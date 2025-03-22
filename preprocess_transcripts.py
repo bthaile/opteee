@@ -7,7 +7,7 @@ from tqdm import tqdm
 # Configuration
 TRANSCRIPT_DIR = "transcripts"
 PROCESSED_DIR = "processed_transcripts"
-METADATA_FILE = "outlier_trading_videos_metadata.csv"
+METADATA_FILE = "outlier_trading_videos_metadata.json"  # Changed to JSON
 CHUNK_SIZE = 250  # Target words per chunk
 OVERLAP = 50  # Words of overlap between chunks
 
@@ -17,36 +17,36 @@ print(f"Chunk size: {CHUNK_SIZE} words with {OVERLAP} words overlap")
 print("="*80)
 
 def load_metadata():
-    """Load video metadata from CSV file"""
+    """Load video metadata from JSON file"""
     print(f"\n[1/3] Loading video metadata from {METADATA_FILE}...")
     try:
-        df = pd.read_csv(METADATA_FILE)
-        print(f"Successfully loaded CSV with {len(df)} rows")
-        # Create a dictionary with video_id as key for faster lookups
-        metadata_dict = {}
-        for _, row in df.iterrows():
-            # Extract YouTube video ID from URL
-            video_id = row.get('video_id')
-            if not video_id and 'url' in row:
-                # Try to extract from URL if video_id is not directly available
-                url = row['url']
-                if 'youtube.com' in url:
-                    video_id = url.split('v=')[1].split('&')[0]
-                elif 'youtu.be' in url:
-                    video_id = url.split('/')[-1]
-            
-            if video_id:
-                metadata_dict[video_id] = {
-                    'title': row.get('title', ''),
-                    'url': row.get('url', ''),
-                    'upload_date': row.get('upload_date', ''),
-                    'duration': row.get('duration', ''),
-                    'channel_name': row.get('channel_name', ''),
-                    'description': row.get('description', '')
-                }
+        # Try to load from JSON first
+        if os.path.exists(METADATA_FILE):
+            with open(METADATA_FILE, 'r', encoding='utf-8') as f:
+                metadata_dict = json.load(f)
+                print(f"Successfully loaded JSON with {len(metadata_dict)} videos")
+                return metadata_dict
         
-        print(f"✅ Loaded metadata for {len(metadata_dict)} videos")
-        return metadata_dict
+        # Fallback to CSV if JSON doesn't exist
+        csv_file = METADATA_FILE.replace('.json', '.csv')
+        if os.path.exists(csv_file):
+            print(f"JSON file not found, trying CSV: {csv_file}")
+            df = pd.read_csv(csv_file)
+            print(f"Successfully loaded CSV with {len(df)} rows")
+            
+            # Create a dictionary with video_id as key for faster lookups
+            metadata_dict = {}
+            for _, row in df.iterrows():
+                video_id = row.get('video_id')
+                if video_id:
+                    metadata_dict[video_id] = row.to_dict()
+            
+            print(f"✅ Loaded metadata for {len(metadata_dict)} videos")
+            return metadata_dict
+        
+        print("⚠️ No metadata file found!")
+        return {}
+        
     except Exception as e:
         print(f"❌ Error loading metadata: {e}")
         return {}
@@ -152,11 +152,68 @@ def chunk_text_with_timestamps(text, timestamps, chunk_size=CHUNK_SIZE, overlap=
     
     return chunks
 
-def get_video_id_from_filename(filename):
-    """Extract video ID from transcript filename"""
+def extract_video_id_from_filename(filename):
+    """Extract video ID from transcript filename with robust fallbacks"""
     # Remove file extension
     base_name = os.path.splitext(filename)[0]
+    
+    # Look for standard YouTube ID pattern (11 characters) in the filename
+    youtube_id_match = re.search(r'([-\w]{11})', base_name)
+    if youtube_id_match:
+        return youtube_id_match.group(1)
+    
+    # Return the base name if we can't find a YouTube ID pattern
     return base_name
+
+def find_metadata_for_transcript(filename, metadata_dict):
+    """Find the best matching metadata for a transcript file using multiple approaches"""
+    # First attempt: Direct video ID extraction and lookup
+    video_id = extract_video_id_from_filename(filename)
+    if video_id in metadata_dict:
+        print(f"✅ Found metadata by direct ID match: {video_id}")
+        return video_id, metadata_dict[video_id]
+    
+    # Second attempt: Try to match by title or filename pattern
+    base_name = os.path.splitext(filename)[0]
+    cleaned_filename = base_name.replace('_', ' ').lower()
+    
+    best_match = None
+    best_score = 0
+    
+    for vid_id, metadata in metadata_dict.items():
+        title = metadata.get('title', '')
+        if not title:
+            continue
+            
+        # Clean and normalize the title for comparison
+        cleaned_title = title.replace('_', ' ').lower()
+        
+        # Simple string contains matching
+        if cleaned_title in cleaned_filename or cleaned_filename in cleaned_title:
+            # Calculate a similarity score based on the length of matching text
+            match_length = len(cleaned_title) if cleaned_title in cleaned_filename else len(cleaned_filename)
+            score = match_length / max(len(cleaned_title), len(cleaned_filename))
+            
+            if score > best_score:
+                best_score = score
+                best_match = vid_id
+    
+    if best_match and best_score > 0.5:  # Threshold for a good match
+        print(f"✅ Found metadata by title match: {best_match} (score: {best_score:.2f})")
+        return best_match, metadata_dict[best_match]
+    
+    # If no good match found, construct basic metadata
+    print(f"⚠️ No metadata found for '{filename}'")
+    base_id = video_id if len(video_id) == 11 else None  # Use only if it looks like a valid YouTube ID
+    
+    # Construct fallback metadata
+    fallback_metadata = {
+        'video_id': base_id or "unknown",
+        'title': base_name.replace('_', ' '),
+        'url': f"https://www.youtube.com/watch?v={base_id}" if base_id else "",
+    }
+    
+    return base_id or "unknown", fallback_metadata
 
 def process_transcripts(metadata_dict):
     """Process all transcripts in the transcript directory"""
@@ -183,22 +240,9 @@ def process_transcripts(metadata_dict):
     for filename in tqdm(transcript_files):
         try:
             file_path = os.path.join(TRANSCRIPT_DIR, filename)
-            video_id = get_video_id_from_filename(filename)
             
-            # Get metadata for this video
-            metadata = metadata_dict.get(video_id, {})
-            
-            # If no metadata found, use minimal info from filename
-            if not metadata:
-                print(f"⚠️ No metadata found for {video_id}, using filename only")
-                metadata = {
-                    'title': video_id,
-                    'url': f"https://www.youtube.com/watch?v={video_id}",
-                    'upload_date': '',
-                    'duration': '',
-                    'channel_name': '',
-                    'description': ''
-                }
+            # Find the best matching metadata for this transcript
+            video_id, metadata = find_metadata_for_transcript(filename, metadata_dict)
             
             # Read the transcript
             with open(file_path, 'r', encoding='utf-8') as f:
@@ -219,12 +263,28 @@ def process_transcripts(metadata_dict):
             # Create JSON for each chunk with metadata
             chunk_data = []
             for i, chunk_info in enumerate(chunks_with_timestamps):
+                # Ensure we have a proper video URL and ID
+                valid_id = video_id if len(video_id) == 11 else "unknown"
+                
+                # Construct proper URL with timestamp
+                timestamp_seconds = int(chunk_info['start_timestamp_seconds'])
+                video_url = metadata.get('url', '') or f"https://www.youtube.com/watch?v={valid_id}"
+                
+                # Extract clean video ID for timestamp URL
+                url_video_id = valid_id
+                url_match = re.search(r'(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s?]+)', video_url)
+                if url_match:
+                    url_video_id = url_match.group(1)
+                
+                # Create proper timestamp URL
+                video_url_with_timestamp = f"https://www.youtube.com/watch?v={url_video_id}&t={timestamp_seconds}"
+                
                 chunk_obj = {
                     'text': chunk_info['text'],
                     'metadata': {
-                        'video_id': video_id,
-                        'title': metadata.get('title', ''),
-                        'url': metadata.get('url', ''),
+                        'video_id': valid_id,
+                        'title': metadata.get('title', filename.replace('.txt', '').replace('_', ' ')),
+                        'url': f"https://www.youtube.com/watch?v={url_video_id}",
                         'upload_date': metadata.get('upload_date', ''),
                         'duration': metadata.get('duration', ''),
                         'channel_name': metadata.get('channel_name', ''),
@@ -232,7 +292,7 @@ def process_transcripts(metadata_dict):
                         'total_chunks': len(chunks_with_timestamps),
                         'start_timestamp': chunk_info['start_timestamp'],
                         'start_timestamp_seconds': chunk_info['start_timestamp_seconds'],
-                        'video_url_with_timestamp': f"{metadata.get('url', f'https://www.youtube.com/watch?v={video_id}')}&t={int(chunk_info['start_timestamp_seconds'])}"
+                        'video_url_with_timestamp': video_url_with_timestamp
                     }
                 }
                 chunk_data.append(chunk_obj)
@@ -258,11 +318,29 @@ def process_transcripts(metadata_dict):
     print("="*80)
 
 def main():
+    print("="*80)
+    print("Starting main function...")
+    
     # Load video metadata
     metadata_dict = load_metadata()
+    print(f"Loaded metadata_dict with {len(metadata_dict)} entries")
+    
+    # Check if transcripts directory exists
+    if not os.path.exists(TRANSCRIPT_DIR):
+        print(f"ERROR: Transcript directory '{TRANSCRIPT_DIR}' not found!")
+        return
+    
+    # Check if any transcript files exist
+    transcript_files = [f for f in os.listdir(TRANSCRIPT_DIR) if f.endswith('.txt')]
+    print(f"Found {len(transcript_files)} transcript files: {transcript_files}")
     
     # Process transcripts
     process_transcripts(metadata_dict)
+    
+    # Check processed output
+    if os.path.exists(PROCESSED_DIR):
+        processed_files = [f for f in os.listdir(PROCESSED_DIR) if f.endswith('.json')]
+        print(f"Created {len(processed_files)} processed files: {processed_files}")
     
     print("\n📝 Script execution complete! Your transcripts are now ready for RAG.")
 

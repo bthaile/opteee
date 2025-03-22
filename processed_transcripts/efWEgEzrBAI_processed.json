@@ -1,0 +1,146 @@
+[
+  {
+    "text": "option volatility it's super straightforward there's really no need for a video on it because you already know the difference between implied realized future realized forecast historic volatilities that all makes sense to you am I right you're anything like me when I first started out trading that all Probably sounds like a bunch of nothing so the goal of this video is to walk through all of those to give you at least a surface level understanding of these different kinds of volatility because they are different things so that you understand how this fits into options markets what's up everybody Eric here welcome back to all the outliers and a shout out to the patreon family you guys make content like this possible if what I do helps you out consider signing up let's get started so we have option volatility what is volatility well really it's just a fancy term for deviation or dispersion what does this mean simple if you take a look at this chart of Microsoft you see these linear regression channels I have a video on those actually I'll throw in the notes below but this middle line here is kind of like a line of best fit for all of the data on this chart so when we move up above or down below that's dispersion from whatever this mean is so that's what we're talking about the variance of something and in this case in trading we're specifically referring to different",
+    "metadata": {
+      "video_id": "efWEgEzrBAI",
+      "title": "Option Volatility Explained | What is IV Rank (IVR) and IV Percentile (IVP)?",
+      "url": "https://www.youtube.com/watch?v=efWEgEzrBAI",
+      "upload_date": "20240313",
+      "duration": "",
+      "channel_name": "Outlier Trading",
+      "chunk_index": 0,
+      "total_chunks": 9,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0.12,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=efWEgEzrBAI&t=0"
+    }
+  },
+  {
+    "text": "a line of best fit for all of the data on this chart so when we move up above or down below that's dispersion from whatever this mean is so that's what we're talking about the variance of something and in this case in trading we're specifically referring to different Securities so let's talk about the common types of volatility there is implied historic realized future realized and forecast we're going to go through all of these quickly so that you have a working understanding of these and then at the end of the video I'm going to walk you through some of the common scales for implied volatility because if you're an options Trader that will be important to you to understand the difference between implied volatility Rank and implied volatility percentile because they're not the same thing so let's start with implied volatility in short this is expected volatility for various time frames that we infer from an options price so because I was looking at Microsoft before we're going to keep looking at Microsoft and we can figure out what the implied volatility is for every single one of these options that's what this column is here for the put side and this column here for the call side the reason why this matters is because if you think about trading options they have two different pieces to their premium they have intrinsic and extrinsic value implied volatility lives in the extrinsic value the time value of",
+    "metadata": {
+      "video_id": "efWEgEzrBAI",
+      "title": "Option Volatility Explained | What is IV Rank (IVR) and IV Percentile (IVP)?",
+      "url": "https://www.youtube.com/watch?v=efWEgEzrBAI",
+      "upload_date": "20240313",
+      "duration": "",
+      "channel_name": "Outlier Trading",
+      "chunk_index": 1,
+      "total_chunks": 9,
+      "start_timestamp": "00:01:04",
+      "start_timestamp_seconds": 64.48,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=efWEgEzrBAI&t=64"
+    }
+  },
+  {
+    "text": "for the put side and this column here for the call side the reason why this matters is because if you think about trading options they have two different pieces to their premium they have intrinsic and extrinsic value implied volatility lives in the extrinsic value the time value of an option so we can isolate what the implied volatility is per strike we can look at the implied volatility per expiration cycle so for example again looking at Microsoft the 15 December expiration cycle the implied volatility there is a 21.25 that infers a 12.96 expected move with within one standard deviation that's all this is so it is the expected movement of something so implied volatility has a lot of uses to us now what is historic volatility it measures the realized volatility for a specific period so if we go back here and we look at Microsoft and we look at something like this this little handy dandy volatility think script that I use and kind of modify it quite a bit over time but if you notice there's hv2 hv5 HV 21 this is historic volatility for different time frames so you can isolate what the volatility was for specific time frames now realized volatility in can be a couple things when we're talking about realized volatility in general parlament and general speak it is the volatility that's realized in the underlying it's also known as the statistical volatility a lot of times these two will",
+    "metadata": {
+      "video_id": "efWEgEzrBAI",
+      "title": "Option Volatility Explained | What is IV Rank (IVR) and IV Percentile (IVP)?",
+      "url": "https://www.youtube.com/watch?v=efWEgEzrBAI",
+      "upload_date": "20240313",
+      "duration": "",
+      "channel_name": "Outlier Trading",
+      "chunk_index": 2,
+      "total_chunks": 9,
+      "start_timestamp": "00:02:14",
+      "start_timestamp_seconds": 134.16,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=efWEgEzrBAI&t=134"
+    }
+  },
+  {
+    "text": "volatility was for specific time frames now realized volatility in can be a couple things when we're talking about realized volatility in general parlament and general speak it is the volatility that's realized in the underlying it's also known as the statistical volatility a lot of times these two will be used interchangeably and that's okay as long as we understand that realized volatility can also be future realized volatility what the hell is that what well this is the realized prediction of future V and this is different than forecast volatility which is the prediction of future volatility so think of it this way we can forecast volatility if you have an implied volatility surface and you're a sophisticated Trader you create your own assessment of volatility you've just forecasted volatility most options Traders especially on the retail side we are dealing with implied volatility this is volatility that is derived from the options price so the smart people in the market are looking at their forecasted volatility and then us retail Traders are looking at what's implied via the pricing of an option then you can assess future realized volatility which tells us how accurate the prediction was of fall make sense good great let's now talk about some implied volatility scales the reason why this matters is if we take a look at Microsoft here and we look at the current implied volatility which is 21 21.29 is that high or low you can't really tell because",
+    "metadata": {
+      "video_id": "efWEgEzrBAI",
+      "title": "Option Volatility Explained | What is IV Rank (IVR) and IV Percentile (IVP)?",
+      "url": "https://www.youtube.com/watch?v=efWEgEzrBAI",
+      "upload_date": "20240313",
+      "duration": "",
+      "channel_name": "Outlier Trading",
+      "chunk_index": 3,
+      "total_chunks": 9,
+      "start_timestamp": "00:03:41",
+      "start_timestamp_seconds": 221.8,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=efWEgEzrBAI&t=221"
+    }
+  },
+  {
+    "text": "of fall make sense good great let's now talk about some implied volatility scales the reason why this matters is if we take a look at Microsoft here and we look at the current implied volatility which is 21 21.29 is that high or low you can't really tell because there's nothing to compare it against you can have things that have 130 implied volatility that that's actually not very high relative to what that specific products implied volatility typically is again if you think about volatility as the dispersion of things if we look at the implied volatility for Microsoft that's 21.29 and then if you look at it for Tesla it's 49 so we expect Tesla to be a little bit more volatile than Microsoft but when we look at this 49 is this High relative for Tesla well this is exactly why we need things like IV Rank and IV percentile now there's a big difference between these two and in my opinion IV percentile is a much better metric that is less prone to skew why is that well let's take a look at how implied volatility rank is calculated we have the current IV we subtract the 52 we IV low then we divide that by the 52e IV High less the 52e IV low so what you'll notice is we're using the extremes we're using the high we're using the low now in typical markets the difference between IV Rank and IV percentile is",
+    "metadata": {
+      "video_id": "efWEgEzrBAI",
+      "title": "Option Volatility Explained | What is IV Rank (IVR) and IV Percentile (IVP)?",
+      "url": "https://www.youtube.com/watch?v=efWEgEzrBAI",
+      "upload_date": "20240313",
+      "duration": "",
+      "channel_name": "Outlier Trading",
+      "chunk_index": 4,
+      "total_chunks": 9,
+      "start_timestamp": "00:05:03",
+      "start_timestamp_seconds": 303.96,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=efWEgEzrBAI&t=303"
+    }
+  },
+  {
+    "text": "subtract the 52 we IV low then we divide that by the 52e IV High less the 52e IV low so what you'll notice is we're using the extremes we're using the high we're using the low now in typical markets the difference between IV Rank and IV percentile is not that crazy however when we are in more extreme markets this can be massively different which I'll show you in just a second but before that let's take a look at what IV percentile is instead of using the extremes we take count of trading days that are below the current IV then we divide that by the number of trading days so typically you'd use something like 252 so this is just looking at a pure tally it doesn't really care what the extremes were what it cares is where we are relative to its previous performance now a fun fact this is from thinker swim and the the current IV percentile here actually is IV rank this is completely wrong and you'll see that in just a second because I want you to do the math for both of these why do we why do we have to go through this every time this one's a little more difficult you kind of can do the math on your own I have a think script for it but I do want you to do the math for the IV rank for this and then throw it in the",
+    "metadata": {
+      "video_id": "efWEgEzrBAI",
+      "title": "Option Volatility Explained | What is IV Rank (IVR) and IV Percentile (IVP)?",
+      "url": "https://www.youtube.com/watch?v=efWEgEzrBAI",
+      "upload_date": "20240313",
+      "duration": "",
+      "channel_name": "Outlier Trading",
+      "chunk_index": 5,
+      "total_chunks": 9,
+      "start_timestamp": "00:06:26",
+      "start_timestamp_seconds": 386.92,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=efWEgEzrBAI&t=386"
+    }
+  },
+  {
+    "text": "to go through this every time this one's a little more difficult you kind of can do the math on your own I have a think script for it but I do want you to do the math for the IV rank for this and then throw it in the comments below what you got before I click on to see if you are correct now you'll see that if if we do the math on this the IV rank for this scenario the current IV is 19.38 so that's this here then we're going to take the 52e IV low which is from here 177 then we're going to divide that by the 52e IV High which is 442 less 52 we IV low again .177 and you're going to get 6.3 notice that this happens to be the same in this scenario so what am I referring to then when we're talking about being quite different simple in this example the IV percentile currently for this product which was Apple is 5 so if this is actually IV percentile this should be 5 not 6 but the this is actually IV rank now this doesn't seem like that big of a difference because it's not the market has been relatively Consolidated for periods of time now however if you look at old performance the this is an OG video of Eric check that out some Eric Inception this was during Co and I don't remember what product I",
+    "metadata": {
+      "video_id": "efWEgEzrBAI",
+      "title": "Option Volatility Explained | What is IV Rank (IVR) and IV Percentile (IVP)?",
+      "url": "https://www.youtube.com/watch?v=efWEgEzrBAI",
+      "upload_date": "20240313",
+      "duration": "",
+      "channel_name": "Outlier Trading",
+      "chunk_index": 6,
+      "total_chunks": 9,
+      "start_timestamp": "00:07:40",
+      "start_timestamp_seconds": 460.8,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=efWEgEzrBAI&t=460"
+    }
+  },
+  {
+    "text": "big of a difference because it's not the market has been relatively Consolidated for periods of time now however if you look at old performance the this is an OG video of Eric check that out some Eric Inception this was during Co and I don't remember what product I was looking at here but the important part is if you look at the IV rank in this scenario whatever it was it was 3.26 however IV percentile was 66 so during covid when there's a lot of volatility this is literally two times that's a massive difference when we're looking at things now it's not that big of a difference because things are relatively low so you're not going to see that big of a skew but it's important for you to know that IV rank is much more skew prone than IV percentile you are going to get a better assessment of IV's performance against itself in an individual product via percentile versus IV rank that is the long and short of it so as always if you have any questions hit me up let me know make sure you hit up think or Swim let them know that they're wrong I've let them know this a million times they don't change it but uh who knows maybe Schwab will get it together and fix it for us but otherwise you should know that that is not IV percentile that's ranked and it is prone to skew if",
+    "metadata": {
+      "video_id": "efWEgEzrBAI",
+      "title": "Option Volatility Explained | What is IV Rank (IVR) and IV Percentile (IVP)?",
+      "url": "https://www.youtube.com/watch?v=efWEgEzrBAI",
+      "upload_date": "20240313",
+      "duration": "",
+      "channel_name": "Outlier Trading",
+      "chunk_index": 7,
+      "total_chunks": 9,
+      "start_timestamp": "00:08:48",
+      "start_timestamp_seconds": 528.0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=efWEgEzrBAI&t=528"
+    }
+  },
+  {
+    "text": "that they're wrong I've let them know this a million times they don't change it but uh who knows maybe Schwab will get it together and fix it for us but otherwise you should know that that is not IV percentile that's ranked and it is prone to skew if there's anything I missed throw it in the comments below don't forget like subscribe share be an outlier it's the only way to be catch youall later",
+    "metadata": {
+      "video_id": "efWEgEzrBAI",
+      "title": "Option Volatility Explained | What is IV Rank (IVR) and IV Percentile (IVP)?",
+      "url": "https://www.youtube.com/watch?v=efWEgEzrBAI",
+      "upload_date": "20240313",
+      "duration": "",
+      "channel_name": "Outlier Trading",
+      "chunk_index": 8,
+      "total_chunks": 9,
+      "start_timestamp": "00:09:54",
+      "start_timestamp_seconds": 594.36,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=efWEgEzrBAI&t=594"
+    }
+  }
+]

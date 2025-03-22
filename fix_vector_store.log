@@ -1,0 +1,108 @@
+================================================================================
+VECTOR STORE FIX UTILITY
+================================================================================
+Creating backup of existing vector store to vector_store_backup
+✅ Backup created
+Removing existing vector store
+Loading processed transcripts from processed_transcripts...
+Found 356 processed transcript files
+✅ Loaded 7377 transcript chunks
+
+Loading embedding model: all-MiniLM-L6-v2
+Creating embeddings for 7377 chunks (batch size: 32)...
+✅ Created embeddings with shape: (7377, 384)
+
+Creating FAISS index with dimension 384...
+✅ Added 7377 vectors to the index
+✅ Saved FAISS index to vector_store/transcript_index.faiss
+✅ Saved metadata to vector_store/transcript_metadata.pkl
+✅ Saved raw texts to vector_store/transcript_texts.pkl
+
+Verifying saved data...
+✅ FAISS index verified: 7377 vectors with dimension 384
+✅ Texts verified: 7377 text chunks
+   Sample text: what's up everyone taking a look at GameStop today there was a pretty interesting trade that I want ...
+✅ Metadata verified: 7377 metadata entries
+✅ Data consistency verified: all components have 7377 items
+
+✅ Vector store has been successfully fixed!
+
+=== Testing Search Functionality ===
+
+Test Query: 'options trading strategies for beginners'
+Top 5 results:
+1. Introduction_to_Options_|_Options_Trading_for_Beginners_|_Options_101 (at 01:16:12, distance: 0.6344)
+   🔗 https://www.youtube.com/watch?v=Introduction_to_Options_|_Options_Trading_for_Beginners_|_Options_101&t=4572
+   📝 you should get options as a Strategic investment I have no vested affiliate link anything with this ...
+2. Introduction_to_Options_|_Options_Trading_for_Beginners_|_Options_101 (at 00:00:00, distance: 0.7009)
+   🔗 https://www.youtube.com/watch?v=Introduction_to_Options_|_Options_Trading_for_Beginners_|_Options_101&t=0
+   📝 introduction to options this is for new people interested in learning about options how they can fit...
+3. Complete_Guide_to_Trading_Options_with_$5K (at 00:06:41, distance: 0.7077)
+   🔗 https://www.youtube.com/watch?v=Complete_Guide_to_Trading_Options_with_$5K&t=401
+   📝 feedback that there's a really misleading low barrier to entry so we think it's going to be much eas...
+4. Full Time Options Trading w/ @StockMarketOptionsTrading  | The Outlier Podcast Ep73 (at 00:05:34, distance: 0.7416)
+   🔗 https://www.youtube.com/watch?v=FnVyDaukQZE&t=334
+   📝 initial reaction? I was familiar with basic equities and general start market knowledge. But when yo...
+5. Avoid_These_9_Beginner_Options_Trading_Mistakes (at 00:08:11, distance: 0.7433)
+   🔗 https://www.youtube.com/watch?v=Avoid_These_9_Beginner_Options_Trading_Mistakes&t=491
+   📝 a vehicle there's something we can trade their uh type of security SO trading options doesn't equal ...
+
+Test Query: 'how to manage risk in trading'
+Top 5 results:
+1. +346%_Return_Pro_Trader_Matt_Caruso_|_Money_Talks (at 00:44:38, distance: 0.6406)
+   🔗 https://www.youtube.com/watch?v=+346%_Return_Pro_Trader_Matt_Caruso_|_Money_Talks&t=2678
+   📝 nine months or so that's that's what i'm looking to you know if the trade is successful it's gonna b...
+2. Maximize_Gains_-_Risk_Management_for_Options_Trading (at 00:04:37, distance: 0.6859)
+   🔗 https://www.youtube.com/watch?v=Maximize_Gains_-_Risk_Management_for_Options_Trading&t=277
+   📝 to go through this process because if you just say the easy answer of oh I'm just going to limit dra...
+3. Maximize_Gains_-_Risk_Management_for_Options_Trading (at 00:12:18, distance: 0.6914)
+   🔗 https://www.youtube.com/watch?v=Maximize_Gains_-_Risk_Management_for_Options_Trading&t=738
+   📝 your rules you're making exceptions because you think you can make this one trade work but you forge...
+4. 5_Fundamental_Concepts_for_ALL_Investors_and_Traders (at 00:02:44, distance: 0.7011)
+   🔗 https://www.youtube.com/watch?v=5_Fundamental_Concepts_for_ALL_Investors_and_Traders&t=164
+   📝 all the money we're gonna make all of those kinds of things and it leads to taking on too much risk ...
+5. The_Trader’s_Guide_to_Effective_Risk_Management (at 00:00:00, distance: 0.7101)
+   🔗 https://www.youtube.com/watch?v=The_Trader’s_Guide_to_Effective_Risk_Management&t=0
+   📝 do you know the difference between good and bad risk as a Trader my guess is most Traders out there ...
+
+Test Query: 'what is gamma in options'
+Top 5 results:
+1. Gamma_Scalping_Introduction (at 00:04:38, distance: 0.6872)
+   🔗 https://www.youtube.com/watch?v=Gamma_Scalping_Introduction&t=278
+   📝 of the traits of gamma we have a 10 DTE gamma here in yellow and then a 30 DTE gamma here in white a...
+2. How_to_Buy_Call_Options_Smarter:_Step_by_Step (at 00:07:42, distance: 0.7131)
+   🔗 https://www.youtube.com/watch?v=How_to_Buy_Call_Options_Smarter:_Step_by_Step&t=462
+   📝 have much higher gamma the other thing you'll notice is options that are closer in time have a much ...
+3. Master_0DTE_Options (at 00:01:48, distance: 0.7868)
+   🔗 https://www.youtube.com/watch?v=Master_0DTE_Options&t=108
+   📝 a which is today's expiration um notice how everything that's out of the money is now essentially bi...
+4. Gamma_Scalping_Introduction (at 00:06:09, distance: 0.8231)
+   🔗 https://www.youtube.com/watch?v=Gamma_Scalping_Introduction&t=369
+   📝 we have low volatility notice how we will have more gamma this exists is because the way that option...
+5. Options_Trading_Secrets:_11_Ways_to_Maximize_Your_Gains (at 00:06:26, distance: 0.8413)
+   🔗 https://www.youtube.com/watch?v=Options_Trading_Secrets:_11_Ways_to_Maximize_Your_Gains&t=386
+   📝 next component which we're going to bounce back and forth between these all options expire and they ...
+
+Test Query: 'best technical indicators for trading'
+Top 5 results:
+1. Technical_Analysis_for_Trading_Options_|_Guide_for_Beginners (at 00:19:25, distance: 0.8703)
+   🔗 https://www.youtube.com/watch?v=Technical_Analysis_for_Trading_Options_|_Guide_for_Beginners&t=1165
+   📝 Direction open up an Excel sheet list out a bunch of random stocks apply your technical analysis in ...
+2. How_I_Analyze_the_Stock_Market_to_Build_Ideas (at 00:04:10, distance: 0.9004)
+   🔗 https://www.youtube.com/watch?v=How_I_Analyze_the_Stock_Market_to_Build_Ideas&t=250
+   📝 this is another really favorite place that I feel like is generally underutilized in thinker swim so...
+3. How_I_Trade_Options (at 00:15:05, distance: 0.9098)
+   🔗 https://www.youtube.com/watch?v=How_I_Trade_Options&t=905
+   📝 trade things like variance risk Premia which I have a video on that I'll link to it below mean rever...
+4. Expert_Guide_to_Technical_Analysis_with_Brian_Shannon (at 01:08:52, distance: 0.9132)
+   🔗 https://www.youtube.com/watch?v=Expert_Guide_to_Technical_Analysis_with_Brian_Shannon&t=4132
+   📝 you know that the the urge is still there for you except i say it all the time i say it jokingly but...
+5. Inflation_&_Trend_Following_with_Matt_Caruso_-_The_Outlier_Podcast (at 00:27:07, distance: 0.9177)
+   🔗 https://www.youtube.com/watch?v=Inflation_&_Trend_Following_with_Matt_Caruso_-_The_Outlier_Podcast&t=1627
+   📝 the opportunity you've been waiting for so I always have these like strong technical guidelines to k...
+
+================================================================================
+📝 Vector store fix complete!
+✅ Total chunks indexed: 7377
+📁 Fixed vector store saved to vector_store/
+================================================================================

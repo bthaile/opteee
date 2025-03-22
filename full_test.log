@@ -1,0 +1,40 @@
+🔍 Testing RAG pipeline with openai provider and top_k=3
+Loading embedding model: all-MiniLM-L6-v2
+Loading FAISS index from vector_store/transcript_index.faiss
+✅ Loaded 7377 vectors
+✅ Using OpenAI model: gpt-4-turbo
+✅ Successfully initialized the RAG pipeline with openai
+
+[1/10] Testing: 'What is gamma in options trading?'
+❌ Error processing question: Error code: 401 - {'error': {'message': 'Incorrect API key provided: put-your*********here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+[2/10] Testing: 'Explain what a covered call strategy is.'
+❌ Error processing question: Error code: 401 - {'error': {'message': 'Incorrect API key provided: put-your*********here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+[3/10] Testing: 'How does implied volatility affect option prices?'
+❌ Error processing question: Error code: 401 - {'error': {'message': 'Incorrect API key provided: put-your*********here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+[4/10] Testing: 'What is the difference between American and European options?'
+❌ Error processing question: Error code: 401 - {'error': {'message': 'Incorrect API key provided: put-your*********here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+[5/10] Testing: 'Explain the concept of theta decay in options.'
+❌ Error processing question: Error code: 401 - {'error': {'message': 'Incorrect API key provided: put-your*********here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+[6/10] Testing: 'What is a bull call spread strategy?'
+❌ Error processing question: Error code: 401 - {'error': {'message': 'Incorrect API key provided: put-your*********here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+[7/10] Testing: 'How do you calculate the break-even point for a call option?'
+❌ Error processing question: Error code: 401 - {'error': {'message': 'Incorrect API key provided: put-your*********here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+[8/10] Testing: 'What happens to options during stock splits?'
+❌ Error processing question: Error code: 401 - {'error': {'message': 'Incorrect API key provided: put-your*********here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+[9/10] Testing: 'Explain what a put-call parity is.'
+❌ Error processing question: Error code: 401 - {'error': {'message': 'Incorrect API key provided: put-your*********here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+[10/10] Testing: 'How can I use options to hedge my stock portfolio?'
+❌ Error processing question: Error code: 401 - {'error': {'message': 'Incorrect API key provided: put-your*********here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+📊 Test Summary: 0/10 questions processed successfully
+📊 Average processing time: 0.00 seconds per question
+✅ Results saved to rag_test_results.txt

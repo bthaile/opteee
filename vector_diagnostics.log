@@ -1,0 +1,36 @@
+================================================================================
+VECTOR STORE DIAGNOSTIC TOOL
+================================================================================
+Checking for vector store directory: vector_store
+✅ Directory exists
+Contents: ['transcript_index.faiss', 'transcript_metadata.pkl', 'transcript_texts.pkl']
+
+Checking texts file...
+✅ File exists: vector_store/transcript_texts.pkl
+   Size: 0.00 MB
+❌ Error loading texts: Ran out of input
+
+Checking metadata file...
+✅ File exists: vector_store/transcript_metadata.pkl
+   Size: 2.69 MB
+✅ Successfully loaded metadata
+   Type: <class 'list'>
+   Number of items: 7377
+   First item type: <class 'dict'>
+   First item keys: ['video_id', 'title', 'url', 'upload_date', 'duration', 'channel_name', 'chunk_index', 'total_chunks', 'start_timestamp', 'start_timestamp_seconds', 'video_url_with_timestamp']
+
+Checking FAISS index...
+✅ File exists: vector_store/transcript_index.faiss
+   Size: 10.81 MB
+✅ Successfully loaded FAISS index
+   Number of vectors: 7377
+   Dimension: 384
+
+Checking consistency...
+❌ Cannot check consistency because one or more components failed to load
+
+================================================================================
+SUMMARY
+================================================================================
+❌ Issues detected with the vector store
+   Please recreate the vector store using create_vector_store.py
