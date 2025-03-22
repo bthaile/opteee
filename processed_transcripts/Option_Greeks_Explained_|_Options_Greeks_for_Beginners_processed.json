@@ -1,0 +1,258 @@
+[
+  {
+    "text": "there are a lot more than the five Greeks most options Traders are used to seeing so the goal of this video is to give you a deeper understanding of the primary Greeks and then give you a cursory overview of the second and third order Greeks that you might be less aware of this will be generally less applicable to most people good reference material and if you're a sophisticated Trader some of this stuff will actually be quite useful to you so we're going to go through what these different orders mean then we're going to get into some miscon ceptions up front and then we're going to dive into the Greeks themselves what's up everybody Eric here welcome back to the outliers shout out to the patreon family if what I do helps you out consider signing up let's get straight to it so what do these different orders mean well when you talk about options we're generally going to be talking about different factors in the context of a differential equation we're not going to go deep into that world in this video today but just know that that is essentially what we're doing so the first order Greeks they give you various factors sensitivity with respect to price that's what WT means with respect to you're going to see that a lot so just earmark what this means second and third order Greeks simply take the next step of that derivative so second order Greeks",
+    "metadata": {
+      "video_id": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "title": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "url": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 0,
+      "total_chunks": 16,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0.08,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners&t=0"
+    }
+  },
+  {
+    "text": "first order Greeks they give you various factors sensitivity with respect to price that's what WT means with respect to you're going to see that a lot so just earmark what this means second and third order Greeks simply take the next step of that derivative so second order Greeks are the derivative of first order with respect to an additional factor and then third does that to second if that makes no sense to you don't worry we're going to get through it together and it gets easier when we get to the breakdown before that let's talk about some misconceptions first off Greeks make you money no they don't second Greeks provide Edge no they don't what do Greeks do they measure things that's it you have to figure out how you can structure things to make money the Greeks can give you some ideas about that but there is no inherent Edge in knowing the Greeks or any way that the Greeks outright make you money they simply measure things now that we got that aside let's get into these Greeks notice we are starting with the first order Greeks and that is because these are the most common if you'll notice there's four of them here but at the beginning of the video I said the five primary Greeks so are we missing one no one of the five primary Greeks is actually a second order Greek which we'll get to that in a minute so",
+    "metadata": {
+      "video_id": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "title": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "url": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 1,
+      "total_chunks": 16,
+      "start_timestamp": "00:00:55",
+      "start_timestamp_seconds": 55.8,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners&t=55"
+    }
+  },
+  {
+    "text": "most common if you'll notice there's four of them here but at the beginning of the video I said the five primary Greeks so are we missing one no one of the five primary Greeks is actually a second order Greek which we'll get to that in a minute so we have Delta Theta Vega and row Delta and row have another Greek in parenthesis next to it so Delta has Lambda row has Epsilon why is that you'll find out in just a minute but just know that that is another Greek so we'll start with Delta this is pretty commonly understood that is the premium rate of change per onepoint move in the underlying price movement it's also a proxy for probability of an option expiring in the money which is actually kind of useful but also grossly inaccurate in other instances I'll throw a video in the notes below that walks through Delta as an approximation of being in the money so that you can be more well versed on that and then it also represents the notional value that you are trading so let's take a look at a quick example I'm going to use apple and right now we're looking at the 19 Jan expiration chain this is Delta now when you look at an option chain this is always in the context of if you were to buy the option so when we're looking at this column that shows the range of these different",
+    "metadata": {
+      "video_id": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "title": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "url": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 2,
+      "total_chunks": 16,
+      "start_timestamp": "00:02:01",
+      "start_timestamp_seconds": 121.04,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners&t=121"
+    }
+  },
+  {
+    "text": "and right now we're looking at the 19 Jan expiration chain this is Delta now when you look at an option chain this is always in the context of if you were to buy the option so when we're looking at this column that shows the range of these different Figures it's in that same context as if you were to buy that option if you choose to sell the option the inverse sign applies so let's take a look at this 190 put in apple the Delta of that is negative 0.30 so going back to options 101 every contract that you trade a standard contract a one lot represents up to 100 shares of the underlying however when you trade options it doesn't behave like that full 100 shares right out of the gate so in this case this is telling you that this contract this 190 put right now is behaving as if it was short 30 shares that's also where the rate of change of the premium will come per dollar move in the underlying so if you sold this option what happens to this sign it becomes a positive so if you sell this 190 put that means your position is behaving like long 30 shares of Apple now the further you go out of the money Delta is going to approximate to zero the deeper in the money you go Delta is going to approximate to one or negative 1 you'll notice on the",
+    "metadata": {
+      "video_id": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "title": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "url": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 3,
+      "total_chunks": 16,
+      "start_timestamp": "00:03:08",
+      "start_timestamp_seconds": 188.0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners&t=188"
+    }
+  },
+  {
+    "text": "put that means your position is behaving like long 30 shares of Apple now the further you go out of the money Delta is going to approximate to zero the deeper in the money you go Delta is going to approximate to one or negative 1 you'll notice on the call side Delta is positive on the put side Delta is negative again if you on the call side and you choose to sell this 47 Delta call you would then be holding a position that's behaving as if you were short 47 shares of Apple at this price so the punchline here is that when you're looking at an options chain all of the Greeks are provided in a sense that you are buying so if you choose to sell all of them flip Delta gamma Theta Vega row all flip okay a couple other things about Delta it is typically about a 50 Delta if you are at the money and Delta doesn't really care if you are at 1 DTE or if you at 50 DTE it's still going to behave generally the same where about 50 Delta is going to be at the money further you go out Delta is going to approximate to zero and then to one the further in the money you go now let's talk about Theta Theta is the rate of change in premium from the passage of time and we measure that by one DTE so each time one day",
+    "metadata": {
+      "video_id": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "title": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "url": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 4,
+      "total_chunks": 16,
+      "start_timestamp": "00:04:24",
+      "start_timestamp_seconds": 264.56,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners&t=264"
+    }
+  },
+  {
+    "text": "go out Delta is going to approximate to zero and then to one the further in the money you go now let's talk about Theta Theta is the rate of change in premium from the passage of time and we measure that by one DTE so each time one day passes Theta is decaying out of the option so again using the same example of these 190s will go back to the 22 DTE and the 190 that 30 Delta option it has a Theta of 0.06 so this means every day that passes everything else remaining the same you are losing six cents out of that options premium notice how I said everything else being the same this is a really important note the Greeks are only as good as when you look at them what that means is markets move all of the inputs that go into the Greeks are constantly changing so it's not a static figure more often than not some of them are more resilient to intraday movement others are not so a couple notes about Theta you'll notice that it's highest at the money and the further out of the money you go or the further in the money you go the further down it goes why is that because an option has the highest extrinsic value at the money the most time value the further something is out of the money the less time value it has has no intrinsic value so Theta",
+    "metadata": {
+      "video_id": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "title": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "url": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 5,
+      "total_chunks": 16,
+      "start_timestamp": "00:05:36",
+      "start_timestamp_seconds": 336.32,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners&t=336"
+    }
+  },
+  {
+    "text": "the further in the money you go the further down it goes why is that because an option has the highest extrinsic value at the money the most time value the further something is out of the money the less time value it has has no intrinsic value so Theta can't be high cuz there's not much left to Decay out same thing if you go super deep in the money there's not a lot of extrinsic value so there's not a lot of theta to Decay out a couple other notes about Theta the rate of theta Decay looks a lot like this graph this is taken from an actual options chain notice how really long DTE 100 days to expiration Theta does not Decay that much day over day even 20 30day blocks notice when you go from 90 to 60 it starts to Exel accelerate and then as you go 60 and in it parabolically approximates to zero because every single option expires at that point it can have no more extrinsic value so Theta accelerates the closer to expiration that you are this is precisely why when I'm trading things like the ratio call diagonal ratio put diagonal I use longer dated options for my Longs so that I'm not wasting away with Theta and when I'm selling I tend to sell shorter term time frames to capitalize on that curve now let's move on to Vega Vega is the premium change of an option per",
+    "metadata": {
+      "video_id": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "title": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "url": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 6,
+      "total_chunks": 16,
+      "start_timestamp": "00:06:44",
+      "start_timestamp_seconds": 404.32,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners&t=404"
+    }
+  },
+  {
+    "text": "put diagonal I use longer dated options for my Longs so that I'm not wasting away with Theta and when I'm selling I tend to sell shorter term time frames to capitalize on that curve now let's move on to Vega Vega is the premium change of an option per 1 move in volatility and a super annoying nerd fact Vega isn't a Greek it actually would be considered Kappa but that doesn't apply as cleanly as Vega volatility so they went with Vega Theta time Delta Direction row rates that work for Kappa and volatility so anyways useless fact for you and I appreciate that Vega is the highest at the money and it's constant it behaves a little bit different than the other Greeks so if we grab Vega right here notice how Vega is highest at the money the further you go out of the money it drops same thing the further in the money you go it drops this is kind of an important figure because depending on the time frame that you're trading shorter term time frames are going to see Vega moving more and you'll notice that a lot of these kind of behave that way where if we go further out in time you'll have more Vega in the options notice how it Peaks up to this why is that well because there's more extrinsic value but is a percentage of the remaining premium it gets to be a little bit jacked up",
+    "metadata": {
+      "video_id": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "title": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "url": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 7,
+      "total_chunks": 16,
+      "start_timestamp": "00:07:48",
+      "start_timestamp_seconds": 468.32,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners&t=468"
+    }
+  },
+  {
+    "text": "that way where if we go further out in time you'll have more Vega in the options notice how it Peaks up to this why is that well because there's more extrinsic value but is a percentage of the remaining premium it gets to be a little bit jacked up when there's at the money not that much time left it's also product dependent but it's just an important note notice how with something that's trading for 237 38 cents the Vega here is 18 so in this case the 78 DTE this represents like 6.8 of the premium the Vega and out here it's closer to like 7.6 so again just kind of a a general data point that's useful to be aware of and then if we look at row this is the premium change from a 1 move in the risk-free rate which is used to price options this is less impactful to most Traders this generally is going to impact longer term options far more so this is less used by most Traders now notice how Lambda and Epsilon are here Lambda is essentially the percent equivalent of Delta so Lambda takes the premium percent change per 1 change in the spot price and Epsilon does that for row so those are technically two more Greeks so far first order Greeks are down did we miss one cuz I said that there's five primary Greeks but as we talked about no the next that you will",
+    "metadata": {
+      "video_id": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "title": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "url": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 8,
+      "total_chunks": 16,
+      "start_timestamp": "00:09:02",
+      "start_timestamp_seconds": 542.12,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners&t=542"
+    }
+  },
+  {
+    "text": "per 1 change in the spot price and Epsilon does that for row so those are technically two more Greeks so far first order Greeks are down did we miss one cuz I said that there's five primary Greeks but as we talked about no the next that you will be familiar with is gamma gamma is the Delta rate of change to a one point move in the stock price so when we think about Gamma there are a couple things that will strike you the first one is gamma is much higher the closer we get to expiration so if we take a look at an at the money option 78 DTE notice the gamma is 02 if we take that into 8 DTE the gamma is 8 why is this the case well if gamma is the rate of change of Delta and we know that as we get closer to expiration every option has to make a choice it's either going to have a Delta of zero and be out of the money or it's going to have a Delta of one plus and be in the money so in this case you notice that all of the in the money options have Deltas of about one and everything that's out of the money has a Delta approximating to zero so gamma is higher the closer you get to expiration because every single option has to make that choice so this is typically what helps buyers",
+    "metadata": {
+      "video_id": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "title": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "url": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 9,
+      "total_chunks": 16,
+      "start_timestamp": "00:10:11",
+      "start_timestamp_seconds": 611.88,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners&t=611"
+    }
+  },
+  {
+    "text": "of the in the money options have Deltas of about one and everything that's out of the money has a Delta approximating to zero so gamma is higher the closer you get to expiration because every single option has to make that choice so this is typically what helps buyers and hurts sellers okay so now we're going to move on to charm which is also known as Delta Decay so this is the Delta rate of change per one point move in days to expiration so as each one day moves and it is the derivative of Premium to Delta and Theta it is also the derivative of theta with respect to spot price so what do we use charm for it gives us an idea of how Delta is going to behave with respect to time time that's it next we have Vana which is known as D Vega dpot and that is the ratio of Vega changing from a onepoint move in the spot price it's also known as D Delta dvol which is the rate of change of Delta per 1 change in volatility so what we're getting an idea of here is how volatility is interacting with both Vega spot price relationship and then also Delta and volatility relationship Vera which a lot of people have probably never heard of that's the row change to a 1 change in volatility and a 1 change in interest rates so it is value premium of an option",
+    "metadata": {
+      "video_id": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "title": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "url": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 10,
+      "total_chunks": 16,
+      "start_timestamp": "00:11:15",
+      "start_timestamp_seconds": 675.96,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners&t=675"
+    }
+  },
+  {
+    "text": "interacting with both Vega spot price relationship and then also Delta and volatility relationship Vera which a lot of people have probably never heard of that's the row change to a 1 change in volatility and a 1 change in interest rates so it is value premium of an option with respect to volatility and interest rates Vera again probably not useful to most of you so we'll move on now to vaa which is also known as Vega Decay this one's actually kind of interesting so it is the Vega rate of change to a 1 move in volatility and a 1 move in DTE so as you get closer to expiration Veta increases and the way to think about most of this as as an option gets closer to expiration things move more because there's a lot that has to happen like we talked about with respect to Delta of everything needing to make a choice between being a Delta of one or Delta of zero you're either going to be in the money or out of the money so there's a lot of other changes that are occurring as we get closer then we have VMA which is also known as vulga and that kind of reminds me of Helga from Hey Arnold uh but this is Vega convexity also known as D Vega Devol so this is your Vega rate of change from a 1 move in volatility so it gives you how Vega behaves as",
+    "metadata": {
+      "video_id": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "title": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "url": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 11,
+      "total_chunks": 16,
+      "start_timestamp": "00:12:18",
+      "start_timestamp_seconds": 738.28,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners&t=738"
+    }
+  },
+  {
+    "text": "is also known as vulga and that kind of reminds me of Helga from Hey Arnold uh but this is Vega convexity also known as D Vega Devol so this is your Vega rate of change from a 1 move in volatility so it gives you how Vega behaves as volatility itself is moving now we move in to the third order Greeks we have color speed Ultima and z and if you don't know there's actually more than this it's insane man that starts tying the Greeks and the behavior between two different products together but I'm sticking with these because again most of these at this point probably don't apply to most of us but they're good to know so let's get to color which is gamma Decay so it tells us the gamma rate of change per onepoint move in DTE then we have speed which is the gamma of gamma and you'll notice a lot of these especially in the third order all of them are tied to volatility that is because volatility is quite literally the lifeblood of options so people that manage different kinds of portfolios especially at a professional level you actually care quite a bit about some of these especially if you trade derivatives because volatility can completely unpack a beautifully built position pretty quickly so that is exactly why we have all of these different measures of volatility's impact to these other things so speed is the gamma rate of change",
+    "metadata": {
+      "video_id": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "title": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "url": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 12,
+      "total_chunks": 16,
+      "start_timestamp": "00:13:27",
+      "start_timestamp_seconds": 807.36,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners&t=807"
+    }
+  },
+  {
+    "text": "quite a bit about some of these especially if you trade derivatives because volatility can completely unpack a beautifully built position pretty quickly so that is exactly why we have all of these different measures of volatility's impact to these other things so speed is the gamma rate of change per one point move in spot price then we have Ultima which is dma Deval which is the VMA VMA I want to make sure I'm pronouncing that well for you guys vama rate of change per 1 move in Vega or Vega convexity when you think about convexity in these definitions it's giving you a sense of the shape of the measurement so if something's convex it typically has this kind of shape to it then we have Z which is D gamma DV gamma rate of change per 1 move inv vol ility so why do we care about all of these because they are giving you insight to how fast something like gamma is going to start to move which actually matters quite a bit to sellers so if you sell options do we really care about color speed ultimate Zama well potentially but depending on the strategy it's more likely than not gamma will suffice in a pretty big way however if you interested in tinkering with the rest of these here they are for you and for the patreon folks if you go to the shop you can download this exact reference sheet and it's",
+    "metadata": {
+      "video_id": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "title": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "url": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 13,
+      "total_chunks": 16,
+      "start_timestamp": "00:14:38",
+      "start_timestamp_seconds": 878.4,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners&t=878"
+    }
+  },
+  {
+    "text": "strategy it's more likely than not gamma will suffice in a pretty big way however if you interested in tinkering with the rest of these here they are for you and for the patreon folks if you go to the shop you can download this exact reference sheet and it's for free for everybody that's silver and above and if you're not on there you can literally just screenshot this and then build your own if you would like a reference so if you have any questions on these let me know the punchline is for most Traders Delta Theta Vega row and Gamma and even row is a kind of sus because for a lot of people that trade shorter term options less so but I still would give it credit here these five are going to be the most important and then from here you can take a look at depending on the strategy how important changes in volatility will impact your position but these five are probably your most important ones once you understand these if you want to dive deeper and deeper into the world of creating graphs that show how these move it's actually pretty fun I guess in a really nerdy way can't believe I just said that so if you have any questions let me know be an outlier see youall later",
+    "metadata": {
+      "video_id": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "title": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "url": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 14,
+      "total_chunks": 16,
+      "start_timestamp": "00:15:45",
+      "start_timestamp_seconds": 945.68,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners&t=945"
+    }
+  },
+  {
+    "text": "fun I guess in a really nerdy way can't believe I just said that so if you have any questions let me know be an outlier see youall later",
+    "metadata": {
+      "video_id": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "title": "Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "url": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 15,
+      "total_chunks": 16,
+      "start_timestamp": "00:16:46",
+      "start_timestamp_seconds": 1006.56,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Option_Greeks_Explained_|_Options_Greeks_for_Beginners&t=1006"
+    }
+  }
+]

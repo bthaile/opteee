@@ -1,0 +1,306 @@
+[
+  {
+    "text": "nothing says Master Class like a shirtless dude so today we're going to talk about rolling options and I'm going to walk you through a quick overview of what it is you probably already know I want to get into some of the mechanics that people mess up quite literally all the time and then at the end of the video I want to walk you through a bunch of best practices and kind of some commonly asked questions to make sure that we're fully thinking through this process because I can tell you from my own experience and what I regularly see in places like Reddit and on my YouTube comments are when people talk about rolling options it is very clear that we don't fully understand them the first time we see them we have an immediate perception that this is the greatest thing ever it's going to fix all of our problems we can just roll things and everything's great and that's not so much of the case so I want to walk you through exactly that we're going to talk about things like when's the best time to roll should you roll out or up or in or down all of those things are on the docket so what's up everybody welcome back to the outliers and a shout out to the patreon family the people in the patreon actually get free access to the shop weekly workshops so if what I do helps you out",
+    "metadata": {
+      "video_id": "Rolling_Options_Masterclass",
+      "title": "Rolling_Options_Masterclass",
+      "url": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 0,
+      "total_chunks": 19,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0.24,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass&t=0"
+    }
+  },
+  {
+    "text": "in or down all of those things are on the docket so what's up everybody welcome back to the outliers and a shout out to the patreon family the people in the patreon actually get free access to the shop weekly workshops so if what I do helps you out consider signing up link in the notes below let's get right to it so here is the beginning what is rolling really simple it's closing a trade entering a new one the what differentiates rolling from closing a trade and opening a new one simple we tie the accounting together so what does that look like in practice well we have the first trade where we enter then we exit and then we enter again so where's the role in this instance right there so as we enter this first trade it's on it's working then we choose to exit it and then enter a new one and tie the accounting between this position and this new opened position together so what does this look like in terms of money well in this first trade if we sell to open uh put I just picked a random one for a dollar then we close it for 2 what happened here Prett simple we realized a 100 loss we collected 1 we closed the trade for 2 that means we give up the dollar that we collected up front and then we give up another dollar on top of that that",
+    "metadata": {
+      "video_id": "Rolling_Options_Masterclass",
+      "title": "Rolling_Options_Masterclass",
+      "url": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 1,
+      "total_chunks": 19,
+      "start_timestamp": "00:00:53",
+      "start_timestamp_seconds": 53.48,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass&t=53"
+    }
+  },
+  {
+    "text": "dollar then we close it for 2 what happened here Prett simple we realized a 100 loss we collected 1 we closed the trade for 2 that means we give up the dollar that we collected up front and then we give up another dollar on top of that that is 100 because obviously you multiply this out by 100 for options this is where the trade lands so where's the roll it's right here if we buy to close at two bucks and then we sell to open at whatever price you've now completed a role common misconception is that roles are only conducted on losing positions you can roll a winning trade it's just in generality and parl when we talk about it it's normally referred to in the context of a losing trade which is actually quite telling when it comes to the mindset of when we roll and this is something I do want to speak about for just a second because it's a common problem people have have is that if this was a winning trade that you closed and then opened you probably wouldn't consider it a role why is that well it's because you're happy with your win that's off the books now we're entering a new trade you don't want to tie the accounting to it because you have a win but when we're rolling very frequently it's fueled by hope we hope this next trade overwhelms the loss of the previous",
+    "metadata": {
+      "video_id": "Rolling_Options_Masterclass",
+      "title": "Rolling_Options_Masterclass",
+      "url": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 2,
+      "total_chunks": 19,
+      "start_timestamp": "00:01:58",
+      "start_timestamp_seconds": 118.6,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass&t=118"
+    }
+  },
+  {
+    "text": "you're happy with your win that's off the books now we're entering a new trade you don't want to tie the accounting to it because you have a win but when we're rolling very frequently it's fueled by hope we hope this next trade overwhelms the loss of the previous trade so that's why we choose to account it together but again admin note you can roll winning trades as well it's just not commonly done or at least commonly referred to so let's say trade three continues to chug along it goes well and we close that for 50s what's happened here do you know what our realized pl is at this point in this case we takeen 150 bucks we sold this option for two bucks 200 bucks we buy to close it for 50 cents 50 bucks that gives us positive 150 so on this rolled position you will have realized a profit of 50 one of the dangers of rolling is that if you don't close this for the correct price then all of a sudden you can be compounding your loss so for example if you have this 100 realized loss we sell to open this new option for 2 then we buy to close it for 3 what happened in that scenario we realized another 100 loss so your net pl at that point is negative 200 so if you keep going down that path and you don't ever get a price accommodation you",
+    "metadata": {
+      "video_id": "Rolling_Options_Masterclass",
+      "title": "Rolling_Options_Masterclass",
+      "url": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 3,
+      "total_chunks": 19,
+      "start_timestamp": "00:03:08",
+      "start_timestamp_seconds": 188.24,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass&t=188"
+    }
+  },
+  {
+    "text": "this new option for 2 then we buy to close it for 3 what happened in that scenario we realized another 100 loss so your net pl at that point is negative 200 so if you keep going down that path and you don't ever get a price accommodation you have problems because you're going to continue compounding that losing position which is really really dangerous so let's talk about some best practices the first thing I want to walk us through is analyzing surrogate options this is a little bit esoteric so follow along and you can come back to this part if you need to fully understand what we're talking about but this is something I do all the time it's really useful let's come over here to XLF and I'm just picking a random stock and let's say you have a position on let's say you have this 33 DTE and let's say when you originally sold your puts or let's say short calls so that we're getting ran over let's say you originally sold these 38 short calls and they were out of the money whenever you chose to sell them it doesn't matter but now they're in the money so we want to do a few things the first thing is we want to see if if we're at risk of early assignment that's a little bit of a different scenario we need to see if there's a dividend we need to see how much",
+    "metadata": {
+      "video_id": "Rolling_Options_Masterclass",
+      "title": "Rolling_Options_Masterclass",
+      "url": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 4,
+      "total_chunks": 19,
+      "start_timestamp": "00:04:18",
+      "start_timestamp_seconds": 258.4,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass&t=258"
+    }
+  },
+  {
+    "text": "they're in the money so we want to do a few things the first thing is we want to see if if we're at risk of early assignment that's a little bit of a different scenario we need to see if there's a dividend we need to see how much extrinsic value is left in the options kind of a different video concept but that's an overview of that at least then we want to figure out how much is intrinsic in extrinsic value and if you remember your options 101 you figure out your intrinsic value by how far in the money we are take that out of your premium and then whatever's left is your extrinsic value you can also look at the corresponding outof the- money option for a approximation it's not perfect but it's pretty close so in this case if I'm looking at these 38 short calls and I'm trying to figure out what's the extr extrinsic value look right over here it's about 30 cents something like that okay good so now we're faced with deciding different things like what does this look like if time passes what will the value of my option be how much extrinsic value will be left well you can either do the math you can run it through your black schs model that's no problem you can run it through a risk profile tool if your platform has it or you could do the easy option at least",
+    "metadata": {
+      "video_id": "Rolling_Options_Masterclass",
+      "title": "Rolling_Options_Masterclass",
+      "url": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 5,
+      "total_chunks": 19,
+      "start_timestamp": "00:05:27",
+      "start_timestamp_seconds": 327.4,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass&t=327"
+    }
+  },
+  {
+    "text": "be how much extrinsic value will be left well you can either do the math you can run it through your black schs model that's no problem you can run it through a risk profile tool if your platform has it or you could do the easy option at least as far as I can tell and again it's not perfect but it's pretty close so let's say that we want to pretend that nothing has happened other than time has passed and we can look at this 12 DTE so even though our option is this 38 call 33 DT we can look at that same option that's just 12 DTE and we can see what it looks like compared to where it is now so in this case it's trading for kind of a really wide Market here let's just call it like 150 something like that and then if you look in here it's like 110 so over the course of this time frame you can see how much your option would change if nothing else changed and again markets moves so then you can also say well what happens if it actually falls further in the money what would that look like so let's say XLF goes another dollar up so instead of being at 39 now it's at 40 well what you can do is you can look at the 37s because your option would behave close to those 37s so all I'm doing is",
+    "metadata": {
+      "video_id": "Rolling_Options_Masterclass",
+      "title": "Rolling_Options_Masterclass",
+      "url": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 6,
+      "total_chunks": 19,
+      "start_timestamp": "00:06:26",
+      "start_timestamp_seconds": 386.76,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass&t=386"
+    }
+  },
+  {
+    "text": "money what would that look like so let's say XLF goes another dollar up so instead of being at 39 now it's at 40 well what you can do is you can look at the 37s because your option would behave close to those 37s so all I'm doing is by the amount that I'm mentally moving XLF I'm mentally adjusting my strike the same amount to see what the option would look like if that move happened so really use use ful tool again that might sound a little complex feel free to listen through this a time or two if you need but that's what I do to analyze a lot of potential options adjustments without doing the math for every single one of them so one of the best practices here is rolling spreads is it something you can do it is something you can do is it something that's reasonable to rely on no it's not and it's because when we're rolling options a lot of the time you'll find things sometimes are really deep in the money or deep out of the money this is a great example that we were looking at with this 33 DTE and we were looking at something that was slightly deeper and deeper in the money notice how if you go to this 36 call notice how wide that market is that's just for a single option so if you have a vertical you have to find the midpoint",
+    "metadata": {
+      "video_id": "Rolling_Options_Masterclass",
+      "title": "Rolling_Options_Masterclass",
+      "url": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 7,
+      "total_chunks": 19,
+      "start_timestamp": "00:07:28",
+      "start_timestamp_seconds": 448.08,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass&t=448"
+    }
+  },
+  {
+    "text": "33 DTE and we were looking at something that was slightly deeper and deeper in the money notice how if you go to this 36 call notice how wide that market is that's just for a single option so if you have a vertical you have to find the midpoint between this which there's a lot of slop on something pric like this and then you have to find the midpoint on whatever else whatever other option you have tied to your vertical or iron Condor the generality here is the more legs you have the harder this is and you're also probably going to have to move them piece by piece which opens you up to Gap risk while you're in the process of adjusting your your strikes rolling spreads is doable very difficult it's not something that I think is worthwhile in most cases does rolling avoid losses the cool part about this one is you actually already know the answer to it because we just looked at this in this example that we looked at over here when you rolled this option meaning you close this one and you open this new one did you avoid a loss no you realized a loss that means this is on your books this means you have a brand new open position that has the potential to cover the cost of this loss but it's not guaranteed you could also have an even bigger loss as a result of opening",
+    "metadata": {
+      "video_id": "Rolling_Options_Masterclass",
+      "title": "Rolling_Options_Masterclass",
+      "url": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 8,
+      "total_chunks": 19,
+      "start_timestamp": "00:08:30",
+      "start_timestamp_seconds": 510.36,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass&t=510"
+    }
+  },
+  {
+    "text": "loss no you realized a loss that means this is on your books this means you have a brand new open position that has the potential to cover the cost of this loss but it's not guaranteed you could also have an even bigger loss as a result of opening this new position so no rolling does not avoid losses now on that same topic if you rolled this option do you know how to calculate what your break even price is on this option if not it's pretty simple so if we closed this trade two bucks 100 realize loss you sell to open this new Option at 2 how much money do you need to make in order to get back to zero on this realized loss 100 so that means on this option you would need this trading at 1 or less to be in profit as soon as this hits 1 not including fees you would be at break even so you can easily do that math to calculate what you need this new option to be trading at to hit break even and then also to then start seeing a profit which is the whole point of doing this a common error Traders make is when they see this option trading for a profit so if this we sold to open for 2 and then now it's trading at 125 you're looking at a 75 profit you're like wow that looks great I want to",
+    "metadata": {
+      "video_id": "Rolling_Options_Masterclass",
+      "title": "Rolling_Options_Masterclass",
+      "url": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 9,
+      "total_chunks": 19,
+      "start_timestamp": "00:09:31",
+      "start_timestamp_seconds": 571.68,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass&t=571"
+    }
+  },
+  {
+    "text": "point of doing this a common error Traders make is when they see this option trading for a profit so if this we sold to open for 2 and then now it's trading at 125 you're looking at a 75 profit you're like wow that looks great I want to take that well unfortunately in the net you would have lost money because if you took this down for a 75 profit and you have a 100 realized loss you still lost 25 bucks so you can calculate your rolled options Break Even which is something I definitely recommend tracking I have an Excel sheet that does that which I've thrown into the shop for all the patreon members if you're silver and above you get free access to it it's just a simple tool to help you track things so now if we continue on our best practices what's the best time to roll as you know my answer to this already is it depends there's two things you really need to answer right up front the first thing is what is your objective for the position and the second thing is what do you think about the underlying so let's say you have a position on the best time to roll in terms of getting the highest variability in your strike price is when you are at the money or slightly in the money the reason being is even though there's a bunch of extrinsic value left in",
+    "metadata": {
+      "video_id": "Rolling_Options_Masterclass",
+      "title": "Rolling_Options_Masterclass",
+      "url": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 10,
+      "total_chunks": 19,
+      "start_timestamp": "00:10:41",
+      "start_timestamp_seconds": 641.28,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass&t=641"
+    }
+  },
+  {
+    "text": "so let's say you have a position on the best time to roll in terms of getting the highest variability in your strike price is when you are at the money or slightly in the money the reason being is even though there's a bunch of extrinsic value left in that option you'll notice you're not moving a bunch of intrinsic value which decreases how effectively you can roll so what this looks like is let's say you were short this 39 put that's now it's in the money right now and it's trading for like 35 36 Cents something like that if we try to roll this and we want to go out one week and we want to collect a credit meaning the rolled trade is bringing in more money than what we're closing if we take a look at that and we know that we need 35 can you get it going further out of the money going out just one week no so we might have to go out let's just pick the next primary expiration you can find you can roll out in time for a credit at the same strike or you can roll out in time and slightly out of the money taking it all the way down to a 28 Delta while collecting a very small credit so when the option price is the same as the strike is when you're going to have the most choices available to you however it's",
+    "metadata": {
+      "video_id": "Rolling_Options_Masterclass",
+      "title": "Rolling_Options_Masterclass",
+      "url": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 11,
+      "total_chunks": 19,
+      "start_timestamp": "00:11:38",
+      "start_timestamp_seconds": 698.92,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass&t=698"
+    }
+  },
+  {
+    "text": "out in time and slightly out of the money taking it all the way down to a 28 Delta while collecting a very small credit so when the option price is the same as the strike is when you're going to have the most choices available to you however it's also when you're Buy buying back the most extrinsic value so if this is something that you don't mind taking assignment on or don't mind managing in the long run then you can wait a little bit wait for some more of this extrinsic value to bleed out and then you can adjust if this is something that's like leveraged options or you really don't want to take assignment in this case on the short put and you don't want to get stuck what I mean by getting stuck is if you wait until you're too far in the money you get to a point where you actually can't adjust down you can't roll down anymore or if you're on the short calls you can't roll up anymore cuz you're too deep in the money and then you run into another problem which is days to expiration liquidity so for example let's say our option fell in the money the 39s we want to roll out and down cool so we go out and down we have to go to 40 days to be able to roll down now we get our small credit you're a dollar better but let's",
+    "metadata": {
+      "video_id": "Rolling_Options_Masterclass",
+      "title": "Rolling_Options_Masterclass",
+      "url": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 12,
+      "total_chunks": 19,
+      "start_timestamp": "00:12:39",
+      "start_timestamp_seconds": 759.32,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass&t=759"
+    }
+  },
+  {
+    "text": "example let's say our option fell in the money the 39s we want to roll out and down cool so we go out and down we have to go to 40 days to be able to roll down now we get our small credit you're a dollar better but let's say time passes and XLF Falls more 4 days pass XL Falls more now your 38s are in the money okay you're like crap I got to roll out again well I can't roll out just one week and get a credit it's not enough so maybe if I roll out two weeks well do you notice what just happened right here you had 40 days to expiration then you were able to look out to 47 now all of a sudden it's 53 then after 53 it's 75 What's Happening Here is options chains offer more expirations the closer to time you are some options chains will offer you a bunch of choices if you look at something like spy anything within 53 days you have a ton of choices but even then after 53 days it gets more and more sparse that's days to expiration liquidity and that's why it's a problem because if you roll immediately every time your strike is challenged let's say you're in this 33 days expiration you roll when your strike is challenged then you go to the 40 then you go to the 47 then you go to the 53 then you",
+    "metadata": {
+      "video_id": "Rolling_Options_Masterclass",
+      "title": "Rolling_Options_Masterclass",
+      "url": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 13,
+      "total_chunks": 19,
+      "start_timestamp": "00:13:39",
+      "start_timestamp_seconds": 819.64,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass&t=819"
+    }
+  },
+  {
+    "text": "why it's a problem because if you roll immediately every time your strike is challenged let's say you're in this 33 days expiration you roll when your strike is challenged then you go to the 40 then you go to the 47 then you go to the 53 then you go to the 75 now you're out out pretty damn far in time data is not ticking away that fast because you're so far out in time and then if you get a continued down move then where do you go you got to 103 days what if the down move continues then you run out of Runway and if the underly continues to move against you you build a really difficult position to move around so when I think about the best time to roll I balance how do I feel about taking the underlying in or out whether I'm short puts or short calls for long or short stock and then I think about what is my disposition towards the underlying because sometimes the best time to roll is never and to take the loss if you're trading something like this let's say you had cash secured puts out on carvana and you were all the way out here you were trading it a while ago when it was 300 bucks and then you're trying to roll your options you're trying to roll your options if you got stuck you're stuck you are there's no rolling your options",
+    "metadata": {
+      "video_id": "Rolling_Options_Masterclass",
+      "title": "Rolling_Options_Masterclass",
+      "url": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 14,
+      "total_chunks": 19,
+      "start_timestamp": "00:14:43",
+      "start_timestamp_seconds": 883.44,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass&t=883"
+    }
+  },
+  {
+    "text": "out on carvana and you were all the way out here you were trading it a while ago when it was 300 bucks and then you're trying to roll your options you're trying to roll your options if you got stuck you're stuck you are there's no rolling your options from here to here sometimes if you get enough price accommodation in the short term you might be able to get Buy with some of it but big moves that happen quickly can leave you stranded so you have to strongly analyze the underline that you're trading and again the same thing can happen to the inverse if you're one of those real smart contrarian Traders and you know better when the Market's pricing things and you see this big green candle you're like wow I'm going to fade this and smci hasn't come back it's gone from 400 to 579 so in this case you get stuck you need some sort of price accommodation in order to be able to roll and eventually find your way out of the money because the problem is can you roll forever no because if you go back to this original example you are realizing losses if we're rolling a losing trade so when you're rolling a losing trade each time you are eroding your account value sooner or later the margin requirement for your trade is bigger than your account value so even though you might have a bunch of cash sitting",
+    "metadata": {
+      "video_id": "Rolling_Options_Masterclass",
+      "title": "Rolling_Options_Masterclass",
+      "url": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 15,
+      "total_chunks": 19,
+      "start_timestamp": "00:15:37",
+      "start_timestamp_seconds": 937.48,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass&t=937"
+    }
+  },
+  {
+    "text": "are realizing losses if we're rolling a losing trade so when you're rolling a losing trade each time you are eroding your account value sooner or later the margin requirement for your trade is bigger than your account value so even though you might have a bunch of cash sitting in your cash and sweep if your net lick net liquidating value isn't high enough to cover your margined requirements for your trade you cannot put it on so you cannot roll forever because you eventually do need price accommodation so the last thing how do we think about rolling in or out up or down I tend to try to roll out is little in time as possible it allows me to maintain the most spot price sensitiv it also gives me more runway on that days to expiration liquidity concept that I was explaining to you so if I can roll from this 12 to the 19 while adjusting my strike I typically would do that if I can roll from the 12 to the 19 and not adjust my strike meaning if I have cash secured puts for example and I can't roll them here but I can roll them in the 26 DTE I need to analyze the underlying do I want to add two weeks and depending on how much I'm improving my basis does that make sense so overall the decision on whether or not you go further out in time comes down to",
+    "metadata": {
+      "video_id": "Rolling_Options_Masterclass",
+      "title": "Rolling_Options_Masterclass",
+      "url": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 16,
+      "total_chunks": 19,
+      "start_timestamp": "00:16:37",
+      "start_timestamp_seconds": 997.44,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass&t=997"
+    }
+  },
+  {
+    "text": "can roll them in the 26 DTE I need to analyze the underlying do I want to add two weeks and depending on how much I'm improving my basis does that make sense so overall the decision on whether or not you go further out in time comes down to how do you feel about the underlying and running out of DTE liquidity and then rolling down or up depends on how much money you want to make because if I try to roll for example from the 12 to the 19 DTE if we look at this scenario and let's say I'm at the 575 so I keep the same strike in this case you have what 2675 and this is just call it 35 in that scenario you can still make an okay amount of money by staying at the same strike if you chose to go from the 575s down to the 570s notice what happens instead of getting 35 whatever this is you're going to get 32 in change so you have to decide what's more important to you is it improving your basis adjusting your basis or is it collecting more money up front that is 100 dependent on the trader so this is part one as you can tell it's a big video there's a lot that goes into this if you have any questions let me know if we should do a part two and go even deeper with specific examples let me",
+    "metadata": {
+      "video_id": "Rolling_Options_Masterclass",
+      "title": "Rolling_Options_Masterclass",
+      "url": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 17,
+      "total_chunks": 19,
+      "start_timestamp": "00:17:50",
+      "start_timestamp_seconds": 1070.08,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass&t=1070"
+    }
+  },
+  {
+    "text": "is 100 dependent on the trader so this is part one as you can tell it's a big video there's a lot that goes into this if you have any questions let me know if we should do a part two and go even deeper with specific examples let me know cuz we might be able to swing that till next time like subscribe share be an outlier see you guys later",
+    "metadata": {
+      "video_id": "Rolling_Options_Masterclass",
+      "title": "Rolling_Options_Masterclass",
+      "url": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 18,
+      "total_chunks": 19,
+      "start_timestamp": "00:18:51",
+      "start_timestamp_seconds": 1131.6,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Rolling_Options_Masterclass&t=1131"
+    }
+  }
+]

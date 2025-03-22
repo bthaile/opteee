@@ -1,0 +1,252 @@
+1.12s: this video is going to walk you through
+2.48s: how you can build your own long box
+5.68s: spread tracker this spreadsheet will
+8.64s: help you understand what the annualized
+11.12s: return of the trade you're looking at is
+13.84s: it will help you track your previous
+15.68s: trades and it even has a tool built in
+18.32s: that lets us see the current yield curve
+21.16s: so that you can pick where you want to
+24.72s: buy your box spreads meaning loan the
+27.12s: market some money so what's up everybody
+29.40s: Eric here shout out to the patreon
+30.96s: family and specifically for you guys a
+34.12s: copy of the spreadsheet will be
+35.36s: available in the patreon shop so if you
+37.20s: are silver or above you get it for free
+39.72s: otherwise there's a free option you can
+41.40s: follow along with me and build it for
+43.80s: yourself to walk you through how to make
+45.72s: for yourself and then most importantly I
+48.92s: want to make sure though we have a
+51.40s: rudimentary understanding so long box
+54.20s: spreads is when we are buying them that
+56.76s: means our cash and sweep is going to
+59.04s: decrease by debit and then the profit at
+62.64s: the end of the trade at expiration is
+64.24s: going to be the width of the spreads so
+66.00s: let's take a look at what that looks
+67.60s: like if we take a look at this box
+70.08s: spread in SPX we want to balance a
+72.84s: couple things I typically try to go
+75.48s: wider apart so that I don't have to put
+78.12s: on so many but you go you don't want to
+81.08s: go too wide where you run out of
+83.28s: liquidity because notice how this strike
+85.84s: here has
+87.36s: 56,000 open interest that is is from a
+90.52s: lot of people doing box spreads so when
+93.40s: I'm looking for my strikes I
+95.68s: specifically want strikes that strike
+97.64s: that balance wow pun not intended so in
+101.28s: this case I want to do a Million worth
+104.52s: box spread so that means I'm going to do
+107.12s: 1,000 points wide and 10 of those the
+110.84s: way to think about the value of the Box
+112.96s: spread is it's just going to be the
+115.28s: width of the spread so in this case I'm
+118.04s: going to look at the 4500s I would be
+120.88s: buying this call I would be selling this
+124.84s: put the 4500 then if we go all the way
+128.00s: to the
+129.68s: 5500 down here you'll notice that these
+132.68s: are thinner in terms of open interest
+135.08s: but not a nimic there's still something
+137.36s: here so in this case we would be selling
+141.40s: this call buying this put that gives you
+144.00s: this position down here now if we take a
+147.52s: look at the risk profile for this notice
+151.20s: how at expiration it has a fixed profit
+154.04s: in this case it's $5.95 that is what the
+158.04s: amount of money you're going to get back
+160.76s: at the end of the trade now quick admin
+163.32s: note it is really important to use
+166.24s: European style options that are cash
+169.20s: settled both of those traits are
+170.96s: important here because early assignment
+173.36s: completely changes the risk profile you
+175.16s: can have a big loss because of that and
+177.24s: then if it's not cash settled and you
+179.36s: can take the the underlying that also
+181.48s: can lead you long shares short shares
+184.40s: that kind of thing which we don't want
+186.12s: so European cash settled okay what fits
+190.56s: that bill SPX why I typically use SPX so
+195.60s: now let's take a look at the tool itself
+198.68s: this down here is just a yield curve and
+202.28s: again the reason why I include this for
+204.36s: you is so that you can get an idea of
+206.64s: where you might choose to buy your box
+210.04s: spread depending on what your goals are
+213.16s: the other thing is if you're looking to
+214.64s: sell a box spread receive a loan maybe
+216.88s: you go further out where it's cheaper
+218.68s: this is inverted right now compared to
+220.88s: what it typically is normally you'll see
+224.08s: the yield curve in Kango where deeper
+226.96s: expirations are going to have or yeah
+229.52s: deeper expirations are going to have a
+231.24s: higher yield and then near-term inverse
+234.56s: but notice how the near-term stuff is
+236.08s: actually higher yielding than the future
+239.12s: dated stuff that's because we're in
+240.84s: backwardation in terms of yields and
+243.04s: that's just a sign of the current
+244.92s: environment which is quite anomalous so
+248.40s: I wouldn't make any big decisions off of
+251.52s: what you're seeing in this now because
+253.36s: again it's different than what it will
+255.36s: be kind of long term this is the current
+257.92s: yield for all these different durations
+259.88s: the reason why I picked this for you
+261.64s: guys is because if you go to this
+263.76s: website right here you can just copy and
+266.16s: paste them and just drop them right in
+268.76s: and then this will automattic atically
+270.04s: update off of that okay so that's the
+273.00s: little yield curve for you now notice
+276.16s: how I have current risk free rate up
+278.08s: here the reason why this is important is
+280.60s: because if we use different duration box
+284.32s: spreads with different days to
+287.32s: expiration that means we need to use for
+289.96s: a more accurate comparison the
+292.28s: corresponding duration so in this case
+294.84s: we're looking at a box spread that's 38
+298.44s: DTE in this example then we're somewhere
+302.08s: in here you could pick the midpoint
+304.40s: between these two which would give you
+306.40s: 5.42 so maybe we update this to be
+310.88s: 5.42 and that's your number this is what
+314.16s: we're going to compare the Box spread
+315.68s: against over here to see net fees if
+319.60s: we're doing better so what's the trade
+323.24s: well on today sixpad we're looking at
+325.96s: that 38 DTE notice how these are in
+328.96s: light green
+330.36s: that's how I tell myself these are cells
+332.96s: I'm to fill in and then the stuff that
+335.52s: is not like that you don't have to fill
+337.88s: that in
+339.72s: so 10 lot this gets me the size that I
+343.20s: want the long call and the short call
+345.40s: the reason why I have these two selected
+348.64s: is because these are the two different
+350.76s: strikes and the puts are just going to
+352.52s: be the inverse so for example the long
+355.12s: call notice how that's the same as the
+357.36s: short put and then the short call the
+360.00s: long put shares that strike so these can
+362.24s: just be pulled directly from that the
+364.16s: net premium this is how much am I buying
+368.20s: the Box spread for how much my loaning
+370.40s: out so then all of this is automatically
+373.04s: calculated which you can follow along so
+375.48s: we already went over those two days to
+377.28s: expiration is just the difference
+378.60s: between these two days in trade is how
+380.68s: long we've been in the position the
+382.48s: width of the strikes is this here the
+384.04s: reason why I calculate that is so that I
+386.72s: can see both the loan value which is
+389.68s: down here and then the loan out so the
+392.12s: difference between loan out and loan
+393.96s: value is simple loan out is how much did
+396.76s: I what was the debit what did I actually
+398.64s: buy loan value is how much is this worth
+401.80s: at expiration and then that gives you
+404.72s: your p&l once we factor in the fees so
+409.16s: it is really important to include the
+410.96s: fees here I have it hardcoded right now
+413.64s: to be it's four legs every time I have
+416.36s: it set to 50 cents a leg which I think
+418.88s: is common for people and I'm assuming
+421.72s: we're taking it to expiration if you're
+424.52s: planning on managing it before
+426.00s: expiration you can either adjust your
+427.96s: input so that it's variable but for me
+431.12s: when I'm putting these on my assumption
+432.64s: is that I'm going to expiration the
+434.60s: reason why the fees matters so much in
+436.20s: this case is because if we get rid of it
+438.44s: take a look at the annual return right
+441.44s: now it's
+443.16s: 5681 it goes to 5701 that's a meaningful
+447.04s: difference so especially if you're doing
+450.40s: smaller box spreads these fees become
+453.00s: really problematic if you're not paying
+454.68s: attention so then we already did the p&l
+457.12s: which is all of this notice how I
+458.68s: aggregate the open trades up here so
+461.92s: right now I have the spreadsheet set so
+463.92s: that you can essentially build out
+466.20s: having four box spreads on you can
+467.76s: always add more if you want I typically
+469.48s: don't have more on than two but the drag
+474.16s: here is telling you how much the fees
+477.68s: are relative to what you would be making
+480.52s: sans's fees so you can see the math for
+483.60s: that there I'm taking the fees and then
+486.68s: I'm figuring out what I would have made
+488.84s: without them that's your drag percentage
+491.08s: of your p&l return on invested capital
+493.48s: is how much you're actually going to
+494.80s: earn on the money you're putting out so
+496.72s: in this case if I'm putting out $994,000
+500.24s: I'm going to get 5880 back that's my
+503.76s: return on invested Capital now you can
+506.08s: annualize the rate of return which is
+508.36s: how you compare Apple to Apples against
+510.36s: these so in this case you can see the
+512.80s: current risk free rate is 542 the
+515.04s: annualized return for this box spread is
+517.28s: 5681 and you can see over the risk free
+520.56s: rate you're getting about a quarter
+521.52s: point and that's for your trouble so
+522.88s: putting on this trade it is not as
+525.88s: simple as just buying one of these so
+527.64s: there's got to be some sort of
+528.64s: compensation here now the closed p&l up
+531.76s: here is actually just summarizing all of
+533.88s: these closed positions over here so the
+536.44s: way that this works is whenever this
+538.40s: trade comes up and and it's done what I
+541.04s: do is I justrl C you can drop it over
+544.00s: here I paste it as
+545.84s: values and you're Off to the Races so
+549.00s: the reason why I do it this way is it
+551.20s: keeps a clean view over here it lets me
+553.48s: track all the previous positions it lets
+555.92s: me see if I'm interested what time
+558.68s: frames what strikes I'm able to gain
+561.72s: entry at specifically that becomes
+564.24s: important to me when I'm trying to
+566.80s: minimize slippage because what you'll
+569.04s: noce if we go back to this
+571.68s: example take a look at the width for
+575.00s: this spread the midpoint is 99420 the
+578.56s: natural is over the width of the strikes
+581.20s: which you would never do this for more
+582.64s: the width of the strikes so in this case
+586.36s: you you have to work this trade and you
+588.76s: have to work all of the legs you can
+590.88s: either choose to do them individually or
+593.00s: you could work the spread as a whole I
+595.60s: tend to find working the legs
+597.64s: individually is the most effective you
+600.52s: just have to be very careful about
+601.84s: pricing that way so this is the tool it
+605.72s: is available for download for all the
+607.52s: patreon gang from the shop if you have
+609.32s: any questions as always just let me know
+611.24s: as you can tell there's no editing in
+612.64s: this video I wanted to get it out today
+614.16s: shout out to my boy Benjamin he was
+616.24s: asking about this so I wanted to make
+618.00s: him something and it's something I
+619.60s: thought about for the broader Community
+620.88s: anyways I think it's
+622.24s: useful let me know what you think if you
+625.16s: have any questions comments concerns
+626.52s: don't forget like subscribe share be an
+627.96s: outlier see you guys later

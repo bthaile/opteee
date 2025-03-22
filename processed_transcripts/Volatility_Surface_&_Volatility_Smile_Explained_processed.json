@@ -1,0 +1,162 @@
+[
+  {
+    "text": "so we use the black shoals martin model when we're pricing options you've heard that before all good now once we understand options a little bit more we come to find out that all of the assumptions in the bsm are not exactly correct one of which is how it integrates implied volatility into the pricing of options primarily how it assumes implied volatility so this video is going to talk about the implied volatility surface and the implied volatility smile so that anybody that trades options that's interested in the inner workings can have a better understanding on how premiums are actually calculated because they are not calculated in a textbook fashion as the black shoals model would assume so what's up everybody eric here welcome back to all the outliers and again we have a little more of a technical session here but i aim to make this video consumable we're going to keep it to less than 10 minutes but i'm hoping to share some useful information so that you can understand the underside of options a little more holistically so let's jump over and get to it so as i already mentioned the black shoals martin model it comes with a whole list of assumptions and not all of them are accurate one of which is the pricing of an underlying security and the reason why that matters is because it impacts how implied volatility is assumed to be so when we're talking about the bsm",
+    "metadata": {
+      "video_id": "Volatility_Surface_&_Volatility_Smile_Explained",
+      "title": "Volatility_Surface_&_Volatility_Smile_Explained",
+      "url": "https://www.youtube.com/watch?v=Volatility_Surface_&_Volatility_Smile_Explained",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 0,
+      "total_chunks": 10,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0.88,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Volatility_Surface_&_Volatility_Smile_Explained&t=0"
+    }
+  },
+  {
+    "text": "model it comes with a whole list of assumptions and not all of them are accurate one of which is the pricing of an underlying security and the reason why that matters is because it impacts how implied volatility is assumed to be so when we're talking about the bsm it normally assumes a log normal distribution which in this scenario i'm specifically referring to the cumulative distribution of a log normal distribution i mentioned that because a log normal distribution can look very different depending on you know what level of statistics you've taken and how often you use this stuff so really when i'm saying log normal or normal distribution in this context i'm referring to the cumulative distribution of a log normal distribution okay so got it i just said the same couple words a few times what the hell does it mean let's talk about it so down below right below those words i have what a cumulative distribution of a log normal distribution can look like and what you're seeing here is also what is commonly referred to as a normal distribution where we have the mean in the middle and then we have symmetrical tails to both positive and negative sides of the mean however this is not how price is actually observed in the marketplace and because that is not how price is actually observed in the marketplace that is also not how implied volatility is calculated because again implied volatility is essentially",
+    "metadata": {
+      "video_id": "Volatility_Surface_&_Volatility_Smile_Explained",
+      "title": "Volatility_Surface_&_Volatility_Smile_Explained",
+      "url": "https://www.youtube.com/watch?v=Volatility_Surface_&_Volatility_Smile_Explained",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 1,
+      "total_chunks": 10,
+      "start_timestamp": "00:01:15",
+      "start_timestamp_seconds": 75.6,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Volatility_Surface_&_Volatility_Smile_Explained&t=75"
+    }
+  },
+  {
+    "text": "tails to both positive and negative sides of the mean however this is not how price is actually observed in the marketplace and because that is not how price is actually observed in the marketplace that is also not how implied volatility is calculated because again implied volatility is essentially just our assessment of future price movement and deviation off of a mean so when we talk about options implied volatility and price they both do not exhibit a normal distribution they have both either or or both kurtosis and skew so what is kurtosis and what is skew essentially both kurtosis and skew lead to fat tails in our data and i don't know about you but nothing gets me going like a good old fat tail in statistics um but on the left hand side here i'm showing you two things i'm showing you what kurtosis looks like and then i'm showing you what skew looks like so kurtosis which is this bit up here we have three different kinds this isn't a statistics course i'm not going to go into all of them the punch line here is as we see different styles of kurtosis an important function is occurring the tails represent the far ends of the data set and typically speaking as you can see over here when we're looking at a normal distribution it assumes that there is a very very small amount small number of occurrences that take place as we get to",
+    "metadata": {
+      "video_id": "Volatility_Surface_&_Volatility_Smile_Explained",
+      "title": "Volatility_Surface_&_Volatility_Smile_Explained",
+      "url": "https://www.youtube.com/watch?v=Volatility_Surface_&_Volatility_Smile_Explained",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 2,
+      "total_chunks": 10,
+      "start_timestamp": "00:02:34",
+      "start_timestamp_seconds": 154.84,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Volatility_Surface_&_Volatility_Smile_Explained&t=154"
+    }
+  },
+  {
+    "text": "function is occurring the tails represent the far ends of the data set and typically speaking as you can see over here when we're looking at a normal distribution it assumes that there is a very very small amount small number of occurrences that take place as we get to the extremes of the data set or the tails however when we have kurtosis we increase likelihood of occurrence in a tail so for example if you look at just regular stock market prices and you plot them out it is not a normal distribution we exhibit and experience moves that statistically would be unsound in a normal distribution more frequently than we should so part of that is due to kurtosis and that's just a function of the pricing of the markets and the way things that move the other function that we see sometimes is skew where normally if we have a symmetrical distribution again both sides of the distribution would have the similar shape just like you see here although this looks like it has cancer and a lot of growths because i can't draw straight with the mouse but you get the idea and then on the positive skew negative skew essentially again what you're seeing is an increase or decreased likelihood of occurrences within a tail so if we look at this example of a negative skew we see that the tail actually raises up on this side compared to this side which means that",
+    "metadata": {
+      "video_id": "Volatility_Surface_&_Volatility_Smile_Explained",
+      "title": "Volatility_Surface_&_Volatility_Smile_Explained",
+      "url": "https://www.youtube.com/watch?v=Volatility_Surface_&_Volatility_Smile_Explained",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 3,
+      "total_chunks": 10,
+      "start_timestamp": "00:04:01",
+      "start_timestamp_seconds": 241.76,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Volatility_Surface_&_Volatility_Smile_Explained&t=241"
+    }
+  },
+  {
+    "text": "the positive skew negative skew essentially again what you're seeing is an increase or decreased likelihood of occurrences within a tail so if we look at this example of a negative skew we see that the tail actually raises up on this side compared to this side which means that we exp experience additional outsized moves that are not priced into a normal distribution curve so why did i just go into an impromptu session on basic statistics well it's because all of this leads to what i'm about to talk about which is the volatility surface so this in and of itself is not the funnest stuff to go through so if you made it be sure to like the video let us know that you got through at least the first half now let's transition over to the output so we now understand what the black shells model assumes now we also understand that that's not actually what the market exhibits so let's talk about how we compensate and what we use is the volatility surface and volatility smiles so on the center of the screen there this is a chart i pulled from investopedia which pulled from wikipedia which i have no idea who the original author is but it's a very reasonable chart so i didn't bother making one and it shows you the implied volatility surface so what i want to highlight is there are a couple different aspects to it we have time to",
+    "metadata": {
+      "video_id": "Volatility_Surface_&_Volatility_Smile_Explained",
+      "title": "Volatility_Surface_&_Volatility_Smile_Explained",
+      "url": "https://www.youtube.com/watch?v=Volatility_Surface_&_Volatility_Smile_Explained",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 4,
+      "total_chunks": 10,
+      "start_timestamp": "00:05:19",
+      "start_timestamp_seconds": 319.28,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Volatility_Surface_&_Volatility_Smile_Explained&t=319"
+    }
+  },
+  {
+    "text": "wikipedia which i have no idea who the original author is but it's a very reasonable chart so i didn't bother making one and it shows you the implied volatility surface so what i want to highlight is there are a couple different aspects to it we have time to maturity over here on this axis then we have moneyness how far something is in or out of the money on this axis and then we have the implied volatility on this axis the black shoals model would essentially assume that the implied volatility surface would be flat meaning we use the same implied volatility for the same series time expiration of options across the different series but that's not what we do what happens is if we open up the trading platform and we take a look at let's pick this options change so this is in the spy and i'm looking at the 19 august 31 options chains i want you to notice something if i take a look at this column right here on the put side this is implied volatility the furthest one i have listed here as of right now is a 12 delta and it's a 29.23 implied volatility then if i go to the at the money option i see 22.9 22.8 and then if i go further in the money i see 22.7 and then i see a period a little further in that's 20.31 all of that is just on the",
+    "metadata": {
+      "video_id": "Volatility_Surface_&_Volatility_Smile_Explained",
+      "title": "Volatility_Surface_&_Volatility_Smile_Explained",
+      "url": "https://www.youtube.com/watch?v=Volatility_Surface_&_Volatility_Smile_Explained",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 5,
+      "total_chunks": 10,
+      "start_timestamp": "00:06:38",
+      "start_timestamp_seconds": 398.72,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Volatility_Surface_&_Volatility_Smile_Explained&t=398"
+    }
+  },
+  {
+    "text": "it's a 29.23 implied volatility then if i go to the at the money option i see 22.9 22.8 and then if i go further in the money i see 22.7 and then i see a period a little further in that's 20.31 all of that is just on the put side if we look at the implied volatility for this options chain which means this specific expiration it's 24.78 if i look at the implied volatility for spy in general it's 24.69 if we go back into the 19 august and we look at the call side and let's find a 12 delta call so that would put us out here the 12 delta call implied volatility is 18.51 so what you're seeing is the same delta out of the money option for calls and puts is different but there's a couple important trends that you should have noticed as i ran through that which is the smile which we'll get into in just a second but essentially by looking at the moneyness for different options the different times to expiration time to maturity dte we're seeing that there are different implied volatilities which is why it's called a volatility surface because it's taking in multiple inputs and it's giving you exactly this it's a surface profile where we can experience different implied volatilities for different series of options in the same expiration or different expirations the main punch line is it's not the same as the black scholes",
+    "metadata": {
+      "video_id": "Volatility_Surface_&_Volatility_Smile_Explained",
+      "title": "Volatility_Surface_&_Volatility_Smile_Explained",
+      "url": "https://www.youtube.com/watch?v=Volatility_Surface_&_Volatility_Smile_Explained",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 6,
+      "total_chunks": 10,
+      "start_timestamp": "00:07:47",
+      "start_timestamp_seconds": 467.44,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Volatility_Surface_&_Volatility_Smile_Explained&t=467"
+    }
+  },
+  {
+    "text": "volatility surface because it's taking in multiple inputs and it's giving you exactly this it's a surface profile where we can experience different implied volatilities for different series of options in the same expiration or different expirations the main punch line is it's not the same as the black scholes model would assume so i showed you that the call implied volatility was different than the put implied volatility for the same out of the money delta why that's because of the volatility smile so essentially on a vertical axis here we have implied volatility and then on the horizontal axis here we have um the strike price so whether it's in the money or out of the money and we're looking at puts here but essentially we see a little bit of a smile unless there's a skew in the smile or kurtosis which can occur but essentially what it means is that again the implied volatility for different series different strikes is not flat it's not equal we have at the money typically b seems to be lower implied volatility whereas deep out of the money or deep in the money tends to have increased implied volatility as you saw in that example i just showed you it's not always the case but very frequently is the case it is product specific so to recap because i got 10 minutes and 40 seconds i want to keep my promise overall the black shoals model in a vacuum assumes",
+    "metadata": {
+      "video_id": "Volatility_Surface_&_Volatility_Smile_Explained",
+      "title": "Volatility_Surface_&_Volatility_Smile_Explained",
+      "url": "https://www.youtube.com/watch?v=Volatility_Surface_&_Volatility_Smile_Explained",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 7,
+      "total_chunks": 10,
+      "start_timestamp": "00:09:15",
+      "start_timestamp_seconds": 555.04,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Volatility_Surface_&_Volatility_Smile_Explained&t=555"
+    }
+  },
+  {
+    "text": "you saw in that example i just showed you it's not always the case but very frequently is the case it is product specific so to recap because i got 10 minutes and 40 seconds i want to keep my promise overall the black shoals model in a vacuum assumes a log normal distribution which is the cumulative distribution of a log normal distribution that has certain series of assumptions that i showed to you are not the case so what that leaves us with is people that interact with the markets create implied volatility services for the individual securities that they're trading based on their series of assumptions to arrive at what they perceive to be the correct implied volatility for that product and that leads to different implied volatilities for various strikes within the same expiration and within different expirations so all of this is to say that the market at least that is of this point is pricing in different volatilities than the black shells model would assume and it is because the market does not move the way that the black shoals model assumes that it does we have fat tails we have more outlier cases than we would expect to see and that is exactly why the volatility surface is not flat in why we have a volatility smile so if you made it all the way through this video make sure you comment with what you learned or what you would add so that",
+    "metadata": {
+      "video_id": "Volatility_Surface_&_Volatility_Smile_Explained",
+      "title": "Volatility_Surface_&_Volatility_Smile_Explained",
+      "url": "https://www.youtube.com/watch?v=Volatility_Surface_&_Volatility_Smile_Explained",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 8,
+      "total_chunks": 10,
+      "start_timestamp": "00:10:29",
+      "start_timestamp_seconds": 629.84,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Volatility_Surface_&_Volatility_Smile_Explained&t=629"
+    }
+  },
+  {
+    "text": "than we would expect to see and that is exactly why the volatility surface is not flat in why we have a volatility smile so if you made it all the way through this video make sure you comment with what you learned or what you would add so that we could crowdsource some information plus i'm just curious to see who makes it through um the entire videos on these i know they're kind of heavy but i am fascinated by this stuff because even though that the model that we primarily use to price options wasn't perfect the markets found a way to still make it all work based on real information as we got it and that's fascinating to me so as always keep on being an outlier keep expanding our knowledge come join the community if you haven't checked out our discord it's completely free you can find the link in the video description below and until next time be an outlier see y'all later",
+    "metadata": {
+      "video_id": "Volatility_Surface_&_Volatility_Smile_Explained",
+      "title": "Volatility_Surface_&_Volatility_Smile_Explained",
+      "url": "https://www.youtube.com/watch?v=Volatility_Surface_&_Volatility_Smile_Explained",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 9,
+      "total_chunks": 10,
+      "start_timestamp": "00:11:52",
+      "start_timestamp_seconds": 712.32,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Volatility_Surface_&_Volatility_Smile_Explained&t=712"
+    }
+  }
+]

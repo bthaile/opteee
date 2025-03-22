@@ -1,0 +1,354 @@
+0.56s: I'm going to walk you through literally
+2.20s: a step-by-step process on how to
+4.84s: logically use stops when trading options
+8.08s: this is not going to be a generalization
+10.32s: this is going to give you the exact
+11.92s: framework that I use so that you're not
+14.28s: just setting random stops because you
+16.76s: probably have heard like you
+18.92s: can't go broke taking profits yes you
+21.20s: can because sooner or later risk will be
+23.60s: realized and if you're not taking enough
+25.80s: big wins to compensate for the losing
+28.32s: trades you have a negatively expect
+30.20s: approach so we're going to talk about
+32.00s: how to actually Define this for yourself
+34.64s: so it's not random you're not doing
+36.60s: things like oh I think I should manage
+38.08s: risk at x% of the portfolio and you're
+40.56s: going to say I actually need to Define
+42.60s: risk for this specific strategy at this
+44.60s: specific spot because this is optimal so
+47.40s: what's up everyone Eric here welcome
+48.84s: back to the outliers let's talk about
+51.32s: using stops in trading options we have a
+53.48s: bit of a framework that we're going to
+55.32s: work through together and the very first
+57.72s: thing I want to focus on here is stops
+60.12s: they are literally designed to manage
+62.16s: risk in a trade they can't be random now
+64.60s: you can have some general portfolio
+67.00s: guidelines like I don't want to risk
+69.04s: more than 5% of the portfolio on an
+71.68s: individual trade if you have a really
+73.12s: small account you have a bigger account
+74.80s: maybe it's half a percent of the
+76.00s: portfolio or whatever it is that you set
+78.00s: you can set General guidelines like that
+80.44s: to manage risk at a um you know
+83.96s: overarching level however from an
+87.00s: individual strategy level you can't
+89.16s: default to stuff like that because the
+91.16s: way we use stops to manage risk has to
+94.56s: be reflective of the strategy itself
+96.56s: which in a few moments you'll understand
+99.00s: a little bit more about what that means
+101.68s: at the end of the video I'm going to
+103.40s: walk you through a actual example for a
+105.72s: live trade that's on as of right now
+108.16s: okay so let's talk about a few things
+111.36s: there are a couple kinds of stops that I
+113.40s: use there's a resting stop and a mental
+115.84s: stop a mental stop is kind of what it
+117.60s: sounds like it's not anything that's
+119.12s: sitting in the market it's a spot that's
+121.08s: predetermined before I enter the trade
+123.84s: where I'm going to take a good hard look
+125.24s: at what I'm doing and see if it makes
+126.56s: sense a resting stop is actually an
+129.28s: order that's submitted sitting there
+130.96s: ready to be triggered now resting stops
+134.16s: the only type that makes sense for that
+135.92s: is a market order now you have to
+137.96s: understand the nuances of this Market
+140.80s: orders can have a lot of slippage
+142.72s: meaning if things are going down really
+144.60s: fast and you get a fill you can get
+146.28s: filled at a really bad price so you have
+148.80s: to bake that into the way you choose
+151.08s: your stop points to account for that
+153.88s: slippage but why not something like a
+156.04s: stop limit order the problem with a stop
+159.28s: limit versus a stop market is a stop
+161.68s: limit might not get triggered and it's
+163.68s: the exact you need to manage risk that's
+165.32s: the whole point of a stop so let's say
+167.24s: that you wanted to get out at $100 but
+169.28s: you're being cheap and you set a stop
+170.84s: limit so that you know you want to get
+172.44s: filled at 100 but you're the lowest that
+174.48s: you're willing to go is 98 well what if
+176.16s: it goes down to 96 then 90 then 85 then
+179.84s: than 80 meanwhile you should have gotten
+181.72s: out way higher above to manage the risk
+184.56s: that's the problem here now when it
+186.36s: comes to picking a stop there are two
+189.32s: elements that go into this equation we
+191.28s: need to Define where we are wrong and
+195.68s: your ego is going to have a big problem
+197.08s: with this this is why most people don't
+198.96s: do this at the onset of the trade is
+201.04s: because we don't want to think about the
+203.08s: scenario where we're wrong but you got
+205.32s: to get over that as a Trader learning to
+208.12s: be a better loser of positions will
+210.68s: ultimately make you more money so that's
+212.92s: the first thing we got to Define based
+214.92s: on the strategy where are we wrong so
+219.00s: for example if you're selling something
+220.80s: like an iron
+222.04s: Condor there's a clear spot that we're
+225.28s: wrong in the trade so for example I'm
+227.48s: using bill because this is the example
+229.00s: we're going to use for the other
+230.16s: scenario and right now I'm just looking
+232.32s: at the 20ds
+233.84s: 9583 iron Condor that's sure well you
+236.52s: can see where the break even is which is
+238.84s: here and here is that where you're wrong
+241.08s: maybe it depends on the strategies
+243.04s: you've outlined but the important thing
+245.20s: is what I can tell you is if we're
+247.16s: trading say for example an iron Condor
+250.00s: and we sold it when it was down here
+252.92s: well there's a spot that you're wrong
+255.24s: this spot is wherever you defined but
+257.56s: this has obviously shot up to the moon
+260.48s: so you have to be thoughtful about the
+262.68s: way that your strategies work now the
+264.36s: funny thing about iron condors and stuff
+266.08s: like that is a lot of times if you're
+268.32s: trading risk premiums you don't want to
+270.28s: use a stop so then you have to be really
+271.92s: careful about this part of the equation
+274.72s: which is confirming the risk at your
+278.44s: loss point so what that means is when
+281.32s: you finally figure out where you're
+283.56s: wrong you have to make sure that the
+285.60s: amount of money that you would
+286.72s: prospectively lose at that spot is
+289.80s: satisfactory which we'll go through an
+291.84s: example in a minute let's talk about
+293.48s: some best practices and I'm going to
+295.32s: walk you through literally the
+296.40s: step-by-step process to build your own
+298.96s: so the first first thing is we have to
+300.48s: deemphasize individual trades what this
+302.60s: means is when we're deciding where we
+304.60s: pick stops we have to think of the stops
+306.92s: in the context of a system of Trades
+309.48s: that's going to be ran over time we're
+312.16s: not so worried about individual
+313.88s: positions this is really really
+315.44s: important because if you overemphasize
+317.96s: individual trades you tend to break
+319.80s: rules and you tend to build something
+322.40s: that might not be scalable over a
+324.28s: duration we have to be thoughtful about
+326.04s: that the next thing is we're worried
+329.08s: about the long run performance right so
+332.28s: we're not worried about the performance
+333.68s: today tomorrow but we're literally
+335.04s: worried about the performance over years
+337.60s: and again I already talked to you about
+338.92s: this you can go broke taking profits
+341.20s: this is bad advice it's meant in good
+343.40s: faith but it doesn't make sense all
+345.60s: right let's go through this step-by-step
+347.24s: process and then I want to walk you
+348.76s: through the example so at the strategy
+351.20s: level how do we Define what stop Mak
+353.88s: sense well we're going to start by
+355.88s: building a profit mechanism this is
+358.28s: based on my outlier strategy process
+360.36s: outlier trade process I'll throw links
+362.00s: to both of those in the notes below for
+363.96s: you but that's the first step the reason
+367.12s: why this is the first step is because we
+368.84s: have to understand the way of the
+371.32s: strategy that we're trying to trade
+374.40s: performs again this is where we have to
+376.96s: be specific so we're going to identify
+379.36s: the profit mechanism so for example the
+381.84s: way that I'm going to set stops on
+384.24s: something that's based on a breakout
+386.28s: style approach is different than the way
+387.84s: I'm going to set stops based on a
+389.72s: variance risk premium trading approach
+391.84s: which is exactly why we have to
+393.20s: structure this now the signals they just
+395.56s: help us to identify this where we are
+399.16s: wrong so again for a breakout style
+401.96s: approach maybe we use standard technical
+403.84s: analysis and based on our technical
+406.16s: analysis we would be able to pinpoint a
+407.92s: spot where we are
+409.76s: wrong then we got to Define that
+412.12s: quantify exactly where we're wrong and
+414.56s: then we set where we think we're going
+416.52s: to manage both profit and loss targets
+419.84s: stops can be used both to manage risk
+423.20s: but then also to secure profits once
+425.28s: we're in profit next we have to track
+429.36s: our win rate and loss rate the reason
+432.48s: why these matter is because we have to
+435.56s: make sure that the stops that we're
+436.80s: using guarantee positive long-term
+440.12s: expected return which again the example
+441.92s: will go through all of this now at the
+444.00s: individual trade level once we have this
+446.20s: built for the strategy at the trade
+448.36s: level we're going to to find an
+450.32s: opportunity based on our scanning based
+452.44s: on portfolio needs all that stuff we're
+454.00s: going to start structuring our trade so
+455.60s: we're going to lay out something that we
+457.68s: think we like we're going to look at
+460.32s: where our profit and loss targets would
+462.76s: be then we were going to take a look at
+464.92s: the risk profile for this individual
+467.24s: trade we're going to then size it based
+470.20s: on the risk profile balancing where we
+472.84s: think we're going to take profit and
+474.88s: losses stops go in place and now we
+479.52s: leave the stops alone
+481.88s: unless we are capturing profit in which
+485.24s: case I actually move the stops up all
+488.00s: the time so it helps me let a trade
+491.32s: continue to work but still manage the
+494.52s: risk and still make sure that I'm
+496.24s: maintaining positively expected return
+498.00s: which I'll explain in a second so this
+500.32s: is the process now let's take a look at
+502.24s: an
+503.12s: example we're going to use price
+505.68s: Direction up for the profit mechanism
+507.80s: for the subtype we're going to look at
+509.56s: breakouts the reason why this is
+511.24s: important is again because depending on
+512.96s: the strategy it's going to inform what
+515.16s: risk profile makes sense now the signals
+518.00s: that we're going to use for this are
+519.32s: technical analysis I'm not going to
+520.68s: spend too much time on that I just want
+522.20s: to give you the strategy performance in
+525.04s: the example so we have a strategy where
+527.24s: the average p&l per trade is positive
+529.44s: 2650 the average win size is 7850 the
+532.44s: win rate is 60% the average loss is $514
+536.36s: the loss rate is 40% so the expected
+538.92s: return for the strategy again is down
+540.88s: here it's the average p&l in this
+543.04s: context wonderful so now let's actually
+546.88s: look at an example that we have if we
+549.96s: take a look at b
+552.48s: l and I'm trading a breakout strategy in
+555.64s: it I entered on this day what I need to
+558.84s: do is figure out where I'm wrong in this
+562.44s: trade the where I'm wrong is super
+564.76s: simple it's below the consolidation
+566.52s: period as it sits here so pretty much
+568.84s: below
+569.88s: 8318 I am wrong what strategy makes
+573.20s: sense in this case it would be a ratio
+574.76s: called diagonal with long options I'm
+576.56s: not going to go super far into detail
+578.20s: why that you can check out my ratio
+580.28s: called diagonal playlist for those
+581.68s: details but I just want to talk about
+583.40s: the trade itself so when I look at the
+585.64s: trade I'm going to eyeball what I think
+587.64s: I want to get and in this case I have
+589.12s: the 21 Fab 85 calls these are um about 2
+594.64s: months out in time so let's say that I
+597.00s: get into these for 1150 maybe a little
+600.04s: bit cheaper for the example and I'm
+601.72s: starting to eyeball 25 of them why 25
+604.40s: I'm just starting with something doesn't
+606.00s: mean this necessarily so I started by
+608.64s: defining that my risk where I'm wrong is
+612.20s: defined when the stock is below 8318 so
+615.28s: I'm going to go in here I'm going to see
+617.08s: what is this worth when we're at
+619.48s: 88318 which is down here well the trade
+623.64s: shows a $7500 loss is maybe a little bit
+627.40s: less $7,400 loss so then given the
+630.60s: average loss of this system being
+632.92s: 5140 is that $7,000 loss
+636.40s: satisfactory it could be but I would
+639.96s: prefer it to be closer to the average
+642.08s: loss so that means based on my eyeball
+645.60s: size it's too big I have to take some of
+648.36s: this trade down so that the size at
+651.76s: 8318 reflects closer to my average
+655.32s: losing trade which is around 55
+660.16s: so if we come down to 18 lots that gives
+663.00s: us a
+664.28s: $548 loss against the 5,100 so maybe a
+669.08s: little bit
+671.92s: lower 17 17 Lots at the defined risk
+676.60s: Point takes me to a $5,185 loss this
+679.60s: fits perfectly so how do I arrive at
+683.32s: these metrics this is by tracking the
+685.88s: performance of the system if you don't
+687.80s: have these metrics yet you should track
+690.96s: but if you're interested in figuring out
+692.92s: what the required win rate for something
+695.56s: is you can take what the average loss is
+699.04s: divide that by the average win plus the
+702.28s: average loss and this will give you the
+704.64s: percentage let's use this example for
+706.72s: that if we pop back over to the platform
+710.28s: and we say Okay based on my technical
+712.40s: analysis I think the stock is going to
+714.20s: go to 92 I'm just picking a number and
+716.88s: let's say that you make 4050 4, 50 bucks
+720.24s: we already know at our loss point at
+722.32s: 5181 or our loss point at
+725.24s: 8318 we lose 5181 so if you take 5181 as
+730.28s: an absolute number you don't have to
+732.40s: include the negative but 5181 if you
+735.28s: divide that by our 4050 plus 5181 that
+740.20s: gives you
+742.20s: 55.6% so that means you need to return
+746.28s: you have to have wins that comprise 55 %
+749.96s: plus of your approach well notice that
+752.00s: our average win rate based on this
+753.64s: approach is 60% so it makes sense this
+757.04s: is the way that you get very specific
+759.16s: with this it cannot be random as always
+761.84s: if you have any questions let me know
+764.32s: but there's one last thing I have to
+765.84s: show you the way we use to capture
+768.20s: profits and a good example for this is
+770.32s: actually an
+771.24s: AP if we take a look down here we can
+775.48s: see that I actually got in here and I've
+777.80s: been trading this up along the way I
+779.48s: have another video that has talked about
+780.96s: some of these stop points but
+782.72s: essentially what I'm doing is as I'm in
+784.56s: profit once I get to my initial profit
+787.72s: Target I don't just take the trade down
+789.32s: I could scale out of some of it which I
+791.08s: often do but then I just set stops below
+795.20s: the new consolidation phases and then as
+798.04s: it breaks and makes a new consolidation
+799.80s: phase I'll move the stop up now again
+802.64s: this cannot be random this is specific
+805.08s: to this specific strategy that I have
+807.76s: that I've built and created an approach
+809.76s: around you cannot just lift and shift
+812.12s: this over because if you're trading
+814.12s: something like this for example that is
+816.20s: based on a large number of occurrences
+818.16s: High churn this is one way that will
+820.08s: work another kind of approach that might
+822.52s: be leveraged and you're really trying to
+825.28s: hit a small number of Trades but be
+827.56s: correct on a bunch of them that means
+830.04s: that your overall profile might look a
+832.08s: little bit different you have to build
+834.28s: this specific to what you're doing so
+837.00s: let me know if you have any questions as
+839.80s: always be an outlier I'll see you later

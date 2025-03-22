@@ -1,0 +1,146 @@
+[
+  {
+    "text": "can you use Delta as the probability for an option being in the money at expiration and if you know anything about me you already know the answer it depends cuz it really does depend it's not a blanket answer and a lot of people don't know that so the goal of this video is to walk through even why we can use Delta as an approximation of an option being in the money but then also some of the math behind it so that you can be smarter on how these things work and then at the end of the video I want to walk you through the exact scenarios where it does work and then it doesn't work because sometimes you have to apply different approach to get an accurate answer so with that what's up everybody welcome back to all the outliers and a shout out to the patreon family let's get straight to business so Delta as a probability we are going to start with a practical application for you guys let's take a look here at Nvidia and we're going to look at this 15 December 2 DTE options chain and then my editor will be kind enough to help help you guys see and follow along with what I'm talking about right here we can see the Delta for this 480 put the Delta here is 44 so traditional approach then would say that we have a 44 chance of this option expiring in",
+    "metadata": {
+      "video_id": "Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "title": "Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "url": "https://www.youtube.com/watch?v=Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 0,
+      "total_chunks": 9,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0.12,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!&t=0"
+    }
+  },
+  {
+    "text": "be kind enough to help help you guys see and follow along with what I'm talking about right here we can see the Delta for this 480 put the Delta here is 44 so traditional approach then would say that we have a 44 chance of this option expiring in the money at expiration I guess expiring in the money and then at kind of duplicative whatever expiring in the money at expiration making sure you know that it's at expiration and if we take a look at the probability that's calculated by The Thinker swim platform this is showing me 4455 it's moving around right now cuz markets are still moving a little bit they're closed but volatility still changes so anyways that's what you're seeing this is very close right this is saying now 43 and it's 44 it's within a point very close tolerance Okay cool so then it sounds like it works right why is this the case and then what was I talking about at the beginning of the video when I said well it doesn't always work well let's take a step over to everybody's favorite I'm actually pretty sure this is universally except accepted that everybody really loves my handwriting a load of so where would I be without sharing look at that I even got to the point where I had to crunch some of this in so my awful handwriting got even worse if you can even believe that tough for",
+    "metadata": {
+      "video_id": "Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "title": "Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "url": "https://www.youtube.com/watch?v=Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 1,
+      "total_chunks": 9,
+      "start_timestamp": "00:00:57",
+      "start_timestamp_seconds": 57.0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!&t=57"
+    }
+  },
+  {
+    "text": "accepted that everybody really loves my handwriting a load of so where would I be without sharing look at that I even got to the point where I had to crunch some of this in so my awful handwriting got even worse if you can even believe that tough for me to believe but I'll walk you through it don't worry you don't have to know this information in depth I just want to show you why this works so that you have a better understanding and if you like this side of trading I have a video called introduction to options where I dive deep into things like the black short formula well really black shs Martin model but the formula that they use in Blacks model so that you can better understand these things but it's just a differential equation with some different inputs that's the punchline okay that means absolutely nothing to you as it should because if it did that means you probably have as little of a life as I do and you don't actually want to know what this means but here's a key for you down here again we don't have to go through it it doesn't really matter I just want to highlight a few things to you first I am going to explain to you what D1 is so right here is where I break out D1 so that you can see what goes into D1 this matters for a particular",
+    "metadata": {
+      "video_id": "Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "title": "Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "url": "https://www.youtube.com/watch?v=Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 2,
+      "total_chunks": 9,
+      "start_timestamp": "00:01:58",
+      "start_timestamp_seconds": 118.52,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!&t=118"
+    }
+  },
+  {
+    "text": "through it it doesn't really matter I just want to highlight a few things to you first I am going to explain to you what D1 is so right here is where I break out D1 so that you can see what goes into D1 this matters for a particular reason why would it matter you might think because fun fact I don't know if you can use the term fun fact when you're talking about this kind of stuff but I'm going to do it anyways cuz I think it's fun boom that's Delta nd1 is Delta so this is how we are calculating the Delta of an option now it is important to note that n in this context n of X is a cumulative density function if you don't know what that means that's okay you don't really have to know what it means but you can simply think of it as a distribution of a real variable so in this case for D1 I am going to walk you through the inputs because the inputs here matter to us here we have the log normal distribution of the stock price divided by the strike Price Plus the risk-free rate plus the annual standard deviation of volatility squar divided by 2 multiplied by time and in this case time is as a percentage of a year and then that's going to be divided by the annual standard deviation of volatility square root of time okay why does",
+    "metadata": {
+      "video_id": "Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "title": "Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "url": "https://www.youtube.com/watch?v=Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 3,
+      "total_chunks": 9,
+      "start_timestamp": "00:02:51",
+      "start_timestamp_seconds": 171.64,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!&t=171"
+    }
+  },
+  {
+    "text": "the risk-free rate plus the annual standard deviation of volatility squar divided by 2 multiplied by time and in this case time is as a percentage of a year and then that's going to be divided by the annual standard deviation of volatility square root of time okay why does this matter well I'm going to show you but before that because I have OCD there's D2 in case we were wondering you probably over there thinking like what the hell is the cumulative density function of this one well that's D2 fun fact okay but why does it actually matter well let's take a look at how we calculate the probability of an option being in the money you take the normal distribution of the log normal function of strike divided by stock price all of that's divided by volatility time the square root of DTE over 365 so in this case T right is DTE is a percentage of a year that's exactly what we're doing here so if you notice the denominator in this case is the exact same thing so then if you look at the numerator you see that this is slightly different slightly different here we're adding a couple additional components like the risk-free rate annual standard deviation of volatility this is to get Delta because remember Delta has a different purpose of probability of being in the money this matters so because of this let's now take a look at when this does",
+    "metadata": {
+      "video_id": "Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "title": "Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "url": "https://www.youtube.com/watch?v=Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 4,
+      "total_chunks": 9,
+      "start_timestamp": "00:03:46",
+      "start_timestamp_seconds": 226.2,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!&t=226"
+    }
+  },
+  {
+    "text": "here we're adding a couple additional components like the risk-free rate annual standard deviation of volatility this is to get Delta because remember Delta has a different purpose of probability of being in the money this matters so because of this let's now take a look at when this does and does not work because in this example it worked beautifully right we have the 43 Delta and it's 44 probability now let's go out to something that's 37 DTE this is 45 Delta for the 480 put and that's 48.6 probability of being in the money what do you notice if it's not clear yet let me zoom out even more let's go to this 19 April 128 DTE I'm going to look at this 42 Delta 480 put I'm just taking essentially the first out of the money put the 42 Delta out of the money put now has a 42 probability according to Delta but according to the option it's 50.7 4 as calculated by thinker swim so what do you notice ideally you notice something that's pretty clear at this point what's happening is the further out in time you go the less accurate Delta is very important for you to know that if you trade anything essentially that's over 90 DTE because if we go back to this example this is 42 DTE This Is 50 that's a 8 point variance eight almost 9o variance if you're trading something where your outcome can have nine",
+    "metadata": {
+      "video_id": "Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "title": "Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "url": "https://www.youtube.com/watch?v=Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 5,
+      "total_chunks": 9,
+      "start_timestamp": "00:04:47",
+      "start_timestamp_seconds": 287.64,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!&t=287"
+    }
+  },
+  {
+    "text": "very important for you to know that if you trade anything essentially that's over 90 DTE because if we go back to this example this is 42 DTE This Is 50 that's a 8 point variance eight almost 9o variance if you're trading something where your outcome can have nine points of slack in potential outcome one good on you cuz that means you have found an insanely insanely effective Edge but most of us don't have that the difference of a 9 probability here is pretty massive and I keep growing it I realized but yeah it's this is essentially and this is only 192 days out or 128 days out there goes dyslexia so what I'm highlighting though is the further you go out in time the less accurate Delta is as your approximation now for those curious on how this all works I bring you the gift of math oh hell no let me close close this up so it's easier for you to follow along you can essentially do a side by side with me and I'll Zoom this in for those that are visually impaired I know that I have a decent amount of my audience that's above 60 so you guys might need your uh your fancy two-tone shades make sure you're not in the sun otherwise it'll be too dark and let's take a look I took the current figures so 48088 for NVIDIA and here are the parameters we need we need",
+    "metadata": {
+      "video_id": "Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "title": "Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "url": "https://www.youtube.com/watch?v=Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 6,
+      "total_chunks": 9,
+      "start_timestamp": "00:05:58",
+      "start_timestamp_seconds": 358.2,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!&t=358"
+    }
+  },
+  {
+    "text": "audience that's above 60 so you guys might need your uh your fancy two-tone shades make sure you're not in the sun otherwise it'll be too dark and let's take a look I took the current figures so 48088 for NVIDIA and here are the parameters we need we need the stock price days expiration you get to pick whatever option you're looking at so in this case I'm looking at a put and a call I'm looking at the 480 put the 485 call then I'm going to grab the implied volatility for both of those options so the put IV in this instance is 33.3 the call IV is 32.4 2 you'll have to trust me cuz it's covered right now and let's take a look at the outputs for the put this is calculating the probability of in the money being 49.3 1 thinker swim is calculating it at 48.63 per and the Delta is calculating it at 45 all slight differences because thinker swim is going to apply their proprietary formulas for most of these things so that's why it is a slight deviation from this but you should notice one thing we are much closer to what thinker swim is calculating in this instance than Delta is same thing for the call side so how do you calculate these I'll highlight these real quick so that you can grab the formulas but it's literally just grabbing the formulas that I just showed you guys but",
+    "metadata": {
+      "video_id": "Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "title": "Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "url": "https://www.youtube.com/watch?v=Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 7,
+      "total_chunks": 9,
+      "start_timestamp": "00:07:07",
+      "start_timestamp_seconds": 427.0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!&t=427"
+    }
+  },
+  {
+    "text": "to what thinker swim is calculating in this instance than Delta is same thing for the call side so how do you calculate these I'll highlight these real quick so that you can grab the formulas but it's literally just grabbing the formulas that I just showed you guys but this for those that look at that and their eyes gloss over here's literally what you could just grab from Google Sheets or Excel is the same thing now I will say before people start dropping in saying like her the normal distribution functions not working if you use something like Google Sheets there are a lot of them right so there's normal distributions for sample normal distribution for populations so in this case you want to use the standard normal distribution function so norm. s.d and then in Excel it's slightly different but you'll be able to figure it out hopefully if not don't do this and probably don't trade so be an outlier see you guys later",
+    "metadata": {
+      "video_id": "Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "title": "Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "url": "https://www.youtube.com/watch?v=Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!",
+      "upload_date": "",
+      "duration": "",
+      "channel_name": "",
+      "chunk_index": 8,
+      "total_chunks": 9,
+      "start_timestamp": "00:08:08",
+      "start_timestamp_seconds": 488.04,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Delta_as_PROBABILITY_in_Options_Trading_EXPLAINED!&t=488"
+    }
+  }
+]

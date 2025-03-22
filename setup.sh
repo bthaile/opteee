@@ -1,0 +1,72 @@
+#!/bin/bash
+
+# YouTube Transcript Project Setup Script
+# This script configures pyenv and creates the right environment for the project
+
+echo "📦 Setting up YouTube Transcript Project with pyenv..."
+
+# Check if pyenv is installed
+if ! command -v pyenv &> /dev/null; then
+    echo "❌ pyenv is not installed. Please install pyenv first:"
+    echo "   For macOS: brew install pyenv"
+    echo "   For Linux: curl https://pyenv.run | bash"
+    exit 1
+fi
+
+# Install Python 3.11.7 if not already installed
+if ! pyenv versions | grep -q "3.11.7"; then
+    echo "🔄 Installing Python 3.11.7 with pyenv..."
+    pyenv install 3.11.7
+else
+    echo "✅ Python 3.11.7 is already installed"
+fi
+
+# Set local Python version for this project
+echo "🔄 Setting local Python version to 3.11.7..."
+pyenv local 3.11.7
+
+# Check if we have a virtual environment
+if [ ! -d "venv" ]; then
+    echo "🔄 Creating a new virtual environment..."
+    python -m venv venv
+else
+    echo "✅ Virtual environment already exists"
+fi
+
+# Activate the virtual environment
+echo "🔄 Activating virtual environment..."
+source venv/bin/activate
+
+# Upgrade pip
+echo "🔄 Upgrading pip..."
+pip install --upgrade pip
+
+# Install requirements
+echo "🔄 Installing requirements..."
+pip install -r requirements.txt
+
+# Create transcripts directory if it doesn't exist
+if [ ! -d "transcripts" ]; then
+    echo "🔄 Creating transcripts directory..."
+    mkdir -p transcripts
+fi
+
+# Create empty progress file if it doesn't exist
+if [ ! -f "transcript_progress.json" ]; then
+    echo "🔄 Creating empty progress file..."
+    echo '{
+  "processed": [],
+  "failed": [],
+  "whisper_processed": []
+}' > transcript_progress.json
+    echo "⚠️ Note: Created a new empty progress file. If you have a backup, replace it with your original."
+else
+    echo "✅ Progress file already exists"
+fi
+
+echo "✅ Setup complete! You can now run:"
+echo "   source venv/bin/activate  # To activate the environment"
+echo "   python whisper_transcribe.py  # To run the transcription script"
+echo ""
+echo "⚠️ IMPORTANT: Always backup your transcript_progress.json file"
+echo "   when recreating the project to preserve your download history." 

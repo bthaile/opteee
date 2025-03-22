@@ -1,0 +1,329 @@
+0.88s: so we use the black shoals martin model
+3.44s: when we're pricing options you've heard
+5.68s: that before
+6.96s: all good
+8.08s: now once we understand options a little
+10.24s: bit more we come to find out that all of
+12.56s: the assumptions in the bsm are not
+15.92s: exactly correct one of which is how it
+19.52s: integrates implied volatility into the
+22.00s: pricing of options primarily how it
+24.32s: assumes implied volatility so this video
+28.08s: is going to talk about the implied
+30.40s: volatility surface and the implied
+33.28s: volatility smile so that anybody that
+36.24s: trades options that's interested in the
+38.56s: inner workings can have a better
+40.24s: understanding on how premiums are
+42.48s: actually calculated because
+44.64s: they are not calculated in a textbook
+46.96s: fashion as the black shoals model would
+50.40s: assume so what's up everybody eric here
+53.52s: welcome back to all the outliers and
+55.76s: again we have a little more of a
+56.96s: technical session here but i aim to make
+59.52s: this video consumable we're going to
+62.00s: keep it to less than 10 minutes but i'm
+64.16s: hoping to share some useful information
+65.84s: so that you can understand the underside
+68.08s: of options a little more holistically so
+70.96s: let's jump over and get to it so as i
+73.76s: already mentioned the black shoals
+75.60s: martin model it comes with a whole list
+78.32s: of assumptions and not all of them are
+81.60s: accurate one of which is the pricing of
+86.24s: an underlying security and the reason
+88.96s: why that matters is because it impacts
+90.96s: how implied volatility is assumed to be
+94.64s: so
+95.68s: when we're talking about the bsm
+97.76s: it normally assumes a log normal
+101.36s: distribution which in this scenario i'm
+104.40s: specifically referring to the cumulative
+106.40s: distribution of a log normal
+107.92s: distribution i mentioned that because a
+110.32s: log normal distribution can look very
+112.32s: different depending on you know what
+114.72s: level of statistics you've taken and how
+117.60s: often you use this stuff so really when
+120.32s: i'm saying log normal or normal
+122.80s: distribution in this context i'm
+125.52s: referring to the cumulative distribution
+127.52s: of a log normal distribution
+129.76s: okay so
+131.04s: got it i just said the same couple words
+133.28s: a few times what the hell does it mean
+135.20s: let's talk about it so down below right
+137.76s: below those words i have what a
+141.52s: cumulative distribution of a log normal
+143.28s: distribution can look like and what
+145.44s: you're seeing here is also what is
+148.00s: commonly referred to as a normal
+149.76s: distribution where we have the mean in
+152.24s: the middle and then we have symmetrical
+154.84s: tails to both positive and negative
+159.20s: sides of the mean
+161.36s: however this is not how price is
+165.20s: actually observed in the marketplace and
+167.68s: because that is not how price is
+170.00s: actually observed in the marketplace
+171.84s: that is also not how implied volatility
+175.76s: is calculated because again
+178.16s: implied volatility is essentially just
+180.80s: our assessment of future price movement
+184.56s: and deviation off of a mean
+186.80s: so when we talk about options implied
+190.00s: volatility and price they both do not
+193.04s: exhibit a normal distribution they have
+197.44s: both either or or both
+200.32s: kurtosis and skew
+202.00s: so what is kurtosis and what is skew
+205.68s: essentially both kurtosis and skew lead
+208.96s: to fat
+210.24s: tails in our
+212.40s: data and i don't know about you but
+214.88s: nothing gets me going like a good old
+216.88s: fat tail
+218.88s: in statistics
+220.80s: um but on the left hand side here i'm
+223.04s: showing you two things i'm showing you
+224.56s: what kurtosis looks like and then i'm
+226.32s: showing you what skew looks like so
+228.72s: kurtosis which is this bit up here we
+231.36s: have three different kinds this isn't a
+233.28s: statistics course i'm not going to go
+234.80s: into all of them the punch line here is
+237.68s: as we see
+239.20s: different styles of kurtosis an
+241.76s: important function is occurring the
+244.08s: tails
+245.36s: represent the far ends of the data set
+249.20s: and typically speaking as you can see
+251.36s: over here
+252.64s: when we're looking at a normal
+254.08s: distribution it assumes that there is a
+257.36s: very very small amount small number of
+260.32s: occurrences that take place as we get to
+263.44s: the extremes of the data set or the
+265.44s: tails
+266.48s: however when we have kurtosis we
+269.28s: increase likelihood of occurrence in a
+273.28s: tail so for example
+275.20s: if you look at just regular stock market
+277.52s: prices and you plot them out it is not a
+279.60s: normal distribution we exhibit and
+282.00s: experience moves
+283.84s: that statistically would be unsound in a
+286.56s: normal distribution more frequently than
+289.04s: we should so part of that is due to
+291.84s: kurtosis and that's just a function of
+294.24s: the pricing of the markets and the way
+296.32s: things that move
+298.16s: the other function that we see sometimes
+300.72s: is skew
+302.48s: where normally if we have a symmetrical
+304.88s: distribution again both sides of the
+308.56s: distribution would have the similar
+310.64s: shape just like you see here although
+312.96s: this looks like it has
+314.72s: cancer and a lot of growths because i
+316.24s: can't draw straight with the mouse but
+317.76s: you get the idea
+319.28s: and then on the positive skew negative
+321.76s: skew essentially again what you're
+324.56s: seeing is an increase or decreased
+327.04s: likelihood of occurrences within a tail
+330.08s: so if we look at this example of a
+331.84s: negative skew we see that the tail
+334.32s: actually raises up on this side compared
+337.28s: to this side which means that we exp
+340.08s: experience additional outsized moves
+342.88s: that are not priced into a normal
+346.16s: distribution curve so why did i just go
+349.52s: into an impromptu session on basic
+353.20s: statistics well it's because all of this
+356.16s: leads to
+357.52s: what i'm about to talk about which is
+359.60s: the volatility surface so this in and of
+362.72s: itself is not the funnest stuff to go
+366.24s: through so if you made it be sure to
+367.92s: like the video let us know that you got
+370.16s: through at least the first half
+372.16s: now let's transition over to the output
+375.04s: so we now understand what the black
+377.76s: shells model
+379.60s: assumes
+381.04s: now we also understand that that's not
+383.12s: actually what the market exhibits so
+385.92s: let's talk about how we compensate and
+388.40s: what we use
+390.00s: is the volatility surface and volatility
+393.52s: smiles
+395.12s: so on the center of the screen there
+397.52s: this is a chart i pulled from
+398.72s: investopedia which pulled from wikipedia
+400.72s: which i have no idea who the original
+402.32s: author is but it's a very reasonable
+403.84s: chart so i didn't bother making one
+406.08s: and it shows you the implied volatility
+408.32s: surface so what i want to highlight is
+411.04s: there are a couple different aspects to
+413.36s: it we have time to maturity over here on
+416.80s: this axis
+418.16s: then we have moneyness how far something
+420.32s: is in or out of the money on this axis
+423.28s: and then we have the implied volatility
+425.20s: on this axis
+426.72s: the black shoals model would essentially
+429.20s: assume that the implied volatility
+431.28s: surface would be flat meaning we use the
+433.52s: same implied volatility for the same
+436.56s: series
+437.52s: time expiration of options across the
+439.76s: different series but that's not what we
+441.92s: do what happens is if we open up the
+446.00s: trading platform
+448.96s: and we take a look
+450.56s: at let's pick this options change so
+452.64s: this is in the spy and i'm looking at
+454.72s: the 19 august 31 options chains i want
+457.92s: you to notice something if i take a look
+460.64s: at this column right here on the put
+462.72s: side this is implied volatility the
+465.44s: furthest one i have listed here as of
+467.44s: right now is a 12 delta and it's a
+470.04s: 29.23 implied volatility
+473.04s: then if i go to the at the money option
+475.52s: i see 22.9
+478.12s: 22.8
+479.68s: and then if i go further in the money i
+482.40s: see
+483.40s: 22.7 and then i see a period a little
+486.32s: further in
+488.00s: that's 20.31
+490.64s: all of that is just on the put side if
+493.68s: we look at the implied volatility for
+495.60s: this options chain
+497.92s: which means this specific expiration
+500.40s: it's 24.78
+502.88s: if i look at the implied volatility for
+505.60s: spy in general it's 24.69
+508.80s: if we go back into the 19 august and we
+511.36s: look at the call side
+513.04s: and let's find a 12
+516.48s: delta
+517.92s: call
+519.04s: so that would put us
+521.04s: out here the 12 delta call implied
+524.08s: volatility
+525.44s: is
+527.04s: 18.51
+529.28s: so what you're seeing is
+531.20s: the same delta out of the money option
+534.08s: for calls and puts is different but
+536.24s: there's a couple important trends that
+538.40s: you should have noticed as i ran through
+540.00s: that which is the smile which we'll get
+541.60s: into in just a second
+543.20s: but essentially by looking at the
+545.20s: moneyness for different options the
+547.44s: different times to expiration time to
+549.68s: maturity dte
+551.60s: we're seeing that there are different
+553.36s: implied volatilities which is why it's
+555.04s: called a volatility surface because it's
+556.88s: taking in multiple inputs and it's
+559.04s: giving you exactly this it's a surface
+561.36s: profile where we can experience
+564.08s: different implied volatilities for
+566.32s: different series of options in the same
+568.96s: expiration or different expirations the
+571.60s: main punch line is it's not the same as
+574.80s: the black scholes model would assume
+576.72s: so i showed you that the call implied
+580.08s: volatility was different than the put
+581.92s: implied volatility for the same out of
+583.84s: the money delta why
+585.60s: that's because of the volatility smile
+588.16s: so essentially on a vertical axis here
+590.88s: we have implied volatility and then on
+593.36s: the horizontal axis here we have um the
+596.80s: strike price so whether it's in the
+598.64s: money or out of the money and we're
+600.64s: looking at puts here but essentially we
+603.52s: see a little bit of a smile unless
+606.56s: there's a skew in the smile or kurtosis
+608.96s: which can occur
+610.32s: but essentially what it means is that
+612.24s: again the implied volatility for
+614.64s: different series different strikes is
+616.72s: not flat it's not equal
+619.52s: we have at the money typically b
+622.16s: seems to be lower implied volatility
+625.52s: whereas deep out of the money or deep in
+628.24s: the money tends to have increased
+629.84s: implied volatility as you saw in that
+632.24s: example i just showed you it's not
+633.84s: always the case but very frequently is
+636.16s: the case it is product specific
+638.64s: so
+639.84s: to recap because i got 10 minutes and 40
+642.08s: seconds i want to keep my promise
+644.64s: overall
+646.96s: the black shoals model
+648.88s: in a vacuum assumes a log normal
+651.92s: distribution which is the cumulative
+653.60s: distribution of a log normal
+655.36s: distribution
+656.80s: that
+657.60s: has certain series of assumptions that i
+660.00s: showed to you are not the case
+662.48s: so what that leaves us with
+664.56s: is
+665.36s: people
+666.40s: that interact with the markets create
+669.20s: implied volatility services for the
+671.84s: individual securities that they're
+673.12s: trading based on their series of
+675.84s: assumptions to arrive at what they
+677.92s: perceive to be the correct implied
+679.60s: volatility for that product and that
+683.12s: leads to different implied volatilities
+686.08s: for
+687.12s: various strikes within the same
+688.88s: expiration and within different
+691.20s: expirations
+692.88s: so all of this is to say that the market
+695.52s: at least that is of this point is
+697.84s: pricing in
+699.36s: different volatilities than the black
+700.88s: shells model would assume and it is
+703.76s: because the market does not move the way
+706.48s: that the black shoals model assumes that
+709.44s: it does we have fat tails we have more
+712.32s: outlier cases than we would expect to
+714.24s: see and that is exactly why the
+716.88s: volatility surface is not flat in why we
+720.00s: have a volatility smile
+721.76s: so
+722.80s: if you made it all the way through this
+724.56s: video make sure you comment with what
+726.64s: you learned or what you would add so
+728.64s: that we could crowdsource some
+729.84s: information plus i'm just curious to see
+731.68s: who makes it through um the entire
+733.76s: videos on these i know they're kind of
+735.04s: heavy but i am fascinated by this stuff
+737.92s: because even though that the model that
+739.76s: we primarily use to price options wasn't
+742.00s: perfect the markets found a way to still
+744.64s: make it all work based on real
+746.80s: information as we got it and that's
+748.24s: fascinating to me so
+750.08s: as always keep on being an outlier keep
+752.56s: expanding our knowledge
+754.24s: come join the community if you haven't
+755.84s: checked out our discord it's completely
+757.28s: free you can find the link in the video
+759.28s: description below and until next time be
+761.60s: an outlier see y'all later

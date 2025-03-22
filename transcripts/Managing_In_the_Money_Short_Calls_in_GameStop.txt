@@ -1,0 +1,1054 @@
+0.46s: [Music]
+0.68s: what is up the ape Community it is Eric
+4.12s: and yet again I come in peace I'm here
+5.60s: to talk about options I'm actually
+6.92s: following up on a prior video that I did
+9.72s: and actually kind of a minseries that
+11.72s: I'm starting to do about trading options
+15.40s: in something like GameStop although if
+17.76s: you're not trading GameStop what I'm
+19.72s: covering today is applicable to you
+21.20s: anyways because what I'm going to talk
+22.88s: about is adjusting in the money short
+27.36s: calls which ideally that's what we want
+30.04s: to happen if we're selling calls as part
+33.60s: of a ratio covered call which is what we
+35.92s: reviewed in the last video I'll throw a
+37.96s: link to that in the description in case
+39.92s: you haven't seen that the whole point of
+42.16s: this strategy is we're going to hold
+44.12s: shares of INE equity in this example
+47.16s: GameStop and we want to hold the equity
+49.84s: anyways that's the premise and then we
+53.00s: are holding something longer term
+54.88s: whatever your holding duration is is
+56.60s: part of your plan but there are going to
+59.16s: be periods where stock might be a little
+61.68s: more mellow and we can see periods like
+63.80s: that in this time frame right so we can
+66.08s: see GameStop from really the middle
+69.12s: slend of the summer until the 11th of
+72.68s: November has been pretty range-bound so
+75.32s: if you're holding Equity during that
+76.92s: duration is not really doing a whole lot
+78.72s: but you can sell some calls against some
+81.28s: of your shares in order to collect some
+83.64s: premium up front however as with
+86.44s: anything in trading there's always a
+87.56s: catch the catch in this instance is
+90.72s: sooner or later the thing that you're
+93.76s: selling calls in can start to move and
+95.92s: it can start to move pretty fast that
+98.16s: can create a problem especially if
+99.60s: you're actually not wanting to unwind
+102.36s: your shares which that's why we do it at
+104.92s: a ratio so the prior video walks through
+109.00s: the basis of this ratio covered call and
+112.76s: how it strikes a balance between taking
+114.72s: in some premium upfront but preserving
+117.20s: upside especially in case things start
+119.00s: to get out of hand things moving really
+120.48s: really fast because it can happen you
+122.56s: can get caught however especially in
+125.92s: something like GameStop which is very
+128.40s: peaky there are a lot of chances for you
+131.56s: to adjust your trade so that you can
+134.36s: keep your shares but still be able to
+136.72s: sell some short calls to collect
+138.68s: something and we actually went through
+140.52s: an example during a prior live stream
+142.96s: and I captured data from that that I'm
+144.72s: going to review now and this is really
+147.44s: to condense down all of the lessons of
+149.44s: that life stream into a palatable format
+151.84s: so that you can follow along the train
+153.44s: of thought and then as always if you
+154.56s: have questions as we go through this
+156.48s: please let me know that's the whole
+158.12s: point of this so if you'll recall we
+161.76s: used the example of this date here the
+165.76s: 16th of April why did we do that because
+169.08s: I wanted to pick as
+171.24s: disadvantage Point as humanly possible
+174.32s: to start selling calls why is this so
+176.68s: disadvantaged because the stock is at a
+178.32s: low so that means everything past this
+180.72s: point in hindsight the stock has been
+182.68s: higher so we're selling short calls into
+186.72s: what we now know in the future to be a
+189.16s: very difficult time because it's just
+190.64s: straight up especially into this short
+193.68s: squeeze that we had so I thought this
+196.92s: would provide a great example of how you
+200.12s: can manage short calls in a very
+202.72s: challenging environment because managing
+204.80s: a short call in this kind of environment
+206.68s: super easy it's been a slow gradual move
+210.12s: up it's had some down ticks this is easy
+213.36s: days to manage a short call this is
+216.04s: challenging and the reason why this is
+217.76s: so challenging is because when we get in
+220.08s: the price of GameStop for the example
+222.24s: was in like the 10 handle and then it's
+225.88s: not seen that again it's essentially
+227.64s: never been not double that so we're
+230.28s: literally dealing with something where
+231.84s: when we entered and started selling
+233.32s: calls against it it is doubled in price
+235.24s: and not come back which provides a
+237.56s: really really great example Le for us to
+241.08s: work through so this is the original
+245.36s: video that I did about trading options
+249.16s: in GameStop and this one obviously
+251.56s: introduces the ratio covered call and
+253.76s: then the video that we're in now is
+255.24s: going to talk about the management I
+257.24s: realize that I don't have the same exact
+258.96s: shirt on but it's pretty damn close I
+260.88s: also realize that my forehead is
+262.96s: disgustingly shiny that's a little
+265.20s: nerve-wracking but that stuff aside this
+268.96s: is what we captur
+270.40s: so I don't expect you to know what this
+272.04s: is right out of the gate this is a very
+273.72s: very basic log that I built for us to go
+276.20s: through the example together so I'm
+277.56s: going to describe to you what this is
+279.12s: now so you can test it out for yourself
+281.96s: that's the point now the entire premise
+284.60s: of a ratio covered call is that you want
+287.44s: to hold more than 100 shares you have to
+290.48s: be able to create a ratio why does it
+293.20s: have to be that because of this I will
+296.68s: show you well actually I'm going to draw
+297.96s: it for you because it's a little easier
+299.88s: so if we have 100 shares our p&l graph
+304.60s: will look like this with this well that
+307.36s: let's see if I can get it at least a
+309.24s: little stter than that something like
+312.00s: that this is the zero
+313.64s: line now when you have anything over
+317.88s: well first let me just reset and do what
+319.92s: if we sell a call against this so if you
+321.68s: have 100
+322.88s: shares and then you sell one call your
+327.00s: pnl graph is now going to turn into this
+330.16s: and you see that it levels off just
+332.20s: pretend that these lines are level and
+334.32s: that means that you now have capped
+336.20s: profit potential anything above the
+338.60s: strike of this call so what this can
+341.88s: turn into though is provided that you
+343.64s: have greater than 100 shares literally
+345.84s: even 101 will do it anything greater
+349.48s: than 100 shares it turns it into
+354.24s: this where it still will maintain an
+357.48s: upside profit potential because this one
+360.12s: share is now not covered you have 100
+363.24s: shares that are covered by this one
+366.08s: short call cuz remember each short call
+369.16s: represents up to -100 shares so these
+371.92s: two cancel out that leaves your one
+374.12s: share alone in unafraid out there to
+377.28s: build profit for you so the name of the
+380.12s: game there is to determine how many
+382.20s: shares you want how many short calls you
+384.00s: want and the prior video goes through
+385.52s: all of that this video I want to
+387.36s: specifically talk about the management
+388.80s: of the short calls that's a tricky part
+390.20s: of this game so if we think about
+392.76s: selling short calls we first need to
+395.48s: start with identifying the risks
+398.08s: specifically in the context of selling
+400.60s: short calls in something that we do not
+404.28s: want to take assignment and meaning well
+408.16s: we don't want to be assigned we kind of
+410.40s: are forced on the cell side we don't
+412.52s: want to be assigned meaning we want to
+414.28s: keep our shares that's the first context
+416.76s: so what are our risks well if the stock
+420.92s: goes above our strike price and we're in
+425.52s: here this technically is a risk this
+428.76s: zone why is this why is this a risk it's
+432.08s: an opportunity cost because if we have a
+434.76s: stock that we're holding the downside
+437.12s: risk for and it eventually makes a
+439.80s: massive up move and we can't participate
+443.36s: that means that we've taken all of this
+445.48s: risk and we've not got the commensurate
+448.24s: payoff for this risk
+450.20s: so that can be part of your strategy it
+452.00s: can be accepted it can be fine it's just
+454.32s: a consideration that is an absolute
+456.28s: opportunity cost I consider that a risk
+458.24s: to the strategy the second risk in the
+460.92s: context of you not wanting to let go of
+462.72s: your shares is early assignment this is
+465.04s: one we're going to have to pay attention
+466.20s: to especially on something that tends to
+470.68s: have really big moves now when are we at
+475.28s: risk of early assignment there's two
+478.48s: primary periods
+480.28s: the first one is when extrinsic
+485.48s: value is about zero and this really
+489.88s: becomes more pertinent I would consider
+492.48s: when it's less than a dime
+495.00s: 0.10 and even that's a little high
+497.32s: that's kind of like an early warning
+498.72s: system when it's like sub a nickel is
+500.88s: what I would consider to be
+502.88s: moderately accessible but even then it's
+505.44s: not
+506.32s: entirely rational and we'll talk about
+509.64s: why early
+510.96s: assignment is not necessarily the
+513.68s: biggest risk if it's managed but we have
+515.80s: to manage it now the second period is if
+519.40s: we have a dividend coming up and the
+522.32s: dividend
+524.72s: yield is greater than the extrinsic
+529.24s: value so let's talk about these two
+531.40s: scenarios really fast because if you're
+534.40s: new to options this might make no sense
+536.80s: to you and that's okay we will literally
+538.60s: be able to describe
+540.40s: all of it very very simply and what I
+543.32s: want to do is actually go over to the
+545.40s: platform and use some live examples
+548.44s: because I think this might be a little
+550.36s: easier if you can look at a live example
+553.80s: with me so let's take a look at GameStop
+556.48s: let's go to 13 DS and let's take a look
+559.36s: at these options and if you'll recall
+562.04s: every single option has two forms of its
+566.04s: value that's what creates the premium of
+568.32s: an option we have inance and extrinsic
+570.12s: value intrinsic value is simply how far
+573.00s: in the money something is extrinsic
+575.84s: value is a composition of Time Value how
+579.12s: much days how many days are left to
+582.08s: expiration and then also
+584.64s: volatility so if we have an option and
+590.36s: let's say we look at this 25 strike just
+592.44s: out of curiosity and we say the 25
+595.00s: strike right now and we'll take a couple
+597.20s: notes so that actually I can just do it
+598.68s: right in here
+599.96s: so we can look at it real together so we
+602.68s: take a look at this 25 strike right here
+604.96s: and let's say that we're short the 25
+606.80s: call that is now pretty far in the money
+608.28s: by like $4.50 that's the current
+611.88s: premium spot price right now is well
+614.40s: let's just call spot price
+616.76s: 29 and we have a strike price of 25 so
+620.56s: that means we have
+623.92s: $4 of intrinsic
+627.68s: value and the reason why I know it's $4
+630.52s: of intrinsic values because our strike
+632.12s: price is 25 the underlying is currently
+634.72s: trading at 29 so the difference between
+637.36s: those because this is a call and we're
+639.28s: in the money intrinsic value then for
+642.60s: the extrinsic value I just showed you
+644.48s: that the option here is trading at a
+646.08s: premium of 450 so if we have 450 less
+650.64s: our intrinsic
+653.56s: value gives us 50
+656.84s: cents so this is how much x transic
+660.24s: value is left in the
+661.64s: options so even though these 25s are an
+664.84s: 80 Delta they're pretty far in the money
+666.44s: they're not actually at massive risk of
+668.16s: early assignment right now why is that
+671.04s: the case well first one as you'll recall
+673.76s: there's not even a dividend here right
+675.76s: we know that there's no dividend in
+677.00s: GameStop right now so that's not a
+679.60s: scenario we have to concern ourselves
+681.44s: with now why not just early assignment
+685.12s: because whoever's holding these options
+686.92s: if they exercise well that means that
+688.80s: they can get the they can buy the stock
+690.44s: at 25 that's pretty awesome because
+693.12s: otherwise if they bought it on the
+694.20s: market it'd be at 29 why wouldn't they
+696.52s: do that it's because they throw this
+700.04s: away so let's take a look at the actual
+702.36s: transactions as that as would occur so
+706.92s: we have the option buyer the other side
+709.56s: of your trade so they bought to open and
+713.40s: they bought to open let's just use
+715.04s: current price at450 or
+717.96s: whatever so so they bought to open one
+720.40s: at
+721.12s: $4.50 so they paid a $450
+725.28s: debit now they're like yo I want to
+727.32s: exercise cool so then they hit the
+729.40s: broker up and they say exercise my
+731.72s: options so what's going to happen here
+733.12s: is they're going to buy to
+735.32s: open 100
+737.48s: shares at their strike price of
+740.40s: 25 so then this is going to cost them
+744.20s: their 25 per times 100 oops decimals in
+748.80s: the wrong spot for the this is in the
+751.08s: wrong spot ignore that this is what
+753.68s: they're going to pay out of pocket and
+756.24s: when they do this this goes away this
+759.32s: vanishes so right now they would have an
+762.12s: unrealized
+765.12s: profit of the difference between these
+767.44s: two things which again is $400 it's the
+769.92s: intrinsic value so what happened in this
+773.00s: scenario is they just lost 50 bucks the
+777.32s: reason why they lost 50 bucks is when
+778.80s: they actually size they get to buy it at
+780.72s: 25 they're going to pay 2500 bucks the
+782.92s: stock is currently at 29 an unrealized
+785.44s: gain of 400 bucks you capture the
+787.84s: intrinsic value that's great but the
+790.92s: extrinsic value is just gone you give
+793.24s: that up so the more efficient
+796.40s: transaction here for the option buyer is
+800.00s: to sell to
+801.52s: close and again we're just going to use
+804.16s: current spot price but then they can
+805.48s: sell to close at
+807.88s: 450 no notice the difference in this
+810.68s: scenario if they sell the option to
+812.76s: close they literally make $50
+815.60s: more it's otherwise the same thing so
+818.92s: this is exactly why early exercise in
+822.36s: general just doesn't make sense because
+825.12s: you are just giving up extrinsic value
+827.08s: the reason why all this detail matters
+828.76s: is because you have to understand the
+830.76s: counterparty to your trade what they're
+832.60s: thinking what they might be doing what
+834.04s: your risk might be because if you
+835.64s: remember this is about managing in the
+839.48s: short calls so as soon as your short
+841.80s: call falls in the money it's not
+844.12s: immediately at risk of early assignment
+847.24s: and in the case of a dividend for those
+849.32s: wondering the time that it makes sense
+852.28s: is if the dividend is greater than this
+855.20s: extrinsic value so if there's a stock
+857.68s: that pays a dollar per
+861.04s: share you would be better off exercising
+864.96s: your option in this scenario and then
+867.56s: you rate the dividend provided that it's
+870.68s: by X div date which gives you an extra
+873.24s: $100 because you have 100 shares so yes
+876.52s: you throw this $50 away but then you net
+880.72s: $50 extra so you'll cover that $50 loss
+884.24s: with this $100 and then you make another
+885.96s: 50 on top of it it makes you whole and
+888.76s: you make a little bit more money so the
+890.88s: time that this becomes at risk for early
+893.40s: assignment with respect to something
+894.64s: that is a dividend is if the dividend
+898.16s: value is greater than your extrinsic
+900.60s: value because then it makes sense for
+902.48s: the holder to take the dividend provided
+905.24s: nothing else is factored into the
+907.00s: equation maybe they don't have the money
+908.68s: to take the inventory maybe they don't
+910.32s: want to deal with the drop after the
+911.64s: dividend there's a million other things
+913.76s: but this is the theoretical backdrop for
+915.92s: it so now you should be able to answer
+918.12s: the question of when are we at risk of
+922.24s: early assignment and we're at risk of
+924.64s: early assignment if there's very very
+926.72s: little extrinsic value left meaning the
+928.40s: person doesn't throwing it away or if
+931.92s: there's a dividend coming up that's
+934.20s: greater than the current extrinsic value
+936.36s: of your short call so now we have those
+938.60s: two scenarios great now we can talk
+941.32s: about managing in the money short calls
+943.24s: the reason why this matters so much
+944.48s: especially in something that moves a lot
+946.72s: is you have to know when you're at risk
+948.68s: of losing your shares if you're trying
+950.24s: to keep them now one giant caveat has to
+953.56s: be made here this is why I use a ratio
+959.16s: because you still could be assigned
+961.28s: somebody can exercise even if it doesn't
+963.56s: financially make sense it is their right
+966.60s: to exercise whenever they want so you
+969.08s: have to be prepared even in that highly
+971.92s: unlikely scenario and it's highly
+973.52s: unlikely it still could happen so what I
+976.00s: would tell somebody is if you have long
+977.92s: shares and you just don't want to let
+979.64s: them go don't sell calls against them
+981.72s: just don't do it because there is a risk
+983.96s: even if we do all these things to
+985.12s: mitigate it there is a risk structurally
+988.60s: it's very very small but it's there so
+991.20s: if you're in the camp don't want to let
+992.40s: the shares go the same for you if you're
+994.36s: in the camp like this scenario that
+996.08s: we're talking about and we use the
+998.28s: scenario of gaining entry on 16 April
+1000.40s: when the stock was around 10 a half and
+1002.56s: this person bought a th000 shares this
+1004.56s: is a hypothetical scenario this was our
+1006.60s: entry
+1008.16s: trade so in this case we started on the
+1012.12s: 16th of April with this position we sold
+1016.16s: four of the 17 May 12 strik we collected
+1020.44s: 4 this was the just starting scenario
+1024.16s: that we begun with the stock at this
+1026.52s: point was trading like 1030 it's just
+1028.20s: because we were using on demand that's
+1029.44s: why these aren't the exact same so what
+1033.12s: happened after this first transaction on
+1035.96s: the 23rd of April we ended up taking
+1038.56s: this down for 21 cents and we made a
+1042.12s: profit of
+1043.48s: $96 so what we did at this point was buy
+1047.48s: a handful of more Shar and really you
+1050.00s: could argue that we should have done
+1051.92s: nine shares I think yeah nine shares in
+1053.92s: the to make all the numbers work out so
+1057.00s: on the 23rd of April when we exited this
+1059.88s: position and we made 96 bucks on the
+1063.00s: same day technically it could it could
+1065.80s: have been the same day towards the end
+1066.88s: of the day or it could have been the
+1067.80s: following day on the open but we bought
+1070.08s: nine shares essentially taking the p&l
+1072.40s: the realiz p&l from that trade and we
+1074.64s: just bought more shares with it so we
+1076.00s: added nine shares for 91 bucks so now
+1079.16s: our total position is 1,09 shares this
+1082.16s: is our total cost
+1083.68s: 10,591 and then we have our total
+1086.96s: composite basis which again is just
+1088.76s: right around
+1090.12s: 1050 so this was I just picked a spot to
+1093.48s: start this obviously wasn't a challenged
+1095.76s: position this thing had no issues
+1097.24s: whatsoever this was in this time frame
+1099.68s: in here but the next trade is where
+1102.36s: things get spicy so on the 23rd of April
+1106.16s: and we can go back to that day and On
+1108.12s: Demand it'll take a second for it to
+1109.88s: load but let's go back to the 23rd of
+1112.84s: April here and I'll let that start to
+1114.88s: load while we're there that's where we
+1116.80s: took this down and that's where we
+1118.24s: opened up our next trade and that was
+1120.60s: another four lot of the 21 June 14s now
+1124.04s: for 54 cents so notice a few things the
+1126.28s: first thing is if you take a look we're
+1129.00s: keeping a really healthy ratio we use an
+1131.68s: example with a five lot we use an
+1133.36s: example now with a four lot but the
+1135.52s: whole point is if we have a four lot
+1138.36s: that means we have 69 shares that are
+1141.64s: uncovered so this means we still have
+1143.64s: massive profit potential and we're only
+1145.76s: using this to collect a few dollars up
+1147.76s: front while we're waiting in this case
+1149.52s: we're getting a $216 credit and again
+1152.16s: this is under the context of the stock
+1154.20s: is going down we don't really know that
+1156.32s: there's going to be a massive squeeze if
+1157.76s: we actually put ourselves in this
+1159.40s: scenario I don't think anybody knew it
+1161.80s: especially at this point there was no
+1163.12s: sign in the options markets that
+1164.44s: anything squirely was going
+1166.76s: on none of that was there
+1169.44s: so with all of that being said we can
+1172.44s: rationally say okay let's try to sell
+1175.88s: some calls make some money while this
+1177.28s: thing is going down maybe we scoop up
+1178.92s: some more shares because we like
+1180.04s: GameStop we like the stock we think it's
+1181.60s: going to go up so that's what we did we
+1185.04s: have this position on now and we
+1187.20s: literally can go into the options chain
+1188.84s: together and take a look at it so we go
+1190.28s: in here I think I said we did the 21
+1192.84s: June why didn't we do the 17 May it's
+1195.76s: because if you remember in the last
+1197.16s: video we try to strike a balance with
+1200.24s: the duration how much money we're making
+1202.24s: how much time the trade has to work and
+1203.76s: whatnot I purposely use the 59 days to
+1206.44s: expiration to actually hamper myself
+1209.32s: this makes this scenario more
+1210.72s: challenging why does it make it more
+1212.56s: challenging well it makes it more
+1214.68s: challenging because there's so much time
+1216.28s: left in these options you actually run
+1218.24s: out of what I call expiration liquidity
+1222.44s: so you notice here that there's an
+1223.80s: expiration in 3 days then in 10 days so
+1227.08s: there's a 7-Day difference here then a
+1228.68s: 7-Day difference here then a 7-Day
+1230.24s: difference here but then notice as you
+1231.96s: go further out here it expands it's much
+1234.96s: greater than a 7-Day difference between
+1237.32s: these two and then between these two so
+1239.60s: as you get further out in time there's
+1241.76s: less expirations just because there's
+1243.60s: less liquidity there's not as many
+1244.92s: people trading that far out so we tend
+1247.88s: to see centralized liquidity and
+1249.36s: near-term expirations especially in
+1251.12s: something like GameStop so this puts me
+1253.52s: at a disadvantage because we actually
+1255.52s: have a big move in this scenario shortly
+1257.56s: after entry and this is all the way out
+1259.40s: like 60 days to go this is about the max
+1261.64s: that I would sell short calls unless
+1264.12s: there's extraneous circumstances which
+1265.60s: we'll talk about in a second so we come
+1267.64s: in here and what did I say that we
+1270.08s: picked we did the 14s for 54 cents they
+1272.68s: might trade yeah so they're trading
+1274.28s: right around there again the timing is
+1276.12s: slightly different I'm using 0900
+1277.88s: Pacific time I'm just picking something
+1279.72s: so we'll just say that this is 54 cents
+1281.68s: for the
+1282.92s: example great so now let's fast forward
+1286.04s: time because we can tell and know that
+1289.20s: things start to get really spicy so
+1291.32s: let's go fast forward a week and see
+1294.32s: what happens so stock starts to Rally
+1297.60s: now in my world of managing short calls
+1300.64s: if the stock rallies like this I don't
+1303.12s: really care I'm not even at my short
+1305.00s: strike yet there's not a lot for me to
+1306.88s: do so I'm not going to bother doing
+1309.08s: anything now another admin note when it
+1311.72s: comes to managing short calls one of the
+1314.80s: best things or managing any short option
+1317.32s: by the way one of the best times to roll
+1320.40s: is when the strike price equals the
+1324.20s: stock price when they're the same why is
+1327.24s: that the case well it's
+1330.08s: because if we take a
+1332.52s: look let's go to the 17 DTE for the
+1336.12s: example if we take a look at stock price
+1340.24s: equals strike price meaning the at the
+1342.12s: monies let's just call it the 11s these
+1345.36s: 11s let's say that you sold the 11 call
+1348.68s: s back when it was n so these were out
+1350.28s: of the money and then they come at the
+1352.68s: money this is showing you that
+1355.60s: directionally you're wrong the stock is
+1357.88s: moving now whether it sustains the move
+1360.28s: we don't know but when an option is at
+1363.68s: the money it is the point where it has
+1365.88s: the most extrinsic value so there's a
+1370.36s: part of natural traders that I like I
+1372.36s: don't want to buy that back if I sold it
+1374.88s: that doesn't make sense however as an
+1378.56s: option goes further and further in the
+1382.12s: money it gains more and more intrinsic
+1386.52s: value and it has less and less extrinsic
+1390.84s: value So when you buy back a really deep
+1394.80s: in the money option you're buying back a
+1397.68s: ton of intrinsic value that does not
+1400.64s: Decay it's intrinsic so that means you
+1403.32s: have to go really far out in time in
+1406.24s: order to compensate
+1408.88s: extrinsic value all of that intrinsic
+1412.64s: value that you have to buy back so we'll
+1416.20s: take a look at a couple examples that to
+1417.96s: help the point settle in feel free to
+1420.12s: listen to that one or two times through
+1421.64s: if that sounds super weird but it has
+1423.92s: everything to do with the constitution
+1425.64s: of the price of the premium and how we
+1428.52s: can manage it so again if you don't need
+1430.48s: all those details suffice it to say you
+1432.76s: will have the most amount of choices as
+1436.12s: you're being challenged to roll your
+1438.08s: option
+1439.04s: when your when the strike price is
+1441.92s: equivalent to the stock price give or
+1443.88s: take doesn't have to be exactly but
+1445.28s: close enough that's when extrinsic value
+1447.48s: is the highest that's what ultimately
+1449.40s: will Decay out of your option so if we
+1452.52s: take a look let's say we had these six
+1454.40s: calls there's like no extrinsic value
+1456.28s: left let's say that they're trading for
+1458.76s: $512 and I want to roll them it means if
+1461.72s: I want to roll these for a credit I have
+1463.28s: to get at least
+1464.68s: $512 so where can I get $512 well if I
+1468.40s: roll out to the seven Junes and I look
+1470.56s: at the sixes can I get
+1473.40s: $512 maybe the bid ass spread is so wide
+1476.76s: because it's so far in the money unless
+1478.68s: I can hit it at the midpoint I might not
+1480.60s: be able to that's because it's so far in
+1483.56s: the money I'm buying back so much
+1485.96s: intrinsic value that my choices are
+1488.64s: truly limited and notice how I can't get
+1490.72s: any basis Improvement there's no way
+1493.04s: that I'll be able to get these six and a
+1494.56s: halfes again because of liquidity I need
+1497.40s: to get at least 5 12 if I get filled
+1499.28s: there the probability of me getting 515
+1501.28s: on these and moving up half a point is
+1502.84s: very low definitely can't get a point
+1505.80s: Improvement because these are for $470
+1507.72s: now let's take a look at another
+1509.24s: scenario if we had the 11s the 11s fall
+1511.88s: in the money you have to buy these back
+1513.60s: for $15 so let's go out to that same
+1516.20s: expiration and see where can we get a15
+1518.68s: ah well we can get it here at the 13 we
+1522.08s: can get $119 but notice the basis
+1525.08s: Improvement we get we can move from an
+1526.96s: 11 strike to a 13 strike I can move two
+1529.68s: points away in the same time frame as
+1532.52s: compared to the other scenario that I
+1534.04s: would be lucky to move 50 cents so
+1537.80s: that's how that relationship works and
+1539.76s: it's a delicate balance between
+1541.40s: expiration liquidity meaning if you go
+1544.32s: too far out in time and then the move
+1546.04s: just keeps happening you just have to
+1547.96s: sit there and deal with it because you
+1549.20s: can't keep rolling out forever you're
+1550.56s: literally going to run out of expiration
+1553.40s: Cycles to pick from so that's The
+1556.52s: Balancing Act here so going back to this
+1560.28s: we sell these and let's now fast forward
+1564.76s: and get some time under our belt let's
+1568.04s: go to the 7 May
+1571.00s: expiration ah starts rallying here now
+1576.92s: in reality If This Were my actual trade
+1581.28s: I absolutely would roll it in one of
+1583.96s: these three days there's no doubt in my
+1585.76s: mind and it's for a Litany of different
+1587.96s: reasons it's not because of I know
+1589.80s: what's going to happen because obviously
+1592.16s: I do but when you see this kind of
+1594.68s: one-sided massive strength in something
+1597.36s: that takes a pause that's a great time
+1599.88s: to try to get an adjustment so let's
+1601.84s: take a look at what we could have
+1603.64s: adjusted for we're not going to because
+1605.68s: I'm again trying to use a really
+1608.04s: difficult scenario for the example so
+1610.16s: I'm not giving myself the easier out
+1612.56s: that I would take I'm just letting you
+1614.60s: know that there's no way that I would
+1616.24s: let it run through those 3 days and not
+1617.84s: do something something with it so let's
+1619.68s: see what these 21 June 14s are trading
+1623.68s: for right now so the 21 June are still
+1626.00s: 45 out 45 days out and these 14s are now
+1629.76s: a do and a half in the money there's a
+1631.72s: lot of extrinsic value left we could
+1633.76s: take these in for
+1636.12s: $3.90 the only choice you have is
+1638.64s: rolling it out 73 days so if we go out
+1641.68s: here and we see where can we get
+1644.16s: $3.90 you can get it to the 15s
+1648.92s: and this is the problem with waiting too
+1650.40s: long because with this kind of move in
+1652.80s: something like GameStop as this is
+1654.72s: making these meteoric Rises volatility
+1657.88s: is jacking up so everything is becoming
+1661.12s: uniform more expensive so you might not
+1663.28s: even be able to get your basis
+1664.76s: adjustment if you're taking those in for
+1666.08s: 390 to get your roll for a net credit
+1668.96s: now you don't always have to get a net
+1673.00s: credit to have a total positive roll
+1675.28s: scenario so what does that mean let's
+1676.88s: use a little bit of scratch paper over
+1678.72s: here so on this trade we made 96 bucks
+1681.72s: so let's throw in 96 and then here we
+1685.12s: had
+1686.92s: 54 cents so let's drop 54 cents
+1692.52s: here and then we had what a four lot so
+1696.20s: in this case we took in a credit of 216
+1702.32s: * 100
+1704.00s: to6 here so this is where we're at so
+1708.28s: far so let's say we buy these back for
+1711.04s: 387 let's see what happens in this
+1713.68s: scenario this is what the other trade
+1715.72s: made already so let's say we buy these
+1718.92s: back now for $387 so
+1724.72s: $387 so oh no I'm sorry I said
+1728.36s: 390 and then these ones are for
+1731.12s: 380 so in this scenario 390 so what's
+1734.52s: our p&l here well it's this minus this
+1738.52s: so we lose
+1739.72s: $336 that's the net loss that we're
+1742.04s: taking so realistically this is what we
+1744.84s: need to make because we're just
+1746.72s: essentially counting this 54 bucks that
+1748.64s: we collected as the net credit and we're
+1750.52s: just saying yeah okay maybe we just give
+1753.48s: that back we're not counting that as
+1755.08s: part of the total loss because that was
+1757.16s: just a credit that was tied to an open
+1758.68s: trade so this is what you actually need
+1761.04s: to make and then if we take a look then
+1764.40s: we have another four lot and we do it
+1767.64s: for
+1770.28s: $387 this is not a net credit you're shy
+1773.96s: 3
+1774.92s: C but in actuality you're still fine you
+1779.36s: would make money so let's take a look at
+1782.20s: this time 100 I'm just doing all of the
+1786.08s: math out for you this times 100 so what
+1790.44s: happens here you'll notice that even
+1792.44s: though from 390 what we closed at to
+1795.36s: selling to open the new ones at 380 Cent
+1797.48s: uh 380 7 which is a 3C debit technically
+1800.76s: between these you still actually have
+1804.08s: collected enough once you include the
+1805.88s: prior credit you received here and then
+1807.80s: the prior p&l of the original call now
+1809.76s: you don't have to include this because
+1811.12s: we put this in stock technically this is
+1813.12s: gone but I just want to make sure when
+1815.84s: people say like you always have to roll
+1817.40s: for a net credit you don't actually have
+1819.00s: to you just have to track your math
+1821.28s: really well and in this case you would
+1823.12s: be fine in this hypothetical scenario
+1825.28s: but let us continue beyond this because
+1827.72s: for for the sake of the scenario we did
+1829.52s: not do that we literally waited until
+1831.92s: the last moment that we could which
+1834.32s: would have been on the 13th of May the
+1837.52s: reason why the 13th of May was the last
+1839.48s: moment you'll
+1843.76s: see big giant move big giant
+1849.00s: move and now if we take a look at our 21
+1852.80s: Junes and we have the 14s let's take a
+1856.48s: look at these 14s you'll notice a really
+1859.24s: important detail now we are running
+1863.20s: really really fast out of extrinsic
+1866.00s: value really fast these have gone so far
+1869.16s: in the money they're at an 86 Delta
+1871.96s: they're essentially $15 in the money so
+1875.96s: right now there's maybe a dollar and
+1877.60s: change left of extrinsic value so you
+1880.68s: don't have to you know that you don't
+1882.52s: have to take these down yet there's
+1884.20s: enough value in them to be okay but I
+1886.92s: think what we did in this scenario on
+1888.48s: the other live stream is we actually
+1890.80s: looked at it early in the morning
+1892.92s: because early in the morning it was even
+1896.08s: higher uh not yet so maybe we have to go
+1898.96s: to like 7:30 let's try that I'm just
+1901.88s: eyeballing the price here yeah something
+1903.68s: like this I think we're close to forgot
+1907.52s: exactly what time it hit that it's
+1909.00s: obviously sometime between 7:30 and
+1911.64s: 6:30 but what I did for the example is I
+1914.28s: made it so that we like this right here
+1916.12s: we we're very close to the very top so
+1918.32s: right now the spot price is not 29 it'll
+1920.40s: be like 36 so these will be even worse
+1923.92s: once this buffers which we'll see in a
+1927.24s: second and this is why you have to pay
+1929.68s: attention to the amount of extrinsic
+1931.08s: value and then the risk of early
+1933.08s: assignment because the other scenario
+1934.48s: that's going on here is people are going
+1937.04s: to be clambering to get shares if they
+1939.36s: think that this is another full-on short
+1941.08s: squeeze because that can be catastrophic
+1942.96s: as we know so the risk of early
+1945.68s: assignment will go up even more as
+1948.08s: volatility starts to crack off so in
+1950.32s: this scenario you can see that it hit a
+1951.76s: peak of like
+1953.96s: 2305 of in just overall cost and of that
+1960.16s: it's $21 in the money so there's still
+1962.96s: extrinsic value but a lot it's just it's
+1966.12s: buried right now so that's why in this
+1968.48s: scenario we actually waited a little bit
+1971.32s: we waited as the stock came down to 2593
+1974.40s: it was a random spot that we picked and
+1975.88s: we closed it for $15
+1978.88s: 45 this represents a $
+1982.24s: 5,964 loss big loss what I try to tell
+1985.28s: people is when you're trading this kind
+1986.44s: of strategy you have to have patience
+1988.00s: because that's the way that this works
+1989.40s: in the long run we're taking losses
+1991.52s: upfront we're realizing losses upfront
+1994.96s: but as long as we are capable of
+1998.20s: continuing to roll and adjust the trade
+2000.24s: and or eventually letting the shares get
+2002.68s: called away then we can ultimately make
+2006.68s: money how does that process work let's
+2009.12s: take a look at kind of the the rest of
+2011.28s: the way that this goes so somebody said
+2014.12s: uh I think before I forgot we looked at
+2016.48s: an example in the in the live stream
+2019.68s: where somebody said something about well
+2022.36s: this is only because the stock didn't
+2024.36s: keep going up or something like that and
+2026.04s: it's a great point so let's say that
+2028.32s: GameStop actually maintained this
+2030.32s: meteoric rise and you were in the very
+2033.72s: very rare but possible scenario that you
+2036.56s: just couldn't roll so let's pretend all
+2039.24s: of this isn't
+2040.96s: here and let's say that you originally
+2043.72s: sold this for 54 and let's say that in
+2046.32s: order to close this here let's say that
+2048.44s: this was like 30 so this would have been
+2050.28s: a massive amount of money in order for
+2052.60s: you to close so instead of $15 it's
+2055.36s: double that so instead of it costing a
+2057.80s: $6,000 debit it's like a 13,000 with the
+2061.36s: rest of the change added in so like a
+2062.88s: $113,000 debit something like that just
+2065.08s: a massive amount of money to close and
+2066.96s: let's just say that the stock stop kept
+2068.08s: going up and there was no point to roll
+2070.84s: well that's when you have to be prepared
+2072.44s: to part with the shares and that's why
+2074.60s: we do it at a lower amount because even
+2077.12s: though that you're unwinding some of
+2079.24s: your shares at this point 400 of them
+2081.56s: you're going to make a killing because
+2082.80s: you got in for 10 and a half and in the
+2084.96s: scenario that we're talking about here
+2086.40s: maybe it's at like 60 the stock so you'd
+2088.72s: make a ton of money and more importantly
+2091.56s: you always have that exit window of just
+2093.88s: let it just let it get assigned just let
+2095.56s: it be done because let's use one other
+2098.80s: scenario let's say you completed that
+2100.52s: first roll and then you were like okay
+2104.40s: this this isn't working anymore let's
+2105.92s: say we're in this scenario now and what
+2108.76s: I'm trying to show you is that you
+2110.32s: always have that exit so in this
+2113.76s: scenario
+2115.44s: we sold the first for 45 bought it back
+2118.40s: for 21 we made 96 bucks then we sold for
+2124.68s: 54 bought it back for $15.45 we lost
+2129.80s: $6,000 about and we're like okay this is
+2133.36s: getting rough one thing you'll notice is
+2136.32s: that I actually increase the lot size we
+2139.84s: go from four to six why do we do that
+2143.12s: it's so that we can get a basis
+2145.36s: adjustment as I showed you in that other
+2147.64s: example trying to roll the sixes once
+2149.72s: they fall so far in the money and
+2151.48s: there's so little extrinsic value it's
+2153.20s: very difficult to get anything back out
+2155.60s: of these without adding a little bit
+2157.28s: more risk risk now what's the drawback
+2159.68s: the drawback is now instead of having
+2162.64s: 200 shares you have 200 more shares
+2164.76s: covered here you go from 4 to 6 so you
+2166.84s: have to be prepared to run this all the
+2168.28s: way through either through management or
+2171.08s: acknowledging at some point that you The
+2172.76s: Jig Is up and you're going to have to
+2174.16s: let now this new number of shares go if
+2176.36s: you're uncomfortable with that you
+2178.20s: either take the exit here or you just
+2180.20s: try to roll out and not improve your
+2182.40s: basis or you go out further in time like
+2184.76s: there's other choices available to you
+2186.64s: this is a slightly more aggressive
+2188.28s: approach but it's designed to get us out
+2190.08s: of trouble faster you have to have the
+2191.96s: stomach for it that's all there is to it
+2193.44s: and again if you're uncomfortable with
+2194.64s: that don't do it you don't have to do it
+2196.92s: but in this case I'm able to improve my
+2198.68s: basis by a dollar even though the stock
+2200.60s: has gone up
+2202.00s: 60% from when I first entered this
+2204.60s: position so this is a massive win to be
+2207.20s: able to make this kind of adjustment but
+2209.40s: all that aside let's say after that
+2212.16s: adjustment let's just pretend that this
+2213.88s: scenario didn't happen where we exited
+2216.28s: and let's say that the stock just kept
+2218.48s: flying up it was just absolutely
+2221.52s: skyrocketing up well here's what happens
+2225.20s: if that occurs and let's say that you
+2228.00s: had this six out so you would have your
+2232.24s: 600 shares that you have for
+2235.28s: 10.5 you would sell to close 600 of
+2240.08s: those and you would do it at
+2243.72s: $15 and then you would keep the entire
+2246.96s: premium
+2248.08s: so in this case you would keep the
+2249.76s: credit of
+2251.68s: $69.90 so if you look at the $699 $69.90
+2255.68s: credit that you got plus the prior
+2259.12s: loss of
+2262.48s: 5964 plus the prior win of 96 you'll
+2266.40s: notice that you still come out ahead you
+2267.84s: still made
+2268.76s: money so what I'm showing you is that
+2271.12s: there's always an exit if you're rolling
+2274.12s: something you're rolling something it's
+2275.60s: keeping it going against you on the call
+2277.60s: side you have the shares and you're just
+2280.04s: tired of trying to roll and adjust it
+2281.88s: you have an exit that's profitable you
+2284.32s: might be upset about it because you're
+2285.56s: like well I'm selling them at 15
+2287.76s: when right now they're trading at 60
+2289.60s: that does suck but again you still have
+2293.04s: another 400 shares that you got at 10
+2295.12s: and a half that are now trading at 60
+2296.64s: that's pretty
+2297.52s: cool but if you take a look at the rest
+2300.24s: of this example we are actually able to
+2302.56s: maneuver through it so to fast forward
+2306.68s: through the rest of
+2307.96s: this what we ended up doing was just
+2310.76s: clawing our way back slowly so you can
+2313.72s: see we had the 15 strike out in 19 July
+2317.60s: we had six of those we got those sold
+2319.76s: for 1165 and again you'll notice that
+2323.28s: this is not a total credit here because
+2327.00s: we closed these at1 1545 but we sold
+2329.40s: these for $165 how does this make sense
+2332.12s: it's because we sold more of them so if
+2335.36s: you take a look at the total
+2339.24s: credit net credit here in this case the
+2341.64s: way that I kind of track the math this
+2343.92s: is taking the total p&l of 5964 as long
+2348.36s: as I take in more than
+2351.68s: 5964 on this next trade I'm good that's
+2356.12s: all I need so in this case because I'm
+2358.64s: selling more that allows me to have a
+2362.72s: credit even though it's a lower premium
+2365.28s: and even though I'm able to move the
+2366.72s: basis by it that overwhelms the prior
+2369.96s: p&l realized p&l so we continue this
+2373.76s: process from 16 April or 16 April 23
+2378.00s: April 13 May 19 June or July 23 July
+2382.24s: five Aug 30 sep and then 11 November is
+2386.00s: when we're finally able to exit this is
+2388.44s: when we're essentially in total profit
+2391.16s: like we've made money we're at no risk
+2394.28s: anymore we're we're good to just
+2395.96s: continue the process
+2397.84s: as per usual so essentially from this
+2401.72s: point on in 23 July is when we were able
+2404.12s: to get this flattened out so that we
+2406.36s: were down 15 bucks flat and then we were
+2409.88s: able to just run standard programming
+2411.80s: from there we can either maintain the
+2413.56s: size if we want we can scale the size
+2416.12s: down like we did here so that we don't
+2419.20s: have as many shares covered but you'll
+2420.76s: notice that I strategically use
+2422.88s: increasing the share sizes to give me
+2425.60s: bigger basis adjustments
+2428.24s: it's a slightly more aggressive approach
+2430.24s: so this is the game that we play here
+2433.76s: now one other thing I want to mention to
+2435.12s: you is this little break even
+2436.88s: requirement sometimes people don't
+2438.80s: understand like let's say we're in this
+2441.24s: scenario here let's say we just realized
+2444.04s: the loss of 5,964 bucks and we came in
+2448.40s: here and we sold six of the 19 July 15s
+2450.68s: for
+2451.52s: 1165 this up here tells me what I need
+2456.44s: this premium to be trading at in order
+2458.52s: to hit a break even that's what this
+2461.28s: tells me so for
+2464.00s: example we have the 1165 I just pull the
+2467.08s: data out here we pull the 11 65s times
+2470.40s: the six slot we weigh that against the
+2474.60s: realized p&l leading into it and this is
+2477.24s: using the total p&l we can use whatever
+2479.72s: p&l that we want this tells me that I
+2482.36s: need these
+2483.48s: 1165 or the the 15 strike 19 July that I
+2488.76s: sold for $165 I need those to be trading
+2492.04s: at
+2493.68s: $187 in order for this to be a break
+2497.44s: even trade and I'll show you exactly
+2499.00s: what it looks like just so that it's
+2500.16s: clear I know that might sound weird so
+2502.48s: I'll move this out of the way so that
+2503.64s: there's no noise so what I'm doing is
+2505.60s: I'm taking the p&l from the prior two
+2508.80s: trades and again we don't have to take
+2510.44s: this we can get rid of that we can just
+2512.24s: say that we want to use this the 5964 so
+2514.92s: let's do that minus 59 964 and we're
+2518.72s: doing that because we're saying will we
+2520.32s: put this into more shares so this isn't
+2522.60s: even there so 5964 in this case we have
+2528.20s: that role that we talked about six of
+2530.92s: these 15 19 July we sold them for $165
+2534.88s: we need them to be trading at
+2537.00s: $1.71 in order for these two trades
+2540.80s: essentially to cancel out so let's try
+2542.76s: that so let's type in $1.71 Let's
+2544.92s: Pretend that's where we closed and
+2548.08s: voila notice how the sum is now zero so
+2552.08s: if you're curious how to calculate this
+2555.28s: all I'm doing is taking the relationship
+2559.56s: well let me see if I get this out of the
+2560.52s: way taking the relationship between the
+2562.84s: realized p&l of whatever I'm trying to
+2565.84s: overcome and I'm taking that against the
+2570.64s: lot size and the premium for an adjusted
+2573.64s: net credit for the other trade so let's
+2575.16s: work through it literally step by step
+2577.24s: I'm taking the lot size times the
+2579.36s: premium for the RO trade that gives me
+2581.76s: again what I call an adjusted net credit
+2584.32s: I'm adding that to the loss from the
+2586.64s: prior trade divided by 100 it kind of
+2588.92s: puts it in a perlop
+2590.60s: basis or in a standard options contract
+2593.32s: basis and then I divide the whole thing
+2595.32s: by the number of lots so that I know
+2598.36s: exactly what I need each single contract
+2602.00s: to be trading at because again when you
+2603.40s: look at an options chain it's not going
+2605.36s: to show the options chain in the context
+2606.92s: of VI having six Lots it's going to show
+2608.56s: it in one lot instances so that's what
+2610.76s: that does so I know that's a lot but I
+2614.28s: hope it's helpful as always we can go
+2616.36s: further into detail on this we can talk
+2618.84s: some other techniques if you'd like or
+2620.68s: we can move on to the next strategy I
+2623.12s: have in the docket for us which is a
+2625.72s: ratio called diagonal that I think fits
+2628.08s: into this thing very well as well
+2630.08s: although a slightly different use case a
+2631.60s: little more active of a management
+2633.92s: approach so that's the game plan using
+2635.80s: GameStop is a really fun example to talk
+2637.72s: through these things uh these are my
+2639.44s: strategies this is essentially what I do
+2640.88s: so this is the ratio covered call
+2644.08s: element of a coverage strangle which
+2646.00s: always goes together for me so let me
+2648.32s: know if you have any questions be an
+2649.36s: outlier I'll see you later

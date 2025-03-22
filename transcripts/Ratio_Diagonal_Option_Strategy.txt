@@ -1,0 +1,486 @@
+0.16s: I'm going to dive into my absolute
+2.52s: favorite directional trading strategy
+4.80s: this is the ratio diagonal whether we
+8.04s: want to trade ratio call diagonals for
+10.08s: upside ratio put diagonals for downside
+12.64s: I've built this strategy over 16 years
+14.92s: and it combines a handful of fantastic
+18.24s: trades from options along with Trend
+20.48s: following strategies from equities and
+22.28s: it is probably one of my favorite
+24.00s: strategies for smaller accounts because
+26.84s: of the leverage provided within so we're
+29.24s: going to walk through what it is how
+31.12s: they work and then at the end an actual
+33.12s: example with some best practices so that
+35.28s: you can take all that information
+36.64s: hopefully build your own variation of
+38.08s: the strategy that helps you make money
+40.52s: what's up everybody Eric K welcome back
+42.08s: to all the outliers a shout out to the
+44.00s: patreon family you guys make content
+45.60s: like this possible and if what I do
+47.16s: helps you in any way consider signing up
+49.28s: it helps me a lot okay let's get right
+51.36s: in why should you care about this
+54.20s: strategy well it's pretty simple I got
+55.80s: three things for you the first one is
+57.40s: leverage this strategy provides leverage
+60.76s: the second thing is it's a defined risk
+62.64s: strategy so for newer Traders this kind
+65.68s: of protects us even though we still need
+68.28s: to apply careful profit and loss
+70.48s: management which we'll get into later
+72.20s: the fact that it opens right out of the
+74.12s: gate to find risk is actually a good
+76.16s: thing because sometimes newer Traders
+78.04s: come across different strategies they
+79.60s: don't fully understand and then they end
+80.96s: up putting on risk that they don't even
+82.28s: know is there and then they get ran over
+83.96s: and then the last thing because of those
+85.80s: first two it's a pretty efficient
+87.76s: directional play so what do I mean by
+90.00s: leverage pretty simple I recently had a
+91.68s: trade on this is the example we're going
+93.00s: to go through at the end but I had six
+95.60s: long call options that were deep in the
+97.68s: money on RTX which is Ron and the
+100.64s: equivalent Equity size for that position
+103.12s: the notional value would have been
+104.64s: $50,000 actually a little bit over that
+106.76s: and then for the options positions that
+108.64s: I put on it was actually under $9,000 it
+111.24s: was like 8,800 bucks or whatever so the
+113.28s: point being is I was controlling the
+115.72s: same size position in this scenario but
+119.20s: it was a FR fraction of the cost now you
+121.44s: might be saying that seems really good
+123.16s: why wouldn't everybody do that because
+124.92s: whenever you trade options we're adding
+126.72s: some complexity options have an
+128.52s: expiration date so you can't just buy it
+130.32s: and hold it and then eventually hope it
+131.68s: moves in your favor there's some
+133.20s: subtleties that get baked into this that
+135.36s: are what actually allow us to identify
+138.48s: opportunities like this leverages and
+140.00s: free so and that's a good thing that
+141.68s: means that there's opportunity for us
+143.56s: within so let's talk about the structure
+145.96s: it is super simple the first part of the
+149.08s: trade the first leg is a long deep in
+152.72s: the money option A far DTE long
+156.36s: expiration out I use at the very least
+159.00s: 90 days to expiration the majority of
+161.52s: the time it's between 180 and 365 so
+164.68s: somewhere between 6 and 12 months is my
+166.96s: normal but you could go in as far as 90
+169.60s: days I've done that previously
+171.56s: specifically if you're catching a trend
+173.04s: that's in progress and then that's the
+174.80s: first leg the second leg is we're going
+176.76s: to be short a near DTE option this is
+180.12s: pretty much anything within 30 DTE I
+182.80s: tend to focus on stuff that's maybe uh
+185.84s: you know 2 weeks 3 weeks something like
+187.96s: that so these are kind of the two
+189.52s: variations that we have we have long
+191.44s: call plus short call that's the bullish
+194.52s: variation and then long put plus short
+197.24s: putut is the bearish variation pretty
+199.96s: simple stuff here so now let's take a
+202.32s: look at some of the traits that I look
+204.36s: for though specifically in the long leg
+207.56s: which is over here days expiration I
+209.36s: already t to you about the Delta this
+211.28s: part is important the reason why we go
+213.56s: so far in the money is multiple fotes
+216.60s: the first reason is it gives us the
+219.08s: ability to move closer dollar for dooll
+222.12s: with the underlying for those that don't
+223.60s: remember Delta everything else setus
+225.72s: parabus everything else remaining the
+226.96s: same Delta tells us how much the premium
+228.88s: of an option is going to move for every
+230.28s: $1 move in the underline so if we have
+232.32s: something with an 0 Delta that means for
+234.16s: every $1 move in the underlying we're
+236.28s: going to see 80 cents of that again
+237.92s: everything else remaining the same the
+239.24s: point being is by going further in the
+240.92s: money we move and we create essentially
+243.52s: a stock replacement the second thing is
+245.92s: by going so far in the money we actually
+248.84s: reduce the extrinsic value of the
+251.16s: options I'll show you what I mean right
+252.48s: now here we have RTX and let's go far
+256.00s: out in time let's go out to the 16 FB
+259.32s: and if we take a look at a 80 Delta plus
+262.60s: long call somewhere one one of these two
+264.96s: you can see that even though these are
+266.60s: 174 days expiration you're only paying
+269.36s: about a dollar per contract in Theta in
+273.20s: extrinsic value so what that means is
+275.20s: the Theta Decay on these options is
+277.12s: actually pretty small so if you take a
+278.64s: look at Theta Decay here it's
+281.36s: .02 so each day they burn essentially to
+284.40s: pennies whereas if we do something
+286.00s: that's further close to DTE in time
+288.44s: closer to us if you take a look the
+290.28s: Theta now for that same option
+292.60s: essentially is now .03 so the closer we
+296.88s: get in DTE Theta is going to pick up
+298.76s: because all options have to approximate
+300.64s: to either in the money whatever their
+302.20s: intrinsic value is or zero if they're
+303.68s: out of the money so that's why I like
+306.56s: the long deep in the money option now
+308.84s: there are some trade-offs here because
+310.68s: the further out in time you go the
+313.12s: deeper in the money you go the more
+315.52s: expensive it is upfront but the way that
+317.56s: I look at it is with the rest of the
+319.72s: management that we're going to put in
+321.08s: place that expensiveness is kind of like
+323.08s: a down payment it doesn't just go away
+325.88s: at the end of this whole thing you
+327.40s: actually are able to maintain a lot of
+329.68s: the value that you're paying up out
+330.96s: front now again it could completely move
+332.96s: against you and then all of that can
+334.48s: change but by going further in the money
+337.24s: further out in time you are benefiting
+339.48s: maximizing your leverage potential
+341.24s: dollar for dooll move you don't need as
+342.84s: big of a move to make money and then the
+344.36s: second thing is decreasing Theta Decay
+346.16s: now if you notice I do have a thing
+347.52s: saying can include kickers kickers
+349.96s: simply put are far out of the money
+352.36s: options you could do it in the same
+354.04s: expiration if you wanted to still
+355.84s: decrease your Theta Decay but
+357.84s: essentially it's the opposite idea idea
+360.04s: where we're going to pick up something
+361.68s: that's further out in time if I'm doing
+364.20s: kicker options with something like this
+366.16s: I tend to pick something that is maybe
+368.64s: 30 or 40 days out because the whole idea
+371.00s: of a kicker option is we want to
+372.72s: maximize our gamma the idea is we grab
+375.80s: something in addition to our base
+377.60s: position that is now further out of the
+379.84s: money and would compound quickly so
+382.84s: that's the idea of a kicker option and
+384.68s: then for the short it's super simple
+387.00s: essentially like I said within 30 days
+389.24s: and our Delta on the short needs to be
+392.16s: above a Critical Strike I'll explain
+393.84s: what that means in a little bit but
+395.32s: essentially this is how it plays out and
+398.36s: I want to specifically show you what I
+400.44s: mean by ratio that's what this whole
+403.12s: strategy is called right ratio diagonals
+406.00s: yes I know that y ratios well here's
+409.12s: exactly why this is a typical call
+412.48s: diagonal so this is further out in time
+415.32s: this is like 180 days out but this isn't
+418.16s: at the money long call and then in a
+421.28s: shorter expiration a short call notice
+424.96s: how after you go up a certain amount
+428.32s: there's actually upside risk this is a
+431.28s: problem if I'm trading a ratio called
+433.32s: diagonal I am bullish I want it to go up
+436.72s: in this case we run into a problem if
+439.44s: we're right and let's say we're super
+441.64s: right we're actually wrong we now start
+443.92s: to lose money I don't want that yeah no
+446.76s:  so this is why we use a ratio
+449.84s: so in this case as you can see down here
+452.08s: I'm simulating being long five of these
+455.20s: style options that are deep in the money
+457.00s: and short three so in this case we have
+460.16s: unlimited upside potential that is
+462.76s: exactly why we use the ratio if we add
+464.68s: one more view to this this is using the
+466.48s: put side right so if we're long puts we
+469.04s: want things to go down but again we
+470.92s: don't want to be wrong if we're right
+473.24s: what I mean by that is if we get the
+474.92s: down move we think is going to happen we
+476.80s: don't want to be penalized if it's big
+478.68s: so this is exactly how we can maintain
+481.80s: unlimited profit potential when trading
+483.92s: these diagonals is trading them at a
+485.40s: ratio and by respecting this Critical
+488.28s: Strike concept which we're going to get
+490.20s: into actually in just a second so let's
+493.64s: take a look at the strategy itself how I
+497.04s: think about deploying it from beginning
+499.32s: to end and then we'll get over to the
+500.88s: example so when we're talking about
+503.08s: these directional strategies it starts
+505.64s: with your directional assumption
+507.16s: whatever that is so you should follow
+509.92s: whatever your process is to create a
+512.92s: directional assumption that's exactly
+514.68s: what's going on here then when we're
+516.44s: looking at something like sizing
+518.76s: allocation scaling this is pretty
+520.84s: straightforward for me I have a process
+522.72s: for it where the first thing I'm going
+524.00s: to do is look at my entire portfolio all
+526.40s: of the risk that's out there I'm going
+528.32s: to assess this opportunity that has come
+531.28s: up and then I'm going to decide how does
+533.32s: it fit into my portfolio and how much
+535.64s: money does it get so for example in the
+538.60s: RTX strategy we're going to talk about
+540.20s: in a second that entire allocation was
+542.96s: $10,000 that's the total amount of money
+545.40s: that that position was a lotted then we
+548.56s: have what I like to call the initial
+550.28s: outlay in scaling protocols the initial
+553.24s: outlay is how much of this total amount
+556.00s: of money are you going to deploy Upfront
+558.40s: for me it's typically 80% or less so if
+561.44s: I allocate $10,000 I'm my initial outlay
+565.24s: will use 8,000 or less and this gives me
+568.56s: room to scale a little bit and the
+571.36s: trade-off here is the more outlay you
+573.88s: use up front the better the move is
+575.76s: going to work if it goes in your favor
+577.60s: the more it's going to hurt if it
+578.60s: doesn't and the less you have left over
+580.20s: for scaling and then for scaling it can
+581.96s: be really simple or complex depending on
+584.56s: however you conduct your directional
+586.88s: assumptions for me I like to use support
+589.36s: and resistant breakouts on a trend
+591.08s: following approach so that I can both
+593.64s: scale in when I'm right or as things are
+596.56s: dropping if I'm still strongly convicted
+600.08s: I will add limited scaling to the
+602.40s: downside to average into the trade this
+605.28s: is a really dangerous approach and I
+607.92s: generally do not recommend adding any
+610.04s: money to losing positions it's bad
+612.12s: practice in some instances I will most
+615.60s: of the time you should avoid it in my
+617.80s: opinion because throwing good money
+620.04s: after bad money is a horrible tendency
+622.04s: for most Traders and they just compound
+623.84s: their losses however it can be a really
+627.40s: effective approach to Max maximize a
+629.96s: short-term pullback in a longer term up
+632.12s: move or vice versa if you're bearish
+634.32s: option selection so we already talked to
+636.16s: you about DTE the way it works for the
+638.72s: long options is the further out in time
+641.32s: you go the more time you have to be
+642.80s: right the lower your Theta Decay the
+644.48s: more expensive it is you have to figure
+646.20s: out which of those combinations make
+647.96s: sense for you as far as the short option
+649.92s: like I said anything within 3 weeks I
+651.84s: think is fine typically for me it'll be
+653.48s: 2 to three we really want to expose
+655.40s: ourselves to the aggressive portion of
+657.60s: the Theta Decay curve that's the whole
+659.04s: whole point of adding those short
+660.00s: options they hedge a little bit of our
+661.76s: risk but it's also to make some money
+663.32s: when things don't go exactly in our
+664.84s: favor which is exactly what my example
+666.64s: is about actually then Delta like I said
+668.92s: for the long options I prefer 80 Delta
+671.68s: plus the further in the money you go the
+673.76s: more expensive it is the less extrinsic
+676.36s: value you're buying so that means lower
+679.04s: Theta Decay and the better you're going
+681.08s: to move dollar for dooll with the
+682.56s: underlying but because it's expensive
+684.68s: upfront you're not going to see those
+686.48s: th% return on those long options for me
+689.24s: that's not my goal again it's kind of
+691.20s: what you need to pay attention to and
+692.76s: then for the short options we need to
+695.16s: pay very close attention to our ratio
+698.04s: and our adjusted cost basis and our
+699.92s: Critical Strike which I'll get into in
+701.60s: the example and then the ratio this is
+703.40s: super simple you buy whatever number of
+705.52s: long options that you want and then when
+707.12s: you're selling the short options you are
+709.04s: faced again with a trade-off if you sell
+712.20s: at a higher ratio so let's say if in
+715.80s: this example we are doing uh let me grab
+720.24s: this one so in this example if we're
+722.56s: long Five Short three we could be long
+725.04s: Five Short four we could even be long
+727.44s: Five Short five and in this case because
+729.68s: the Deltas are set up properly there's
+731.20s: no upside risk on this first trade what
+733.00s: are the what's the difference well the
+735.16s: more short options you sell against the
+737.44s: long the more money you're going to
+739.08s: collect upfront the more upside
+741.80s: potential you going to give up if you
+744.60s: get your move so I tend to be about
+747.24s: 50/50 disposition meaning I like to
+749.44s: cover about half maybe slightly over
+751.32s: half it again comes down to your overall
+753.92s: disposition towards the product I have a
+755.92s: recent trade actually in apple that I'll
+757.72s: throw a link in the video below that I
+760.28s: covered a lot on our YouTube live
+761.76s: sessions that talks a lot about this
+763.92s: exact ratio concept and how I adjusted
+766.16s: my ratio throughout the life cycle of
+767.64s: the trade but that is really the long
+769.96s: and short of it there for the short
+771.52s: options the more you sell up front the
+773.24s: more money you're going to collect up
+774.52s: front the more upside you give up and
+776.28s: then the inverse and then the management
+777.80s: cycle once we enter the trade so we find
+780.80s: our long options then our short options
+783.32s: I like to enter the long options with a
+785.60s: single lot first to test liquidity
+788.76s: liquidity is really important because
+791.36s: we're adding a bunch of things that
+793.44s: actually go against looking for
+795.24s: liquidity we're going deep in the money
+797.04s: which tends to decrease liquidity we're
+798.72s: going far out in time also tends to
+801.16s: decrease liquidity so it's super
+803.48s: important when you're trading anything
+805.68s: like this with ratio diagonals using the
+807.84s: long options the way that I tend to
+809.24s: structure them you have got to check
+811.96s: liquidity it's got to be reasonable if
+814.64s: you have to struggle to get into the
+816.20s: trade at a fair price just imagine how
+819.00s: difficult it's going to be to get out at
+820.68s: a fair price because I do not take these
+823.88s: to expiration essentially what's going
+826.00s: to happen we have four total scenarios
+828.96s: your p&l is hit whatever your profit and
+831.36s: loss is once you enter the trade so
+833.72s: again I'll show you an example in a
+835.00s: second on how I set those up personally
+837.00s: but that's the first exit criteria this
+838.80s: the second criteria is the short option
+841.72s: is out of the money then you can choose
+843.48s: to add more short options the short
+845.64s: option is in the money so if our short
+847.72s: call short put falls in the money what I
+849.60s: like to do is sell some of my long
+852.60s: options to cover the cost of the in a
+855.60s: money short option this does a few
+857.08s: things one it makes sure that I'm
+860.16s: realizing profits as I'm realizing
+862.72s: losses because if we have a short in the
+864.68s: money option that we need to close if
+867.00s: you just close this and continue the
+868.80s: trade there's nothing to say that the
+870.08s: whole thing doesn't roll over and then
+871.72s: not only did you realize a loss there
+873.32s: but then the rest of the position start
+874.60s: showing a loss so I use this actually as
+876.92s: criteria to help me start scaling out of
+878.88s: the trade naturally and then the fourth
+880.88s: scenario that's not listed here but is
+883.16s: very common for me is if I enter a trade
+885.40s: with 180 DTE once I start getting within
+888.52s: 90 DTE I'm going to naturally manage it
+891.36s: either it did or didn't hit my profit
+893.28s: and loss targets and I'm just kind of
+894.80s: trending sideways I might reestablish
+897.04s: rooll further out but I don't want to
+899.00s: take those long options within 90 DTE
+902.20s: more often than not let's get to the
+904.80s: example so this is the example trade in
+906.92s: RTX and let me show you what that
+910.00s: actually looks like I entered here with
+912.88s: the long options I started selling short
+915.00s: options here here here and here is when
+917.76s: I exited in total you can see all of
+920.56s: those movements here I'm not going to
+921.96s: run through it l by line with you but I
+923.72s: want to highlight a few high notes the
+926.04s: first one is this was a kind of a unique
+929.24s: scenario for me I typically am not super
+931.24s: bullish here to be honest especially
+932.76s: after a big drop but because it was
+934.44s: earnings driven short-term price mean
+936.92s: reversion is what I was considering and
+939.48s: that's kind of what I was expecting to
+940.92s: see I didn't see it and even though I
+944.04s: did not see the move that I wanted I
+945.96s: still made money that's why I'm using
+947.60s: this as an example because if you want
+949.32s: an example of like a really profitable
+951.12s: one take a look at the Apple one that I
+953.04s: threw in the notes below because that
+954.44s: was just smooth saling all the way
+955.84s: through made a bunch of money there as a
+957.48s: percent return on that trade because it
+959.20s: did exactly what I wanted this I think
+961.20s: shows some of the power of this strategy
+963.16s: because this was a bullish trade that I
+965.44s: didn't get the move and I still made
+967.04s: money so this is again just kind of my
+969.36s: own version of the tracker there's some
+970.96s: issues with the math in here and it's
+972.52s: just to make this show up as it is but
+974.84s: overall this turned out to be about a 7%
+977.48s: return on invested Capital even though I
+979.56s: was completely wrong and these are the
+981.44s: formulas that I was referring to before
+983.48s: the Critical Strike is this formula
+986.84s: right here and the reason why we care
+988.80s: about the Critical Strike is because as
+990.96s: this trade evolves over time we do not
+993.44s: want upside risk this is what prevents
+995.40s: it the adjusted long call basis is
+998.08s: exactly what we feed into the Critical
+999.60s: Strike as you could tell the long call
+1001.48s: basis takes a look at how much our cost
+1003.84s: were for the long options the closed in
+1006.00s: the money short options and then any
+1008.08s: closed long options to cover the cost of
+1011.24s: the short options that were in the money
+1013.04s: we had to cover so this just keeps
+1014.84s: pretty close tracking of what the basis
+1016.96s: is as again the trade evolve and then
+1019.16s: the last one we have the number of lots
+1023.04s: we can sell and in this case you can
+1025.60s: either use a risk profile super simply
+1027.76s: from the platform like this if you were
+1029.52s: so inclined just like this it'll tell
+1031.56s: you you know those kinds of things no
+1033.20s: problem or you can do the math which
+1035.44s: essentially we just take a look at our
+1037.12s: long option our number of lots that we
+1039.88s: have out the Delta the current Delta of
+1042.56s: those long options and then we divide it
+1044.56s: by 2.1 times the short option Delta this
+1047.28s: just makes sure that we have no upside
+1050.04s: risk so this was kind of a broad
+1051.92s: overview of the strategy however if you
+1054.00s: have any questions comments concerns let
+1055.60s: me know in the comments below if you
+1056.96s: found this useful also let me know and
+1059.32s: if you're interested I can do a
+1060.72s: follow-up video diving much further into
+1062.80s: detail on both of these however we're
+1064.76s: already 20 minutes in I know this stuff
+1066.80s: can be a little bit heavy but these are
+1068.56s: literally the ways that I typically
+1070.88s: trade these are some of my primary
+1072.20s: strategies so I hope this is helpful be
+1074.44s: an outlier don't forget like subscribe
+1076.44s: share catch you guys later
