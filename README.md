@@ -372,3 +372,21 @@ If you encounter errors during deployment:
 1. Check that your `requirements.txt` doesn't contain any Mac-specific paths (files starting with `/AppleInternal/...`)
 2. Verify that all package versions are compatible with the Python version used by Hugging Face
 3. Remove any platform-specific packages that aren't needed for the web application 
+
+### Resolving Dependency Conflicts
+
+Sometimes deployment fails due to dependency conflicts between packages. Common conflicts include:
+
+1. **torch vs openai-whisper**: Recent versions of torch (2.6.0+) require triton 3.2.0 on Linux, while openai-whisper requires triton<3. To fix this:
+   ```bash
+   # Downgrade torch to version 2.0.1 in requirements.txt
+   sed -i '' 's/torch==2.6.0/torch==2.0.1/g' requirements.txt
+   # Or manually edit the file
+   ```
+
+2. If you encounter other dependency conflicts, the error message usually contains useful information about which packages are conflicting. Try:
+   - Downgrading or upgrading specific packages
+   - Using compatibility matrices from package documentation
+   - Using a tool like `pip-tools` to resolve dependencies
+
+After making changes to resolve conflicts, commit and push the changes to trigger a new deployment. 
