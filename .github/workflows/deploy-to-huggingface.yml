@@ -24,8 +24,14 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           SPACE_NAME: "bthaile/opteee"
         run: |
+          # Set credentials helper to store token
+          git config --global credential.helper store
+          
+          # Store the Hugging Face token in the credentials helper
+          echo "https://USER:${HF_TOKEN}@huggingface.co" > ~/.git-credentials
+          
           # Add Hugging Face Space as a Git remote
           git remote add space https://huggingface.co/spaces/$SPACE_NAME
           
           # Force push to Hugging Face Space
-          git push --force https://$HF_TOKEN@huggingface.co/spaces/$SPACE_NAME main 
+          git push --force space main 
