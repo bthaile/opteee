@@ -13,12 +13,19 @@ import pickle
 from datetime import datetime
 import argparse  # Import argparse for creating an args object
 
-# Import vector store creation function
-# Assuming this is the function that creates your vector store
+# Import vector store creation function directly
 try:
+    # First try to import as a module
     import create_vector_store
-except ImportError:
-    print("❌ Could not import create_vector_store module")
+    create_vector_store_main = create_vector_store.main
+except (ImportError, AttributeError) as e:
+    print(f"❌ Could not import create_vector_store module: {str(e)}")
+    try:
+        # If that fails, try to import the main function directly
+        from create_vector_store import main as create_vector_store_main
+    except ImportError as e:
+        print(f"❌ Could not import main from create_vector_store: {str(e)}")
+        create_vector_store_main = None
 
 # Paths
 VECTOR_STORE_DIR = "vector_store"
@@ -127,7 +134,10 @@ def main():
         args.batch_size = 32  # Default batch size
         args.test_search = False  # Don't run test search during rebuild
         
-        create_vector_store.main(args)
+        if create_vector_store_main is None:
+            raise ImportError("No create_vector_store function available")
+            
+        create_vector_store_main(args)
         update_vector_store_timestamp()
         print("✅ Vector store rebuilt successfully")
         return True
