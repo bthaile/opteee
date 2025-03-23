@@ -3,6 +3,8 @@
 # YouTube Transcript Project Setup Script
 # This script configures pyenv and creates the right environment for the project
 
+echo "===== Starting setup script - $(date) ====="
+
 echo "📦 Setting up YouTube Transcript Project with pyenv..."
 
 # Check if pyenv is installed
@@ -63,6 +65,24 @@ if [ ! -f "transcript_progress.json" ]; then
 else
     echo "✅ Progress file already exists"
 fi
+
+# Ensure we have the right package versions
+echo "Installing specific package versions..."
+pip uninstall -y huggingface-hub transformers sentence-transformers
+pip install huggingface-hub==0.17.3
+pip install transformers==4.30.2
+pip install sentence-transformers==2.2.2
+
+# Check if vector store exists
+echo "Checking vector store..."
+if [ ! -d "vector_store" ] || [ ! -f "vector_store/transcript_index.faiss" ]; then
+    echo "Vector store missing, copying from backup..."
+    mkdir -p vector_store
+    cp -r vector_store_backup/* vector_store/
+    echo "Vector store restored from backup."
+fi
+
+echo "===== Setup completed - $(date) ====="
 
 echo "✅ Setup complete! You can now run:"
 echo "   source venv/bin/activate  # To activate the environment"
