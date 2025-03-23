@@ -1,3 +1,15 @@
+---
+title: Options Trading Education Assistant
+emoji: 📈
+colorFrom: blue
+colorTo: green
+sdk: gradio
+sdk_version: 4.19.2
+app_file: app.py
+pinned: false
+license: mit
+---
+
 # YouTube Transcript Processor
 
 This project downloads and processes YouTube transcripts. If a video doesn't have a transcript, it uses Whisper to generate one from the audio.
