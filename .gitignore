@@ -18,12 +18,9 @@ venv/
 
 # Logs and output
 *.log
-*.json
-*.csv
 *.sqlite3
 *.db
 *.sqlite
-*.pkl
 
 # OS-specific
 .DS_Store
@@ -33,16 +30,20 @@ Thumbs.db
 *.testoutput
 test_output.log
 full_test.log
-*.log
 *.bak
 *.tmp
 
 # Application data
-# vector_store/  # Commented out so vector store is included in git
+vector_store/*.faiss
+vector_store/*.pkl
 vector_store_backup/
-transcripts/
-processed_transcripts/
 audio_files/
+
+# Keep transcript data (these will be used to rebuild the vector store)
+# transcripts/
+# processed_transcripts/
+# *.json
+# *.csv
 
 # Editor/IDE-specific
 .vscode/
