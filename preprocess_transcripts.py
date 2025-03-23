@@ -288,6 +288,8 @@ def process_transcripts(metadata_dict):
                         'upload_date': metadata.get('upload_date', ''),
                         'duration': metadata.get('duration', ''),
                         'channel_name': metadata.get('channel_name', ''),
+                        'description': metadata.get('description', ''),
+                        'content_summary': metadata.get('content_summary', ''),
                         'chunk_index': i,
                         'total_chunks': len(chunks_with_timestamps),
                         'start_timestamp': chunk_info['start_timestamp'],

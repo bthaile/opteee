@@ -12,8 +12,8 @@ import re
 load_dotenv()
 
 # Configuration variables
-INPUT_CSV = 'outlier_trading_videos.csv'
-OUTPUT_JSON = 'outlier_trading_videos_metadata.json'  # Changed to JSON
+INPUT_JSON = 'outlier_trading_videos.json'  # Changed from CSV to JSON
+OUTPUT_JSON = 'outlier_trading_videos_metadata.json'
 OUTPUT_CSV = 'outlier_trading_videos_metadata.csv'  # Keep CSV output for backward compatibility
 TRANSCRIPT_DIR = 'transcripts'
 API_KEY = os.getenv('YOUTUBE_API_KEY')  # Load from .env file
@@ -192,16 +192,20 @@ def main():
     if not use_api:
         print("Warning: YouTube API key not set. Some metadata will be limited.")
     
-    # Read existing CSV
+    # Read existing JSON
     try:
-        df = pd.read_csv(INPUT_CSV)
-        print(f"Read {len(df)} videos from {INPUT_CSV}")
+        with open(INPUT_JSON, 'r', encoding='utf-8') as f:
+            videos_data = json.load(f)
+        
+        # Convert JSON to DataFrame for consistent processing
+        df = pd.DataFrame(videos_data)
+        print(f"Read {len(df)} videos from {INPUT_JSON}")
     except Exception as e:
-        print(f"Error reading input CSV: {e}")
+        print(f"Error reading input JSON: {e}")
         return
     
-    # Extract video IDs
-    df['video_id'] = df['URL'].apply(extract_video_id)
+    # Extract video IDs from URLs
+    df['video_id'] = df['url'].apply(extract_video_id)
     
     # Filter out rows with invalid video IDs
     df = df[df['video_id'].notna()]
@@ -220,8 +224,8 @@ def main():
     # Process each video
     for i, row in df.iterrows():
         video_id = row.get('video_id')
-        url = row.get('URL')
-        title = row.get('Title')
+        url = row.get('url')
+        title = row.get('title')
         
         if not video_id:
             continue
@@ -232,7 +236,7 @@ def main():
         metadata = {
             'video_id': video_id,
             'title': title,
-            'url': f"https://www.youtube.com/watch?v={video_id}"  # Standard URL format
+            'url': url if url else f"https://www.youtube.com/watch?v={video_id}"
         }
         
         # Add transcript info

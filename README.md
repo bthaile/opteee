@@ -72,28 +72,37 @@ python whisper_transcribe.py
 
 ## YouTube Video Metadata Collection
 
-To create a comprehensive CSV file with metadata about all videos:
+To create a comprehensive collection of metadata about all videos:
 
 1. Install the required dependencies:
    ```
    pip install -r requirements.txt
    ```
 
-2. Obtain a YouTube Data API key:
+2. Generate the initial JSON file with video information:
+   ```
+   python outlier_scraper.py
+   ```
+   This will create `outlier_trading_videos.json` containing basic information about all available videos.
+
+3. Obtain a YouTube Data API key:
    - Go to [Google Cloud Console](https://console.cloud.google.com/)
    - Create a new project
    - Enable the YouTube Data API v3
    - Create credentials (API Key)
    - Copy your API Key
 
-3. Edit the `collect_video_metadata.py` script and replace `YOUR_YOUTUBE_API_KEY` with your actual API key
+4. Create a `.env` file in the project root and add your API key:
+   ```
+   YOUTUBE_API_KEY=your-api-key-here
+   ```
 
-4. Run the metadata collection script:
+5. Run the metadata collection script:
    ```
    python collect_video_metadata.py
    ```
 
-This will create a new file called `outlier_trading_videos_metadata.csv` with comprehensive information about each video, including:
+This will create a new file called `outlier_trading_videos_metadata.json` with comprehensive information about each video, including:
 - Video ID, title, and URL
 - Channel name
 - Upload date and duration
@@ -112,11 +121,12 @@ This project now includes functionality to create a vector database from the pro
 
 ### Processing Pipeline
 
-1. **Data Collection**: Videos metadata is collected using `collect_video_metadata.py`
-2. **Transcript Generation**: Transcripts are generated using Whisper and stored in the `transcripts` directory
-3. **Transcript Processing**: Transcripts are cleaned, chunked, and enriched with metadata using `preprocess_transcripts.py`
-4. **Vector Database Creation**: Chunks are converted to embeddings and stored in a FAISS vector database using `create_vector_store.py`
-5. **Semantic Search**: Search the vector database for relevant content using `search_transcripts.py`
+1. **Data Collection**: Initial video data is collected using `outlier_scraper.py` which generates a JSON file
+2. **Metadata Enhancement**: Detailed video metadata is collected using `collect_video_metadata.py` and stored in JSON format
+3. **Transcript Generation**: Transcripts are generated using Whisper and stored in the `transcripts` directory
+4. **Transcript Processing**: Transcripts are cleaned, chunked, and enriched with metadata using `preprocess_transcripts.py`
+5. **Vector Database Creation**: Chunks are converted to embeddings and stored in a FAISS vector database using `create_vector_store.py`
+6. **Semantic Search**: Search the vector database for relevant content using `search_transcripts.py`
 
 ### Setting Up the Vector Database
 

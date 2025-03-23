@@ -126,8 +126,21 @@ def test_search(index, embeddings, metadatas, model_name=MODEL_NAME, top_k=5):
             timestamp = metadatas[idx]['start_timestamp']
             video_url = metadatas[idx]['video_url_with_timestamp']
             
+            # Get description and content summary if available
+            description = metadatas[idx].get('description', '')
+            content_summary = metadatas[idx].get('content_summary', '')
+            
+            # Truncate description if it's too long
+            if description and len(description) > 100:
+                description = description[:97] + "..."
+                
             print(f"{i+1}. {result_text} (at {timestamp}, distance: {distance:.4f})")
             print(f"   🔗 {video_url}")
+            if content_summary:
+                print(f"   📝 Summary: {content_summary}")
+            if description:
+                print(f"   📄 Description: {description}")
+            print("")
 
 def main(args):
     print("="*80)
