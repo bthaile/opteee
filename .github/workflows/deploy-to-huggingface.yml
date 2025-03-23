@@ -25,9 +25,19 @@ jobs:
         run: |
           # If you have a specific tokenizers version requirement, update it to compatible version
           if [ -f requirements.txt ]; then
+            # Fix tokenizers version
             sed -i 's/tokenizers==0.13.3/tokenizers>=0.14.0/g' requirements.txt
-            # Optional: you might also want to pin transformers to a specific version
-            # sed -i 's/transformers==.*/transformers==4.36.2/g' requirements.txt
+            
+            # Either downgrade transformers or upgrade torch
+            # Option 1: Downgrade transformers to version compatible with your torch
+            sed -i 's/transformers==[0-9.]*/transformers==4.31.0/g' requirements.txt
+            
+            # Option 2: Ensure torch is upgraded to a compatible version
+            echo "torch>=2.0.0" >> requirements.txt
+            
+            # Print the updated requirements for debugging
+            echo "Updated requirements.txt:"
+            cat requirements.txt
           fi
 
       - name: Push to Hugging Face Space
