@@ -8,6 +8,7 @@ sdk_version: "4.19.2"
 app_file: app.py
 pinned: false
 license: mit
+pre_build: "bash deploy_fix.sh"
 ---
 
 # YouTube Transcript Processor

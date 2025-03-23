@@ -1,32 +1,34 @@
 #!/bin/bash
 
-echo "===== Starting Happy Face deployment fix - $(date) ====="
+# This script fixes dependency issues on Hugging Face Spaces
+echo "===== Fixing dependencies for Hugging Face Spaces ====="
 
-# Fix package versions
-echo "Installing specific package versions..."
-pip uninstall -y huggingface-hub transformers sentence-transformers
-pip install huggingface-hub==0.17.3
-pip install transformers==4.30.2
-pip install sentence-transformers==2.2.2
+# Update huggingface_hub to a compatible version
+pip install --upgrade huggingface_hub>=0.19.3
 
-# Make sure we have the vector store directory
-echo "Checking vector store..."
-if [ ! -d "vector_store" ]; then
-    echo "Creating vector store directory..."
-    mkdir -p vector_store
+# Install transformers and sentence-transformers with compatible versions
+pip install --upgrade transformers>=4.35.0
+pip install --upgrade sentence-transformers>=2.3.0
+
+# Create necessary directories if they don't exist
+mkdir -p vector_store transcripts processed_transcripts
+
+# Check if vector store already exists
+echo "===== Checking vector store status ====="
+if [ -f "vector_store/transcript_index.faiss" ] && [ -f "vector_store/transcript_metadata.pkl" ]; then
+    echo "✅ Vector store files found"
+else
+    echo "⚠️ Vector store doesn't exist"
+    # Since we have processed transcripts, we can try to rebuild
+    if [ -d "processed_transcripts" ] && [ "$(ls -A processed_transcripts)" ]; then
+        echo "📄 Processed transcripts found, attempting to rebuild vector store..."
+        python create_vector_store.py
+    else
+        echo "❌ No processed transcripts available"
+    fi
 fi
 
-# If there's a backup, restore it
-if [ -d "vector_store_backup" ] && [ "$(ls -A vector_store_backup)" ]; then
-    echo "Restoring vector store from backup..."
-    cp -r vector_store_backup/* vector_store/
-    echo "Vector store restored from backup."
-    
-    # Create a timestamp file to avoid rebuild
-    echo "$(date +%s)" > vector_store/last_updated.txt
-fi
-
-echo "===== Happy Face deployment fix completed - $(date) ====="
+echo "===== Dependency fix completed ====="
 
 # Run the application
 echo "Starting the application..."
