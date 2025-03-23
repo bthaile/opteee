@@ -33,10 +33,11 @@ full_test.log
 *.bak
 *.tmp
 
-# Application data
-vector_store/*.faiss
-vector_store/*.pkl
-vector_store_backup/
+# Application data - exclude vector store files but keep directory
+vector_store/*
+!vector_store/.gitkeep
+vector_store_backup/*
+!vector_store_backup/.gitkeep
 audio_files/
 
 # Keep transcript data (these will be used to rebuild the vector store)
