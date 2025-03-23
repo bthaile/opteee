@@ -27,88 +27,42 @@ jobs:
           echo "" > packages.txt
           
           # Create requirements.txt specifically for Hugging Face
-          cat > requirements.txt.new <<EOL
+          cat > requirements.txt <<EOF
           # Pin specific versions that work together
           torch==1.13.1
           transformers==4.31.0
           tokenizers==0.14.1
           # Add other dependencies below but don't specify versions unless needed
-          # This will let pip resolve compatible versions
-          EOL
+          EOF
           
           # Append existing requirements without versions
-          if [ -f requirements.txt ]; then
-            grep -v "torch\|transformers\|tokenizers" requirements.txt | grep -v "==" >> requirements.txt.new || true
+          if [ -f requirements.txt.orig ]; then
+            grep -v "torch\|transformers\|tokenizers" requirements.txt.orig | grep -v "==" >> requirements.txt || true
           fi
-          
-          # Replace the original requirements
-          mv requirements.txt.new requirements.txt
           
           # Create a specific Hugging Face runtime.txt
           echo "python-3.10" > runtime.txt
           
-          # Update README.md while preserving HF configuration
-          if [ -f README.md ]; then
-            # Check if README already has HF configuration
-            if grep -q "^---" README.md && grep -q "sdk:" README.md; then
-              # Preserve existing configuration and add our notes
-              sed -n '/^---/,/^---/p' README.md > README.md.new
-              cat >> README.md.new <<EOL
-              
-              # HuggingFace Space for opteee
-              
-              This space runs with specific dependency versions:
-              - torch==1.13.1
-              - transformers==4.31.0
-              - tokenizers==0.14.1
-              EOL
-              # Add the rest of README after the frontmatter
-              sed '1,/^---/d' README.md | sed '1,/^---/d' >> README.md.new || true
-            else
-              # Create new README with default configuration
-              cat > README.md.new <<EOL
-              ---
-              title: opteee
-              emoji: 🔥
-              colorFrom: blue
-              colorTo: red
-              sdk: gradio
-              sdk_version: 4.19.2
-              app_file: app.py
-              pinned: false
-              ---
-              
-              # HuggingFace Space for opteee
-              
-              This space runs with specific dependency versions:
-              - torch==1.13.1
-              - transformers==4.31.0
-              - tokenizers==0.14.1
-              EOL
-            fi
-            mv README.md.new README.md
-          else
-            # No README exists, create one with default configuration
-            cat > README.md <<EOL
-            ---
-            title: opteee
-            emoji: 🔥
-            colorFrom: blue
-            colorTo: red
-            sdk: gradio
-            sdk_version: 4.19.2
-            app_file: app.py
-            pinned: false
-            ---
-            
-            # HuggingFace Space for opteee
-            
-            This space runs with specific dependency versions:
-            - torch==1.13.1
-            - transformers==4.31.0
-            - tokenizers==0.14.1
-            EOL
-          fi
+          # Create new README with default configuration
+          cat > README.md <<EOF
+          ---
+          title: opteee
+          emoji: 🔥
+          colorFrom: blue
+          colorTo: red
+          sdk: gradio
+          sdk_version: 4.19.2
+          app_file: app.py
+          pinned: false
+          ---
+          
+          # HuggingFace Space for opteee
+          
+          This space runs with specific dependency versions:
+          - torch==1.13.1
+          - transformers==4.31.0
+          - tokenizers==0.14.1
+          EOF
           
           echo "Created HuggingFace-specific configuration files:"
           ls -la
