@@ -32,6 +32,9 @@ jobs:
           torch==1.13.1
           transformers==4.31.0
           tokenizers==0.13.3
+          # Vector store and other requirements
+          faiss-cpu
+          python-dotenv
           # Add other dependencies below but don't specify versions unless needed
           EOF
           
@@ -61,7 +64,7 @@ jobs:
           This space runs with specific dependency versions:
           - torch==1.13.1
           - transformers==4.31.0
-          - tokenizers==0.14.1
+          - tokenizers==0.13.3
           EOF
           
           echo "Created HuggingFace-specific configuration files:"
