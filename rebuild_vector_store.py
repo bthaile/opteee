@@ -16,7 +16,7 @@ import argparse  # Import argparse for creating an args object
 # Import vector store creation function
 # Assuming this is the function that creates your vector store
 try:
-    from create_vector_store import main as create_vector_store
+    import create_vector_store
 except ImportError:
     print("❌ Could not import create_vector_store module")
 
@@ -127,7 +127,7 @@ def main():
         args.batch_size = 32  # Default batch size
         args.test_search = False  # Don't run test search during rebuild
         
-        create_vector_store(args)
+        create_vector_store.main(args)
         update_vector_store_timestamp()
         print("✅ Vector store rebuilt successfully")
         return True
