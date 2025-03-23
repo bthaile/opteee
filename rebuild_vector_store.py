@@ -11,6 +11,7 @@ import glob
 import json
 import pickle
 from datetime import datetime
+import argparse  # Import argparse for creating an args object
 
 # Import vector store creation function
 # Assuming this is the function that creates your vector store
@@ -120,7 +121,13 @@ def main():
     
     # Rebuild vector store
     try:
-        create_vector_store()
+        # Create an argparse.Namespace object with default values
+        args = argparse.Namespace()
+        args.model = "all-MiniLM-L6-v2"  # Default model
+        args.batch_size = 32  # Default batch size
+        args.test_search = False  # Don't run test search during rebuild
+        
+        create_vector_store(args)
         update_vector_store_timestamp()
         print("✅ Vector store rebuilt successfully")
         return True
