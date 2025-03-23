@@ -276,4 +276,53 @@ If you need to recreate the project:
 2. **Copy your backed-up transcript_progress.json file to the project directory**
 3. Run the setup script: `./setup.sh`
 
-This ensures you don't reprocess videos that have already been transcribed. 
+This ensures you don't reprocess videos that have already been transcribed.
+
+# Options Trading Education Assistant (OPTEEE)
+
+A RAG (Retrieval-Augmented Generation) system for answering questions about options trading based on Outlier Trading educational videos.
+
+## Features
+- Ask questions about options trading concepts
+- Retrieves relevant information from a collection of educational videos
+- Provides source links to the exact timestamp in original videos
+- Supports both OpenAI and Anthropic Claude models
+
+## Setup in Hugging Face Spaces
+
+1. Fork this repository to your GitHub account
+2. Create a new Hugging Face Space
+   - Go to [Hugging Face Spaces](https://huggingface.co/spaces)
+   - Click "Create new Space"
+   - Select "Gradio" as the SDK
+   - Connect to your GitHub repository
+   
+3. Configure your Space:
+   - Add your API keys as secrets:
+     - OPENAI_API_KEY: Your OpenAI API key
+     - ANTHROPIC_API_KEY: Your Anthropic API key (optional)
+   - Set the Space hardware (at least CPU + 16GB RAM recommended)
+
+The app will automatically install the required dependencies and start the Gradio web interface.
+
+## Using with Discord
+
+To integrate this with Discord:
+1. Create a Discord bot using the Discord Developer Portal
+2. Use the Discord.py library to create a bot that calls your hosted Hugging Face API
+3. Deploy the Discord bot to a server (Replit, Heroku, etc.)
+
+## Local Development
+
+To run this app locally:
+
+```bash
+git clone https://github.com/yourusername/opteee.git
+cd opteee
+pip install -r requirements.txt
+python gradio_app.py
+```
+
+## Data Sources
+
+This app uses a vector database of processed transcripts from Outlier Trading educational videos. The transcripts have been chunked, embedded, and stored in a FAISS index. 

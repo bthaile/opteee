@@ -2,3 +2,49 @@ audio_files/
 whisper-env/
 .env
 .venv/*
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+env/
+whisper-env/
+venv/
+.venv/
+
+# Logs and output
+*.log
+*.json
+*.csv
+*.sqlite3
+*.db
+*.sqlite
+*.pkl
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Test & debug output
+*.testoutput
+test_output.log
+full_test.log
+*.log
+*.bak
+*.tmp
+
+# Application data
+vector_store/
+vector_store_backup/
+transcripts/
+processed_transcripts/
+audio_files/
+
+# Editor/IDE-specific
+.vscode/
+.idea/
+*.swp
