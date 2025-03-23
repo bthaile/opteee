@@ -47,15 +47,68 @@ jobs:
           # Create a specific Hugging Face runtime.txt
           echo "python-3.10" > runtime.txt
           
-          # Add a README.md with build instructions
-          cat > README.md <<EOL
-          # HuggingFace Space for opteee
-          
-          This space runs with specific dependency versions:
-          - torch==1.13.1
-          - transformers==4.31.0
-          - tokenizers==0.14.1
-          EOL
+          # Update README.md while preserving HF configuration
+          if [ -f README.md ]; then
+            # Check if README already has HF configuration
+            if grep -q "^---" README.md && grep -q "sdk:" README.md; then
+              # Preserve existing configuration and add our notes
+              sed -n '/^---/,/^---/p' README.md > README.md.new
+              cat >> README.md.new <<EOL
+              
+              # HuggingFace Space for opteee
+              
+              This space runs with specific dependency versions:
+              - torch==1.13.1
+              - transformers==4.31.0
+              - tokenizers==0.14.1
+              EOL
+              # Add the rest of README after the frontmatter
+              sed '1,/^---/d' README.md | sed '1,/^---/d' >> README.md.new || true
+            else
+              # Create new README with default configuration
+              cat > README.md.new <<EOL
+              ---
+              title: opteee
+              emoji: 🔥
+              colorFrom: blue
+              colorTo: red
+              sdk: gradio
+              sdk_version: 4.19.2
+              app_file: app.py
+              pinned: false
+              ---
+              
+              # HuggingFace Space for opteee
+              
+              This space runs with specific dependency versions:
+              - torch==1.13.1
+              - transformers==4.31.0
+              - tokenizers==0.14.1
+              EOL
+            fi
+            mv README.md.new README.md
+          else
+            # No README exists, create one with default configuration
+            cat > README.md <<EOL
+            ---
+            title: opteee
+            emoji: 🔥
+            colorFrom: blue
+            colorTo: red
+            sdk: gradio
+            sdk_version: 4.19.2
+            app_file: app.py
+            pinned: false
+            ---
+            
+            # HuggingFace Space for opteee
+            
+            This space runs with specific dependency versions:
+            - torch==1.13.1
+            - transformers==4.31.0
+            - tokenizers==0.14.1
+            EOL
+          fi
           
           echo "Created HuggingFace-specific configuration files:"
           ls -la
@@ -68,7 +121,7 @@ jobs:
           # Set credentials helper to store token
           git config --global credential.helper store
           
-          # Store the Hugging Face token in the credentials helper
+          # Store the Hugging Face token in the credentials helpers
           echo "https://USER:${HF_TOKEN}@huggingface.co" > ~/.git-credentials
           
           # Create a new repository with only the current content
