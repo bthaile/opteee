@@ -396,7 +396,13 @@ Sometimes deployment fails due to dependency conflicts between packages. Common 
    sed -i '' 's/sentence-transformers==2.5.0/sentence-transformers==2.2.2/g' requirements.txt
    ```
 
-4. If you encounter other dependency conflicts, the error message usually contains useful information about which packages are conflicting. Try:
+4. **transformers vs tokenizers**: Transformers requires specific versions of tokenizers. For example:
+   ```bash
+   # If using transformers 4.30.2, downgrade tokenizers to 0.13.3
+   sed -i '' 's/tokenizers==0.21.1/tokenizers==0.13.3/g' requirements.txt
+   ```
+
+5. If you encounter other dependency conflicts, the error message usually contains useful information about which packages are conflicting. Try:
    - Downgrading or upgrading specific packages
    - Using compatibility matrices from package documentation
    - Using a tool like `pip-tools` to resolve dependencies
