@@ -18,6 +18,8 @@ jobs:
         run: |
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
+          # Set default branch name to main
+          git config --global init.defaultBranch main
 
       - name: Push to Hugging Face Space
         env:
