@@ -337,4 +337,38 @@ python gradio_app.py
 
 ## Data Sources
 
-This app uses a vector database of processed transcripts from Outlier Trading educational videos. The transcripts have been chunked, embedded, and stored in a FAISS index. 
+This app uses a vector database of processed transcripts from Outlier Trading educational videos. The transcripts have been chunked, embedded, and stored in a FAISS index.
+
+## Deployment to Hugging Face
+
+This project is configured to deploy automatically to Hugging Face Spaces using GitHub Actions whenever changes are pushed to the main branch.
+
+### Creating a Proper requirements.txt File
+
+When deploying to Hugging Face, it's important to create a proper `requirements.txt` file that works across platforms. The standard `pip freeze` on macOS can include Apple-specific system package paths that will cause deployment failures.
+
+To create a clean `requirements.txt` file on macOS that will work on Hugging Face:
+
+```bash
+# Make sure your virtual environment is activated
+source venv/bin/activate
+
+# Create a clean requirements file without paths to local system files
+pip list --format=freeze | grep -v "@ file://" > requirements.txt
+```
+
+This command filters out any package that has a local file path reference (which typically happens with system packages on macOS).
+
+Alternatively, you can manually install all required packages in your virtual environment and then use:
+
+```bash
+pip freeze --exclude-editable > requirements.txt
+```
+
+### Troubleshooting Deployment Issues
+
+If you encounter errors during deployment:
+
+1. Check that your `requirements.txt` doesn't contain any Mac-specific paths (files starting with `/AppleInternal/...`)
+2. Verify that all package versions are compatible with the Python version used by Hugging Face
+3. Remove any platform-specific packages that aren't needed for the web application 
