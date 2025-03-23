@@ -12,7 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1  # Only fetch the latest commit
 
       - name: Configure Git
         run: |
@@ -29,6 +29,12 @@ jobs:
           
           # Store the Hugging Face token in the credentials helper
           echo "https://USER:${HF_TOKEN}@huggingface.co" > ~/.git-credentials
+          
+          # Create a new repository with only the current content
+          rm -rf .git
+          git init
+          git add .
+          git commit -m "Deploy to Hugging Face"
           
           # Add Hugging Face Space as a Git remote
           git remote add space https://huggingface.co/spaces/$SPACE_NAME
