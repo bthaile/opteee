@@ -384,7 +384,13 @@ Sometimes deployment fails due to dependency conflicts between packages. Common 
    # Or manually edit the file
    ```
 
-2. If you encounter other dependency conflicts, the error message usually contains useful information about which packages are conflicting. Try:
+2. **torch vs transformers**: When downgrading torch, transformers may need to be downgraded as well. Newer transformers versions (4.40.0+) may require torch features like `torch.compiler` that don't exist in older torch versions:
+   ```bash
+   # If using torch 2.0.1, downgrade transformers to 4.30.2
+   sed -i '' 's/transformers==4.50.0/transformers==4.30.2/g' requirements.txt
+   ```
+
+3. If you encounter other dependency conflicts, the error message usually contains useful information about which packages are conflicting. Try:
    - Downgrading or upgrading specific packages
    - Using compatibility matrices from package documentation
    - Using a tool like `pip-tools` to resolve dependencies
