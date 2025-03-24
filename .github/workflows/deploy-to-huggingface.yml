@@ -42,59 +42,89 @@ jobs:
           EOF
           
           # Create patch script for sentence_transformers
-          cat > patch_sentence_transformers.py <<'EOF'
+          cat > direct_patch.py <<'EOF'
           """
-          This script patches SentenceTransformer to work with modern huggingface_hub
+          Direct patching of sentence_transformers files without importing the module
           """
           import os
-          import sys
           import re
-
-          def patch_sentence_transformers():
-              """Find and patch sentence_transformers code to replace cached_download with hf_hub_download"""
-              try:
-                  import sentence_transformers
-                  st_path = os.path.dirname(sentence_transformers.__file__)
+          import sys
+          import site
+          
+          def find_sentence_transformers_path():
+              """Find sentence_transformers package path without importing it"""
+              # Check site-packages directories
+              for site_dir in site.getsitepackages():
+                  st_dir = os.path.join(site_dir, "sentence_transformers")
+                  if os.path.exists(st_dir) and os.path.isdir(st_dir):
+                      return st_dir
+              
+              # Check current directory
+              if os.path.exists("sentence_transformers") and os.path.isdir("sentence_transformers"):
+                  return "sentence_transformers"
                   
-                  # Files likely using cached_download
-                  files_to_patch = [
-                      os.path.join(st_path, "models", "Transformer.py"),
-                      os.path.join(st_path, "SentenceTransformer.py")
-                  ]
+              return None
+              
+          def patch_st_files():
+              """Patch sentence_transformers files to use hf_hub_download"""
+              st_path = find_sentence_transformers_path()
+              if not st_path:
+                  print("❌ Could not find sentence_transformers installation")
+                  return False
                   
-                  for file_path in files_to_patch:
-                      if os.path.exists(file_path):
-                          print(f"Patching {file_path}")
-                          with open(file_path, 'r') as f:
-                              content = f.read()
+              print(f"Found sentence_transformers at: {st_path}")
+              
+              # Files to patch
+              files_to_patch = [
+                  os.path.join(st_path, "models", "Transformer.py"),
+                  os.path.join(st_path, "SentenceTransformer.py"),
+                  # Add any additional files that might use cached_download
+                  os.path.join(st_path, "util.py")
+              ]
+              
+              patched_files = []
+              
+              for file_path in files_to_patch:
+                  if os.path.exists(file_path):
+                      print(f"Checking {file_path}")
+                      with open(file_path, 'r', encoding='utf-8') as f:
+                          content = f.read()
+                          
+                      if 'cached_download' in content:
+                          print(f"  Found cached_download in {file_path}, patching...")
                           
                           # Replace imports
-                          content = re.sub(
+                          new_content = re.sub(
                               r'from huggingface_hub import cached_download', 
                               'from huggingface_hub import hf_hub_download', 
                               content
                           )
                           
-                          # Replace function calls (may need adjustment based on actual code)
-                          content = re.sub(
-                              r'cached_download\(([^)]*)\)', 
+                          # Replace function calls - might need adjustment
+                          new_content = re.sub(
+                              r'cached_download\s*\(([^)]*)\)', 
                               r'hf_hub_download(repo_id="sentence-transformers/all-MiniLM-L6-v2", filename=\1)', 
-                              content
+                              new_content
                           )
                           
-                          with open(file_path, 'w') as f:
-                              f.write(content)
-                          
-                          print(f"✅ Successfully patched {file_path}")
+                          with open(file_path, 'w', encoding='utf-8') as f:
+                              f.write(new_content)
+                              
+                          patched_files.append(file_path)
+                          print(f"  ✅ Successfully patched {file_path}")
+                      else:
+                          print(f"  No cached_download found in {file_path}")
               
-                  print("Patching complete!")
+              if patched_files:
+                  print(f"✅ Successfully patched {len(patched_files)} files")
                   return True
-              except Exception as e:
-                  print(f"❌ Error patching sentence_transformers: {e}")
+              else:
+                  print("❌ No files required patching")
                   return False
-
+                  
           if __name__ == "__main__":
-              patch_sentence_transformers()
+              success = patch_st_files()
+              sys.exit(0 if success else 1)
           EOF
           
           # Create app startup wrapper script
@@ -104,21 +134,40 @@ jobs:
           """
           import sys
           import os
+          import subprocess
 
-          # Try to patch sentence_transformers
+          # Directly patch the files without importing
           try:
-              from patch_sentence_transformers import patch_sentence_transformers
-              patch_successful = patch_sentence_transformers()
-              print(f"Patching sentence_transformers: {'SUCCESS' if patch_successful else 'FAILED'}")
+              print("Running direct patching of sentence_transformers...")
+              result = subprocess.run([sys.executable, "direct_patch.py"], 
+                                    capture_output=True, text=True)
+              print(result.stdout)
+              if result.stderr:
+                  print("Patching errors:", result.stderr)
+                  
+              if result.returncode == 0:
+                  print("✅ Patching successful")
+              else:
+                  print("❌ Patching failed")
           except Exception as e:
-              print(f"Error during patching: {e}")
+              print(f"❌ Error during patching: {e}")
 
           # Import and run the original app
-          sys.path.insert(0, os.getcwd())
-          from app import app as gradio_app
+          try:
+              sys.path.insert(0, os.getcwd())
+              from app import app as gradio_app
 
-          # This is needed for Gradio on HuggingFace Spaces
-          app = gradio_app
+              # This is needed for Gradio on HuggingFace Spaces
+              app = gradio_app
+          except Exception as e:
+              print(f"❌ Error importing app: {e}")
+              # Create a minimal error app
+              import gradio as gr
+              app = gr.Interface(
+                  fn=lambda x: f"Application failed to start: {str(e)}",
+                  inputs=gr.Textbox(placeholder="Enter text here..."),
+                  outputs=gr.Textbox()
+              )
           EOF
           
           # Update the README to use app_wrapper.py instead
