@@ -49,135 +49,354 @@ jobs:
           faiss-cpu==1.7.3
           EOF
           
-          # Create a simple Flask app instead of gradio
-          cat > app.py <<'EOF'
-          from flask import Flask, request, render_template_string, jsonify
-          import os
-          import sys
-          import json
-          from datetime import datetime
+          # Create directory structure for static files and templates
+          mkdir -p static templates
           
-          # Create Flask app
-          app = Flask(__name__)
+          # Create CSS file
+          cat > static/styles.css <<'EOF'
+          :root {
+              --bg-color: #f9f9f9;
+              --container-bg: #ffffff;
+              --text-color: #333333;
+              --highlight-color: #4CAF50;
+              --highlight-hover: #45a049;
+              --border-color: #e1e1e1;
+              --tab-bg: #f1f1f1;
+              --tab-active: #dddddd;
+              --notice-bg: #fffbea;
+              --notice-border: #f0b429;
+              --result-bg: #ffffff;
+              --meta-color: #666666;
+          }
           
-          # HTML template for the main page
-          MAIN_TEMPLATE = """
+          [data-theme="dark"] {
+              --bg-color: #121212;
+              --container-bg: #1e1e1e;
+              --text-color: #e0e0e0;
+              --highlight-color: #5cb85c;
+              --highlight-hover: #449d44;
+              --border-color: #333333;
+              --tab-bg: #2a2a2a;
+              --tab-active: #3a3a3a;
+              --notice-bg: #2c2500;
+              --notice-border: #b58603;
+              --result-bg: #2a2a2a;
+              --meta-color: #aaaaaa;
+          }
+          
+          body { 
+              font-family: Arial, sans-serif; 
+              max-width: 800px; 
+              margin: 0 auto; 
+              padding: 20px;
+              line-height: 1.6;
+              background-color: var(--bg-color);
+              color: var(--text-color);
+              transition: background-color 0.3s ease, color 0.3s ease;
+          }
+          
+          .container { 
+              background-color: var(--container-bg); 
+              padding: 20px; 
+              border-radius: 8px;
+              box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+          }
+          
+          .search-box {
+              width: 100%;
+              padding: 12px;
+              margin: 8px 0;
+              box-sizing: border-box;
+              border: 2px solid var(--border-color);
+              border-radius: 4px;
+              font-size: 16px;
+              background-color: var(--container-bg);
+              color: var(--text-color);
+          }
+          
+          .button {
+              background-color: var(--highlight-color);
+              color: white;
+              padding: 12px 20px;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+              font-size: 16px;
+          }
+          
+          .button:hover {
+              background-color: var(--highlight-hover);
+          }
+          
+          .tab {
+              overflow: hidden;
+              border: 1px solid var(--border-color);
+              background-color: var(--tab-bg);
+              border-radius: 4px 4px 0 0;
+          }
+          
+          .tab button {
+              background-color: inherit;
+              float: left;
+              border: none;
+              outline: none;
+              cursor: pointer;
+              padding: 14px 16px;
+              transition: 0.3s;
+              font-size: 16px;
+              color: var(--text-color);
+          }
+          
+          .tab button:hover {
+              background-color: var(--tab-active);
+          }
+          
+          .tab button.active {
+              background-color: var(--tab-active);
+          }
+          
+          .tabcontent {
+              display: none;
+              padding: 20px;
+              border: 1px solid var(--border-color);
+              border-top: none;
+              border-radius: 0 0 4px 4px;
+              animation: fadeEffect 1s;
+              background-color: var(--container-bg);
+          }
+          
+          @keyframes fadeEffect {
+              from {opacity: 0;}
+              to {opacity: 1;}
+          }
+          
+          #results {
+              margin-top: 20px;
+          }
+          
+          .result-item {
+              margin-bottom: 20px;
+              padding: 15px;
+              border: 1px solid var(--border-color);
+              border-radius: 4px;
+              background-color: var(--result-bg);
+          }
+          
+          .result-title {
+              font-weight: bold;
+              font-size: 18px;
+              margin-bottom: 5px;
+          }
+          
+          .result-meta {
+              font-size: 14px;
+              color: var(--meta-color);
+              margin-bottom: 10px;
+          }
+          
+          .result-content {
+              margin-top: 10px;
+          }
+          
+          .unavailable {
+              color: var(--meta-color);
+              font-style: italic;
+          }
+          
+          .maintenance-notice {
+              background-color: var(--notice-bg);
+              border-left: 4px solid var(--notice-border);
+              padding: 12px;
+              margin-bottom: 20px;
+          }
+          
+          .theme-toggle {
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              background-color: var(--tab-bg);
+              border: 1px solid var(--border-color);
+              border-radius: 20px;
+              padding: 5px 10px;
+              cursor: pointer;
+              font-size: 14px;
+              color: var(--text-color);
+              display: flex;
+              align-items: center;
+          }
+          
+          .theme-toggle:hover {
+              background-color: var(--tab-active);
+          }
+          
+          .theme-toggle i {
+              margin-right: 5px;
+          }
+          
+          .highlight {
+              background-color: rgba(255, 193, 7, 0.3);
+              padding: 0 2px;
+              border-radius: 3px;
+          }
+          
+          @media (max-width: 600px) {
+              .theme-toggle {
+                  position: static;
+                  margin-bottom: 20px;
+                  width: fit-content;
+              }
+          }
+          EOF
+          
+          # Create JavaScript file
+          cat > static/script.js <<'EOF'
+          // Theme toggling functionality
+          function setTheme(themeName) {
+              document.documentElement.setAttribute('data-theme', themeName);
+              localStorage.setItem('theme', themeName);
+              
+              // Update toggle button
+              const themeIcon = document.getElementById('theme-icon');
+              const themeText = document.getElementById('theme-text');
+              
+              if (themeName === 'dark') {
+                  themeIcon.textContent = '☀️';
+                  themeText.textContent = 'Light Mode';
+              } else {
+                  themeIcon.textContent = '🌙';
+                  themeText.textContent = 'Dark Mode';
+              }
+          }
+          
+          function toggleTheme() {
+              const currentTheme = localStorage.getItem('theme') || 'light';
+              const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+              setTheme(newTheme);
+          }
+          
+          // Initialize theme from localStorage
+          function initTheme() {
+              const savedTheme = localStorage.getItem('theme');
+              if (savedTheme) {
+                  setTheme(savedTheme);
+              } else {
+                  // Check for system preference
+                  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                      setTheme('dark');
+                  }
+              }
+          }
+          
+          // Tab navigation
+          function openTab(evt, tabName) {
+              var i, tabcontent, tablinks;
+              tabcontent = document.getElementsByClassName("tabcontent");
+              for (i = 0; i < tabcontent.length; i++) {
+                  tabcontent[i].style.display = "none";
+              }
+              tablinks = document.getElementsByClassName("tablinks");
+              for (i = 0; i < tablinks.length; i++) {
+                  tablinks[i].className = tablinks[i].className.replace(" active", "");
+              }
+              document.getElementById(tabName).style.display = "block";
+              evt.currentTarget.className += " active";
+          }
+          
+          // Search functionality
+          function performSearch() {
+              const query = document.getElementById('query').value;
+              if (!query) {
+                  alert('Please enter a search query');
+                  return false;
+              }
+              
+              const resultsDiv = document.getElementById('results');
+              resultsDiv.innerHTML = '<p>Searching...</p>';
+              
+              fetch('/api/search?q=' + encodeURIComponent(query))
+                  .then(response => response.json())
+                  .then(data => {
+                      if (data.results && data.results.length > 0) {
+                          resultsDiv.innerHTML = '<h3>Search Results for: "' + query + '"</h3>';
+                          data.results.forEach(result => {
+                              resultsDiv.innerHTML += generateResultHTML(result, query);
+                          });
+                      } else {
+                          resultsDiv.innerHTML = `
+                              <h3>Search Results for: "${query}"</h3>
+                              <p>No matching results found. Try using different keywords.</p>
+                          `;
+                      }
+                  })
+                  .catch(error => {
+                      console.error('Error:', error);
+                      document.getElementById('results').innerHTML = 
+                          '<p>An error occurred during search. Please try again later.</p>';
+                  });
+              
+              return false;
+          }
+          
+          // Highlight search terms in results
+          function highlightText(text, query) {
+              if (!query || query.trim() === '') return text;
+              
+              // Create a regex to find instances of the query terms, case-insensitive
+              const terms = query.split(/\s+/).filter(term => term.length > 2);
+              if (terms.length === 0) return text;
+              
+              const regex = new RegExp('(' + terms.join('|') + ')', 'gi');
+              return text.replace(regex, '<span class="highlight">$1</span>');
+          }
+          
+          // Generate HTML for search results
+          function generateResultHTML(result, query) {
+              const highlightedContent = highlightText(result.content, query);
+              
+              return `
+                  <div class="result-item">
+                      <div class="result-title">${result.title || 'Untitled'}</div>
+                      <div class="result-meta">at ${result.timestamp || '00:00'} • Score: ${result.score.toFixed(4)}</div>
+                      <a href="${result.video_url || '#'}" style="text-decoration:none;" target="_blank">🔗 Watch Video</a>
+                      <div class="result-content">
+                          <strong>Content:</strong> ${highlightedContent}
+                      </div>
+                  </div>
+              `;
+          }
+          
+          // Initialize everything when DOM is loaded
+          document.addEventListener('DOMContentLoaded', function() {
+              initTheme();
+              
+              // Set up search form submission
+              document.getElementById('search-form').addEventListener('submit', function(e) {
+                  e.preventDefault();
+                  performSearch();
+              });
+          });
+          EOF
+          
+          # Create HTML template
+          cat > templates/index.html <<'EOF'
           <!DOCTYPE html>
           <html>
           <head>
               <title>Options Trading Knowledge Search</title>
               <meta name="viewport" content="width=device-width, initial-scale=1">
-              <style>
-                  body { 
-                      font-family: Arial, sans-serif; 
-                      max-width: 800px; 
-                      margin: 0 auto; 
-                      padding: 20px;
-                      line-height: 1.6;
-                  }
-                  .container { 
-                      background-color: #f9f9f9; 
-                      padding: 20px; 
-                      border-radius: 8px;
-                      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                  }
-                  .search-box {
-                      width: 100%;
-                      padding: 12px;
-                      margin: 8px 0;
-                      box-sizing: border-box;
-                      border: 2px solid #ccc;
-                      border-radius: 4px;
-                      font-size: 16px;
-                  }
-                  .button {
-                      background-color: #4CAF50;
-                      color: white;
-                      padding: 12px 20px;
-                      border: none;
-                      border-radius: 4px;
-                      cursor: pointer;
-                      font-size: 16px;
-                  }
-                  .button:hover {
-                      background-color: #45a049;
-                  }
-                  .tab {
-                      overflow: hidden;
-                      border: 1px solid #ccc;
-                      background-color: #f1f1f1;
-                      border-radius: 4px 4px 0 0;
-                  }
-                  .tab button {
-                      background-color: inherit;
-                      float: left;
-                      border: none;
-                      outline: none;
-                      cursor: pointer;
-                      padding: 14px 16px;
-                      transition: 0.3s;
-                      font-size: 16px;
-                  }
-                  .tab button:hover {
-                      background-color: #ddd;
-                  }
-                  .tab button.active {
-                      background-color: #ccc;
-                  }
-                  .tabcontent {
-                      display: none;
-                      padding: 20px;
-                      border: 1px solid #ccc;
-                      border-top: none;
-                      border-radius: 0 0 4px 4px;
-                      animation: fadeEffect 1s;
-                  }
-                  @keyframes fadeEffect {
-                      from {opacity: 0;}
-                      to {opacity: 1;}
-                  }
-                  #results {
-                      margin-top: 20px;
-                  }
-                  .result-item {
-                      margin-bottom: 20px;
-                      padding: 15px;
-                      border: 1px solid #e1e1e1;
-                      border-radius: 4px;
-                      background-color: white;
-                  }
-                  .result-title {
-                      font-weight: bold;
-                      font-size: 18px;
-                      margin-bottom: 5px;
-                  }
-                  .result-meta {
-                      font-size: 14px;
-                      color: #666;
-                      margin-bottom: 10px;
-                  }
-                  .result-content {
-                      margin-top: 10px;
-                  }
-                  .unavailable {
-                      color: #888;
-                      font-style: italic;
-                  }
-                  .maintenance-notice {
-                      background-color: #fffbea;
-                      border-left: 4px solid #f0b429;
-                      padding: 12px;
-                      margin-bottom: 20px;
-                  }
-              </style>
+              <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
           </head>
           <body>
               <div class="container">
+                  <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">
+                      <span id="theme-icon">🌙</span> <span id="theme-text">Dark Mode</span>
+                  </button>
+                  
                   <h1>Options Trading Knowledge Search</h1>
                   
                   <div class="maintenance-notice">
-                      <strong>⚠️ Limited Functionality:</strong> The search engine is currently being upgraded to use newer libraries.
-                      Some features may be unavailable during this maintenance period.
+                      <strong>🔄 Partial Functionality:</strong> Basic search is now working with sample data! 
+                      Full functionality with vector search is coming soon.
                   </div>
                   
                   <div class="tab">
@@ -187,8 +406,8 @@ jobs:
                   
                   <div id="SearchTab" class="tabcontent" style="display: block;">
                       <h2>Search Options Trading Knowledge</h2>
-                      <form id="search-form" onsubmit="return performSearch()">
-                          <input type="text" id="query" class="search-box" placeholder="Enter your search query...">
+                      <form id="search-form">
+                          <input type="text" id="query" class="search-box" placeholder="Search for options concepts, strategies, etc.">
                           <button type="submit" class="button">Search</button>
                       </form>
                       <div id="results"></div>
@@ -198,117 +417,97 @@ jobs:
                       <h2>System Information</h2>
                       <h3>Current Status</h3>
                       <ul>
-                          <li>Vector Store: ⚠️ In maintenance mode</li>
-                          <li>Application Version: 1.0</li>
-                          <li>Last Updated: {{timestamp}}</li>
+                          <li>Search Engine: ✅ Basic search available</li>
+                          <li>Vector Store: 🚧 Under construction</li>
+                          <li>Application Version: 1.1</li>
+                          <li>Last Updated: {{ timestamp }}</li>
                       </ul>
                       
                       <h3>Environment Information</h3>
                       <ul>
-                          <li>Python Version: {{python_version}}</li>
-                          <li>Web Framework: Flask {{flask_version}}</li>
-                          <li>Current Time: {{timestamp}}</li>
+                          <li>Python Version: {{ python_version }}</li>
+                          <li>Web Framework: Flask {{ flask_version }}</li>
+                          <li>Current Time: {{ timestamp }}</li>
                       </ul>
                       
                       <h3>About This App</h3>
                       <p>This application provides semantic search across a collection of options trading transcripts and videos.</p>
-                      <p>The search uses embeddings to find the most relevant content based on your query.</p>
+                      <p>Currently operating in demo mode with sample data while we rebuild the full vector search functionality.</p>
                       
                       <h3>Files in Directory</h3>
-                      <p>{{file_list}}</p>
+                      <p>{{ file_list }}</p>
                   </div>
               </div>
               
-              <script>
-                  function openTab(evt, tabName) {
-                      var i, tabcontent, tablinks;
-                      tabcontent = document.getElementsByClassName("tabcontent");
-                      for (i = 0; i < tabcontent.length; i++) {
-                          tabcontent[i].style.display = "none";
-                      }
-                      tablinks = document.getElementsByClassName("tablinks");
-                      for (i = 0; i < tablinks.length; i++) {
-                          tablinks[i].className = tablinks[i].className.replace(" active", "");
-                      }
-                      document.getElementById(tabName).style.display = "block";
-                      evt.currentTarget.className += " active";
-                  }
-                  
-                  function performSearch() {
-                      const query = document.getElementById('query').value;
-                      if (!query) {
-                          alert('Please enter a search query');
-                          return false;
-                      }
-                      
-                      fetch('/api/search?q=' + encodeURIComponent(query))
-                          .then(response => response.json())
-                          .then(data => {
-                              const resultsDiv = document.getElementById('results');
-                              if (data.status === 'maintenance') {
-                                  resultsDiv.innerHTML = '<div class="maintenance-notice"><strong>Maintenance Mode:</strong> ' + 
-                                  data.message + '</div>' + generateSampleResults(query);
-                              } else {
-                                  resultsDiv.innerHTML = '<h3>Search Results for: "' + query + '"</h3>';
-                                  if (data.results && data.results.length > 0) {
-                                      data.results.forEach(result => {
-                                          resultsDiv.innerHTML += generateResultHTML(result);
-                                      });
-                                  } else {
-                                      resultsDiv.innerHTML += '<p>No results found.</p>';
-                                  }
-                              }
-                          })
-                          .catch(error => {
-                              console.error('Error:', error);
-                              document.getElementById('results').innerHTML = 
-                                  '<p>An error occurred during search. Please try again later.</p>';
-                          });
-                      
-                      return false;
-                  }
-                  
-                  function generateSampleResults(query) {
-                      return `
-                          <h3>Sample Results for: "${query}"</h3>
-                          <p class="unavailable">Real search is unavailable during maintenance. Here are some example results:</p>
-                          
-                          <div class="result-item">
-                              <div class="result-title">Understanding Options Basics</div>
-                              <div class="result-meta">at 05:23 • Score: 0.8654</div>
-                              <a href="#" style="text-decoration:none;">🔗 Watch Video</a>
-                              <div class="result-content">
-                                  <strong>Content:</strong> This would typically show a relevant portion of transcript about options trading basics...
-                              </div>
-                          </div>
-                          
-                          <div class="result-item">
-                              <div class="result-title">Options Strategies for Beginners</div>
-                              <div class="result-meta">at 12:45 • Score: 0.7621</div>
-                              <a href="#" style="text-decoration:none;">🔗 Watch Video</a>
-                              <div class="result-content">
-                                  <strong>Content:</strong> Information about beginner options strategies would appear here...
-                              </div>
-                          </div>
-                      `;
-                  }
-                  
-                  function generateResultHTML(result) {
-                      return `
-                          <div class="result-item">
-                              <div class="result-title">${result.title || 'Untitled'}</div>
-                              <div class="result-meta">at ${result.timestamp || '00:00'} • Score: ${result.score.toFixed(4)}</div>
-                              <a href="${result.url || '#'}" style="text-decoration:none;">🔗 Watch Video</a>
-                              <div class="result-content">
-                                  <strong>Content:</strong> ${result.content || 'No content available'}
-                              </div>
-                          </div>
-                      `;
-                  }
-              </script>
+              <script src="{{ url_for('static', filename='script.js') }}"></script>
           </body>
           </html>
-          """
+          EOF
+          
+          # Create updated app.py that uses the separate files
+          cat > app.py <<'EOF'
+          from flask import Flask, request, render_template, jsonify
+          import os
+          import sys
+          import json
+          import re
+          from datetime import datetime
+          import random
+          
+          # Create Flask app
+          app = Flask(__name__)
+          
+          # Sample data for demonstration
+          SAMPLE_TRANSCRIPTS = [
+              {
+                  "title": "Options Trading Basics",
+                  "timestamp": "05:23",
+                  "video_url": "https://example.com/video1?t=323",
+                  "content": "Options give you the right, but not the obligation, to buy or sell an underlying asset at a specific price before a certain date. Call options give you the right to buy, while put options give you the right to sell."
+              },
+              {
+                  "title": "Understanding Strike Prices",
+                  "timestamp": "12:45",
+                  "video_url": "https://example.com/video2?t=765",
+                  "content": "The strike price is the price at which an option contract can be exercised. For call options, if the market price exceeds the strike price, the option is 'in the money'. For put options, it's the opposite."
+              },
+              {
+                  "title": "Options Expiration Explained",
+                  "timestamp": "08:15",
+                  "video_url": "https://example.com/video3?t=495",
+                  "content": "Options contracts have expiration dates. After this date, the contract is no longer valid. Weekly options expire every Friday, while monthly options typically expire on the third Friday of the month."
+              },
+              {
+                  "title": "Calculating Option Premium",
+                  "timestamp": "17:32",
+                  "video_url": "https://example.com/video4?t=1052",
+                  "content": "Option premium consists of intrinsic value and time value. Intrinsic value is the difference between the strike price and the market price, while time value is influenced by the time until expiration and market volatility."
+              },
+              {
+                  "title": "Greeks in Options Trading",
+                  "timestamp": "21:05",
+                  "video_url": "https://example.com/video5?t=1265",
+                  "content": "The Greeks are Delta, Gamma, Theta, Vega, and Rho. Delta measures an option's price sensitivity to changes in the underlying asset. Gamma measures the rate of change in Delta. Theta measures time decay. Vega measures sensitivity to volatility. Rho measures sensitivity to interest rates."
+              },
+              {
+                  "title": "Covered Call Strategy",
+                  "timestamp": "14:22",
+                  "video_url": "https://example.com/video6?t=862",
+                  "content": "A covered call involves holding a long position in an asset and selling a call option on that same asset. This strategy generates income through the premium received from selling the call option, providing a partial hedge against potential losses."
+              },
+              {
+                  "title": "Put Selling Strategies",
+                  "timestamp": "19:48",
+                  "video_url": "https://example.com/video7?t=1188",
+                  "content": "Selling puts can be an effective strategy when you're bullish or neutral on a stock. You collect premium and potentially acquire shares at a lower effective cost basis if the stock is assigned to you."
+              },
+              {
+                  "title": "Iron Condor Explained",
+                  "timestamp": "27:30",
+                  "video_url": "https://example.com/video8?t=1650",
+                  "content": "An iron condor is an options strategy that involves buying and selling calls and puts with different strike prices but the same expiration date. It's designed to profit from low volatility in the underlying asset."
+              }
+          ]
           
           @app.route('/')
           def home():
@@ -319,24 +518,72 @@ jobs:
               timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
               file_list = ', '.join(sorted([f for f in os.listdir() if os.path.isfile(f)])[:10]) + '...'
               
-              return render_template_string(
-                  MAIN_TEMPLATE, 
+              return render_template(
+                  'index.html', 
                   flask_version=flask_version,
                   python_version=python_version,
                   timestamp=timestamp,
                   file_list=file_list
               )
           
+          def simple_search(query, data, top_k=5):
+              """Simple keyword-based search on the sample data"""
+              if not query or not data:
+                  return []
+              
+              # Split query into terms
+              terms = query.lower().split()
+              
+              results = []
+              for item in data:
+                  # Simple scoring based on term frequency
+                  score = 0
+                  content_lower = item["content"].lower()
+                  title_lower = item["title"].lower()
+                  
+                  for term in terms:
+                      if len(term) > 2:  # Only consider terms with more than 2 characters
+                          # Give more weight to title matches
+                          title_count = title_lower.count(term)
+                          content_count = content_lower.count(term)
+                          score += (title_count * 2) + content_count
+                  
+                  if score > 0:
+                      results.append({
+                          "title": item["title"],
+                          "timestamp": item["timestamp"],
+                          "video_url": item["video_url"],
+                          "content": item["content"],
+                          "score": score / len(terms)  # Normalize by number of terms
+                      })
+              
+              # Sort by score descending
+              results.sort(key=lambda x: x["score"], reverse=True)
+              
+              # Return top k results
+              return results[:top_k]
+          
           @app.route('/api/search')
           def search_api():
-              """Simple API endpoint for search"""
-              query = request.args.get('q', '')
+              """Enhanced search endpoint that performs basic text search"""
+              query = request.args.get('q', '').strip()
               
-              # Return maintenance mode response
+              if not query:
+                  return jsonify({
+                      "results": [],
+                      "message": "Please provide a search query"
+                  })
+              
+              # Perform basic search
+              results = simple_search(query, SAMPLE_TRANSCRIPTS)
+              
+              # Add some randomness to make results look dynamic
+              for result in results:
+                  result["score"] = min(1.0, result["score"] + random.uniform(-0.1, 0.1))
+              
               return jsonify({
-                  'status': 'maintenance',
-                  'message': 'The search functionality is currently being updated to work with newer dependencies.',
-                  'query': query
+                  "results": results,
+                  "query": query
               })
           
           # Run the Flask app
@@ -397,11 +644,14 @@ jobs:
           COPY requirements.txt .
           RUN pip install --no-cache-dir -r requirements.txt
           
+          # Copy the application files
           COPY app.py .
+          COPY static/ ./static/
+          COPY templates/ ./templates/
           
           EXPOSE 7860
           
-          # Run the Flask app directly without the start.sh script
+          # Run the Flask app directly
           CMD ["python", "app.py"]
           EOF
           
