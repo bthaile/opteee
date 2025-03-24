@@ -65,55 +65,87 @@ jobs:
                   
               return None
               
+          def patch_file(file_path):
+              """Patch a single file to replace cached_download with hf_hub_download"""
+              if not os.path.exists(file_path):
+                  print(f"File not found: {file_path}")
+                  return False
+                  
+              print(f"Checking {file_path}")
+              with open(file_path, 'r', encoding='utf-8') as f:
+                  content = f.read()
+                  
+              if 'cached_download' in content:
+                  print(f"  Found cached_download in {file_path}, patching...")
+                  
+                  # Replace imports
+                  new_content = re.sub(
+                      r'from huggingface_hub import cached_download', 
+                      'from huggingface_hub import hf_hub_download', 
+                      content
+                  )
+                  
+                  # Also check for import huggingface_hub
+                  new_content = re.sub(
+                      r'from huggingface_hub import ([^,]*), cached_download(.*)', 
+                      r'from huggingface_hub import \1, hf_hub_download\2', 
+                      new_content
+                  )
+                  
+                  # Replace function calls - might need adjustment
+                  new_content = re.sub(
+                      r'cached_download\s*\(([^)]*)\)', 
+                      r'hf_hub_download(repo_id="sentence-transformers/all-MiniLM-L6-v2", filename=\1)', 
+                      new_content
+                  )
+                  
+                  with open(file_path, 'w', encoding='utf-8') as f:
+                      f.write(new_content)
+                      
+                  print(f"  ✅ Successfully patched {file_path}")
+                  return True
+              else:
+                  print(f"  No cached_download found in {file_path}")
+                  return False
+              
           def patch_st_files():
               """Patch sentence_transformers files to use hf_hub_download"""
+              patched_files = []
+              
+              # First patch app files
+              app_files = [
+                  "create_vector_store.py",
+                  "app.py"
+              ]
+              
+              for file_path in app_files:
+                  if os.path.exists(file_path):
+                      if patch_file(file_path):
+                          patched_files.append(file_path)
+              
+              # Then patch sentence_transformers
               st_path = find_sentence_transformers_path()
               if not st_path:
                   print("❌ Could not find sentence_transformers installation")
-                  return False
+              else:
+                  print(f"Found sentence_transformers at: {st_path}")
                   
-              print(f"Found sentence_transformers at: {st_path}")
-              
-              # Files to patch
-              files_to_patch = [
-                  os.path.join(st_path, "models", "Transformer.py"),
-                  os.path.join(st_path, "SentenceTransformer.py"),
-                  # Add any additional files that might use cached_download
-                  os.path.join(st_path, "util.py")
-              ]
-              
-              patched_files = []
-              
-              for file_path in files_to_patch:
-                  if os.path.exists(file_path):
-                      print(f"Checking {file_path}")
-                      with open(file_path, 'r', encoding='utf-8') as f:
-                          content = f.read()
-                          
-                      if 'cached_download' in content:
-                          print(f"  Found cached_download in {file_path}, patching...")
-                          
-                          # Replace imports
-                          new_content = re.sub(
-                              r'from huggingface_hub import cached_download', 
-                              'from huggingface_hub import hf_hub_download', 
-                              content
-                          )
-                          
-                          # Replace function calls - might need adjustment
-                          new_content = re.sub(
-                              r'cached_download\s*\(([^)]*)\)', 
-                              r'hf_hub_download(repo_id="sentence-transformers/all-MiniLM-L6-v2", filename=\1)', 
-                              new_content
-                          )
-                          
-                          with open(file_path, 'w', encoding='utf-8') as f:
-                              f.write(new_content)
-                              
+                  # Files to patch
+                  files_to_patch = [
+                      os.path.join(st_path, "models", "Transformer.py"),
+                      os.path.join(st_path, "SentenceTransformer.py"),
+                      os.path.join(st_path, "util.py"),
+                      # Recursively search for all Python files
+                      *[os.path.join(dp, f) for dp, dn, filenames in os.walk(st_path) 
+                        for f in filenames if f.endswith('.py')]
+                  ]
+                  
+                  # Remove duplicates
+                  files_to_patch = list(set(files_to_patch))
+                  
+                  for file_path in files_to_patch:
+                      if patch_file(file_path):
                           patched_files.append(file_path)
-                          print(f"  ✅ Successfully patched {file_path}")
-                      else:
-                          print(f"  No cached_download found in {file_path}")
               
               if patched_files:
                   print(f"✅ Successfully patched {len(patched_files)} files")
