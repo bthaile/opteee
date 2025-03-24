@@ -17,12 +17,31 @@ try:
     print("✅ Successfully imported config module")
 except ImportError:
     print("⚠️ Could not import config module, using defaults")
-    PROCESSED_DIR = "processed_transcripts"
-    VECTOR_DIR = "vector_store"
+    # Use /tmp directory which should be writable
+    PROCESSED_DIR = "/tmp/processed_transcripts"
+    VECTOR_DIR = "/tmp/vector_store"
     
     # Create these directories if they don't exist
-    os.makedirs(PROCESSED_DIR, exist_ok=True)
-    os.makedirs(VECTOR_DIR, exist_ok=True)
+    try:
+        os.makedirs(PROCESSED_DIR, exist_ok=True)
+        os.makedirs(VECTOR_DIR, exist_ok=True)
+        print(f"✅ Created directories: {PROCESSED_DIR} and {VECTOR_DIR}")
+    except PermissionError:
+        print("⚠️ Permission denied when creating directories. Using fallbacks.")
+        # Last resort - try current directory with relative paths
+        PROCESSED_DIR = "./data/transcripts"
+        VECTOR_DIR = "./data/vectors"
+        
+        try:
+            # Try to create these directories
+            os.makedirs(PROCESSED_DIR, exist_ok=True)
+            os.makedirs(VECTOR_DIR, exist_ok=True)
+            print(f"✅ Created fallback directories: {PROCESSED_DIR} and {VECTOR_DIR}")
+        except Exception as e:
+            print(f"❌ Still can't create directories: {e}")
+            # Absolute fallback - don't try to create directories, just use strings
+            PROCESSED_DIR = "processed_data"
+            VECTOR_DIR = "vector_data"
 
 # Import our vector search module
 from vector_search import semantic_search, vector_store_exists, build_vector_store

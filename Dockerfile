@@ -13,11 +13,17 @@ COPY vector_search.py .
 COPY static/ ./static/
 COPY templates/ ./templates/
 
-# Create necessary directories
-RUN mkdir -p processed_transcripts vector_store
+# Create writable directories with proper permissions
+RUN mkdir -p /tmp/processed_transcripts /tmp/vector_store
+RUN chmod -R 777 /tmp/processed_transcripts /tmp/vector_store
 
-# List all files to verify
+# Also create a local data directory with write permissions
+RUN mkdir -p ./data/transcripts ./data/vectors
+RUN chmod -R 777 ./data
+
+# List all files to verify and debug permissions
 RUN ls -la
+RUN ls -la /tmp
 
 # Add these debugging commands
 RUN echo "Python path: $PYTHONPATH"
