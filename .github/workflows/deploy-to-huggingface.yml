@@ -32,10 +32,12 @@ jobs:
           torch==1.13.1
           transformers==4.31.0
           tokenizers==0.13.3
+          # Pin huggingface_hub to version with cached_download
+          huggingface_hub==0.12.1
           # Vector store and other requirements
           faiss-cpu
           python-dotenv
-          sentence_transformers
+          sentence_transformers==2.2.2
           # Add other dependencies below but don't specify versions unless needed
           EOF
           
