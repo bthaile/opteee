@@ -6,18 +6,25 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application files - most important is app.py
+# Explicitly copy config.py and other Python modules
 COPY app.py .
+COPY config.py .
+COPY vector_search.py .
 COPY static/ ./static/
 COPY templates/ ./templates/
 
 # Create necessary directories
 RUN mkdir -p processed_transcripts vector_store
 
-# List files for debugging
+# List all files to verify
 RUN ls -la
+
+# Add these debugging commands
+RUN echo "Python path: $PYTHONPATH"
+RUN python -c "import sys; print('Python module paths:', sys.path)"
+RUN find / -name config.py 2>/dev/null || echo "config.py not found"
 
 EXPOSE 7860
 
-# Run the Flask app directly
+# Run the Flask app
 CMD ["python", "app.py"] 

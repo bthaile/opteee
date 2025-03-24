@@ -11,8 +11,20 @@ import random
 import threading
 import json
 
+# Try to import from config, but fall back to default values if not found
+try:
+    from config import PROCESSED_DIR, VECTOR_DIR
+    print("✅ Successfully imported config module")
+except ImportError:
+    print("⚠️ Could not import config module, using defaults")
+    PROCESSED_DIR = "processed_transcripts"
+    VECTOR_DIR = "vector_store"
+    
+    # Create these directories if they don't exist
+    os.makedirs(PROCESSED_DIR, exist_ok=True)
+    os.makedirs(VECTOR_DIR, exist_ok=True)
+
 # Import our vector search module
-from config import PROCESSED_DIR, VECTOR_DIR
 from vector_search import semantic_search, vector_store_exists, build_vector_store
 
 # Create Flask app
@@ -121,15 +133,9 @@ print(f"Current directory: {os.getcwd()}")
 print(f"Directory contents: {os.listdir()}")
 
 # ===== Configuration (directly in app.py) =====
-PROCESSED_DIR = "processed_transcripts"
-VECTOR_DIR = "vector_store"
 MODEL_NAME = "all-MiniLM-L6-v2"
 DEFAULT_TOP_K = 5
 BATCH_SIZE = 32
-
-# Ensure directories exist
-os.makedirs(PROCESSED_DIR, exist_ok=True)
-os.makedirs(VECTOR_DIR, exist_ok=True)
 
 # ===== Vector Search Functions (simplified) =====
 def vector_store_exists():
