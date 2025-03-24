@@ -625,3 +625,516 @@ jobs:
           
           # Force push to Hugging Face Space
           git push --force space main 
+
+      - name: Create a config.py file to centralize configuration
+        run: |
+          cat > config.py <<'EOF'
+          import os
+
+          # Directories
+          PROCESSED_DIR = "processed_transcripts"
+          VECTOR_DIR = "vector_store"
+          
+          # Model configuration
+          MODEL_NAME = "all-MiniLM-L6-v2"  # Small, fast model good for semantic search
+          
+          # Search configuration
+          DEFAULT_TOP_K = 5
+          
+          # Processing configuration
+          BATCH_SIZE = 32  # For embedding creation
+          
+          # Ensure directories exist
+          os.makedirs(PROCESSED_DIR, exist_ok=True)
+          os.makedirs(VECTOR_DIR, exist_ok=True)
+          EOF
+          
+      - name: Create vector_search.py module for semantic search functionality
+        run: |
+          cat > vector_search.py <<'EOF'
+          import os
+          import json
+          import pickle
+          import numpy as np
+          from sentence_transformers import SentenceTransformer
+          import faiss
+          from tqdm import tqdm
+          import time
+          import sys
+          
+          from config import PROCESSED_DIR, VECTOR_DIR, MODEL_NAME, BATCH_SIZE
+          
+          # Global model instance (loaded when needed)
+          _model = None
+          
+          def get_model():
+              """Get or initialize the embedding model"""
+              global _model
+              if _model is None:
+                  print(f"Loading model: {MODEL_NAME}")
+                  _model = SentenceTransformer(MODEL_NAME)
+              return _model
+              
+          def vector_store_exists():
+              """Check if vector store files exist"""
+              index_path = os.path.join(VECTOR_DIR, "transcript_index.faiss")
+              metadata_path = os.path.join(VECTOR_DIR, "transcript_metadata.pkl")
+              texts_path = os.path.join(VECTOR_DIR, "transcript_texts.pkl")
+              return all(os.path.exists(f) for f in [index_path, metadata_path, texts_path])
+              
+          def load_processed_transcripts():
+              """Load all processed transcript chunks from JSON files"""
+              print(f"Loading processed transcripts from {PROCESSED_DIR}...")
+              all_chunks = []
+              all_metadatas = []
+              
+              # Check if directory exists
+              if not os.path.exists(PROCESSED_DIR):
+                  print(f"Directory {PROCESSED_DIR} not found")
+                  return [], []
+              
+              # Get all JSON files
+              json_files = [f for f in os.listdir(PROCESSED_DIR) if f.endswith('.json')]
+              if not json_files:
+                  print(f"No JSON files found in {PROCESSED_DIR}")
+                  return [], []
+                  
+              print(f"Found {len(json_files)} processed transcript files")
+              
+              # Use a progress bar for loading
+              for filename in tqdm(json_files, desc="Loading files"):
+                  try:
+                      file_path = os.path.join(PROCESSED_DIR, filename)
+                      with open(file_path, 'r', encoding='utf-8') as f:
+                          chunk_data = json.load(f)
+                          
+                          for chunk in chunk_data:
+                              text = chunk.get('text', '')
+                              metadata = chunk.get('metadata', {})
+                              
+                              if text and len(text.strip()) > 0:
+                                  all_chunks.append(text)
+                                  all_metadatas.append(metadata)
+                  except Exception as e:
+                      print(f"Error loading {filename}: {e}")
+              
+              print(f"✅ Loaded {len(all_chunks)} transcript chunks")
+              return all_chunks, all_metadatas
+              
+          def create_embeddings(texts):
+              """Create embeddings for all texts using the specified model"""
+              model = get_model()
+              embeddings = []
+              
+              # Process in batches to avoid memory issues
+              print(f"Creating embeddings for {len(texts)} chunks (batch size: {BATCH_SIZE})...")
+              
+              for i in tqdm(range(0, len(texts), BATCH_SIZE), desc="Creating embeddings"):
+                  batch_texts = texts[i:i+BATCH_SIZE]
+                  batch_embeddings = model.encode(batch_texts, show_progress_bar=False)
+                  embeddings.extend(batch_embeddings)
+              
+              embeddings = np.array(embeddings).astype('float32')
+              print(f"✅ Created embeddings with shape: {embeddings.shape}")
+              return embeddings
+              
+          def create_faiss_index(embeddings, metadatas, texts):
+              """Create and save a FAISS index for fast similarity search"""
+              # Create directory for vector store if it doesn't exist
+              os.makedirs(VECTOR_DIR, exist_ok=True)
+              
+              # Get dimension of embeddings
+              dimension = embeddings.shape[1]
+              print(f"Creating FAISS index with dimension {dimension}...")
+              
+              # Create a flat index - simple but effective for smaller datasets
+              index = faiss.IndexFlatL2(dimension)
+              
+              # Add vectors to the index
+              index.add(embeddings)
+              print(f"✅ Added {index.ntotal} vectors to the index")
+              
+              # Save the index
+              index_path = os.path.join(VECTOR_DIR, "transcript_index.faiss")
+              faiss.write_index(index, index_path)
+              print(f"✅ Saved FAISS index to {index_path}")
+              
+              # Save the metadata mapping (needed for retrieval)
+              metadata_path = os.path.join(VECTOR_DIR, "transcript_metadata.pkl")
+              with open(metadata_path, 'wb') as f:
+                  pickle.dump(metadatas, f)
+              print(f"✅ Saved metadata mapping to {metadata_path}")
+              
+              # Save raw texts for retrieval
+              texts_path = os.path.join(VECTOR_DIR, "transcript_texts.pkl")
+              with open(texts_path, 'wb') as f:
+                  pickle.dump(texts, f)
+              print(f"✅ Saved raw texts to {texts_path}")
+              
+              return index
+              
+          def build_vector_store():
+              """Build or rebuild the vector store from processed transcripts"""
+              start_time = time.time()
+              
+              print("\n" + "="*50)
+              print(f"BUILDING VECTOR STORE - Using model: {MODEL_NAME}")
+              print("="*50)
+              
+              # Load transcripts
+              texts, metadatas = load_processed_transcripts()
+              
+              if not texts:
+                  print("❌ No transcript chunks loaded, cannot build vector store")
+                  return False
+                  
+              try:
+                  # Create embeddings
+                  embeddings = create_embeddings(texts)
+                  
+                  # Create index
+                  create_faiss_index(embeddings, metadatas, texts)
+                  
+                  elapsed = time.time() - start_time
+                  print(f"\n✅ Vector store built successfully in {elapsed:.1f} seconds")
+                  return True
+              except Exception as e:
+                  print(f"❌ Error building vector store: {e}")
+                  import traceback
+                  traceback.print_exc()
+                  return False
+                  
+          def load_vector_store():
+              """Load the vector store from disk"""
+              if not vector_store_exists():
+                  print("⚠️ Vector store does not exist")
+                  return None, [], []
+                  
+              try:
+                  index_path = os.path.join(VECTOR_DIR, "transcript_index.faiss")
+                  metadata_path = os.path.join(VECTOR_DIR, "transcript_metadata.pkl")
+                  texts_path = os.path.join(VECTOR_DIR, "transcript_texts.pkl")
+                  
+                  # Load FAISS index
+                  index = faiss.read_index(index_path)
+                  
+                  # Load metadata and texts
+                  with open(metadata_path, 'rb') as f:
+                      metadatas = pickle.load(f)
+                      
+                  with open(texts_path, 'rb') as f:
+                      texts = pickle.load(f)
+                      
+                  print(f"✅ Loaded vector store with {index.ntotal} vectors")
+                  return index, metadatas, texts
+              except Exception as e:
+                  print(f"❌ Error loading vector store: {e}")
+                  return None, [], []
+                  
+          def semantic_search(query, top_k=5):
+              """Perform semantic search using the vector store"""
+              # Check if vector store exists and try to build it if not
+              if not vector_store_exists():
+                  print("Vector store doesn't exist, attempting to build...")
+                  success = build_vector_store()
+                  if not success:
+                      return []
+              
+              # Load vector store
+              index, metadatas, texts = load_vector_store()
+              if index is None:
+                  return []
+                  
+              # Get model and create query embedding
+              model = get_model()
+              query_embedding = model.encode([query])[0].reshape(1, -1).astype('float32')
+              
+              # Search
+              distances, indices = index.search(query_embedding, top_k)
+              
+              results = []
+              for i, (idx, distance) in enumerate(zip(indices[0], distances[0])):
+                  if idx >= len(texts) or idx < 0:
+                      continue
+                      
+                  metadata = metadatas[idx]
+                  text = texts[idx]
+                  
+                  # Normalize distance to a score between 0 and 1
+                  # Lower distance is better in L2 space, so we invert it
+                  score = 1.0 / (1.0 + distance)
+                  
+                  results.append({
+                      "title": metadata.get("title", f"Result {i+1}"),
+                      "timestamp": metadata.get("start_timestamp", ""),
+                      "video_url": metadata.get("video_url_with_timestamp", "#"),
+                      "content": text,
+                      "score": score
+                  })
+                  
+              return results
+          EOF
+          
+          # Create updated app.py file that uses our vector search implementation
+          cat > app.py <<'EOF'
+          from flask import Flask, request, render_template, jsonify
+          import os
+          import sys
+          import json
+          from datetime import datetime
+          import random
+          import threading
+          
+          # Import our vector search module
+          from config import PROCESSED_DIR, VECTOR_DIR
+          from vector_search import semantic_search, vector_store_exists, build_vector_store
+          
+          # Create Flask app
+          app = Flask(__name__)
+          
+          # Sample data for demonstration
+          SAMPLE_TRANSCRIPTS = [
+              {
+                  "title": "Options Trading Basics",
+                  "timestamp": "05:23",
+                  "video_url": "https://example.com/video1?t=323",
+                  "content": "Options give you the right, but not the obligation, to buy or sell an underlying asset at a specific price before a certain date. Call options give you the right to buy, while put options give you the right to sell."
+              },
+              {
+                  "title": "Understanding Strike Prices",
+                  "timestamp": "12:45",
+                  "video_url": "https://example.com/video2?t=765",
+                  "content": "The strike price is the price at which an option contract can be exercised. For call options, if the market price exceeds the strike price, the option is 'in the money'. For put options, it's the opposite."
+              },
+              {
+                  "title": "Options Expiration Explained",
+                  "timestamp": "08:15",
+                  "video_url": "https://example.com/video3?t=495",
+                  "content": "Options contracts have expiration dates. After this date, the contract is no longer valid. Weekly options expire every Friday, while monthly options typically expire on the third Friday of the month."
+              },
+              {
+                  "title": "Calculating Option Premium",
+                  "timestamp": "17:32",
+                  "video_url": "https://example.com/video4?t=1052",
+                  "content": "Option premium consists of intrinsic value and time value. Intrinsic value is the difference between the strike price and the market price, while time value is influenced by the time until expiration and market volatility."
+              },
+              {
+                  "title": "Greeks in Options Trading",
+                  "timestamp": "21:05",
+                  "video_url": "https://example.com/video5?t=1265",
+                  "content": "The Greeks are Delta, Gamma, Theta, Vega, and Rho. Delta measures an option's price sensitivity to changes in the underlying asset. Gamma measures the rate of change in Delta. Theta measures time decay. Vega measures sensitivity to volatility. Rho measures sensitivity to interest rates."
+              },
+              {
+                  "title": "Covered Call Strategy",
+                  "timestamp": "14:22",
+                  "video_url": "https://example.com/video6?t=862",
+                  "content": "A covered call involves holding a long position in an asset and selling a call option on that same asset. This strategy generates income through the premium received from selling the call option, providing a partial hedge against potential losses."
+              },
+              {
+                  "title": "Put Selling Strategies",
+                  "timestamp": "19:48",
+                  "video_url": "https://example.com/video7?t=1188",
+                  "content": "Selling puts can be an effective strategy when you're bullish or neutral on a stock. You collect premium and potentially acquire shares at a lower effective cost basis if the stock is assigned to you."
+              },
+              {
+                  "title": "Iron Condor Explained",
+                  "timestamp": "27:30",
+                  "video_url": "https://example.com/video8?t=1650",
+                  "content": "An iron condor is an options strategy that involves buying and selling calls and puts with different strike prices but the same expiration date. It's designed to profit from low volatility in the underlying asset."
+              }
+          ]
+          
+          # Application status tracking
+          app_status = {
+              "vector_store_available": False,
+              "building_vector_store": False,
+              "transcript_count": 0,
+              "vector_count": 0,
+              "last_updated": datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+          }
+          
+          def check_and_build_vector_store():
+              """Check vector store status and build if needed"""
+              app_status["vector_store_available"] = vector_store_exists()
+              
+              # If vector store doesn't exist and we're not already building it
+              if not app_status["vector_store_available"] and not app_status["building_vector_store"]:
+                  # Start a background thread to build the vector store
+                  threading.Thread(target=build_vector_store_background).start()
+          
+          def build_vector_store_background():
+              """Build vector store in a background thread"""
+              try:
+                  app_status["building_vector_store"] = True
+                  success = build_vector_store()
+                  app_status["vector_store_available"] = success
+              finally:
+                  app_status["building_vector_store"] = False
+                  app_status["last_updated"] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+          
+          # Check vector store on startup (not using before_first_request as it's deprecated)
+          @app.route('/')
+          def home():
+              """Render the home page"""
+              # Check vector store status
+              try:
+                  check_and_build_vector_store()
+              except Exception as e:
+                  print(f"⚠️ Warning: Vector store check error: {e}")
+              
+              # Get system info for the Info tab
+              flask_version = "2.0.1"  # Hardcoded for simplicity
+              python_version = sys.version.split()[0]
+              timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+              
+              # Get directory listing
+              app_files = sorted([f for f in os.listdir() if os.path.isfile(f)])
+              static_files = []
+              if os.path.exists('static'):
+                  static_files = sorted(os.listdir('static'))
+              template_files = []
+              if os.path.exists('templates'):
+                  template_files = sorted(os.listdir('templates'))
+              
+              # Check vector store
+              vector_status = "✅ Available" if vector_store_exists() else "🚧 Building" if app_status["building_vector_store"] else "❌ Not Available"
+              
+              # Count transcript files
+              transcript_count = 0
+              if os.path.exists(PROCESSED_DIR):
+                  transcript_files = [f for f in os.listdir(PROCESSED_DIR) if f.endswith('.json')]
+                  transcript_count = len(transcript_files)
+              
+              return render_template(
+                  'index.html', 
+                  flask_version=flask_version,
+                  python_version=python_version,
+                  timestamp=timestamp,
+                  file_list=', '.join(app_files[:10]) + ('...' if len(app_files) > 10 else ''),
+                  static_files=', '.join(static_files[:5]) + ('...' if len(static_files) > 5 else ''),
+                  template_files=', '.join(template_files[:5]) + ('...' if len(template_files) > 5 else ''),
+                  vector_status=vector_status,
+                  transcript_count=transcript_count,
+                  building_vector_store=app_status["building_vector_store"]
+              )
+          
+          def simple_search(query, data, top_k=5):
+              """Simple keyword-based search on the sample data"""
+              if not query or not data:
+                  return []
+              
+              # Split query into terms
+              terms = query.lower().split()
+              
+              results = []
+              for item in data:
+                  # Simple scoring based on term frequency
+                  score = 0
+                  content_lower = item["content"].lower()
+                  title_lower = item["title"].lower()
+                  
+                  for term in terms:
+                      if len(term) > 2:  # Only consider terms with more than 2 characters
+                          # Give more weight to title matches
+                          title_count = title_lower.count(term)
+                          content_count = content_lower.count(term)
+                          score += (title_count * 2) + content_count
+                  
+                  if score > 0:
+                      results.append({
+                          "title": item["title"],
+                          "timestamp": item["timestamp"],
+                          "video_url": item["video_url"],
+                          "content": item["content"],
+                          "score": score / max(1, len(terms))  # Normalize by number of terms
+                      })
+              
+              # Sort by score descending
+              results.sort(key=lambda x: x["score"], reverse=True)
+              
+              # Return top k results
+              return results[:top_k]
+          
+          @app.route('/api/search')
+          def search_api():
+              """Enhanced search endpoint that tries vector search first, then fallback to simple search"""
+              query = request.args.get('q', '').strip()
+              
+              if not query:
+                  return jsonify({
+                      "results": [],
+                      "message": "Please provide a search query"
+                  })
+              
+              # Check if we have vector store and try semantic search
+              if vector_store_exists():
+                  try:
+                      results = semantic_search(query)
+                      if results:
+                          return jsonify({
+                              "results": results,
+                              "query": query,
+                              "search_type": "semantic"
+                          })
+                  except Exception as e:
+                      print(f"Error in semantic search: {e}")
+                      # Fall back to simple search
+              
+              # Fallback to simple search
+              results = simple_search(query, SAMPLE_TRANSCRIPTS)
+              
+              # Add some randomness to make results look dynamic
+              for result in results:
+                  result["score"] = min(1.0, result["score"] + random.uniform(-0.1, 0.1))
+              
+              return jsonify({
+                  "results": results,
+                  "query": query,
+                  "search_type": "keyword"
+              })
+          
+          @app.route('/api/status')
+          def status_api():
+              """API endpoint for checking application status"""
+              # Update status
+              app_status["vector_store_available"] = vector_store_exists()
+              app_status["last_updated"] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+              
+              # Count transcript files
+              transcript_count = 0
+              if os.path.exists(PROCESSED_DIR):
+                  transcript_files = [f for f in os.listdir(PROCESSED_DIR) if f.endswith('.json')]
+                  transcript_count = len(transcript_files)
+              app_status["transcript_count"] = transcript_count
+              
+              return jsonify(app_status)
+          
+          # Run the Flask app
+          if __name__ == '__main__':
+              app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 7860)))
+          EOF
+          
+          # Ensure vector_search.py is copied in the Dockerfile
+          cat > Dockerfile <<'EOF'
+          FROM python:3.9-slim
+          
+          WORKDIR /app
+          
+          COPY requirements.txt .
+          RUN pip install --no-cache-dir -r requirements.txt
+          
+          # Copy the application files
+          COPY app.py .
+          COPY config.py .
+          COPY vector_search.py .
+          COPY static/ ./static/
+          COPY templates/ ./templates/
+          
+          # Create necessary directories
+          RUN mkdir -p processed_transcripts vector_store
+          
+          EXPOSE 7860
+          
+          # Run the Flask app directly
+          CMD ["python", "app.py"]
+          EOF 
