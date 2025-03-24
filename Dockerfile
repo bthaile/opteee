@@ -8,6 +8,7 @@ COPY runtime_requirements.txt ./runtime_requirements.txt
 
 # Install requirements
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install gradio==3.50.2  # Explicitly install Gradio
 
 # Show installed packages for debugging
 RUN pip list
@@ -28,6 +29,7 @@ RUN echo "Python path:"
 RUN python -c "import sys; print(sys.path)"
 
 EXPOSE 7860
+EXPOSE 7861  # For Gradio
 
-# Run the Flask app
-CMD ["python", "app.py"] 
+# Use Gradio as entry point
+CMD ["python", "gradio_app.py"] 
