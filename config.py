@@ -1,8 +1,8 @@
 import os
 
-# Directories
-PROCESSED_DIR = "processed_transcripts"
-VECTOR_DIR = "vector_store"
+# Directories - use /tmp for writable storage
+PROCESSED_DIR = "/tmp/processed_transcripts"
+VECTOR_DIR = "/tmp/vector_store"
   
 # Model configuration
 MODEL_NAME = "all-MiniLM-L6-v2"  # Small, fast model good for semantic search

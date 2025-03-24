@@ -633,63 +633,23 @@ jobs:
           
           # Update app.py to handle missing imports
           cat > app.py <<'EOF'
-          # Flask application for Options Trading Knowledge Search
+          # Flask application for Options Trading Knowledge Search with vector store building
           from flask import Flask, request, render_template, jsonify
           import os
           import sys
           import json
           from datetime import datetime
-          import random
           import threading
-          
+
           print(f"===== Flask App Starting at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} =====")
-          
-          # Define configuration variables directly if imports fail
-          try:
-              from config import PROCESSED_DIR, VECTOR_DIR
-              print("✅ Successfully imported config")
-          except ImportError:
-              print("⚠️ Config import failed, using defaults")
-              PROCESSED_DIR = "/tmp/processed_transcripts"
-              VECTOR_DIR = "/tmp/vector_store"
-              os.makedirs(PROCESSED_DIR, exist_ok=True)
-              os.makedirs(VECTOR_DIR, exist_ok=True)
-          
-          # Define vector search functions directly if imports fail
-          try:
-              from vector_search import semantic_search, vector_store_exists, build_vector_store
-              print("✅ Successfully imported vector_search")
-          except ImportError:
-              print("⚠️ vector_search import failed, using simplified versions")
-              
-              def vector_store_exists():
-                  return False
-                  
-              def build_vector_store():
-                  return True
-                  
-              def semantic_search(query, top_k=5):
-                  return []
-          
+
+          # Import configuration and vector search modules
+          from config import PROCESSED_DIR, VECTOR_DIR, MODEL_NAME
+          from vector_search import semantic_search, vector_store_exists, build_vector_store
+
           # Create Flask app
           app = Flask(__name__)
-          
-          # Sample data for demonstration
-          SAMPLE_TRANSCRIPTS = [
-              {
-                  "title": "Options Trading Basics",
-                  "timestamp": "05:23",
-                  "video_url": "https://example.com/video1?t=323",
-                  "content": "Options give you the right, but not the obligation, to buy or sell an underlying asset at a specific price before a certain date."
-              },
-              {
-                  "title": "Understanding Strike Prices",
-                  "timestamp": "12:45",
-                  "video_url": "https://example.com/video2?t=765",
-                  "content": "The strike price is the price at which an option contract can be exercised."
-              }
-          ]
-          
+
           # Application status tracking
           app_status = {
               "vector_store_available": False,
@@ -698,7 +658,7 @@ jobs:
               "vector_count": 0,
               "last_updated": datetime.now().strftime('%Y-%m-%d %H:%M:%S')
           }
-          
+
           def check_and_build_vector_store():
               """Check vector store status and build if needed"""
               app_status["vector_store_available"] = vector_store_exists()
@@ -707,7 +667,7 @@ jobs:
               if not app_status["vector_store_available"] and not app_status["building_vector_store"]:
                   # Start a background thread to build the vector store
                   threading.Thread(target=build_vector_store_background).start()
-          
+
           def build_vector_store_background():
               """Build vector store in a background thread"""
               try:
@@ -717,7 +677,7 @@ jobs:
               finally:
                   app_status["building_vector_store"] = False
                   app_status["last_updated"] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-          
+
           @app.route('/')
           def home():
               """Render the home page"""
@@ -762,47 +722,10 @@ jobs:
                   transcript_count=transcript_count,
                   building_vector_store=app_status["building_vector_store"]
               )
-          
-          def simple_search(query, data, top_k=5):
-              """Simple keyword-based search on the sample data"""
-              if not query or not data:
-                  return []
-              
-              # Split query into terms
-              terms = query.lower().split()
-              
-              results = []
-              for item in data:
-                  # Simple scoring based on term frequency
-                  score = 0
-                  content_lower = item["content"].lower()
-                  title_lower = item["title"].lower()
-                  
-                  for term in terms:
-                      if len(term) > 2:  # Only consider terms with more than 2 characters
-                          # Give more weight to title matches
-                          title_count = title_lower.count(term)
-                          content_count = content_lower.count(term)
-                          score += (title_count * 2) + content_count
-                  
-                  if score > 0:
-                      results.append({
-                          "title": item["title"],
-                          "timestamp": item["timestamp"],
-                          "video_url": item["video_url"],
-                          "content": item["content"],
-                          "score": score / max(1, len(terms))  # Normalize by number of terms
-                      })
-              
-              # Sort by score descending
-              results.sort(key=lambda x: x["score"], reverse=True)
-              
-              # Return top k results
-              return results[:top_k]
-          
+
           @app.route('/api/search')
           def search_api():
-              """Enhanced search endpoint that tries vector search first, then fallback to simple search"""
+              """Semantic search endpoint using the vector store"""
               query = request.args.get('q', '').strip()
               
               if not query:
@@ -811,33 +734,25 @@ jobs:
                       "message": "Please provide a search query"
                   })
               
-              # Check if we have vector store and try semantic search
-              if vector_store_exists():
-                  try:
-                      results = semantic_search(query)
-                      if results:
-                          return jsonify({
-                              "results": results,
-                              "query": query,
-                              "search_type": "semantic"
-                          })
-                  except Exception as e:
-                      print(f"Error in semantic search: {e}")
-                      # Fall back to simple search
+              # Use semantic search
+              results = semantic_search(query)
               
-              # Fallback to simple search
-              results = simple_search(query, SAMPLE_TRANSCRIPTS)
-              
-              # Add some randomness to make results look dynamic
-              for result in results:
-                  result["score"] = min(1.0, result["score"] + random.uniform(-0.1, 0.1))
-              
-              return jsonify({
-                  "results": results,
-                  "query": query,
-                  "search_type": "keyword"
-              })
-          
+              # If we got results, return them
+              if results:
+                  return jsonify({
+                      "results": results,
+                      "query": query,
+                      "search_type": "semantic"
+                  })
+              else:
+                  # If no results, return empty list with explanation
+                  return jsonify({
+                      "results": [],
+                      "query": query,
+                      "search_type": "semantic",
+                      "message": "No matching results found or vector store is not available."
+                  })
+
           @app.route('/api/status')
           def status_api():
               """API endpoint for checking application status"""
@@ -853,9 +768,21 @@ jobs:
               app_status["transcript_count"] = transcript_count
               
               return jsonify(app_status)
-          
+
+          # Initialize vector store on startup
+          @app.before_first_request
+          def initialize_vector_store():
+              """Initialize the vector store when the app starts"""
+              print("Starting vector store initialization...")
+              check_and_build_vector_store()
+
           # Run the Flask app
           if __name__ == '__main__':
+              # Start building the vector store immediately
+              threading.Thread(target=build_vector_store_background).start()
+              print("⚙️ Started vector store building in background thread")
+              
+              # Run the Flask app
               app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 7860)))
           EOF
           
@@ -865,11 +792,10 @@ jobs:
           
           WORKDIR /app
           
-          # Copy requirements
+          # Copy requirements and install
           COPY requirements.txt .
           COPY runtime_requirements.txt .
           
-          # Install requirements
           RUN pip install --no-cache-dir -r requirements.txt
           RUN pip install --no-cache-dir -r runtime_requirements.txt
           
@@ -878,17 +804,21 @@ jobs:
           COPY static/ ./static/
           COPY templates/ ./templates/
           
-          # Create necessary directories with proper permissions
+          # Make sure to copy create_vector_store.py in the deployment
+          COPY create_vector_store.py ./
+          
+          # Create writable directories with proper permissions
           RUN mkdir -p /tmp/processed_transcripts /tmp/vector_store
           RUN chmod -R 777 /tmp
           
-          # Show what files we have
-          RUN ls -la
+          # Copy any existing processed transcripts (if available)
+          COPY processed_transcripts/ /tmp/processed_transcripts/ || true
           
-          EXPOSE 7860
+          # Print debug info
+          RUN ls -la /tmp/processed_transcripts/
           
-          # Run the Gradio app which will also start Flask
-          CMD ["python", "gradio_app.py"]
+          # Run app.py directly - it will build the vector store on startup
+          CMD ["python", "app.py"]
           EOF
           
           echo "Created HuggingFace-specific configuration files:"

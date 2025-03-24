@@ -6,12 +6,7 @@ import faiss
 import pickle
 from sentence_transformers import SentenceTransformer
 import argparse
-
-# Configuration
-PROCESSED_DIR = "processed_transcripts"
-VECTOR_DIR = "vector_store"
-MODEL_NAME = "all-MiniLM-L6-v2"  # A good balance between performance and speed
-BATCH_SIZE = 32  # Adjust based on your available memory
+from config import PROCESSED_DIR, VECTOR_DIR, MODEL_NAME, BATCH_SIZE
 
 def load_processed_transcripts():
     """Load all processed transcript chunks from JSON files"""

@@ -10,6 +10,16 @@ from datetime import datetime
 import random
 import threading
 import json
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+# Make API keys available if they're set as Hugging Face secrets
+if os.environ.get("OPENAI_API_KEY"):
+    print("✅ OpenAI API key found in environment")
+if os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("CLAUDE_API_KEY"):
+    print("✅ Claude API key found in environment")
 
 # Try to import from config, but fall back to default values if not found
 try:
@@ -346,6 +356,58 @@ def status_api():
     app_status["transcript_count"] = transcript_count
     
     return jsonify(app_status)
+
+# Add a new route for the RAG endpoint
+@app.route('/api/rag')
+def rag_api():
+    """RAG endpoint for AI-powered answers"""
+    query = request.args.get('q', '').strip()
+    provider = request.args.get('provider', 'openai')  # openai or claude
+    
+    if not query:
+        return jsonify({
+            "answer": "Please provide a question to answer.",
+            "sources": []
+        })
+    
+    try:
+        # Import the RAG pipeline components
+        from rag_pipeline import CustomFAISSRetriever, create_rag_chain, run_rag_query
+        
+        # Initialize the retriever
+        top_k = int(request.args.get('top_k', 5))
+        retriever = CustomFAISSRetriever(top_k=top_k)
+        
+        # Create the RAG chain
+        temperature = float(request.args.get('temperature', 0.2))
+        retriever, chain = create_rag_chain(
+            retriever, 
+            temperature=temperature,
+            provider=provider
+        )
+        
+        # Run the query
+        result = run_rag_query(retriever, chain, query)
+        
+        return jsonify(result)
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        
+        # Check if it's an API key error
+        error_msg = str(e)
+        if "API key" in error_msg:
+            return jsonify({
+                "error": "API key not configured. Please add your OpenAI or Claude API key in the Hugging Face Space settings.",
+                "answer": "Unable to generate AI response: API key not configured.",
+                "sources": []
+            })
+        
+        return jsonify({
+            "error": str(e),
+            "answer": "An error occurred while processing your question. Basic search is still available.",
+            "sources": []
+        })
 
 # Run the Flask app
 if __name__ == '__main__':

@@ -2,29 +2,33 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-# Copy requirements
+# Copy requirements and install
 COPY requirements.txt .
+COPY runtime_requirements.txt .
+
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r runtime_requirements.txt
 
-# Ensure gradio is installed
-RUN pip install gradio==3.50.2
-
-# Copy debug script and other files
-COPY debug.py .
-COPY app.py .
-COPY gradio_app.py .
+# Copy application files
+COPY *.py ./
 COPY static/ ./static/
 COPY templates/ ./templates/
 
-# Make debug script executable
-RUN chmod +x debug.py
-
-# Create directories
+# Create writable directories with proper permissions
 RUN mkdir -p /tmp/processed_transcripts /tmp/vector_store
 RUN chmod -R 777 /tmp
 
-EXPOSE 7860
-EXPOSE 7861
+# Copy processed transcripts to the writable directory
+COPY processed_transcripts/ /tmp/processed_transcripts/ || true
 
-# Run the debug script first, then try to run gradio_app
-CMD ["python", "debug.py"] 
+# Print directory contents for debugging
+RUN echo "Files in directory:" && ls -la
+RUN echo "Transcript files:" && ls -la /tmp/processed_transcripts/ || true
+
+# IMPORTANT: Create the vector store during container initialization
+# This is run when the container starts but before the app is accessed
+ENTRYPOINT ["sh", "-c", "python create_vector_store.py && python app.py"]
+
+# Add this to set default API keys if available from Hugging Face secrets
+ENV OPENAI_API_KEY=${OPENAI_API_KEY}
+ENV ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY} 
