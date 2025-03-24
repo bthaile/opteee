@@ -6,22 +6,25 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Make sure Gradio is installed
+# Ensure gradio is installed
 RUN pip install gradio==3.50.2
 
-# Copy application files
+# Copy debug script and other files
+COPY debug.py .
 COPY app.py .
+COPY gradio_app.py .
 COPY static/ ./static/
 COPY templates/ ./templates/
 
-# Create writable directories
+# Make debug script executable
+RUN chmod +x debug.py
+
+# Create directories
 RUN mkdir -p /tmp/processed_transcripts /tmp/vector_store
 RUN chmod -R 777 /tmp
 
-# Print directory listing for debugging
-RUN ls -la
-
 EXPOSE 7860
+EXPOSE 7861
 
-# Run the app.py which now has both the Flask app and Gradio
-CMD ["python", "app.py"] 
+# Run the debug script first, then try to run gradio_app
+CMD ["python", "debug.py"] 

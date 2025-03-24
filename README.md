@@ -10,7 +10,7 @@ pinned: false
 
 # Options Trading Knowledge Search
 
-This application provides semantic search across a collection of options trading transcripts and videos, using a Gradio wrapper around a Flask application.
+Debug version to understand Hugging Face Spaces environment.
 
 ## Features
 

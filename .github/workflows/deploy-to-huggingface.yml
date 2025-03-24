@@ -45,6 +45,9 @@ jobs:
           # Utility libraries
           markdown==3.3.7
           tqdm==4.66.1
+          
+          # Add Gradio for Hugging Face Spaces
+          gradio==3.50.2
           EOF
           
           # Create runtime_requirements.txt with exact versions for runtime
@@ -557,14 +560,14 @@ jobs:
           # Make start.sh executable
           chmod +x start.sh
           
-          # Update the README to properly run Flask app
+          # Update the README to specify Gradio as the SDK
           cat > README.md <<EOF
           ---
           title: opteee
           emoji: 🔥
           colorFrom: blue
           colorTo: red
-          sdk: docker
+          sdk: gradio
           app_port: 7860
           pinned: false
           ---
@@ -580,303 +583,57 @@ jobs:
           - Direct links to specific timestamps in relevant videos
           EOF
           
-          # Create Dockerfile for Hugging Face Spaces
-          cat > Dockerfile <<'EOF'
-          FROM python:3.9-slim
-          
-          WORKDIR /app
-          
-          COPY requirements.txt .
-          RUN pip install --no-cache-dir -r requirements.txt
-          
-          # Copy the application files
-          COPY app.py .
-          COPY static/ ./static/
-          COPY templates/ ./templates/
-          
-          EXPOSE 7860
-          
-          # Run the Flask app directly
-          CMD ["python", "app.py"]
-          EOF
-          
-          echo "Created HuggingFace-specific configuration files:"
-          ls -la
-
-      - name: Push to Hugging Face Space
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          SPACE_NAME: "bthaile/opteee"
-        run: |
-          # Set credentials helper to store token
-          git config --global credential.helper store
-          
-          # Store the Hugging Face token in the credentials helpers
-          echo "https://USER:${HF_TOKEN}@huggingface.co" > ~/.git-credentials
-          
-          # Create a new repository with only the current content
-          rm -rf .git
-          git init
-          git add .
-          git commit -m "Deploy to Hugging Face with fixed dependencies"
-          
-          # Add Hugging Face Space as a Git remote
-          git remote add space https://huggingface.co/spaces/$SPACE_NAME
-          
-          # Force push to Hugging Face Space
-          git push --force space main 
-
-      - name: Create a config.py file to centralize configuration
-        run: |
-          cat > config.py <<'EOF'
+          # Create gradio_app.py for Hugging Face Spaces
+          cat > gradio_app.py <<'EOF'
+          # Gradio app wrapper for Hugging Face Spaces
+          import gradio as gr
           import os
-
-          # Directories
-          PROCESSED_DIR = "processed_transcripts"
-          VECTOR_DIR = "vector_store"
-          
-          # Model configuration
-          MODEL_NAME = "all-MiniLM-L6-v2"  # Small, fast model good for semantic search
-          
-          # Search configuration
-          DEFAULT_TOP_K = 5
-          
-          # Processing configuration
-          BATCH_SIZE = 32  # For embedding creation
-          
-          # Ensure directories exist
-          os.makedirs(PROCESSED_DIR, exist_ok=True)
-          os.makedirs(VECTOR_DIR, exist_ok=True)
-          EOF
-          
-      - name: Create vector_search.py module for semantic search functionality
-        run: |
-          cat > vector_search.py <<'EOF'
-          import os
-          import json
-          import pickle
-          import numpy as np
-          from sentence_transformers import SentenceTransformer
-          import faiss
-          from tqdm import tqdm
-          import time
           import sys
+          import threading
+          from datetime import datetime
           
-          from config import PROCESSED_DIR, VECTOR_DIR, MODEL_NAME, BATCH_SIZE
+          print(f"===== Gradio App Starting at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} =====")
           
-          # Global model instance (loaded when needed)
-          _model = None
-          
-          def get_model():
-              """Get or initialize the embedding model"""
-              global _model
-              if _model is None:
-                  print(f"Loading model: {MODEL_NAME}")
-                  _model = SentenceTransformer(MODEL_NAME)
-              return _model
-              
-          def vector_store_exists():
-              """Check if vector store files exist"""
-              index_path = os.path.join(VECTOR_DIR, "transcript_index.faiss")
-              metadata_path = os.path.join(VECTOR_DIR, "transcript_metadata.pkl")
-              texts_path = os.path.join(VECTOR_DIR, "transcript_texts.pkl")
-              return all(os.path.exists(f) for f in [index_path, metadata_path, texts_path])
-              
-          def load_processed_transcripts():
-              """Load all processed transcript chunks from JSON files"""
-              print(f"Loading processed transcripts from {PROCESSED_DIR}...")
-              all_chunks = []
-              all_metadatas = []
-              
-              # Check if directory exists
-              if not os.path.exists(PROCESSED_DIR):
-                  print(f"Directory {PROCESSED_DIR} not found")
-                  return [], []
-              
-              # Get all JSON files
-              json_files = [f for f in os.listdir(PROCESSED_DIR) if f.endswith('.json')]
-              if not json_files:
-                  print(f"No JSON files found in {PROCESSED_DIR}")
-                  return [], []
-                  
-              print(f"Found {len(json_files)} processed transcript files")
-              
-              # Use a progress bar for loading
-              for filename in tqdm(json_files, desc="Loading files"):
-                  try:
-                      file_path = os.path.join(PROCESSED_DIR, filename)
-                      with open(file_path, 'r', encoding='utf-8') as f:
-                          chunk_data = json.load(f)
-                          
-                          for chunk in chunk_data:
-                              text = chunk.get('text', '')
-                              metadata = chunk.get('metadata', {})
-                              
-                              if text and len(text.strip()) > 0:
-                                  all_chunks.append(text)
-                                  all_metadatas.append(metadata)
-                  except Exception as e:
-                      print(f"Error loading {filename}: {e}")
-              
-              print(f"✅ Loaded {len(all_chunks)} transcript chunks")
-              return all_chunks, all_metadatas
-              
-          def create_embeddings(texts):
-              """Create embeddings for all texts using the specified model"""
-              model = get_model()
-              embeddings = []
-              
-              # Process in batches to avoid memory issues
-              print(f"Creating embeddings for {len(texts)} chunks (batch size: {BATCH_SIZE})...")
-              
-              for i in tqdm(range(0, len(texts), BATCH_SIZE), desc="Creating embeddings"):
-                  batch_texts = texts[i:i+BATCH_SIZE]
-                  batch_embeddings = model.encode(batch_texts, show_progress_bar=False)
-                  embeddings.extend(batch_embeddings)
-              
-              embeddings = np.array(embeddings).astype('float32')
-              print(f"✅ Created embeddings with shape: {embeddings.shape}")
-              return embeddings
-              
-          def create_faiss_index(embeddings, metadatas, texts):
-              """Create and save a FAISS index for fast similarity search"""
-              # Create directory for vector store if it doesn't exist
-              os.makedirs(VECTOR_DIR, exist_ok=True)
-              
-              # Get dimension of embeddings
-              dimension = embeddings.shape[1]
-              print(f"Creating FAISS index with dimension {dimension}...")
-              
-              # Create a flat index - simple but effective for smaller datasets
-              index = faiss.IndexFlatL2(dimension)
-              
-              # Add vectors to the index
-              index.add(embeddings)
-              print(f"✅ Added {index.ntotal} vectors to the index")
-              
-              # Save the index
-              index_path = os.path.join(VECTOR_DIR, "transcript_index.faiss")
-              faiss.write_index(index, index_path)
-              print(f"✅ Saved FAISS index to {index_path}")
-              
-              # Save the metadata mapping (needed for retrieval)
-              metadata_path = os.path.join(VECTOR_DIR, "transcript_metadata.pkl")
-              with open(metadata_path, 'wb') as f:
-                  pickle.dump(metadatas, f)
-              print(f"✅ Saved metadata mapping to {metadata_path}")
-              
-              # Save raw texts for retrieval
-              texts_path = os.path.join(VECTOR_DIR, "transcript_texts.pkl")
-              with open(texts_path, 'wb') as f:
-                  pickle.dump(texts, f)
-              print(f"✅ Saved raw texts to {texts_path}")
-              
-              return index
-              
-          def build_vector_store():
-              """Build or rebuild the vector store from processed transcripts"""
-              start_time = time.time()
-              
-              print("\n" + "="*50)
-              print(f"BUILDING VECTOR STORE - Using model: {MODEL_NAME}")
-              print("="*50)
-              
-              # Load transcripts
-              texts, metadatas = load_processed_transcripts()
-              
-              if not texts:
-                  print("❌ No transcript chunks loaded, cannot build vector store")
-                  return False
-                  
+          # Import Flask app and start it in a background thread
+          def start_flask():
               try:
-                  # Create embeddings
-                  embeddings = create_embeddings(texts)
-                  
-                  # Create index
-                  create_faiss_index(embeddings, metadatas, texts)
-                  
-                  elapsed = time.time() - start_time
-                  print(f"\n✅ Vector store built successfully in {elapsed:.1f} seconds")
-                  return True
+                  from app import app
+                  print("✅ Successfully imported Flask app")
+                  app.run(host="0.0.0.0", port=7860)
               except Exception as e:
-                  print(f"❌ Error building vector store: {e}")
+                  print(f"❌ Error starting Flask app: {e}")
                   import traceback
                   traceback.print_exc()
-                  return False
-                  
-          def load_vector_store():
-              """Load the vector store from disk"""
-              if not vector_store_exists():
-                  print("⚠️ Vector store does not exist")
-                  return None, [], []
-                  
-              try:
-                  index_path = os.path.join(VECTOR_DIR, "transcript_index.faiss")
-                  metadata_path = os.path.join(VECTOR_DIR, "transcript_metadata.pkl")
-                  texts_path = os.path.join(VECTOR_DIR, "transcript_texts.pkl")
-                  
-                  # Load FAISS index
-                  index = faiss.read_index(index_path)
-                  
-                  # Load metadata and texts
-                  with open(metadata_path, 'rb') as f:
-                      metadatas = pickle.load(f)
-                      
-                  with open(texts_path, 'rb') as f:
-                      texts = pickle.load(f)
-                      
-                  print(f"✅ Loaded vector store with {index.ntotal} vectors")
-                  return index, metadatas, texts
-              except Exception as e:
-                  print(f"❌ Error loading vector store: {e}")
-                  return None, [], []
-                  
-          def semantic_search(query, top_k=5):
-              """Perform semantic search using the vector store"""
-              # Check if vector store exists and try to build it if not
-              if not vector_store_exists():
-                  print("Vector store doesn't exist, attempting to build...")
-                  success = build_vector_store()
-                  if not success:
-                      return []
-              
-              # Load vector store
-              index, metadatas, texts = load_vector_store()
-              if index is None:
-                  return []
-                  
-              # Get model and create query embedding
-              model = get_model()
-              query_embedding = model.encode([query])[0].reshape(1, -1).astype('float32')
-              
-              # Search
-              distances, indices = index.search(query_embedding, top_k)
-              
-              results = []
-              for i, (idx, distance) in enumerate(zip(indices[0], distances[0])):
-                  if idx >= len(texts) or idx < 0:
-                      continue
-                      
-                  metadata = metadatas[idx]
-                  text = texts[idx]
-                  
-                  # Normalize distance to a score between 0 and 1
-                  # Lower distance is better in L2 space, so we invert it
-                  score = 1.0 / (1.0 + distance)
-                  
-                  results.append({
-                      "title": metadata.get("title", f"Result {i+1}"),
-                      "timestamp": metadata.get("start_timestamp", ""),
-                      "video_url": metadata.get("video_url_with_timestamp", "#"),
-                      "content": text,
-                      "score": score
-                  })
-                  
-              return results
+          
+          # Start Flask in a background thread
+          flask_thread = threading.Thread(target=start_flask, daemon=True)
+          flask_thread.start()
+          print("⚙️ Started Flask server in background thread")
+          
+          # Create a simple Gradio interface
+          def dummy_function():
+              return "The Options Trading Knowledge Search is running on port 7860!"
+          
+          # Create the Gradio interface
+          demo = gr.Interface(
+              fn=dummy_function,
+              inputs=None,
+              outputs=gr.Textbox(),
+              title="Options Trading Knowledge Search",
+              description="The main application is running as a Flask app on port 7860. This is just a wrapper for Hugging Face Spaces."
+          )
+          
+          # Export the Gradio app for Hugging Face
+          gradio_app = demo
+          
+          # Launch if running directly
+          if __name__ == "__main__":
+              gradio_app.launch()
           EOF
           
-          # Create updated app.py file that uses our vector search implementation
+          # Update app.py to handle missing imports
           cat > app.py <<'EOF'
+          # Flask application for Options Trading Knowledge Search
           from flask import Flask, request, render_template, jsonify
           import os
           import sys
@@ -885,9 +642,34 @@ jobs:
           import random
           import threading
           
-          # Import our vector search module
-          from config import PROCESSED_DIR, VECTOR_DIR
-          from vector_search import semantic_search, vector_store_exists, build_vector_store
+          print(f"===== Flask App Starting at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} =====")
+          
+          # Define configuration variables directly if imports fail
+          try:
+              from config import PROCESSED_DIR, VECTOR_DIR
+              print("✅ Successfully imported config")
+          except ImportError:
+              print("⚠️ Config import failed, using defaults")
+              PROCESSED_DIR = "/tmp/processed_transcripts"
+              VECTOR_DIR = "/tmp/vector_store"
+              os.makedirs(PROCESSED_DIR, exist_ok=True)
+              os.makedirs(VECTOR_DIR, exist_ok=True)
+          
+          # Define vector search functions directly if imports fail
+          try:
+              from vector_search import semantic_search, vector_store_exists, build_vector_store
+              print("✅ Successfully imported vector_search")
+          except ImportError:
+              print("⚠️ vector_search import failed, using simplified versions")
+              
+              def vector_store_exists():
+                  return False
+                  
+              def build_vector_store():
+                  return True
+                  
+              def semantic_search(query, top_k=5):
+                  return []
           
           # Create Flask app
           app = Flask(__name__)
@@ -898,49 +680,13 @@ jobs:
                   "title": "Options Trading Basics",
                   "timestamp": "05:23",
                   "video_url": "https://example.com/video1?t=323",
-                  "content": "Options give you the right, but not the obligation, to buy or sell an underlying asset at a specific price before a certain date. Call options give you the right to buy, while put options give you the right to sell."
+                  "content": "Options give you the right, but not the obligation, to buy or sell an underlying asset at a specific price before a certain date."
               },
               {
                   "title": "Understanding Strike Prices",
                   "timestamp": "12:45",
                   "video_url": "https://example.com/video2?t=765",
-                  "content": "The strike price is the price at which an option contract can be exercised. For call options, if the market price exceeds the strike price, the option is 'in the money'. For put options, it's the opposite."
-              },
-              {
-                  "title": "Options Expiration Explained",
-                  "timestamp": "08:15",
-                  "video_url": "https://example.com/video3?t=495",
-                  "content": "Options contracts have expiration dates. After this date, the contract is no longer valid. Weekly options expire every Friday, while monthly options typically expire on the third Friday of the month."
-              },
-              {
-                  "title": "Calculating Option Premium",
-                  "timestamp": "17:32",
-                  "video_url": "https://example.com/video4?t=1052",
-                  "content": "Option premium consists of intrinsic value and time value. Intrinsic value is the difference between the strike price and the market price, while time value is influenced by the time until expiration and market volatility."
-              },
-              {
-                  "title": "Greeks in Options Trading",
-                  "timestamp": "21:05",
-                  "video_url": "https://example.com/video5?t=1265",
-                  "content": "The Greeks are Delta, Gamma, Theta, Vega, and Rho. Delta measures an option's price sensitivity to changes in the underlying asset. Gamma measures the rate of change in Delta. Theta measures time decay. Vega measures sensitivity to volatility. Rho measures sensitivity to interest rates."
-              },
-              {
-                  "title": "Covered Call Strategy",
-                  "timestamp": "14:22",
-                  "video_url": "https://example.com/video6?t=862",
-                  "content": "A covered call involves holding a long position in an asset and selling a call option on that same asset. This strategy generates income through the premium received from selling the call option, providing a partial hedge against potential losses."
-              },
-              {
-                  "title": "Put Selling Strategies",
-                  "timestamp": "19:48",
-                  "video_url": "https://example.com/video7?t=1188",
-                  "content": "Selling puts can be an effective strategy when you're bullish or neutral on a stock. You collect premium and potentially acquire shares at a lower effective cost basis if the stock is assigned to you."
-              },
-              {
-                  "title": "Iron Condor Explained",
-                  "timestamp": "27:30",
-                  "video_url": "https://example.com/video8?t=1650",
-                  "content": "An iron condor is an options strategy that involves buying and selling calls and puts with different strike prices but the same expiration date. It's designed to profit from low volatility in the underlying asset."
+                  "content": "The strike price is the price at which an option contract can be exercised."
               }
           ]
           
@@ -972,7 +718,6 @@ jobs:
                   app_status["building_vector_store"] = False
                   app_status["last_updated"] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
           
-          # Check vector store on startup (not using before_first_request as it's deprecated)
           @app.route('/')
           def home():
               """Render the home page"""
@@ -1114,27 +859,60 @@ jobs:
               app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 7860)))
           EOF
           
-          # Ensure vector_search.py is copied in the Dockerfile
+          # Update Dockerfile to use Gradio
           cat > Dockerfile <<'EOF'
           FROM python:3.9-slim
           
           WORKDIR /app
           
+          # Copy requirements
           COPY requirements.txt .
-          RUN pip install --no-cache-dir -r requirements.txt
+          COPY runtime_requirements.txt .
           
-          # Copy the application files
-          COPY app.py .
-          COPY config.py .
-          COPY vector_search.py .
+          # Install requirements
+          RUN pip install --no-cache-dir -r requirements.txt
+          RUN pip install --no-cache-dir -r runtime_requirements.txt
+          
+          # Copy application files
+          COPY *.py ./
           COPY static/ ./static/
           COPY templates/ ./templates/
           
-          # Create necessary directories
-          RUN mkdir -p processed_transcripts vector_store
+          # Create necessary directories with proper permissions
+          RUN mkdir -p /tmp/processed_transcripts /tmp/vector_store
+          RUN chmod -R 777 /tmp
+          
+          # Show what files we have
+          RUN ls -la
           
           EXPOSE 7860
           
-          # Run the Flask app directly
-          CMD ["python", "app.py"]
-          EOF 
+          # Run the Gradio app which will also start Flask
+          CMD ["python", "gradio_app.py"]
+          EOF
+          
+          echo "Created HuggingFace-specific configuration files:"
+          ls -la
+
+      - name: Push to Hugging Face Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          SPACE_NAME: "bthaile/opteee"
+        run: |
+          # Set credentials helper to store token
+          git config --global credential.helper store
+          
+          # Store the Hugging Face token in the credentials helpers
+          echo "https://USER:${HF_TOKEN}@huggingface.co" > ~/.git-credentials
+          
+          # Create a new repository with only the current content
+          rm -rf .git
+          git init
+          git add .
+          git commit -m "Deploy to Hugging Face with Gradio integration"
+          
+          # Add Hugging Face Space as a Git remote
+          git remote add space https://huggingface.co/spaces/$SPACE_NAME
+          
+          # Force push to Hugging Face Space
+          git push --force space main 
