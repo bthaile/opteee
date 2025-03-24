@@ -28,8 +28,12 @@ jobs:
           
           # Create requirements.txt with minimal dependencies for build time
           cat > requirements.txt <<EOF
-          # Very minimal dependencies to avoid conflicts
+          # Very minimal dependencies with pinned versions
           flask==2.0.1
+          Werkzeug==2.0.1
+          Jinja2==3.0.1
+          itsdangerous==2.0.1
+          click==8.0.1
           markdown==3.3.7
           python-dotenv==0.21.0
           numpy==1.23.5
@@ -394,13 +398,11 @@ jobs:
           RUN pip install --no-cache-dir -r requirements.txt
           
           COPY app.py .
-          COPY start.sh .
-          
-          RUN chmod +x start.sh
           
           EXPOSE 7860
           
-          CMD ["./start.sh"]
+          # Run the Flask app directly without the start.sh script
+          CMD ["python", "app.py"]
           EOF
           
           echo "Created HuggingFace-specific configuration files:"
