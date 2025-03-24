@@ -4,26 +4,20 @@ WORKDIR /app
 
 # Copy requirements
 COPY requirements.txt .
-COPY runtime_requirements.txt .
-
-# Install requirements
 RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install --no-cache-dir -r runtime_requirements.txt
 
-# Copy application files - explicitly list important files
-COPY app.py ./
-COPY config.py ./
-COPY vector_search.py ./
+# Copy the new entry point file
+COPY main.py .
 COPY static/ ./static/
 COPY templates/ ./templates/
 
-# Create directories
+# Create necessary directories
 RUN mkdir -p processed_transcripts vector_store
 
-# Debug: Show all files
+# Show what files we have
 RUN ls -la
 
 EXPOSE 7860
 
-# Run the Flask app directly
-CMD ["python", "app.py"] 
+# Use our new entry point
+CMD ["python", "main.py"] 
