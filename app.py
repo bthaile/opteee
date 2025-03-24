@@ -944,4 +944,18 @@ if __name__ == "__main__":
     print("✅ Flask app started in background thread")
     
     # Launch the Gradio app
-    gradio_app.launch() 
+    gradio_app.launch()
+
+# Add more debug logging at app startup
+import os
+import sys
+from datetime import datetime
+
+print(f"===== App Starting at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} =====")
+print(f"Python version: {sys.version}")
+print(f"Current directory: {os.getcwd()}")
+print(f"Contents of /tmp/vector_store:")
+if os.path.exists("/tmp/vector_store"):
+    print(os.listdir("/tmp/vector_store"))
+else:
+    print("Directory doesn't exist") 

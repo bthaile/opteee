@@ -2,10 +2,11 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-# Copy requirements and install
+# Copy requirements
 COPY requirements.txt .
 COPY runtime_requirements.txt .
 
+# Install requirements
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --no-cache-dir -r runtime_requirements.txt
 
@@ -14,20 +15,26 @@ COPY *.py ./
 COPY static/ ./static/
 COPY templates/ ./templates/
 
-# Create writable directories with proper permissions
+# IMPORTANT: Copy processed transcripts if they exist
+COPY processed_transcripts/ ./processed_transcripts/ || true
+
+# Create writable directories
 RUN mkdir -p /tmp/processed_transcripts /tmp/vector_store
 RUN chmod -R 777 /tmp
 
-# Copy processed transcripts to the writable directory
-COPY processed_transcripts/ /tmp/processed_transcripts/ || true
+# Copy and make executable the startup script
+COPY startup.sh ./
+RUN chmod +x startup.sh
 
-# Print directory contents for debugging
-RUN echo "Files in directory:" && ls -la
-RUN echo "Transcript files:" && ls -la /tmp/processed_transcripts/ || true
+# Debug output
+RUN ls -la
+RUN echo "Processed transcripts:"
+RUN ls -la processed_transcripts || echo "No processed_transcripts directory"
 
-# IMPORTANT: Create the vector store during container initialization
-# This is run when the container starts but before the app is accessed
-ENTRYPOINT ["sh", "-c", "python create_vector_store.py && python app.py"]
+EXPOSE 7860
+
+# Use the startup script as the entry point
+CMD ["./startup.sh"]
 
 # Add this to set default API keys if available from Hugging Face secrets
 ENV OPENAI_API_KEY=${OPENAI_API_KEY}

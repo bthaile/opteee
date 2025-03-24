@@ -824,6 +824,36 @@ jobs:
           echo "Created HuggingFace-specific configuration files:"
           ls -la
 
+      - name: Prepare transcript files
+        run: |
+          # Create a directory for processed transcripts
+          mkdir -p processed_transcripts
+          
+          # If you have transcript files in your repo, they'll be used
+          # Otherwise, add some sample files to enable testing
+          if [ ! "$(ls -A processed_transcripts)" ]; then
+            echo "Creating sample transcript data for testing..."
+            cat > processed_transcripts/sample.json <<EOF
+            [
+              {
+                "text": "Options give you the right, but not the obligation, to buy or sell an underlying asset at a specific price before a certain date.",
+                "metadata": {
+                  "title": "Options Trading Basics",
+                  "start_timestamp": "05:23",
+                  "start_timestamp_seconds": 323,
+                  "video_id": "sample123",
+                  "video_url": "https://example.com/video1",
+                  "video_url_with_timestamp": "https://example.com/video1?t=323",
+                  "channel_name": "Options Education"
+                }
+              }
+            ]
+            EOF
+          fi
+          
+          echo "Transcript files prepared:"
+          ls -la processed_transcripts/
+
       - name: Push to Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}

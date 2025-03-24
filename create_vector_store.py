@@ -8,6 +8,10 @@ from sentence_transformers import SentenceTransformer
 import argparse
 from config import PROCESSED_DIR, VECTOR_DIR, MODEL_NAME, BATCH_SIZE
 
+# Update the directory paths to use writable locations in Hugging Face
+PROCESSED_DIR = "/tmp/processed_transcripts"
+VECTOR_DIR = "/tmp/vector_store"
+
 def load_processed_transcripts():
     """Load all processed transcript chunks from JSON files"""
     print(f"Loading processed transcripts from {PROCESSED_DIR}...")
