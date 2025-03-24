@@ -32,163 +32,166 @@ jobs:
           torch==1.13.1
           transformers==4.26.0
           tokenizers==0.13.3
-          huggingface_hub>=0.12.1
+          huggingface_hub>=0.14.0
           # Vector store and other requirements
           faiss-cpu
           python-dotenv
-          sentence_transformers==2.2.2
-          gradio
+          sentence_transformers>=2.2.2
+          gradio>=3.20.0
           # Add other dependencies below but don't specify versions unless needed
           EOF
           
-          # Create patch script for sentence_transformers
-          cat > direct_patch.py <<'EOF'
-          """
-          Direct patching of sentence_transformers files without importing the module
-          """
+          # Create a modernized version of create_vector_store.py 
+          cat > create_vector_store.py <<'EOF'
           import os
-          import re
-          import sys
-          import site
-          
-          def find_sentence_transformers_path():
-              """Find sentence_transformers package path without importing it"""
-              # Check site-packages directories
-              for site_dir in site.getsitepackages():
-                  st_dir = os.path.join(site_dir, "sentence_transformers")
-                  if os.path.exists(st_dir) and os.path.isdir(st_dir):
-                      return st_dir
+          import json
+          import numpy as np
+          from tqdm import tqdm
+          import faiss
+          import pickle
+          from sentence_transformers import SentenceTransformer
+          import argparse
+
+          # Configuration
+          PROCESSED_DIR = "processed_transcripts"
+          VECTOR_DIR = "vector_store"
+          MODEL_NAME = "all-MiniLM-L6-v2"  # A good balance between performance and speed
+          BATCH_SIZE = 32  # Adjust based on your available memory
+
+          def load_processed_transcripts():
+              """Load all processed transcript chunks from JSON files"""
+              print(f"Loading processed transcripts from {PROCESSED_DIR}...")
+              all_chunks = []
+              all_metadatas = []
               
-              # Check current directory
-              if os.path.exists("sentence_transformers") and os.path.isdir("sentence_transformers"):
-                  return "sentence_transformers"
-                  
-              return None
+              # Ensure directory exists
+              if not os.path.exists(PROCESSED_DIR):
+                  raise FileNotFoundError(f"Directory {PROCESSED_DIR} not found. Run preprocess_transcripts.py first.")
               
-          def patch_file(file_path):
-              """Patch a single file to replace cached_download with hf_hub_download"""
-              if not os.path.exists(file_path):
-                  print(f"File not found: {file_path}")
-                  return False
-                  
-              print(f"Checking {file_path}")
-              with open(file_path, 'r', encoding='utf-8') as f:
-                  content = f.read()
-                  
-              if 'cached_download' in content:
-                  print(f"  Found cached_download in {file_path}, patching...")
-                  
-                  # Replace imports
-                  new_content = re.sub(
-                      r'from huggingface_hub import cached_download', 
-                      'from huggingface_hub import hf_hub_download', 
-                      content
-                  )
-                  
-                  # Also check for import huggingface_hub
-                  new_content = re.sub(
-                      r'from huggingface_hub import ([^,]*), cached_download(.*)', 
-                      r'from huggingface_hub import \1, hf_hub_download\2', 
-                      new_content
-                  )
-                  
-                  # Replace function calls - might need adjustment
-                  new_content = re.sub(
-                      r'cached_download\s*\(([^)]*)\)', 
-                      r'hf_hub_download(repo_id="sentence-transformers/all-MiniLM-L6-v2", filename=\1)', 
-                      new_content
-                  )
-                  
-                  with open(file_path, 'w', encoding='utf-8') as f:
-                      f.write(new_content)
-                      
-                  print(f"  ✅ Successfully patched {file_path}")
-                  return True
-              else:
-                  print(f"  No cached_download found in {file_path}")
-                  return False
+              # Get all JSON files
+              json_files = [f for f in os.listdir(PROCESSED_DIR) if f.endswith('.json')]
+              print(f"Found {len(json_files)} processed transcript files")
               
-          def patch_st_files():
-              """Patch sentence_transformers files to use hf_hub_download"""
-              patched_files = []
+              for filename in tqdm(json_files, desc="Loading files"):
+                  try:
+                      file_path = os.path.join(PROCESSED_DIR, filename)
+                      with open(file_path, 'r', encoding='utf-8') as f:
+                          chunk_data = json.load(f)
+                          
+                          for chunk in chunk_data:
+                              text = chunk.get('text', '')
+                              metadata = chunk.get('metadata', {})
+                              
+                              if text and len(text.strip()) > 0:
+                                  all_chunks.append(text)
+                                  all_metadatas.append(metadata)
+                  except Exception as e:
+                      print(f"Error loading {filename}: {e}")
               
-              # First patch app files
-              app_files = [
-                  "create_vector_store.py",
-                  "app.py"
-              ]
+              print(f"✅ Loaded {len(all_chunks)} transcript chunks")
+              return all_chunks, all_metadatas
+
+          def create_embeddings(texts, model_name=MODEL_NAME, batch_size=BATCH_SIZE):
+              """Create embeddings for all texts using the specified model"""
+              print(f"\nLoading embedding model: {model_name}")
+              # Use modern SentenceTransformer without cached_download
+              model = SentenceTransformer(model_name)
               
-              for file_path in app_files:
-                  if os.path.exists(file_path):
-                      if patch_file(file_path):
-                          patched_files.append(file_path)
+              print(f"Creating embeddings for {len(texts)} chunks (batch size: {batch_size})...")
+              embeddings = []
               
-              # Then patch sentence_transformers
-              st_path = find_sentence_transformers_path()
-              if not st_path:
-                  print("❌ Could not find sentence_transformers installation")
-              else:
-                  print(f"Found sentence_transformers at: {st_path}")
-                  
-                  # Files to patch
-                  files_to_patch = [
-                      os.path.join(st_path, "models", "Transformer.py"),
-                      os.path.join(st_path, "SentenceTransformer.py"),
-                      os.path.join(st_path, "util.py"),
-                      # Recursively search for all Python files
-                      *[os.path.join(dp, f) for dp, dn, filenames in os.walk(st_path) 
-                        for f in filenames if f.endswith('.py')]
-                  ]
-                  
-                  # Remove duplicates
-                  files_to_patch = list(set(files_to_patch))
-                  
-                  for file_path in files_to_patch:
-                      if patch_file(file_path):
-                          patched_files.append(file_path)
+              # Process in batches to avoid memory issues
+              for i in tqdm(range(0, len(texts), batch_size), desc="Creating embeddings"):
+                  batch_texts = texts[i:i+batch_size]
+                  batch_embeddings = model.encode(batch_texts, show_progress_bar=False)
+                  embeddings.extend(batch_embeddings)
               
-              if patched_files:
-                  print(f"✅ Successfully patched {len(patched_files)} files")
-                  return True
-              else:
-                  print("❌ No files required patching")
-                  return False
-                  
+              embeddings = np.array(embeddings).astype('float32')
+              print(f"✅ Created embeddings with shape: {embeddings.shape}")
+              return embeddings
+
+          def create_faiss_index(embeddings, metadatas, texts):
+              """Create and save a FAISS index for fast similarity search"""
+              # Create directory for vector store if it doesn't exist
+              os.makedirs(VECTOR_DIR, exist_ok=True)
+              
+              # Get dimension of embeddings
+              dimension = embeddings.shape[1]
+              print(f"\nCreating FAISS index with dimension {dimension}...")
+              
+              # Create a flat index - simple but effective for smaller datasets
+              index = faiss.IndexFlatL2(dimension)
+              
+              # Add vectors to the index
+              index.add(embeddings)
+              print(f"✅ Added {index.ntotal} vectors to the index")
+              
+              # Save the index
+              index_path = os.path.join(VECTOR_DIR, "transcript_index.faiss")
+              faiss.write_index(index, index_path)
+              print(f"✅ Saved FAISS index to {index_path}")
+              
+              # Save the metadata mapping (needed for retrieval)
+              metadata_path = os.path.join(VECTOR_DIR, "transcript_metadata.pkl")
+              with open(metadata_path, 'wb') as f:
+                  pickle.dump(metadatas, f)
+              print(f"✅ Saved metadata mapping to {metadata_path}")
+              
+              # Save raw texts for retrieval
+              texts_path = os.path.join(VECTOR_DIR, "transcript_texts.pkl")
+              with open(texts_path, 'wb') as f:
+                  pickle.dump(texts, f)
+              print(f"✅ Saved raw texts to {texts_path}")
+              
+              return index
+
+          def main(args):
+              print("="*80)
+              print(f"VECTOR STORE CREATION - Using model: {args.model}")
+              print("="*80)
+              
+              # Load processed transcript chunks
+              texts, metadatas = load_processed_transcripts()
+              
+              # Create embeddings
+              embeddings = create_embeddings(texts, model_name=args.model, batch_size=args.batch_size)
+              
+              # Create and save FAISS index
+              index = create_faiss_index(embeddings, metadatas, texts)
+              
+              print("\n"+"="*80)
+              print("📝 Vector store creation complete!")
+              print(f"✅ Model used: {args.model}")
+              print(f"✅ Total chunks indexed: {len(texts)}")
+              print(f"📁 Vector store saved to {VECTOR_DIR}/")
+              print("="*80)
+              print("\nTo search your vector store, use search_transcripts.py")
+
           if __name__ == "__main__":
-              success = patch_st_files()
-              sys.exit(0 if success else 1)
+              parser = argparse.ArgumentParser(description='Create a vector store from processed transcripts')
+              parser.add_argument('--model', type=str, default=MODEL_NAME, 
+                                  help=f'Sentence transformer model to use (default: {MODEL_NAME})')
+              parser.add_argument('--batch-size', type=int, default=BATCH_SIZE,
+                                  help=f'Batch size for embedding creation (default: {BATCH_SIZE})')
+              parser.add_argument('--test-search', action='store_true',
+                                  help='Run test queries after creating the index')
+              
+              args = parser.parse_args()
+              main(args)
           EOF
           
-          # Create app startup wrapper script
+          # Create simple app wrapper
           cat > app_wrapper.py <<'EOF'
           """
-          Wrapper script to patch sentence_transformers before starting the app
+          App wrapper for Hugging Face Spaces
           """
           import sys
           import os
-          import subprocess
-
-          # Directly patch the files without importing
-          try:
-              print("Running direct patching of sentence_transformers...")
-              result = subprocess.run([sys.executable, "direct_patch.py"], 
-                                    capture_output=True, text=True)
-              print(result.stdout)
-              if result.stderr:
-                  print("Patching errors:", result.stderr)
-                  
-              if result.returncode == 0:
-                  print("✅ Patching successful")
-              else:
-                  print("❌ Patching failed")
-          except Exception as e:
-              print(f"❌ Error during patching: {e}")
 
           # Import and run the original app
           try:
               sys.path.insert(0, os.getcwd())
               from app import app as gradio_app
-
               # This is needed for Gradio on HuggingFace Spaces
               app = gradio_app
           except Exception as e:
@@ -202,7 +205,7 @@ jobs:
               )
           EOF
           
-          # Update the README to use app_wrapper.py instead
+          # Update the README
           cat > README.md <<EOF
           ---
           title: opteee
@@ -217,11 +220,10 @@ jobs:
           
           # HuggingFace Space for opteee
           
-          This space runs with specific dependency versions and patches:
+          This space runs with updated code and modernized dependencies:
           - torch==1.13.1
           - transformers==4.26.0
-          - tokenizers==0.13.3
-          - sentence_transformers with huggingface_hub compatibility patch
+          - sentence_transformers (latest compatible version)
           EOF
           
           echo "Created HuggingFace-specific configuration files:"
