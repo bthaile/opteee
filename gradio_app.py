@@ -85,4 +85,8 @@ except Exception as e:
         print("Falling back to direct Flask execution")
         app.run(host="0.0.0.0", port=7860)
     except Exception as e2:
-        print(f"❌ Also failed to run Flask directly: {e2}") 
+        print(f"❌ Also failed to run Flask directly: {e2}")
+
+# Simple redirector to app.py
+print("gradio_app.py redirecting to app.py...")
+import app 

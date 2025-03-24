@@ -2,34 +2,26 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-# Copy requirements files
+# Copy requirements
 COPY requirements.txt .
-COPY runtime_requirements.txt ./runtime_requirements.txt
-
-# Install requirements
 RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install gradio==3.50.2  # Explicitly install Gradio
 
-# Show installed packages for debugging
-RUN pip list
+# Make sure Gradio is installed
+RUN pip install gradio==3.50.2
 
-# Explicitly copy Python modules
-COPY *.py ./
+# Copy application files
+COPY app.py .
 COPY static/ ./static/
 COPY templates/ ./templates/
 
-# Create writable directories with proper permissions
+# Create writable directories
 RUN mkdir -p /tmp/processed_transcripts /tmp/vector_store
 RUN chmod -R 777 /tmp
 
-# Print debug information
-RUN echo "Files in /app:"
+# Print directory listing for debugging
 RUN ls -la
-RUN echo "Python path:"
-RUN python -c "import sys; print(sys.path)"
 
 EXPOSE 7860
-EXPOSE 7861  # For Gradio
 
-# Use Gradio as entry point
-CMD ["python", "gradio_app.py"] 
+# Run the app.py which now has both the Flask app and Gradio
+CMD ["python", "app.py"] 
