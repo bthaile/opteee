@@ -26,19 +26,24 @@ jobs:
           # Create packages.txt for system dependencies
           echo "" > packages.txt
           
-          # Create requirements.txt specifically for Hugging Face
+          # Create requirements.txt with minimal dependencies for build time
           cat > requirements.txt <<EOF
-          # Pin specific versions that work together
+          # Minimal dependencies for build process
           torch==1.13.1
-          transformers==4.26.0
-          tokenizers==0.13.3
-          huggingface_hub>=0.14.0
-          # Vector store and other requirements
-          faiss-cpu
-          python-dotenv
-          sentence_transformers>=2.2.2
-          gradio>=3.20.0
-          # Add other dependencies below but don't specify versions unless needed
+          gradio==3.20.0
+          python-dotenv==0.21.0
+          # Keep these unversioned to avoid build conflicts
+          numpy
+          EOF
+          
+          # Create runtime_requirements.txt with exact versions for runtime
+          cat > runtime_requirements.txt <<EOF
+          # Exact versions for runtime compatibility
+          huggingface_hub==0.10.1
+          transformers==4.20.1
+          tokenizers==0.12.1
+          sentence_transformers==2.1.0
+          faiss-cpu==1.7.3
           EOF
           
           # Create a modernized version of create_vector_store.py 
@@ -94,7 +99,6 @@ jobs:
           def create_embeddings(texts, model_name=MODEL_NAME, batch_size=BATCH_SIZE):
               """Create embeddings for all texts using the specified model"""
               print(f"\nLoading embedding model: {model_name}")
-              # Use modern SentenceTransformer without cached_download
               model = SentenceTransformer(model_name)
               
               print(f"Creating embeddings for {len(texts)} chunks (batch size: {batch_size})...")
@@ -180,115 +184,312 @@ jobs:
               main(args)
           EOF
           
-          # Create an extremely minimal app.py without sentence_transformers
+          # Create functional app.py 
           cat > app.py <<'EOF'
-          import gradio as gr
           import os
-          import sys
+          import gradio as gr
+          import pickle
+          import faiss
+          from sentence_transformers import SentenceTransformer
+          import numpy as np
+          import json
           from datetime import datetime
+          import sys
           
-          def minimal_search(query):
-              """
-              Minimal search function that doesn't use sentence_transformers
-              """
-              if not query or query.strip() == "":
-                  return "Please enter a search query."
+          # Configuration
+          VECTOR_DIR = "vector_store"
+          MODEL_NAME = "all-MiniLM-L6-v2"
+          
+          # Check if vector store exists, if not pre-build it
+          def vector_store_exists():
+              if not os.path.exists(VECTOR_DIR):
+                  os.makedirs(VECTOR_DIR, exist_ok=True)
+                  return False
+              index_path = os.path.join(VECTOR_DIR, "transcript_index.faiss")
+              metadata_path = os.path.join(VECTOR_DIR, "transcript_metadata.pkl")
+              texts_path = os.path.join(VECTOR_DIR, "transcript_texts.pkl")
+              return os.path.exists(index_path) and os.path.exists(metadata_path) and os.path.exists(texts_path)
+          
+          # Function to load transcripts
+          def load_processed_transcripts():
+              """Load all processed transcript chunks from JSON files"""
+              processed_dir = "processed_transcripts"
+              print(f"Loading processed transcripts from {processed_dir}...")
+              all_chunks = []
+              all_metadatas = []
+              
+              # Ensure directory exists
+              if not os.path.exists(processed_dir):
+                  print(f"⚠️ Directory {processed_dir} not found.")
+                  return [], []
+              
+              # Get all JSON files
+              json_files = [f for f in os.listdir(processed_dir) if f.endswith('.json')]
+              print(f"Found {len(json_files)} processed transcript files")
+              
+              for filename in json_files[:10]:  # Limit to first 10 files for testing
+                  try:
+                      file_path = os.path.join(processed_dir, filename)
+                      with open(file_path, 'r', encoding='utf-8') as f:
+                          chunk_data = json.load(f)
+                          
+                          for chunk in chunk_data:
+                              text = chunk.get('text', '')
+                              metadata = chunk.get('metadata', {})
+                              
+                              if text and len(text.strip()) > 0:
+                                  all_chunks.append(text)
+                                  all_metadatas.append(metadata)
+                  except Exception as e:
+                      print(f"Error loading {filename}: {e}")
+              
+              print(f"✅ Loaded {len(all_chunks)} transcript chunks")
+              return all_chunks, all_metadatas
+          
+          # Function to build or rebuild the vector store
+          def ensure_vector_store():
+              if vector_store_exists():
+                  print("✅ Vector store exists, using existing store")
+                  return True
+              
+              print("⚠️ Vector store doesn't exist, attempting to build...")
+              try:
+                  from create_vector_store import create_embeddings, create_faiss_index
                   
-              # Return a placeholder message
-              return f"""
-              # Search Results for: "{query}"
+                  # Load transcript chunks
+                  texts, metadatas = load_processed_transcripts()
+                  
+                  if not texts:
+                      print("❌ No transcript chunks found, cannot build vector store")
+                      return False
+                  
+                  # Create embeddings
+                  print("Creating embeddings...")
+                  model = SentenceTransformer(MODEL_NAME)
+                  batch_size = 32
+                  
+                  # Process in batches
+                  embeddings = []
+                  for i in range(0, len(texts), batch_size):
+                      batch_texts = texts[i:i+batch_size]
+                      batch_embeddings = model.encode(batch_texts, show_progress_bar=True)
+                      embeddings.extend(batch_embeddings)
+                  
+                  embeddings = np.array(embeddings).astype('float32')
+                  print(f"✅ Created embeddings with shape: {embeddings.shape}")
+                  
+                  # Create FAISS index
+                  print("Creating FAISS index...")
+                  os.makedirs(VECTOR_DIR, exist_ok=True)
+                  
+                  # Create a flat index
+                  dimension = embeddings.shape[1]
+                  index = faiss.IndexFlatL2(dimension)
+                  
+                  # Add vectors to the index
+                  index.add(embeddings)
+                  print(f"✅ Added {index.ntotal} vectors to the index")
+                  
+                  # Save the index
+                  index_path = os.path.join(VECTOR_DIR, "transcript_index.faiss")
+                  faiss.write_index(index, index_path)
+                  print(f"✅ Saved FAISS index to {index_path}")
+                  
+                  # Save the metadata mapping (needed for retrieval)
+                  metadata_path = os.path.join(VECTOR_DIR, "transcript_metadata.pkl")
+                  with open(metadata_path, 'wb') as f:
+                      pickle.dump(metadatas, f)
+                  print(f"✅ Saved metadata mapping to {metadata_path}")
+                  
+                  # Save raw texts for retrieval
+                  texts_path = os.path.join(VECTOR_DIR, "transcript_texts.pkl")
+                  with open(texts_path, 'wb') as f:
+                      pickle.dump(texts, f)
+                  print(f"✅ Saved raw texts to {texts_path}")
+                  
+                  return True
+              except Exception as e:
+                  print(f"❌ Error building vector store: {e}")
+                  return False
+          
+          # Load vector store if it exists
+          def load_vector_store():
+              if not vector_store_exists():
+                  dummy_data = (
+                      lambda: None,  # Dummy index
+                      [{"title": "Dummy Title", "start_timestamp": "00:00", "video_url_with_timestamp": "#"}] * 5,  # Dummy metadata
+                      ["This is dummy text for demonstration purposes."] * 5  # Dummy texts
+                  )
+                  return dummy_data
               
-              This application is currently in maintenance mode. The vector search functionality 
-              is being updated to work with newer dependency versions.
+              try:
+                  index_path = os.path.join(VECTOR_DIR, "transcript_index.faiss")
+                  metadata_path = os.path.join(VECTOR_DIR, "transcript_metadata.pkl")
+                  texts_path = os.path.join(VECTOR_DIR, "transcript_texts.pkl")
+                  
+                  index = faiss.read_index(index_path)
+                  
+                  with open(metadata_path, 'rb') as f:
+                      metadatas = pickle.load(f)
+                      
+                  with open(texts_path, 'rb') as f:
+                      texts = pickle.load(f)
+                      
+                  return index, metadatas, texts
+              except Exception as e:
+                  print(f"❌ Error loading vector store: {e}")
+                  return None, [], []
+          
+          # Simple search function
+          def search_transcripts(query, model=None, top_k=5):
+              try:
+                  # Load model if not provided
+                  if model is None:
+                      model = SentenceTransformer(MODEL_NAME)
+                      
+                  # Load vector store
+                  index, metadatas, texts = load_vector_store()
+                  
+                  # If using dummy data or no real index
+                  if not isinstance(index, faiss.swigfaiss.IndexFlat):
+                      return [{
+                          "text": "Vector store is not available. Please check back later.",
+                          "metadata": {"title": "No Data", "start_timestamp": "", "video_url_with_timestamp": ""},
+                          "distance": 0.0
+                      }]
+                  
+                  # Create query embedding
+                  query_embedding = model.encode([query])[0].reshape(1, -1).astype('float32')
+                  
+                  # Search
+                  distances, indices = index.search(query_embedding, top_k)
+                  
+                  results = []
+                  for i, (idx, distance) in enumerate(zip(indices[0], distances[0])):
+                      # Get metadata for this result
+                      try:
+                          metadata = metadatas[idx]
+                          text = texts[idx]
+                      except IndexError:
+                          metadata = {"title": f"Result {i+1}", "start_timestamp": "", "video_url_with_timestamp": ""}
+                          text = "Content unavailable"
+                      
+                      result = {
+                          "text": text,
+                          "metadata": metadata,
+                          "distance": float(distance)
+                      }
+                      results.append(result)
+                      
+                  return results
+              except Exception as e:
+                  print(f"Error in search: {e}")
+                  return []
+          
+          # Gradio interface
+          def search_interface(query):
+              if not query or len(query.strip()) == 0:
+                  return "Please enter a search query"
               
-              ## What's happening?
+              try:
+                  # Check vector store status
+                  if not vector_store_exists():
+                      return """
+                      # Vector Store Not Available
+                      
+                      The vector store is currently being built or is not available.
+                      
+                      Please check back later or contact the administrator.
+                      """
+                  
+                  model = SentenceTransformer(MODEL_NAME)
+                  results = search_transcripts(query, model=model, top_k=5)
+                  
+                  if not results:
+                      return "No results found or search error occurred"
+                  
+                  output = f"## Search Results for: '{query}'\n\n"
+                  
+                  for i, result in enumerate(results):
+                      metadata = result["metadata"]
+                      text = result["text"]
+                      distance = result["distance"]
+                      
+                      title = metadata.get("title", "Untitled")
+                      timestamp = metadata.get("start_timestamp", "")
+                      url = metadata.get("video_url_with_timestamp", "")
+                      
+                      output += f"### {i+1}. {title} (at {timestamp}) - Score: {distance:.4f}\n"
+                      output += f"🔗 [Watch Video]({url})\n\n"
+                      output += f"**Content:** {text}\n\n"
+                      output += "---\n\n"
+                      
+                  return output
+              except Exception as e:
+                  return f"Error: {str(e)}"
+          
+          # Info page content
+          def info_page():
+              status = "✅ Available" if vector_store_exists() else "⚠️ Not Available"
               
-              The application is being upgraded to use the latest versions of:
-              - huggingface_hub
-              - sentence_transformers
-              - faiss-cpu
+              # Get environment info
+              env_info = {
+                  "Python Version": sys.version,
+                  "Libraries": {
+                      "gradio": gr.__version__,
+                      "faiss": faiss.__version__ if hasattr(faiss, "__version__") else "Unknown",
+                      "numpy": np.__version__,
+                      "sentence_transformers": SentenceTransformer.__version__ if hasattr(SentenceTransformer, "__version__") else "Unknown"
+                  },
+                  "Vector Store Status": status,
+                  "Current Directory Files": os.listdir()[:10]  # First 10 files
+              }
               
-              ## Sample Results
+              info_md = f"""
+              # Options Trading Knowledge Base
               
-              Here are some static example results that would normally appear:
+              ## System Status
               
-              ### 1. Understanding Options Basics (at 05:23)
-              🔗 [Watch Video](#)
-              
-              **Content:** This would typically show a relevant portion of transcript about options trading basics...
-              
-              ---
-              
-              ### 2. Options Strategies for Beginners (at 12:45)
-              🔗 [Watch Video](#)
-              
-              **Content:** Information about beginner options strategies would appear here...
-              
-              ---
+              - Vector Store: {status}
+              - Application Version: 1.0
+              - Last Updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
               
               ## Environment Information
               
-              - Python Version: {sys.version.split()[0]}
-              - Gradio Version: {gr.__version__}
-              - Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-              - Available Files: {', '.join(sorted([f for f in os.listdir() if os.path.isfile(f)])[:10])}...
-              """
-          
-          def get_info():
-              """Return system information"""
-              content = f"""
-              # Options Trading Knowledge Base (Maintenance Mode)
-              
-              ## Current Status
-              
-              This application is currently in maintenance mode while we update dependencies.
-              
-              ## System Information
-              
-              - Python Version: {sys.version.split()[0]}
-              - Gradio Version: {gr.__version__}
-              - Current Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-              
-              ## Installed Packages
-              
-              Here's a list of some installed packages:
-              ```
-              {os.popen('pip list | head -10').read()}
-              ```
-              
-              ## Directory Contents
-              
-              Current directory contains:
-              ```
-              {os.popen('ls -la | head -10').read()}
-              ```
+              - Python Version: {env_info['Python Version'].split()[0]}
+              - Gradio Version: {env_info['Libraries']['gradio']}
+              - FAISS Version: {env_info['Libraries']['faiss']}
+              - NumPy Version: {env_info['Libraries']['numpy']}
               
               ## About This App
               
-              This application is designed to provide semantic search across a 
-              collection of options trading video transcripts. We're currently
-              updating it to work with newer dependency versions.
+              This application provides semantic search across a collection of options trading transcripts and videos.
               
-              Please check back soon for the full functionality!
+              The search uses embeddings from the model `{MODEL_NAME}` to find the most relevant content based on your query.
+              
+              ## Files in Directory (Sample)
+              
+              {', '.join(env_info['Current Directory Files'])}...
               """
-              return content
+              
+              return info_md
           
-          # Create search tab
+          # Create the Gradio interface
           search_tab = gr.Interface(
-              fn=minimal_search,
+              fn=search_interface,
               inputs=gr.Textbox(
                   lines=2, 
                   placeholder="Search for options trading concepts..."
               ),
               outputs=gr.Markdown(),
               title="Options Trading Knowledge Search",
-              description="Search through options trading transcripts (Maintenance Mode)",
+              description="Search through hundreds of transcripts about options trading",
               theme="default"
           )
           
           # Info tab
           info_tab = gr.Interface(
-              fn=get_info,
+              fn=lambda: info_page(),
               inputs=None,
               outputs=gr.Markdown(),
               title="System Information",
@@ -301,15 +502,64 @@ jobs:
               [search_tab, info_tab],
               ["Search", "System Info"],
           )
-
-          # Start the app
-          if __name__ == "__main__":
-              app.launch()
           EOF
           
-          # No need for app_wrapper.py anymore
+          # Create startup wrapper script to install runtime dependencies
+          cat > start.py <<'EOF'
+          import os
+          import sys
+          import subprocess
+          import time
+          from datetime import datetime
           
-          # Update the README to use app.py directly
+          def install_runtime_dependencies():
+              """Install runtime dependencies before starting the app"""
+              print("=" * 40)
+              print(f"Installing runtime dependencies at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+              print("=" * 40)
+              
+              if os.path.exists("runtime_requirements.txt"):
+                  print("Found runtime_requirements.txt, installing dependencies...")
+                  result = subprocess.run(
+                      [sys.executable, "-m", "pip", "install", "-r", "runtime_requirements.txt"],
+                      capture_output=True,
+                      text=True
+                  )
+                  
+                  print(f"Installation stdout: {result.stdout}")
+                  if result.stderr:
+                      print(f"Installation stderr: {result.stderr}")
+                      
+                  if result.returncode == 0:
+                      print("✅ Successfully installed runtime dependencies")
+                  else:
+                      print("❌ Failed to install some runtime dependencies")
+              else:
+                  print("⚠️ No runtime_requirements.txt file found")
+              
+              print("=" * 40)
+          
+          # Install runtime dependencies
+          install_runtime_dependencies()
+          
+          # Import the actual app
+          try:
+              print("Starting application...")
+              from app import app
+          except Exception as e:
+              print(f"❌ Error importing app: {e}")
+              import gradio as gr
+              
+              # Fallback to minimal app if the import fails
+              app = gr.Interface(
+                  fn=lambda x: f"Application failed to start: {str(e)}",
+                  inputs=gr.Textbox(placeholder="Error occurred..."),
+                  outputs=gr.Textbox(),
+                  title="Application Error"
+              )
+          EOF
+          
+          # Update the README to use start.py
           cat > README.md <<EOF
           ---
           title: opteee
@@ -318,7 +568,7 @@ jobs:
           colorTo: red
           sdk: gradio
           sdk_version: 4.19.2
-          app_file: app.py
+          app_file: start.py
           pinned: false
           ---
           
