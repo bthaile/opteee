@@ -30,14 +30,14 @@ jobs:
           cat > requirements.txt <<EOF
           # Pin specific versions that work together
           torch==1.13.1
-          transformers==4.31.0
+          transformers==4.26.0
           tokenizers==0.13.3
-          # Pin huggingface_hub to version with cached_download
           huggingface_hub==0.12.1
           # Vector store and other requirements
           faiss-cpu
           python-dotenv
           sentence_transformers==2.2.2
+          gradio
           # Add other dependencies below but don't specify versions unless needed
           EOF
           
@@ -66,8 +66,9 @@ jobs:
           
           This space runs with specific dependency versions:
           - torch==1.13.1
-          - transformers==4.31.0
+          - transformers==4.26.0
           - tokenizers==0.13.3
+          - huggingface_hub==0.12.1
           EOF
           
           echo "Created HuggingFace-specific configuration files:"
