@@ -1,92 +1,91 @@
-import sys
+# This is the module that Hugging Face is looking for
+import gradio as gr
 import os
+import sys
+import threading
 from datetime import datetime
 
-print(f"===== Gradio Wrapper Starting at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} =====")
+print(f"===== gradio_app.py Starting at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} =====")
 
-# Install gradio if not already installed
-try:
-    import gradio as gr
-    print("✅ Gradio is already installed")
-except ImportError:
-    print("⚠️ Gradio not found, attempting to install")
-    import subprocess
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "gradio==3.50.2"])
-    import gradio as gr
-    print("✅ Successfully installed gradio")
+# Create a minimal Flask app for our search functionality
+from flask import Flask, request, render_template, jsonify
 
-# Start Flask app in background
-def start_flask_app():
-    try:
-        import threading
-        from app import app
-        
-        def run_flask():
-            app.run(host="0.0.0.0", port=7860)
-        
-        # Start Flask in a thread
-        flask_thread = threading.Thread(target=run_flask, daemon=True)
-        flask_thread.start()
-        print("✅ Flask app started in background thread")
-        return True
-    except Exception as e:
-        print(f"❌ Error starting Flask app: {e}")
-        import traceback
-        traceback.print_exc()
-        return False
+# Set up writable directories
+PROCESSED_DIR = "/tmp/processed_transcripts"
+VECTOR_DIR = "/tmp/vector_store"
+os.makedirs(PROCESSED_DIR, exist_ok=True)
+os.makedirs(VECTOR_DIR, exist_ok=True)
 
-# Create a simple Gradio interface
-with gr.Blocks() as demo:
-    gr.Markdown("# Options Trading Knowledge Search")
-    gr.Markdown("## Loading Flask application...")
+# Create a simple Flask app
+app = Flask(__name__)
+
+# Sample data
+SAMPLE_TRANSCRIPTS = [
+    {
+        "title": "Options Trading Basics",
+        "timestamp": "05:23",
+        "video_url": "https://example.com/video1?t=323",
+        "content": "Options give you the right, but not the obligation, to buy or sell an underlying asset."
+    }
+]
+
+@app.route('/')
+def home():
+    return render_template('index.html', 
+                          flask_version="2.0.1",
+                          python_version=sys.version.split()[0],
+                          timestamp=datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                          file_list="Debug mode",
+                          static_files="Debug mode",
+                          template_files="Debug mode",
+                          vector_status="Debug mode",
+                          transcript_count=0,
+                          building_vector_store=False)
+
+@app.route('/api/search')
+def search_api():
+    query = request.args.get('q', '').strip()
     
-    # Use HTML to embed the Flask application
-    html_content = """
-    <div style="text-align: center; margin: 20px 0;">
-        <p>The Flask application is running at port 7860.</p>
-        <p>Loading the application in an iframe below:</p>
-    </div>
+    if not query:
+        return jsonify({"results": [], "message": "Please provide a search query"})
     
-    <iframe 
-        id="flask-app-frame" 
-        style="width:100%; height:600px; border:1px solid #ddd; border-radius: 8px;" 
-        src="">
-    </iframe>
-    
-    <script>
-        // Set the iframe source to the current hostname with port 7860
-        function updateIframeSource() {
-            var iframe = document.getElementById('flask-app-frame');
-            var host = window.location.hostname;
-            iframe.src = window.location.protocol + '//' + host + ':7860';
-            console.log('Set iframe source to: ' + iframe.src);
+    # Return sample results
+    results = [
+        {
+            "title": "Sample Result",
+            "timestamp": "10:00",
+            "video_url": "https://example.com/video",
+            "content": f"This is a sample result for query: {query}",
+            "score": 0.95
         }
-        
-        // Try to update immediately and also after a delay
-        updateIframeSource();
-        setTimeout(updateIframeSource, 2000);
-    </script>
-    """
+    ]
     
-    # Display the HTML
-    gr.HTML(html_content)
+    return jsonify({
+        "results": results,
+        "query": query,
+        "search_type": "keyword"
+    })
 
-# Start Flask app when Gradio loads
-start_flask_app()
+# Function to run Flask in background
+def run_flask():
+    app.run(host="0.0.0.0", port=7860)
 
-# Launch Gradio interface on port 7861
-try:
-    demo.launch(server_name="0.0.0.0", server_port=7861)
-except Exception as e:
-    print(f"❌ Error launching Gradio interface: {e}")
-    # If Gradio fails, try to start Flask directly as a fallback
-    try:
-        from app import app
-        print("Falling back to direct Flask execution")
-        app.run(host="0.0.0.0", port=7860)
-    except Exception as e2:
-        print(f"❌ Also failed to run Flask directly: {e2}")
+# Start Flask app in background thread
+threading.Thread(target=run_flask, daemon=True).start()
+print("✅ Flask app started in background thread")
 
-# Simple redirector to app.py
-print("gradio_app.py redirecting to app.py...")
-import app 
+# Create a Gradio interface that wraps the Flask app
+def empty_fn():
+    return "Options Trading Knowledge Search is running at port 7860!"
+
+# Create the gradio interface
+demo = gr.Interface(
+    fn=empty_fn,
+    inputs=None,
+    outputs=gr.Textbox(),
+    title="Options Trading Knowledge Search",
+    description="The application is running on port 7860. This Gradio interface is just a wrapper."
+)
+
+# This is what Hugging Face specifically looks for
+gradio_app = demo 

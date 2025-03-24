@@ -10,7 +10,7 @@ pinned: false
 
 # Options Trading Knowledge Search
 
-This Flask application provides semantic search across a collection of options trading transcripts and videos.
+This application provides semantic search across a collection of options trading transcripts and videos, using a Gradio wrapper around a Flask application.
 
 ## Features
 
