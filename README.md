@@ -1,19 +1,23 @@
 ---
-title: Options Trading Education Assistant
-emoji: 📈
+title: opteee
+emoji: 🔥
 colorFrom: blue
-colorTo: green
-sdk: gradio
-sdk_version: "4.19.2"
-app_file: app.py
+colorTo: red
+sdk: docker
+app_port: 7860
 pinned: false
-license: mit
-pre_build: "bash deploy_fix.sh"
 ---
 
-# YouTube Transcript Processor
+# Options Trading Knowledge Search
 
-This project downloads and processes YouTube transcripts. If a video doesn't have a transcript, it uses Whisper to generate one from the audio.
+This Flask application provides semantic search across a collection of options trading transcripts and videos.
+
+## Features
+
+- Semantic search using sentence-transformers
+- FAISS vector database for fast retrieval
+- Direct links to specific timestamps in relevant videos
+- Built with Flask - not using Gradio
 
 ## Setup
 
