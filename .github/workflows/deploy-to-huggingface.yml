@@ -26,17 +26,25 @@ jobs:
           # Create packages.txt for system dependencies
           echo "" > packages.txt
           
-          # Create requirements.txt with minimal dependencies for build time
+          # Create requirements.txt with all necessary dependencies
           cat > requirements.txt <<EOF
-          # Very minimal dependencies with pinned versions
+          # Core dependencies with pinned versions
           flask==2.0.1
           Werkzeug==2.0.1
           Jinja2==3.0.1
           itsdangerous==2.0.1
           click==8.0.1
-          markdown==3.3.7
           python-dotenv==0.21.0
+          
+          # Vector search dependencies
           numpy==1.23.5
+          sentence-transformers==2.1.0
+          faiss-cpu==1.7.3
+          torch==1.13.1
+          
+          # Utility libraries
+          markdown==3.3.7
+          tqdm==4.66.1
           EOF
           
           # Create runtime_requirements.txt with exact versions for runtime
@@ -246,6 +254,47 @@ jobs:
                   width: fit-content;
               }
           }
+          
+          /* Search type badges */
+          .search-type-badge {
+              display: inline-block;
+              padding: 3px 6px;
+              border-radius: 3px;
+              font-size: 12px;
+              margin-left: 10px;
+              font-weight: normal;
+          }
+          
+          .semantic-badge {
+              background-color: var(--highlight-color);
+              color: white;
+          }
+          
+          .keyword-badge {
+              background-color: #6c757d;
+              color: white;
+          }
+          
+          /* Status indicator */
+          .status-indicator {
+              display: inline-block;
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              margin-right: 5px;
+          }
+          
+          .status-available {
+              background-color: var(--highlight-color);
+          }
+          
+          .status-building {
+              background-color: #f0b429;
+          }
+          
+          .status-unavailable {
+              background-color: #dc3545;
+          }
           EOF
           
           # Create JavaScript file
@@ -317,7 +366,11 @@ jobs:
                   .then(response => response.json())
                   .then(data => {
                       if (data.results && data.results.length > 0) {
-                          resultsDiv.innerHTML = '<h3>Search Results for: "' + query + '"</h3>';
+                          const searchTypeLabel = data.search_type === 'semantic' ? 
+                              '<span style="background: #5cb85c; color: white; padding: 3px 6px; border-radius: 3px; font-size: 12px; margin-left: 10px;">SEMANTIC</span>' : 
+                              '<span style="background: #6c757d; color: white; padding: 3px 6px; border-radius: 3px; font-size: 12px; margin-left: 10px;">KEYWORD</span>';
+                          
+                          resultsDiv.innerHTML = '<h3>Search Results for: "' + query + '"' + searchTypeLabel + '</h3>';
                           data.results.forEach(result => {
                               resultsDiv.innerHTML += generateResultHTML(result, query);
                           });
@@ -394,9 +447,14 @@ jobs:
                   
                   <h1>Options Trading Knowledge Search</h1>
                   
-                  <div class="maintenance-notice">
-                      <strong>🔄 Partial Functionality:</strong> Basic search is now working with sample data! 
-                      Full functionality with vector search is coming soon.
+                  <div class="maintenance-notice" id="status-notice">
+                      <strong>🔄 Status:</strong> 
+                      {% if building_vector_store %}
+                      Vector store is currently building. Basic search is available in the meantime.
+                      {% else %}
+                      Semantic search is {{ "available" if vector_status == "✅ Available" else "not available" }}. 
+                      {{ "Using keyword search as fallback." if vector_status != "✅ Available" else "" }}
+                      {% endif %}
                   </div>
                   
                   <div class="tab">
@@ -417,9 +475,10 @@ jobs:
                       <h2>System Information</h2>
                       <h3>Current Status</h3>
                       <ul>
-                          <li>Search Engine: ✅ Basic search available</li>
-                          <li>Vector Store: 🚧 Under construction</li>
-                          <li>Application Version: 1.1</li>
+                          <li>Search Engine: {{ "✅ Semantic search" if vector_status == "✅ Available" else "🔍 Keyword search" }}</li>
+                          <li>Vector Store: {{ vector_status }}</li>
+                          <li>Transcript Files: {{ transcript_count }}</li>
+                          <li>Application Version: 2.0</li>
                           <li>Last Updated: {{ timestamp }}</li>
                       </ul>
                       
@@ -430,165 +489,51 @@ jobs:
                           <li>Current Time: {{ timestamp }}</li>
                       </ul>
                       
+                      <h3>Files</h3>
+                      <p><strong>App Files:</strong> {{ file_list }}</p>
+                      <p><strong>Static Files:</strong> {{ static_files }}</p>
+                      <p><strong>Template Files:</strong> {{ template_files }}</p>
+                      
                       <h3>About This App</h3>
                       <p>This application provides semantic search across a collection of options trading transcripts and videos.</p>
-                      <p>Currently operating in demo mode with sample data while we rebuild the full vector search functionality.</p>
-                      
-                      <h3>Files in Directory</h3>
-                      <p>{{ file_list }}</p>
+                      <p>The search uses embeddings from the SentenceTransformer model to find the most relevant content based on your query.</p>
+                      {% if building_vector_store %}
+                      <div class="maintenance-notice">
+                        <strong>🚧 Vector Store Building:</strong> The semantic search index is currently being built. This may take a few minutes.
+                      </div>
+                      {% endif %}
                   </div>
               </div>
               
               <script src="{{ url_for('static', filename='script.js') }}"></script>
+              
+              <script>
+              // Add polling for vector store status if it's building
+              {% if building_vector_store %}
+              let checkStatusInterval = setInterval(function() {
+                  fetch('/api/status')
+                      .then(response => response.json())
+                      .then(data => {
+                          if (!data.building_vector_store) {
+                              // Vector store build finished
+                              clearInterval(checkStatusInterval);
+                              // Show success message
+                              const notice = document.getElementById('status-notice');
+                              if (data.vector_store_available) {
+                                  notice.innerHTML = '<strong>✅ Ready:</strong> Semantic search is now available!';
+                              } else {
+                                  notice.innerHTML = '<strong>❌ Error:</strong> Could not build vector store. Using keyword search.';
+                              }
+                              // Refresh page after 2 seconds
+                              setTimeout(() => location.reload(), 2000);
+                          }
+                      })
+                      .catch(error => console.error('Error checking status:', error));
+              }, 5000); // Check every 5 seconds
+              {% endif %}
+              </script>
           </body>
           </html>
-          EOF
-          
-          # Create updated app.py that uses the separate files
-          cat > app.py <<'EOF'
-          from flask import Flask, request, render_template, jsonify
-          import os
-          import sys
-          import json
-          import re
-          from datetime import datetime
-          import random
-          
-          # Create Flask app
-          app = Flask(__name__)
-          
-          # Sample data for demonstration
-          SAMPLE_TRANSCRIPTS = [
-              {
-                  "title": "Options Trading Basics",
-                  "timestamp": "05:23",
-                  "video_url": "https://example.com/video1?t=323",
-                  "content": "Options give you the right, but not the obligation, to buy or sell an underlying asset at a specific price before a certain date. Call options give you the right to buy, while put options give you the right to sell."
-              },
-              {
-                  "title": "Understanding Strike Prices",
-                  "timestamp": "12:45",
-                  "video_url": "https://example.com/video2?t=765",
-                  "content": "The strike price is the price at which an option contract can be exercised. For call options, if the market price exceeds the strike price, the option is 'in the money'. For put options, it's the opposite."
-              },
-              {
-                  "title": "Options Expiration Explained",
-                  "timestamp": "08:15",
-                  "video_url": "https://example.com/video3?t=495",
-                  "content": "Options contracts have expiration dates. After this date, the contract is no longer valid. Weekly options expire every Friday, while monthly options typically expire on the third Friday of the month."
-              },
-              {
-                  "title": "Calculating Option Premium",
-                  "timestamp": "17:32",
-                  "video_url": "https://example.com/video4?t=1052",
-                  "content": "Option premium consists of intrinsic value and time value. Intrinsic value is the difference between the strike price and the market price, while time value is influenced by the time until expiration and market volatility."
-              },
-              {
-                  "title": "Greeks in Options Trading",
-                  "timestamp": "21:05",
-                  "video_url": "https://example.com/video5?t=1265",
-                  "content": "The Greeks are Delta, Gamma, Theta, Vega, and Rho. Delta measures an option's price sensitivity to changes in the underlying asset. Gamma measures the rate of change in Delta. Theta measures time decay. Vega measures sensitivity to volatility. Rho measures sensitivity to interest rates."
-              },
-              {
-                  "title": "Covered Call Strategy",
-                  "timestamp": "14:22",
-                  "video_url": "https://example.com/video6?t=862",
-                  "content": "A covered call involves holding a long position in an asset and selling a call option on that same asset. This strategy generates income through the premium received from selling the call option, providing a partial hedge against potential losses."
-              },
-              {
-                  "title": "Put Selling Strategies",
-                  "timestamp": "19:48",
-                  "video_url": "https://example.com/video7?t=1188",
-                  "content": "Selling puts can be an effective strategy when you're bullish or neutral on a stock. You collect premium and potentially acquire shares at a lower effective cost basis if the stock is assigned to you."
-              },
-              {
-                  "title": "Iron Condor Explained",
-                  "timestamp": "27:30",
-                  "video_url": "https://example.com/video8?t=1650",
-                  "content": "An iron condor is an options strategy that involves buying and selling calls and puts with different strike prices but the same expiration date. It's designed to profit from low volatility in the underlying asset."
-              }
-          ]
-          
-          @app.route('/')
-          def home():
-              """Render the home page"""
-              # Get system info for the Info tab
-              flask_version = "2.0.1"  # Hardcoded for simplicity
-              python_version = sys.version.split()[0]
-              timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-              file_list = ', '.join(sorted([f for f in os.listdir() if os.path.isfile(f)])[:10]) + '...'
-              
-              return render_template(
-                  'index.html', 
-                  flask_version=flask_version,
-                  python_version=python_version,
-                  timestamp=timestamp,
-                  file_list=file_list
-              )
-          
-          def simple_search(query, data, top_k=5):
-              """Simple keyword-based search on the sample data"""
-              if not query or not data:
-                  return []
-              
-              # Split query into terms
-              terms = query.lower().split()
-              
-              results = []
-              for item in data:
-                  # Simple scoring based on term frequency
-                  score = 0
-                  content_lower = item["content"].lower()
-                  title_lower = item["title"].lower()
-                  
-                  for term in terms:
-                      if len(term) > 2:  # Only consider terms with more than 2 characters
-                          # Give more weight to title matches
-                          title_count = title_lower.count(term)
-                          content_count = content_lower.count(term)
-                          score += (title_count * 2) + content_count
-                  
-                  if score > 0:
-                      results.append({
-                          "title": item["title"],
-                          "timestamp": item["timestamp"],
-                          "video_url": item["video_url"],
-                          "content": item["content"],
-                          "score": score / len(terms)  # Normalize by number of terms
-                      })
-              
-              # Sort by score descending
-              results.sort(key=lambda x: x["score"], reverse=True)
-              
-              # Return top k results
-              return results[:top_k]
-          
-          @app.route('/api/search')
-          def search_api():
-              """Enhanced search endpoint that performs basic text search"""
-              query = request.args.get('q', '').strip()
-              
-              if not query:
-                  return jsonify({
-                      "results": [],
-                      "message": "Please provide a search query"
-                  })
-              
-              # Perform basic search
-              results = simple_search(query, SAMPLE_TRANSCRIPTS)
-              
-              # Add some randomness to make results look dynamic
-              for result in results:
-                  result["score"] = min(1.0, result["score"] + random.uniform(-0.1, 0.1))
-              
-              return jsonify({
-                  "results": results,
-                  "query": query
-              })
-          
-          # Run the Flask app
-          if __name__ == '__main__':
-              app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 7860)))
           EOF
           
           # Create a simple gunicorn starter for HF Spaces
