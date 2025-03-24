@@ -115,12 +115,12 @@ import random
 import threading
 
 # Print diagnostic information
-print(f"===== Application Startup at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} =====")
+print(f"===== REPLACED APP.PY STARTUP at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} =====")
 print(f"Python version: {sys.version}")
 print(f"Current directory: {os.getcwd()}")
 print(f"Directory contents: {os.listdir()}")
 
-# ===== Configuration (formerly in config.py) =====
+# ===== Configuration (directly in app.py) =====
 PROCESSED_DIR = "processed_transcripts"
 VECTOR_DIR = "vector_store"
 MODEL_NAME = "all-MiniLM-L6-v2"
@@ -157,9 +157,8 @@ SAMPLE_TRANSCRIPTS = [
         "title": "Options Trading Basics",
         "timestamp": "05:23",
         "video_url": "https://example.com/video1?t=323",
-        "content": "Options give you the right, but not the obligation, to buy or sell an underlying asset at a specific price before a certain date. Call options give you the right to buy, while put options give you the right to sell."
-    },
-    # Add more sample transcripts as needed
+        "content": "Options give you the right, but not the obligation, to buy or sell an underlying asset."
+    }
 ]
 
 # Application status tracking
@@ -190,7 +189,6 @@ def build_vector_store_background():
         app_status["building_vector_store"] = False
         app_status["last_updated"] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-# Routes
 @app.route('/')
 def home():
     """Render the home page"""
@@ -284,26 +282,8 @@ def search_api():
             "message": "Please provide a search query"
         })
     
-    # Check if we have vector store and try semantic search
-    if vector_store_exists():
-        try:
-            results = semantic_search(query)
-            if results:
-                return jsonify({
-                    "results": results,
-                    "query": query,
-                    "search_type": "semantic"
-                })
-        except Exception as e:
-            print(f"Error in semantic search: {e}")
-            # Fall back to simple search
-    
     # Fallback to simple search
     results = simple_search(query, SAMPLE_TRANSCRIPTS)
-    
-    # Add some randomness to make results look dynamic
-    for result in results:
-        result["score"] = min(1.0, result["score"] + random.uniform(-0.1, 0.1))
     
     return jsonify({
         "results": results,

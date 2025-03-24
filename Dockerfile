@@ -6,18 +6,18 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the new entry point file
-COPY main.py .
+# Copy application files - most important is app.py
+COPY app.py .
 COPY static/ ./static/
 COPY templates/ ./templates/
 
 # Create necessary directories
 RUN mkdir -p processed_transcripts vector_store
 
-# Show what files we have
+# List files for debugging
 RUN ls -la
 
 EXPOSE 7860
 
-# Use our new entry point
-CMD ["python", "main.py"] 
+# Run the Flask app directly
+CMD ["python", "app.py"] 
