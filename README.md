@@ -3,7 +3,7 @@ title: opteee
 emoji: 🔥
 colorFrom: blue
 colorTo: red
-sdk: docker
+sdk: gradio
 app_port: 7860
 pinned: false
 ---
