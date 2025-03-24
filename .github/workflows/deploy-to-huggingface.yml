@@ -32,7 +32,7 @@ jobs:
           torch==1.13.1
           transformers==4.26.0
           tokenizers==0.13.3
-          huggingface_hub==0.12.1
+          huggingface_hub>=0.12.1
           # Vector store and other requirements
           faiss-cpu
           python-dotenv
@@ -41,15 +41,87 @@ jobs:
           # Add other dependencies below but don't specify versions unless needed
           EOF
           
-          # Append existing requirements without versions
-          if [ -f requirements.txt.orig ]; then
-            grep -v "torch\|transformers\|tokenizers" requirements.txt.orig | grep -v "==" >> requirements.txt || true
-          fi
+          # Create patch script for sentence_transformers
+          cat > patch_sentence_transformers.py <<'EOF'
+          """
+          This script patches SentenceTransformer to work with modern huggingface_hub
+          """
+          import os
+          import sys
+          import re
+
+          def patch_sentence_transformers():
+              """Find and patch sentence_transformers code to replace cached_download with hf_hub_download"""
+              try:
+                  import sentence_transformers
+                  st_path = os.path.dirname(sentence_transformers.__file__)
+                  
+                  # Files likely using cached_download
+                  files_to_patch = [
+                      os.path.join(st_path, "models", "Transformer.py"),
+                      os.path.join(st_path, "SentenceTransformer.py")
+                  ]
+                  
+                  for file_path in files_to_patch:
+                      if os.path.exists(file_path):
+                          print(f"Patching {file_path}")
+                          with open(file_path, 'r') as f:
+                              content = f.read()
+                          
+                          # Replace imports
+                          content = re.sub(
+                              r'from huggingface_hub import cached_download', 
+                              'from huggingface_hub import hf_hub_download', 
+                              content
+                          )
+                          
+                          # Replace function calls (may need adjustment based on actual code)
+                          content = re.sub(
+                              r'cached_download\(([^)]*)\)', 
+                              r'hf_hub_download(repo_id="sentence-transformers/all-MiniLM-L6-v2", filename=\1)', 
+                              content
+                          )
+                          
+                          with open(file_path, 'w') as f:
+                              f.write(content)
+                          
+                          print(f"✅ Successfully patched {file_path}")
+              
+                  print("Patching complete!")
+                  return True
+              except Exception as e:
+                  print(f"❌ Error patching sentence_transformers: {e}")
+                  return False
+
+          if __name__ == "__main__":
+              patch_sentence_transformers()
+          EOF
           
-          # Create a specific Hugging Face runtime.txt
-          echo "python-3.10" > runtime.txt
+          # Create app startup wrapper script
+          cat > app_wrapper.py <<'EOF'
+          """
+          Wrapper script to patch sentence_transformers before starting the app
+          """
+          import sys
+          import os
+
+          # Try to patch sentence_transformers
+          try:
+              from patch_sentence_transformers import patch_sentence_transformers
+              patch_successful = patch_sentence_transformers()
+              print(f"Patching sentence_transformers: {'SUCCESS' if patch_successful else 'FAILED'}")
+          except Exception as e:
+              print(f"Error during patching: {e}")
+
+          # Import and run the original app
+          sys.path.insert(0, os.getcwd())
+          from app import app as gradio_app
+
+          # This is needed for Gradio on HuggingFace Spaces
+          app = gradio_app
+          EOF
           
-          # Create new README with default configuration
+          # Update the README to use app_wrapper.py instead
           cat > README.md <<EOF
           ---
           title: opteee
@@ -58,17 +130,17 @@ jobs:
           colorTo: red
           sdk: gradio
           sdk_version: 4.19.2
-          app_file: app.py
+          app_file: app_wrapper.py
           pinned: false
           ---
           
           # HuggingFace Space for opteee
           
-          This space runs with specific dependency versions:
+          This space runs with specific dependency versions and patches:
           - torch==1.13.1
           - transformers==4.26.0
           - tokenizers==0.13.3
-          - huggingface_hub==0.12.1
+          - sentence_transformers with huggingface_hub compatibility patch
           EOF
           
           echo "Created HuggingFace-specific configuration files:"
