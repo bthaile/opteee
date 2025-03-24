@@ -2,39 +2,29 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-# Copy requirements
-COPY requirements.txt .
-COPY runtime_requirements.txt .
+# Copy requirements files
+COPY minimal_requirements.txt .
 
-# Install requirements
-RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install --no-cache-dir -r runtime_requirements.txt
+# First install huggingface-hub specifically
+RUN pip install huggingface-hub==0.12.1
 
-# Copy application files
-COPY *.py ./
-COPY static/ ./static/
-COPY templates/ ./templates/
+# Then install other requirements
+RUN pip install --no-cache-dir -r minimal_requirements.txt
 
-# IMPORTANT: Copy processed transcripts if they exist
-COPY processed_transcripts/ ./processed_transcripts/ || true
-
-# Create writable directories
-RUN mkdir -p /tmp/processed_transcripts /tmp/vector_store
+# Create necessary directories
+RUN mkdir -p /tmp/vector_store /tmp/processed_transcripts
 RUN chmod -R 777 /tmp
 
-# Copy and make executable the startup script
-COPY startup.sh ./
-RUN chmod +x startup.sh
+# Copy application files
+COPY app.py config.py vector_search.py startup.sh /app/
+RUN chmod +x /app/startup.sh
 
-# Debug output
-RUN ls -la
-RUN echo "Processed transcripts:"
-RUN ls -la processed_transcripts || echo "No processed_transcripts directory"
+# Copy static files and templates
+COPY static/ /app/static/
+COPY templates/ /app/templates/
 
-EXPOSE 7860
-
-# Use the startup script as the entry point
-CMD ["./startup.sh"]
+# Run the application
+CMD ["/app/startup.sh"]
 
 # Add this to set default API keys if available from Hugging Face secrets
 ENV OPENAI_API_KEY=${OPENAI_API_KEY}

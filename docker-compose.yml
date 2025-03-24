@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  options-search:
+    build: .
+    ports:
+      - "7860:7860"
+    volumes:
+      # Mount your actual processed transcripts
+      - ./processed_transcripts:/app/processed_transcripts:ro
+      # Mount vector store for persistence
+      - ./vector_store:/tmp/vector_store
+    environment:
+      - FLASK_ENV=development
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY} 

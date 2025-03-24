@@ -1,18 +1,19 @@
 import os
+from pathlib import Path
 
-# Directories - use /tmp for writable storage
-PROCESSED_DIR = "/tmp/processed_transcripts"
-VECTOR_DIR = "/tmp/vector_store"
-  
+# Paths
+PROCESSED_TRANSCRIPTS_PATH = "/tmp/processed_transcripts"
+VECTOR_STORE_PATH = "/tmp/vector_store"
+
 # Model configuration
-MODEL_NAME = "all-MiniLM-L6-v2"  # Small, fast model good for semantic search
-  
+MODEL_NAME = "all-MiniLM-L6-v2"
+DEVICE = "cpu"  # Use "cuda" if GPU is available
+
 # Search configuration
-DEFAULT_TOP_K = 5
-  
-# Processing configuration
-BATCH_SIZE = 32  # For embedding creation
-  
-# Ensure directories exist
-os.makedirs(PROCESSED_DIR, exist_ok=True)
-os.makedirs(VECTOR_DIR, exist_ok=True) 
+TOP_K = 5
+CHUNK_SIZE = 500
+CHUNK_OVERLAP = 50
+
+# Create necessary directories
+Path(PROCESSED_TRANSCRIPTS_PATH).mkdir(exist_ok=True, parents=True)
+Path(VECTOR_STORE_PATH).mkdir(exist_ok=True, parents=True) 

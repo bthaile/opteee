@@ -1,45 +1,25 @@
 #!/bin/bash
 
 echo "===== Starting application setup ====="
-echo "Current directory: $(pwd)"
-echo "Listing files:"
-ls -la
 
-# Check if processed transcripts exist
-echo "Checking for processed transcripts..."
+# Check for transcript files
 if [ -d "processed_transcripts" ]; then
-  echo "✅ Found local processed_transcripts directory"
-  # Copy to tmp directory for write access
-  echo "Copying transcripts to /tmp/processed_transcripts..."
+  echo "✅ Found processed_transcripts directory"
   mkdir -p /tmp/processed_transcripts
-  cp -r processed_transcripts/* /tmp/processed_transcripts/
-  echo "✅ Copied $(ls -1 /tmp/processed_transcripts | wc -l) transcript files"
+  cp -r processed_transcripts/* /tmp/processed_transcripts/ || echo "Error copying files"
+  echo "Copied transcripts to /tmp/processed_transcripts"
 else
-  echo "❌ No local processed_transcripts directory found"
-  # Look for transcripts in other locations
-  if [ -d "/tmp/processed_transcripts" ] && [ "$(ls -A /tmp/processed_transcripts)" ]; then
-    echo "✅ Found transcripts in /tmp/processed_transcripts"
-  else
-    echo "❌ No transcripts found! Vector store cannot be built."
-    echo "Please make sure processed transcript files are included in your deployment."
-  fi
+  echo "❌ No processed_transcripts directory found"
+  exit 1
 fi
 
-# Make sure all directories are writable
-echo "Setting permissions..."
+# Set permissions
 chmod -R 777 /tmp
 
 # Build the vector store
 echo "===== Building vector store ====="
-python create_vector_store.py
+python -c "from vector_search import build_vector_store; build_vector_store()"
 
-# Check if vector store was built
-if [ -f "/tmp/vector_store/transcript_index.faiss" ]; then
-  echo "✅ Vector store built successfully!"
-else
-  echo "❌ Vector store build failed!"
-fi
-
-# Start the Flask app
-echo "===== Starting Flask application ====="
+# Start the Gradio app
+echo "===== Starting Gradio app ====="
 python app.py 

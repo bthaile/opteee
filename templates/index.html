@@ -1,33 +1,18 @@
-<!-- Add this to your tab buttons -->
-<button class="tablinks" onclick="openTab(event, 'RagTab')">AI Q&A</button>
-
-<!-- Add this as a new tab content -->
-<div id="RagTab" class="tabcontent">
-    <h2>AI-Powered Options Trading Q&A</h2>
-    <p>Ask questions about options trading and get AI-generated answers based on educational video content.</p>
-    
-    <form id="rag-form" onsubmit="return performRagQuery()">
-        <input type="text" id="rag-query" class="search-box" placeholder="Ask a question about options trading...">
-        
-        <div class="rag-options">
-            <div class="option-group">
-                <label>AI Provider:</label>
-                <label><input type="radio" name="provider" value="openai" checked> OpenAI (GPT)</label>
-                <label><input type="radio" name="provider" value="claude"> Claude</label>
-            </div>
-            
-            <div class="option-group">
-                <label for="temperature">Temperature:</label>
-                <input type="range" id="temperature" min="0" max="1" step="0.1" value="0.2">
-                <span id="temperature-value">0.2</span>
-            </div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Options Trading Search</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Options Trading Knowledge Search</h1>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search options trading concepts...">
+            <button id="search-button">Search</button>
         </div>
-        
-        <button type="submit" class="button">Generate Answer</button>
-    </form>
-    
-    <div id="rag-results"></div>
-</div>
-
-<!-- Include the RAG JavaScript file -->
-<script src="{{ url_for('static', filename='rag.js') }}"></script> 
+        <div id="results-container"></div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html> 
