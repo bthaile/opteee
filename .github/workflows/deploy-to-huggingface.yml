@@ -361,14 +361,15 @@ jobs:
           # Make start.sh executable
           chmod +x start.sh
           
-          # Update the README to use start.sh
+          # Update the README to properly run Flask app
           cat > README.md <<EOF
           ---
           title: opteee
           emoji: 🔥
           colorFrom: blue
           colorTo: red
-          sdk: static
+          sdk: docker
+          app_port: 7860
           pinned: false
           ---
           
@@ -381,6 +382,25 @@ jobs:
           - Semantic search using sentence-transformers
           - FAISS vector database for fast retrieval
           - Direct links to specific timestamps in relevant videos
+          EOF
+          
+          # Create Dockerfile for Hugging Face Spaces
+          cat > Dockerfile <<'EOF'
+          FROM python:3.9-slim
+          
+          WORKDIR /app
+          
+          COPY requirements.txt .
+          RUN pip install --no-cache-dir -r requirements.txt
+          
+          COPY app.py .
+          COPY start.sh .
+          
+          RUN chmod +x start.sh
+          
+          EXPOSE 7860
+          
+          CMD ["./start.sh"]
           EOF
           
           echo "Created HuggingFace-specific configuration files:"
