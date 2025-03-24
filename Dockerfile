@@ -6,14 +6,14 @@ WORKDIR /app
 COPY requirements.txt .
 COPY runtime_requirements.txt .
 
-# Install requirements (separately to maintain flexibility)
+# Install requirements
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --no-cache-dir -r runtime_requirements.txt
-# Add Gradio
-RUN pip install gradio==3.50.2
 
-# Copy application files
-COPY *.py ./
+# Copy application files - explicitly list important files
+COPY app.py ./
+COPY config.py ./
+COPY vector_search.py ./
 COPY static/ ./static/
 COPY templates/ ./templates/
 
@@ -24,7 +24,6 @@ RUN mkdir -p processed_transcripts vector_store
 RUN ls -la
 
 EXPOSE 7860
-EXPOSE 7861
 
-# Use the gradio wrapper script
-CMD ["python", "gradio_app.py"] 
+# Run the Flask app directly
+CMD ["python", "app.py"] 
