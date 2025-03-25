@@ -29,46 +29,14 @@ TEXTS_PATH = os.path.join(VECTOR_STORE_DIR, "transcript_texts.pkl")
 METADATA_PATH = os.path.join(VECTOR_STORE_DIR, "transcript_metadata.pkl")
 INDEX_PATH = os.path.join(VECTOR_STORE_DIR, "transcript_index.faiss")
 
-SYSTEM_PROMPT = """You are Options Trading Education Expert, an options trading education expert.
-
-RESPONSE STRUCTURE:
-1. Start with a brief, direct answer to the question
-2. Follow with detailed explanation using bullet points
-3. Include relevant examples when possible
-4. End with source references from the provided context
-
-GUIDELINES:
-- Use clear, educational language suitable for options trading learners
-- Only use information from the provided context
-- When mentioning concepts, briefly explain them
-- If citing specific strategies or techniques, make sure to have clear sources of information
-- Prioritize newer video text transcriptions over older ones
-- Format complex numerical examples in a clear, readable way
-- If the context doesn't provide enough information, acknowledge the limitations
-- If the question is not related to options trading, say "I'm sorry, I can only answer questions about options trading."
-- If the question is not clear, ask for more information
-- Make sure to prioritize video text transcriptions
-- Never make up information or make assumptions, always use the sources provided
-
-FORMATTING:
-- Use ### for main sections
-- Use bullet points (•) for lists
-- Use `code` formatting for mathematical formulas or specific values
-- Use **bold** for emphasis on key terms
-- Include source timestamps in [brackets]
-
-Remember: Your goal is to educate and clarify, Share what you know from the context. Partial information is better than no information."""
-
 DEFAULT_TOP_K = 5
-DEFAULT_LLM_MODEL = "o3-mini-2025-01-31"
+DEFAULT_LLM_MODEL = "gpt-4o-mini"
 DEFAULT_CLAUDE_MODEL = "claude-3-7-sonnet-20250219"
 DEFAULT_TEMPERATURE = 0.2
 DEFAULT_LLM_PROVIDER = "openai"  # "openai" or "claude"
 
 # Load environment variables
 load_dotenv()
-
-SYSTEM_PROMPT = os.getenv('SYSTEM_PROMPT', """Default prompt here...""")
 
 def get_available_providers() -> List[str]:
     """Get a list of available LLM providers based on API keys"""
@@ -101,6 +69,7 @@ class CustomFAISSRetriever:
         """Initialize the retriever"""
         self.model_name = model_name
         self.top_k = top_k
+        self.fetch_multiplier = 2  # Will fetch 2x the requested results
         self.model = None
         self.index = None
         self.texts = []
@@ -145,17 +114,20 @@ class CustomFAISSRetriever:
     
     def get_relevant_documents(self, query: str) -> List[Document]:
         """Get relevant documents for a query"""
-        if self.model is None or self.index is None or self.texts is None or self.metadata is None:
+        if self.model is None or self.index is None:
             raise ValueError("Retriever not properly initialized")
+        
+        # Fetch 2x the requested number of results
+        fetch_k = self.top_k * self.fetch_multiplier
         
         # Encode the query
         query_embedding = self.model.encode([query])[0]
         query_embedding = np.array([query_embedding]).astype('float32')
         
-        # Search the index
-        distances, indices = self.index.search(query_embedding, self.top_k)
+        # Search the index for more results than needed
+        distances, indices = self.index.search(query_embedding, fetch_k)
         
-        # Create documents
+        # Create documents with scores
         documents = []
         for i, idx in enumerate(indices[0]):
             if idx == -1:  # FAISS may return -1 if there are not enough results
@@ -171,7 +143,9 @@ class CustomFAISSRetriever:
             doc = Document(page_content=text, metadata=meta)
             documents.append(doc)
         
-        return documents
+        # Sort by score (lower distance is better) and take top_k
+        documents.sort(key=lambda x: x.metadata['score'])
+        return documents[:self.top_k]
 
 def format_documents(docs: List[Document]) -> str:
     """Format documents for the prompt"""
@@ -181,12 +155,13 @@ def format_documents(docs: List[Document]) -> str:
         content = doc.page_content
         meta = doc.metadata
         
-        # Format metadata
+        # Format metadata including upload date
         meta_str = "\n".join([
             f"Title: {meta.get('title', 'Unknown')}",
             f"URL: {meta.get('video_url', 'Unknown')}",
             f"Timestamp: {meta.get('timestamp', 'Unknown')}",
-            f"Channel: {meta.get('channel', 'Unknown')}"
+            f"Channel: {meta.get('channel', 'Unknown')}",
+            f"Upload Date: {meta.get('upload_date', 'Unknown')}"
         ])
         
         # Format document
@@ -267,19 +242,19 @@ User Question: {question}""")
 
 def run_rag_query(retriever, chain, query: str) -> Dict[str, Any]:
     """Run a RAG query and return the result with sources"""
-    # Get relevant documents
+    # Get relevant documents (already sorted by score)
     docs = retriever.get_relevant_documents(query)
     
     if not docs:
         return {
-            "answer": "I couldn't find any relevant information to answer your question. Please try rephrasing or asking about another options trading topic.",
+            "answer": "I couldn't find any relevant information to answer your question.",
             "sources": []
         }
     
     # Generate answer
     answer = chain.invoke(query)
     
-    # Extract sources
+    # Extract sources (maintaining order)
     sources = []
     for doc in docs:
         meta = doc.metadata
@@ -300,10 +275,10 @@ def run_rag_query(retriever, chain, query: str) -> Dict[str, Any]:
         source = {
             "title": meta.get("title", "Unknown"),
             "video_id": video_id,
-            # Use our reconstructed URL instead of the potentially problematic one
             "url": video_url_with_timestamp or meta.get("video_url", ""),
             "timestamp": meta.get("start_timestamp", ""),
             "channel": meta.get("channel_name", meta.get("channel", "Unknown")),
+            "upload_date": meta.get("upload_date", "Unknown"),
             "score": meta.get("score", 0.0)
         }
         sources.append(source)
