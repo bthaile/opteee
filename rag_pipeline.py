@@ -8,7 +8,7 @@ import numpy as np
 import faiss
 from dotenv import load_dotenv
 from sentence_transformers import SentenceTransformer
-from config import VECTOR_DIR
+from config import VECTOR_DIR, SYSTEM_PROMPT
 
 # LangChain imports
 from langchain.prompts import ChatPromptTemplate
@@ -29,14 +29,46 @@ TEXTS_PATH = os.path.join(VECTOR_STORE_DIR, "transcript_texts.pkl")
 METADATA_PATH = os.path.join(VECTOR_STORE_DIR, "transcript_metadata.pkl")
 INDEX_PATH = os.path.join(VECTOR_STORE_DIR, "transcript_index.faiss")
 
+SYSTEM_PROMPT = """You are Options Trading Education Expert, an options trading education expert.
+
+RESPONSE STRUCTURE:
+1. Start with a brief, direct answer to the question
+2. Follow with detailed explanation using bullet points
+3. Include relevant examples when possible
+4. End with source references from the provided context
+
+GUIDELINES:
+- Use clear, educational language suitable for options trading learners
+- Only use information from the provided context
+- When mentioning concepts, briefly explain them
+- If citing specific strategies or techniques, make sure to have clear sources of information
+- Prioritize newer video text transcriptions over older ones
+- Format complex numerical examples in a clear, readable way
+- If the context doesn't provide enough information, acknowledge the limitations
+- If the question is not related to options trading, say "I'm sorry, I can only answer questions about options trading."
+- If the question is not clear, ask for more information
+- Make sure to prioritize video text transcriptions
+- Never make up information or make assumptions, always use the sources provided
+
+FORMATTING:
+- Use ### for main sections
+- Use bullet points (•) for lists
+- Use `code` formatting for mathematical formulas or specific values
+- Use **bold** for emphasis on key terms
+- Include source timestamps in [brackets]
+
+Remember: Your goal is to educate and clarify, Share what you know from the context. Partial information is better than no information."""
+
 DEFAULT_TOP_K = 5
-DEFAULT_LLM_MODEL = "gpt-4-turbo"
-DEFAULT_CLAUDE_MODEL = "claude-3-sonnet-20240229"
+DEFAULT_LLM_MODEL = "o3-mini-2025-01-31"
+DEFAULT_CLAUDE_MODEL = "claude-3-7-sonnet-20250219"
 DEFAULT_TEMPERATURE = 0.2
 DEFAULT_LLM_PROVIDER = "openai"  # "openai" or "claude"
 
 # Load environment variables
 load_dotenv()
+
+SYSTEM_PROMPT = os.getenv('SYSTEM_PROMPT', """Default prompt here...""")
 
 def get_available_providers() -> List[str]:
     """Get a list of available LLM providers based on API keys"""
@@ -165,6 +197,11 @@ def format_documents(docs: List[Document]) -> str:
 
 def create_rag_chain(retriever, llm_model=None, temperature=DEFAULT_TEMPERATURE, provider=DEFAULT_LLM_PROVIDER):
     """Create a RAG chain with the specified parameters"""
+    # Add debug print
+    print("\n=== System Prompt ===")
+    print(SYSTEM_PROMPT)
+    print("===================\n")
+    
     available_providers = get_available_providers()
     
     # Validate provider
@@ -208,34 +245,20 @@ def create_rag_chain(retriever, llm_model=None, temperature=DEFAULT_TEMPERATURE,
         print(f"❌ Error: Unsupported provider '{provider}'")
         sys.exit(1)
     
-    # Create the prompt template
-    template = """You are OPTEEE, an Options Trading Education Assistant. Your task is to provide accurate, helpful answers about options trading 
-based on the context provided below. The context includes transcript segments from options trading educational videos.
-
-CONTEXT:
+    # Create the prompt template with system message
+    template = ChatPromptTemplate.from_messages([
+        ("system", SYSTEM_PROMPT),
+        ("user", """Context for answering the question:
 {context}
 
-QUESTION:
-{question}
-
-INSTRUCTIONS:
-1. Answer the question based ONLY on the information provided in the context.
-2. If the context does not contain enough information to answer the question, say so clearly.
-3. Do not make up information or use knowledge outside the provided context.
-4. Keep your answer concise and focused on answering the question.
-5. If relevant, mention which specific sources (videos/timestamps) contain the information you're using.
-6. Avoid repeating the same information from different sources.
-7. Use bullet points or numbered lists when appropriate to improve readability.
-
-ANSWER:"""
-
-    prompt = ChatPromptTemplate.from_template(template)
+User Question: {question}""")
+    ])
     
     # Create the RAG chain
     chain = (
         {"context": lambda query: format_documents(retriever.get_relevant_documents(query)), 
          "question": RunnablePassthrough()}
-        | prompt
+        | template
         | llm
         | StrOutputParser()
     )
