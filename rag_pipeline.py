@@ -65,11 +65,12 @@ def get_vector_store_path(filename):
 class CustomFAISSRetriever:
     """Custom retriever using FAISS index"""
     
-    def __init__(self, model_name: str = "all-MiniLM-L6-v2", top_k: int = DEFAULT_TOP_K):
+    def __init__(self, model_name: str = "all-MiniLM-L6-v2", top_k: int = DEFAULT_TOP_K, sort_by: str = "relevance"):
         """Initialize the retriever"""
         self.model_name = model_name
         self.top_k = top_k
-        self.fetch_multiplier = 2  # Will fetch 2x the requested results
+        self.sort_by = sort_by  # Can be 'relevance', 'date', or 'combined'
+        self.fetch_multiplier = 2
         self.model = None
         self.index = None
         self.texts = []
@@ -127,24 +128,40 @@ class CustomFAISSRetriever:
         # Search the index for more results than needed
         distances, indices = self.index.search(query_embedding, fetch_k)
         
-        # Create documents with scores
+        # Create documents with scores and parsed dates
         documents = []
         for i, idx in enumerate(indices[0]):
-            if idx == -1:  # FAISS may return -1 if there are not enough results
+            if idx == -1:
                 continue
                 
             text = self.texts[idx]
             meta = self.metadata[idx]
             score = float(distances[0][i])
-            
-            # Add score to metadata
             meta['score'] = score
+            
+            # Parse upload date
+            try:
+                from datetime import datetime
+                upload_date = datetime.strptime(meta.get('upload_date', '1970-01-01'), '%Y-%m-%d')
+                meta['upload_date_obj'] = upload_date
+            except:
+                from datetime import datetime
+                meta['upload_date_obj'] = datetime(1970, 1, 1)
             
             doc = Document(page_content=text, metadata=meta)
             documents.append(doc)
         
-        # Sort by score (lower distance is better) and take top_k
-        documents.sort(key=lambda x: x.metadata['score'])
+        # Sort based on user preference
+        if self.sort_by == 'date':
+            # Newest first
+            documents.sort(key=lambda x: (-x.metadata['upload_date_obj'].timestamp()))
+        elif self.sort_by == 'combined':
+            # Balance relevance and date
+            documents.sort(key=lambda x: (x.metadata['score'], -x.metadata['upload_date_obj'].timestamp()))
+        else:  # 'relevance' (default)
+            # Sort by relevance score only
+            documents.sort(key=lambda x: x.metadata['score'])
+        
         return documents[:self.top_k]
 
 def format_documents(docs: List[Document]) -> str:
@@ -300,6 +317,7 @@ def format_result(result: Dict[str, Any]) -> None:
     
     for i, source in enumerate(result["sources"]):
         print(f"{i+1}. {source['title']}")
+        print(f"   Upload Date: {source['upload_date']}")
         print(f"   Timestamp: {source['timestamp']}")
         print(f"   URL: {source['url']}")
         print(f"   Score: {source['score']:.4f}")

@@ -186,93 +186,116 @@ def get_video_details_from_yt_dlp(url, video_id):
             'url': f"https://www.youtube.com/watch?v={video_id}" if video_id else url
         }
 
+def get_channel_videos(channel_urls):
+    """Fetch all videos from channel URLs using yt-dlp."""
+    all_videos = []
+    
+    ydl_opts = {
+        'extract_flat': True,
+        'skip_download': True,
+        'ignoreerrors': True,
+        'quiet': True
+    }
+    
+    for url in channel_urls:
+        print(f"Fetching videos from: {url}")
+        try:
+            with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+                result = ydl.extract_info(url, download=False)
+                if 'entries' in result:
+                    # Process each video entry
+                    for entry in result['entries']:
+                        if entry:
+                            video_data = {
+                                'video_id': entry.get('id'),
+                                'url': f"https://www.youtube.com/watch?v={entry.get('id')}",
+                                'title': entry.get('title'),
+                                'upload_date': entry.get('upload_date'),
+                                'duration': entry.get('duration'),
+                                'view_count': entry.get('view_count'),
+                            }
+                            all_videos.append(video_data)
+                    print(f"Found {len(result['entries'])} videos in {url}")
+        except Exception as e:
+            print(f"Error fetching from {url}: {e}")
+    
+    return all_videos
+
+def find_missing_transcripts(videos_data, transcript_dir="transcripts"):
+    """Find videos that don't have transcripts."""
+    missing_transcripts = []
+    
+    for video in videos_data:
+        video_id = video['video_id']
+        transcript_exists = False
+        
+        # Check different possible filenames
+        possible_filenames = [
+            f"{video_id}.txt",
+            f"video_{video_id}.txt",
+            f"{video.get('title', '').replace(' ', '_')}.txt"
+        ]
+        
+        for filename in possible_filenames:
+            if os.path.exists(os.path.join(transcript_dir, filename)):
+                transcript_exists = True
+                break
+        
+        if not transcript_exists:
+            missing_transcripts.append(video)
+    
+    return missing_transcripts
+
 def main():
-    # Check if API key is set
-    use_api = API_KEY is not None and API_KEY.strip() != '' and API_KEY != 'YOUR_YOUTUBE_API_KEY'
-    if not use_api:
-        print("Warning: YouTube API key not set. Some metadata will be limited.")
+    # Channel URLs
+    channel_urls = [
+        "https://www.youtube.com/@OutlierTrading/videos",
+        "https://www.youtube.com/@OutlierTrading/shorts",
+        "https://www.youtube.com/@OutlierTrading/streams",
+        "https://www.youtube.com/@OutlierTrading/podcasts"
+    ]
     
-    # Read existing JSON
-    try:
-        with open(INPUT_JSON, 'r', encoding='utf-8') as f:
-            videos_data = json.load(f)
-        
-        # Convert JSON to DataFrame for consistent processing
-        df = pd.DataFrame(videos_data)
-        print(f"Read {len(df)} videos from {INPUT_JSON}")
-    except Exception as e:
-        print(f"Error reading input JSON: {e}")
-        return
+    # Get all videos from channel
+    print("Fetching all channel videos...")
+    all_videos = get_channel_videos(channel_urls)
+    print(f"Found total of {len(all_videos)} videos")
     
-    # Extract video IDs from URLs
-    df['video_id'] = df['url'].apply(extract_video_id)
-    
-    # Filter out rows with invalid video IDs
-    df = df[df['video_id'].notna()]
-    print(f"Found {len(df)} videos with valid YouTube IDs")
-    
-    # Get YouTube API data if available
-    video_api_data = {}
-    if use_api:
-        print("Fetching data from YouTube API...")
-        video_ids = df['video_id'].dropna().tolist()
-        video_api_data = get_video_details_from_youtube(video_ids)
-    
-    # Prepare to collect all metadata
-    all_metadata = {}
-    
-    # Process each video
-    for i, row in df.iterrows():
-        video_id = row.get('video_id')
-        url = row.get('url')
-        title = row.get('title')
-        
-        if not video_id:
-            continue
-        
-        print(f"Processing video {i+1}/{len(df)}: {title or url}")
-        
-        # Initialize with basic data
-        metadata = {
-            'video_id': video_id,
-            'title': title,
-            'url': url if url else f"https://www.youtube.com/watch?v={video_id}"
-        }
-        
-        # Add transcript info
-        transcript_info = get_transcript_info(video_id)
-        metadata.update(transcript_info)
-        
-        # Add content summary (would need ML or manual input)
-        metadata['content_summary'] = f"Content about {title}" if title else "Options trading content"
-        
-        # Try to get API data first
-        if video_id in video_api_data:
-            metadata.update(video_api_data[video_id])
-        
-        # Fill in gaps with yt-dlp data
-        ytdlp_data = get_video_details_from_yt_dlp(url, video_id)
-        
-        # Only update fields that are not already filled
-        for key, value in ytdlp_data.items():
-            if key not in metadata or metadata.get(key) is None:
-                metadata[key] = value
-        
-        # Ensure video_id is consistently used
-        metadata['video_id'] = video_id
-        
-        # Add to all metadata
-        all_metadata[video_id] = metadata
-    
-    # Save to JSON file
+    # Save all videos metadata
     with open(OUTPUT_JSON, 'w', encoding='utf-8') as f:
-        json.dump(all_metadata, f, indent=2, ensure_ascii=False)
+        json.dump(all_videos, f, indent=2, ensure_ascii=False)
+    print(f"Saved metadata for {len(all_videos)} videos to {OUTPUT_JSON}")
     
-    # Also create a CSV for backward compatibility
-    metadata_df = pd.DataFrame(list(all_metadata.values()))
-    metadata_df.to_csv(OUTPUT_CSV, index=False, encoding='utf-8-sig')
+    # Find videos missing transcripts
+    missing_transcripts = find_missing_transcripts(all_videos)
+    print(f"Found {len(missing_transcripts)} videos without transcripts")
     
-    print(f"✅ Metadata for {len(all_metadata)} videos saved to {OUTPUT_JSON} and {OUTPUT_CSV}")
+    # Save missing transcripts list for whisper processing
+    missing_transcripts_file = "missing_transcripts.json"
+    with open(missing_transcripts_file, 'w', encoding='utf-8') as f:
+        json.dump(missing_transcripts, f, indent=2, ensure_ascii=False)
+    print(f"Saved {len(missing_transcripts)} videos needing transcription to {missing_transcripts_file}")
+    
+    # Create a script to process missing transcripts with whisper
+    whisper_batch_file = "process_missing_transcripts.sh"
+    with open(whisper_batch_file, 'w') as f:
+        f.write("#!/bin/bash\n\n")
+        for video in missing_transcripts:
+            f.write(f"python whisper_transcribe.py \"{video['url']}\"\n")
+    os.chmod(whisper_batch_file, 0o755)  # Make executable
+    
+    # In the main() function, before creating process_missing_transcripts.sh:
+    progress_data = {
+        'processed': [],
+        'failed': [video['url'] for video in missing_transcripts],
+        'whisper_processed': []
+    }
+    with open('transcript_progress.json', 'w') as f:
+        json.dump(progress_data, f, indent=2)
+    
+    print("\nNext steps:")
+    print(f"1. Review the collected metadata in {OUTPUT_JSON}")
+    print(f"2. Check {missing_transcripts_file} for videos needing transcription")
+    print(f"3. Run ./{whisper_batch_file} to process missing transcripts with Whisper")
 
 if __name__ == "__main__":
     main() 
