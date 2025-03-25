@@ -1,0 +1,805 @@
+0.00s:  you
+30.00s:  you
+60.00s:  in
+77.30s:  into analyzing game stop. We're going to continue going through the DD library. We left off. I want to take another look at the big DD.
+89.30s:  So I think there's a little more for us to poke through there. And then I want to continue rolling through the rest of the broader library. So that is the game plan for today.
+104.30s:  Now for those that don't know, I am starting a recurring video. It'll probably be either Thursday or Friday. I'm not exactly sure what I'm going to do it. But I'm starting to track a coverage strangle allocation of my portfolio in game stop.
+121.30s:  And the purpose behind this is to try and show a few different ways that we can leverage options to trade things like game stop because game stop is very, very lucrative for a lot of different reasons from an options trading perspective.
+141.30s:  Now I know that there's a lot of people that their overall preference is to hold game stop not trade it, which is totally cool. And that's the point of me using something like the covered strangle specifically.
+156.30s:  And it's because the base position is long equity. It's a holding of your choosing. Obviously in this case, we were talking about choosing game stop. And then we can trade options around that position.
+168.30s:  So I'm going to start doing a regular update on that. However, what I still don't have nailed down, which is exactly what I hope to nail down today is what size allocation.
+184.30s:  And then we use the purpose of the question is I want to use an amount of money that is relatable to the average game stop holder.
+197.30s:  And a while ago, I asked the same question and there was a flurry of different responses of how much, you know, the person like the average person might hold in game stop. I saw everything from, you know, 5000, 50,000 or something like that.
+214.30s:  And to be honest, the way that I'm structuring this is I already have a series of game stop shares that I bought that are set off to the side as part of this thing I've told you about a bunch of times now. So I'm not going to belabor that point.
+230.30s:  So what I'm doing is I'm taking a subset of those shares and I'm going to use them for this portfolio. It's really not a portfolio. It's going to be in the primary portfolio. But for this allocation of the portfolio to run the strategy.
+247.30s:  So I had originally selected 15,000 and to me, I think it was something between 10 and 20 K was like the average from the last time I asked this question.
+261.30s:  But it doesn't really matter. We can pick pretty much whatever number we want. I don't have like several million in game stop or anything like that. But I do have a portion of the portfolio. But it's, I don't know to say this without coming off wrong. It's just it's probably more my allocation is probably more than what most people would hold as my guess.
+284.30s:  So even though it's a smaller subset of the portfolio, I do it as a percentage. That's how I allocate stuff. So my guess is it can probably be whatever we want it to be.
+293.30s:  But the whole point again is I want it to be something relatable so that as I'm talking about updating the position. It's like, oh, somebody else could like visualize that in their portfolio.
+309.30s:  Because that's the whole point. It's to try and teach not saying that this is the right way to do it. The only way to do it. It's just to try to teach people my skill set of options trading, but also to share a different approach. So that's the goal. So in the comments or in the chat, I would literally love to hear what amount of money you would like me to use for the allocation of the portfolio.
+333.30s:  And the way it will work then going forward is pretty much whatever you pick, I'm going to update the allocation here. And because I already have the shares, what I'm doing is I'm picking an average basis for those shares based on the period that I had scaled in.
+354.30s:  And we will use that as the basis. And I will just track it like I typically would in well, typically Excel. But now I've moved a lot of this stuff over to Google sheets. So if there is a Lauren says do a poll in your community tab.
+368.30s:  The problem with poll is that I have to input specific numbers. And I would rather just eyeball it.
+375.30s:  So I guess I could do that. That's a good wreck. Lauren, it's just I maybe I do like a ranger something. So let's do GME coverage strangle allocation size. So then we have like 5K. We have 10K.
+397.30s:  We have maybe 20K or 15K.
+403.30s:  And then maybe we do like 25K.
+407.30s:  And then I can't add more.
+412.30s:  So we can see what the breakdown is for this poll. And then if it's on the higher end, then I can run another poll and run numbers above 25.
+427.30s:  Fill what up fill. It's actually really interesting that I do you go in and genuine question. Do you go in and
+439.30s:  Lauren says get your community tab going. You need you need to up your engagement to get your sub goal.
+446.30s:  Lauren, I'm not going to lie. You just went right over. I don't even know how the fuck that works, to be honest. What the fuck is is the community tab where like I post
+453.30s:  is that right. Hold on. Let me grab my channel.
+459.30s:  Lauren's about to fucking school me here.
+464.30s:  Okay.
+466.30s:  Community.
+467.30s:  Yeah. Okay. So this is where you do posts and stuff.
+470.30s:  I see got it.
+472.30s:  Yeah. Helpful.
+474.30s:  Oh, I see. So you mean to do the broader poll there versus the live stream. I understand that. Got it. Got it. Got it. Okay.
+481.30s:  Yeah. We'll see where this runs. And then we will.
+486.30s:  So I see even split between 10 and 15 on 18 votes. There's about 60 folks in here. So I'll give it a leave it up a few more minutes.
+496.30s:  And like I said, genuinely, if we wanted to do a bigger allocation, I'm cool with it. I genuinely don't really care. I probably wouldn't go over like a few hundred thousand dollars for it.
+507.30s:  But I also just I have to imagine for the average person like even a hundred thousand dollars is probably just unrealistic and I understand that. So the entire purpose for the allocation is not to go quite as far as small stacks. I hate small stacks. I did one of those a while ago. And it was a terrible.
+529.30s:  It's just super annoying.
+531.30s:  But what I want to do is I like I want to be able to talk to you about saying like yes, I have one short call against these 200 shares and then I'm going to take the short call down at some point at a certain subset of profit.
+544.30s:  And then I'm going to sell another short call and I want to explain and use this as a vector around like why it's being done the way it is.
+551.30s:  It definitely would definitely has to be more than 5K.
+555.30s:  I would say the minimum viable that I could do something like educational with would have to be 10K because right now I'm using 13 for this section. And if I get rid of this.
+571.30s:  That would still put me just over 10. So yeah, it would it would have to be at the very least 10K. I 5K unfortunately wouldn't really it would be a lot of money.
+584.30s:  It really it would work, but I wouldn't be able to actually show the overall approach. It would be a very modified approach because of the sizing.
+596.30s:  So I see splits between 10 and 25.
+602.30s:  So I'm 23 votes. I'll leave the pull up for a little bit longer and just see if anybody else wants to vote if we get something around halfway because actually let me end this.
+615.30s:  And I want to ask one more question.
+619.30s:  So this one is going to be.
+630.30s:  More more applicable.
+635.30s:  So for this question pick the number that's closest.
+648.30s:  So the new question is what dollar amount of game stop do you hold?
+653.30s:  And that's I think a better way to phrase this because what I want.
+662.30s:  Yeah, I want something that's as representative as possible.
+667.30s:  Gravitaris is what are the characteristics of the computer stock when using the coverage and the strategy great question.
+702.30s:  And then a year and stuff like that.
+706.30s:  B William says, are you want to vote in that muddy river doing a podcast so fun fact.
+712.30s:  That's actually not a muddy river at all.
+715.30s:  This is from this is from Iceland. This is a shot that I took with my drone.
+721.30s:  And this is actually glacial melt.
+724.30s:  So this is more like a pond than anything is definitely muddy, but it's not a river whatsoever.
+730.30s:  So actually massive glacier that's trickling down this whole thing and then slowly melting.
+737.30s:  I actually stood on this glacier.
+740.30s:  We walked on it with my wife and I the fun thing that's really difficult to gather by scale.
+746.30s:  Actually, I'll see if I can find one of the photos really quick from it.
+749.30s:  Just because it's I think it's really, really interesting.
+752.30s:  And I hope that you'll find it somewhat interesting as well.
+756.30s:  And it's things where it's like you can't fully get the context.
+762.30s:  And this good help. We're am I I'm already in the correct folder.
+770.30s:  We have a here we go.
+773.30s:  Yeah, perfect.
+777.30s:  So let's start with this one.
+782.30s:  This is this glacier. So this behind here is this.
+787.30s:  So what you're looking at now is obviously that's her and I I am 72 inches tall 72 and slight chunk of change.
+799.30s:  And I want to show you the the height of us on here.
+803.30s:  So then if I get rid of this.
+806.30s:  If I were to walk you on to target with where we're standing.
+810.30s:  We're kind of like over down in this corner, like a little further over this way.
+815.30s:  So you can this glacier is like budding up against the land.
+819.30s:  And then you can walk on of the glacier from land.
+822.30s:  But the context of this I always find to be insane.
+828.30s:  Because when I look at this, obviously, it's a background for me because I think it's cool.
+832.30s:  And I look at this. This just looks like you can't tell.
+835.30s:  But like these crevices here are like 30 60 feet deep here.
+840.30s:  And then as you get up further, they're literally over 100 foot deep.
+843.30s:  Just these massive crevices, which is I think absolutely fascinating.
+849.30s:  But yeah, so fun fact, not a muddy river.
+851.30s:  It's actually a glacial melt pond from this thing, which is like the Joe Carlson.
+856.30s:  I don't know to say it glacier, but pretty neat.
+861.30s:  Cool. So while that poll is up and running, I am going to grab the DD library for us to continue working our way through.
+876.30s:  So we need to go in here.
+879.30s:  We need to grab this and this.
+884.30s:  And this beautiful.
+888.30s:  So I have exactly where we left off up so that we can work through this together.
+897.30s:  I'm going to move you guys over to the main screen now.
+901.30s:  Make sure everything's good.
+904.30s:  And here we go.
+906.30s:  So now welcome to the main screen.
+908.30s:  I'll move this over a little bit more so that I can zoom in some.
+911.30s:  And ideally, make this easier for you guys to see.
+919.30s:  That should be, I think, pretty good.
+924.30s:  And all right, let's take a look.
+926.30s:  So I see 28%. 30% is at 10.
+930.30s:  10 is at 15. 10 is at 20.
+935.30s:  And then 50% is at 25.
+938.30s:  And then we can see up to allocation.
+941.30s:  To be honest, I would, I personally would prefer that anyways because it's a lot easier for me to run the overall strategy.
+954.30s:  Power.
+955.30s:  So it's not really a big measuring contest of who is the most number of dollars.
+958.30s:  I know I'm always hesitant to put stuff like this up because I know that that's the impulse for people is more often than not from a psychological standpoint.
+967.30s:  You'll get the two ends of the spectrum will report here.
+971.30s:  It will be the people that have small holdings.
+973.30s:  No, they have small holdings and they think it's funny and kind of joke about it.
+976.30s:  And then you have the people who think they have big holdings.
+979.30s:  They want to talk about the big holdings.
+981.30s:  And then they will want to share their size.
+984.30s:  It's actually always entertaining to me to see because I've ran this in not just this stock but like other stuff.
+991.30s:  And Zachariah is my spirit animal because just like that God damn lockness monster Zachariah has about tree fiddy that giant crustacean from the petadoic era for those that are not just a lot of people who are not.
+1001.30s:  I am lockedness monster Zachariah has about tree fiddy that giant crustacean from the petadoic era for those that don't know it's absolutely magical clip.
+1015.30s:  I am 100% willing for this live stream to potentially be taken down to watch this.
+1021.30s:  And let me grab.
+1027.30s:  This should be like a compilation.
+1045.30s:  All right.
+1047.30s:  At the time we saw the lockness monster.
+1054.30s:  No, that's okay.
+1056.30s:  Must have been about seven eight years ago.
+1058.30s:  Me and the little lady was out on this boat you see.
+1061.30s:  All alone at night.
+1062.30s:  When all was sudden it's huge creature.
+1064.30s:  It's giant crustacean from the petadoic era comes out of the water.
+1067.30s:  We were so scared Lord I'm not jumping the boner that time.
+1071.30s:  It's what I know that that creature.
+1073.30s:  It's true the bovets looking down with these big red eyes.
+1076.30s:  It's so scary.
+1077.30s:  And now you're out I said, what do you want from our monster and the monster bent down and said I need about tree fiddy.
+1086.30s:  What's tree feed three dollars and 50 cents tree fiddy he wanted money.
+1091.30s:  Tree feed.
+1092.30s:  Now the fun fact is if you listen to this more and more.
+1097.30s:  One of the greatest artifacts of it is the time frame that they say the lockness monster is from evolves.
+1105.30s:  So it starts with the paleolithic era.
+1108.30s:  Then later it goes to the petadoic era and they keep changing like as he's telling the story keeps changing the time frame.
+1116.30s:  Like what era it's for it's just a masterclass in insanely awesome humor.
+1123.30s:  Giant giant fan.
+1126.30s:  Lauren says I knew it always willing to go down for South Park.
+1129.30s:  Yes, exactly.
+1130.30s:  I I think.
+1132.30s:  Yes.
+1133.30s:  I would happily blow up the live stream for us to be able to enjoy that.
+1138.30s:  I mean, it's like that's like culture right there to be able to enjoy that culture together.
+1143.30s:  Easy easy decision every single time.
+1146.30s:  The time that it's difficult is when we're watching some bullshit nerd from CNBC talking about something like this and they think that because they're fun is so well positioned and small caps and growth stocks.
+1162.30s:  That I want to unalive myself potentially.
+1166.30s:  So that I'm less willing to blow up the live stream for but South Park always good always willing.
+1174.30s:  All right, so let's see.
+1177.30s:  We already know what the move is here.
+1180.30s:  So I need to hold on a second.
+1186.30s:  I forgot.
+1188.30s:  So I have this uploaded in my primary folder that I have access to Gemini.
+1195.30s:  So let's see.
+1197.30s:  Let's go to Gemini.
+1200.30s:  And let's use the correct account.
+1204.30s:  This one.
+1206.30s:  And let me see.
+1208.30s:  Find the diamond.
+1212.30s:  And book.
+1215.30s:  Part two file.
+1218.30s:  And locate.
+1222.30s:  Page.
+1224.30s:  Where are we at?
+1227.30s:  We are at.
+1230.30s:  Cell order limitations on page 130 page 130.
+1236.30s:  Cell order limitation.
+1240.30s:  And let's see if I can take.
+1244.30s:  So for those that don't know, I went through a thing not too long ago where I uploaded.
+1251.30s:  Probably 600 books that I have.
+1254.30s:  Into my Google workspace account because Gemini can query against all of your files, which is really fucking cool.
+1264.30s:  I did.
+1267.30s:  So I got in.
+1269.30s:  Took forever.
+1270.30s:  But that's where having to touch the Tism is nice because I can do those simple repetitive tasks and just plug along.
+1279.30s:  trying to upload it. So while that's doing that, I'm going to zoom out all the way. And then
+1286.10s:  we apply the next approach as well, which is to have chat GPT summarize. This I still haven't
+1292.66s:  found a workaround for. I have no idea why I cannot click and scroll. It seems to blow my mind.
+1300.82s:  I don't understand why this is the case. Cannot cannot scroll with the mouse. I have to do this,
+1308.58s:  whatever this is. But we've learned at least to zoom out all the way and it goes pretty quick.
+1314.82s:  So we are at page 131. Leigh Hall says control A. I don't think that's it.
+1326.66s:  Because I don't want everything from here. I want the specific section that we're looking at.
+1333.94s:  This is a long. This one's significant. I'm actually excited to go through this one.
+1345.22s:  I like when they look like they're well built.
+1351.46s:  Okay, it's go to here. So we copy and let's find our way into chat GPT like this.
+1363.78s:  And let's dump this in.
+1370.18s:  Summarize the findings from this part.
+1376.42s:  And let's see what you can see. Okay, here we go.
+1382.98s:  Says the compilation provides an overview of selling restrictions. So I'm going to zoom us back in
+1389.70s:  and get back up to where we need to be.
+1395.62s:  Here.
+1399.14s:  And it says many brokers have transaction caps based on share value.
+1403.54s:  But others permit unlimited sell orders as long as market conditions are met.
+1408.74s:  Limitations often depend on trading platform. Certain brokers impose constraints on setting
+1415.14s:  high value limit orders would allow market orders without caps.
+1424.18s:  Okay, so it looks like they went through individual brokers.
+1428.66s:  And it says that Revolut has an initial 10,000 sell limit per share.
+1434.58s:  Exceptions available of selling the entire share holding via the max button.
+1440.10s:  Ally, 1 million transaction, fidelity, no sell limits tied to share price, but may cap sell
+1446.34s:  orders at 500% of the current price.
+1450.10s:  E-trade, no limits. Okay, so I'm just trying to understand they went through essentially every single
+1456.42s:  broker it looks like. Well, like the vast majority of brokers.
+1464.42s:  All right, so let's give them through this because the main thing it just looks like from what
+1470.10s:  GPT told me is just like a summary.
+1479.86s:  Yeah.
+1482.42s:  And let's see. He take away his planning is essential and sure familiarity with brokerage
+1489.86s:  specific policies to avoid execution delays. Okay, I see. So if they're just talk yet,
+1497.14s:  so they're just going through each and each that's first of all hats off to them.
+1500.82s:  We're going through each and every one of these. That's kind of nuts. But the thing I would offer
+1506.74s:  to them, it looks like they're they're talking about resting in order like this. Let's see what
+1513.94s:  one of our primary brokers. Let's look at TD.
+1518.90s:  The highest sell price is allowing me to set 10,000. So 9999 max sell price and he's
+1524.58s:  selling price greater. He throws an error.
+1532.42s:  I was just curious if they had an actual conversation with TD. Here's the thing. During crazy market
+1538.26s:  volatility, like if we're talking about trying to sell into a squeeze, you don't want to rest in
+1542.66s:  order. And if you're trading something like game stop specifically, if you're resting any sort
+1552.58s:  of limit order, there's a super solid chance you're not going to get filled.
+1559.86s:  So I think that yeah, I think I don't know. I like I guess it's cool that they went through
+1573.78s:  and they showed like the limits for the sell orders and stuff. But the other thing is that
+1577.14s:  they're talking about sell orders with the stock price resting at what it currently is. And
+1582.50s:  we've not actually seen game stop go parabolic like overnight. It still takes a couple days.
+1590.98s:  So those sell orders would update meaning the limits on those sell orders would update to be
+1596.90s:  sensitive to whatever the current price is. So yeah, my takeaway from that,
+1604.90s:  although they went through each one is that if you're going to look to sell during a squeeze,
+1610.10s:  you have to be positioned to like sit at your platform and sell. If you're just going to try to
+1615.94s:  rest in order, you're going to get ripped off whether you try to do a limit order a market order,
+1621.06s:  both of those won't work very well. So all right, let's take a look through this one. Moas
+1628.26s:  preparation guide. This one I'm actually really interesting. Okay.
+1639.62s:  Don't sell your shares.
+1650.42s:  If you can open up an account on a reputable broker,
+1653.70s:  yeah, okay. What they're saying is by doing this, you would limit your exposure
+1679.14s:  if you still have something that could appreciate. This doesn't really make a lot of sense to me,
+1686.82s:  to be honest, because the broker is exceedingly unlikely during something like a squeeze to restrict
+1695.14s:  the offload. The broker in general, and we've already seen this is going to be more likely to
+1701.62s:  restrict the purchase, because that's what continues to drive share price up, which is the dangerous part.
+1708.26s:  The dangerous part is not the unwind in terms of retail traders trying to take profit and sell.
+1713.86s:  So I would be surprised. Do you guys have any historic reference for this? Where the broker wouldn't
+1720.34s:  let somebody sell? Because that to me would be really interesting. The limitation on buying, although
+1727.54s:  frustrating, is a thing and I can understand it, but for selling, I've not heard that. I don't know
+1733.22s:  if that's something that you all have experienced. H says they have more GME,
+1741.22s:  and then Wiggly Worm says I voted 25. See, I told you all, it's every time
+1748.26s:  that is the standard, standard response. I told you. But have you come across any instances where
+1757.78s:  they wouldn't let you sell? I've not heard that. Decorizes screenshots from Reddit. Were they
+1767.78s:  weren't permitted to sell? Do we have those screenshots somewhere? Because I'd love to look at them.
+1775.94s:  H says no sell restrictions from their experience. Yeah, I've not really heard that myself.
+1783.94s:  So I'm curious the efficacy behind it.
+1789.78s:  Anyways, diversify brokers. Here we go. Here's a list of brokers who place restrictions.
+1813.22s:  Dan says there's a Robinhood screenshot of the partial share purchase that are rated over 5K.
+1817.78s:  Yeah, I've seen that, but I don't think that that means
+1824.02s:  that you're disillod from selling. That's the main point here to drive home.
+1828.58s:  Is this process of trying to gain access to multiple brokers, grabbing a share in another broker
+1834.98s:  so that you can still sell? I understand what they're talking about, but I think it's really
+1842.18s:  extreme. And I think it's extreme for the side of the position that really is unlikely to be hampered.
+1852.02s:  So that's the, yeah, that's just the main thing here at least so far. But
+1860.58s:  and that's why I'm asking if there's actually anybody who has personally or has come across
+1866.34s:  somebody else who has personally been disallowed from selling, like closing a position I should specify
+1873.30s:  because that that would be pretty insane to me. Absolutely insane. Taxes, yes.
+1889.78s:  This also is kind of insensitive just because taxes obviously are way more complex than this.
+1895.94s:  The main thing to think about is that if you make a bunch of money, it's probably worth us
+1902.50s:  reaching out to a good tax-preparer, CPA, tax attorney somebody. And the, I mean, that's one of the
+1910.98s:  biggest things that most of us make is we start generating a little bit more money and it's entirely
+1916.82s:  worth it to like it's absolutely worth the expense. I think it's entirely worth the expense.
+1923.38s:  So if you're selling what some of the people would say at Moas at like stuff like phone numbers,
+1931.46s:  then you probably would just want to get a good tax attorney.
+1941.78s:  Yep, so this is fine. This is like tax stuff.
+1945.06s:  Oh, Jesus, I'm out health. Don't care about health.
+1950.66s:  Trading halt, sure, sure, sure,
+1960.34s:  hold.
+1965.78s:  This, this to me personally is disillusionment.
+1971.94s:  Right? Like this idea that this stock is going to run to $100,000 per share and that don't feel
+1979.38s:  pressure to sell at that point. I mean, a couple things. The first thing is
+1989.14s:  I go back to the idea of what we think the price target could be during something like
+2003.22s:  Moas and from a functional standpoint, a functional standpoint. And the reason why I say that
+2011.14s:  is because from a functional standpoint, if you recall the prior squeezes, the stock,
+2021.46s:  it didn't get anywhere near $100,000, right? Like not even close. And the stock was stopped
+2029.62s:  before it hit that. So my fear by somebody saying something like this, don't feel pressure to
+2036.74s:  sell as soon as it gets to $100,000 is the likelihood of games stop hitting $100,000. I'm not saying
+2042.58s:  is zero. I don't know what the probability is, but I know it's very low because I know that the
+2047.70s:  market stepped in the first time to stop it from happening. So my expectation would be that the
+2054.74s:  market wouldn't just magically let it go unhinged the next time. The reason why I say this is because
+2064.58s:  what would be really sucky is if somebody reads this and they're like, okay, don't feel pressure to
+2072.10s:  sell as soon as it gets to $100,000. That makes it sound like $100,000, like baseline level of the
+2076.90s:  squeeze. And then if the stock got to $10,000 or something like that, and they're like, oh, we're not
+2084.18s:  even close to the $100,000. I'm not going to do anything. Like there's probably going to be a bunch
+2089.46s:  of people that are going to miss out on a ton of money. So what I would offer for this is rather
+2098.74s:  than picking price levels on something like this, I would consider creating a protocol based on
+2106.98s:  your portfolio and scaling out at certain levels because we do not know when the dance stops.
+2118.42s:  Because again, like the probability of game stop even getting pushed up to a thousand is really
+2125.38s:  unlikely. It can happen and we saw it transact partials at way above a thousand by like 5K.
+2132.10s:  So it's definitely possible. Like that's a possible range, but it's still an unlikely range
+2138.18s:  for us to hit and then remain there for any significant duration of time. One of the things I see
+2144.10s:  people reference a lot is the Volkswagen squeeze. The problem with making that comparison is markets
+2152.34s:  are completely different now. They're completely different now. The regulations, the exchange
+2157.62s:  rules, the way we process things, the amount of leverage that's out there. It's completely
+2164.10s:  completely different now. So it's good to use Volkswagen as a reference point for a contextual
+2170.82s:  understanding, but we have got to identify that it is not a direct parallel. It is not a direct
+2177.62s:  parallel. We cannot say Volkswagen did this so game stop should at least be able to do that.
+2183.22s:  We cannot make that statement because things are different now. This is in no way to belittle or to
+2192.50s:  try to dismiss the idea of a squeeze. I know sometimes when people talk like I am right now,
+2198.02s:  we will get labeled as like a shill. This is not to put down any of this. This is to try to have
+2203.70s:  a pragmatic conversation about what is possible, what is likely, and what to do across that array.
+2213.46s:  Because even if you're waiting for 10K before you start selling, it comes a big problem.
+2221.30s:  Because what if it gets to 6K and you don't do anything? That sucks. We've lost on a ton of money.
+2228.98s:  So the point I would like to reiterate is just look at your portfolio, look at your number of shares
+2235.78s:  and then pick the price levels that you're comfortable with. And if it doubles in price, maybe
+2242.58s:  you sell 10%, 15%, whatever you want, 25%, pick the numbers. You can literally build an excel sheet
+2250.10s:  that helps you track the numbers that you're comfortable with. And I'll show you.
+2256.66s:  So if we grab a scratch part of this, and let's say that we have 10,000, let's just say we have
+2266.18s:  10,000, what do we think maybe like a thousand shares? Let's say we have a thousand shares at $20.
+2280.42s:  So we're 20K in. Now, what we can do is eyeball different levels of the stock
+2295.38s:  in what you're comfortable selling as a percentage of your holdings. Because what's important
+2301.70s:  to remember is that as game stop goes up, your holdings become worth more. So then you
+2309.86s:  have to decipher how much you're comfortable unwinding at different levels and at what percentages.
+2317.62s:  So let's say game stop first goes to 40. I would call that insanely probable, like exceedingly
+2325.14s:  probable. This would be like base case scenario very likely to happen. And then let's say that we
+2331.22s:  have game stop at 80 still very probable. This is less probable than 40 for sure. Obviously,
+2338.90s:  but it's entirely probable. Then we'll do like 120, maybe 150. I'm just picking different
+2346.42s:  price levels that we might think game stop could get to. Right. Just eyeballing here.
+2353.46s:  And then maybe 300, maybe 500, something like this to start. And then you can build this out as far
+2361.46s:  as you want to go. So what you can say is what would my portfolio be worth at all of these levels
+2369.06s:  and how much would I potentially want to trim. And if I trim X amount, how much does that leave me
+2375.30s:  left with? And would I be comfortable risking the profit on that remaining amount? A lot of times
+2381.78s:  the way traders will run stuff like this is we will scale out a little heavy in the beginning
+2391.86s:  to cover risk. And then we will leave a smaller amount on for as things hopefully continue to run in
+2400.58s:  our favor. So then we can say maybe at 40, at 40, we would take off 10% because that's a modest move,
+2409.46s:  nothing crazy. At 80, we might take off another 20% that leaves us 70% remaining. And what is how
+2416.10s:  many steps is this along the way? And we have five steps left to go. So then maybe if it hits to
+2423.46s:  120, we ramp this up again and we take off up higher amounts. So the way I would look at this is
+2429.46s:  you have 100% total here. This would be your total remaining. So this will be a sum of this, of this,
+2446.10s:  this becomes your residual. And you can tinker with these numbers to figure out again based on the
+2466.26s:  likelihood of hitting these different numbers, how much you might want to unwind. Now what I can tell
+2474.42s:  you is for me personally, I would absolutely lean into way more heavily this beginning stage of
+2483.54s:  the move. 40 is still a little light in my opinion. We can literally hit 40 on just standard price
+2490.50s:  movement. Like that's not squeeze at all at this point. 40 is just normal stock going up because
+2497.30s:  the company is doing pretty well. So 40, I personally would not be heavily incentivized to unwind
+2504.02s:  very heavily. Again, personally, I'm giving you my opinion and my perspective so that then you can
+2511.30s:  paint and create your own. Now if this were me personally, I would add in probably another step
+2518.90s:  here though. And I would have stock at 60 because starting with stock at 60, I would start unwinding
+2528.10s:  more heavily. So stock at 60, I probably would take another 20% down, something like that. So this
+2534.74s:  would leave about half the trade on at this point. Once we get up to something like 80, I would probably
+2541.38s:  take off a pretty meaningful amount of the position at this point, maybe 30 or 40% total. So this
+2549.38s:  would leave me 30% left to go across these residual phases. So then I essentially would just split
+2556.50s:  10% out across these, something like this. And again, you could figure out what numbers make sense
+2570.50s:  for you, what you're happy with, what you think makes sense. But the main point here is based on
+2580.58s:  numbers, you can then figure out how much of your portfolio is left and how much you would make
+2587.86s:  in both the bracket itself and then in aggregate to then make a decision and say, yeah, okay,
+2596.42s:  I am okay with this scenario because in this scenario, you would make a ton of money. Let me
+2601.38s:  open the door real quick for Thor.
+2610.82s:  So to finish out the spreadsheet idea here, all I would do is I would take the total amount
+2622.58s:  remaining. So in this case, I know there's a way to set this up cleaner, but I just want you to
+2629.38s:  see the ideas as I'm walking through it. So what you can do is you can say this one, this specific
+2637.70s:  bucket would have 90% of the portfolio remaining, this specific bucket
+2648.26s:  would have this amount of the portfolio remaining and so on and so forth. And you can then look
+2656.58s:  at what amount is remaining. So then you can make an educated decision because here's the thing,
+2665.38s:  saving 10% for these last few numbers might seem like not much, right? It's just not a whole lot.
+2675.14s:  But at those values, 5% of your money with a basis of 20 when the stock is at 300 is a significant
+2685.78s:  sum of money, even though it's a small allocation of the portfolio. So I would personally build this out
+2693.46s:  if I were playing this broader thesis of a squeeze and trying to figure out when I would want to
+2699.62s:  get out because what I can tell you unequivocally is personally, there's a zero percent chance I
+2704.26s:  would wait until 100K. There is an overwhelming probability that you are just going to be sitting there
+2710.66s:  holding your original basis waiting for that number to come back up again, which it might, I don't
+2716.66s:  know, but what I do know is that I can realize profit along the way and build a bigger position.
+2722.26s:  I do know that because to use this as an example, we don't have to go back that far, I forgot.
+2732.02s:  We have to go back further than that. This one. So let's say that you got in here, even higher than
+2737.54s:  this. Let's say you got in at 11, 11, 50, we'll call it and literally let's look at another example.
+2744.58s:  So we have the stock at 11, 50 and we're saying that we have a 20 or $15,000 account, whatever,
+2751.38s:  release $15,000 account. So this means you have mail, not just kidding.
+2762.82s:  1300 shares, 1304. Technically, we have to round this down. You can't have, I don't,
+2769.06s:  partial shares are fake. So I don't, I don't fuck with partial shares.
+2773.62s:  So you have 13 or four shares. So now, let's say that the stock doubled in price.
+2787.46s:  And did it double before it didn't. So let's say on this first jump up, you want to start
+2792.98s:  looking at selling towards the mid at 28 and a half, 28.5. So now the stock is at 28.5.
+2811.62s:  And you decide that you want to unwind some of your shares. This is not phone numbers.
+2816.10s:  This is not even that significant of a move. This isn't even a big run up yet. But I want to show you
+2823.94s:  something. First, I have to show my way into formatting this. Otherwise, my OCD won't let me show you
+2832.50s:  shit. So here you have this minus this times this. So this is your profit at this point on top
+2846.82s:  of this. Right. So this is what I'm showing you here is the difference between 1150 and 28.5
+2853.38s:  on your 1304 shares. So solid, like super solid amount of money that you've made.
+2862.66s:  Let's say when this doubled, you're like, I'm going to take 50% of this profit down, take 50%
+2869.30s:  down. So you would sell half of this overall cost. So let's do that.
+2877.54s:  And then let's look at how many shares we have now. We need to add a calm for total cost.
+2902.82s:  Oops, wrong one. I'm done. We need 30 here.
+2914.50s:  So that's our total cost at the time. Total value at this point would be this times this.
+2923.46s:  Profit would equal this minus this. So this is how much you're actually up in making.
+2930.66s:  So then we can say, all right, I have $37,000. I have $22,000 profit. I want to take half of this
+2939.46s:  profit down. Easy choice. So there's a few different ways you can either just decide in amount of
+2946.42s:  shares. I would personally just use the dollar amount at a cost level. And I would say I just
+2952.26s:  want to take half this down. So equals this divided by two. So we're going to take 50% of it down.
+2958.66s:  So then I'm going to figure out how many shares I need to take off. So it's going to be this
+2963.22s:  divided by the current price. So I need to drop 388 shares. So then what I do is take this minus
+2973.46s:  the 388. So this is my new shares total, total position size. I have 915 shares. The current price
+2982.82s:  of those is still 2850. So then my new cost basis based on the remaining shares at the original
+2991.54s:  position of 1150 is 10k. So I've trimmed a bit down from here, mostly coming from the profit side
+3000.58s:  of this. So now I still have 950 shares at a basis of 1150 with the stock at 2850.
+3008.42s:  Here's what I want to show you. By doing this, when the stock eventually comes back down,
+3014.74s:  let's say that we don't play any of this. Let's just say we're unlucky, we fuck up the playing
+3020.42s:  of all this, which there's no reason to be, by the way, like you can absolutely, like I play
+3024.10s:  to all of these days. It was very, very simple to do. And let's say this stock comes back down to 1855.
+3031.14s:  So now we're at post-move. Stock is at 1855. Here's what's happened. Your original position was worth
+3040.02s:  $15,000. That's the total amount of money that you had in the beginning. Now with the stock at 1855,
+3048.26s:  the cost of your residual position of 915 shares, you have $16,000 that are in the position by itself.
+3057.54s:  But remember, we literally took half of it out over here. So this is our booked realized profit
+3065.46s:  right here, 11K. So now, when this comes back down to 1855, guess what we can do? We can now buy
+3076.42s:  more shares. So let's take this divide by the current price of 1855, which is 597.
+3085.30s:  So now let's take a look at our new position. This plus this, you can now have 1512 shares.
+3095.62s:  So this might, as I'm looking at these numbers and the way I'm talking about it, this might sound
+3101.38s:  crazy, right? Like the way I'm rattling off. But the ultimate thing I want you to take away from
+3107.86s:  is that if you bought here, we called it 1150 or whatever, if you bought here at 1150.
+3114.90s:  And you just held from 1150 up here, down here. And the stock is now at 1850.
+3121.94s:  In scenario one, where we bought 1150 held because we didn't see phone numbers, stock is back
+3127.22s:  down to 1850. You still have your $15,000 worth, but all of your money is in an unrealized gain.
+3137.46s:  So you just, you're just holding there for the time being. In scenario two, which is what we just
+3144.18s:  worked through by offloading some, not all, some of the shares at in this scenario, a sub optimal
+3152.58s:  point on the way up. I didn't even play playing the rest of the squeeze. I literally just said
+3157.94s:  price doubled a little bit, doubled and then some, not much though. And offload half of it,
+3163.38s:  I didn't play the rest of the squeeze in this example. But now take a look at what we've been
+3168.02s:  able to do. Instead of having 13 and 104 shares, we now have 1512. So this might not sound crazy,
+3176.74s:  because it's really not a crazy improvement, but it's still not an insignificant improvement.
+3183.06s:  You've increased your overall exposure by 16% just by opportunistic selling during the moves.
+3190.42s:  This is exactly what the coverage strangle example is going to be as we go through that portfolio
+3196.10s:  for the year. You're going to see me doing shit like this all the time. And I know that bothers
+3199.14s:  some people because it includes selling some of the position. But I will always remind you all, I do
+3204.98s:  have part of the shares that are not part of this because I said I would maintain those. But I'm a
+3212.66s:  trader. And what I'm doing is I'm using the movement of the stock to opportunistically monetize
+3219.38s:  the movement. So that then when it has residual moves, I can have a 16% larger position
+3228.74s:  after adding zero dollars. I've added no money in this scenario. I've not put anything into this.
+3237.94s:  But I can now have a 16% larger position than I did previously by adding no money.
+3245.14s:  This is why management is so important. So a little bit of a rabbit hole and dovetail off of this
+3250.90s:  one single line as you could tell the way that my brain works. But I want that point to be really,
+3257.62s:  really clear because for people that read this and they're like, well, I'm just going to wait
+3261.86s:  until this level. That's okay, right? Like you can do whatever's right for you. And that's exactly
+3267.22s:  what you should do, whatever's right for you. But what I can tell you is that in the process of waiting
+3272.10s:  for this scenario, the trader will have given up so much profit along the way that going into this move
+3278.90s:  waiting for 100k, maybe they have 100 shares, but they could have had 116 shares based on the
+3284.74s:  example that I just gave you on a suboptimal example of a move. And you have a much bigger position
+3291.38s:  to go into this. So yeah, those are my thoughts. I love their idea about planning an exit
+3301.86s:  in finding things that you're comfortable with what levels you want to be at and stuff like that.
+3305.22s:  I think that's good. I think that's really good. But I think that a little more nuance
+3312.42s:  is required in the approach because you can end up at a far, far, far better off position than what
+3319.62s:  this person would be at. All right, let me get caught up on the chat. And it looks like I see 39,
+3328.90s:  and six, and 46% okay. So that's super helpful.
+3334.02s:  Wigglyworm says this spreadsheet is on the Patreon, right? I know you did the videos to walk through
+3338.26s:  building it. No, I don't think there's any. This is just like a random workbook that I use. This
+3342.82s:  is like a scratch book. So you'll already see that this one's called scratch. This is, this is
+3348.50s:  all sorts of random shit from our live streams and stuff. So yeah, this is just personal
+3354.74s:  bunch of random nonsense in here. I don't remember what this one was. What is this one?
+3359.38s:  This looks like GameStop though. This must have been rolling short calls. Yeah, this is rolling
+3367.46s:  short calls. Yeah, it's just a bunch of random nonsense in there. Dave says, do you think it's
+3378.98s:  possible RK overestimated the squeeze and sitting on far too many options and shares and doing
+3383.46s:  his best to build some hype volume so you can unwind his position? I don't think so.
+3388.18s:  I don't think that at all. The thing to remember is that the cat has already made, he's made more money
+3400.50s:  than several generations of his family could go through. So
+3407.46s:  I don't think he needs exit liquidity. I don't think he cares. Like I really don't think he cares.
+3416.34s:  And I also don't think that he would try to create some hype for him to be able to make a few
+3422.26s:  bucks off of like I just don't see that because the good part with shares is that they don't expire.
+3428.10s:  The shares are going to be there for the options position. The last we saw he didn't have any
+3432.82s:  options. Now he's probably trading options for leverage and stuff, but last we saw he didn't have any.
+3437.86s:  So yeah, I personally don't see that as even remotely likely scenario. Again, I will always be
+3445.78s:  clear. It's possible, right? I don't know. But I feel pretty pretty confident in saying I think
+3452.34s:  it's pretty damn unlikely because if we take a look at this, this is just his yolo portfolio update
+3458.66s:  at the end. This is $210 million dog. Like I'm just fucking money. Do you need? So and this is
+3470.90s:  just in is one bullshit account. You know that this is not all his money. So no, I would be absolutely
+3479.86s:  but beside myself, if that were the case, like I feel I feel pretty confident in that being not
+3488.50s:  so much the case. Hold on. My wife and I were going to grab dinner tonight. There's a cool restaurant
+3502.10s:  bias that we both really like. Cool. That's not for a little bit though. We still have like another
+3509.30s:  half hour 40 minutes. Okay. So yeah, that's that good question. But yeah, I don't think so personally.
+3521.06s:  Okay. Cool. It looks like I'm caught up on most of this stuff that I can eyeball.
+3526.26s:  If there's any question that you asked and I missed just let me just let me know just throw
+3529.30s:  back in there and I'm happy to take a look. But I just wanted this to be super clear because
+3535.62s:  through opportunistic selling, you can drastically enhance your position without adding any money
+3541.46s:  so that when and if you do eventually get the move that you're wanting to see, you will make
+3547.54s:  way more money than somebody like this that might not be willing to sell until it hits 100K.
+3559.62s:  All right. I love this. Don't sell everything at once. This is good.
+3568.10s:  Sell on the way down is dangerous. I don't dislike it, but it's dangerous. The scaling process,
+3578.26s:  I think, especially in something like GameStop has to be done very cautiously because if you sell
+3585.62s:  on the way down, let's just use it as an example. Let's say that you sold on the way up when it was
+3593.14s:  surging here on the sixth and let's say that once it broke above 45, you decided to start selling
+3598.98s:  even though it was on the way up. If you waited to sell on the way down, the stock opened here at 37.
+3607.70s:  So that's the way down. So then if you start unwinding on the way down as expected or as we discuss,
+3613.38s:  that's almost a 10 point loss you take here. I'm not saying that's a bad idea. I'm just saying you
+3620.18s:  should be aware of the risk in doing so. And this is actually why I think setting different price
+3626.90s:  levels for scaling makes a lot more sense than just trying to catch it on the drop. This is another
+3632.90s:  great example of this. If you sell on the way down here, you get out at 49. If you wait to get out
+3640.82s:  a day here, it opens up at 40, right? That's a nine point drop that you consume there.
+3648.26s:  So again, I'm not saying in I rarely would talk about exiting all at once, right? It doesn't make
+3655.62s:  sense. But through the process of scaling, you prevent the scenario where if you sell 10% of this
+3663.62s:  as it breaks above 45 and it goes higher, you're still in it. You're not out of it. So it doesn't
+3669.62s:  like selling on the way down in this case doesn't it doesn't really save you. The other thing to
+3675.94s:  keep in mind is based on the logic here, if we sell on the way down and we scale and we scale
+3684.42s:  slowly, the overwhelming potential is you're going to miss most of the move. Because again,
+3690.50s:  remember, let's use this as an example. This is one day. This is two days. This is three days by day
+3696.82s:  four. It's back down to standard levels by day four. So depending on how slow and how little we
+3706.02s:  scale out on the way down, this can set you up for unwinding 30% of the position by the time it gets
+3716.10s:  back down to levels here. So I think what makes more sense is like we were just talking about
+3725.86s:  picking different price levels. That makes sense for your holdings of the portfolio. And as you
+3731.54s:  start to approximate to those levels, because by doing this, you are inherently leaving runners out.
+3740.90s:  You already have position remaining to take advantage if the move continues.
+3746.50s:  So there are literally built in protocols by the scaling approach that prevent you from unwinding
+3759.70s:  on the way up. The stock just starting to blast off and then you sit in there being like,
+3763.86s:  fuck, you know, I could have made way more money. You don't want to do that. That's a bad move as well.
+3767.94s:  So yeah, thoughts on that as well. Let's get back in here.
+3774.82s:  Types of orders. When the dust settles,
+3781.06s:  a single share for a seven figure price. Again, the problem with this, and I understand,
+3787.22s:  and I appreciate the vision that they have and what they're trying to do.
+3791.14s:  The probability of you selling a game stop share for a seven figure price is, I mean, again,
+3799.86s:  it's just objectively insanely low because it was already stopped from doing so before.
+3806.10s:  So there's nothing wrong with thinking about that, trying to consider, visualize, hoping that it
+3811.14s:  happens. That's all fine. But if you're planning on that and that's part of when you're deciding to
+3816.90s:  take games, you're going to miss out on a lot of money that I can probably tell you.
+3824.50s:  Flashgains online. This is another thing I never understand this because people always just
+3832.18s:  like, well, if you make money, don't tell your friends, don't tell your family, the way I think about
+3837.94s:  that is it like, what kind of friends and family do you have? And family is whatever the family is.
+3847.94s:  But your friends, you get to pick. So if you're so nervous about telling your friends that you have
+3853.30s:  money because they might come ask you for it. And then if you told them, no, that they wouldn't like
+3858.90s:  you anymore, well, it's not a fucking friend anyways. That's somebody that shouldn't be around you,
+3864.66s:  fucking regardless. So it's like, that's just something that people have said before and they just
+3870.58s:  kind of keep saying it. And it's just so superficial. Just doesn't make any fucking sense.
+3875.62s:  So the, and it's the same thing realistically for a family like if somebody in my family, and it
+3881.78s:  happens pretty regularly, where my family members will reach out asking for money. And I make a judgment
+3887.22s:  call either yes or no. But if I tell them, no, I'm not afraid of the repercussions of telling them
+3893.46s:  no, because I'm operating off of my principles and my values. And if I tell them no regarding a resource
+3900.98s:  that I have and I built on my own and that bothers them, I do not literally care at fucking all,
+3910.74s:  at all. And if it pisses them off and they don't want to talk to me or anything like that,
+3914.74s:  that literally tells you that that's somebody that you shouldn't have around you anyways.
+3922.26s:  And I tell you guys this specifically because a lot of my friends are military friends and a lot of
+3927.54s:  them know they've been to my house. They've been around me like they know that I've done well.
+3932.42s:  And even in that case, like when I, when I take them out to dinner or stuff, I always will pay for
+3937.86s:  dinner because I want to and I can and I'm in a different spot. I'm fortunate for that. But most of
+3942.42s:  them will still then mow me after dinner. I don't ask. I literally don't want them to. But they will
+3949.46s:  then mow me typically more than what they're fucking dinner costs. So I have to refund them on
+3954.18s:  like a legit level. And like that's just a difference in good people versus people that might
+3963.62s:  take advantage of you. So all I'm saying is publicly short, right? The general public doesn't need to
+3968.50s:  know that's fine. But like if you're nervous of sharing like success with friends and family or
+3976.34s:  like letting them know that you have money. And there's a difference. Like you should never go
+3981.06s:  around to your friends and be like, yo, I made a bunch of money. Look at me because then you were
+3985.30s:  literally just a fucking dickhead. Like nobody cares. Literally nobody cares. So if you're flashing it
+3992.50s:  like that, then you are literally super lame. But I've seen people go as far as like trying to rent a
+4002.02s:  car to go see their friends so that they don't see their car. That's nice. So that they don't know
+4006.58s:  that you don't even mean I'm like, that's crazy. That's a crazy level of paranoia around people that
+4011.62s:  are nowhere near your friends. So if you cannot roll up to your dinner plans in your McLaren with
+4018.98s:  your friends and still have a great night, then again, I think it's somebody that doesn't have
+4026.90s:  a decent enough moral background and standing of themselves to like work off of their own
+4033.46s:  principles. So that's all I'm saying. Inform your bank about large deposits. You don't have to do this.
+4043.86s:  Yeah, you don't have to do this. Let's see what this says.
+4062.02s:  Yeah, this isn't like special banking, by the way. Like they're making it sound like
+4067.78s:  you have like a specific bank or something. It's just economies of scale. So it's like a CD account.
+4073.78s:  Have you ever looked at CD rates and their CD rates for like a $5,000 account or 25 or 50,
+4078.58s:  100 and plus? There's there's economies of scale. So when you park a lot of money in a bank,
+4083.70s:  that absolutely benefits the bank. So they're incentivized to make it nicer for you. So yeah,
+4091.14s:  like there will be perks involved for sure, but you don't have to like go to a specific bank or
+4096.82s:  something like that. Lawyer up, that's fine. Financial advisor. Sure, if you think you need it,
+4105.62s:  can't emphasize enough to work with an advisor that is a fiduciary.
+4113.22s:  This is good advice. I honestly don't think most people need a financial advisor. I think you
+4118.42s:  can educate yourself generally, but yeah, I don't think there's anything wrong with this.
+4127.06s:  This I agree with, I completely agree with this. There should be no remorse. If the financial
+4133.30s:  system crashed in some way and they try to make it sound like the apes did it. It's not the
+4138.50s:  fucking apes. That's institutions and hedge funds being so over levered that they can't handle
+4144.82s:  the volatility. That's their own fucking bag, right? That's their fault. So yeah, fuck that.
+4150.66s:  Do nothing with the money. I disagree with this. I do agree with this. Don't just go out and go crazy.
+4157.62s:  This is typically what happens to people that don't have a lot of money. Is they spend it all? This
+4161.46s:  is the thing you've heard about people who win the lottery because you think about the kind of
+4165.38s:  person that tends to play the lottery. The overwhelming majority of them are not super financially
+4171.70s:  savvy, which is why they're playing the lottery, trying to be lucky and change the lives.
+4178.02s:  And most of them will burn it super fast. So super, super common. So yeah, I think this is good.
+4185.94s:  Lambo's are great, but they won't bring you happiness forever. Again, this is all relative. I
+4190.66s:  can tell you McClarans do bring a lot of happiness. But what I try to tell people is that
+4196.42s:  and to follow along with this point is material things are just material. So yeah, if you think
+4203.30s:  that a material item is going to make you happy, it's not, it's literally not going to make
+4209.30s:  you happy. You're going to get over it super fast. But and this is why I talk about a, this is from
+4217.30s:  the the Patreon. And I've talked about this more broadly with everybody before though, which is
+4223.86s:  home, let me find the file. I'll show it to you here so that because we looked at this before,
+4229.38s:  but I think it's pertinent and I obviously don't care about giving stuff away. Give me a second,
+4236.02s:  I gotta find it. This. So this here is an exercise that I built for for myself literally. And this
+4250.90s:  is available on the Patreon for a download again, like you can make your own. This isn't anything,
+4254.90s:  like I'm trying to gatekeep. This is just some I literally built this document originally for
+4260.34s:  myself. So the context behind it is the I call it a money mindset marginal utility exercise.
+4269.46s:  The whole point is to figure out the things in life that genuinely add marginal utility. And for
+4276.02s:  those kinds of things, you. You're mark them so that you're ready to pay for them a great example.
+4282.10s:  When Mel and I when we were just traveling and we were going through Calgary and stuff like that,
+4289.38s:  there was a couple places that we stayed like definitely like more than half were over a thousand
+4296.18s:  dollars a night for sure and a couple of more multiples of that. Looking back at poor Eric,
+4305.14s:  there's a zero percent chance ever in my entire life. What I ever possibly can see if we're
+4310.10s:  spending that kind of money to check into a place at like 3 p.m. and to check out of a place at 12 or
+4316.82s:  1 p.m. Right? Like that's an insane use of money. It's an insane use of money. However,
+4323.22s:  the marginal utility specifically for the group is very high. We both really, really enjoy having
+4332.42s:  a cool place to hang out and more specifically the view. That's what we really, that's why we have
+4338.02s:  the house we have now is we both really love a beautiful view. What I'm sharing with you is that
+4345.86s:  something that we both are willing to pay for something that neither of us have design or close.
+4352.18s:  I couldn't possibly care less if my fucking t-shirts says Columbia, which there's a Columbia
+4356.90s:  employee store here that I can go to and get a t-shirt for 10 bucks or if it says Balenciaga.
+4361.70s:  To say it literally is the same shirt I don't care at all. That's not to say that for people that
+4366.98s:  like designer clothes that that's a poor marginal utility. The marginal utility is up to the person.
+4372.18s:  It's up to the individuals up to what you value as a human being. And that's what this exercise
+4379.14s:  was built for to help me identify those things. Because one of the things I noticed was when I was
+4387.22s:  poor, I would look at anything related to money. And I would always think like, oh, that's
+4394.10s:  superficial or oh, that's lame or oh, this or oh, that. And it's me managing expectations.
+4400.34s:  Right? I'm mature enough at this point that I can definitely tell you that younger Eric would
+4405.94s:  look at designer clothes and think that's so stupid. Like such a colossal waste of money,
+4410.50s:  unbelievable, just like pure superficial nonsense bullshit. And the people that would buy that
+4417.22s:  kind of stuff for that. And that's just me coping with something that I didn't have access to
+4422.18s:  and didn't understand. As I started to realize this understanding marginal utility, the process
+4428.82s:  of building wealth and identifying the things that value to you. Again, I can tell you from the bottom
+4433.70s:  of my heart, I do not understand designer clothing. I do not understand. I don't get it. But
+4440.34s:  just because I don't get it doesn't mean that somebody else doesn't derive true marginal utility
+4445.46s:  from the important thing is to find what you as an individual derive marginal utility from.
+4455.86s:  That's what you value. That's the stuff that's worth spending your money on. So to this person's
+4462.18s:  exact point, a lot of times when people don't have money, find their way into money, they think
+4468.10s:  that if they go out and they buy a bunch of expensive stuff that they see influencers use,
+4472.50s:  or they've seen in movies or movie stars or whatever Instagram. And they think that they're
+4477.54s:  supposed to go buy a bunch of this really expensive stuff. And then they do it and then they
+4480.34s:  realize like, oh, fuck, this really didn't move the needle for me. And it inherently won't do that.
+4489.46s:  So try to think about what you derive true marginal utility from. And I really agree with their
+4496.98s:  point here is even if like even if you think a lambo is really cool, if you're not really a car
+4504.82s:  person, it's a terrible investment. I love cars. I grew up building cars. So for me, cars is a
+4512.26s:  completely different thing, right? Like I don't buy cars and work on cars because I think somebody
+4518.26s:  else is going to think something about me. I couldn't possibly care less. But I really enjoy them.
+4525.14s:  I have a lift that I put in my house so that I could work on them. I love working on cars.
+4530.02s:  So it's a significant marginal utility. What I can tell you is that if that's not you and you don't
+4535.14s:  really care about them that much and you are acquiring something because you think somebody else
+4541.54s:  might look at you or perceive you a certain way, that's true superficial. Does it means nothing?
+4549.14s:  That means we're literally purchasing something in the hopes that somebody else might recognize us
+4555.22s:  in some type of way. It makes no sense. So just think about what you personally derive marginal
+4561.06s:  utility from. That's absolutely the case. And then the other thing I think I saw somebody,
+4567.70s:  where was it? Dan says the people with most money are actually the most frugal. It's really not
+4577.54s:  true at all to be honest. That's another thing I find that I because I used to think the same
+4583.14s:  thing as well. You'll hear the thing of like, oh, you know, super rich people, they drive a Honda
+4588.42s:  Accord. And it's like Warren Buffett drives around in his Cadillac, but he bought a fucking jet,
+4595.86s:  right? The point I'm making is that he has no problem spending on the things that he derives marginal
+4603.30s:  utility from. So just remember being frugal is essential. You have to be frugal. There's nothing
+4611.78s:  wrong and it's really smart to be frugal. But people with money are willing to spend the money
+4618.66s:  on things that they derive marginal utility from. The funny thing about it though is people look
+4625.38s:  at how much Warren Buffett is worth. And they're like, oh, he should be in a sports car or something.
+4630.02s:  That society trying to impress upon somebody what their marginal utility should be. And it's
+4636.26s:  fucking not for him. He couldn't possibly care less about that. But he's happy to hop on his jet.
+4641.70s:  So the note there is the concept of rich people being like the most frugal. It's really not that true
+4653.14s:  because you don't get rich by not being frugal. You have to be frugal unless you're just really
+4658.90s:  fortunate and you're born into it. However, what I've learned is that most people with money
+4666.02s:  are more than happy to spend it on the things that they value. Another thing that I've seen some
+4671.06s:  of my more wealthy friends spend money on is like these really extravagant dinners and they're like
+4676.10s:  buying booze out and stuff like my wife and I really don't drink. But the idea of paying like
+4681.94s:  $60 for a cocktail is fucking crazy to me. Even it's not like I'm against drinking, I would. It's
+4688.58s:  typically don't feel inclined to. But I'm too cheap for that. And I do not derive the marginal
+4694.90s:  utility from that. But what I will tell you is that a good Tomahawk steak, $140 steak that's solid.
+4701.78s:  I'm cool with that. Good marginal utility. So people I've learned that people that have capital,
+4710.02s:  they have no problem spending it, but they tend to spend it on the things that they really care about.
+4716.58s:  And to me, this is smartest way to do it. Or none, the smartest way.
+4726.58s:  BW says the value of having money should only be applied to towards travel,
+4731.46s:  experiencing different cultures and helping the less fortunate.
+4737.06s:  Yeah, I mean, I just don't agree with that. I don't agree with that at all.
+4741.30s:  Too many people always use it for their own desires, which is stupid. Most rich people are selfish.
+4747.22s:  Yeah, which I also don't, yeah, I don't agree with that at all. And I want to be clear,
+4752.34s:  I'm a massive advocate of travel. And I genuinely believe everybody would be better off if they
+4759.38s:  traveled, even if they're not really passionate about it, because you can learn a lot. But I also
+4765.38s:  don't think it's up to me to dictate what somebody else should apply their money to.
+4772.18s:  Not up to me. It's not up to you. And it's not up to us to judge what they decide to do.
+4777.46s:  That's just the fact, man. That's actually one of the things I always find so interesting
+4783.38s:  is when online people will see when people have money or doing stuff. And they're like, oh,
+4788.26s:  you could have fed 100 kids from Africa with that money. Instead, you went and bought a designer bag.
+4794.66s:  And while I personally can't resonate with the designer bag thing, I also think it's up to that
+4800.58s:  person to spend the money they earned, however they want. It's always crazy to me like how open
+4805.46s:  people feel about telling other people how they should spend their money that they don't have.
+4811.38s:  Like if that's what you think, good, make the money, do what you think you should do with the money.
+4816.18s:  But for people without to judge so heavily, the people with in terms of like what they choose to
+4822.26s:  spend on, I just think it's misguided, angst. I can understand not agreeing with stuff for sure.
+4829.62s:  And that's okay. But yeah, I think taking it all the way back to this, you should spend on things
+4838.50s:  that you personally derive maximum marginally utility from. That's what I think.
+4844.10s:  Whatever that is. And again, for me, it's weird. If it's like designer clothes and stuff,
+4848.10s:  I don't understand it. But if you're the kind of person that goes into your closet and just the
+4852.42s:  process of walking through your closet, you're like, man, this is fucking awesome. I just love seeing
+4857.70s:  all my clothes and it makes me happy and feel fulfilled. Cool. That's awesome to get that feeling.
+4862.02s:  If that's the thing that gives you that feeling, great. I just think in general, if people become
+4872.10s:  materialistic, that comes across in other ways. And you can always see a materialistic person. And
+4877.86s:  unfortunately, to be W's broader point, a lot of people who are into very material things
+4884.26s:  tend to be hyper materialistic and that does suck. But I don't think it's fair to say most rich
+4890.26s:  people are selfish either because I think that's, that's, I don't know if you know most rich people.
+4895.86s:  I don't know most rich people. I know a ton of not rich people that suck. I know rich people that
+4903.46s:  also do suck. We stayed at a place that was much higher end. And I just remember like I didn't
+4911.14s:  like the people around there. I could just tell the way that they were talking interacting. Like I
+4914.66s:  didn't like the culture. I didn't like the vibe. And that's my predisposition. That doesn't mean
+4920.42s:  that they all suck. It means that I just didn't like it. So I don't think it's wise to cast large
+4927.22s:  statements like that about broad groups because like you don't know them. So I think preconceived
+4934.98s:  judgments like that tend to indicate more ignorance than anything. Because again, you'll find rich
+4942.34s:  people that suck. You'll find poor people that suck. You'll find rich people that are awesome and
+4947.62s:  would give you the shirt off the back if they knew you. And you'll find poor people that will do
+4951.62s:  the same. So I would just avoid disliking somebody based on some trait like that preemptively.
+4962.50s:  Oh right. Terminal and economy. I could totally see this. If things start getting like super
+4968.98s:  crazy, I agree with this. Had you against hyperinflation. So this were already kind of past.
+4984.42s:  Cool. What time I got? I got time for a little more. Let's take a look at this. Is this the same person
+4990.98s:  that did this other one? No, okay. That one's from our boy's Socrates. Okay.
+4999.46s:  All right.
+5007.06s:  Um, this just looks like price expectations. I don't really care about this to be honest.
+5018.18s:  Oh, here we go.
+5028.58s:  Um,
+5037.22s:  um,
+5045.30s:  this just looks like their expectations of price moving and stuff, which is okay.
+5067.54s:  Hmm.
+5073.30s:  I mean, I don't love that as an exit.
+5082.74s:  Yeah, I mean, I can tell you from the general approach.
+5088.50s:  I don't really identify with where we're choosing the exits.
+5096.74s:  But that's up to literally up to the individual. As some says, everything is superficial.
+5109.14s:  The only not superficial thing we do is die. I mean, you could think that. I definitely don't
+5114.42s:  agree with that. But I think depending on how serious we take the term superficial and what we
+5120.82s:  think that represents, I could definitely see the position for sure. But yeah, I don't share it.
+5132.50s:  Um, yeah, so this I don't really.
+5138.90s:  Oh, okay. So that's it. So the to not just criticize and not offer anything, the way that I would
+5144.82s:  look at this is a fall, at least the way that I trade breakouts and stuff like this is I typically
+5153.22s:  start to exit on a failure of the breakout and then follow on consolidation. So like breakout,
+5161.38s:  still breakout continuation, breakout continuation, breakout continuation, breakout rejection.
+5165.70s:  This second day, I would start to scale out and probably fully exit by somewhere in here.
+5171.78s:  And then during this kind of breakout, I would buy back in breakout up breakout up breakout up,
+5176.50s:  breakout up slowing, slowing, rotating. This here would be beginning of exit for me, the way that I
+5184.26s:  trade. And then I would probably take a full exit somewhere in here. And then I would wait for another
+5191.06s:  breakout of something above this, which doesn't come. So I would have already been out of this for
+5197.70s:  a, for a bit personally. Well, let's see this one. I need every ape to drill in their math. Tesla is
+5213.30s:  a short of 20 bunch of paper handed folks went to four and a half, combined five to one,
+5221.14s:  short of 140, smaller flow. Okay. So yeah. So we're seeing that same thing again.
+5227.22s:  Any number five or 10k makes no sense. I did not even factor in the fin reshort. This is how
+5233.86s:  ridiculously generous 31 and a half. Yeah. I mean, I just think that stuff is tricky to, oh, that's
+5242.82s:  hilarious. I think that's a tough angle to take.
+5251.86s:  Roryntitty. What up, Roryntitty? Roryntitty says, isn't the whole reason to have and accumulate
+5256.82s:  wealth of the ability and freedom to have a better quality of life that will depend on your morals
+5261.54s:  and interest, how that meant best with that money. Yeah. I literally agree. I completely agree.
+5267.70s:  I think that that's a completely, a completely fair point.
+5287.22s:  Been away for the past few months. This one I've seen around a bunch.
+5298.66s:  So
+5320.42s:  I agree with this. I hate Robinhood. Anytime to talk shit about Robinhood,
+5325.86s:  we already know that I'm down to talk shit about Robinhood. I hate Robinhood.
+5339.54s:  That is a very little chair for a very large ape. We went to a really, really cool
+5359.94s:  place this last weekend where I think I posted it in the discord. I'll actually show you guys
+5364.74s:  here too because it's awesome. There's a sanctuary and we did like a behind-the-scenes tour thing
+5372.10s:  and we got to look at this. So, one sec.
+5384.58s:  So we got to hang out with these two girls and these are two tigers that were from
+5393.86s:  the Tiger King, which I think is just really interesting. But there was a grizzly bear there.
+5404.18s:  This is what jogged my paw. There was a grizzly bear there named Rocco. That was like sitting
+5409.46s:  in a big thing of water and he was as massive as you would expect a grizzly bear to be.
+5416.50s:  And my wife and I, we literally talked about we're planning a trip to go to Alaska to go check out
+5426.26s:  like the grizzly bears during the salmon runs. And I'm super stoked to go see them. The thing that sounds
+5434.26s:  so cool. All right. That's a cool picture.
+5446.18s:  This part is tricky, right? Because there is a timing element of things. And if you're too early,
+5457.62s:  there is a point where too early does become wrong.
+5468.98s:  This is so funny. When DD Writers don't add a TLDR, all right, then keep your secrets.
+5476.90s:  Oh, that's so awesome. It's so.
+5483.94s:  Graveteris says, wait, did I miss something?
+5492.34s:  Did I didn't see if grab, I don't know, I'm lost on the chat.
+5496.42s:  That.
+5501.14s:  As Sam says, Zachariah, you're right about our death being monetized. I guess I can't even
+5505.06s:  die with a clear conscience. Yes, you can. You just got to go do it somewhere that they won't find
+5510.26s:  you. And then you're good. Just do the, just do the thing where people go for a sale around the
+5519.78s:  world. And I mean, there's the people that try to make it, but a lot of them don't make it.
+5523.94s:  GC says Graveteris asked about selling options during a major squeeze like Moas or a major squeeze.
+5533.94s:  What about it? Okay, but in a Moas, well, contracts event event actually be able to be sold for
+5541.86s:  their true intrinsic value, you really have to exercise and quickly sell to get the most value.
+5546.34s:  Well, you're going to run out of liquidity super fast. So there is a significant chance that during
+5552.82s:  a big squeeze, depending on what you have, whether it's long call short calls, puts whatever,
+5557.46s:  like the volatility is going to go through the roof. So if you're trying to play the squeeze via
+5562.74s:  options, which I wouldn't do personally, trying to get an exit via options during the squeeze is
+5568.90s:  going to be really difficult. The other problem is, is that if you go the route of exercise,
+5573.38s:  depending on how the broker handles it, you might not be able to exercise mid day. You might only
+5578.66s:  be able to exercise the end of day. So you have to be careful about that as well so that you don't get
+5584.34s:  stuck holding something that otherwise you would want to exit from. But the other thing to keep in
+5591.62s:  mind is that even though liquidity would go out the window, you still would make a ton of money.
+5598.66s:  So even if you don't get an optimal fill, it would be, it would still likely be way more than what
+5607.54s:  you would make on the share equivalent due to the leverage alone. It just wouldn't be the full
+5611.70s:  amount that you theoretically should make because of liquidity. So that's why when GameStop is going
+5618.10s:  through the cycles and stuff, I do use options. But it's for the smaller cycle moves and yeah,
+5625.14s:  it's a little bit different. This is a good, this is a good beard.
+5638.34s:  I think we've read these before.
+5653.54s:  Okay, here we go. Yep. Don't more shares than they have to be market demand.
+5672.10s:  Direct buyers don't know that they're buying short.
+5674.82s:  These are the violations of brokers. Yeah. Okay. Yeah, these are all we've read these ones before.
+5687.14s:  Get to the bottom of this. And
+5696.50s:  and
+5710.98s:  now is a great time, by the way, if there's anything else that you want to hit before we wrap up,
+5715.30s:  now's the perfect time to start dropping them in.
+5720.10s:  Big daddy Dave Lauer, I'm actually doing another podcast or I think we're doing a live stream on
+5727.46s:  the Irvin channel next week. I for those that don't know, I am affiliated with Irvin. I was one of
+5734.66s:  the first round investors in the company and then I added more capital through a couple of the
+5739.70s:  additional rounds and I create content with them and stuff. I just really like Dave and I like what
+5744.34s:  they work on. So I just like that stuff to be known if I do have an affiliation with something
+5752.18s:  or somebody I do with him. All right, let me drop a comment here so that I have where we are.
+5762.10s:  This this will be leave off for 4 Jan 25. Look at us go for Jan 25. All right, let me close this
+5774.18s:  down or not. That's another choice. And let me look tickle like the chat. Let's save this.
+5782.18s:  Good. We can close all this stuff. Good. Dylan says, what do you think about shorting some of
+5790.02s:  these quantum stocks through back ratios? I was looking at some in RGTI 30 days out. I'd like to
+5797.38s:  try to short without having as much upside exposure. Yeah, I mean, you could do something like that.
+5804.02s:  You're going to have a little bit more of a vol perspective. You can always do spreads if that's
+5812.26s:  your flavor. But yeah, I think either of those are fine. Back ratios definitely isn't my personal go
+5821.22s:  to for a few different reasons. One of them just being the velocity of the move. It dampens too much
+5827.30s:  to the exact thing. When I'm being directional, I prefer to be directional. And that's on purpose.
+5834.42s:  I explicitly want to have a directional bias. So I'm trying to gain it. But yeah, there's nothing
+5842.98s:  wrong with doing something like that. Good question though. All right. And anything else.
+5853.54s:  Raptor says thoughts on a share recall based off what I tied you on X. I didn't see
+5859.38s:  the thing on X. So if you posted it during this, I didn't catch it. I'm happy to take a look though
+5863.54s:  and we can stroll through it together during the next live stream. But it is time for me to get ready
+5872.26s:  to go head to dinner. If you guys need anything as always, let me know. You guys can hit me up in the
+5877.78s:  discord. Be an outlier. See you all later.
