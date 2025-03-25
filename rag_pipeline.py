@@ -8,6 +8,7 @@ import numpy as np
 import faiss
 from dotenv import load_dotenv
 from sentence_transformers import SentenceTransformer
+from config import VECTOR_DIR
 
 # LangChain imports
 from langchain.prompts import ChatPromptTemplate
@@ -22,7 +23,8 @@ from langchain_openai import ChatOpenAI
 from langchain_anthropic import ChatAnthropic
 
 # Constants
-VECTOR_STORE_DIR = "vector_store"
+VECTOR_STORE_DIR = VECTOR_DIR
+TMP_VECTOR_STORE_DIR = "/tmp/vector_store"
 TEXTS_PATH = os.path.join(VECTOR_STORE_DIR, "transcript_texts.pkl")
 METADATA_PATH = os.path.join(VECTOR_STORE_DIR, "transcript_metadata.pkl")
 INDEX_PATH = os.path.join(VECTOR_STORE_DIR, "transcript_index.faiss")
@@ -48,6 +50,18 @@ def get_available_providers() -> List[str]:
         
     return providers
 
+def get_vector_store_path(filename):
+    """Try both permanent and temporary vector store locations"""
+    app_path = os.path.join(VECTOR_STORE_DIR, filename)
+    tmp_path = os.path.join(TMP_VECTOR_STORE_DIR, filename)
+    
+    if os.path.exists(app_path):
+        return app_path
+    elif os.path.exists(tmp_path):
+        return tmp_path
+    else:
+        raise FileNotFoundError(f"Required file '{filename}' not found in either {VECTOR_STORE_DIR} or {TMP_VECTOR_STORE_DIR}")
+
 class CustomFAISSRetriever:
     """Custom retriever using FAISS index"""
     
@@ -63,13 +77,12 @@ class CustomFAISSRetriever:
         # Check if vector store exists
         if not os.path.exists(VECTOR_STORE_DIR):
             print(f"❌ Error: Vector store directory '{VECTOR_STORE_DIR}' not found.")
-            print("   Please run create_vector_store.py first.")
             sys.exit(1)
         
         # Check if all required files exist
         for path in [TEXTS_PATH, METADATA_PATH, INDEX_PATH]:
             if not os.path.exists(path):
-                print(f"❌ Error: Required file '{path}' not found.")
+                print(f"❌ Error: Required file '{os.path.basename(path)}' not found.")
                 print("   Please run create_vector_store.py first.")
                 sys.exit(1)
         
@@ -83,14 +96,13 @@ class CustomFAISSRetriever:
         
         # Load the index
         try:
-            print(f"Loading FAISS index from {INDEX_PATH}")
-            self.index = faiss.read_index(INDEX_PATH)
+            print("Loading vector store files...")
+            self.index = faiss.read_index(get_vector_store_path(INDEX_PATH))
             
-            # Load texts and metadata
-            with open(TEXTS_PATH, 'rb') as f:
+            with open(get_vector_store_path(TEXTS_PATH), 'rb') as f:
                 self.texts = pickle.load(f)
             
-            with open(METADATA_PATH, 'rb') as f:
+            with open(get_vector_store_path(METADATA_PATH), 'rb') as f:
                 self.metadata = pickle.load(f)
             
             print(f"✅ Loaded {len(self.texts)} vectors")

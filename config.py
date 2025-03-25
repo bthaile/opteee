@@ -1,9 +1,11 @@
 import os
 from pathlib import Path
 
-# Paths
-PROCESSED_TRANSCRIPTS_PATH = "/tmp/processed_transcripts"
-VECTOR_STORE_PATH = "/tmp/vector_store"
+# Use /app paths since vector store is built during image creation
+PROCESSED_DIR = "/app/processed_transcripts"
+VECTOR_DIR = "/app/vector_store"
+VECTOR_STORE_PATH = VECTOR_DIR
+PROCESSED_TRANSCRIPTS_PATH = PROCESSED_DIR
 
 # Model configuration
 MODEL_NAME = "all-MiniLM-L6-v2"
@@ -14,6 +16,13 @@ TOP_K = 5
 CHUNK_SIZE = 500
 CHUNK_OVERLAP = 50
 
+# Vector store configuration
+BATCH_SIZE = 32
+
 # Create necessary directories
-Path(PROCESSED_TRANSCRIPTS_PATH).mkdir(exist_ok=True, parents=True)
-Path(VECTOR_STORE_PATH).mkdir(exist_ok=True, parents=True) 
+Path(PROCESSED_DIR).mkdir(exist_ok=True, parents=True)
+Path(VECTOR_DIR).mkdir(exist_ok=True, parents=True)
+
+# Create directories if they don't exist
+for directory in [PROCESSED_DIR, VECTOR_DIR]:
+    os.makedirs(directory, exist_ok=True) 
