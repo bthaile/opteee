@@ -1,0 +1,953 @@
+0.00s:  you
+30.00s:  you
+60.00s:  you
+90.00s:  you
+120.00s:  you
+150.00s:  you
+180.00s:  you
+210.00s:  you
+240.00s:  you
+270.00s:  you
+300.00s:  you
+330.00s:  you
+360.00s:  you
+390.00s:  you
+420.00s:  you
+422.00s:  you
+450.00s:  you
+480.00s:  you
+510.00s:  you
+512.00s:  you
+540.00s:  you
+542.00s:  you
+570.00s:  you
+600.00s:  you
+630.00s:  you
+632.00s:  you
+660.00s:  this
+668.00s:  I
+673.00s:  first
+675.00s:  me
+677.00s:  I
+679.00s:  about it at the aggregate level, or if we're talking about it for an individual option
+684.00s:  or a specific term, doesn't matter.
+688.00s:  Just the functional difference between open interest, aka, OI, and volume.
+697.16s:  Feel free to throw your answer in the chat.
+699.12s:  We'll take a look, see what you think, the correct responses.
+703.80s:  I imagine most of you will be familiar with it.
+707.48s:  Each says OIs, the total number of open contracts, volume number, traded hands today.
+713.24s:  Yeah, I think that's good.
+714.76s:  I think that's a good overview.
+716.32s:  Now a couple other notes to build onto that.
+720.88s:  Porx says liquidity.
+721.88s:  It's not liquidity.
+724.28s:  It can definitely represent a level of liquidity, but open interest simply represents the number
+733.00s:  of existing contracts.
+735.36s:  So if we take a look at spy and we take a look at the options chain and we go all the way
+743.68s:  down here to the bottom, you'll see that there's open interest and that looks exceedingly
+750.40s:  low.
+751.40s:  I do not believe that that's correct.
+753.96s:  That seems much more correct.
+756.80s:  So the open interest right now for spy on the call side is 6.5 million and on the put
+763.00s:  side it's 11.9 million.
+765.88s:  Those are the number of contracts that exist today and currently are open, meaning there
+773.60s:  are two parties to that trade that are choosing to maintain their position.
+780.04s:  Now volume represents the number of contracts traded and we can look at volume over different
+788.08s:  time frames.
+789.08s:  Volume today, we look at option volume over a rolling five day period to assess if something's
+794.00s:  becoming more active and so on and so forth.
+797.04s:  Volume doesn't differentiate whether or not it's an opening or closing position.
+802.52s:  So of this 5.8 million calls that were traded today, we do not yet know how many of those
+807.32s:  are opening positions versus closing position.
+810.68s:  We will see that reflected tomorrow.
+814.84s:  Then interest updates overnight and then the next day it will not change all day.
+821.64s:  Open interest will be whatever it is all day regardless of how much volume there is and
+825.92s:  then once we see where that volume goes throughout the day, then the next day it will update.
+831.48s:  So open interest essentially updates overnight and then it's static during the day volume
+836.96s:  is essentially the inverse.
+838.44s:  It's going to move all day as people are trading, but then overnight there's not going to
+841.92s:  be volume.
+842.92s:  It's going to zero out and then it will open back up the next day.
+846.44s:  The reason why we need to know the difference between these two things is because they
+849.52s:  mean different things and the way that we might use them for information, rocker is different.
+855.88s:  Next question, how can we use volume over OI?
+863.20s:  This essentially creates a ratio and for those that are a little more visual while you're
+872.32s:  answering that, I'll show you right now.
+875.76s:  We'll go into a specific option, change this to I'm going to go further out in time because
+879.60s:  it will be lighter, it won't be as much, it will be easier to show you.
+887.48s:  Let's do this one.
+888.48s:  I think this is a good example.
+890.64s:  So in this option chain and for this option specific, let me, oops, let me click it so
+900.68s:  that you can see the one I'm looking at.
+902.44s:  We are eyeballing this bad boy.
+906.32s:  And then I think yellow will be visible.
+910.52s:  So let's take a look.
+911.88s:  So we can see that the volume right now is 317 volume.
+920.04s:  Even interest currently is 159.
+927.12s:  So we can create a ratio.
+929.96s:  We can say volume over open interest.
+935.04s:  So in this case, it'd be 317 divided by 159.
+939.12s:  And then this equals around 2, which is what this is tracking.
+946.32s:  Because the math for me, because math for Marines, we're dumb.
+952.96s:  Now what this can be used for is let's see, Reese says, how do you check weekly volume?
+959.44s:  I always looked at daily.
+960.84s:  I'll get to that in a second.
+962.88s:  Each says to show how much activity is happening in the period versus the total activity in
+968.40s:  a contract has traded.
+969.60s:  That's correct.
+970.68s:  So expand on that a little bit more.
+973.04s:  So it's assessing the recent activity compared to the existing proceeding activity completely
+980.52s:  correct.
+981.52s:  Now, take that one step further.
+984.28s:  How do we use that information?
+992.72s:  And then in the meantime for Reese, you essentially can either track it yourself or you have
+998.28s:  to find a data source.
+1000.28s:  So a platform like think or swim, I don't think it actually is in this platform, but platforms
+1006.40s:  like bar chart, unusual whales.
+1009.20s:  Again, as you guys know, I'm affiliate for both of those.
+1011.40s:  They do have that information.
+1013.60s:  And you can also track it for yourself.
+1015.40s:  O rats will also have it.
+1017.80s:  So Ben says estimate, oh, I, that's not it.
+1024.40s:  Good guess.
+1026.60s:  Let me phrase it to you this way.
+1029.96s:  Let's say that we're looking at a toy.
+1034.84s:  Let's just, let's look at a toy, whatever the toy is.
+1041.68s:  And let's say that you're in the field of flipping toys.
+1045.48s:  You try to find toys that are cheaper and then sell them when they're more expensive.
+1050.20s:  So let's say that there's this toy right here, which I call it stick man and stick man
+1057.52s:  historically, shockingly, really not that popular.
+1061.92s:  The current open interest on the number of stick men that have been purchased has been
+1067.08s:  five.
+1069.00s:  And then stick man starts doing marketing.
+1072.04s:  They're doing a limited production run, so on and so forth.
+1074.92s:  And then all of a sudden in an individual day, we see volume for stick man go to 100.
+1082.72s:  So if we have 100 volume over the existing open interest of five, you can do the math
+1090.92s:  here.
+1091.92s:  But this tells us something very interesting is going on.
+1096.88s:  It tells us that the preceding interest in stick man was five, five interest units.
+1104.08s:  Then all of a sudden there's a hundred interest units in stick man.
+1109.28s:  Why would there be so many new interest units in stick man could be for a lot of different
+1116.48s:  reasons.
+1117.48s:  But it tells us something very, very specific, supply and demand relationship is changing
+1122.60s:  a little bit and demand for this specific thing is much higher.
+1127.92s:  This is how we use volume over O I is option straighters.
+1132.52s:  If sub out is very cool stick man and think of it in terms of an individual option.
+1140.32s:  Now the stick man example is obviously simplified.
+1144.64s:  We're effectively saying the reason why people might be growing interest in stick man.
+1150.08s:  It is very simple.
+1151.08s:  It simply means more people want this toy for either they want to bid it up and then sell
+1157.28s:  it.
+1158.28s:  They want to keep it as a collector's item.
+1159.56s:  Whatever.
+1160.56s:  Many reasons why ultimately people want an increase in stick man.
+1165.08s:  You can break down that demand pretty easily.
+1167.52s:  It might just be a really hot toy for this Christmas.
+1171.32s:  Where is options sticking with the standard team very complex.
+1176.00s:  There can be a lot of different reasons why there's more interest in this specific options
+1183.52s:  contract versus other options contracts.
+1187.36s:  But what I can tell you is that if I clear this stuff out of the way notice the color of
+1193.52s:  this column right I made this thing script to make it easy to eyeball stuff.
+1199.16s:  Here and then I'm just going to click down here so that it doesn't shade otherwise.
+1206.96s:  And then notice right here.
+1216.28s:  There is interest in these two options the seven thirties and the seven thirty fives.
+1222.60s:  There's abnormal interest in these options.
+1225.96s:  Now you have to understand the relative component of options because in this case for this example
+1236.68s:  there's obviously elevated interest in these options.
+1240.52s:  But for something like spy.
+1242.88s:  This really isn't much right.
+1244.24s:  We're talking three hundred here, thirteen hundred here.
+1247.00s:  The total dollar value of that interest quote unquote is not very high.
+1250.92s:  So this isn't anything that I would think very much about.
+1253.88s:  But this idea becomes much more interesting as you're trading other kinds of names that
+1258.48s:  show anomalous behavior actually gave a couple examples of this recently with VIX.
+1264.04s:  And it's honestly one of the reasons why I was so well positioned for these drops is
+1270.24s:  because the VIX had very unusual options trading behavior leading into the drop.
+1279.92s:  So that is why volume over OI is of interest to you.
+1285.72s:  It's a very usable tool.
+1287.28s:  Okay, so that's your quiz.
+1289.24s:  Let's jump into obviously quick recap now.
+1292.68s:  We talked about how to use the Greeks to build trades and where to find the Greeks.
+1298.28s:  And the last session was about navigating the options change.
+1301.40s:  So this is essentially how we visualize the Greeks for different options to come up with
+1306.48s:  ideas on how we can conceivably create a trade that reflects our ideas.
+1313.56s:  The other things that we discuss are how to analyze an options chain because there's
+1318.60s:  a lot of data.
+1320.08s:  I gave you just one example right now of volume over OI.
+1324.60s:  We talked about also how to glean information from volatility from volume behavior from
+1330.76s:  term structure from call put differences both in terms of volatility, but then also in
+1337.00s:  terms of overall volume.
+1339.40s:  We talked about how to detect if options are being bought or sold.
+1345.36s:  All of these tools amplify the total amount of information you have at your disposal
+1350.64s:  to make better trading decisions.
+1353.48s:  And all of that is literally captured in the options chain.
+1359.16s:  It's super cool, like a one stop shop for tons of information.
+1363.00s:  Okay, so now recap complete.
+1368.32s:  We get into the session for today and the session for today is all about how to build a trade.
+1376.08s:  Now for this, there are two reference videos which I honestly imagine most of you, I hope,
+1385.16s:  have seen these videos.
+1386.68s:  If not, then actually a lot of this is going to be a little bit difficult to follow because
+1392.20s:  I don't intend to go through these videos in crazy depth again because they're already
+1399.00s:  here in videos.
+1400.52s:  But there's the first one.
+1402.32s:  That's the outlier strategy process.
+1405.08s:  And then here's the second one, which is the outlier trade process.
+1408.40s:  And again, I call it those names just because it's way I think about it.
+1413.12s:  But this isn't necessarily the way to do things.
+1417.68s:  This is a way to do things.
+1421.08s:  But one of the most important things to keep in mind and I want to emphasize a term that
+1425.96s:  you see on your screen here, repeatable.
+1429.72s:  This term here is super important.
+1433.88s:  Why do I emphasize the point of repeatable so much?
+1440.76s:  Why am I asking you this question?
+1443.36s:  If you know why I care so much about a repeatable process, throw it in the chat.
+1449.80s:  And the reason why we need to take a minute to discuss this is because this effectively
+1455.84s:  high level will be the total representation of your capacity as a trader is how well
+1464.48s:  you can execute a repeatable task.
+1468.00s:  So why is repeatable so important?
+1470.68s:  Why does that matter?
+1475.44s:  Ben says it's hard to collect clean data when your input is random.
+1479.80s:  Good, go further.
+1480.88s:  That's exactly correct.
+1482.84s:  Each says to make a system that's profitable rather than getting lucky and then ultimately
+1487.52s:  getting right at some point.
+1489.04s:  Bingo.
+1490.04s:  Honestly between Ben and H, those responses in line exactly as they're written is the reason.
+1496.60s:  It's because when we're trading options, we're already trading.
+1502.56s:  Think of it this way.
+1503.40s:  If you think of the stock market, the stock market as a whole is wildly complex.
+1511.44s:  This is about the most simplified version of the stock market that I could possibly create
+1518.88s:  to even give you a glimpse of what is in here.
+1524.52s:  This doesn't even go into, there's a whole other bucket over here that I didn't add
+1528.48s:  because this was originally a one-on-ones version and I didn't want to overwhelm people.
+1533.84s:  But effectively, I don't know why I can't.
+1539.00s:  Thank you.
+1540.08s:  Effectively, I will add another one here that a lot of you might not even be familiar with.
+1547.28s:  Xotics.
+1548.84s:  These are not things like you're used to seeing.
+1553.88s:  So these can be things like custom swaps.
+1558.68s:  This can be Bermudian options.
+1565.72s:  I'm just going to put Bermuda, Opt-Damnit.
+1572.28s:  It's just a little...
+1576.56s:  MyOC will literally not allow that to happen.
+1579.28s:  So we'll have to do exotic options.
+1582.68s:  We'll have to use the same term twice, which is awful to do, but it's a necessary evil.
+1588.28s:  But there is this exact thing where the market itself is very, very complex.
+1596.16s:  It is nowhere near as simple as people tend to think it is.
+1600.56s:  That's because we tend to think it's so simple because Robinhood wants to make it seem
+1606.80s:  that way, right, to get you to trade because it's how they make money.
+1611.76s:  But if you as the trader are interfacing with this really complex place, there's a bunch
+1618.24s:  of different exchanges, a bunch of different participants trying to do all sorts of different
+1622.64s:  things, trading these different kinds of securities with different timeframes, that all of these
+1628.72s:  things are essentially big information ingestion sources for quite literally the world around
+1638.04s:  you.
+1639.28s:  The conversations between Trump and China regarding the tariffs will impact the market.
+1645.04s:  The conversations between Putin and Ukraine, Zelensky, will impact the market and so on and
+1652.44s:  so forth.
+1653.72s:  So if we go back to the purpose behind this concept of repeatable, it's because the system
+1660.72s:  that you're interfacing with naturally is exceedingly complex.
+1665.56s:  If you as a trader cannot differentiate between the output of your system, deriving from
+1674.24s:  luck or path versus the actual performance of the system and you as a trader, sooner or
+1683.00s:  later, it will show you.
+1685.84s:  And this is the exactly funny enough, I wasn't expecting to use it for this example.
+1691.40s:  But this is exactly why if you scroll through Reddit today, you are going to see a ton
+1698.44s:  of these lost it all down over 8k trading options on this.
+1709.44s:  If you literally just they got assigned target calls early, it looked like they actually
+1715.68s:  did okay, but this person lost 80k in the stock market, right?
+1720.60s:  The point that I'm making is right now they learn their lesson today.
+1728.72s:  Right now there are droves of people that are getting humbled by the market.
+1734.68s:  And it's because the market is finally showing another phase that people are not used to
+1740.64s:  seeing.
+1741.80s:  If we look at the total market performance and the market in general, it does absolutely
+1746.96s:  tend to go up.
+1749.00s:  I zoom this out far enough.
+1752.36s:  You'll see that reflected.
+1753.72s:  It tends to go up.
+1755.84s:  But there are nasty periods where it can go down pretty aggressively.
+1761.60s:  This is the COVID drop.
+1763.88s:  This is the bear market that we had in 22 where the market was down about 19.4% over the
+1769.08s:  year.
+1770.08s:  These aren't even really the quote unquote very ugly parts.
+1774.04s:  The real ugly parts are back here in 2008, 2009.
+1778.24s:  Then we have to go back way further into the 1930s before this was around.
+1784.52s:  But there are plenty of periods where the market is shown really, really rough times.
+1789.96s:  And this is also why a lot of traders gets really confused between how well things are
+1796.60s:  working versus the reality of markets.
+1799.76s:  I had somebody that was on, I was on a coaching call with just walking through their
+1803.68s:  process and their approach and they were talking about how they were crushing creating
+1808.24s:  zero DTE options.
+1809.24s:  And I'll show you exactly what they're doing because to no surprise, it didn't work that
+1816.36s:  well for too long.
+1819.40s:  So effectively what they're doing is I'm going to use the three DTE options just because
+1824.68s:  the zero DTEs are going to have absolutely nothing right because it's after the close.
+1829.04s:  But I want you to see the general construct.
+1832.32s:  So effectively what this person was doing is saying, where do I think SPX is just overwhelmingly
+1841.12s:  likely not going to go.
+1844.64s:  And they would go all the way out here to what we refer to as the tails.
+1850.28s:  Become all the way out here to a four delta option, a two delta option.
+1854.52s:  If you take a look at the probability of a two delta option or in this case a three delta
+1858.60s:  option being in the money of expiration, it is 3.2%.
+1863.56s:  If you take a look at the probability of a touch, it is 6.3%.
+1867.92s:  That is a exceedingly low probability of occurring.
+1872.76s:  What was happening is that they had a massive string of winning traits as you would expect.
+1880.72s:  Most of these traits worked and it's because the probability favors it.
+1885.68s:  The issue was over the course of two days they gave back effectively all that they made
+1892.64s:  over about six months.
+1896.56s:  This is the misunderstanding of how to build a trade that's based on a sound approach.
+1904.28s:  So let's now talk about that.
+1907.72s:  In order to even begin this process, we have to understand what we are trying to do as
+1914.52s:  a trader.
+1916.08s:  And in the options trading world, in my opinion, it starts with this.
+1924.12s:  It starts with creating an approach.
+1928.72s:  So this is the construct I give you to give you some structure around how to create your
+1934.96s:  own trading approach.
+1935.96s:  And again, I fully encourage you to rip this and then turn it into your own version.
+1941.12s:  Do what works for you.
+1942.76s:  This is what works for me.
+1944.80s:  The way that I approach the markets is by first analyzing market effects.
+1952.72s:  I refer to them as profit mechanisms.
+1955.88s:  These market effects, profit mechanisms are the underlying method in which we attempt to
+1964.80s:  make money.
+1965.80s:  This sounds so simple when you break it down this way.
+1968.60s:  But if I go through most of the people and just in the discord that pop on the live streams
+1975.80s:  that are even just in my broader viewership, if I go through most people and I say, show
+1980.80s:  me your last 10 trades and we look at those trades together, I can literally guarantee you
+1986.96s:  I will find the overwhelming majority will have trades that are sub optimally structured
+1994.64s:  against what they are attempting to trade.
+1999.12s:  Why would that be?
+2001.08s:  It's because we're not starting from this step.
+2005.64s:  What most traders mistakenly do is they start by putting the cart so far in front of the
+2013.48s:  horse, you cannot even see it.
+2018.08s:  What most traders do is literally not bother with any of this, completely skip this entire
+2026.36s:  stage and instead they jump straight into the second part of this broader process and specifically
+2035.24s:  this step right here.
+2038.24s:  If we talk to most options traders, this is literally the only thing they're doing.
+2046.24s:  The only thing they're doing.
+2050.88s:  My goal for you all today is to understand the importance of this step and then how once
+2059.76s:  this step is built, how it simplifies this process so much.
+2067.68s:  The reality for you as a trader and I can unequivocally tell you this has been my experience.
+2074.36s:  The process of actually trading is mind numbingly easy.
+2081.52s:  It's mind numbingly easy.
+2084.00s:  There's effectively very little thought that has to go into things and that's the process
+2089.82s:  of actually clicking the buttons.
+2091.64s:  It's so easy and this is the funny part when most people say, well, how much time do you
+2097.16s:  actually spend trading and it's so small.
+2101.80s:  Well, that too, but it's such an insignificant amount of time and the reason why is because
+2108.96s:  all the work is done before you ever place trade.
+2111.92s:  So when we're talking about this idea of building a trade, the entire premise is that we
+2119.44s:  have to start by doing all of this work.
+2125.16s:  Otherwise your trade, whatever you're doing is going to fail.
+2131.64s:  That is the reality you have to accept.
+2135.32s:  If you don't like that, too fucking bad.
+2140.36s:  What we want, what we prefer, what would be easier for us doesn't matter in the least.
+2146.20s:  What matters is what can we perform in the long run as a trader.
+2152.12s:  So looking at this entire thing, I'm going to breeze through this.
+2157.16s:  But first thing I want to open up a poll and I'm actually genuinely very curious in your
+2164.48s:  response here.
+2166.12s:  Let's take a look at spy.
+2168.16s:  Actually, I'm not going to do a poll because I want to ask a few questions back to back,
+2173.56s:  but there will be short answers.
+2175.80s:  So you should be able to run through them really quick.
+2177.96s:  Let me pop the door for Thor real fast.
+2190.20s:  About time for him to get his grow on.
+2192.92s:  So the first question, if you wanted to trade spy right now, let's say you had to put
+2202.16s:  on a trade and spy right now, are you going to trade it up or are you going to trade
+2207.88s:  it down just literally right up or down?
+2211.20s:  We're going to start with good old up or down analysis.
+2216.08s:  And you'll see where I'm going to go with this in a second.
+2218.24s:  Alberto says down.
+2219.24s:  Let's see what else we got.
+2222.36s:  Ben also says down who else who else is brave to figure out how they want to trade spy
+2231.12s:  as it sits today.
+2234.00s:  Haters says down, age says up, Reese says no sideways.
+2238.28s:  That's correct.
+2239.28s:  No sideways up or down.
+2240.48s:  Those are the two choices in the scenario.
+2248.20s:  Down.
+2249.20s:  Okay.
+2250.20s:  Next question.
+2252.96s:  And I'm specifically interested in the people that answered the first question.
+2257.96s:  What timeframe would you want to trade it up or down?
+2263.16s:  Would you trade it for a day, five days, 10 days a month?
+2270.88s:  This is in the context of whatever direction you chose to pick.
+2280.92s:  For this answer, you literally can just say X days, X week, X months, whatever.
+2288.68s:  What duration?
+2293.60s:  Recess five to 14.
+2294.60s:  Alberto says two weeks to a month.
+2298.72s:  Age says one to five.
+2299.88s:  Ben says one.
+2303.12s:  Hater.
+2304.12s:  You answered in the last one.
+2306.24s:  Were you at?
+2310.92s:  Few weeks, okay.
+2314.80s:  One month from Paulo, okay.
+2318.44s:  Jamie, what about you?
+2321.80s:  Jammigard jumping in.
+2324.88s:  Down two to three months.
+2326.60s:  Jamie says two weeks.
+2328.08s:  Okay.
+2329.08s:  So far, what do we notice?
+2332.84s:  We notice that every single one of us looking at the same thing, even though there's overlapping
+2338.16s:  ideas in terms of direction.
+2340.56s:  A lot of people said down, still some said up.
+2343.80s:  But then as soon as we add another layer of duration, there's some overlap, but there's
+2350.00s:  also more different answers so far.
+2355.20s:  Right?
+2357.20s:  Next question.
+2359.56s:  This is again, agnostic to what days to expiration you would pick.
+2366.56s:  I simply want to know what kind of option would you trade?
+2372.04s:  Would you buy or sell calls or puts?
+2377.64s:  Don't worry about strike.
+2378.64s:  Don't worry about any of the Greeks.
+2380.40s:  Don't worry about what expiration, just based on your idea and your timeframe.
+2386.92s:  Would you buy or sell calls or puts?
+2392.56s:  So there's two parts to your response by or sell calls or puts.
+2397.68s:  What is it for you guys?
+2402.04s:  I see buy put.
+2403.68s:  I see sell calls for Reese Hader.
+2407.60s:  What else for the rest of you guys?
+2411.88s:  Alberto H. Pollo.
+2416.84s:  Ben would buy a put.
+2420.24s:  Alberto would sell puts, H would go with a long call spread.
+2424.96s:  Jamie would go long some puts.
+2428.36s:  OK.
+2430.48s:  One more question.
+2433.16s:  Now don't worry about picking a specific expiry.
+2437.80s:  I want you to pick days to expiration.
+2441.40s:  So whatever you selected for buying or selling, again, you don't have to pick the actual
+2447.36s:  expiration.
+2448.84s:  But what duration would you target for your trade buying or selling the calls or puts?
+2459.52s:  Ben goes zero DTE.
+2462.12s:  Reese says 50.
+2465.88s:  Alberto says 45 to 60.
+2472.84s:  Pollo is behind.
+2479.44s:  Hader says 20 to 30 days.
+2482.48s:  OK.
+2483.72s:  So now if we were to create a mapping for each trader, each of these questions that I've
+2491.96s:  asked, there was some overlap, right?
+2495.08s:  A lot of people said down, for example.
+2498.36s:  But if we were to overlap the details of each response and map them and create a counter
+2505.84s:  for the frequency that we select the same thing, it would be zero.
+2513.76s:  We have the direction.
+2516.28s:  We have the type of timeframe.
+2520.52s:  We would want to trade the idea.
+2523.32s:  We have whether we would buy or sell calls or puts.
+2526.64s:  We have the days to expiration we would target for those calls or puts.
+2532.84s:  So far, we have already introduced a series of literally vital variables that will be the
+2542.76s:  difference between making money or losing money.
+2545.72s:  A great example of this that sticks out to me is Ben's trade.
+2551.92s:  Ben is talking about buying puts that are zero DTE.
+2557.40s:  What I can tell you is that depending on what the market does, there is a really good
+2562.24s:  chance those will lose money.
+2564.92s:  Now whether or not they will lose money in the long run, that depends on the strategy.
+2571.40s:  So now let's go back and recenter ourselves on this idea of the outlier strategy process.
+2579.76s:  And again, just a general trading process.
+2582.16s:  It doesn't have to be this.
+2583.16s:  It could be whatever you want.
+2585.80s:  The point I'm making here is that based on all of those different ideas that we just
+2590.80s:  discussed as a group for that series of people, the way that we would want to build an
+2599.68s:  optimal position is completely different.
+2603.36s:  And the only way we can figure out what the optimal idea is is by studying things.
+2609.68s:  So let's pick one.
+2611.04s:  Let's use one as an example and let's start by applying the outlier strategy process
+2617.08s:  at a very high level.
+2618.92s:  So I'm actually going to use Ben.
+2621.16s:  One because Ben has been helping us out in the discord with the question of the day
+2625.32s:  prepping.
+2626.84s:  And also I think Ben's trade is an interesting one.
+2631.96s:  So if I go through the chat really quick and I'm just going to compile Ben's answers.
+2641.84s:  So we have down.
+2645.64s:  We have a one day idea.
+2651.04s:  We have buying a put.
+2656.08s:  And we have zero DTE for Ben.
+2661.80s:  So those are the compilation to the questions I asked, direction, the duration of his idea,
+2673.32s:  what the trade would be, and then the duration for the trade.
+2678.32s:  So let's think about how we would build a trade around this idea.
+2685.32s:  And I'm using this obviously as an example and I will show you how to apply this process.
+2690.84s:  So the first thing to profit in this example, we're using direction.
+2698.04s:  And in this case, we're the direction is going to be to the downside.
+2705.44s:  The type we will have to see in a second what we want to qualify it as.
+2711.00s:  But for a zero DTE style trade and something like this, this is going to be primarily flow
+2718.68s:  and sentiment driven.
+2723.32s:  Meaning short term inclusion of information is really what's going to drive markets in such a short term timeframe.
+2729.80s:  Now, we already have now the profit mechanism defined.
+2736.28s:  Now we need to think about some signals that help us identify this profit mechanism.
+2742.24s:  So if we were to just spitball some ideas with respect to signals that are going to be relevant here,
+2751.52s:  there are things like a VWOP.
+2755.20s:  There are things like volume, support and resistance.
+2760.88s:  Again, this is all for a very short term timeframe.
+2764.36s:  We need to figure out a couple of questions.
+2766.96s:  We need to know what the robustness is of this zero DTE directional idea.
+2776.40s:  So we need to do a robustness check and I'll show you some different ways you can go about this.
+2783.60s:  We also need to qualify and quantify the effect.
+2797.68s:  So something we can use for this super simple.
+2801.52s:  We can look at average volume.
+2806.72s:  We can use the opening range breakout.
+2809.52s:  Essentially, what does the first 15 minutes of the day look like?
+2814.72s:  We can look at ATR and more specifically for this case ADR.
+2823.76s:  We can look at price relative to VWOP.
+2830.16s:  So on and so forth.
+2831.36s:  What I'm doing is I'm saying, okay, if my idea here is to trade something short term timeframe
+2840.08s:  and I'm trying to figure out if there's some sort of trend I can identify with respect to the price movements of something in a very short term timeframe.
+2851.52s:  So I'm thinking of different signals I can use to help me spot trend in a short term timeframe.
+2861.44s:  And then I'm also trying to figure out ways to help me figure out what ultimately will make the most sense.
+2869.36s:  Now, what most traders would instead do is they would say, I think it's going to go down and then they would buy a random put.
+2878.72s:  More often than not, they would pick the put at the price that they think it might hit, which is almost always the wrong answer.
+2888.80s:  But that's what most would do.
+2891.20s:  Instead, we are going to apply a little bit of analysis instead.
+2897.04s:  Now, the next step that I typically would follow that explore this idea,
+2903.68s:  is I would come to a spot, well, first I would start with even something simpler, the eyeball test.
+2911.68s:  I call it the eyeball test because it takes exactly very little effort.
+2916.00s:  And it's to help me just like just look literally just look and see what kind of sticks out to you.
+2924.24s:  And a couple things really stick out to me right from the jump.
+2928.56s:  The first thing is in a longer term timeframe, it's definitely uptrending.
+2935.44s:  As I look at the distribution of candles between green and red update versus down day,
+2942.56s:  I can see that it's sporadic and then also streaky.
+2947.12s:  So that's an idea that I might want to explore.
+2950.88s:  Meaning, is there some sort of concept or probability I can attempt to trade?
+2956.96s:  If the underlying is up two days in a row.
+2960.80s:  So one of the things I would do is start writing these ideas down.
+2973.20s:  Ideas.
+2975.04s:  So the first thing can be next day persistence.
+2986.88s:  Based on prior day, friend.
+2993.52s:  And then I would just slowly explore this idea.
+3004.56s:  Another key part of this process is if we're thinking about buying puts,
+3010.08s:  we know we're in a race against time.
+3013.04s:  And we also know that depending on what kind of price movement we want,
+3021.68s:  the type of put we would buy looks different.
+3026.24s:  So to illustrate this point, let's zoom into six month daily.
+3032.16s:  And I'm going to go back in time.
+3033.68s:  I'm going to take us to the third of March.
+3036.64s:  And I want to look at an example with you.
+3038.40s:  I think they should let us go to March three.
+3040.00s:  Yeah, perfect.
+3041.60s:  And we'll go towards the beginning of the day.
+3044.16s:  We'll start at a zero seven forty five.
+3046.32s:  We'll see what the kennel looks like there.
+3048.00s:  Yeah, this looks okay.
+3049.68s:  I'm just going to give you an example.
+3051.84s:  Now, we already know this is a down day.
+3056.40s:  I'm giving you we already know the direction.
+3060.08s:  So now Ben, this is a specific question for you.
+3064.24s:  What?
+3065.04s:  What zero DTE put trade?
+3067.52s:  Am I doing?
+3068.40s:  And I just also want to let Ben off the hook in the sense that Ben never said that this is
+3075.12s:  what he would do. Ben is literally just answering the binary questions effectively.
+3081.84s:  I gave him.
+3083.20s:  So I don't want the perception of like this is Ben's idea and we're debunking it or exploring it.
+3088.80s:  That's not it at all.
+3090.40s:  We're literally just using it as a case study for the example here.
+3094.96s:  So Ben, we know that for the example, we're going to trade zero DTE options
+3101.60s:  and we're just picking a day that we know it goes down.
+3105.60s:  So we know that we're going to trade some puts.
+3108.56s:  So what what now?
+3113.68s:  Which one do we pick?
+3115.92s:  You let me know as you look at this and then I'm going to grab a drink. I'll be right back.
+3154.00s:  You're sadly out of the mango orange and we are on to lime, which will make work.
+3180.88s:  We can get we can get by with some lime.
+3184.56s:  Ben says I'm cheap. I don't want to pay.
+3187.44s:  Wait, I don't want to min payment for puts you 30 cents, I guess.
+3192.32s:  Okay, so let's find 30 cents.
+3194.96s:  30 cents is right here.
+3197.44s:  So we're buying a two delta and it's going to be 32 cents.
+3202.72s:  So this is one trade.
+3205.04s:  I'm going to throw it in the analyzed tab so that we can track these different ideas.
+3208.56s:  You don't have to worry about what the graph looks like.
+3211.20s:  I just want to track the numbers so that we don't forget them.
+3215.76s:  So there's that one.
+3217.28s:  Now let's take a look at a couple other ideas.
+3219.76s:  Let's say maybe we grab something that's like 50 delta
+3224.08s:  and I accidentally bought it.
+3225.20s:  I meant to or accidentally sold this one.
+3227.28s:  I got to buy this one.
+3231.84s:  And I'm not worrying about cost yet.
+3234.00s:  I'm literally just putting on single lots because I just want to compare relative movements.
+3239.12s:  And then let's say that we want to get something that's super far in the money
+3243.04s:  so that we're paying very little extrinsic values.
+3245.44s:  So maybe something like this, the 60 20s.
+3250.88s:  And then let's say following Ben's idea, we want to go, I think he did it to delta.
+3257.44s:  So maybe we'll go out of the money but we'll pick something that's a more common
+3263.52s:  tail trade, which is like a five delta.
+3265.60s:  So what I did is I literally have just grabbed a handful.
+3274.32s:  And the, that line is very good.
+3278.40s:  And the goal here is I just want to help us come up with an understanding of the movements.
+3284.72s:  Now let's go towards the end of the day.
+3288.48s:  The market will close.
+3289.60s:  Let's go to 1245 and we'll say that we want to clean our trades out.
+3295.84s:  Big down move.
+3298.40s:  And rather than writing all of this out in my terrible handwriting,
+3303.52s:  I will grab an Excel sheet so that we can explore the idea together.
+3310.48s:  Now let's get rid of all this stuff.
+3313.68s:  Okay, and then I need to get my little tablet out the way.
+3319.20s:  So,
+3319.52s:  let's start here.
+3324.48s:  So we have what's the easiest way to differentiate here?
+3332.16s:  We're all the same DTEs, so I'm not going to bother inputting this.
+3335.20s:  I'm just going to put, strike,
+3340.00s:  delta, and then premium.
+3349.68s:  And then we will look at
+3354.48s:  exits, premium.
+3356.56s:  And then over here we'll calculate cost.
+3360.08s:  Then we'll calculate, you know, and then we'll calculate relic.
+3373.20s:  This is
+3376.00s:  freezing up to
+3380.00s:  how do we?
+3381.20s:  There we go.
+3382.24s:  The game of these windows freezing is really annoying because in order to
+3387.28s:  unfreeze that I literally have to click in random windows, sometimes it's OBS,
+3390.88s:  sometimes it's the other browser window.
+3392.72s:  I haven't figured out the pattern.
+3394.08s:  So it's like super random.
+3396.72s:  But let's just fill this in super fast.
+3400.32s:  So we have the 5830s.
+3404.48s:  We have the 5950s.
+3407.36s:  We have the 62,
+3411.84s:  now 6020s.
+3415.84s:  And then we have the 5870s.
+3420.64s:  And then I'm going to rewind us again really fast to 07 so that we can get the details from the
+3426.80s:  beginning.
+3431.12s:  Back up.
+3432.88s:  Just remember what the
+3434.88s:  Alt is where for all of them.
+3436.96s:  And then we'll also get
+3441.12s:  the
+3444.48s:  price, stock price.
+3447.44s:  So what I'm showing you is literally a simple process that you can do yourself
+3454.24s:  to even get a
+3457.44s:  general idea of how we answer the question of what options make the most sense.
+3462.48s:  And this is before we build a trade.
+3464.08s:  This is the process of researching the structures.
+3467.68s:  So if we go back for reference quickly, we're in this stage right here.
+3474.96s:  We're outlining fitting structures.
+3477.76s:  We're just eyeballing and testing some very basic ideas to see what might work.
+3492.64s:  Okay, so right now in the example,
+3495.44s:  SP500 is at 582163.
+3501.12s:  Nope, it's still uploading.
+3505.28s:  Come on, man, you could do it.
+3510.40s:  Right now it still shows it as
+3513.52s:  buffering.
+3517.60s:  So let's see.
+3522.40s:  58.
+3527.28s:  Yeah, this is supposed to move.
+3535.52s:  Dude, what is
+3542.08s:  we'll give this another couple of seconds.
+3543.76s:  And then if it
+3545.44s:  dies on us, I will just guess.
+3548.24s:  And the reason why I'm clicking all these random windows is because I don't know what's causing it to freeze right now.
+3568.72s:  Hmm, okay, last attempt will go out of on demand and then back in.
+3573.12s:  Oh, it's like completely disconnected.
+3575.52s:  Am I still on, yeah, looks like I'm still on.
+3581.28s:  Oh, weird.
+3584.88s:  It's showing thinkorswim is completely disconnected.
+3591.28s:  Okay, well, I will simulate.
+3597.92s:  And really the main thing I want to show you is pretty simple.
+3602.08s:  So if we let's,
+3606.32s:  this frozen.
+3609.76s:  5830, I just want to organize these.
+3617.60s:  Cool.
+3618.88s:  So now if we just eyeball what these different things could be again,
+3624.16s:  I think Ben was like a two delta.
+3626.40s:  This was like a five delta.
+3628.80s:  I think this one was like a 50 delta.
+3631.36s:  And then I think this was a one delta.
+3633.44s:  Something like that.
+3634.24s:  I think it's pretty close.
+3637.52s:  And then the premium peds we know Ben, you only wanted 30 cents.
+3642.80s:  I think this will actually show us this is good so we can at least see what the premium
+3647.20s:  we paid were.
+3648.72s:  So then we have this.
+3649.52s:  We have a dollar 15.
+3651.52s:  We have 1340.
+3654.00s:  And then we have 6250.
+3656.56s:  So we have all of this.
+3658.40s:  So if we think about different size price moves,
+3663.84s:  the total impact of the position will be completely different depending on how far the stock moves.
+3671.12s:  Now we'll start by just using delta.
+3673.52s:  There will be other factors like implied volatility.
+3676.64s:  But again, like because this is completely locked up,
+3680.40s:  it's not really going to help us.
+3681.76s:  And actually to see if I can't fix it,
+3684.88s:  what I'll do is I'll move us over to this screen.
+3688.08s:  I'm just going to close it down really fast if I can't open it back up.
+3694.80s:  Yes, completely frozen.
+3700.40s:  Very, very weird.
+3702.48s:  Okay.
+3703.52s:  So if we just use delta, it'll be close.
+3709.52s:  It won't be as accurate as I want.
+3711.44s:  So I'm trying to open thinkorswim again right now.
+3713.52s:  It says it's installing updates.
+3715.76s:  So I'll give it a second to do that.
+3718.96s:  And then if not, I'll just start guessing.
+3721.76s:  So we know that this would have been about the stock price though, the 5950.
+3730.24s:  And then because that's like a 50 delta.
+3732.48s:  And then for the example, I'm just going to hop on my phone.
+3735.52s:  And then I'm going to see what the total movement was in SPX.
+3741.68s:  On the third of March, which is what we're using.
+3749.60s:  So let's go to the third of March.
+3754.00s:  Here.
+3755.76s:  And it opened at 5968.
+3761.92s:  5968.
+3764.32s:  And then it closed at 5849.
+3772.48s:  And it looks like thinkorswim is down because it's stuck on installing update.
+3777.12s:  So just keep over here.
+3781.04s:  So this line is this.
+3784.72s:  The bud by this.
+3786.72s:  So this was our move on the day, 1.99%.
+3791.20s:  So then we can just eyeball.
+3797.76s:  5849 is the exit.
+3801.68s:  And then we can again, we can guess what the premium might be based on just the changes in delta.
+3815.44s:  So we'll simulate that now again.
+3817.36s:  I just want to be abundantly clear.
+3818.88s:  There are other factors we're just using what we can right now because thinkorswim is down.
+3823.68s:  So the stock price here, then we'll do
+3827.36s:  delta impact.
+3830.48s:  And this isn't going to capture gamma unfortunately.
+3833.44s:  So the delta's we're going to speculate that they move linearly, but they won't.
+3839.04s:  So you're not going to capture one of the more actually just realized that's going to be one of
+3843.44s:  the more important effects to be honest is because the delta change on these based on gamma is a huge factor.
+3853.04s:  So I won't be able to capture that because I don't know what the delta's are or what the gamma is for any of them.
+3859.04s:  Gameth.
+3859.84s:  Well, we'll see if thinkorswim turns on later if you guys can keep me a prize if you don't mind trying it once in a while.
+3867.52s:  And then in the meantime, I'll just summarize what we effectively know will happen.
+3873.04s:  The first thing we know what will happen is that these two trades need much bigger moves in order to make money.
+3882.08s:  But if we get those big moves because of gamma, they will compound very quickly.
+3889.60s:  So then if we were to size these trades on a commensurate basis with the largest trade, which in this case is 62.5.
+3899.60s:  What we can do is we can just eyeball what the lot sizes would be.
+3904.24s:  So in this case, we're saying 62.5 is the cap.
+3907.12s:  That's the most we can put on.
+3908.96s:  So this is going to be a one lot.
+3911.04s:  And then this equals the 62.5 divided by this.
+3915.04s:  So this one you can get on a four lot.
+3917.44s:  This one would equal the 62.5 divided by this.
+3921.28s:  You can get a 54 lot.
+3923.28s:  And then this one equals the 62.5 divided by this.
+3926.24s:  You can get a 208 lot.
+3928.96s:  And the reason for this is to show the example based on same size positions.
+3936.40s:  Because here's effectively what would happen.
+3941.84s:  In this scenario, we can see that for the more expensive position, you can't put on as many.
+3950.24s:  But the bigger position will have a much higher delta.
+3955.28s:  So then if you don't get as big of a move as you thought you might get,
+3960.72s:  then all of a sudden, this one delta can make a lot of sense.
+3966.16s:  So now let's go back.
+3968.16s:  I'm going to just put on think or swim.
+3972.56s:  And then let's go back.
+3974.24s:  I'm going to grab what's trading view.
+3977.28s:  We can use this for the example.
+3984.56s:  And we were looking at SPX.
+3988.24s:  And I don't have like the convenient indicators on like the same labels.
+3992.56s:  So I can eyeball ATR and ADR.
+3995.36s:  So we'll just kind of talk about them in general.
+3997.60s:  But here's one thing we can tell.
+4000.00s:  More recently, look at the size of the candles here.
+4004.32s:  Compared to the size of the candles here, compared to the size of the candles here,
+4008.80s:  and then here and so on.
+4010.56s:  What do you notice?
+4012.24s:  One of the things I notice for sure is that when it's going down, the candles are bigger.
+4018.88s:  And then I notice when it's going up, the candles are smaller,
+4022.24s:  not every time, but in general.
+4026.08s:  So the reason why this matters is because the way that I might build my trade,
+4033.60s:  if I think it's going up versus if I think it's going down on the day,
+4038.40s:  might also depend on where we are in a cycle.
+4045.04s:  So in this case, I'm expecting smaller movements.
+4049.04s:  If I'm trying to trade a zero DTE idea,
+4052.08s:  using those super far out of the money options is going to be very suboptimal
+4057.76s:  because you're not going to get enough of a move in order for them to show a profit
+4061.44s:  at the rate that they're decaying away.
+4064.00s:  Whereas if I'm trying to trade the zero DTE idea on one of these more inside days,
+4069.68s:  maybe I go with the higher cost, higher delta.
+4073.04s:  And it's because I get at least the dollar for dollar move with the underlying.
+4077.20s:  So then, conversely, if I'm trading up or down direction,
+4082.96s:  but during these broader down move style days,
+4086.32s:  the way that I build that position will look different,
+4089.44s:  because I know as the market's going down, the average daily range is expanding.
+4093.68s:  That information impacts how I ultimately will build the trade.
+4101.60s:  So now that we have at least a base understanding of how we test different structures
+4109.12s:  to then create parameters around,
+4111.20s:  this is when we turn option structures into strategies,
+4115.04s:  then we can get into the trade process.
+4117.44s:  And the process of building a trade is now very simple,
+4121.84s:  because using this example that we just did,
+4125.20s:  if I know that I'm trading zero DTE options with the directional tilt,
+4129.44s:  and if I run my data analysis based on downloading historic data,
+4134.24s:  and I take a look at what's the propensity for the third trading day after the prior two days
+4140.64s:  were read, maybe the same thing if the prior two days were green.
+4144.96s:  And then I know that when the market is going down,
+4147.84s:  the average true range is higher as compared to when it's going up.
+4151.04s:  So in this example, going back to this,
+4154.08s:  if we were trading one of these days in here,
+4157.92s:  would I prefer, let's say we were trading it to the downside again,
+4164.32s:  if I were trading this to the downside, would I prefer in the money based position
+4169.44s:  or in out of the money based position?
+4172.24s:  I might prefer something that allows me to compound more,
+4176.32s:  or for me, I would actually take a hybrid, fortunately,
+4178.88s:  because it's not really a this or that,
+4181.12s:  meaning the base position might be something that's in the money for the delta move,
+4185.60s:  but then the, I might add a kicker options that are out of the money that will compound quickly
+4190.16s:  if the move is large enough. I wouldn't do that if I was trying to trade
+4196.16s:  directly on one of these days. Now this is also with the glory of hindsight,
+4200.32s:  right? Seeing exactly what happens, but you'll notice as you analyze these things that this trend is
+4205.36s:  very common, whereas things are going up and maintaining up trends, the average daily range will
+4211.04s:  contract, volatility will contract. That's exactly what that is.
+4216.72s:  By knowing those details about the strategy, it inherently informs how I analyze the profit
+4225.76s:  mechanism in the signal. These are details I know about the profit mechanism in the signal.
+4231.44s:  So then when I'm building my trade, I'm building it in the context of understanding the broad
+4238.88s:  performance of the strategy. By understanding what the implications are, where we are today
+4246.40s:  in the market against what my idea is, and then I build the trade that capitalizes on that idea.
+4256.08s:  And again, this example was using a zero DTE concept. And again, to Ben's point earlier,
+4263.28s:  doesn't mean that's not Ben's strategy. He was just responding to questions I had.
+4269.36s:  Now, when we're going through and building a trade, one other note that's extremely important
+4277.12s:  to identify. And again, this is all from the Outlier Trade Process video. You'll get all these
+4280.96s:  details there. But the main thing is that it always, every single time, starts with reviewing the
+4289.36s:  portfolio. The reason why we have to review the portfolios because we need to know what the
+4295.52s:  portfolio needs or doesn't need, what we want to put in or what we don't want. The portfolio fit
+4302.80s:  is always the first stop before ever placing a trade. And there are different scenarios.
+4310.72s:  Sometimes we'll look at the portfolio and there might be specific traits that we want to try
+4315.20s:  to add to it. Sometimes we'll look at the portfolio and say, it doesn't really need anything.
+4319.04s:  I just got to use more money or we can look at the portfolio and say, I don't really need to do
+4323.92s:  anything right now. And in that case, you might choose to be super selective on what you might
+4331.28s:  in exposure to. So that's why portfolio fit is literally always first. So unfortunately,
+4337.60s:  the platform is down. So I am going to wrap up this session here. I'm happy to hang out for a little
+4344.24s:  bit. We can do like a Q and A if you guys want to talk about what we just reviewed together. If
+4348.88s:  there's specific elements that you want to explore, happy to discuss that stuff. Sorry that the
+4355.84s:  platform kind of crept out on us a little bit of a bummer. But that's how it goes. The main thing is
+4361.60s:  you really don't need the platform to understand the broader concepts that I'm explaining to you,
+4365.92s:  at least hopefully. And the broad takeaway here is that when you're building a trade,
+4375.36s:  needs to start from the point of executing a strategy. The strategy has to be something that
+4384.96s:  we've researched. Actually, we can do that really quick. We can talk about researching a strategy
+4389.44s:  because with the platform down, I actually can show you another scenario. Actually, I kind of
+4396.40s:  like that idea. What I want to show you is how to explore that idea that I was just outlining,
+4403.52s:  specifically the, well, what's the propensity if there's two consecutive down days that the
+4410.24s:  third day is up or down, right? Like that kind of thing. Now, normally I would use something
+4418.08s:  very simple. Like I would just use Python, but everybody now has access to ChatGPT, which is
+4426.00s:  actually awesome because ChatGPT can accelerate all of that. So what I'm going to do now is go into
+4432.40s:  SPX really fast on bar chart. And I'm going to go to historical data. So right now, I am here.
+4444.08s:  And then I can just download it for the past, you know, experience of time.
+4449.68s:  And as you can tell, we download a lot. So we'll grab this, open this up.
+4458.00s:  First step, we just got to clean it super fast, get rid of this. And then the other thing that
+4466.64s:  you'll learn from bar chart is that bar chart really, or I'm sorry, not bar chart. ChatGPT, it
+4473.36s:  prefers date and then it prefers close. You, by changing those two, you just save yourself a little
+4480.96s:  bit of training on the model. You can tell ChatGPT that it's named differently, but it'll get stuck
+4486.40s:  up on it a little bit. So now what I'm going to do is I'm actually going to upload this
+4494.00s:  to ChatGPT. And I'm going to tell it to analyze
+4503.68s:  the performance of SPX using the last five years of data.
+4512.08s:  I want to see if there is a predictive trend.
+4521.76s:  When there are two consecutive days of either an up or down move. And I'm going to define for it
+4536.72s:  what I consider the upper down move. So this is going to be using open to close.
+4544.48s:  I want to see if there's a predictive trend when there are two consecutive down days of either
+4550.16s:  upper down for the next trading day and the propensity for it to either continue the trend
+4568.96s:  or reverse it. Also, calculate the 20-day average daily range and see if there is a correlation
+4588.64s:  between 80-r and the third trading day continuation or reversal. Let's see what it does.
+4604.00s:  So right now what I'm showing you is actually the process of researching it. How I would go about
+4609.68s:  taking this idea and just starting to at least get my bearings around it. Okay, so let's see.
+4615.76s:  Brian says, are you a full-time trader? I definitely, depending on what you consider full-time,
+4620.72s:  but I make the most money from trading. But I do a lot of other things.
+4628.80s:  Ben says, oh, I thought I chose the puts specific for compounding, but I've never actually done
+4634.56s:  anything with options. Yeah, no, that's okay. And that's the those puts that you got the way to
+4640.56s:  look at it is that they're not all created equal. There are some puts that are much more susceptible
+4648.56s:  to compounding. And then there are other other puts that really don't compound as much,
+4653.76s:  but just provide standard leverage. So a good example of that is if you buy an option that has
+4662.72s:  a delta of one, it doesn't compound at all. It's already out of one delta. The compounding
+4668.96s:  effective options occurs from gamma. So if I show you, I mean, get rid of all that nonsense.
+4678.16s:  I show you an option that has let's call it a 0.10 delta.
+4686.48s:  And then let's say gamma is 0.01. And then let's just fill this out like loosely.
+4698.72s:  It's say like 0.20. Let's say gamma is 0.02. Let's say 0.30. Gamma is 0.02.
+4710.72s:  0.40. And I think these are behind my head. So I'll move myself in a second. Let's say gamma goes
+4716.48s:  to 0.03. And then so on. Give me one sec. I'll just move myself off to there. So
+4728.72s:  this is one scenario compared to the other scenario where we have a delta of one. Gamma
+4738.24s:  will be 2,000. At least in your positive direction, just to be clear, like technically this will,
+4747.92s:  this still absolutely can have gamma because delta in this context can change if it goes against you.
+4754.80s:  But I'm just saying for the continuation, you can't gain any more delta. It's maxed out.
+4761.68s:  So here's what happens. The stock goes up $1 plus 1. You now have, you go from 10 delta,
+4769.36s:  you gain 10 cents of premium, you gain 1 delta. So now you have 0.11. And then this continues down
+4778.08s:  the path. So then another scenario, if you have, let's say the underlying goes up another dollar,
+4785.44s:  just pretending maybe this is super liquid and this represents a $1 move. So now, well,
+4792.56s:  there would be like 0.15 or something. So what ends up happening is as your option, as it moves
+4800.40s:  in your favor, it compounds more quickly than just what the delta would provide. And it's because
+4809.04s:  it's rapidly gaining more delta as it goes in your favor. Whereas if you have an option with the
+4816.48s:  delta of one and it continues to go in your favor, the most you can have is one. So the compounding
+4823.20s:  effect is all from gamma. Gamma is what allows your option to gain more delta's and the gaining of
+4834.40s:  more delta's per same one point move is what leads to the like the actual compounding effect.
+4842.64s:  Whereas if we get something with the delta of one, there really isn't much of a compounding
+4847.76s:  effect because it's already at the biggest size, more or less that it can be. But you have leverage
+4856.24s:  still because that leverage comes from the fact that even though that you have a delta of one and
+4862.64s:  you can't gain more delta's, it absolutely is still cheaper to buy an option with a delta of one
+4870.32s:  to control those 100 shares as compared to buying 100 shares outright. So two different ways to
+4879.28s:  play the same idea. Paul says generally speaking does increased volume and our OI correspond to levels
+4890.96s:  observed in price action. Generally speaking depends on how generally speaking. If I were to do
+4903.20s:  my best to give you an answer that isn't it depends, I would say a low correlation, but it depends.
+4910.80s:  And it's because there are certain things that there will be a significant correlation. And then
+4916.64s:  there will be other things where there's very little correlation. So it genuinely does depend
+4922.32s:  quite a lot. Now let's see what ChatGPT came back with. The file and data processing was interrupted.
+4932.96s:  Please upload the file again. Okay.
+4935.36s:  You're saying.
+4944.16s:  I'm using, I don't know if you guys have tried GTPT 4.5. It seems okay, but I think for this 4.0 will be better.
+4958.00s:  So I'm letting that run in the background.
+4965.84s:  Let me grab the chat and the thing out with you guys while it's trying to figure its life out.
+4978.08s:  Any other questions that you guys have either on what we've covered so far in the series or on what
+4984.48s:  we've covered tonight while this is running?
+4995.60s:  Oh,
+5000.56s:  Oh, but it says this has been a fun session. That's awesome. Yeah, I'm glad. I hope that it's been
+5006.08s:  at least useful to understand the process because that part is super, super important.
+5012.56s:  ChatGPT is saying it seems the file doesn't have a column named time. Oh, this is funny because I
+5018.08s:  already trained the model on the old version. That's so funny. Time column
+5027.68s:  is now date and last column is now closed. That's so funny. In this chat thread that I have with it,
+5042.00s:  I trained it to the old columns and it remembered it. The humor and that's pretty good.
+5051.04s:  Let's see what this comes up with. Now, the other thing is you can do this in Python.
+5055.28s:  Oh, perfect. Here we go.
+5061.76s:  Okay. And this is exactly why chatGPT is the fucking
+5072.16s:  game changer. This is exactly why. So the question we started with is is there any sort of predictive
+5083.28s:  value in two consecutive trading days, whether up or down and whether or not that impacts the third
+5089.68s:  day? And this goes back to the original idea that we were talking about for Ben for trading,
+5094.72s:  zero DTE directionally. And we have to figure out some sort of predictive capacity to identify
+5101.20s:  direction. So we downloaded the last 25 years of data for SPX daily. We asked it to run the
+5107.76s:  analysis on the last five years. And again, I would take this research much further. I would segmented,
+5113.44s:  I would wait it towards the more recent data. I would use a longer look back window, but it's
+5118.00s:  really just for the sake of the example here. And this is what chatGPT gave us. It gives us the
+5122.96s:  actual output of data. And it says that in the scenarios, the probability of a trend continuation
+5132.32s:  after two consecutive updates, 51% chance the next day is up 48 that it's down. The probability of
+5140.64s:  a trend continuation after two consecutive down days, 55% reversal, 44% continuation. So what do
+5148.24s:  we notice? We notice two very usable ideas. The first idea is that there is a slight edge for
+5155.44s:  reversal in both scenarios. The second thing we identify is that the probability of a reversal
+5162.24s:  is larger on down days than updates to consecutive down days turning into up. That's a four point edge
+5169.04s:  that's pretty significant. Now there are further questions we could ask to refine this. You can see
+5175.68s:  that the correlation between the 20-day average daily range and third consecutive continuation is
+5181.84s:  about null. It's insignificant. So then we can ask other questions, though. We can say, is there a
+5189.92s:  relationship between the five-day ADR and maybe the 20-day compared to the five-day ADR? Or maybe the
+5198.96s:  price direction for the first 15 minutes of the day compared to the close? Or the size of the
+5206.24s:  prior move as individual days or composite days? These all these different questions are ways
+5213.44s:  that then we can analyze and this all is tied to step number two. But all of this then continues
+5222.56s:  to help inform our ideas. So a follow-on question I would ask and let's see what it has is for each
+5233.28s:  scenario what is the average percent move on the third day? So now I'm essentially saying and
+5247.12s:  wanting to see is is there a meaningful difference between the size of the move in these two scenarios?
+5255.84s:  So after two days the average after two up days the average third day move is negative 0.016. So on
+5267.76s:  an average besides the count it means that the down moves on the third day are larger than the
+5272.96s:  up moves right that's how it builds that negative skew. And then after two down days there's a
+5279.92s:  positive 0.078% average move to the upside. So what that would infer then is that there's
+5288.88s:  absolutely a more significant effect to the rebound versus a third continuation down day.
+5297.36s:  All tradable information. This is the fun part of trading to me. I don't know if this is stuff
+5303.44s:  that you guys are like yeah this sucks. But for me this is like the the ability to just explore ideas
+5310.88s:  like this and then to figure out how to monetize them is so fun. That's one of the big things I'm
+5315.92s:  actually about to work on a video right now that's talking about a recent change that I've seen in
+5319.76s:  zero DTE option and I'm excited to launch that it won't be out honestly for like a month because I'm
+5325.20s:  building out the videos I'm traveling a bit hitting up Ireland next month. So I like to try to have
+5333.52s:  videos queued up for you guys so that you're still busy. But Ben says do we see that in option
+5342.72s:  press. All's going up on two days down. I don't follow.
+5355.28s:  Could you help me understand better.
+5360.16s:  Premium. Well think of it this way right. You would have to break that out then into two follow
+5366.80s:  on questions. The first primary input in this context is going to be volatility. So is there a
+5373.12s:  demonstrable volatility edge or I'm sorry delta change. And in this case we know that
+5379.76s:  if volatility if the market's going down two days in a row volatility is more likely to be
+5384.24s:  expanding than contracting especially when compared to two consecutive opt days volatility will
+5389.44s:  typically contract versus expand. So that will input or impact the price correspondingly.
+5395.84s:  And then the severity of the move would be the second input in terms of option premiums.
+5401.68s:  So what you'll notice at a high level and again that that's a great question by the way.
+5406.64s:  But the way that you would chase that down subsequently is then creating like a 20 day and a 10
+5413.84s:  day rolling volatility input for the model which is again super easy to do.
+5419.36s:  Chat you can do it for you or you can do it in Python and you can analyze if volatility is
+5425.44s:  expanding because if it is then you know the options are getting more expensive. I was just going
+5429.20s:  to try to click into the platform. I forgot it's closed to show you the change implied volatility.
+5434.16s:  But that is what you will find.
+5436.88s:  Sweet. All right gang that wraps me up two episodes left. If there's anything that you need if
+5446.24s:  you're stuck on anything that we've learned so far let your boy know but as always be an ally.
+5452.16s:  I'll see you all later.
