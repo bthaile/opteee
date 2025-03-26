@@ -31,6 +31,7 @@ MISSING_TRANSCRIPTS_JSON = 'missing_transcripts.json'
 TRANSCRIPT_DIR = 'transcripts'
 AUDIO_DIR = 'audio_files'
 YOUTUBE_API_KEY = os.getenv('YOUTUBE_API_KEY')
+MANUAL_PROCESSING_FILE = "manual_processing_needed.json"
 
 # Debug: Print API key info (first few characters)
 if YOUTUBE_API_KEY:
@@ -38,13 +39,32 @@ if YOUTUBE_API_KEY:
 else:
     print("\n❌ No API key found in environment variables!")
 
+def save_manual_processing_list(video_list):
+    """Save list of videos that need manual processing"""
+    if os.path.exists(MANUAL_PROCESSING_FILE):
+        with open(MANUAL_PROCESSING_FILE, 'r') as f:
+            existing_data = json.load(f)
+        # Merge with existing data
+        merged_list = list(set(existing_data + video_list))
+    else:
+        merged_list = video_list
+        
+    with open(MANUAL_PROCESSING_FILE, 'w') as f:
+        json.dump(merged_list, f, indent=2)
+    
+    print(f"📝 Saved {len(merged_list)} videos for manual processing to {MANUAL_PROCESSING_FILE}")
+
 def find_ffmpeg():
     """Find ffmpeg executable in common locations"""
+    print("\n🔍 Looking for ffmpeg...")
+    
     # Try using which command
     try:
         result = subprocess.run(['which', 'ffmpeg'], capture_output=True, text=True)
         if result.returncode == 0 and result.stdout.strip():
-            return result.stdout.strip()
+            ffmpeg_path = result.stdout.strip()
+            print(f"✅ Found ffmpeg at: {ffmpeg_path}")
+            return ffmpeg_path
     except:
         pass
     
@@ -55,15 +75,26 @@ def find_ffmpeg():
         '/opt/homebrew/bin/ffmpeg',
         '/opt/local/bin/ffmpeg',
         '/Applications/ffmpeg',
-        # Add more potential paths here
+        os.path.expanduser('~/.brew/bin/ffmpeg'),  # Homebrew user directory
     ]
     
     for path in common_paths:
         if os.path.exists(path):
+            print(f"✅ Found ffmpeg at: {path}")
             return path
     
-    # If we can't find it, return the command name and hope it's in PATH
-    return 'ffmpeg'
+    print("\n❌ ffmpeg not found! Please install it:")
+    print("\nFor macOS (using Homebrew):")
+    print("1. Install Homebrew if you don't have it:")
+    print("   /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"")
+    print("2. Install ffmpeg:")
+    print("   brew install ffmpeg")
+    print("\nFor other systems:")
+    print("- Ubuntu/Debian: sudo apt-get install ffmpeg")
+    print("- Windows: Download from https://ffmpeg.org/download.html")
+    print("- Or use your system's package manager")
+    
+    raise FileNotFoundError("ffmpeg not found. Please install it using the instructions above.")
 
 def collect_video_metadata(videos_data):
     """Collect detailed metadata for videos using YouTube Data API"""
@@ -328,7 +359,7 @@ def download_audio(url, output_path, ffmpeg_path):
     video_id = url.split('=')[-1]
     print(f"Video ID: {video_id}")
     
-    # Method 1: Direct FFmpeg approach (most likely to bypass restrictions)
+    # Method 1: Direct FFmpeg streaming method (most reliable)
     try:
         print("Trying direct FFmpeg streaming method...")
         
@@ -361,83 +392,133 @@ def download_audio(url, output_path, ffmpeg_path):
     except Exception as e:
         print(f"Method 1 (direct FFmpeg) failed: {str(e)}")
     
-    # Method 2: Try with spotdl as an alternative
+    # Method 2: Try with yt-dlp with mobile API
     try:
-        print("Trying alternative spotdl method...")
+        print("Trying yt-dlp with mobile API...")
         
-        # Try to install spotdl if not already installed
-        try:
-            subprocess.run(["pip", "install", "spotdl"], check=False, capture_output=True)
-        except:
-            pass
-            
-        cmd = [
-            "spotdl",
-            "--format", "mp3",
-            "--output", os.path.dirname(output_path),
-            "--spotify-client-id", "5f573c9620494bae87890c0f08a60293",
-            "--spotify-client-secret", "212476d9b0f3472eaa762d90b19b0ba8",
-            "download", url
-        ]
+        # Create fake cookies as a fallback
+        fake_cookies = "fake_cookies.txt"
+        with open(fake_cookies, "w") as f:
+            f.write("# Netscape HTTP Cookie File\n")
+            f.write(".youtube.com\tTRUE\t/\tFALSE\t2147483647\tCONSENT\tYES+cb.20220301-11-p0.en+FX+123\n")
+            f.write(".youtube.com\tTRUE\t/\tFALSE\t2147483647\tLOGIN_INFO\tdummy_value\n")
+            f.write(".youtube.com\tTRUE\t/\tFALSE\t2147483647\tPREF\tf1=50000000&f6=8\n")
+            f.write(".youtube.com\tTRUE\t/\tFALSE\t2147483647\tYSC\tdummy_value\n")
+            f.write(".youtube.com\tTRUE\t/\tFALSE\t2147483647\tWIDE\t1\n")
         
-        print(f"Running command: {' '.join(cmd)}")
-        result = subprocess.run(cmd, capture_output=True, text=True)
-        
-        # Check if any MP3 files were created in the directory
-        for file in os.listdir(os.path.dirname(output_path)):
-            if file.endswith('.mp3') and video_id in file:
-                file_path = os.path.join(os.path.dirname(output_path), file)
-                if os.path.getsize(file_path) > 0:
-                    # Copy to the expected output path
-                    shutil.copy(file_path, output_path)
-                    print(f"✅ Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
-                    return True
-    except Exception as e:
-        print(f"Method 2 (spotdl) failed: {str(e)}")
-    
-    # Method 3: Try with pytube using stream protocol
-    try:
-        print("Trying pytube with stream protocol...")
-        
-        # Configure pytube to use different clients
-        pytube.innertube._default_clients['ANDROID'] = pytube.innertube._default_clients['WEB']
-        
-        # Use a proxy to bypass restrictions
-        proxies = {
-            'http': None,
-            'https': None,
+        ydl_opts = {
+            'format': 'bestaudio/best',
+            'postprocessors': [{
+                'key': 'FFmpegExtractAudio',
+                'preferredcodec': 'mp3',
+                'preferredquality': '192',
+            }],
+            'outtmpl': output_path,
+            'ffmpeg_location': os.path.dirname(ffmpeg_path),
+            'geo_bypass': True,
+            'geo_bypass_country': 'US',
+            'cookiefile': fake_cookies,
+            'nocheckcertificate': True,
+            'ignoreerrors': True,
+            'no_warnings': True,
+            'quiet': False,
+            'api_key': YOUTUBE_API_KEY,
+            'player_client': 'ANDROID',
+            'user_agent': 'com.google.android.youtube/17.36.4 (Linux; U; Android 12; US) gzip',
+            'extractor_args': {
+                'youtube': {
+                    'player_client': ['android', 'ios'],
+                    'player_skip': ['webpage', 'configs', 'js'],
+                }
+            },
+            'http_headers': {
+                'User-Agent': 'com.google.android.youtube/17.36.4 (Linux; U; Android 12; US) gzip',
+                'Accept': '*/*',
+                'Accept-Language': 'en-US,en;q=0.5',
+                'X-YouTube-Client-Name': '3',
+                'X-YouTube-Client-Version': '17.36.4',
+            },
         }
         
-        # Create a YouTube object
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            ydl.download([url])
+            
+            if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
+                print(f"✅ Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
+                return True
+    except Exception as e:
+        print(f"Method 2 (mobile API) failed: {str(e)}")
+    
+    # Method 3: Try with browser API + different format options
+    try:
+        print("Trying yt-dlp with browser API and alternative format settings...")
+        ydl_opts.update({
+            'format': 'bestaudio[ext=m4a]/bestaudio/best',
+            'force_generic_extractor': True,
+            'extract_flat': True,
+            'youtube_include_dash_manifest': False,
+            'player_client': 'WEB',
+            'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
+            'http_headers': {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                'Accept-Language': 'en-US,en;q=0.5',
+                'Referer': 'https://www.youtube.com/',
+            },
+            'extractor_args': {
+                'youtube': {
+                    'player_client': ['web', 'web_embedded'],
+                    'player_skip': ['webpage', 'configs', 'js'],
+                }
+            },
+        })
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            ydl.download([url])
+            
+            if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
+                print(f"✅ Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
+                return True
+    except Exception as e:
+        print(f"Method 3 (browser API) failed: {str(e)}")
+    
+    # Method 4: Try direct yt-dlp command
+    try:
+        print("Trying direct yt-dlp command...")
+        cmd = [
+            "yt-dlp",
+            "--extract-audio",
+            "--audio-format", "mp3",
+            "--audio-quality", "0",
+            "--output", output_path,
+            "--cookies", fake_cookies,
+            "--force-ipv4",
+            "--geo-bypass",
+            "--user-agent", "com.google.android.youtube/17.36.4 (Linux; U; Android 12; US) gzip",
+            url
+        ]
+        
+        subprocess.run(cmd, check=True, capture_output=True)
+        
+        if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
+            print(f"✅ Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
+            return True
+    except Exception as e:
+        print(f"Method 4 (direct yt-dlp) failed: {str(e)}")
+    
+    # Method 5: Try using pytube with custom options
+    try:
+        print("Trying pytube method...")
+        pytube.innertube._default_clients['ANDROID'] = pytube.innertube._default_clients['WEB']
         yt = pytube.YouTube(
             url,
             use_oauth=False,
-            allow_oauth_cache=False,
-            proxies=proxies
+            allow_oauth_cache=False
         )
-        
-        # Get all available streams to check what's available
-        print(f"Available streams for {yt.title}:")
-        streams = yt.streams.filter(only_audio=True).order_by('abr').desc()
-        
-        if not streams:
-            raise Exception("No audio streams available")
+        audio_stream = yt.streams.filter(only_audio=True).order_by('abr').desc().first()
+        if audio_stream:
+            temp_file = audio_stream.download(filename=f"temp_{os.path.basename(output_path)}")
             
-        # Try to get the best audio stream
-        audio_stream = streams.first()
-        print(f"Selected stream: {audio_stream}")
-        
-        # Download to a temporary file
-        temp_file = os.path.join(os.path.dirname(output_path), f"temp_{video_id}.{audio_stream.subtype}")
-        print(f"Downloading to {temp_file}...")
-        
-        # Use streaming download
-        stream_data = audio_stream.stream_to_buffer(timeout=30)
-        with open(temp_file, 'wb') as f:
-            f.write(stream_data.read())
-        
-        if os.path.exists(temp_file) and os.path.getsize(temp_file) > 0:
-            # Convert to MP3
+            # Convert to mp3 using ffmpeg
             cmd = [
                 ffmpeg_path,
                 '-i', temp_file,
@@ -455,77 +536,7 @@ def download_audio(url, output_path, ffmpeg_path):
                 print(f"✅ Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
                 return True
     except Exception as e:
-        print(f"Method 3 (pytube streaming) failed: {str(e)}")
-    
-    # Method 4: Last resort - try yt-dlp with extreme options
-    try:
-        print("Trying yt-dlp with extreme options...")
-        
-        # Create a YouTube-specific cookie file with fake cookies
-        fake_cookies = "cookies.txt"
-        with open(fake_cookies, "w") as f:
-            f.write("# Netscape HTTP Cookie File\n")
-            f.write(".youtube.com\tTRUE\t/\tFALSE\t2147483647\tCONSENT\tYES+cb.20220301-11-p0.en+FX+123\n")
-            f.write(".youtube.com\tTRUE\t/\tFALSE\t2147483647\tLOGIN_INFO\tdummy_value\n")
-            f.write(".youtube.com\tTRUE\t/\tFALSE\t2147483647\tPREF\tf1=50000000&f6=8\n")
-            f.write(".youtube.com\tTRUE\t/\tFALSE\t2147483647\tYSC\tdummy_value\n")
-            f.write(".youtube.com\tTRUE\t/\tFALSE\t2147483647\tWIDE\t1\n")
-        
-        # Set extreme options for yt-dlp
-        ydl_opts = {
-            'format': 'bestaudio/best',
-            'outtmpl': output_path,
-            'cookiefile': fake_cookies,
-            'quiet': False,
-            'no_warnings': False,
-            'ignoreerrors': True,
-            'noplaylist': True,
-            'nocheckcertificate': True,
-            'geo_bypass': True,
-            'geo_bypass_country': 'US',
-            'geo_bypass_ip_block': '1.0.0.1',
-            'force_ipv4': True,
-            'source_address': '0.0.0.0',
-            'sleep_interval': 1,
-            'max_sleep_interval': 5,
-            'postprocessors': [{
-                'key': 'FFmpegExtractAudio',
-                'preferredcodec': 'mp3',
-                'preferredquality': '192',
-            }],
-            'ffmpeg_location': os.path.dirname(ffmpeg_path),
-            'extractor_args': {
-                'youtube': {
-                    'player_client': ['android', 'web'],
-                    'player_skip': ['webpage', 'configs', 'js'],
-                }
-            },
-            'http_headers': {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
-                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-                'Accept-Language': 'en-US,en;q=0.5',
-                'Accept-Encoding': 'gzip, deflate, br',
-                'DNT': '1',
-                'Connection': 'keep-alive',
-                'Upgrade-Insecure-Requests': '1',
-                'Sec-Fetch-Dest': 'document',
-                'Sec-Fetch-Mode': 'navigate',
-                'Sec-Fetch-Site': 'none',
-                'Sec-Fetch-User': '?1',
-                'Pragma': 'no-cache',
-                'Cache-Control': 'no-cache',
-                'TE': 'trailers',
-            }
-        }
-        
-        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-            ydl.download([url])
-            
-            if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-                print(f"✅ Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
-                return True
-    except Exception as e:
-        print(f"Method 4 (extreme yt-dlp) failed: {str(e)}")
+        print(f"Method 5 (pytube) failed: {str(e)}")
     
     # Last resort: Look for any related files
     print("Looking for any files related to this video...")
@@ -554,29 +565,16 @@ def download_audio(url, output_path, ffmpeg_path):
                     print(f"✅ Successfully copied/converted to {output_path} (size: {os.path.getsize(output_path)} bytes)")
                     return True
     
-    # If all methods fail, create a dummy audio file so we don't keep retrying
-    print("⚠️ All methods failed - creating a dummy audio file")
-    try:
-        with open(output_path, 'wb') as f:
-            # Create a 1-second silent MP3
-            cmd = [
-                ffmpeg_path,
-                '-f', 'lavfi',
-                '-i', 'anullsrc=r=44100:cl=mono',
-                '-t', '1',
-                '-codec:a', 'libmp3lame',
-                '-qscale:a', '2',
-                output_path,
-                '-y'
-            ]
-            subprocess.run(cmd, check=True, capture_output=True)
-        
-        if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-            print(f"⚠️ Created dummy audio at {output_path}")
-            return True
-    except Exception as e:
-        print(f"Error creating dummy file: {e}")
-
+    # If all methods fail, record this URL for manual processing
+    print("👤 Flagging video for manual processing...")
+    save_manual_processing_list([url])
+    
+    # Create a note file to indicate this is a failed download
+    note_path = output_path.replace('.mp3', '.note.txt')
+    with open(note_path, 'w') as f:
+        f.write(f"Failed to download audio for: {url}\nCreated note file on {datetime.now()}\n")
+        f.write("This video has been flagged for manual processing.\n")
+    
     raise Exception("All download methods failed")
 
 def process_transcripts(missing_videos):
@@ -611,6 +609,17 @@ def process_transcripts(missing_videos):
                 # Setup filenames
                 audio_path = os.path.join(AUDIO_DIR, f"{video_id}.mp3")
                 transcript_path = os.path.join(TRANSCRIPT_DIR, f"{video_id}.txt")
+                
+                # Check if we already have a valid audio file
+                if os.path.exists(audio_path):
+                    file_size = os.path.getsize(audio_path)
+                    if file_size > 10000:  # More than 10KB
+                        print(f"✅ Found existing audio file: {audio_path} ({file_size} bytes)")
+                    else:
+                        print(f"⚠️ Found small audio file ({file_size} bytes), will try to download again")
+                        os.remove(audio_path)  # Remove small file
+                else:
+                    print(f"⬇️ No existing audio file found, downloading...")
                 
                 # Download audio if needed
                 if not os.path.exists(audio_path):
