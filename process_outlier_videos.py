@@ -10,6 +10,9 @@ import shutil
 from dotenv import load_dotenv
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
+import pandas as pd
+from datetime import datetime
+import re
 
 # Load environment variables
 load_dotenv()
@@ -29,7 +32,15 @@ TRANSCRIPT_DIR = 'transcripts'
 AUDIO_DIR = 'audio_files'
 YOUTUBE_API_KEY = os.getenv('YOUTUBE_API_KEY')
 
+# Debug: Print API key info (first few characters)
+if YOUTUBE_API_KEY:
+    print(f"\n🔑 API Key loaded: {YOUTUBE_API_KEY[:8]}...")
+else:
+    print("\n❌ No API key found in environment variables!")
+
 def find_ffmpeg():
+    """Find ffmpeg executable in common locations"""
+    # Try using which command
     try:
         result = subprocess.run(['which', 'ffmpeg'], capture_output=True, text=True)
         if result.returncode == 0 and result.stdout.strip():
@@ -37,18 +48,162 @@ def find_ffmpeg():
     except:
         pass
     
+    # Try common locations
     common_paths = [
         '/usr/bin/ffmpeg',
         '/usr/local/bin/ffmpeg',
         '/opt/homebrew/bin/ffmpeg',
         '/opt/local/bin/ffmpeg',
         '/Applications/ffmpeg',
+        # Add more potential paths here
     ]
     
     for path in common_paths:
         if os.path.exists(path):
             return path
+    
+    # If we can't find it, return the command name and hope it's in PATH
     return 'ffmpeg'
+
+def collect_video_metadata(videos_data):
+    """Collect detailed metadata for videos using YouTube Data API"""
+    print("\n📊 Collecting detailed video metadata...")
+    
+    if not YOUTUBE_API_KEY:
+        print("❌ ERROR: No YouTube API key found in .env file!")
+        print("Please add your YouTube API key to the .env file:")
+        print("YOUTUBE_API_KEY=your_api_key_here")
+        return videos_data
+    
+    # Validate API key format
+    if YOUTUBE_API_KEY.endswith('.apps.googleusercontent.com'):
+        print("❌ ERROR: Invalid API key format!")
+        print("You're using an OAuth client ID instead of an API key.")
+        print("Please get a proper YouTube API key from Google Cloud Console:")
+        print("1. Go to https://console.cloud.google.com/")
+        print("2. Create a project or select existing one")
+        print("3. Enable YouTube Data API v3")
+        print("4. Create credentials (API key)")
+        print("5. Add the API key to your .env file")
+        return videos_data
+    
+    try:
+        print("🔌 Initializing YouTube API client...")
+        youtube = build('youtube', 'v3', developerKey=YOUTUBE_API_KEY)
+        print("✅ YouTube API client initialized successfully")
+        
+        # Test the API key with a simple request
+        print("🔍 Testing API key with a sample request...")
+        test_response = youtube.videos().list(part='snippet', id='dQw4w9WgXcQ').execute()
+        print("✅ API key test successful!")
+    except HttpError as e:
+        print(f"❌ ERROR: Invalid API key! Error: {e}")
+        print("Please check your API key in the .env file")
+        return videos_data
+    except Exception as e:
+        print(f"❌ ERROR: Failed to initialize YouTube API: {e}")
+        return videos_data
+    
+    enhanced_videos = []
+    
+    for video in videos_data:
+        try:
+            video_id = video.get('video_id')
+            if not video_id:
+                continue
+                
+            # Get video details
+            video_response = youtube.videos().list(
+                part='snippet,contentDetails,statistics',
+                id=video_id
+            ).execute()
+            
+            if not video_response.get('items'):
+                print(f"⚠️ No metadata found for video {video_id}")
+                enhanced_videos.append(video)
+                continue
+                
+            video_details = video_response['items'][0]
+            snippet = video_details.get('snippet', {})
+            statistics = video_details.get('statistics', {})
+            content_details = video_details.get('contentDetails', {})
+            
+            # Format upload date from YouTube API
+            published_at = snippet.get('publishedAt', '')
+            if published_at:
+                # Convert ISO 8601 format to YYYYMMDD format
+                try:
+                    dt = datetime.strptime(published_at, '%Y-%m-%dT%H:%M:%SZ')
+                    upload_date = dt.strftime('%Y%m%d')
+                except:
+                    upload_date = published_at
+            else:
+                # Fallback to yt-dlp upload_date if available
+                upload_date = video.get('upload_date', '')
+            
+            # Enhance video data with additional metadata
+            enhanced_video = {
+                **video,  # Keep existing data
+                'title': snippet.get('title', video.get('title', '')),
+                'description': snippet.get('description', ''),
+                'published_at': published_at,
+                'upload_date': upload_date,  # Add formatted upload date
+                'channel_id': snippet.get('channelId', ''),
+                'channel_title': snippet.get('channelTitle', ''),
+                'tags': snippet.get('tags', []),
+                'category_id': snippet.get('categoryId', ''),
+                'live_broadcast_content': snippet.get('liveBroadcastContent', ''),
+                'default_language': snippet.get('defaultLanguage', ''),
+                'duration': content_details.get('duration', ''),
+                'dimension': content_details.get('dimension', ''),
+                'definition': content_details.get('definition', ''),
+                'caption': content_details.get('caption', ''),
+                'licensed_content': content_details.get('licensedContent', False),
+                'projection': content_details.get('projection', ''),
+                'view_count': statistics.get('viewCount', '0'),
+                'like_count': statistics.get('likeCount', '0'),
+                'comment_count': statistics.get('commentCount', '0'),
+                'favorite_count': statistics.get('favoriteCount', '0'),
+                'thumbnail_url': snippet.get('thumbnails', {}).get('high', {}).get('url', ''),
+                'content_summary': generate_content_summary(snippet.get('description', ''))
+            }
+            
+            enhanced_videos.append(enhanced_video)
+            print(f"✅ Enhanced metadata for video {video_id} (upload date: {upload_date})")
+            
+            # Respect API quota limits
+            time.sleep(0.1)
+            
+        except HttpError as e:
+            print(f"❌ API Error for video {video_id}: {e}")
+            enhanced_videos.append(video)
+        except Exception as e:
+            print(f"❌ Error processing video {video_id}: {e}")
+            enhanced_videos.append(video)
+    
+    return enhanced_videos
+
+def generate_content_summary(description):
+    """Generate a concise summary of the video content from description"""
+    if not description:
+        return ""
+    
+    # Remove URLs and special characters
+    clean_desc = re.sub(r'http\S+|www\S+', '', description)
+    clean_desc = re.sub(r'[^\w\s.,!?-]', ' ', clean_desc)
+    
+    # Split into sentences and take first few
+    sentences = re.split(r'[.!?]+', clean_desc)
+    sentences = [s.strip() for s in sentences if s.strip()]
+    
+    # Take up to 3 sentences
+    summary = '. '.join(sentences[:3])
+    
+    # Truncate if too long
+    if len(summary) > 200:
+        summary = summary[:197] + '...'
+    
+    return summary
 
 def scrape_channel_videos():
     """Step 1: Scrape all videos from the channel"""
@@ -93,15 +248,34 @@ def scrape_channel_videos():
             seen_ids.add(video['video_id'])
             unique_videos.append(video)
 
+    # Collect enhanced metadata
+    unique_videos = collect_video_metadata(unique_videos)
+
+    # Save both JSON and CSV formats
     with open(VIDEOS_JSON, 'w', encoding='utf-8') as jsonfile:
         json.dump(unique_videos, jsonfile, indent=4, ensure_ascii=False)
+    
+    # Also save as CSV for compatibility
+    df = pd.DataFrame(unique_videos)
+    csv_file = VIDEOS_JSON.replace('.json', '.csv')
+    df.to_csv(csv_file, index=False, encoding='utf-8')
 
     print(f"✅ Found {len(unique_videos)} unique videos")
+    print(f"📁 Saved metadata to {VIDEOS_JSON} and {csv_file}")
     return unique_videos
 
 def find_missing_transcripts(videos_data):
     """Step 2: Identify videos missing transcripts"""
     print("\n🔍 Step 2: Finding videos without transcripts...")
+    
+    # First, check if transcripts directory exists
+    if not os.path.exists(TRANSCRIPT_DIR):
+        print(f"❌ ERROR: Transcript directory '{TRANSCRIPT_DIR}' does not exist!")
+        return []
+    
+    # List all files in transcripts directory
+    transcript_files = os.listdir(TRANSCRIPT_DIR)
+    print(f"\n📁 Found {len(transcript_files)} files in {TRANSCRIPT_DIR}")
     
     missing_transcripts = []
     
@@ -109,24 +283,38 @@ def find_missing_transcripts(videos_data):
         video_id = video['video_id']
         transcript_exists = False
         
+        # List all possible filenames we're looking for
         possible_filenames = [
             f"{video_id}.txt",
             f"video_{video_id}.txt",
             f"{video.get('title', '').replace(' ', '_')}.txt"
         ]
         
+        print(f"\n🔍 Checking video {video_id}:")
+        print(f"  Title: {video.get('title', 'No Title')}")
+        print(f"  Looking for files: {possible_filenames}")
+        
         for filename in possible_filenames:
-            if os.path.exists(os.path.join(TRANSCRIPT_DIR, filename)):
+            full_path = os.path.join(TRANSCRIPT_DIR, filename)
+            if os.path.exists(full_path):
                 transcript_exists = True
+                print(f"  ✅ Found transcript: {filename}")
                 break
         
         if not transcript_exists:
+            print(f"  ❌ No transcript found for video {video_id}")
             missing_transcripts.append(video)
     
+    print(f"\n📊 Summary:")
+    print(f"  Total videos checked: {len(videos_data)}")
+    print(f"  Total transcript files: {len(transcript_files)}")
+    print(f"  Videos missing transcripts: {len(missing_transcripts)}")
+    
+    # Save missing transcripts to JSON
     with open(MISSING_TRANSCRIPTS_JSON, 'w', encoding='utf-8') as f:
         json.dump(missing_transcripts, f, indent=2, ensure_ascii=False)
     
-    print(f"✅ Found {len(missing_transcripts)} videos without transcripts")
+    print(f"\n📁 Saved missing transcripts list to {MISSING_TRANSCRIPTS_JSON}")
     return missing_transcripts
 
 def download_audio(url, output_path, ffmpeg_path):
