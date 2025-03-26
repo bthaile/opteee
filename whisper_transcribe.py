@@ -74,9 +74,19 @@ def load_progress():
     if os.path.exists('missing_transcripts.json'):
         with open('missing_transcripts.json', 'r') as f:
             data = json.load(f)
-            # Convert the video data into list of URLs
+            # Filter out videos that already have transcripts
+            missing_videos = []
+            for video in data:
+                video_id = video.get('video_id')
+                if video_id:
+                    # Check for transcript files with video ID
+                    transcript_path = os.path.join('transcripts', f"{video_id}.txt")
+                    if not os.path.exists(transcript_path):
+                        missing_videos.append(video)
+            
+            # Convert the filtered video data into list of URLs
             return {
-                'failed': [video['url'] for video in data if video.get('url')],
+                'failed': [video['url'] for video in missing_videos if video.get('url')],
                 'processed': [],
                 'whisper_processed': []
             }
@@ -560,7 +570,7 @@ def main():
     except Exception as e:
         print(f"⚠️ Could not check IP address: {e}")
     
-    # Load progress
+    # Load progress and filter out videos that already have transcripts
     progress = load_progress()
     failed_videos = progress['failed']
     
@@ -586,6 +596,16 @@ def main():
         print(f"\n🎥 Processing video {i}/{len(failed_videos)}: {url}")
         start_time = time.time()
         
+        # Extract video ID from URL
+        video_id = extract_video_id(url)
+        
+        # Check if transcript already exists
+        transcript_path = os.path.join(output_dir, f"{video_id}.txt")
+        if os.path.exists(transcript_path):
+            print(f"✅ Transcript already exists for video {video_id}, skipping...")
+            successful.append(url)
+            continue
+        
         # Add retry logic
         max_retries = 3
         retry_count = 0
@@ -605,10 +625,10 @@ def main():
                     title = f"{video_id}"
                     
                 # Use video ID in filenames for consistency
-                transcript_filename = os.path.join(output_dir, f"{title}.txt")
+                transcript_filename = os.path.join(output_dir, f"{video_id}.txt")
                 
                 # Use a permanent audio file instead of a temporary one
-                audio_filename = os.path.join(audio_dir, f"{title}.mp3")
+                audio_filename = os.path.join(audio_dir, f"{video_id}.mp3")
                 
                 # Download audio to a permanent location
                 if not os.path.exists(audio_filename):
@@ -634,7 +654,7 @@ def main():
                 transcribe_with_whisper(audio_filename, transcript_filename)
                 
                 processing_time = time.time() - start_time
-                print(f"✅ Transcript saved for {title} (took {processing_time:.2f} seconds)")
+                print(f"✅ Transcript saved for {video_id} (took {processing_time:.2f} seconds)")
                 
                 # Update progress
                 successful.append(url)

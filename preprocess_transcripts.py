@@ -3,6 +3,7 @@ import re
 import pandas as pd
 import json
 from tqdm import tqdm
+from collections import defaultdict
 
 # Configuration
 TRANSCRIPT_DIR = "transcripts"
@@ -10,6 +11,9 @@ PROCESSED_DIR = "processed_transcripts"
 METADATA_FILE = "outlier_trading_videos_metadata.json"  # Changed to JSON
 CHUNK_SIZE = 250  # Target words per chunk
 OVERLAP = 50  # Words of overlap between chunks
+
+# Add error tracking
+skipped_files = defaultdict(list)  # Track skipped files by reason
 
 print("="*80)
 print(f"TRANSCRIPT PREPROCESSING SCRIPT - VERBOSE MODE")
@@ -23,8 +27,18 @@ def load_metadata():
         # Try to load from JSON first
         if os.path.exists(METADATA_FILE):
             with open(METADATA_FILE, 'r', encoding='utf-8') as f:
-                metadata_dict = json.load(f)
-                print(f"Successfully loaded JSON with {len(metadata_dict)} videos")
+                data = json.load(f)
+                # Convert list to dictionary if needed
+                if isinstance(data, list):
+                    metadata_dict = {}
+                    for item in data:
+                        video_id = item.get('video_id')
+                        if video_id:
+                            metadata_dict[video_id] = item
+                    print(f"Successfully converted list to dictionary with {len(metadata_dict)} videos")
+                else:
+                    metadata_dict = data
+                    print(f"Successfully loaded dictionary with {len(metadata_dict)} videos")
                 return metadata_dict
         
         # Fallback to CSV if JSON doesn't exist
@@ -167,53 +181,71 @@ def extract_video_id_from_filename(filename):
 
 def find_metadata_for_transcript(filename, metadata_dict):
     """Find the best matching metadata for a transcript file using multiple approaches"""
-    # First attempt: Direct video ID extraction and lookup
-    video_id = extract_video_id_from_filename(filename)
-    if video_id in metadata_dict:
-        print(f"✅ Found metadata by direct ID match: {video_id}")
-        return video_id, metadata_dict[video_id]
-    
-    # Second attempt: Try to match by title or filename pattern
-    base_name = os.path.splitext(filename)[0]
-    cleaned_filename = base_name.replace('_', ' ').lower()
-    
-    best_match = None
-    best_score = 0
-    
-    for vid_id, metadata in metadata_dict.items():
-        title = metadata.get('title', '')
-        if not title:
-            continue
-            
-        # Clean and normalize the title for comparison
-        cleaned_title = title.replace('_', ' ').lower()
+    try:
+        # First attempt: Direct video ID extraction and lookup
+        video_id = extract_video_id_from_filename(filename)
+        if video_id in metadata_dict:
+            print(f"✅ Found metadata by direct ID match: {video_id}")
+            return video_id, metadata_dict[video_id]
         
-        # Simple string contains matching
-        if cleaned_title in cleaned_filename or cleaned_filename in cleaned_title:
-            # Calculate a similarity score based on the length of matching text
-            match_length = len(cleaned_title) if cleaned_title in cleaned_filename else len(cleaned_filename)
-            score = match_length / max(len(cleaned_title), len(cleaned_filename))
+        # Second attempt: Try to match by title or filename pattern
+        base_name = os.path.splitext(filename)[0]
+        cleaned_filename = base_name.replace('_', ' ').lower()
+        
+        best_match = None
+        best_score = 0
+        
+        # Ensure metadata_dict is a dictionary
+        if isinstance(metadata_dict, list):
+            metadata_dict = {item.get('video_id', ''): item for item in metadata_dict}
+        
+        for vid_id, metadata in metadata_dict.items():
+            if not isinstance(metadata, dict):
+                continue
+                
+            title = metadata.get('title', '')
+            if not title:
+                continue
+                
+            # Clean and normalize the title for comparison
+            cleaned_title = title.replace('_', ' ').lower()
             
-            if score > best_score:
-                best_score = score
-                best_match = vid_id
-    
-    if best_match and best_score > 0.5:  # Threshold for a good match
-        print(f"✅ Found metadata by title match: {best_match} (score: {best_score:.2f})")
-        return best_match, metadata_dict[best_match]
-    
-    # If no good match found, construct basic metadata
-    print(f"⚠️ No metadata found for '{filename}'")
-    base_id = video_id if len(video_id) == 11 else None  # Use only if it looks like a valid YouTube ID
-    
-    # Construct fallback metadata
-    fallback_metadata = {
-        'video_id': base_id or "unknown",
-        'title': base_name.replace('_', ' '),
-        'url': f"https://www.youtube.com/watch?v={base_id}" if base_id else "",
-    }
-    
-    return base_id or "unknown", fallback_metadata
+            # Simple string contains matching
+            if cleaned_title in cleaned_filename or cleaned_filename in cleaned_title:
+                # Calculate a similarity score based on the length of matching text
+                match_length = len(cleaned_title) if cleaned_title in cleaned_filename else len(cleaned_filename)
+                score = match_length / max(len(cleaned_title), len(cleaned_filename))
+                
+                if score > best_score:
+                    best_score = score
+                    best_match = vid_id
+        
+        if best_match and best_score > 0.5:  # Threshold for a good match
+            print(f"✅ Found metadata by title match: {best_match} (score: {best_score:.2f})")
+            return best_match, metadata_dict[best_match]
+        
+        # If no good match found, construct basic metadata
+        print(f"⚠️ No metadata found for '{filename}'")
+        base_id = video_id if len(video_id) == 11 else None  # Use only if it looks like a valid YouTube ID
+        
+        # Construct fallback metadata
+        fallback_metadata = {
+            'video_id': base_id or "unknown",
+            'title': base_name.replace('_', ' '),
+            'url': f"https://www.youtube.com/watch?v={base_id}" if base_id else "",
+        }
+        
+        return base_id or "unknown", fallback_metadata
+        
+    except Exception as e:
+        print(f"❌ Error in find_metadata_for_transcript: {e}")
+        # Return basic fallback metadata
+        base_name = os.path.splitext(filename)[0]
+        return "unknown", {
+            'video_id': "unknown",
+            'title': base_name.replace('_', ' '),
+            'url': "",
+        }
 
 def process_transcripts(metadata_dict):
     """Process all transcripts in the transcript directory"""
@@ -232,7 +264,6 @@ def process_transcripts(metadata_dict):
     # Initialize counters
     total_chunks = 0
     processed_files = 0
-    skipped_files = 0
     
     # Process each transcript
     print("\n[3/3] Beginning processing of transcript files...")
@@ -253,8 +284,11 @@ def process_transcripts(metadata_dict):
             
             # Skip if cleaned text is too short
             if len(cleaned_text.split()) < 10:
-                print(f"⚠️ Skipping {filename} - too short after cleaning")
-                skipped_files += 1
+                skipped_files['insufficient_content'].append({
+                    'filename': filename,
+                    'word_count': len(cleaned_text.split()),
+                    'reason': 'Text too short after cleaning'
+                })
                 continue
             
             # Split into chunks with timestamp information
@@ -308,15 +342,29 @@ def process_transcripts(metadata_dict):
             processed_files += 1
             
         except Exception as e:
-            print(f"❌ Error processing {filename}: {e}")
-            skipped_files += 1
+            skipped_files['processing_error'].append({
+                'filename': filename,
+                'error': str(e),
+                'reason': 'Error during processing'
+            })
     
     print("="*80)
     print(f"\n✅ Processing complete!")
     print(f"✅ Processed {processed_files} transcript files")
     print(f"✅ Created {total_chunks} total chunks")
-    print(f"⚠️ Skipped {skipped_files} files due to errors or insufficient content")
-    print(f"📁 Results saved to {PROCESSED_DIR}/")
+    
+    # Print detailed skipped files report
+    print("\n⚠️ Skipped Files Report:")
+    for reason, files in skipped_files.items():
+        print(f"\n{reason.upper()} ({len(files)} files):")
+        for file_info in files:
+            print(f"- {file_info['filename']}: {file_info.get('reason', 'Unknown reason')}")
+            if 'word_count' in file_info:
+                print(f"  Word count: {file_info['word_count']}")
+            if 'error' in file_info:
+                print(f"  Error: {file_info['error']}")
+    
+    print(f"\n📁 Results saved to {PROCESSED_DIR}/")
     print("="*80)
 
 def main():
