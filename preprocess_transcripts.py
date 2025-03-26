@@ -319,7 +319,7 @@ def process_transcripts(metadata_dict):
                         'video_id': valid_id,
                         'title': metadata.get('title', filename.replace('.txt', '').replace('_', ' ')),
                         'url': f"https://www.youtube.com/watch?v={url_video_id}",
-                        'upload_date': metadata.get('upload_date', ''),
+                        'upload_date': metadata.get('published_at', ''),
                         'duration': metadata.get('duration', ''),
                         'channel_name': metadata.get('channel_name', ''),
                         'description': metadata.get('description', ''),

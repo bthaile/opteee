@@ -13,7 +13,6 @@ from rag_pipeline import (
     DEFAULT_TOP_K
 )
 from datetime import datetime
-from flask import request, jsonify
 
 # Check if we need to build the vector store
 index_path = os.path.join("/tmp/vector_store", "faiss.index")
@@ -137,35 +136,3 @@ if __name__ == "__main__":
         server_port=7860,
         share=False
     )
-
-@app.route('/api/search')
-def search_api():
-    """Enhanced search endpoint that tries vector search first, then fallback to simple search"""
-    query = request.args.get('q', '').strip()
-    
-    if not query:
-        return jsonify({
-            "results": [],
-            "message": "Please provide a search query"
-        })
-    
-    # Try vector search first
-    try:
-        results = semantic_search(query)
-        if results:
-            return jsonify({
-                "results": results,
-                "query": query,
-                "search_type": "semantic"
-            })
-    except Exception as e:
-        print(f"Vector search error: {e}")
-    
-    # Fallback to simple search
-    results = simple_search(query, SAMPLE_TRANSCRIPTS)
-    
-    return jsonify({
-        "results": results,
-        "query": query,
-        "search_type": "keyword"
-    })
