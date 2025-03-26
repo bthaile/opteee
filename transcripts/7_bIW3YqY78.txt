@@ -1,0 +1,1340 @@
+0.00s:  What's up everybody welcome back to the outliers we are onto our next I forgot wrong camera
+7.28s:  I think we're over here.
+9.92s:  We're on the next options trading for beginner series and as you can tell I do have my crappy
+13.68s:  camera because these typically run 60 90 minutes ish there's no time frame necessarily.
+20.44s:  It's whatever it is.
+23.48s:  But I have this so that I can stand up and sit down and stuff like that.
+27.88s:  So here's the rough agenda for what we have in store for us today.
+34.20s:  It will be a pretty heavy dose of analyzing options chains and then it will be a slightly
+41.48s:  lighter dose of building trades but I want to immediately start that process with you
+47.44s:  guys because there's a really important transition that happens with trading and really markets
+56.04s:  in general where there's a lot of theoretical learning that happens and we need to immediately
+63.24s:  as soon as possible make the pivot from theory to practical application.
+66.96s:  I actually think that's one of the reasons why I've been able to kind of create the
+71.28s:  success that I have with trading is because I never got to hung up on the theoretical
+76.04s:  side.
+77.04s:  It's something that I learned in parallel with everything else and I want to be super
+80.40s:  clear what I mean by all of this.
+81.92s:  It doesn't mean start trading real money.
+84.04s:  I actually think it's a giant mistake for the vast majority of options traders.
+87.72s:  I think the best possible thing you could do and if I was giving advice to myself would
+91.64s:  be to start with paper trading.
+93.64s:  It's a super super unsexy answer and that's probably how you could tell it's the right
+97.44s:  one because most of the things that lead to positive outcomes tend not to be what we would
+103.08s:  rather do to get there.
+105.32s:  There's a lot of effort that goes into it and especially for kind of beginner options
+109.44s:  traders really would have boils down to is it's so easy to make a ton of dumb mistakes
+115.40s:  that we can avoid.
+116.92s:  I actually think I have a video on kind of like a trade checklist.
+121.44s:  Let me see if I can find that real quick before I forget.
+125.24s:  Yeah, right here.
+131.52s:  That video there is kind of like a options trading checklist.
+138.52s:  Yeah, I think that one's probably decent at least to give you guys something to start
+145.52s:  off with.
+146.52s:  I think making a checklist in the beginning is really useful and we'll kind of talk a
+149.80s:  little bit about that as we go through.
+152.64s:  So let's see who we got in the chat.
+154.92s:  It looks like we got Elongs.
+157.92s:  Elongs songs.
+158.92s:  I don't know if it's Elongs songs or Elongs songs.
+162.32s:  I'm going to go with long songs and not add an additional S that may or may not be there.
+168.24s:  Great to see you and it looks like they've made their way through part one and part two.
+171.48s:  That's perfect.
+172.48s:  That is the goal and we're going to pick right up on part three for those that might have
+176.80s:  missed any of the other episodes.
+180.60s:  You can actually check the description to this and I'm linking them all together to make
+187.20s:  it easier and easier to find them.
+189.32s:  One of the things that I kind of pride myself in is organization.
+193.00s:  I very, very much prefer to be organized.
+197.08s:  So that is why you essentially will be able to find these things as we move along.
+204.28s:  So all of that aside, let's start talking a little bit about options.
+209.92s:  I want to first start with any specific questions that you guys have from specifically
+216.84s:  the previous sessions.
+218.68s:  So if there's anything that we talked about in one of our last episodes, one of the last
+223.60s:  two workshops and there's something that you want to take a look at.
+228.24s:  Let me know.
+229.24s:  Let's start there by clearing out any existing questions.
+232.08s:  You can throw them in the chat.
+233.60s:  Obviously, I will take a look and the other kind of just general rules for the road is feel
+237.76s:  free to chat in at any point.
+239.64s:  There's some people actually that were giving me some flak for taking too many questions
+243.04s:  during the sessions, but honestly, like I don't care.
+245.40s:  That's why I'm doing it during a YouTube live session is to interact with you guys.
+249.56s:  I have a video coming out.
+250.76s:  I think sometimes next month that's I forgot how long it is.
+255.04s:  It's like an hour or 90 minutes that I just shot straight all the way through.
+260.12s:  I'm like an introduction to options trading.
+262.16s:  So for the people that really prefer a more end to end discrete process that's coming
+266.92s:  out next month, I have an old video as well that I can throw in here in the meantime.
+271.28s:  It's just a old video.
+272.28s:  It's not bad.
+273.60s:  The content at least.
+275.20s:  I always make that differentiation is because even the old stuff that I have, I think, has
+281.56s:  generally good content, but it's the, you know, the old production cycle is not great.
+287.96s:  It's still not great.
+288.96s:  I'm not a YouTuber, man.
+290.44s:  Like I'm here to share information.
+292.16s:  That's my that's my get up and my get down.
+294.64s:  All right.
+296.28s:  Let's see who else we got in the chat.
+298.32s:  We got J. Hey, that's a familiar name.
+300.04s:  Good to see you.
+301.04s:  Shrej.
+302.04s:  A little more familiar name.
+303.04s:  Same thing with wise owl.
+304.84s:  Another familiar name.
+306.84s:  I just spent my day battling the degenerate gambler, me, SMCI is so sexy for some quick
+313.16s:  thrills.
+314.16s:  Yeah, that's probably true.
+316.88s:  And I also think if we take a look real quick at SMCI, I had a couple alerts set in here.
+324.36s:  I actually need to re institute this one.
+329.20s:  Because I do like SMCI a lot.
+332.00s:  And for kind of a general trading thing, right, to we'll start right off on the practical
+338.44s:  side of things as I was alluding to before, this is a really common and effective pattern
+345.24s:  to trade where a booming stock goes through typically a really strong, drawn out up move
+354.40s:  30 to 60% price appreciation.
+358.32s:  Pretty along in there, there's a catalyst of some sort, some sort of really hot earnings
+361.92s:  like this one, as you could tell.
+363.88s:  And then the stock will trend sideways anywhere from two to 12 weeks.
+369.24s:  And you kind of just follow it while it's going through this sideways trending thing,
+372.88s:  keeping a really close eye on how consolidated it gets.
+376.16s:  If we're starting to see higher relative lows and how many times we're touching near-term
+381.00s:  resistance, all that kind of stuff.
+383.36s:  And for me, this is a quintessential momentum breakout candidate.
+388.20s:  That's I would bet dollars to donuts.
+390.52s:  It will break out to the upside.
+392.08s:  Nobody knows.
+393.08s:  I want to be super clear because I know there's beginners in here.
+395.16s:  You have to be really careful when people pontificate about what they think or what they
+398.80s:  know is going to happen.
+400.16s:  Nobody knows.
+401.16s:  So whenever I say probabilities and stuff like that, very probable, that's in my probabilistic
+406.60s:  assessment of things to be abundantly clear.
+409.44s:  Don't listen to anybody says about what they think is going to happen.
+412.20s:  The only opinion that matters is your own.
+413.72s:  Okay.
+414.72s:  That aside.
+415.72s:  I think it's going to go up.
+417.88s:  The punchline to that, especially with this earnings coming up, which is interesting.
+421.76s:  But yeah, SMCI looks really good.
+424.24s:  Imply volatility percentile is nice and jacked up over 65%.
+429.64s:  This is another great learning point for you all.
+431.56s:  We covered this a little bit, I think, previously.
+434.12s:  The difference between implied volatility percentile and implied volatility rank.
+438.72s:  But these are just different ways to plot the relative volatility of a product against
+444.84s:  itself, which is a really important process.
+447.60s:  You can have something like, let's look at GE.
+451.32s:  GE has 30% volatility.
+455.28s:  So not a ton, but take a look at the implied volatility percentile.
+458.76s:  It's 70%.
+460.32s:  So what this means is on a relative basis, it's quite volatile relative to itself.
+467.52s:  But if we go back to SMCI, this has 82% volatility so much higher volatility yet as a lower
+478.00s:  volatility percentile.
+479.92s:  So again, that's why the conversation of relative volatility becomes super important,
+484.88s:  which again, we'll talk a little bit about before.
+488.88s:  We also have cricket core, cricket core, cool name.
+496.92s:  It looks like they just joined the discord in the pro.
+500.40s:  That's awesome.
+501.40s:  Welcome in.
+502.40s:  Let me see if we got you.
+503.56s:  We do.
+504.96s:  Let me make sure that you are all set up in here.
+509.28s:  And then we also have, there we go.
+519.04s:  Abdulaz says, hey, is high higher IV better?
+523.20s:  That's literally a fantastic question.
+526.24s:  And the answer to most of the things you're going to hear me talk about with respect to
+532.80s:  trading in general is it depends.
+538.16s:  It heavily depends.
+539.84s:  So most things in trading are not inherently good or bad.
+544.08s:  It depends on what side you are of the effect and what your overall disposition is.
+551.20s:  So here's the way to think about it.
+554.32s:  High implied volatility or just implied volatility in general, I would completely detach it from
+559.20s:  the ideas of good and bad.
+560.92s:  And I would qualify implied volatility by itself.
+565.16s:  And then there are different strategies that will benefit from it.
+568.96s:  There are different strategies that will hurt from it.
+571.64s:  So then that good and bad becomes qualitative based on what you're doing.
+574.64s:  So what does high implied volatility tell us?
+577.84s:  Very, very simple.
+580.04s:  Volatility is a financial term of variance.
+584.60s:  What we're looking at is the dispersion from some sort of mean that's time bound.
+591.44s:  That's what creates this volatility thing that we're looking at.
+595.84s:  So when you see things that have high volatility, it means that we're expecting to see greater
+603.20s:  dispersion from a mean of some sort.
+606.80s:  So let's take a look at a example right now.
+609.12s:  If we take a look at SMCI and we look at these, these are called linear regression channels.
+614.04s:  It essentially waits the sizes of the moves so that 50% and 100% of the moves will
+620.20s:  fall within these bands.
+622.04s:  You can kind of loosely use them as standard deviation channels.
+624.88s:  The reason why I like these is because they're not arbitrary.
+628.64s:  They're built off of existing price as it is.
+631.60s:  So if you overlay something like standard deviation channels with linear regression channels,
+635.80s:  a lot of times they'll line up very, very close.
+637.84s:  Sometimes they'll be very disparate.
+639.44s:  So I prefer linear regression channels for those reasons.
+643.80s:  Now if we look at something like SMCI, you'll see that again, really high implied volatility,
+649.52s:  82%.
+650.84s:  So if I take a look at 275, which was the low, and then it hit high of 1229, the massive
+660.40s:  move, volatility is an indication of how much we think something is going to move.
+667.08s:  Now volatility has different forms.
+669.12s:  I actually think I have this, let me see real quick, just for a quick recap.
+675.92s:  I have the old presentation that I gave you guys this one.
+679.72s:  Because I also added something to it, which is a great segue because one of the things
+684.56s:  I want to talk to you guys about is funny enough.
+688.40s:  I gave you guys a couple thought exercises in here because I want to start highlighting
+692.40s:  a lot of the flaws with the standard person's way of thinking compared to what it needs
+697.08s:  to be for trading.
+698.92s:  So you can forecast volatility, which is forward looking.
+702.72s:  Most retail traders are not doing this carte launch.
+705.44s:  And the reason for that is because there's a lot that goes into forecasting volatility
+709.40s:  accurately.
+710.40s:  Anybody can forecast it.
+711.40s:  You literally can look at previous price moves and come up with a guess of where you think
+716.76s:  the range might be going forward.
+718.76s:  But the entire name of the game is how accurate is it?
+722.04s:  So retail traders in general aren't super worried about forecast volatility, but you should
+726.72s:  know it exists because the people who do forecast volatility market makers, folks like
+731.00s:  that, they implant that essentially into pricing models.
+736.20s:  That's how they determine what they're going to offer options premiums at.
+741.24s:  And we on the retail side observe it through implied volatility.
+746.20s:  This is the volatility that is implied through the options pricing.
+749.64s:  You can use something like the Black Sholes Martin model to pull out what the forecasted
+755.00s:  volatility is by whoever forecasted it to see what it is.
+758.68s:  So in this case, when we're looking at this specifically implied volatility, that's
+764.68s:  what this is.
+765.68s:  It's looking at whatever the market consensus is for forecast volatility for this product,
+769.76s:  which is forward looking forward looking volatility.
+773.24s:  The standard is 30 days.
+775.20s:  It changes kind of all the time.
+778.08s:  Charlie, welcome to outlier bronze.
+780.24s:  Great to have you.
+782.36s:  So essentially what this means is going forward.
+784.84s:  How much do we think something is going to move?
+786.72s:  That's pretty much it.
+788.28s:  So going all the way back to your original question of is high volatility good or bad?
+794.28s:  Well, in general for options traders, whether you're buying or selling, we typically prefer
+800.80s:  more volatility because that's you need things to move.
+804.76s:  Even if you're buying volatility and it's expensive, which means on a relative basis,
+809.20s:  you're overpaying for the exposure that you're getting, you still want the product to move.
+814.00s:  So you might be overpaying in terms of vols priced into the premiums, but if you get really
+818.16s:  big moves, you can make a lot of money.
+820.80s:  Now it's not always the case though, because some of the best times to sell volatility,
+826.84s:  selling options to capture volatility is actually when volatility is low.
+832.32s:  Because a lot of people will hear kind of the tasty trade methodology of if volatility
+836.56s:  is high, you sell premium.
+839.60s:  And it's not bad.
+840.88s:  There's it's an okay way to think about it and it'll get you there most of the time.
+846.12s:  But the reason why it's not ideal is because don't worry about the white line so much here.
+853.28s:  Take a look at these two yellow lines.
+857.96s:  These are two different term volatilities.
+860.20s:  The darkest 30 days, the seven I think right now, let me confirm for you.
+864.92s:  I think it's two days.
+866.00s:  Yes, two day vol.
+867.80s:  So in this case, you'll find that there are periods where implied volatility might be high
+874.36s:  on a relative basis.
+875.44s:  It's elevated here.
+876.84s:  But if the realized move is even higher, you still lose money selling vol.
+881.68s:  So when implied volatility is high, the reason why they use that generality of if volatiles
+889.16s:  sell premium is because the in the long run in total, typically when implied volatility trends
+898.76s:  over realized volatility, that relationship can get even more skewed if implied volatility
+903.84s:  is high.
+904.84s:  But there's a danger.
+906.08s:  If you sell volatility when volatility is high, it means whatever you're trading is probably
+911.60s:  going to move a lot.
+912.60s:  And that can hurt if it happens to move in a trending direction one way or the other
+916.56s:  and you're on the wrong side of it.
+918.72s:  So it's like most of this stuff, a bit of a long winded and nuanced answer, but that's
+924.68s:  because I'm not trying to give you guys the easy answers.
+928.08s:  The easy answer to that would have been yes, we want volatility high because stuff moves.
+932.04s:  That's the short succinct answer.
+933.32s:  But as you can tell from that entire thing I went through, there is a lot of subsequent
+939.04s:  detail that goes into actually arriving at what I would consider to be a legitimately
+944.28s:  accurate answer, which is what I can't just care to share with you guys.
+949.44s:  We also have Charlie McMichael.
+952.36s:  That's a hilarious last name to be honest that joined outlier bronze great to have you
+956.72s:  as well.
+958.52s:  Carlos says easy answer is yellow all of your money at high volatility.
+962.48s:  That is an easy answer.
+963.80s:  Yeah, I think if I were to think about trying to break down the world of options trading
+968.28s:  into the simplest simplest thing, I think that's probably right.
+971.80s:  You like where your head's out there.
+974.64s:  Okay.
+976.64s:  There was another question up here that I don't want to miss.
+980.04s:  So C. Lee, that's a cool name.
+982.44s:  Are there any signs between all the Greeks that can give insight when an option is priced
+987.76s:  in our favor?
+989.24s:  I get Delta and theta but have trouble incorporating Vega and gamma.
+993.32s:  That's hilarious.
+994.32s:  You know, you do know why that's so hilarious because look what I have is the first thing
+998.24s:  that we're going to talk about.
+999.60s:  You guys are getting a little too good at essentially creating the segues for us.
+1004.96s:  But that's actually exactly what I want to talk about.
+1007.96s:  Now in terms of option pricing in your favor, there can be instances again, depending on
+1015.80s:  what you're trying to do.
+1017.84s:  And again, it's a very nuanced answer.
+1021.24s:  So what I would prefer to do instead is talk about these different aspects of an options
+1028.84s:  price.
+1030.48s:  And what I would love to do is actually spend a little bit of time talking about how to
+1035.92s:  think about them.
+1037.72s:  And the reason why I want to spend the time thinking about them is so that you understand
+1042.00s:  how to wait the decisions you're making because here's the deal.
+1046.20s:  Whenever you're looking to buy a stock, for example, let's say SMCI because we have
+1051.40s:  SMCI up and you say, I want to buy this stock.
+1054.24s:  I think it's going up to really simple analysis.
+1057.68s:  You go through your technical, fundamental analysis and then you say, I'm going to buy
+1061.16s:  the stock.
+1062.16s:  That's it.
+1063.16s:  You have one thing to buy and it's done.
+1066.00s:  Options add a lot of complexity.
+1068.84s:  There's a trade off of the complexity.
+1070.52s:  You can make money from different market forces.
+1072.40s:  You can make money even if things go slightly against you.
+1075.44s:  You gain access to leverage.
+1077.52s:  You can trade on margin or with margin, not on margin.
+1081.88s:  So there's a lot of benefits with options, but they do add complexity.
+1087.28s:  So if we take a look now at this idea of buying SMCI and we pop over here and now we're
+1094.28s:  looking at the world of options.
+1097.40s:  That's the first thing.
+1098.40s:  Well, first we have to figure out what expiration cycle we're going to pick.
+1101.84s:  You don't have to pick that with stock.
+1103.48s:  With stock, you just come up here and you say, okay, the offer right now is $898.75.
+1110.20s:  I'm chill with that and you buy it and then you're done and you move on.
+1113.76s:  There's literally, we have to do a bunch more steps with options.
+1119.20s:  And that's actually the goal of walking through these is I want to walk you through a really
+1124.36s:  loose framework on how you can think about all of these and make an efficient decision.
+1130.76s:  And really all we need to do for that is understand the trade offs that come with each of these.
+1137.76s:  This is the beautiful part and the difficult part with options.
+1141.68s:  It's difficult because there's more things we have to think about.
+1144.92s:  But the beautiful part is rather than trading a stock that when I put that trade on, it's
+1150.20s:  going to go up or go down and I have a one for one move with the underlying itself.
+1155.36s:  I have the opportunity to structure something that behaves exactly how I want, exactly how
+1162.24s:  I want.
+1163.24s:  You can't do that with stock.
+1165.32s:  So let's start with this idea of days to expiration and also Carlos, my man, big
+1172.84s:  to everybody knows they're supposed to hit the like button.
+1174.84s:  That's what actually helps us emerge from the depths of the YouTube algorithm, which
+1179.72s:  is one of my goals to try and bring this information to more people.
+1183.08s:  So thank you, Carlos.
+1184.36s:  All right, so days to expiration.
+1186.64s:  What's the trade off here?
+1187.64s:  Let's take a look.
+1189.44s:  If we think about and actually one, sorry, one more quick admin note on this, I just
+1194.40s:  recently made a video on buying call options smarter, which I'm going to drop that in
+1201.04s:  here for you guys.
+1202.64s:  It's just a reference and that walks through really more from the call buying perspective
+1208.04s:  a little bit about this.
+1210.00s:  And it's probably a good reference for you guys on the idea of how to think about some
+1213.52s:  of these criteria.
+1214.52s:  We're going to go a little bit more in detail here, though.
+1217.68s:  All right.
+1219.36s:  So days to expiration, we have zero all the way out to 574 in this case.
+1225.80s:  The very first thing to think about is how does time impact these contracts?
+1233.44s:  And if you know some of the ways that time impacts these contracts, throw it in the chat
+1238.48s:  as I go through it.
+1239.84s:  Kind of a way to assess your own understanding.
+1242.04s:  And then I'll take a look at what you guys think.
+1244.40s:  So the very first thing near term, explorations, they expire faster.
+1249.08s:  But no shit Sherlock needs to be said, the further out and time you go, the longer your
+1254.64s:  positions have to work.
+1256.56s:  That could be a good thing or that could be a bad thing.
+1259.52s:  If you're trying to play a short term move, going super far out in time, it not makes
+1264.00s:  sense.
+1265.00s:  So again, it has to be in the context of whatever you're attempting to structure as
+1269.56s:  your position, but there are components to DTE that remain the same no matter what
+1275.16s:  you're trying to do like that one right there.
+1277.12s:  If you go further out in time, the position will have longer to work.
+1280.00s:  So then you have to determine what's the amount of right amount of time for your position.
+1284.80s:  The next thing, the further out in time you go, the more X-Trenzic value an option is
+1292.48s:  going to have.
+1293.80s:  Why is that?
+1294.80s:  Well, because if you'll recall, in options premium has two components.
+1301.40s:  It has intrinsic, if it's in the money, and it has extrinsic, which is all time value.
+1307.84s:  We know that all options expire.
+1311.24s:  So sooner or later, all of the extrinsic value is going to go away, all of it.
+1318.08s:  So if you go further out in time, these options will have way more X-Trenzic value because
+1325.28s:  the contract spans a longer duration.
+1329.84s:  As we get closer and closer to expiration, X-Trenzic value declines and it starts to decline
+1336.56s:  precipitously within 60 DTE.
+1340.04s:  And again, for a quick refresh on this, you guys can take a look at that.
+1349.88s:  So as you can see, data decay, this is for at the money options.
+1354.08s:  If we take a look, once we start crossing within 60 days to expiration, the amount of
+1359.32s:  X-Trenzic value starts declining massively.
+1362.52s:  That's theta decay.
+1363.52s:  That is, all of the X-Trenzic value starting to bleed out of the options super fast because
+1370.00s:  going back to what we were just talking about, all options expire.
+1375.44s:  And if it's coming up on expiration, whether it's in the money or out of the money, it doesn't
+1379.60s:  matter, all of the X-Trenzic value has to go away.
+1383.16s:  Because there's no more time left in the contract.
+1386.56s:  So the other component to think about here is how expensive the option is.
+1393.84s:  So you can probably reason your way through this component.
+1396.72s:  If you have a contract that spans a longer timeframe, those options probably will be
+1403.16s:  worth a little bit more on a relative basis and we can prove this out.
+1407.24s:  I'm going to move us away from SMCI into spy just because I want to use something that's
+1412.52s:  a little bit cheaper so that it's easier to see.
+1415.96s:  Because with SMCI, as you were noticing in the option chain, the numbers were really
+1419.50s:  compressed because it's a big product.
+1421.16s:  There's a lot of numbers.
+1422.92s:  So if we look at spy and let's look at a 30 delta and be clear, these will still, after
+1429.76s:  today, these will have no X-Trenzic value at all.
+1431.96s:  It's just because we're coming up on expiration.
+1434.48s:  But the 31 delta has 10 cents.
+1437.80s:  It's bid at 10 offered at 11.
+1440.00s:  So 10 and a half technically you can't trade at that though.
+1442.76s:  As an options trader, you can only go out to two digits.
+1446.00s:  So let's go out now a week.
+1448.68s:  And let's find that 30 delta again, same 30 delta.
+1451.04s:  Now they have $144.
+1453.80s:  $1.44, remember options work in 100 lot contracts or 100 share contracts.
+1460.96s:  Redact that last thing.
+1462.04s:  That's super wrong.
+1463.36s:  A lot, one lot represents 100 shares.
+1466.84s:  You want to be super clear there.
+1468.28s:  Try not to steer anybody in the wrong direction.
+1470.72s:  But notice how much more these are worth at the same delta because there's way more time.
+1476.40s:  And just to drive the point home further, let's go out 364 days.
+1480.40s:  Let's find us again, that 30 delta ish.
+1483.36s:  These have $13.15, 16 cents, something like that.
+1488.72s:  So way more X-Trenzic value because these have way more time.
+1495.84s:  That's your first trade off.
+1497.04s:  That's the very first thing you need to look at as an options trader is what days,
+1502.56s:  expiration makes sense.
+1505.72s:  And I just gave you a list of the primary trade offs.
+1509.16s:  We now will have to integrate some of these other Greeks to see how they behave with respect
+1514.56s:  to delta because this is also going to be part of the conversation.
+1519.04s:  All right, let's see what the guesses are so far.
+1522.84s:  In your comments, Carlos says, not going to lie, don't know much about the Greeks,
+1525.84s:  but I love trading options.
+1526.84s:  So I'm here to learn how's perfect, man.
+1528.20s:  This is exactly what this is all about.
+1529.96s:  The Greeks, they sound way, well, one, fun fact, they're not even all Greek letters.
+1535.44s:  We just call them Greeks, which I find entertaining.
+1538.16s:  Second thing is it sounds complex and it's a little bit different, but it's like anything
+1544.08s:  else.
+1545.08s:  Once you understand the general rules, it's really, really not that bad.
+1550.96s:  And for those wondering, we got two beverages tonight.
+1554.72s:  The first one we're rocking with is a spin drift raspberry lime.
+1558.56s:  This one's pretty good.
+1559.56s:  I like the orange one way better.
+1561.28s:  And then we have a good old croaker watermelon, celtzer water, ready to rock and roll in reserve.
+1569.28s:  So we are, we're here.
+1571.44s:  We're here with everything we could possibly need, essentially to last in eternity, talking
+1576.24s:  about some options.
+1579.44s:  Jay says increased DTE means more extrinsic value that's perfect.
+1583.28s:  Data will tend to be lower.
+1584.80s:  That's also perfect.
+1586.32s:  But because there's more time, vaults, it will be higher and so will row.
+1591.00s:  Literally perfect.
+1592.00s:  Jay, if I'm not mistaken, you're relatively new to options, aren't you?
+1596.88s:  Because so far, like that's literally perfect.
+1600.36s:  We got to take the socks off because it's getting warm in the office.
+1604.16s:  That's what that little maneuver was.
+1607.88s:  That's literally perfect.
+1609.36s:  Jay, that's exactly correct.
+1612.84s:  Jay says he started a few weeks ago.
+1614.72s:  That's awesome.
+1615.72s:  Like that's, I'm really, really happy with that answer.
+1618.12s:  And anybody in here, Ty, being one of them, like Ty went through a couple, like options
+1623.04s:  traders for beginner series with me where I did like smaller groups with like just a handful
+1627.76s:  of people.
+1629.12s:  And anybody that knows the way I trade or even talk about options is I'm real, real picky
+1634.76s:  about the details.
+1636.08s:  And it's because I genuinely believe that's where a lot of money is to be made in markets
+1642.44s:  is in the details.
+1644.56s:  So I like that answer.
+1647.80s:  Jayden says I feel like as a new trader options, those shorter term explorations seem so much
+1654.08s:  more lucrative considering the cost.
+1657.08s:  It's a great, great, great, great, great question.
+1661.00s:  Flash statement, I guess I should say.
+1663.76s:  Because you're not wrong.
+1667.12s:  In terms of the percent return capable, it's very different.
+1672.60s:  So like, let's say, for example, we got seven days in spy and let's say that we go to
+1678.08s:  like a 20 delta something like this.
+1680.76s:  And let's say that you buy these 84 delta options.
+1683.56s:  You're only paying 84 bucks, which is, you're paying $84 to control 21 shares of spy,
+1691.40s:  which is at 544.
+1693.32s:  And I'm not good at math for Marines.
+1695.92s:  So again, you're paying 84 dollars to control 24 shares of something that's at 544,
+1702.00s:  51, 13,068 bucks.
+1705.28s:  That's your notional exposure in this position.
+1709.32s:  So you're controlling 13,000 dollars.
+1711.28s:  You literally put up 80.
+1714.16s:  So yeah, that's massive leverage.
+1716.36s:  And if you get a big move in your favor in these compound a lot, you're also absolutely
+1721.00s:  correct.
+1722.00s:  You can make quite a lot of money here.
+1725.12s:  There are a couple of big problems though, which we'll talk about.
+1728.92s:  I guess we can skip to it because it's on here.
+1731.20s:  It's just a little further down.
+1732.20s:  So we're going to go from DTE to theta, kind of falls into the rest of these realistically.
+1736.96s:  So this will be our first stand up of the session.
+1740.80s:  We are rising up.
+1743.36s:  So let's take a look at what this looks like then.
+1749.68s:  If we know that these kind of closer to expiration options look really, really lucrative, you
+1755.20s:  can make a bunch of money pretty quick.
+1757.36s:  Who doesn't want to make a bunch of money pretty quick?
+1759.04s:  I know I do.
+1760.88s:  And here is the trick.
+1764.08s:  I want you to look at this column here.
+1766.64s:  This column is called theta.
+1768.64s:  And this is the amount of time value, extrinsic value, that's going to bleed out of these
+1775.52s:  options after the passage of one day.
+1779.60s:  Now a common question people ask is, is this like a discrete figure?
+1784.28s:  Meaning does this work all at once?
+1786.68s:  Or is this something that, you know, it's kind of a continual movement?
+1794.48s:  And it is continual, which is really, really important to know.
+1798.44s:  The reason why it's so important to know is because with something like this that is
+1802.56s:  continual, there's not a massive opportunity to put on a trade and capture, you know,
+1810.20s:  days worth of theta decay.
+1811.72s:  It doesn't quite work as discreetly as that.
+1814.80s:  So the way to think about theta decay is it's perpetual.
+1818.24s:  This is just showing you how much it will lose over the course of that time frame of
+1824.16s:  that entire window.
+1826.16s:  Now seven days to expiration, we already know now that options have to make a big choice
+1832.04s:  as they get closer to expiration and get ready to expire.
+1834.48s:  They're either going to be in the money or out of the money.
+1836.76s:  We'll talk about delta in a second.
+1839.04s:  But what does that mean in terms of the remaining theta decay?
+1841.96s:  It's got to go away.
+1843.44s:  So if I look at something like this here, 21 delta, and the reason why I use delta is
+1850.44s:  it's just a way to kind of pick a common language to look at these different products.
+1856.40s:  So looking at this 21 delta, that you paid 84 cents for on a daily basis, it's going
+1865.40s:  to lose $18.
+1867.20s:  So again, a little bit of math for Marines here.
+1870.00s:  Let's take a look at $18 divided by 84, which is the total cost of the position.
+1875.72s:  So on a, as one day passes, this seven DTE option is going to bleed 21.4% of its options
+1885.16s:  premium gone.
+1887.56s:  It's going to bleed off.
+1889.32s:  So 24% of the premium you paid is going to be gone.
+1894.28s:  Seteris parabas, meaning everything else remaining the same after one day passes.
+1898.68s:  So that's the tricky part about how lucrative they may or may not be because while they're
+1905.64s:  cheap, they decay super, super fast.
+1909.20s:  So let's go further out in time.
+1911.56s:  Let's take a look at these 90 DTEs and we used a 21 delta before, right?
+1915.80s:  So let's use, we'll even use a slightly higher delta, which will have a higher
+1919.08s:  theta decay technically.
+1921.36s:  And we take a look at the theta decay here.
+1923.20s:  It's seven cents and that's like, well, okay, that's actually kind of not that far off
+1929.16s:  from what we saw in here at 70 T, 70 T, 21.
+1933.92s:  It was 18 cents here.
+1937.00s:  It's again less than half, but it's still not cheap $7 every single day.
+1943.48s:  Let's look at how much time value is left in these options.
+1946.72s:  Let's call it $3.86.
+1947.96s:  So if you take the $7 that you're going to bleed off every day, you divide that by 386
+1953.72s:  ish, that comes out to 1.8% of the options premium is going to bleed off in these 21 DTE calls
+1964.36s:  as well, 23.
+1965.36s:  And again, this would be even higher technically because it's slightly closer to the money.
+1969.68s:  Which 21 DTE's if they were offered would be probably $0.6 as my guess.
+1973.88s:  So even lower still.
+1975.24s:  But the main point I'm highlighting is even something with a higher delta will decay less
+1979.28s:  quickly.
+1980.76s:  Really, really important to understand these kinds of concepts when it comes to options.
+1986.08s:  Because now we have a second input into our decision model.
+1991.36s:  First input is how long do we want to give the option to work and how much do we want
+1996.32s:  to pay for it the further out in time ago, the more expensive it is.
+1999.64s:  Now we have a second input.
+2001.76s:  The further out in time we go, we know that theta decay as a percentage of the premium
+2008.32s:  is less.
+2009.88s:  The other thing to keep in mind, however, is when we're looking at something like this,
+2017.44s:  you have way more total principle at risk.
+2021.44s:  Because again, coming all the way back into these 70 DTEs, you're buying these options
+2026.32s:  for $0.84.
+2028.44s:  That's the amount of money you're putting out.
+2030.24s:  That's your total risk if you buy these calls.
+2032.96s:  If we go all the way out here to 91 DTE, and again, we get close to that 20 delta, you're
+2039.12s:  paying now $386.
+2042.92s:  So these are more expensive.
+2045.40s:  You have more value at risk.
+2048.12s:  Again, that doesn't mean that you're going to lose it all.
+2051.16s:  And that's one of the things that I think people run into a giant mistake when it comes
+2054.40s:  to trading options.
+2056.08s:  Because they essentially establish these positions, and then they just expect to just let
+2062.04s:  them go and come all the way to expiration, which I actually think is a massive mistake.
+2067.16s:  I'm going to open my door real quick.
+2075.96s:  One of the funny things about dogs is that they're exceedingly patient.
+2080.16s:  So my dog was just sitting there doing like one little paw scratch on the door, just one
+2084.04s:  at a time like that.
+2086.64s:  So another thing we have to know about theta is it is highest for at the money options.
+2092.64s:  Again, we talked about this, I think in part two.
+2095.72s:  So I'm not going to go through this in as much detail as I did in the other video because
+2100.52s:  we already kind of talked about some of this stuff.
+2102.88s:  But just know quick recap, theta is highest for at the money options across all expiration
+2109.72s:  cycles.
+2110.72s:  As you go deeper in the money, there's less extrinsic value at entry.
+2115.76s:  And as you go further out of the money, there's less extrinsic value at entry.
+2120.04s:  The reason why at entry is so important is because let's say, for example, you buy
+2124.32s:  these really deep in the money calls and let's say you pay 7,350 bucks for them, something
+2130.68s:  like that.
+2131.68s:  You might be like, okay, well, there's only $1.84, $184 of that $7,300 bucks that can decay
+2139.60s:  away.
+2140.68s:  So I don't care so much about the decay.
+2142.48s:  I'm okay with that.
+2143.48s:  That's not that much to control that large of a position for that long.
+2147.52s:  The downside here is if for whatever reason, these options start to fall out of the money.
+2154.96s:  Now you can go from your $184 of extrinsic value to $1,700 of extrinsic value.
+2162.92s:  That not only includes the overall premium of your options decreasing, but that also includes
+2168.48s:  then the entire remaining premium potentially decaying away.
+2174.48s:  Have to again, find the right balance here.
+2177.32s:  One of the things I want to remind people is that once you place an option's trade, you're
+2181.80s:  not stuck.
+2183.32s:  Also, yeah, you're not stuck at all.
+2186.72s:  You can trade in and out depending on what the underlying does, which I think is again,
+2192.80s:  really important for people to know as you look at these things.
+2196.68s:  All right.
+2197.68s:  We talked about DTE.
+2199.00s:  We talked about theta.
+2200.00s:  I'll take a pause there for questions and I'm jumping in the chat to see what we're looking
+2203.72s:  at.
+2204.72s:  Pollo says, can and should you use the Greeks to decide when to exit a position?
+2209.00s:  It should absolutely be part of it.
+2210.92s:  The Greeks help us understand how our remaining position is going to behave.
+2216.36s:  That's not inherently the deciding factor in my opinion.
+2220.56s:  The price action and what you expect to happen in the underlying is way more important.
+2226.64s:  For example, if I'm looking at something like spy and I put on a bullish position, the
+2232.20s:  primary reason why I may get or get out of the trade or add more or do whatever is depending
+2237.84s:  on what the price does compared to my assessment.
+2240.48s:  If I put on a bullish position, I think it's going to go up and it goes down, then it doesn't
+2245.56s:  really matter what the Greeks are.
+2247.16s:  My thesis is wrong.
+2248.52s:  What I thought was going to happen is wrong.
+2251.68s:  That right there is probably the most important thing to start with.
+2256.04s:  To help with that, let me grab another video for you guys that I did recently that talks
+2263.92s:  about this exact thing.
+2264.92s:  I'm going to drop this in the chat for you all.
+2268.64s:  That video is essentially about how to create a consistently profitable option strategy.
+2273.48s:  The entire premise of that entire video is making sure that you have good alignment.
+2279.92s:  We're going to talk about that a little bit later in this video as well in terms of building
+2284.60s:  a strategy and managing a strategy around and underlying.
+2287.72s:  It's a great question.
+2290.40s:  Ryan says, does theta decay only happen each day or also intraday?
+2294.44s:  It happens 24-7.
+2295.76s:  Theta decay is perpetual.
+2297.40s:  The options markets don't always show the movement itself, but it's perpetual.
+2304.72s:  The other thing people don't understand is the way that market makers will structure
+2311.48s:  their trades, it's very, very thoughtful.
+2315.48s:  One of the things that they're looking for is, say, for example, we're coming up on
+2319.52s:  a weekend.
+2320.76s:  Things can move over a weekend.
+2322.88s:  Let's say that theta decay does decay over a weekend, for sure.
+2327.68s:  If things weren't accounted for by market makers, think of a great trade.
+2333.52s:  Markets don't move that much over weekends in general.
+2335.52s:  There's a lot of studies on that.
+2336.52s:  I've shared some of those with the Patreon folks.
+2340.80s:  If you look at the close on Friday, you get near the close on Friday, you could say,
+2344.72s:  oh, well, I'm just going to sell premium and then I'll buy it back on Monday right at
+2348.36s:  the open and I'll collect the theta decay over the weekend.
+2352.08s:  The market makers are smart.
+2353.16s:  They accelerate the weekly theta decay right into the weekend to account for the lower volatility
+2360.28s:  period.
+2361.60s:  So baked into the pricing models, not that anybody asks about that, but I just think
+2366.12s:  it's important for you guys to be aware of it.
+2369.24s:  Paul Andrew says, question for you, I have 20 of the 16 Jan 26.
+2377.52s:  I don't know which, I assume you mean GameStop.
+2383.84s:  I assume this is GameStop.
+2385.80s:  If for whatever reason there is a squeeze and the stock is worth 50, what will be my
+2390.20s:  market value?
+2391.20s:  That's a great question.
+2392.20s:  I actually love that question.
+2393.40s:  And there's a bunch of different ways you can answer that question.
+2396.08s:  The first one is you actually can use the black sholes, Martin model, right?
+2401.68s:  So first, Paul, the first question I have for you is, what did you buy those options for?
+2406.48s:  How much did you pay?
+2408.60s:  And we can do a few different things to figure out at least what the intrinsic value would
+2413.44s:  be, right?
+2414.44s:  That's easy.
+2415.44s:  We can answer that right out of the gate.
+2417.00s:  If the stock goes up to 50 and you got in at 20, you would have $30 of intrinsic value
+2425.08s:  right out of the gate.
+2426.56s:  So that means that whatever your current premium is that you paid, you can add $30 to that.
+2434.48s:  That's how much it would be worth at a minimum that's not accounting for the resulting time
+2438.12s:  value that's left in those options.
+2440.60s:  But that's also why it's kind of important to understand what the original payment was
+2445.04s:  because that will inform a couple other things, meaning how much time value is in those
+2449.92s:  options and how much we think might be left.
+2452.72s:  Now another thing that you can do that's even easier, in my opinion, is to use platforms.
+2460.08s:  A lot of platforms have really cool tools now.
+2464.32s:  And again, I'm assuming it's GameStop.
+2466.40s:  You left me high and dry here and I'm just making a bunch of guesses because you haven't
+2470.40s:  let me know if it's GameStop or what your premium was.
+2473.60s:  It's actually getting a little lonely up here.
+2475.92s:  But I might keep going anyways and we'll see how right I am making a bunch of guesses
+2480.08s:  like a fool.
+2482.40s:  So going out to the 26, okay, so that lines up.
+2486.08s:  It does have that expiration.
+2487.48s:  So I believe that my thesis might be correct.
+2489.60s:  The 20s are in the money, which is a great purchase if you bought them and the money I love
+2494.00s:  that.
+2496.20s:  Also assuming that this is what you actually bought.
+2498.80s:  Again, I'm just making guesses because you've now ghosted me entirely.
+2503.28s:  Sick.
+2505.08s:  Now if we look at the intrinsic versus extrinsic value, these are about $4 in the money.
+2510.24s:  So $4 of this premium is intrinsic value.
+2513.60s:  That doesn't decay.
+2514.72s:  The rest of that is extrinsic value.
+2517.24s:  So it's about eight bucks ish of extrinsic value.
+2521.40s:  And you can see again, the back of the napkin way to do this is just look at the corresponding
+2526.20s:  out of the money put or call depending on which side you're looking at.
+2529.92s:  And that will give you a pretty close estimate of how much intrinsic or extrinsic value is
+2535.76s:  left in the options.
+2536.76s:  But you can also just do the math, right?
+2538.44s:  So for an in the money option, we need to remove the intrinsic value, which is simply
+2543.36s:  how far in the money it is.
+2545.20s:  Again, the stock is just called 24.
+2547.48s:  The strike is 20.
+2548.72s:  So that's $4.
+2549.92s:  You would take $4 out of this.
+2552.60s:  And then that will give you the remaining extrinsic value for the option.
+2557.40s:  There's, oh, damn, this is not Carlos.
+2560.76s:  Damn, Carlos, I got, I really got my hopes up because I thought that Paul Andrew hooked
+2565.28s:  me up with the rest of the details I was hoping for.
+2568.52s:  I'm not going to lie, I'm still happy you chimed in Carlos, to be honest, but it's just,
+2573.20s:  I still have been ghosted.
+2574.96s:  So yeah, that's a little bit of a little bit of a bummer, but still great.
+2582.32s:  Oh, there's Paul.
+2583.80s:  Sorry, I'm driving.
+2585.28s:  What do you mean driving?
+2586.88s:  If you're driving, you should be texting like I live in California, that's what everybody
+2591.04s:  does.
+2592.04s:  I'm almost, I'm almost pretty sure that like driving is the time that most Californians
+2596.12s:  catch up on their texts.
+2598.16s:  So yeah.
+2601.00s:  Yes, it's GMME.
+2603.40s:  My cost is way way over 100.
+2605.40s:  Ah, that's shitty.
+2608.64s:  Yeah, we don't like that.
+2610.56s:  That's terrible news.
+2612.88s:  Let's take a look at the scenario now for you.
+2614.48s:  Yeah, that's terrible news.
+2616.44s:  Don't like that.
+2618.28s:  But we'll look at a scenario.
+2619.72s:  So let's just say that your cost was 100.
+2621.84s:  Ah, man, really don't like that.
+2625.52s:  When you say 100, do you mean $100 in premium or just $100?
+2628.80s:  Because that's also different.
+2629.96s:  I don't know if I'm being, if you're catfishing me now, because if you paid $10, which was
+2634.96s:  $100, that's okay.
+2637.72s:  I love that for you.
+2639.36s:  If you're saying that you paid $100 in premium, which is a completely different position,
+2646.84s:  that would be terrible news for us.
+2648.96s:  So I'm going to go off maybe that you got them at 10 bucks, because that would mean
+2654.04s:  you probably bought them at the money.
+2656.72s:  And I would assume that you would have bought them somewhere back here maybe.
+2660.16s:  And like, may total cost was 103.
+2663.20s:  Yeah, okay.
+2664.20s:  Change is everything.
+2665.68s:  Love this trade for you.
+2668.36s:  So when he's saying total cost, the reason why I caught that is because it's completely
+2672.92s:  different if he's giving me the premium of the option that he paid or the total cost.
+2678.20s:  Because when you look at the total cost, that means the premium he paid was not 100.
+2683.88s:  It was $1.3.
+2686.96s:  So that means that this is like really low.
+2690.48s:  That actually confuses me.
+2691.48s:  I would have guessed it would have been like 10 bucks.
+2693.28s:  All right, well now you got my head in the blender like Rory and Kitty has had me in the
+2696.18s:  last few days, but we'll just roll with it.
+2698.00s:  That you got these.
+2699.00s:  Why would you have gotten these for $1?
+2701.52s:  Okay, now we got to do a little investigative work.
+2705.28s:  Sorry.
+2706.28s:  Quick, quick, segue to see when these would have possibly been trading for $1.
+2714.88s:  And it looks like, yeah, so it looks like my original guess might be one of.
+2723.88s:  I've got these trading for $1.
+2729.48s:  So what I'm doing right now so you guys can follow along is I'm just going way back in
+2733.60s:  time to see if these were trading for $1.
+2736.28s:  Because if his total cost was $103, that means that he bought them for $1.3.
+2741.84s:  And I don't think that these traded for $1.3.
+2744.16s:  At least not going back six months.
+2746.64s:  Maybe you got them like a really long time ago.
+2748.64s:  Still, I don't think they were trading for $1.3.
+2751.60s:  They're pegged at 9, 980 or something.
+2754.88s:  And this is going back to the offering.
+2758.08s:  Yeah, so I can tell you that he didn't get them for $1.3.
+2762.32s:  Sorry, don't mean to put you on blast, Paul, but I also do mean to put you on blast because
+2767.52s:  you straight up ghosted me.
+2768.92s:  Now my feelings were hurt.
+2770.52s:  I have a chance to vindicate myself.
+2772.84s:  And yeah, here we are because these did not trade for that.
+2777.48s:  I would bet my left nut, that's my guess, my left nut, that these did not trade for a dollar.
+2786.92s:  So again, what I'm doing here is I'm just seeing what the option traded at.
+2791.96s:  They could have technically.
+2793.16s:  I'm kind of obviously making some jokes here.
+2795.72s:  But if he got these for super, super cheap way out of the money.
+2800.60s:  And he got in when GameStop was trading for pennies,
+2803.88s:  then sure, it might have happened.
+2805.88s:  But the other thing that I can tell as I look at this entire bit,
+2812.60s:  it looks like it looks like overall, I'm seeing the cheapest it got was like
+2820.52s:  $7.91.
+2823.48s:  Something something like that.
+2825.40s:  So what I'll do to get an even better look at this is this.
+2830.52s:  We'll come in here, we'll look at a bigger chart, quick chart,
+2834.44s:  take a little pixie.
+2835.88s:  So what I can do now is I can see when these were offered.
+2838.68s:  So if I go back to the max,
+2841.64s:  they were offered for the first time on 9 allows.
+2845.16s:  Shit.
+2846.36s:  Oh shit.
+2847.56s:  These are some Taliban options.
+2850.28s:  Hot damn.
+2851.72s:  So the furthest back these go is 9 11.
+2855.40s:  Damn.
+2856.84s:  That's kind of funny timing, huh?
+2859.16s:  And I can look at where the low was, the cheapest these ever traded was two and a quarter.
+2866.92s:  So these weren't, these weren't bought for $1.3.
+2873.00s:  So not only did you go speed, but you straight up fucking catfished me.
+2880.20s:  Brutal.
+2881.80s:  Unbelievable.
+2882.84s:  Here I am hanging out with you guys on a Friday evening,
+2886.60s:  talking to you about some shit that I've known about for a decade and a half.
+2890.68s:  And I'm getting some bum scoop.
+2892.36s:  I can't even get straight information.
+2894.36s:  This is unbelievable.
+2896.28s:  I would make an assessment that these might have been bought for $10 and three,
+2900.68s:  something like that.
+2901.40s:  And it might have been $1,000 and $3.
+2904.12s:  simplest explanation here might be we forgot a zero, something like that.
+2910.76s:  So if we take a look at this, let's say you got them for $10 and three cents.
+2917.00s:  Now before we take a look at the correct answer, again, we can make some assumptions.
+2921.24s:  The first assumption is there's about $8 of extra in the value.
+2925.72s:  So we would add eight.
+2927.48s:  The other thing we can tell us how far in the money it would be if it goes up to 50,
+2932.44s:  which would be then $30 in the money.
+2934.52s:  So that's $30 of intrinsic value, about $8 of extrinsic value.
+2938.84s:  So with no changes in volatility, that takes us about $38, something like that.
+2943.72s:  So let's take a look.
+2945.40s:  We can go into the profile here and say at 50, they would be making $25, 95, something like that.
+2956.92s:  And the reason why the numbers would be different is because they're obviously would be a
+2961.08s:  passage of time for sure. But yeah, it's not super far off. It's a little bit off, but not super far off.
+2967.96s:  That's essentially you could tell what they would be trading at.
+2970.28s:  This is the easiest to use the platform, but you have to account for some of the changes in
+2975.08s:  stuff like that. So damn it, Paul. Damn it. Damn it all the hell.
+2985.24s:  Unbelievable. The treatment I get.
+2989.64s:  Let's see. Blender.
+2994.60s:  So I'm putting my socks back on because as I'm standing here, my dog likes to fight with my
+2998.76s:  feet, which I'm fighting with him, but he has he's a small dog and he has these little sharp teeth.
+3007.56s:  Why is Owl says those GME 20 Jane calls were actually 115 on April 22nd? Let me double check
+3013.56s:  that absolutely could be the case. So let me see.
+3018.52s:  Send, Winfo, send me location.
+3021.48s:  I don't think so, man. So here's the other thing. I don't know what you're looking at,
+3030.68s:  but there's a difference between what the market was offered at and where any transactions occurred.
+3036.44s:  So I'm looking at the entire options chain from its origin from the I guess the the terrorists that
+3042.76s:  made this. And I can like you can you can see the same thing I'm looking at the low is $2.25.
+3049.96s:  That means that this option, this is the lowest that this option transacted at was $2.25 right there.
+3057.40s:  So I don't know where we're getting the $1.15, but that's not what I'm seeing.
+3067.32s:  That is that's my follow up response. All right. Let's see what you guys got.
+3075.08s:  But Lender says what would be good IV when you buy an option one year out? What percentages
+3082.60s:  are normal versus abnormal IV like GME? Yeah, that's a that's a really, really great question.
+3087.80s:  So the way to think about it is when IV is high, you're paying more for the exposure. That's
+3095.16s:  really the simplest way to consider it. Carlos says I would bet money didn't catch the absolute
+3101.88s:  bottom again, like he didn't these didn't trade there. He's speaking of AMC literally looking at
+3111.56s:  the next guy. Paul like the first clarifying question I asked was the damn ticker we're looking at.
+3122.36s:  Damn it. Paul unbelievable. All right. Well, we could do the Cliff Notes version of this then for Paul
+3130.92s:  because now now we're in it. Now we're in it for the long haul. Now we got to go all the way out
+3135.72s:  here and we got to find the 20s. Ah, this is what Paul did. He bought the super cheap far out of
+3142.60s:  the money options. Everything I said in the beginning about picking a good picking a good
+3146.84s:  expiration. All that's gone. It's all gone. There's not there's not a good pick at all whatsoever,
+3153.32s:  which we'll actually talk about. Let's use this as an example. So the 20s. If AMC goes to 50,
+3162.36s:  the first thing we know again is you can add 30. That would be the intrinsic value. And then it would
+3169.40s:  be about 60, 70 cents maybe something like that. So like 30, 70 ish. So let's take a quick look and see
+3180.36s:  how close that is. And let's say that we get this up to 50, which I could tell somebody has big dreams.
+3195.40s:  So it's like 35. Yeah. So and it would be 2,900 at expiration. So yeah, we're right on the money there.
+3206.20s:  So that's just kind of inferring. The answer to you, Paul is 35, 54 is what they would be worth.
+3213.80s:  Now the reason why I hate that trade and the reason why it's not really worth much at all.
+3220.60s:  Again, this is why when we're trading options, it's so important to balance two different things.
+3224.92s:  There's the gross dollar amount of things and then there's a percent return. Because in that
+3229.88s:  example, let's say that those options would be trading again, what did I say? Like $30, they'd be
+3235.64s:  trading at like $35 something like that. So and he might have got them. He said he got them for
+3240.84s:  like 103. So he got them for a dollar and three cents. So that would be literally a 3,298 percent return.
+3250.28s:  Crazy return, right? But that's turning $100 into four grand ish. Three grand actually. I grossly
+3258.20s:  over swagged there. So it's not a lot of money, right? That's it's a fantastic return on the
+3265.56s:  outlay. But in a gross dollar amount, it's just not that much money. And why is that? Especially if
+3272.20s:  he got in this scenario that we're looking at, if you got like a $45 price accommodation,
+3279.00s:  why is he only making that much? Well, it's because of the next thing that we'll talk about on this
+3284.84s:  list. I guess the two things actually. So we hit theta. This is great. We're hitting all these.
+3290.68s:  Delta and gamma are the next ones on this list. And those are the two reasons why he's not making a
+3296.04s:  lot of money. Because the delta for these further out of the money options is 32. So that means that
+3302.36s:  for every $1 move he gets an AMC, he's going to see his premium appreciate by 32 cents,
+3308.60s:  Ceterus Parabus. Now the other problem with this is these have crazy low gamma. So that means
+3316.84s:  if we get that dollar move, this 32 delta will grow into a 38 delta adding this sixth sense here.
+3326.12s:  And that would be the new delta for the position for when he gets another dollar move and then
+3330.68s:  so on and so forth. This is the problem with options that are further out in time at a low delta
+3336.36s:  is the gamma is very low. They don't change that much. And it sucks because you lose that
+3341.48s:  compounding effect. Whereas if instead we're at something like a 50 60 and you take a look at
+3348.44s:  again, something that's like a 30 delta something around where he's at. Notice how fast these would
+3353.56s:  start to grow even at 50 60 T. If he's at that 35 delta ish 30 delta ish, he gets a dollar move.
+3361.24s:  He's going to see 11 cents essentially double what he's seeing in the other scenario.
+3365.32s:  So then that 31 will become a 42 which would look like this. Then if he gets another dollar
+3371.32s:  in that case, he gets another 15 cents on top of that. So now he's of 56 delta something like that
+3376.20s:  or whatever it was, 57 delta and then so on and so forth. So then if he gets a third dollar move,
+3381.24s:  he's going to gain another 18 delta. So when you go super far out in time and far out of the money,
+3387.64s:  you have a low delta. So you get a low dollar for dollar move and you have a low gamma. So you
+3392.44s:  don't gain a bunch of delta is until you get a just massive move in your favor, which is exactly
+3397.80s:  why in that video I shared earlier about buying call options smarter. I talk about trying to think
+3403.48s:  about different ways to strike a balance and also shout out to you guys because it looks like there's
+3407.24s:  like 50 of you in here, which is awesome. I love that. So but that's exactly what that means in the
+3413.80s:  scenario is going super far out in time gives a trade time to work. But in that scenario, if I had
+3421.56s:  that position, my position would be something in the money. And the reason for that is you still
+3427.96s:  don't have that many delta's, but I will get a much better dollar for dollar move. Right. So in this case,
+3435.80s:  if I had this 77 delta, the four and a half here or whatever and I get a dollar move in the
+3441.24s:  underlying, I see 77 cents of that dollar. So it would be a hundred dollars price appreciation.
+3447.88s:  This is $77. Whereas it's literally double and then some. Now this is the trade off. These are
+3454.76s:  more expensive. So if you're expecting a really big move in something, you can make a better compounded
+3461.00s:  return going further out of the money, but you'll still make more money here. So let's take a look
+3465.64s:  at the scenario. If we instead buy this one and let's analyze it and we have his trade here as well,
+3471.64s:  the four and a half's. Let's go all the way out to that 50 delta to prove this point or the 50
+3479.40s:  dollar relying at 50. So these four and a half's at 50, as we already talked about, they make
+3486.04s:  four grand something like, oh, I'm sorry, wrong one. The 20s, my bad, my bad. So the 50s,
+3492.28s:  these make 3500 bucks at that 50. And if we take a look at the higher delta that are in the,
+3502.28s:  oh, wait, hold on, I'm all sorts of twisted my bad, my bad, my bad. I completely twisted it. So
+3507.72s:  in this scenario, and I think it's because, yeah, these are flipped. Okay.
+3514.20s:  Redo, skip the last flip over to here. We start from scratch. If he gets his move up to 50s,
+3523.16s:  the in the money options would return 43 hundred or yeah, 4400 bucks, something like that.
+3530.36s:  The out of the money that he would get, they would return 3500 bucks. So you can see, you make more
+3538.04s:  money with the in the money options. Why is that? It's super simple. It's because they have a higher
+3544.28s:  delta. So for each dollar for dollar move that AMC is moving, this is seeing way more of an
+3551.72s:  appreciation per dollar move than these do all the way out here. But they're more expensive.
+3558.04s:  So that's the nature of delta is the higher your delta, the more expensive the options are,
+3564.04s:  but the better dollar for dollar move you're going to get with the underlying. You'll make more money
+3567.72s:  as a gross dollar amount if you get your move. But they won't provide the same compounded return
+3576.04s:  that a far out of the money option. So Ryan says, once your delta increase as you get in the money,
+3581.80s:  absolutely, up until it hits a one. Once you get to a one delta, that's it. You're at the top.
+3588.12s:  So in that example, essentially, what's happening is he's gaining delta
+3592.68s:  until you get again, like a $10 move or something like that, then these become a one delta.
+3598.76s:  So then you're just moving dollar for dollar with the underlying. So they would cap out at one.
+3605.56s:  All right. Now getting back up to the top here, Carlos says, do you think 115 for GME 628 was a good
+3613.72s:  buy? Again, I wouldn't worry so much about the premium and those kinds of trades because if the
+3620.60s:  thesis of those trades is a big move, the cost that you get in at is less important than potentially
+3627.80s:  what you can make. So for example, what I personally would care way, way more about in this scenario
+3634.44s:  is what strike, what delta, not so much the cost. The cost is part of the equation obviously,
+3640.52s:  but that's not really the most important point. And it's another thing with trading is that
+3645.56s:  you're not really trying to bargain by. It's not a great way to make money in trading.
+3651.00s:  I'm
+3655.00s:  strike is 628. That's super confusing, Mr. Carlos, because that would be an expiration cycle.
+3661.72s:  628 or you're I'm confused now. What is this? Let's just strike.
+3669.48s:  628, I'm assuming yeah, the expiration cycle is 28 June. So then we need a strike,
+3675.72s:  which is this little guy in the middle. The strike price is what the options contract pertains to.
+3687.72s:  Let's see, let's see if we can figure out what this strike price is.
+3695.40s:  Yeah, so you see R4 T5, which is kind of like R2 T2, they have a strike. I mean, 25 strike.
+3702.12s:  There we go. I don't hate that. The 25 strike here is not terrible. Again, it wouldn't be my pick.
+3710.04s:  I would want to be at the money or in the money. But the big problem you're going to have with this
+3715.64s:  is again, unless you get a big accommodating move, you're going to bleed out like a stuck pig
+3722.36s:  into expiration. So what this looks like for you is again, let's say that we got in at like
+3726.92s:  125, you're losing 13 cents a day in extrinsic value. So literally 10% of the options value
+3735.56s:  is gone after the passage of one day and then so on and so forth. So that's the problem. And again,
+3742.52s:  that video that I shared earlier, you really should watch that one specifically for you, Carlos,
+3747.24s:  because the idea is to structure trades that avoid this exact problem. Because think of it this way.
+3754.92s:  Even if you get a dollar move in your favor, you're still going to be out of the money. You'll be
+3759.48s:  right at the money, but you're still going to be out of the money. You will see a 44 cent appreciation
+3764.92s:  less the 13 cents that you saw. So you're kind of eating away at that massively.
+3773.80s:  If you get a big move, these can compound really well if you can get a big move. But even if you
+3781.08s:  get that dollar move, $2 move, you're still going to be losing a ton of theta K. So that's the problem
+3787.48s:  with these super short term. They're going to bleed so, so fast. So yeah, there wouldn't be my go too.
+3795.88s:  All right. Back up, getting caught up on the chats. Oh, damn, Steve, you did me dirty. I was about to
+3806.12s:  talk about yours, but then you moved it. You confused me. All right.
+3814.84s:  Let me see. Nicholas says, how do I beat the Algos trading ATM calls and puts spy? You're
+3822.04s:  playing a different game than the Algos. The Algos don't even care about you. The Algos are looking
+3825.96s:  for mispricing on a volatility surface and repricing them. You're not going to beat them first of all.
+3830.68s:  The other thing is you're comparing yourself against the entire wrong entity.
+3835.72s:  Like I said, the Algos don't care about you and you guys are playing quite literally
+3841.72s:  completely different games. So in my opinion, I would like straight up just drop that thought
+3848.84s:  process whatsoever. There's no, yeah, there's nothing really for you to do there.
+3853.80s:  Benjamin says, would you show how to set a stop loss and take profit on thinker swim? Yeah,
+3865.48s:  you sure. It depends on, are you talking about like an option?
+3870.76s:  On an option, it will, it would have to be on an existing position. So I don't have an existing
+3874.92s:  position on here. But essentially, you would just do the reverse order for whatever you have on,
+3880.20s:  and then you can set a stop limit. So thinker swim has a really cool education thing in here.
+3885.80s:  You can go into the learning center and you can pop through essentially how to kind of complete
+3890.76s:  those different kinds of orders. So this will walk you through exactly how to do it. But essentially,
+3895.08s:  if you want to do some sort of take profit, you would do an OCO order, order cancels others.
+3903.32s:  So like this here, you would trigger OCO and that essentially would say, okay, I want to take
+3908.68s:  profit at this point or if I lose this much, I want to get out and then it would cancel the other
+3914.44s:  orders. So it starts with an OCO and then you set up whatever order type you want based on what
+3918.92s:  you're trying to do. That's like the overview Clifnotes version. Paul says, how about using
+3924.36s:  diagonals to bet on big moves? Yeah, you definitely can use diagonals. That's as you know, a go-to
+3929.56s:  strategy of mine is ratio call diagonals for stuff like that and you can make a ton of money with
+3934.28s:  them. I have a video out. I think I did. Let me see.
+3941.80s:  Yeah, so this one here. I don't think this was like a big...
+3947.16s:  I don't think this was a big return, anything special to be honest. But I think it is a simpler...
+3955.64s:  Yeah, it's like a simple display of the ratio diagonals.
+3962.28s:  Essentially what they're talking about and like my preferred strategy for directional stuff is
+3966.84s:  ratio diagonals. I like to go a little further like 60 plus days, typically around like 90 something
+3972.20s:  like that. I want to go a little bit in the money and then you can sell options depending on if you're
+3977.72s:  doing caller put side call for upside put for downside. You can sell options against it that are
+3982.68s:  closer in time but they don't necessarily... They're like designed to amplify the returns. So again,
+3989.96s:  what's most important there is actually this part right here defining the profit mechanism
+3996.04s:  and then structuring a trade that makes sense for it. So what that means in this context is let's say
+4001.64s:  you find something that you think is going to go up. The most important part of this equation
+4006.60s:  is doing the due diligence and being good enough at determining direction to then trade something
+4013.16s:  that is going to move a lot. From there, it's a matter of optimizing the strategy that you're using
+4019.32s:  to extract as much profit from the scenario if that's the total objective. Sometimes it's to
+4025.88s:  extract as much profit while reducing risk. Again, that's the cool part with options is you can
+4031.24s:  overlay a lot of different things that you are trying to... that you're trying to emphasize.
+4038.36s:  So yeah. John Cox, why is everyone buying way out of the money calls on short dates and not
+4049.08s:  in the money a few weeks out or a month off? Cheaper. That's the thing. It comes down to it is
+4054.28s:  way cheaper and if you get a big move, you can get a really big percent return. Which again,
+4060.04s:  that's a big percent return in options. In my opinion, it's literally useless. It's focusing on
+4066.52s:  the wrong thing. That's an ego-satiating metric. To be able to put on an option, it's trying to be like,
+4070.76s:  oh my god, I made a thousand percent on this call compounding. Sure. If you're one penny option,
+4078.12s:  compounds a thousand percent, literally nobody cares. You've made a hundred bucks, right? Well,
+4082.92s:  whatever it is, a thousand bucks. It's just such an insignificant amount of money that it doesn't
+4087.00s:  actually matter. It just sounds really, really cool to be like, oh, I had this percent return.
+4093.08s:  So it's important to keep things in context, right? Percent returns still matter, but gross returns
+4098.20s:  also matter quite a lot. So yeah, that's the main reason why people go super short in time.
+4103.96s:  Is it cheap? And it offers a really big compounding opportunity. But it's primarily the cheapness.
+4112.84s:  Let's see. How much trail are you limited to strategy as a beginner with only a level two
+4120.28s:  options trading approval? I gotta be honest, I don't actually remember what the levels are.
+4128.12s:  There might be a level three, I guess level three, if there's level three, that means uncover.
+4134.28s:  Level two might be like, verticals and shit. If there's three levels, I'm just guessing.
+4139.72s:  If there's three levels, no spreads for level two. Yeah, okay, there we go.
+4146.36s:  Yeah, so then inherently you would be limited in some sort of strategies if you don't have
+4150.68s:  full options approval. I guess this is the easiest way to think about it. Lenders says there was
+4155.80s:  a dude who made 90,000 with 3000 on his year DTE cheap calls on an eight dollar move. Yeah,
+4161.08s:  yeah, you can definitely do that. What I try to remind people specifically is that even short term
+4167.96s:  gains, they're short term, right? Like that guy that made 90,000 with that one trade, that's awesome.
+4175.08s:  And I genuinely am one of those people that is stoked when other people make money. Like
+4180.12s:  genuinely, I want to see other people do well. It's literally why I'm spending my Friday night
+4185.48s:  with you guys teaching you this stuff is because I want to see people do well. This stuff literally
+4191.08s:  has changed my life. I was talking my mom yesterday. She lives in New York and she has to get
+4194.92s:  some dental work done and stuff like that. And like being able to just be like just literally
+4201.16s:  get whatever you want done we can pay for it. Like it's no problem. That's super cool. So this
+4207.96s:  kind of stuff is wildly, wildly life changing. Now when you try to think about the prospect of
+4218.20s:  trading long term is short term gains don't really fucking matter. Even that 90,000 dollars,
+4227.72s:  what you get like three years of super cheap living if you're exceedingly frugal.
+4233.88s:  It doesn't matter. Right. What I try to remind people is that the hallmark of a trader is somebody
+4242.12s:  who stands the test of time. It's not even like a year thing, a five year thing, a 10 year thing.
+4251.80s:  Like literally if you think about the entire depth of how long it takes to be a successful
+4258.68s:  trader, it's like 20 years, 40 years, long, long runs of time. A great example of this is our
+4268.44s:  boy Jesse Livermore. And let's take a look at that.
+4277.00s:  Crypt, crypto, holy shit. Dude, thank you so much. That's awesome. I appreciate that. Crypt
+4284.04s:  a donated 50 bucks. I really, really appreciate that. Thank you very much.
+4289.88s:  And they said, thanks. I mean, absolutely, I love your videos. Thanks for helping us all out.
+4294.52s:  That's awesome. Man, thank you so much. I appreciate it. I love doing this stuff.
+4297.96s:  So anyways, let's take a quick look at Jesse Livermore. I got to pin that.
+4305.64s:  Tell you, thanks, man. So looking at Jesse Livermore, there you go. Moody Blues is right on it.
+4313.56s:  So he made hundreds of millions of dollars. I literally think he, and this is back in like the 40s.
+4320.52s:  Right. So the current dollar equivalent of this is crazy. And the dude, he made tons of money
+4330.84s:  trading, tons of money trading. But then like this right here, he made a million dollars in a single
+4339.56s:  day, right? Massive amount of money. Paul says Jesse's mental health was always wildly sure.
+4344.68s:  But that's not that's not so much the point, right? It's the fact that he's a perfect example of
+4349.96s:  somebody that's done an incredible job getting really good at making money objectively. He did a
+4356.36s:  terrible job keeping the money. Whether or not he killed himself, I actually don't care at all
+4360.28s:  about right? That's kind of a decoupled from the scenario. The point is is that he was literally
+4367.48s:  phenomenal at making money. But take a look at he went bankrupt after essentially covering his
+4375.32s:  losses. 1915 filed bankruptcy again. In this case, he made 10 million dollars in this scenario.
+4382.44s:  What I'm trying to highlight is that this is a dude in 1929. He made a hundred million dollars.
+4389.88s:  The problem is he ended up losing his money, right? That's the problem. So somebody that I will never even
+4400.04s:  get like I can't even stand in the man shadow. But he couldn't keep his money. So when I hear people
+4408.84s:  talk about like short term streaky wins and stuff like that, again, I'm very, very happy for them.
+4413.56s:  Anytime you can get a break, it's awesome. But this is a long, long road. And if you don't take the
+4421.96s:  long road approach to this and keep trading, it is a massive, massive problem. Policist, his biography
+4430.36s:  is reminiscent of a stock operator. Yeah, just and a lot of people confuse that book. They think
+4435.08s:  that he wrote it and he didn't. Another dude wrote it about him. I can show you the book. I have it
+4441.48s:  in Kindle, obviously, which is this one right here. This guy. So Edward Lafer or whatever left
+4451.24s:  fever, I can't say, Edwin LaFever, that guy. But it's all about just 11 more, which is a fantastic
+4458.36s:  book. And he is a crazy, crazy, crazy, crazy good trader. So that is again, it's just a case study
+4465.48s:  that you guys should be aware of. That's really important to be aware of. This is a long game.
+4473.00s:  That's what it all comes down to. All right. Back up here, Marquette. What was about calls
+4486.84s:  versus puts? What's your ratio or what was your ratio when you started out? I assume you're talking
+4492.52s:  to a fram. So I will skip over that one. Unless that one's for me, then I can try to decipher what
+4497.88s:  you mean. Trey J says, given away gold, that's the goal, bro. Also great to see you straight.
+4504.44s:  Hounds says completely agree or talks like this is picking a cake. Yeah, that's that's kind of the
+4509.80s:  way that I think about trading, to be honest, is that once you define the process and the inputs,
+4514.44s:  it really is kind of a function of modulating different inputs to find the right thing for you.
+4520.44s:  So I actually think it's a great analogy, TBH.
+4524.84s:  Paul says, do you ever use stop loss take profits orders on your positions? Definitely. I use
+4529.00s:  stop losses all the time, either arresting or a mental. They are kind of a non-negotiable for every
+4535.88s:  single position that you put on. Here's, here's a hack. They're first of all in trading. Anytime you
+4541.72s:  hear a hack, here's a hack is probably bullshit. There are very few hacks, but the counteract
+4547.56s:  that exact thing, this one is actually a hack that can completely change your trading with this one
+4551.96s:  simple tip, right? There's your clickbait video title. What it is though is defining before you
+4559.16s:  place every single trade from now on going forward forever your profit and loss targets, where
+4566.52s:  you will exit the trade, either in profit or at loss, where that occurs. If you define that now
+4573.48s:  before every single trade going forward forever, your trading will be far better. Literally,
+4578.68s:  if there's no debate about it. So that is every single trade has a stop loss of some sort, whether
+4585.48s:  it's resting or not is different, but it will be defined for no doubt. I... Let me see.
+4598.76s:  Paul said, oh, whoa, I didn't realize that there's five levels. That's crazy.
+4604.84s:  Where are there five levels? I didn't realize that there's five levels to options because when I first
+4611.40s:  started with like think or swim or whatever, I thought I was like two or three. That's crazy.
+4615.64s:  Jay says, do you account for a missed opportunity cost when analyzing your trades and returns now?
+4622.92s:  Absolutely not. It's definitely part of my assessment, meaning if I'm comparing the efficacy of
+4629.32s:  two different strategies, say for example, we want to trade TSM. And you want to trade it to the
+4637.88s:  upside. And I selected a defined profit strategy. So let's say that I chose to use some sort of
+4646.20s:  breakout strategy where at or above this level, let me grab a price level here.
+4656.52s:  Where at or above this level, I was going to buy and let's say that I bought here.
+4661.00s:  I absolutely need to have a thought process on if I'm selling puts or buying calls, for example,
+4668.20s:  if I'm going to the upside, right? If there's something I'm really bullish or bearish,
+4672.60s:  I'm trading something with a heavy direction, I'm not going to sell premium. Because in this case,
+4677.80s:  you can sell that put, you could collect your $200, but who cares? It moved from $147.73 to $185.
+4687.80s:  Your $2 don't matter at all. If you compare that to selling a to buying a call, for example,
+4694.76s:  that might be 90 days out slightly in the money, you would make a ton of money in this scenario.
+4701.96s:  So in this case, again, it's really a function of what is the hypothesis. That's why this,
+4712.28s:  if you take your time really thinking through defining the profit mechanism, it can take you so
+4722.60s:  far because it will naturally limit what things make sense. So for example, if I'm trading something
+4729.48s:  like GameStop and I'm trading it to the upside, what's the primary profit mechanism? Hopefully,
+4735.48s:  a really big parabolic move to the upside. Would I rather sell a put because IV is really high
+4742.20s:  or buy a call? I probably would buy the call, might even do both of them, sell the put to subsidize
+4748.52s:  the cost of buying the call, something like that synthetic long stock. But the point is, if you really
+4754.44s:  take the time to define the profit mechanism, it naturally backs you into the exact thing that
+4761.08s:  you're trying to do more often than not once you define your toolkit, which is really important.
+4770.84s:  So that's that one.
+4775.24s:  Moody Blue says, how long did it take you to grow your account to be able to make five figures
+4780.04s:  selling contracts? Five figures. Let's see.
+4785.72s:  The way I'm going to answer this is just by looking at my annual returns and looking at worthy
+4793.56s:  account, essentially was exceeding five figures in terms of gain.
+4798.52s:  So it looks like one, two, three, four, five years.
+4815.00s:  Yeah, four or five years.
+4820.28s:  Why is Alasas? Can you imagine if Roryn Kitty began his Yolo trading from a Roth IRA with 53,
+4827.48s:  he would still have over 20 years before he could touch his gains with Uncle Sam slapping his
+4831.32s:  ass sort of. It's a funny thing, but there's actually a lot of ways to crack into an IRA. That's
+4836.84s:  penalty free. That starts getting obviously into kind of a really nuanced conversation about
+4841.24s:  structure and all that kind of stuff. But you should just know what's the thing. You're actually not
+4846.04s:  super, super handcuffed. A frame is role option better or you will lose money when doing. Great
+4854.68s:  question. Every time you roll an option, you are realizing the profit and loss from a trade.
+4862.76s:  Whether it's a profitable role or rolling a position when it's moving against you, which is
+4867.88s:  most commonly when we use this is up for debate. Here you go. I have a bunch of videos out on it.
+4879.16s:  Here's another one. Those are two videos on rolling. The first one is an old one,
+4883.40s:  but it talks about why a lot of people get it wrong because they're not actually tracking
+4888.36s:  accounting well at all. Then the second video is just a little bit more about rolling options
+4893.24s:  and how to think about it. But the simplest way to think about it is you're closing a position
+4897.00s:  and opening anyone. Let's literally let's use an example. I'll go back into on demand and we'll
+4902.20s:  take a look at what TSM. We'll go back to the 13th of May. Boom, we're going back in time. Come
+4912.60s:  with me on a journey. We will be 13th of May right here. Let's take a look. Okay. So let's say
+4924.76s:  that I wanted to trade this to the upside. I actually did trade this to the upside on one of its
+4929.96s:  breakouts. It has popped up on a bunch of my scans. I'm waiting just to say another reason I'm
+4937.96s:  kind of sitting here quietly is this pre-buffering needs to go away before really we can do anything.
+4944.68s:  So let's say we structure a bullish trade and again to be very clear this is hindsight being
+4951.64s:  2020 right. We know it's going to go up. So it's really easy to structure stuff that looks great
+4960.76s:  when you know it's going to happen. But let's just follow the standard protocols here.
+4964.76s:  I would be looking at something again that's greater than 60 typically 90 plus maybe 180
+4971.72s:  expiration liquidity is another thing that I try to keep track of. But I would probably go at least
+4977.40s:  to the at least to the 74 delta trying to get closer to this 81 delta. And there's decent open
+4984.92s:  interest but there's not a lot of volume. The markets are all pretty wide not crazy. So in this
+4990.28s:  case let's say that we buy and what is this 2000 so what we want to put on maybe 10 10 of them right
+5000.84s:  so get like a 20 20k position something like that. Yeah 21k that's cool. So we'll launch that
+5006.68s:  that's out the door. And now let's say that we want to sell some options against it. I would come
+5012.12s:  into like the 18 25 somewhere in there maybe these maybe maybe 18 maybe 18s. I don't know if
+5017.32s:  earnings is coming up we'll go to 18s. And let's say we want to sell some options against this I'll
+5023.08s:  come up here to the 52 and a halves are fine. I like the normal strikes better not like the halves
+5035.00s:  because they tend to have a little bit more liquidity. So I'll probably come here to the 26s.
+5041.24s:  And if we have 10 I might sell like three against it something like that. And this will be the
+5046.68s:  example for rolling options. So we got a nice beautiful completely unrealistic paper fill.
+5053.56s:  And now let's fast forward a week because we know it should be up a bit yet. And what were my
+5061.32s:  shorts at the 155s. So let's wait until it gets up above 155. So we'll go to the end of this week.
+5069.08s:  Here we go. So these are now in the money. The short call specifically. So what's happening in
+5076.76s:  this trade right now? Well, the first thing is I'm essentially using these long calls. This is
+5080.92s:  called a ratio call diagonal by the way. I'll give you a video on ratio diagonals which is kind of
+5087.32s:  like a go to go to structure for me. Actually, I have a whole playlist on them. Let me find that
+5092.12s:  super fast. This is the way that I think about building option strategies is there's only a few
+5098.68s:  things that I do. But I've taken the time to get really, really in depth and calculated with how I
+5103.96s:  do just a few things. It allows me honestly to make way more money than trying to do a bunch of
+5108.84s:  random bullshit. It's very difficult to do. So as you can see, the trade is making a bunch of money.
+5115.08s:  Right. So we put on the position for 20 grand. We're making 10 grand right now, including the loss
+5121.88s:  that we have on the short calls, right? We collected a credit on these, but it moved against us,
+5128.68s:  which is against being relative, right? It moved against the short calls, but it actually moved
+5134.76s:  in the favor of the long calls, which is the base of the position. And I can actually switch us back
+5140.52s:  to this camera now. Cool. And so this is where we might choose to roll. What's going to happen in
+5149.56s:  this position? I would have sold these to open for $1.57. When I'm rolling this trade, I'm buying
+5158.44s:  them back for $5.43. And I'm realizing the PNL for that trade. I sold them for $1.57. I'm buying
+5168.44s:  them back at $5.43. I'm closing this trade. That's the first part of the role. So whenever you roll
+5175.72s:  a trade, you literally are realizing the PNL on your position. That's the first thing you have to
+5181.96s:  know is you are realizing the PNL on the position. So that's the first step here. Now before I would
+5189.56s:  roll these personally, there's a bunch of different things I would take a look at that we could go
+5194.52s:  into detail on, but it's kind of nuanced. So I'm not sure if you guys would want to, but let's just
+5199.56s:  say I would look at what I could roll to. That's an easy place to start. So in this case,
+5206.76s:  if these are trading for $5.45, I would round it up to make sure that I'm not putting myself in a
+5213.64s:  bad spot on the roll. And then I would go out maybe a couple weeks. I want to go out as little
+5219.00s:  in time as possible. I need to get $5.45. So I can move from the $1.55. I can go out two weeks
+5227.56s:  and I can actually improve my basis from $155 up to $157. And then
+5235.80s:  Tommy says, can you move yourself? Yeah, for sure. Let me change to this. Boom. Bleed out of the way.
+5243.56s:  So now what I can do is see about if I want to roll out in time and give the trade more time to work,
+5253.24s:  if I want to roll out in up, the vast majority of the time, if I'm rolling an option, it's to
+5258.12s:  adjust my basis. And that's because in this case, if I'm long calls in TSM, it means I want it to go
+5265.72s:  up. It's starting to go up. I don't want my calls to get in the way of the profit of the primary
+5273.72s:  profit mechanism of the trade, which is long calls, which means I want it to go up. So all that is
+5279.16s:  to say when I'm looking at the adjustment, I'm heavily personally going to favor going as
+5285.72s:  little out in time as I can and being able to adjust up. So if I go out one week from the seven
+5292.12s:  days to the 14 days, if I go out one week, then you can see that I can roll to the $155, but I'm
+5299.80s:  unable to roll up to the $157.5 and still get a credit. Now, again, the story goes really deep.
+5307.32s:  I don't want to confuse people too early, but there's always nuances to this. You can roll for
+5312.36s:  a slight debit if you want. But again, keeping it a little more simple. If I go out two weeks,
+5321.08s:  I know I can get to the $57.5, give myself $2.5 of upside change, which is really important,
+5328.84s:  because that gives me greater capital gains profit potential. And I would collect a small credit.
+5336.84s:  So I would close these out for $5.45. I would open the same number of these three. I would sell
+5343.40s:  them right here at the $57.5, which again, we can go through it to see how this whole thing goes.
+5349.16s:  So let's pretend I don't know if it'll let me get a fillet where it probably would. Let's see.
+5353.80s:  Yeah, perfect. So we got a fillet $5.45. It improved us to $5.43. But yeah.
+5361.32s:  So now let's sell three of these again. And let's say we get the mid at $5.90.
+5367.24s:  Sweet. Now let's fast forward. We'll go forward. What? Like two weeks? You guys think something like
+5371.64s:  that? What is this? The 24th, 31st, 7th. And then see you guys know, I'm still good on time. My
+5381.08s:  dinner's not here yet. So I'll hang out for a bit longer. If there are questions that you guys
+5386.20s:  want to hit, start throwing them in now, though, so that I can try to take a look at these.
+5391.64s:  I don't want to end up dropping off last second. And you guys have a bunch of questions. You
+5395.48s:  didn't get a chance to ask. And that was a perfect time to start asking.
+5405.08s:  Shreys says, what would prompt you to roll out in time, but no change in strike?
+5409.32s:  That would mostly be the primary motivation for that would be if I like the strike. And I just
+5419.24s:  want to give the trade a little bit more time to work. There are scenarios. Or if something is
+5424.60s:  so far in the money, and I am unable to roll out and up. And you essentially just have to roll out
+5433.24s:  and see if you get a slight price accommodation. That's another scenario.
+5437.08s:  Those are probably the most common ones. I think. So now looking at this trade, the $5.90,
+5447.80s:  sorry, the $157.5 that I sold for $5.90, they're now trading for $7.10. So we are back, fallen
+5456.76s:  deeper in the money. So now if I wanted to roll these again, I would see what I can get out of them
+5461.96s:  for. So let's call it $7.10. Maybe I go out again two weeks. I try to go out as little
+5466.68s:  in time as possible, maintain expiration liquidity as much as I can. I'm at the $5.7.5. Can I get to
+5472.92s:  the $160? I can. So in this case, it would be another simple solution of close these.
+5480.52s:  Again, these would be maybe like $7.10. It probably priced and proved me to the mid maybe.
+5486.04s:  Yeah, it does. It all, I'm actually taking you to the mid, which is okay. And then I would sell these.
+5491.80s:  The one 160s get three of them out there. We need to make more than 710, which in this case,
+5497.56s:  we can get like 732. Perfect. So now over the course of both of these rolls, here's what's happened.
+5504.84s:  I realized a loss on this trade of $1,200. I realized a loss on this trade of 350. So I'm
+5515.64s:  realizing losses. That means that the available cash and sweep in my account is going down
+5522.52s:  as we're going through this. Then eventually, you have to make a choice.
+5528.44s:  Either we allow these to roll off. And we, and what I personally would do in this scenario,
+5534.44s:  sell the longs to cover the shorts. Or you close them for a loss, eat the loss, and then just let
+5540.76s:  the trade continue to roll. Again, that's going to be super, super dependent on what you choose to do
+5545.00s:  as a trader. The other thing that you have to keep in mind when you're rolling options like this,
+5549.24s:  is how much time value you're buying back that would otherwise decay out versus how much it's moving.
+5556.04s:  Always a trade off. Here's the trade off here. We had the 57 and a halfs. I bought them back for 710.
+5563.96s:  If nothing changed, an entire dollar would bleed out of those. So rather than getting them back
+5571.00s:  for 710, I could have bought them back for 610, something like that. And another slick trick that you
+5577.00s:  can do is just use the near term expiration for the same strike to see what they look like. So in this
+5582.44s:  case, the 157 and a halfs, I know about a dollar would come out. But let's take a look at what they
+5587.32s:  actually look like the 157 and a halfs. They're trading for like 610 shocker. It's almost like there's
+5593.08s:  a little bit of method to the madness. So that's if nothing changed. Here's where the analysis part
+5600.68s:  of the equation is really important. Because if you think this is going to keep flying off the
+5606.04s:  handle to the upside, what ends up happening is your options can get so far in the money. Like,
+5611.48s:  sure, you're not buying back any extrinsic value. But you actually then are buying a ton of
+5619.56s:  intrinsic value, which you then cannot. That doesn't decay out of your options. So that becomes a
+5626.44s:  massive problem. Crypteto says, dinners on me, thanks again. Thank you, brother. I really appreciate
+5632.04s:  that. Thank you so much for that. And if there's anything I could do to help you out, feel free to
+5636.68s:  shoot me an email because I generally generally appreciate that. Now, looking at this scenario here,
+5645.56s:  if we end up falling too far in the money, you will have less extrinsic value that you're buying
+5652.12s:  back. But there's way more intrinsic value. The options get more expensive. It becomes way more
+5656.12s:  difficult to roll out and up. So it's a qualitative assessment. How much extrinsic value are you
+5662.60s:  willing to buy back to avoid that happening? And it's all going to be based completely upon your
+5669.96s:  analysis. That's literally what it boils down to. So let's finish this scenario out while we're
+5676.36s:  looking at it really quick. And let's say that we fast forward what two weeks again, we're running
+5682.12s:  out of what this will let us go to. Unfortunately, that's kind of a bummer. We might not be able to
+5687.40s:  finish this through all the way to the conclusion. I just want to see what these would be trading for.
+5696.12s:  Oh, ugly. Yeah. So now these are this is actually a great example of options that are super, super far
+5701.64s:  in the money. So these are out in 28 June. They're in here. We have these. This is a great example.
+5711.00s:  So these do not have a lot of extrinsic value, right? It's like 30 cents, something like that. There's
+5716.44s:  not a ton of extrinsic value, but these are now super expensive. So they're trading for 1970. So now,
+5723.00s:  if I try to go out two weeks and see where I can get 1970, it's here and notice what just happened.
+5732.28s:  It's at the same strike. They're now so far in the money that I cannot roll out the same time
+5739.96s:  and still be able to improve my basis like I was able to the last two times. So now,
+5747.88s:  we have to go further out. Let's say another week and see where we can get that 1970. Can we get it
+5753.40s:  here and get up five bucks? No, just shy. So now we have to go out another week where we should be
+5759.48s:  able to get 1970, which we can. But notice what happened in this scenario, we can no longer go out
+5765.16s:  just two weeks. We had to go out an entire month. This becomes problematic if you continue to do this
+5771.80s:  because let's say you make this adjustment and now your options expire 3070 to eat and let's say
+5778.92s:  over the next couple of days, TSM flies even further off the handle. Well, now you don't even have
+5787.00s:  the ability to just roll out a couple weeks. Now you're going from 37, maybe 30 days out to 58 to
+5793.72s:  93. You run out of expiration liquidity. So this is how you can get caught off sides doing this. Now,
+5801.00s:  again, this is all not bad because if you take a look at your P&L, you're making money. Even though
+5806.04s:  you're realizing losses on these calls trying to manage them, you're still making money. But the
+5811.16s:  downside when you're making these transactions in something like a ratio call diagonal versus a
+5816.36s:  covered call is you really can't take them to expiration. You still have to buy these back
+5824.36s:  in order to then sell the calls against it. So you can still net out positive. Again, it's not the
+5829.80s:  end of the world. You're fighting a part of the position that's not really working in your favor.
+5834.04s:  But in this case, you would have improved your basis by $5. And that lets these calls make a lot
+5840.36s:  more money. Then if you had to close these for a loss, you take these down now for $3,700
+5846.52s:  in total, you would have a loss that you made $3,754, 1158, but you made $30,000 on the stock or
+5856.92s:  really on the long options in this area. So you still come out profitable. You're just trying to
+5861.32s:  manipulate this losing position that's been difficult. Ryan says do you have a video on TA? Yeah, definitely.
+5870.76s:  Let me actually think I might have a playlist on analysis if I'm not mistaken. Yeah, this one.
+5880.28s:  Here you go. So in that playlist, it has a bunch of different tools, but I think it will be
+5888.92s:  right up your alley like technical analysis, fundamental analysis, stuff like that.
+5900.12s:  Cool. And yeah, so I think that's a good spot to start. Yeah, you got it, Ryan.
+5913.24s:  Crypteto says I'm in the discord now. Oh, perfect. Yeah, that's great. If you guys aren't in there,
+5917.72s:  it's completely free to join you guys are obviously welcome to pop in. And then for the Patreon folks,
+5923.08s:  there's the paid side to it. That's kind of where I like share a little bit more of my active
+5927.80s:  thoughtware and trade updates and stuff like that. But if you do join that, just make sure that you
+5932.36s:  link the Patreon account to discord. So it grants you access. It's a bot that does it because I'm too
+5937.32s:  dumb. Yeah, that's kind of what that boils down to. All right, let's see. Ian says do you ever trade
+5943.96s:  some of the long calls, the clothes shorts calls if call offsides? Yeah, absolutely. That's literally
+5949.16s:  exactly what I do. Like straight up to a T. So in that, I think in that playlist, I shared above
+5956.68s:  about ratio diagonals. It'll walk through that exact process because it's exactly how I do this.
+5964.20s:  So let's say, for example, after that first role, I didn't want to continue rolling. I wanted to
+5968.52s:  just kind of eat the trade and really enjoy the upside potential that I think might be there.
+5974.36s:  What I would end up doing is, I mean, let's go back in time. Well, we don't even have to. We could
+5978.12s:  just take a look. So I closed those for $7.10 and there was three of them. So here's what I would do.
+5984.92s:  I would say, and I would include the previous role as well. You have to track your basis. It's
+5991.24s:  really important to track your basis and this stuff. Well, let's say I lost $11.58 on the first
+5996.44s:  role and then I lost $354 when I was getting ready to close the other trade. So it's $15.12. I
+6001.40s:  lost. So then what I would do is take a look at the long calls and I would say, okay, how many of
+6008.36s:  these do I need to sell in order to cover that cost? So in this case, they're trading for $15.95
+6013.96s:  again, it's kind of, you know, mistiming, but I'm just showing you the muscle movements I would take.
+6018.84s:  So the 50, 55, 95, less the 2153. That means on a per long option basis, I'm making $2,942 per.
+6033.80s:  So in this scenario, literally, all I would do is close all these short calls for a loss and then
+6042.04s:  sell one, maybe two of the long calls to cover that loss and then to realize a little bit again on
+6049.00s:  top and then you can just leave the rest on. So yeah, that is literally exactly what I do.
+6056.04s:  M goops doesn't want to have to finish the education videos you put out. So I was trying to figure
+6061.00s:  out profits on a call this 8.M. Yeah. So profits on a call are really simple. It's essentially if
+6067.72s:  there's intrinsic value, it's how much intrinsic value it has plus whatever remaining extrinsic value
+6072.76s:  there is. And then beyond that, if it's not necessarily in the money, but you get a price
+6080.28s:  appreciation, you would make money and you can use Delta, essentially, for that to see how much
+6084.04s:  you would move, give or take. Cool. All right. Let's see if there's anything else. We won't have time
+6093.24s:  to dive deep into this stuff. Maybe that's what we'll do on the next one. I'll make a note for
+6099.40s:  myself on part four. And for part four of the series, we can talk about stuff like analyzing
+6109.40s:  options, chains and stuff like that. I think that might be fun. What do you guys think?
+6113.24s:  Part four, analyzing option options. I don't know which one I would use options.
+6121.56s:  Option chains. I don't know which one of those I would use if I was you guys.
+6129.16s:  But that's what we'll cover in the next one. Analyzing options, chains. You go with S and S.
+6135.80s:  Options, chains. Yeah. That sounds that sounds comfortable to me. That feels right.
+6142.28s:  Cool. And then somebody asked before what are next steps. So next steps for sure are to
+6150.52s:  join the next one of these. I'll do it next week. I don't have like a, as you can tell, I'm kind of
+6156.04s:  figuring out who's joining and what we're talking about as we go. And I'm filling in gaps as we move
+6160.28s:  along. I'm not set on ending these after a month, two months. Like I don't have a timeline.
+6165.56s:  My guess is I'll probably make it about six weeks. So that means give or take three more sessions.
+6171.16s:  At least is what I have in mind first. And another thing is if for anybody watching the video now,
+6177.48s:  or anybody that's watching the recording, please let me know what kind of gaps there are in your
+6184.52s:  understanding. Like what are the things you want to learn how to do? And then I can bake it in.
+6189.64s:  The way I envision this going forward right now is looking through this exact stuff,
+6194.76s:  thinking about things, getting a better relationship with stuff like volatility, talking about
+6199.08s:  analyzing options, chains. As you can tell in all of these sessions going forward, we're going to be
+6204.28s:  talking about the actual practical application of trading, right? We looked at a couple examples
+6208.84s:  today in TSM of structuring a long trade and essentially running it through after we understand
+6216.28s:  some of these being what different inputs there are that influence the decision and how that
+6222.60s:  impacts how our position will perform. So from there, I think it gets into a little bit more of
+6231.56s:  developing a better relationship with this specifically, defining profit mechanisms and measuring them,
+6239.32s:  even in a simplistic way, if you're not super into things like Python, buying data and whatnot.
+6245.88s:  I mean, that's how I do this stuff. I take a very, very in-depth approach. So anybody that's familiar
+6251.88s:  with the content that I do, it's very data driven, I buy data, I scrub it, I put it in a interface,
+6258.84s:  like Python or even now, something as simple as Jupiter, which is web-based, even easier to use
+6263.88s:  to look at ideas. But I share a lot of that with you guys to try to help because I know not everybody
+6269.64s:  is in a place to do that. So anyways, next session I'm thinking more about analyzing options, chains,
+6276.12s:  with trading, different trading stuff in there. I give examples of live trades and stuff like that
+6282.84s:  that's, again, mostly what I do for like the pro live streams on like Wednesdays and the market
+6287.24s:  stuff on Sundays, but I also put out standalone videos and I have a playlist on like active trades
+6293.32s:  and stuff that you can take a look at. So that gives you an idea of how I deal with different kinds
+6299.64s:  of structures and positions, but I can also bring some comparisons case studies for us to take a look at.
+6305.16s:  If you guys let me know what kind of trades were wanting to spend some time on. For me, the beginning
+6311.64s:  trades I would be focusing on if I were a new trader starting again would be things like
+6319.24s:  ratio diagonals would probably be the biggest thing. The covered strangle would be the next biggest
+6323.88s:  thing. Strattles and strangles would be the next one. And then that's pretty much it. That's
+6330.20s:  kind of mostly all of what I do. Give or take the number of legs trading the individual legs separately
+6336.28s:  or kind of layering things on, but that is the vast majority of what I do. So that's where I would
+6342.36s:  start personally. And then from there, I think we should talk a little bit about kind of trading
+6348.52s:  plans, trading logs. It's really the unsexy stuff that I imagine most people won't enjoy too much,
+6354.36s:  but as I look across what I've been able to achieve the vast majority of that literally stems
+6361.32s:  from exactly that. I made a post in here and I'll show you this is from the discord,
+6371.96s:  but I posted this in like the beginner section of the discord and I did it mostly just to
+6378.12s:  highlight what this is looking like, but my trading plan now is like over 400 pages long.
+6384.52s:  It's something that I've built out over the last 16 years. And the reason why I bring that up is
+6391.32s:  having a document for stuff I think is unequivocally, it's just nonnegotiable in my opinion.
+6401.16s:  So Elon Song says I appreciate you sharing your organization and trading plans on logs yet. And
+6407.00s:  again, for the folks that I'm Patreon, there's stuff in the shop that give you like simple templates
+6411.88s:  to start with. I'm very against handing people like a developed trade log or a developed trading plan.
+6417.40s:  It defeats the entire purpose, which is building it yourself. So I won't do it, but I will give
+6421.64s:  people starting points. And if you're not in the Patreon, that's totally cool. I have videos on both
+6426.12s:  of them. So literally you could just follow along, put the video, open up a document, and then go
+6429.96s:  back and forth as we go through. That's also available to you guys. So I try to make as much of this
+6434.92s:  stuff easily accessible to as many people as I can for the people that are in the Patreon. I always
+6438.68s:  like to say thank you and maybe make it a little easier, but the stuff in general is there.
+6445.00s:  Paul says I would like to learn about defending positions. Yeah, we can do that. If you let me know
+6450.20s:  what kind of positions, literally if you let me know now, I will grab your comment here and I will
+6458.12s:  throw it into this so that I do not forget and I can build some stuff for around you.
+6464.44s:  You just gotta let me know kind of what what that means to you.
+6485.56s:  So we have analyzing options, chains, and then for Paulo, we want to look at
+6490.76s:  defending positions. I'll throw that in here as well. There we go.
+6501.96s:  We will defend.
+6507.64s:  All right you guys, that's all I got. As always, hit me up in the discord. Let me know
+6512.04s:  whatever else you want to talk about. I'm here for it.
