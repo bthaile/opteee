@@ -141,11 +141,15 @@ def collect_video_metadata(videos_data):
         try:
             video_id = video.get('video_id')
             if not video_id:
+                print(f"⚠️ Skipping video with no ID: {video}")
                 continue
+                
+            print(f"\n🔍 Processing video {video_id}")
+            print(f"  Original upload_date: {video.get('upload_date', 'None')}")
                 
             # Get video details
             video_response = youtube.videos().list(
-                part='snippet,contentDetails,statistics',
+                part='snippet,contentDetails,statistics,status',
                 id=video_id
             ).execute()
             
@@ -158,26 +162,32 @@ def collect_video_metadata(videos_data):
             snippet = video_details.get('snippet', {})
             statistics = video_details.get('statistics', {})
             content_details = video_details.get('contentDetails', {})
+            status = video_details.get('status', {})
             
-            # Format upload date from YouTube API
-            published_at = snippet.get('publishedAt', '')
-            if published_at:
+            # Get publishAt from status if available, fallback to snippet publishedAt
+            publish_date = status.get('publishAt') or snippet.get('publishedAt')
+            print(f"  YouTube API publishAt: {publish_date}")
+            
+            if publish_date:
                 # Convert ISO 8601 format to YYYYMMDD format
                 try:
-                    dt = datetime.strptime(published_at, '%Y-%m-%dT%H:%M:%SZ')
+                    dt = datetime.strptime(publish_date, '%Y-%m-%dT%H:%M:%SZ')
                     upload_date = dt.strftime('%Y%m%d')
-                except:
-                    upload_date = published_at
+                    print(f"  Converted upload_date: {upload_date}")
+                except Exception as e:
+                    print(f"  ⚠️ Error converting date: {e}")
+                    upload_date = publish_date
             else:
                 # Fallback to yt-dlp upload_date if available
                 upload_date = video.get('upload_date', '')
+                print(f"  Using fallback upload_date: {upload_date}")
             
             # Enhance video data with additional metadata
             enhanced_video = {
                 **video,  # Keep existing data
                 'title': snippet.get('title', video.get('title', '')),
                 'description': snippet.get('description', ''),
-                'published_at': published_at,
+                'published_at': publish_date,
                 'upload_date': upload_date,  # Add formatted upload date
                 'channel_id': snippet.get('channelId', ''),
                 'channel_title': snippet.get('channelTitle', ''),
@@ -196,11 +206,14 @@ def collect_video_metadata(videos_data):
                 'comment_count': statistics.get('commentCount', '0'),
                 'favorite_count': statistics.get('favoriteCount', '0'),
                 'thumbnail_url': snippet.get('thumbnails', {}).get('high', {}).get('url', ''),
-                'content_summary': generate_content_summary(snippet.get('description', ''))
+                'content_summary': generate_content_summary(snippet.get('description', '')),
+                'privacy_status': status.get('privacyStatus', ''),
+                'license': status.get('license', ''),
+                'embeddable': status.get('embeddable', True)
             }
             
+            print(f"  Final upload_date in enhanced data: {enhanced_video.get('upload_date', 'None')}")
             enhanced_videos.append(enhanced_video)
-            print(f"✅ Enhanced metadata for video {video_id} (upload date: {upload_date})")
             
             # Respect API quota limits
             time.sleep(0.1)
@@ -243,7 +256,8 @@ def scrape_channel_videos():
     ydl_opts = {
         'ignoreerrors': True,
         'quiet': True,
-        'extract_flat': True,
+        'extract_flat': 'in_playlist',
+        'dateformat': '%Y%m%d',
         'playlistend': 5000,
     }
 
@@ -258,11 +272,16 @@ def scrape_channel_videos():
                 
                 for entry in video_entries:
                     if entry:
+                        video_id = entry.get('id')
+                        upload_date = entry.get('upload_date')
+                        print(f"\n📥 Found video {video_id}")
+                        print(f"  Upload date from yt-dlp: {upload_date}")
+                        
                         video_info = {
-                            'video_id': entry.get('id'),
+                            'video_id': video_id,
                             'title': entry.get('title', 'No Title'),
-                            'url': f"https://www.youtube.com/watch?v={entry.get('id')}" if entry.get('id') else None,
-                            'upload_date': entry.get('upload_date'),
+                            'url': f"https://www.youtube.com/watch?v={video_id}" if video_id else None,
+                            'upload_date': upload_date,
                             'view_count': entry.get('view_count'),
                             'duration': entry.get('duration'),
                             'description': entry.get('description')
@@ -278,21 +297,60 @@ def scrape_channel_videos():
         if video['video_id'] not in seen_ids:
             seen_ids.add(video['video_id'])
             unique_videos.append(video)
+            print(f"\n📝 Unique video {video['video_id']}")
+            print(f"  Upload date: {video.get('upload_date', 'None')}")
 
-    # Collect enhanced metadata
-    unique_videos = collect_video_metadata(unique_videos)
+    # Try to enhance metadata with YouTube API if available
+    if YOUTUBE_API_KEY:
+        print("\n🔍 Attempting to enhance metadata with YouTube API...")
+        unique_videos = collect_video_metadata(unique_videos)
+    else:
+        print("\n⚠️ No YouTube API key found - using yt-dlp metadata only")
+        # Get additional metadata from yt-dlp for each video
+        enhanced_videos = []
+        for video in unique_videos:
+            try:
+                video_url = video['url']
+                with yt_dlp.YoutubeDL({'quiet': True}) as ydl:
+                    info = ydl.extract_info(video_url, download=False)
+                    video.update({
+                        'description': info.get('description', ''),
+                        'channel_id': info.get('channel_id', ''),
+                        'channel_title': info.get('channel', ''),
+                        'tags': info.get('tags', []),
+                        'view_count': str(info.get('view_count', '0')),
+                        'like_count': str(info.get('like_count', '0')),
+                        'comment_count': str(info.get('comment_count', '0')),
+                        'upload_date': info.get('upload_date', video.get('upload_date', '')),
+                    })
+            except Exception as e:
+                print(f"Error getting additional metadata for {video['video_id']}: {e}")
+            enhanced_videos.append(video)
+        unique_videos = enhanced_videos
 
-    # Save both JSON and CSV formats
-    with open(VIDEOS_JSON, 'w', encoding='utf-8') as jsonfile:
+    # Save to both JSON files
+    print("\n💾 Saving metadata to files...")
+    
+    # Save to video_metadata.json
+    with open('video_metadata.json', 'w', encoding='utf-8') as jsonfile:
         json.dump(unique_videos, jsonfile, indent=4, ensure_ascii=False)
+    print("✅ Saved to video_metadata.json")
+    
+    # Save to outlier_trading_videos_metadata.json
+    with open('outlier_trading_videos_metadata.json', 'w', encoding='utf-8') as jsonfile:
+        json.dump(unique_videos, jsonfile, indent=4, ensure_ascii=False)
+    print("✅ Saved to outlier_trading_videos_metadata.json")
     
     # Also save as CSV for compatibility
     df = pd.DataFrame(unique_videos)
-    csv_file = VIDEOS_JSON.replace('.json', '.csv')
+    csv_file = 'outlier_trading_videos_metadata.csv'
     df.to_csv(csv_file, index=False, encoding='utf-8')
+    print(f"✅ Saved to {csv_file}")
 
-    print(f"✅ Found {len(unique_videos)} unique videos")
-    print(f"📁 Saved metadata to {VIDEOS_JSON} and {csv_file}")
+    print(f"\n📊 Final Summary:")
+    print(f"  Total videos found: {len(unique_videos)}")
+    print(f"  Videos with upload dates: {sum(1 for v in unique_videos if v.get('upload_date'))}")
+    print(f"  Videos without upload dates: {sum(1 for v in unique_videos if not v.get('upload_date'))}")
     return unique_videos
 
 def find_missing_transcripts(videos_data):
@@ -667,10 +725,12 @@ def process_transcripts(missing_videos):
 def main():
     print("🚀 Starting Outlier Trading video processing pipeline...")
     
-    # Step 1: Scrape videos
+    # Step 1: Scrape videos (force this step)
+    print("\n📥 Step 1: Scraping channel videos...")
     videos = scrape_channel_videos()
     
     # Step 2: Find missing transcripts
+    print("\n🔍 Step 2: Finding videos without transcripts...")
     missing_videos = find_missing_transcripts(videos)
     
     if not missing_videos:

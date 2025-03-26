@@ -46,10 +46,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const timestamp = result.timestamp ? formatTimestamp(result.timestamp) : '';
             const videoUrl = result.video_url ? `${result.video_url}&t=${Math.floor(result.timestamp)}` : '#';
+            const uploadDate = result.metadata?.upload_date || 'Unknown';
             
             resultElement.innerHTML = `
                 <h3 class="result-title">${result.title || 'Untitled'}</h3>
                 <p>${result.text || ''}</p>
+                <p><strong>Upload Date:</strong> ${uploadDate}</p>
                 <p><strong>Relevant timestamp:</strong> ${timestamp}</p>
                 <a class="result-link" href="${videoUrl}" target="_blank">Watch Video at Timestamp</a>
             `;
