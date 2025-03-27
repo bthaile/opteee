@@ -142,7 +142,13 @@ class CustomFAISSRetriever:
             # Parse upload date
             try:
                 from datetime import datetime
-                upload_date = datetime.strptime(meta.get('upload_date', '1970-01-01'), '%Y-%m-%d')
+                # Try to parse published_at first, then fallback to upload_date
+                date_str = meta.get('published_at', meta.get('upload_date', '1970-01-01'))
+                # Handle both ISO format and YYYYMMDD format
+                if 'T' in date_str:  # ISO format
+                    upload_date = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
+                else:  # YYYYMMDD format
+                    upload_date = datetime.strptime(date_str, '%Y%m%d')
                 meta['upload_date_obj'] = upload_date
             except:
                 from datetime import datetime
@@ -295,7 +301,7 @@ def run_rag_query(retriever, chain, query: str) -> Dict[str, Any]:
             "url": video_url_with_timestamp or meta.get("video_url", ""),
             "timestamp": meta.get("start_timestamp", ""),
             "channel": meta.get("channel_name", meta.get("channel", "Unknown")),
-            "upload_date": meta.get("upload_date", "Unknown"),
+            "upload_date": meta.get("published_at", meta.get("upload_date", "Unknown")),  # Use published_at first
             "score": meta.get("score", 0.0)
         }
         sources.append(source)
@@ -316,12 +322,26 @@ def format_result(result: Dict[str, Any]) -> None:
     print("-"*80)
     
     for i, source in enumerate(result["sources"]):
-        print(f"{i+1}. {source['title']}")
-        print(f"   Upload Date: {source['upload_date']}")
-        print(f"   Timestamp: {source['timestamp']}")
-        print(f"   URL: {source['url']}")
-        print(f"   Score: {source['score']:.4f}")
-        print()
+        # Format the date nicely
+        try:
+            from datetime import datetime
+            date_str = source.get('upload_date', '')
+            if 'T' in date_str:  # ISO format
+                date = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
+            else:  # YYYYMMDD format
+                date = datetime.strptime(date_str, '%Y%m%d')
+            # Format as "Monday, Mar 23, 2024"
+            formatted_date = date.strftime("%A, %b %d, %Y")
+        except:
+            formatted_date = source.get('upload_date', 'Unknown')
+            
+        # Create video link with timestamp
+        video_link = source.get('url', '')
+        if video_link:
+            video_link = f" [{video_link}]"
+            
+        print(f"• \"{source['title']}\" (Score: {source['score']:.1f}) - {formatted_date}{video_link}")
+    print()
 
 def main():
     """Main function"""
