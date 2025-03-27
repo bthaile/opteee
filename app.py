@@ -69,20 +69,32 @@ def search_transcripts(query: str, num_results: int, provider: str, sort_by: str
         result = run_rag_query(retriever, chain, query)
         
         # Format the response in Markdown
-        markdown_response = f"### Answer\n{result['answer']}\n\n### Sources (Sorted by: {sort_by})\n"
+        markdown_response = f"### Answer\n{result['answer']}\n\n### Sources\n"
         
-        for i, source in enumerate(result['sources'], 1):
-            title = source.get('title', 'Unknown')
-            timestamp = source.get('timestamp', 'Unknown')
-            url = source.get('url', '#')
-            score = source.get('score', 0.0)
-            upload_date = format_date(source.get('upload_date', 'Unknown'))
+        for source in result['sources']:
+            # Format the date nicely
+            try:
+                from datetime import datetime
+                date_str = source.get('upload_date', '')
+                if 'T' in date_str:  # ISO format
+                    date = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
+                else:  # YYYYMMDD format
+                    date = datetime.strptime(date_str, '%Y%m%d')
+                # Format as "Monday, Mar 23, 2024"
+                formatted_date = date.strftime("%A, %b %d, %Y")
+            except:
+                formatted_date = source.get('upload_date', 'Unknown')
             
-            markdown_response += f"{i}. **{title}**\n"
-            markdown_response += f"   - Upload Date: {upload_date}\n"
-            markdown_response += f"   - Timestamp: {timestamp}\n"
-            markdown_response += f"   - [Watch Video]({url})\n"
-            markdown_response += f"   - Relevance: {score:.4f}\n\n"
+            # Title and metadata line
+            markdown_response += f"• \"{source['title']}\" (Score: {source['score']:.1f}) - {formatted_date}\n"
+            
+            # Video link on separate line
+            video_link = source.get('url', '')
+            if video_link:
+                markdown_response += f"  [Watch Video]({video_link})\n"
+            
+            # Add some space between entries
+            markdown_response += "\n"
         
         return markdown_response
         
