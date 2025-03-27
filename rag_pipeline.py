@@ -263,6 +263,40 @@ User Question: {question}""")
     
     return retriever, chain
 
+def iso_duration_to_hhmmss(duration_str: str) -> str:
+    """Convert ISO 8601 duration to HH:MM:SS format"""
+    if not duration_str:
+        return ""
+        
+    try:
+        # Remove 'PT' prefix
+        duration = duration_str.replace('PT', '')
+        
+        # Initialize hours, minutes, seconds
+        hours = 0
+        minutes = 0
+        seconds = 0
+        
+        # Parse hours if present
+        if 'H' in duration:
+            hours_str, duration = duration.split('H')
+            hours = int(hours_str)
+            
+        # Parse minutes if present
+        if 'M' in duration:
+            minutes_str, duration = duration.split('M')
+            minutes = int(minutes_str)
+            
+        # Parse seconds if present
+        if 'S' in duration:
+            seconds_str = duration.replace('S', '')
+            seconds = int(seconds_str)
+            
+        # Format as HH:MM:SS
+        return f"{hours:02d}:{minutes:02d}:{seconds:02d}"
+    except:
+        return duration_str  # Return original if parsing fails
+
 def run_rag_query(retriever, chain, query: str) -> Dict[str, Any]:
     """Run a RAG query and return the result with sources"""
     # Get relevant documents (already sorted by score)
@@ -295,6 +329,10 @@ def run_rag_query(retriever, chain, query: str) -> Dict[str, Any]:
         video_url = f"https://www.youtube.com/watch?v={video_id}"
         video_url_with_timestamp = f"{video_url}&t={timestamp_seconds}" if video_id else ""
         
+        # Convert duration to HH:MM:SS format
+        duration = meta.get("duration", "")
+        formatted_duration = iso_duration_to_hhmmss(duration)
+        
         source = {
             "title": meta.get("title", "Unknown"),
             "video_id": video_id,
@@ -302,7 +340,10 @@ def run_rag_query(retriever, chain, query: str) -> Dict[str, Any]:
             "timestamp": meta.get("start_timestamp", ""),
             "channel": meta.get("channel_name", meta.get("channel", "Unknown")),
             "upload_date": meta.get("published_at", meta.get("upload_date", "Unknown")),  # Use published_at first
-            "score": meta.get("score", 0.0)
+            "score": meta.get("score", 0.0),
+            "content": doc.page_content,  # Include the actual transcript content
+            "duration": formatted_duration,  # Use formatted duration
+            "start_timestamp": meta.get("start_timestamp", "")  # Ensure start_timestamp is included
         }
         sources.append(source)
     

@@ -69,7 +69,7 @@ def search_transcripts(query: str, num_results: int, provider: str, sort_by: str
         result = run_rag_query(retriever, chain, query)
         
         # Format the response in Markdown
-        markdown_response = f"### Answer\n{result['answer']}\n\n### Sources\n"
+        markdown_response = f"### Answer\n{result['answer']}\n\n### Video Links\n"
         
         for source in result['sources']:
             # Format the date nicely
@@ -88,10 +88,32 @@ def search_transcripts(query: str, num_results: int, provider: str, sort_by: str
             # Title and metadata line
             markdown_response += f"• \"{source['title']}\" (Score: {source['score']:.1f}) - {formatted_date}\n"
             
-            # Video link on separate line
+            # Video link (keeping it simple)
             video_link = source.get('url', '')
             if video_link:
                 markdown_response += f"  [Watch Video]({video_link})\n"
+            
+            # Add transcript context from the matched chunk
+            content = source.get('content', '')
+            if content:
+                # Trim if too long
+                context_snippet = content[:250].strip() + "..." if len(content) > 250 else content
+                markdown_response += f"  *\"{context_snippet}\"*\n"
+            else:
+                # Fallback to generic description
+                description = f"Relevant content about {query}."
+                markdown_response += f"  *{description}*\n"
+            
+            # Add video details (timestamp and duration)
+            timestamp = source.get('start_timestamp', '')
+            duration = source.get('duration', '')
+            if timestamp or duration:
+                details = []
+                if timestamp:
+                    details.append(f"Start at: {timestamp}")
+                if duration:
+                    details.append(f"Duration: {duration}")
+                markdown_response += f"  *Video Details: {', '.join(details)}*\n"
             
             # Add some space between entries
             markdown_response += "\n"
