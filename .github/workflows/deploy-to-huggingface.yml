@@ -29,27 +29,24 @@ jobs:
           
           echo "===== Setting up environment ====="
           
-          # Try to use /workspace for persistence if available and writable
-          if [ -d "/workspace" ] && [ -w "/workspace" ]; then
-              echo "Using /workspace for cache directories (persistent)..."
-              
-              # Try to create directories in /workspace
-              if mkdir -p /workspace/cache/matplotlib /workspace/cache/huggingface 2>/dev/null; then
-                  echo "Successfully created directories in /workspace"
-                  export MPLCONFIGDIR=/workspace/cache/matplotlib
-                  export TRANSFORMERS_CACHE=/workspace/cache/huggingface
-                  export XDG_CACHE_HOME=/workspace/cache
-                  export XDG_CONFIG_HOME=/workspace/cache
-              else
-                  echo "Warning: Could not create directories in /workspace, falling back to /tmp"
-                  mkdir -p /tmp/matplotlib /tmp/huggingface
-                  export MPLCONFIGDIR=/tmp/matplotlib
-                  export TRANSFORMERS_CACHE=/tmp/huggingface
-                  export XDG_CACHE_HOME=/tmp
-                  export XDG_CONFIG_HOME=/tmp
-              fi
+          # Try app directory first (should always be writable)
+          echo "Creating cache directories in /app..."
+          if mkdir -p /app/cache/matplotlib /app/cache/huggingface; then
+              echo "Successfully created cache directories in /app"
+              export MPLCONFIGDIR=/app/cache/matplotlib
+              export TRANSFORMERS_CACHE=/app/cache/huggingface
+              export XDG_CACHE_HOME=/app/cache
+              export XDG_CONFIG_HOME=/app/cache
+          # If app directory fails, try workspace
+          elif [ -d "/workspace" ] && mkdir -p /workspace/cache/matplotlib /workspace/cache/huggingface 2>/dev/null; then
+              echo "Using /workspace for cache directories..."
+              export MPLCONFIGDIR=/workspace/cache/matplotlib
+              export TRANSFORMERS_CACHE=/workspace/cache/huggingface
+              export XDG_CACHE_HOME=/workspace/cache
+              export XDG_CONFIG_HOME=/workspace/cache
+          # Last resort - try tmp
           else
-              echo "Warning: /workspace is not available or writable, using /tmp (non-persistent)..."
+              echo "WARNING: Could not create cache directories in /app or /workspace. Using /tmp as last resort."
               mkdir -p /tmp/matplotlib /tmp/huggingface
               export MPLCONFIGDIR=/tmp/matplotlib
               export TRANSFORMERS_CACHE=/tmp/huggingface
