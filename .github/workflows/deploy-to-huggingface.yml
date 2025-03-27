@@ -44,12 +44,6 @@ jobs:
           mkdir -p /tmp/matplotlib /tmp/huggingface
           chmod -R 777 /tmp/matplotlib /tmp/huggingface
           
-          # Load environment variables
-          echo "Loading environment variables..."
-          set -a
-          source /app/.env
-          set +a
-          
           # Ensure we're in the app directory
           cd /app
           
@@ -73,6 +67,12 @@ jobs:
           sdk: docker
           app_port: 7860
           pinned: false
+          env:
+            - MPLCONFIGDIR=/tmp/matplotlib
+            - TRANSFORMERS_CACHE=/tmp/huggingface
+            - XDG_CACHE_HOME=/tmp
+            - XDG_CONFIG_HOME=/tmp
+            - PYTHONPATH=/app
           ---
           
           # Options Trading Knowledge Search
