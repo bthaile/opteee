@@ -29,11 +29,6 @@ jobs:
           
           echo "===== Setting up environment ====="
           
-          # Create cache directories
-          echo "Creating cache directories..."
-          mkdir -p /tmp/matplotlib /tmp/huggingface
-          chmod -R 777 /tmp/matplotlib /tmp/huggingface
-          
           # Set environment variables
           echo "Setting environment variables..."
           export MPLCONFIGDIR=/tmp/matplotlib
