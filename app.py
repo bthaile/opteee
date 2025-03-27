@@ -52,9 +52,17 @@ def format_date(date_str):
     except Exception:
         return date_str  # Return original if parsing fails
 
-def search_transcripts(query: str, num_results: int, provider: str, sort_by: str = "relevance") -> str:
+def search_transcripts(query: str, num_results: str, provider: str, sort_by: str = "relevance") -> str:
     """Search transcripts using the RAG pipeline"""
     try:
+        # Convert num_results to integer and validate
+        try:
+            num_results = int(num_results)
+            if num_results < 1 or num_results > 10:
+                return "Error: Number of results must be between 1 and 10"
+        except ValueError:
+            return "Error: Please enter a valid number for results"
+        
         # Update retriever settings
         retriever.top_k = num_results
         retriever.sort_by = sort_by
@@ -134,12 +142,11 @@ iface = gr.Interface(
             label="Search Query",
             placeholder="Enter your options trading question here..."
         ),
-        gr.Slider(
-            minimum=1,
-            maximum=10,
-            value=DEFAULT_TOP_K,
-            step=1,
-            label="Number of Results"
+        gr.Textbox(
+            label="Number of Results",
+            value=str(DEFAULT_TOP_K),
+            placeholder="Enter number of results (1-10)",
+            info="Enter a number between 1 and 10"
         ),
         gr.Dropdown(
             choices=get_available_providers(),
@@ -157,9 +164,9 @@ iface = gr.Interface(
     title="Options Trading Search",
     description="Search through options trading educational content using AI-powered search.",
     examples=[
-        ["What is gamma in options trading?", 5, "openai", "relevance"],
-        ["Explain covered calls", 3, "claude", "date"],
-        ["How does implied volatility affect option prices?", 4, "openai", "combined"],
+        ["What is gamma in options trading?", "5", "openai", "relevance"],
+        ["Explain covered calls", "3", "claude", "date"],
+        ["How does implied volatility affect option prices?", "4", "openai", "combined"],
     ]
 )
 
