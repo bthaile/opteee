@@ -21,6 +21,16 @@ jobs:
           # Set default branch name to main
           git config --global init.defaultBranch main
 
+      - name: Create Docker environment file
+        run: |
+          cat > .env <<'EOF'
+          MPLCONFIGDIR=/tmp/matplotlib
+          TRANSFORMERS_CACHE=/tmp/huggingface
+          XDG_CACHE_HOME=/tmp
+          XDG_CONFIG_HOME=/tmp
+          PYTHONPATH=/app
+          EOF
+
       - name: Create Docker startup script
         run: |
           cat > docker_startup.sh <<'EOF'
@@ -29,50 +39,16 @@ jobs:
           
           echo "===== Setting up environment ====="
           
-          # Function to check if directory is writable
-          check_writable() {
-              local dir="$1"
-              if [ ! -w "$dir" ]; then
-                  echo "Error: Directory $dir is not writable"
-                  echo "Current permissions: $(ls -ld $dir)"
-                  echo "Current user: $(whoami)"
-                  echo "Current group: $(groups)"
-                  return 1
-              fi
-              return 0
-          }
-          
-          # Create persistent storage directories with proper permissions
+          # Create cache directories
           echo "Creating cache directories..."
-          mkdir -p /workspace/cache/matplotlib /workspace/cache/huggingface
+          mkdir -p /tmp/matplotlib /tmp/huggingface
+          chmod -R 777 /tmp/matplotlib /tmp/huggingface
           
-          # Try to set permissions
-          echo "Setting permissions..."
-          chmod -R 777 /workspace/cache || {
-              echo "Warning: Could not set permissions on /workspace/cache"
-              echo "Trying alternative approach..."
-              chown -R $(whoami):$(id -gn) /workspace/cache
-              chmod -R u+rwx /workspace/cache
-          }
-          
-          # Verify permissions
-          echo "Verifying permissions..."
-          check_writable "/workspace/cache" || {
-              echo "Error: /workspace/cache is not writable"
-              echo "Falling back to /tmp..."
-              mkdir -p /tmp/cache/matplotlib /tmp/cache/huggingface
-              chmod -R 777 /tmp/cache
-              export MPLCONFIGDIR=/tmp/cache/matplotlib
-              export TRANSFORMERS_CACHE=/tmp/cache/huggingface
-              export XDG_CACHE_HOME=/tmp/cache
-              export XDG_CONFIG_HOME=/tmp/cache
-          }
-          
-          # Set environment variables for cache directories
-          export MPLCONFIGDIR=/workspace/cache/matplotlib
-          export TRANSFORMERS_CACHE=/workspace/cache/huggingface
-          export XDG_CACHE_HOME=/workspace/cache
-          export XDG_CONFIG_HOME=/workspace/cache
+          # Load environment variables
+          echo "Loading environment variables..."
+          set -a
+          source /app/.env
+          set +a
           
           # Ensure we're in the app directory
           cd /app
