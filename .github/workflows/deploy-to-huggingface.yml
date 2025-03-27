@@ -29,13 +29,39 @@ jobs:
           
           echo "===== Setting up environment ====="
           
-          # Set environment variables
-          echo "Setting environment variables..."
-          export MPLCONFIGDIR=/tmp/matplotlib
-          export TRANSFORMERS_CACHE=/tmp/huggingface
-          export XDG_CACHE_HOME=/tmp
-          export XDG_CONFIG_HOME=/tmp
-          export PYTHONPATH=/app
+          # Try to use /workspace for persistence if available and writable
+          if [ -d "/workspace" ] && [ -w "/workspace" ]; then
+              echo "Using /workspace for cache directories (persistent)..."
+              
+              # Try to create directories in /workspace
+              if mkdir -p /workspace/cache/matplotlib /workspace/cache/huggingface 2>/dev/null; then
+                  echo "Successfully created directories in /workspace"
+                  export MPLCONFIGDIR=/workspace/cache/matplotlib
+                  export TRANSFORMERS_CACHE=/workspace/cache/huggingface
+                  export XDG_CACHE_HOME=/workspace/cache
+                  export XDG_CONFIG_HOME=/workspace/cache
+              else
+                  echo "Warning: Could not create directories in /workspace, falling back to /tmp"
+                  mkdir -p /tmp/matplotlib /tmp/huggingface
+                  export MPLCONFIGDIR=/tmp/matplotlib
+                  export TRANSFORMERS_CACHE=/tmp/huggingface
+                  export XDG_CACHE_HOME=/tmp
+                  export XDG_CONFIG_HOME=/tmp
+              fi
+          else
+              echo "Warning: /workspace is not available or writable, using /tmp (non-persistent)..."
+              mkdir -p /tmp/matplotlib /tmp/huggingface
+              export MPLCONFIGDIR=/tmp/matplotlib
+              export TRANSFORMERS_CACHE=/tmp/huggingface
+              export XDG_CACHE_HOME=/tmp
+              export XDG_CONFIG_HOME=/tmp
+          fi
+          
+          # Print current environment settings
+          echo "MPLCONFIGDIR: $MPLCONFIGDIR"
+          echo "TRANSFORMERS_CACHE: $TRANSFORMERS_CACHE"
+          echo "XDG_CACHE_HOME: $XDG_CACHE_HOME"
+          echo "XDG_CONFIG_HOME: $XDG_CONFIG_HOME"
           
           # Ensure we're in the app directory
           cd /app
@@ -61,10 +87,6 @@ jobs:
           app_port: 7860
           pinned: false
           env:
-            - MPLCONFIGDIR=/tmp/matplotlib
-            - TRANSFORMERS_CACHE=/tmp/huggingface
-            - XDG_CACHE_HOME=/tmp
-            - XDG_CONFIG_HOME=/tmp
             - PYTHONPATH=/app
           ---
           

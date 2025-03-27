@@ -38,18 +38,6 @@ RUN chmod +x /app/startup.sh
 # Set environment variables
 ENV VECTOR_STORE_PREBUILT=true
 ENV PYTHONPATH="${PYTHONPATH}:/app"
-ENV MPLCONFIGDIR=/tmp/matplotlib
-ENV TRANSFORMERS_CACHE=/tmp/huggingface
-ENV XDG_CACHE_HOME=/tmp
-ENV XDG_CONFIG_HOME=/tmp
-
-# Create cache directories with correct permissions
-RUN mkdir -p /tmp/matplotlib /tmp/huggingface && \
-    chown -R nobody:nogroup /tmp/matplotlib /tmp/huggingface && \
-    chmod -R 777 /tmp/matplotlib /tmp/huggingface
-
-# Switch to non-root user
-USER nobody
 
 # Run the app
 CMD ["/app/startup.sh"] 
