@@ -21,21 +21,58 @@ jobs:
           # Set default branch name to main
           git config --global init.defaultBranch main
 
-      - name: Create entrypoint script
+      - name: Create Docker startup script
         run: |
-          cat > entrypoint.sh <<'EOF'
+          cat > docker_startup.sh <<'EOF'
           #!/bin/bash
           set -e
           
           echo "===== Setting up environment ====="
           
-          # Create cache directories with proper permissions
-          mkdir -p /tmp/matplotlib /tmp/huggingface
-          chmod -R 777 /tmp/matplotlib /tmp/huggingface
+          # Function to check if directory is writable
+          check_writable() {
+              local dir="$1"
+              if [ ! -w "$dir" ]; then
+                  echo "Error: Directory $dir is not writable"
+                  echo "Current permissions: $(ls -ld $dir)"
+                  echo "Current user: $(whoami)"
+                  echo "Current group: $(groups)"
+                  return 1
+              fi
+              return 0
+          }
+          
+          # Create persistent storage directories with proper permissions
+          echo "Creating cache directories..."
+          mkdir -p /workspace/cache/matplotlib /workspace/cache/huggingface
+          
+          # Try to set permissions
+          echo "Setting permissions..."
+          chmod -R 777 /workspace/cache || {
+              echo "Warning: Could not set permissions on /workspace/cache"
+              echo "Trying alternative approach..."
+              chown -R $(whoami):$(id -gn) /workspace/cache
+              chmod -R u+rwx /workspace/cache
+          }
+          
+          # Verify permissions
+          echo "Verifying permissions..."
+          check_writable "/workspace/cache" || {
+              echo "Error: /workspace/cache is not writable"
+              echo "Falling back to /tmp..."
+              mkdir -p /tmp/cache/matplotlib /tmp/cache/huggingface
+              chmod -R 777 /tmp/cache
+              export MPLCONFIGDIR=/tmp/cache/matplotlib
+              export TRANSFORMERS_CACHE=/tmp/cache/huggingface
+              export XDG_CACHE_HOME=/tmp/cache
+              export XDG_CONFIG_HOME=/tmp/cache
+          }
           
           # Set environment variables for cache directories
-          export MPLCONFIGDIR=/tmp/matplotlib
-          export TRANSFORMERS_CACHE=/tmp/huggingface
+          export MPLCONFIGDIR=/workspace/cache/matplotlib
+          export TRANSFORMERS_CACHE=/workspace/cache/huggingface
+          export XDG_CACHE_HOME=/workspace/cache
+          export XDG_CONFIG_HOME=/workspace/cache
           
           # Ensure we're in the app directory
           cd /app
@@ -47,7 +84,7 @@ jobs:
           exec /app/startup.sh
           EOF
           
-          chmod +x entrypoint.sh
+          chmod +x docker_startup.sh
           
       - name: Update README for Hugging Face
         run: |
