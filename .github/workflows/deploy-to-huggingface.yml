@@ -21,19 +21,9 @@ jobs:
           # Set default branch name to main
           git config --global init.defaultBranch main
 
-      - name: Create Docker environment file
+      - name: Create Docker entrypoint script
         run: |
-          cat > .env <<'EOF'
-          MPLCONFIGDIR=/tmp/matplotlib
-          TRANSFORMERS_CACHE=/tmp/huggingface
-          XDG_CACHE_HOME=/tmp
-          XDG_CONFIG_HOME=/tmp
-          PYTHONPATH=/app
-          EOF
-
-      - name: Create Docker startup script
-        run: |
-          cat > docker_startup.sh <<'EOF'
+          cat > entrypoint.sh <<'EOF'
           #!/bin/bash
           set -e
           
@@ -43,6 +33,14 @@ jobs:
           echo "Creating cache directories..."
           mkdir -p /tmp/matplotlib /tmp/huggingface
           chmod -R 777 /tmp/matplotlib /tmp/huggingface
+          
+          # Set environment variables
+          echo "Setting environment variables..."
+          export MPLCONFIGDIR=/tmp/matplotlib
+          export TRANSFORMERS_CACHE=/tmp/huggingface
+          export XDG_CACHE_HOME=/tmp
+          export XDG_CONFIG_HOME=/tmp
+          export PYTHONPATH=/app
           
           # Ensure we're in the app directory
           cd /app
@@ -54,7 +52,7 @@ jobs:
           exec /app/startup.sh
           EOF
           
-          chmod +x docker_startup.sh
+          chmod +x entrypoint.sh
           
       - name: Update README for Hugging Face
         run: |
@@ -67,12 +65,6 @@ jobs:
           sdk: docker
           app_port: 7860
           pinned: false
-          env:
-            - MPLCONFIGDIR=/tmp/matplotlib
-            - TRANSFORMERS_CACHE=/tmp/huggingface
-            - XDG_CACHE_HOME=/tmp
-            - XDG_CONFIG_HOME=/tmp
-            - PYTHONPATH=/app
           ---
           
           # Options Trading Knowledge Search
