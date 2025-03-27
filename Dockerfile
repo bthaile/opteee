@@ -35,9 +35,19 @@ COPY startup.sh /app/
 # Make startup script executable
 RUN chmod +x /app/startup.sh
 
+# Create cache and flagged directories
+RUN mkdir -p /app/cache/matplotlib /app/cache/huggingface /app/flagged
+
+# Set permissions on the entire /app directory
+RUN chmod -R 777 /app
+
 # Set environment variables
 ENV VECTOR_STORE_PREBUILT=true
 ENV PYTHONPATH="${PYTHONPATH}:/app"
+ENV MPLCONFIGDIR=/app/cache/matplotlib
+ENV TRANSFORMERS_CACHE=/app/cache/huggingface
+ENV XDG_CACHE_HOME=/app/cache
+ENV XDG_CONFIG_HOME=/app/cache
 
 # Run the app
 CMD ["/app/startup.sh"] 
