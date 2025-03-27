@@ -20,6 +20,25 @@ jobs:
           git config --global user.name "GitHub Actions"
           # Set default branch name to main
           git config --global init.defaultBranch main
+
+      - name: Create startup script
+        run: |
+          cat > startup.sh <<'EOF'
+          #!/bin/bash
+          
+          # Create cache directories with proper permissions
+          mkdir -p /tmp/matplotlib /tmp/huggingface
+          chmod -R 777 /tmp/matplotlib /tmp/huggingface
+          
+          # Set environment variables for cache directories
+          export MPLCONFIGDIR=/tmp/matplotlib
+          export TRANSFORMERS_CACHE=/tmp/huggingface
+          
+          # Run the original startup script
+          exec /app/startup.sh
+          EOF
+          
+          chmod +x startup.sh
           
       - name: Update README for Hugging Face
         run: |
