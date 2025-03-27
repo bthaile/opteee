@@ -21,9 +21,9 @@ jobs:
           # Set default branch name to main
           git config --global init.defaultBranch main
 
-      - name: Create Docker entrypoint script
+      - name: Create Docker startup script
         run: |
-          cat > entrypoint.sh <<'EOF'
+          cat > startup.sh <<'EOF'
           #!/bin/bash
           set -e
           
@@ -48,11 +48,11 @@ jobs:
           echo "===== Starting application ====="
           date
           
-          # Run the original startup script
-          exec /app/startup.sh
+          # Run the application
+          python app.py
           EOF
           
-          chmod +x entrypoint.sh
+          chmod +x startup.sh
           
       - name: Update README for Hugging Face
         run: |
@@ -65,6 +65,12 @@ jobs:
           sdk: docker
           app_port: 7860
           pinned: false
+          env:
+            - MPLCONFIGDIR=/tmp/matplotlib
+            - TRANSFORMERS_CACHE=/tmp/huggingface
+            - XDG_CACHE_HOME=/tmp
+            - XDG_CONFIG_HOME=/tmp
+            - PYTHONPATH=/app
           ---
           
           # Options Trading Knowledge Search

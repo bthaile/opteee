@@ -38,6 +38,14 @@ RUN chmod +x /app/startup.sh
 # Set environment variables
 ENV VECTOR_STORE_PREBUILT=true
 ENV PYTHONPATH="${PYTHONPATH}:/app"
+ENV MPLCONFIGDIR=/tmp/matplotlib
+ENV TRANSFORMERS_CACHE=/tmp/huggingface
+ENV XDG_CACHE_HOME=/tmp
+ENV XDG_CONFIG_HOME=/tmp
+
+# Create cache directories
+RUN mkdir -p /tmp/matplotlib /tmp/huggingface && \
+    chmod -R 777 /tmp/matplotlib /tmp/huggingface
 
 # Run the app
 CMD ["/app/startup.sh"] 
