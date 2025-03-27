@@ -21,10 +21,13 @@ jobs:
           # Set default branch name to main
           git config --global init.defaultBranch main
 
-      - name: Create startup script
+      - name: Create entrypoint script
         run: |
-          cat > startup.sh <<'EOF'
+          cat > entrypoint.sh <<'EOF'
           #!/bin/bash
+          set -e
+          
+          echo "===== Setting up environment ====="
           
           # Create cache directories with proper permissions
           mkdir -p /tmp/matplotlib /tmp/huggingface
@@ -34,11 +37,17 @@ jobs:
           export MPLCONFIGDIR=/tmp/matplotlib
           export TRANSFORMERS_CACHE=/tmp/huggingface
           
+          # Ensure we're in the app directory
+          cd /app
+          
+          echo "===== Starting application ====="
+          date
+          
           # Run the original startup script
           exec /app/startup.sh
           EOF
           
-          chmod +x startup.sh
+          chmod +x entrypoint.sh
           
       - name: Update README for Hugging Face
         run: |
