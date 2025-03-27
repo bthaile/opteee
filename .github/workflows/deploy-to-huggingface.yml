@@ -29,20 +29,41 @@ jobs:
           
           echo "===== Setting up environment ====="
           
-          # Create app directory (should always be writable)
-          echo "Creating cache directories in /app..."
-          mkdir -p /app/cache/matplotlib /app/cache/huggingface
+          # Function to try creating directories and return success/failure
+          try_dir() {
+              local base_dir=$1
+              local mpl_dir="$base_dir/matplotlib"
+              local hf_dir="$base_dir/huggingface"
+              
+              echo "Trying to create cache directories in $base_dir..."
+              if mkdir -p "$mpl_dir" "$hf_dir" 2>/dev/null; then
+                  echo "SUCCESS: Created cache directories in $base_dir"
+                  export MPLCONFIGDIR="$mpl_dir"
+                  export TRANSFORMERS_CACHE="$hf_dir"
+                  export XDG_CACHE_HOME="$base_dir"
+                  export XDG_CONFIG_HOME="$base_dir"
+                  return 0
+              else
+                  echo "FAILED: Could not create directories in $base_dir"
+                  return 1
+              fi
+          }
           
-          # Set environment variables (before Python is imported)
-          echo "Setting environment variables..."
-          export MPLCONFIGDIR=/app/cache/matplotlib
-          export TRANSFORMERS_CACHE=/app/cache/huggingface
-          export XDG_CACHE_HOME=/app/cache
-          export XDG_CONFIG_HOME=/app/cache
-          export PYTHONPATH=/app
+          # Export HOME as current directory
+          export HOME=$(pwd)
+          echo "HOME set to: $HOME"
           
-          # Make sure Python knows not to try to use the root directory
-          export HOME=/app
+          # Try several locations in order of preference
+          if try_dir "$HOME/.cache"; then
+              echo "Using home directory for cache"
+          elif try_dir "/tmp"; then
+              echo "Using /tmp for cache"
+          elif try_dir "/var/tmp"; then
+              echo "Using /var/tmp for cache"
+          else
+              echo "WARNING: Could not create cache directories in any location!"
+              echo "Python libraries may fail to load models or create visualizations."
+          fi
           
           # Print current environment settings
           echo "MPLCONFIGDIR: $MPLCONFIGDIR"
@@ -50,9 +71,11 @@ jobs:
           echo "XDG_CACHE_HOME: $XDG_CACHE_HOME"
           echo "XDG_CONFIG_HOME: $XDG_CONFIG_HOME"
           echo "HOME: $HOME"
+          echo "Current directory: $(pwd)"
+          echo "Current user: $(whoami)"
           
-          # Ensure we're in the app directory
-          cd /app
+          # Set Python path
+          export PYTHONPATH=/app
           
           echo "===== Starting application ====="
           date
@@ -76,11 +99,6 @@ jobs:
           pinned: false
           env:
             - PYTHONPATH=/app
-            - HOME=/app 
-            - MPLCONFIGDIR=/app/cache/matplotlib
-            - TRANSFORMERS_CACHE=/app/cache/huggingface
-            - XDG_CACHE_HOME=/app/cache
-            - XDG_CONFIG_HOME=/app/cache
           ---
           
           # Options Trading Knowledge Search
