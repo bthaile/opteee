@@ -412,4 +412,219 @@ Sometimes deployment fails due to dependency conflicts between packages. Common 
    - Using compatibility matrices from package documentation
    - Using a tool like `pip-tools` to resolve dependencies
 
-After making changes to resolve conflicts, commit and push the changes to trigger a new deployment. 
+After making changes to resolve conflicts, commit and push the changes to trigger a new deployment.
+
+# Opteee Discord Bot
+
+A Discord bot that provides access to the opteee options trading knowledge base through Discord.
+
+## Features
+
+- Search options trading knowledge base using natural language queries
+- Get detailed answers with video sources and timestamps
+- Easy-to-use commands
+- Markdown-formatted responses
+
+## Setup
+
+1. Create a Discord Bot:
+   - Go to the [Discord Developer Portal](https://discord.com/developers/applications)
+   - Click "New Application" and give it a name
+   - Go to the "Bot" section and click "Add Bot"
+   - Copy the bot token
+   - Enable the following bot intents:
+     - Message Content Intent
+     - Server Members Intent
+
+2. Install Dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Create a `.env` file:
+   ```
+   DISCORD_TOKEN=your_discord_bot_token_here
+   ```
+
+4. Invite the Bot to Your Server:
+   - Go to OAuth2 > URL Generator in the Discord Developer Portal
+   - Select the following scopes:
+     - `bot`
+     - `applications.commands`
+   - Select the following bot permissions:
+     - Send Messages
+     - Read Message History
+   - Copy the generated URL and open it in a browser to invite the bot
+
+## Usage
+
+1. Start the bot:
+   ```bash
+   python discord_bot.py
+   ```
+
+2. Available Commands:
+   - `!search <query>` - Search for options trading information
+   - `!help` - Show help information
+
+Example:
+```
+!search What is gamma in options trading?
+```
+
+## Notes
+
+- The bot uses the opteee application hosted on Hugging Face Spaces
+- Responses are formatted in Markdown for better readability
+- Long responses are automatically split into multiple messages to comply with Discord's message length limits 
+
+# Outlier Trading Transcript Processing Pipeline
+
+This repository contains scripts for processing and maintaining transcripts from the Outlier Trading YouTube channel. The pipeline handles video scraping, transcript generation, and preprocessing for RAG (Retrieval-Augmented Generation) applications.
+
+## Prerequisites
+
+1. Python 3.8 or higher
+2. FFmpeg installed on your system
+3. YouTube API key (for enhanced metadata)
+
+### System Requirements
+
+- FFmpeg installation:
+  ```bash
+  # macOS (using Homebrew)
+  brew install ffmpeg
+
+  # Ubuntu/Debian
+  sudo apt-get install ffmpeg
+
+  # Windows
+  # Download from https://ffmpeg.org/download.html
+  ```
+
+### Python Dependencies
+
+Install required Python packages:
+```bash
+pip install -r requirements.txt
+```
+
+## Environment Setup
+
+1. Create a `.env` file in the root directory:
+```bash
+YOUTUBE_API_KEY=your_api_key_here
+```
+
+2. Create necessary directories:
+```bash
+mkdir transcripts audio_files processed_transcripts
+```
+
+## Pipeline Overview
+
+The pipeline consists of four main steps:
+
+1. **Video Scraping**: Collects metadata for all videos from the Outlier Trading channel
+2. **Missing Transcript Detection**: Identifies videos without transcripts
+3. **Transcript Generation**: Uses Whisper to generate transcripts for missing videos
+4. **Transcript Preprocessing**: Processes all transcripts into chunks for RAG applications
+
+### Directory Structure
+
+```
+.
+├── transcripts/              # Raw transcript files (.txt)
+├── audio_files/             # Temporary audio files for processing
+├── processed_transcripts/   # Processed chunks for RAG (.json)
+├── process_outlier_videos.py # Main processing script
+└── requirements.txt         # Python dependencies
+```
+
+## Running the Pipeline
+
+Execute the main script:
+```bash
+python process_outlier_videos.py
+```
+
+The script will:
+1. Scrape all videos from the Outlier Trading channel
+2. Identify videos missing transcripts
+3. Generate transcripts for missing videos using Whisper
+4. Preprocess all transcripts into chunks with metadata
+
+### Output Files
+
+- `outlier_trading_videos.json`: Complete video metadata
+- `missing_transcripts.json`: List of videos needing transcripts
+- `manual_processing_needed.json`: Videos requiring manual intervention
+- `processed_transcripts/*.json`: Processed transcript chunks for RAG
+
+## Transcript Processing Details
+
+### Chunking Configuration
+
+- Chunk size: 250 words
+- Overlap: 50 words between chunks
+- Minimum content length: 10 words
+
+### Metadata Included
+
+Each processed chunk includes:
+- Video ID and title
+- Upload date and duration
+- Channel information
+- Description and content summary
+- Timestamp information
+- Direct video URL with timestamp
+
+## Troubleshooting
+
+### Common Issues
+
+1. **FFmpeg Not Found**
+   - Ensure FFmpeg is installed and in your system PATH
+   - Verify installation with `ffmpeg -version`
+
+2. **YouTube API Errors**
+   - Check your API key in `.env`
+   - Verify API quota limits
+   - Ensure proper API key format (not an OAuth client ID)
+
+3. **Transcript Generation Failures**
+   - Check audio file quality
+   - Verify sufficient disk space
+   - Check Whisper model loading
+
+### Manual Processing
+
+Videos requiring manual processing are saved to `manual_processing_needed.json`. These may need:
+- Manual transcript creation
+- Audio quality improvements
+- Special handling for non-English content
+
+## Maintenance
+
+### Regular Updates
+
+1. Run the pipeline weekly to catch new videos
+2. Monitor `manual_processing_needed.json` for issues
+3. Check processed transcript quality in `processed_transcripts/`
+
+### Cleanup
+
+Periodically clean up temporary files:
+```bash
+rm -rf audio_files/*  # Remove processed audio files
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Submit a pull request
+
+## License
+
+[Your License Here] 
