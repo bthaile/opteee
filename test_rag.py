@@ -134,7 +134,7 @@ def save_results(results, output_file="rag_test_results.txt"):
                 f.write(f"Answer ({result['time_seconds']:.2f} seconds):\n")
                 f.write(result['answer'] + "\n\n")
                 
-                f.write("Sources:\n")
+                f.write("\n")
                 for j, source in enumerate(result['sources'], 1):
                     f.write(f"{j}. {source['title']}\n")
                     f.write(f"   URL: {source['url']}\n")

@@ -82,7 +82,7 @@ def display_answer(result, show_sources=True, width=80):
     
     if show_sources and sources:
         print("-"*width)
-        print("SOURCES:")
+        print(":")
         print("-"*width)
         
         for i, source in enumerate(sources):

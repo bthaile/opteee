@@ -5,13 +5,48 @@
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="main-container">
         <h1>Options Trading Knowledge Search</h1>
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search options trading concepts...">
-            <button id="search-button">Search</button>
+        
+        <!-- Two-column layout -->
+        <div class="two-column-layout">
+            <!-- Left column (25%) for search parameters -->
+            <div class="search-column">
+                <h2>Search Options</h2>
+                <div class="search-form">
+                    <input type="text" id="search-input" placeholder="Search options trading concepts...">
+                    <button id="search-button">Search</button>
+                    
+                    <!-- Additional search parameters can be added here -->
+                    <div class="search-params">
+                        <div class="param-group">
+                            <label for="search-type">Search Type:</label>
+                            <select id="search-type">
+                                <option value="semantic">Semantic</option>
+                                <option value="keyword">Keyword</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right column (75%) for results -->
+            <div class="results-column">
+                <div class="results-sections">
+                    <!-- Text results section -->
+                    <div class="text-results-section">
+                        <h2>Search Results</h2>
+                        <div id="text-results"></div>
+                    </div>
+                    
+                    <!-- Video results section -->
+                    <div class="video-results-section">
+                        <h2>Video Results</h2>
+                        <div id="video-results"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="results-container"></div>
     </div>
     <script src="/static/script.js"></script>
 </body>

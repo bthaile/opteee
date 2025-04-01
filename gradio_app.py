@@ -45,6 +45,7 @@ def home():
 @app.route('/api/search')
 def search_api():
     query = request.args.get('q', '').strip()
+    search_type = request.args.get('type', 'semantic').strip()
     
     if not query:
         return jsonify({"results": [], "message": "Please provide a search query"})
@@ -52,18 +53,35 @@ def search_api():
     # Return sample results
     results = [
         {
-            "title": "Sample Result",
-            "timestamp": "10:00",
+            "title": "Options Trading Basics",
+            "timestamp": "05:23",
             "video_url": "https://example.com/video",
-            "content": f"This is a sample result for query: {query}",
-            "score": 0.95
+            "content": f"This is a sample text result for query: {query}. Options give you the right, but not the obligation, to buy or sell an underlying asset.",
+            "score": 0.95,
+            "duration": "15:30"
+        },
+        {
+            "title": "Call Options Explained",
+            "timestamp": "10:15",
+            "video_url": "https://example.com/video2",
+            "content": "A call option gives the holder the right to buy an asset at a specified price within a specific time period.",
+            "score": 0.88,
+            "duration": "12:45"
+        },
+        {
+            "title": "Put Options Strategies",
+            "timestamp": "07:45",
+            "video_url": "https://example.com/video3",
+            "content": "Put options are financial contracts that give the buyer the right to sell an asset at a specified price within a specific time period.",
+            "score": 0.82,
+            "duration": "18:20"
         }
     ]
     
     return jsonify({
         "results": results,
         "query": query,
-        "search_type": "keyword"
+        "search_type": search_type
     })
 
 # Function to run Flask in background

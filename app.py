@@ -15,9 +15,14 @@ from rag_pipeline import (
 from datetime import datetime
 
 # Check if we need to build the vector store
-index_path = os.path.join("/tmp/vector_store", "faiss.index")
-if not os.path.exists(index_path):
-    print("Vector store not found. Will be built during startup.")
+index_path = os.path.join("/app/vector_store", "faiss.index") # Adjusted path for typical container setup
+# Check existence logic might need adjustment based on exact volume mapping/build process
+# Simplified check: Assume store exists if path exists (Dockerfile builds it)
+vector_store_exists = os.path.exists(os.path.dirname(index_path))
+if not vector_store_exists:
+     print(f"WARNING: Vector store index directory {os.path.dirname(index_path)} not found. RAG search might fail.")
+     # Consider adding logic here to *attempt* building if missing, though Dockerfile should handle it.
+     # build_vector_store() # Example: If you wanted to build on startup if missing
 
 # Initialize the retriever and chains at startup
 retriever = CustomFAISSRetriever(top_k=DEFAULT_TOP_K)
@@ -76,60 +81,95 @@ def search_transcripts(query: str, num_results: str, provider: str, sort_by: str
         # Run the query
         result = run_rag_query(retriever, chain, query)
         
-        # Format the response in Markdown
-        markdown_response = f"### Answer\n{result['answer']}\n\n### Video Links\n"
-        
-        for source in result['sources']:
-            # Format the date nicely
-            try:
-                from datetime import datetime
-                date_str = source.get('upload_date', '')
-                if 'T' in date_str:  # ISO format
-                    date = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
-                else:  # YYYYMMDD format
-                    date = datetime.strptime(date_str, '%Y%m%d')
-                # Format as "Monday, Mar 23, 2024"
-                formatted_date = date.strftime("%A, %b %d, %Y")
-            except:
-                formatted_date = source.get('upload_date', 'Unknown')
-            
-            # Title and metadata line
-            markdown_response += f"• \"{source['title']}\" (Score: {source['score']:.1f}) - {formatted_date}\n"
-            
-            # Video link (keeping it simple)
-            video_link = source.get('url', '')
-            if video_link:
-                markdown_response += f"  [Watch Video]({video_link})\n"
-            
-            # Add transcript context from the matched chunk
-            content = source.get('content', '')
-            if content:
-                # Trim if too long
-                context_snippet = content[:250].strip() + "..." if len(content) > 250 else content
-                markdown_response += f"  *\"{context_snippet}\"*\n"
-            else:
-                # Fallback to generic description
-                description = f"Relevant content about {query}."
-                markdown_response += f"  *{description}*\n"
-            
-            # Add video details (timestamp and duration)
-            timestamp = source.get('start_timestamp', '')
-            duration = source.get('duration', '')
-            if timestamp or duration:
-                details = []
+        # Format the response as HTML
+        html_response = f"<p><b>Answer:</b><br/>{result.get('answer', 'No answer generated.')}</p>"
+        html_response += "<h3>Video Links</h3>"
+
+        if not result.get('sources'):
+             html_response += "<p>No relevant video sources found.</p>"
+        else:
+            for source in result['sources']:
+                # Format the date nicely
+                formatted_date = 'Unknown Date'
+                try:
+                    date_str = source.get('upload_date', '')
+                    if date_str:
+                        if 'T' in date_str:  # ISO format like 2023-10-26T...
+                            date = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
+                        else:  # YYYYMMDD format
+                            date = datetime.strptime(date_str, '%Y%m%d')
+                        formatted_date = date.strftime("%A, %b %d, %Y") # e.g., Thursday, Oct 26, 2023
+                except Exception as date_e:
+                    print(f"Warning: Could not parse date '{source.get('upload_date', '')}': {date_e}")
+                    formatted_date = source.get('upload_date', 'Unknown Date') # Fallback to original string or unknown
+
+                # Start the div for this result
+                # Added basic inline style for margin, padding, border for visual separation
+                html_response += '<div class="video-result" style="margin-bottom: 15px; border: 1px solid #eee; padding: 10px; border-radius: 5px;">'
+
+                # Title
+                title = source.get('title', 'Untitled Video')
+                html_response += f'<b>{title}</b><br/>'
+
+                # Video Link, Timestamp, Duration line
+                details_parts = []
+                video_link = source.get('url', '')
+                if video_link:
+                    details_parts.append(f'<a href="{video_link}" target="_blank">Watch Video</a>')
+
+                timestamp = source.get('start_timestamp', '')
                 if timestamp:
-                    details.append(f"Start at: {timestamp}")
+                     # Attempt to format timestamp if it's numeric seconds
+                    try:
+                        ts_seconds = float(timestamp)
+                        minutes = int(ts_seconds // 60)
+                        seconds = int(ts_seconds % 60)
+                        timestamp_formatted = f"{minutes:02d}:{seconds:02d}"
+                        details_parts.append(f'Start: {timestamp_formatted}')
+                    except (ValueError, TypeError):
+                         details_parts.append(f'Start: {timestamp}') # Fallback to original string
+                
+                duration = source.get('duration', '')
                 if duration:
-                    details.append(f"Duration: {duration}")
-                markdown_response += f"  *Video Details: {', '.join(details)}*\n"
-            
-            # Add some space between entries
-            markdown_response += "\n"
-        
-        return markdown_response
-        
+                     # Attempt to format duration if it's numeric seconds
+                    try:
+                        dur_seconds = float(duration)
+                        minutes = int(dur_seconds // 60)
+                        seconds = int(dur_seconds % 60)
+                        duration_formatted = f"{minutes}m {seconds}s"
+                        details_parts.append(f'Duration: {duration_formatted}')
+                    except (ValueError, TypeError):
+                         details_parts.append(f'Duration: {duration}') # Fallback to original string
+
+                if details_parts: # Only add the line if there are details
+                    html_response += ' | '.join(details_parts) + '<br/>'
+
+                # Transcript Context Snippet
+                content = source.get('content', '')
+                if content:
+                    # Basic escaping for HTML
+                    import html
+                    content_escaped = html.escape(content)
+                    context_snippet = content_escaped[:300].strip() + ("..." if len(content_escaped) > 300 else "")
+                    html_response += f'<i>"{context_snippet}"</i>'
+                else:
+                    # Fallback description
+                    html_response += f'<i>Relevant content about "{query}".</i>'
+
+                # Score and Date (on a new line for clarity)
+                score = source.get('score', 0.0) # Default score to 0.0 if missing
+                html_response += f'<br/><small><i>(Score: {score:.2f} | Date: {formatted_date})</i></small>' # Show score with 2 decimals
+
+                # Close the div
+                html_response += '</div>'
+
+        return html_response
+
     except Exception as e:
-        return f"Error: {str(e)}"
+        # Also return errors as HTML
+        import traceback
+        error_trace = traceback.format_exc()
+        return f"<p style='color: red;'><b>Error:</b> {str(e)}</p><pre>{error_trace}</pre>"
 
 # Initialize the chains at startup
 initialize_chains()
@@ -160,13 +200,13 @@ iface = gr.Interface(
             info="relevance: Best matches first | date: Newest first | combined: Balance both"
         )
     ],
-    outputs=gr.Markdown(label="Results"),
+    outputs=gr.HTML(label="Results"),
     title="Options Trading Search",
-    description="Search through options trading educational content using AI-powered search.",
+    description="Search through Outlier Trading content using AI-powered search.",
     examples=[
         ["What is gamma in options trading?", "5", "openai", "relevance"],
-        ["Explain covered calls", "3", "claude", "date"],
-        ["How does implied volatility affect option prices?", "4", "openai", "combined"],
+        ["Explain ratio call diagonals", "3", "claude", "date"],
+        ["What is a covered strangle and when to use it?", "4", "openai", "combined"],
     ]
 )
 
