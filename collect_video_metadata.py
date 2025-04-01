@@ -14,7 +14,6 @@ load_dotenv()
 # Configuration variables
 INPUT_JSON = 'outlier_trading_videos.json'  # Changed from CSV to JSON
 OUTPUT_JSON = 'outlier_trading_videos_metadata.json'
-OUTPUT_CSV = 'outlier_trading_videos_metadata.csv'  # Keep CSV output for backward compatibility
 TRANSCRIPT_DIR = 'transcripts'
 API_KEY = os.getenv('YOUTUBE_API_KEY')  # Load from .env file
 

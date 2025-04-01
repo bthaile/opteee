@@ -348,12 +348,6 @@ def scrape_channel_videos():
         json.dump(unique_videos, jsonfile, indent=4, ensure_ascii=False)
     print("✅ Saved to outlier_trading_videos_metadata.json")
     
-    # Also save as CSV for compatibility
-    df = pd.DataFrame(unique_videos)
-    csv_file = 'outlier_trading_videos_metadata.csv'
-    df.to_csv(csv_file, index=False, encoding='utf-8')
-    print(f"✅ Saved to {csv_file}")
-
     print(f"\n📊 Final Summary:")
     print(f"  Total videos found: {len(unique_videos)}")
     print(f"  Videos with upload dates: {sum(1 for v in unique_videos if v.get('upload_date'))}")
