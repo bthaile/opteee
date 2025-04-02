@@ -31,7 +31,6 @@ for channel_url in channel_urls:
                         'title': entry.get('title', 'No Title'),
                         'url': f"https://www.youtube.com/watch?v={entry.get('id')}" if entry.get('id') else None,
                         'upload_date': entry.get('upload_date'),
-                        'view_count': entry.get('view_count'),
                         'duration': entry.get('duration'),
                         'description': entry.get('description')
                     }

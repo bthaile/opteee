@@ -107,6 +107,9 @@ def extract_timestamps_and_clean(text):
     # Join the cleaned lines with spaces
     cleaned_text = ' '.join(cleaned_lines)
     
+    # Remove emojis and other Unicode characters
+    cleaned_text = re.sub(r'[\U0001F300-\U0001F9FF]', '', cleaned_text)
+    
     # Remove any remaining special characters or formatting
     cleaned_text = re.sub(r'[^\w\s.,?!\'"-]', '', cleaned_text)
     
@@ -321,7 +324,7 @@ def process_transcripts(metadata_dict):
                         'url': f"https://www.youtube.com/watch?v={url_video_id}",
                         'upload_date': metadata.get('published_at', ''),
                         'duration': metadata.get('duration', ''),
-                        'channel_name': metadata.get('channel_name', ''),
+                        'channel_name': metadata.get('channel_title', ''),
                         'description': metadata.get('description', ''),
                         'content_summary': metadata.get('content_summary', ''),
                         'chunk_index': i,

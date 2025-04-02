@@ -208,8 +208,6 @@ def collect_video_metadata(videos_data):
                 'caption': content_details.get('caption', ''),
                 'licensed_content': content_details.get('licensedContent', False),
                 'projection': content_details.get('projection', ''),
-                'view_count': statistics.get('viewCount', '0'),
-                'like_count': statistics.get('likeCount', '0'),
                 'comment_count': statistics.get('commentCount', '0'),
                 'favorite_count': statistics.get('favoriteCount', '0'),
                 'thumbnail_url': snippet.get('thumbnails', {}).get('high', {}).get('url', ''),
@@ -266,6 +264,13 @@ def scrape_channel_videos():
         'extract_flat': 'in_playlist',
         'dateformat': '%Y%m%d',
         'playlistend': 5000,
+        'no_warnings': True,
+        'ignoreerrors': True,
+        'no_check_certificates': True,
+        'prefer_insecure': True,
+        'http_headers': {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        }
     }
 
     all_videos_data = []
@@ -289,7 +294,6 @@ def scrape_channel_videos():
                             'title': entry.get('title', 'No Title'),
                             'url': f"https://www.youtube.com/watch?v={video_id}" if video_id else None,
                             'upload_date': upload_date,
-                            'view_count': entry.get('view_count'),
                             'duration': entry.get('duration'),
                             'description': entry.get('description')
                         }
@@ -325,8 +329,6 @@ def scrape_channel_videos():
                         'channel_id': info.get('channel_id', ''),
                         'channel_title': info.get('channel', ''),
                         'tags': info.get('tags', []),
-                        'view_count': str(info.get('view_count', '0')),
-                        'like_count': str(info.get('like_count', '0')),
                         'comment_count': str(info.get('comment_count', '0')),
                         'upload_date': info.get('upload_date', video.get('upload_date', '')),
                     })
@@ -441,6 +443,16 @@ def download_audio(url, output_path, ffmpeg_path):
         print(f"Running command: {' '.join(cmd)}")
         result = subprocess.run(cmd, capture_output=True, text=True)
         
+        # Check for scheduled video error in stderr
+        if "This live event will begin in" in result.stderr:
+            print("⚠️ Video is scheduled for future broadcast - skipping")
+            # Create a note file to indicate this is a scheduled video
+            note_path = output_path.replace('.mp3', '.note.txt')
+            with open(note_path, 'w') as f:
+                f.write(f"Scheduled video: {url}\nCreated note file on {datetime.now()}\n")
+                f.write("This video is scheduled for future broadcast.\n")
+            return False
+            
         if result.returncode != 0:
             print(f"FFmpeg error: {result.stderr}")
             raise Exception(f"FFmpeg failed with code {result.returncode}")
@@ -451,20 +463,9 @@ def download_audio(url, output_path, ffmpeg_path):
     except Exception as e:
         print(f"Method 1 (direct FFmpeg) failed: {str(e)}")
     
-    # Method 2: Try with yt-dlp with mobile API
+    # Method 2: Try with mobile API
     try:
-        print("Trying yt-dlp with mobile API...")
-        
-        # Create fake cookies as a fallback
-        fake_cookies = "fake_cookies.txt"
-        with open(fake_cookies, "w") as f:
-            f.write("# Netscape HTTP Cookie File\n")
-            f.write(".youtube.com\tTRUE\t/\tFALSE\t2147483647\tCONSENT\tYES+cb.20220301-11-p0.en+FX+123\n")
-            f.write(".youtube.com\tTRUE\t/\tFALSE\t2147483647\tLOGIN_INFO\tdummy_value\n")
-            f.write(".youtube.com\tTRUE\t/\tFALSE\t2147483647\tPREF\tf1=50000000&f6=8\n")
-            f.write(".youtube.com\tTRUE\t/\tFALSE\t2147483647\tYSC\tdummy_value\n")
-            f.write(".youtube.com\tTRUE\t/\tFALSE\t2147483647\tWIDE\t1\n")
-        
+        print("Trying mobile API method...")
         ydl_opts = {
             'format': 'bestaudio/best',
             'postprocessors': [{
@@ -473,23 +474,11 @@ def download_audio(url, output_path, ffmpeg_path):
                 'preferredquality': '192',
             }],
             'outtmpl': output_path,
-            'ffmpeg_location': os.path.dirname(ffmpeg_path),
-            'geo_bypass': True,
-            'geo_bypass_country': 'US',
-            'cookiefile': fake_cookies,
-            'nocheckcertificate': True,
-            'ignoreerrors': True,
+            'quiet': True,
             'no_warnings': True,
-            'quiet': False,
-            'api_key': YOUTUBE_API_KEY,
-            'player_client': 'ANDROID',
-            'user_agent': 'com.google.android.youtube/17.36.4 (Linux; U; Android 12; US) gzip',
-            'extractor_args': {
-                'youtube': {
-                    'player_client': ['android', 'ios'],
-                    'player_skip': ['webpage', 'configs', 'js'],
-                }
-            },
+            'ignoreerrors': True,
+            'no_check_certificates': True,
+            'prefer_insecure': True,
             'http_headers': {
                 'User-Agent': 'com.google.android.youtube/17.36.4 (Linux; U; Android 12; US) gzip',
                 'Accept': '*/*',
@@ -500,7 +489,18 @@ def download_audio(url, output_path, ffmpeg_path):
         }
         
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-            ydl.download([url])
+            try:
+                ydl.download([url])
+            except Exception as e:
+                if "This live event will begin in" in str(e):
+                    print("⚠️ Video is scheduled for future broadcast - skipping")
+                    # Create a note file to indicate this is a scheduled video
+                    note_path = output_path.replace('.mp3', '.note.txt')
+                    with open(note_path, 'w') as f:
+                        f.write(f"Scheduled video: {url}\nCreated note file on {datetime.now()}\n")
+                        f.write("This video is scheduled for future broadcast.\n")
+                    return False
+                raise e
             
             if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
                 print(f"✅ Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
@@ -510,119 +510,47 @@ def download_audio(url, output_path, ffmpeg_path):
     
     # Method 3: Try with browser API + different format options
     try:
-        print("Trying yt-dlp with browser API and alternative format settings...")
-        ydl_opts.update({
-            'format': 'bestaudio[ext=m4a]/bestaudio/best',
-            'force_generic_extractor': True,
-            'extract_flat': True,
-            'youtube_include_dash_manifest': False,
-            'player_client': 'WEB',
-            'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
+        print("Trying browser API method...")
+        ydl_opts = {
+            'format': 'bestaudio/best',
+            'postprocessors': [{
+                'key': 'FFmpegExtractAudio',
+                'preferredcodec': 'mp3',
+                'preferredquality': '192',
+            }],
+            'outtmpl': output_path,
+            'quiet': True,
+            'no_warnings': True,
+            'ignoreerrors': True,
+            'no_check_certificates': True,
+            'prefer_insecure': True,
             'http_headers': {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
                 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-                'Accept-Language': 'en-US,en;q=0.5',
-                'Referer': 'https://www.youtube.com/',
+                'Accept-Language': 'en-us,en;q=0.5',
+                'Sec-Fetch-Mode': 'navigate',
             },
-            'extractor_args': {
-                'youtube': {
-                    'player_client': ['web', 'web_embedded'],
-                    'player_skip': ['webpage', 'configs', 'js'],
-                }
-            },
-        })
+        }
+        
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-            ydl.download([url])
+            try:
+                ydl.download([url])
+            except Exception as e:
+                if "This live event will begin in" in str(e):
+                    print("⚠️ Video is scheduled for future broadcast - skipping")
+                    # Create a note file to indicate this is a scheduled video
+                    note_path = output_path.replace('.mp3', '.note.txt')
+                    with open(note_path, 'w') as f:
+                        f.write(f"Scheduled video: {url}\nCreated note file on {datetime.now()}\n")
+                        f.write("This video is scheduled for future broadcast.\n")
+                    return False
+                raise e
             
             if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
                 print(f"✅ Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
                 return True
     except Exception as e:
         print(f"Method 3 (browser API) failed: {str(e)}")
-    
-    # Method 4: Try direct yt-dlp command
-    try:
-        print("Trying direct yt-dlp command...")
-        cmd = [
-            "yt-dlp",
-            "--extract-audio",
-            "--audio-format", "mp3",
-            "--audio-quality", "0",
-            "--output", output_path,
-            "--cookies", fake_cookies,
-            "--force-ipv4",
-            "--geo-bypass",
-            "--user-agent", "com.google.android.youtube/17.36.4 (Linux; U; Android 12; US) gzip",
-            url
-        ]
-        
-        subprocess.run(cmd, check=True, capture_output=True)
-        
-        if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-            print(f"✅ Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
-            return True
-    except Exception as e:
-        print(f"Method 4 (direct yt-dlp) failed: {str(e)}")
-    
-    # Method 5: Try using pytube with custom options
-    try:
-        print("Trying pytube method...")
-        pytube.innertube._default_clients['ANDROID'] = pytube.innertube._default_clients['WEB']
-        yt = pytube.YouTube(
-            url,
-            use_oauth=False,
-            allow_oauth_cache=False
-        )
-        audio_stream = yt.streams.filter(only_audio=True).order_by('abr').desc().first()
-        if audio_stream:
-            temp_file = audio_stream.download(filename=f"temp_{os.path.basename(output_path)}")
-            
-            # Convert to mp3 using ffmpeg
-            cmd = [
-                ffmpeg_path,
-                '-i', temp_file,
-                '-codec:a', 'libmp3lame',
-                '-qscale:a', '2',
-                output_path,
-                '-y'
-            ]
-            subprocess.run(cmd, check=True, capture_output=True)
-            
-            if os.path.exists(temp_file):
-                os.remove(temp_file)
-                
-            if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-                print(f"✅ Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
-                return True
-    except Exception as e:
-        print(f"Method 5 (pytube) failed: {str(e)}")
-    
-    # Last resort: Look for any related files
-    print("Looking for any files related to this video...")
-    for file in os.listdir(os.path.dirname(output_path)):
-        if video_id in file:
-            file_path = os.path.join(os.path.dirname(output_path), file)
-            if os.path.getsize(file_path) > 0:
-                # Copy or convert to the expected output path
-                if file.endswith('.mp3'):
-                    shutil.copy(file_path, output_path)
-                else:
-                    try:
-                        cmd = [
-                            ffmpeg_path,
-                            '-i', file_path,
-                            '-codec:a', 'libmp3lame',
-                            '-qscale:a', '2',
-                            output_path,
-                            '-y'
-                        ]
-                        subprocess.run(cmd, check=True, capture_output=True)
-                    except:
-                        shutil.copy(file_path, output_path)
-                
-                if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-                    print(f"✅ Successfully copied/converted to {output_path} (size: {os.path.getsize(output_path)} bytes)")
-                    return True
     
     # If all methods fail, record this URL for manual processing
     print("👤 Flagging video for manual processing...")

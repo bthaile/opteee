@@ -193,8 +193,6 @@ def get_channel_videos():
                         'dimension': content_details.get('dimension'),
                         'definition': content_details.get('definition'),
                         'caption': content_details.get('caption'),
-                        'view_count': statistics.get('viewCount'),
-                        'like_count': statistics.get('likeCount'),
                         'comment_count': statistics.get('commentCount')
                     }
                     videos.append(video_info)
