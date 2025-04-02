@@ -4,6 +4,7 @@ This file runs the Gradio interface for searching options trading knowledge.
 """
 import gradio as gr
 import os
+import markdown # Add import for markdown library
 from vector_search import search_vector_store, build_vector_store
 from rag_pipeline import (
     CustomFAISSRetriever,
@@ -82,7 +83,9 @@ def search_transcripts(query: str, num_results: str, provider: str, sort_by: str
         result = run_rag_query(retriever, chain, query)
         
         # Format the response as HTML
-        html_response = f"<p><b>Answer:</b><br/>{result.get('answer', 'No answer generated.')}</p>"
+        # Convert the Markdown answer to HTML
+        answer_html = markdown.markdown(result.get('answer', 'No answer generated.'))
+        html_response = f"<div>{answer_html}</div>" # Use a div instead of p for potentially multi-paragraph answers
         html_response += "<h3>Video Links</h3>"
 
         if not result.get('sources'):
@@ -174,7 +177,10 @@ def search_transcripts(query: str, num_results: str, provider: str, sort_by: str
 # Initialize the chains at startup
 initialize_chains()
 
+print("==== Chains Initialized ====") # Added log
+
 # Create the Gradio interface
+print("==== Defining Gradio Interface ====") # Added log
 iface = gr.Interface(
     fn=search_transcripts,
     inputs=[
@@ -202,7 +208,7 @@ iface = gr.Interface(
     ],
     outputs=gr.HTML(label="Results"),
     title="Options Trading Search",
-    description="Search through Outlier Trading content using AI-powered search.",
+    description="Search through Outlier Trading Video content using AI-powered search.",
     examples=[
         ["What is gamma in options trading?", "5", "openai", "relevance"],
         ["Explain ratio call diagonals", "3", "claude", "date"],
@@ -210,10 +216,14 @@ iface = gr.Interface(
     ]
 )
 
+print("==== Gradio Interface Defined ====") # Added log
+
 # Launch the app
 if __name__ == "__main__":
+    print("==== Entering main block ====") # Added log
     iface.launch(
         server_name="0.0.0.0",
         server_port=7860,
         share=False
     )
+    print("==== Gradio launch command executed ====") # Added log
