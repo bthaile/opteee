@@ -15,6 +15,7 @@ from datetime import datetime
 import re
 from tqdm import tqdm
 from collections import defaultdict
+import preprocess_transcripts as transcript_processor  # Import with alias to avoid name conflicts
 
 # Load environment variables
 load_dotenv()
@@ -44,7 +45,13 @@ OVERLAP = 50  # Words of overlap between chunks
 if YOUTUBE_API_KEY:
     print(f"\n🔑 API Key loaded: {YOUTUBE_API_KEY[:8]}...")
 else:
-    print("\n❌ No API key found in environment variables!")
+    print("\n❌ WARNING: No YouTube API key found in environment variables!")
+    print("For proper metadata, please add your YouTube API key to a .env file:")
+    print("1. Create a .env file in the same directory as this script")
+    print("2. Add the following line: YOUTUBE_API_KEY=your_api_key_here")
+    print("3. Get an API key from: https://console.cloud.google.com/apis/credentials")
+    print("4. Enable the YouTube Data API v3 in the Google Cloud Console")
+    print("Without an API key, metadata will be incomplete and chunked files may have missing properties.")
 
 def save_manual_processing_list(video_list):
     """Save list of videos that need manual processing"""
@@ -152,7 +159,6 @@ def collect_video_metadata(videos_data):
                 continue
                 
             print(f"\n🔍 Processing video {video_id}")
-            print(f"  Original upload_date: {video.get('upload_date', 'None')}")
                 
             # Get video details
             video_response = youtube.videos().list(
@@ -173,31 +179,28 @@ def collect_video_metadata(videos_data):
             
             # Get publishAt from status if available, fallback to snippet publishedAt
             publish_date = status.get('publishAt') or snippet.get('publishedAt')
-            print(f"  YouTube API publishAt: {publish_date}")
             
             if publish_date:
-                # Convert ISO 8601 format to YYYYMMDD format
+                # Convert ISO 8601 format to YYYYMMDD format for upload_date
                 try:
                     dt = datetime.strptime(publish_date, '%Y-%m-%dT%H:%M:%SZ')
                     upload_date = dt.strftime('%Y%m%d')
-                    print(f"  Converted upload_date: {upload_date}")
                 except Exception as e:
-                    print(f"  ⚠️ Error converting date: {e}")
                     upload_date = publish_date
             else:
                 # Fallback to yt-dlp upload_date if available
                 upload_date = video.get('upload_date', '')
-                print(f"  Using fallback upload_date: {upload_date}")
             
             # Enhance video data with additional metadata
             enhanced_video = {
                 **video,  # Keep existing data
                 'title': snippet.get('title', video.get('title', '')),
                 'description': snippet.get('description', ''),
-                'published_at': publish_date,
+                'published_at': publish_date,  # Keep original ISO format
                 'upload_date': upload_date,  # Add formatted upload date
                 'channel_id': snippet.get('channelId', ''),
                 'channel_title': snippet.get('channelTitle', ''),
+                'channel_name': snippet.get('channelTitle', ''),  # Add channel_name for compatibility
                 'tags': snippet.get('tags', []),
                 'category_id': snippet.get('categoryId', ''),
                 'live_broadcast_content': snippet.get('liveBroadcastContent', ''),
@@ -217,7 +220,6 @@ def collect_video_metadata(videos_data):
                 'embeddable': status.get('embeddable', True)
             }
             
-            print(f"  Final upload_date in enhanced data: {enhanced_video.get('upload_date', 'None')}")
             enhanced_videos.append(enhanced_video)
             
             # Respect API quota limits
@@ -274,6 +276,7 @@ def scrape_channel_videos():
     }
 
     all_videos_data = []
+    scheduled_videos = []
     
     for channel_url in CHANNEL_URLS:
         print(f"Processing: {channel_url}")
@@ -286,7 +289,23 @@ def scrape_channel_videos():
                     if entry:
                         video_id = entry.get('id')
                         upload_date = entry.get('upload_date')
+                        live_status = entry.get('live_status', '')
+                        availability = entry.get('availability', '')
+                        
+                        # Skip scheduled videos
+                        if live_status == 'scheduled' or availability == 'scheduled':
+                            print(f"\n⏰ Skipping scheduled video {video_id}")
+                            scheduled_videos.append({
+                                'video_id': video_id,
+                                'title': entry.get('title', 'No Title'),
+                                'url': f"https://www.youtube.com/watch?v={video_id}" if video_id else None,
+                                'scheduled_time': entry.get('scheduled_time', ''),
+                                'upload_date': upload_date
+                            })
+                            continue
+                        
                         print(f"\n📥 Found video {video_id}")
+                        print(f"  Title: {entry.get('title', 'No Title')}")
                         print(f"  Upload date from yt-dlp: {upload_date}")
                         
                         video_info = {
@@ -309,12 +328,30 @@ def scrape_channel_videos():
             seen_ids.add(video['video_id'])
             unique_videos.append(video)
             print(f"\n📝 Unique video {video['video_id']}")
+            print(f"  Title: {video.get('title', 'No Title')}")
             print(f"  Upload date: {video.get('upload_date', 'None')}")
+
+    # Save scheduled videos to a separate file
+    if scheduled_videos:
+        print("\n📝 Saving scheduled videos list...")
+        with open('scheduled_videos.json', 'w', encoding='utf-8') as f:
+            json.dump(scheduled_videos, f, indent=2)
+        print(f"✅ Saved {len(scheduled_videos)} scheduled videos to scheduled_videos.json")
 
     # Try to enhance metadata with YouTube API if available
     if YOUTUBE_API_KEY:
         print("\n🔍 Attempting to enhance metadata with YouTube API...")
         unique_videos = collect_video_metadata(unique_videos)
+        
+        # Debug: Print first video metadata after API enhancement
+        if unique_videos and len(unique_videos) > 0:
+            print("\n✅ API Metadata Enhancement Sample:")
+            sample_video = unique_videos[0]
+            print(f"  Video ID: {sample_video.get('video_id', 'MISSING')}")
+            print(f"  Title: {sample_video.get('title', 'MISSING')}")
+            print(f"  Channel: {sample_video.get('channel_title', 'MISSING')}")
+            print(f"  Published At: {sample_video.get('published_at', 'MISSING')}")
+            print(f"  Duration: {sample_video.get('duration', 'MISSING')}")
     else:
         print("\n⚠️ No YouTube API key found - using yt-dlp metadata only")
         # Get additional metadata from yt-dlp for each video
@@ -336,22 +373,26 @@ def scrape_channel_videos():
                 print(f"Error getting additional metadata for {video['video_id']}: {e}")
             enhanced_videos.append(video)
         unique_videos = enhanced_videos
+        
+        # Debug: Print first video metadata after yt-dlp enhancement
+        if unique_videos and len(unique_videos) > 0:
+            print("\n✅ yt-dlp Metadata Enhancement Sample:")
+            sample_video = unique_videos[0]
+            print(f"  Video ID: {sample_video.get('video_id', 'MISSING')}")
+            print(f"  Title: {sample_video.get('title', 'MISSING')}")
+            print(f"  Channel: {sample_video.get('channel_title', 'MISSING')}")
+            print(f"  Upload Date: {sample_video.get('upload_date', 'MISSING')}")
+            print(f"  Duration: {sample_video.get('duration', 'MISSING')}")
 
-    # Save to both JSON files
-    print("\n💾 Saving metadata to files...")
-    
-    # Save to video_metadata.json
-    with open('video_metadata.json', 'w', encoding='utf-8') as jsonfile:
-        json.dump(unique_videos, jsonfile, indent=4, ensure_ascii=False)
-    print("✅ Saved to video_metadata.json")
-    
-    # Save to outlier_trading_videos_metadata.json
+    # Save to metadata file
+    print("\n📝 Saving metadata to file...")
     with open('outlier_trading_videos_metadata.json', 'w', encoding='utf-8') as jsonfile:
         json.dump(unique_videos, jsonfile, indent=4, ensure_ascii=False)
     print("✅ Saved to outlier_trading_videos_metadata.json")
     
     print(f"\n📊 Final Summary:")
     print(f"  Total videos found: {len(unique_videos)}")
+    print(f"  Scheduled videos skipped: {len(scheduled_videos)}")
     print(f"  Videos with upload dates: {sum(1 for v in unique_videos if v.get('upload_date'))}")
     print(f"  Videos without upload dates: {sum(1 for v in unique_videos if not v.get('upload_date'))}")
     return unique_videos
@@ -651,307 +692,43 @@ def process_transcripts(missing_videos):
     
     return successful, failed
 
-def extract_timestamps_and_clean(text):
-    """
-    Extract timestamps and clean transcript, preserving timestamp information
-    Returns cleaned text and a dictionary of timestamp positions
-    """
-    # First, split the text into lines to process each line
-    lines = text.split('\n')
-    
-    # Initialize variables to store cleaned text and timestamps
-    cleaned_lines = []
-    timestamps = {}
-    current_position = 0
-    
-    for line in lines:
-        # Look for timestamp at the beginning of the line
-        timestamp_match = re.match(r'^(\d+\.\d+)s:', line)
-        if timestamp_match:
-            timestamp_seconds = float(timestamp_match.group(1))
-            # Remove the timestamp from the line
-            content = re.sub(r'^\d+\.\d+s:', '', line).strip()
-            
-            # Remove speaker labels if any
-            content = re.sub(r'^\s*[A-Za-z0-9_\- ]+:', '', content).strip()
-            
-            if content:  # Only add non-empty lines
-                # Record the position in the final text where this timestamp applies
-                timestamps[current_position] = timestamp_seconds
-                cleaned_lines.append(content)
-                current_position += len(content) + 1  # +1 for the space we'll add between lines
-        else:
-            # For lines without timestamps, just clean and add them
-            content = line.strip()
-            # Remove speaker labels if any
-            content = re.sub(r'^\s*[A-Za-z0-9_\- ]+:', '', content).strip()
-            
-            if content:  # Only add non-empty lines
-                cleaned_lines.append(content)
-                current_position += len(content) + 1
-    
-    # Join the cleaned lines with spaces
-    cleaned_text = ' '.join(cleaned_lines)
-    
-    # Remove any remaining special characters or formatting
-    cleaned_text = re.sub(r'[^\w\s.,?!\'"-]', '', cleaned_text)
-    
-    # Remove extra whitespace
-    cleaned_text = re.sub(r'\s+', ' ', cleaned_text).strip()
-    
-    return cleaned_text, timestamps
-
-def format_timestamp(seconds):
-    """Convert seconds to HH:MM:SS format for video referencing"""
-    hours, remainder = divmod(seconds, 3600)
-    minutes, seconds = divmod(remainder, 60)
-    return f"{int(hours):02}:{int(minutes):02}:{int(seconds):02}"
-
-def chunk_text_with_timestamps(text, timestamps, chunk_size=CHUNK_SIZE, overlap=OVERLAP):
-    """
-    Split text into chunks of approximately chunk_size words with overlap
-    Include timestamp information for each chunk
-    """
-    words = text.split()
-    
-    # If text is shorter than chunk_size, return as a single chunk
-    if len(words) <= chunk_size:
-        # Find the earliest timestamp that applies to this text
-        start_timestamp = min(timestamps.values()) if timestamps else 0
-        return [{
-            'text': text,
-            'start_timestamp_seconds': start_timestamp,
-            'start_timestamp': format_timestamp(start_timestamp)
-        }]
-    
-    chunks = []
-    start = 0
-    
-    while start < len(words):
-        # Calculate end index (start + chunk_size or end of text)
-        end = min(start + chunk_size, len(words))
-        
-        # Create chunk from words[start:end]
-        chunk = ' '.join(words[start:end])
-        
-        # Find the position of this chunk in the original text
-        chunk_start_pos = len(' '.join(words[:start])) + (1 if start > 0 else 0)
-        
-        # Find the closest timestamp that comes before or at this position
-        applicable_timestamps = {pos: ts for pos, ts in timestamps.items() if pos <= chunk_start_pos}
-        chunk_timestamp = max(applicable_timestamps.values()) if applicable_timestamps else 0
-        
-        chunks.append({
-            'text': chunk,
-            'start_timestamp_seconds': chunk_timestamp,
-            'start_timestamp': format_timestamp(chunk_timestamp)
-        })
-        
-        # Move start position for next chunk (with overlap)
-        start += (chunk_size - overlap)
-    
-    return chunks
-
-def extract_video_id_from_filename(filename):
-    """Extract video ID from transcript filename with robust fallbacks"""
-    # Remove file extension
-    base_name = os.path.splitext(filename)[0]
-    
-    # Look for standard YouTube ID pattern (11 characters) in the filename
-    youtube_id_match = re.search(r'([-\w]{11})', base_name)
-    if youtube_id_match:
-        return youtube_id_match.group(1)
-    
-    # Return the base name if we can't find a YouTube ID pattern
-    return base_name
-
-def find_metadata_for_transcript(filename, metadata_dict):
-    """Find the best matching metadata for a transcript file using multiple approaches"""
-    try:
-        # First attempt: Direct video ID extraction and lookup
-        video_id = extract_video_id_from_filename(filename)
-        if video_id in metadata_dict:
-            print(f"✅ Found metadata by direct ID match: {video_id}")
-            return video_id, metadata_dict[video_id]
-        
-        # Second attempt: Try to match by title or filename pattern
-        base_name = os.path.splitext(filename)[0]
-        cleaned_filename = base_name.replace('_', ' ').lower()
-        
-        best_match = None
-        best_score = 0
-        
-        # Ensure metadata_dict is a dictionary
-        if isinstance(metadata_dict, list):
-            metadata_dict = {item.get('video_id', ''): item for item in metadata_dict}
-        
-        for vid_id, metadata in metadata_dict.items():
-            if not isinstance(metadata, dict):
-                continue
-                
-            title = metadata.get('title', '')
-            if not title:
-                continue
-                
-            # Clean and normalize the title for comparison
-            cleaned_title = title.replace('_', ' ').lower()
-            
-            # Simple string contains matching
-            if cleaned_title in cleaned_filename or cleaned_filename in cleaned_title:
-                # Calculate a similarity score based on the length of matching text
-                match_length = len(cleaned_title) if cleaned_title in cleaned_filename else len(cleaned_filename)
-                score = match_length / max(len(cleaned_title), len(cleaned_filename))
-                
-                if score > best_score:
-                    best_score = score
-                    best_match = vid_id
-        
-        if best_match and best_score > 0.5:  # Threshold for a good match
-            print(f"✅ Found metadata by title match: {best_match} (score: {best_score:.2f})")
-            return best_match, metadata_dict[best_match]
-        
-        # If no good match found, construct basic metadata
-        print(f"⚠️ No metadata found for '{filename}'")
-        base_id = video_id if len(video_id) == 11 else None  # Use only if it looks like a valid YouTube ID
-        
-        # Construct fallback metadata
-        fallback_metadata = {
-            'video_id': base_id or "unknown",
-            'title': base_name.replace('_', ' '),
-            'url': f"https://www.youtube.com/watch?v={base_id}" if base_id else "",
-        }
-        
-        return base_id or "unknown", fallback_metadata
-        
-    except Exception as e:
-        print(f"❌ Error in find_metadata_for_transcript: {e}")
-        # Return basic fallback metadata
-        base_name = os.path.splitext(filename)[0]
-        return "unknown", {
-            'video_id': "unknown",
-            'title': base_name.replace('_', ' '),
-            'url': "",
-        }
-
-def preprocess_transcripts(metadata_dict):
-    """Process all transcripts in the transcript directory"""
+def perform_transcript_preprocessing(metadata):
+    """Process all transcripts in the transcript directory using the imported module"""
     print("\n📝 Step 4: Preprocessing transcripts...")
     
-    # Create output directory if it doesn't exist
-    os.makedirs(PROCESSED_DIR, exist_ok=True)
-    print(f"Created or confirmed existence of output directory: {PROCESSED_DIR}")
+    # Convert to dictionary if it's a list
+    metadata_dict = {}
+    if isinstance(metadata, list):
+        print("Converting list to dictionary...")
+        for video in metadata:
+            video_id = video.get('video_id')
+            if video_id:
+                metadata_dict[video_id] = video
+        print(f"Converted {len(metadata)} videos to dictionary with {len(metadata_dict)} entries")
+    else:
+        metadata_dict = metadata
+        print(f"Using provided dictionary with {len(metadata_dict)} entries")
     
-    # Get list of transcript files
-    if not os.path.exists(TRANSCRIPT_DIR):
-        print(f"❌ ERROR: Transcript directory {TRANSCRIPT_DIR} does not exist!")
-        return
-        
-    transcript_files = [f for f in os.listdir(TRANSCRIPT_DIR) if f.endswith('.txt')]
-    print(f"Found {len(transcript_files)} transcript files to process")
-    
-    # Initialize counters and tracking
-    total_chunks = 0
-    processed_files = 0
-    skipped_files = defaultdict(list)
-    
-    # Process each transcript
-    for filename in tqdm(transcript_files):
-        try:
-            file_path = os.path.join(TRANSCRIPT_DIR, filename)
+    # Debug: Print a few sample entries to verify metadata
+    if metadata_dict:
+        print("\nSample metadata entries for preprocessing:")
+        for i, (video_id, video) in enumerate(list(metadata_dict.items())[:3]):
+            print(f"\nSample video {i+1}: {video_id}")
+            print(f"  Title: {video.get('title', 'MISSING')}")
+            print(f"  Upload date (published_at): {video.get('published_at', 'MISSING')}")
+            print(f"  Upload date (upload_date): {video.get('upload_date', 'MISSING')}")
+            print(f"  Duration: {video.get('duration', 'MISSING')}")
+            print(f"  Channel (channel_title): {video.get('channel_title', 'MISSING')}")
+            print(f"  Channel (channel_name): {video.get('channel_name', 'MISSING')}")
             
-            # Find the best matching metadata for this transcript
-            video_id, metadata = find_metadata_for_transcript(filename, metadata_dict)
-            
-            # Read the transcript
-            with open(file_path, 'r', encoding='utf-8') as f:
-                transcript_text = f.read()
-            
-            # Clean the transcript and extract timestamps
-            cleaned_text, timestamps = extract_timestamps_and_clean(transcript_text)
-            
-            # Skip if cleaned text is too short
-            if len(cleaned_text.split()) < 10:
-                skipped_files['insufficient_content'].append({
-                    'filename': filename,
-                    'word_count': len(cleaned_text.split()),
-                    'reason': 'Text too short after cleaning'
-                })
-                continue
-            
-            # Split into chunks with timestamp information
-            chunks_with_timestamps = chunk_text_with_timestamps(cleaned_text, timestamps)
-            
-            # Create JSON for each chunk with metadata
-            chunk_data = []
-            for i, chunk_info in enumerate(chunks_with_timestamps):
-                # Ensure we have a proper video URL and ID
-                valid_id = video_id if len(video_id) == 11 else "unknown"
-                
-                # Construct proper URL with timestamp
-                timestamp_seconds = int(chunk_info['start_timestamp_seconds'])
-                video_url = metadata.get('url', '') or f"https://www.youtube.com/watch?v={valid_id}"
-                
-                # Extract clean video ID for timestamp URL
-                url_video_id = valid_id
-                url_match = re.search(r'(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s?]+)', video_url)
-                if url_match:
-                    url_video_id = url_match.group(1)
-                
-                # Create proper timestamp URL
-                video_url_with_timestamp = f"https://www.youtube.com/watch?v={url_video_id}&t={timestamp_seconds}"
-                
-                chunk_obj = {
-                    'text': chunk_info['text'],
-                    'metadata': {
-                        'video_id': valid_id,
-                        'title': metadata.get('title', filename.replace('.txt', '').replace('_', ' ')),
-                        'url': f"https://www.youtube.com/watch?v={url_video_id}",
-                        'upload_date': metadata.get('published_at', ''),
-                        'duration': metadata.get('duration', ''),
-                        'channel_name': metadata.get('channel_name', ''),
-                        'description': metadata.get('description', ''),
-                        'content_summary': metadata.get('content_summary', ''),
-                        'chunk_index': i,
-                        'total_chunks': len(chunks_with_timestamps),
-                        'start_timestamp': chunk_info['start_timestamp'],
-                        'start_timestamp_seconds': chunk_info['start_timestamp_seconds'],
-                        'video_url_with_timestamp': video_url_with_timestamp
-                    }
-                }
-                chunk_data.append(chunk_obj)
-            
-            # Save processed chunks to JSON file
-            output_path = os.path.join(PROCESSED_DIR, f"{video_id}_processed.json")
-            with open(output_path, 'w', encoding='utf-8') as f:
-                json.dump(chunk_data, f, indent=2)
-            
-            total_chunks += len(chunks_with_timestamps)
-            processed_files += 1
-            
-        except Exception as e:
-            skipped_files['processing_error'].append({
-                'filename': filename,
-                'error': str(e),
-                'reason': 'Error during processing'
-            })
-    
-    print(f"\n✅ Transcript preprocessing complete!")
-    print(f"✅ Processed {processed_files} transcript files")
-    print(f"✅ Created {total_chunks} total chunks")
-    
-    # Print detailed skipped files report
-    if skipped_files:
-        print("\n⚠️ Skipped Files Report:")
-        for reason, files in skipped_files.items():
-            print(f"\n{reason.upper()} ({len(files)} files):")
-            for file_info in files:
-                print(f"- {file_info['filename']}: {file_info.get('reason', 'Unknown reason')}")
-                if 'word_count' in file_info:
-                    print(f"  Word count: {file_info['word_count']}")
-                if 'error' in file_info:
-                    print(f"  Error: {file_info['error']}")
-    
-    print(f"\n📁 Results saved to {PROCESSED_DIR}/")
+    # Hand off processing to the imported module
+    try:
+        transcript_processor.process_transcripts(metadata_dict)
+        print(f"\n✅ Transcript preprocessing complete using preprocess_transcripts module!")
+    except Exception as e:
+        print(f"❌ Error in preprocess_transcripts module: {e}")
+        print(f"Error details: {str(e)}")
+        raise  # Re-raise the error to be handled by the caller
 
 def main():
     print("🚀 Starting Outlier Trading video processing pipeline...")
@@ -964,24 +741,59 @@ def main():
     print("\n🔍 Step 2: Finding videos without transcripts...")
     missing_videos = find_missing_transcripts(videos)
     
-    if not missing_videos:
+    if missing_videos:
+        # Step 3: Process missing transcripts
+        successful, failed = process_transcripts(missing_videos)
+    else:
         print("✅ No videos need processing!")
-        return
     
-    # Step 3: Process missing transcripts
-    successful, failed = process_transcripts(missing_videos)
+    # Step 4: Use preprocess_transcripts module for chunking
+    print("\n📝 Step 4: Preprocessing transcripts...")
     
-    # Step 4: Preprocess all transcripts
-    preprocess_transcripts(videos)
+    # Important: Don't use the videos list directly, load the metadata from the saved JSON file
+    # This ensures we're using the same metadata that preprocess_transcripts.py would use
+    print("Loading metadata from file for transcript preprocessing...")
+    try:
+        with open('outlier_trading_videos_metadata.json', 'r', encoding='utf-8') as f:
+            metadata_json = json.load(f)
+            
+        # Convert to dictionary if it's a list
+        if isinstance(metadata_json, list):
+            metadata_dict = {}
+            for item in metadata_json:
+                video_id = item.get('video_id')
+                if video_id:
+                    metadata_dict[video_id] = item
+            print(f"Converted {len(metadata_json)} videos to dictionary with {len(metadata_dict)} entries")
+        else:
+            metadata_dict = metadata_json
+            print(f"Loaded dictionary with {len(metadata_dict)} entries")
+            
+        # Debug: Print sample metadata
+        if metadata_dict and len(metadata_dict) > 0:
+            first_key = list(metadata_dict.keys())[0]
+            sample_video = metadata_dict[first_key]
+            print("\n✅ Sample Metadata for Preprocessing:")
+            print(f"  Video ID: {sample_video.get('video_id', 'MISSING')}")
+            print(f"  Title: {sample_video.get('title', 'MISSING')}")
+            print(f"  Channel: {sample_video.get('channel_title', 'MISSING')}")
+            print(f"  Published At: {sample_video.get('published_at', 'MISSING')}")
+            print(f"  Duration: {sample_video.get('duration', 'MISSING')}")
+        
+        perform_transcript_preprocessing(metadata_dict)
+    except Exception as e:
+        print(f"❌ Error loading metadata for preprocessing: {e}")
+        print("Falling back to using videos list...")
+        perform_transcript_preprocessing(videos)
     
     # Final report
     print("\n📊 Final Summary:")
     print(f"Total videos found: {len(videos)}")
-    print(f"Videos needing transcripts: {len(missing_videos)}")
-    print(f"Successfully processed: {len(successful)}")
-    print(f"Failed to process: {len(failed)}")
+    print(f"Videos needing transcripts: {len(missing_videos) if 'missing_videos' in locals() else 0}")
+    print(f"Successfully processed: {len(successful) if 'successful' in locals() else 0}")
+    print(f"Failed to process: {len(failed) if 'failed' in locals() else 0}")
     
-    if failed:
+    if 'failed' in locals() and failed:
         print("\n❌ Failed videos:")
         for video in failed:
             print(f"- {video['url']}")
