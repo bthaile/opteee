@@ -8,11 +8,14 @@ on:
 jobs:
   process-transcripts:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Add explicit write permission
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Fetch all history for proper git operations
+          token: ${{ secrets.GITHUB_TOKEN }}  # Use token for checkout
 
       - name: Set up Python
         uses: actions/setup-python@v4
