@@ -192,8 +192,7 @@ def get_channel_videos():
                         'duration': content_details.get('duration'),
                         'dimension': content_details.get('dimension'),
                         'definition': content_details.get('definition'),
-                        'caption': content_details.get('caption'),
-                        'comment_count': statistics.get('commentCount')
+                        'caption': content_details.get('caption')
                     }
                     videos.append(video_info)
                 except Exception as e:

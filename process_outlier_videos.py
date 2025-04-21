@@ -211,7 +211,6 @@ def collect_video_metadata(videos_data):
                 'caption': content_details.get('caption', ''),
                 'licensed_content': content_details.get('licensedContent', False),
                 'projection': content_details.get('projection', ''),
-                'comment_count': statistics.get('commentCount', '0'),
                 'favorite_count': statistics.get('favoriteCount', '0'),
                 'thumbnail_url': snippet.get('thumbnails', {}).get('high', {}).get('url', ''),
                 'content_summary': generate_content_summary(snippet.get('description', '')),
@@ -366,7 +365,6 @@ def scrape_channel_videos():
                         'channel_id': info.get('channel_id', ''),
                         'channel_title': info.get('channel', ''),
                         'tags': info.get('tags', []),
-                        'comment_count': str(info.get('comment_count', '0')),
                         'upload_date': info.get('upload_date', video.get('upload_date', '')),
                     })
             except Exception as e:
