@@ -16,30 +16,17 @@ import re
 from tqdm import tqdm
 from collections import defaultdict
 import preprocess_transcripts as transcript_processor  # Import with alias to avoid name conflicts
+from pipeline_config import (
+    CHANNEL_URLS, VIDEOS_JSON, MISSING_TRANSCRIPTS_JSON, TRANSCRIPT_DIR,
+    AUDIO_DIR, PROCESSED_DIR, YOUTUBE_API_KEY, MANUAL_PROCESSING_JSON,
+    CHUNK_SIZE, OVERLAP, ensure_directories
+)
 
 # Load environment variables
 load_dotenv()
 
-# Channel URLs
-CHANNEL_URLS = [
-    'https://www.youtube.com/@OutlierTrading/videos',
-    'https://www.youtube.com/@OutlierTrading/shorts',
-    'https://www.youtube.com/@OutlierTrading/streams',
-    'https://www.youtube.com/@OutlierTrading/podcasts'
-]
-
-# File paths
-VIDEOS_JSON = 'outlier_trading_videos.json'
-MISSING_TRANSCRIPTS_JSON = 'missing_transcripts.json'
-TRANSCRIPT_DIR = 'transcripts'
-AUDIO_DIR = 'audio_files'
-PROCESSED_DIR = 'processed_transcripts'
-YOUTUBE_API_KEY = os.getenv('YOUTUBE_API_KEY')
-MANUAL_PROCESSING_FILE = "manual_processing_needed.json"
-
-# Configuration for transcript preprocessing
-CHUNK_SIZE = 250  # Target words per chunk
-OVERLAP = 50  # Words of overlap between chunks
+# Use centralized configuration
+MANUAL_PROCESSING_FILE = MANUAL_PROCESSING_JSON
 
 # Debug: Print API key info (first few characters)
 if YOUTUBE_API_KEY:

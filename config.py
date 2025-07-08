@@ -1,9 +1,20 @@
 import os
 from pathlib import Path
 
-# Use /app paths since vector store is built during image creation
-PROCESSED_DIR = "/app/processed_transcripts"
-VECTOR_DIR = "/app/vector_store"
+# Detect if we're running in Docker or locally
+IS_DOCKER = os.path.exists('/app') and os.path.ismount('/app')
+IS_LOCAL = not IS_DOCKER
+
+if IS_DOCKER:
+    # Use /app paths since vector store is built during image creation
+    PROCESSED_DIR = "/app/processed_transcripts"
+    VECTOR_DIR = "/app/vector_store"
+else:
+    # Use local paths for development
+    PROJECT_ROOT = Path(__file__).parent.absolute()
+    PROCESSED_DIR = str(PROJECT_ROOT / "processed_transcripts")
+    VECTOR_DIR = str(PROJECT_ROOT / "vector_store")
+
 VECTOR_STORE_PATH = VECTOR_DIR
 PROCESSED_TRANSCRIPTS_PATH = PROCESSED_DIR
 
@@ -19,13 +30,18 @@ CHUNK_OVERLAP = 50
 # Vector store configuration
 BATCH_SIZE = 32
 
-# Create necessary directories
-Path(PROCESSED_DIR).mkdir(exist_ok=True, parents=True)
-Path(VECTOR_DIR).mkdir(exist_ok=True, parents=True)
-
-# Create directories if they don't exist
-for directory in [PROCESSED_DIR, VECTOR_DIR]:
-    os.makedirs(directory, exist_ok=True)
+# Create necessary directories (only if not in Docker or if paths are writable)
+try:
+    Path(PROCESSED_DIR).mkdir(exist_ok=True, parents=True)
+    Path(VECTOR_DIR).mkdir(exist_ok=True, parents=True)
+    
+    # Create directories if they don't exist
+    for directory in [PROCESSED_DIR, VECTOR_DIR]:
+        os.makedirs(directory, exist_ok=True)
+except (OSError, PermissionError) as e:
+    print(f"Warning: Could not create directories: {e}")
+    print(f"Processed dir: {PROCESSED_DIR}")
+    print(f"Vector dir: {VECTOR_DIR}")
 
 # Add this to your existing config.py
 SYSTEM_PROMPT = """You are Options Trading Education Expert, an options trading education expert.

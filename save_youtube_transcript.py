@@ -2,7 +2,6 @@ from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api._errors import TranscriptsDisabled, NoTranscriptFound
 from urllib.parse import urlparse, parse_qs
 import os
-import csv
 import json
 import time
 from datetime import datetime
@@ -51,19 +50,20 @@ def transcribe_with_whisper(audio_path, output_path):
             text = segment["text"]
             f.write(f"{start_time:.2f}s: {text}\n")
 
-# Read URLs and titles from the CSV file
+# Read URLs and titles from the JSON file (not CSV)
 video_data = []
 try:
-    with open('outlier_trading_videos.csv', 'r') as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            video_data.append({
-                'url': row['URL'],
-                'title': row['Title'].replace(' ', '_')  # Replace spaces with underscores
-            })
+    with open('outlier_trading_videos.json', 'r', encoding='utf-8') as jsonfile:
+        data = json.load(jsonfile)
+        for video in data:
+            if video.get('url') and video.get('title'):
+                video_data.append({
+                    'url': video['url'],
+                    'title': video['title'].replace(' ', '_').replace('/', '_')  # Clean title for filename
+                })
     print(f"📚 Found {len(video_data)} videos to process")
 except FileNotFoundError:
-    print("❌ Error: outlier_trading_videos.csv not found. Please run outlier_scraper.py first.")
+    print("❌ Error: outlier_trading_videos.json not found. Please run outlier_scraper.py first.")
     exit(1)
 
 output_dir = "transcripts"

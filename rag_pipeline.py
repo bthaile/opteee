@@ -30,8 +30,8 @@ METADATA_PATH = os.path.join(VECTOR_STORE_DIR, "transcript_metadata.pkl")
 INDEX_PATH = os.path.join(VECTOR_STORE_DIR, "transcript_index.faiss")
 
 DEFAULT_TOP_K = 5
-DEFAULT_LLM_MODEL = "gpt-4o-mini"
-DEFAULT_CLAUDE_MODEL = "claude-3-7-sonnet-20250219"
+DEFAULT_LLM_MODEL = "o3-mini"
+DEFAULT_CLAUDE_MODEL = "claude-sonnet-4-20250522"
 DEFAULT_TEMPERATURE = 0.2
 DEFAULT_LLM_PROVIDER = "openai"  # "openai" or "claude"
 

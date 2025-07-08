@@ -1,13 +1,12 @@
 import json
 import os
-import csv
 import re
 from urllib.parse import urlparse, parse_qs
+from pipeline_config import VIDEOS_JSON, TRANSCRIPT_DIR, TRANSCRIPT_PROGRESS_JSON
 
-# Paths
-CSV_FILE = "outlier_trading_videos.csv"
-TRANSCRIPT_DIR = "transcripts"
-PROGRESS_FILE = "transcript_progress.json"
+# Use centralized configuration
+JSON_FILE = VIDEOS_JSON
+PROGRESS_FILE = TRANSCRIPT_PROGRESS_JSON
 
 def extract_video_id(url):
     """Extract video ID from YouTube URL"""
@@ -27,19 +26,19 @@ def clean_title(title):
     return cleaned
 
 def main():
-    # Get all YouTube URLs and titles from CSV
+    # Get all YouTube URLs and titles from JSON
     all_video_info = []
-    with open(CSV_FILE, 'r', encoding='utf-8') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            if 'URL' in row and row['URL'].strip():
+    with open(JSON_FILE, 'r', encoding='utf-8') as f:
+        videos = json.load(f)
+        for video in videos:
+            if video.get('url') and video['url'].strip():
                 all_video_info.append({
-                    'url': row['URL'],
-                    'title': row.get('Title', ''),
-                    'id': extract_video_id(row['URL'])
+                    'url': video['url'],
+                    'title': video.get('title', ''),
+                    'id': video.get('video_id') or extract_video_id(video['url'])
                 })
     
-    print(f"Found {len(all_video_info)} videos in CSV")
+    print(f"Found {len(all_video_info)} videos in JSON")
     
     # Get list of transcript files
     transcript_files = os.listdir(TRANSCRIPT_DIR)

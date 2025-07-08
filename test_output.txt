@@ -1,0 +1,47 @@
+🔧 PIPELINE CONSISTENCY TEST
+==================================================
+🔍 Testing imports...
+✅ pipeline_config imported successfully
+   Chunk size: 250, Overlap: 50
+   Videos file: outlier_trading_videos.json
+   Metadata file: outlier_trading_videos_metadata.json
+================================================================================
+TRANSCRIPT PREPROCESSING SCRIPT - VERBOSE MODE
+Chunk size: 250 words with 50 words overlap
+================================================================================
+✅ preprocess_transcripts imported successfully
+Processing: https://www.youtube.com/@OutlierTrading/videos
+Processing: https://www.youtube.com/@OutlierTrading/shorts
+Processing: https://www.youtube.com/@OutlierTrading/streams
+Processing: https://www.youtube.com/@OutlierTrading/podcasts
+✅ 501 unique videos saved to outlier_trading_videos.json
+✅ outlier_scraper imported successfully
+
+🔍 Testing file consistency...
+✅ Old CSV file removed
+✅ Backup files removed
+
+🔍 Testing configuration consistency...
+✅ Configuration is valid:
+   Chunk size: 250 words
+   Overlap: 50 words
+   Min chunk words: 10
+
+🔍 Testing script organization...
+✅ pipeline_config.py
+✅ outlier_scraper.py
+✅ collect_video_metadata.py
+✅ save_youtube_transcript.py
+✅ whisper_transcribe.py
+✅ preprocess_transcripts.py
+✅ create_vector_store.py
+✅ run_pipeline.py
+✅ validate_pipeline.py
+
+==================================================
+🎉 ALL TESTS PASSED - Pipeline is consistent and ready!
+
+📋 Next Steps:
+1. Run: python3 run_pipeline.py --force-reprocess
+2. This will reprocess all videos with consistent settings
+3. Multiple runs will produce identical results

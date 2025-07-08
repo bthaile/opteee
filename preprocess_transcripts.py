@@ -4,13 +4,10 @@ import pandas as pd
 import json
 from tqdm import tqdm
 from collections import defaultdict
-
-# Configuration
-TRANSCRIPT_DIR = "transcripts"
-PROCESSED_DIR = "processed_transcripts"
-METADATA_FILE = "outlier_trading_videos_metadata.json"  # Changed to JSON
-CHUNK_SIZE = 250  # Target words per chunk
-OVERLAP = 50  # Words of overlap between chunks
+from pipeline_config import (
+    TRANSCRIPT_DIR, PROCESSED_DIR, CHUNK_SIZE, OVERLAP, MIN_CHUNK_WORDS,
+    get_metadata_file, ensure_directories
+)
 
 # Add error tracking
 skipped_files = defaultdict(list)  # Track skipped files by reason
@@ -22,8 +19,10 @@ print("="*80)
 
 def load_metadata():
     """Load video metadata from JSON file"""
-    print(f"\n[1/3] Loading video metadata from {METADATA_FILE}...")
     try:
+        METADATA_FILE = get_metadata_file()
+        print(f"\n[1/3] Loading video metadata from {METADATA_FILE}...")
+        
         # Try to load from JSON first
         if os.path.exists(METADATA_FILE):
             with open(METADATA_FILE, 'r', encoding='utf-8') as f:
@@ -41,22 +40,9 @@ def load_metadata():
                     print(f"Successfully loaded dictionary with {len(metadata_dict)} videos")
                 return metadata_dict
         
-        # Fallback to CSV if JSON doesn't exist
-        csv_file = METADATA_FILE.replace('.json', '.csv')
-        if os.path.exists(csv_file):
-            print(f"JSON file not found, trying CSV: {csv_file}")
-            df = pd.read_csv(csv_file)
-            print(f"Successfully loaded CSV with {len(df)} rows")
-            
-            # Create a dictionary with video_id as key for faster lookups
-            metadata_dict = {}
-            for _, row in df.iterrows():
-                video_id = row.get('video_id')
-                if video_id:
-                    metadata_dict[video_id] = row.to_dict()
-            
-            print(f"✅ Loaded metadata for {len(metadata_dict)} videos")
-            return metadata_dict
+        # No CSV fallback - JSON format is required
+        print("❌ No metadata file found! Please run outlier_scraper.py first to create video metadata.")
+        return {}
         
         print("⚠️ No metadata file found!")
         return {}
@@ -253,7 +239,7 @@ def find_metadata_for_transcript(filename, metadata_dict):
 def process_transcripts(metadata_dict):
     """Process all transcripts in the transcript directory"""
     # Create output directory if it doesn't exist
-    os.makedirs(PROCESSED_DIR, exist_ok=True)
+    ensure_directories()
     print(f"\n[2/3] Created or confirmed existence of output directory: {PROCESSED_DIR}")
     
     # Get list of transcript files
@@ -286,11 +272,11 @@ def process_transcripts(metadata_dict):
             cleaned_text, timestamps = extract_timestamps_and_clean(transcript_text)
             
             # Skip if cleaned text is too short
-            if len(cleaned_text.split()) < 10:
+            if len(cleaned_text.split()) < MIN_CHUNK_WORDS:
                 skipped_files['insufficient_content'].append({
                     'filename': filename,
                     'word_count': len(cleaned_text.split()),
-                    'reason': 'Text too short after cleaning'
+                    'reason': f'Text too short after cleaning (< {MIN_CHUNK_WORDS} words)'
                 })
                 continue
             
@@ -373,6 +359,9 @@ def process_transcripts(metadata_dict):
 def main():
     print("="*80)
     print("Starting main function...")
+    
+    # Ensure directories exist
+    ensure_directories()
     
     # Load video metadata
     metadata_dict = load_metadata()

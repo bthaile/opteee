@@ -1,200 +1,20 @@
 [
   {
-    "text": "today I want to talk about how you can create a zero DTE SPX option strategy that actually makes money we're going to look at a couple examples up front of two sides of the same coin very different experiences and then we're going to go through some data and at the end of the video I want to walk you through some very specific tips and tricks so what's up everybody welcome back to all the outliers shout out to the patreon family thank you guys for the support you make content like this possible and if what I do helps you in any way consider signing up it helps me out a bunch Link in the notes below ah yes two sides of the same exact coin on the left hand side we have 18 year old meets zero DTE spy puts and in a single day they grew their account 124.3 percent that looks pretty good to me then we have well the other side zero DTE Lotto trades gone wrong not sure how I'm going to recover from this and for this person over it looks like I have no idea what the time frame for is for this it's obviously not within a day it says all time and they're down 82 202 and a nickel which is essentially 100 of their account all right all right two very different experiences what's going on here well I'm gonna give you some quick excerpts from a",
+    "text": "DOWNLOAD FAILED Could not access the original audio for this video This transcript is a placeholder because YouTube blocked all download attempts. You may need to manually transcribe this video by watching it on YouTube. httpswww.youtube.comwatch?vNCZNV1K2Tcw 3214.587390 This video has been flagged for manual processing.",
     "metadata": {
       "video_id": "NCZNV1K2Tcw",
       "title": "0DTE SPX Option Strategy Comparison",
       "url": "https://www.youtube.com/watch?v=NCZNV1K2Tcw",
-      "upload_date": "2023-09-19T17:03:00Z",
-      "duration": "PT11M12S",
-      "channel_name": "Outlier Trading",
-      "description": "\ud83d\udca1 Join the Outlier Pro Patreon Community for weekly livestreams, private community, market & trade analysis, direct Q&A, & more. https://www.patreon.com/OutlierTrading\n\u25ba Free Guide for Beginner Options Traders. https://www.outliertrading.io/guide\n\u25ba Subscribe to the Outlier Insights Newsletter. https://outliertrading.substack.com/\n\u25ba Join the FREE Outlier Community Discord. https://discord.gg/hYGZUEJpve\n\u25ba Listen to the Outlier Podcast. https://www.youtube.com/playlist?list=PLAFDZ3YyC4rSe9h-s9XvtxktSm16-7-9L\n\u25ba Learn About Erik. https://www.outliertrading.io \u25ac AFFILIATES  \n\u25ba 50% off Options Omega Backtesting. https://optionomega.com/register/esinvests\n\u25ba 50% off ORATS Options Trading Platform, Backtesting. https://orats.com/esinvests\n\u25ba Barchart Premium - Try for Free. https://www.barchart.com/get-barchart-premier?fpr=xaiek\n\u25ba 5% off Unusual Whales Options Flow Platform. http://unusualwhales.com/referral#esinvests\n\n\u25ac VIDEO\n#optionstrading #stockmarket\n\n\nDISCLAIMER:\nThe content presented is for informational purposes only and any opinions, news, research, analyses, or other information contained in these videos are provided as general market commentary and do not constitute investment advice. esInvests, its affiliates, and employees are not responsible for any investment decisions made based on the information presented in these videos. esInvests does not guarantee the accuracy, completeness, or reliability of any information presented in these videos and is not liable for any losses or damages arising from the use of or reliance on this information. By accessing and watching these videos, viewers acknowledge and agree to these disclosures and terms of use.",
-      "content_summary": "Join the Outlier Pro Patreon Community for weekly livestreams, private community, market   trade analysis, direct Q A,   more. Free Guide for Beginner Options Traders. Subscribe to the Outlier Insi...",
+      "upload_date": "",
+      "duration": 672.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
       "chunk_index": 0,
-      "total_chunks": 11,
+      "total_chunks": 1,
       "start_timestamp": "00:00:00",
-      "start_timestamp_seconds": 0.0,
+      "start_timestamp_seconds": 0,
       "video_url_with_timestamp": "https://www.youtube.com/watch?v=NCZNV1K2Tcw&t=0"
-    }
-  },
-  {
-    "text": "is for this it's obviously not within a day it says all time and they're down 82 202 and a nickel which is essentially 100 of their account all right all right two very different experiences what's going on here well I'm gonna give you some quick excerpts from a recent video I did that really Dives deep into the world of zero DTE options and if you want to check that video out I'll throw a link to that in the notes below it's really good context this video is going to dive way more into actually analyzing individual strategies so slight different scope but what I want to show you three things quickly left hand side this essentially just means zero DTE volume is increasing exponentially this here shows you the average p l profitability of zero dte's small traders meaning mostly retail and essentially there was a period where we were doing well that starts kind of in December of 21 definitely through 2022 and then since then it's turned negative there's net and gross that means gross is obviously The Upfront returns and the net is once we induce friction commission slippage so on and so forth all I'm highlighting here is that slippage is a big deal cost is a big deal then down here we have a quick summary of the profitability of zero DTE trades and essentially it says we document that retail Traders consistently lose money especially after transaction costs which is",
-    "metadata": {
-      "video_id": "NCZNV1K2Tcw",
-      "title": "0DTE SPX Option Strategy Comparison",
-      "url": "https://www.youtube.com/watch?v=NCZNV1K2Tcw",
-      "upload_date": "2023-09-19T17:03:00Z",
-      "duration": "PT11M12S",
-      "channel_name": "Outlier Trading",
-      "description": "\ud83d\udca1 Join the Outlier Pro Patreon Community for weekly livestreams, private community, market & trade analysis, direct Q&A, & more. https://www.patreon.com/OutlierTrading\n\u25ba Free Guide for Beginner Options Traders. https://www.outliertrading.io/guide\n\u25ba Subscribe to the Outlier Insights Newsletter. https://outliertrading.substack.com/\n\u25ba Join the FREE Outlier Community Discord. https://discord.gg/hYGZUEJpve\n\u25ba Listen to the Outlier Podcast. https://www.youtube.com/playlist?list=PLAFDZ3YyC4rSe9h-s9XvtxktSm16-7-9L\n\u25ba Learn About Erik. https://www.outliertrading.io \u25ac AFFILIATES  \n\u25ba 50% off Options Omega Backtesting. https://optionomega.com/register/esinvests\n\u25ba 50% off ORATS Options Trading Platform, Backtesting. https://orats.com/esinvests\n\u25ba Barchart Premium - Try for Free. https://www.barchart.com/get-barchart-premier?fpr=xaiek\n\u25ba 5% off Unusual Whales Options Flow Platform. http://unusualwhales.com/referral#esinvests\n\n\u25ac VIDEO\n#optionstrading #stockmarket\n\n\nDISCLAIMER:\nThe content presented is for informational purposes only and any opinions, news, research, analyses, or other information contained in these videos are provided as general market commentary and do not constitute investment advice. esInvests, its affiliates, and employees are not responsible for any investment decisions made based on the information presented in these videos. esInvests does not guarantee the accuracy, completeness, or reliability of any information presented in these videos and is not liable for any losses or damages arising from the use of or reliance on this information. By accessing and watching these videos, viewers acknowledge and agree to these disclosures and terms of use.",
-      "content_summary": "Join the Outlier Pro Patreon Community for weekly livestreams, private community, market   trade analysis, direct Q A,   more. Free Guide for Beginner Options Traders. Subscribe to the Outlier Insi...",
-      "chunk_index": 1,
-      "total_chunks": 11,
-      "start_timestamp": "00:01:11",
-      "start_timestamp_seconds": 71.1,
-      "video_url_with_timestamp": "https://www.youtube.com/watch?v=NCZNV1K2Tcw&t=71"
-    }
-  },
-  {
-    "text": "forth all I'm highlighting here is that slippage is a big deal cost is a big deal then down here we have a quick summary of the profitability of zero DTE trades and essentially it says we document that retail Traders consistently lose money especially after transaction costs which is what I just showed you up here while they correctly incorporate the overall level of expensiveness of zero DTE options in their decision to buy or sell they fail to outperform the Hefty spreads what people don't realize is it's actually very expensive for us to trade these and it's because you are confused by the zero dollar commissions you think you see up front when really your game you're paying for all of that on the back end which again the zero DTE option video that I have goes through that in detail so what I want to walk through now though is actually a strategy comparison so I am affiliated with my friends over at options Omega because I think that they really give a decent platform for somebody that doesn't want to manage their own data to take a look at options they didn't sponsor this video outright I'm literally just doing it because I like to Tinker with their tool from once in a while however I do have a discount code for it if you want to sign up there's a link in the notes below for that as well but to make this a",
-    "metadata": {
-      "video_id": "NCZNV1K2Tcw",
-      "title": "0DTE SPX Option Strategy Comparison",
-      "url": "https://www.youtube.com/watch?v=NCZNV1K2Tcw",
-      "upload_date": "2023-09-19T17:03:00Z",
-      "duration": "PT11M12S",
-      "channel_name": "Outlier Trading",
-      "description": "\ud83d\udca1 Join the Outlier Pro Patreon Community for weekly livestreams, private community, market & trade analysis, direct Q&A, & more. https://www.patreon.com/OutlierTrading\n\u25ba Free Guide for Beginner Options Traders. https://www.outliertrading.io/guide\n\u25ba Subscribe to the Outlier Insights Newsletter. https://outliertrading.substack.com/\n\u25ba Join the FREE Outlier Community Discord. https://discord.gg/hYGZUEJpve\n\u25ba Listen to the Outlier Podcast. https://www.youtube.com/playlist?list=PLAFDZ3YyC4rSe9h-s9XvtxktSm16-7-9L\n\u25ba Learn About Erik. https://www.outliertrading.io \u25ac AFFILIATES  \n\u25ba 50% off Options Omega Backtesting. https://optionomega.com/register/esinvests\n\u25ba 50% off ORATS Options Trading Platform, Backtesting. https://orats.com/esinvests\n\u25ba Barchart Premium - Try for Free. https://www.barchart.com/get-barchart-premier?fpr=xaiek\n\u25ba 5% off Unusual Whales Options Flow Platform. http://unusualwhales.com/referral#esinvests\n\n\u25ac VIDEO\n#optionstrading #stockmarket\n\n\nDISCLAIMER:\nThe content presented is for informational purposes only and any opinions, news, research, analyses, or other information contained in these videos are provided as general market commentary and do not constitute investment advice. esInvests, its affiliates, and employees are not responsible for any investment decisions made based on the information presented in these videos. esInvests does not guarantee the accuracy, completeness, or reliability of any information presented in these videos and is not liable for any losses or damages arising from the use of or reliance on this information. By accessing and watching these videos, viewers acknowledge and agree to these disclosures and terms of use.",
-      "content_summary": "Join the Outlier Pro Patreon Community for weekly livestreams, private community, market   trade analysis, direct Q A,   more. Free Guide for Beginner Options Traders. Subscribe to the Outlier Insi...",
-      "chunk_index": 2,
-      "total_chunks": 11,
-      "start_timestamp": "00:02:24",
-      "start_timestamp_seconds": 144.96,
-      "video_url_with_timestamp": "https://www.youtube.com/watch?v=NCZNV1K2Tcw&t=144"
-    }
-  },
-  {
-    "text": "outright I'm literally just doing it because I like to Tinker with their tool from once in a while however I do have a discount code for it if you want to sign up there's a link in the notes below for that as well but to make this a little more easily consumable as compared to showing you a bunch of these individual kind of screenshots I'm going to show you kind of um some synopsis data that I threw into a Google sheet so what we're looking at is a 100 000 prospective portfolio we're doing one Lots in SPX and we're doing short this shouldn't be strangle actually this should be straddle that's the wrong word we're doing short straddles so 50 Delta call 50 Delta put and this top analysis is looking from one Jan 2021 to 19 Aug 2023 however we have a second analysis that has even better results than this one and I want to talk to you about why that is but first let's take a look at our initial results so the well that just got rid of everything that didn't look at nothing did it yes it did so the very top line you see here is the entry time these are all zero DTE and we have profit Loss Management this is where we're expecting to manage the trade and then we have different trade metrics over here now the very top line here is simply expiration this means",
-    "metadata": {
-      "video_id": "NCZNV1K2Tcw",
-      "title": "0DTE SPX Option Strategy Comparison",
-      "url": "https://www.youtube.com/watch?v=NCZNV1K2Tcw",
-      "upload_date": "2023-09-19T17:03:00Z",
-      "duration": "PT11M12S",
-      "channel_name": "Outlier Trading",
-      "description": "\ud83d\udca1 Join the Outlier Pro Patreon Community for weekly livestreams, private community, market & trade analysis, direct Q&A, & more. https://www.patreon.com/OutlierTrading\n\u25ba Free Guide for Beginner Options Traders. https://www.outliertrading.io/guide\n\u25ba Subscribe to the Outlier Insights Newsletter. https://outliertrading.substack.com/\n\u25ba Join the FREE Outlier Community Discord. https://discord.gg/hYGZUEJpve\n\u25ba Listen to the Outlier Podcast. https://www.youtube.com/playlist?list=PLAFDZ3YyC4rSe9h-s9XvtxktSm16-7-9L\n\u25ba Learn About Erik. https://www.outliertrading.io \u25ac AFFILIATES  \n\u25ba 50% off Options Omega Backtesting. https://optionomega.com/register/esinvests\n\u25ba 50% off ORATS Options Trading Platform, Backtesting. https://orats.com/esinvests\n\u25ba Barchart Premium - Try for Free. https://www.barchart.com/get-barchart-premier?fpr=xaiek\n\u25ba 5% off Unusual Whales Options Flow Platform. http://unusualwhales.com/referral#esinvests\n\n\u25ac VIDEO\n#optionstrading #stockmarket\n\n\nDISCLAIMER:\nThe content presented is for informational purposes only and any opinions, news, research, analyses, or other information contained in these videos are provided as general market commentary and do not constitute investment advice. esInvests, its affiliates, and employees are not responsible for any investment decisions made based on the information presented in these videos. esInvests does not guarantee the accuracy, completeness, or reliability of any information presented in these videos and is not liable for any losses or damages arising from the use of or reliance on this information. By accessing and watching these videos, viewers acknowledge and agree to these disclosures and terms of use.",
-      "content_summary": "Join the Outlier Pro Patreon Community for weekly livestreams, private community, market   trade analysis, direct Q A,   more. Free Guide for Beginner Options Traders. Subscribe to the Outlier Insi...",
-      "chunk_index": 3,
-      "total_chunks": 11,
-      "start_timestamp": "00:03:24",
-      "start_timestamp_seconds": 204.24,
-      "video_url_with_timestamp": "https://www.youtube.com/watch?v=NCZNV1K2Tcw&t=204"
-    }
-  },
-  {
-    "text": "very top line you see here is the entry time these are all zero DTE and we have profit Loss Management this is where we're expecting to manage the trade and then we have different trade metrics over here now the very top line here is simply expiration this means we're not applying any profit or Loss Management we're putting on the trade letting it expire the p l of that is negative 46 000 again from 21 2021 to 2023. the compound annual growth rate negative 21 you can kind of get through the rest of the detail on yourself but a couple of things that we really want to key into to obviously p l kagger drawdown win rate is less important which you'll kind of find out in a little bit but we definitely like average p l so not doing anything clearly was not successful over this time frame okay then I started isolating looking at the profit side or the Lost side or a combination thereof so if we managed at 25 50 and 75 percent max profit these are your results and you'll notice that the only profitable outcome here was managing profits at 25 percent again that's leaving losses to their own devices letting them run wherever they're going to be this is an important note that will carry over as we move into the next segment of data which is now looking at the loss side so in these next couple scenarios",
-    "metadata": {
-      "video_id": "NCZNV1K2Tcw",
-      "title": "0DTE SPX Option Strategy Comparison",
-      "url": "https://www.youtube.com/watch?v=NCZNV1K2Tcw",
-      "upload_date": "2023-09-19T17:03:00Z",
-      "duration": "PT11M12S",
-      "channel_name": "Outlier Trading",
-      "description": "\ud83d\udca1 Join the Outlier Pro Patreon Community for weekly livestreams, private community, market & trade analysis, direct Q&A, & more. https://www.patreon.com/OutlierTrading\n\u25ba Free Guide for Beginner Options Traders. https://www.outliertrading.io/guide\n\u25ba Subscribe to the Outlier Insights Newsletter. https://outliertrading.substack.com/\n\u25ba Join the FREE Outlier Community Discord. https://discord.gg/hYGZUEJpve\n\u25ba Listen to the Outlier Podcast. https://www.youtube.com/playlist?list=PLAFDZ3YyC4rSe9h-s9XvtxktSm16-7-9L\n\u25ba Learn About Erik. https://www.outliertrading.io \u25ac AFFILIATES  \n\u25ba 50% off Options Omega Backtesting. https://optionomega.com/register/esinvests\n\u25ba 50% off ORATS Options Trading Platform, Backtesting. https://orats.com/esinvests\n\u25ba Barchart Premium - Try for Free. https://www.barchart.com/get-barchart-premier?fpr=xaiek\n\u25ba 5% off Unusual Whales Options Flow Platform. http://unusualwhales.com/referral#esinvests\n\n\u25ac VIDEO\n#optionstrading #stockmarket\n\n\nDISCLAIMER:\nThe content presented is for informational purposes only and any opinions, news, research, analyses, or other information contained in these videos are provided as general market commentary and do not constitute investment advice. esInvests, its affiliates, and employees are not responsible for any investment decisions made based on the information presented in these videos. esInvests does not guarantee the accuracy, completeness, or reliability of any information presented in these videos and is not liable for any losses or damages arising from the use of or reliance on this information. By accessing and watching these videos, viewers acknowledge and agree to these disclosures and terms of use.",
-      "content_summary": "Join the Outlier Pro Patreon Community for weekly livestreams, private community, market   trade analysis, direct Q A,   more. Free Guide for Beginner Options Traders. Subscribe to the Outlier Insi...",
-      "chunk_index": 4,
-      "total_chunks": 11,
-      "start_timestamp": "00:04:24",
-      "start_timestamp_seconds": 264.9,
-      "video_url_with_timestamp": "https://www.youtube.com/watch?v=NCZNV1K2Tcw&t=264"
-    }
-  },
-  {
-    "text": "25 percent again that's leaving losses to their own devices letting them run wherever they're going to be this is an important note that will carry over as we move into the next segment of data which is now looking at the loss side so in these next couple scenarios we're leaving the profits to their own meaning we're not managing those but we are managing at 25 50 and 75 percent max profit and you can see here here that if we're managing losses at 25 percent max loss that that actually was the best overall p l for this scenario up top here and we saw a 14 kagger in 18.9 drawdown Max a 34 or I'm sorry 37.8 win rate so overall pretty insignificant win rate and this means we're taking a lot of small losing trades so the average p l although it's positive it's not super impressive here but the average wins are given room to run the losses are managed pretty carefully then I want to show you this next bucket 25 managed at profit 25 managed at loss essentially what I did to test this is I just took the best of both scenarios I said okay 25 Max profit did the best on the profit side 25 Max loss did the best on Lost side how does this do and arguably this low looks pretty good compared to the rest Although our p l is slightly less as well as her kagger",
-    "metadata": {
-      "video_id": "NCZNV1K2Tcw",
-      "title": "0DTE SPX Option Strategy Comparison",
-      "url": "https://www.youtube.com/watch?v=NCZNV1K2Tcw",
-      "upload_date": "2023-09-19T17:03:00Z",
-      "duration": "PT11M12S",
-      "channel_name": "Outlier Trading",
-      "description": "\ud83d\udca1 Join the Outlier Pro Patreon Community for weekly livestreams, private community, market & trade analysis, direct Q&A, & more. https://www.patreon.com/OutlierTrading\n\u25ba Free Guide for Beginner Options Traders. https://www.outliertrading.io/guide\n\u25ba Subscribe to the Outlier Insights Newsletter. https://outliertrading.substack.com/\n\u25ba Join the FREE Outlier Community Discord. https://discord.gg/hYGZUEJpve\n\u25ba Listen to the Outlier Podcast. https://www.youtube.com/playlist?list=PLAFDZ3YyC4rSe9h-s9XvtxktSm16-7-9L\n\u25ba Learn About Erik. https://www.outliertrading.io \u25ac AFFILIATES  \n\u25ba 50% off Options Omega Backtesting. https://optionomega.com/register/esinvests\n\u25ba 50% off ORATS Options Trading Platform, Backtesting. https://orats.com/esinvests\n\u25ba Barchart Premium - Try for Free. https://www.barchart.com/get-barchart-premier?fpr=xaiek\n\u25ba 5% off Unusual Whales Options Flow Platform. http://unusualwhales.com/referral#esinvests\n\n\u25ac VIDEO\n#optionstrading #stockmarket\n\n\nDISCLAIMER:\nThe content presented is for informational purposes only and any opinions, news, research, analyses, or other information contained in these videos are provided as general market commentary and do not constitute investment advice. esInvests, its affiliates, and employees are not responsible for any investment decisions made based on the information presented in these videos. esInvests does not guarantee the accuracy, completeness, or reliability of any information presented in these videos and is not liable for any losses or damages arising from the use of or reliance on this information. By accessing and watching these videos, viewers acknowledge and agree to these disclosures and terms of use.",
-      "content_summary": "Join the Outlier Pro Patreon Community for weekly livestreams, private community, market   trade analysis, direct Q A,   more. Free Guide for Beginner Options Traders. Subscribe to the Outlier Insi...",
-      "chunk_index": 5,
-      "total_chunks": 11,
-      "start_timestamp": "00:05:28",
-      "start_timestamp_seconds": 328.68,
-      "video_url_with_timestamp": "https://www.youtube.com/watch?v=NCZNV1K2Tcw&t=328"
-    }
-  },
-  {
-    "text": "scenarios I said okay 25 Max profit did the best on the profit side 25 Max loss did the best on Lost side how does this do and arguably this low looks pretty good compared to the rest Although our p l is slightly less as well as her kagger our Max drawdown is much less this serves as a jump point for other analysis which I'll get into in just a little bit on how we can think about this information but before that if any of this shocks you let me know in the comments below because there's actually a couple things here that did surprise me genuinely and one of which is I was surprised that letting the profits run more actually hurt us so bad which it's also important to take into account the market conditions that we were seeing in 2021 to 2023 but still nonetheless volatility is kind of an important input here and as you could tell I'm obviously doing this video shirtless so my zero DTE trades are forcing me to start in only fans page which that's not going well either so hard to figure out my next thing maybe that Wendy's dumpster with all the other Wall Street bets degenerates is on my to-do list however the main point here is this over overall didn't perform as well as I thought it would I really thought that this would have worked better as a typical strategy here and the last",
-    "metadata": {
-      "video_id": "NCZNV1K2Tcw",
-      "title": "0DTE SPX Option Strategy Comparison",
-      "url": "https://www.youtube.com/watch?v=NCZNV1K2Tcw",
-      "upload_date": "2023-09-19T17:03:00Z",
-      "duration": "PT11M12S",
-      "channel_name": "Outlier Trading",
-      "description": "\ud83d\udca1 Join the Outlier Pro Patreon Community for weekly livestreams, private community, market & trade analysis, direct Q&A, & more. https://www.patreon.com/OutlierTrading\n\u25ba Free Guide for Beginner Options Traders. https://www.outliertrading.io/guide\n\u25ba Subscribe to the Outlier Insights Newsletter. https://outliertrading.substack.com/\n\u25ba Join the FREE Outlier Community Discord. https://discord.gg/hYGZUEJpve\n\u25ba Listen to the Outlier Podcast. https://www.youtube.com/playlist?list=PLAFDZ3YyC4rSe9h-s9XvtxktSm16-7-9L\n\u25ba Learn About Erik. https://www.outliertrading.io \u25ac AFFILIATES  \n\u25ba 50% off Options Omega Backtesting. https://optionomega.com/register/esinvests\n\u25ba 50% off ORATS Options Trading Platform, Backtesting. https://orats.com/esinvests\n\u25ba Barchart Premium - Try for Free. https://www.barchart.com/get-barchart-premier?fpr=xaiek\n\u25ba 5% off Unusual Whales Options Flow Platform. http://unusualwhales.com/referral#esinvests\n\n\u25ac VIDEO\n#optionstrading #stockmarket\n\n\nDISCLAIMER:\nThe content presented is for informational purposes only and any opinions, news, research, analyses, or other information contained in these videos are provided as general market commentary and do not constitute investment advice. esInvests, its affiliates, and employees are not responsible for any investment decisions made based on the information presented in these videos. esInvests does not guarantee the accuracy, completeness, or reliability of any information presented in these videos and is not liable for any losses or damages arising from the use of or reliance on this information. By accessing and watching these videos, viewers acknowledge and agree to these disclosures and terms of use.",
-      "content_summary": "Join the Outlier Pro Patreon Community for weekly livestreams, private community, market   trade analysis, direct Q A,   more. Free Guide for Beginner Options Traders. Subscribe to the Outlier Insi...",
-      "chunk_index": 6,
-      "total_chunks": 11,
-      "start_timestamp": "00:06:46",
-      "start_timestamp_seconds": 406.8,
-      "video_url_with_timestamp": "https://www.youtube.com/watch?v=NCZNV1K2Tcw&t=406"
-    }
-  },
-  {
-    "text": "Wendy's dumpster with all the other Wall Street bets degenerates is on my to-do list however the main point here is this over overall didn't perform as well as I thought it would I really thought that this would have worked better as a typical strategy here and the last thing I want to show you in this bucket is this which is just managing it one hour so I just picked a random time frame as compared to any sort of percent p l and that did not do super well so there's a bunch of reasons why this is the case and there's actually some really interesting further analysis that I'm gonna overlay on this if you guys are interested if the video gets enough likes then I will happily continue to build this out with more and more data specifically using the options Omega stuff because you guys can replicate that you got me but some of this aligns neatly with my own data set but I like also integrating some of these random stuff that I actually don't use in my data set like our management but there was nothing too noteworthy here now what I want to take a look at though is kind of this next bucket instead of going from one Jan 2021 to 19 August 2023 this looks at 13 May 2022 to 19 August 2023. what's the difference here this is actually when daily expirations and SPX were launched well actually",
-    "metadata": {
-      "video_id": "NCZNV1K2Tcw",
-      "title": "0DTE SPX Option Strategy Comparison",
-      "url": "https://www.youtube.com/watch?v=NCZNV1K2Tcw",
-      "upload_date": "2023-09-19T17:03:00Z",
-      "duration": "PT11M12S",
-      "channel_name": "Outlier Trading",
-      "description": "\ud83d\udca1 Join the Outlier Pro Patreon Community for weekly livestreams, private community, market & trade analysis, direct Q&A, & more. https://www.patreon.com/OutlierTrading\n\u25ba Free Guide for Beginner Options Traders. https://www.outliertrading.io/guide\n\u25ba Subscribe to the Outlier Insights Newsletter. https://outliertrading.substack.com/\n\u25ba Join the FREE Outlier Community Discord. https://discord.gg/hYGZUEJpve\n\u25ba Listen to the Outlier Podcast. https://www.youtube.com/playlist?list=PLAFDZ3YyC4rSe9h-s9XvtxktSm16-7-9L\n\u25ba Learn About Erik. https://www.outliertrading.io \u25ac AFFILIATES  \n\u25ba 50% off Options Omega Backtesting. https://optionomega.com/register/esinvests\n\u25ba 50% off ORATS Options Trading Platform, Backtesting. https://orats.com/esinvests\n\u25ba Barchart Premium - Try for Free. https://www.barchart.com/get-barchart-premier?fpr=xaiek\n\u25ba 5% off Unusual Whales Options Flow Platform. http://unusualwhales.com/referral#esinvests\n\n\u25ac VIDEO\n#optionstrading #stockmarket\n\n\nDISCLAIMER:\nThe content presented is for informational purposes only and any opinions, news, research, analyses, or other information contained in these videos are provided as general market commentary and do not constitute investment advice. esInvests, its affiliates, and employees are not responsible for any investment decisions made based on the information presented in these videos. esInvests does not guarantee the accuracy, completeness, or reliability of any information presented in these videos and is not liable for any losses or damages arising from the use of or reliance on this information. By accessing and watching these videos, viewers acknowledge and agree to these disclosures and terms of use.",
-      "content_summary": "Join the Outlier Pro Patreon Community for weekly livestreams, private community, market   trade analysis, direct Q A,   more. Free Guide for Beginner Options Traders. Subscribe to the Outlier Insi...",
-      "chunk_index": 7,
-      "total_chunks": 11,
-      "start_timestamp": "00:07:51",
-      "start_timestamp_seconds": 471.36,
-      "video_url_with_timestamp": "https://www.youtube.com/watch?v=NCZNV1K2Tcw&t=471"
-    }
-  },
-  {
-    "text": "want to take a look at though is kind of this next bucket instead of going from one Jan 2021 to 19 August 2023 this looks at 13 May 2022 to 19 August 2023. what's the difference here this is actually when daily expirations and SPX were launched well actually technically it was the 11th of May but I did the 13th just to give it a couple days for the liquidity to find itself and notice how much better the performance of nearly all of these buckets are even though some of these have lower P L's look at the max drawdowns in comparison if I take a look at the same exact Top Line trade here where we just put on the short straddle and let it go and do nothing in that scenario we're not only positive but our Max drawdown is only 17.6 so the drawdowns here are much less part of this is because of the time frame the market in 2022 the tail half was pretty strong it stopped going through its you know overall aggressive adjustment phase but the other thing is we now have a lot of occurrences whereas in this case before every single day there was an expiration we were tailored to a smaller data set relative to the time span we were in so a couple other things I want to highlight here quickly managing the loss in all of these scenarios is clearly important the best compound annual",
-    "metadata": {
-      "video_id": "NCZNV1K2Tcw",
-      "title": "0DTE SPX Option Strategy Comparison",
-      "url": "https://www.youtube.com/watch?v=NCZNV1K2Tcw",
-      "upload_date": "2023-09-19T17:03:00Z",
-      "duration": "PT11M12S",
-      "channel_name": "Outlier Trading",
-      "description": "\ud83d\udca1 Join the Outlier Pro Patreon Community for weekly livestreams, private community, market & trade analysis, direct Q&A, & more. https://www.patreon.com/OutlierTrading\n\u25ba Free Guide for Beginner Options Traders. https://www.outliertrading.io/guide\n\u25ba Subscribe to the Outlier Insights Newsletter. https://outliertrading.substack.com/\n\u25ba Join the FREE Outlier Community Discord. https://discord.gg/hYGZUEJpve\n\u25ba Listen to the Outlier Podcast. https://www.youtube.com/playlist?list=PLAFDZ3YyC4rSe9h-s9XvtxktSm16-7-9L\n\u25ba Learn About Erik. https://www.outliertrading.io \u25ac AFFILIATES  \n\u25ba 50% off Options Omega Backtesting. https://optionomega.com/register/esinvests\n\u25ba 50% off ORATS Options Trading Platform, Backtesting. https://orats.com/esinvests\n\u25ba Barchart Premium - Try for Free. https://www.barchart.com/get-barchart-premier?fpr=xaiek\n\u25ba 5% off Unusual Whales Options Flow Platform. http://unusualwhales.com/referral#esinvests\n\n\u25ac VIDEO\n#optionstrading #stockmarket\n\n\nDISCLAIMER:\nThe content presented is for informational purposes only and any opinions, news, research, analyses, or other information contained in these videos are provided as general market commentary and do not constitute investment advice. esInvests, its affiliates, and employees are not responsible for any investment decisions made based on the information presented in these videos. esInvests does not guarantee the accuracy, completeness, or reliability of any information presented in these videos and is not liable for any losses or damages arising from the use of or reliance on this information. By accessing and watching these videos, viewers acknowledge and agree to these disclosures and terms of use.",
-      "content_summary": "Join the Outlier Pro Patreon Community for weekly livestreams, private community, market   trade analysis, direct Q A,   more. Free Guide for Beginner Options Traders. Subscribe to the Outlier Insi...",
-      "chunk_index": 8,
-      "total_chunks": 11,
-      "start_timestamp": "00:08:53",
-      "start_timestamp_seconds": 533.34,
-      "video_url_with_timestamp": "https://www.youtube.com/watch?v=NCZNV1K2Tcw&t=533"
-    }
-  },
-  {
-    "text": "before every single day there was an expiration we were tailored to a smaller data set relative to the time span we were in so a couple other things I want to highlight here quickly managing the loss in all of these scenarios is clearly important the best compound annual growth rates you see in all of these different scenarios comes with loss management now in the future I will show you a much better way to manage losses than using a stop the problem with using stops in stuff like this is the market moves around and a lot of times you actually get kicked out of of a trade that otherwise comes back into profit and that's not good so we want to talk about things like iron flies next if you're interested in trading these with a smaller account so that we can avoid using stops where we can but that will be in the next video so if you have any questions comments concerns throw them in the comments below let me know what you thought if this kind of information is helpful for you and if it is we can talk about some other things to do in the future be an outlier I'll see you guys later",
-    "metadata": {
-      "video_id": "NCZNV1K2Tcw",
-      "title": "0DTE SPX Option Strategy Comparison",
-      "url": "https://www.youtube.com/watch?v=NCZNV1K2Tcw",
-      "upload_date": "2023-09-19T17:03:00Z",
-      "duration": "PT11M12S",
-      "channel_name": "Outlier Trading",
-      "description": "\ud83d\udca1 Join the Outlier Pro Patreon Community for weekly livestreams, private community, market & trade analysis, direct Q&A, & more. https://www.patreon.com/OutlierTrading\n\u25ba Free Guide for Beginner Options Traders. https://www.outliertrading.io/guide\n\u25ba Subscribe to the Outlier Insights Newsletter. https://outliertrading.substack.com/\n\u25ba Join the FREE Outlier Community Discord. https://discord.gg/hYGZUEJpve\n\u25ba Listen to the Outlier Podcast. https://www.youtube.com/playlist?list=PLAFDZ3YyC4rSe9h-s9XvtxktSm16-7-9L\n\u25ba Learn About Erik. https://www.outliertrading.io \u25ac AFFILIATES  \n\u25ba 50% off Options Omega Backtesting. https://optionomega.com/register/esinvests\n\u25ba 50% off ORATS Options Trading Platform, Backtesting. https://orats.com/esinvests\n\u25ba Barchart Premium - Try for Free. https://www.barchart.com/get-barchart-premier?fpr=xaiek\n\u25ba 5% off Unusual Whales Options Flow Platform. http://unusualwhales.com/referral#esinvests\n\n\u25ac VIDEO\n#optionstrading #stockmarket\n\n\nDISCLAIMER:\nThe content presented is for informational purposes only and any opinions, news, research, analyses, or other information contained in these videos are provided as general market commentary and do not constitute investment advice. esInvests, its affiliates, and employees are not responsible for any investment decisions made based on the information presented in these videos. esInvests does not guarantee the accuracy, completeness, or reliability of any information presented in these videos and is not liable for any losses or damages arising from the use of or reliance on this information. By accessing and watching these videos, viewers acknowledge and agree to these disclosures and terms of use.",
-      "content_summary": "Join the Outlier Pro Patreon Community for weekly livestreams, private community, market   trade analysis, direct Q A,   more. Free Guide for Beginner Options Traders. Subscribe to the Outlier Insi...",
-      "chunk_index": 9,
-      "total_chunks": 11,
-      "start_timestamp": "00:10:04",
-      "start_timestamp_seconds": 604.14,
-      "video_url_with_timestamp": "https://www.youtube.com/watch?v=NCZNV1K2Tcw&t=604"
-    }
-  },
-  {
-    "text": "to do in the future be an outlier I'll see you guys later",
-    "metadata": {
-      "video_id": "NCZNV1K2Tcw",
-      "title": "0DTE SPX Option Strategy Comparison",
-      "url": "https://www.youtube.com/watch?v=NCZNV1K2Tcw",
-      "upload_date": "2023-09-19T17:03:00Z",
-      "duration": "PT11M12S",
-      "channel_name": "Outlier Trading",
-      "description": "\ud83d\udca1 Join the Outlier Pro Patreon Community for weekly livestreams, private community, market & trade analysis, direct Q&A, & more. https://www.patreon.com/OutlierTrading\n\u25ba Free Guide for Beginner Options Traders. https://www.outliertrading.io/guide\n\u25ba Subscribe to the Outlier Insights Newsletter. https://outliertrading.substack.com/\n\u25ba Join the FREE Outlier Community Discord. https://discord.gg/hYGZUEJpve\n\u25ba Listen to the Outlier Podcast. https://www.youtube.com/playlist?list=PLAFDZ3YyC4rSe9h-s9XvtxktSm16-7-9L\n\u25ba Learn About Erik. https://www.outliertrading.io \u25ac AFFILIATES  \n\u25ba 50% off Options Omega Backtesting. https://optionomega.com/register/esinvests\n\u25ba 50% off ORATS Options Trading Platform, Backtesting. https://orats.com/esinvests\n\u25ba Barchart Premium - Try for Free. https://www.barchart.com/get-barchart-premier?fpr=xaiek\n\u25ba 5% off Unusual Whales Options Flow Platform. http://unusualwhales.com/referral#esinvests\n\n\u25ac VIDEO\n#optionstrading #stockmarket\n\n\nDISCLAIMER:\nThe content presented is for informational purposes only and any opinions, news, research, analyses, or other information contained in these videos are provided as general market commentary and do not constitute investment advice. esInvests, its affiliates, and employees are not responsible for any investment decisions made based on the information presented in these videos. esInvests does not guarantee the accuracy, completeness, or reliability of any information presented in these videos and is not liable for any losses or damages arising from the use of or reliance on this information. By accessing and watching these videos, viewers acknowledge and agree to these disclosures and terms of use.",
-      "content_summary": "Join the Outlier Pro Patreon Community for weekly livestreams, private community, market   trade analysis, direct Q A,   more. Free Guide for Beginner Options Traders. Subscribe to the Outlier Insi...",
-      "chunk_index": 10,
-      "total_chunks": 11,
-      "start_timestamp": "00:11:08",
-      "start_timestamp_seconds": 668.46,
-      "video_url_with_timestamp": "https://www.youtube.com/watch?v=NCZNV1K2Tcw&t=668"
     }
   }
 ]

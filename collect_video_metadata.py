@@ -7,15 +7,18 @@ from dotenv import load_dotenv
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 import re
+from pipeline_config import (
+    VIDEOS_JSON, METADATA_JSON, TRANSCRIPT_DIR, 
+    CHANNEL_URLS, YOUTUBE_API_KEY
+)
 
 # Load environment variables from .env file
 load_dotenv()
 
-# Configuration variables
-INPUT_JSON = 'outlier_trading_videos.json'  # Changed from CSV to JSON
-OUTPUT_JSON = 'outlier_trading_videos_metadata.json'
-TRANSCRIPT_DIR = 'transcripts'
-API_KEY = os.getenv('YOUTUBE_API_KEY')  # Load from .env file
+# Configuration variables (using centralized config)
+INPUT_JSON = VIDEOS_JSON
+OUTPUT_JSON = METADATA_JSON
+API_KEY = YOUTUBE_API_KEY
 
 def extract_video_id(url):
     """Extract video ID from YouTube URL."""
@@ -246,13 +249,8 @@ def find_missing_transcripts(videos_data, transcript_dir="transcripts"):
     return missing_transcripts
 
 def main():
-    # Channel URLs
-    channel_urls = [
-        "https://www.youtube.com/@OutlierTrading/videos",
-        "https://www.youtube.com/@OutlierTrading/shorts",
-        "https://www.youtube.com/@OutlierTrading/streams",
-        "https://www.youtube.com/@OutlierTrading/podcasts"
-    ]
+    # Use centralized channel URLs from configuration
+    channel_urls = CHANNEL_URLS
     
     # Get all videos from channel
     print("Fetching all channel videos...")
