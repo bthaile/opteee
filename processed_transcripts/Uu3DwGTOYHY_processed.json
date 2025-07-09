@@ -1,6 +1,6 @@
 [
   {
-    "text": "DOWNLOAD FAILED Could not access the original audio for this video This transcript is a placeholder because YouTube blocked all download attempts. You may need to manually transcribe this video by watching it on YouTube. httpswww.youtube.comwatch?vUu3DwGTOYHY 3521.762625 This video has been flagged for manual processing.",
+    "text": "What's up to all the outliers, Eric here. I got a video for you on using implied volatility in your options trading. And then I also have a couple interesting uses that you might not know of for implied volatility. So let's dive straight over and get into it. Now the very first thing is you have to promise me when I start flashing this first piece up that you're not immediately gonna run away because it does include a formula, but you have to trust me. We'll get through it. I'm not gonna spend a bunch of time on the formula. I just wanna talk about implied volatility, implied volatility percentile and implied volatility rank because traders use all of them interchangeably and they're all different. So it's important to understand the difference between them because in my opinion, one of them is far more useful than the other two. So first, let's start with the heavier one. Again, don't let the formula scare you, stand your ground. There it is. It's actually not that bad. So if you're familiar with the black shul's model, that's what you're seeing here. We're looking at how you calculate implied volatility for calls and puts. Again, I'm not gonna go too far in detail here. I'm just throwing it in there for the people that are interested in it. Now, that part aside, let's take a look at what implied volatility is. In short, it simply is a forward looking projection. So",
     "metadata": {
       "video_id": "Uu3DwGTOYHY",
       "title": "Implied Volatility Rank (IVR) vs Implied Volatility Percentile (IVP)",
@@ -11,7 +11,169 @@
       "description": "",
       "content_summary": "",
       "chunk_index": 0,
-      "total_chunks": 1,
+      "total_chunks": 10,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Uu3DwGTOYHY&t=0"
+    }
+  },
+  {
+    "text": "calls and puts. Again, I'm not gonna go too far in detail here. I'm just throwing it in there for the people that are interested in it. Now, that part aside, let's take a look at what implied volatility is. In short, it simply is a forward looking projection. So it is when the market attempts to forecast the future. We wanna know how much variance we expect to see in the price of an underlying. That's all implied volatility is. Implied meaning forward looking. It's a projection, which is different than historical volatility, which is, as you guessed, previous in nature. It is what actually happened. So when we're trading options, we really care about implied volatility. Now, there is an argument to be made in one of my favorite strategies, actually, is to track the historic variation between implied volatility and historic volatility to see how over-understated it is. That's actually a very useful metric. But that part aside, for options trading, implied volatility is really the main show in town. Otherwise, historic volatility really applies more to the underlying itself, the stock, not so much for options. Okay, so now that we know what implied volatility is, why do we care about implied volatility percentile or implied volatility rank? Well, as a raw number, implied volatility can be very misleading. And I will show you an example right now. Let's take a look at HUT, which is HUT 8 mining corp, and a stock that is absolutely",
+    "metadata": {
+      "video_id": "Uu3DwGTOYHY",
+      "title": "Implied Volatility Rank (IVR) vs Implied Volatility Percentile (IVP)",
+      "url": "https://www.youtube.com/watch?v=Uu3DwGTOYHY",
+      "upload_date": "",
+      "duration": 794.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 1,
+      "total_chunks": 10,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Uu3DwGTOYHY&t=0"
+    }
+  },
+  {
+    "text": "why do we care about implied volatility percentile or implied volatility rank? Well, as a raw number, implied volatility can be very misleading. And I will show you an example right now. Let's take a look at HUT, which is HUT 8 mining corp, and a stock that is absolutely given me the hardest time. But anyways, the implied volatility in here is 490.17. 490.17 is that high or is that low? It might seem high because it's a high number, but is this actually high for HUT? If we look at implied volatility by itself, it's very difficult to answer that question. Let's switch over to Apple. Apple's implied volatility is 46.08. Again, I ask the same question. Is that high or is that low relative for Apple? When we're looking at Apple at that point in time, do we know if premiums are juiced up because implied volatility is high or because implied volatility is low? You can't really tell with implied volatility. That's exactly what I'm kind of explaining here. When we look at implied volatility as a raw figure, it's not that useful because it doesn't really give you any context. You can have a stock like HUT that maintains implied volatility that's in the hundreds over periods of time. It's very normal for HUT, whereas Apple is a little bit different. So we use things like implied volatility percentile and implied volatility rank to give us context. Now, what's the difference between the two? And",
+    "metadata": {
+      "video_id": "Uu3DwGTOYHY",
+      "title": "Implied Volatility Rank (IVR) vs Implied Volatility Percentile (IVP)",
+      "url": "https://www.youtube.com/watch?v=Uu3DwGTOYHY",
+      "upload_date": "",
+      "duration": 794.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 2,
+      "total_chunks": 10,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Uu3DwGTOYHY&t=0"
+    }
+  },
+  {
+    "text": "like HUT that maintains implied volatility that's in the hundreds over periods of time. It's very normal for HUT, whereas Apple is a little bit different. So we use things like implied volatility percentile and implied volatility rank to give us context. Now, what's the difference between the two? And which one is better, most importantly, the difference is in the way that they're calculated. Which one is better in my opinion is very simple. It is implied volatility percentile hands down. Let's find out why. Implied volatility percentile simply takes the number of trading days below the current IV and it divides it by 252. So it gives you a scale of how many days were below the current implied volatility over a year essentially. When we look at implied volatility rank, it is the current implied volatility minus the 52-week IV low divided by the 52-week IV high minus the 52-week IV low. What are you seeing in the difference between these two formulas? And I give you a pretty big hint here. It is this right here. IV rank exposes you to extreme outlier skew. Now, this isn't that prevalent when the markets are relatively stable or going through a correction like we are right now. Today is the 11th of May. Now, during the COVID drop, after we experienced the COVID drop and we had implied volatility run to essentially levels that a lot of stocks hadn't seen in literally a decade plus, that movement skewed",
+    "metadata": {
+      "video_id": "Uu3DwGTOYHY",
+      "title": "Implied Volatility Rank (IVR) vs Implied Volatility Percentile (IVP)",
+      "url": "https://www.youtube.com/watch?v=Uu3DwGTOYHY",
+      "upload_date": "",
+      "duration": 794.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 3,
+      "total_chunks": 10,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Uu3DwGTOYHY&t=0"
+    }
+  },
+  {
+    "text": "going through a correction like we are right now. Today is the 11th of May. Now, during the COVID drop, after we experienced the COVID drop and we had implied volatility run to essentially levels that a lot of stocks hadn't seen in literally a decade plus, that movement skewed IV rank for an extended period of time because that 52-week IV high hung out there until 52 weeks rolled by and that data was completely clear down of the calculation. So implied volatility rank is definitely more susceptible to skew. Implied volatility percentile, much less prone to experiencing that same skew. So now, I hope we have a general understanding of implied volatility, implied volatility percentile, tough one there, and then implied volatility rank. Now, let's talk about some of the uses for implied volatility, which I will refer to again, just like is every other trader, is whichever one we're looking at. So we can use implied volatility to gauge sentiment as well and most importantly, in my opinion, for strategy selection. Let's look at it an example, gauge sentiment. Now, if knowing what we know now, we come over here and we say, okay, the implied volatility percentile in the apple is 46. The implied volatility percentile, which this is wrong, this is implied volatility rank, think or swim flags this wrong, very frustrating, but it's saying that implied volatility, current implied volatility rank is 77. If we want to know the implied volatility percentile, what that",
+    "metadata": {
+      "video_id": "Uu3DwGTOYHY",
+      "title": "Implied Volatility Rank (IVR) vs Implied Volatility Percentile (IVP)",
+      "url": "https://www.youtube.com/watch?v=Uu3DwGTOYHY",
+      "upload_date": "",
+      "duration": 794.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 4,
+      "total_chunks": 10,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Uu3DwGTOYHY&t=0"
+    }
+  },
+  {
+    "text": "percentile in the apple is 46. The implied volatility percentile, which this is wrong, this is implied volatility rank, think or swim flags this wrong, very frustrating, but it's saying that implied volatility, current implied volatility rank is 77. If we want to know the implied volatility percentile, what that actually is, I use a think script so that I can see it. And you can see the delta between the two even now. Implied volatility rank 77, implied volatility percentile 98, very different. So anyways, now we look at apple and we can gain some pretty helpful information. If we're looking at strategy selection, we can immediately use things like implied volatility percentile, actual implied volatility percentile, that's my preference, IVP. We can use that to inform how we want to play something. For example, if I wanted to play apple to the upside here, I'm bullish. I can let's pick two traits. I can either buy a call or I can sell a put. How do I decide between the two other than the structural differences between the trade? The main difference differentiator for me is actually implied volatility percentile because if we buy a call and implied volatility contracts, that hurts the call. It means that we need to be even more directionally correct in order to make money. Implied volatility directly impacts the premium of options. As implied volatility increases, premiums increase, as implied volatility decreases, premiums decrease. So with that known, if I see something",
+    "metadata": {
+      "video_id": "Uu3DwGTOYHY",
+      "title": "Implied Volatility Rank (IVR) vs Implied Volatility Percentile (IVP)",
+      "url": "https://www.youtube.com/watch?v=Uu3DwGTOYHY",
+      "upload_date": "",
+      "duration": 794.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 5,
+      "total_chunks": 10,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Uu3DwGTOYHY&t=0"
+    }
+  },
+  {
+    "text": "volatility contracts, that hurts the call. It means that we need to be even more directionally correct in order to make money. Implied volatility directly impacts the premium of options. As implied volatility increases, premiums increase, as implied volatility decreases, premiums decrease. So with that known, if I see something like this where I'm bullish in Apple and I see implied volatility percentile is 98, I am going to drift to short premium strategies. That's not to say that implied volatility cannot remain elevated or even increase higher. It most certainly can, but it's less likely to do that. So the higher we see implied volatility percentile, the more I tend to drift to short premium strategies for that exact reason. Now, the other thing to keep in mind here is implied volatility, generally speaking, is one of the more mean reverting aspects of the market. So it's just a higher statistical probability that we will see this revert down to a mean. So because of that, when I see implied volatility percentile at extremes, either to the low or high side, I use that to make inferences about the strategy I'm going to select. If this said implied volatility percentile was zero, that would tell me it is more likely that implied volatility percentile or implied volatility as a raw figure is going to expand in the future. So because of that, I would lean towards a long premium strategy to take advantage of that implied volatility expansion. It's",
+    "metadata": {
+      "video_id": "Uu3DwGTOYHY",
+      "title": "Implied Volatility Rank (IVR) vs Implied Volatility Percentile (IVP)",
+      "url": "https://www.youtube.com/watch?v=Uu3DwGTOYHY",
+      "upload_date": "",
+      "duration": 794.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 6,
+      "total_chunks": 10,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Uu3DwGTOYHY&t=0"
+    }
+  },
+  {
+    "text": "percentile was zero, that would tell me it is more likely that implied volatility percentile or implied volatility as a raw figure is going to expand in the future. So because of that, I would lean towards a long premium strategy to take advantage of that implied volatility expansion. It's a way for us to kind of stack probabilities in our favor beyond just a directional assumption. So I always lace in implied volatility in my strategy selection. I typically will pick direction first because direction will absolutely overwhelm implied volatility changes, but if we can get them both to work together, it's very useful. Now, the last thing I want to show you is using implied volatility as a gauge for sentiment. Two ways we can do that the first way. If we see implied volatility in this sense is very high, it means that the market is pricing in a lot of volatility to the premium of the options. So what we're understanding is that there is whip expected. We are expecting larger price variance. So when we see implied volatility is high, the very first thing we should think is premiums are high. The second thing we should think is prices are going to move in a wider range as implied volatility increases. Now, the other way we can use it to gauge sentiment is a really useful tool. Over here on the right hand side and thinkorswim, you can see all of these percentages. This is",
+    "metadata": {
+      "video_id": "Uu3DwGTOYHY",
+      "title": "Implied Volatility Rank (IVR) vs Implied Volatility Percentile (IVP)",
+      "url": "https://www.youtube.com/watch?v=Uu3DwGTOYHY",
+      "upload_date": "",
+      "duration": 794.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 7,
+      "total_chunks": 10,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Uu3DwGTOYHY&t=0"
+    }
+  },
+  {
+    "text": "should think is prices are going to move in a wider range as implied volatility increases. Now, the other way we can use it to gauge sentiment is a really useful tool. Over here on the right hand side and thinkorswim, you can see all of these percentages. This is telling you the implied volatility for that month. And the other thing that you'll know is this plus and minus. This is actually doing some of the work for you. And it's telling you the expected range based on that implied volatility for the month. Now, if we scroll down through here, you'll notice a couple things. Typically, as we start to go further out in time, implied volatility starts to decrease. So we see 60 upfront, 50, 48, 45, 44, 45, 41, 48.71. What's going on here? Why would we be generally declining but then all of a sudden rise up about seven points? Well, you can start to glean a lot of information from this. As in, there's probably earnings being priced into this cycle. So if you want to trade Apple and you don't want to be exposed to earnings, there is very likely an earnings event around this month. It's not announced yet, but if we think about it logically, it makes total sense because earnings just announced the end of April. So if we start to think about where earnings is likely to be next quarter, three months out, that puts us right around this",
+    "metadata": {
+      "video_id": "Uu3DwGTOYHY",
+      "title": "Implied Volatility Rank (IVR) vs Implied Volatility Percentile (IVP)",
+      "url": "https://www.youtube.com/watch?v=Uu3DwGTOYHY",
+      "upload_date": "",
+      "duration": 794.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 8,
+      "total_chunks": 10,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=Uu3DwGTOYHY&t=0"
+    }
+  },
+  {
+    "text": "around this month. It's not announced yet, but if we think about it logically, it makes total sense because earnings just announced the end of April. So if we start to think about where earnings is likely to be next quarter, three months out, that puts us right around this ballpark. And as we get more explorations around this time frame, because there's only so many expiration cycles offered, so as we get closer to this, you'll see whichever week earnings will be reported and will have higher volatility than the other surrounding weeks. So we can use implied volatility to do a ton of different things, as well as figure out when earnings is probably going to be. So if this video is helpful and you enjoy this kind of content, make sure you subscribe to the channel, like the video so you can help us grow and then comment anything in here that you found interesting or if there's any other topics that you want to dive into. Looking forward to catching you guys next time, continue being an outlier. See you guys later.",
+    "metadata": {
+      "video_id": "Uu3DwGTOYHY",
+      "title": "Implied Volatility Rank (IVR) vs Implied Volatility Percentile (IVP)",
+      "url": "https://www.youtube.com/watch?v=Uu3DwGTOYHY",
+      "upload_date": "",
+      "duration": 794.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 9,
+      "total_chunks": 10,
       "start_timestamp": "00:00:00",
       "start_timestamp_seconds": 0,
       "video_url_with_timestamp": "https://www.youtube.com/watch?v=Uu3DwGTOYHY&t=0"

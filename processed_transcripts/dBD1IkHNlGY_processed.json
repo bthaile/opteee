@@ -1,6 +1,6 @@
 [
   {
-    "text": "DOWNLOAD FAILED Could not access the original audio for this video This transcript is a placeholder because YouTube blocked all download attempts. You may need to manually transcribe this video by watching it on YouTube. httpswww.youtube.comwatch?vdBD1IkHNlGY 1533.980575 This video has been flagged for manual processing.",
+    "text": "What's up, outliers? Let's talk about the basics of back testing. The goal of this video is to give you a framework to work off of when you're trying to come up with trading approaches. Now back testing is so nuanced that this video will not capture everything, but it will capture 80 of the stuff that matters. So let's get straight into what this is all about. We're going to cover why back testing is useful, shortfalls, some key steps to follow, and then we're actually going to use an example that came up during a recent pro livestream where I worked through this exact example with the actual folks on the stream live. And I think it serves a good general overview and pulls everything together in a relatively nice way for you all. So first off, let's talk about why back test. The entire concept of back testing I think is widely misunderstood. Most people would think of it as, oh, this is a way for me to find if this strategy works. So this is for me to find the optimized strategy, the best strategy. It's really not the point at all. The context of a back test is for you to simply be able to say, is this idea viable or should I throw it out? It is so easy to make a back test that looks good because of some of the common shortfalls such as overfitting which we'll touch on, that if you",
     "metadata": {
       "video_id": "dBD1IkHNlGY",
       "title": "Backtesting Basics for Trading Options",
@@ -11,7 +11,367 @@
       "description": "",
       "content_summary": "",
       "chunk_index": 0,
-      "total_chunks": 1,
+      "total_chunks": 21,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=dBD1IkHNlGY&t=0"
+    }
+  },
+  {
+    "text": "back test is for you to simply be able to say, is this idea viable or should I throw it out? It is so easy to make a back test that looks good because of some of the common shortfalls such as overfitting which we'll touch on, that if you attempt to apply a back test going forward, that seemed to do really well, you're probably going to be really sad with the results. And it's because the past is always nuance and relevant to the past. The future can look like flavors of the past, but it's never the past. So we're going to talk about what to look out for. So keep this in the back of your mind as you go through all of this. The idea is not to find or build optimized strategies that perform the best. This is literally just to remove bad ideas. The other thing to pay attention here is this component, improve execution and to better understand the strategy itself. The reason why that's so important is because a lot of times when traders strategy hop, for example, you have a strategy that tends to work well, you go through a losing streak, you say, oh, this isn't working anymore. I'm going to try something else. The problem with that kind of approach is you're never going to get anywhere as a trader because every single trade is going to go through different paths and not all of them are going",
+    "metadata": {
+      "video_id": "dBD1IkHNlGY",
+      "title": "Backtesting Basics for Trading Options",
+      "url": "https://www.youtube.com/watch?v=dBD1IkHNlGY",
+      "upload_date": "",
+      "duration": 1394.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 1,
+      "total_chunks": 21,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=dBD1IkHNlGY&t=0"
+    }
+  },
+  {
+    "text": "losing streak, you say, oh, this isn't working anymore. I'm going to try something else. The problem with that kind of approach is you're never going to get anywhere as a trader because every single trade is going to go through different paths and not all of them are going to be perpetually winning paths. Now if you back test an idea, you have an understanding of how the approach generally works. You are pretty comfortable with the general concepts of it. And when you go through those not ideal paths, you're not as shaken up because you're like, oh, yeah, I saw this before. I think I know this is part of the strategy and I think I'm comfortable continuing to execute. Maybe you even develop some filters based on the paths where maybe you size your strategy down if it goes through X number of losing trades. So on and so forth. Now this section cannot be understated because one of the largest shortfalls for back testing is the trader. And whoever is running the back test because it is so easy to come across a back test that looks super, super good and you are ultimately confident in. For example, I had somebody in the discord a while back that showed this portfolio and they were essentially saying, oh, this is what I'm going to do. And I even think they might operate a hedge fund, which is crazy to me. Now take a look at the",
+    "metadata": {
+      "video_id": "dBD1IkHNlGY",
+      "title": "Backtesting Basics for Trading Options",
+      "url": "https://www.youtube.com/watch?v=dBD1IkHNlGY",
+      "upload_date": "",
+      "duration": 1394.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 2,
+      "total_chunks": 21,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=dBD1IkHNlGY&t=0"
+    }
+  },
+  {
+    "text": "in. For example, I had somebody in the discord a while back that showed this portfolio and they were essentially saying, oh, this is what I'm going to do. And I even think they might operate a hedge fund, which is crazy to me. Now take a look at the compound annual growth rate. 66.6 with a max drawdown of 6. What does that tell me? That tells me that this is so overfit. It's not even funny. And the reason being is because if this kind of portfolio were to attain this kind of performance, guess what you probably would see more broadly in hedge funds and different kinds of institutional trading, probably stuff that looks more like this, but they don't. And it doesn't look like that. Why? Because this is a great strategy for the historic timeframe it was built within. This is something that we call not robust. Meaning if you were to apply this to an out of sample experience, meaning forward testing or trading live data, attempting to get the actual fills, all that kind of stuff, you would all of a sudden see this breakdown pretty fast. So when we're talking about the shortfalls of that is toxic because it's really fun to iterate on something and try to make it better and better and better. But that will lead you down this really nasty path that's going to set you up for failure. A couple other things to pay attention to beyond",
+    "metadata": {
+      "video_id": "dBD1IkHNlGY",
+      "title": "Backtesting Basics for Trading Options",
+      "url": "https://www.youtube.com/watch?v=dBD1IkHNlGY",
+      "upload_date": "",
+      "duration": 1394.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 3,
+      "total_chunks": 21,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=dBD1IkHNlGY&t=0"
+    }
+  },
+  {
+    "text": "shortfalls of that is toxic because it's really fun to iterate on something and try to make it better and better and better. But that will lead you down this really nasty path that's going to set you up for failure. A couple other things to pay attention to beyond the overfitting component and to expand on that a little bit more. It's really simple. It's essentially saying, if I have this idea and then I apply a filter on it, then I apply another filter on it. And I apply another filter on it. My performance in the back test will probably go up because I'm literally shaping something around a prior timeframe. But one of the most important things that you have to pay attention to when you're back testing is how well something holds up under other conditions. We refer to that as robustness even at it here so you can see. So one of the downsides to this is if you apply some of these shortfalls and you believe what you're doing, then it leads to this false confidence. You feel like you're going to go get that 66.6 return and you feel super confident about it. But then all of a sudden you're like, wait a minute, this isn't what's going on. This isn't painting out the way I thought. And again, the same improved execution that can come from back testing can happen on the negative side if you're not thoughtful about what you're",
+    "metadata": {
+      "video_id": "dBD1IkHNlGY",
+      "title": "Backtesting Basics for Trading Options",
+      "url": "https://www.youtube.com/watch?v=dBD1IkHNlGY",
+      "upload_date": "",
+      "duration": 1394.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 4,
+      "total_chunks": 21,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=dBD1IkHNlGY&t=0"
+    }
+  },
+  {
+    "text": "it. But then all of a sudden you're like, wait a minute, this isn't what's going on. This isn't painting out the way I thought. And again, the same improved execution that can come from back testing can happen on the negative side if you're not thoughtful about what you're doing. Now the way I think about back testing is that it actually pairs beautifully with things like forward testing, doing random sampling simulations like money, car low, paper trading, I have a video on paper trading talks about that. And we'll throw that in the notes below. But the way that I think about this hierarchy of exploring ideas is back testing is a way to quickly look at stuff that you want to click into. So if we take something like this, the outlier strategy process, which I have a video on that, if you're curious, it just creates a framework to test ideas effectively. And we start with the profit mechanism. So when I'm thinking about this idea of back testing, we'll talk about the general approach in just a moment. But one of the things I want you to pay attention to is that there's several steps that have to happen here. So if you spend a bunch of time building a strategy around something that you're not sure if it works well, it's kind of a waste of time. So the whole point of back testing is for you to get a sense of does",
+    "metadata": {
+      "video_id": "dBD1IkHNlGY",
+      "title": "Backtesting Basics for Trading Options",
+      "url": "https://www.youtube.com/watch?v=dBD1IkHNlGY",
+      "upload_date": "",
+      "duration": 1394.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 5,
+      "total_chunks": 21,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=dBD1IkHNlGY&t=0"
+    }
+  },
+  {
+    "text": "steps that have to happen here. So if you spend a bunch of time building a strategy around something that you're not sure if it works well, it's kind of a waste of time. So the whole point of back testing is for you to get a sense of does this thing tend to work well and is it worthy of additional time from me? So that leads us to some of the things to pay attention to when you're actually executing a back test. The first thing is to come up with an idea. And for options traders, I actually think it's much easier than you think because your idea starts with the profit mechanism. It doesn't start with what delta, what DTE, what volatility matters. Like none of that matters at this point. Actually, when we're thinking about trying to trade a profit mechanism, it's agnostic to an option typically. Now there are some option strategies that essentially become the profit mechanism, but that's seldom. So the example that came up during the stream earlier was about pre-earnings move in so-fi. Now I typically don't overemphasize individual names like this, but it's served as a good foundation. So the profit mechanism is some sort of pre-earnings drift that was thought to have occurred based on a general observation in so-fi. So what this looks like is we start with this idea. Then we kind of crafted a little more carefully after we start with something I call the",
+    "metadata": {
+      "video_id": "dBD1IkHNlGY",
+      "title": "Backtesting Basics for Trading Options",
+      "url": "https://www.youtube.com/watch?v=dBD1IkHNlGY",
+      "upload_date": "",
+      "duration": 1394.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 6,
+      "total_chunks": 21,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=dBD1IkHNlGY&t=0"
+    }
+  },
+  {
+    "text": "the profit mechanism is some sort of pre-earnings drift that was thought to have occurred based on a general observation in so-fi. So what this looks like is we start with this idea. Then we kind of crafted a little more carefully after we start with something I call the eyeball test, just looking at it. So if we grab a chart of so-fi and we just grab a handful of prior earnings releases and we literally just eyeball it, we just say how does price seem to move into the earnings release? This one seems to go up, this one seems to go down, this one seems to go up, and so on. Now there are different ways you can track all of this, but in the beginning, I literally just look at it and see if anything sticks out to me. And in this case, it seems like there might be some merit to it. I don't know yet, but it's worth the next step. Now if I looked at this in 85 of these were going down into earnings, I might still proceed, but for a different reason. Maybe there's a completely different trade that could be had there. But this does seem to have some sort of positive drift going on into it. So then we can move on to the next step, which is to think about the profit mechanism itself and to analyze it. After that, we can overlay strategies. Then we can move",
+    "metadata": {
+      "video_id": "dBD1IkHNlGY",
+      "title": "Backtesting Basics for Trading Options",
+      "url": "https://www.youtube.com/watch?v=dBD1IkHNlGY",
+      "upload_date": "",
+      "duration": 1394.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 7,
+      "total_chunks": 21,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=dBD1IkHNlGY&t=0"
+    }
+  },
+  {
+    "text": "had there. But this does seem to have some sort of positive drift going on into it. So then we can move on to the next step, which is to think about the profit mechanism itself and to analyze it. After that, we can overlay strategies. Then we can move into different forms of live testing, forward testing. So we're really going to focus on these two things here, the profit mechanism backtest and the strategy backtest. A couple of notes, there are different ways to go about this testing. You can do something super manual, so that would be like coming here, manually log the dates in Google Sheets, manually log the price behavior, preimpost, then start doing your general data analysis on top of it. All in Google Sheets, all handmade formulas, that kind of thing. There's no reason to do that anymore with the advent of artificial intelligence AI. I'm going to show you how we can use AI to essentially fast track all of this. So there's no reason to go full manual. Am I automated or things like packaged back testing tools and software that exist? And then there's other versions like code base where you build your own. That's what I've done. But the cool part is just about everybody has access to AI and some capacity now, which can help a lot. You have to figure out where you're going to get your data from. Now this is a bit of a drawback",
+    "metadata": {
+      "video_id": "dBD1IkHNlGY",
+      "title": "Backtesting Basics for Trading Options",
+      "url": "https://www.youtube.com/watch?v=dBD1IkHNlGY",
+      "upload_date": "",
+      "duration": 1394.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 8,
+      "total_chunks": 21,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=dBD1IkHNlGY&t=0"
+    }
+  },
+  {
+    "text": "you build your own. That's what I've done. But the cool part is just about everybody has access to AI and some capacity now, which can help a lot. You have to figure out where you're going to get your data from. Now this is a bit of a drawback when you're trying to trade options because getting good data typically is expensive and the file sizes are pretty large. So you can choose to buy your own. You can choose to use an API to tie into somebody else that already has data from a back testing software platform, something like that. Now one of the cool things again is most option strategies that you might choose to express with options. You don't even really have to test the option side of it. So going back to this sofa thing, do I need to get a bunch of options data? One side rough out this idea to test how the options would behave? No. Because I can quantify and qualify the movements coming into the earnings release. I can measure it. So then I can literally just reason through with my knowledge of options and say, if something moves a lot, do I want to sell a put or buy a call? Probably buy a call. Now the change in volatility would matter to that. But we know there's ways we can minimize the change in volatility around an earnings release. We can close before the earnings release. We",
+    "metadata": {
+      "video_id": "dBD1IkHNlGY",
+      "title": "Backtesting Basics for Trading Options",
+      "url": "https://www.youtube.com/watch?v=dBD1IkHNlGY",
+      "upload_date": "",
+      "duration": 1394.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 9,
+      "total_chunks": 21,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=dBD1IkHNlGY&t=0"
+    }
+  },
+  {
+    "text": "a lot, do I want to sell a put or buy a call? Probably buy a call. Now the change in volatility would matter to that. But we know there's ways we can minimize the change in volatility around an earnings release. We can close before the earnings release. We know implied volatility expands going into earnings, all these different kind of things that come with understanding options. So like, you don't have to have options data in order to test these ideas. That's the main point here. So now a couple of things to keep in mind as we go through the testing itself. And again, in this example, we're going to use sofa and we're literally going to test the idea that was observed by one of the members and saying, is there something about pre-earnings release movement? So we're going to start zoomed out and then we're going to slowly zoom in. What that means is what I like to do is this is the same thing you've seen in some of my zero DTE videos. I'll take a look at the total performance of something and then I'll break it down into different variations into different time frames. The reason for doing this for segmenting and then tweaking the settings is to check for robustness. So for example, if I'm doing I sell a 30 delta put, that's 30 days out. And I find that that works super well. And then all of a sudden, I",
+    "metadata": {
+      "video_id": "dBD1IkHNlGY",
+      "title": "Backtesting Basics for Trading Options",
+      "url": "https://www.youtube.com/watch?v=dBD1IkHNlGY",
+      "upload_date": "",
+      "duration": 1394.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 10,
+      "total_chunks": 21,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=dBD1IkHNlGY&t=0"
+    }
+  },
+  {
+    "text": "time frames. The reason for doing this for segmenting and then tweaking the settings is to check for robustness. So for example, if I'm doing I sell a 30 delta put, that's 30 days out. And I find that that works super well. And then all of a sudden, I change it to 31 days out and it falls apart. That's a problem. There shouldn't be that big of a difference between 30 days and 31 days. Now one could be better than the other for a list of reasons, but it shouldn't be that different. So the idea of segmenting the data and then tweaking the settings is to give you a sense of how robust this thing is and how well it tracks. And the way to do this is really simple. If we're looking at a larger time series of data, right? So something like this. And let's say that this is 10 years of data you want to test this idea across. All I'm going to do is first split it in half and look at this five year period and this five year period. Then I'm going to split that in half. And I'm going to look at two and a half year period here, two and a half period here, two and a half year period here and two and a half year period here. And so on. I'm literally just going to keep cutting this into pieces. And by doing this, I can",
+    "metadata": {
+      "video_id": "dBD1IkHNlGY",
+      "title": "Backtesting Basics for Trading Options",
+      "url": "https://www.youtube.com/watch?v=dBD1IkHNlGY",
+      "upload_date": "",
+      "duration": 1394.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 11,
+      "total_chunks": 21,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=dBD1IkHNlGY&t=0"
+    }
+  },
+  {
+    "text": "to look at two and a half year period here, two and a half period here, two and a half year period here and two and a half year period here. And so on. I'm literally just going to keep cutting this into pieces. And by doing this, I can deconstruct any sort of smoothing effect that comes with time. Because for example, if you look at buy and hold in something like T triple cues, it might look something like this and you might see something like a good, Jillian percent return because three times leverage tech has done well. But this move here can be very minimized compared to what it actually was. So then if we're segmenting that data as I just discussed, we might find that during that period, if you didn't have this gain coming into it, your account could have gone insolvent. We have to detect that kind of stuff. Now you can also detect it based on draw downs and things like that. By segmenting it in this way, you get a much higher fidelity view. And then again, that idea of tweaking settings is just taken random variables and just moving them to different numbers and seeing how much things change. It shouldn't change a ton. Now another thing with respect to stress tests and the actual T triple cues example is a great one because we know that recently if we plot T triple cues, it's had a draw down of",
+    "metadata": {
+      "video_id": "dBD1IkHNlGY",
+      "title": "Backtesting Basics for Trading Options",
+      "url": "https://www.youtube.com/watch?v=dBD1IkHNlGY",
+      "upload_date": "",
+      "duration": 1394.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 12,
+      "total_chunks": 21,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=dBD1IkHNlGY&t=0"
+    }
+  },
+  {
+    "text": "to different numbers and seeing how much things change. It shouldn't change a ton. Now another thing with respect to stress tests and the actual T triple cues example is a great one because we know that recently if we plot T triple cues, it's had a draw down of 82 plus where it drew down over 82. Now this is post GFC and if we think about trying to test what the maximum move might have been, well, we're not going to use 82 because we know it likely is more than that. So we can either use the data itself to inform what we might want to pad this by. So for example, we can add standard error bars around the data and just essentially do the same here. Or we can just look at what the worst move was and add some onto it. But that's just one setting that you can think about with respect to a stress test. The stress test is going to be relevant to the strategy that you're trading. Okay. So now let's talk about this idea in SoFi. I ball it. We think we see something there. So then the next step is just to go download data. So in this case, I literally would just go to bar chart. I would type in SoFi. And then all I'm doing is downloading the actual data, the daily data here. Now you can download intraday for higher fidelity periods, all that kind",
+    "metadata": {
+      "video_id": "dBD1IkHNlGY",
+      "title": "Backtesting Basics for Trading Options",
+      "url": "https://www.youtube.com/watch?v=dBD1IkHNlGY",
+      "upload_date": "",
+      "duration": 1394.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 13,
+      "total_chunks": 21,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=dBD1IkHNlGY&t=0"
+    }
+  },
+  {
+    "text": "step is just to go download data. So in this case, I literally would just go to bar chart. I would type in SoFi. And then all I'm doing is downloading the actual data, the daily data here. Now you can download intraday for higher fidelity periods, all that kind of stuff doesn't matter for this one. I'm going to start there. The next thing I'm going to do is I know that I need to take a look at the price behavior around these different earnings periods. So I'm going to think maybe I'll start from 90 days out, 60 days out, 20 days out, 10 days out, five days, four days, three days, two days, one day, right? So I might come up with that coming into the release and then post release because the profit mechanism that we're analyzing here is price movement, ideally direction up or down. It doesn't matter that much, but we need to quantify and qualify it, which is exactly what we're able to do. Now you can do all of this manually if you so choose, but you don't have to. We now have a handy dandy thing called chat GPT. So the first thing I did is tell chat GPT go back a period, go back a spell and look at earnings dates. Now it didn't go back as far as I wanted. I could tell it to go back further and make it do it again. I don't really care.",
+    "metadata": {
+      "video_id": "dBD1IkHNlGY",
+      "title": "Backtesting Basics for Trading Options",
+      "url": "https://www.youtube.com/watch?v=dBD1IkHNlGY",
+      "upload_date": "",
+      "duration": 1394.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 14,
+      "total_chunks": 21,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=dBD1IkHNlGY&t=0"
+    }
+  },
+  {
+    "text": "the first thing I did is tell chat GPT go back a period, go back a spell and look at earnings dates. Now it didn't go back as far as I wanted. I could tell it to go back further and make it do it again. I don't really care. But the first thing I'm going to do is absolutely analyze these dates because you cannot trust chat GPT. It literally can just make stuff up. So I'm going to fact check these. I'm going to say do I see 29 up 24 on this is that correct? And I do see it right here and I would literally check the sample and make sure that it lines up. I already did and it does, but just an important step. Now as I'm looking at this, there's other ideas that can come into my mind, right? I can see maybe there's a relationship between the quarter moves. Maybe there's a relationship between EPS, actual and estimate impact on the movement, pre and post probably post that kind of stuff. Now an important step to do here is to leverage what already exists. So part of this idea generation is actually researching. So what I've done here is literally go to SSRN type in pre earnings move. There's a bunch of papers that pop up. I see this one that catches my eyes pretty popular and I also know these names because I look at these a lot and I see",
+    "metadata": {
+      "video_id": "dBD1IkHNlGY",
+      "title": "Backtesting Basics for Trading Options",
+      "url": "https://www.youtube.com/watch?v=dBD1IkHNlGY",
+      "upload_date": "",
+      "duration": 1394.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 15,
+      "total_chunks": 21,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=dBD1IkHNlGY&t=0"
+    }
+  },
+  {
+    "text": "researching. So what I've done here is literally go to SSRN type in pre earnings move. There's a bunch of papers that pop up. I see this one that catches my eyes pretty popular and I also know these names because I look at these a lot and I see that it's from a university. It tells me it's not some sort of entity that has an agenda to push. So we click this one and then we read it. We understand what kind of things they're identifying. The reason why this part's important is so that as we go through our analysis, I know this one's specific again to SoFi, but the idea of a pre earnings move probably applies to other stuff too and it might be a broader effect that we can trade. By doing this, we will have an idea of what kind of inputs matter a lot based on the existing research. So rather than us just randomly throwing out why I think if RSI is high coming into earnings release, then it's going to be bad. Well, who knows, but that would be a ton of research to figure that out with any level of fidelity that you don't have to do. You can see what people in a peer reviewed setting are already finding. Now let's go back into our chat GPT prompt. We get our earnings dates. So now what I did was I uploaded the data that I downloaded and I",
+    "metadata": {
+      "video_id": "dBD1IkHNlGY",
+      "title": "Backtesting Basics for Trading Options",
+      "url": "https://www.youtube.com/watch?v=dBD1IkHNlGY",
+      "upload_date": "",
+      "duration": 1394.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 16,
+      "total_chunks": 21,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=dBD1IkHNlGY&t=0"
+    }
+  },
+  {
+    "text": "of fidelity that you don't have to do. You can see what people in a peer reviewed setting are already finding. Now let's go back into our chat GPT prompt. We get our earnings dates. So now what I did was I uploaded the data that I downloaded and I told it to essentially analyze the price performance behavior pre and post earnings in these durations. I told it that I wanted to calculate those percent returns to allow me to analyze how it changes between 90 and 60 days, but then also 90 days out to their earnings release. It gives me a table that I can download, run analysis on or what I can do is just have it turn it into a plot. So it started with a post earnings change, which is fine, but I wanted to focus in this context on a pre earnings change. So then I move it to pre earnings changes and I can see a couple things. It plots the earnings date for each and it gives me the percent change based on these different durations. So then I can start running some sort of robustness analysis off of this. Instead of looking at each individual one, I ask it to collate into the average and the mean or median. In this case, typically doing some sort of median makes the most sense, which is why it actually knew that's what I wanted, even though I put mean. So it plots",
+    "metadata": {
+      "video_id": "dBD1IkHNlGY",
+      "title": "Backtesting Basics for Trading Options",
+      "url": "https://www.youtube.com/watch?v=dBD1IkHNlGY",
+      "upload_date": "",
+      "duration": 1394.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 17,
+      "total_chunks": 21,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=dBD1IkHNlGY&t=0"
+    }
+  },
+  {
+    "text": "of looking at each individual one, I ask it to collate into the average and the mean or median. In this case, typically doing some sort of median makes the most sense, which is why it actually knew that's what I wanted, even though I put mean. So it plots the median, so it helps us get rid of some of the outlier tails, be an outlier, by the way. And we can see that there's some sort of trends here. So then the next thing we need to figure out is, well, this is just general price movement coming into earnings. How do we isolate that price movement from the standard drift that the stock clearly exhibits from the actual earnings move? Well, that's super easy. One, if you don't know how to do it, you can ask it how to do it. But the simple answer is just take a couple random samples of a duration and look at what the move is on average between those. That becomes your average move provided that it's not wrapped around a catalyst. So from there, we ask it to effectively do that. I isolate the earnings move and then show me these plots again. Then I can go through and say, okay, well, there's clearly some sort of excess move at different periods coming into the earnings release after we isolate the earnings move itself. So then I can ask it stuff like, well, how is this trending over time?",
+    "metadata": {
+      "video_id": "dBD1IkHNlGY",
+      "title": "Backtesting Basics for Trading Options",
+      "url": "https://www.youtube.com/watch?v=dBD1IkHNlGY",
+      "upload_date": "",
+      "duration": 1394.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 18,
+      "total_chunks": 21,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=dBD1IkHNlGY&t=0"
+    }
+  },
+  {
+    "text": "me these plots again. Then I can go through and say, okay, well, there's clearly some sort of excess move at different periods coming into the earnings release after we isolate the earnings move itself. So then I can ask it stuff like, well, how is this trending over time? Is it getting bigger as it's smaller? And as you can see, as time progresses, the move is actually getting smaller both upside and downside. Why would that be? Because there's enough information coverage at this point that you're not seeing these massive pre-moves anymore. This is also why using averages and mediums are so important because these two would absolutely skew this entire sample. So this is the game. We've just analyzed the profit mechanism. We have a general idea that something seems to exist here. So now we can simulate using a stock strategy. Again, going back to what I said before, you can just use stock to see how the stock strategies would perform. And then you can interpolate and infer what option structures would make the most sense based on your knowledge of options. Now, if you're trading something like a volatility or an earnings release move that's based on changes in volatility, then you need options for those. But a lot of things you don't need options. And you can figure out general concepts without them. And again, this is literally all using ChatGPT. The next thing I can see is, well, there's definitely some",
+    "metadata": {
+      "video_id": "dBD1IkHNlGY",
+      "title": "Backtesting Basics for Trading Options",
+      "url": "https://www.youtube.com/watch?v=dBD1IkHNlGY",
+      "upload_date": "",
+      "duration": 1394.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 19,
+      "total_chunks": 21,
+      "start_timestamp": "00:00:00",
+      "start_timestamp_seconds": 0,
+      "video_url_with_timestamp": "https://www.youtube.com/watch?v=dBD1IkHNlGY&t=0"
+    }
+  },
+  {
+    "text": "move that's based on changes in volatility, then you need options for those. But a lot of things you don't need options. And you can figure out general concepts without them. And again, this is literally all using ChatGPT. The next thing I can see is, well, there's definitely some sort of decent pre-earnings return overall across the different time frames. And I can see that it's higher for the further duration stuff. Why would that be? Well, it's because it has more time to compound. So then if I isolated to the more recent time frames and I asked you to do it on an annualized return basis, which takes into account holding duration, we actually see that the near-term holdings on an annualized return basis can hold off better. So this is literally a crash course intro into back testing. This is absolutely the tip of the iceberg. If we should go deeper, let me know. Be an outlier. See you guys later.",
+    "metadata": {
+      "video_id": "dBD1IkHNlGY",
+      "title": "Backtesting Basics for Trading Options",
+      "url": "https://www.youtube.com/watch?v=dBD1IkHNlGY",
+      "upload_date": "",
+      "duration": 1394.0,
+      "channel_name": "",
+      "description": "",
+      "content_summary": "",
+      "chunk_index": 20,
+      "total_chunks": 21,
       "start_timestamp": "00:00:00",
       "start_timestamp_seconds": 0,
       "video_url_with_timestamp": "https://www.youtube.com/watch?v=dBD1IkHNlGY&t=0"

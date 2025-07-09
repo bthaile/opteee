@@ -642,6 +642,12 @@ python3 manual_video_processor.py --export download_list.txt
 
 ### **📥 Step 3: Download Audio Files**
 
+**First: Update the download tracker page**
+```bash
+# Generate/update the download tracker with current failed videos
+python3 generate_tracker_page.py
+```
+
 **Option A: Use y2mate (Recommended)**
 1. **Open `download_tracker.html`** in your browser
 2. **Click "📥 Download" buttons** → Opens y2mate directly
@@ -768,9 +774,145 @@ python3 manual_video_processor.py --cleanup                 # Remove dummy files
 # Export and utilities  
 python3 manual_video_processor.py --export [filename]       # Export download list
 python3 convert_mp4_to_mp3.py                              # Convert video files
+
+# Audio file organization
+python3 organize_processed_audio.py                        # Show audio files status
+python3 organize_processed_audio.py --move                 # Move processed files to separate directory
+
+# Download tracker page management
+python3 generate_tracker_page.py                           # Generate/update download tracker HTML page
 ```
 
 This new system gives you complete control and visibility over the manual processing workflow!
+
+### **🗂️ Audio File Organization**
+
+**NEW: Organize processed audio files to keep your workspace clean!**
+
+Once you have successfully processed videos and created transcripts, you can organize your audio files to separate processed from unprocessed files:
+
+```bash
+# Check current audio files status
+python3 organize_processed_audio.py
+
+# Move all processed audio files to separate directory
+python3 organize_processed_audio.py --move
+```
+
+**What this does:**
+- **✅ Identifies processed files** - Finds MP3 files that have corresponding transcripts
+- **📁 Creates organized structure** - Moves processed files to `audio_files_processed/` directory
+- **⏸️ Keeps unprocessed files** - Leaves files without transcripts in `audio_files/` for manual processing
+- **📊 Provides clear summary** - Shows exactly what was moved and what remains
+
+**Directory structure after organization:**
+```
+audio_files/                    # Only unprocessed files (need manual download/processing)
+├── failed_video_id1.note.txt   # Markers for failed downloads
+├── failed_video_id2.note.txt   # Ready for download_tracker.html
+└── ...
+
+audio_files_processed/          # All successfully processed files
+├── video_id1.mp3              # Processed audio files (safe to delete)
+├── video_id2.mp3              # Can be archived or removed
+└── ...
+```
+
+**Benefits:**
+- **🧹 Clean workspace** - Easy to see what still needs processing
+- **📊 Clear progress** - Visually separate completed from pending work
+- **💾 Space management** - Processed files can be archived or deleted
+- **🎯 Focus on remaining** - Only failed downloads visible in main directory
+
+**Usage Examples:**
+```bash
+# Quick status check
+python3 organize_processed_audio.py
+# Output: Shows 468 MP3 files ready to organize
+
+# Organize all processed files
+python3 organize_processed_audio.py --move
+# Output: Moves 468 files to audio_files_processed/
+
+# Check manual processing needs
+python3 manual_video_processor.py --failed 10
+# Output: Shows remaining videos needing manual download
+```
+
+### **🌐 Download Tracker Page Generation**
+
+**NEW: Automatically generate web-based download tracking interface!**
+
+The download tracker page provides a user-friendly web interface for manually downloading failed videos:
+
+```bash
+# Generate/update the download tracker page
+python3 generate_tracker_page.py
+```
+
+**What this creates:**
+- **📄 `download_tracker.html`** - Web-based interface for manual downloads
+- **🎯 Failed video detection** - Automatically finds videos needing manual download  
+- **📊 Progress tracking** - Shows completion statistics
+- **🔗 Direct download links** - One-click access to y2mate and other download tools
+
+**How it works:**
+1. **📂 Scans for `.note.txt` files** in `audio_files/` directory
+2. **📋 Loads video metadata** from `outlier_trading_videos_metadata.json`
+3. **🎬 Matches failed videos** with titles, durations, and descriptions
+4. **📝 Generates HTML page** with download buttons and video information
+5. **🔄 Updates automatically** when you re-run the script
+
+**Generated page features:**
+- **📥 Download buttons** - Direct links to y2mate for each video
+- **📋 Video details** - Title, duration, upload date, view count
+- **📊 Progress tracking** - Shows completion percentage and remaining count
+- **🎯 Copy-paste helpers** - Video IDs for easy file naming
+- **📱 Mobile-friendly** - Works on any device with a web browser
+
+**Usage workflow:**
+```bash
+# 1. Update the tracker page
+python3 generate_tracker_page.py
+
+# 2. Open in browser
+open download_tracker.html
+
+# 3. Download videos using the web interface
+# 4. Save files as: audio_files/{VIDEO_ID}.mp3
+
+# 5. Process downloaded audio into transcripts
+python3 manual_video_processor.py --process-transcripts
+
+# 6. Update tracker page to reflect progress
+python3 generate_tracker_page.py
+```
+
+**Integration with manual processing:**
+- **🔄 Automatic updates** - Re-run after processing to see updated progress
+- **🧹 Cleanup detection** - Removes processed videos from the page
+- **📈 Progress visualization** - Shows exactly what still needs work
+- **🎯 Focus on remaining** - Only displays videos that actually need manual download
+
+**Output examples:**
+```bash
+$ python3 generate_tracker_page.py
+📊 Loaded metadata for 502 videos
+🎬 Found 15 failed videos
+📝 Generating HTML tracker page with titles...
+✅ Generated download_tracker.html with 15 videos and titles
+📁 Open download_tracker.html in your browser to start tracking downloads
+
+🎯 Ready to track 15 failed video downloads!
+🌐 Open download_tracker.html in your browser to get started
+```
+
+**Benefits:**
+- **🎯 Visual progress tracking** - See exactly what needs work
+- **⚡ One-click downloads** - No manual URL copying needed
+- **📊 Real-time updates** - Always shows current status
+- **🔗 Multiple download options** - Works with various online tools
+- **📱 Cross-platform** - Works on any device with a browser
 
 ---
 
