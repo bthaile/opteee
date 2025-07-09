@@ -469,7 +469,7 @@ python3 rag_pipeline.py --validate
 
 # Test specific model temperature support
 python3 rag_pipeline.py --test-temp gpt-4o --provider openai
-python3 rag_pipeline.py --test-temp claude-3-5-sonnet-20241022 --provider claude
+python3 rag_pipeline.py --test-temp claude-sonnet-4-20250514 --provider claude
 ```
 
 ### **What Gets Validated**
@@ -1781,7 +1781,7 @@ python3 search_transcripts.py "covered call" --show-text
 
 - `QUERY` - Question to answer
 - `--top-k K` - Number of documents to retrieve (default: 5)
-- `--model MODEL` - LLM model to use (default: gpt-4o for OpenAI, claude-3-5-sonnet-20241022 for Claude)
+- `--model MODEL` - LLM model to use (default: gpt-4o for OpenAI, claude-sonnet-4-20250514 for Claude)
 - `--temperature T` - Temperature for the LLM (default: 0.1)
 - `--provider {openai,claude}` - LLM provider to use (default: openai)
 

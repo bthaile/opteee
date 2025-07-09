@@ -168,17 +168,19 @@ def config_menu(current_settings):
                 
         elif current_settings['provider'] == 'claude':
             print("\nAvailable Claude models:")
-            print("1. claude-3-5-sonnet (current flagship model, balanced)")
-            print("2. claude-3-5-haiku (fastest, most efficient)")
-            print("3. claude-3-opus (highest quality, more expensive)")
-            print("4. Use default")
-            model_choice = input("Choose a model (1-4): ").strip()
+            print("1. claude-sonnet-4 (newest flagship model, best performance)")
+            print("2. claude-3-5-sonnet (previous flagship model, balanced)")
+            print("3. claude-3-5-haiku (fastest, most efficient)")
+            print("4. claude-3-opus (highest quality, more expensive)")
+            print("5. Use default")
+            model_choice = input("Choose a model (1-5): ").strip()
             
             claude_model_map = {
-                '1': 'claude-3-5-sonnet-20241022',
-                '2': 'claude-3-5-haiku-20241022',
-                '3': 'claude-3-opus-20240229',
-                '4': None
+                '1': 'claude-sonnet-4-20250514',
+                '2': 'claude-3-5-sonnet-20241022',
+                '3': 'claude-3-5-haiku-20241022',
+                '4': 'claude-3-opus-20240229',
+                '5': None
             }
             
             if model_choice in claude_model_map:
