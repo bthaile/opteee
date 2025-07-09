@@ -30,6 +30,11 @@ provider_chains = {}
 
 def initialize_chains():
     """Initialize chains for all available providers"""
+    # First, validate system configuration
+    from rag_pipeline import validate_system_configuration
+    print("🔧 Validating system before initializing chains...")
+    validate_system_configuration(verbose=True)
+    
     available_providers = get_available_providers()
     for provider in available_providers:
         try:
@@ -38,6 +43,7 @@ def initialize_chains():
             print(f"✅ Initialized chain for {provider}")
         except Exception as e:
             print(f"❌ Failed to initialize {provider} chain: {e}")
+            print(f"   This provider will not be available in the interface.")
 
 def format_date(date_str):
     """Convert YYYYMMDD to readable format."""

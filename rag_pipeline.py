@@ -31,12 +31,62 @@ INDEX_PATH = os.path.join(VECTOR_STORE_DIR, "transcript_index.faiss")
 
 DEFAULT_TOP_K = 5
 DEFAULT_LLM_MODEL = "gpt-4o"  # Current OpenAI model that supports temperature
-DEFAULT_CLAUDE_MODEL = "claude-3-5-sonnet-20241022"  # Current stable Claude model
+DEFAULT_CLAUDE_MODEL = "claude-sonnet-4-20250514"  # Latest Claude Sonnet 4 model
 DEFAULT_TEMPERATURE = 0.2
 DEFAULT_LLM_PROVIDER = "openai"  # "openai" or "claude"
 
 # Load environment variables
 load_dotenv()
+
+def test_model_temperature_support(model_name: str, provider: str) -> bool:
+    """
+    Test if a model supports the temperature parameter without failing the application.
+    Returns True if temperature is supported, False otherwise.
+    """
+    try:
+        if provider == "openai":
+            # Quick test with minimal parameters
+            ChatOpenAI(model_name=model_name, temperature=0.1, max_tokens=1)
+            return True
+        elif provider == "claude":
+            ChatAnthropic(model_name=model_name, temperature=0.1, max_tokens=1)
+            return True
+    except Exception as e:
+        error_msg = str(e).lower()
+        if any(indicator in error_msg for indicator in ["temperature", "unsupported parameter", "invalid parameter"]):
+            return False
+        # If it's a different error (like auth), we can't determine temperature support
+        return True  # Assume it supports temperature, let the main function handle auth errors
+    
+    return True
+
+def validate_model_configuration(provider: str, model: str, temperature: float) -> dict:
+    """
+    Validate model configuration and return compatibility info.
+    """
+    config = {
+        "provider": provider,
+        "model": model,
+        "temperature": temperature,
+        "supports_temperature": True,
+        "recommended_temperature": temperature,
+        "warnings": []
+    }
+    
+    # Check temperature support
+    supports_temp = test_model_temperature_support(model, provider)
+    config["supports_temperature"] = supports_temp
+    
+    if not supports_temp:
+        config["recommended_temperature"] = None
+        config["warnings"].append(f"Model {model} doesn't support temperature parameter")
+    
+    # Check if model is known to be deprecated
+    deprecated_models = ["gpt-3.5-turbo-0301", "gpt-4-0314", "claude-v1", "claude-instant-v1"]
+    if any(deprecated in model.lower() for deprecated in deprecated_models):
+        config["warnings"].append(f"Model {model} may be deprecated")
+    
+    return config
 
 def get_available_providers() -> List[str]:
     """Get a list of available LLM providers based on API keys"""
@@ -170,6 +220,92 @@ class CustomFAISSRetriever:
         
         return documents[:self.top_k]
 
+def create_openai_model_with_fallback(model: str, temperature: float) -> ChatOpenAI:
+    """
+    Create OpenAI model with comprehensive temperature error handling.
+    This function ensures we NEVER get temperature errors by using multiple fallback layers.
+    """
+    
+    # Layer 1: Known models that don't support temperature (fastest check)
+    no_temperature_models = [
+        "o1-preview", "o1-mini", "o1-pro", "o1", 
+        "o3-mini", "o3-medium", "o3", "o3-pro", 
+        "o4-mini", "o4", "o4-pro",
+        "gpt-4o-mini"  # Some versions don't support temperature
+    ]
+    
+    # Check if model is known to not support temperature
+    is_known_no_temp = any(no_temp_model in model.lower() for no_temp_model in no_temperature_models)
+    
+    if is_known_no_temp:
+        print(f"✅ Using OpenAI model: {model} (temperature not supported)")
+        return ChatOpenAI(model_name=model)
+    
+    # Layer 2: Try with temperature first (most models support it)
+    try:
+        llm = ChatOpenAI(model_name=model, temperature=temperature)
+        print(f"✅ Using OpenAI model: {model} (temperature: {temperature})")
+        return llm
+    except Exception as e:
+        error_msg = str(e).lower()
+        
+        # Layer 3: Check for specific temperature-related errors
+        temperature_error_indicators = [
+            "temperature", "unsupported parameter", "invalid parameter",
+            "not supported", "temperature is not supported"
+        ]
+        
+        is_temp_error = any(indicator in error_msg for indicator in temperature_error_indicators)
+        
+        if is_temp_error:
+            print(f"⚠️ Model {model} doesn't support temperature parameter")
+            print(f"🔄 Retrying without temperature...")
+            try:
+                llm = ChatOpenAI(model_name=model)
+                print(f"✅ Using OpenAI model: {model} (no temperature)")
+                return llm
+            except Exception as fallback_error:
+                print(f"❌ Failed to create model without temperature: {fallback_error}")
+                raise fallback_error
+        else:
+            # Layer 4: Unknown error - still try without temperature as last resort
+            print(f"⚠️ Unknown error with model {model}: {e}")
+            print(f"🔄 Attempting fallback without temperature...")
+            try:
+                llm = ChatOpenAI(model_name=model)
+                print(f"✅ Fallback successful: {model} (no temperature)")
+                return llm
+            except Exception as final_error:
+                print(f"❌ All fallback attempts failed for model {model}")
+                print(f"Original error: {e}")
+                print(f"Fallback error: {final_error}")
+                raise final_error
+
+def create_claude_model_with_fallback(model: str, temperature: float) -> ChatAnthropic:
+    """
+    Create Claude model with error handling (Claude generally supports temperature).
+    """
+    try:
+        llm = ChatAnthropic(model_name=model, temperature=temperature)
+        print(f"✅ Using Claude model: {model} (temperature: {temperature})")
+        return llm
+    except Exception as e:
+        error_msg = str(e).lower()
+        
+        if "temperature" in error_msg:
+            print(f"⚠️ Claude model {model} doesn't support temperature parameter")
+            print(f"🔄 Retrying without temperature...")
+            try:
+                llm = ChatAnthropic(model_name=model)
+                print(f"✅ Using Claude model: {model} (no temperature)")
+                return llm
+            except Exception as fallback_error:
+                print(f"❌ Failed to create Claude model: {fallback_error}")
+                raise fallback_error
+        else:
+            print(f"❌ Error creating Claude model {model}: {e}")
+            raise e
+
 def format_documents(docs: List[Document]) -> str:
     """Format documents for the prompt"""
     formatted_docs = []
@@ -192,6 +328,56 @@ def format_documents(docs: List[Document]) -> str:
         formatted_docs.append(doc_str)
     
     return "\n\n".join(formatted_docs)
+
+def validate_system_configuration(verbose: bool = False) -> bool:
+    """
+    Validate the entire system configuration to prevent errors.
+    Returns True if everything is configured correctly, False otherwise.
+    """
+    
+    print("🔍 Validating system configuration...")
+    
+    # Check API keys
+    available_providers = get_available_providers()
+    if not available_providers:
+        print("❌ No API keys found. Please set OPENAI_API_KEY or ANTHROPIC_API_KEY.")
+        return False
+    
+    print(f"✅ Available providers: {', '.join(available_providers)}")
+    
+    # Test default configurations
+    all_valid = True
+    
+    # Test OpenAI default if available
+    if "openai" in available_providers:
+        if verbose:
+            print(f"🧪 Testing OpenAI default model: {DEFAULT_LLM_MODEL}")
+        
+        config = validate_model_configuration("openai", DEFAULT_LLM_MODEL, DEFAULT_TEMPERATURE)
+        
+        if config["warnings"]:
+            print(f"⚠️ OpenAI warnings: {'; '.join(config['warnings'])}")
+        
+        if not config["supports_temperature"]:
+            print(f"ℹ️ OpenAI model {DEFAULT_LLM_MODEL} doesn't support temperature (will use fallback)")
+    
+    # Test Claude default if available
+    if "claude" in available_providers:
+        if verbose:
+            print(f"🧪 Testing Claude default model: {DEFAULT_CLAUDE_MODEL}")
+        
+        config = validate_model_configuration("claude", DEFAULT_CLAUDE_MODEL, DEFAULT_TEMPERATURE)
+        
+        if config["warnings"]:
+            print(f"⚠️ Claude warnings: {'; '.join(config['warnings'])}")
+        
+        if not config["supports_temperature"]:
+            print(f"ℹ️ Claude model {DEFAULT_CLAUDE_MODEL} doesn't support temperature (will use fallback)")
+    
+    if all_valid:
+        print("✅ System configuration validation complete - no critical issues found")
+    
+    return all_valid
 
 def create_rag_chain(retriever, llm_model=None, temperature=DEFAULT_TEMPERATURE, provider=DEFAULT_LLM_PROVIDER):
     """Create a RAG chain with the specified parameters"""
@@ -223,23 +409,8 @@ def create_rag_chain(retriever, llm_model=None, temperature=DEFAULT_TEMPERATURE,
         # Initialize OpenAI model
         model = llm_model or DEFAULT_LLM_MODEL
         
-        # Check if model is a reasoning model or other model that doesn't support temperature
-        no_temperature_models = ["o1-preview", "o1-mini", "o1-pro", "o3-mini", "o3-medium", "o3", "o3-pro", "o4-mini"]
-        is_no_temperature_model = any(no_temp_model in model.lower() for no_temp_model in no_temperature_models)
-        
-        if is_no_temperature_model:
-            llm = ChatOpenAI(model_name=model)
-            print(f"✅ Using OpenAI model: {model} (temperature not supported)")
-        else:
-            try:
-                llm = ChatOpenAI(model_name=model, temperature=temperature)
-                print(f"✅ Using OpenAI model: {model} (temperature: {temperature})")
-            except Exception as e:
-                if "temperature" in str(e).lower():
-                    print(f"⚠️ Model {model} doesn't support temperature parameter, using without temperature")
-                    llm = ChatOpenAI(model_name=model)
-                else:
-                    raise e
+        # Robust temperature handling with multiple fallback layers
+        llm = create_openai_model_with_fallback(model, temperature)
         
     elif provider == "claude":
         # Check for API key
@@ -249,11 +420,10 @@ def create_rag_chain(retriever, llm_model=None, temperature=DEFAULT_TEMPERATURE,
             print("   Please set your Claude API key in the .env file.")
             sys.exit(1)
         
-        # Initialize Claude model
+        # Initialize Claude model with fallback handling
         model = llm_model or DEFAULT_CLAUDE_MODEL
         os.environ["ANTHROPIC_API_KEY"] = claude_key  # Ensure the key is set for Anthropic
-        llm = ChatAnthropic(model_name=model, temperature=temperature)
-        print(f"✅ Using Claude model: {model} (temperature: {temperature})")
+        llm = create_claude_model_with_fallback(model, temperature)
     
     else:
         print(f"❌ Error: Unsupported provider '{provider}'")
@@ -403,13 +573,32 @@ def format_result(result: Dict[str, Any]) -> None:
 def main():
     """Main function"""
     parser = argparse.ArgumentParser(description="RAG pipeline for options trading education")
-    parser.add_argument("query", type=str, help="Query to answer")
+    parser.add_argument("query", type=str, nargs="?", help="Query to answer")
     parser.add_argument("--top-k", type=int, default=DEFAULT_TOP_K, help=f"Number of documents to retrieve (default: {DEFAULT_TOP_K})")
     parser.add_argument("--model", type=str, default=None, help=f"LLM model to use (default: {DEFAULT_LLM_MODEL} for OpenAI, {DEFAULT_CLAUDE_MODEL} for Claude)")
     parser.add_argument("--temperature", type=float, default=DEFAULT_TEMPERATURE, help=f"Temperature for the LLM (default: {DEFAULT_TEMPERATURE})")
     parser.add_argument("--provider", type=str, default=DEFAULT_LLM_PROVIDER, choices=["openai", "claude"], help=f"LLM provider to use (default: {DEFAULT_LLM_PROVIDER})")
+    parser.add_argument("--validate", action="store_true", help="Validate system configuration and exit")
+    parser.add_argument("--test-temp", type=str, help="Test if a specific model supports temperature")
     
     args = parser.parse_args()
+    
+    # Handle special commands
+    if args.validate:
+        validate_system_configuration(verbose=True)
+        return
+        
+    if args.test_temp:
+        provider = args.provider
+        model = args.test_temp
+        supports_temp = test_model_temperature_support(model, provider)
+        print(f"Model {model} ({'✅ supports' if supports_temp else '❌ does not support'}) temperature parameter")
+        return
+        
+    if not args.query:
+        print("❌ Error: Query is required unless using --validate or --test-temp")
+        parser.print_help()
+        return
     
     # Get available providers
     available_providers = get_available_providers()

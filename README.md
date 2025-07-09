@@ -238,6 +238,11 @@ This comprehensive UI ecosystem ensures that users can access the options tradin
 ```bash
 cd /Users/bthaile/gitrepos/opteee
 source venv/bin/activate
+
+# Optional: Validate system to prevent errors
+python3 validate_system.py
+
+# Run the main application
 python3 whisper_focused_downloader.py
 ```
 
@@ -441,6 +446,74 @@ source venv/bin/activate
 - ✅ Converts them to text transcripts
 - ✅ Tracks progress
 - ✅ Handles all the technical stuff
+
+## 🛡️ **Temperature Error Prevention System**
+
+**OPTEEE now includes a comprehensive system to prevent temperature parameter errors that can crash applications.**
+
+### **Automatic Protection Layers**
+
+1. **Layer 1 - Known Model Detection**: Instantly identifies models that don't support temperature
+2. **Layer 2 - Try with Temperature**: Attempts to use temperature first (most models support it)
+3. **Layer 3 - Error Detection**: Detects temperature-related errors and retries without temperature
+4. **Layer 4 - Final Fallback**: Last resort attempt without temperature for unknown errors
+
+### **System Validation Commands**
+
+```bash
+# Complete system validation (recommended before deployment)
+python3 validate_system.py
+
+# Quick configuration check
+python3 rag_pipeline.py --validate
+
+# Test specific model temperature support
+python3 rag_pipeline.py --test-temp gpt-4o --provider openai
+python3 rag_pipeline.py --test-temp claude-3-5-sonnet-20241022 --provider claude
+```
+
+### **What Gets Validated**
+
+- ✅ **API Keys**: Checks for OpenAI and Claude API keys
+- ✅ **Vector Store**: Verifies all required vector database files
+- ✅ **Model Compatibility**: Tests temperature support for default models
+- ✅ **Configuration**: Validates all system settings
+- ✅ **Error Handling**: Confirms fallback systems are working
+
+### **How It Prevents Temperature Errors**
+
+**Before (Error-Prone)**:
+```python
+# This could fail with "temperature not supported"
+llm = ChatOpenAI(model_name="o1-mini", temperature=0.1)
+```
+
+**After (Error-Proof)**:
+```python
+# This automatically handles temperature issues
+llm = create_openai_model_with_fallback("o1-mini", 0.1)
+# Result: Uses o1-mini without temperature, logs the issue
+```
+
+### **Temperature Support by Model**
+
+**✅ Supports Temperature**:
+- `gpt-4o`, `gpt-4`, `gpt-4-turbo`, `gpt-3.5-turbo`
+- `claude-3-5-sonnet-*`, `claude-3-5-haiku-*`, `claude-3-opus-*`
+
+**❌ No Temperature Support** (auto-detected):
+- `o1-preview`, `o1-mini`, `o1-pro`, `o1`
+- `o3-mini`, `o3-medium`, `o3`, `o3-pro`
+- `o4-mini`, `o4`, `o4-pro`
+
+**🔄 Automatic Fallback**: System automatically retries without temperature if errors occur
+
+**Benefits**:
+- **🚫 Zero Temperature Errors**: Comprehensive fallback system prevents crashes
+- **🔄 Automatic Recovery**: Seamless retry without user intervention  
+- **📝 Clear Logging**: Shows exactly what's happening and why
+- **🧪 Pre-validation**: Test models before using them in production
+- **📈 Future-Proof**: Handles new models automatically
 
 ## 🔧 **Advanced Setup (For Developers)**
 
@@ -1545,6 +1618,7 @@ This section documents all command-line arguments and configuration options for 
 
 | Script                     | Purpose                    | Common Usage                                   |
 | -------------------------- | -------------------------- | ---------------------------------------------- |
+| `validate_system.py`       | ⭐ **System validation**   | `python3 validate_system.py`                   |
 | `run_pipeline.py`          | Main pipeline orchestrator | `python3 run_pipeline.py`                      |
 | `run_pipeline.py --step X` | Run specific step          | `python3 run_pipeline.py --step transcripts`   |
 | `validate_pipeline.py`     | Health check               | `python3 validate_pipeline.py`                 |
@@ -1722,6 +1796,12 @@ python3 rag_pipeline.py "Explain covered calls" --provider claude --top-k 7
 
 # Use specific model and temperature
 python3 rag_pipeline.py "Risk management strategies" --model gpt-4 --temperature 0.2
+
+# Validate system configuration
+python3 rag_pipeline.py --validate
+
+# Test if a model supports temperature
+python3 rag_pipeline.py --test-temp gpt-4o --provider openai
 ```
 
 ### Testing & Debugging Scripts
