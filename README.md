@@ -1350,6 +1350,7 @@ No arguments. Uses chunking parameters from `pipeline_config.py`.
 **Arguments:**
 - `--model MODEL` - Sentence transformer model (default: `all-MiniLM-L6-v2`)
 - `--batch-size SIZE` - Batch size for embedding creation (default: 32)
+- `--output-dir DIR` - Output directory for vector store (default: use config)
 - `--test-search` - Run test queries after creating the index
 
 **Examples:**
@@ -1359,6 +1360,9 @@ python3 create_vector_store.py
 
 # Use different model and batch size
 python3 create_vector_store.py --model all-mpnet-base-v2 --batch-size 16
+
+# Create with custom output directory
+python3 create_vector_store.py --output-dir /tmp/vector_store
 
 # Create and test search functionality
 python3 create_vector_store.py --test-search

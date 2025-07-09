@@ -159,6 +159,7 @@ def run_vector_creation(force=False):
     vector_args = argparse.Namespace(
         model='all-MiniLM-L6-v2',
         batch_size=32,
+        output_dir=None,  # Use default from config
         test_search=False
     )
     

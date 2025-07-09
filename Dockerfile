@@ -25,7 +25,7 @@ COPY processed_transcripts /app/processed_transcripts
 # Build vector store (this layer will be cached)
 RUN mkdir -p /tmp/processed_transcripts /tmp/vector_store && \
     cp -r /app/processed_transcripts/* /tmp/processed_transcripts/ && \
-    python create_vector_store.py && \
+    python create_vector_store.py --output-dir /tmp/vector_store && \
     cp -r /tmp/vector_store/* /app/vector_store/ && \
     rm -rf /tmp/processed_transcripts /tmp/vector_store
 

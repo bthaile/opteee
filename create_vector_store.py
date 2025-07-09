@@ -11,6 +11,9 @@ from pipeline_config import PROCESSED_DIR, VECTOR_STORE_DIR, BATCH_SIZE
 # Use the correct directory paths from pipeline_config
 MODEL_NAME = "all-MiniLM-L6-v2"
 
+# Global variable to allow override of vector store directory
+VECTOR_OUTPUT_DIR = VECTOR_STORE_DIR
+
 def load_processed_transcripts():
     """Load all processed transcript chunks from JSON files"""
     print(f"Loading processed transcripts from {PROCESSED_DIR}...")
@@ -65,7 +68,7 @@ def create_embeddings(texts, model_name=MODEL_NAME, batch_size=BATCH_SIZE):
 def create_faiss_index(embeddings, metadatas, texts):
     """Create and save a FAISS index for fast similarity search"""
     # Create directory for vector store if it doesn't exist
-    os.makedirs(VECTOR_STORE_DIR, exist_ok=True)
+    os.makedirs(VECTOR_OUTPUT_DIR, exist_ok=True)
     
     # Get dimension of embeddings
     dimension = embeddings.shape[1]
@@ -79,18 +82,18 @@ def create_faiss_index(embeddings, metadatas, texts):
     print(f"✅ Added {index.ntotal} vectors to the index")
     
     # Save the index
-    index_path = os.path.join(VECTOR_STORE_DIR, "transcript_index.faiss")
+    index_path = os.path.join(VECTOR_OUTPUT_DIR, "transcript_index.faiss")
     faiss.write_index(index, index_path)
     print(f"✅ Saved FAISS index to {index_path}")
     
     # Save the metadata mapping (needed for retrieval)
-    metadata_path = os.path.join(VECTOR_STORE_DIR, "transcript_metadata.pkl")
+    metadata_path = os.path.join(VECTOR_OUTPUT_DIR, "transcript_metadata.pkl")
     with open(metadata_path, 'wb') as f:
         pickle.dump(metadatas, f)
     print(f"✅ Saved metadata mapping to {metadata_path}")
     
     # Save raw texts for retrieval
-    texts_path = os.path.join(VECTOR_STORE_DIR, "transcript_texts.pkl")
+    texts_path = os.path.join(VECTOR_OUTPUT_DIR, "transcript_texts.pkl")
     with open(texts_path, 'wb') as f:
         pickle.dump(texts, f)
     print(f"✅ Saved raw texts to {texts_path}")
@@ -141,8 +144,15 @@ def test_search(index, embeddings, metadatas, model_name=MODEL_NAME, top_k=5):
             print("")
 
 def main(args):
+    global VECTOR_OUTPUT_DIR
+    
+    # Set output directory if provided
+    if hasattr(args, 'output_dir') and args.output_dir:
+        VECTOR_OUTPUT_DIR = args.output_dir
+    
     print("="*80)
     print(f"VECTOR STORE CREATION - Using model: {args.model}")
+    print(f"Output directory: {VECTOR_OUTPUT_DIR}")
     print("="*80)
     
     # Load processed transcript chunks
@@ -162,7 +172,7 @@ def main(args):
     print("📝 Vector store creation complete!")
     print(f"✅ Model used: {args.model}")
     print(f"✅ Total chunks indexed: {len(texts)}")
-    print(f"📁 Vector store saved to {VECTOR_STORE_DIR}/")
+    print(f"📁 Vector store saved to {VECTOR_OUTPUT_DIR}/")
     print("="*80)
     print("\nTo search your vector store, use search_transcripts.py")
 
@@ -172,6 +182,8 @@ if __name__ == "__main__":
                         help=f'Sentence transformer model to use (default: {MODEL_NAME})')
     parser.add_argument('--batch-size', type=int, default=BATCH_SIZE,
                         help=f'Batch size for embedding creation (default: {BATCH_SIZE})')
+    parser.add_argument('--output-dir', type=str, default=None,
+                        help='Output directory for vector store (default: use config)')
     parser.add_argument('--test-search', action='store_true',
                         help='Run test queries after creating the index')
     

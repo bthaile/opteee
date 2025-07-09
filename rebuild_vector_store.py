@@ -132,6 +132,7 @@ def main():
         args = argparse.Namespace()
         args.model = "all-MiniLM-L6-v2"  # Default model
         args.batch_size = 32  # Default batch size
+        args.output_dir = None  # Use default from config
         args.test_search = False  # Don't run test search during rebuild
         
         if create_vector_store_main is None:
