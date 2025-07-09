@@ -26,6 +26,7 @@ AI-powered search through Outlier Trading educational videos using RAG (Retrieva
 **We've successfully solved the YouTube 403 Forbidden blocking issue!**
 
 Our new **browser-based cookie extraction approach** bypasses YouTube's anti-bot detection by:
+
 - 🍪 **Extracting real browser cookies** from actual user sessions
 - 🤖 **Simulating authentic user behavior** with proper headers and delays
 - 🆕 **Using latest yt-dlp version** (2025.6.30) with enhanced compatibility
@@ -44,6 +45,7 @@ python3 whisper_focused_downloader.py
 ```
 
 **This will automatically:**
+
 - ✅ **Discover videos** from Outlier Trading channel (502 videos)
 - ✅ **Process in batches** of 5 videos (conservative system-friendly approach)
 - ✅ **Download audio** using browser-based cookie extraction (bypasses YouTube blocking)
@@ -59,6 +61,7 @@ python3 whisper_focused_downloader.py
 **This means you opened a NEW terminal!** Every new terminal session starts fresh.
 
 **Solution: Always run these 2 setup commands first:**
+
 ```bash
 cd /Users/bthaile/gitrepos/opteee
 source venv/bin/activate
@@ -77,6 +80,7 @@ source venv/bin/activate
 ### **✅ Prerequisites Check**
 
 **Good news: Your system is already set up!** You have:
+
 - ✅ Python installed
 - ✅ All packages installed in a virtual environment
 - ✅ Project ready to use
@@ -86,11 +90,13 @@ source venv/bin/activate
 ### **🖥️ Step 1: Open Terminal**
 
 **On Mac:**
+
 1. Press `Cmd + Space` (Command + Spacebar)
 2. Type "terminal"
 3. Press Enter
 
 **You'll see a black window with text like:**
+
 ```
 [yourusername@computer:~]$
 ```
@@ -98,11 +104,13 @@ source venv/bin/activate
 ### **🗂️ Step 2: Navigate to the Project**
 
 **Copy and paste this command into Terminal:**
+
 ```bash
 cd /Users/bthaile/gitrepos/opteee
 ```
 
 **Press Enter. You should see:**
+
 ```
 [bthaile@mbp:~/gitrepos/opteee]$
 ```
@@ -110,11 +118,13 @@ cd /Users/bthaile/gitrepos/opteee
 ### **🐍 Step 3: Activate Python Environment**
 
 **Copy and paste this command:**
+
 ```bash
 source venv/bin/activate
 ```
 
 **Press Enter. You should see `(venv)` appear at the beginning:**
+
 ```
 (venv) [bthaile@mbp:~/gitrepos/opteee]$
 ```
@@ -124,11 +134,13 @@ source venv/bin/activate
 ### **🎵 Step 4: Automatically Process All Outlier Trading Videos**
 
 **Copy and paste this command:**
+
 ```bash
 python3 whisper_focused_downloader.py
 ```
 
 **This will automatically:**
+
 - **Discover videos** from the Outlier Trading YouTube channel (502 videos)
 - **Process in batches** of 5 videos (prevents system overload)
 - **Download audio** using browser-based cookie extraction (bypasses YouTube's anti-bot detection)
@@ -156,18 +168,21 @@ python3 whisper_focused_downloader.py
 ### **🔄 Understanding Terminal Sessions**
 
 **Think of terminals like this:**
+
 - **Terminal Window 1** = Needs setup commands ✅
-- **Terminal Window 2** = Needs setup commands again ✅  
+- **Terminal Window 2** = Needs setup commands again ✅
 - **New Terminal Tab** = Needs setup commands again ✅
 - **Same Terminal** = Setup stays active until you close it ✅
 
 **Examples of when you need to run setup again:**
+
 - ❌ You opened a new terminal window
 - ❌ You opened a new terminal tab
 - ❌ You restarted your computer
 - ❌ You closed and reopened terminal
 
 **When setup stays active:**
+
 - ✅ You run multiple commands in the same terminal window
 - ✅ You wait for one command to finish, then run another
 
@@ -176,12 +191,14 @@ python3 whisper_focused_downloader.py
 ### **📁 How the Automatic Process Works**
 
 **The script automatically handles everything:**
+
 ```
 /Users/bthaile/gitrepos/opteee/audio_files/    # Audio files (temporary)
 /Users/bthaile/gitrepos/opteee/transcripts/    # Final transcripts
 ```
 
 **Automatic process:**
+
 1. **Discovers videos** from Outlier Trading YouTube channel (502 videos)
 2. **Downloads audio** using browser-based cookie extraction (bypasses YouTube blocking)
 3. **Saves progress immediately** after each successful audio download
@@ -195,12 +212,14 @@ python3 whisper_focused_downloader.py
 ### **🚨 If Something Goes Wrong**
 
 **"Command not found" error:**
+
 ```bash
 # Make sure you're in the right folder:
 cd /Users/bthaile/gitrepos/opteee
 ```
 
 **"No module named..." error (MOST COMMON):**
+
 ```bash
 # This means you opened a NEW terminal session!
 # Always run BOTH setup commands:
@@ -210,6 +229,7 @@ source venv/bin/activate
 ```
 
 **"No videos to process" or "All videos processed":**
+
 - This means all Outlier Trading videos have been transcribed!
 - Check the `transcripts/` folder for results
 - To reprocess videos, delete `transcript_progress.json` and run again
@@ -219,6 +239,7 @@ source venv/bin/activate
 **This guide is designed so you can use the system without learning Python programming.** Just follow the copy-paste commands above.
 
 **The system automatically:**
+
 - ✅ Finds your MP3 files
 - ✅ Converts them to text transcripts
 - ✅ Tracks progress
@@ -231,6 +252,7 @@ source venv/bin/activate
 ### Quick Start (Recommended)
 
 **Option 1: Docker Setup (Matches Production)**
+
 ```bash
 # Clone the repository
 git clone https://github.com/yourusername/opteee.git
@@ -247,6 +269,7 @@ EOF
 ```
 
 **Option 2: Python Environment Setup (Advanced)**
+
 ```bash
 # Make the script executable
 chmod +x setup.sh
@@ -256,6 +279,7 @@ chmod +x setup.sh
 ```
 
 The Python setup script will:
+
 1. Check if pyenv is installed
 2. Install Python 3.11.7 using pyenv if not already installed
 3. Set the local Python version for this project
@@ -268,6 +292,7 @@ The Python setup script will:
 If you prefer to set up manually:
 
 1. Install pyenv and Python 3.11.7:
+
 ```bash
 # Install pyenv (macOS)
 brew install pyenv
@@ -280,12 +305,14 @@ pyenv local 3.11.7
 ```
 
 2. Create a virtual environment:
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
 3. Install dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -304,6 +331,7 @@ pip install -r requirements.txt
    ```
 
 **That's it!** The script will:
+
 - ✅ **Discover all videos** from the Outlier Trading YouTube channel
 - ✅ **Download audio** using robust fallback methods
 - ✅ **Generate transcripts** using Whisper AI
@@ -331,6 +359,7 @@ python3 app.py
 ### **🔧 Advanced Usage (For Developers)**
 
 **Recommended: Docker Method (Matches Production)**
+
 ```bash
 # Create .env file with API keys (at least one required)
 cat > .env << EOF
@@ -347,6 +376,7 @@ EOF
 ```
 
 **Alternative: Direct Python Method**
+
 ```bash
 # Activate the virtual environment
 source venv/bin/activate
@@ -364,11 +394,13 @@ python3 app.py
 ### Local Docker Development Tips
 
 **First-time setup:**
+
 1. The initial Docker build takes 3-5 minutes (building vector store)
 2. Subsequent runs are much faster (image is cached)
 3. The vector store is built once during image creation, not at runtime
 
 **Making changes:**
+
 ```bash
 # Stop running container
 docker stop opteee-options-search
@@ -378,6 +410,7 @@ docker stop opteee-options-search
 ```
 
 **Debugging:**
+
 ```bash
 # View container logs
 docker logs opteee-options-search
@@ -402,6 +435,7 @@ python3 whisper_focused_downloader.py
 ```
 
 **This automatically:**
+
 - ✅ Discovers videos from Outlier Trading YouTube channel
 - ✅ Downloads audio for each video (multiple fallback strategies)
 - ✅ Transcribes audio using Whisper AI (most reliable method)
@@ -436,6 +470,7 @@ python3 whisper_focused_downloader.py
 ### **📖 What You'll See When Running the Script**
 
 **Starting the script:**
+
 ```bash
 $ python3 whisper_focused_downloader.py
 🚀 Whisper-Focused Transcript Downloader (Browser-Based)
@@ -462,6 +497,7 @@ $ python3 whisper_focused_downloader.py
 ```
 
 **During processing:**
+
 ```bash
 🎯 Found 447 videos to process
 
@@ -491,6 +527,7 @@ $ python3 whisper_focused_downloader.py
 ```
 
 **Checking status anytime:**
+
 ```bash
 $ python3 whisper_focused_downloader.py --status
 📋 Current Processing Status
@@ -514,7 +551,7 @@ $ python3 whisper_focused_downloader.py --status
     - dBD1IkHNlGY
     - qW6h2g8C_NI
     - GVoSqEj3k9I
-    
+
 📁 Progress file: transcript_progress.json
 ```
 
@@ -523,11 +560,13 @@ $ python3 whisper_focused_downloader.py --status
 The new system uses **one comprehensive progress file** (`transcript_progress.json`) with **immediate progress saves**:
 
 **🔄 Batch Processing:**
+
 - **Groups of 5 videos** (configurable) for conservative processing
 - **10-second pause** between videos, **15-second pause** between batches
 - **Real-time batch statistics** (success rate, timing, overall progress)
 
 **📋 Immediate Progress Tracking:**
+
 - **Single file tracking** - no dummy files or scattered progress data
 - **Immediate saves** - progress saved after each audio download and transcript
 - **Dual tracking** - separate counters for audio downloads vs transcript completion
@@ -535,6 +574,7 @@ The new system uses **one comprehensive progress file** (`transcript_progress.js
 - **Recent failures tracking** - see what went wrong recently
 
 **📈 Key Benefits:**
+
 - ✅ **Easy to monitor** - run `python3 whisper_focused_downloader.py --status` anytime
 - ✅ **System-friendly** - conservative batching prevents overload
 - ✅ **Immediate saves** - never lose progress, even if interrupted mid-process
@@ -543,13 +583,14 @@ The new system uses **one comprehensive progress file** (`transcript_progress.js
 - ✅ **Latest tech** - updated yt-dlp with enhanced anti-bot countermeasures
 
 **📁 Progress File Contents:**
+
 ```json
 {
   "processed": [],
   "failed": ["https://www.youtube.com/watch?v=abc123"],
   "audio_downloaded": ["https://www.youtube.com/watch?v=def456", "https://www.youtube.com/watch?v=ghi789"],
   "whisper_processed": ["https://www.youtube.com/watch?v=def456"],
-  "methods": {"def456": "Whisper"},
+  "methods": { "def456": "Whisper" },
   "batch_info": {
     "last_batch_completed": 13,
     "videos_per_batch": 5,
@@ -571,6 +612,7 @@ The new system uses **one comprehensive progress file** (`transcript_progress.js
 The improved script now includes additional options for better control:
 
 **Basic Usage:**
+
 ```bash
 # Run with default settings (batch size 5)
 python3 whisper_focused_downloader.py
@@ -586,12 +628,14 @@ python3 whisper_focused_downloader.py --reprocess
 ```
 
 **Key Options:**
+
 - `--status` - Show current processing status without starting new downloads
 - `--batch-size N` - Process N videos per batch (default: 5, recommended: 1-10)
 - `--reprocess` - Reprocess all videos, overwriting existing files
 - `--help` - Show all available options
 
 **When to Use --reprocess:**
+
 - Audio files are corrupted or incomplete
 - Transcript quality is poor due to older Whisper models
 - You want to upgrade all files to the latest format
@@ -608,7 +652,7 @@ python3 whisper_focused_downloader.py --reprocess
 Instead of the messy old process, we now have a unified system that tracks video states and allows resuming from any failure point:
 
 1. **FAILED_DOWNLOAD** - Video download failed, needs manual download
-2. **HAVE_VIDEO_NO_TRANSCRIPT** - Video downloaded but transcript generation failed  
+2. **HAVE_VIDEO_NO_TRANSCRIPT** - Video downloaded but transcript generation failed
 3. **COMPLETED** - Video downloaded and transcript generated successfully
 
 ### **📊 Step 1: Check Current Status**
@@ -625,8 +669,9 @@ python3 manual_video_processor.py --scan
 ```
 
 **This will show you:**
+
 - ❌ Videos needing manual download
-- 🎵 Videos needing transcript processing  
+- 🎵 Videos needing transcript processing
 - ✅ Videos completed successfully
 - 🎯 Overall progress percentage
 
@@ -643,12 +688,14 @@ python3 manual_video_processor.py --export download_list.txt
 ### **📥 Step 3: Download Audio Files**
 
 **First: Update the download tracker page**
+
 ```bash
 # Generate/update the download tracker with current failed videos
 python3 generate_tracker_page.py
 ```
 
 **Option A: Use y2mate (Recommended)**
+
 1. **Open `download_tracker.html`** in your browser
 2. **Click "📥 Download" buttons** → Opens y2mate directly
 3. **Click the "🎵 Audio" tab** (not the Video tab!)
@@ -657,6 +704,7 @@ python3 generate_tracker_page.py
 6. **Move file:** `mv ~/Downloads/filename.mp3 audio_files/{VIDEO_ID}.mp3`
 
 **Option B: Use yt-dlp (Batch)**
+
 ```bash
 # Download multiple videos at once
 yt-dlp --extract-audio --audio-format mp3 --output "audio_files/%(id)s.%(ext)s" \
@@ -674,6 +722,7 @@ python3 convert_mp4_to_mp3.py
 ```
 
 This will:
+
 - Convert all `.mp4` files in `audio_files/` to `.mp3`
 - Remove the original `.mp4` files
 - Tell you they're ready for transcript processing
@@ -711,7 +760,7 @@ source venv/bin/activate
 # 2. Check what needs to be done
 python3 manual_video_processor.py --scan
 
-# 3. See first 10 videos needing download  
+# 3. See first 10 videos needing download
 python3 manual_video_processor.py --failed 10
 
 # 4. Download some MP3 files manually...
@@ -731,27 +780,31 @@ python3 manual_video_processor.py --status
 ✅ **No Duplicate Work** - Never reprocess the same video twice  
 ✅ **Automatic Cleanup** - Removes dummy files and error messages  
 ✅ **Progress Monitoring** - See completion percentage and status  
-✅ **Batch Processing** - Handle multiple videos efficiently  
+✅ **Batch Processing** - Handle multiple videos efficiently
 
 ### **🔍 Troubleshooting New System**
 
 **"No videos tracked. Run --scan first."**
+
 ```bash
 python3 manual_video_processor.py --scan
 ```
 
 **"Downloaded MP4 instead of MP3"**
+
 ```bash
 python3 convert_mp4_to_mp3.py
 ```
 
 **"Want to see what videos need work"**
+
 ```bash
 python3 manual_video_processor.py --failed
 python3 manual_video_processor.py --need-transcript
 ```
 
 **"Want to export list for batch downloading"**
+
 ```bash
 python3 manual_video_processor.py --export my_download_list.txt
 ```
@@ -771,7 +824,7 @@ python3 manual_video_processor.py --process-transcripts     # Process all pendin
 python3 manual_video_processor.py --process-transcripts ID1 ID2  # Process specific IDs
 python3 manual_video_processor.py --cleanup                 # Remove dummy files
 
-# Export and utilities  
+# Export and utilities
 python3 manual_video_processor.py --export [filename]       # Export download list
 python3 convert_mp4_to_mp3.py                              # Convert video files
 
@@ -800,12 +853,14 @@ python3 organize_processed_audio.py --move
 ```
 
 **What this does:**
+
 - **✅ Identifies processed files** - Finds MP3 files that have corresponding transcripts
 - **📁 Creates organized structure** - Moves processed files to `audio_files_processed/` directory
 - **⏸️ Keeps unprocessed files** - Leaves files without transcripts in `audio_files/` for manual processing
 - **📊 Provides clear summary** - Shows exactly what was moved and what remains
 
 **Directory structure after organization:**
+
 ```
 audio_files/                    # Only unprocessed files (need manual download/processing)
 ├── failed_video_id1.note.txt   # Markers for failed downloads
@@ -819,12 +874,14 @@ audio_files_processed/          # All successfully processed files
 ```
 
 **Benefits:**
+
 - **🧹 Clean workspace** - Easy to see what still needs processing
 - **📊 Clear progress** - Visually separate completed from pending work
 - **💾 Space management** - Processed files can be archived or deleted
 - **🎯 Focus on remaining** - Only failed downloads visible in main directory
 
 **Usage Examples:**
+
 ```bash
 # Quick status check
 python3 organize_processed_audio.py
@@ -851,12 +908,14 @@ python3 generate_tracker_page.py
 ```
 
 **What this creates:**
+
 - **📄 `download_tracker.html`** - Web-based interface for manual downloads
-- **🎯 Failed video detection** - Automatically finds videos needing manual download  
+- **🎯 Failed video detection** - Automatically finds videos needing manual download
 - **📊 Progress tracking** - Shows completion statistics
 - **🔗 Direct download links** - One-click access to y2mate and other download tools
 
 **How it works:**
+
 1. **📂 Scans for `.note.txt` files** in `audio_files/` directory
 2. **📋 Loads video metadata** from `outlier_trading_videos_metadata.json`
 3. **🎬 Matches failed videos** with titles, durations, and descriptions
@@ -864,6 +923,7 @@ python3 generate_tracker_page.py
 5. **🔄 Updates automatically** when you re-run the script
 
 **Generated page features:**
+
 - **📥 Download buttons** - Direct links to y2mate for each video
 - **📋 Video details** - Title, duration, upload date, view count
 - **📊 Progress tracking** - Shows completion percentage and remaining count
@@ -871,6 +931,7 @@ python3 generate_tracker_page.py
 - **📱 Mobile-friendly** - Works on any device with a web browser
 
 **Usage workflow:**
+
 ```bash
 # 1. Update the tracker page
 python3 generate_tracker_page.py
@@ -889,12 +950,14 @@ python3 generate_tracker_page.py
 ```
 
 **Integration with manual processing:**
+
 - **🔄 Automatic updates** - Re-run after processing to see updated progress
 - **🧹 Cleanup detection** - Removes processed videos from the page
 - **📈 Progress visualization** - Shows exactly what still needs work
 - **🎯 Focus on remaining** - Only displays videos that actually need manual download
 
 **Output examples:**
+
 ```bash
 $ python3 generate_tracker_page.py
 📊 Loaded metadata for 502 videos
@@ -908,6 +971,7 @@ $ python3 generate_tracker_page.py
 ```
 
 **Benefits:**
+
 - **🎯 Visual progress tracking** - See exactly what needs work
 - **⚡ One-click downloads** - No manual URL copying needed
 - **📊 Real-time updates** - Always shows current status
@@ -937,6 +1001,7 @@ python3 create_vector_store.py
 ```
 
 **Alternative: Use the unified pipeline (may have mixed results)**
+
 ```bash
 # Complete pipeline - includes YouTube transcript methods (mostly fail for this channel)
 python3 run_pipeline.py
@@ -945,11 +1010,12 @@ python3 run_pipeline.py
 python3 run_pipeline.py --step scrape      # Video discovery
 # Then use whisper_focused_downloader.py instead of built-in transcript step
 python3 whisper_focused_downloader.py      # Whisper transcription
-python3 run_pipeline.py --step preprocess  # Chunking & metadata  
+python3 run_pipeline.py --step preprocess  # Chunking & metadata
 python3 run_pipeline.py --step vectors     # Vector store creation
 ```
 
 **Why this approach works better:**
+
 - ✅ **Outlier Trading doesn't provide YouTube captions** for most videos
 - ✅ **Whisper transcription has 100% success rate** when audio downloads succeed
 - ✅ **Multiple audio download strategies** increase success rate
@@ -957,6 +1023,7 @@ python3 run_pipeline.py --step vectors     # Vector store creation
 - ✅ **Progress tracking** allows resuming from interruptions
 
 **Pipeline Validation & Health Check:**
+
 ```bash
 # Validate pipeline is ready and consistent
 python3 validate_pipeline.py
@@ -970,6 +1037,7 @@ python3 test_pipeline_fixes.py
 **NEW: All processing scripts now use centralized configuration for consistency.**
 
 The project includes `pipeline_config.py` which provides:
+
 - **Unified settings**: Chunk size (250 words), overlap (50 words), file paths
 - **Consistent formats**: All files use JSON format for compatibility
 - **Environment management**: Centralized API key and directory handling
@@ -981,6 +1049,7 @@ python3 pipeline_config.py
 ```
 
 **Key Configuration Settings:**
+
 - **Chunk Size**: 250 words per chunk (consistent across all processing)
 - **Overlap**: 50 words between chunks (maintains context continuity)
 - **Min Words**: 10 words minimum per chunk (filters out noise)
@@ -990,6 +1059,7 @@ python3 pipeline_config.py
 ## YouTube Video Metadata Collection
 
 **Recommended: Use the unified pipeline runner**
+
 ```bash
 python3 run_pipeline.py --step scrape
 ```
@@ -997,18 +1067,21 @@ python3 run_pipeline.py --step scrape
 **Manual Setup (Advanced):**
 
 1. Set up your environment:
+
    ```bash
    # Install dependencies
    pip install -r requirements.txt
-   
+
    # Create .env file with API key (optional but recommended)
    echo "YOUTUBE_API_KEY=your-api-key-here" > .env
    ```
 
 2. Run video discovery:
+
    ```bash
    python3 outlier_scraper.py
    ```
+
    Creates `outlier_trading_videos.json` with basic video information.
 
 3. Enhance with detailed metadata (if YouTube API key provided):
@@ -1018,11 +1091,13 @@ python3 run_pipeline.py --step scrape
    Creates `outlier_trading_videos_metadata.json` with comprehensive data.
 
 **YouTube API Setup:**
+
 - Go to [Google Cloud Console](https://console.cloud.google.com/)
 - Create a new project and enable YouTube Data API v3
 - Create credentials (API Key) and add to `.env` file
 
 **Generated Metadata Includes:**
+
 - Video ID, title, and URL
 - Channel name, upload date, duration
 - View count, likes, description, tags
@@ -1038,6 +1113,7 @@ The project includes a comprehensive vector database system for semantic search 
 ### Complete Processing Pipeline (Automated)
 
 **Recommended: Use the unified pipeline runner**
+
 ```bash
 # Complete pipeline - handles everything automatically
 python3 run_pipeline.py
@@ -1048,6 +1124,7 @@ python3 run_pipeline.py --step vectors     # Vector store creation
 ```
 
 **The automated pipeline ensures:**
+
 - ✅ **Consistent chunking**: 250 words per chunk, 50 words overlap
 - ✅ **Complete metadata**: Every chunk includes video info, timestamps, URLs
 - ✅ **Progress tracking**: Avoids reprocessing, handles errors gracefully
@@ -1067,20 +1144,23 @@ python3 run_pipeline.py --step vectors     # Vector store creation
 If you need to run individual steps:
 
 1. Ensure dependencies and validate configuration:
+
    ```bash
    pip install -r requirements.txt
    python3 validate_pipeline.py
    ```
 
 2. Process transcripts into chunks:
+
    ```bash
    python3 preprocess_transcripts.py
    ```
 
 3. Create the vector database:
+
    ```bash
    python3 create_vector_store.py
-   
+
    # Optional: Test search functionality
    python3 create_vector_store.py --test-search
    ```
@@ -1088,11 +1168,13 @@ If you need to run individual steps:
 ### Searching for Content
 
 Search for relevant transcript sections using:
+
 ```
 python3 search_transcripts.py "your search query here"
 ```
 
 Options:
+
 - `--top-k 10`: Return 10 results (default is 5)
 - `--show-text`: Also show the transcript text (not just metadata)
 
@@ -1140,6 +1222,7 @@ python3 run_pipeline.py --step vectors     # Vector store creation only
 ```
 
 **Features:**
+
 - **Smart Detection**: Detects existing data and asks before reprocessing
 - **Progress Tracking**: Shows detailed statistics and completion status
 - **Error Recovery**: Handles failures gracefully with detailed error reporting
@@ -1153,7 +1236,7 @@ python3 run_pipeline.py --step vectors     # Vector store creation only
 🔧 Script Dependencies & Function Calls:
 ├── run_pipeline.py (Main Orchestrator)
 │   ├── → outlier_scraper.main() [No args needed]
-│   ├── → whisper_transcribe.main() [No args needed] 
+│   ├── → whisper_transcribe.main() [No args needed]
 │   ├── → preprocess_transcripts.main() [No args needed]
 │   └── → create_vector_store.main(args) [✅ FIXED: Now passes argparse.Namespace]
 │
@@ -1165,15 +1248,16 @@ python3 run_pipeline.py --step vectors     # Vector store creation only
 │
 └── Individual Scripts (Can run standalone)
     ├── outlier_scraper.py
-    ├── collect_video_metadata.py  
+    ├── collect_video_metadata.py
     ├── whisper_transcribe.py
     ├── preprocess_transcripts.py
     └── create_vector_store.py [Takes argparse args]
 ```
 
 **Artifact Creation Flow:**
+
 1. **`outlier_scraper.py`** → Creates `outlier_trading_videos.json`
-2. **`collect_video_metadata.py`** → Enhances to `outlier_trading_videos_metadata.json`  
+2. **`collect_video_metadata.py`** → Enhances to `outlier_trading_videos_metadata.json`
 3. **`whisper_transcribe.py`** → Creates `.txt` files in `transcripts/`
 4. **`preprocess_transcripts.py`** → Creates `.json` files in `processed_transcripts/`
 5. **`create_vector_store.py`** → Creates FAISS index in `vector_store/`
@@ -1183,9 +1267,11 @@ python3 run_pipeline.py --step vectors     # Vector store creation only
 ### Validation Tools
 
 **Pipeline Health Check (`validate_pipeline.py`):**
+
 ```bash
 python3 validate_pipeline.py
 ```
+
 - Validates script organization and dependencies
 - Checks configuration consistency
 - Verifies file structure and formats
@@ -1193,18 +1279,22 @@ python3 validate_pipeline.py
 - Provides specific recommendations for fixes
 
 **Consistency Testing (`test_pipeline_fixes.py`):**
+
 ```bash
 python3 test_pipeline_fixes.py
 ```
+
 - Tests import consistency across all scripts
 - Validates configuration settings
 - Checks for conflicting file formats
 - Ensures all required scripts are present
 
 **Configuration Management (`pipeline_config.py`):**
+
 ```bash
 python3 pipeline_config.py
 ```
+
 - Shows current configuration settings
 - Validates chunking parameters
 - Displays file paths and API key status
@@ -1244,6 +1334,7 @@ create_vector_store.main(vector_args)
 ```
 
 **Scripts Requiring Arguments:**
+
 - `create_vector_store.py` - Requires model name, batch size, test mode
 - All other scripts (`outlier_scraper.py`, `whisper_transcribe.py`, `preprocess_transcripts.py`) can be called without arguments
 
@@ -1255,37 +1346,42 @@ This section documents all command-line arguments and configuration options for 
 
 ### Quick Reference - Most Common Scripts
 
-| Script | Purpose | Common Usage |
-|--------|---------|--------------|
-| `run_pipeline.py` | Main pipeline orchestrator | `python3 run_pipeline.py` |
-| `run_pipeline.py --step X` | Run specific step | `python3 run_pipeline.py --step transcripts` |
-| `validate_pipeline.py` | Health check | `python3 validate_pipeline.py` |
-| `search_transcripts.py` | Vector search | `python3 search_transcripts.py "your query"` |
-| `rag_pipeline.py` | RAG Q&A | `python3 rag_pipeline.py "your question"` |
-| `test_rag.py` | Test RAG pipeline | `python3 test_rag.py --provider claude` |
-| `app.py` | Web application | `python3 app.py` |
-| `create_vector_store.py` | Vector store creation | `python3 create_vector_store.py --test-search` |
+| Script                     | Purpose                    | Common Usage                                   |
+| -------------------------- | -------------------------- | ---------------------------------------------- |
+| `run_pipeline.py`          | Main pipeline orchestrator | `python3 run_pipeline.py`                      |
+| `run_pipeline.py --step X` | Run specific step          | `python3 run_pipeline.py --step transcripts`   |
+| `validate_pipeline.py`     | Health check               | `python3 validate_pipeline.py`                 |
+| `search_transcripts.py`    | Vector search              | `python3 search_transcripts.py "your query"`   |
+| `rag_pipeline.py`          | RAG Q&A                    | `python3 rag_pipeline.py "your question"`      |
+| `test_rag.py`              | Test RAG pipeline          | `python3 test_rag.py --provider claude`        |
+| `app.py`                   | Web application            | `python3 app.py`                               |
+| `create_vector_store.py`   | Vector store creation      | `python3 create_vector_store.py --test-search` |
 
 ### Common Argument Patterns
 
 **Top-K (Number of Results):**
+
 - `--top-k 5` - Return 5 results (default in most scripts)
 - `--top-k 10` - Return 10 results for more comprehensive searches
 
 **Model Selection:**
+
 - `--model gpt-4` - Use GPT-4 (OpenAI)
 - `--model claude-3-5-sonnet` - Use Claude 3.5 Sonnet (Anthropic)
 - `--model all-MiniLM-L6-v2` - Use default embedding model
 
 **Provider Selection:**
+
 - `--provider openai` - Use OpenAI models
 - `--provider claude` - Use Anthropic Claude models
 
 **Temperature Control:**
+
 - `--temperature 0.1` - More deterministic responses (default)
 - `--temperature 0.7` - More creative responses
 
 **Testing & Debugging:**
+
 - `--test-search` - Run test queries
 - `--show-text` - Show full text content
 - `--compare` - Compare multiple providers
@@ -1294,13 +1390,16 @@ This section documents all command-line arguments and configuration options for 
 ### Main Pipeline Scripts
 
 #### 1. `run_pipeline.py` - Main Pipeline Orchestrator
+
 **Usage:** `python3 run_pipeline.py [OPTIONS]`
 
 **Arguments:**
+
 - `--step {scrape,transcripts,preprocess,vectors}` - Run only a specific step
 - `--force-reprocess` - Force reprocessing of all steps (ignores existing files)
 
 **Examples:**
+
 ```bash
 # Run complete pipeline
 python3 run_pipeline.py
@@ -1313,11 +1412,13 @@ python3 run_pipeline.py --force-reprocess
 ```
 
 #### 2. `validate_pipeline.py` - Pipeline Health Check
+
 **Usage:** `python3 validate_pipeline.py`
 
 No arguments. Validates configuration consistency and system health.
 
 #### 3. `test_pipeline_fixes.py` - Code Consistency Testing
+
 **Usage:** `python3 test_pipeline_fixes.py`
 
 No arguments. Tests import consistency and code organization.
@@ -1325,35 +1426,42 @@ No arguments. Tests import consistency and code organization.
 ### Individual Processing Scripts
 
 #### 4. `outlier_scraper.py` - Video Discovery
+
 **Usage:** `python3 outlier_scraper.py`
 
 No arguments. Uses configuration from `pipeline_config.py`.
 
 #### 5. `collect_video_metadata.py` - Enhanced Metadata Collection
+
 **Usage:** `python3 collect_video_metadata.py`
 
 No arguments. Requires `YOUTUBE_API_KEY` in environment.
 
 #### 6. `whisper_transcribe.py` - Transcript Generation
+
 **Usage:** `python3 whisper_transcribe.py`
 
 No arguments. Uses configuration from `pipeline_config.py`.
 
 #### 7. `preprocess_transcripts.py` - Transcript Chunking
+
 **Usage:** `python3 preprocess_transcripts.py`
 
 No arguments. Uses chunking parameters from `pipeline_config.py`.
 
 #### 8. `create_vector_store.py` - Vector Store Creation
+
 **Usage:** `python3 create_vector_store.py [OPTIONS]`
 
 **Arguments:**
+
 - `--model MODEL` - Sentence transformer model (default: `all-MiniLM-L6-v2`)
 - `--batch-size SIZE` - Batch size for embedding creation (default: 32)
 - `--output-dir DIR` - Output directory for vector store (default: use config)
 - `--test-search` - Run test queries after creating the index
 
 **Examples:**
+
 ```bash
 # Create vector store with defaults
 python3 create_vector_store.py
@@ -1371,15 +1479,18 @@ python3 create_vector_store.py --test-search
 ### Search & Query Scripts
 
 #### 9. `search_transcripts.py` - Vector Search
+
 **Usage:** `python3 search_transcripts.py QUERY [OPTIONS]`
 
 **Arguments:**
+
 - `QUERY` - Search query (multiple words accepted)
 - `--model MODEL` - Sentence transformer model (default: `all-MiniLM-L6-v2`)
 - `--top-k K` - Number of results to return (default: 5)
 - `--show-text` - Show text content of results
 
 **Examples:**
+
 ```bash
 # Basic search
 python3 search_transcripts.py "gamma in options trading"
@@ -1392,9 +1503,11 @@ python3 search_transcripts.py "covered call" --show-text
 ```
 
 #### 10. `rag_pipeline.py` - RAG Question Answering
+
 **Usage:** `python3 rag_pipeline.py QUERY [OPTIONS]`
 
 **Arguments:**
+
 - `QUERY` - Question to answer
 - `--top-k K` - Number of documents to retrieve (default: 5)
 - `--model MODEL` - LLM model to use (default: gpt-3.5-turbo for OpenAI, claude-3-5-sonnet for Claude)
@@ -1402,6 +1515,7 @@ python3 search_transcripts.py "covered call" --show-text
 - `--provider {openai,claude}` - LLM provider to use (default: openai)
 
 **Examples:**
+
 ```bash
 # Basic question with OpenAI
 python3 rag_pipeline.py "What is gamma in options trading?"
@@ -1416,9 +1530,11 @@ python3 rag_pipeline.py "Risk management strategies" --model gpt-4 --temperature
 ### Testing & Debugging Scripts
 
 #### 11. `test_rag.py` - RAG Pipeline Testing
+
 **Usage:** `python3 test_rag.py [OPTIONS]`
 
 **Arguments:**
+
 - `--provider {openai,claude}` - LLM provider to use
 - `--top-k K` - Number of documents to retrieve (default: 5)
 - `--output FILE` - Output file to save results (default: rag_test_results.txt)
@@ -1426,6 +1542,7 @@ python3 rag_pipeline.py "Risk management strategies" --model gpt-4 --temperature
 - `--model MODEL` - Specific model to use (default: provider's default)
 
 **Examples:**
+
 ```bash
 # Test with default questions
 python3 test_rag.py
@@ -1438,9 +1555,11 @@ python3 test_rag.py --output my_test_results.txt
 ```
 
 #### 12. `test_single_question.py` - Single Question Testing
+
 **Usage:** `python3 test_single_question.py QUESTION [OPTIONS]`
 
 **Arguments:**
+
 - `QUESTION` - Question to test
 - `--provider {openai,claude}` - LLM provider to use
 - `--top-k K` - Number of documents to retrieve (default: 5)
@@ -1449,6 +1568,7 @@ python3 test_rag.py --output my_test_results.txt
 - `--compare` - Compare results from both providers if available
 
 **Examples:**
+
 ```bash
 # Test single question
 python3 test_single_question.py "What is implied volatility?"
@@ -1463,14 +1583,17 @@ python3 test_single_question.py "Bull call spread strategy" --model gpt-4 --temp
 ### Utility Scripts
 
 #### 13. `count_files.py` - File Counting Utility
+
 **Usage:** `python3 count_files.py DIRECTORY [OPTIONS]`
 
 **Arguments:**
+
 - `DIRECTORY` - Directory to count files in
 - `-r, --recursive` - Count files in subdirectories
 - `-t, --type TYPE` - File type to count (e.g., .txt)
 
 **Examples:**
+
 ```bash
 # Count files in transcripts directory
 python3 count_files.py transcripts
@@ -1483,6 +1606,7 @@ python3 count_files.py processed_transcripts -t .txt
 ```
 
 #### 14. `pipeline_config.py` - Configuration Display
+
 **Usage:** `python3 pipeline_config.py`
 
 No arguments. Displays current configuration settings and validates them.
@@ -1490,11 +1614,13 @@ No arguments. Displays current configuration settings and validates them.
 ### Web Applications
 
 #### 15. `app.py` - Main Gradio Web Application
+
 **Usage:** `python3 app.py`
 
 No arguments. Runs the web interface on port 7860.
 
 #### 16. `discord/discord_bot.py` - Discord Bot
+
 **Usage:** `python3 discord/discord_bot.py`
 
 No arguments. Requires `DISCORD_TOKEN` in environment.
@@ -1502,6 +1628,7 @@ No arguments. Requires `DISCORD_TOKEN` in environment.
 ### Configuration Files
 
 #### Environment Variables (`.env` file)
+
 ```bash
 # Required for enhanced metadata
 YOUTUBE_API_KEY=your_youtube_api_key
@@ -1516,7 +1643,9 @@ DISCORD_TOKEN=your_discord_bot_token
 ```
 
 #### Central Configuration (`pipeline_config.py`)
+
 Key settings that affect all scripts:
+
 - `CHUNK_SIZE = 250` - Words per chunk
 - `OVERLAP = 50` - Words overlap between chunks
 - `MIN_CHUNK_WORDS = 10` - Minimum chunk size
@@ -1526,11 +1655,13 @@ Key settings that affect all scripts:
 ### Script Usage Patterns
 
 **Complete Pipeline (Recommended):**
+
 ```bash
 python3 run_pipeline.py
 ```
 
 **Individual Steps:**
+
 ```bash
 python3 run_pipeline.py --step scrape
 python3 run_pipeline.py --step transcripts
@@ -1539,12 +1670,14 @@ python3 run_pipeline.py --step vectors
 ```
 
 **Search & Query:**
+
 ```bash
 python3 search_transcripts.py "your query"
 python3 rag_pipeline.py "your question"
 ```
 
 **Testing:**
+
 ```bash
 python3 validate_pipeline.py
 python3 test_rag.py
@@ -1552,12 +1685,13 @@ python3 test_single_question.py "test question"
 ```
 
 **Debugging:**
+
 ```bash
 python3 count_files.py transcripts
 python3 pipeline_config.py
 ```
 
-This comprehensive reference ensures you can use and configure every script in the project effectively.  
+This comprehensive reference ensures you can use and configure every script in the project effectively.
 
 ## RAG (Retrieval Augmented Generation) Pipeline
 
@@ -1566,11 +1700,13 @@ This project now includes a full RAG pipeline that can answer questions about op
 ### Setting Up the RAG Pipeline
 
 1. Make sure you have completed the previous steps:
+
    - Collected video metadata
    - Processed transcripts
    - Created the vector database
 
 2. Set your OpenAI API key in the `.env` file:
+
    ```
    OPENAI_API_KEY=your-api-key-here
    ```
@@ -1578,21 +1714,26 @@ This project now includes a full RAG pipeline that can answer questions about op
 3. The system includes two ways to interact with the RAG pipeline:
 
    **a. Web Interface (Recommended):**
+
    ```
    python3 app.py
    ```
+
    Open your browser to `http://localhost:7860` to access the Gradio interface where you can:
+
    - Ask questions about options trading
    - Adjust settings (number of sources, AI provider, sorting)
    - See answers with source attribution
    - View formatted results with video links
 
    **b. Command-line Interface (Advanced):**
+
    ```
    python3 rag_pipeline.py "What are the best options strategies for beginners?"
    ```
 
    Options:
+
    - `--top-k 7`: Retrieve 7 sources (default is 5)
    - `--model "gpt-4"`: Use a specific OpenAI model (default is gpt-3.5-turbo)
    - `--temperature 0.2`: Set temperature for response generation (default is 0.1)
@@ -1609,29 +1750,34 @@ This project now includes a full RAG pipeline that can answer questions about op
 ### 🔧 **RAG Pipeline Technical Implementation**
 
 #### **Query Processing Flow**
+
 ```
 User Question → Embedding → FAISS Search → Chunk Retrieval → Context Assembly → LLM Generation → Formatted Response
 ```
 
 #### **Retrieval Strategy**
+
 - **Similarity Search**: Uses cosine similarity in 384-dimensional vector space
 - **Top-K Selection**: Configurable (default: 5 chunks)
 - **Relevance Scoring**: FAISS L2 distance converted to similarity scores
 - **Deduplication**: Removes duplicate chunks from same video segment
 
 #### **Context Assembly**
+
 - **Chunk Ordering**: Sorted by relevance score (highest first)
 - **Metadata Integration**: Each chunk includes video title, timestamp, and URL
 - **Context Limits**: Respects LLM token limits (typically 4k-8k tokens)
 - **Format Structure**: Consistent formatting for optimal LLM comprehension
 
 #### **LLM Integration**
+
 - **Supported Models**: OpenAI GPT-3.5/4, Anthropic Claude 3.5 Sonnet
 - **Temperature Control**: Configurable (default: 0.1 for consistency)
 - **System Prompts**: Optimized for financial education content
 - **Response Formatting**: Structured with source attribution
 
 #### **Source Attribution System**
+
 - **Timestamp Precision**: Links to exact seconds in videos
 - **URL Generation**: Automatic YouTube timestamp URLs (`&t=XXX`)
 - **Title Preservation**: Original video titles with timestamp references
@@ -1640,6 +1786,7 @@ User Question → Embedding → FAISS Search → Chunk Retrieval → Context Ass
 ### Example Usage
 
 **Web Interface (Primary Method):**
+
 1. Run `python3 app.py`
 2. Open `http://localhost:7860` in your browser
 3. Enter your question: "What is gamma in options trading?"
@@ -1648,24 +1795,25 @@ User Question → Embedding → FAISS Search → Chunk Retrieval → Context Ass
 6. Click submit to get formatted results with video links
 
 **Command Line (Advanced):**
-```
+
+````
 $ python3 rag_pipeline.py "What is gamma in options trading?"
 
 ================================================================================
 QUESTION: What is gamma in options trading?
 ================================================================================
 
-Gamma in options trading is a measure of the rate of change in an option's delta 
-in relation to changes in the underlying asset's price. It represents the amount 
+Gamma in options trading is a measure of the rate of change in an option's delta
+in relation to changes in the underlying asset's price. It represents the amount
 delta will change when the underlying security increases in price by $1.
 
-Gamma is highest for at-the-money options and decreases for in-the-money and 
-out-of-the-money options. It's particularly important for options nearing 
-expiration, as time decay accelerates and gamma increases significantly for 
+Gamma is highest for at-the-money options and decreases for in-the-money and
+out-of-the-money options. It's particularly important for options nearing
+expiration, as time decay accelerates and gamma increases significantly for
 at-the-money options.
 
-Options traders need to be aware of gamma risk, especially when trading multiple 
-options positions or managing delta-hedged positions, as it can cause rapid 
+Options traders need to be aware of gamma risk, especially when trading multiple
+options positions or managing delta-hedged positions, as it can cause rapid
 changes in portfolio exposure during volatile market movements.
 
 ----------------------------------------
@@ -1736,9 +1884,10 @@ echo "ANTHROPIC_API_KEY=your_key_here" >> .env
 
 # Run with Docker (builds everything automatically)
 ./run_local.sh
-```
+````
 
 ### Option 2: Python Environment Setup
+
 ```bash
 git clone https://github.com/yourusername/opteee.git
 cd opteee
@@ -1762,6 +1911,7 @@ python3 app.py
 ```
 
 ### Rebuilding Data from Scratch
+
 ```bash
 # Complete rebuild (processes all videos)
 python3 run_pipeline.py --force-reprocess
@@ -1774,6 +1924,7 @@ python3 run_pipeline.py --step vectors     # Build vector store
 ```
 
 **Critical Files to Backup:**
+
 - `transcript_progress.json` (processing status)
 - `outlier_trading_videos*.json` (video metadata)
 - `processed_transcripts/` (processed chunks)
@@ -1785,6 +1936,7 @@ python3 run_pipeline.py --step vectors     # Build vector store
 A RAG (Retrieval-Augmented Generation) system for answering questions about options trading based on Outlier Trading educational videos.
 
 ## Features
+
 - Ask questions about options trading concepts
 - Retrieves relevant information from a collection of educational videos
 - Provides source links to the exact timestamp in original videos
@@ -1798,7 +1950,6 @@ A RAG (Retrieval-Augmented Generation) system for answering questions about opti
    - Click "Create new Space"
    - Select "Docker" as the SDK
    - Connect to your GitHub repository
-   
 3. Configure your Space:
    - Add your API keys as secrets:
      - OPENAI_API_KEY: Your OpenAI API key
@@ -1810,6 +1961,7 @@ The app will automatically install the required dependencies, build the vector s
 ## Using with Discord
 
 To integrate this with Discord:
+
 1. Create a Discord bot using the Discord Developer Portal
 2. Use the Discord.py library to create a bot that calls your hosted Hugging Face API
 3. Deploy the Discord bot to a server (Replit, Heroku, etc.)
@@ -1819,6 +1971,7 @@ To integrate this with Discord:
 **This application uses Docker for both local development and production deployment to ensure consistency.**
 
 ### Primary Method: Docker (Matches Hugging Face Deployment)
+
 ```bash
 git clone https://github.com/yourusername/opteee.git
 cd opteee
@@ -1832,12 +1985,14 @@ echo "ANTHROPIC_API_KEY=your_key_here" >> .env
 ```
 
 **Key Benefits:**
+
 - ✅ **Identical to Hugging Face deployment** - same Docker image, same runtime
 - ✅ **Vector store built during image creation** - faster startup, consistent data
 - ✅ **No dependency conflicts** - all packages pinned to working versions
 - ✅ **Consistent environment** - works the same on any machine
 
 ### Alternative: Direct Python (Advanced Users Only)
+
 ```bash
 git clone https://github.com/yourusername/opteee.git
 cd opteee
@@ -1860,24 +2015,28 @@ The application will be available at `http://localhost:7860`
 This app processes Outlier Trading educational videos through a comprehensive pipeline that ensures consistency and high-quality RAG responses:
 
 #### **0. Centralized Configuration & Pipeline Management**
+
 - **Configuration**: `pipeline_config.py` provides unified settings for all processing scripts
 - **Pipeline Runner**: `run_pipeline.py` orchestrates the complete workflow with progress tracking
 - **Validation**: `validate_pipeline.py` ensures configuration consistency and system health
 - **Benefits**: Eliminates configuration drift, ensures reproducible results, simplifies maintenance
 
 #### **1. Video Discovery & Metadata Collection**
+
 - **Discovery**: `outlier_scraper.py` scrapes the Outlier Trading YouTube channel
 - **Metadata Enhancement**: `collect_video_metadata.py` enriches videos with YouTube API data
 - **Output**: `outlier_trading_videos.json` and `outlier_trading_videos_metadata.json`
 - **Configuration**: Uses centralized channel URLs and file paths from `pipeline_config.py`
 
 #### **2. Transcript Generation**
+
 - **Primary Method**: YouTube API automatic captions (when available)
 - **Fallback Method**: Whisper AI transcription for videos without captions
 - **Processing**: `save_youtube_transcript.py` and `whisper_transcribe.py`
 - **Output**: Raw transcripts in `transcripts/` directory (`.txt` files)
 
 #### **3. Transcript Preprocessing & Chunking**
+
 - **Script**: `preprocess_transcripts.py`
 - **Chunking Strategy** (centrally configured for consistency):
   - **Chunk Size**: 250 words per chunk
@@ -1887,7 +2046,9 @@ This app processes Outlier Trading educational videos through a comprehensive pi
 - **Output**: Processed chunks in `processed_transcripts/` directory (`.json` files)
 
 #### **4. Chunk Structure & Metadata**
+
 Each processed chunk is a JSON object with **consistent metadata**:
+
 ```json
 {
   "video_id": "abc123xyz",
@@ -1910,10 +2071,11 @@ Each processed chunk is a JSON object with **consistent metadata**:
 ```
 
 #### **5. Vector Store Creation**
+
 - **Script**: `create_vector_store.py`
 - **Embedding Model**: `all-MiniLM-L6-v2` (384-dimensional vectors)
 - **Index**: FAISS L2 distance similarity search
-- **Process**: 
+- **Process**:
   - Loads all processed chunks from `processed_transcripts/`
   - Generates embeddings for chunk text
   - Builds FAISS index for fast similarity search
@@ -1921,6 +2083,7 @@ Each processed chunk is a JSON object with **consistent metadata**:
 - **Build Time**: ~30 minutes for 14,721 chunks (during Docker image creation)
 
 #### **6. RAG Pipeline Integration**
+
 - **Query Processing**: User questions are embedded using the same model
 - **Retrieval**: FAISS similarity search finds top-k relevant chunks
 - **Context Assembly**: Retrieved chunks are combined with their metadata
@@ -1930,12 +2093,14 @@ Each processed chunk is a JSON object with **consistent metadata**:
 ### 🎯 **Metadata Consistency & Quality**
 
 #### **Consistent Naming Convention**
+
 - **Chunk IDs**: `{video_id}_chunk_{index:03d}` (e.g., `abc123xyz_chunk_042`)
 - **File Names**: `{video_id}_processed.json` in `processed_transcripts/`
 - **Timestamps**: Always in `HH:MM:SS` format
 - **URLs**: Always include timestamp parameter for direct access
 
 #### **Quality Assurance**
+
 - **Duplicate Detection**: Chunks are deduplicated during processing
 - **Content Validation**: Minimum word count ensures meaningful content
 - **Metadata Validation**: All chunks include complete metadata schema
@@ -1945,6 +2110,7 @@ Each processed chunk is a JSON object with **consistent metadata**:
 - **Testing**: `test_pipeline_fixes.py` validates code organization and imports
 
 #### **Scalability Design**
+
 - **Incremental Processing**: Only new videos are processed on updates
 - **Caching**: Vector store built once, reused across deployments
 - **Batch Processing**: Embeddings created in batches for efficiency
@@ -1953,6 +2119,7 @@ Each processed chunk is a JSON object with **consistent metadata**:
 ### 📈 **Performance Metrics & Data Scale**
 
 #### **Current Data Scale**
+
 - **Total Videos**: ~500+ educational videos from Outlier Trading
 - **Total Chunks**: 14,721 processed chunks
 - **Average Chunk Size**: 250 words (~1,000 characters)
@@ -1961,6 +2128,7 @@ Each processed chunk is a JSON object with **consistent metadata**:
 - **Build Time**: ~30 minutes (full pipeline)
 
 #### **Query Performance**
+
 - **Average Query Time**: <2 seconds (including LLM generation)
 - **Retrieval Time**: <100ms for similarity search
 - **Vector Search**: <10ms for top-k retrieval
@@ -1968,6 +2136,7 @@ Each processed chunk is a JSON object with **consistent metadata**:
 - **LLM Generation**: 1-2 seconds (depends on model and response length)
 
 #### **Complete Processing Flow**
+
 ```
 YouTube Videos (500+)
     ↓ (outlier_scraper.py)
@@ -1989,6 +2158,7 @@ User Q&A Interface (Gradio)
 ```
 
 **Key Processing Details:**
+
 - **Video Discovery**: Automated scraping of Outlier Trading channel
 - **Dual Transcript Methods**: YouTube API (fast) + Whisper AI (fallback)
 - **Smart Chunking**: 250-word chunks with 50-word overlap for context
@@ -2005,16 +2175,19 @@ This app uses a vector database of processed transcripts from Outlier Trading ed
 The application uses a FAISS vector database that contains chunked and embedded transcripts:
 
 ### Local Development
+
 - Vector store is built from `processed_transcripts/` directory
 - Run `python3 create_vector_store.py` to build/rebuild locally
 - Stored in `vector_store/` directory
 
 ### Docker Deployment
+
 - Vector store is built during Docker image creation
 - Built from `processed_transcripts/` during `docker build`
 - Ensures consistent environment between local and production
 
 ### Hugging Face Spaces
+
 - Vector store is built during the Docker image build process
 - No runtime building required - faster startup times
 - Includes all processed transcripts in the deployment
@@ -2022,6 +2195,7 @@ The application uses a FAISS vector database that contains chunked and embedded 
 ### Adding New Content
 
 **Recommended: Use the unified pipeline**
+
 ```bash
 # Process all new videos with complete pipeline
 python3 run_pipeline.py
@@ -2034,11 +2208,13 @@ python3 run_pipeline.py --step vectors     # Update vector store
 ```
 
 **Manual deployment:**
+
 1. Process new videos: `python3 run_pipeline.py`
 2. Commit new files: `git add processed_transcripts/ outlier_trading_videos*.json && git commit`
 3. Deploy: `git push origin main`
 
 **The pipeline ensures:**
+
 - ✅ Only new videos are processed (smart detection)
 - ✅ Consistent chunking with existing content
 - ✅ Complete metadata for all new chunks
@@ -2058,6 +2234,7 @@ This project uses **Docker for both local development and production deployment*
 ### Deployment Architecture
 
 **Both Local and Hugging Face use identical setup:**
+
 - **SDK**: Docker (not Gradio SDK)
 - **Container**: Uses `Dockerfile` to build complete environment
 - **Vector Store**: Built during Docker image creation (not at runtime)
@@ -2075,6 +2252,7 @@ This project uses **Docker for both local development and production deployment*
 ### Required Secrets
 
 Set these in your GitHub repository secrets:
+
 - `HF_TOKEN`: Your Hugging Face access token
 - API keys are set in Hugging Face Spaces environment variables:
   - `OPENAI_API_KEY`
@@ -2098,13 +2276,14 @@ If you encounter errors during deployment:
 
 1. Check that your `requirements.txt` doesn't contain any Mac-specific paths (files starting with `/AppleInternal/...`)
 2. Verify that all package versions are compatible with the Python version used by Hugging Face
-3. Remove any platform-specific packages that aren't needed for the web application 
+3. Remove any platform-specific packages that aren't needed for the web application
 
 ### Resolving Dependency Conflicts
 
 Sometimes deployment fails due to dependency conflicts between packages. Common conflicts include:
 
 1. **torch vs openai-whisper**: Recent versions of torch (2.6.0+) require triton 3.2.0 on Linux, while openai-whisper requires triton<3. To fix this:
+
    ```bash
    # Downgrade torch to version 2.0.1 in requirements.txt
    sed -i '' 's/torch==2.6.0/torch==2.0.1/g' requirements.txt
@@ -2112,18 +2291,21 @@ Sometimes deployment fails due to dependency conflicts between packages. Common 
    ```
 
 2. **torch vs transformers**: When downgrading torch, transformers may need to be downgraded as well. Newer transformers versions (4.40.0+) may require torch features like `torch.compiler` that don't exist in older torch versions:
+
    ```bash
    # If using torch 2.0.1, downgrade transformers to 4.30.2
    sed -i '' 's/transformers==4.50.0/transformers==4.30.2/g' requirements.txt
    ```
 
 3. **transformers vs sentence-transformers**: Different versions of these packages have strict interdependencies. If you downgrade transformers, you may need to downgrade sentence-transformers as well:
+
    ```bash
    # If using transformers 4.30.2, downgrade sentence-transformers to 2.2.2
    sed -i '' 's/sentence-transformers==2.5.0/sentence-transformers==2.2.2/g' requirements.txt
    ```
 
 4. **transformers vs tokenizers**: Transformers requires specific versions of tokenizers. For example:
+
    ```bash
    # If using transformers 4.30.2, downgrade tokenizers to 0.13.3
    sed -i '' 's/tokenizers==0.21.1/tokenizers==0.13.3/g' requirements.txt
@@ -2150,6 +2332,7 @@ A Discord bot that provides access to the opteee options trading knowledge base 
 ## Setup
 
 1. Create a Discord Bot:
+
    - Go to the [Discord Developer Portal](https://discord.com/developers/applications)
    - Click "New Application" and give it a name
    - Go to the "Bot" section and click "Add Bot"
@@ -2159,11 +2342,13 @@ A Discord bot that provides access to the opteee options trading knowledge base 
      - Server Members Intent
 
 2. Install Dependencies:
+
    ```bash
    pip install -r requirements.txt
    ```
 
 3. Create a `.env` file:
+
    ```
    DISCORD_TOKEN=your_discord_bot_token_here
    ```
@@ -2181,6 +2366,7 @@ A Discord bot that provides access to the opteee options trading knowledge base 
 ## Usage
 
 1. Start the bot:
+
    ```bash
    python3 discord_bot.py
    ```
@@ -2190,6 +2376,7 @@ A Discord bot that provides access to the opteee options trading knowledge base 
    - `!help` - Show help information
 
 Example:
+
 ```
 !search What is gamma in options trading?
 ```
@@ -2198,7 +2385,7 @@ Example:
 
 - The bot uses the opteee application hosted on Hugging Face Spaces
 - Responses are formatted in Markdown for better readability
-- Long responses are automatically split into multiple messages to comply with Discord's message length limits 
+- Long responses are automatically split into multiple messages to comply with Discord's message length limits
 
 # Outlier Trading Transcript Processing Pipeline
 
@@ -2213,6 +2400,7 @@ This repository contains scripts for processing and maintaining transcripts from
 ### System Requirements
 
 - FFmpeg installation:
+
   ```bash
   # macOS (using Homebrew)
   brew install ffmpeg
@@ -2227,6 +2415,7 @@ This repository contains scripts for processing and maintaining transcripts from
 ### Python Dependencies
 
 Install required Python packages:
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -2234,11 +2423,13 @@ pip install -r requirements.txt
 ## Environment Setup
 
 1. Create a `.env` file in the root directory:
+
 ```bash
 YOUTUBE_API_KEY=your_api_key_here
 ```
 
 2. Create necessary directories:
+
 ```bash
 mkdir transcripts audio_files processed_transcripts
 ```
@@ -2266,11 +2457,13 @@ The pipeline consists of four main steps:
 ## Running the Pipeline
 
 Execute the main script:
+
 ```bash
 python3 process_outlier_videos.py
 ```
 
 The script will:
+
 1. Scrape all videos from the Outlier Trading channel
 2. Identify videos missing transcripts
 3. Generate transcripts for missing videos using Whisper
@@ -2294,6 +2487,7 @@ The script will:
 ### Metadata Included
 
 Each processed chunk includes:
+
 - Video ID and title
 - Upload date and duration
 - Channel information
@@ -2306,10 +2500,12 @@ Each processed chunk includes:
 ### Common Issues
 
 1. **FFmpeg Not Found**
+
    - Ensure FFmpeg is installed and in your system PATH
    - Verify installation with `ffmpeg -version`
 
 2. **YouTube API Errors**
+
    - Check your API key in `.env`
    - Verify API quota limits
    - Ensure proper API key format (not an OAuth client ID)
@@ -2322,6 +2518,7 @@ Each processed chunk includes:
 ### Manual Processing
 
 Videos requiring manual processing are saved to `manual_processing_needed.json`. These may need:
+
 - Manual transcript creation
 - Audio quality improvements
 - Special handling for non-English content
@@ -2337,6 +2534,7 @@ Videos requiring manual processing are saved to `manual_processing_needed.json`.
 ### Cleanup
 
 Periodically clean up temporary files:
+
 ```bash
 rm -rf audio_files/*  # Remove processed audio files
 ```
@@ -2349,4 +2547,4 @@ rm -rf audio_files/*  # Remove processed audio files
 
 ## License
 
-[Your License Here] 
+[Your License Here]
