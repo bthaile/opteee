@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  opteee-dev:
+    build: .
+    ports:
+      - "7860:7860"
+    volumes:
+      # Mount source code for hot reload
+      - ./app_enhanced.py:/app/app_enhanced.py
+      - ./app.py:/app/app.py
+      - ./rag_pipeline.py:/app/rag_pipeline.py
+      - ./vector_search.py:/app/vector_search.py
+      - ./static:/app/static
+      - ./templates:/app/templates
+      # Mount configuration files
+      - ./.env:/app/.env
+    environment:
+      - GRADIO_SERVER_NAME=0.0.0.0
+      - GRADIO_SERVER_PORT=7860
+      - GRADIO_RELOAD=true
+    env_file:
+      - .env
+    command: >
+      sh -c "
+        echo 'Starting development server with hot reload...' &&
+        python app_enhanced.py
+      "
+    # Keep container running even if app crashes
+    restart: unless-stopped 

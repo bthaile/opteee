@@ -30,8 +30,8 @@ METADATA_PATH = os.path.join(VECTOR_STORE_DIR, "transcript_metadata.pkl")
 INDEX_PATH = os.path.join(VECTOR_STORE_DIR, "transcript_index.faiss")
 
 DEFAULT_TOP_K = 5
-DEFAULT_LLM_MODEL = "o3-mini"
-DEFAULT_CLAUDE_MODEL = "claude-sonnet-4-20250522"
+DEFAULT_LLM_MODEL = "gpt-4o"  # Current OpenAI model that supports temperature
+DEFAULT_CLAUDE_MODEL = "claude-3-5-sonnet-20241022"  # Current stable Claude model
 DEFAULT_TEMPERATURE = 0.2
 DEFAULT_LLM_PROVIDER = "openai"  # "openai" or "claude"
 
@@ -99,12 +99,12 @@ class CustomFAISSRetriever:
         # Load the index
         try:
             print("Loading vector store files...")
-            self.index = faiss.read_index(get_vector_store_path(INDEX_PATH))
+            self.index = faiss.read_index(get_vector_store_path("transcript_index.faiss"))
             
-            with open(get_vector_store_path(TEXTS_PATH), 'rb') as f:
+            with open(get_vector_store_path("transcript_texts.pkl"), 'rb') as f:
                 self.texts = pickle.load(f)
             
-            with open(get_vector_store_path(METADATA_PATH), 'rb') as f:
+            with open(get_vector_store_path("transcript_metadata.pkl"), 'rb') as f:
                 self.metadata = pickle.load(f)
             
             print(f"✅ Loaded {len(self.texts)} vectors")
@@ -222,8 +222,24 @@ def create_rag_chain(retriever, llm_model=None, temperature=DEFAULT_TEMPERATURE,
         
         # Initialize OpenAI model
         model = llm_model or DEFAULT_LLM_MODEL
-        llm = ChatOpenAI(model_name=model, temperature=temperature)
-        print(f"✅ Using OpenAI model: {model}")
+        
+        # Check if model is a reasoning model or other model that doesn't support temperature
+        no_temperature_models = ["o1-preview", "o1-mini", "o1-pro", "o3-mini", "o3-medium", "o3", "o3-pro", "o4-mini"]
+        is_no_temperature_model = any(no_temp_model in model.lower() for no_temp_model in no_temperature_models)
+        
+        if is_no_temperature_model:
+            llm = ChatOpenAI(model_name=model)
+            print(f"✅ Using OpenAI model: {model} (temperature not supported)")
+        else:
+            try:
+                llm = ChatOpenAI(model_name=model, temperature=temperature)
+                print(f"✅ Using OpenAI model: {model} (temperature: {temperature})")
+            except Exception as e:
+                if "temperature" in str(e).lower():
+                    print(f"⚠️ Model {model} doesn't support temperature parameter, using without temperature")
+                    llm = ChatOpenAI(model_name=model)
+                else:
+                    raise e
         
     elif provider == "claude":
         # Check for API key
@@ -237,7 +253,7 @@ def create_rag_chain(retriever, llm_model=None, temperature=DEFAULT_TEMPERATURE,
         model = llm_model or DEFAULT_CLAUDE_MODEL
         os.environ["ANTHROPIC_API_KEY"] = claude_key  # Ensure the key is set for Anthropic
         llm = ChatAnthropic(model_name=model, temperature=temperature)
-        print(f"✅ Using Claude model: {model}")
+        print(f"✅ Using Claude model: {model} (temperature: {temperature})")
     
     else:
         print(f"❌ Error: Unsupported provider '{provider}'")

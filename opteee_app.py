@@ -144,18 +144,18 @@ def config_menu(current_settings):
     elif choice == '3':
         if current_settings['provider'] == 'openai':
             print("\nAvailable OpenAI models:")
-            print("1. gpt-3.5-turbo (faster, cheaper)")
-            print("2. gpt-4 (better quality, more expensive)")
-            print("3. gpt-4-turbo (latest model, balanced)")
-            print("4. gpt-4o (comprehensive, most expensive)")
+            print("1. gpt-4o (current flagship model, balanced)")
+            print("2. gpt-4 (previous generation, stable)")
+            print("3. gpt-4-turbo (optimized for speed)")
+            print("4. gpt-3.5-turbo (legacy, faster/cheaper)")
             print("5. Use default")
             model_choice = input("Choose a model (1-5): ").strip()
             
             openai_model_map = {
-                '1': 'gpt-3.5-turbo',
+                '1': 'gpt-4o',
                 '2': 'gpt-4',
                 '3': 'gpt-4-turbo',
-                '4': 'gpt-4o',
+                '4': 'gpt-3.5-turbo',
                 '5': None
             }
             
@@ -168,15 +168,15 @@ def config_menu(current_settings):
                 
         elif current_settings['provider'] == 'claude':
             print("\nAvailable Claude models:")
-            print("1. claude-3-haiku (fastest, cheapest)")
-            print("2. claude-3-sonnet (balanced)")
-            print("3. claude-3-opus (highest quality, most expensive)")
+            print("1. claude-3-5-sonnet (current flagship model, balanced)")
+            print("2. claude-3-5-haiku (fastest, most efficient)")
+            print("3. claude-3-opus (highest quality, more expensive)")
             print("4. Use default")
             model_choice = input("Choose a model (1-4): ").strip()
             
             claude_model_map = {
-                '1': 'claude-3-haiku-20240307',
-                '2': 'claude-3-sonnet-20240229',
+                '1': 'claude-3-5-sonnet-20241022',
+                '2': 'claude-3-5-haiku-20241022',
                 '3': 'claude-3-opus-20240229',
                 '4': None
             }

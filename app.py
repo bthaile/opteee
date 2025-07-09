@@ -15,14 +15,13 @@ from rag_pipeline import (
 )
 from datetime import datetime
 
-# Check if we need to build the vector store
-index_path = os.path.join("/app/vector_store", "faiss.index") # Adjusted path for typical container setup
-# Check existence logic might need adjustment based on exact volume mapping/build process
-# Simplified check: Assume store exists if path exists (Dockerfile builds it)
+# Check if we need to build the vector store using config paths
+from config import VECTOR_DIR
+index_path = os.path.join(VECTOR_DIR, "faiss.index")
 vector_store_exists = os.path.exists(os.path.dirname(index_path))
 if not vector_store_exists:
      print(f"WARNING: Vector store index directory {os.path.dirname(index_path)} not found. RAG search might fail.")
-     # Consider adding logic here to *attempt* building if missing, though Dockerfile should handle it.
+     # Consider adding logic here to *attempt* building if missing
      # build_vector_store() # Example: If you wanted to build on startup if missing
 
 # Initialize the retriever and chains at startup
@@ -209,6 +208,7 @@ iface = gr.Interface(
     outputs=gr.HTML(label="Results"),
     title="Options Trading Search",
     description="Search through Outlier Trading Video content using AI-powered search.",
+    allow_flagging="never",  # This removes the Flag button!
     examples=[
         ["What is gamma in options trading?", "5", "openai", "relevance"],
         ["Explain ratio call diagonals", "3", "claude", "date"],
