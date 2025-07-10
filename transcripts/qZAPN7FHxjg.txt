@@ -1,0 +1,306 @@
+0.00s: Do you have a defined process for creating an option strategy?
+4.48s: Do you even know where to start?
+6.48s: The goal is videos to walk you through end to end and then to give you an example on what
+11.68s: this can look like in a simple scenario.
+14.44s: But the punchline is if you're going to trade for hopefully a long time, you have got
+19.68s: to define a process for this.
+21.68s: While strategies are different and they vary based on circumstances, the process to create
+26.68s: one is not that different.
+28.68s: And we can define a well thought out process that we can multiply and apply in a bunch
+35.08s: of different scenarios so that this isn't a painful thing that we're forgetting pieces
+40.52s: because we're just kind of cobbling it together as we go.
+44.08s: What's up everybody?
+45.08s: Eric here.
+46.08s: Welcome back to the outliers.
+47.08s: Shout out to the Patreon.
+48.08s: Let's get right in.
+49.08s: So don't be this guy.
+50.08s: That's kind of the starting point.
+51.32s: So you can see we have a person here that they put on a trade and they're asking a
+56.96s: Reddit community, should I hold on to expiration?
+60.28s: What's the problem here?
+61.28s: The trades on like we are a daily dollar short.
+64.20s: You should already know what you're doing before you put the trade on.
+67.36s: Don't be this guy.
+68.48s: This guy says I sold a put 511 expires today.
+72.08s: It's trading below but now it's above why didn't I get assigned?
+75.72s: So clearly they don't even understand the risk that they're taking with the strategy
+81.40s: that they put on because again, they didn't build a strategy.
+84.32s: They just put a trade on and they're hoping that it works out.
+87.24s: Okay, I think that point's been made.
+89.12s: So how does this work?
+90.56s: As you can tell, we have kind of 11 broad steps here.
+93.64s: We're going to run through all of them pretty quickly.
+95.64s: Here's the thing.
+96.64s: One of the most common mistakes I see new traders make when it comes to building a strategy
+102.28s: is they pick a structure and then they just start trying to cobble together a strategy
+108.60s: around the structure.
+109.80s: The difference between a structure and option structure is a short call, long put.
+113.80s: Those are structures.
+114.80s: It's an iron condor.
+116.28s: It's just a configuration of options.
+118.08s: A strategy is how you use that configuration.
+122.32s: What rules are applied.
+123.96s: So the idea of saying I sell puts is superfluous because sometimes it might make sense to
+130.64s: sell puts and other times it might not.
+132.68s: There's no reason to be a put seller.
+134.80s: There's a good reason to be a trader and trade what makes sense.
+138.76s: So as we go through this process, you'll see the very first step here is pretty clear
+142.52s: to find a purpose.
+144.00s: What are we trying to do?
+145.32s: Notice how this isn't pick a structure.
+147.36s: We need to figure out what it is we're trying to accomplish.
+150.08s: So what is the goal of this strategy?
+153.00s: Are we trying to trade a bullish thesis directionally up?
+157.36s: Are we trying to trade a bearish thesis when something's going down?
+160.20s: Are we trying to trade volatility?
+161.76s: Are we trying to develop something that allows us to have short beta weighted spy deltas?
+167.96s: You got to start with what we're even looking for here.
+170.96s: And once you do that, we should outline what the money making mechanism is.
+178.08s: This is a core competency in trading that shockingly a lot of people have a giant gap.
+184.28s: I have a video that talks about this a bit more.
+186.92s: I'll throw in the notes below.
+188.28s: But here's what this comes down to.
+190.08s: A vertical doesn't make money.
+191.88s: A long stock share doesn't make money.
+195.60s: Long options don't make money.
+197.16s: They need a condition to occur to make money.
+201.16s: So the idea here is we're trying to identify the conditions that lead to making money.
+207.72s: So is that you're going to trade things directionally to the upside.
+211.72s: OK, that's a condition.
+213.24s: We know if we buy low and sell high, we make money.
+216.08s: We know that there's risk premium in SPX options, for example.
+220.80s: That is a money making mechanism.
+222.48s: You have to define what this thing is and then how it makes money.
+228.16s: So from here, we move on to then determining what structures make sense.
+233.36s: So based on if we're trying to trade a bullish thesis where if something is going up, we
+239.56s: want to trade it to the upside directionally, what structures make sense for that?
+244.24s: List them out.
+245.24s: And I would start from simplest and move to more complex.
+248.32s: So for example, if we want to trade something that we think is going to go up, you can
+252.04s: buy shares.
+253.04s: That's the simplest.
+254.04s: Then maybe you can buy a call and sell a put so on and so forth.
+257.48s: You can list out these different structures that work in this scenario.
+260.36s: This is going to help us later.
+262.16s: Then we need to create a basic rules set.
+265.12s: So based on this idea of we want to trade something directionally to the upside, what
+269.88s: are the rules that we want to apply on entering the trade, exiting the trade, and then how
+275.16s: long are we looking to hold these trades?
+277.12s: Again, if you trade options, guess what?
+279.08s: You don't have the luxury of just picking a direction.
+282.48s: All options have an expiration.
+284.12s: So not only do you need to pick a direction, you also need to understand the severity,
+288.20s: how much it's going to move or have an idea on that.
+290.60s: And then you also need to have a time bound component.
+292.88s: This is actually why options aren't always the right answer.
+295.60s: It adds a lot of complexity that may not need to be there.
+299.00s: But in any case, these are kind of just three basic rules that you can start with to develop
+304.60s: a strategy.
+305.72s: So based on this rule set, I would then test those rules with a few things in mind.
+311.76s: The first one is I would start with a very big sample.
+314.52s: I would use the largest sample I could find.
+317.00s: So for example, if I'm trying to trade something in the SPX, that goes all the way back to
+321.40s: the 20s.
+322.40s: I will literally run a test from the 20s until the nearest data I have.
+326.08s: Does that mean I'm going to treat all that data the same?
+328.32s: No.
+329.32s: But that doesn't mean that I'm not going to acknowledge it because it's so far gone.
+333.84s: Old data still is relevance.
+335.70s: So when I look at how do I then make this make more sense, I segment the data.
+341.58s: So let's say I'm back testing 10 year period.
+344.62s: I'll run a 10 year back test.
+346.66s: Then I'll run two five year back tests.
+349.94s: Then I'll do five to your back tests.
+352.94s: Then I'll do 10 one year back tests.
+355.46s: Why do I do that?
+356.82s: Because this helps me see the path of the strategy.
+360.26s: So for example, you can have something like this in T triple cues where let's say you
+364.50s: were just buying T triple cues.
+366.26s: And if you just test this broad data like, wow, you went from 36 cents to $59.
+371.70s: That's a great return.
+372.70s: That's perfect.
+373.70s: Meanwhile, at one point, you were all the way up at $92 and it fell all the way down
+378.18s: to $16.
+379.82s: That's the path of something.
+381.94s: So you might have something that has a crazy good return.
+385.30s: But then once you analyze it closer, you might realize like, okay, this actually has like
+388.46s: a 98% drawdown.
+390.90s: Am I going to hold for that?
+392.14s: Is that viable?
+393.30s: Are there rules I can apply during that drawdown that make it easier?
+396.98s: Who knows?
+397.98s: But you have to be aware of the path that your returns take.
+402.22s: Then from here, we start identifying more closely out of those different structures that
+406.78s: worked.
+407.78s: What are the best for our use case?
+410.58s: So an example of this is let's say that you want to trade directionally and you actually
+415.18s: want to use leverage.
+416.18s: Well, that right out of the gate will probably get us away from using long shares.
+421.06s: So you can apply kind of selection criteria like that.
+424.62s: And once you finish doing so, we now codify it in its current form.
+429.94s: You're going to be taken a bunch of guesses.
+432.26s: Some of them might be good.
+433.26s: Some of them might not be good.
+434.54s: That's okay.
+435.54s: That's part of the process.
+436.54s: What we need to do is track them.
+438.18s: So we use things like strategy outlines and trading logs.
+441.90s: And specifically for the Patreon members, the outlier pro folks, you have free access
+446.98s: to the shop that I have.
+448.82s: So you can download templates for both of those from there.
+451.58s: And if you aren't in the Patreon, that's okay.
+454.14s: You can check out this video on the notes below that walks through an outline on how to
+458.46s: create a strategy so that you can make your own without that.
+462.82s: But the point being is unequivocally, you need to define what you're doing and then you
+467.30s: need to track how that goes.
+468.94s: This is how we objectively see what works by repeatedly testing and changing specific
+475.34s: variables so that we understand their effect and then we can optimize them.
+479.66s: Now you have to be careful between overfitting, but in general, if you're using a large sample
+486.18s: then a segmented sample and then you're even getting into this next step where we're
+489.82s: going to back test and forward test again, you're going to limit that inherently.
+493.62s: So we want things that are robust.
+496.30s: We want things that hold true in large samples and then also generally hold true in the smaller
+501.34s: samples as much as possible or at least have observable patterns that we can then calculate
+507.90s: different approaches off of.
+510.06s: So once we get through this cursory back test, I think of it like working down a funnel.
+514.50s: I want to start with the biggest funnel and then get more and more specific because you
+518.26s: get more specific.
+519.26s: It takes more time to analyze these things.
+522.10s: So this next stage of back testing, forward testing, it's not super time consuming, but
+527.02s: it gives us a chance to take a look at the rules set.
+529.62s: Now you might be thinking, how do we even back test this stuff?
+533.06s: There's different ways you can do that.
+534.38s: You can either jump in a platform.
+536.26s: I'm an affiliate of two of them, O rats and options, Omega.
+540.06s: They're both in the links below for discount codes, but that's if you don't want to get
+543.78s: your own data, but you are completely capable of getting your own data from Cebo and you
+549.30s: can either run back tests and something like Python.
+552.62s: It's up to you how you want to back test.
+554.74s: If you don't want to do any of that, you could consider doing something like on demand
+558.78s: and think or swim, which is free.
+560.70s: But the thing is, is people feel like this data should just be available to them and it's
+565.54s: not right?
+566.54s: Like think about if you're a professional athlete, you need stuff to do your job and
+571.34s: as a professional athlete, you're not necessarily paying for that stuff, but somebody does.
+575.66s: It's not free.
+576.66s: It doesn't just fall out of the sky.
+578.02s: Somebody still has to buy the stuff that they use.
+580.14s: It's the same thing here, but in this case, as a sole proprietor, you're by yourself.
+583.74s: You have to buy it.
+584.74s: You have to procure it.
+585.74s: So I wouldn't come into this thinking that you're going to be able to just get fantastic
+588.90s: data easily for free.
+590.50s: It's just not reasonable.
+592.54s: So then you can also pay for trade with different variations.
+596.22s: I do this anyways, but this is also free, but it takes time.
+600.54s: You only get to pay for trade with the market show you.
+603.34s: And for example, I started trading in 2007 from 2007 until now, 2024.
+608.22s: There's only been three bear markets and two of those have been in the last four years.
+613.50s: What that means is if you just pay for trade at this, you're really getting a skewed view
+618.38s: of the path something takes.
+620.78s: So I really believe in paper trading.
+623.06s: I do it with live strategies, kind of actually in this sustained optimization stage as well,
+628.86s: but this stage here step nine is when we're actually trading it exactly as we think we
+634.46s: would.
+635.62s: And at the same time, we have different variations that we're also paper trading.
+639.86s: So I kind of segment this into two buckets.
+642.22s: I have the paper trading I'm doing to simulate my actual account and then I have the paper
+645.90s: trading I'm doing to collect data.
+648.14s: So the way I do that is the stuff I'm using to collect data.
+650.58s: I'll put on tons of different trades, thousands of them and track them, right?
+654.26s: I'm creating a data set.
+655.34s: I'm not worried about actually doing that exactly as I would, but in the paper trading account
+660.14s: that I'm testing as if it were live, I'm going to size things exactly as I would.
+664.90s: I'm going to manage them exactly as I would because it gives me the best view of how
+669.22s: this actually would work.
+671.30s: And we have our live test is when you start using real money, none of this testing is ever
+675.94s: going to be the same as using live capital.
+678.22s: That's all there is to it.
+679.22s: But the idea is we want to make as many mistakes as we can and get as much headway as we can
+683.90s: before we're throwing capital at things.
+686.42s: I know for the impatient people, I wasn't the beginning.
+689.42s: This seems really painful in a waste of time, but the fact of the matter is, is you are
+692.98s: far more likely to lose money than make it as a trader.
+696.10s: So by not losing money unnecessarily and setting your account back further than it needs
+700.66s: to go, you're actually moving faster in terms of compounding your capital.
+705.66s: So going slow upfront actually will get you a speedier result in the long run.
+710.54s: So what does this actually look like?
+712.02s: I kind of outlined what this in large steps goes down like and here's kind of a quick
+718.66s: flow.
+719.66s: So in number one here, I'm saying I need long beta weighted spy delta.
+724.42s: So that means I need something that goes up when the S and P 500 goes up.
+728.14s: This can be whatever you want.
+729.14s: This could be you need negative beta weighted spy delta so that you have some uncorrelated
+734.02s: or non correlated returns.
+735.90s: You could also say that I need non correlated returns to the S and P 500, whatever it is,
+740.06s: whatever the use cases that you need to your portfolio.
+743.18s: In this stage here, what I recommend to traders is have a specific use case in mind.
+749.46s: Don't just think about building strategies for the sake of it.
+752.10s: Think about what the market does.
+753.26s: The market goes up.
+754.26s: I need a strategy for that.
+755.74s: Things go down.
+756.74s: I need a strategy for that.
+758.14s: If I trade volatility, I need a strategy to trade volatility when it goes up down sideways.
+762.94s: So as I look across the toolkit, you can start to see that you don't need 35 different
+767.42s: strategies.
+768.42s: You kind of just need a handful because you need to be able to trade directionally up
+772.18s: down.
+773.18s: You need to be able to trade volatility up down.
+775.42s: Maybe there's a couple of risk premium strategies in their momentum, premium strategies
+778.74s: in their news announcement strategies in there, stuff like that.
+782.02s: But they're not all unique.
+783.46s: The way that I trade earnings is the very similar to the way that I trade FOMC meetings.
+787.58s: I'm using the same structures, just modifying them slightly.
+790.54s: So really think about how many strategies you need and what for we shouldn't just have
+795.34s: a laundry list of stuff.
+797.42s: Then I go through the rest of these stages to codify what I'm doing.
+801.06s: Now getting down to kind of testing things.
+804.34s: This is from using Python.
+807.18s: And the cool part about this is it lets you test simple thesis.
+812.02s: And if you wanted to test something like options, it starts to get a little more complex.
+815.46s: You have to calculate them yourselves or buy historic data.
+818.90s: So maybe if that's too prohibitive for you, you actually just see maybe a directional
+823.82s: assumption.
+824.82s: And then you can use logic to reason through the rest.
+827.10s: For example, let's say that you don't have data to back test and you want it to understand
+831.34s: which one would make you more money.
+833.06s: Let's say that's one of the questions you have.
+834.62s: Would it be long stock or long options?
+837.62s: Well, if you put the same amount of money in both and you get the move in your favor,
+841.58s: you're going to make money with long options.
+843.50s: So you can also reason through some of this if you don't have access to the data.
+848.70s: When I start pairing down these different choices, I think about the structures because
+855.30s: is a long call the same thing as a short put?
+858.74s: No, long calls have defined risk.
+861.66s: They have undefined profit potential.
+863.98s: So if the thesis that I'm trying to trade is directional momentum, meaning I want it
+869.82s: to move a lot, would I prefer a long call or short put?
+874.54s: Probably the long call.
+875.54s: That's a better fit for that thesis, a directional momentum trade.
+880.02s: If you trade a short put in that scenario, it could still make money, but you have a
+884.54s: defined risk or a defined profit right out of the gate and undefined risk.
+889.58s: So by understanding the qualities of the options, you can then use that to further narrow down
+894.18s: what best fits again, what money making mechanism you are trying to capitalize on.
+900.34s: Then we go down to these last steps.
+903.82s: We're going to test multiple variations.
+906.26s: We're going to use something like this, a strategy outline to document what we think we're
+910.70s: going to do.
+911.86s: And then we iterate on this process.
+914.14s: A good example of this iteration and I'll throw a link in the notes below that talks about
+918.82s: this exact thing where for zero DTE and even earnings for a long time, I favored
+923.78s: straddles made more money.
+925.94s: But with the markets over the last four years or so, I've actually started moving to
+929.38s: strangles more frequently because I need the delta offset based on how the markets are
+933.38s: behaving.
+934.38s: So how did I come to that conclusion by this down here, by continually to optimize what
+938.82s: I'm doing because if I just use the original analysis that I did and stopped, I probably
+943.46s: would actually be losing money on some of those as compared to making money.
+946.38s: You have to continue to adapt your strategies to what the markets are doing.
+949.90s: That's the name of the game, more traders.
+952.02s: That's our job.
+953.02s: See what the market is doing.
+954.02s: Fit your toolkit to the market to make money.
+957.62s: Like, subscribe, share, be an outlier.
+959.42s: See you all later.

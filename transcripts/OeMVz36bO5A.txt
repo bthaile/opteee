@@ -1,0 +1,176 @@
+0.00s: I'm going to show you what gamma scalping is, what the major components are, and then
+4.86s: walk you through an example so that you can see how this thing works from beginning to
+8.48s: end. What's up everybody? Eric here, and I'm stoked to talk a little bit about gamma
+12.88s: scalping because I actually think there's better opportunity now than there has been
+16.72s: in the past few years. So let's jump over and get right into what this is. What is gamma
+21.72s: scalping? It's essentially Delta adjustments around a base trade. So the way to think
+28.64s: about it is you can scalp without having any sort of base position. And what I mean
+33.76s: by that is you could try to benefit from the interim price movements of whatever it
+39.24s: is that you're trading. Now the difference between that and gamma scalping is we typically
+44.44s: have some sort of base trade on and we're adjusting the Delta's on that trade. So when
+52.08s: we're looking at these, there's kind of two main categories. There's long premium
+56.08s: trades and then short premium trades. Now for gamma scalping more often than not, this
+61.80s: is typically an institutional practice. So there's a lot of differences between what an
+66.08s: institution will do with this and what retail seeks to do with it. A lot of that has to
+70.56s: do with transaction costs and things of that nature. But that being said, the normal way
+76.68s: retail traders will gamma scalp is typically having some sort of long base volatility
+83.40s: trade. Their very common move is long straddles. So buying and at the money call and put,
+90.52s: which we'll talk about, but that's a very common base trade to gamma scalp around. And
+96.20s: the idea here is the main enemy of any sort of long premium trade is time. We need whatever
+104.32s: it is that we're buying to move so that we can make money. Now there is another use for
+110.84s: this for short premium traders. And this is a way to minimize some of the directional risk.
+117.36s: However, you're going to see this a lot less frequently with short premium traders. And
+122.12s: it's primarily because we want time to pass. And that benefits our position. Whereas for
+129.00s: the people who are long premium, the main utility of gamma scalping is to pay for theta so
+135.64s: that you're experiencing less erosion in your base position. So that's the main difference
+142.28s: between long premium short premium gamma scalping. I'm going to spend more time talking
+145.96s: about the long premium side again, because that's the more common use case. All right, let's
+150.56s: talk about the components. There's two main things that we're going to have here. We
+153.80s: have Delta and gamma, which I'll talk about those in a second. But what is the base style
+158.64s: trade look like? As I mentioned, it'll normally be some sort of long premium strategy. So
+165.44s: in this case, we're looking at something like a long straddle. I'm using think or swim,
+170.48s: the on demand feature. So this is actually back in time on the 1st of June of 21, just
+175.64s: for some context and what you're looking at here. But the base position typically would
+179.72s: be something like this where we buy the 419 call and put. And that's really the base
+186.20s: position that we have here. So now we're long in at the money straddle. So that is the
+192.48s: beginning. Now in order to understand the idea of gamma scalping, we need to understand
+197.12s: how these two Greeks specifically Delta and give them a move around. So as you can see
+201.60s: on this top chart, we have two lines, the white line and the yellow line. The yellow line
+207.56s: is a 325 days to expiration option. And then the white line is 31. Really, what I want
+214.48s: you to note is the steepness in Delta. That's what I'm highlighting because the closer we
+221.24s: get to expiration, the more Delta is going to move because options are approximating to
+228.92s: one of two conditions, either it's going to zero if it's out of the money or if it's
+233.08s: going to want to fit in the money. And this becomes steeper and steeper, the closer we
+238.32s: get to expiration. Okay. Now we need to talk about gamma because it's called gamma scalping.
+244.72s: Gamma is simply the rate of change of Delta. So when we're thinking about gamma scalping,
+252.80s: what we're doing is identifying how much our Delta's are going to move. And then we're
+259.12s: using that movement to buy in and out of the underlying so that we can cover our theta
+266.92s: costs. So again, right now pretend we're long that straddle. And as we start to get some
+272.96s: movements, we're going to trade the underlying, which I'll show you when we get into the example.
+278.08s: Let's talk about some of the traits of gamma. We have a 10 DTE gamma here in yellow and then a
+286.48s: 30 DTE gamma here in white. Again, notice how steep gamma becomes as we get closer to expiration.
+297.60s: The other thing that you're going to note is as we get closer to expiration, the overall level
+304.32s: of gamma is significantly higher. Whereas on a 30 DTE option, the highest the peak gamma, which
+311.20s: is going to be at the money, is 0.04. Meanwhile, on the 10 DTE option, our at the money gamma is
+322.00s: 0.08. Now this can vary quite a bit depending on what you're trading. And there's one other condition
+329.20s: that matters. So I just went over this first one here where gamma in general will get,
+335.28s: will increase in magnitude, the closer we get to expiration, it will also be highest for at the
+340.80s: money options. Now there's one other function is this right here. Gamma decreases as volatility
+350.16s: increases. So what I have sketched over this in these awful hand drawn lines are two different
+356.88s: volatility scenarios. So if we have a high volatility scenario represented here in orange,
+365.76s: notice how that is a bit more flat. And if we have low volatility, notice how we will have
+374.80s: more gamma. The reason why this exists is because the way that options move. If we have really high
+381.92s: volatility, a lot of that is already priced into the options. So a slight move in the underlying
+388.40s: isn't going to make as big of a difference as it would have before. So two other things we got to
+395.20s: talk about. One is if you are long premium, whether it's long calls, long puts, it doesn't matter,
+401.60s: you are long gamma. The way to think about this is if you're long gamma, you just want something to
+406.80s: move. You need it to move ideally in your favor. But in this scenario, if we're talking about a long
+411.44s: straddle, we don't care which way it moves. We just need it to move because otherwise as time passes,
+416.88s: we are just losing theta. If you were short premium, you were short gamma. This is kind of the
+422.16s: inverse. We don't want things to move that much, which is again, why this entire concept of gamma
+428.16s: doesn't really matter quite as much for short premium or short gamma positions is because we
+433.20s: don't want it to move much anyways. Now, if it does, you can do some adjustments about it, but it
+438.40s: doesn't work to the same degree as what we will see with long gamma positions. All right, we'll take
+444.56s: a quick pause there, do a quick recap, and then I want to get into an example. So gamma scalping
+450.48s: is a very active style strategy. We typically will try to create varying thresholds that we choose
+460.32s: to gamma scalp on. Now, I'm not going to go super far in detail because I don't have time in this
+465.12s: video for that, but in maybe a couple gamma follow on videos, I will go into some of the considerations
+472.08s: because it's going to be largely dependent on what you are trading, how frequently it makes sense
+476.56s: to gamma scalp. As we have our long base position, we are fighting theta. That is the entire
+484.00s: premise of gamma scalping. All right, let's get over to an example. I have here a series of trades
+494.88s: really, but I'm going to start with what I was just showing you in here. So again, today is one
+500.72s: June 2011. It's I'm sorry, 2021 really, it's a November 22, but I again am using on demand.
+510.00s: And I established this 419 long straddle. So what does this look like? Let's take a look.
+517.76s: We bought to open 10 of the 21 June. So this is just a 20 days to expiration trade. And I bought
+524.64s: the 419 column put at $10.79. So the initial position here has an outlay of $10,790. It's 20 DTE.
+535.52s: Right now, we have long 59 gamma. We are long 67 delta's. And we are losing $260 to daily theta decay.
+549.60s: So we don't want to just continually get sucked into our daily theta erosion while we're waiting
+558.64s: for that ideally large move. So in order to maximize this base position, what we're doing is
+567.60s: we're going to sell to open 67 shares of spy at 419 83. So really the current price as of right
+576.32s: now, that's going to give us a $28,129 credit. So what just happened here? This is where we
+583.84s: entered the trade. I drew a line right through the candle for some context. And we'll go back
+588.56s: over to the thinkers woman a second. But I want you to see how this is working. So we have this
+593.36s: long straddle. This was the remaining Greeks that really pertain to us right now.
+600.24s: And we want to neutralize this delta. The whole point of this long straddle is we're not
+606.80s: necessary. We don't want to be directional. That's the point of a straddle. It's designed to be
+611.84s: non directional. We are just trying to gain exposure to volatility expansions or just a big move
+618.96s: one way or the other for us to exit while we're waiting for that. We're fighting theta. So this is
+624.88s: a way for us to attempt to offset theta. So right now as we sell those 67 shares, it's going to take
+632.32s: that 67 delta and it's going to reduce it to just about nothing. So let's take a look. I have
+638.32s: the same trade pulled up here. Notice how our dam is 59.12 delta is 67.83. So maybe we can do 68
+645.84s: shares instead of 67 just to go a little on the oversight just kind of rounding it up because you
+651.60s: can't sell partial shares. And time is paused. So nothing is moving around. And I want you to look
+657.60s: at what happens to delta. So we just got filled on our fake trade and notice delta is now 0.17
+669.20s: negative 0.17. Gamma doesn't move because we couldn't do anything in that scenario to adjust our
+674.80s: gamma. If we wanted to be gamma neutral for a completely different style trade, we would structure
+680.80s: the trade based off of gamma, not off of delta like we did here because if you look gamma on
+686.56s: this option is 0.03 0.03 here, but they're going to adjust over time as time moves, which is why you
+695.12s: see this discrepancy between the two, even though they're the same strike. So our long straddle is
+702.80s: essentially flat. Maybe we're just seeing a small volatility expansion on the put side relative,
+709.12s: which is why we're seeing that come down just a little bit. But overall we have a flat position
+713.92s: or delta is a flat. Okay, now let's get back over to the screen and I want to show you I am just
+720.16s: fast forwarding us to the end of the day because for me personally, if I'm gamma scalping more often
+725.84s: than not, it's a daily endeavor. Some people will gamma scalp way more throughout the day, which is
+731.60s: okay, but again, there are costs associated with that even though we don't have those upfront
+737.76s: commissions on each order we send, we're still paying for those trades via payment for order flow,
+744.40s: which comes in at where we're seeing quotes and where we're getting filled at. So don't allow the
+751.60s: absence in the US, at least, of underlying commissions to mislead you into thinking that there's
+756.88s: no cost associated with hedging. There still most certainly is. So that's why I typically will hedge
+762.96s: daily, maybe a little more frequently depending on the size of the position and how much theta I'm losing.
+769.20s: So I'm just using a beginning of day entry and an end of day adjustment just so that you can see
+775.52s: how this thing works. Okay, so now let's fast forward time and instead of it being 0801 AM,
+783.04s: now it is 1601. This is Eastern time. And here's the trade that we have on. Our long straddle is now
+790.32s: losing some money. It's net PNL or it's unrealized PNL is negative 356. And the short shares are
+797.76s: showing a very small profit of plus $65. So I'm going to fast forward time over here as well,
+805.12s: just so that you could see exactly what this looks like. And as that loads, we can talk about it.
+811.68s: Coming back over here, this in my opinion for me would be a slightly premature delta adjustment.
+819.20s: And this goes back to the preference in terms of what we're trading and what we're trying to
+824.00s: accomplish. So in this scenario, I would create a delta range. I think attempting to keep this at
+831.60s: zero delta's at all times is very, very troublesome. So you can do it again, like I'm sharing
+837.84s: end of day, you could do it for a percent or dollar move in the underlying. You could do it
+845.12s: based on a delta threshold. So what I typically will do is I'll look at the size of the position.
+850.64s: I'll create a delta range. And then I will simply hedge once we get outside that range. In this case,
+856.64s: I would not be using 67 delta's, it would be more than that, probably at least 100 delta's. But
+861.68s: again, for the sake of the example, I'm going to show you the adjustment. If we were doing an end
+866.64s: of day adjustment, so each day. So in this case, we have our third trade. And we're going to buy to
+872.64s: close 59 shares of our 67 really, we did 68 in a bit of an audible on the platform itself,
+881.52s: which we'll see in a second. But this will show you the debit that we paid out and then the realized
+886.16s: PNL. So in this case, we're still losing $260 a day in daily theta. In this scenario, we offset $57.82.
+895.20s: It's not enough. Obviously. So if this were the case and we're hoping to get some sort of movement
+901.28s: that we can scalp, but you're not guaranteed it. So that's why the frequency of scalping starts to
+906.24s: matter a lot. So let's come over here real quick. Take a look at the platform and see where we're at.
+911.04s: As you can see, it's about the same as what I was just showing you. Now we're in a unique scenario
+915.52s: here because both the call and the put are both losing value. And that's because of theta and
+923.12s: volatility in this scenario. So it is entirely possible when we're long straddle to lose on both.
+928.88s: It's the less typical scenario, but it certainly does happen. And a lot of that's going to be
+934.72s: dependent on again, volatility and theta. So in this case, as you could see, our position now has a
+943.20s: total short delta's 57. And we're up about 65 bucks. So what I would do in this scenario is
+950.00s: essentially flatten out the delta's again. And in this case, it means that I would have to buy 57
+955.20s: shares. I think it might be the same or slightly different in this scenario again, just because we
+959.28s: changed the original the original hedge, but essentially all we're going to do then is make whatever
+965.36s: that PNL is. So in this example, let's just do it real quick. We know that we need to buy. So we'll
+972.64s: come up over here. We'll calm down here. And then we'll go to buy. And we need to buy 57 delta's
+979.20s: in order to get us out of here. The midpoint on that is 41890, whatever it's paper trading. So it's
+984.80s: all fake. And it looks like it's frozen up on me, which is super fun. So we'll just pretend that
+990.24s: it went through. But realistically, all that's happening is I'm saying, okay, I sold them for 41983.
+997.28s: I just bought them back at 41880 or whatever this thing said before it locked up on me. Or yeah,
+1003.84s: 41890. And then that's it. You make that PNL. Now you're delta flat again. And we're ready for
+1010.56s: the next move. So the end of day position here is we're still long the straddle. Nothing has changed
+1016.16s: there. The current price of the straddle is 1044. So we have a $350 unrealized PNL. And we're now just
+1023.92s: short the eight shares of spy at 41885. We realized 5782 today in PNL, although we lost more than
+1032.64s: that in daily theta. And this is gamma scalping. There are a ton of variations to it, which again,
+1039.04s: if there's interest, I'm happy to go into more in depth videos than some of the nuance differences.
+1043.60s: But I wanted to show you the primary mechanics so that most people can become more familiar with
+1048.40s: the concept. And then we could dive further into detail from there. I will say in a broad overview,
+1054.16s: this is still a very, very small part of my overall trading strategy. I typically will deploy
+1060.16s: these kinds of things if I want to be long premium. The only time that I typically want to be
+1064.24s: long premiums if I'm expecting some sort of big move. Now you can do this if it's not a straddle.
+1069.92s: You can do this with a long put or a long call. It's the same exact concept. But you start to
+1076.40s: introduce different risk because you don't have the same hedge available to you. Because remember,
+1081.44s: if you bought a call, bought a put, we're defining the risk in some shape or form again, depending
+1088.00s: on the structure of the trade. So this is a really fun conversation for me. I like game
+1092.64s: is scalping. I think it's a good thing for people to become familiar with. So if you have any
+1096.00s: questions, let me know if you made it to the end of the video, make sure you like and subscribe,
+1099.52s: share it with some friends. Help us grow. I'm still trying to hit 9k subscribers before the end
+1104.72s: of the year. We're getting close, but got a little more to go. So I'd appreciate you guys.
+1107.68s: It's help. Until next time, catch you all later. Be an outlier.

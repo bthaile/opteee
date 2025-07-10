@@ -1,0 +1,530 @@
+0.00s: you
+30.00s: you
+60.00s: you
+90.00s: you
+120.00s: you
+150.00s: you
+180.00s: you
+210.00s: you
+241.00s: you
+264.00s: what's up out liars happy friday hope the relief rally today took some of the
+270.00s: throughout the
+294.00s: tough
+295.74s: the
+296.72s: as
+298.96s: that's
+299.52s: change for information. Again, this will be at a slightly more basic level, so some of the concepts
+305.84s: I'm going to gloss over so that we don't get bogged down, but I want you to be aware of them.
+311.04s: And then hopefully we will be able to get a little further into detail as we get further along
+316.96s: in the video and hopefully on the next version of the series that we do. Now, one quick admin note
+324.56s: for the outlier options trading basics series is I had to reconfigure our sessions just a little bit
+333.52s: and it's just to accommodate some travel and stuff so that I'm not stopping in the very middle
+338.96s: of the series because that wouldn't be ideal. So I want to show you this syllabus as it sits
+345.68s: and I have to move it so that I can also see how it has sits. Okay, so we are here in the options
+351.68s: chain navigation and then we have essentially two more videos in this mini series about options
+359.44s: trading basics. The next one is going to be how to build trade and then the one after that is
+364.72s: going to be portfolio management. And then I have one bonus video after those two which will be
+372.40s: on the 21st of March will kind of be like a summation. We'll recap the series at a super high level,
+379.12s: but the most important thing that I want to accomplish during that 11th episode is helping people
+386.96s: create a path forward for themselves. So that's really the intention I have and then obviously we
+393.68s: can do a generalized Q&A or anything that we didn't answer or you want to dive a little deeper
+398.88s: into. So just so that you understand where we're at in this broader series, we've been at it for
+405.28s: a hot minute. Now I have a slightly compressed time frame today so I'm not going to run through
+412.96s: too deep of a quiz and all that stuff. I have to skip over it because I don't want to run out of time.
+418.08s: I want to get into this. So I'm going to move us over onto the main screen here and then we'll
+426.88s: bring this along and then we'll talk about this. Now your TLO's terminal learning objectives
+433.36s: is not only should you have an understanding of how to read an options chain literally just
+439.60s: to find your way around, but you should also have an understanding of some of the data and
+447.20s: information we can extrapolate from market specifically options markets and market pricing.
+456.48s: The reason why this is so important is because options are leveraged markets.
+463.20s: What that means is other than your friend who likes to lick windows and you're not sure if they
+469.68s: can tie their shoes and their proclivity to yolo on zero DTE options, most of the money in options
+478.48s: tends to be more informed, quite informed because they're pursuing leverage with these ideas.
+484.72s: Because of that, we can reliably pull very usable information out of the markets. And I have a
+493.12s: couple examples that I will give you towards the end of the session, but that's the so what here.
+499.92s: We have the very basics of how do we even look at these things and understand what we're looking at?
+506.24s: That's the very basic. And then there's the more important level beyond that of how can we use
+513.12s: options chains to glean information because they are full of information that I use literally
+520.80s: every single day. If you've seen me in the GME series that I've been doing analyzing GameStop
+526.32s: options, I talk about a lot of these tools that I'm going to introduce you to because they're
+531.12s: very useful. So that's our agenda for today. Before we get too far, I've got to say hello to
+538.16s: everybody. So looks like we got magic hands and magic hands seems to be a little grumpy that
+544.16s: there was no sound during the holding screen kickoff with the countdown. So that's okay.
+550.40s: We have Reese Alex, Mr. Lex Ryan. Great to see everybody. Awesome. So let's start with this. This
+559.20s: should take us literally two minutes. The option chain itself obviously is where you will find all
+566.24s: of the individual options that you might try to analyze and or subsequently trade.
+572.56s: The options chain is broken down into different explorations. We refer to these
+578.00s: explorations as terms, T-E-R-M terms. So when we're referring to different terms, we're referring
+586.72s: to different explorations. They're interchangeable. Within any individual term or expiration,
+594.08s: you will see that there are two types of options. Cals and puts. You're familiar with all of those
+598.56s: by now, but they split. So we have calls on one side, puts on the other. Other platforms don't do
+605.12s: this side-by-side version. You will find some platforms actually use a stacked version, which is
+610.56s: different. Just be aware that there are different ways this will be presented to you. So on the data
+621.04s: side, you will have the same data with respect to the columns for both the calls and the puts.
+628.24s: The data obviously will be slightly different. For most of them, put call parity aside.
+632.64s: You will find unique data points. And that's why it's split calls and puts.
+637.84s: Then different platforms will present this differently. I'm obviously familiar with thinker swim.
+642.24s: If you have questions about your platform, let me know. You can send in a screenshot
+646.24s: into the discord. And I'll do my best to see what it is. I actually have no idea what Robin Hood's
+653.52s: options chain looks like. Like genuinely zero idea. I've seen trades posted. So I know what the
+658.56s: individual trades look like, but in the charts, but I have no idea what the options chain looks like
+663.04s: in there. But the main thing is that there are certain data points that are super important to us.
+669.28s: And then there are others that are kind of just good to know. So I'm going to slide this out of
+674.40s: the way now. We're going to actually look at in options chain together. I was looking at HWM
+680.00s: earlier, actually with somebody on the mentoring program. So we'll just keep this up because we're
+686.24s: in here. Now let's go into the trade tab. And let's get rid of this. I don't know what that
+692.80s: example is from. And let's start with a standard expiration. One of the things to know,
+699.36s: as as we look through the different terms, you'll see that there are kind of like these gray ones.
+704.40s: And then there's these yellow ones. The gray ones represent standard option expiration,
+711.44s: which is the third Friday of the month. And then we have weekly's, which is a weekly expiration.
+716.40s: If we look at something like SPX, you will see daily expirations. The reason why they're
+722.64s: different colors is because different expiration cycles need to be called out for a bunch of
+727.60s: different reasons. One of the things you will find with options chains overwhelmingly,
+734.32s: most of the liquidity is going to be in standard expirations. Why is that the case? Does anybody
+742.24s: have a guess in the chat as to why this would be the case? Any guesses?
+749.36s: Mr. Lex, daily will still have weekly? Yes, that's correct because it's telling you it's expiring
+758.88s: within that week, right? So it's expiring in a week, meaning like within a subweek timeframe.
+764.80s: So it just uses the same flag for it. Travel says institution trading. That's not wrong.
+774.00s: Zoom it up one level. Why would institutions go into the standard expiration?
+780.40s: This is important for you to know, especially if you're looking to trade options in different
+785.20s: timeframes. If you don't understand this detail, you're typically stepping in front of illiquid
+789.92s: options just because you happen to prefer the 17 DTE 17 marches. And instead of just going out
+798.08s: a couple of extra days to 21 March, you're going to take a haircut on the liquidity of your options.
+802.80s: There's a very specific reason why. No other guesses? I'll give you the answer. It's because
+809.36s: that's where everybody goes. That's why it's a self-fulfilling prophecy. If we had the scenario where
+817.76s: everybody chose to use this 10 DTE weekly option, these would be super liquid. They'd be the most
+823.92s: liquid options on here. But they're not. And it's literally just because everybody just goes to
+831.60s: these. That's literally why it is the way it is. The reason why you should know that's why
+836.96s: the way it is is because if you find instances where most of the liquidity is in another cycle for
+846.24s: some reason, there's typically a reason. And there were going to be a lot of these little instances
+851.28s: that I highlight with that exact framing. There's typically a reason. And it's because this is the
+856.00s: market giving you subtle context clues based on what's normal. And then based on what the deviations
+862.56s: off of normal are. That is a big part of analyzing options chains. It's not there's not going to be
+868.96s: big blinking flashing lights telling you this is different. This is changed. This is anomalous.
+873.76s: You have to build a familiarity with these. So to put that idea to the test, let's go down here
+880.72s: really quick. And let's take a look at the open interest. The open interest for SPX right now
+885.76s: across all cycles is 6.7 million and 12.5 million calls to puts respectively. Let's take a look at
+894.00s: these different expiration cycles. Let's go to the 14 March. The 14 March has 60,000 calls 248,000
+903.92s: the 17 March has 10,000 calls 31,000 puts. The 21 March has 1.7 million calls against 2.6 million
+915.76s: puts. What do you notice? You notice that the standard expiration has insanely higher open
+926.16s: interest than all of these individual little weekly options. This will almost always be the case.
+932.80s: So you should be aware of that propensity. Okay. Now let's go back to what we were looking at. I
+939.68s: literally already forgot the ticker. Was it hwb? No. hwn? No. Well, y'all help me out. What was I
+948.80s: just looking at? What's in here? Is it hh something? hwm? Thank you. Thank you, Elizabeth, hwm.
+963.44s: So if we go into hwm and we take a look at this same idea, all of the options in this are pretty
+972.32s: light. There's 36,000 calls against 17,000 puts. And just to reiterate this point, what should I find
+981.52s: if I get rid of all these different series, series, terms, expectations, all the same thing,
+986.72s: by the way, all synonymous. I get rid of all these different terms and I'm going to flow between
+991.44s: them just to help reinforce that point. And I click this series versus this series. The 14 March
+999.52s: versus 21 March. What am I going to see? What are you going to see? What do you know?
+1004.80s: overwhelmingly, probabilistically, you're going to see. Now it could not be the case, but there's
+1009.60s: would be a reason why it would not be the case. And that would be something for us to look into.
+1014.48s: But what is overwhelmingly likely going to be the case? If I click into 14 March and then 21 March,
+1021.52s: what what am I going to see in terms of an open interest disparity between those? Which of those
+1026.72s: is going to have higher open interest? 14 March or 21 March. What's the guess?
+1035.60s: Love me a good guess. Bingo. Big Aces on it. Big A's with the big brain. We go into 14 March,
+1042.96s: 4,000 again, 625. Go into 21 March, 4,000 against 1,000. Not that big of a difference.
+1050.16s: Something interesting there. But still, this is essentially two times the size on the put side.
+1055.44s: So the total OI in here is 5,700. The total OI in here is 4,800. So still more, but not a ton more.
+1066.00s: One of the things you'll notice is with lower overall float options, meaning 36,000 total OI
+1077.20s: against 17,000 total OI on the put side, when it's this low, the discrepancy between different
+1085.84s: expiration cycles is less pronounced. And it's because there's less of them in total.
+1092.96s: If you look at it as a total percentage difference, it's still quite high, right? The difference
+1097.84s: between 5,700, 747, 100. It's still fairly high. But it looks flatter because there's simply
+1107.84s: not as many options in there. What's another thing we can conclude by just looking at this open
+1114.40s: interest? If I were to take an educated guess about the liquidity of these options,
+1122.64s: what might I conclude by this? Do we think that it would be more liquid or less liquid than
+1130.72s: something that has higher open interest? So if I'm comparing HWM to something else that has higher
+1137.76s: open interest, what I expect the liquidity in here to be higher or lower. Ben says not good,
+1147.92s: you pay more. Good first part. The second part, a little shaky. It's not inherent that you pay
+1154.72s: more, but you do pay a wider bit ask spread overwhelming probability. Travel also has it, less liquid.
+1162.08s: So let's take a look at what this might look like. Let's go to the 21 March and let's take a look
+1165.52s: at the liquidity here. These are $1.60 wide for at the money put. That's actually like super
+1173.20s: illiquid. And then these are $1.40 wide for at the money call. So these are also very illiquid.
+1180.64s: Important point, we're going to circle back to it in a little bit. But again, what I'm trying to
+1187.84s: get you to think about is when you look at an options chain, all of these little data points should
+1194.48s: be popping into your brain. It shouldn't be just looking at numbers. You should be looking at numbers
+1200.88s: coming up with conclusions as you're looking at the numbers. Another thing that jumps out to me
+1208.08s: on the screen is the difference between calls traded today against puts traded today.
+1218.16s: What's going on here? What can I infer? I can infer that there is a shit ton of calls being traded
+1226.40s: compared to HWM. The majority of these might be traded at the bid, the ask, or in between the market.
+1238.00s: So big A says bullish, not inherently. We don't know inherently. Why don't we know inherently?
+1244.32s: I just gave you a little bit of a preamble. And as everything to do with these, the bid,
+1250.24s: the ask, or between the market, if we were to take a guess as to whether or not it's actually
+1257.84s: bullish or not. And then I'm going to grab my little drawing pad here. So big A's, why is your
+1263.04s: response there not accurate by itself? It happens to be the case here, by the way. But simply comparing
+1271.20s: calls to puts, that doesn't answer it for us. What do we think? Did they buy or sell would make
+1281.68s: a difference? It's exactly correct. Elizabeth is on it like white on rice. So if we take a look
+1288.00s: at the difference between these two calls inputs, we can see that there's 4,700 of these against
+1295.20s: 561 of these. At a first look, we would think, yeah, that's super bullish. That's way more calls
+1300.96s: traded. But we're mistakenly making an assumption. The assumption we're making is that we bought those
+1306.80s: calls, we being the broad market participants. We don't know that yet. So what we need to do is
+1313.60s: actually take a look if they transacted at the bid or at the offer. So if you'll recall,
+1323.76s: all options have a bid and an ask. The bid is somebody saying, this is the most I'll pay.
+1337.04s: And then the ask is the cheapest I'll sell. So let's pretend for a moment that there's no bid
+1351.04s: ask spread. Let's pretend that you can only transact at one of these two points. The bid or the ask.
+1361.12s: And let's say that I wanted to buy a call. Let's say I, Eric, and bullish. I want to buy to open a call.
+1370.24s: Who do I have to go to? Who do I go to in order to buy this one call? Do I go to the bid?
+1378.08s: The person that's offering the bid or the person that's offering the ask or offering the offer
+1384.08s: to make it confusing for you? Where do I go? Which one of these sides do I go to in order to buy this call?
+1393.36s: What's the guess?
+1400.72s: Big Ace is close to it with his question from the other part.
+1407.76s: You go to the ask exactly correct. So if I'm buying this call under the assumption that I'm bullish,
+1415.52s: I have to go to this person. If I want to sell to open one call, which would be bearish,
+1427.20s: I have to go to this person. Can't sell it to them. They're trying to sell. I have to sell to them.
+1434.72s: So this is how you can use the at the bid or at the offer to make an inference super important point.
+1444.08s: In inference, we do not know. We do not know if these 113 calls at the bid, we do not know if all of them were bought.
+1460.72s: I guess I should say sold here. Sorry. We do not know if they were sold.
+1468.96s: Some of them might have been bought low probability, but they might have been. This can happen during
+1478.40s: what's called a sweep or subsequent orders. I'm putting in a big order. That's just a market order
+1484.72s: at a certain price. I can get filled at better levels than the bidder to the offer.
+1491.60s: There will be instances that, for example, you might be able to buy at the bid. It's not common.
+1498.64s: The majority of instances that won't be the case, but it absolutely can happen. It does happen.
+1502.80s: It's not like super rare, but the majority of instances that won't be the case. You have to be
+1506.64s: aware of that because a lot of people that I see talking about the bids and the offers in
+1513.20s: deconstructing the bias behind those trades falsely assume that this is a bullish rebarrows trade
+1521.68s: based on the transaction that happened there. But we are making an educated guess. We do not know
+1530.72s: if they were actually bought or sold. We're making an educated guess based on market mechanics.
+1536.64s: It's important nuance to be aware of with respect to this.
+1542.32s: A big A says, what about when you placed at the mid? What's it classified then? Great question.
+1547.60s: What do you notice this category is
+1554.56s: between the market and notice where the majority of the volume went today.
+1559.84s: The majority of the volume today went between the market. When something's between the market,
+1569.68s: we don't know. Now, again, we can make educated guesses. You can't make an educated guess in here
+1575.28s: because they don't have the capability. But if I show you a tool like this
+1581.04s: who fold disclosure, I am an affiliate for. They're not sponsor in this or anything.
+1586.16s: But again, I'm just always going to keep it a buck with you guys.
+1592.96s: If I take a look at, let's do flow feed. Let's take a look at HWM.
+1604.32s: Or not. We can also not. It's the computer is doing this fun thing that it started doing
+1609.28s: or just completely locks up during this. Okay. So if I take a look at HWM, and again,
+1616.16s: you can also do this in thinkorswim, by the way, I should clarify that. It's just more difficult.
+1620.72s: If I want to know for the between the market, if I wanted to try and make a guess,
+1626.88s: an educated guess as to if the option was bought or sold, the way that I can do this is very simple.
+1635.28s: If this 88% of instances, I'm kind of like, how can I classify if these were bought or sold?
+1645.68s: Well, if we're trading something that's illiquid like this, it actually becomes easier.
+1652.80s: Because rather than something like the S&P 500, where the bid and ask might be this distance apart,
+1659.84s: HWM being less liquid, the bid ask spread is this distance apart. We already looked at two scenarios
+1666.48s: where for the calls, they were $1.40 wide, and then I think what was it? $1.80 wide for the puts.
+1673.68s: So what can we do? Simple. We can see where they transacted over here,
+1680.32s: or where they transacted over here, or over here, or over here.
+1686.08s: You can look at where it's closer to. So the cool part about bar chart, or I'm sorry,
+1691.76s: bar chart, unusual whales, you can kind of see all that in one spot. You can also see it in
+1695.04s: thinkorswim though. What you can do is you can go to TNS, time and sales. And I can take a look at
+1700.48s: what the market was offered at during the time that the trade ran through. And we can find instances
+1709.20s: where the trade like this right here is a great example. The seven March, 141 calls here,
+1716.88s: they traded at a dollar. The market at the time was 95 cents by a dollar 10. What is this closer to?
+1727.84s: That's closer to 95 cents. More likely than not occurred towards the bid. So you can make an
+1735.84s: educated guess that those were probably sold. Don't know. Educated guess. So anyways,
+1742.72s: you could do the same thing with a tool like this that kind of lets you see it in one spot more
+1747.52s: broadly. And you can even look at it. One of the things I do like about it is that if you look
+1752.80s: at the overall flow for the day, you can see where most of it transacted at. So if we look at it
+1759.52s: over the course of the day, we can get a sense of where the net premium came in. And then at
+1767.12s: closer to bids or offers where it came in. Okay, so this is literally just an overview of what I
+1774.80s: want to talk to you about. This is really what I want to talk to you about. When we're looking at
+1780.72s: an option chain, there are two broad buckets of data that I think makes sense to look at. There's
+1788.72s: a zero percent chance we'll be able to go through all of this in detail today. But I want you to be
+1794.00s: aware of some of these. Now, the purpose of this data is we can come up with ideas on what's happening
+1806.00s: again, cleaning information from the market. So I'm going to move this out of the way. And we're
+1811.36s: just going to keep strolling through the options chain like this together. And then I'm going to
+1815.12s: highlight more of these four you as we go along. So one of the things that we can look at is based
+1822.48s: on volume and open interest. We just started doing that analysis, by the way. We started looking at
+1827.68s: the total volume of calls traded today versus puts and kind of coming up with some assumptions.
+1833.12s: First assumption is, is it mostly bullish flow? Is it mostly bearish flow? That typically means
+1839.20s: that there are people taking educated guesses based on information that they may not have.
+1844.64s: Another interesting question with respect to this is I wonder what
+1847.92s: explorations this volume happened in and is this same breakdown prevalent in the individual
+1856.80s: exploration. So we can take a look at the volume total volume and we can eyeball what
+1862.88s: explorations got the bulk of this volume. Well, I can tell you from the call side, the bulk of
+1867.84s: that volume came in at the 14 March 143's 1921 of these total contracts traded there. Interesting.
+1878.40s: So what could I do now? I could then say, I'm curious specifically about these 143's.
+1886.88s: Do I think these 143's were bought or sold? Simple. We can come in here and we can filter this.
+1894.16s: We can say, I only want to look at the call side in that specific series. So we're going to go to
+1901.76s: 14 March and then we're going to look at what was it? The 141's. I only care in this scenario,
+1909.36s: about the 141's. So let's limit everything we're looking at to just the 141's.
+1915.76s: And then let's also get rid of where is it? Oh, interesting. It doesn't have the quantity filter on.
+1935.60s: Okay, so this isn't showing me the right data, which is kind of annoying. But we can find it over here
+1941.44s: as well. So we can go into the volume for today and we can take a look at these different calls,
+1948.00s: right? So we know the 141's were busy today. And we can figure out where the majority of those were
+1954.00s: traded at throughout the day. Now normally, think or swim would also support being able to do this
+1960.48s: yourself. I don't know why it's yielding not correct information. One of the issues when you're
+1965.84s: trading or when you're using data like this, not paid data is typically going to have some constraints.
+1972.56s: It's just kind of a function of what it is. I know a lot of people, traders are used to getting
+1978.24s: a ton for free. But the reality is the only reason why you get as much as you do for free is because
+1983.04s: the brokers want you to trade. They're not necessarily incentivized for like quality of information.
+1988.80s: They just want to give you stuff so that you do trade. That's how they make their money.
+1995.92s: So that's the facade. That's one style of analysis that we can run based on what we think
+2004.48s: this difference between calls and puts are. Another very common analysis, there's actually a scam
+2012.48s: that I run for this is we can take a look at tickers. Let's build one together really quick.
+2022.88s: We don't want non-common. We don't want OTC. Let's take a look at options really fast.
+2031.68s: What I'm going to do is first filter by open interest. We want open interest to be greater than zero.
+2040.72s: Probably 500 at least so that we're not trading like super, super small stuff.
+2045.36s: And then what I want to do is actually look at changes in volume to OI. And it's frozen again.
+2058.16s: We want to look at volume compared to OI. So what this scan is going to show me is where
+2066.72s: in what tickers did we have explosions of volume over open interest on the day.
+2077.84s: The reason why volume over open interest is such a useful metric is because it shows us
+2085.60s: where positions are being aggressively built out. And I don't see any in here that are jumping
+2093.68s: out at me. And I don't see any here. So we'll run the scan and see what comes up.
+2103.44s: It's probably going to be a ton, not that many actually. So let's sort this
+2111.60s: by volume over OI. If I can get this to work for me, there we go.
+2121.52s: So we can see O or ORGO. I was literally just going to say this too.
+2128.32s: More often than not, when you see big spikes in volume over OI, it's from the medical world.
+2133.76s: Why is it from the medical world? And funny is shit. The top two are from the medical world.
+2139.68s: Why is that? Anybody know? That's so funny, honestly. I'm going to get a kick out of that.
+2146.00s: And while you guys are seeing if you can come up with why that might be the case,
+2156.32s: let's add a couple more things. While we're in here, we'll add 5% change.
+2165.20s: We will add one month. We will add six months. We will add one year.
+2174.64s: The reason why the percent changes matter to me is because typically speaking,
+2180.32s: there will be a reason why we see massive changes in volume over OI.
+2192.48s: So I didn't input anything into those. I just want to see what the results are.
+2196.40s: James says clinical trials. That's a little specific. But the reason why more often than not,
+2203.68s: that I will see volume over OI very high in the medical industry is because very frequently,
+2214.08s: the motherfuckers that trade options in these are insiders. And it's because they have much more
+2223.44s: lacks rules with respect to insider trading in the medical industry. If you couple that
+2231.84s: with the fact that a lot of medical companies, specifically biotech and stuff like that,
+2238.24s: their entire business is typically wrapped around an individual trial of a drug or solution
+2247.28s: that they're trying to get out onto the open market. So you have the ability for something to move
+2254.80s: massively based on the information that we're discussing. So that's why as you look through this,
+2260.96s: if we just take an eyeball count of how many of these are in the medical field, it looks like the
+2266.08s: majority to me, right? Medical, medical, medical, medical, medical, medical, medical, medical, medical,
+2274.32s: so on and so forth. A ton of these are in medical. And this is very, very common for this kind of
+2279.92s: thing. So let's just take a look at ORGO. Something's happening there. Wonder what it is.
+2287.12s: ORGO.
+2295.84s: You don't say. So this had earnings where it was expected to come in at negative
+2304.16s: three cents and it came in at four cents, a massive earnings beat.
+2309.84s: There is a. So one of the things we can do now is we can say, well, that's for today.
+2316.96s: I wonder if there are some bastards that knew about this ahead of time and they were
+2321.12s: positioning ahead of time. You very often will actually see that. So what we can do
+2326.56s: if this will allow me is we can take a look at a few things. We can look at volume percent change.
+2341.20s: And then we can also look at put call volume ratio.
+2347.60s: I don't really care so much about the one month change. I don't want this to become too noisy for
+2356.48s: you guys. Then we can also look at total interest percent change. We'll do this over the five day.
+2363.60s: And then this one should have one one. Okay. So we will have call versus puts
+2370.96s: for current and then a five day average. And then we have five day percent open interest percent
+2384.24s: changes. We have five day volume percent changes. And then we have one month open interest percent
+2394.24s: changes. So what we can do now is we can observe what kind of changes have occurred over the past
+2405.60s: five day periods for both volume and OI just to get a sense of did somebody have a clue that
+2412.16s: this was going on? And what do we notice? It looks like yes. Because if we take a look at the
+2425.12s: five day volume change and the five day OI change even compared to the one month OI change.
+2433.76s: Huge huge discrepancy, which is kind of hilarious to be honest. And this is again super, super
+2441.76s: common. There's really I wish it wasn't as common as it was because this is a lot of people
+2450.72s: that are trading information that they have access to that technically it's not completely
+2455.60s: removed from your access either by the way. That's an important note. That's why it's allowed.
+2460.48s: In a lot of these places you'll see this kind of thing in medical devices especially because of
+2469.68s: periods where they will have conferences and whatnot which is again kind of annoying but
+2476.24s: it is what it is. So what we can do for something like this again if this thing will
+2482.88s: work as it should we can get in alert. We can essentially say we want to sort this by the total
+2494.16s: volume over OI. We want to do it descending and we want it both at market open and market close
+2502.32s: because then this will give us an idea throughout the day as people are putting positions on midday
+2508.48s: is also fine depending on what period you might try to trade the idea. But this is literally
+2514.80s: exactly how you can use something like volume over OI to get a little bit of a heads up that
+2521.76s: something's happening before the thing actually happens. Now there are other versions of this that we
+2527.68s: can run. We can get rid of total volume over OI. We can get rid of that as our primary filter
+2534.32s: and we can say that we just want to look for stuff that's starting to have really big changes
+2541.20s: in volume just overall volume. So what we can do is like these become less important and we can
+2549.28s: analyze the growth of five day versus one month average volumes. Specifically, often for bigger
+2560.16s: names you really require institutional sponsorship. Institutional sponsorship doesn't happen overnight.
+2567.28s: So the medical device world a lot of times institutions will stay out of there. And it's just because
+2573.36s: it's a complete crapshoot and you're typically betting against people that have information that you
+2577.68s: don't. More often than not, if I'm going to trade in the medical space like that, I'm purposely going
+2582.48s: to try to ride the flow that exists. So now let's go back. I don't want to get too far into the weeds on
+2588.88s: this specific example and I want to talk to you about a couple other things. A big one is analyzing
+2596.64s: open interest shelves. So let's take a look at a GameStop is a good example.
+2604.80s: So if we look at GameStop and the reason why GameStop is a good example is because this is
+2610.48s: something that absolutely has previously experienced Gamma squeezes. And if we take a look at this
+2617.36s: 21 March expiration and we just kind of like think about the landscape for a Gamma squeeze.
+2625.76s: This is exactly why I got involved trading GameStop earlier this year and I've talked about this.
+2632.96s: How I traded this exact move like earlier last year. I got my years fucked up during this move here.
+2642.40s: And the reason why I became involved in this move just like I was involved during the first
+2648.96s: squeeze. It's not because and I'm very open about this. I trade everything. I know that there are
+2653.28s: like apes that they are so deep into GameStop and I don't have that depth of knowledge yet. But
+2659.92s: what I do know is from a general trading perspective when I see massive changes in open interest
+2666.16s: and volume like I did here, it draws my attention. Then when I see that movement sustained and if we
+2674.64s: look in the options chain, we can start to glean some information. That kind of information comes
+2682.72s: by way of understanding the hedging behavior of the counter party to your trade typically market
+2690.32s: makers. Now a bunch of notes. The first thing. The majority of people wrongfully believe, well,
+2700.48s: actually let's put it to the test. If I buy to open one call, we assume that a market maker
+2716.48s: has sold to open one call. So this means we are long deltas.
+2723.76s: This means these guys are short deltas.
+2732.80s: And let's say that we're talking about a 30 delta option.
+2741.28s: We assume that this market maker hedges. How does this market maker hedge? What are your thoughts?
+2753.04s: Pepe says shares. Any other guesses?
+2762.16s: I don't know what Ben means.
+2781.76s: Pepe says baldness which I assume means not hedging.
+2792.96s: So is that the primary consensus right now that they would hedge with shares?
+2797.92s: Is that what I'm picking up?
+2806.16s: Looks like yes.
+2811.28s: Here's the reality. They don't have to hedge with shares.
+2824.48s: There's no imperative for them to hedge with shares.
+2829.28s: What if this one call gets added because they don't just market make for this one strike? They
+2838.16s: market make for all of this. So what if this one strike? This one call gets added to this broader
+2848.72s: basket of options that they've sold at different periods? What if this one call actually offsets
+2859.44s: some of the other risk that they've taken on throughout the day?
+2862.80s: Absolutely.
+2863.76s: Absolutely can be the case.
+2870.40s: They don't have to hedge with shares. It's a massive common misconception.
+2875.12s: Now there is an important period when they would hedge with shares.
+2884.24s: I was trying to delete this.
+2896.96s: If I have these options that are in the money,
+2904.16s: big A says in the money that is also only partially correct.
+2912.00s: It's still not full credit correct. Why is that not full credit correct?
+2916.80s: Guesses.
+2924.00s: What do we think? Why do I say partially correct?
+2933.36s: Not full credit correct. You do not get full credit.
+2942.96s: Reece says most in the money are still sold to close out not exercise. That's part of it.
+2952.96s: Think carefully. We covered this before.
+2959.76s: When is an option likely to be exercised?
+2963.36s: In the money near expiration. Be more specific. That's not wrong. But be more specific. I want you to
+2984.88s: identify the actual function. Bingo. Reece and travel are on it.
+2994.48s: When there's not a lot of extrinsic value left, that's when it becomes logical to exercise the
+2999.76s: option. So it's not just a function of buying or selling a call. That inherently doesn't mean
+3008.88s: hedging with the underlying. It also doesn't mean hedge with the underlying if I've in the money
+3014.80s: options that are 21 days out. Because these options still have a ton of extrinsic value. You can
+3022.16s: get a proxy by looking over here. They're still very unlikely to be exercised. And if they are,
+3028.16s: it's profitable for me. Just going to open market and buy them. Completely fine.
+3034.56s: So if we go back to this idea of analyzing open interest shelves,
+3041.44s: again, this context is super important. Because if we want to talk about something like a gamma
+3049.28s: squeeze, which is a very near term behavior, the places where a gamma squeeze become increasingly
+3056.00s: likely is if, say, for example, next week, let's say next week, GameStop starts to see a massive
+3068.08s: build out in all of these OIs. What ends up happening is as one of these fall in the money,
+3079.68s: the market makers now have to make a business decision, especially depending on the
+3084.16s: probability of being assigned, which they have very good models that help them assess that.
+3088.48s: And they say, do I need to buy shares? Okay, I need to go buy shares now. So buy to open shares.
+3093.44s: As they buy shares to hedge their short call, that pushes price up. So then we move into the next
+3101.68s: wrong. And they say, okay, now I have to buy shares here to hedge the calls. And then I also have
+3108.24s: to buy more shares here to finish Delta hedging these calls because they don't want to buy
+3114.16s: a hundred shares for one call of the Delta's 53. Because now they're net long. They're not trying
+3120.40s: to be net long necessarily. They're trying to be flat. They're trying to capture the bit-ass spread.
+3125.84s: Now, if they think it's uninformed market flow, they might pile on top of it. A lot of them will
+3130.08s: try to do that. But from a hedging lens, they don't want to over hedge. They want to hedge the
+3134.96s: position precisely. So anyways, as this series happens, more buying, more hedging, pushing more
+3145.20s: options in the money that causes more buying, that causes more hedging, that causes more stock
+3152.16s: goes up. This action is what causes a gamma squeeze. So that's why understanding the volume shelves
+3161.52s: or the open interest shelves is super important. Because for example, if price got pushed up into
+3168.40s: here and they had all the sudden 7,300 options have to be hedged because they fall in the money.
+3174.96s: Okay, cool. But then the next couple shelves, they're pretty light. There's not a whole lot going
+3181.36s: on here. So then the buying pressure will wane if this is the case. So this is how you can use
+3190.88s: open interest to help you understand something like a gamma squeeze. You can also use open interest
+3197.84s: to help us identify specific strikes that are of interest for different reasons.
+3206.32s: So one of the things that I coded for thinkorswim is the change day over day of open interest.
+3216.08s: And then I also have another tool that helps me calculate the volume ratio.
+3224.96s: Right. So in this case for the 25s and a halfs, I can see that day over day 95 were added.
+3231.84s: But then I can also see that 7.4 times of this strike were traded today compared to the open
+3238.16s: interest, 3,500 compared to 481 going back to what we learned earlier. If we know that every
+3247.36s: single option has to has to have a counterparty and quick recap volume is the number of options
+3255.04s: traded today. Open interest is the number of options that are active, meaning day over day.
+3261.60s: So if we see volume like this, 4,500 compared to sorry, this one, 3,500 compared to 481,
+3271.68s: we already know there's going to be new OI, new open interest because there's more volume than
+3278.64s: the existing open interest. So it can't be closing. There would be nothing there. So there's going to be
+3285.44s: a massive amount of open interest being added to the strike. So we can use that as an understanding of
+3295.92s: where options are being built out. Then we can take a look at which strikes have the most volume,
+3302.16s: which expiration cycles have the most volume, so on and so forth. So you can glean an insane
+3310.08s: amount of information from options. Now the last thing, I mean, there's way more than that from
+3315.36s: a volume in OI lens, but the last thing I want to talk about quickly over the next five minutes
+3320.88s: or so and then leave some time for Q and A is volatility. Volatility is super important.
+3325.92s: So we can visualize term structure, the volatility across expiration cycles, and you see me do this
+3332.08s: all the time. It helps me understand what the perception is for different periods of time.
+3337.68s: If we see volume spike up like this here, 77% vol up to 96, up to 94, up to 96, and then it starts to
+3346.72s: come back down to 94, 91, 82, 69 means that the market is pricing in movement around this time
+3352.64s: frame. Very frequently, that's due to a corporate event that we kind of know is going to happen during
+3357.28s: that time frame. And in this case, that corporate event is going to be earnings of some sort.
+3361.76s: So you can use the term structure to make inferences about movements and also movements severity.
+3369.92s: The cool part about volatility is that it literally tells us based on the best market consensus
+3375.60s: that exists right now today, what is the expected range for something over a time frame?
+3380.40s: So for GameStop, the expected range for GameStop over the next 21 days is plus or minus $3.71.
+3387.36s: That's a one standard deviation 68% probability of falling within that range.
+3391.84s: You can calculate this for different standard deviations. I'll literally do it right now and
+3395.92s: one of my calculators for you just to give you an idea of what the number would be.
+3399.52s: So we're here. So stock price is 25 or 4.
+3407.84s: The events, expert evolve. So in this case, we're looking at the 21 March, which is 96.35.
+3416.32s: We're three five. The ticker volatility is 86.95.
+3426.08s: And the days expiration on that cycle are 21. So for a two standard deviation move over that
+3437.92s: time frame, you're essentially looking at plus or minus, in this case, it's $3.71.
+3446.48s: You're looking at plus or minus $4 in change. So you can calculate the actual expected range.
+3457.20s: Now using the, this is using not the term vault. This is using the underlying vault, the 86%.
+3464.48s: We can also calculate this using the actual term vault for that specific time frame.
+3470.08s: But using the volatility of 86.95%, the one day range is $1.37.274.11 for one, two, and three
+3483.92s: standard deviations. For the monthly range, if we're going to look at that over the course of a
+3488.96s: month, it's 6.29, 12.57, 1886, for a one, two, three standard deviation move, so on and so forth.
+3496.56s: So the point that I'm trying to help you with here is that we can use volatility to calculate moves.
+3501.76s: That's one of the greatest things about it. The other thing we can do is look at a volatility surface.
+3509.20s: And the volatility surface is really, really useful. So if I just use the standard
+3514.56s: expiration volatility surfaces, I can come up with all sorts of inferences based on expected move
+3522.72s: and relative values based on the way that these look. If they're jagged like this, I can tell you
+3527.68s: that there's a lot of mispricings or discrepancies between implied volatility pricing or wide
+3532.72s: bit of spreads. I can also tell you that if we see the call tail as high as this even higher than
+3539.52s: the put tail, that tells us that the market is pricing in a higher probability move to the downside,
+3545.84s: but higher severity move to the upside. So you can extract a insane amount of information by
+3554.08s: just looking at options chains in this way. And as promised, that puts us right at 55. And I want
+3561.20s: to make sure that we have a little bit of time for Q and A. The main thing I want you all to be
+3566.56s: aware of is twofold. The first one is how to generally navigate in options chain. And then the
+3572.16s: second is just to give you at least a taste of some of the different ways we can use an options chain
+3577.92s: to glean information about the underlying. So that wraps me up for the kind of formal part of
+3587.60s: the series or this episode I should say. I would love to hit any questions, concepts, things that
+3595.68s: you're interested in understanding better. And in the meantime, I'm actually going to update one
+3602.32s: of my calculators because I want to also be able to calculate these ranges using a specific event.
+3611.04s: So feel free to throw in any questions that you have now and then happy to take a look.
+3615.76s: Hopefully you learned something new. At least that's the main goal.
+3626.56s: Von Hale says I've read they can pair a buyer and sell her so they don't have to hedge. I mean,
+3631.60s: that's the entire goal for a market maker. The market maker carries inventory for as little time
+3638.16s: as possible. And the reason is because they were trying to capture the bid-ass spread.
+3649.20s: So the way that they can capture the bid-ass spread is by exactly that, by trying to identify
+3653.60s: buyers and sellers and to pair them. Now realistically more often than not, they can't do it real time.
+3658.40s: They have to take on inventory for at least a little bit. But they absolutely do try to minimize
+3663.84s: the time frame that they're taking on inventory because that increases their total risk.
+3667.36s: They don't want to take on inventory. Rhys says I swear I was listening. But how can you discern
+3673.04s: if they were bought or sold if the majority were between the bid and ask? Okay, so then Rhys,
+3679.76s: if you were listening and I believe you were, what do you recall me saying about the process of
+3686.48s: discerning that? I gave you an ex a specific example, actually, if you'll recall.
+3695.92s: And it had to do with the split between bid and ask. That base says what platform can I use if I
+3703.04s: live in Mexico? I honestly have no fucking idea. I don't live in Mexico. I do know I be interactive
+3709.60s: brokers is used most places globally. So I do think that they have a pretty global footprint.
+3716.64s: But I generally don't know beyond that. I would have to do the same Google search that you would
+3722.40s: do to get to the answer. If you do the Google search really quick and you list out some of the
+3726.64s: brokers, I'm happy to let you know if like I think they're good or not, I can do that. But
+3734.08s: Rhys says checking actual transactions sort of. But there's an important differentiation that we can
+3740.64s: make and I gotta go grab the dog real quick.
+3758.08s: All right. That's straight hater activity. Look at this. It literally cuts his head off
+3765.68s: because he's too dark. Okay. So now the dude is ready to answer your questions. Let me get
+3772.40s: this out of his way. And the question was how can we figure out if an option falls between the
+3782.64s: bid S spread? How can we tell if it was a bottle sold? What do you think?
+3789.84s: So he's licking my hand, which is clearly him trying to explain to you about analyzing the width
+3800.24s: between the bid S spread and then where the transaction occurs.
+3806.64s: That is the start to the answer.
+3813.76s: Travel says one is through. We're going to start picking stocks. He's not going to do stocks.
+3818.00s: He's going to do sector ETFs. But I'm hopeful to do it soon. I think it'll be super, super fun.
+3826.88s: And essentially run it like week over week. Or maybe month over month or something like that could
+3832.48s: be fun. Lauren says Thor looks like he's wearing white eyeliner. Yo, the disrespect,
+3843.84s: the disrespect to Thor. He's actually going back in to get another haircut tomorrow. So he's
+3848.00s: going to be looking fly as a motherfucker. So Reese, let's take a look at an example here. We're in
+3857.20s: GameStop. 26% of the calls traded today and 47% of the puts traded today were between the market.
+3867.04s: How can we tell? Let's look at the puts. How can we tell if these puts were bought or sold?
+3873.60s: One of the main ways is by analyzing where the transaction occurred against the bid S spread.
+3884.80s: So if we go into TNS and if we choose to just look at puts, let's just eyeball some of them.
+3894.64s: So like this one, this one we can see and right now the way it codifies them, right, is red
+3901.60s: sold green is bought. That's if it's at the bidder ask. So these gray ones are the ones that occur
+3908.16s: between the bid S spread. So if we take a look, this is another great example. This one here. If we take
+3914.00s: a look at the 155 traded at one dollar when the market is bid at 95 cents offered at 115.
+3924.48s: It's much closer to the bid. So it's much more likely to have been sold versus bought. Much closer to the
+3939.04s: bid. So this is exactly how you can go through and kind of complete that process of trying to analyze
+3946.08s: if it occurred closer one or the other. Now the one thing I want to be super clear on,
+3951.52s: like this isn't necessarily the the pinnacle use of your time. This is okay if you're getting into
+3957.92s: nuanced analysis and trying to come up with smaller trends and stuff like that. It's okay to do this.
+3962.88s: I do this all the time. But for the vast majority of new traders, this is not the right place to
+3968.64s: spend your time. The right place to spend your time is by analyzing profit mechanisms and finding
+3974.64s: things that make money genuinely. This is kind of interesting side information that you can use to
+3982.16s: slightly temper the way you might be building a trade or thinking about a trade. But this is not
+3987.04s: there's not like super secret squirrel information in here that's going to be the difference between
+3992.00s: you making money or not. You got to get the profit mechanisms down for that without a doubt.
+3996.08s: This is good amplifying information. So yeah, that's how you do it.
+4000.08s: Any other questions Ben says, can you see US European option classification and an option
+4008.24s: chain? No, I don't think so. You just kind of know it. So it's the indices. The indices are
+4014.64s: going to be European style options. Most other things are going to be American style options.
+4019.52s: But I don't think you can see it in the options chain. I've not actually looked for it in there.
+4024.96s: I don't think so. Let me ask, let me just try to be tea. I literally don't know.
+4034.80s: Does think or swim go you Euro and the first American options?
+4045.92s: Oh no, shit. So you can filter by it.
+4049.92s: Yeah, you can filter by it, but I don't see somewhere where it like explicitly tells you that.
+4060.48s: It's interesting. But yeah, not something. The majority of instances you'll find that
+4068.08s: they're going to be American style unless they're indices.
+4071.28s: Cool. All right, Ken, looks like that wraps us up as always. If you need anything, let me know.
+4082.32s: Be an outlier. Let's go later.

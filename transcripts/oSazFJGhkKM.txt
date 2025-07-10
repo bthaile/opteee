@@ -1,0 +1,189 @@
+0.00s: Betawating explain I'm gonna walk you through exactly what this metric is and why you should care about it
+4.96s: Because this is one of the few things in trading where one tool can provide a ton of great information and it's super simple to access
+13.36s: So I'm gonna walk you through exactly what it is how it's calculated
+16.24s: How you can use it and then some best practices at the end of the video
+19.44s: So what's up everybody Eric here welcome back to all the outliers and a shout out to the patreon and family because you guys make content like this
+26.24s: possible for everybody so if what I do helps you consider signing up it helps me a lot
+30.32s: Let's talk about what Betawating is and I'm gonna get my face out of the way because I caught a little too much sun
+36.08s: This past week and playing some sick pickleball and I'm burnt
+39.60s: So not much to look at not that I'm typically much to look at but let's look at this
+44.64s: We have a portfolio inside this portfolio. We have all different kinds of positions
+48.40s: I'm not gonna run through them all but you can see that word short calls short straddles long calls all different kinds of things
+54.64s: So if we think about this portfolio, how do we answer some simple questions like if the broad market using spy in this example
+62.72s: Goes up 10 points what happens to our portfolio? How is that going to behave? You don't really know
+67.52s: That's one of the things we can use beta-weighted delta sport the other thing is with all of these different positions on you probably know
+74.00s: You know in aggregate how much money you have out at a given point in time
+77.76s: But what's the no-sional value of the risk also don't know that but beta-weighting deltas will help you understand that
+84.48s: So let's take a look now at what these raw deltas are and then we'll get into beta-weighting them
+90.08s: What's a raw delta? It's just whatever you get from the options chain now to be very clear stock can also have and has
+97.68s: Delta so if we take a look at this example down here where we're long 500 shares of AMC
+102.56s: That's long 500 delta's but I kind of combine this one because it's a covered call and we have short two calls against it
+109.60s: So that takes our delta's down a little bit that kind of thing
+111.92s: But these are just raw deltas and why is this metric not good enough?
+115.76s: Well because it's a little misleading in this case if we take a look at this long deep in the money calls in vix
+122.24s: I didn't put any specific trade details, but I'm just pretending that these are plus
+126.64s: 180 delta's these are approximates these aren't directly pulled from anything
+130.40s: But they're pretty close to give you a good idea
+132.00s: But in this case we have something that's long deltas however
+135.84s: Vix is typically inversely correlated to the stock market
+139.20s: So as you see in a second this metric actually looks quite a bit different when it's put into the language of beta waiting
+144.48s: Delta's so let's do exactly that I'm gonna slide up out of your way
+148.00s: So in the think or swim platform
+149.92s: This is super easy to do if you don't use think or swim
+152.24s: I have no idea if your platform has it a lot of them do this is nothing novel
+156.24s: Most account managers use this tool because it's very simple
+159.04s: But if you do use think or swim there's just this little thing under monitor activity and positions position statement
+165.04s: There's a little box you could tick or beta waiting and then you just type in whatever you want to beta wait against
+170.88s: It's one of the cool things about beta waiting actually is that you don't have to use spy you could beta wait against whatever the hell you want
+177.04s: It just kind of makes the most sense to use spy typically for most people or spx or just some sort of broad market index
+183.04s: So you can also use vix you can use of volatility product and what this is doing is taking all of these positions
+189.84s: And it's putting them into a common language that language is how many shares
+195.44s: Spy or whatever your beta waiting against does this position represent?
+199.36s: So if we look at these two short calls and excel you they're negative 60 delta's by themselves
+204.08s: But if you beta wait them to the spy they're only negative 20
+207.28s: So what is this negative 20 again?
+209.12s: This means that this is going to behave like negative short 20 shares of spy and then so on down this list
+215.76s: So if you take a look at that vix trade that I was kind of highlighting before and you see that's actually
+220.00s: It plus 180 delta's but then when we beta waited to the spy it's actually negative 200 delta's so in this case again
+227.52s: This means that this is pretending. This is essentially the same thing at this point in time as short 200 shares of spy
+234.80s: Notice how I said at this point in time. It's a really important note because as the market moves as the value of
+242.08s: Spy moves as these delta's move all of these things change so these are pretty regularly updating figures
+248.72s: They're just static obviously in the snapshot
+250.96s: So now I want to walk you through those other two things I was talking to you about the notional value and the P&L
+256.16s: Now you'll notice how beta waited spy delta's we you know have the each individual position
+261.28s: So you can beta way all of them, but then you can also summarize them you could do totals
+266.48s: So right now our portfolio is behaving like 300 shares of spy
+272.08s: So with that information
+273.92s: You should already be able to calculate the answer to this question over here
+278.72s: But if you can't don't worry the only piece you need for this is whatever spy currently is trading at and in this example
+284.72s: I'm used $430 so you can with that detail you can answer essentially this you can answer this and you can answer this
+293.44s: But if you're unfamiliar with it, let's talk about it
+295.44s: So when we look at something like no shinole value all we're going to do is take the
+300.80s: Beta-weighted delta's and then we're going to multiply that by the current price of spy
+304.96s: So in this case like I said, I'm going to use spy at $430 and these are the notional values for each of these trades
+313.12s: And then in the aggregate so again, you can either do the math for each individual position
+319.44s: Which you know again your platform typically will do this for you
+321.92s: So you can get a view of each individual position
+324.24s: But then you can also look at the aggregate this is so useful
+328.72s: Because one you get one stop shop for your overall portfolio metrics and to be clear once you beta-weight against the spy
+336.88s: You can get beta-weighted delta's you can get beta-weighted all different kinds of metrics that help you understand the
+342.88s: disposition of your portfolio
+344.32s: What do I mean by that? You can also beta-weight things like your gamma now things like theta and vega don't matter
+350.24s: If you beta-weight them, you're not going to see them change because it doesn't matter what they're ranked against
+354.40s: They are what they are
+355.84s: But those two things specifically and a bunch others you can beta-weight, but I want to focus on delta's here
+360.32s: So as you can see we can see the overall value of each of these positions
+364.16s: So one of the things we should be doing as we're seeing this is do any of these positions strike you as odd
+370.00s: His eyes seem to be a little bit odd don't they?
+372.88s: And again, this is all going to be completely predicated on your risk tolerance
+377.44s: And the way you like to structure your portfolio
+379.20s: But the first thing that I see is this is a giant position in northrop crumman
+383.60s: This position down here by itself is $193,500
+387.36s: Whereas the rest is kind of 20,000
+389.84s: This one is essentially flat if you look at them side-by-side
+393.12s: But if you look at them individually, they're $10,000 trades
+395.76s: This one is also pretty big at 86,000, but this is double that
+399.44s: So this is a big trade and I can tell you right out of the gate
+403.12s: That's something that interests me
+404.64s: This is how you use beta-weighted delta's to get one in understanding of your entire portfolio
+410.08s: But then to individual positions within it
+412.16s: So that's just one thing that jumps out to me
+413.76s: Maybe you really like northrop crumman and you want that position
+416.24s: Cool, that's really fine
+417.28s: But if you look at this you're like oh shit
+419.04s: This is actually way bigger than all of these other ones
+421.20s: Because if you take for example these AMC versus northrop crumman positions
+425.28s: They have essentially the same rock deltas
+427.52s: The AMC cover calls 440
+429.52s: The northrop crumman calls are 400
+431.36s: But when you beta-weight them it's massive difference
+433.36s: So that's the kind of thing we can use
+435.36s: Now if you hadn't already
+437.60s: Let's take a look at how we do the math here
+440.00s: To figure out how our P&L moves based on movements in the S&P 500
+446.00s: So in this case
+447.04s: Again you should be able to do this math before I show you these numbers
+449.68s: So you can pause the video, run through, do the math real quick
+452.16s: And then here are your answers
+454.16s: So I just did it for the S&P 500 at $440
+457.28s: Again you can do the same exact thing with it at $430
+460.64s: But this is the same process
+462.16s: What we're looking at is whatever the delta is in spy
+465.28s: Meaning the change
+466.56s: That can be a little confusing when you talk about delta in terms of change
+469.76s: Versus delta in terms of representation of
+472.96s: In options product
+474.16s: But in this case I was referring to it as in change
+476.56s: That's why I kind of purposely use change here
+478.16s: So if we use the price change in spy
+480.16s: So again going from 430 to 440 that's $10
+484.48s: So we're saying spy change by $10
+486.80s: Then we need to multiply our beta-weighted deltas
+489.76s: By whatever that changes
+491.04s: So in this case I'm taking 20 beta-weighted deltas
+494.40s: And then I'm multiplying it by the change here
+496.48s: Which is 10
+497.36s: That gives you your negative 200
+499.04s: And then you can do that all the way down
+500.96s: Now again this is in a vacuum
+503.60s: Because volatility is going to change
+505.68s: The deltas on things are going to change
+507.44s: So it's very rarely going to be this neat math
+510.80s: Where you see spy move $10
+512.80s: And none of these other things change
+514.48s: But this is just to give you an idea of how this broadly works
+517.12s: Because round about this is what you would see
+519.60s: Again, barring massive other changes in volatility or other products
+522.80s: But the main tool that you can derive from this
+526.64s: Notional value for the positions
+528.24s: How those positions are correlated to the spy
+531.52s: And then the notional size for the portfolio
+533.68s: So overall this one tool gives you a ton of information
+538.88s: So again to recap what you learned
+541.04s: You now know that beta-weighting is a tool for helping us
+544.16s: Normalizing positions into a common language
+546.80s: So that we can see how everything fits together as a broad puzzle piece
+550.64s: We can also understand our directional risk
+553.04s: Because if you have really big either individual trade
+557.36s: Sizing that's beta-weighted or the portfolio
+560.16s: That's a shot across your bow
+561.68s: And what I mean by that is if we come back to this example
+564.80s: If you look at this beta-weighted delta's of $130,000
+568.24s: If you have a $50,000 account
+570.88s: This means that you are in a pretty big size
+573.84s: And by the way let me get out of your fucking way so you can see
+576.48s: Thank fucking God
+577.84s: I'm referencing this down here
+579.44s: So if you see this $129,000
+581.76s: And that looks really big relative to your portfolio
+584.16s: Let's say it's $50,000
+585.44s: That means that you're leveraged
+587.04s: You have more risk than you have capital in the account
+590.32s: Again that might be part of your game plan
+592.00s: But that gives you a sense of your overall risk
+594.88s: But then again you can also see if you have individual trades
+598.00s: That are outsized compared to others
+600.72s: So the other thing you can grab here is the overall size of positions
+605.52s: But the correlation of them
+607.36s: Because you can have things that by themselves
+610.32s: If you look at the raw delta
+611.84s: You might not actually fully understand how these things behave against one another
+615.36s: So like for example
+616.64s: These short calls in XLU compared to SPX short straddle
+620.32s: This delta relationship from the raw delta's doesn't really tell us much
+623.76s: But if you look at the beta-weighted delta's
+625.36s: You're like, oh wait a minute
+626.40s: These essentially gansely each other out
+628.40s: Interesting
+629.12s: So the overall risk in the portfolio is quite different than what the raw delta's would lead you to believe
+634.72s: So this helps you get way way way more precise
+638.08s: Understanding the risk in your portfolio
+639.92s: Mapping out what changes you need to make
+641.84s: So that you are more effectively employing
+644.72s: And protecting your capital
+646.32s: If you have any questions as always
+647.84s: Drop them in the notes below in the comments section
+650.16s: If you have anything else that you want me to cover
+652.16s: Throw those suggestions in there too
+653.92s: Like, subscribe, be an outlier
+656.40s: I'll see you guys later

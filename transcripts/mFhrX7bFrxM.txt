@@ -1,0 +1,163 @@
+0.00s: Trading Bitcoin using options is about time.
+3.84s: So for a long time, you can only really gain exposure
+6.92s: through the underlying itself, which is fine.
+8.64s: I still have an outright Bitcoin holding in and of itself.
+12.44s: But as you all know, I'm an options trader
+14.72s: and there's really, really awesome opportunity
+17.00s: in something like Bitcoin.
+19.60s: So I want to talk about a covered strangle strategy
+23.12s: that I'm going to be running in Bitcoin for the rest of this year.
+26.44s: And I'm going to provide to you periodic updates.
+28.44s: But first, I want to introduce you to the position,
+31.96s: why it is what it is, how I'm setting it up,
+34.60s: what I've done so far, and why I'm using the ticker
+38.80s: that I'm using, which is I bit.
+42.36s: So first things first, quick overview of the covered strangle.
+45.60s: I will throw a couple links in the description
+49.60s: so you could check out the actual coverage
+51.32s: strangle option strategy.
+52.56s: I have a whole playlist on it.
+53.96s: So you can get into detail.
+54.96s: This is not going to get into that.
+56.16s: I'm just going to provide you a quick overview.
+57.84s: So you know what we're talking about.
+59.40s: And there's three components in its mature form,
+63.84s: but it's not always all three components.
+66.32s: It can be one, two, three, like that,
+68.60s: different components, two, it can be on at a given point in time.
+71.88s: So the base position, the primary profit mechanism,
+74.92s: is going to be being long as security,
+77.80s: and we're trying to play direction.
+80.68s: That's the base position that is the primary profit
+84.08s: mechanism for the straight.
+85.64s: Then there are two additional components where we include options.
+90.00s: We have a ratio covered call, and then we have cash secured puts.
+95.60s: This option component allows us to include a volatility
+101.44s: and a theta aspect to our position.
+105.00s: And it also allows us to dollar cost average
+109.04s: into the underlying using a variable entry point.
+115.20s: So what that means is we might go out into the broad market
+117.96s: and buy the shares outright.
+120.12s: That's a lot of times how it will start.
+122.40s: Then we can use things like cash secured puts.
+125.52s: I've referred to them as satellite positions.
+127.96s: What that means is the base position, long equity,
+131.56s: and we will have cash secured puts,
+133.84s: but the cool part about cash secured puts is you can move them.
+137.12s: So if something starts rolling over and you're like,
+139.36s: well, I still want to add into it,
+141.16s: but it seems like we're in a bit of a decline.
+144.48s: So I might roll the short puts so that I can get a better basis
+148.68s: as I continue to scale into the underlying.
+151.60s: Now, the entire premise of this thing is that you are trading
+156.44s: something that you want to hold.
+159.00s: The way to think about it is that if I was setting up a buy
+162.96s: and hold portfolio, this is something I would want in it,
+166.36s: meaning whatever the ultimate sizing that the trade gets,
+171.04s: the entire purpose behind the rest of this is just
+173.72s: to optimize that holding.
+175.40s: So the way that this works is I'll show you my little tracker.
+178.92s: You've probably seen different versions of this.
+181.28s: And what I'm sampling is a $125,000 allocation to Ibit.
+187.92s: What this ultimately means is I essentially would be prepared
+193.56s: to buy $125,000 of Ibit in a portfolio as shares and just hold it.
+199.32s: That's what the allocation is.
+201.28s: Then there's utilization, which is how much of that total allocation
+205.40s: I'm using at a given point in time, which is right now $80,000.
+210.08s: The reason why I'm using this amount of money is I actually have a bigger position
+214.68s: that's not part of this.
+216.00s: I'm breaking out part of the bigger position just like I'm doing in the leveraged ETFs
+221.32s: to use this as an example for us to learn together about the strategy,
+225.84s: how I operate it over a longer period of time.
+229.60s: So I'm purposely picking amounts of money that is probably more relatable
+235.52s: to people for the strategy so that you can understand the sizing of things
+239.60s: relative to this amount of money.
+241.84s: So that's a quick overview of the position itself.
+248.56s: Now I want to spend a few minutes talking about why there's a specific opportunity
+255.76s: in something like Ibit.
+257.44s: And the reason why I like Ibit is because it allows me to play an overall bullish
+263.08s: disposition on Bitcoin.
+264.32s: I am bullish on Bitcoin longer term.
+267.12s: It also adds an interesting correlation relationship with equities.
+274.36s: So if we pop over to the platform and we take a look at the relationship here
+279.32s: between something like Bitcoin futures and the e-minis futures.
+285.76s: The S&P 500 futures contracts, which I want you to take a look at is the different
+289.92s: correlation values for different periods of time.
+294.64s: And the first thing that you'll notice is that the correlations are kind of all over
+299.44s: the place, right?
+300.80s: We can see 90 day correlations.
+302.72s: They tend to be pretty strong.
+304.00s: 60 day correlations tend to be strong.
+306.36s: Well, we can also see in shorter term time frames that the correlations can invert
+311.00s: and actually offset one another.
+313.08s: And to help, you know, see this point a little more clearly, if we grab two charts
+319.04s: of this just so that you can see over a longer term time frame, you can see that there's
+323.08s: general alignment in terms of positive drift, but the composition of the moves is very
+327.56s: different.
+328.52s: So the reason why this fits the portfolio well is because it doesn't inherently add
+333.76s: in a hedge, but it does add a slightly different correlation to the portfolio.
+340.20s: And then this also allows me to capture the volatility of something like Bitcoin,
+346.36s: because again, if we take a look first at Ibit itself, you can see that it's a really
+352.92s: volatile ticker.
+354.00s: The current implied volatility in it is 63%.
+357.52s: As a raw number, that's high.
+359.96s: Now, we don't have enough data on it yet, because it's so new to give it an implied
+365.48s: volatility percentile and an implied volatility rank.
+368.96s: So it'll be a little time before we actually have those metrics for Ibit, but on a gross
+374.04s: dollar amount, that's not an insignificant amount of volatility, which is great to be
+378.84s: able to trade that and options provide me access to that.
+382.72s: If I'm trying to trade the volatility and not through the directional price movement,
+388.16s: you can't do that with futures outright, which is one of the benefits.
+393.24s: So what is Ibit?
+395.44s: Well, I like Ibit for a few different reasons, one, because it's liquid, meaning it's
+402.44s: being accepted by the market.
+404.28s: Two, if we take a look at the overall holdings for it, it's pretty straightforward.
+411.92s: And I'll show you that here, if we go into the holdings, you can see that it's essentially
+418.52s: holding Bitcoin, a little bit of cash, and then some Bitcoin US dollars currencies.
+425.64s: The reason why this is so useful is because you're getting direct exposure to Bitcoin.
+431.48s: Now, again, this isn't the same as actually holding the coin out right.
+434.28s: Obviously, but for a tradable vehicle, this is not gaining exposure to individual minors,
+441.56s: Bitcoin production facilities and whatnot, because now your position takes on a different
+446.88s: shape, rather than simply behaving like Bitcoin, the Bitcoin itself outright,
+453.88s: you're gaining exposure to the operations of Bitcoin mining, which includes operational
+461.20s: expenses for producing the Bitcoin.
+463.00s: They have to have places in order to put all of their machinery in order to mine Bitcoin
+468.72s: and stuff like that.
+469.76s: It adds other flavors to it, which I'm indifferent to, but for this position itself,
+475.60s: I just want to access the Bitcoin and this provides it.
+480.08s: So let me give you a quick update on what the position sits at right now so that going
+486.28s: forward, you'll kind of have an idea of what I'm talking about.
+489.64s: So the position as it sits is 1000 shares of Ibit at a basis of 5455.
+496.16s: And then I have two tranches of puts out one expiring this week, actually on 17,
+503.04s: Jan, and then the other in 21 feb.
+505.76s: I have a two lot at the 52 strike and then I have a three lot at the 49 strike respectively.
+512.16s: So both of those trades are on and sitting and then you can see that I have a ratio
+517.20s: series of short calls against it.
+518.76s: I'm short six calls against the 1000 shares and the basis for the strike price
+525.60s: or the calls which are out in 21 feb is the 60.
+529.60s: So this here is essentially the tracker that I will be using to show you how I'm
+535.24s: scaling into the trade.
+536.80s: I originally had a much smaller allocation in mind and then after talking to some people,
+541.96s: we arrived at this being a better allocation use 125k.
+546.84s: So I needed to add a bunch more, which is why a lot of this went on.
+550.60s: You can see that there's some existing options trades that have already come on,
+554.20s: come off not really worth highlighting that.
+557.48s: But as the position sits right now, we can see that I have a total of $1,000 in credit
+562.84s: in sitting from the put side.
+564.96s: I have $1,100 in credit from the call side of things.
+568.80s: These are both open trades.
+571.16s: Now the cool part about this is if you take a look at the underlying asset from when I started
+576.88s: this, it was 5725.
+578.72s: It's currently at 54 83.
+580.96s: So the percent change on that is about 4.2% to downside.
+586.20s: Yet my position is realized with profit to the upside.
+592.00s: We have a realized PNL of 365, but then we also have a total PNL of up $2,800.
+600.16s: Again, that's nothing to write home about.
+602.36s: But this happens through scaling into the trade and then also having a little bit of
+607.20s: realized PNL coming from the option side.
+609.40s: And then right now there's way more potential PNL coming from the option side,
+613.16s: which will help to position a lot.
+614.92s: So this is the game plan to trade I bit with the coverage triangle.
+618.52s: And again, you guys will be able to follow along.
+620.80s: And if you have any questions, let me know, be an outlier.
+623.32s: I'll see you all later.

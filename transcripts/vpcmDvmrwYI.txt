@@ -1,0 +1,164 @@
+0.00s: The Greeks are seemingly confusing but really simple.
+4.32s: And once you know how to use them, they become second nature
+7.52s: to help you build smarter trades.
+10.80s: The goal of this video is to walk you through a step-by-step process
+14.72s: on how you can default on what makes the most sense based on what you're trying to do
+19.92s: for an individual trade so that the Greeks seem way less overwhelming.
+24.64s: And this is stuff that you can quite literally practically apply whenever you feel like it.
+29.04s: The way to think about the Greeks is they're like the instrument cluster to your car.
+34.32s: It gives you a lot of information. It tells you if your car is running high and potentially
+39.28s: going to overheat. It tells you if your oil pressure is good, if your oil temperature is good,
+42.88s: so on and so forth. That is exactly what the Greeks do. So they can seem overwhelming but really
+49.76s: they just give you information on how an option or grouping of options known as a structure or
+55.92s: strategy is going to behave. So let's talk about basics here. Now I have a video that goes
+63.52s: pretty deep into detail on the Greeks. So I'm going to spend very little time on the basics.
+68.64s: And I want to speak more so from the practical application of using them to build smarter trades.
+73.76s: But for those that need a reminder on the basics, you can gloss over this very quickly.
+78.56s: And you will be essentially caught up. Now one admin note is that these are what we consider
+84.24s: the primary Greeks. Some of them would call these the first order Greeks, but really they're not
+90.24s: because gamma is not a first order Greek. It's a second order Greek, which is a nerdy cocktail
+96.88s: party fun fact that nobody cares about, but you should know. The way to think about first order,
+102.48s: second order, third order simply pertains to what does the Greek measure. Notice how for delta,
+108.32s: theta, Vega, row, it has everything to do with premium rates of change relative to something
+117.44s: pertaining to the option. Notice how gamma is not the premium rate of change, but the delta
+123.84s: rate of change. So second order Greeks tell us how some of the other Greeks might behave given
+130.00s: movements. Now from a retail trading perspective, you don't really need to care that much about it.
+134.64s: If you're curious, I actually built a chart in this other video that I'll link to below that
+138.96s: goes through all of the different orders of Greeks. There's even more than this technically,
+143.36s: but you can go beyond third order Greeks talking about things like color speed,
+147.12s: ultimate, zama, it goes deeper than that. But for the general person, you don't need more than this.
+153.20s: Now you do need to know some of the general traits of the primary Greeks. Notice how row is not
+160.48s: on here and that's because interest rates do not tend to move that much. The way to think about
+165.68s: row is when you're in interest rate sensitive environments like we are now, it becomes a little more
+170.24s: topical, but in general, the risk-free rate relative to in options expiration is generally
+176.80s: pretty static. So let's first eyeball how delta behaves across different
+183.76s: expirations. Do you notice how on this 31 DTE, which is the white line compared to the 325 DTE?
+189.84s: Do you notice how the white line is actually quite steep for the at the money's and as well as
+195.76s: the further out of the money? That is everything to do with what is happening to delta as you get
+202.32s: closer to expiration. If an option is out of the money, the delta is going to approximate to zero.
+209.12s: We can take a look at that in something like Nvidia. Let's take a look at this zero DTE
+213.36s: option chain. Notice how the out of the money options are literally at zero and these ones that
+219.52s: are showing one, these will be zero. And the options that are in the money will have a delta of one.
+225.84s: So as time passes, a delta has to approximate to one of those two states and only one of those
+233.12s: two states, one or a zero. That's why you'll see it gets steeper over time. This matters a lot
+239.20s: because it's going to impact the way that your trades might behave. So say for example,
+245.60s: that we're holding in out of the money option in something like Nvidia. And let's say that we
+252.64s: started with something that was seven days to expiration and we bought something that was like a
+256.72s: 10 delta. And this is again seven days to go. Well, as time passes, unless this option moves
+264.80s: closer and closer to the money, this is actually going to lose delta. And again, you can see that
+270.72s: reflected here because that same option that we were just looking at the 10 delta, which is a
+277.44s: 124 strike. If we take a look at the 124 strike with zero DTEs, this is zero. So that's one of the
+283.84s: issues with really short duration out of the money options is they're actively losing delta.
+289.52s: You have to be aware of that. So if we look at theta, the main thing to know for theta is that it
+296.56s: decays as a rate higher as you get closer to expiration and it really starts to pick up once
+303.20s: you're 60 DTE. Now there are nuances to this because if you have an option that is at the money
+309.04s: where there's more extrinsic value versus an option that's really deep in or out of the money
+314.56s: where there's less extrinsic value, it'll be a little bit lower. Gamma ramps up as we get closer
+321.52s: to expiration because again, we just talked about this with delta. Delta has to make a choice. And gamma
+326.48s: measures the rate of change of delta. So this is important because of some of the trades will talk
+332.48s: about with building trades with respect to gamma. And then Vega, you'll notice is typically more
+339.04s: elevated the further out in time we go because Vega operates in the extrinsic value of an option.
+344.08s: So this means that if you're trying to trade something related to the volatility expansion of an
+349.44s: option, you might actually want to go slightly further out of the money because it will have a
+354.24s: bigger impact provided that the impact of implied volatility is relative to that time frame.
+360.48s: So I want to fast forward to this. This is really a checklist that you can use to help think
+368.08s: through how to use these. And I want to use some examples with you. So let's take a look at delta.
+374.00s: And let's take a look at delta in a vacuum. Delta is agnostic to time frame, meaning if I go out
+379.76s: 500 days, these will still have all different kinds of delta. They'll be skewed differently.
+385.68s: This is because of volatility. You don't necessarily go super far in detail on that. But you'll
+389.92s: notice that the at the money for the strike, the one thirty four is actually sixty six delta.
+396.16s: So, but you'll notice that delta is whatever it is. This is one of the reasons why if you're buying
+402.16s: options a lot of times it can make sense to go further out in time because we're decreasing the
+408.40s: amount of delta decay that we're experiencing. And delta is whatever it is. So that means that if I
+414.48s: buy something that has a higher delta, it's going to move closer dollar for dollar move in the
+419.92s: underlying while mitigating some other factors that we'll talk about. One of the downsides to this,
+424.72s: though, is your gamma will be lower. So let's say that you're trying to buy cheaper options that
+431.28s: have the ability to compound way more. If I go to seven days to expiration and I take a look at
+437.12s: the gamma for these for the at the money is there five and the out of the money is there's two,
+441.44s: three and four. If I look at that same thing 70 days out, notice how the gamma is essentially a
+447.36s: one or two much, much lower. So what that tells you is the further out in time you go,
+453.20s: the lower your gamma inherently is going to be and that means that the rate of change of your
+458.40s: delta will be slower. This is why for something like ratio diagonals when I go at least 60, 90 days
+464.72s: out, I'm picking things that have a higher overall delta because I know I'm not going to get a big
+471.84s: boost from gamma. If I'm trying to trade a short term movement, I might go a little near term
+479.12s: and pick something that might rapidly compound because of a very high gamma because if we think
+485.92s: about the time value of options going back to this little graph is they're very DTE sensitive
+495.20s: and there's two ways we need to look at theta. We can track it as theta itself, but we can look
+502.48s: in a gross manner and a relative manner and I'll show you what that means. So options that have
+509.04s: longer days to expiration will naturally have more theta and let's go out to these 280 DTs and we
+517.60s: take a look at theta, you'll see that for the in the money's it's three cents, four cents, five cents
+521.92s: for the at the money's and then goes back down for the out of the money. So that means every single day
+526.64s: on these options for the at the money's they're going to lose about five dollars. That's their theta
+532.32s: 280 days out. If I come in here to 35 days out, you'll notice that theta is six cents and cents
+540.80s: 11 cents for the at the money. So it's about double. It's very, very high and then you'll notice
+545.12s: something interesting. If I go into the 70TE and we take a look at theta, you'll notice that it's
+550.56s: super, super high. We have 23 cents. That's because these are decaying away literally today into
+556.64s: whatever they're going to be. So all of this value has to bleed out. And then if we go really close
+562.16s: data expiration and this is using zero, but you can use even closer than this, you can actually find
+568.24s: that theta will slow down and on a relative basis. Let's take a look at spikes. This will have
+573.92s: more expiration so that you can kind of see what I'm talking about. If I look at seven days to
+578.24s: expiration, my theta for an at the money's about 33 cents. If I look at a 3DTE and I look at my
+586.48s: theta for an at the money, it's about 23 cents. Why is it less? Well, it's because as you get really
+592.56s: close in time, there's less overall extrinsic value to come out. But if you look at 23 cents
+601.52s: relative to something that is worth a dollar and you compare that to something that's this is 24 cents
+609.68s: against something that's $2.80. Even though this can be lower at times on a relative basis,
+619.20s: it's huge. This is about a quarter of the remaining value, whereas this is not quite. And I
+625.04s: realized before I think I said 33, I meant to say 24 for the theta value. So that's the difference
+632.80s: here. And if we go further out in time to 35 DTE, notice the theta here is only 14. So
+639.60s: overall amount of theta will be much more, but you're losing less of it on a daily basis. And
+645.04s: this will continue as you go further and further out in time. If we go 280 days out, there's way more
+650.56s: overall theta, but you're losing less of it on a per day basis. It's kind of like a down payment
+656.64s: to something. So if I were to summarize those main points for you and we already talked about
+662.40s: Vega, I don't think we have to go super far into it because I don't think traders often are trying
+666.56s: to isolate Vega specifically. But for those options traders that are, you should refer to this plot.
+674.24s: So if you're trying to trade the expansion or contraction of volatility of something,
+679.12s: we need to pay attention to Vega, but you can see most of it from what I just showed you. So if
+684.40s: we come in here and we take a look at Vega for the at the money, these are 21, 19, 16, something
+691.12s: like that. And then if I go out here to the 35s, Vega for these is 74. And then if I go out to
+699.28s: these that are 70, they're a dollar four. And that's because Vega operates in the extrinsic value
+706.24s: of an option. So if there's more extrinsic value, there's a larger Vega impact. Now again,
+710.88s: this can be done as a gross value or a relative value as a gross value, a dollar four on something
+717.28s: that's $15 is a different ratio than something that's 33 cents on something that's 280 and change.
+726.72s: So the way to think about a lot of these metrics, theta, Vega, they're relative to the time frame,
+735.76s: but then they're also relative to the total premium of an option. So here's the cliff note summary.
+742.32s: If I buy an option that is a higher delta, it's going to be more expensive, but it's going to move
+748.88s: closer for a dollar for dollar move in the underlying. It's also going to compound less. What that
+755.60s: means is this one delta, there's no compounding value. It's going to move one dollar for each dollar
+762.00s: move in the underlying. And it's going to be more expensive as compared to something that might be
+767.28s: cheaper that I can buy more of that starts at a 30 delta, but for each one dollar move in the
+775.76s: underlying, it's going to gain five delta's. And then after another dollar move in the underlying,
+780.96s: it's going to gain six delta's. So it compounds very, very quickly. So the trade off here is higher delta,
+789.92s: moves better dollar for dollar, lower delta, depending on whatever gamma is,
+796.00s: lower delta will be cheaper, but you can buy more of them. And then for gamma, we just naturally
+802.40s: hit on some of that. Gamma is going to be higher the closer you are in time, which if you're correct,
+809.60s: will allow you to compound faster if you're buying your option. But if you're wrong, your option
+815.36s: is going to decay from delta decay as we get closer to expiration. So you can strike a balance
+822.32s: between these based on what kind of risk profile you're trying to achieve in your option. Now for theta,
+828.80s: if you use, let's say, long options and you buy something that seven days to expiration,
+835.28s: your theta as a gross value might be less, but as a percentage of what you bought into is going to
+842.16s: be way more. The reason why this matters is because then as your 24 cents decays away from these
+850.56s: $2.80 call options, well, that means that even if you get your dollar move and get 52 cents out of
+857.68s: the delta, you're essentially paying 24 cents of that or $24 to counteract your theta decay.
+865.44s: Now, if you go further out in time to avoid that, you're going to pay a larger gross amount. But
+872.16s: you're going to get less gamma, you're going to get less of a compounding effect. So this is why
+877.20s: for a lot of buying strategies, I prefer to going a little further out in time and at the money
+883.28s: slash a little bit deeper in the money, typically targeting around a 70 delta. Now, if I'm trying
+888.96s: to compound an option more, I'll come in a little closer in time and I'll pick something that's a
+894.48s: little further out of the money from a buying perspective that still has a higher gamma that's
+899.84s: going to ramp. But this is a shorter fused trade. I need to be correct in a timely manner. Now,
+904.88s: if I'm selling premium, I don't want to come super far in time because if I do that, even though I
+912.08s: collect a higher amount of theta relative to the price of the option, I'm experiencing a lot of gamma
+919.84s: to get it. Whereas if I pick something that's further out in time to sell and I might get, let's say,
+928.24s: here I might only get $10 a day or something like that, but I'm cutting my gamma down a lot.
+934.88s: And again, $10 of theta here relative to the total premium is much less, but $10 as a gross
+942.32s: amount is way more than I might get for a commensurate option if I'm selling something that's
+948.72s: super far out of the money or something like that. So with theta, you want to look at it in both
+953.28s: of those manners, whether you're buying or selling relative to how much you stand to make if
+957.92s: you're selling, but then also as a gross value. Because another example here is if I sell,
+964.16s: let's say the same 30 delta option here that has seven days left to go, well, I'm getting 25
+969.12s: sense of theta. If I compare that to the 35s, I'm only getting 10. And then if I do compare that to
+975.60s: something like the three days to expiration, same 30 delta, I'm getting 19. So all of these provide
+983.84s: a slightly different amount of money. And again, once it's taken relative to the total premium,
+988.88s: it makes a big difference. But this is how you can use all of these different Greeks to naturally
+994.72s: back you into a position. So if you have any questions, as always, let me know, be an outlier. I'll see you
+1000.56s: later.

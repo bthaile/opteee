@@ -1,0 +1,166 @@
+0.00s: There are a lot more than the five Greeks. Most options traders are used to seeing. So the goal
+5.12s: of this video is to give you a deeper understanding of the primary Greeks and then give you a cursory
+11.68s: overview of the second and third order Greeks that you might be less aware of. This will be
+17.60s: generally less applicable to most people, good reference material, and if you're a sophisticated
+22.48s: trader, some of this stuff will actually be quite useful to you. So we're going to go through
+27.20s: what these different orders mean, then we're going to get into some misconceptions up front,
+30.72s: and then we're going to dive into the Greeks themselves. What's up everybody? Eric here,
+33.44s: welcome back to the outliers. Shout out to the Patreon family. If what I do helps you out,
+37.68s: consider signing up. Let's get straight to it. So what do these different orders mean? Well,
+43.68s: when you talk about options, we're generally going to be talking about different factors in the
+48.88s: context of a differential equation. We're not going to go deep into that world in this video today,
+53.20s: but just know that that is essentially what we're doing. So the first order Greeks, they give you
+59.36s: various factors sensitivity with respect to price. That's what WRT means with respect to.
+66.64s: You're going to see that a lot. So just earmark what this means. Second and third order Greeks
+72.88s: simply take the next step of that derivative. So second order Greeks are the derivative of first
+79.44s: order with respect to an additional factor. And then third does that to second. If that makes no
+85.52s: sense to you, don't worry. We're going to get through it together and it gets easier when we get
+89.52s: to the breakdown. Before that, let's talk about some misconceptions. First off, Greeks make you
+93.68s: money. No, they don't. Second Greeks provide edge. No, they don't. What do Greeks do? They measure
+98.16s: things. That's it. You have to figure out how you can structure things to make money. The Greeks
+104.08s: can give you some ideas about that, but there is no inherent edge in knowing the Greeks or any
+110.00s: way that the Greeks outright make you money. They simply measure things. Now that we got that
+114.40s: aside, let's get into these Greeks. Notice we are starting with the first order Greeks. And that
+120.24s: is because these are the most common. If you'll notice, there's four of them here, but at the beginning
+124.96s: of the video, I said the five primary Greeks. So are we missing one? No, one of the five primary
+131.68s: Greeks is actually a second order Greek, which we'll get to that in a minute. So we have delta,
+138.16s: beta, Vega, and row. Delta and row have another Greek in parentheses next to it. So delta has
+146.80s: lambda, row has epsilon. Why is that? You'll find out in just a minute, but just know that that is
+152.56s: another Greek. So we'll start with delta. This is pretty commonly understood. That is the
+158.00s: premium rate of change per one point move in the underlying price movement. It's also a proxy
+164.48s: for probability of an option expiring in the money, which is actually kind of useful, but also
+170.00s: grossly inaccurate in other instances. I'll throw a video in the notes below that walks through
+175.52s: delta as an approximation of being in the money so that you can be more well versed on that.
+181.04s: And then it also represents the notional value that you're trading. So let's take a look at a
+186.80s: quick example. I'm going to use Apple. And right now we're looking at the 19 Jan expiration chain.
+192.88s: This is delta. Now when you look at an options chain, this is always in the context of if you were
+198.56s: to buy the option. So when we're looking at this column that shows the range of these different
+205.36s: figures, it's in that same context as if you were to buy that option. If you choose to sell the
+211.36s: option, the inverse sign applies. So let's take a look at this 190 put in Apple. The delta of that
+219.92s: is negative 0.30. So going back to options 101, every contract that you trade a standard contract,
+228.72s: a one lot represents up to 100 shares of the underlying. However, when you trade options,
+235.60s: it doesn't behave like that full 100 shares right out of the gate. So in this case,
+240.88s: this is telling you that this contract is 190 put right now is behaving as if it was short 30 shares.
+249.76s: That's also where the rate of change of the premium will come per dollar move in the underlying.
+255.92s: So if you sold this option, what happens to this sign? It becomes a positive. So if you sell this 190,
+265.52s: put that means your position is behaving like long 30 shares of Apple. Now the further you go out
+273.12s: of the money, delta is going to approximate to zero. The deeper in the money you go, delta is going
+279.28s: to approximate to one or negative one. You'll notice on the call side, delta is positive on the
+284.88s: put side, delta is negative. Again, if you're on the call side and you choose to sell this 47 delta
+293.76s: you would then be holding a position that's behaving as if you were short 47 shares of Apple at
+300.64s: this price. So the punchline here is that when you're looking at an option chain, all of the Greeks
+306.48s: are provided in a sense that you are buying. So if you choose to sell all of them flip delta,
+313.68s: gamma theta, Vega, row, all flip. Okay, a couple of the things about delta. It is typically about
+321.76s: a 50 delta if you are at the money and delta doesn't really care if you are at one DTE or if you are
+329.76s: at 50 DTE, it's still going to behave generally the same where about 50 delta is going to be at the
+336.24s: money further you go out, delta is going to approximate to zero and then the one the further in the
+340.88s: money you go. Now let's talk about theta. Theta is the rate of change in premium from the passage of
+346.72s: time and we measure that by one DTE. So each time one day passes theta is decaying out of the
+355.04s: option. So again, using the same example of these 190s will go back to the 22 DTE and the 190,
+363.20s: that 30 delta option, it has a theta of negative 0.06. So this means every day that passes
+371.52s: everything else remaining the same, you are losing six cents out of that options premium. Notice how
+377.44s: I said everything else being the same. This is a really important note. The Greeks are only as good
+383.28s: as when you look at them. What that means is markets move. All of the inputs that go into the Greeks
+389.20s: are constantly changing. So it's not a static figure more often than not. Some of them are more
+394.32s: resilient to intraday movement. Others are not. So a couple notes about theta. You'll notice that it's
+401.12s: highest at the money and the further out of the money you go or the further in the money you go,
+406.96s: the further down it goes. Why is that? Because an option has the highest extrinsic value at the money,
+414.48s: the most time value. The further something is out of the money, the less time value it has has no
+419.76s: intrinsic value. So theta can't be high because there's not much left to decay out. Same thing if you
+424.80s: go super deep in the money, there's not a lot of extrinsic value. So there's not a lot of theta to
+429.92s: decay out. A couple other notes about theta. The rate of theta decay looks a lot like this graph.
+435.44s: This is taken from an actual options chain. Notice how really long DTE, 100 days to expiration, theta
+442.00s: does not decay that much day over day, even 20, 30 day blocks. Notice when you go from 90 to 60, it starts
+448.88s: to accelerate. And then as you go 60 and in, it parabolically approximates to zero because every single
+456.16s: option expires at that point, it can have no more extrinsic value. So theta accelerates the closer
+464.16s: to expiration that you are. This is precisely why when I'm trading things like the ratio call
+469.44s: diagonal ratio, put diagonal, I use longer dated options for my longs so that I'm not wasting away
+476.72s: with theta. And when I'm selling, I tend to sell shorter term time frames to capitalize on that
+483.60s: curve. Now let's move on to Vega. Vega is the premium change of an option per 1% move in
+491.60s: volatility. And a super annoying nerd fact, Vega isn't a Greek. It actually would be considered
+498.24s: Kappa, but that doesn't apply as cleanly as Vega volatility. So they went with Vega theta,
+505.68s: time delta direction, row rates that didn't work for Kappa and volatility. So anyways,
+512.64s: useless fact for you. And I appreciate that. Vega is the highest at the money and it's constant.
+519.44s: It behaves a little bit different than the other Greeks. So if we grab Vega right here, notice how
+525.36s: Vega is highest at the money. The further you go out of the money, it drops. Same thing the
+529.68s: further in the money you go, it drops. This is kind of an important figure because depending on
+536.00s: the time frame that you're trading, shorter term time frames are going to see Vega moving more.
+541.36s: And you'll notice that a lot of these kind of behave that way where if we go further out in time,
+546.96s: you'll have more Vega in the options. Notice how it peaks up to this. Why is that? Well, because
+552.64s: there's more extrinsic value, but as a percentage of the remaining premium, it gets to be a little
+558.80s: bit jacked up when there's at the money, not that much time left. It's also product dependent,
+563.68s: but it's just an important note. Notice how with something that's trading for $2.37, $0.38,
+570.32s: the Vega here is 18. So in this case, the 70 DTE, this represents like 6.8% of the premium,
+577.60s: the Vega. And out here, it's closer to like 7.6%. So again, just kind of a general data point that's
+585.92s: useful to be aware of. And then if we look at row, this is the premium change from a 1% move
+591.04s: in the risk free rate, which is used to price options. This is less impactful to most traders.
+596.00s: This generally is going to impact longer term options far more. So this is less used by most
+602.96s: traders. Now, notice how Lambda and Epsilon are here. Lambda is essentially the percent equivalent
+609.60s: of delta. So Lambda takes the premium percent change per 1% change in the spot price, and Epsilon
+618.48s: does that for row. So those are technically two more Greeks. So far, first order Greeks are down.
+624.72s: Did we miss one? Because I said that there's five primary Greeks, but as we already talked about,
+629.68s: no. The next that you will be familiar with is gamma. Gamma is the delta rate of change to a
+636.56s: one point move in the stock price. So when we think about gamma, there are a couple things that
+642.16s: will strike you. The first one is gamma is much higher, the closer we get to expiration. So if we
+648.40s: take a look at an at the money option, 78 DTE, notice the gamma is 0.02. If we take that into
+654.64s: eight DTE, the gamma is 0.08. Why is this the case? Well, if gamma is the rate of change of delta,
+661.92s: and we know that as we get closer to expiration, every option has to make a choice. It's either
+667.76s: going to have a delta of 0 and be out of the money, or it's going to have a delta of 1 plus
+673.12s: and be in the money. So in this case, you notice that all of the in the money options have
+678.24s: delta of about one, and everything that's out of the money has a delta approximating to 0. So gamma
+684.16s: is higher, the closer you get to expiration, because every single option has to make that choice.
+689.04s: So this is typically what helps buyers and hurts sellers. Okay, so now we're going to move on to
+695.04s: charm, which is also known as delta decay. So this is the delta rate of change per one point move
+700.16s: in days to expiration. So as each one day moves, and it is the derivative of premium to delta and
+707.36s: theta, it is also the derivative of theta with respect to spot price. So what do we use charm for?
+714.88s: It gives us an idea of how delta is going to behave with respect to time. That's it. Next we have
+720.72s: Vanna, which is known as D Vega D spot, and that is the ratio of Vega changing from a one point
+727.60s: move in the spot price. It's also known as D delta D vol, which is the rate of change of delta per
+734.00s: one percent change in volatility. So what we're getting an idea of here is how volatility is
+742.16s: interacting with both Vega spot price relationship and then also delta and volatility relationship.
+750.40s: Vera, which a lot of people have probably never heard of, that's the row change to a one percent
+755.84s: change in volatility and a one percent change in interest rates. So it is value premium of an
+763.04s: option with respect to volatility and interest rates. Vera again, probably not useful to most of
+768.72s: you, so we'll move on now to Veda, which is also known as Vega decay. This one's actually kind
+773.20s: of interesting. So it is the Vega rate of change to a one percent move in volatility and a one
+780.48s: percent move in DTE. So as you get closer to expiration, Veda increases. And the way to think
+788.72s: about most of this as as an option gets closer to expiration, things move more because there's a lot
+795.04s: that has to happen. Like we talked about with respect to delta of everything needing to make a
+800.24s: choice between being a delta of one or a delta of zero, you're either going to be in the money or
+804.24s: out of the money. So there's a lot of other changes that are occurring as we get closer. Then we
+808.72s: have Vala, which is also known as Volga, and that kind of reminds me of Helga from Hey Arnold.
+815.20s: But this is Vega convexity also known as D Vega D vol. So this is your Vega rate of change from a
+822.32s: one percent move in volatility. So it gives you how Vega behaves as volatility itself is moving.
+830.56s: Now we move into the third order Greeks. We have color, speed, ultima, and zama. And if you don't know,
+838.32s: there's actually more than this. That starts tying the Greeks and the behavior between two
+844.48s: different products together. But I'm sticking with these because again, most of these at this point
+849.52s: probably don't apply to most of us, but they're good to know. So let's get to color, which is gamma
+855.28s: decay. So it tells us the gamma rate of change per one point move in DTE. Then we have speed, which is
+861.36s: the gamma of gamma. And you'll notice a lot of these, especially in the third order, all of them,
+866.88s: are tied to volatility. That is because volatility is quite literally the lifeblood of options.
+873.44s: So people that manage different kinds of portfolios, especially at a professional level,
+878.08s: you actually care quite a bit about some of these, especially if you trade derivatives,
+882.56s: because volatility can completely unpack a beautifully built position pretty quickly. So that
+890.56s: is exactly why we have all of these different measures of volatility's impact to these other things.
+896.56s: So speed is the gamma rate of change per one point move in spot price. Then we have ultima,
+901.60s: which is dvaama dvaal, which is the Vama. Vama, I want to make sure I'm pronouncing that
+906.96s: well for you guys, Vama rate of change per one percent move in Vega or Vega convexity.
+912.64s: When you think about convexity in these definitions, it's giving you a sense of the shape of the
+918.00s: measurement. So if something's convex, it typically has this kind of shape to it. Then we have
+922.88s: zama, which is d gamma, dvaal, gamma rate of change per one percent move in volatility. So
+929.92s: why do we care about all of these? Because they are giving you insight to how fast something like
+936.56s: gamma is going to start to move, which actually matters quite a bit to sellers. So if you sell options,
+942.88s: do we really care about color speed? Ultima and zama? Well, potentially. But depending on the strategy,
+949.76s: it's more likely than not gamma will suffice in a pretty big way. However, if you're interested
+955.84s: in tinkering with the rest of these, here they are for you. And for the Patreon folks, if you go to
+960.48s: the shop, you can download this exact reference sheet. And it's for free for everybody that's
+966.96s: silver and above. And if you're not on there, you can literally just screenshot this and then build
+972.00s: your own if you would like a reference. So if you have any questions on these, let me know.
+976.16s: The punchline is for most traders, Delta, theta, Vega, Ro and gamma. And even Ro is a kind of
+983.20s: sus because for a lot of people that trade shorter term options less so, but I still would give it
+987.60s: credit here. These five are going to be the most important. And then from here, you can take a look
+992.56s: at depending on the strategy, how important changes in volatility will impact your position. But
+997.68s: these five are probably your most important ones. Once you understand these, if you want to dive deeper
+1003.60s: and deeper into the world of creating graphs that show how these move, it's actually pretty fun.
+1008.56s: I guess in a really nerdy way, can't believe I just said that. So if you have any questions, let me know.
+1013.28s: Be an outlier. See you later.

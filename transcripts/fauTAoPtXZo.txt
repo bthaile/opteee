@@ -1,0 +1,79 @@
+0.00s: zero DTE SPX spreads. These are a strategy I've tested for a really long time and here are three
+7.60s: super common mistakes when it comes to them and some ways we can overcome them. What's up everybody?
+14.72s: Eric here. Welcome back to all the outliers and we were talking about a super common strategy today.
+19.76s: A lot of people I know like to trade the strategy myself included but there are some really really
+24.56s: common errors people make. So first let's get a quick baseline on what this strategy is the zero DTE SPX
+32.96s: strategies. There's a ton of different forms and fashions of them. Sometimes people will trade
+39.12s: short strangles. Sometimes they will trade short straddles. Sometimes short iron condors that are far
+45.36s: out of the money. So on and so forth there's a lot of variations and I'm not going into all of them
+51.12s: what I do want to talk about today are some of the more common variations and the issues with them.
+57.36s: So one of the most common variations I've seen is essentially a short wide far out of the money iron
+65.36s: condor. So what that looks like is if I come over to the trade tab I typically would see a zero DTE
+72.48s: obviously it's the weekend right well not obviously you would know that I know that today's the
+76.48s: 23rd of October it's Sunday. So there's no zero DTE right now but normally there would be.
+82.24s: So let's just pretend that this one DTE is actually zero DTE we would pop this open and then a
+89.04s: lot of people go super far out of the money for the short option. So let's start with the put side
+94.32s: and let's say we go to this 10 delta far out of the money short put and then you would buy
+100.40s: an even further out of the money long put essentially to create a hedge now there's a couple
+108.56s: big issues with this the first one is the use of spreads in my opinion is an inefficient way
+116.48s: to trade the strategy what is this strategy anyways why do we trade it in short what we're
+122.16s: attempting to do is harvest the volatility risk premium and what that means is if I zoom in on a
+130.48s: slightly shorter time period and we look down at this weird look in series of lines I am charting
+136.88s: out implied volatility versus historic volatility that is the entire purpose of the zero DTE
+145.60s: strategies is we are attempting to trade the typical overstatement of implied volatility to
+152.88s: historic volatility. The problem is we are making the assumption that implied volatility is high
+161.28s: relative to historic volatility that is why we sell premium in these strategies. The big problem is
+167.84s: if you're trading a spread okay we're selling the volatility in this 10 delta short put
+175.28s: but then we're buying the very same volatility that we think is overpriced that's the first problem
+184.24s: people are uncomfortable taking risk so they seek to hedge out this risk using spreads like this
+191.28s: and that is an issue because you are literally contradicting the entire trade hypothesis that you're
+196.40s: starting with now to be abundantly clear that is not this is suggest that all spreads like this
+202.80s: vertical spreads or condors are immediately contradictory in nature for some people they will
+208.96s: use that far out of the money wing just as a way to hedge black swan risk no problem if we want to
+216.96s: do that let's use some data to inform our decision cycle and what I mean by that is maybe we only do
+224.16s: it on the put side because markets tend to move down much lower far more aggressively than they do
+231.44s: to the upside so if that's our concern instead of just automatically doing some sort of condor
+237.92s: maybe we only do it on the put side where the risk typically lays but for me more frequently than
+245.28s: not I would prefer just to use short straddles or short strangles typically a short straddle is
+250.64s: better off in my opinion next one non-dusturning entry this is the most important one out of this list
+256.72s: I put it number two in case you want to jump ship early which you shouldn't you should stay to
+261.12s: the end because the last one's actually really interesting in conjunction with the first one
+265.92s: but let's talk about the second one non-dusturning entry if I look at these different lines you'll
+271.84s: notice I have a bright yellow a dark yellow and then a white the white line is implied volatility
+277.52s: and then the historic volatility that's more pertinent to this conversation is this brighter yellow
+282.24s: which is the 30 day now you'll notice there are periods of time where the actual historic volatility
+291.60s: is greater than the implied volatility so if we simply just every single day trade this strategy
+300.88s: you are indisturbingly of throwing out something that's supposed to capitalize on a specific
+306.80s: environment and some of those environments it doesn't so we need to pay close attention to the
+313.92s: relationship between implied volatility and historic volatility again based on the time frames
+318.80s: that you're trading but this entire strategy is predicated on implied volatility typically being
+324.32s: slightly overstated compared to historic volatility so if you just randomly wield this strategy all
+329.20s: the time because it's the only thing you know you are using the strategy in periods of time where it
+334.40s: actually doesn't make sense so you've got to pay attention to that okay the last one is some
+341.12s: people do this really interesting thing where we kind of combine both of these entities meaning
+346.40s: we use spreads to spread off our risk but then we also put stops on those spreads the problem with
+354.64s: this is as soon as you start integrating stops into this kind of strategy the numbers change
+361.76s: significantly and I know what you're saying Eric I've seen it back tested it looks great the problem
+368.40s: with back tests on strategies like this is they miss things like slippage they're not super specific
+375.92s: to the strategy as it is and again unless we get very very pointed with our back testing to include
+383.20s: periods where implied volatility actually is overstated compared to when it's not using stops on
+390.16s: these spreads essentially kneecaps the strategy you are trying to capture a variance in volatility
+397.36s: but then you're not giving the trade the space it needs to move and I've actually done videos dissecting
+403.12s: this more in detail but the fact of the matter is stops on spreads again not saying it's always the
+410.32s: wrong answer but you got to look really carefully at what's happening to the expectancy of the strategy
+416.56s: what ends up happening with this kind of setup more often than not especially if it's coupled
+422.96s: with all three of these in conjunction with one another is we run into a scenario where we are taking
+429.60s: a lot of very small profits and we're taking fewer big losses but those losses tend to overwhelm
+438.96s: the majority of those frequent small profits so it's not as simple as set the strategy up because
+444.72s: you saw it somewhere running gun and you'll make a bunch of money there's more to it than that
+450.40s: and if you've been trading for any period of time you probably guess that because far more frequently
+456.00s: than not things tend to be a little deeper as you peel back especially this second one if you
+463.20s: were trading this kind of strategy and you don't actually have a volatility edge you are literally
+469.20s: hoping and that is a awful strategy to make money in the markets so a couple things to keep in mind
+475.12s: there's obviously some ways you can circumnavigate these different issues that I've listed out
+480.88s: but the name of the game is optimize the strategy and become discerning this is not just a throw
+487.36s: it out all the time because it's mechanical the issue is if you've blindly follow something
+492.64s: mechanically you step into periods exactly like this that don't make any sense for the strategy
+499.12s: to be deployed so if you made it to the end make sure you like and subscribe to the channel share
+504.08s: your thoughts with me especially if you use this strategy I'm curious how it's worked out for you
+508.72s: and until next time be an outlier see you later

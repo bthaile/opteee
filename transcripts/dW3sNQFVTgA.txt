@@ -1,0 +1,351 @@
+0.00s: you
+30.00s: you
+60.00s: you
+90.00s: you
+120.00s: you
+150.00s: you
+180.00s: you
+210.00s: you
+240.00s: you
+270.00s: you
+300.00s: you
+330.00s: you
+360.00s: you
+390.00s: you
+392.00s: you
+420.00s: you
+422.00s: you
+450.00s: farm
+480.00s: percent plus lower. So with these defined terms, then we can fill in some blanks, right?
+486.60s: We can figure out what we personally would define as a drawdown. I would first start
+493.50s: though by understanding what is normal market behavior. And the way we can figure out
+501.12s: what normal market behavior is is we can go to a place that provides data downloads. I
+508.88s: don't know if Yahoo Finance does maybe one of you can throw into the chat if they do
+513.44s: where you can download stock data for free. But there's because it used to be, I think
+519.20s: you used to be able to get it from Yahoo Finance. I don't know if they took it down and
+522.04s: I think it might be only one other place that does free data. I'm honestly not sure.
+527.24s: But okay, so James says no longer free last I checked. Yeah, I think there is still one.
+531.24s: I don't know if it's investing.com. You guys, I'm sure can find it. But what we can do
+536.84s: is we can literally go into some sort of data source, free or paid. And we can download
+544.28s: the actual performance data metrics for the underlying that we happen to be looking at.
+550.88s: So we can grab the performance data metrics or something like SPX or NDX. And again, the
+555.60s: reason why I start with these from the market perspective is because of the history. SPX
+561.44s: has been around the longest. So this is absolutely the tool to use in any of these broader market
+568.28s: studies. So then what we could do is we can download that data and then we can create
+572.72s: a distribution plot distribution plot simply looks at all of these individual data points
+578.68s: and these data points that you look at here actually weeks. It's not even individual
+583.88s: days, but we can look at all of these individual data points and then we literally create a frequency
+589.24s: plot. So we say how often is there a move that's zero to 0.5% and so on and so forth.
+597.52s: You can do this for negative values as well and you can combine them. So then you can have
+602.76s: a frequency plot that looks like this where this is your zero line. And then this is your
+608.20s: again, zero to 0.5% on the negative zero to 0.5% on the positive. And they just plot all
+617.96s: the price performance. And what you will find is under the central limit theorem in the law
+626.32s: of large numbers, even things that can be log normally distributed. Once you have a large
+631.36s: enough sample size, they typically become they approximate towards a normal distribution.
+635.64s: So what you'll notice is the curve will look something like this. And one of the important
+641.88s: notes here though is that these tails are fatter than a standard distribution might assume.
+648.04s: The fatter tails corresponds to a frequency. So here your y-axis would be the percent of
+656.88s: occurrences or the count of occurrences. The thing to keep in mind is the majority of the time,
+666.28s: the market will fall within this nice one standard deviation range here. And then the
+671.80s: overwhelming majority of the time it will fall within this nice two standard deviation range here.
+677.48s: And the even more overwhelming amount of the time it will fall within three standard deviations.
+684.68s: However, it will have instances where it moves outside of both of these into four,
+690.20s: five, even six standard deviation moves. Why does all this matter? It matters because of the problem
+695.64s: that we're trying to solve today, which is how do we behave during market drawdowns? Well,
+700.44s: the first thing we have to do and that is define a drawdown. And I can tell you one thing,
+704.60s: I personally wouldn't want to define a drawdown based on this range, meaning where price tends to
+710.68s: behave because that's where we expect price to be. So when I'm looking at something like a market
+717.40s: drawdown, that's when I start looking at outside of one standard deviation moves, specifically
+723.40s: isolating the lower end of this distribution, because we're effectively saying for this sake of
+730.20s: this conversation, we're not worried if we have an excessive move to the upside. Maybe our portfolios
+735.64s: are positioned to take advantage of that. We're okay. So we're more worried about when we start to see
+740.28s: excessive moves to the downside outside of an expected range. And depending on the time frame you
+746.36s: look at, you're going to get different measures for what we might consider a drawdown. But in this case,
+751.88s: I would argue plus minus 5%, that's kind of normal. That's nothing outside the
+758.28s: realm of what actively happens, particularly, again, depending on the time frame that you're looking at.
+763.64s: So I think once you start looking at things that are kind of like 8% plus, this is where you'll
+769.24s: find that we start to operate outside of a normal distribution. We start pursuing larger in larger
+777.72s: moves towards the tails. So when I'm thinking about how we want to manage a portfolio during
+785.56s: these different conditions, when we have 5% moves plus or minus, we don't really care. Again,
+791.48s: that's just normal. That's normal market movement. As soon as we start seeing this move expand,
+798.28s: let's call it 8% plus, then we start thinking of things differently. The reason why I attach
+807.48s: a percent move to it is because the way that I would prepare for these different phases changes.
+815.16s: The reason why I have a phased approach is because there can be instances where the market
+820.84s: goes to 8% down, but then rallies back up. It can go to 10% down and then rally back up.
+828.76s: So what I'm saying is these serve as early warning signals that something different than usual
+835.64s: is happening. We don't know what yet. And I've done an insane amount of statistical analysis to
+842.92s: take a look at what is the frequency if we experience an 8% drawdown that it then turns into
+847.88s: x% future drawdowns, all of that ad nauseam. So specifically with the SPX data said, I am
+855.48s: supremely familiar with and it's because I base a lot of ideas off of it. This analysis is
+861.32s: important to conduct, especially for you as a trader because it gives you a ton of insight
+866.60s: into how things move. Now for the pro members during the case study tomorrow, I'm going to talk to you
+872.44s: a little bit more about these different thresholds and some of the descriptive statistics around them
+877.80s: because we can use them to preemptively start building our portfolio to look a certain way
+884.52s: based on the probabilities of a subsequent move that's not limited to just simple descriptive
+889.88s: probabilistic analysis such as if we hit a percent drawdown, how frequently does it go to greater
+896.52s: than a percent drawdown? There's other overlaying statistics and filters criteria that we can add
+903.08s: on top of it that give us a much better picture. So all of that is stuff aside though keeping this
+908.76s: at a higher level. Let's now talk about what this then means. 8% drawdown. It means that depending
+919.64s: on how your portfolio is structured, the market, the undertones of the market is starting to change.
+926.20s: Now what it's turned into, we don't know yet, but we do know it's starting to change. So this means
+933.48s: that if you're holding some sort of just generally long portfolio that when we start experiencing
+939.88s: near correction moves, you kind of have to start thinking about, okay, what's the game plan here?
+943.88s: Because got to do something and depending on what I think the market is going to do, it's going
+950.36s: to look different. Now I want to take a second and I want to talk about the other end of the spectrum.
+956.36s: Like we talked about drawdowns, maybe starting 6 to 8%, then we get into corrections 10%,
+963.00s: then we get into bear markets. Let's take a look at bear markets because this is useful context
+969.48s: for you to have as it pertains to bear markets and here they are.
+977.16s: You didn't notice anything?
+981.32s: There's really not a lot of them and you'll notice a couple traits as we look at these bear markets.
+989.00s: Now one really important note is this is looking at the trading year and that's on purpose.
+996.52s: This is not looking at peak to trough moves in a vacuum. So I have two different ways that we can
+1005.32s: look at this in timestamp it. The reason why I'm looking at it in this context of an annual frame
+1011.96s: is because I think it gives you some descriptive statistics from the idea of holding a portfolio,
+1017.64s: meaning how long if I start trading might I look at a bear market that could be consuming the
+1023.88s: portfolio. One of the things you'll notice is that as time has progressed the duration of these
+1030.60s: bear markets on average has declined and so is the severity. Why would that be? Well there's a
+1037.40s: couple things you'll notice on this little list below the graphs that are useful for you to know
+1042.84s: and it's that there are a lot, a whole lot of different evolution components to the stock market
+1052.52s: that have happened from the 20s literally over the last century just about. So you'll notice
+1058.68s: there's eight things that I want to talk about from the lens of a bear market quickly. Now
+1063.80s: this is all going to be part of a video I'm doing in the future actually. So you're getting a bit of
+1068.28s: a sneak peek on some of the stuff. The video is going to talk about a little bit more than just
+1073.08s: the bear markets it'll talk about corrections, but I think understanding the extreme is useful
+1079.80s: because it gives us a lot of context. So if we think about investor psychology during a bear
+1085.72s: market this really impacts people broadly. The thing to note is that generally people become
+1092.68s: really nervous. This is hedge fund managers because their jobs depend on their ability to maintain
+1098.44s: people's money. This comes from high frequency trading firms that might have positions that could
+1104.12s: be going against them or liquidity is widening out and they're not able to run their book the way
+1108.52s: that they might. This is retail traders that are watching. There are 401ks or their retirement
+1114.04s: accounts evaporate becomes pretty widespread. And if you'll remember a big part of the stock market
+1121.08s: is actually the human element. So you can't just not pay attention to the psychological factor of
+1129.72s: what's happening right there across the board. The next thing on this list is volatility.
+1135.40s: Valtility will expand across the board that will lead to decreasing of liquidity which actually
+1143.00s: serves as a natural breaking function for market declines. You'll also find as volatility is coming
+1149.40s: up as the market is starting to drop uncorrelated returns become more and more correlated. This
+1156.12s: means that if you're holding some sort of diversified stock portfolio, you're following kind of
+1160.60s: fundamentals. You have eight different stocks and eight different sectors. Well, they can start
+1165.32s: acting a lot like the same thing which is always funny because people build these portfolios
+1171.16s: in the context of well, I should have at least X number of stocks, 15 stocks to decrease my
+1177.56s: total correlation risk. But during things like bear markets, they become generally very correlated.
+1184.52s: And we've seen this in a lot of different instances. We've seen this with equities in gold.
+1190.60s: In the mid 1900s and a big reason for that is people were liquidating gold positions to have
+1197.56s: cash on hand. So even though the equities were dropping and most people will say, well, gold
+1203.00s: typically is a flight to quality and people are trying to move their money into safer assets.
+1207.56s: Gold even plummeted. And again, it's because people were like, shit, I need money. I need cash.
+1211.48s: I don't need the gold right now. So those kinds of relationships can become broken. And again,
+1218.92s: really important for us to know because if you're a trader that's trying to maintain a book
+1225.56s: that's based on simply diversification of the underlines that you're trading,
+1231.00s: then your correlation approach actually might not withhold the way you think, especially as it
+1237.00s: becomes tested in more severe environments. Next thing, during draw downs, we tend to see more
+1244.44s: bear market. Sorry, during bear markets, we tend to see more mean reversion specifically for
+1249.64s: extended downside moves. So what you'll notice is that when we look at big, big changes in names
+1258.52s: during extended down moves, you still will find bear market rallies. Bear market rallies are
+1265.08s: actually quite robust, meaning they're sharp, but then they tailor off pretty quick and then the
+1272.04s: downside resumes. Things that are more defensive and low beta tend to outperform. These are your
+1279.00s: staples, healthcare utilities. And that's typically because they have better cash flow and they're
+1283.56s: more resistant to recessions, right? That's the nature of staples. People need staples. That's where
+1288.92s: they go and get products to live their day-to-day lives. Growth stocks tend to crash because they tend
+1296.04s: to have higher PE, higher future expectations that have now come under fire. And then we have the
+1301.08s: last involvement of things like central banks and broader fiscal policy that tries to intervene.
+1308.60s: And the tools that central banks and broader fiscal policy has to intervene has gotten
+1313.96s: more sophisticated as time has developed, which is a big reason why you see the 2020 bear market
+1319.64s: literally was one day that then rallied up soon thereafter. So this is what inside of a bear
+1327.56s: market looks like. And again, the whole purpose of doing this exercise is so that you at least have
+1333.64s: a general understanding of what this could look like, both in terms of severity, which you can see
+1340.84s: here, in terms of duration, both from peak to trow and then trow to recovery, so that then we can
+1348.28s: inform what our approach might be. This is one of the overwhelmingly skipped steps by the vast
+1359.56s: majority of traders because they don't want to do this work. But this work is so important,
+1367.56s: because if you don't do essentially what I'm showing you here, then you have no idea what you're
+1374.20s: preparing for or how to adjust your approach to be able to exist through it. So this is as always
+1382.28s: why the step of defining things is so important in something I quite literally insist that we do,
+1392.44s: because now we have some ideas on how bear markets work specifically. And the reason why I'm
+1399.00s: focusing on bear markets is because they tend to be a little more dangerous to traders than something
+1405.64s: like a pullback. So the first thing now as we're talking about approach is this.
+1417.32s: What does my portfolio look like and what is my risk profile?
+1429.32s: Here's why this matters, because if I'm trading a long futures portfolio that's leveraged to
+1445.16s: the long side as we think about that gradient for drops that I explained earlier, we know
+1456.20s: that 8% is when things start to change, 10% is when we enter a correction and funky market
+1465.64s: behavior starts ramping, and then 20% is when we're actually in the throes of things.
+1472.84s: If I have a leveraged long portfolio, I need to be more ready to act earlier in these stages,
+1482.20s: whereas if I'm trading a wheel, a coverage strangle, those kinds of things, then I actually can
+1489.96s: kind of use these as opportunities to do different things to the portfolio, meaning maybe scale in
+1495.08s: a little bit, those kinds of effects. I'm not really over-underreacting. I can just kind of play it
+1501.16s: as far as I want. So understanding your portfolio structure, not just at what it is right now,
+1509.00s: but the different ways that you run your portfolio, because we can experience these broader
+1514.12s: drawdowns pretty quickly. They tend to take a little while. So what I mean by that is if we take a
+1520.44s: look at, let me hide this really quick, if we take a look at SPX and let's zoom these in now,
+1529.80s: let's do a three year, now it's a little bit longer now, let's do a five year. So if we take a look
+1537.72s: specifically at the 22, I called the 22 a bear market, it technically isn't, but I call it that,
+1544.84s: the reason why it's technically isn't is because it was down 19.4% on the year.
+1549.56s: But if we take a look at even this down move that happened during 22, you notice that these are
+1556.12s: weekly candles. This didn't just happen like that. It takes a little time for it actually to
+1562.44s: materialize. That's important information for us, because it means we have time to act if we're
+1566.92s: paying attention. So then when we're defining our approach, first we need to define what our portfolios
+1574.52s: typically look like. These are things like what kind of strategies are in there. What kind of time
+1582.92s: frames, especially with options. What kind of beta-weighted delta is? This is something like SPI.
+1593.40s: We also care about allocation and utilization. The reason why we care about utilization is because
+1607.56s: this tells us, depending on what different strategies we have, how much more money we have to use
+1612.04s: as condition shift. One of the things that most of you know about my approach by now is that when
+1617.72s: we're sitting near all time highs, I actually tend to be slightly less invested, not massively so.
+1624.28s: But depending on what I'm trading and how much it's moving, I'm not going to be 80%. Let's say in
+1630.04s: the T-Triple Cues coverage strangle, I'm not going to be 80% equity during that period.
+1635.88s: And it's because I know the way that T-Triple Cues can move. And if I was that invested during that
+1642.84s: time frame, if there's a pullback, I also know that I'm kind of stuck. There's not a whole lot I
+1648.84s: can do other than sit and wait and just hope that it eventually works out, which is not in
+1653.96s: efficacious approach to trading. So this is your first step. Is to actually look at your portfolio
+1660.84s: and see what's in there. The second step is to actually conduct an analysis of market
+1670.20s: and economic themes. Now this can be done before this stat, these are essentially interchangeable,
+1683.96s: and they both happen in parallel with one another. But the reason for the analysis is to help bolster
+1691.80s: our internal probabilistic assessment of how probable is it that this gets worse.
+1699.08s: Because again, one of the things to remember is as a trader, we should have different phases
+1703.56s: we're paying attention in early warning systems. So I'm not sitting here thinking about what am I
+1707.96s: going to do with my portfolio when things are down 25%. Guess what? Way too fucking late.
+1714.84s: Way too late. It's already happening. So you have to be prepared to do things before
+1721.72s: we get to that step. Understanding the opportunity costs that will come with it, which we'll talk about.
+1728.68s: So let's use the current landscape for an analysis. It's a great example.
+1733.24s: The markets have been teetering around a correction. They close below it already. And we know that
+1739.24s: what we did just get the FOMC statement. So the economy still looks strong, but there's a lot of
+1743.00s: holes in the economy. We're seeing unemployment rise a little bit. We're seeing the terror of
+1746.20s: conversation expanding and so on and so forth. So all of that leads me to say not that
+1753.48s: markets crashing, but the same thing I've been telling you guys for literally two months now.
+1759.16s: I think that the market is in a transition period and we have to be really careful.
+1762.60s: Because I still think that the market can roll either way from this breadth of evidence. This is
+1767.32s: exactly what I'm doing here. I'm analyzing all these different things and I'm coming up with a
+1771.64s: conclusion. Based on that conclusion, I'm going to position my portfolio appropriately.
+1781.00s: So here we need to adjust the portfolio
+1787.96s: to fit our analysis. So here's what this means. With the market as it is now, again,
+1796.36s: using current day as an example, there are a handful of things I can tell you definitively.
+1801.00s: One of them is I do not want to be long lots of small caps.
+1812.68s: I know this. The other thing is I actually don't want to be long
+1817.96s: autos.
+1821.64s: Big part of this is because of the tariffs and so on and so forth. So all I'm doing is I'm
+1826.68s: analyzing what the portfolio currently looks like. I'm seeing how I view the total market economic
+1833.32s: force. And then I'm reconciling those two. I'm saying does my portfolio reflect my broader idea
+1841.56s: in understanding about what's happening here. Now, this adjustment the portfolio is kind of the
+1847.64s: first step to make sure if this move does become more severe, we're positioned okay for it.
+1855.80s: This isn't the end state here. There's still a couple more steps that are super important.
+1860.92s: But this is the next step to make sure that we are alive throughout the rest of this process.
+1866.60s: Because again, go back to this. If we're leveraged long futures and we get a 15% down move over
+1874.20s: the course of a few weeks, that could send a portfolio insolvent. So the rest is moot. If we're
+1880.60s: too worried about what opportunities we want to take advantage of, if we have no portfolio.
+1885.00s: Well, that's why this is now. And then after this,
+1895.96s: how to profit. So once our portfolio is positioned in a way that's logical, given the current
+1902.52s: market conditions, then we can say, okay, my portfolio is set, it's robust. If this drawdown
+1910.12s: continues to expand, my portfolio is well positioned to at least deal with it.
+1915.56s: How can I now take advantage of the current market behavior? Because again, towards the beginning
+1922.28s: of this, I gave you a list of things that happens that we know tends to happen. So we can trade a
+1927.96s: lot of those different ideas. So then it turns to what do we think we can do to profit from it?
+1934.04s: And some again, examples from the current market environment. One of them is volatility.
+1939.72s: I am running way more different kinds of SPX volatility capture strategies.
+1945.56s: I told you all not that long ago that I had slowed down on their production. And it's because
+1950.60s: volatility had siphoned out and there really wasn't as much money to be made based on the risk I was
+1955.24s: taking. And it's the exact opposite. Today's a great example. I was trading volatility almost all
+1959.56s: day with FOMC because it's such a lucrative event. So that's one method to profit from the current
+1968.20s: market conditions that have us placed somewhere around that 10% mark. The other things that I do in
+1976.92s: these time frames is I trade things directionally, but I shorten my durations and the types of
+1983.08s: directional ideas that I trade look a lot different. So for example, if I'm trading something from a
+1989.08s: post earnings announcement drift lens, which I do, I still will not hold those things as long as
+1996.28s: I typically would, which a lot of times post earnings announcement drift will happen over the next
+2000.04s: quarter. And I'll show you. Let's run a quick scan. And then I just want to eyeball the performance of
+2009.32s: some of these things with you. Do we have a post earnings announcement? We don't. We can build one
+2018.12s: really quick. It's easy. So the first thing for post earnings announcement drift, we know that we
+2022.76s: want something that's at least a few bucks. Normally I would filter this to be at least like 10 bucks,
+2027.88s: but I normally use a lighter filter for the streams and stuff simply because the cheaper stuff
+2032.92s: can actually provide pretty good opportunity for people. I prefer things that have options. So I'm
+2038.36s: adding another filter that I wanted to have at least 500 open interest, which is very, very light.
+2043.96s: Now the next thing we need to take a look at two different things. We need to take a look at earnings.
+2049.24s: So we need, I forgot if it's most recent or latest. I don't remember. One of these will give us the
+2059.96s: correct one of them won't. So let me just fact check it really quick. So we want to do at least we
+2066.68s: just want to look back over yesterday. Let's see if these look correct. 319, 1919, 18, these look
+2075.40s: correct. This is great. Okay, good. So then this is accurate so far. So this is essentially looking
+2080.60s: at things that have had earnings in the last day. Now the next thing is I want something that has had a
+2087.00s: gap. Following earnings. So in this case, we want something that gaped. We're looking for post
+2095.56s: earnings announcement drift to the positive for this example. So we'll look for things that have had
+2099.48s: a gap of at least 5% and then we also need surprise. So the last earnings release, we need something
+2109.32s: that had at least a greater than 0% surprise. So nothing fits the filter for this. So all I'm going
+2117.24s: to do is open up the time a little bit again, just for the example. Let's move this up.
+2125.72s: I just want to find a name that actually fits the criteria.
+2130.28s: Okay, so something seems off with this.
+2139.56s: Turning surprise last. Let me get rid of this and see if that's it.
+2147.08s: Dig. Let's take a look at sig.
+2150.60s: Yeah, see, oh, no, it's looking at a correct. It had a really terrible surprise. It actually missed to
+2159.32s: the downside. So this is actually looking. Actually looking correct. So this is just saying that right
+2167.56s: now there are really just very few things that are meeting this criteria. Let's look back over the
+2172.12s: last month. I know that there would be something at some point. And then if not, I'll just eyeball some
+2177.56s: stuff. Okay, yeah, I will abandon ship on this. Let's just take a look at think or swim really fast.
+2188.12s: What I want to show you is the type of moves that happen.
+2195.16s: So let's go to the calendar. And let's look at something that had good earnings.
+2204.44s: M-R-V-L looks like they had good earnings. So let's take a look.
+2215.72s: They had good earnings, but they fell off a cliff. Let's take a look at some of their previous earnings.
+2220.36s: So if we go back to to their December 3rd earnings, you can see that after this massive gap,
+2228.28s: there's this drift that occurred essentially from the 4th of December peaking out to the 24th of
+2235.08s: Jan. So what, like six weeks? One of the things that I noticed for post earnings announcement drift
+2241.72s: in any sort of consumable form for this most recent earnings cycle is that one, it's way fewer
+2249.00s: and further in between. But the second thing is that the duration of the positive move is much lower.
+2257.32s: Now, one thing to remember is you can trade things like post earnings announcement
+2260.52s: drift either to the upside or downside. It's just slightly different criteria.
+2264.12s: But the point here is that I modify my current tool bag so that I can trade things that make
+2272.20s: the most sense given the current market conditions and the suite of things that thus changes with.
+2278.76s: Other things that change is very basic sector rotation strategies. Those come down right now.
+2284.92s: They're not suitable things like that. So to summarize what we've covered about managing an
+2291.96s: options portfolio at a high level. And then I want to talk about some specific tendencies quickly
+2298.28s: is that it's super important to take a look at the actual portfolio. What it's doing? We then need to
+2305.80s: conduct an actual analysis of the market and broader economic themes to inform our decision making.
+2312.28s: Then we adjust our portfolio. This can include things like taking trades down, balancing our
+2319.08s: deltas by adding short deltas to the portfolio if we're too long or adding long deltas if we're too
+2326.12s: short. This can be done by finding individual opportunities and structuring trades off of those
+2332.28s: or it can be done via managing the risk via index positioning. So selling calls, selling puts,
+2339.08s: buying calls, buying puts, again, depending on what you're trying to capture.
+2343.16s: One of the things I notice during the profit function here is most of the time frames that I'm
+2349.48s: trading start to siphon down and I start to conservatively position my core allocation and then
+2357.40s: more strongly pivot into my speculative allocation. So that is the general concepts about managing
+2367.64s: an option portfolio during a market drawdown. Any questions that you guys have on that? I'm going to
+2372.36s: pop the door for the way.
+2374.36s: you
+2396.68s: Beautiful. Lauren says the volume on a lot of stocks I watch have been very low recently.
+2403.72s: That'll definitely happen depending on the names. Sometimes you'll actually find certain stocks
+2409.08s: can get way more active now because what ends up happening is a lot of money will siphon out
+2416.60s: of the more speculative names and it'll migrate into the more defensive or safer names,
+2423.96s: which is a really interesting thing. So if we take a look, I'll clear all this stuff off.
+2429.64s: If we take a look at this, this is looking at the different sectors, take a look at the average volume.
+2445.64s: You'll see that the average volume in builders is going down.
+2450.44s: The average volume in xlc, comm services is kind of going down and peeking up a little bit.
+2457.08s: You can see that for energy, it ramped up and it went down, but on average, it's still drifting up.
+2464.52s: You can see for things like healthcare actually starting to slow down, which is a little
+2469.56s: antithesis. It's not always perfect, obviously. But then you can also see staples has seen a massive
+2475.48s: surge and that surge really correlates with the broader market drawdown. So this is super common.
+2482.20s: And it's a really tradable effect actually to find the things where money we call it flows.
+2488.76s: So finding where money is flowing into and out of can be really, really effective.
+2495.80s: So I think one of the things to keep in mind with the broader market right now is that
+2502.52s: as the market is in like this decision mode, volatility looks really attractive to me.
+2507.80s: And volatility is still at attractive levels. It's still above 20. So there's definitely a lot to do.
+2517.24s: But the position sizing for me tends to come down and I tend to start throwing more stuff out there.
+2524.60s: There's actually a great example of one of the approaches I use is actually a trade that I ran
+2531.80s: today is in AI. So AI is C3 AI. And the thing that really stuck out to me here is what do you
+2544.28s: notice about the call versus put volume today? What sticks out to you here? There's a couple things
+2551.00s: that should be really, really drawing drawing your eye in a pretty big way.
+2562.28s: The first thing is Jordan says it's skewed. It is. That's correct. You want to click in a little
+2572.68s: bit though because that's where a lot of the information is. So the fact that there's big call versus
+2579.00s: put skew is definitely our first indicator that something's going on. The next thing is if you take a
+2585.88s: look at the actual transactions, the unbelievably overwhelming number of these calls were bought.
+2594.60s: 46% came in at the offer above. Of the 2700 puts, the overwhelming majority were sold.
+2607.56s: Interesting. If I take a look at the total call volume today, 91,000
+2613.96s: against the total call open eye of 300,000, it's almost a third of the entire existing
+2621.32s: OI traded just today. So then that for somebody like me, that draws my eye. Why and where?
+2632.76s: So then if we come in here, we can see that in the 20 June, there was 37,000 of the 25
+2639.88s: traded out in 30 June. And then we can also see in 21 March at the 35,000, there was 36,000
+2646.28s: traded huge numbers traded today. So then we can say interesting. It's in those two
+2653.16s: explorations, 20 June and then 21 March. So let's go look at those. 20 June here. Take a look.
+2662.04s: The 25s with 37,000 contracts traded, it's 96 times volume over OI.
+2669.88s: Really interesting to me. And then if you take a look at 21 March,
+2674.76s: or I'm sorry, was it 21 March or
+2680.76s: yeah, I already forgot.
+2686.20s: Well, it should be 21 March. The 35s.
+2690.68s: Here. There's 36,000 that traded today against 43,000. So massive, massive volume
+2708.52s: build out here is just interesting. So then you can use these as different trade ideas.
+2714.52s: There's a couple of other steps that I typically follow to take a look at the vol curve and
+2719.40s: stuff like that. But these ideas become very interesting during markets like this, right?
+2725.08s: Where the coverage triangle is kind of mellow, not really doing a whole lot, but this stuff
+2729.48s: can provide really solid returns in the meantime. So that's all I got, gang. As always,
+2738.20s: if you need anything, let me know. Be an outlier. See you all later.

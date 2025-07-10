@@ -1,0 +1,690 @@
+0.00s: you
+30.00s: you
+60.00s: you
+90.00s: you
+120.00s: you
+150.00s: you
+180.00s: you
+210.00s: you
+240.00s: you
+270.00s: you
+300.00s: you
+302.00s: you
+304.00s: you
+306.00s: you
+308.00s: you
+312.00s: you
+314.00s: What's up outliers. Happy Friday. Hope everybody had a stellar week. We had a little
+336.04s: bit of a fun end to the week with the market showing us a little bit of a down tick.
+341.54s: Nothing too crazy. That's really really funny. There was a couple comments, one comment on a video,
+346.34s: one comment in the discord where people you could tell they thought that this was like a
+353.18s: moderately sizable down move, which is always interesting to me because I try to remind
+360.06s: people that context matters quite a lot. And if we take a quick look at where the market
+368.94s: landed this week, now, oh, no, this is a big red down day. There's no debate about that. If
+377.02s: we take a look at the daily range today, it was 1.7% to the downside. And that exceeds the 90
+384.50s: day average daily range by almost two times. So volatility unequivocally did tick up today.
+392.86s: That absolutely is something that happened today. But this is where we are. We're literally 2.17% off of
+405.58s: all time highs. So what I'm doing is I'm zooming out a little bit by little bit to give you more
+411.66s: and more context with this thing that we're talking about. This is a 10 year monthly. I actually,
+419.02s: yeah, monthly is okay for this. And then this is obviously a weekly chart that goes back. But
+426.62s: this is where we are right now. And if you take a look at the market and people are out there saying,
+433.58s: oh, my God, the market is falling. It's crashing. Here's the balls. The bears are here.
+439.82s: There's like a million different things that I'm seeing flying around. And I think it's
+443.74s: important to remember this context that I'm showing you is that literally the market is just off
+451.50s: of all time highs. It's 2.17%. Paul says 1.71. Did I misspeak? If I said 1.7, I was wrong. It's 2.17.
+464.14s: 2.17% off of all time highs. So we're still literally parked at highs. So this came from a lot of
+472.62s: different things on the day today. But we will get all of that on the Sunday live stream getting
+478.30s: ready for the week ahead and whatnot. That is not what the stream today is about. The stream today
+485.50s: is about options trading basics, which is exactly what we're going to get into. So the agenda switched
+495.66s: a little bit for those that don't know. I was originally planning on doing, I was originally
+503.82s: planning on doing navigating an options chain today. But a couple days ago, I had a pretty rough
+512.38s: about a food poisoning. Like it put me down for like an entire day. I haven't had something like
+517.42s: that before. So I didn't get a chance to build the materials as I would have wanted. So the
+524.70s: agenda today is going to be more of an open Q&A. And what I did was is I sourced a bunch of
+531.58s: questions from DMs and emails that I've gotten. So we'll take a little time looking at those.
+537.34s: And then there's a couple broader topics that I wanted to talk about just openly, right? A
+541.50s: loose conversation to get the dialogue started. So the agenda for today is essentially that.
+549.26s: Now, as always, I do have a quiz for you. So don't worry about that. There's always time to recap
+557.34s: and knock out a quiz from what we covered last time. So let's start with the quiz. So this is the
+567.02s: quiz from last, the session last week, which is on the Greeks. The first question I have for you
+573.82s: is what is the difference between first, second, and third order Greeks? I want you specifically
+583.34s: to think about what these different Greeks measure. And realistically as long as you understand
+591.34s: the difference between first order and then second third, then you're pretty much good. You have
+599.18s: a decent idea of where I'm going with this question. And in the meantime, I'd love to say hello to
+607.26s: everybody who's coming to hang out and learn about options trading on this awesome Friday. So we got
+612.94s: Lauren, Paulo, Dakota. We also got Ian. Great to see everybody.
+620.94s: Lauren says, so can you collect a dividend when you sell Paul options? Good question.
+627.42s: It depends on if you hold the underlying. So what's the difference between first, second,
+637.10s: and third order Greeks? Who knows the answer to this one?
+643.02s: Any guesses? And I need to get this stuff out of my way so that we can get the handy dandy
+652.70s: right and pad ready to go as well without knocking over my salt water. No guesses.
+661.42s: Okay, that makes me a little nervous because it leads me to believe that we might not
+668.38s: understand the Greeks as much as we might need to.
+672.78s: Okay, so let's break the question down. What do first order Greeks measure?
+678.78s: So first order Greeks are Delta,
+683.90s: Beta, Vega, and Ro.
+693.74s: Ian says second order Greeks measure the change of first order Greeks.
+697.98s: More or less. So first order Greeks measure changes with respect to price.
+709.66s: Okay, so Delta gives us rate of change
+721.82s: per one point move.
+727.18s: Beta gives us, and this is premium.
+732.70s: Beta gives us premium rate of change per one day passing.
+747.34s: Vega is the premium rate of change per
+756.06s: one percent change involved and so on and so forth.
+763.50s: So the important thing to remember with first, second, and third order Greeks.
+769.82s: First order Greeks measure premium impacts.
+774.30s: Second and third order Greeks measure other Greeks.
+778.94s: And the reason why that's important is because this is also why
+785.18s: Gamma, you'll notice Gamma was not in that bucket of first order Greeks.
+790.62s: And it's because Gamma measures the rate of change of Delta.
+795.58s: So Gamma is actually a second order Greek.
+800.30s: Okay, next question.
+804.86s: If I sell a call, what is my net Delta, Gamma, Theta, and Vega?
+813.42s: I just want you to give me positive or negative.
+819.34s: So if I sell a call, is that positive or negative Delta?
+825.26s: Is that positive or negative Gamma?
+828.38s: Is it positive or negative theta, positive or negative Vega?
+836.46s: So Ian says negative, Ben says negative for which ones.
+839.74s: I'm talking for each individual Greek.
+842.14s: So maybe we'll split them out one by one so it's easier to answer.
+845.98s: So Delta.
+848.62s: Okay, so Big Abee has got us negative Delta.
+851.74s: James says positive Delta, positive Gamma, negative theta, positive Gamma.
+857.58s: Ian says negative Delta, negative Gamma, positive theta, and negative Vega.
+865.18s: Okay, so we're going to need some tie breakers because we have some different answers.
+877.18s: James says oh, sell.
+879.34s: Okay.
+885.74s: So there's no fully correct answer yet.
+894.94s: Let me hide this.
+916.38s: Big Abee says it's the equivalent of buying a put as far as Delta is concerned.
+923.26s: No, it's not the equivalent of buying a put.
+929.26s: You would need one other part of that trade for the synthetic that you're trying to build.
+939.18s: James says negative Delta, negative Gamma, positive theta, and negative Vega.
+944.22s: Does that sound correct?
+945.26s: Ian beat you to it before.
+953.10s: Lauren says Delta is negative, theta is positive, not sure about Vega.
+958.86s: Okay, so think of it this way.
+963.90s: Now for everybody that's listening in to make sure I'm not confusing anybody, Ian was the first
+970.06s: one to answer it fully correctly. So and then it looks like James got it sorted out later.
+980.54s: The way to think about answering something like this is just think about what the symbols would be
+987.66s: for each of the Greeks. Now when we're looking at an options chain, the symbols are essentially under
+993.42s: the premise of being long that option. So right now this is long 54 Delta's. This is short $2
+1003.18s: theta. This is long 6.55 Vega and gamma is not flat. I don't know why gamma is as flat there.
+1016.14s: What's coming here? I don't know why gamma is all messed up.
+1024.38s: It's probably because the market is closed.
+1027.02s: It's just because the platform gets really squirrely when the market is closed.
+1033.42s: So I'm using spy now just so that you can see gamma, which is positive 0.02.
+1043.34s: So this is essentially how you can see what the net impact of an individual position might be
+1049.66s: on your portfolio and then you can actually aggregate all of those up.
+1052.86s: Okay. Next and last question related to the Greeks is if I want to buy a call,
+1061.10s: I have a bullish trade idea. Should I go near DTE or further DTE?
+1075.42s: The INSIS further. What are the guesses?
+1082.70s: Lauren. Lauren, you got me a grinning from ear to ear.
+1091.98s: Fuckin' A. Nice job. Lauren, you are 100% correct. That's awesome.
+1103.90s: It entirely depends.
+1106.54s: Steph says depends on time expected for the move. Part of it.
+1116.62s: Yeah, that's exactly correct. So Lauren is spot on.
+1121.02s: Now, a lot of times you will probably be familiar with my general preference for buying options,
+1126.86s: which is typically going a little bit further out in time. But there absolutely are instances
+1133.42s: where buying a near-dated option for a bullish play can make a ton of sense.
+1138.22s: So it entirely depends on the idea. And I'm really, really proud of Lauren for nailing that one,
+1145.02s: because this is also a trick question, right? This one I give you two choices and it's up to you
+1150.62s: to decipher that there's actually a third choice. And that was a big thing that I wanted also to
+1157.50s: put out here is in trading, you have to be ready to look for the gray area.
+1163.82s: Even though this is listed as should I do blank or blank, rarely in trading is the answer
+1172.14s: this or that, very rarely. So yeah, I actually am pretty stoked on that. That's a completely
+1180.54s: accurate response. So nice job. Good work out of you. Sweet. Now, let's get out of this quiz.
+1192.14s: Let's run through the recap on the Greeks. And obviously, we already hit this in the quiz,
+1198.38s: but understanding the differences between first, second order. That's really important because
+1206.62s: really when we start compiling Greeks together to look at composite Greeks.
+1213.42s: So when we're looking at second and third order Greeks, they matter to a degree with individual
+1220.46s: options, but these really become way more important when we're aggregating the Greeks up to the
+1227.50s: portfolio level. And it's because this is how you can start to see weaknesses, gaps, potential risks
+1235.02s: in the total portfolio positioning, even though each individual position might be put on in a
+1239.90s: safe way or in line with your broader risk management protocols, there can be risks underlying the
+1246.38s: surface that you might not even be aware of. So that's the whole point of understanding the differences
+1253.50s: between the different orders is because it can help you view things at different levels, trade
+1258.38s: level, composite level. We understand the impacts now of the net Greeks, whether we buy or sell.
+1268.38s: When you're looking at an option chain and you buy, when you're looking at an option chain,
+1272.62s: it's something that context of buy. And if you sell, it's essentially the inverse of everything
+1277.50s: you see there. And the reason why this question fell in the Greeks side of things is because
+1287.02s: we spent a while talking about using the Greeks as a tool to help us build positions.
+1296.22s: That's the main point I want you to take away from when we're looking at something like the Greeks,
+1302.22s: is that if you understand how to use the Greeks for information input, it can help you build
+1310.14s: smarter positions that more accurately reflect what you're actually trying to accomplish as a trader.
+1317.90s: So solid job on the recap. Now we have our open Q&A. So I actually have a little bit of
+1332.70s: a question list built. So I'm actually going to pull this in. And we can work through these together.
+1341.10s: And then what I want to do though is obviously integrate the questions that you all have on top of this.
+1349.98s: So I'm going to start with a couple of these for general conversation points. But as we talk about
+1355.90s: these, I would love for you to weigh in with other questions, other areas, other elements that you're
+1362.94s: interested in diving into. So the first question we have on here is how long does it get,
+1373.50s: or how long does it take to finally get it as an options trader, which is a really interesting
+1379.42s: question. Now for those that don't know, I think I put this in the discord, but a lot of the questions
+1384.62s: here are just, I might have said it in the beginning of this stream. I don't know, I'm not all here.
+1388.46s: But a lot of these questions are sourced. Oh, I said it in the beginning of the stream. They're sourced
+1393.34s: from emails, DMs, stuff like that. So, but I think a lot of these questions represent
+1400.62s: probably the sentiment for a lot of people. Like my guess is a lot of people in here right now
+1406.38s: probably have this same level of a question. And it's really interesting because it's kind of like
+1415.42s: any sort of skills-based assessment. If you think about how long it takes anybody to pick up any
+1425.74s: skill, you already know it's highly dependent on the person and the skill. What I can tell you is that
+1432.94s: just like we do things in the Marine Corps in trading, it's not based on time, it's based on a standard.
+1443.18s: So the way I would think about how long does it take to finally get it as an options trader is
+1448.06s: way less as a function of time and way more as a display of proficiency. Now the short answer to
+1458.38s: is we literally can take a look at some really basic math that help us at least frame
+1466.94s: how long this might conceivably take, right? Because it is a good, it is good to have an idea
+1473.98s: of things. So if you pop over to the website under resources, there's this tab to traders make money.
+1480.30s: You could look at the profitability factors for different traders and how things typically
+1485.34s: work for people. But there's one element in here that's important for you to be aware of, which is this,
+1490.62s: the Dunning Kruger Effect. And the Dunning Kruger Effect, it's this psychological learning process.
+1498.06s: And the thing that I want you to really hone in on those, where mastery is considered. And if you
+1505.02s: take a look at the 10,000. I'm grabbing the actual publish study for you guys.
+1521.66s: There it goes. So there's a study on this mastery concept. Now I want to be very clear.
+1532.86s: 10,000 hours isn't like the actual end all be all for quote unquote mastery. You can develop mastery
+1541.26s: and something faster. There's also things that take longer than this.
+1547.74s: We normally throw this around because it gives you an idea. And that's why I think that this
+1554.38s: is relevant to you here. Because the broader question is how long does it take to finally get it?
+1561.58s: And we're starting from a point where we have no idea. So that's why I'm showing you that 10,000
+1566.94s: hour level. Because at least gives you a starting point. Okay. So we have that data point.
+1573.82s: Then if we go back to this one, we can see that the majority of traders wipe out within five years.
+1584.22s: So that's another timeline that now is actually really important to us. So
+1591.74s: this gives us two important data points now that we can at least start to reason through this.
+1599.18s: We know 10,000 hours is where we might find mastery. And we know that most traders typically
+1607.50s: wash up within five years. So the first way I would think about framing this is after five years.
+1616.46s: If you are profitable and achieving your objectives as a trader, I think that that is a
+1624.14s: probably early depiction of the timeline. But I think it's a fair starting point.
+1629.66s: Takes a while to get this stuff down. Now just because you might not have it fully dialed in
+1636.46s: in that time frame doesn't mean that you still can't be profitable. But it does mean it takes a while
+1641.18s: to pick up the skill set because there's a lot that goes into this thing. So that's the
+1646.14s: the Clifnotes version I think of the answer. I think if I were to think of a trader's timeline
+1651.58s: and just kind of eyeball it for again, the masses. So just kind of guessing for most people.
+1658.38s: If we look at a time series.
+1663.26s: And we have T zero. So kind of like when we first start trading. And then we have T one. So thinking
+1671.42s: one year and then maybe T three and then maybe T five and then maybe T ten and then maybe T 15
+1683.58s: and then maybe E. Let me plug. So here is what I consider to be. I'll use a different color.
+1696.62s: So this zone here. I consider to be the fire hose phase.
+1709.18s: This is where we're literally drinking from a fire hose. Trying to understand all the terminology
+1714.30s: getting the basic understanding of markets down and that kind of stuff. Then in here is when
+1723.50s: Dunning Kruger is most prevalent. This is because we now know enough to be dangerous, but we still
+1736.86s: are very inexperienced and we still don't know what we don't know. This is typically where most
+1742.22s: of us make the largest mistakes. I made the largest percent drawdown on the portfolio around this
+1750.30s: time frame myself. Then I think once you get past this five year window and you're operating
+1761.34s: consistently and effectively. This is where I consider somebody to be proficient.
+1769.74s: In this time frame, there's still a ton of learning going on. Then from here to here,
+1785.90s: I would call this stuff like refinement and innovate.
+1791.58s: So a lot of what you do here in this window is taking stuff that you've seen somewhere,
+1803.10s: dusting it off and then reconfiguring it to your own purposes.
+1808.30s: There then will come a point as a trader and it can be before this again. These are very loose
+1812.78s: timelines. I'm essentially thinking of the average trader that's probably spending somewhere
+1819.42s: between an hour to two hours on this a day, which is still not an inconsequential amount of time
+1824.46s: for most people. But in that kind of timeline, it's going to take you quite a while. Because again,
+1829.90s: if you go back to what I was showing you here, or actual mastery of something, and I again put this
+1839.18s: in there for general context, if you want to hit the 10,000 hour mark, you essentially have to focus
+1847.66s: on something for five hours every single day without ever missing a day for five and a half years.
+1854.46s: So it takes a minute to get there.
+1858.14s: Assuming that most people aren't going to have that kind of time, that's why the timeline,
+1864.94s: as I'm drawing it out for you guys, is extended like this. It's to account for that just so that you
+1869.26s: understand the way I'm looking. So from here out, it's really where you start truly coming up with
+1877.50s: your own ideas and concepts. And then 20 plus, no fucking idea. I'm not there yet myself. So I
+1883.18s: don't know what to tell you. But right now, I'm about right here. So I will report back once I hit
+1891.50s: the two decade mark. My expectations for two decades is probably going to be a lot of what I'm
+1897.18s: doing now. That is my general guess. Now one thing I will note, and this is very dependent on how
+1903.98s: much money you have your objectives and stuff is somewhere in here, like this zone, would probably be,
+1912.30s: let me, somewhere in here, this I'm trying to draw from like the eight, nine year mark is,
+1920.86s: um,
+1928.86s: asset diversity. So at some point, my expectation for most people, and again, this falls in line with
+1936.94s: my own path, is starting to spread into other asset classes. As you have your pile of money
+1945.10s: building up, the way that this works, at least the way that it did work for me is I started with a very
+1951.34s: little pile of money. And then as the pile of money grew, what I would do is take like a third of it.
+1960.38s: And then I would put it into something else, real estate, angel investing, hard money lending for
+1967.42s: a long time. It was flipping motorcycles, buying broken cars, fixing them, selling them, those kinds
+1973.42s: of things. And then two thirds would stay in. And then continue to do this point. And then as your
+1981.58s: stack of money grows a lot, I actually went through a phase where it inverted, where two thirds of my
+1988.14s: money came out, and it went into other asset classes. And only one third stayed in the markets.
+1996.06s: And this is because I'm now very confident in my ability to produce from this one third to get
+2004.06s: it back to being again, a sizable amount of money. And fortunately, this one third represents
+2011.18s: more than all of this ever was. So the main thing I want you to take away from all of this, though,
+2017.34s: is the importance of our ability to start spreading into other asset classes is actually really
+2028.70s: important because it starts to add a lot of robustness to what you're doing as a trade.
+2036.06s: So a lot of details obviously went into that answer. The short answer, I think, would be after two,
+2043.98s: three years, you probably have your feet under you after five years is probably when you're going to
+2049.66s: be showing at least a base level of proficiency. And then beyond that, it's way more based on your
+2057.42s: capacity to produce fairly predictable returns. If you're trading and you have no idea what the
+2065.90s: year is going to look like for you at all, then you're still a long ways off from it.
+2070.70s: Ian says also the lower you lower the volatility of your asset portfolio diversification is
+2078.22s: great. So leave that. Yeah. And the thing is it really depends on your objectives and what you're
+2084.38s: trying to achieve, right? Because diversification is important. But if you diversify too early,
+2094.14s: it's actually a bad thing. And the reason why is let's say that I have a smaller account.
+2100.70s: Let's say that I'm working with a $500,000 account.
+2108.22s: If I take this $500,000 account and I start trying to split this thing into a bunch of different
+2115.34s: things, then you end up with a bunch of just small amounts of money spread across a bunch of
+2123.18s: different things. So that then if you have one of these actually produce well for you,
+2129.66s: it doesn't really matter, right? So let's say you put some money in different real estate deals.
+2135.18s: Let's say you keep some of it in your trading account, yada yada yada. And let's say that you have
+2140.30s: a really solid year in one of those and you get a 20% return. Well, that is a really solid return.
+2147.42s: But that 20% on your $100,000 gives you 120k. Like nobody really cares.
+2157.42s: It's a great percent return. The gross dollar amount really doesn't matter that much.
+2165.34s: So diversification has to be approached very tactically. Because if instead of prematurely
+2173.34s: diversifying the small amount of money and instead of trying to split it into a bunch of different
+2179.10s: things and maybe instead I keep this at 400k and then maybe put 100k somewhere else to start that
+2186.62s: process if I was so inclined, then this actually is a fairly meaningful amount of money, right?
+2195.02s: Then you're at 180. So like I guess adding on top of that, my bag, you get 80. Then you bet 480.
+2210.86s: The main point is diversification is good. But I think it's broadly misunderstood. And I think people
+2220.38s: over diversify actually as far as I see it typically, which is a really great point.
+2228.38s: All right. The next question here is how much time do you spend trading? This is a really interesting
+2234.06s: one. And the reason why this is such an interesting question is because there's two very different
+2239.34s: parts of my brain. There's the part that is executing a strategy. And then there's a part that's
+2245.74s: just interested in markets. So the reality is the amount of time that I actually spend
+2252.70s: clicking buttons and putting on trades is minimal throughout the course of a week. Like if I were to
+2260.86s: ballpark it on a weekly basis, how much button clicking like time spent actually like building a
+2268.70s: position to put the position on for all the positions that go on over the course of a week.
+2275.90s: It's, I mean, it's unequivocally less than an hour. An hour would be an eternity. So my guess
+2284.14s: is somewhere closer to maybe 20 to 30 minutes. If that something like that, just guessing.
+2289.98s: Obviously, it depends on the week and a bunch of other stuff. But the time spent actually trading
+2296.38s: for me is very little. Now the thing when it comes to trading is you will have heard me talk about
+2303.10s: this before, but essentially all of the work in trading is done before you trade. And that takes
+2309.74s: a ton of time. And you've heard me quote, you can go on my website and you can see how I ballpark
+2315.26s: the total amount of time that I've spent on this stuff. I just wrapped up my 18th year of trading.
+2320.70s: And I unequivocally have spent over 35,000 hours in markets, either studying, learning,
+2328.54s: or trading, like some variation of those. So I've spent a ton of time. Now most people when they
+2338.14s: asked this question, though, they're asking it from the context of this person when they sent this
+2343.10s: in, they still probably believe in fast easy money. And they're trying to see if they can get
+2352.94s: the fast easy money. And just reading in between the lines for the question. And the reality is,
+2360.06s: and you guys already know the answer to this, it's not going to be fast easy money. It's just not a
+2363.42s: thing. Now, inversely, very cool part about trading is that once you do have your approach built,
+2371.90s: it really is pretty easy to execute. And then it also depends on what you're comfortable with
+2378.94s: as a trader. If you're comfortable with lower touch points, higher volatility of the portfolio,
+2384.70s: you can get by without trading very much. I always share at the end of the year the performance
+2390.46s: of my trading account, but then also my IRA account. And the reason why I do that is because
+2397.10s: I don't trade much of my IRA account. And it typically performs pretty damn well. And it's
+2403.82s: really to show that you don't have to be mega involved in order to drive solid returns.
+2411.10s: A lot of it actually is getting out of your own way. So total time spent button clicking,
+2417.34s: like building trades less than an hour a week. The total amount of time looking at markets,
+2423.82s: reading news, reading studies, I would probably put it somewhere between four and 12 hours a day.
+2432.54s: It really depends on the day and what I'm working on.
+2438.94s: So I think there's a wide range that can go into this. But this is also one of the reasons why I'm
+2447.10s: not really big into day trading. And it's just because day trimming is it can work. It's very
+2453.18s: difficult to get it to work because you're dealing with really, really short term sentiment,
+2456.46s: which is very hard to predict. But you're also like strapped to the screen, which is wholly
+2466.14s: unappealing to me to be completely honest with. All right, next one. This one was from Reddit.
+2473.10s: I distinctly remember this one because I remember reading this and thinking how far off base
+2481.10s: this question was for like what they what they're trying to do. So they said, hey,
+2488.06s: how can I get to the same places you where I can trade and make consistent money? Can you teach me
+2493.74s: your strategy, which is a general note for people? This is a terrible way to approach anybody
+2502.86s: with a favor. It really is a terrible way because it's so unbelievably selfish to ask this.
+2511.42s: I would never go up to a successful business owner and be like, hey, can you teach me everything
+2517.90s: you know about building successful businesses? It's not going to work. I'm not even going to get
+2524.86s: any sort of conversation with them. Now, I actually go out of my way to respond to as many of
+2531.66s: these as I can because I've been on the receiving end of trying to get information and being ghosted
+2539.42s: and I know that that sucks. So I try not to do that to people. But for those that are listening
+2546.06s: to this in general, a good piece of general advice is that this is a terrible way to ask this question.
+2554.54s: It just comes off awfully because you have to think of it from the practitioner standpoint.
+2560.94s: In this case, my standpoint, this is something that I've spent a insane amount of my life force
+2569.02s: learning and building. And then this person essentially just says, can you teach me how to do that?
+2575.82s: And there's a way to go about this that I think is likely to get them a better answer.
+2584.30s: So for somebody like this, if this was rewritten, now I want to be clear, this is from
+2591.26s: this is my own lens. Somebody else that you might seek advice from might have a different
+2595.90s: perspective. But I've had pretty good success with this style of framing, which is, hey, it can
+2604.14s: be whatever, you know, I saw your post on blank or I saw you talking about blank and thought it was
+2611.10s: really interesting. I wanted to know do you have time for a five minute call? I would love to
+2618.14s: pick your brain on a couple questions. You're still going to get a no 95% of the time. But it at
+2625.50s: least comes across as a little bit more thoughtful because here's the other reality. Again, think of
+2632.94s: what like, let's say I even wanted to do this. What would go into me teaching them the strategy?
+2641.42s: Could you imagine how much work that would be to teach somebody that if you go on my YouTube
+2646.46s: channel, there's over two and a half million views across hundreds of videos, hundreds.
+2655.90s: So another thing that this just presents as is lazy, right? Can you give me the TLDR of your
+2663.34s: profession essentially? So now all that stuff aside in trying to coach people how to get more
+2669.90s: successful answers, I think the way that somebody can get to the point where they're making
+2677.74s: consistent money is if they go through the process of building their own approach. I think that
+2684.46s: that's so important. I was actually just talking with somebody in the discord earlier today about
+2689.58s: this. It's the same thing in the military. The process of planning literally is more important than
+2699.34s: the output of planning. Almost always, right? Mike Tyson has that great quote, everybody's got a
+2705.50s: plan to link it, punch in the mouth. The thing with planning is that the output, the plan itself,
+2712.54s: very rarely is going to directly reflect what you're going to see. That's just the reality. But
+2719.42s: that aside, going through the process of planning is extremely enlightening. You can learn
+2729.02s: so damn much from the process of planning. So the way that you get to this, to this point, is through
+2738.94s: the planning process. And I will show you. So if I go into the discord here, and I just want to show
+2753.42s: you some of the conversation I was having earlier with one of our members, Pollo.
+2762.06s: And so this is in the open part of the discord. Everybody's welcome in here. And
+2770.54s: Pollo had mentioned there's a bot that I built that essentially just opens up a dialogue,
+2776.46s: right? And as people, how'd your day go? Essentially, and since it's a Friday, how'd your week go?
+2782.06s: And Pollo responded that they're sticking to trades longer than they should negative return on
+2786.70s: the week. That's actually a really good self identification. That's solid. So then I ask, what's
+2792.22s: the fix? One of the things that you'll note about me is I could easily tell them what they should
+2801.34s: do to fix this. I think that literally sabotages them of a learning experience. I think the process
+2812.38s: of thinking through things is just like the planning process I was referring to earlier.
+2817.82s: The process of reasoning under your own accord with guided inputs is much more valuable than
+2825.50s: me just giving a blank answer that says you should do this. And you'll see why in a second.
+2831.50s: So I asked him what the fix is. And we went back and forth and he was saying planning things in
+2838.30s: advance and sticking to the plan, which is actually a really, really great insight. Also something,
+2844.94s: I think pretty much all of us would agree with this smart. So then I was asking, you know,
+2850.54s: tell me more about what's happening because at this point, if we're saying something like
+2857.02s: stick to the plan, that then calls into the question of do we have a plan? And if we do have a plan,
+2866.38s: do we trust the plan? So that's what I'm probing for in this. And now we have a little bit of hindsight
+2873.26s: bias. They're essentially looking back and they're saying, well, if I had done blank,
+2879.02s: then this other thing would have happened. This is really common. It's a really common bias for
+2883.98s: just about everybody, but it's the exact wrong way to analyze things after the fact. It doesn't really,
+2890.86s: X and E doesn't do anything for you because there could have been the exact other scenario where you
+2897.10s: exit the trade and then it flies in your direction even more and you could have made more money.
+2902.30s: This I can immediately glean that we're still far too focused on the outcome of individual
+2911.34s: trades and not enough on the process. I can glean that from this exact statement. Now the reason
+2916.54s: why this is so important is because when somebody is still so hung up on the outcome of individual
+2924.54s: trades, it tells me the underlying strategy is lacking because if you have a solid underlying
+2932.70s: strategy that you believe in that's robust, that is not lacking, you naturally start to deprioritize
+2940.30s: the outcome of individual trades. So that's why I told them in this case, based on this comment,
+2946.22s: I think we're looking at the wrong thing. And then going down a couple of other things,
+2950.62s: I want to show you where is it here. So essentially, they're saying that they're trying to trade
+2960.78s: the contraction of volatility post earnings. Okay, that's fine. That's a completely reasonable idea.
+2967.82s: And they're saying, I'm asking, okay, then how do we actually measure the movement of volatility
+2975.74s: around earnings? The reason why this question matters is because guess what the profit mechanism
+2981.42s: here? They're telling me what the profit mechanism and they're telling me that the profit mechanism
+2985.66s: is volatility contracting after earnings. But then when I ask, how are we measuring that?
+2992.22s: We're not even measuring that. We're saying we're just seeing how the position returns.
+2997.18s: That induces a bunch of other factors into the profit and loss. You're going to have delta
+3002.70s: inclusion. You're going to have theta inclusion. So there's going to be other things impacting the
+3007.50s: PNL of your actual position. You're going to have things like delta decay impacting your position.
+3012.14s: So the issue here is that we're not actually even measuring the thing that we're trying to
+3022.06s: accomplish. So guess what? This is like if I was trying to win a three point shooting competition,
+3032.22s: but nobody counted the number of shots that I made.
+3039.02s: Off to fucking know if I won or lost, isn't it? Right? The point here is that if we can accurately
+3046.38s: identify a profit mechanism, we have to measure it. So in this instance, we accurately identified
+3053.02s: a profit mechanism, which is fantastic, but we've not measured it. That's a problem. This goes back
+3058.94s: to the point I made earlier of detecting a lack of underlying strategy. This bolsters that
+3065.74s: original hypothesis that I had. Then there was this. If I get 70 to 80% return, then I sell.
+3073.98s: I'm beginning to think that's too high as well. Now, another note I skipped over that I should
+3080.22s: highlight is this up here. I asked, are we doing single lots, multiple lots? And they said,
+3085.18s: well, they're doing three to 10 lots. Yes, that's too big. Two things. One, there's actually no way
+3090.46s: I'm planted earth for me to know from the data given so far. If this is too big or too small.
+3095.58s: So the fact that they're autonomously putting this in that this is too big, it tells me that they
+3101.66s: know they're actively making a fucking mistake because a 10 lot, depending on the size of the stock
+3108.30s: and the size of the portfolio, can be completely reasonable. It could even be undersized.
+3112.54s: But this tells me that again, there's no underlying strategy because part of the strategy is
+3118.70s: sizing. This is saying this is too big. So we're not following the strategy. Then come down here.
+3127.10s: If I get 70 to 80% return, I sell. I'm beginning to think that this is too high as well.
+3133.42s: Yes, what this tells me. This is unrecarched. We're taking another guess. And guess what? We're
+3141.42s: not measuring. So it's no surprise to me that when we look at hollows path with this and for those
+3151.82s: hopefully that can see what's going on here, I mean, no way picking on polo. You'll actually notice
+3157.90s: the people that are putting in the effort to try and learn. I will always give them the time of day
+3163.58s: like this. Right? Like I don't get much out of this to be completely honest with you. This
+3167.74s: doesn't necessarily help me a whole lot. But I really like helping people, especially people
+3172.46s: that are trying. And I can see that from the fact that polo answered how the week went with an
+3178.62s: honest self assessment that polo is trying. I'm always here for that. So anyways, this being a random
+3186.78s: number that we tie on and say I'm beginning to think that's too high as well. It tells me it's not
+3191.90s: researched. Go all the way back to the first thing I said. We don't have a fucking strategy.
+3198.14s: So here's the problem. And this goes all the way back to what we're talking about here,
+3205.18s: about making consistent money. The process of building your own strategy is so unbelievably
+3215.90s: important because if you take the time to build your own strategy, you inherently understand the
+3225.66s: landscape. There isn't the question of I'm beginning to think this is too high as well. There
+3234.54s: isn't the question of this size is too big. There isn't the question of I think I'm staying in
+3243.02s: trades longer than I should. All of those fall off because it's defined. Now one thing to note,
+3253.58s: my opinion is as a new trader, it is so much more important to strictly follow the plan. As a season
+3265.42s: trader, you get to have more creative license. You get to break the rules a little bit.
+3273.34s: For me, my trading plan is more like trading guidelines. I generally follow the core concepts of
+3280.94s: the majority of what's in there. But I always have a saying that I like to use, which is the
+3286.38s: trader has the last say. It's not the plan that I wrote out. It's whatever I'm seeing is the
+3291.02s: trader and whatever I think as the trader on scene, whatever I see makes the most sense.
+3297.02s: Now you only get to do that once you have a demonstrable skill set. It's kind of like when you see
+3304.62s: professional athletes doing things that are fundamentally unsound, but they're professionals. They
+3312.62s: kind of know when they can get away with a little exuberance and where it might actually be optimal
+3320.14s: based on what they happen to be seeing at that point in time and they have the skill at that point
+3326.46s: to pivot in that way and take advantage of that opportunity. The same thing with trading. It's
+3331.42s: literally the same exact thing with trading. The main note here is the way that this person
+3344.70s: or literally any other person can get to the point where they can consistently make money.
+3350.30s: It's when you build a toolkit that allows you to confidently trade any given market condition.
+3360.86s: The cool part is, bring that many of them. Market goes up, market goes down, market goes sideways.
+3368.30s: Volatility goes up, volatility goes down, volatility clusters. That's what you got.
+3378.14s: The really cool part about trading in general is that there's a bunch of different ways you can go
+3383.90s: about it. But the reality is you're starting from a pretty decent jump point which knowing those
+3390.94s: different ways that the market can make money. Reese, what up, Reese, good to see you.
+3398.46s: Casadoro says you continue to drop quality info and really stand out. You do not have enough
+3404.06s: subs. So many more should be learning from you. That's awesome to hear. Thank you so much for saying
+3408.30s: that. That kind of stuff is really encouraging because I obviously want you guys to learn as much
+3415.58s: as you can. And I want to try to help people learn. But to be honest, that's also why I think our
+3422.22s: community is right sized. It's because the majority of traders get into the world of trading thinking
+3428.86s: it's going to be fast easy money. And it's simply not. So that's actually why you'll see other
+3434.54s: YouTubers in general. They will essentially just try to monetize their audience by using what we
+3442.62s: all know is clickbait. But it's for the kind of people that touch those kinds of things and they
+3449.10s: have those hopes of fast easy money and stuff like that. Our community is very specific and it's
+3454.70s: actually our community members that taught me this. I didn't even know this, which is the people
+3461.10s: that find their way into the outlier community typically are people that have been trading for a
+3465.98s: little bit understand that this is actually kind of difficult, but they're interested in putting
+3471.34s: in the effort to learn. And that's naturally going to be a much smaller subset of the total trading
+3476.94s: world. So I really appreciate the comments. It's really, really kind of you to say, but I will always
+3484.30s: beat this drum. I care so much more about the quality of our community. And to be honest,
+3494.38s: I care so much more about being proud and comfortable about the information that I'm putting out.
+3500.38s: Then I am growing now I am trying to hit 40,000 subs at the end of the year because if I'm
+3506.54s: going to take the time to do something, I need to continue to get better at it. That's just
+3510.22s: part of how my brain works. And one of the ways that I do measure that obviously is through
+3514.86s: subscriber count. So I definitely am still trying to grow and get better, but that's always secondary
+3522.06s: to me. And it's why I mean, a great example of that is the video that I put out this past Thursday.
+3527.66s: I put out I'm starting a segment on Thursday that talks about like options trading quick tips.
+3535.98s: And the video literally got 185 views. That's like an objective flop. It's a terrible, terrible
+3544.94s: turnout for a video. But the content in that video is good. And I'm comfortable with the content
+3551.34s: of that video. So the way I look at that is not wow, that sucks. Only 185 people watch this. I
+3557.82s: look at this as 185 people got to watch something that I actually think is good usable information.
+3564.38s: It was about volatility. So yeah, it's a it's a really interesting problem set for me to be honest
+3571.10s: because you can see how in why creators turn to the clickbait stuff. But I don't think it excuses
+3580.78s: it. I think that's I think it's a perversion of morals, to be honest. And everybody has their
+3589.10s: objectives, but mine rests a little bit different. Lauren says I didn't see that yet. I didn't know
+3596.78s: you put it out. Share it again on your community wall. Got it. Yeah, thank you. I will I will. I
+3601.34s: drop the link in here. But for those that don't know what I'm doing is on on Thursdays. I'm starting
+3609.98s: a segment that's essentially I'm calling it outlier trading quick tips. And the whole point is
+3619.10s: a lot of what I do is kind of heavier stuff. So the goal for the quick tip segment is to give people
+3629.50s: shorter videos that teach pretty dense stuff in a condensed time frame. Now this last one I'm not
+3636.86s: going to lie. It was a little bit longer than I wanted it to be. It was like 13 minutes. I'm
+3640.38s: trying to keep them under eight minutes. That's the goal going forward. So Chris says, Hey Eric,
+3646.94s: do you have any videos on debit spreads for zero DTSP X trading? I don't I don't trade those
+3651.74s: at all myself. I don't really think that there's a lot of efficacy behind that personally. So I don't
+3658.86s: and now by the way is the perfect time. If you have questions, if you have anything that you
+3663.42s: want to talk about, feel free to start throwing it in there. We're at about an hour. I'm going to go
+3667.82s: through the rest of these questions just because I don't want to leave people hanging, but I'll go a
+3670.62s: little bit quicker. Next one says, could you provide some guidance reading material and how to get
+3675.18s: started with option trading in a manner that's compatible with a full-time job? That's a great
+3678.94s: question. I actually think that this was a veteran that sent this to me. I think grabbing options
+3685.02s: is a strategic investment and just working through that entire book. I really think that that's
+3689.90s: the easiest way to do it. The way that I would structure it in my mind is I would pretend that
+3694.46s: I'm back in college and this is the required reading for this semester. It's like if you apply
+3701.58s: that kind of discipline, you can get through a pretty big book like that in a reasonable timeframe.
+3709.26s: If we take a look, this book is getting out of the glossary, getting out of the graphs,
+3727.66s: axes, which are great. The book is 978 pages. How long is the semester? I don't even remember. When I
+3741.90s: was at RIT, we did semesters my super senior year because before that, we were actually on quarters.
+3751.10s: So I actually don't even know how long a semester is. Is it six? No, not six months. How long is
+3759.18s: the semester? Anyways, I'll start doing a math problem here though and then you guys can tell me
+3763.90s: how long a semester is. Somebody will know that. So 987. If you read 10 pages a day every single day,
+3777.26s: it'll take you 98.7 days. So the point is even a book that's a thousand pages long.
+3787.74s: If you break it up into a smaller problem set, it takes you less than three months to complete.
+3795.18s: 10 pages a day is it's literally child's play. It's literally child's play. It's just a function
+3804.14s: of consistency. Paul says six months. Oh, it is six months. Thank you. I actually, I genuinely didn't know.
+3820.38s: But for somebody with a full-time job, it's exactly how I would start. I would give the problem set
+3825.98s: that simple of a starting point so that you can gain momentum and keep crushing it. All right,
+3832.62s: next one. This is also from Reddit. I actually didn't read this one. I was just wondering though,
+3842.38s: is there any hope for small accounts? Not of course to trade full time, but maybe one day.
+3847.50s: My day job doesn't make me much money, but I can afford to lose some for investing. Yeah, there's
+3853.18s: of course, the thing to remember with a small account is that your job with a small account is
+3862.78s: to learn the skill set. That's your job. The prospects of growing a really small account into a
+3870.30s: really big account is very low. But a lot of the stuff that you learn trading a small account
+3878.70s: applies directly to a big account. Chris says, do you still stay in touch with Newton? It's a great
+3887.26s: question. I texted him at 2132 last night and then he texted me back at 0613 this morning and
+3900.14s: we went back and forth for a little bit. He and I still talk, at least every week, we bullshit
+3909.10s: back and forth. I talked to Newton quite a lot. I like him a lot. The thing that I like so much
+3917.18s: about Newton is it's not even from like a game stop or a trading perspective. Now that's one of
+3923.66s: the cool things about him is that I met him through GameStop, which is very cool. But he's so different
+3928.94s: than me and you guys have to understand how much I love that. I love when people are different than
+3937.74s: me. They become really interesting thought partners for me. So he's very religious. I am not. I'm not
+3945.98s: not religious. I'm just not anywhere near as religious. And he is like a very specific belief
+3953.02s: system with his religion. And I literally love learning about it because it's so fucking interesting.
+3958.94s: So yeah, I keep in touch with him really because I think he's a genuinely good person. But also
+3967.42s: because it's like he and I have really interesting conversations. It's fun having thought partners
+3974.30s: to just not again, not even necessarily related to GameStop. He's still the dude that I go to to
+3979.34s: bounce ideas off of with that. But it's really cool to have thought partners in general just in life
+3985.66s: about different things. So yeah, or sure. How do you find the right stock to trade? This is a good
+3994.14s: question. This becomes so much easier if you have a defined strategy. And then once you have a
+4002.94s: defined strategy, if you're familiar with the outlier strategy process, this essentially answers
+4007.90s: itself because based on the profit mechanism and based on the signals that fit the profit mechanism,
+4014.38s: you can scan for those signals. And essentially that's how you find it. So the problem a lot of new
+4022.22s: traders when you're trying to figure out what stock to trade is it just starts as like this really
+4026.62s: big problem that we don't know how to wrap our arms around. But the cool part is as you gain
+4032.14s: experience as a trader, it actually becomes pretty damn simple to be completely honest with you.
+4039.98s: There's just nowhere near is much effort that has to go into place. And it stems from
+4051.26s: you naturally limit your choices based on what you're looking for. A great example of this is,
+4056.38s: let's say I'm trying to play in earnings, let going back to that example from Paulo earlier.
+4061.34s: If I'm trying to play earnings, it tells me that unless earnings happen to align with an
+4067.42s: up in options expiration, opX, that I essentially need something that has weaklies in order for me to
+4077.50s: get the actual exposure that I want. It's a natural filter that's going to knock out the most
+4082.54s: of the tradable universe. There's only like 500 and something stocks, 538 or some shit that have
+4088.22s: weekly options. So that's how you find the right stuff to trade is you start with something like
+4093.02s: the outlier strategy process, which is literally just a framework for thinking. And then you define
+4098.38s: the profit mechanism, you define the signals. And then when you search for those signals that fit
+4102.86s: the profit mechanism, it's going to back you into the kind of stocks or just securities that fit the
+4110.06s: idea. What info is the most important to know? I mean, that's such a big question.
+4124.62s: It's such a big question. I think the most important information to know is the profit mechanism.
+4132.78s: Like if I had to pick something, it's the profit mechanism. Because if you thoroughly understand
+4139.18s: the profit mechanism, then the worst you can do is pick something that's suboptimal to capture it.
+4149.26s: But you still would make money in that scenario if you firmly understand profit mechanisms.
+4155.02s: So I think that's the most important thing to know. Profit mechanism.
+4159.50s: Recommendation on understanding tax implications or softwares or should I need to go to a CPA?
+4169.26s: I think if your, I mean, trading itself is not that complex. The reporting process for trading can
+4176.46s: be done. I used to do my own taxes. I think it really depends on your broader tax footprint to be
+4180.86s: completely honest. So I think what I can tell you is that a CPA becomes worth their way in gold
+4188.78s: as you make more money, unequivocally. Because the main thing is as taxes get more complex with more
+4196.22s: components to it, the broader expertise is just so worth it. I happily pay a lot of money
+4204.06s: for really my team of people that help me, which one of them is a really solid CPA.
+4212.06s: I also think having a really good attorney that can help you. Again, once you start having larger
+4220.22s: assets, it's really good to have that kind of expertise. If you're a smaller retail trader,
+4227.34s: it's just a pass through amount, right? So if you're trading short-term, you're going to be taxed
+4232.54s: at your nominal tax rate. If you're holding things longer than a year, you get long-term capital gains
+4237.90s: tax. You can attempt to hit DTS, day trading status. And if you do that, then you can elect for
+4247.10s: something like Mark to market, which will change your tax profile a little bit, allowing things
+4251.90s: like wash sales. But you get a consolidated 1099 from your broker, which essentially is telling you
+4257.26s: exactly what to input. So yeah, I think if you have simple broader taxes, you can do them yourself.
+4267.10s: If you have a more complex tax picture, then CPAs are entirely worth it, completely, completely
+4274.14s: worth it. And then the last one here is, why is there so little accountability for what people
+4280.86s: say on air or right, even in the finance world? The sheer amount of noise is useless, slash non-actionable
+4287.90s: stats. Like, the spy is down a whole 1% today due to XYZ. The reason for this is actually funny,
+4298.46s: and you have yourself to blame. That's the reality. It's because a lot of people
+4307.42s: really like entertainment. They like to be entertained. So in order to get people to click in and to
+4316.86s: watch stuff, they essentially need to entertain. So if the collective behavior and preferences of
+4325.90s: investors and traders changed so that we weren't clicking into whatever this thing is or these
+4333.74s: kinds of things, then they would change what they produce. But reality is people like it. So that's
+4342.78s: why they produce it. So yeah, unfortunately, we literally have ourselves to blame for why most
+4351.66s: reporting has done the way it is. And the other thing about it honestly is that there's kind of
+4356.30s: opportunity that lies within it. And it's because it tells you that the average person really has a
+4363.10s: completely different experience than what a trader is doing. And the cool part about that is you can
+4374.94s: absolutely use news cycles for tradable ideas, which is very, very neat, I think. But yeah,
+4383.42s: that's exactly why the Cliff Notes version is because you and obviously I mean retail traders in
+4389.66s: general like it, fortunately, that is the case. So those were the questions that I got submitted. I
+4397.58s: hope that just the general conversation is useful. I hope that you guys hopefully picked up a couple
+4404.30s: things in here as we walk through a bunch of these. But I have like another five minutes or so.
+4409.66s: So if there's any questions that you have that you want to rock and roll through, I would love
+4416.62s: to hit anything else that you might have more than happy.
+4423.58s: More than happy to dive in and uncover it. So yeah, that's the end of this part though.
+4432.78s: Our Q&A.
+4437.66s: And then while you guys are doing that, we can take a look at the trading basics,
+4444.46s: the libous because I actually have to update this. So today
+4453.02s: ended up being Q&A.
+4462.22s: And then these two will just move down.
+4468.22s: So the next session for next Friday will be navigating an options chain. And then we're going to
+4475.42s: get into analysis, technical analysis and fundamental analysis.
+4483.98s: Cool.
+4484.54s: Paul says a ticker. Sure, we can take a quick look at a ticker. Why not?
+4491.02s: Well, actually, why not is because I need to build our recap. That's why not.
+4499.02s: All right, gang. I'm going to wrap us up here. Then it looks like we got all the questions answered.
+4504.22s: I'm going to finish the episode recap, sketch your quiz sets. Chris says,
+4510.94s: disappointed that there's so many scammer YouTube's that try to sell you a fake course.
+4515.26s: They also have so many of those videos to sell fear on stock or markets just for the click.
+4521.10s: That's the that is the the straight up reality. And it's because I have a thing on my white
+4526.54s: board over here. When I first started getting into YouTube, I really started spending a bunch of
+4531.50s: time understanding YouTube. It's the same the same stuff that I talk to you all about doing,
+4539.02s: landscape analysis. Those kinds of things are literally exactly what I do in my personal
+4545.98s: personal career when I'm doing stuff like this. So with YouTube, the three things that I have
+4555.74s: written on my board over here are fear, curiosity and desire. And the reality is fear, unfortunately,
+4566.94s: works really well. And it's because people are highly fearful of a lot of different things.
+4575.18s: And people will continue to be fearful. So honestly, Chris, it's another one of those things.
+4581.58s: You really shouldn't be that disappointed in the YouTubers. You should be disappointed in your
+4586.30s: peers, the people that click the video. Because if those people don't click that video,
+4593.42s: then that video starves and dies. Because those are the people that are actually trying to make a
+4598.70s: living off of YouTube, which I I understand and I respect that. I'm really fortunate and that I
+4604.86s: don't have to do that. But if I had to make my living through YouTube because that was going to be
+4610.62s: my essential professional way to to make a living, then my job is a YouTuber is to serve the audience
+4618.06s: what they want. And that's reality is whether people
+4624.06s: overtly acknowledge it or not, it is what they want. And it's displayed through their action.
+4632.62s: Which is I think sad, but yeah, it's another one of those things we have
+4639.34s: nobody other than ourselves to blame unfortunately. And as what it is, hey.
+4644.46s: Now, I will say that I do think that there's room for morals and integrity. And I do think people
+4653.26s: do stretch them sometimes for the sake of getting a click. So even though I think that the audience
+4661.90s: might favor something, demand something, have a preference for something like the creator isn't
+4669.98s: forced to do that. But they are pressured to do that if they're attempting to make a living
+4677.74s: off of this. Because this is another thing I honestly see all the time. I don't have any courses.
+4682.70s: But a lot of people will try to talk shit about courses and they'll say, well, if anybody is
+4689.26s: successful, then they wouldn't have a course. It's such a dumb statement. It really is
+4694.54s: fucking dumb. That book that I just picked up Lawrence McMillan options is a strategic
+4700.38s: investment that dude's been in markets for a long time. He has a course. He has online courses.
+4705.42s: He has book. He has a like a trading guide or like a guide for that bigger book.
+4712.14s: Like the fact is for people that spend a lot of their time and effort building expertise in
+4718.30s: something, you try and monetize it, but you also try to share it. That's just a natural
+4726.94s: propensity for people. The other thing that people don't understand for a lot of these other folks,
+4733.10s: again, is the incentive structure. Even if you're really successful as a trader and make a lot of
+4737.74s: money, why wouldn't you want to make money from another avenue based on the same skill set?
+4747.34s: You're leveraging the same skills you have, right? Now, one other thing I noticed when people
+4753.10s: talk about that, now I want to be clear, the majority of courses that I come across are straight
+4758.14s: trash. And I really do believe that. I think the vast majority of people that are selling stuff
+4763.02s: are garbage. So I don't blame them. The overwhelming majority of those people don't belong in that
+4769.02s: kind of space. So I get it. I'm just poking at the logic because the logic just simply doesn't
+4775.26s: make sense. The other thing that people will say is like, oh, if they know how to trade, then they
+4780.22s: would just trade in like size their positions up. There's a reality. Why do you think Warren Buffett
+4786.78s: is sitting on so much cash? He's sitting on so much cash because it's difficult for him to find
+4797.42s: things to get invested in that makes sense for the size of the portfolio. It's difficult
+4806.14s: for bigger accounts. You actually start to get phased out of a lot of things that you're trying
+4810.54s: to trade. You can't actually put them on in the size that you want because then the market starts
+4815.50s: to detect it in front, run the move, especially for stuff like options because options, whether you
+4821.10s: believe it or not, you really care about the price quite a lot because you're making a pretty
+4827.58s: specific bet with respect to price. So those thought processes are always so interesting to me
+4834.54s: from like a person's perspective. And a lot of things that I've learned have come from books.
+4843.10s: I've never purchased a course to be completely honest with you. But I have taken a couple courses
+4847.74s: from like MIT OpenCourseWare that have been decent. Now, funny enough, this stuff from MIT OpenCourseWare,
+4854.62s: I actually don't consider it to be that good. But it's not bad. So it's so weird to me that people
+4862.78s: think that just information should be convenient. Exactly what they want free. It's like just a
+4874.86s: fundamental misunderstanding literally of the fucking world in how things work. But yeah, really,
+4881.58s: really interesting. The main thing though that I always remind people of is our decisions in what
+4887.90s: we choose to interact with has a massive impact on what's provided to us. So as long as people keep
+4894.54s: clicking on those fear mongering bullshit links and stuff like that, they're going to keep making them.
+4899.34s: And it's a unfortunate reality, but it is what it is. The cool part is is you don't have to click
+4904.38s: them. I essentially consume very little finance media, like very, very little. Most of what I learned
+4911.66s: from finance comes from feeds that get from wire feeds, not from like seeking alpha position posts.
+4923.58s: But literally from actual data feeds like this, right? So that I can see just information. I can see
+4934.94s: what's going on. Why it might be going on. But this isn't like this stock could double in the next
+4942.06s: two weeks, right? Because I like, I don't give a fuck about that kind of analysis at all. I will come
+4947.98s: up with my own analysis. I just need to be able to access the information to synthesize on my own
+4954.06s: and come up with ideas. So yeah, the overall finance media landscape is so interesting to me.
+4961.66s: But and that's also why it's I think it's really difficult to find like what I would consider
+4967.82s: to be like genuine people. Because yeah, a lot of people I think are exceedingly crooked and they
+4974.46s: have the wrong motives. Unfortunately, Chris says that people on social media sell the fear,
+4981.82s: saying both it but it sold all his V.O.O. Yeah. And all of his V.O.O. was like what? A percent or
+4988.38s: less than a percent of the portfolio? That point, it's like it doesn't even fucking matter.
+4994.06s: But yeah, I thought that that was also hilarious to be honest. Oh, oh, I didn't even see this.
+5002.78s: Shit, you guys see this? NKLA says that on the 19th from NASDAQ that the company is going to be
+5013.10s: delisted from NASDAQ. I didn't even see that. I'm sure the stock didn't like that.
+5025.90s: Well, you can't even tell.
+5030.30s: Because yeah, it didn't like it, but it's already a fucking penny stock. This is crazy.
+5036.70s: Believe it or not, I used to have a long position in here.
+5041.90s: Yeah, I was trading just some of these run ups. It's been a long time since I've touched it, but
+5048.22s: that's nuts. This is a really, really interesting example of just a company that was positioned pretty well.
+5058.46s: But it just fucked it all up. Take a look at this, man. The stock was several hundred dollars
+5068.22s: and just ground down and it's literally at 35 cents. Fucking crazy.
+5076.86s: Policies, do you ever use whale alerts? I use unusual options activity, not necessarily whale alerts.
+5085.58s: And the reason why is because unusual options activity takes a lot of different forms,
+5091.74s: and it's very contextual. But a lot of times people will see what they consider to be whales,
+5098.06s: right? Big positions. And they'll think that it means something, and it's very difficult to tell
+5104.30s: if an individual big person placing a trade really means anything. So yeah, now we did talk about
+5113.82s: yesterday, those VIX positions that went on. Did we not?
+5122.06s: Interesting, but that's also not one individual position that went on. And I told you guys that I
+5126.94s: was following along with some of them, simply because unusual options activity can be very informative.
+5133.66s: But like whale alerts on individual big trades and stuff like that, I don't really care about
+5138.78s: those quite as much to be completely honest with you. What did we learn today? We learned
+5148.46s: a couple things. The first thing I think that we can summarize here is
+5157.90s: the typical duration and learning path for an administrator.
+5164.14s: We also learned strategy, building, and role of planning,
+5177.98s: in trading. And then the third thing that we learned.
+5195.90s: I think I want to kind of combine five, six, and seven.
+5199.50s: And I think these are fine. I think these two capture everything.
+5206.70s: And then I'm going to hop off so that I can build your quays next week.
+5214.22s: As always, if you guys need anything, let me know. Be an outlier. I will see you all here.

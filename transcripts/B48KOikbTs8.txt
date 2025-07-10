@@ -1,0 +1,611 @@
+0.00s: you
+30.00s: you
+60.00s: you
+90.00s: you
+120.00s: you
+150.00s: you
+180.00s: you
+182.50s: you
+184.50s: that
+190.00s: you
+200.98s: you
+202.98s: What's up, outliers, happy Friday. Welcome back to another episode of Outlier Options
+217.62s: Trading Basics. Today, we are going to take a closer look at a really overlooked portion.
+228.34s: I would argue of developing a trading strategy, but actually understanding what we're looking
+238.50s: at and whether or not what we're actually looking at makes sense, doesn't make sense.
+245.74s: And this actually follows a recent series for the Outlier Pro members last week, a couple
+254.54s: days ago where what we are doing is looking at pattern recognition. So this realistically is just
+265.18s: following off of that idea of pattern recognition. What that looks like, how to interpret it, those kinds
+274.26s: of things. So let's start with a super quick overview and then we will get into detail. I'm going
+282.46s: to move us over to the main screen so that I can look right ahead instead of at an angle. And I'm
+291.26s: going to refresh us off of this. And then I'm going to walk you through just another slide with
+298.94s: some key concepts. The way that I envision this going is I want to talk about the process broadly.
+307.02s: And then I want to talk about some of the more common mistakes that I see. And then I want to
+313.18s: talk about some of the metrics that might make sense to take a look at. So there's a few things
+319.98s: that we have slated for the agenda is always it is a interactive session. So talk to me. Let me know
+326.06s: if you have questions. I'm actually going to use the material that we're talking about today for
+331.58s: a standalone video at some point. So feel free to interrupt as much as you can.
+338.06s: Anything that doesn't make sense or you want to double click into, please tell me because
+341.82s: it's literally the point of doing these on a stream. You are not bothering me. You're not
+347.26s: interrupting me. It's nothing like that. It's literally what we're here to do, which is to have
+352.46s: a interactive process as we're looking at this because this stuff can be a little bit challenging
+358.94s: up front. The cool part is as with most things in trading. Once you have a sense of like what it is,
+365.82s: it really is nothing that crazy. You'll see that it makes a ton of sense inherent to itself.
+372.86s: So it looks like we got why not Lauren E. Hodge, Wheel Strat Joe, a bunch of familiar names.
+379.50s: As always, that's my favorite because it tells me we have people that are growing over time,
+386.94s: which is perfect. So first things first, let's just understand what people tend to do when it comes
+396.30s: to a strategy. And in general, I think we all tend to know, but people tend to just kind of
+407.50s: just shoot from the hip, right? They just completely go off the cuff. And there's not really any sort
+418.38s: of defined process around the way that they're thinking about creating a strategy, managing a
+424.14s: strategy, evaluating a strategy. And therefore, there's really nothing that we would expect to see
+429.90s: long-term that would be positively expected. And I'll explain a few reasons as to why that's the case.
+439.10s: So first, let's just take a look at a couple, as always, Reddit posts. These are like some of the
+445.02s: best possible places to see what normal people do in how normal people think. And this is not a
+454.94s: drag on any of these people. It's just a great representation of how it is so easy to be misled
+465.10s: in this business. And it's not misled in terms of like somebody tricking you. It's just literally
+469.26s: based on your own eyes. So this post talks about green 16 slash 17 so 16 out of 17 months in a row,
+480.30s: selling options. And then they give you some context in here. This one says, did I find the
+487.02s: safest trading strategy or am I just dumb? This one says, I've recently discovered to me what seems
+492.70s: like a perfect trading strategy. It consists of buying a call debit spread on spy with a strike price
+498.86s: about $5 under current trading value $1 wide zero to two days to expiration. Contracts cost about
+506.54s: 80 cents due to the fact that spy doesn't usually drop more than a percentage in one day.
+511.74s: You'll always reach your max profit. But doing this for the past two weeks made about 6% gain
+517.66s: on my overall account granted that I do have a small account, which we can obviously assume
+522.30s: based on the fact that a $80 trade led to a 60% gain on the account. My question,
+528.86s: are is this really profitable in the long term? In my risking too much for the amount back,
+535.02s: what are your overall thoughts on the strategy? So this is how normal people evaluate a strategy.
+541.98s: This is somebody that says, I think I found something that makes sense and good for them for going
+546.46s: to even a community like Reddit and saying like, yo, fact check me, does this make sense?
+551.74s: Unfortunately, as most of us know that have been in the business for a while, this
+557.02s: you're going to see this kind of result here. And after this video, you'll know how to actually
+563.42s: analyze this more in detail to get a usable output. And then we have one more. This person says,
+569.90s: it's been about 18 months. And by the way, the way that I found these is I literally just went
+573.98s: into options and just typed in the word strategy. So these are just posts from there. These aren't
+578.94s: like cherry picked. I just picked the top couple. And this says, the whole description is in the
+584.70s: comments. Basically, spring of 22 almost done. Big issue, not taking gains, not knowing when to cut
+591.26s: losses. Okay, never mind. What the fuck am I reading right now? I thought that there's going
+601.50s: to give me a strategy. Keep it simple statistically. The vast majority of traders don't make money.
+607.18s: Why then make it complicated? Trying to iron condor consistently hedge covered calls. If it works
+612.46s: through it works for you, but otherwise, no need to further complicate trading. Just trying to
+617.10s: possibly help others out. What the fuck does this mean? Once again, succeeded in killing the
+626.14s: account. I, okay, so I have no idea what I just put us through because I don't actually see what
+631.02s: the strategy is in here. What made me click of this, to be honest, is the fact this, it's been about
+636.54s: 18 months in my strategy has been consistently winning with a high success rate. This was the issue
+642.54s: that I had with this one. That's why I wanted to look at it. So I don't actually even see,
+646.70s: it says the whole description is in the comments. So maybe there's actually a strategy in there
+650.54s: or something. But anyways, this is wrong. Like, this is the wrong way to look at it. It's the same
+654.46s: reason why this is wrong. And we'll understand why. All right. So before we go any further,
+664.54s: what I would love for you to do, whether you're watching the recording or you're on the stream now,
+669.82s: is I would love for you to think about a trading strategy that you use. And I would like you
+679.18s: to quickly evaluate that trading strategy to yourself. What I mean by this is think about
+687.18s: the data points, think about the things that you would look at to see if this strategy is good
+696.86s: or not. Okay. Once you have that for a couple moments, I'm going to start walking you through what
+704.94s: I would do. And I want you to compare what you came up with on your own against what we're about
+713.58s: to go through together. I want you to see what's the same because there will be things that are
+718.30s: the same. I'm pretty sure. And what's different. And I guarantee you there will be things that are
+724.86s: different. So off we go. Now for those unfamiliar with the outlier strategy process, like I said,
+735.10s: in the beginning, we're going to start here. This is just a framework for building a strategy.
+739.18s: The reason why this matters is because when we get into the concept of reviewing a strategy,
+744.94s: you'll see that there's actually a very important first step when we're trying to review a
+750.70s: strategy, which we're going to talk about in a second. I actually realized I'm going to move this
+755.58s: over here for just a moment. I want to make sure that everything on the next slide doesn't pop up
+762.22s: all at once, which I think it's going to. It is. Give me one sec. I'm just dropping a couple
+771.82s: covers right now.
+773.26s: I want you guys to have the progression because there's progression in what you're about to take a look at.
+785.34s: Cool. This will work.
+789.50s: All right. So let me slide. Let me slide this back over.
+810.06s: I'm fixing two other things. Beautiful. All right. We Gucci. I don't know how long that was,
+817.90s: but I felt like it wasn't too bad for you guys. And I think this will make it a better,
+825.18s: a better experience, which is what we're going for.
+829.42s: Oh, bad.
+832.46s: Joe says, buy and hold diversified funds has been my best strategy.
+837.58s: Yeah. Well, especially somebody like you, Joe, to be honest, it makes a lot of sense.
+841.90s: And it's because you have funny enough. I actually realized I need you just jog my mind for
+848.54s: something. I need to add to this list for you. And it's just that people strategy hop a lot.
+853.82s: It's very difficult. It's very difficult to create a trading strategy. It takes a lot of time
+860.78s: in effort. And I have seen you enough by now that I know you're not doing it. So because of that,
+868.86s: your propensity to kind of flow in between things that you think might work.
+874.14s: And then bouncing out when it's not working, we refer to that as strategy hopping. And it's
+879.90s: really nefarious. And you'll actually see there's something in here that talks directly about that.
+887.26s: So yeah, buy and hold for most people realistically will work best. Now, if we take a look
+894.86s: at the ally of strategy process, you'll notice that there's four steps. And these first two steps
+902.46s: as always are all about the profit mechanism. They're not about a strategy at all. And then we get into
+908.70s: creating strategies between these two steps. Okay. So if we now move on to the concept of evaluating
+919.10s: a trading strategy, you'll notice that the first thing, the very first thing that's here is idea.
+928.78s: You can't evaluate a trading strategy unless you have some sort of idea on what it is you're
+939.26s: trying to monetize the profit mechanism. And some idea on what it should look like. If you don't have
+947.90s: this, then you can't evaluate what you're doing. And again, most people, my guests like this person,
+956.54s: they don't have this. So they're just starting to click buttons. They're seeing an outcome, yet
+964.38s: unfortunately, they don't actually know what they're trying to do. So then they can't answer the
+972.46s: question they're trying to answer. And nobody really can answer it unless you understand what
+977.90s: it is that you're trying to do. So I don't know if that point is too esoteric. Like if that's one
+983.90s: of those things that as I say it, it kind of just goes over and it doesn't make sense. If so, please
+988.14s: tell me the way to think about this, it's like if you play pool, I'm not good at pool, but I have fun.
+997.34s: And when I'm playing pool, if I'm trying to shoot a ball, I'm thinking about what ball I'm trying
+1005.74s: to hit, where I'm trying to hit it, and where I think that ball is going to go. Now anybody that's
+1013.34s: played pool will know sometimes that idea that you think it might go like that, but then you shoot
+1020.86s: the ball is something bounces in a way that you didn't expect in all of a sudden, another of your
+1025.90s: ball, it goes in, but it's not the one that you meant to go in. So that's the case where somebody
+1033.42s: puts on a trade, they make money, they made money on a trade, but they didn't make money for the
+1040.14s: right reason. Just happen to make money because of path. The danger here is that if I were to try
+1047.58s: and become a professional pool player, and the premise of my skill set is sometimes when I shoot
+1054.46s: the ball, some shit goes in, but it's not really what I'm trying to do, I'm probably not going to
+1059.74s: go that far. It's the same thing in trading, but the differences is in trading, everybody is just
+1064.94s: equally happy when they make money, and this goes back to a broader concept about a lack of attention
+1072.46s: to the process, and everybody's focused on the outcome, which is a whole other conversation.
+1077.26s: So you have to start with a defined idea. We take the idea, we analyze it. So the idea in this
+1085.50s: context is a profit mechanism. So we should be able to take a look at whatever the profit mechanism
+1094.86s: is that we're trying to trade, and we should be able to analyze it. This process here mirrors what
+1105.98s: you see in the outlier strategy process. These are the four steps of the outlier strategy process
+1111.10s: in a slightly different context. So now is where we get to the point of evaluation. We have a profit
+1119.42s: mechanism, we analyze it, we build a strategy around that, and now we're testing the strategy. Now
+1126.86s: is when we get to analyze. The process of analysis is actually really, really simple.
+1133.74s: We're going to observe what happens with our strategy. Then we're going to iterate on the strategy.
+1144.62s: This is when we're bringing other elements back in, applying new filters, maybe testing different
+1150.54s: deltas, all that kind of stuff. We're iterating. We're trying to see what fits optimally.
+1156.54s: And then once you finish this process in a paper trading sense, then we can move to
+1163.82s: a live variation of this, and then an actual full-scale trading, like utilization of this.
+1173.82s: So this here is the same as this here, which is the same as this here. It's just at different stages.
+1185.18s: In this stage, we're roughing out the idea. In this stage, we're testing it live with a small
+1189.98s: amount of money. And then in this stage here, we are actually implementing it in continuing to monitor
+1196.22s: and optimize. So now, none of this talks about the process of evaluating just yet. This is giving you
+1202.86s: the overall strategy process and the iterative components to it. So now, what we need to do is double
+1210.70s: into these spots. This is where the actual evaluation occurs. This is when we're looking for those
+1221.02s: details that are going to give us some idea on whether or not this is something that we like or
+1226.46s: don't like, that we think fits our general approach or doesn't. So now, let's click into these
+1235.02s: stages where the actual evaluation occurs. Now, we already started talking about some traps.
+1243.82s: It's like Admiral Akbar. It's a trap. There's so many of them. It's not even funny. There's
+1249.74s: so many of them. It's not even funny. And this isn't even a drop in the bucket. Another one that
+1257.90s: we were just talking about before that would fit in here is strategy hopping. Another one would
+1264.06s: just be a whole litany of statistical traps. It's literally too many. Well, it's not too many.
+1271.90s: We could list them, but it would take this entire slide in terms of our analysis. Then we have
+1277.74s: things like cognitive biases. So if we go through these and think about them, I want you to go back
+1291.26s: to that exercise I gave you at the very beginning of this where I asked you to think about one
+1295.74s: of your strategies and just kind of loosely evaluate it in your head in terms of like,
+1300.14s: what are the things that you would be looking at and evaluating with your strategy.
+1305.98s: Then I want to run through this together now. And you'll see some things.
+1311.10s: First, regime impact. You tell me, is there a difference between 2020 and 2025?
+1333.18s: Year to date. Obviously, there's differences. It's not going to be the exact same.
+1339.42s: But broadly, if you think about the broad market conditions, are there differences?
+1345.98s: Lauren says yes, Joseph says yes. So name one of the differences. What's one of the things that's
+1350.94s: very different between 2020 and 2025?
+1355.34s: Age says I could throw a dart at letters on the wall and go long. That's actually a hilarious
+1365.98s: smart way to say it. That's completely true. Ricky says was that COVID? It was COVID.
+1373.90s: Reese says interest rates. Here we go. Now we're getting it. So rate environment.
+1378.78s: We had things like stimulation from the Fed. Everybody relax.
+1387.58s: Everybody relax. I know I said the word stimulation. Everybody got a little perked up there.
+1392.54s: But I meant from the Fed. If Big Daddy Jay Powell stimulates you, we have a problem.
+1398.78s: 2025. What do we have? We have Trump as press. And again, politics aside, your political leanings,
+1418.38s: being whatever they are, doesn't matter. There are implications with Trump as president.
+1423.10s: It is a fact. Age says higher rates, Bingo. Much higher rates.
+1437.90s: Age says more uncertainty around how Trump will act, Bingo. So now we have things like tariffs.
+1447.58s: We have a new conflict.
+1457.82s: And so on and so forth. So the regime matters so much. What you see and what performs well
+1473.02s: in this will differ than this. This is using two years at an annual view.
+1486.86s: This concept of regime, we talked about this in the procession when we were talking about
+1493.34s: pattern recognition. One of the key things to take away from that session is a reminder and then
+1499.18s: also to introduce it for those that weren't in there is that when we're analyzing regimes,
+1504.22s: we can analyze regimes across a broad spectrum of levels. So we have things like an economic.
+1515.02s: We have things like the geopolitical.
+1521.50s: We have things like the stock market.
+1523.42s: And again, when I've refer to the stock market in this context, I'm talking about indices,
+1531.74s: behavior, commodities,
+1535.74s: vol, all that stuff. Then you click in another level. We have the individual stocks, sectors,
+1547.98s: so on. And then we finally start getting down to the portfolio level.
+1553.90s: All of these things have regimes. And the regimes aren't on an annual basis.
+1563.66s: When we think about regimes, you can have micro macro. There's regimes that come and go,
+1572.30s: that become relevant to very small points in time or very large points in time.
+1577.02s: So taking this all the way back to when we're evaluating a strategy, you have to be cognizant.
+1583.50s: Of what the regimes were in the thing that you're looking at. That's the backdrop.
+1591.18s: So to give you like an actual example of this, a practical example. Let me hide all that stuff.
+1599.98s: If I take a look at the last 10 years in SPX, and again, we know that 22 was a bear market.
+1609.34s: That was a down year. So if I'm evaluating a long call strategy in 22, what do I think I'll see?
+1621.02s: Long call in equity index, probably lose money. If we're just doing what I've referred to as a
+1628.14s: dumb strategy, just a road strategy where we're just mechanical. Then if I were to buy a 30 day
+1638.78s: call and then roll it out in time every two weeks, probably not going to do great, probably not.
+1647.50s: Yet if I did that in 2020, I probably would have smashed it. It probably would have gone super well
+1656.38s: because on the downside, you have limited loss. You're not getting killed like all the long stock
+1661.02s: people are. And then you have unlimited upside potential. So the point here is if you don't pay
+1671.66s: attention to the regime when you're analyzing your strategy, you're making a massive mistake.
+1677.66s: Because a lot of us, we tend to oversimplify it in our brains. And then we miss a lot of important
+1683.98s: nuance. So if you did consider regime when I asked you in the exercise earlier to evaluate a
+1692.86s: strategy, just drop a Y in the chat. I'm curious how many people. And it's okay. My guess is most
+1699.34s: people probably wouldn't think of regime. My guess is most people wouldn't directly to the strategy.
+1703.42s: That's my guess.
+1705.02s: Yes.
+1707.98s: Yet it's one of the most important things to start with. And this is why when you all hear me talk
+1717.18s: about things, you'll hear me talk about things in the context of a generally standardized process.
+1728.54s: Top down top regime. That's the top thing we have to set a backdrop. Cool. Next.
+1738.22s: Path. Who's familiar with path? This is path. This is path. Path is super confusing.
+1752.22s: Path can lead people into such a false sense of security that eventually causes them
+1762.30s: massive problems with their trading approach. And I'll show you exactly how this typically goes
+1767.02s: with respect path. Normally, somebody will build a strategy.
+1777.42s: That's random. Just off the dome, some stuff that they've seen over time. And then they start
+1785.26s: moving that strategy directly to production. Then what ends up happening is if we think about the
+1793.90s: stock market, we know that over different time frames, you'll get different looks typically.
+1807.02s: Yet if we just plot a stock market that looks like somebody's having an aneurysm, not really.
+1817.58s: It's not jagged enough. Wait, I don't really know what this looks like. This one went backwards
+1824.30s: and time. Go ahead, try to trade a market that goes backwards and time. Check that out. Let's actually
+1832.78s: draw something that might be a little more reasonable. So if somebody takes this strategy to production
+1842.06s: right here. And let's say that this strategy is what I was referring to before, because it's simple.
+1848.22s: We're going to buy 30 day calls and we're going to roll them every two weeks out in time.
+1852.86s: Just over and over again, start a 50 delta. It doesn't matter. And let's say that this is a six
+1857.74s: month period. They might think holy shit. I have found the holy grail. I have made so much money
+1873.42s: over this time frame. I should take a mortgage out on the house. You don't already have one. Take a second
+1882.06s: mortgage. And I should put all of my money into this strategy. I started the strategy by risking,
+1891.26s: let's say, one percent of the account. But over this time frame risking just one percent of the
+1898.46s: account. If I had risked 10% of the account, holy shit, I could have quadrupled my account over
+1905.82s: this time frame minimum. This is what I'm going to do. This is path. Path will catch everyone.
+1916.06s: Literally everyone. If you stay in the markets, path will catch you. This is why you see
+1927.82s: volatility-based hedge funds blow up. It doesn't happen super frequently. But when it starts to happen,
+1936.22s: it tends to happen quite a few at once. And they're the kind of things that people win over and over
+1943.90s: again. They have great returns over and over and over again. The overwhelming majority of instances,
+1948.86s: this thing is working beautifully. Yet they fall prey to path. So this is path. It's the fact that
+1957.66s: the market can show you something for an extended period of time. Now, let's say by comparison,
+1964.62s: instead of the long call strategy, let's say that this was supposed to be a short strangle strategy.
+1973.74s: What would happen here? The short strangle would not work. This would lose money.
+1981.74s: Does that mean that this strategy doesn't work? Oh, strategy could be completely fine. It could
+1989.26s: be completely fine. It means it doesn't work there. It means in a persistent uptrending market,
+1997.26s: typically marked by low volatility and all this other shit, it means it doesn't work well there.
+2003.42s: Does that mean that this doesn't work at all? Absolutely not. So this leads to one of the very many
+2009.50s: cognitive biases where people will, again, not understanding the context of what they're looking at,
+2015.10s: they'll throw something out. That might otherwise be pretty decent.
+2020.14s: Path confuses and loses most people, I think. And it's because path will always catch you. If you
+2029.66s: stay in the markets long enough, you are going to see what your actual skill is. The issue with path
+2039.34s: is that if I plot a time series again, path can carry your returns for a while.
+2047.26s: So this can be six years where the path of what you were doing happened to work.
+2053.34s: And then all of a sudden, what you're doing no longer works on year seven and you lose everything.
+2059.98s: This is why people that have really consistent returns in markets over long durations are super
+2067.26s: fucking rare. It's because of path. Okay. Next, small sample. I think everybody knows what this one is.
+2077.98s: It's actually the same concept as path, funny enough. But 18 months, super small sample,
+2087.50s: 17 months, super small sample literally means nothing. Super short term timeframes literally
+2095.66s: mean nothing means nothing. Antel, Antel, good or bad means nothing. The idea comes from general
+2105.74s: statistical practice. You'll hear of something called law of large numbers. And
+2116.38s: the central limit theorem. Good old CLT. So the Clifnodes version for both of these is if I plot
+2132.30s: my return zero line. And this is just my trade count. I plot five trades.
+2141.02s: I plot five trades.
+2146.06s: Making money. This looks pretty good. I plot another five trades.
+2157.02s: Still looks pretty good to me. I plot another five trades.
+2161.10s: I plot five trades.
+2167.10s: Starts to look a little more concerning. I continue this process over time. The longer you do this
+2174.78s: process, the more that line of best fit represents your actual strategy and your actual performance.
+2185.18s: If you do not have a lot of dots, which are individual trades, and I'm going to show you a
+2192.06s: way to calculate the number of trades you need in order to have a 90% confidence interval
+2199.34s: that what you're doing is actually showing you the performance of the thing.
+2204.06s: Most people don't know you can do that. It's really not that difficult. We're literally going
+2208.54s: to calculate so that I know well, how many trades do I need to have before this thing
+2213.66s: actually starts to represent what the performance is. We can calculate it.
+2219.42s: So the idea of small sample is most people will say based on this grouping here, oh,
+2228.54s: shit, this thing is good. This is great. The problem is it's probably not. And if you continue
+2234.22s: doing it long term, you're going to see what it really is. And you're probably not going to like
+2239.10s: it. That's just the reality. Next, Goldilocks analysis. Goldilocks analysis applies to all of these.
+2248.14s: I was working with somebody on a coaching call this week. And we were looking at a zero DTE
+2254.30s: strategy. And in the zero DTE strategy, they were using a back testing tool. And in that back
+2262.14s: testing tool, there was a couple toggles, conditional toggles. I don't even remember what they
+2266.78s: were. There were two conditional toggles, though. And the performance before those conditional
+2273.34s: toggles, when they're on, the performance was, I don't remember, but let's call it like 15% return.
+2279.90s: Something like that. Or maybe 11. And then once we turned these conditional toggles off,
+2287.82s: the performance dropped to like 4%. This is Goldilocks analysis.
+2296.78s: This shows me something that literally lacks all robustness. What this tells me is that the
+2302.94s: entire edge of the strategy was based on these conditional toggles, which were based on the
+2307.82s: back testing logic. That's a fucking problem. But when you want to see something so bad,
+2319.02s: your brain will make it so your brain will skip over these red flags. And be like, no, this is
+2325.98s: probably, this is probably pretty representative. I did it over a long term timeframe. It looks good
+2331.34s: over the long run. Your brain will make that leap for you. I know this all too well, because I've
+2337.42s: spent, I cannot tell you how many hundreds of hours testing strategies. And it's like the same
+2343.74s: thing when you're hunting for those that have been hunting before. I cannot tell you how many times
+2350.14s: I've seen a deer. Beautiful deer. Moving around pretty far just, you know, at the end of
+2357.50s: visual pretty far, I could swear it's moving. And then I look at it long enough, get a little
+2363.74s: closer and it's a fucking stump. My brain wants to see a deer so bad that it's turning fucking
+2373.18s: stumps into deer that move. Fun fact, this stump didn't move. My brain made that bitch move.
+2384.78s: That's how bad I wanted to see it. That can screw you in trading. Your brain will try to make
+2393.50s: whatever you want to happen happen. But you've got it, you've got to reel that in.
+2398.14s: The only thing that it ultimately manifests in is losing money. It's bad news bears. We don't want
+2405.74s: that. Goldilocks analysis really couples with everything on this list. The way to overcome
+2414.30s: Goldilocks analysis is actually really, really simple. You should look at things the objective
+2422.38s: as objectively as you possibly can and you have to make it a habit. That's why you guys hear me
+2429.34s: talk about that so much and why I try to apply that lens so frequently because if you make it a
+2436.78s: habit, if you wire it as a part of the way you think, it becomes easier. The other thing is you
+2442.94s: have to be ready to do the hard things like turn off these toggles and see what the performance is
+2449.66s: and then see this drop. Why wouldn't that person have turned off these toggles just to see
+2456.70s: because they don't want to see. They want to see this so then they make it so. And this is partly
+2463.98s: why we have to have a robust process when we're evaluating things. Strategy hopping we already talked
+2472.78s: about statistical traps dog there's a million of them. All of these are basic statistical paths.
+2480.78s: It goes super deep. One of the absolute most common statistical traps that I can see with
+2489.10s: option traders bar none. Anybody guess what it is? I'm going to open the door for a tour but take
+2494.54s: a guess because I'm thinking you probably know. Bingo. Joe's on it. That's exactly right.
+2512.14s: The overwhelming majority of option traders they disgustingly, disgustingly exhibit a gross
+2523.90s: over emphasis on high win rate. Again, what are we what are we showing here? 16 at a 17 months. I have
+2533.90s: a video coming out on this post. I think the video will come out next Wednesday but to give you a
+2539.58s: pre read since 2024 8.32 percent. Yeah, this one 18 months high success rate. Win rate right
+2561.90s: here. This is win rate. It's so common and it's because you're taught to want to win in trading you
+2571.10s: have to completely reconfigure that. Winning is still part of it but the way that winning looks
+2579.66s: can look very different than what most people falsely bubble it up to being just a high win rate.
+2586.70s: For example, I'm looking at one of my strategies now. So I have a long call option strategy.
+2603.26s: My loss rate is 53 percent. The current win rate for the strategy is 47 percent.
+2613.34s: So it means that I'm losing more than 50 percent of the time with that strategy.
+2624.70s: Arguably not a high win rate yet. I'm trading the strategy. Why would I do that?
+2633.18s: I'm not going to do that.
+2636.38s: Reese has it. Reese has exactly what it is. It's a timing based strategy. The way that it makes sense is
+2643.42s: that I take small losses frequently. But then when it makes money, it makes a lot of money.
+2655.50s: So even though the win rate is only 47 percent, it's severely profitable.
+2663.42s: This is one of the issues with overemphasis on high win rates. All right, let's talk about some of these metrics.
+2673.50s: Howie? Not exhaustive by any stretch. This is actually what I would consider to be an MVP
+2681.02s: minimal viable product. So what we need to track and break down. And again, this occurs here.
+2694.06s: It occurs here. And it occurs here. So what I'm going to do is break out the traits. So just
+2710.22s: a simple count number and then percent of wins losses. There's no draws. There's no draws in
+2719.74s: trading. There is no draw. It doesn't exist. Every single trade will have at least some sort of
+2728.22s: positive or negative P&L. Now there is the unicorn scenario where maybe your win is the exact
+2735.26s: size of your commissions and slippage included. I feel pretty confident saying the overwhelming
+2740.46s: majority of people won't find that circumstance. So what that means is you just need these two buckets.
+2750.06s: So let's talk about this. How do we use a win rate? If I'm looking at a strategy and I see, for
+2763.26s: example, that it has 10 wins and two losses, what can I conclude from this? And don't say it's
+2775.50s: too small of a sample. We don't know that. What can I conclude from this, though? Any guesses?
+2793.42s: If you guessed not much, you're right. This metric alone, I can't guess shit. I have no idea.
+2810.22s: H says high win rate. Yep, definitely. That's about the only thing that I can walk away with is
+2816.86s: that there's 10 wins and two losses. That's all I know. This could be based on something,
+2823.90s: some sort of market effect that does not come up that frequently. This could be based on some
+2829.42s: sort of market effect that comes up once a year. This represents 12 years of data for that strategy,
+2836.94s: for that profit mechanism. Or this could be something that's traded on a zero DTE basis
+2845.42s: and is super early. The fact is we have to be able to contextualize this information.
+2856.06s: And by itself, we can't tell that much. Yet the funny thing is, just as who was it?
+2865.26s: H. Just as H noted, this has a high win rate. What did we just say? Most retail traders focus on.
+2885.02s: H. I win rate. I can't tell anything from it. Now, just because I can't tell anything from it alone,
+2897.18s: doesn't mean that this is unusable. I need this information. This is the foundation for everything
+2902.86s: else that I'm going to show you. Everything else that we're going to test is based on that.
+2907.74s: So another thing that people do in their minds, and it's because people we like to argue,
+2913.10s: and it's not a bad thing, right? A lot of people like to, I'm argumentative. I like to argue in the
+2917.18s: pursuit of information. But one of the downfalls of people that like to argue, but they're not thoughtful
+2923.74s: about it is they'll just take the other side. And if you just default to the other side,
+2930.30s: you're actually going to miss really important information. So when we look through this,
+2937.82s: you'll see that this by itself doesn't really show us that much. But if you just default to the other
+2946.62s: side of that, meaning you then say, well, then it's not useful data. It's a massive mistake. It's
+2951.98s: not true. There's nuance in this shit. It's super important. Just can't tell anything from it
+2958.38s: by itself. So first piece trade counts.
+2975.26s: Here. No, I didn't say Siri. Chill. My phone just knows Siri. Go away.
+2985.02s: All right. Chill. Turn off. So the first thing that you'll notice here, we don't really need the rest of
+2999.58s: this stuff. This is a sample log that you can make for yourself. You can literally rip this.
+3007.74s: So notice how we have number of trades open closed total right out of the gate. And then what I do
+3018.46s: is I break them out. I start with the overalls. So this is the average total average, meaning for the
+3027.66s: entire grouping. Then I segment the wins here. I segment the losses here. I look at the extremes,
+3043.66s: the tails, max and min. And then I also calculate the expected return. You can do different
+3052.22s: permutations for average PNL from expected return. But in this case, I calculate this separately.
+3063.10s: So that's essentially how I'm breaking out the trade count, the PNL and the expectancy.
+3070.46s: And for those that need a refresh on why you care about expected return, here's a video for you
+3087.66s: on this metric. Okay. So now we get into this to the more nuanced stuff that a lot of people probably
+3095.02s: don't look at. So first thing I like to plot is total standard deviation and then downside deviation.
+3104.86s: So what this does is if I'm plotting standard deviation, standard deviation just tells me how a
+3111.98s: data set the overall severity about a mean. So I was just looking at variance.
+3122.06s: So it's not downside meaning when the stock goes down. It's downside meaning,
+3134.06s: are my losing positions? What's the deviation? And this gives me a sense of how consistent is this thing.
+3147.10s: Then you can calculate things like max drawdown. So that would just be the sequence of your returns
+3155.66s: that yielded the largest or the smallest. But the worst PNL. So you can write a formula that does
+3166.14s: that. I want to look through all of my PNL and I want to find the sequence of returns where the
+3172.62s: consecutive losing trades led to the largest total amount of losses. That would show you your max drawdown.
+3182.94s: Then we can calculate sharp and sortino. I prefer sortino because like standard deviation and
+3192.78s: downsides, downsides standard deviation. Sharp is similar to standard deviation. It's looking at
+3200.14s: measuring risk adjusted returns of overall deviation. Sortino gives us that same thing. But again,
+3208.78s: for downside standard deviation. Then we can calculate something that I imagine most people don't
+3218.54s: calculate, which is coefficient variance. And again, if the stuff that I'm saying is like,
+3227.50s: you're thinking yourself, what the hell is this? Just play it back and ask Chachi Pt to help you.
+3235.10s: None of this stuff is that crazy. I promise you. There are just words that you might not be
+3240.46s: used to hearing. Just as if you at your job were to start talking to me about your job,
+3247.74s: in how there would be a lot of words that you would be saying that I wouldn't know.
+3253.34s: So don't feel like this is some crazy shit. It's not. It's super basic.
+3258.70s: If just don't let the words scare you off. Just remember them. And then ask Chachi Pt to tell you
+3265.58s: about them. That's it. You just have to learn. That's all. So coefficient variance is really important.
+3273.42s: And it's because it gives us an understanding of how our return varies against
+3284.38s: an average, against a mean, whatever the line of best fit is. So a slightly different metric
+3289.90s: than looking at standard deviations.
+3295.50s: Then we can calculate the number of required trades. The formula for required trades is easier than
+3307.02s: you think. So in this context, I'm not including a standard error margin, margin of error,
+3318.78s: which we typically would. So the way that that would look
+3326.54s: is here. We would just go right here and then we would put something in here. So if we wanted to
+3332.22s: be within 15%, standard margin of error, whatever it is, that we're calculating. You could throw that
+3341.18s: there, whatever. So the first metric you see here is 1.635. That represents a specific confidence
+3352.38s: interval. It's another statistical term. We have certain numbers that represent specific confidence
+3361.02s: intervals for the various formulas that we might use. Then we take AZ. Is it AZ?
+3373.26s: Oh, yeah, AZ here. Standard deviation. I was wondering when I made this, I made it backwards.
+3379.02s: Normally, I would start from here and then go here. Standard deviation. Now the way that I
+3385.74s: would also run this is first use the total standard deviation, but then use the downside standard
+3391.66s: deviation. Now, one of the things you're going to notice with your returns as a trader is that
+3399.50s: you are going to get huge coefficient variance, typically expressed as a percentage. So the issue
+3407.10s: here is that if you have really large standard deviations, which is what most people will have,
+3413.90s: it means that you're going to need a ton of trades. If you want to land at a 15% confidence
+3419.82s: interval or I'm sorry, using a 15% margin of error. So the issue here is that when we get our final
+3430.46s: result of required number of trades, often it will be a huge number. That does not mean that the
+3441.98s: metric itself is useless. It means as always, you need to apply some context to the metric. One of
+3450.70s: them is I actually use a moving average for mine. So I can see is my performance tightening the
+3459.66s: range or is my performance expanding the range of required trades. If it's tightening the range,
+3468.30s: I can become more and more confident that what I'm seeing is likely a closer representation of
+3476.94s: the performance of the strategy. If I see it expanding the range, then I know that's not the case.
+3483.42s: So something like you might get 80,000 something like that. That absolutely can be the case.
+3490.06s: So that doesn't mean that if you get that you essentially say I can't use the strategy because I
+3495.42s: would need 80,000 instances to see if it works. You have to make some educated guesses, but then you
+3501.18s: can monitor the performance over time and see how the metric trends. All right. So I'm going to take
+3508.54s: a pause there because I noticed that as I started talking about the statistical stuff, we literally
+3513.82s: lost like half the people here, which is to be expected. But what questions you guys have on this
+3521.58s: so far? And then I'll talk to you about how to look at these that actually think about a strategy.
+3527.10s: But what questions do you have so far?
+3535.02s: For those that have run the gauntlet, if you're good, that's awesome.
+3546.30s: Reese says I'm going to ask chat to PT about the last 20 minutes. Yeah. And that's cool.
+3550.70s: I imagine that will be the case for most people. You'll have to pause it and go back.
+3557.34s: Lauren says I have a lot of questions for chat.
+3559.02s: You be good. Yeah. That's awesome. And that's what I would expect, right? A bunch of people will
+3565.02s: have heard something, a series of some things for the first time in a context that might not make
+3571.90s: any sense. But the cool part is is like to create a super simple log like this.
+3579.18s: It's really just a function of working through what you're doing in order. That's all. So like I
+3588.54s: said, I wouldn't get overwhelmed with anything that's in here. Just break it down into bite size
+3598.54s: chunks. Jordan says that log is beyond me at this point. That's not true at all.
+3603.26s: It's not beyond you. Like I said, there's just going to be some words in here that are different
+3609.90s: than what you're used to seeing. Like that's literally it. It's just a function of some of the words.
+3617.66s: So I wouldn't feel any type of way about it. I would simply take a look at the terms
+3626.22s: that are confusing that you're not super confident, you know, and like what they mean.
+3631.66s: And then I would just think about breaking them down into their smaller components. That's all.
+3640.14s: And you are 100% capable of literally everything in here. This is easy stuff. Just takes a little while.
+3648.94s: Ricky says we don't have master's degrees in stats. I don't either. I just have a bunch of stats
+3658.70s: focus, but it's not a natural degree in outright stats. That would be some straight nerd shit.
+3667.50s: Lauren says I got a new ligament in my elbow Friday. So I'm slow to the draw still. That's perfect.
+3672.38s: That also means that you probably got plenty of time to test and refine ideas, which is great.
+3682.78s: Age says thanks for the template. Yeah, perfect. That's exactly what you should do.
+3687.10s: You should use this as a starting point. Now there's a couple of ways that I would make this
+3693.58s: a little bit better by including things like not just the largest, not just the tails,
+3699.98s: but things like the median, the median matters a lot. What things end up about the middle.
+3706.54s: The other thing that I do is I calculate the returns,
+3710.62s: exonerating both tails, one tail, so that I can see how do things work? How does the average
+3717.82s: P&L work if I get rid of the extremes? If I see the average P&L move a lot, that tells me I have
+3724.62s: a strategy that's highly, highly dependent on whatever those extremes are. So if I can explain
+3731.02s: in an upside extreme, if that came from pure luck, then I would generally analyze the strategy
+3738.70s: without that data point included so that I can see what the true performance is.
+3743.90s: And then to the downside, if it's something where I fat fingered something and I just made a
+3748.30s: giant mistake, and that's what led me to lose a bunch of money that otherwise structurally
+3754.86s: wouldn't be part of the strategy, then I would exonerate that. I would still track it as my P&L.
+3760.14s: It's my P&L. But when I'm analyzing stuff to try and improve what I'm doing, I would take those
+3766.38s: data points into consideration. Now if you just have a strategy where if you take the tails off,
+3771.82s: the extremes, like the most extreme one or two trades, and it doesn't change that much,
+3776.86s: well then that tells you quite a lot. It tells you that your strategy is pretty widespread by itself.
+3783.26s: So there's a lot of small inferences like that that we can make. So I'm literally going to go
+3788.30s: through all of these really quick. recess coefficient lost me. Yeah, so the coefficient variance
+3798.14s: is a little easier than it might seem. All it's telling us is the relative variability
+3806.22s: against the mean. Whereas if you think about standard deviation, that's giving you the absolute
+3812.22s: dispersion or variance about a mean. So the main difference between a standard deviation and
+3820.78s: coefficient variance is one is using total, total variance, and then coefficient variance is
+3829.74s: using relative variability. FXT says, how does this log accommodate path and regime change? Like,
+3843.34s: how do you see that type of shift happening? It's a great question. So in a log like this,
+3849.34s: there's a couple ways you can do it. You can either simply track these numbers and you can see
+3858.30s: how they're changing day over day. So you can take screenshots of your metrics. Any time you make
+3866.46s: an update. So if I'm down here updating a trade and then normally what I do is I have another
+3871.90s: section down here. So this would be like the live trade section. And then this would be the closed
+3880.94s: trade section. So if I copy this out and I actually just use a macro, there's a button I click.
+3888.30s: And when I click the button, it automatically inserts a cell down here. It copies this entire
+3895.42s: range as values down here. And then it deletes the input ranges from in this context AF to AX. So
+3904.78s: you can build a button that does it. That's easy or you can just copy and paste it and then come
+3909.50s: up here and manually delete. But what you can do is as you're updating your live trades. So let's say
+3915.74s: that we're taking something down before I take it down, you can take a screenshot here. And then
+3921.58s: you could just put it in a cell over here. So that like this.
+3929.26s: So if I take a screenshot, I drop that screenshot in. I can have a date column. So today's date is
+3936.70s: 20 June or 20 June slash if you like it for whatever reason. And then I can click the cell that I
+3945.18s: want to put it in. And then I literally just put put image in the cell. Bam, there it is.
+3951.74s: So then I can create a library this way. Now it's easy now to extract data from this,
+3960.06s: from pictures. It used to not be. So what you can do for a more live sense is you can literally
+3967.58s: copy and paste this as an entirety over to the side as well. Not a photo, but the thing itself.
+3974.86s: And then you can run whatever analysis you want off of it. So that's the simple way is literally
+3981.98s: just to track this stuff here. Now what I do in my log is I have a couple things. This is just like
+3991.90s: a super simplified version of stuff. What I do is up here, I have two inputs. I have something
+4002.14s: like population in sample. And then I have input dates. So then what I do is I'll populate and
+4019.58s: then I have an input for strategy. And realistically it actually looks like this where it goes
+4025.90s: I'd raise like that. So what I do is I use a drop down for my strategy. So it'll pull from any of
+4036.30s: these. And then it'll pull all of these population levels statistics, which looks at the entire log.
+4045.42s: And then I then date bound it to take a look at the sample. So then I can just quickly visualize
+4054.54s: over the last week. How is this performed against the population? That's another way.
+4059.58s: And then the other thing that my log has is over to the side here. I have a full statistical
+4065.98s: breakdown with actual graphs that help me see everything. It's the same concept where I bound it
+4071.50s: by date and strategy. I take a look at population in sample, but I create visuals that essentially
+4078.30s: give me all of this data, but visualized. So it allows me to detect them, to see them. So it's
+4085.18s: a great question. And that's that's how you can detect things as they're shifting. Now this is
+4091.34s: from a data perspective. There's also just a trader intuition, which you will develop that over time.
+4099.02s: And that will also become part of the thing that's more so for like regime chefs. So for example,
+4104.86s: I didn't need to like do some sort of rigorous statistical analysis that when inflation started
+4111.42s: skyrocketing to know that small caps were going to get hurt. Right? That's why you guys saw me rotate
+4116.14s: out of the Russell, which I typically trade that came down in its entirety. And it's because of that.
+4122.38s: Like I knew it was going to struggle.
+4124.06s: Now, when it comes to path, that's why graphs are really, really useful because you can see the
+4135.50s: actual individual data points and how they relate to one another. With summary level statistics
+4141.90s: like this, you'll never see that. And that's why having like different views is really important.
+4147.90s: And that's honestly a really, really good question. But that's the long answer, but at least
+4153.58s: honest answer on how to accommodate things like path of returns in your analysis. And then to
+4161.90s: track things like regime changes. It's a great question. Trace says, updated my log to track standard
+4168.86s: deviation coefficient. That's good. Need to add downside deviation sequence max CD. Yeah,
+4174.46s: those are super, super useful. And then it really can go again, like I said, and that's not to be
+4179.98s: like intimidating or anything, but like this is a really simplified version. The reason why it's so
+4185.02s: simple is you have to think of it this way. Once you build this, you build it once. So once you
+4194.46s: struggle through learning the difference between standard deviation, downside deviation between
+4199.82s: sharp and sortino between different margin of error inputs into your coefficient variance calculator.
+4207.98s: Right. Like once you tinker with all that stuff, once it's built, it's built. So you have to think,
+4214.62s: like I've been building my log literally for almost 20 years. Realistically, I would give it
+4221.34s: maybe 15 because the logs that I had in the beginning were pretty trash. So the like,
+4228.54s: that's why the even this which to me is like extremely basic can look super overwhelming.
+4236.38s: And it's just because it's might be something that somebody might not have started at all.
+4241.74s: So then when you see this, it's like, oh, fuck, that's a lot. But in reality, it's really not.
+4248.14s: If you think about a professional sport, how many stats they give a professional athletes,
+4254.38s: they have everything from their average scoring by distance, by defender, by side of the court,
+4261.50s: like all of these stats. That's for basketball. And it's just because once you observe stuff long
+4268.70s: enough, you can come up with different data points that become relevant. So I view this as like a
+4276.22s: solid minimum starting point. This gives you at least enough stuff to take a look at to have
+4283.74s: some ideas on where to go. So now we'll just take a quick look at these. We already talked about
+4295.18s: a bunch of them. So you already know how to use literally all of these total P&L. Obviously,
+4301.50s: you need to know how your thing is doing in total averages. So it breaks that down over different
+4309.74s: individual trade lens so that you know what each individual exposure typically looks like.
+4318.46s: We break down between wins and losses. So like everything in here is designed to make it simple
+4325.50s: to come up with at least broad ideas on what you might take a look at. So for example,
+4332.54s: if I'm trading a long strangle or straddle strategy either or and I notice that my win rate as
+4342.70s: a percentage is going down, but my average P&L is going up. That'll spark some questions. And as you're
+4351.98s: doing this, it'll be really simple. You'll immediately know that you're losing more frequently,
+4360.14s: but less. And when you're winning, you're winning more, but less often. But then you can actually
+4368.14s: measure the relationship between those. So if I see the average P&L going up, is it because my
+4375.18s: wins are that much larger or is it because my losses have become much smaller? And this ties
+4382.46s: back into the trade plan and the trade plan change template that we talk about. Because when I think
+4388.38s: about my trade plan, let's say my trade plan says, I'm going to exit my, what is this long strangle?
+4398.54s: So I'm going to exit this long strangle talking on the losing side. Let's say in the beginning,
+4405.98s: it's at X-PRI. Then in again, my 20 June update, my change log, I'm going to know changed
+4422.14s: exit to be 50% loss, just picking something. So then when I go back to this and I input my dates,
+4439.10s: I can see what's going on. As I change my loss from just taking it to X-PRI to 50% loss,
+4447.18s: what do I notice? Well, I would expect to see my average P&L change in some way.
+4453.90s: Now, it depends on what the strategy is and what the tails look like. Because taking it down at
+4459.26s: a 50% loss could improve my average P&L or it can hurt my average P&L. If it hurts my average P&L,
+4467.90s: it tells me that I'm now knocking off too many wins. So I would then expect to see a change in my
+4475.50s: win rate and my average wins. So this is the iterative process. This is what I spend a lot of time
+4484.06s: with people that I do one-on-ones with is like literally running through this analysis because
+4489.90s: it's nothing that you can't figure out on your own. But if you don't think to look at this stuff,
+4496.14s: most people probably would never do so. And that's why I'm doing streams like this to give you
+4501.74s: the ideas even though there's 18 people watching this, I don't care. I think this information is
+4507.98s: really important. I think that for the people that do watch this, it has the capacity to make a big
+4514.06s: difference. So now you have some ideas on when you're evaluating a trading strategy, some of the
+4523.18s: stuff to look at. And this also turned into a little bit about building a log to help give you
+4529.66s: those data points to look at, but pretty much it. So
+4538.62s: what stuff you guys want to talk about? What questions do you have anything else that you want to
+4542.14s: hit before we wrap up? Reese says, are they correlated? Yeah, you could argue that they're correlated.
+4557.26s: Just look at different things. So here, let's literally show you really quick. The way to think
+4567.02s: about it before I show you is if you think about standard deviation, that's just showing you
+4573.26s: total magnitude. And then coefficient variance is showing you relative. So let's use Gemini.
+4583.66s: And let's say I'm learning about standard deviation and coefficient variance. Give me an example
+4599.42s: to help understand the difference between the metrics at the end, create a table that summarizes
+4610.70s: each four quick comparison. Let us learn together. Whoa, tail of two cafes literally puts it in a
+4624.70s: story. That's kind of fun. So your coffee kind of sore trying to decide between two cafes,
+4630.62s: daily grind and bean dream. Great names. You're interested in how consistently they deliver your
+4636.46s: lattes, specifically how much milk they add in millimeters is a very specific person. You visit
+4642.22s: each cafe five times and measure the milk and your latte. So daily grind gives you these numbers,
+4648.94s: bean dream gives you these numbers. So you can calculate first the standard deviation for both
+4655.34s: of these, which essentially is you can see for each data point, you just need to find how far they
+4665.18s: are off a mean, you square them because it makes them all the same type of number positive integer.
+4671.90s: Then you sum them, and then you divide by the total data points, you square root, the reason why
+4678.46s: you take the square root is you squared them. So everything becomes magnified. So you take it back
+4684.86s: down to whatever the original magnitude was. And then you get your metric. So between these,
+4695.50s: we have seven mill and 14 mill. So what does this tell us about the difference between
+4703.74s: bean dream and daily grind, daily grinds at seven mill, bean dreams at 14. So you can see this,
+4712.94s: this is incredible. The fact that it gives you this whole story. It says per daily grind on average
+4719.74s: the amount of milk in your latte deviates about seven mill. And then in bean dream, it deviates by
+4726.54s: 14 mill. So there's a much larger deviation in your milk content from cafe B. So it's more spread out.
+4737.02s: Now if we take a look at CV, all we're doing is taking the standard deviation. And a lot of times
+4745.26s: like more often than not, we are going to express it as a percentage. So you take the standard deviation
+4749.74s: over the average and then turn it into a percentage. So you can see daily grind is a 3.7% CV, bean dream is
+4757.58s: 12.8%. Then here that says daily grind, this means the standard deviation is about 3.72% of the
+4768.14s: mean. Yeah, okay, this is a fair way to describe it. So let's see if it clears this up. It's kind of
+4773.34s: reiterating what it is. It might not actually clarify it. Let's see how it does it. Then it gives you
+4779.82s: bean dream saying that they're 12.85% of the mean. So this says even though cafe B has higher
+4792.14s: absolute standard deviation, 14 mill versus 7 mill, it's relative variability as much. Yeah,
+4799.34s: this does a beautiful job. Its relative variability is much higher. The standard deviation of 14 mill
+4806.62s: for cafe B is much larger proportion of its mean 110 mill than the standard deviation of 7 mill. Yeah,
+4812.70s: this is great. This is a good job. I like this. This does a good job. And then our summary table,
+4821.18s: what it measures, absolute dispersion, like we talked about relative amount of dispersion about
+4826.30s: the mean we talked about gives you the units again, typically CV as a percentage.
+4832.22s: Interpretation for standard deviation, how much on average individual data points deviate from
+4836.78s: the mean good, how variable a data set is in proportion to its average value. That's solid.
+4842.38s: That's really solid. This is great. You all just literally got a undergrad level understanding
+4853.18s: of standard deviation in CV. That's actually absolutely sick.
+4865.58s: Thank you. Good job. Any questions on that?
+4871.90s: This is sick. I might actually impress with how well it does this for you guys.
+4889.90s: Cool. All right, gang. Well, that's your crash course on understanding what is worth
+4901.26s: taking a look at in a trade log. And this will help you a lot with actually evaluating a trading
+4911.42s: strategy. So as always, if you guys need anything, let me know. Be an outlier.
+4917.34s: Jillhard?

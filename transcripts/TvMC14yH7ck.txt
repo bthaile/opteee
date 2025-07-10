@@ -1,0 +1,828 @@
+0.00s: you
+30.00s: you
+60.00s: you
+90.00s: you
+120.00s: you
+150.00s: you
+180.00s: you
+210.00s: you
+240.00s: you
+270.00s: you
+300.00s: you
+330.00s: you
+360.00s: you
+362.00s: you
+390.00s: you
+392.00s: you
+420.00s: you
+450.00s: you
+452.00s: you
+480.00s: you
+482.00s: you
+510.00s: you
+512.00s: you
+540.00s: you
+542.00s: you
+570.00s: your options, hopefully you're trading your options, not trading your options, otherwise,
+575.36s: of business. Trading options says wondering when to get out of a vertical spread.
+585.52s: Simple question, but this goes actually back to literally what I was just talking about.
+592.72s: How important it is to have the fundamentals down. So the brief answer to that question is
+601.76s: when to get out of a vertical spread actually has nothing to do with it being a vertical spread,
+607.44s: a horizontal spread, it doesn't matter what the spread is. It is everything to do with what
+613.12s: the strategy is. So the way that you answer that question trading your options is honestly not
+621.52s: worrying about vertical spread at all. That's ancillary details that will be added on to what you're
+627.52s: doing later. What needs to be defined first in that scenario is what's the strategy? And based
+635.12s: on that strategy, then what makes sense to close your position out. So we could take a look at a
+641.68s: couple examples of something like that to see if we can help dial this in. But I'll show you this
+648.32s: right here. This is from just this random deck that I've made. I use like a reference for us.
+657.20s: But this is what I call the outlier trade process. There's two main process docs that I continually
+662.88s: reference and put in front of you. There is the outlier strategy process. And then there's the
+666.88s: outlier trade process. The strategy process is exactly what it sounds like. It focuses on strategy
+671.04s: level and development of actual option strategies or just trading strategies. The trade process is
+677.12s: the execution of a specific strategy. So what you're talking about now in terms of your question
+685.60s: trading your options is actually down here. You're in step three of the outlier trade process.
+693.52s: Now you'll notice that you're effectively in the execute trade stage. And in that execution,
+701.84s: the question is, well, where do we exit this vertical option? The way to think about answering
+707.76s: these questions is you have to put first things first. And first things in this scenario stem from
+716.24s: what is the strategy that you're trying to trade? And I'll give you a couple examples.
+721.36s: Let's say that I'm looking at the broad market right now. And we're in SPX. So we'll look at SPX.
+730.00s: And let's say that I have a vertical spread in SPX. And as you may or may not know, we can be
+736.08s: longer short vertical spreads. So in this context, let's say that I'm long of vertical spread.
+744.08s: And the entire premise of my long vertical spread is directional. I'm my basis. The profit mechanism,
+752.64s: the basis for the trade is a directional assumption of some sort. So let's say I think SPX,
+759.04s: just using a random example, SPX is going to go down. Let's say I think that. And therefore,
+765.60s: I decide to buy a put spread. Well, if I buy that put spread and SPX starts going up, I'm wrong.
+776.40s: So depending on where based on my strategy and my approach, I would be fully disproven. I
+783.44s: would be fully shown that I'm wrong. Meaning you have to give the trade a little bit of room.
+787.20s: This comes from the strategy element of this phase because your question will open up other
+794.64s: questions as you start to solve your original question. So again, back to the original question,
+800.24s: when do you close a vertical spread? Well, we have a bunch of questions we have to ask. The main
+804.64s: one is what's the strategy? Is it long or short? So if we go back to the ally or strategy process
+811.20s: here, you'll notice that we have to go through two key stages defining the profit mechanism. In
+817.60s: this case, we're talking the profit mechanisms directional. And then we're talking about the behavior
+823.28s: of the profit mechanism. So this one can effectively be summed up to behavior.
+829.68s: So looking within the behavior of the profit mechanism, I'll tack this on so that it's clear,
+838.48s: when we're looking within the behavior of a profit mechanism, not all directional trading is built
+843.36s: the same. So what that means is going back to this basic idea, if I think SPX is going to go down,
+852.72s: price can go down in different ways. Here's an example. This range here to here, take a look at what
+861.60s: price did from here to here. Price went down really aggressively, three days consecutively.
+869.92s: That's a different movement pattern than something like from here to here.
+877.68s: Price also went down here over also three days, but much less so.
+884.48s: It's not built the same. So that means that the way that I'm going to trade these two different
+889.36s: scenarios might be different. So one of the beautiful things about vertical spreads is very
+895.68s: frequently. You just kind of leave them on. Now you do have to be worried about early assignment
+902.32s: of one of your legs, specifically the short leg, or assignment if it expires in the money.
+909.44s: So to parameterize the condition, easy place to start is, well, we know we're going to close it
+914.88s: before expiration. We know that because unless you're trading an index option that settles to cash,
+921.84s: there is assignment risk and you might not want to carry that inventory. Okay, so that gives us
+927.92s: starting point. We know that it's going to be before expiration. So then the question is when
+933.60s: before expiration and then that goes back to what the strategy is. If we're trading some sort of,
+939.76s: let's say for example, instead of trading this via a long put spread, I choose instead a short
+947.44s: all spread. Well, if it goes against me, I kind of expect that to happen. That's the nature with
+954.40s: short options and short spreads in this context. I'm essentially, again, based on the approach,
+961.04s: I'm either going to define my max loss on entry via the sizing and the width of the spreads.
+966.88s: Or if I'm trading the vertical spread for leverage, that's a different scenario.
+972.00s: So you understand my point here. Hopefully that it really, anybody that gives you a blanket answer
+978.16s: to that question is straight up bullshitting you because it doesn't make sense. There isn't a
+983.20s: blanket answer to that question beyond something like before expiration. And even that's not a blanket
+989.60s: answer because again, if you're trading index options or for example, if I'm trading zero DTEs or
+995.36s: one three four DTEs and SPX, there's very frequently that I'll have a vertical component leg to
+1001.52s: that as of lately. And I'll let it go into expiration. So even that isn't really a blanket answer,
+1008.48s: that's fully applicable all the time. It's highly nuanced depending on what you're doing.
+1015.84s: So that's really where you have to answer that. You have to start by defining what you're doing
+1021.60s: and working backwards from there. Because again, another scenario for me often is if I'm using a
+1027.84s: vertical spread, I personally am going to use the width of the strikes and the size to serve
+1033.92s: as my risk management. That's how I'm managing the risk in the trade. So and it's because
+1038.88s: multi-leg strategies, I don't want to move them that much. I don't want to have to enter exit,
+1043.28s: enter again, the lot of legs. You're going to get a lot of slippage and it builds up fees really fast.
+1049.04s: So instead, I will essentially fire and forget. And then if I am trading some sort of vertical spread
+1056.88s: in an individual name, again, going back to what we do know, it's going to have to be closed before
+1061.12s: expiration or if there's a really assignment risk. It's not a big deal if you get assigned
+1066.40s: with the legs, but it's just an annoyance. It does become a little more confusing slash complex
+1072.96s: if it is something that expires on the money. So if you're trading it that way, we're using the
+1079.92s: vertical to define the risk and size, then your management approach is going to look way different.
+1084.32s: Then if you're using it as simply a way to manage the margin requirement, if you have a smaller
+1090.32s: account, what that means is you might sell a 30 delta call, but rather than buying something that's
+1097.52s: a little further out of the money, maybe like a 25 delta or something like that, you're going to
+1102.56s: buy like a really cheap wing that's like a 10 delta or a 5 delta, where that's not really
+1107.84s: designed to be a risk management element of that trade. That's more designed just to cap
+1114.32s: the margin requirement for smaller accounts. So a lot of nuance is always this is the fun part
+1120.24s: in my opinion with options is that there are very few simple basic answers even to seemingly very
+1125.28s: simple questions like that. But I hope that gives you at least some ideas to start with. You really
+1128.48s: have to take a look at the strategy. And once you define what you're doing with the strategy and
+1133.44s: how the vertical spreads allow you to capture the profit mechanism and the behavior of that profit
+1138.64s: mechanism, then you can come up with some logical ideas based on what might make sense in terms
+1144.40s: of your assets. Reese says, I'm sitting more cash than I ever had had shorts that I closed waiting
+1151.84s: for clarity, trying not to force trades, but doing nothing is hard. Yeah, that honestly becomes a
+1157.76s: little bit of a disease to be honest, because moving to cash is fine if there's a good reason,
+1167.84s: but there's a lot of instances where especially if you're an option trader,
+1175.04s: there really are kind of few instances where moving to cash and staying in cash,
+1179.92s: I think is like actually fully applicable or logical. And it's because if you're a well-rounded
+1185.20s: option trader, there's kind of almost always something you can do. And if you're finding that
+1190.80s: you're not able to find things to do that you like, well, that's obviously giving you a glaring
+1196.80s: pointing sign that there are some massive holes in the game that we need to round out.
+1203.20s: So I totally understand that sentiment. That's probably the case for a lot of people.
+1207.20s: One of the things that I think option traders get caught up in like these general advice pieces
+1213.92s: that you'll hear from other types of trading is like, oh, like cash is a position too, you can move
+1219.84s: to cash. Again, that's really you can, but for obfuscitating that's really not highly applicable.
+1228.40s: A lot of the times you'll hear that will come from stock traders that trade from the long side only.
+1234.56s: For them, it makes entire sense to move to cash, to sit and cash, and to do nothing.
+1240.40s: If their entire modality of trading is based on something like a canceling method,
+1245.28s: where you're playing growth stocks to the upside, that's a really challenging environment right
+1249.68s: now. It might make sense for a lot of those people to sit and cash. And that's one of the artifacts
+1254.88s: of a stock trader's return profile. This is a really important concept to understand as a trader with
+1261.92s: like what we're doing as option traders compared to what other traders do as stock traders,
+1268.48s: canceling traders, whatever other trading approach you want to highlight. Because if we take
+1273.52s: a time series like this, and let's say that this is a 10-year time series, and let's say that this
+1283.12s: is year zero. And we just add a couple notches in here. We'll do one more here. And there are
+1291.12s: periods where a stock trader's returns, let's use green for a stock trader.
+1298.00s: Stock trader returns might, let me finish the axis here.
+1307.76s: This is percent return. So you might have a canceling style stock trader that might have a year
+1316.72s: that looks kind of like this. And then the second year looks like this. And then the next year
+1322.24s: is like this. And then a year after that, it's like this. And so on and so forth, right? You just
+1328.08s: kind of normalize that out. What I'm showing you is with somebody like a canceling style trader,
+1333.60s: there are going to be conditions that are insanely, insanely profitable for that group. They can have
+1340.24s: literally thousands of percent's return depending on how aggressive they are in these time frames.
+1346.40s: Right? So we can take a look over the course of this four-year time frame. And we can say,
+1351.28s: yeah, wow, like they really, really crushed it here. This is a super solid return.
+1355.92s: However, they're also going to have periods where they either are going to go down quite a lot,
+1362.72s: or there might just be nothing to do. Their fastball might not apply. And it can look like this
+1369.36s: line here where there's just not much to it. Whereas the world of options trading is quite different.
+1375.60s: The world of options trading in my opinion, and this is my approach is compared to other people's
+1381.28s: approach, is I'm actually way less concerned with having those kinds of peaks. But my performance
+1389.20s: in the aggregate looks a lot more like this, where it may or may not pace at the end if this
+1396.96s: is aggregate total account performance. But there's less total volatility in the way that I seek to
+1405.04s: trade compared to what a Canceling Style trader might see. So the reason why all this matters is
+1412.40s: because when options traders hear things like, oh, cash is a position, you can sit in cash,
+1417.68s: you can sit and do nothing, you can. It's a choice. But there's a downside to that choice. Because
+1423.52s: while the Canceling Stock Trader might have a year that gives them a 3000 percent return,
+1429.76s: the probability of you seeing that as an options trader is super fucking low. So what that means is
+1435.76s: you need to be way more consistent in your return profile. So that in the aggregate, it ultimately
+1442.32s: pans out. So it's something to be aware of. Cash is fine. But getting too comfortable being cash
+1451.12s: becomes really dangerous. And then also again, if you're an options trader and you're looking at a
+1455.76s: market like right now, sitting in a lot of cash, you're like, man, I don't know what to do.
+1459.52s: Me that shows that we have some pretty serious gaps because from an options trader lens, literally,
+1465.84s: this is a wet dream. It doesn't get much better than this because from trading options, our entire
+1474.48s: lifeblood is volatility. It is volatility. And right now, you are actually seeing
+1483.60s: good volatility. This will not always be the case. This actually infrequently is the case. These
+1491.60s: are the years that options traders typically should be outperforming pretty handedly. And it's
+1497.68s: because this is the condition that's suitable for our world compared to something like a Canceling
+1503.60s: Style trader. This will be very difficult for their world. So yeah, just some general thoughts
+1510.96s: around it, I think. Let me see. Lauren says, I'm pulling out a trace too quick. I don't trust the
+1521.20s: market paper hands. That goes back to just not having a defined plan realistically. If you have
+1525.76s: like a defined plan, defined strategy, and you already know how the thing is that you're trading
+1532.16s: or the approach or the profit mechanism that you're trading typically behaves, then that question
+1536.72s: entirely goes away. The reason why you're doing that is not honestly because of paper hands. That's
+1542.48s: an art of fact of not having a strategy built. The reason why you have paper hands is because there
+1547.68s: isn't a strategy that you trust with any level of clarity. So then you're way more incentivized
+1554.56s: to just go off script because the entire thing is off script. It's very difficult to adhere to
+1560.08s: anything in that context. The reason why I mentioned that in that way is to help you with
+1568.64s: positive attribution. It's actually identified the thing itself that needs to work on. So
+1574.40s: the way you fix this thing that you're talking about, Lauren, is not by sitting there saying like,
+1578.72s: damn, you know, I have paper hands. I got to be more resilient and holding my trades. That's not
+1584.88s: going to fix it. What's going to fix it is actually building a strategy and understanding the way
+1590.16s: that that thing behaves. Again, great example. If we go back to SPX and let's say that we're trading
+1600.08s: short-term premium again, 0, 1, 2, 3, 4, 5, whatever DTE time premium you want to use.
+1605.68s: But let's say that we're using sell side strategies. We're selling premium.
+1609.60s: Well, if I am undisciplined in my approach in doing this, what you'll notice is let's say for
+1619.52s: example that there's an entry here for a zero DTE trade on this candle. And let's say that you
+1627.60s: have no context. You don't know what the market typically does. You don't know how SPX typically
+1634.00s: behaves. You don't know really anything about the strategy. You're just like,
+1638.64s: let me sell some short puts in here because I've heard that there's risk premiums on the put side,
+1643.28s: puts you. And I think that there are little expensive here with all the down moves.
+1648.08s: Well, that trader, that trader, as the market collapses in the position seemingly, just continues
+1655.84s: to move against them relentlessly with no change and just very one directional against them.
+1662.24s: That trader, at some point, probably around here is going to be like,
+1664.96s: ah, shit, I should get out. I'm wrong. It's not going in this way. I thought it was going to go up.
+1669.36s: And it's just not so I have to get out. Whereas if you're more adept in trading these things,
+1676.08s: then you might have a better understanding of the total range that it can have over the course
+1681.44s: of a day. And you can say, well, maybe actually, I think it's a little too extended here to the
+1685.52s: downside. I might as well just wait at this point. And then in this looking back armchair,
+1691.04s: quarterback scenario, it rallied back up and you would have been fine. But instead, we exited
+1695.92s: at a loss. That happens literally all the time. And the reason why that happens so much is because
+1701.76s: you're playing human nature at that point. And you're playing into something that's completely unknown.
+1707.04s: So this person that doesn't have an understanding of how these things move is going to be the paper
+1712.24s: hand person that's going to exit down here because it looks terrible. And this is that the other
+1715.52s: thing. Whereas the person that might study this a bit more and have an understanding of how this
+1720.08s: thing might move and has at least some details and data based on prior analysis of let's call it
+1727.52s: intraday moves based on the entry time frame. You might say, yeah, okay, well, this strategy in
+1733.44s: general is going to win X percent of the time. This might be one of the times that it doesn't win.
+1737.92s: But I size it in that context. And I also know that there is a really high frequency for
+1743.28s: reversals. So if I got out every single time in this kind of strategy, when things look bad and
+1748.72s: it was going against me, that means I lose out on those 15% of reversals, which is a really important
+1753.20s: part of the actual return profile of the strategy. So that's why it's really not a paper hands issue
+1758.88s: at all. It is entirely a strategy issue. Super common.
+1763.04s: H says, very weak on idea generation came from the GME crew and have mostly been building the
+1769.60s: position selling calls against it feels like you need to branch out, but also have been learning a
+1772.96s: lot overall. Yeah, I think, oh yeah, working into running the coverage triangle on it just had
+1778.00s: a windfall come the other strat. Yeah, so the idea generation that just comes from having a narrow
+1785.52s: toolbox. So like you're saying, if you're really just focusing on trading one stock, you're naturally
+1790.72s: going to run into that. So in your scenario, send your or send your S H, this is where you need to
+1799.68s: spend a little time looking at profit mechanism. And again, these are it's just a way to think about
+1805.44s: how things make money. So when I'm considering a profit mechanism, I'm thinking how does this
+1811.60s: whatever it is that I'm looking at, how does it functionally make money? So in GameStop, you could
+1817.52s: look at things like price direction, you could look at things like volatility, whatever you're
+1820.72s: so inclined. But then you can apply that same framework for whatever it is in GameStop that has you
+1826.88s: in there. If you're a standard GameStop trader that's more just kind of like on the holdable team,
+1832.56s: then you have to develop other profit mechanisms to apply and other things. But yeah, this is
+1838.96s: this is where you got to spend some time to come up with other trade ideas because right now,
+1842.88s: and I put this out in a recent newsletter, I've talked about this quite a lot, but
+1847.52s: right now there's literally a million things to do. You have trading downside direction,
+1854.64s: you have tons of short premium strategies, you have tons of volatility trading strategies,
+1860.32s: relative vault index vault cross index vault relationships, you have pairs trading, you have
+1867.28s: now earnings trading. Like there are literally a million things to do right now in the market.
+1873.04s: And there typically are a lot of things you can do. That's the beautiful part when you build
+1878.48s: a more well rounded out toolbox is that you're not really restricted into doing like one thing.
+1886.48s: Because yeah, if you only trade one stock or you only trade one strategy,
+1890.40s: there are going to be periods where it's just disadvantageous for that, whatever that is,
+1894.24s: right? Just the example I gave you before with respect to Cancel him from a stock trading lens,
+1898.72s: or even the coverage triangle like you reference, there are periods where the coverage
+1902.48s: triangle like right now, I've talked about it with the leverage ETFs that I'm trading the coverage
+1906.80s: triangle in. Like right now, the coverage triangle is not performing well. I think the overall
+1910.80s: return for it for the year, the last lot was like 2%, not doing well. But most of my returns so
+1917.04s: far this year has come from all the speculative trading activities because I have to rotate and do
+1922.24s: other things when that one thing isn't working. That's another mental disease that a lot of
+1928.56s: hobbyist level traders have is a hobbyist level trader is way too concerned with their convenience
+1937.68s: or their preference. A hobbyist trader will say things like, well, I just want to run one strategy
+1943.84s: because it's simpler or I just want to look at one stock. I don't have time to look at other stocks.
+1948.48s: You can do that like it's entirely your choice with trading. It is absolutely build your own
+1954.80s: adventure. However, if you succumb to that and if that is your choice, there are a ton of trade-offs
+1960.32s: that come with that. And there's going to be plenty of periods where whatever that thing is or
+1965.60s: that specific stock is that you like to trade, it's just not going to do well. And then you're
+1970.80s: just going to sit there and wait. And again, that's the trade-off you accept. You preferred simplicity
+1976.24s: and you preferred your ease just like when I was talking with Lauren before about the paper hands.
+1984.40s: We've talked with Lauren before about this and about the importance of building a strategy,
+1989.44s: but she's not done that. So right now, she's prioritizing another series of elements, whatever they
+1997.20s: are over the actual process of like sitting down and doing the hard work of building a strategy.
+2004.00s: So because of that, that's the trade-off is we're avoiding that more difficult
+2008.64s: challenging problem set. That's good in a way. It's easier for us. However, there's a trade-off.
+2014.08s: And the trade-off is that she's finding that she's exiting strategies too fast because of paper
+2019.04s: hands because she's nervous with the market and she's not sure what to do. So every literal decision
+2025.20s: that we choose to make when we're approaching this whole thing of trading, it's going to come with
+2030.56s: series of trade-offs. Again, that's the beauty of this whole thing.
+2039.92s: Hey, yo, James, what up? Good to see you. H says also, wondering what you use for back testing.
+2045.20s: Tasty has limited back testing software for options that I've been playing with. Yeah, I've
+2048.40s: talked about this quite a lot. So in short, I've built my own. And it's because I have never been
+2056.24s: able to find something that fully does everything that I would want it to do. Now, there are two
+2061.52s: solutions that are public facing. They're both paid. I'm an affiliate for two of them
+2066.40s: because in the world where I know a lot of retail traders are not going to build their own solution,
+2074.64s: I tried to look for things that I think are decent otherwise understanding that. And again,
+2080.56s: there's a trade-off there. The trade-off here is really saving money. It might sound weird to
+2087.20s: say that, but using a paid solution is actually cheaper than building your own because the data is
+2092.32s: really expensive to access. So for people that might be trying to make this trade-off analysis of like,
+2098.56s: do I want to try to build my own or do I want to use a paid solution and you're thinking like,
+2102.40s: well, the paid solution is expensive. I can almost guarantee you it's going to be cheaper than
+2106.88s: building your own. It's expensive. It's the cost of doing business. Now, there's that element,
+2111.68s: but then there's also the skill set, right? It takes time to learn how to build your own thing.
+2115.52s: Now, what's the trade-off here? You get to use whatever the build solution is. And that means whatever
+2121.36s: the logic is that they use in building that, whatever the limitations are in terms of what time
+2126.48s: frames the offer, what kind of overlays how complex it can be built. All of that is now
+2132.64s: slaves to whatever that solution produces. Whereas if you build your own, again, it's a choose
+2137.92s: your own adventure. So everything that we do here is going to come down to a trade-off. So the two
+2144.80s: that you can check out that I do think are worth looking at. The first one is O rats. And there's
+2151.76s: links to these and most of the recent videos that I've done. You'll see there's an affiliate link
+2156.24s: in there. I do get it, kick back. It's honestly trivial, but you get a discount. That's the reason
+2162.00s: I found them is because I get asked that kind of a lot. And I wanted to find something that I
+2167.44s: at least feel good to recommend to people because again, I normally just use my own stuff.
+2173.76s: But O rats is solid. And they also have an API infrastructure so you can just pull data from them
+2180.24s: as well to then manipulate and tinker with on your own. They have their own series of issues,
+2186.00s: though. One of the issues I have with what O rats does is they infer deltas. That's inaccurate.
+2192.00s: So there's in general, it doesn't make that big of a difference. But again, for somebody like me
+2199.36s: that wants things precise. That's in precise. It's a data management approach because storing full
+2208.56s: Greeks, full options chains for every single underlying for the last 20 years is like tremendously
+2216.24s: large data. So because of that, you can run some shortcuts. You can say, well, the delta of this call
+2223.04s: is 45 delta. So one minus that is the put and it might not be, especially for things that are
+2229.76s: further out in time and more volatile. So that can impact what you're doing. So there's small artifacts
+2234.72s: like that that you just have to accept. There's a free solution through thinkorswim. And that's cool.
+2240.96s: The problem with that free solution is there's no way in aggregate to run an idea. You have to click
+2247.04s: and move everything. So I like that actually for a slew of different reasons, but that's the trade
+2253.36s: off for that. Another one is options omega. They're pretty solid. I like their data set. I look
+2260.24s: through it actually pretty early on. The thing that is really restrictive about them is they're
+2266.40s: really focused on a specific series of trading, mostly short term trading styles and indices.
+2272.00s: They don't offer a lot of names. So that's the trade off for that. Then as soon as you want to start
+2277.28s: applying management, I want to get out at this option. If it's at x percent return or if the
+2285.04s: underlying did this, good luck. You're going to run out of stuff insanely fast that can do anything
+2290.72s: like that. So one of the things to keep in mind is with back testing is I think one of the things
+2298.48s: you have to get comfortable with as a trader is using imperfect information and being comfortable
+2304.00s: with that. But you want to rough out ideas. So again, for example, if I'm trading SPX here to the
+2310.48s: downside, does it materially matter if I sell a 30 delta or a 33 delta call? Does it materially
+2320.80s: do a degree to be honest because that can yield maybe a point difference in total performance.
+2326.64s: But what really matters is my ability to even have a shot at predicting direction. That
+2333.52s: matters so much more. So it doesn't matter if I'm spending too much time trying to optimize between
+2338.80s: the 30 delta versus 31 delta or should I exit at 50% max profit or should I exit at 55% max profit.
+2345.20s: None of that matters if everything else isn't in order being your ability to identify a profit
+2351.84s: mechanism in signal. The beautiful part about that is it's easier to find. You don't need to run
+2356.48s: these super complex back tests to understand those things. So going back to the intraday example I gave
+2363.44s: you before in SPX, if I am trading long premium, short premium strategies for that time frame,
+2371.12s: it doesn't ultimately matter if I understand how it tends to move. That's what matters way more
+2377.60s: because then it's going to inform the strategy that I use. So the summation for all of that is
+2383.92s: I personally use my own stuff and it's because I treat this professionally. This is my livelihood.
+2392.48s: So that's a cost of doing business and I've already talked about this before. I've talked about
+2396.56s: this years ago where I literally have spent over six figures on just data, literally just market
+2403.52s: data and it's a cost of doing business. However, for people that don't necessarily take it that
+2410.48s: seriously or to that degree, then you don't necessarily have to spend anywhere near that much.
+2415.60s: You can spend a lot less, but then again, there's trade-offs. Maybe you don't have minute level
+2419.68s: or intraminent. Maybe you don't have full Greeks. Maybe you have a smaller suite of tickers that
+2424.96s: you're going to use. It's customizable. You don't have to spend a ton of money, but at scale,
+2431.36s: it's worth it. Now, if again, you're using more basic ideas and you want a cheaper solution,
+2437.20s: those are at least a couple you could take a look at and see what you find. The problem is,
+2442.00s: is any sort of free back testing solution is not going to be very good. I literally can guarantee
+2449.44s: that. And it's because again, the data is not cheap. Housing the data is not cheap.
+2455.20s: Building the actual tool to run the back tests is not easy, especially with all the logic that's
+2459.60s: to be done depending on how complex it's going to be. Then the maintenance of whatever the tools
+2464.88s: that you build is not cheap. One of the problems retail traders have fallen into is that because
+2470.16s: you're used to hearing things like free access to trading platforms, having free access to an app,
+2476.40s: having free access to paper trading, having commission free trading. Like retail traders have
+2482.80s: been primed to think that this shit's free. And it's fucking not. The reason why all of that other
+2489.36s: stuff is provided to you for free is because the brokers make money off your order flow.
+2495.20s: That's why there's literally entities that are fucking competing for broker order flow because
+2500.48s: they know retail traders are uninformed order flow and they can make a ton of money off of it.
+2504.80s: It's exactly why that happens. It's exactly why when you go to a brokerage,
+2508.88s: place they're like, sure, come to our completely free options trading bootcamp. We'll teach you
+2514.48s: over the course of a weekend. This is great. And people are thinking, oh, wow, this is so amazing.
+2518.96s: The broker cares so much about me. They're going to teach me how to trade for free.
+2522.72s: The broker is literally monetizing you. That's what they're doing. And that's not admonishing them
+2530.24s: for that, right? It's business. But I'm admonishing the naive day of retail traders in those
+2535.92s: instances and not being able to see what's actually going on. And again, that's not to say that you
+2540.72s: can't go to a broker power trading thing and not learn valuable stuff you can. But you should go
+2546.32s: into it eyes wide open, understand the landscape of what you're looking at. And this goes back to
+2550.72s: back testing. So if there's a free back testing tool, the free back testing tool is incentivized in
+2556.48s: some way to monetize you in some way. If it's a free back testing tool, it's going to have a
+2562.40s: ton of limitations again, just because it's not cheap in order to build a good one that's robust,
+2567.20s: that can do a lot of things. Then you're going to go into the next tier, which is lower paid solutions.
+2572.88s: And for the average retail trader, the lower paid solutions are still relatively expensive.
+2577.92s: And that's just a reality of things for a lot of these kinds of places, 100 bucks a month,
+2583.52s: 200 bucks a month. And for a regular retail trader, they're like, whoa, shit, that's really
+2587.36s: expensive. Again, in the grand scheme of things, it's really not. But retail traders have just
+2594.24s: been so primed that everything for them is super cheap and free. And it's just not reflective of
+2602.16s: the reality of the world that we live in. And when I say that, I don't mean like the broader world,
+2606.48s: I just mean in the trading world. So those ones that I did mention, though, they're not on the high
+2613.20s: end of the cost spectrum. But yeah, those are some of the details at least about them.
+2617.60s: Check them out, see if they work for you. But yeah, it's a little bit, definitely a little bit tricky
+2622.40s: to find something that works well. Let me see.
+2631.92s: Salad sandwich says, do you foresee a giant GME bone cone?
+2636.40s: I haven't looked that close. To be honest, I haven't spent a lot of time getting reacquainted.
+2640.64s: I was planning on doing that tomorrow. But I mean, as of right now, there's nothing
+2644.96s: necessarily jumping out at me. But that's also a very ignorant statement at this point.
+2649.36s: Just because I don't really know what's going on. I haven't really gone through it. So
+2653.52s: probably should have a little bit more on that tomorrow, I think.
+2658.08s: H says, do you care about slash, try to sculpt your sharp ratio? I don't really try to sculpt it.
+2664.40s: I mean, it's really important to be aware of what your risk adjusted returns are. And honestly,
+2670.08s: it's also funny because like sharp ratio really, I don't even think is like an optimal
+2676.64s: risk management or assessment thing. It's just something that institutions use, fund managers
+2682.80s: use. So then retail traders like, oh, shit, I should use this one. I always find that comical.
+2689.04s: But yeah, I do think in a more broad sense, risk adjusted returns are super important.
+2695.12s: It's because it gives you the entire context of scalability is an idea scalable.
+2702.96s: And if you have something that has a really great compound annual growth rate, for example,
+2707.60s: but a really poor risk adjusted return, that might not be super scalable, even though it has a
+2712.48s: really sexy look in compound annual growth rate. And it's because there's a reality when systems
+2719.60s: produce things, they can produce things that are purely optimized. This is like the same thing with
+2724.24s: Kelly sizing. If you use Kelly criterion for trade sizing, Kelly criterion does exactly what
+2730.48s: Kelly criterion tells you what's going to do, which is optimized for growth that comes at a
+2736.00s: tremendous cost, which is absolute fear for your fucking life because of what it's going to tell
+2742.80s: you to do at different times with respect to sizing. And you're going to be like, yo, I am not
+2746.00s: comfortable with that at all. And that's why they have things like half Kelly quarter Kelly.
+2751.60s: They have smaller versions of it because of those kinds of things. So yeah, I think
+2759.68s: risk adjusted returns are really important. Not in terms of I like if you you could tell on the
+2765.92s: monthly readouts, for example, that I give you guys on my performance, I don't include risk adjusted
+2770.16s: return there. Because in that context, I really don't care. It doesn't matter to me. But in the
+2774.64s: context of what strategies I use, how I use them and how I scale them, that absolutely matters to
+2779.04s: me a lot. And again, that gives me a lot of context on the scalability. So I got to pop the door
+2784.72s: for Thorough real quick. It's time for Niko Grab his dinner.
+2802.88s: Little dude is ready for his ding-ding.
+2809.20s: JG says, what helps you determine what delta you are choosing to sell your short calls,
+2815.60s: more specifically with the ratio diagonal? Great question. So for that one specifically and for
+2820.08s: those that are curious, what that strategy looks like, it's pretty simple in its shape. So let's
+2828.56s: take a look at something like Palantir. And let's say that we have a ratio called diagonal,
+2836.08s: yearly hypothetically, link, link, and Palantir. And let's say in this hypothetical ratio called
+2845.60s: diagonal, we're out right now in the 16 Jans. And let's say that we have something that's
+2852.88s: fairly deep in the money. What is it? The 65s.
+2857.04s: So let me get rid of these other things in here, the 65. And let's say we start with a 25-lot here.
+2874.00s: So we have a 25-lot at the 65s. And let's say that we're selling short calls against them.
+2881.52s: And the question right now is what delta? So it starts always with what is the idea behind
+2892.48s: the trade, behind the individual positions. So in this case, if I'm trading something like Palantir
+2900.80s: that I think is still bullish in the longer term, but not necessarily given the current environment
+2907.92s: hyper bullish, likely going to just slowly meander if it is able to sustain the up move, which I
+2914.80s: would broadly assume again over a long enough time frame, then I'm not so concerned about
+2920.32s: capping the upside. Now again, this is in context. I never want a flat upside profit potential.
+2926.80s: So because of that, there's a series of choices I can make. And there's two things that go into
+2933.36s: the decision beyond what is the idea for the underlying. So the first step is what is the idea for
+2938.00s: the underlying? If I'm trading something that I think is going to move a lot, then I'm going to want
+2941.76s: something that's further out of the money and I'm going to want to size it down. Or if it's something
+2946.56s: that is going to move a lot, I might sell something that's slightly more aggressive if I'm seeing
+2951.76s: vol priced rich on the call side, but then I'll just size it down. So the first thing is what is the
+2958.08s: idea for the underlying? The second thing is what's the current position at? What do I want to do
+2963.68s: with it? A great example is this. Let's say instead of the long options right now being all the way
+2970.96s: out here in 16 Jan. And let's say that I put this position on a while ago. And let's say that the
+2978.00s: long options now we're actually sitting at the 20 June. And let's say that they're super deep in
+2983.04s: the money because it's had a really strong rally. Let's say that hypothetically, of course,
+2987.52s: that we had something like at the 20s. And these were grabbed much, much cheaper than where they are
+2993.92s: now. And don't know exactly. It's just called it like maybe 10 if that's something like that.
+2999.20s: Now for the way that I run the ratio called diagonal, it's about time for these to come down.
+3004.00s: They need to go away because they need to be moved further out in time. They're coming in on the
+3008.88s: time window for management of the ratio called diagonal because of that. Going back to the delta
+3014.24s: question on the short calls. Well, I know that the longs need to come down.
+3018.64s: So what I can do is get more aggressive on the shorts if I'm so inclined, depending again
+3025.52s: on how far I think it's going to move. So what that means is this, if I have 30 of these,
+3036.00s: let's clear these ones out. If I have 30 of these of the 20s that were grabbed for around 10
+3043.68s: on average, and let's again say that we're going to sell in the 28. And let's say that I know
+3051.12s: that there's a handful of days left before strategically, those need to be moved further out in time.
+3056.24s: And for those that don't know, when I say that kind of role, it's really simple, right? We're
+3061.12s: closing a position, opening a new one. It would be rolling these long options. So with that,
+3067.04s: do I want to try to collect a little more money on the short call side of things based on what
+3074.96s: I think is going to happen in the market? So what that means is maybe I come all the way into the 95s.
+3080.32s: And let's say that I get these for $9. Well, effectively, if we recall the basics of option pricing,
+3089.36s: you can see that this $9 you collect on top of the 95 will literally show you where your break
+3096.88s: even is for the option at expiration. And the reason why this matters is because you can use it as
+3104.56s: a proxy for how far do I think the underlying is going to go? And therefore, how much premium I
+3111.12s: collecting and do I think that the premium among what I'm going to collect accounts for the expected
+3118.08s: range for the underlying itself? So in this case, let's say we can see our break even is right
+3126.00s: around here at like 104. So with the break even at 104, do I think that the option itself or the
+3135.12s: underlying itself is likely to go super far above 104, depending on my answer to that, that will
+3140.56s: determine if I want to sell something like this, the 95s, or do I want to go a little further
+3145.60s: out of the money? Because if I think that balance here is likely to roll over a little bit and
+3151.20s: start to come back down, then I actually want to be way more aggressive with these calls. I can
+3155.20s: make way more money with them than just holding the underlying or holding the long options and
+3160.88s: just waiting to see what happens. So as always, it's a dance. But the dance is really based on those
+3167.52s: first two inputs. It's what do I think the underlying is going to do? And it's what is the strategy
+3174.08s: as it's put on? Where am I at in the phases of the strategy? And based on those, I'm going to choose to
+3180.56s: get either more or less aggressive both with the short call deltas, but then also how many I will sell
+3189.12s: both of those influence that condition. So again, as always, you all know this by now.
+3194.96s: Simple questions really do not have simple answers in the trading world. And it's because
+3200.96s: there is so much nuance is to what's going on. But I hope that that's useful overall.
+3207.28s: If you have any follow ups, obviously just let me know.
+3214.96s: H says, I'm trying to get out of the habit of stubbornness that is rewarded from staying in
+3221.20s: GME and you need to push harder on branching out. Well, not necessarily. There's nothing,
+3225.44s: there's nothing to say that you can't specialize in individual stock if it's working.
+3229.44s: Right? Like if something is working, then that's okay. You can do, you can absolutely do what's
+3234.88s: working. But this goes back to having very clearly defined goals as a trader, what you're trying
+3241.52s: to accomplish. And then if whatever it is that you're doing, if it directly moves you closer to being
+3250.64s: able to accomplish those goals, then the one underlying might be completely fine. But if you're
+3257.68s: looking at the performance of that one underlying against what you're trying to do and you're like,
+3261.92s: fuck, this doesn't really line up with what I want to happen. Yeah, then you absolutely need to
+3266.08s: start doing something else for sure.
+3273.36s: Trading option says one more question. If you don't mind, when trading vertical spreads, which is
+3276.96s: the best time of day to get more premium,
+3279.04s: um,
+3286.08s: depends on a million things. The very brief answer to that question is the beginning of the day
+3293.20s: is often going to have more volatility. And often towards the end of the day is likely going to
+3299.84s: have more volatility. It will depend on a million things. I'm praying that you're trading,
+3304.40s: underlying that you're trading what the current market conditions are. Yadda, yadda, yadda.
+3308.96s: And again, based on the broader strategy, I don't know what you're doing, but that question
+3316.96s: opens up a bunch of questions in my mind to the primary is, what are we doing that getting the
+3326.56s: most premium in a day matters that much? In my mind, we're probably optimizing for the wrong thing,
+3333.12s: just a hunch, but I have no idea what you're doing. So it could be completely wrong.
+3340.16s: Elizabeth says an idea for your series after logging trades in your trade log for a period of time
+3345.20s: where the aspects of what are all the aspects of data worth looking at and what actions do you take
+3351.28s: once, once analyze? This is actually a perfect, thank you so much for that, Elizabeth, because
+3355.12s: literally the perfect pivot. So we have a few minutes left. And I do want to make sure that we have
+3359.60s: some time. By the way, great questions, great conversation. Hopefully it's useful to you guys,
+3364.16s: but I really enjoy understanding the way that you're looking at the markets and the kind of
+3368.96s: problems that you guys are working on. Obviously, I just hope that the information at least is usable
+3375.84s: and guides you in a worthy direction. But back to crafting out the mini series. So the mini series,
+3384.72s: in my mind right now is probably going to be like I said, like four episodes or so.
+3389.84s: And this is what I'm thinking of. And as I'm explaining this to you, I would really love
+3394.56s: for you to think about where you're at in your options trading world and where you're trying to go
+3403.28s: with it. Because the premise behind the series, so this is outlier options trading foundations,
+3413.68s: the entire premise, the mission, the purpose of the series is to help traders, newer traders,
+3423.04s: develop an approach on how they intend to proceed as a trader. It's a very broad concept approach.
+3433.60s: But the reason why the approach matters so much is because the way I'm thinking about it is like
+3439.52s: episode one, this would be things like landscape, analysis, mindset,
+3457.44s: mindset. Again, I hate mindset that kind of like term just because it's so abused and really
+3463.20s: esoteric and it's stupid. But there's a specific angle that I intend to approach it from that I
+3471.36s: think obviously is not stupid. Otherwise, I wouldn't waste the time on it. I think when it comes to
+3476.72s: mindset, the overwhelming majority of traders approach trading with the exact wrong mindset that
+3481.52s: quite literally sets them up for pure failure. So my goal is to help people identify those kinds of
+3487.44s: mindsets that really are probably more prone to their failure than their success to at least
+3494.56s: develop a healthy relationship. And then we're going to talk in my mind. Again, this isn't the fine
+3500.56s: yet. But we would talk about the process of trading. And again, this isn't like going into the markets,
+3507.12s: who the market participants are and stuff like that. We've covered all of that stuff in prior
+3511.36s: beginner series. This is more so trying to integrate the iterative approach that is trading to
+3519.12s: options traders. Because again, as per usual, if I told you that over the course of your
+3528.08s: options trading career, you're going to have to iterate on something. That means you do something,
+3535.60s: you observe an outcome, you take the outcome details that you can, you build it back into the
+3541.12s: process and then you observe the next outcome and you do this over and over again. That's what
+3545.44s: trading is. With that, as I still talk to most traders, they still don't have literally the
+3555.36s: fundamental tools you need in order to implement an iterative process, like a plan, like a strategy
+3563.92s: outline, like a trade log. This is akin to being a truck driver, but your truck has no wheels.
+3571.20s: It's not going to work. It's literally not going to work. But as I think about the beginner
+3578.08s: options trading world, the overwhelming majority of new options traders do not appreciate and think
+3585.60s: about the iterative process that they are about to start using a jujitsu example. This is the case
+3592.24s: for new white belts that come in that are really, they've seen stuff on TV. They think it's really
+3598.56s: sexy to get these awesome submissions and they're really excited to start knocking out these
+3603.36s: submissions and just crushing people. Meanwhile, they can't get off their fucking back if somebody's
+3609.12s: inside control because they don't know how to implement angles and frames. They're so worried
+3614.08s: about this other thing that's so far down the line that literally doesn't matter because they
+3619.20s: can't do shit to get off their back to do anything else. The same thing in trading.
+3625.76s: Too many options traders are so focused on how much money they're going to make or what time of
+3631.60s: day, for example, to sell the credit spread that we're not even appreciating these other facts
+3639.20s: that are integral to your long-term success far more than any of this other stuff.
+3644.80s: So that's the concept behind process. So episode two,
+3652.88s: this is all about approach.
+3658.32s: And this is thinking about things like how to make money.
+3668.80s: This is thinking about things like how to build a portfolio.
+3675.12s: That kind of stuff.
+3678.96s: Then episode three, in my mind, are things like implementation.
+3693.68s: So this is literally following the outlier strategy process and the outlier trade process
+3701.20s: from end to end. So again, what I'm asking you to keep in mind is I'm outlining these broad ideas.
+3708.56s: I'm coming up with this now. This isn't, again, thought out yet. I want to know one,
+3714.32s: what your thoughts are on these broad topics, what specific questions and stuff do you have
+3719.68s: about these topics so that I can build it into the series. So we know here that there's stuff
+3727.52s: about analyzing logs, which is a great question. And that's perfect because that fits
+3736.16s: directly into this one, the outlier trade process. So that's a good example there.
+3741.28s: And then EP4, episode four, this is evolution.
+3749.68s: The way I think about evolution here, it's going back to this point over here.
+3757.12s: It's ingesting information and its optimization
+3770.40s: and exploration of new ideas, new ways to do things, different ways to maybe implement existing ideas.
+3778.80s: But this is the series at a broad level that I'm thinking of. If you have questions,
+3785.76s: if this makes sense, if it doesn't make sense, if there are things that you think would make
+3789.12s: sense to add to this, I would literally love to hear it. And while you're doing that,
+3793.44s: there is a small critter scratching at the door, post dinner, ready to come back in. So I have to go,
+3802.40s: obviously, I've got to go grab him. So give me one sec and I'll zoom you guys out so that you can
+3809.36s: see him. Because you just got a haircut.
+3825.92s: Good dude. Looking on with this fresh cut.
+3829.52s: Damn. He got all trimmed up. He's looking.
+3835.28s: Dapper is can be. Look at him go.
+3842.16s: Give a good dinner. Yeah. Right now he's literally standing on his back legs,
+3849.20s: like a little, like a little bear.
+3858.64s: There he is.
+3863.52s: All right. Back to this. Lauren says Thor's pimping. Yeah. He is. He's got his tuxedo on as per
+3871.44s: usual. He's staying. He's keeping things dapper. AF.
+3878.32s: Really what we would expect from him is actually hilarious because he was so
+3886.56s: goofy. Oh yeah. I didn't even show you guys any. You guys want to see some drone photos?
+3894.96s: Give me a sec. I can hide all this. Move this. Good. I'll show you some drone photos from Ireland.
+3908.88s: Pictures.
+3909.68s: I'm going to use.
+3919.36s: All right.
+3925.68s: Oh no, that was good.
+3929.60s: So we just got back from a couple weeks cruising around Ireland.
+3939.28s: So I'll click through some of these while we're hanging out. You can still throw in questions
+3944.72s: and stuff. I'm just going to kind of click on these in the background. They're a way to
+3947.68s: automate this so it doesn't automatically. That would be nice. This is it.
+3952.56s: And no, that's okay. I'll just click on them.
+3955.28s: Mateo says, do you think that selling credit spreads based on moving averages and collecting
+3958.72s: premium trading zero DTE is a good day trade strategy and SPX? That's a great question.
+3968.72s: I
+3973.76s: wouldn't be that excited about that strategy personally, but that doesn't mean it's not a viable strategy.
+3983.12s: It could be and it's something that could could work, but there's a lot of elements of that that
+3988.48s: I would consider to be quite suboptimal. Even down to the the directional element, I think that
+3996.40s: it's likely going to be really difficult to do that successfully.
+4003.92s: So this was kind of cool. This was like the roads that were there. As you can see, it's literally
+4008.80s: like a straight single lane that goes on the side of this freaking mountain.
+4014.00s: Really funny because you have to the driving is very different. The fun part is obviously they drive
+4021.04s: on the other side of the road and in the other side of the car, which is actually quite funny to
+4028.00s: me. I really don't have any issues making the adjustment, but it is funny to see like when other people
+4038.08s: are like, yeah, that's actually it's completely different. But this was we were staying at actually
+4046.72s: a show you were staying at this place. We were staying at this big manor. We had a suite that was
+4053.36s: like right in here somewhere that like overlooked their gardens and stuff, but this manor was literally
+4060.08s: right by this giant castle. One of the cool things I found about Ireland is they have castles everywhere,
+4065.60s: dog. It's such a different thing compared to the US because they have stuff that's built in
+4069.76s: literally the year 1000. And here in the US, the ship wasn't around until the 1770s. So it's like
+4076.64s: just such a baby, you know, world compared to Europe and a lot of these other places. You see that
+4082.72s: there's just sheep everywhere. Mateo says, do you think, oh, I already answered that sorry.
+4089.52s: Lauren says, do you have a good time on vacation? The birds were cool. Oh, absolutely. I had a blast.
+4093.76s: We love traveling. Both Mel and I, we literally love just love seeing other places. It's so fun.
+4100.72s: Yeah, we had an absolutely incredible time. So yeah, these are just some other shots of the castle.
+4109.04s: I forgot how old this one was. To be honest, I'd have to look it up somewhere, but so if I
+4114.48s: said to say like most of these other places, the ship was old.
+4122.48s: What other interesting photos do I have? This wasn't really that interesting. This was just like a
+4129.60s: lake that we were at, but it was kind of captivating in a way, I suppose. Right now we're standing right
+4136.80s: in here. This place was cool. So this place, here's the interesting thing I found about this place.
+4148.56s: The interesting thing in my mind about this place is why? Why is this spot so fucking green compared
+4156.80s: to everywhere else? There's an aerial photo that I'll show you this one. Why is this one spot so green
+4164.16s: compared to the rest of the stuff around it's like this little stone rock formation literally from
+4168.88s: forever ago, like the rest of the stuff, which is pretty interesting. I don't really have an
+4173.52s: answer to that, but it interests me. This is another spot that we stayed. They have a lot of these
+4180.16s: really, really old manners that you can stay in. So this was another one. We were in a suite on this
+4187.20s: one that was like over here. They all have like these really expansive grounds that they're
+4194.24s: plopped on, which is pretty neat. Passible says, do we have access to those slides? You do not. That is
+4200.64s: just a random reference deck that I've been building for myself for like two years now, really for
+4208.96s: you guys. It's all stuff that I reference for you guys, but it's nothing that I share externally.
+4219.20s: Matias says, based on historical data, I noticed that the market very,
+4222.40s: rarely moves time to the expected move for the day. Based on that, I enter my trade close to the
+4227.12s: top levels of expected move up or down. Yeah, I don't think it's a bad approach. I think you're
+4232.72s: looking at it the right way. I think the problem is is it's the market also knows that, right? Anything
+4238.56s: that you think you know like that, the market knows. So unless there is a good reason for the
+4244.72s: persistence of some sort of idea, then it's unlikely that there's significant edge within that idea.
+4254.40s: So from your idea of using moving averages and trying to trade intradate directionally with
+4261.52s: short premium, you're kind of starting to cross over in short term direction, which is really
+4267.36s: dominated by algorithms. It's very, very difficult to outperform an algorithm in that space.
+4271.84s: So that's why like the my broader expectation there is that it would be pretty, pretty challenging.
+4281.84s: That doesn't mean not profitable. It doesn't mean that couldn't work, but I think it would be
+4287.76s: like, it's definitely different than how I trade those timeframes personally. That's for sure.
+4291.84s: But yeah, I think it's absolutely worth exploring. And if it's something that you're finding even
+4299.84s: just general interest in, meaning you enjoy it. Or if it's something that you think is generally
+4308.32s: promising, there literally is absolutely nothing wrong, absolutely nothing wrong with testing the
+4315.12s: waters and seeing how it goes. Like I think that's completely, completely fine, especially because
+4320.80s: you're doing it via credit spreads. The thing with those credit spreads is you're probably not
+4324.16s: going to make a bunch of money. You're not going to lose a bunch of money. That's one of the benefits
+4328.40s: of trading spreads like that is they naturally have a bit of a built-in buffer to effectively
+4336.64s: keep you from hurting yourself unnecessarily. So. It's always as also theta is in my favor. I tend
+4348.16s: to simply close a trade at 50% and possibly open another trade. And that's one of the problems
+4352.56s: you're going to have with that right is the instinct to close at 50%. You're trading two legs that's
+4357.28s: going to be expensive in terms of the round trips. And in terms of slippage, the other thing there is
+4364.24s: theta is slightly in your favor. It's not significantly in your favor because again, remember with
+4370.88s: that credit spread, you're buying a leg. So yes, the short option in that context is going to be the
+4376.72s: more dominant leg. And that's why it absolutely will benefit from theta for sure. But you're as
+4383.04s: that one option is benefiting from theta, the other option is getting crushed by that very same theta.
+4388.40s: So you really minimize the total theta benefit in that context.
+4394.80s: What other cool oh, this one was cool. This was the that's that spot we were staying in is right
+4402.40s: here. You can see like there's like this really long winding road that goes through a bunch of
+4406.96s: flowers. But the colors in this town, I thought were really, really neat. Oh, this is crazy. So this
+4412.72s: was our first day. Like the next series of photos was like the next the full day that we had. And
+4422.32s: this is this is what it was. I we were joking that this looks like the freaking Caribbean to me.
+4432.72s: And I've spent a lot of time diving in the Caribbean. I had no idea Ireland had coastlines
+4437.52s: like this, but it was literally so sunny that we're like, yo, we literally need to get freaking
+4443.92s: sunscreen. Otherwise, we are going to burn. That's how sunny it was. And everything that you get
+4450.48s: told about Ireland is obviously it's like super rainy and stuff like that, which we just got really,
+4454.80s: really lucky with the weather. But this is that's me sitting flying the drone. That's Mel just
+4461.60s: kind of checking out the water. But yeah, this is literally the water, which I just had no idea
+4466.88s: that this place had even anything that looked like this was absolutely wild, not expected in the least.
+4475.36s: Then this was the same day we were on like some sort of overlook right of like this little bay.
+4484.48s: Michael says Pfizer CNBC announced drug tariff with all the drug companies selling off on news,
+4490.32s: but America should be safe. Okay, you're just providing some information. Thanks for sharing that.
+4495.68s: Each says underground springs natural well. Maybe that's interesting. Yeah, the weirdest part
+4499.76s: about that green circle is like was like specifically in that spot. And the like the overall
+4506.64s: span of that space was just not that big. I just didn't understand it. I found it. And it's not
+4512.72s: like it's irrigated because that's out in the middle of nowhere. So yeah, I just thought that whole
+4517.44s: thing was pretty novel. The vex good evening, sir. Good evening to you. Is there a way one can
+4526.80s: become profitable an option in option buying by holding or scalping the only way? Could you
+4534.88s: sorry, clarify your question a little bit? I just want to make sure I'm understanding so I can
+4538.64s: answer you correctly. When you say by holding or scalping or is scalping the only way my bad?
+4552.24s: Okay, is there a way one can become profitable an option buying by holding or is scalping the
+4556.80s: other way? Scalping is in no way the only way. Scalping is actually a really poor way to try to
+4561.68s: make any sort of serious money in options trading. So yeah, you can absolutely hold. You just can't
+4569.20s: hold forever, right? Because they have aspirations. This I thought was really cool because this one
+4575.36s: again reminded me of the Caribbean, like these freaking boats and these docks. I couldn't believe
+4580.32s: the water. I just had no idea that this place had water like this. This was from some bluffs. So for
+4589.84s: scale, you can see that those little dots over there are people. These are people. And these are
+4599.04s: people. I like the tip. So to give you some idea of scale, these cliffs were absolutely massive.
+4606.24s: They're beautiful. Really, really, really pretty. Then this was us cruising out to some light house.
+4613.36s: So that's the car. That's the lighthouse we went to. And then we were literally just hanging out
+4618.80s: here to fly the drone and take a look at the water. And again, take a look at the water.
+4624.24s: This is crazy. So in Mel, she's right here. And then I'm right here. You can always find people
+4633.44s: if in case you don't know via aerial photography is if you look at
+4640.00s: if you look at the shadows. So you can see where the shadows are cast. That's how you can kind of
+4645.76s: identify where people are at. But anyways, cool spot. EHODGE says, do you show your
+4655.04s: previous trading for my dea to execution on Patreon? Yeah. So on Patreon, what I do for that is
+4663.20s: in the streams. I'll typically talk about recent trades and why I'm doing them. It's not my whole
+4671.20s: book at all. And it's not a trade alert service. So I implement latency. So I don't like cherry pick
+4678.56s: like good idea, bad idea. But I don't I some of the things I will tell you guys as I do it,
+4686.80s: because it doesn't really matter. So like if I'm putting on an earnings player, whatever,
+4691.04s: that doesn't really matter that much. But for a lot of the other stuff, there's latency because I
+4697.04s: vehemonately against being even remotely close to what could be considered a trade alert service.
+4702.96s: Those are, I think, straight garbage. But the broad purpose of the pro side of the community is
+4712.48s: because it's smaller. I can go through a little bit more of my activity. So on the streams, we spend
+4718.32s: actually quite a bit of time looking at the markets together. We spend time analyzing, trying to come
+4725.60s: up with ideas, then scanning, then building watch lists, to then trade, and then modeling some
+4732.24s: trades, that kind of stuff. So yeah, there's that's actually kind of the primary purpose of that
+4739.68s: side of the community. All right, let's take a look at. Oh, okay. So this part, this part was one
+4747.44s: of the cooler spots that we were at. So we didn't know this, but there's a place.
+4758.40s: Let me see if I can find it.
+4759.60s: There's, yeah, here. So apparently in Star Wars, there's a series of spots. And I guess in one
+4779.36s: of them, Luke Skywalker, I think dies on like Star Wars rock or some shit, this thing right here.
+4787.12s: So this, this spot is what I'm about to show you guys and funny enough, we ended up getting there
+4794.40s: right around sunset. That wasn't planned. I enjoy Star Wars as like a casual fan. I don't know
+4800.32s: shit about it. But when we were going up to it, it's literally called like Star Wars rock. But
+4805.68s: this was an absolutely gorgeous, gorgeous spot. And you'll see where we are in a second.
+4813.60s: But this spot was absolutely captivating here. So you can see Mel and I here. And yeah, this giant,
+4826.40s: just this absolutely giant bluff hanging out with the sunset. There's a couple, this photo I like.
+4836.40s: I don't know why I just think this rock was so cool, like the lighting difference and stuff like
+4844.40s: that. And then I want to show you one other one, this one. So this was a panoramic, obviously,
+4854.40s: of the Star Wars rock thing. So the Star Wars rock is like right in here.
+4866.48s: Pretty neat spot. That one was like some glacial cut out, probably not as interesting to you guys.
+4873.20s: This one's pretty cool. So we stayed at this castle. We had a suite in the castle. We were actually
+4885.44s: trying to figure out the orientation as I look at this thing.
+4888.88s: Okay, so the fronts around the side over here. So we had a spot that's literally right behind
+4896.08s: the tree. Unfortunately, we had a spot that's like right behind this tree. It was like it's own wing.
+4900.96s: It was absolutely insane. I'd never seen anything like that in my life. What a absolutely novel. Yeah,
+4908.00s: here you go. Now you can see it. So this dark area is like it's own wing. So we were staying in
+4917.76s: that spot. So we kind of had like an entire view of like the lake and stuff, which is really cool.
+4925.36s: Vivek, did that make sense to you by the way about the idea of like being like you definitely
+4931.20s: can make money by holding options. But it depends far more on the approach, for sure.
+4939.68s: Tommy says pro also go through scans, good stuff. Yeah, definitely. A big part of what I try to do
+4951.04s: in there is really like tied together the entire practical application of trading. So we have a
+4957.28s: lot of like different support programs too, like the trading program where I put you guys into
+4962.16s: groups and build a syllabus for you to meet with each other on a weekly basis. I started offering
+4967.92s: now office hours so that there's time a couple of times a week even to just have like a direct back
+4973.76s: and forth conversation about whatever. But yeah, it's really designed to take like the theoretical
+4981.04s: court components of what I show you guys and to show like the practical application component of it.
+4987.44s: So this is an interesting thing that I learned I took Mel. I found this random ass thing where you
+4994.32s: can go for I'm not kidding, you can go for a walk with alpacas. And as we were going for the walk,
+5004.08s: the dude that we were walking with was explaining this thing. It's called a fairy ring. And it's like
+5008.96s: there's a lot of lore in Ireland around fairies and leprechauns. But that's the background of that
+5019.68s: kind of random. Okay, one of the last things I want to show you guys, this was one of the coolest spots
+5025.36s: that I think we found this. So right now you can see Mel and I, we are right there. So again,
+5036.72s: this is to give you some context of scale and scope. So that's us. This was one of the neatest spots
+5047.68s: that we found. This like little rock thing is completely detached. So it has its entire
+5054.56s: entire own like water flow thing going through here.
+5059.12s: Mateo says thinking about taking an online certificate on derivatives investing in either
+5063.44s: NYU or Wharton, they're about two months long, one or if they work the money. I think so. I don't
+5067.84s: know anything about them. But I think the education itself is worth it. Now you can do those kinds
+5074.16s: of things for free, right? Like you can do open courseware from MIT and take one of their
+5080.08s: derivatives courses or something like that. But one of the things to know is the vast majority
+5086.16s: of institutional places that you're going to take those kind of courses. It's not for retail traders.
+5090.88s: They're going to be talking about derivatives investing from the lens of like banking. It's not
+5097.12s: going to be or client management. It's not going to be derivatives investing from a retail traders lens.
+5103.76s: That doesn't mean it's not useful, but it's not like this direct application thing. Because I did a
+5108.96s: series on YouTube not that long ago, well, actually probably a while ago now, where we did open
+5114.64s: courseware options trading course. And it was exactly that. It was much more about like corporate
+5124.80s: and institutional implementation of derivatives versus retail trading for sure.
+5133.76s: So worth the money is going to be entirely contextual on what that means to you and what you
+5140.08s: think is worth the money. But yeah, this was a place called the candlestick. This is like a
+5146.56s: rock out in the middle of the ocean. This one was cool because we were literally fighting.
+5151.36s: We were racing against time. So you can see right now we're way over here. This was that rock.
+5157.60s: I was just showing you right. So this rock here is this rock that I'm kind of doing a big circle
+5164.00s: around. But you can see how dark this sky is on this side. So literally rain was very fast cruising
+5171.92s: in. It's like literally consumed this entire side. You can see Mel and I here. A little tiny specks
+5177.04s: on the coast. This spot was also crazy. There's Mel and I just we went for like a post in our walk
+5186.80s: like we typically do and it was really cool. These were like the roads the colors here I thought were
+5193.20s: pretty neat. More of the absolutely insane water is nuts. This one I just thought that the like
+5206.16s: the gaps in the rocks looked super cool. Bunch of these old ruins. Like there's these old churches
+5214.00s: and old ruins literally absolutely everywhere. Reese says, how's your mentor doing? If you don't
+5220.64s: mind me asking, don't mind at all. So the for those that don't know, this was a couple of weeks ago.
+5227.84s: The guy that got me even basically understanding of what investing was in terms of like compounding.
+5237.60s: I had been reading about like my grandpa, he had newspapers. So I was always interested in charts.
+5245.36s: I thought they looked cool, but I had no idea what I was looking at. No idea what investing was.
+5248.56s: No idea what compounding was. But that dude is the guy that actually taught me what investing was.
+5257.36s: This guy right here. So this is me back in high school. And I keep in general touch with him. We
+5265.60s: don't text like every day, but we text, you know, definitely every other week and you know, have
+5271.68s: probably a little more frequent than that. So I sent him a text on like a Tuesday and I didn't get
+5278.64s: a response back, which is rare. Normally he'll respond at least within a reasonable time frame.
+5283.84s: Then I sent him another text on Thursday. And he didn't respond. So then on Friday, I went to look
+5290.40s: to understand like the timeline between the text because I didn't know. And I saw that the text I
+5294.72s: sent on Thursday actually was green. He has an iPhone. So the fact that it was green told me that
+5299.68s: the phone was dead. The fact that he didn't respond. And the fact that the phone was dead is
+5306.56s: very wrong. So I ended up calling the police to schedule a welfare check because he's in New
+5313.52s: York, I'm in California. And they found him on the floor. And he had been on the floor for like
+5320.56s: three days. He was like really close to dying. He was completely dehydrated. He was hypothermic.
+5328.64s: So he's in his 70s. He's not that old, but he has cancer. So they're working on, he's on, he was
+5334.40s: on like a trial drug that messed with his blood pressure a lot and stuff. So anyways, they
+5339.76s: ended up bringing him to the hospital. They start running at a bunch of tests. The dude survives
+5344.00s: fucking magically. And he, we think that he had a TIA, which is a small stroke.
+5354.00s: When he was upstairs in his house, he went downstairs and then we think he had like a full
+5359.04s: on stroke after that. So he couldn't talk much. He was still there. Like he could understand
+5366.48s: what was going on around him. But he couldn't talk much. He obviously couldn't walk or anything
+5371.76s: like that. And he just was brought back home like two days ago. He can walk around a little bit
+5378.72s: by himself. Now he's getting stronger. He's not like a fall risk anymore. He can talk. So he's
+5385.68s: recovering insanely quickly. So yeah, no, I don't mind you asking at all. I appreciate the, the
+5392.56s: thought he's doing incredible. It's absolutely insane to think about the fact that this dude almost
+5399.92s: literally almost died just on the floor. And it was like a series of small little clues that
+5406.64s: led to me thinking, you know, something was wrong and decided to check it out. This was another
+5411.84s: really cool castle that we got to explore. This one we got to like actually go in and like go
+5417.12s: upstairs and stuff, which is really fun. Then this place was really neat too. There was like this
+5424.88s: city that has like this little whatever government building was. But then there's a castle right
+5430.88s: across from it, which I'll show you here. This whole thing is an old castle that day literally
+5436.88s: just built a city around, which is really, really neat. You can see like this is towards the end
+5441.52s: of the trip. There's a bunch of weather rolling in. This I thought was interesting just from all
+5448.88s: these different house colors. They have a bunch of just giant rolling open fields. This was our
+5458.88s: last night. We literally stayed in a penthouse. So this entire top floor was hours and it literally
+5468.96s: had like a small putting green, which is just so comical. And then right across from us, obviously
+5475.68s: was just like this really cool bay. That was interesting stuff in it.
+5482.48s: This this I just thought was captivating because of all the different colors like the little
+5487.20s: squiggly lines and shit, the clouds. I thought that one was pretty interesting. And then there's some
+5494.24s: evening, evening photos of the sunset. This one I liked because there's like the glow of the
+5501.68s: sunset on the church. The purple in the sky was crazy. This was really neat. This fucking boat
+5510.16s: that was just sand barred. But then obviously getting like the reflection of the sunlight and all
+5514.96s: these little spots here was really, really ready. And then this is the bay. This is the hotel
+5522.48s: that we're staying at. So literally this entire it was the top floor. This entire top floor was
+5527.84s: hours, which was nuts. It was super, super cool, so obnoxious in terms of like the size of the
+5533.92s: place. We like spots that are that have really cool views. That's what I look for. And the view
+5540.80s: from that spot was really pretty. And then there's this like as the sun was setting, I took a
+5548.72s: panoramic. I actually like this panoramic a lot. So yeah, those are really some of the drone
+5556.72s: photos. I have a bunch of drone videos. I make like a little video for us just to kind of remember
+5563.84s: the trip and stuff. It's like super fun. But yeah, that's that's what it looked like. It was like
+5572.08s: a really, really solid time. We enjoyed it a lot. Very, very fun to explore. We literally drove
+5579.20s: like 1400 kilometers. Whenever we do these trips, we drive a ton so that we can see a lot. We
+5586.24s: literally stay in each hotel one night. And then it's on to the next. And it's just this giant loop
+5593.84s: that we did. That was super fun. GC says, what are you a professional photographer to these pics
+5600.48s: are amazing. I appreciate it. I am a complete amateur. But I do find like flying the drone is really
+5606.88s: fun because it gives a completely different perspective, which is just really, really interesting.
+5612.64s: It allows you to experience places in a way that you otherwise would never be able to experience.
+5618.32s: This is especially a place like Ireland, the drone, obviously, was cool to capture it. But places
+5624.48s: like Norway, Iceland, Alaska, the drone there is like clutch because it literally lets you see
+5632.56s: stuff that you functionally could not get to otherwise. That wasn't really so much the case
+5637.92s: in Ireland, like most of the spots reasonably you can at least see part of.
+5644.64s: But definitely not the case in those other places. Those other places like you literally can't get to
+5650.32s: some of them. So sweet. Awesome. Well, it was absolutely stellar catching up with everybody.
+5661.92s: I'm going to work on refining down the series for this for the next few weeks at least.
+5670.48s: So if you have any input based on what I was showing you before, even if you don't have something
+5677.36s: right now, but it's something that you kind of think about a little bit later, I absolutely would love
+5682.16s: to know. My goal is to make this usable, but I want to really focus on the foundational element of
+5694.80s: this. The main reason for that is just because I think having the right mindset and the right
+5702.08s: general approach to what you're doing is absolutely so important because there's nothing else that
+5710.00s: will matter as a trader if you don't have this stuff filed in. So that's the idea.
+5717.20s: All right, gang. We are officially back. We were back to the full production schedule. So tomorrow
+5723.28s: we will have a GME stream get caught back up there. Share some updates on the covered strangle. I
+5730.56s: made a series of adjustments in that for GameStop. Sunday will be trading prep for the pro members.
+5737.60s: And then next week we are back on full cadence. So great to be back. Great to see everybody.
+5742.72s: I love seeing familiar names. There's a lot of people here that have literally been around for,
+5747.84s: I mean, years. So there's people here that I actually like feel like I know to a degree, which is
+5752.96s: kind of cool. The last thing I will mention is the channel is closing in on 30k, which is so awesome.
+5762.56s: But I promised you guys a specific stream for when we hit 30,000. So I will grab the link to that
+5775.92s: because I'm also going to do a giveaway for the when we do hit it. So there will be a specific
+5783.76s: stream and then also going to offer to connect with somebody and essentially have a one on one
+5792.00s: with them, which I offer limited availability for that for like a really small number of people.
+5798.24s: But every once in a while, I like to just connect with somebody random and you know, see what we can,
+5803.36s: what we can do. So we are on our way almost there. As always, if you need anything, just hit
+5811.36s: your boy up. Be an outlier. Be a little later.

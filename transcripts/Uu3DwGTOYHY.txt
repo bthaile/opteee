@@ -1,0 +1,260 @@
+0.00s: What's up to all the outliers, Eric here.
+2.80s: I got a video for you on using implied volatility
+6.56s: in your options trading.
+8.36s: And then I also have a couple interesting uses
+11.04s: that you might not know of for implied volatility.
+14.44s: So let's dive straight over and get into it.
+17.52s: Now the very first thing is you have to promise me
+20.08s: when I start flashing this first piece up
+22.44s: that you're not immediately gonna run away
+23.96s: because it does include a formula,
+26.12s: but you have to trust me.
+27.68s: We'll get through it.
+28.48s: I'm not gonna spend a bunch of time on the formula.
+30.40s: I just wanna talk about implied volatility,
+33.84s: implied volatility percentile and implied volatility rank
+38.36s: because traders use all of them interchangeably
+42.28s: and they're all different.
+44.04s: So it's important to understand the difference between them
+47.16s: because in my opinion,
+48.84s: one of them is far more useful than the other two.
+53.12s: So first, let's start with the heavier one.
+56.40s: Again, don't let the formula scare you, stand your ground.
+61.32s: There it is.
+62.16s: It's actually not that bad.
+63.56s: So if you're familiar with the black shul's model,
+65.84s: that's what you're seeing here.
+67.52s: We're looking at how you calculate implied volatility
+70.72s: for calls and puts.
+72.00s: Again, I'm not gonna go too far in detail here.
+74.44s: I'm just throwing it in there
+75.60s: for the people that are interested in it.
+77.56s: Now, that part aside,
+79.92s: let's take a look at what implied volatility is.
+83.52s: In short, it simply is a forward looking projection.
+88.68s: So it is when the market attempts to forecast the future.
+93.68s: We wanna know how much variance we expect to see
+98.04s: in the price of an underlying.
+100.00s: That's all implied volatility is.
+102.12s: Implied meaning forward looking.
+104.88s: It's a projection, which is different
+107.08s: than historical volatility, which is, as you guessed,
+111.40s: previous in nature.
+112.48s: It is what actually happened.
+114.84s: So when we're trading options,
+117.32s: we really care about implied volatility.
+120.08s: Now, there is an argument to be made
+121.96s: in one of my favorite strategies, actually,
+124.56s: is to track the historic variation
+128.32s: between implied volatility and historic volatility
+131.40s: to see how over-understated it is.
+134.44s: That's actually a very useful metric.
+136.52s: But that part aside, for options trading,
+139.48s: implied volatility is really the main show in town.
+143.08s: Otherwise, historic volatility really applies
+146.28s: more to the underlying itself, the stock,
+149.68s: not so much for options.
+151.76s: Okay, so now that we know what implied volatility is,
+155.16s: why do we care about implied volatility percentile
+159.60s: or implied volatility rank?
+162.08s: Well, as a raw number,
+165.20s: implied volatility can be very misleading.
+168.08s: And I will show you an example right now.
+171.88s: Let's take a look at HUT, which is HUT 8 mining corp,
+175.44s: and a stock that is absolutely given me the hardest time.
+180.00s: But anyways, the implied volatility in here is 490.17%.
+186.44s: 490.17% is that high or is that low?
+192.84s: It might seem high because it's a high number,
+195.60s: but is this actually high for HUT?
+200.00s: If we look at implied volatility by itself,
+203.00s: it's very difficult to answer that question.
+206.16s: Let's switch over to Apple.
+208.16s: Apple's implied volatility is 46.08%.
+212.84s: Again, I ask the same question.
+214.44s: Is that high or is that low relative for Apple?
+219.00s: When we're looking at Apple at that point in time,
+222.16s: do we know if premiums are juiced up
+225.00s: because implied volatility is high
+226.96s: or because implied volatility is low?
+229.40s: You can't really tell with implied volatility.
+231.48s: That's exactly what I'm kind of explaining here.
+234.32s: When we look at implied volatility as a raw figure,
+236.48s: it's not that useful because it doesn't really give you
+239.56s: any context.
+240.92s: You can have a stock like HUT that maintains implied volatility
+245.80s: that's in the hundreds over periods of time.
+248.84s: It's very normal for HUT,
+250.28s: whereas Apple is a little bit different.
+252.36s: So we use things like implied volatility percentile
+255.84s: and implied volatility rank to give us context.
+259.20s: Now, what's the difference between the two?
+261.08s: And which one is better, most importantly,
+263.84s: the difference is in the way that they're calculated.
+266.52s: Which one is better in my opinion is very simple.
+269.32s: It is implied volatility percentile hands down.
+272.00s: Let's find out why.
+273.48s: Implied volatility percentile simply takes the number
+277.00s: of trading days below the current IV
+281.32s: and it divides it by 252.
+283.44s: So it gives you a scale of how many days were below
+287.40s: the current implied volatility over a year essentially.
+291.08s: When we look at implied volatility rank,
+293.56s: it is the current implied volatility minus the 52-week IV low
+298.96s: divided by the 52-week IV high minus the 52-week IV low.
+305.00s: What are you seeing in the difference between these two
+308.36s: formulas?
+309.52s: And I give you a pretty big hint here.
+311.96s: It is this right here.
+315.40s: IV rank exposes you to extreme outlier skew.
+320.48s: Now, this isn't that prevalent when the markets are relatively
+324.68s: stable or going through a correction like we are right now.
+327.64s: Today is the 11th of May.
+329.80s: Now, during the COVID drop, after we experienced the COVID drop
+334.60s: and we had implied volatility run to essentially levels
+338.96s: that a lot of stocks hadn't seen in literally a decade plus,
+343.92s: that movement skewed IV rank for an extended period of time
+350.40s: because that 52-week IV high hung out there
+355.88s: until 52 weeks rolled by and that data was completely clear
+360.20s: down of the calculation.
+362.40s: So implied volatility rank is definitely
+365.28s: more susceptible to skew.
+367.44s: Implied volatility percentile, much less prone to experiencing
+371.92s: that same skew.
+373.28s: So now, I hope we have a general understanding
+376.08s: of implied volatility, implied volatility percentile,
+380.80s: tough one there, and then implied volatility rank.
+383.64s: Now, let's talk about some of the uses for implied volatility,
+387.84s: which I will refer to again, just like is every other trader,
+390.64s: is whichever one we're looking at.
+393.16s: So we can use implied volatility to gauge sentiment
+397.28s: as well and most importantly, in my opinion,
+400.40s: for strategy selection.
+401.84s: Let's look at it an example, gauge sentiment.
+404.92s: Now, if knowing what we know now, we come over here and we say,
+408.68s: okay, the implied volatility percentile
+411.08s: in the apple is 46%.
+413.32s: The implied volatility percentile, which this is wrong,
+416.72s: this is implied volatility rank,
+418.80s: think or swim flags this wrong, very frustrating,
+421.96s: but it's saying that implied volatility,
+423.96s: current implied volatility rank is 77%.
+427.24s: If we want to know the implied volatility percentile,
+430.04s: what that actually is, I use a think script so that I can see it.
+434.20s: And you can see the delta between the two even now.
+437.12s: Implied volatility rank 77%,
+439.32s: implied volatility percentile 98%, very different.
+443.64s: So anyways, now we look at apple
+447.68s: and we can gain some pretty helpful information.
+451.40s: If we're looking at strategy selection,
+454.24s: we can immediately use things like implied volatility percentile,
+458.12s: actual implied volatility percentile, that's my preference, IVP.
+462.24s: We can use that to inform how we want to play something.
+465.92s: For example, if I wanted to play apple to the upside here,
+470.52s: I'm bullish.
+472.00s: I can let's pick two traits.
+473.64s: I can either buy a call or I can sell a put.
+476.36s: How do I decide between the two other than the structural differences
+480.64s: between the trade?
+482.04s: The main difference differentiator for me
+485.00s: is actually implied volatility percentile
+488.08s: because if we buy a call and implied volatility contracts,
+496.00s: that hurts the call.
+497.92s: It means that we need to be even more directionally correct
+501.52s: in order to make money.
+502.88s: Implied volatility directly impacts the premium of options.
+506.28s: As implied volatility increases, premiums increase,
+509.96s: as implied volatility decreases, premiums decrease.
+514.04s: So with that known, if I see something like this
+517.60s: where I'm bullish in Apple and I see implied volatility percentile
+521.84s: is 98%, I am going to drift to short premium strategies.
+527.08s: That's not to say that implied volatility
+529.96s: cannot remain elevated or even increase higher.
+534.24s: It most certainly can, but it's less likely to do that.
+539.00s: So the higher we see implied volatility percentile,
+541.84s: the more I tend to drift to short premium strategies
+545.40s: for that exact reason.
+546.92s: Now, the other thing to keep in mind here
+549.08s: is implied volatility, generally speaking,
+552.40s: is one of the more mean reverting aspects of the market.
+557.00s: So it's just a higher statistical probability
+560.48s: that we will see this revert down to a mean.
+563.84s: So because of that, when I see implied volatility
+566.08s: percentile at extremes, either to the low or high side,
+570.16s: I use that to make inferences about the strategy
+573.84s: I'm going to select.
+575.52s: If this said implied volatility percentile was zero,
+579.52s: that would tell me it is more likely
+581.68s: that implied volatility percentile
+584.04s: or implied volatility as a raw figure
+585.72s: is going to expand in the future.
+588.88s: So because of that, I would lean towards a long premium strategy
+593.44s: to take advantage of that implied volatility expansion.
+596.60s: It's a way for us to kind of stack probabilities
+600.04s: in our favor beyond just a directional assumption.
+603.40s: So I always lace in implied volatility
+607.28s: in my strategy selection.
+609.00s: I typically will pick direction first
+611.16s: because direction will absolutely overwhelm implied volatility
+616.16s: changes, but if we can get them both to work together,
+619.20s: it's very useful.
+620.52s: Now, the last thing I want to show you
+622.72s: is using implied volatility as a gauge for sentiment.
+626.84s: Two ways we can do that the first way.
+629.12s: If we see implied volatility in this sense is very high,
+633.36s: it means that the market is pricing in a lot of volatility
+638.24s: to the premium of the options.
+640.00s: So what we're understanding is that there is whip expected.
+643.80s: We are expecting larger price variance.
+648.00s: So when we see implied volatility is high,
+650.52s: the very first thing we should think is premiums are high.
+653.48s: The second thing we should think is prices
+656.24s: are going to move in a wider range
+660.04s: as implied volatility increases.
+662.44s: Now, the other way we can use it to gauge sentiment
+665.08s: is a really useful tool.
+666.68s: Over here on the right hand side
+668.20s: and thinkorswim, you can see all of these percentages.
+672.32s: This is telling you the implied volatility for that month.
+677.32s: And the other thing that you'll know is this plus and minus.
+679.88s: This is actually doing some of the work for you.
+682.28s: And it's telling you the expected range
+685.12s: based on that implied volatility for the month.
+687.60s: Now, if we scroll down through here,
+690.88s: you'll notice a couple things.
+692.24s: Typically, as we start to go further out in time,
+694.92s: implied volatility starts to decrease.
+698.12s: So we see 60% upfront, 50%, 48%, 45%, 44%,
+704.44s: 45%, 41%, 48.71%.
+709.40s: What's going on here?
+711.20s: Why would we be generally declining
+713.44s: but then all of a sudden rise up about seven points?
+716.56s: Well, you can start to glean a lot of information from this.
+720.76s: As in, there's probably earnings being priced into this cycle.
+725.48s: So if you want to trade Apple
+727.52s: and you don't want to be exposed to earnings,
+730.40s: there is very likely an earnings event around this month.
+733.48s: It's not announced yet,
+734.96s: but if we think about it logically,
+736.76s: it makes total sense because earnings
+738.80s: just announced the end of April.
+742.04s: So if we start to think about where earnings
+744.72s: is likely to be next quarter, three months out,
+748.04s: that puts us right around this ballpark.
+750.96s: And as we get more explorations around this time frame,
+755.28s: because there's only so many expiration cycles offered,
+758.04s: so as we get closer to this, you'll see whichever week
+762.84s: earnings will be reported
+764.12s: and will have higher volatility
+765.72s: than the other surrounding weeks.
+767.32s: So we can use implied volatility
+769.92s: to do a ton of different things,
+772.32s: as well as figure out when earnings is probably going to be.
+775.36s: So if this video is helpful
+776.92s: and you enjoy this kind of content,
+778.20s: make sure you subscribe to the channel,
+780.28s: like the video so you can help us grow
+782.84s: and then comment anything in here that you found interesting
+785.72s: or if there's any other topics that you want to dive into.
+788.20s: Looking forward to catching you guys next time,
+790.08s: continue being an outlier.
+792.16s: See you guys later.

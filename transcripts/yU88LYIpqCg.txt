@@ -1,0 +1,110 @@
+0.00s: You bought a call option in a couple days, the stock moves in your favor, meaning it goes up,
+5.76s: and yet you're losing money. This happens literally all the time, and it's easily explained if you
+13.12s: understand where to look. So the goal of this video is to walk you through this exact scenario where
+18.88s: we place a trade. It does what we want, and yet we still lose money. And the goal at the end of
+25.52s: the video is you will have a much better understanding of how to structure trades, but then also how to
+31.76s: analyze your trades to figure out what's going on so that when you place future iterations of those
+38.08s: trades, you can make sure that you're setting it up in a way that more directly aligns with your
+43.76s: goal because nothing sucks more than being right and being wrong at the same time losing money.
+50.48s: Super frustrating. What's up outliers? Welcome back to the channel. Let's get into detail. We're
+57.12s: going to use this as an example in a little bit. Here we are looking at Nvidia. This is actually
+61.76s: using thinkorswims on demand function. And this is back on 13 December of 2024. So not that long
+69.12s: ago. And Nvidia was trading at 135. It's been trending up for some time. It had a little bit of a
+75.76s: pullback after the dividend. And the idea here is maybe we think it's going to go back up. We're
+81.92s: going to play out that scenario. Pin that in your mind. Now, first, we need to talk about the
+88.32s: profit factors of an option. And in order to do this, we just need to revisit our friend very,
+97.04s: very quickly. The black shoals, Martin model. And the reason why we need to revisit this quickly is
+104.88s: because you need to answer some questions related. Not just kidding. You just need to know what the
+109.28s: primary inputs are into an options price. So you can see if we take a look at the model, we need
+115.92s: things like stock price, strike price, time to expiration, DTE. We need the risk free rate
+121.76s: volatility and any relevant dividend yield. For options, this right here gives you insight into
+130.40s: what things impact the value of your options, literally all of these. So we understand that the
+137.36s: relationship between our strike price and the stock price will impact the price of our option.
+144.16s: We know that the days to expiration impacts the price of our option. We know that the risk free
+150.08s: rates, especially for longer dated options, we're not going to go deep into row in this video because
+155.12s: it's typically not a massive factor, but it is one to be aware of volatility directly impacts the
+161.60s: premium of our options and then dividend yield also does. So if we just eyeball some of these,
+168.08s: we can come up with some pretty quick ideas as to how these might make a differing impact on our
+176.24s: option, depending on what happens and in what scale. So there's a really neat thing we can do to
+182.40s: better understand this and it starts with asking ourselves a few basic questions.
+189.44s: First one is how does direction impact my trade? So if we go back over here for the start of our
+198.16s: example, we're eyeballing out in 27 December, so a two week trade, we're looking at buying the
+205.60s: 139 calls here. So in this hypothetical, we think Nvidia is going to go up and we're buying
+213.84s: calls that are about a 40 delta. This allows us to benefit from the expansion of price and it allows
+222.72s: the options to compound pretty quickly if we're correct. So if we have a long call, well, how does
+230.32s: direction impact my trade? The beautiful thing about options is that there are specific tools
+237.20s: you can use to measure the impact of different market forces. So for example, for us to take a look
+245.68s: at directional impacts, we can use delta, we can use gamma, and then we can use something like speed.
+252.32s: So all of these tell us how the option is going to behave as the underlying price moves. So
+260.24s: delta tells us the rate of change of premium per one point move in the underlying. We go back to
+266.00s: this. You can see again, our delta is 40 cents. That means if Nvidia goes up by a dollar, the
+272.72s: the premium of these options is going to gain by 40 cents. If it goes down, they're going to lose 40
+277.12s: cents. Gamma obviously tells us the rate of change of delta and so on and so forth. We're not going to
+281.76s: go through all of these. I actually have a video that goes through the Greeks in detail. You can
+285.76s: explore all of this there. But by asking ourselves these questions, we can understand if we find ourselves
+294.40s: in the scenario where the trade does what we want, but we're not showing a profit, we then can
+300.72s: identify why it happened. So let's do exactly that. Let's say that we again, on 13Ds, we say,
+307.44s: we want to buy these calls because we think that Nvidia got pushed down a little bit too far,
+312.40s: and we think it's going to go up. Okay, so now let's fast forward time. We can start by going maybe
+319.60s: to Christmas Eve. We're not going to go all the way to expiration because we know right at expiration,
+323.92s: the options are going to be probably decaying away really fast. So we're actually giving this the
+328.72s: benefit of the doubt in order to make the move. And let's pop over to the chart and let's see what
+334.24s: happens when it uploads. All right, so you can see this is where we entered on the 13th,
+340.32s: and then this is where it's trading right now. And we'll take a look at what the actual move was
+346.08s: in just a second. You can see that it did go down, but then it did go up, and it ultimately moved
+351.92s: in our favor. Again, we got in around 135 down here, and it's trading right now at around 140.
+358.96s: So it would have moved in our favor about 4%. In this case, we were directionally correct.
+364.16s: This did exactly what we thought it would do, meaning go up. It went down first, but it ultimately
+370.64s: went up. So we should be making money, right? Well, they can kind of tell by the
+375.20s: premise of the video where we're not going to be making money. Let's take a look at the current
+378.96s: price. It's currently trading at 27627, and we had gotten in at a slightly higher price.
+388.48s: So let's see what happened here. Let's take a look next at the trade that we entered. We got in
+397.36s: at around $2.87. So this is what it looks like at the time of entry. We had a trade with the delta
+406.00s: of 0.4 gamma 0.04. So this means for every dollar move, our delta is going to move by 0.04,
+412.16s: and then it'll obviously update as it moves around gamma changes. Data, we're going to lose 14
+417.28s: cents per day. Vega is 11 cents. So as volatility goes up by 1%, we gain 11 cents. If it goes down,
+426.64s: we lose 11 cents. And then obviously as each day passes, we lose 14 cents. Our total premium here
+431.92s: is $2.87. And I just showed you the scenario where we know we're losing money. And what happened?
+440.08s: Well, the stock moved in our favor again, around 4%. We had a five in a quarter point move,
+447.28s: in our direction, yet the trade is showing a loss of $10. So what went wrong? What happened here?
+457.04s: Well, the first thing that we can tell is we can do a little bit of math. If we do some really
+463.28s: basic math, and we essentially say, well, 11 days past that loses us $1.54, a five point move
+471.04s: collecting and paying attention to both delta and gamma, assuming a linear rate, which we know is not
+477.36s: true, then we have essentially $2.40 of profit. So why would this have lost money? Obviously,
+484.32s: we would have gained 2.4 here, lost 154 here. Well, here's the rub. Data is not linear. Gamma is not
+492.48s: linear. Neither is Vega. So what ended up happening with this individual trade is a compilation
+501.84s: of the underlying moving against us in the beginning, which then requires a larger move
+507.76s: in order for us to get back to break even and then into profit, as that's happening, that's
+512.64s: consuming time, which theta decay, if you'll recall, accelerates as we get closer to expiration.
+519.76s: That's actually one of the Greeks I showed you before. So if we rewind this, we entered on the 13th,
+525.76s: let's go to the 17th. And let's just see how our theta decay and really the rest of the Greeks
+534.56s: will update. And again, for reference, we started with theta at 14 cents. So let's see what theta is
+543.36s: now. Amazing. Theta actually decreased. It's down to 11 cents. Why did theta decrease down to 11
+551.36s: cents? Well, it's because the underlying at this point in the trade moved so far against us
+556.24s: that there's literally less extrinsic value. Notice the options only worth 83, 84 cents now.
+561.60s: So because it's further out of the money coming up on expiration, theta actually has to slow down
+567.20s: because there's just not that much extrinsic value left. So now let's fast forward one more time.
+572.80s: We'll go to the 20th and let's see what theta looks like here. And what I'm showing you is to have
+581.84s: a better understanding of how the life cycle of the option looks so that you can take better care
+589.76s: when you're building your trade idea because what most options traders do and they say, well,
+594.72s: I think this move is going to happen sometime in the next two to three weeks. So then they pick
+598.80s: an expiration that directly aligns with that, which is a massive mistake. So let's see what it is now.
+604.72s: We have the 139s and we can see that we recouped some value, but take a look at theta decay now.
+611.84s: It's actually gone up. Even though there's less total value than what we started with, theta is now
+619.52s: at 16 cents versus 14 cents. Why? Because we're getting closer and closer to expiration. Theta decay
+625.52s: right now is accelerating massively. So now let's fast forward just one more time. We'll go all the way
+633.84s: to one day before expiration, the 26th. And we'll see what our option looks like leading into
+642.56s: expiration. And you'll notice again, a really, really important function because the option at
+648.48s: this point is going to look a lot healthier. We're actually getting really close to being in the money.
+655.12s: So let's see what it looks like now. And here's our option. It is one strike in the money.
+661.52s: It's barely in the money. But if we take a look at the theta decay, it's now at 37 cents.
+669.20s: So it's massively high as a percentage of the total value of this option.
+675.36s: So going back to this question, you were right. The underlying moved in your favor,
+682.40s: about 4%, but you still lost money. You lost money because of these other profit factors. And the
+688.40s: fun fact, I didn't get into it to not go too deep in the weeds, but Vega actually helped you
+693.84s: in this case, because volatility expanded as the underlying was going down, but it didn't do enough
+699.44s: to offset the directional move. So this is why we need to build trades while carefully monitoring
+706.72s: the Greeks, not just at the point of entry, but over the life cycle of the trade. And I have a video
+711.60s: that walks through all of that in detail. We'll throw it in the notes below. Build trade smarter
+717.76s: so that you're not in the scenario of being correct, but losing money. As always, if you have any
+722.80s: questions, let me know. Be an ally. See you all later.

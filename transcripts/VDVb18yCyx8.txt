@@ -1,0 +1,234 @@
+0.00s: Stop over emphasizing probability of profit.
+3.84s: It is an important part of a more important equation that most traders don't pay attention
+9.56s: to.
+10.56s: And it's unfortunate because you can have a very high probability of profit and still
+16.12s: a losing strategy, meaning as you deploy that strategy, you're not making money, even
+21.40s: you have a 90% win rate like a lot of people look for.
+25.64s: It is a way to see, shade our egos.
+28.52s: We like high probabilities of profit.
+30.88s: We don't like being wrong.
+32.28s: Who doesn't like a good old winning trade?
+34.52s: The problem is there's more to this story than just that one piece of the broader equation
+39.56s: that is expectancy or expected returns, which I'm going to walk you through now.
+44.48s: I want to explain what they are, how you can use them as a trader, how to create an
+48.44s: excel tracker for it, and then how to interpolate the results so that you can optimize a strategy
+53.64s: and make more money out there.
+54.92s: What's up, everybody?
+55.92s: Eric here.
+56.92s: Welcome back to all the outliers.
+57.92s: We're going to get a look at the expectancy.
+59.08s: Like I said, pop is popular.
+61.32s: Look at me go over here with my jokes.
+64.00s: It's part of the puzzle and you can see this parabolic rise in probability of profit.
+69.18s: It's actually comical.
+70.84s: But the issue with it is it only gives us a small piece of the broader, more important
+76.16s: puzzle, which is expectancy.
+79.68s: Expectancy includes probably profit.
+81.52s: It's one of the variables we need to input into the formula.
+85.16s: But let's talk very quickly about expectancy.
+88.54s: This is from statistics.
+90.12s: It doesn't just apply to trading and applies to anything really.
+93.84s: And we just modify it slightly for trading and it quantifies performance.
+98.36s: It's a way for us to codify the output of a system and see how that system will continue
+105.00s: to perform into the future.
+107.00s: So that's where we get these two different views, historic and implied.
+111.28s: We can see how a system performed or we can look forward and see how a system will perform
+117.36s: going forward.
+118.86s: And both of those are really important pieces to this.
+121.48s: So what is the fabled equation?
+124.08s: How crazy is it?
+125.32s: As you can tell, it's unbelievably easy, very simple.
+129.28s: We're going to take our win rate as a percentage times the average win.
+133.80s: We're going to add the loss rate times the average loss.
+137.24s: That's it.
+138.24s: There it is.
+140.92s: There's nothing to it.
+142.20s: But for whatever reason, people aren't taking this step.
+145.24s: They're looking at probability of profit.
+146.76s: They're thinking that it's good enough and they're forgetting the rest of this equation.
+151.26s: And let me show you why this is so important.
+153.52s: Here I have a 100 trade sample system and we have 85 winning trades, 15 losing trades.
+160.04s: So an 85% win rate.
+162.44s: Our average win is $30.
+164.16s: Our average loss is $170.
+166.50s: And let's take a look at the expectancy here.
+168.76s: What is that number to you?
+170.08s: It's to me, it's zero.
+171.88s: It means that you've won 85% of the time.
+175.12s: But because of the rest of the variables in this equation, you make nothing.
+179.08s: Actually, you would lose money once you add in commissions and whatnot.
+182.64s: So this is my point.
+184.44s: You can have a really strong win rate.
+187.40s: But if you do not have a grasp on expected profit, you could literally just be losing money.
+194.40s: Now where do we get this information?
+196.28s: Where do we get our winning trades, our losing trades?
+199.60s: You get it from your trading log that you have, right?
+203.44s: That's tracking the performance of what you have written down in your trading plan,
+208.80s: which you surely have, right?
+212.80s: You get my point here.
+214.44s: Without those two pieces, a trading plan and a trading log, one, without a trading plan,
+219.24s: you're not even taking responsibility for what happens.
+221.56s: You're just slinging trades and hoping something works out.
+224.60s: The bigger problem with that is what are you going to optimize?
+227.76s: That's the next part of this video is I'm going to walk you through how to build this
+230.56s: very quickly and then teach you how to optimize it.
+233.76s: But if you're not going to, if you don't have an existing system to optimize, there's
+238.12s: nothing to optimize.
+239.64s: So the very first thing is down in the video description below, I'm going to throw a link
+243.88s: to a video on trading plans and trading logs that will walk you through how to create
+248.44s: them.
+249.44s: The reason why it's so important is because as I talk about adjusting and optimizing
+253.60s: these strategies, we have to understand the impact that it will have.
+257.80s: So for example, let's say we change this system just a little bit and our average win goes
+263.68s: from $30 to $35.
+267.12s: What just happened here?
+269.04s: Well, we now have a positively expectant strategy, but is it that simple?
+275.68s: It might be that simple.
+277.00s: It might not be.
+278.00s: And what I mean by that is typically when we have an average win or an average loss and
+284.08s: we start playing with those numbers, typically these numbers will change the number of
+290.12s: wins and the number of losses.
+292.44s: So it's important for us to be able to look at our trading plan and our trading log and
+297.72s: say, okay, if instead of taking these down at $30 profits, I let them run to $35 profits.
+304.16s: Maybe you just haven't thought to do that before and you were just being super wasteful
+308.52s: and that's an easy win and none of this changes.
+311.44s: That would be great.
+312.76s: What's more likely to be the case as you have an optimized strategy and we're clawing
+317.64s: our way to optimize just a little bit further is as we let this win rate run a little bit,
+324.52s: then we're going to start to see maybe some more losing traits.
+328.28s: And that's important for us to calculate because then we need to understand the trade
+331.84s: off.
+332.84s: If we start raising our win rate by $5 and we only add two more losing trades, are we profitable?
+340.08s: This calculator will show you that.
+342.16s: So there's a few broad concepts I want to share right now.
+346.16s: I run my expected expected return by strategy.
+351.48s: This is how I've been so successful this year in 2022 when the markets down 18 to 20%
+357.84s: most of the year, I'm walking out at a tidy profit and it's because of this because I was
+362.84s: looking at systems that worked in applying those and the systems that weren't working, I wasn't
+368.72s: using them anymore.
+370.28s: It allows me to rotate into what's working for the individual market environments.
+375.56s: So let's talk really quickly how to build this and then I will walk you through how to optimize
+381.28s: it.
+382.28s: So winning trades, losing trades again, this should be pulled directly from your trading
+386.16s: log which hopefully you sincerely do have if not, they're easy enough to build, but
+390.88s: this is where we're getting this very first figure, your win rate and your loss rate.
+398.52s: We're going to take winning trades, losing trades, that gives us our total trades.
+402.56s: Then to figure out your win probability, you're just going to take your winning trades divided
+406.60s: by your total trades.
+408.84s: And then for your losing trade probability, you're going to take your losing trades, the
+413.20s: number divide that by your total trades.
+415.36s: That's how you get these percentages.
+416.92s: If you wanted, you could just take 100% subtracted by this same, same, same, but the point
+421.20s: being that's how you get those two figures.
+423.68s: Then the average win and average loss.
+425.32s: Again, this is when having a trade log becomes super handy.
+427.92s: I have it auto calculate in Excel for me, but if you don't, you go through these 100 trades.
+433.40s: You put them in Excel or whatever tool you want to use or if you want to do it by hand,
+438.44s: which I don't recommend because it's very error prone.
+441.08s: But then you figure out of the winning trades, what was the average win size of the losing
+446.80s: trades?
+447.80s: What is the average loss?
+450.44s: Once you have that, you can make this right here, expectancy done.
+454.88s: That's all there is to it.
+456.04s: Now the expectancy ratio just turns this into division as compared to addition.
+461.84s: That's it.
+462.84s: It just gives you another way to look at the same information and then the our multiple,
+466.96s: this is just telling us what is our profit divided by risk?
+472.14s: What is our risk multiple?
+473.44s: That's where our multiple is.
+475.16s: And you could view that a lot of different ways.
+476.60s: I'm not going to go into that into this video.
+478.20s: It's less important.
+479.20s: Really what I want to highlight here is expectancy, not even expected ratio.
+482.84s: Don't worry about that.
+483.84s: Just worry about expectancy right now.
+485.36s: What we want is this number to be as high as possible.
+488.20s: We want expectancy to go up, up, up.
+490.84s: So in this case, by letting our wins run a little bit more, our expectancy went up by $4
+496.44s: essentially.
+497.44s: So that means that as you run this system, this is what you can expect to make.
+501.88s: Now a couple things per trade by the way.
+504.44s: Now a couple things to think about as we're creating these kind of structures.
+510.28s: The historic looking data is one thing.
+513.00s: The implied looking data is slightly different.
+515.16s: You can imply how systems will work going forward.
+519.92s: You can just increase the sample sizes based on the percentages of that specific strategy
+524.08s: that you're running.
+525.28s: You can say, okay, on average, I trade this this many times.
+528.80s: And if I dump more trades into this, so instead of using 85 and 15, you already know your
+535.18s: win and loss probabilities, you just throw in a bigger number and you're saying, if I
+538.36s: continue doing the same exact thing, this is what I'll get.
+541.92s: So it's a really useful way to forecast things out, but you have to remain sensitive to changes
+547.84s: because it's a forecast.
+550.20s: The underlying circumstances will vary a little bit or a lot of bit and that can really
+554.80s: impact this.
+555.80s: So it's important to continually update these as you go along.
+558.72s: So you have the best picture available.
+560.32s: Last thing, let's talk about optimizing this.
+563.48s: As you look at this sort of layout and we're using expectancy as our primary lens, we
+567.96s: have a couple levers we can pull.
+570.20s: We can either total trades or overall, I don't necessarily worry about that too much.
+575.72s: The first lever we can pull is how many winning and losing trades we have.
+579.40s: There's different ways we can pull that lever, but that directly impacts your win probability
+583.54s: and your loss probability.
+585.04s: The other lever you can pull is your average win size and your average loss size.
+590.24s: So let's talk about all these very quickly.
+592.32s: If you want to increase your win probability, who doesn't, that's when we go through our
+595.84s: trading plane.
+596.84s: We figure out the best time to deploy specific strategy and we deploy that strategy in
+600.96s: the best environment we can find.
+603.16s: Maybe this is timing your trades better if you're a day trader.
+606.64s: Maybe this is being more selective when you are buying or selling strategies based on
+610.60s: implied volatility percentile.
+612.52s: There's a lot that goes into increasing your win rate, but that is the first and it will
+615.96s: be strategy dependent.
+617.44s: The first lever we can pull try to win more trades.
+619.92s: Next, we go into the risk management side of the equation, meaning how are we trading
+624.28s: profits and losses?
+626.08s: As you saw in this example, I simply just said, okay, instead of taking profits at an
+630.08s: average of $30, we'll take them at $35.
+633.20s: See how that goes.
+634.80s: Same thing for average losses.
+636.44s: We could try to decrease our average loss.
+638.96s: There's a few ways to do this that's actually picking low hanging fruit.
+642.60s: One of the easiest things you could do is look at your losses and this is an average.
+648.04s: There will be an average of this average so that you can figure out, okay, where are the
+653.08s: outliers?
+654.32s: Where am I doing really well managing losses?
+656.72s: What are the losses that I'm just letting run real big?
+659.32s: Maybe you see the scenarios where you had your two biggest losses and figure out what
+664.32s: happened there and just see what happens to this average loss.
+667.60s: If you get rid of the biggest loss that you took on that strategy, if you can codify
+672.36s: that out, that's an easy win.
+674.88s: And again, it's the same thing for the average win.
+676.96s: If you're just too trigger happy and you're taking trades down too fast, maybe you're just
+681.72s: being too trigger happy and you could legitimately squeeze out another $5 of profit by just
+687.32s: waiting.
+688.76s: That could be the case.
+689.96s: Some people are way too trigger happy, which is a very common investor slash trader trade.
+694.72s: So it could be that simple or it could be your average wins are falling down in a specific
+702.16s: environment depending on whatever you're trading.
+704.84s: And you just stop trading in that environment and you pivot to something else.
+709.20s: This is how we can make data driven decisions about your strategy and to optimize it.
+714.88s: But notice how I keep referring back to this plan because if you say, let's say for example,
+721.20s: there were two really big losing trades that skewed this average loss result pretty heavily.
+726.56s: You can modify that.
+727.64s: You could say, okay, I took this average loss because I held it through earnings going
+732.24s: forward.
+733.24s: I'm not going to hold this trade through earnings and see how it goes.
+736.84s: That will likely have a pretty profound impact on the overall profitability of the system.
+741.00s: Name the game here.
+742.00s: Ladies and gentlemen, is expectancy.
+744.44s: Forget probability of profit as a standalone metric.
+747.04s: It's important.
+748.04s: It's part of this equation.
+749.36s: This is probability of profit.
+750.56s: Wouldn't rate.
+751.56s: That's an important part of the equation.
+752.88s: However, it is not the bell of the ball, which I would argue is expectancy or expected
+757.32s: return.
+758.32s: This is how we can see how strategies actually performed in different markets and then
+762.40s: project that forward and make better trading decisions.
+766.56s: If you made it to the end, don't forget to like the video.
+769.20s: Subscribe to the channel.
+770.60s: See you all later, be an outlier.

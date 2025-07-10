@@ -1,0 +1,224 @@
+0.00s: the ratio covered call option strategy, how I trade it, some important notes about it,
+6.28s: and why I think it is better than the covered call.
+9.84s: And I'm going to walk you through an example at the very end.
+12.76s: So with that, let's get right to it.
+14.32s: For those that don't know, this is essentially a part of my covered strangle strategy.
+19.68s: We're just breaking out a specific segment and applying it to the people that like to
+23.60s: trade covered calls because a lot of folks like to do that.
+26.20s: And that's totally cool.
+27.56s: We're going to start with looking at a covered call for context.
+30.48s: The assumption here is that you already generally know what this is.
+33.24s: But if you don't, I'll give you a quick recap.
+35.40s: A covered call typically means we're going to have the same overall delta potential for
+40.72s: long and short delta's.
+43.68s: So in this case, we have a one to one or a two to two reduced down one to one.
+48.52s: So this is long 200 shares of Tesla and short two calls.
+55.16s: So what this means is we have a maximum of long 200 delta's from our shares and then
+60.12s: a maximum of negative 200 delta's from the short calls.
+64.36s: And that leads to this right here.
+66.68s: You'll notice once we get to the max profit potential for the trade, which is going to
+71.64s: be our short call strike, plus whatever premium we receive from the trade and any incremental
+79.72s: change over that going forward.
+82.36s: As in if the underlying continues to rally, it doesn't matter.
+85.84s: Our profit potential is capped at that maximum profit zone.
+91.60s: Let's compare that to the ratio covered call.
+94.92s: And as you'll notice right out of the gate, we have a slightly different risk profile
+100.32s: where that same scenario that I was just showing you doesn't exist.
+104.52s: We have unlimited upside potential.
+107.60s: How does this happen?
+108.88s: Well, it means that we're going to have more long deltas than short deltas.
+114.84s: So in this same exact scenario, I am long 200 shares of Tesla.
+121.48s: So that's our stock position down here.
+123.88s: But I'm only short one covered call or one call against those 200 shares.
+130.80s: So I have 200 maximum long deltas and negative 100 maximum short deltas.
+138.72s: So what means I have 100 uncovered deltas?
+142.64s: That is how we have unlimited upside potential.
+145.76s: So what's the trade off if you've traded for any period of time?
+149.60s: You know there's a trade off and here it is.
+152.52s: We are unlocking uncapped upside potential.
+155.92s: That's awesome.
+156.92s: And I value that very highly.
+159.12s: But the trade off we're receiving less money up front.
+163.68s: So that means if for whatever reason, we don't get the move.
+167.88s: We think we're supposed to get.
+169.56s: Whoops, sorry about that.
+171.36s: Then if we don't get the move that we think we're supposed to get, then we have less of a
+176.32s: hedge to help us out.
+178.32s: That's kind of a problem.
+179.32s: So I want to walk you through an example on how this actually plays out in just a minute.
+183.92s: But before that, I want to talk to you about the management of this trade.
+187.68s: So my again, underlying hypothesis here is that you already have something that you like
+193.20s: to trade.
+194.72s: You already have a structure to go around, pick the products that you like.
+199.32s: You already have money management strategy wrapped around how you like to scale into things.
+204.08s: If you don't, I'm going to talk to you about some of that in just a second.
+207.88s: But I want to get into the flow so that you understand how this thing looks.
+212.24s: And then I'm going to bring you over to an example that we're actually going to walk
+215.04s: through live using the on-demand feature on thinkorswim.
+218.84s: So we're going to start in this case rather than a cash secure put like we typically would
+222.96s: in the covered strangle.
+224.08s: We're just going to assume that we've already been assigned and we have long shares.
+227.52s: Then we're going to offer the ratio covered call.
+229.68s: I'm going to talk to you about the thought process behind what ratios and what
+233.20s: expressions and deltas in just a second.
+236.20s: But we're going to offer whatever we are going to offer for the ratio covered call being
+240.28s: short calls.
+241.80s: Then we have a couple scenarios.
+243.68s: Those short calls can be out of the money in which case we just go back and start over
+247.36s: again.
+248.36s: Or those short calls can be in the money.
+249.96s: Then we have two choices.
+251.20s: We can either roll that position if we want to try and defend the in the money short
+256.56s: calls.
+257.56s: That kind of brings us back up to this scenario.
+259.76s: Or we can allow assignment where our long shares are going to be called away.
+265.28s: So that is essentially allowing the long shares that are tied up.
+270.12s: So in this scenario over here, if we have long 200 shares but only short one covered call,
+276.60s: it means we're going to lose 100 of those shares.
+279.84s: And that scenario you still have 100 shares left.
+282.28s: So if you have a big enough position or if you choose to buy more shares, you can go
+286.76s: back to the ratio covered call, you could turn it into a regular covered call at that
+290.40s: time if you want.
+291.40s: Or you could flatten the whole thing at that point in time, which a lot of times is what
+295.48s: I would do.
+296.60s: And it depends on the trade hypothesis.
+298.88s: Because if we think the underlying is going to go up into perpetuity and we're still
+304.24s: really bullish, then I wouldn't flatten.
+306.56s: But if I made an original trade hypothesis, the trade moved in that favor again in line
+312.52s: with my hypothesis.
+314.04s: And then I reassess and I say, okay, it's made the move.
+316.28s: I think it was supposed to make.
+317.84s: So it's time for me to flatten out and move on to the next opportunity.
+321.48s: It really depends on your disposition towards the product.
+324.00s: Okay.
+325.00s: Now I want to pivot us over to an example.
+326.76s: And like I said, in order to do that, I want to use on demand.
+329.60s: Right now I have this back in time.
+331.68s: It's the beginning of January.
+333.84s: So this is 6 Jan 2023.
+337.68s: So just beginning of this here, because I actually had some positions on in here.
+341.64s: So I thought it would be kind of fun to use the essential product that I did.
+347.44s: Now you'll notice as I fast forward time, there's going to be more of these dots and
+351.56s: some of them aren't aligned on anything.
+353.56s: It's because they're actually tied to the trade that I put on.
+357.48s: So I'm going to zoom us out to 10 February quick so you can kind of see the flow of the
+360.64s: trade.
+361.64s: And as you can tell, I'm purposefully testing this in a bullish environment because that's
+366.08s: really the main comparison I want to make between these products.
+370.08s: So I'm going to take this back out and we're going to go to 6 Jan and then we're going
+376.60s: to essentially establish a ratio covered call.
+381.52s: So to do that, I'm going to buy instead of sell.
+385.76s: I'm going to buy and let's say I'm going to do 500 shares and let's start with the
+389.88s: covered call.
+391.12s: So I'm going to do 500 shares, send those out the door and most people when they're
+396.20s: selling a covered call, they'll kind of offer all of their options at once.
+402.24s: So let's say we go out to like a 34 delta something like that and let's say that we're
+408.24s: going to sell five here.
+410.84s: So now what you'll notice and I'm getting instant fills because it's all fake.
+414.96s: This is paper.
+416.68s: If you'll notice we have 500 long delta and we have negative 500 short delta.
+423.28s: So this is a covered call in our maximum profit potential is going to be realized at 130
+428.52s: plus the premium received, which is 540.
+431.52s: So 135 40 and let's now fast forward and see what the result of this is.
+438.16s: I'm just going to take us right up to expiration to save us some time here.
+443.08s: And in this case, you can see that we had obviously an insane rally during the life
+448.34s: cycle of this trade.
+449.92s: So with that big ol' rally, this trade would be walking out at a overall PNL of $10,950
+458.20s: give or take.
+459.68s: So this is showing us what this one instance would look like if we sold all five short
+466.80s: calls at once.
+467.80s: Now a quick admin note, if you are trading the covered strangle, or I'm sorry, I used
+472.52s: that strategy so much, I literally just say it.
+475.68s: But if you are trading the covered call, one of the simplest ways you can optimize your
+480.76s: performance is instead of offering all five short calls at once in this scenario would
+486.52s: be to sell one each week.
+488.88s: And it avoids this exact scenario where all of your short calls are out there and the
+493.28s: underlying made this big move.
+495.40s: Sometimes we can do that, sometimes we can't.
+497.36s: If you still prefer the covered call, that's what I would do to modify this.
+503.32s: Now that part aside, let's talk about the PNL of the trade.
+508.08s: So as we can see, we made 41, 825 on the underlying and we lost 3875 on the shorts.
+515.56s: Obviously, we'll keep the premium we collected.
+518.52s: And that premium we collected is an important note because that's going to be one of the
+522.12s: big differences between this and the other version of this.
+524.88s: So in total, we collected $2,700 in premium upfront.
+531.24s: Okay, cool.
+532.24s: So let's go ahead and reset this whole shebang.
+535.96s: We're going to go back in time to the same exact starting point, six Jan and instead of
+543.40s: the previous example where we had a covered call, we're going to do an uncovered call.
+549.44s: Now my typical preference for the uncovered call as I was just highlighting would be
+554.52s: instead of just selling all of my short calls in this expiration, it would be to ladder
+561.40s: them out week over week.
+563.48s: So something I might do to that example would be sell to in the 13 Jan, two in the 20 Jan,
+569.92s: two in the 27 Jan or one in the 27 Jan or zero in the 27 Jan.
+574.04s: It depends on how you want to spread them out.
+575.84s: But essentially, I would want to make sure I have at least 100 shares uncovered.
+580.16s: So, but to keep it closer to an apples to apples comparison, I'm not going to say,
+584.40s: I'm not going to do any of that.
+585.84s: I'm going to pick our very same short call here and instead of selling five, we're literally
+592.72s: just going to sell four, maybe three, if you're super bullish in this case, I was, but
+597.80s: again, to keep it to a closer non preferential look back, I'm going to say that we sold
+603.48s: four.
+604.48s: So in this case, I want to talk to you real quick about our selection process.
+609.72s: If I'm thinking about whether it's a covered call or a ratio covered call, the closer I
+616.72s: can trade, typically the happy I am, and it's because it allows me to get more cycles
+621.36s: in, you're going to make aggregate more money that way than going further out in time.
+625.84s: The other thing I'm going to try to do is find a balance.
+629.20s: So let's say that I want to do this 35 days expiration.
+633.32s: I want it to be above my cost basis.
+635.96s: That's for sure.
+636.96s: So my cost base in this scenario is one 1360.
+639.08s: I wanted above that.
+640.36s: Okay.
+641.36s: I could sell this one 14.
+643.56s: What's the trade off here?
+645.00s: If I sell the one 14, I'm going to collect more money upfront, but I have less capital
+651.40s: gains potential.
+653.20s: So what I mean by that is I can make, let's just call it $1,100 by selling the one 14,
+658.48s: but in terms of capital gains, I can only make 40 cents per share.
+663.16s: In this scenario, I'm collecting much less upfront.
+666.68s: I'm only collecting $540 up front as compared to 11, but instead of only having 40 cents
+673.60s: of profit potential, I now am allowed to run up to 130.
+678.32s: So it's like $15, $16 plus.
+680.80s: So you essentially are making a judgment call.
+684.32s: Do you think something is going to run a lot?
+687.08s: And if so, you might go further out of the money so that you are not getting stuck on
+693.80s: cat upside potential prematurely.
+696.64s: If you want to unwind the position, you've had it for a long time.
+700.00s: It's already made the move you thought it should make.
+702.32s: It's time to rebalance the portfolio risk, things like that.
+705.16s: Maybe you sell closer at the money and accept that trade off.
+708.16s: I'm going to make more money up front, but if I do get a big run, I'm going to miss out
+711.92s: on it totally up to you.
+713.24s: You got to figure out what's right.
+714.64s: So in this case, I'm just picking the same thing and we did four instead of five and
+719.08s: I'm going to do the same exact things.
+720.68s: Last time we're going to fast forward right to expiration.
+723.44s: Last time we made about 10 grand, something like that.
+727.24s: And in this case, we're at 17, 1, 2, 5.
+730.28s: So you can see it's a much greater return potential.
+732.36s: This is an extreme example to be abundantly clear because this is a huge move to have
+736.20s: in a short period of time.
+737.80s: But if I'm trading something like a covered call or a ratio covered call, this is what
+743.24s: I want to see.
+744.24s: This is the scenario I'm attempting to expose myself to.
+747.36s: So that's why I selected this one.
+749.48s: The main trade off here is if the opposite happened and we moved down, I just would have
+754.64s: collected less money up front.
+756.80s: So that's the trade off here.
+758.68s: You can either have much greater profit potential if you use uncovered or I don't use uncovered
+763.76s: because that's kind of synonymous with naked short calls.
+766.80s: But in this case, they're covered because you have the underlying, but you're selling
+769.36s: them out of ratio.
+770.36s: You're just uncovering your upside potential.
+772.80s: So the ratio covered call favors giving us upside potential, but it finds a balance between
+779.04s: upside potential, but still collecting enough money up front.
+782.52s: Because in this scenario, you essentially just collected $500 less because it's one
+786.64s: lot less, but you unlocked significantly more profit potential if you get the big move
+791.36s: that you think might happen.
+793.16s: So it's all a judgment call based on your perceptions, but this is one of my absolute
+796.52s: favorite strategies.
+797.84s: And like I said, this is baked into my coverage strangle strategy, which I'll throw a link
+801.36s: in the video description below.
+803.04s: If you haven't seen that yet, if you made it to the end, don't forget to like, subscribe,
+806.08s: be an outlier, and I'll see you all later.

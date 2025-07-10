@@ -1,0 +1,348 @@
+0.00s: Nothing says masterclass like a shirtless dude.
+2.88s: So today we're going to talk about rolling options.
+6.72s: And I'm going to walk you through a quick overview of what it is.
+9.88s: You probably already know.
+11.28s: I want to get into some of the mechanics
+12.72s: that people mess up quite literally all the time.
+15.40s: And then at the end of the video, I want to walk you through
+17.36s: a bunch of best practices and kind of some commonly asked
+21.24s: questions to make sure that we're fully
+23.76s: thinking through this process because I can tell you
+26.32s: from my own experience and what I regularly see in places like
+30.88s: Reddit and on my YouTube comments are when people talk about
+35.16s: rolling options, it is very clear that we don't fully understand
+38.72s: them. The first time we see them, we have an immediate perception
+41.68s: that this is the greatest thing ever.
+43.32s: It's going to fix all of our problems.
+44.60s: We can just roll things and everything's great.
+47.00s: And that's not so much of the case.
+49.16s: So I want to walk you through exactly that.
+51.36s: And we're going to talk about things like once the best time to roll,
+54.20s: should you roll out or up or in or down all of those things are
+59.56s: on the docket.
+60.72s: So what's up everybody?
+61.68s: Welcome back to the outliers and a shout out to the Patreon family,
+64.80s: the people in the Patreon actually get free access to the shop,
+69.72s: weekly workshops.
+71.04s: So if what I do helps you out, consider signing up link in the
+74.60s: notes below.
+75.28s: Let's get right to it.
+76.16s: So here is the beginning.
+78.68s: What is rolling really simple?
+80.12s: It's closing a trade, entering a new one.
+82.28s: The what differentiates rolling from closing a trade and opening a new one
+86.84s: simple, we tie the accounting together.
+90.80s: So what does that look like in practice?
+93.12s: Well, we have the first trade where we enter, then we exit and then we enter
+97.52s: again.
+98.04s: So where's the role in this instance right there?
+100.72s: So as we enter this first trade, it's on its working.
+103.88s: Then we choose to exit it and then enter a new one and tie the accounting
+108.48s: between this position and this new open position together.
+112.68s: So what does this look like in terms of money?
+114.68s: Well, in this first trade, if we sell to open a put, I just picked a random one for
+119.52s: a dollar, then we close it for two dollars.
+123.80s: What happened here?
+125.64s: We simple.
+126.36s: We realized a $100 loss.
+129.80s: We collected $1.
+131.64s: We close the trade for $2.
+134.56s: That means we give up the dollar that we collected up front and then we give up
+138.32s: another dollar on top of that.
+140.92s: That is $100 because obviously you multiply this out by 100 for options.
+146.12s: This is where the trade lands.
+148.24s: So where's the role?
+149.48s: It's right here.
+150.48s: If we buy to close at two bucks and then we sell to open at whatever price, you've now
+155.88s: completed a role.
+157.40s: Common misconception is that roles are only conducted on losing positions.
+161.44s: You can roll a winning trade.
+163.40s: It's just in generality and parlance.
+165.56s: When we talk about it, it's normally referred to in the context of a losing trade, which
+170.44s: is actually quite telling when it comes to the mindset of when we roll.
+175.32s: This is something I do want to speak about for just a second because it's a common problem
+179.40s: people have is that if this was a winning trade that you closed and then opened, you probably
+184.88s: wouldn't consider a role.
+186.56s: Why is that?
+187.56s: Well, it's because you're happy with your win.
+190.96s: That's off the books.
+191.96s: Now we're entering a new trade.
+193.48s: You don't want to tie the accounting to it because you have a win.
+196.36s: But when we're rolling very frequently, it's fueled by hope.
+201.04s: We hope this next trade overwhelms the loss of the previous trade.
+207.16s: So that's why we choose to account it together.
+210.52s: But again, admin note, you can roll winning trade as well.
+214.32s: It's just not commonly done or at least commonly referred to.
+217.80s: So let's say trade three continues to chug along.
+220.80s: It goes well and we close that for 50 cents.
+223.44s: What's happened here?
+224.76s: Do you know what our realized PNL is at this point?
+228.52s: In this case, we take in 150 bucks.
+231.08s: We sold this option for two bucks, 200 bucks.
+234.52s: We buy to close it for 50 cents, 50 bucks.
+237.28s: That gives us positive $150.
+240.12s: So on this rolled position, you will have realized a profit of 50 dollars.
+246.28s: One of the dangers of rolling is that if you don't close this for the correct price,
+252.60s: then all of a sudden, you can become pounding your loss.
+256.56s: So for example, if you have this $100 realized loss, we sell to open this new option for
+261.96s: two dollars, then we buy to close it for $3.
+265.44s: What happened in that scenario?
+267.12s: We realized another $100 loss.
+270.32s: So your net PNL at that point is negative $200.
+275.72s: So if you keep going down that path and you don't ever get a price accommodation, you
+279.52s: have problems because you're going to continue compounding that losing position, which is
+284.88s: really, really dangerous.
+287.08s: So let's talk about some best practices.
+290.30s: The first thing I want to walk us through is analyzing surrogate options.
+294.82s: This is a little bit esoteric.
+297.16s: So follow along and you can come back to this part if you need to fully understand what
+302.20s: we're talking about.
+303.56s: But this is something I do all the time.
+305.76s: It's really useful.
+307.20s: Just come over here to XLF and I'm just picking a random stock.
+311.36s: And let's say you have a position on, let's say you have this 33 DTE and let's say when
+316.32s: you originally sold your puts or let's say short calls so that we're getting ran over.
+322.28s: Let's say you originally sold these 38 short calls and they were out of the money whenever
+327.40s: you chose to sell them, it doesn't matter.
+329.84s: But now they're in the money.
+331.28s: So we want to do a few things.
+332.88s: The first thing is we want to see if we're at risk of early assignment.
+336.28s: That's a little bit of a different scenario.
+337.72s: We need to see if there's a dividend.
+339.20s: We need to see how much extrinsic value is left in the options.
+341.92s: Kind of a different video concept, but that's an overview of that at least.
+345.92s: Then we want to figure out how much is intrinsic and extrinsic value.
+349.28s: And if you remember your options 101, you figure out your intrinsic value by how far in
+354.08s: the money we are.
+355.16s: Take that out of your premium and then whatever's left is your extrinsic value.
+359.20s: You can also look at the corresponding out of the money option for a approximation.
+365.08s: It's not perfect, but it's pretty close.
+367.36s: So in this case, if I'm looking at these 38 short calls and I'm trying to figure out what's
+373.16s: the extrinsic value.
+374.16s: We could look right over here.
+375.96s: It's about 30 cents, something like that.
+378.12s: Okay.
+379.12s: Good.
+380.12s: So now we're faced with deciding different things.
+383.64s: Like, what does this look like if time passes?
+388.36s: What will the value of my option be?
+390.00s: How much extrinsic value will be left?
+392.76s: Well, you can either do the math.
+394.68s: You can run it through your black sholes model.
+396.76s: That's no problem.
+397.76s: You can run it through a risk profile tool if your platform has it or you could do the
+401.92s: easy option, at least as far as I can tell.
+404.52s: And again, it's not perfect, but it's pretty close.
+406.80s: So let's say that we want to pretend that nothing has happened other than time has passed.
+412.24s: And we can look at this 12 DTE.
+415.24s: So even though our option is this 38 call 33 DTE, we can look at that same option that's
+422.60s: just 12 DTE.
+423.60s: And we can see what it looks like compared to where it is now.
+427.32s: So in this case, it's trading for kind of a really wide market here.
+431.32s: Let's just call it like 150, something like that.
+433.96s: And then if you look in here, it's like 110.
+436.72s: So over the course of this time frame, you can see how much your option would change
+442.20s: if nothing else changed.
+443.52s: And again, markets move.
+445.04s: So then you can also say, well, what happens if it actually falls further in the money?
+449.12s: What would that look like?
+450.24s: So let's say XLF goes another dollar up.
+454.24s: So instead of being at 39, now it's at 40.
+457.52s: Well, what you can do is you can look at the 37s because your option would behave close
+464.20s: to those 37s.
+466.04s: So all I'm doing is by the amount that I'm mentally moving XLF, I'm mentally adjusting
+472.44s: my strike the same amount to see what the option would look like if that move happened.
+478.92s: That really useful tool, again, that might sound a little complex.
+482.16s: Feel free to listen through this a time or two if you need, but that's what I do to analyze
+488.32s: a lot of potential options adjustments without doing the math for every single one of them.
+493.52s: So one of the best practices here is rolling spreads.
+496.44s: Is this something you can do?
+497.68s: It is something you can do.
+499.16s: Is it something that's reasonable to rely on?
+501.60s: No, it's not.
+502.60s: And it's because when we're rolling options a lot of the time, you'll find things sometimes
+507.36s: are really deep in the money or deep out of the money.
+509.76s: This is a great example that we were looking at with this 33 DTE and we were looking at
+515.68s: something that was slightly deeper and deeper in the money.
+518.48s: Notice how if you go to this 36 call, notice how wide that market is.
+523.28s: That's just for a single option.
+524.76s: So if you have a vertical, you have to find the midpoint between this, which there's
+529.04s: a lot of slop on something price like this.
+531.64s: And then you have to find the midpoint on whatever else, whatever other option you have
+535.52s: tied to your vertical or iron condor.
+537.72s: The generality here is the more legs you have, the harder this is.
+542.12s: And you're also probably going to have to move them piece by piece, which opens you
+546.24s: up to gap risk while you're in the process of adjusting your strikes.
+550.44s: Rolling spreads is doable.
+552.56s: Very difficult.
+553.56s: It's not something that I think is worthwhile in most cases.
+556.92s: Does rolling avoid losses?
+559.12s: The cool part about this one is you actually already know the answer to it because we
+563.80s: just looked at this.
+565.20s: In this example that we looked at over here, when you rolled this option, meaning you
+570.44s: closed this one and you open this new one, did you avoid a loss?
+574.76s: No, you realized a loss.
+577.96s: That means this is on your books.
+579.96s: This means you have a brand new open position that has the potential to cover the cost of
+585.04s: this loss, but it's not guaranteed.
+587.64s: You could also have an even bigger loss as a result of opening this new position.
+592.08s: So no, rolling does not avoid losses.
+595.32s: Now on that same topic, if you rolled this option, do you know how to calculate what
+601.00s: your break even prices on this option?
+603.92s: If not, it's pretty simple.
+605.32s: So if we closed this trade to box, $100 realized loss, you sell to open this new option at
+611.80s: $2.
+612.80s: How much money do you need to make in order to get back to zero on this realized loss?
+618.16s: $100.
+619.20s: So that means on this option, you would need this trading at $1 or less to be in profit.
+626.20s: As soon as this hits $1, not including fees, you would be at break even.
+632.12s: So you can easily do that math to calculate what you need this new option to be trading
+637.24s: at to hit break even and then also to then start seeing a profit, which is the whole point
+642.52s: of doing this.
+643.52s: A common error traders make is when they see this option trading for a profit.
+648.36s: So if this we sell to open for $2 and then now it's trading at $1.25, you're looking
+653.48s: at a $75 profit.
+654.48s: You're like, wow, that looks great.
+655.68s: I want to take that.
+656.68s: Well, unfortunately, in the net, you would have lost money because if you took this down
+660.68s: for a $75 profit and you have a $100 realized loss, you still lost $25.
+666.12s: So you can calculate your rolled options break even, which is something I definitely recommend
+671.52s: tracking.
+672.52s: I have an Excel sheet that does that, which I've thrown into the shop for all the
+677.06s: Patreon members if you're silver and above, you get free access to it.
+680.18s: It's just a simple tool to help you track things.
+682.36s: So now if we continue on our best practices, what's the best time to roll?
+686.74s: As you know, my answer to this already is it depends.
+689.70s: There's two things you really need to answer right up front.
+692.86s: The first thing is what is your objective for the position and the second thing is what
+698.74s: do you think about the underlying?
+700.62s: So let's say you have a position on the best time to roll in terms of getting the highest
+708.24s: variability in your strike price is when you are at the money or slightly in the money.
+714.48s: The reason being is even though there's a bunch of extrinsic value left in that option,
+719.52s: you'll notice you're not moving a bunch of intrinsic value, which decreases how effectively
+725.92s: you can roll.
+726.92s: What this looks like is let's say you were short, this 39 put that's now it's in the money
+731.72s: right now and it's trading for like 35, 36 cents, something like that.
+736.28s: If we try to roll this and we want to go out one week and we want to collect a credit,
+741.76s: meaning the rolled trade is bringing in more money than what we're closing.
+746.32s: If we take a look at that and we know that we need 35 cents, can you get it going further
+751.56s: out of the money going out just one week?
+753.20s: No.
+754.20s: We have to go out.
+755.20s: Let's just pick the next primary expiration.
+757.56s: You can find you can roll out in time for a credit at the same strike or you can roll out
+763.76s: in time and slightly out of the money taking it all the way down to a 28 delta while collecting
+769.92s: a very small credit.
+771.24s: So when the option price is the same as the strike is when you're going to have the most
+776.16s: choices available to you.
+777.76s: However, it's also when you're buying back the most extrinsic value.
+782.04s: So if this is something that you don't mind taking assignment on or don't mind managing
+787.24s: in the long run, then you can wait a little bit, wait for some more of this extrinsic value
+792.20s: to bleed out and then you can adjust.
+794.32s: If this is something that's like leveraged options or you really don't want to take
+798.28s: assignment in this case on the short put and you don't want to get stuck, what I mean
+803.80s: by getting stuck is if you wait until you're too far in the money, you get to a point
+807.88s: where you actually can't adjust down.
+810.44s: You can't roll down anymore or if you're on the short cause you can't roll up anymore
+814.24s: because you're too deep in the money.
+815.80s: And then you run into another problem, which is days to expiration liquidity.
+821.56s: So for example, let's say our option fell in the money, the 39s, we want to roll out
+826.24s: and down.
+827.24s: Cool.
+828.24s: So we go out and down.
+829.24s: We have to go to 40 days to be able to roll down.
+831.08s: Now we get our small credit.
+833.00s: You're a dollar better.
+834.12s: But let's say time passes and XLF falls more four days pass XLF falls more.
+839.88s: Now your 30-eighths are in the money.
+841.48s: Okay, you're like crap, I got to roll out again.
+843.56s: Well, I can't roll out just one week and get a credit.
+846.92s: It's not enough.
+847.92s: So maybe if I roll out two weeks, well, do you notice what just happened?
+852.52s: Right here, you had 40 days to expiration.
+856.12s: Then you were able to look out to 47.
+858.44s: Now all of a sudden it's 53.
+860.28s: Then after 53, it's 75.
+862.36s: What's happening here is options chains offer more explorations the closer to time you
+869.20s: are.
+870.20s: Some options chains will offer you a bunch of choices.
+874.08s: If you look at something like spy, anything within 53 days, you have a ton of choices.
+879.32s: But even then, after 53 days, it gets more and more sparse.
+884.64s: That's days to expiration liquidity.
+886.52s: And that's why it's a problem.
+887.92s: Because if you roll immediately, every time your strike is challenged, let's say you're
+891.76s: in this 33 days to expiration, you roll when your strike is challenged.
+894.80s: Then you go to the 40, then you go to the 47, then you go to the 53, then you go to the
+897.72s: 75.
+898.72s: Now your out pretty damn far in time.
+900.44s: Data is not taking away that fast because you're so far out in time.
+903.70s: And then if you get a continued down move, then where do you go?
+906.52s: You go to 103 days.
+908.24s: What if the down move continues then?
+910.08s: You've run out of runway.
+912.12s: And if the underlying continues to move against you, you build a really difficult position
+917.64s: to move around.
+918.84s: So when I think about the best time to roll, I balance.
+921.84s: How do I feel about taking the underlying in or out, whether I'm short puts or short
+926.06s: calls for longer short stock?
+928.18s: And then I think about what is my disposition towards the underlying because sometimes the
+932.64s: best time to roll is never and to take a loss.
+936.12s: If you're trading something like this, let's say you had cash secured, puts out on Carvana
+940.60s: and you were all the way out here.
+942.80s: You were trading it a while ago when it was 300 bucks and then you're trying to roll
+947.28s: your options, you're trying to roll your options.
+949.32s: If you got stuck, you're stuck.
+951.76s: There's no rolling your options from here to here.
+955.20s: Sometimes if you get enough price accommodation in the short term, you might be able to get
+958.60s: buy with some of it.
+960.16s: But big moves that happen quickly can leave you stranded.
+963.68s: So you have to strongly analyze the underlying that you're trading.
+968.20s: And again, the same thing can happen to the inverse.
+971.12s: If you're one of those real smart contrarian traders and you know better when the market's
+974.54s: pricing things and you see this big green candle, you're like, wow, I'm going to fade this
+979.36s: and SMCI hasn't come back.
+981.32s: It's gone from $400 to $579.
+984.12s: So in this case, you get stuck.
+986.96s: You need some sort of price accommodation in order to be able to roll and eventually
+991.54s: find your way out of the money because the problem is, can you roll forever?
+995.92s: No, because if you go back to this original example, you are realizing losses if we're
+1002.60s: rolling a losing trade.
+1004.20s: So when you're rolling a losing trade, each time you are eroding your account value.
+1010.00s: And then or later, the margin requirement for your trade is bigger than your account
+1015.40s: value.
+1016.40s: So even though you might have a bunch of cash sitting in your cash and sweep, if your
+1020.52s: net lick net liquidating value isn't high enough to cover your margin requirements for
+1025.40s: your trade, you cannot put it on.
+1027.68s: So you cannot roll forever because you eventually do need price accommodation.
+1034.12s: So the last thing, how do we think about rolling in or out up or down?
+1039.76s: I tend to try to roll out as little in time as possible.
+1044.88s: It allows me to maintain the most spot price sensitivity.
+1049.52s: It also gives me more runway on that days to expiration liquidity concept that I was
+1056.20s: explaining to you.
+1057.52s: So if I can roll from this 12 to the 19 while adjusting my strike, I typically would do
+1062.68s: that.
+1063.68s: If I can roll from the 12 to the 19 and not adjust my strike, meaning if I have cash
+1067.76s: secured puts, for example, and I can't roll them here, but I can roll them in the 26
+1072.56s: DTE.
+1073.56s: I need to analyze the underlying.
+1074.96s: So I want to add two weeks and depending on how much I'm improving my basis, does that
+1079.96s: make sense?
+1080.96s: So overall, the decision on whether or not you go further out in time comes down to how
+1086.56s: do you feel about the underlying and running out of DTE liquidity and then rolling down
+1091.40s: or up depends on how much money you want to make.
+1094.68s: Because if I try to roll, for example, from the 12 to the 19 DTE, if we look at this
+1101.28s: scenario and let's say I'm at the 575, so I keep the same strike.
+1106.60s: In this case, you have what 2675, and this is just called 35 in that scenario, you can
+1114.84s: still make an okay amount of money by staying at the same strike.
+1118.04s: If you chose to go from the 575s down to the 570s, notice what happens instead of getting
+1123.04s: $35, whatever this is, you're going to get 32 in change.
+1126.52s: So you have to decide what's more important to you.
+1130.02s: Is it improving your basis, adjusting your basis, or is it collecting more money up front?
+1133.96s: That is 100% dependent on the trader.
+1136.68s: So this is part one.
+1137.68s: As you can tell, it's a big video.
+1139.24s: There's a lot that goes into this.
+1140.92s: If you have any questions, let me know if we should do a part two and go even deeper with
+1145.16s: specific examples, let me know because we might be able to swing that.
+1148.52s: Until next time, like, subscribe, share, be an outlier.
+1150.88s: See you guys later.

@@ -1,0 +1,141 @@
+0.00s: I love me a good anomaly in the options market and what better than GameStop.
+5.92s: We have a really interesting position today and even if you're not necessarily a big GameStop
+11.12s: person, there's some really important details in here for options traders writ large.
+16.68s: There's a great lesson.
+18.28s: So today in the 19 July 24 expiration cycle, the 30 calls, they had pretty high volume and
+27.04s: they actually kicked off a couple different alerts that I have except this one was really
+33.64s: weird.
+34.64s: Let me show you why.
+36.32s: If we first start with what is a bid, what is an ask?
+41.52s: The bid is the most somebody is willing to buy something for right now and then the
+47.36s: ask is the cheapest somebody is willing to sell for right now.
+52.00s: So that means that if I want to buy something as a trader, you have to essentially be near
+57.60s: the ask to do it right now, right the second.
+60.08s: You can always try to play the mid price.
+62.56s: That's more of a negotiation process of back and forth, typically.
+66.56s: So if I want to buy something right now, this second and get a fill, you got to go towards
+70.64s: the ask.
+71.80s: If I want to sell something right now, I would have to go towards the bid.
+77.04s: So what's going on here?
+79.04s: Well, this is looking at the 30s, a lot of transactions today and this is filtering by
+86.84s: stuff that's 50 lots and over.
+88.68s: There's way more than this, but these are kind of most of the larger transactions and
+93.00s: it's a shotgun blast.
+94.00s: It's all over the place.
+95.00s: There's a lot of cells which are red.
+96.76s: There's a lot of buys which are green and then there's this one at the top right there.
+102.84s: Game through a 1248, a one Pacific time.
+106.12s: It was a 4,688 lot, fascinating trade size.
+111.72s: The price it came through was 50 cents.
+115.00s: Came through on the C-Bull Exchange.
+117.36s: This is the weird part.
+119.20s: The market was 50 bid 49 offered.
+124.72s: This inversion doesn't happen normally.
+130.00s: This actually represents an arbitrage opportunity.
+133.24s: This means that if I could transact actually at these prices, I can collect the spread
+138.52s: between these essentially risk free.
+140.88s: You can be a market maker for a second.
+143.40s: Now the probability of you actually transacting fast enough at those prices is essentially
+147.28s: no, but as a scholastic exercise, you very rarely will see bids higher than the offers
+155.96s: that is inherently arbitrage.
+159.20s: That means that if I wanted to sell something, I could sell it for 50 and then buy it back
+164.72s: at 49.
+165.72s: I can make money right away.
+167.92s: Now this to me seems like an error of sorts because take a look at this.
+175.20s: The platform has it labeled red, meaning it was something that was sold.
+180.96s: The logic that the platform uses which I can clearly tell is if it's below the bid,
+188.16s: even though the bid is actually higher than the offer, which is very strange.
+192.40s: This is classifying it as a sell.
+195.08s: Then I have to look at some other places to try to see what's going on here.
+198.20s: I take a look at unusual whales.
+200.56s: I see a ton of different transactions here for today for this specific strike.
+206.84s: These all came through at 1248, a bunch of them, right?
+209.84s: Ten lot, a bunch of single lots, a seven, a ten, a seven, and then there's this one,
+213.44s: the 4688, $203, $4,000 trade.
+218.68s: And they're flagging it as a buy.
+221.80s: So if I close this out and we take a look at that position up here, they are classifying
+228.28s: this as a purchased option bullish.
+231.60s: They're saying that it is transacted at or above the ask, which is clearly also possible,
+236.60s: right?
+237.60s: Because they're also showing it bid 50 offered at 49.
+242.88s: So then was this bought or sold?
+246.56s: This opens up a whole other subject, which is the fact of the matter is when platforms
+252.56s: like this do these different color coding rules, how could it be that this one colors
+259.20s: it red and this one colors it essentially green for a buy versus a sell?
+265.16s: They just use different logic orders.
+267.84s: This one is looking at the bid side first and saying is it at or below the bid if so sell.
+275.64s: That's what this is telling you.
+276.64s: However, if we take a look at this, it's telling you essentially the inverse.
+282.16s: If it's above the offer, then it's a buy, even though the bid is 50 here as well.
+289.64s: So then we had to go to an arbiter, a third data source and funny enough, bar chart flags
+296.68s: it as green, meaning that this was bought.
+300.36s: However, their logic is clearly using if it's above the offer, which is 49 cents.
+305.56s: It's kind of bowling in where it thinks it transacted above that, which is not wrong.
+310.44s: Here's what I find fascinating.
+312.16s: Look at the size of the purchase that this is showing you.
+316.04s: 49 cents offered by 31.
+320.04s: Here there's a 50 bid at 4688.
+325.68s: Within the bar chart platform, there's an inherent discrepancy because this is saying it's
+331.08s: above this price, but look at the size.
+334.16s: 4688 against 4688 on the bid.
+338.72s: So what happened here?
+340.04s: Well, there's a couple different ways you could try to decipher the information.
+343.64s: For me, this is actually very important.
+345.60s: This is probably one of the more important data points in this whole thing is to figure
+349.40s: out the sizes because then I can see when it came through.
+354.68s: If I look at it on this platform and we take a look at all of these different transactions
+359.92s: that happen, these are a lot of buys that are flagged here.
+364.96s: And then one big giant sell, if we use the other two data points, I'm not so sure about that.
+372.40s: So I cannot say definitively what this is.
+376.24s: My instincts lead me to believe that it would be bought.
+380.72s: That would be my guess because that also aligns with the incentives of being able to transact.
+387.12s: Because again, otherwise there's an arbitrage opportunity.
+390.12s: I would expect that to be priced out faster than a human could see it.
+394.96s: That's my instinct.
+396.64s: What calls into question my instinct is this right here and this size.
+401.20s: The fact that the bid size here lines up perfectly with the size of this transaction,
+407.36s: which lines up with what I see here, them tracking it as a sell leads me to believe sell.
+416.40s: And that overrides my instincts, my instincts think that this is a buy.
+421.52s: Doesn't really matter.
+422.40s: Like if we're talking about all this in the grand scheme of things, none of this really matters.
+426.00s: You're watching somebody right now who's been in options markets for so long
+431.04s: that these small little nuance things are fascinating to me and probably only to me.
+436.72s: This is like watching somebody like Michael Jordan, not that I'm anywhere near the goat,
+441.36s: but it's like watching somebody like him shoot free throws for somebody like him.
+446.24s: He's focusing on like how does the ball feel on the pinky on the 39th shot compared to the 60 second shot,
+453.36s: something that's imperceptible to most of us that play pickup basketball.
+456.80s: That's kind of what I'm doing here, but this is fascinating to me.
+460.08s: So I'm sharing it with you for that reason.
+462.56s: So I hope other people find this at least somewhat curious because I do.
+466.24s: I would also love for the platforms to tell me what's going on here.
+469.28s: So what's going to end up happening is I have another data source that I'm going to download
+474.72s: all of the options trades from today and do my best to see what the sizes were that this came
+481.20s: through at because if it is this, that would lead me to believe sold.
+487.36s: If it is not this and this is an error for some reason,
+490.72s: then it would lead me to believe bought, which falls in line with the vast majority
+496.72s: of other volume that we saw today here.
+499.36s: But absolutely, absolutely interesting, especially to see this,
+504.32s: this is a market unicorn to a degree in something like this.
+507.52s: This happens in small sloppy products.
+509.52s: It's not like that special, but it is very rare because algorithms are looking for this exact
+516.16s: thing and they're very, very fast and they can price this out very, very fast.
+521.68s: So the fact that this even printed like that and it's if it's not an error will be very interesting
+527.68s: to me. So super, super interesting trade today. I am very eager to see what this actually is,
+535.44s: but just note, despite what a lot of people will say online because they want to share what they know,
+541.68s: it's impossible to tell decisively from this information.
+544.72s: Just because you pull it up on a platform and this one says,
+547.84s: oh, this came in as a buy and we're going to color it like that.
+551.92s: You got to be careful with data sources because they're processing large vats of data
+559.36s: that's not perfect. You still have to be a thinking trader out here and say, wait a minute,
+564.24s: there's a lot of weird things that happened here. Again, it absolutely could have been a buy,
+569.60s: it could have been a sale. I don't know, but I can tell I don't know because of these reasons.
+573.92s: I don't just see the color and say, yes, sale for sure.
+578.00s: Sale, but bid at 50 offered at 49, taken at 50. Very weird. I do not know. But like I said, instinct,
+588.32s: I think buy based on the rest of the volume today, based on the data, I would have to lean towards
+594.32s: a sale. Again, leaning primarily on the size offered here, matching perfect here.
+601.20s: So I will have a better answer tomorrow for sure because I will download all of the trades
+605.84s: from today and I'll see what size they came through and what the market was offered at that time.
+610.40s: So yeah, again, personal little pet project that really doesn't impact much of anything,
+615.20s: but I do find very, very interesting. And if these were buys, this is a very interesting position
+621.12s: because this is out for the next primary expiration at the 30s. It's a big position. So
+626.08s: TBD, we'll see. If you have any questions, let me know being outlier. See you guys later.
