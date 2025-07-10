@@ -467,9 +467,10 @@ def transcribe_with_whisper(audio_path, output_path):
             f.write("This transcript may be empty or incomplete because the audio file could not be properly downloaded.\n")
             f.write("YouTube may have blocked download attempts for this video.\n")
     
-    # Load the Whisper model (using 'base' model for faster processing)
-    print("🎯 Loading Whisper model (this might take a minute on first run)...")
-    model = whisper.load_model("base")
+    # Load the Whisper model (using centralized config)
+    from pipeline_config import WHISPER_MODEL
+    print(f"🎯 Loading Whisper model '{WHISPER_MODEL}' (this might take a minute on first run)...")
+    model = whisper.load_model(WHISPER_MODEL)
     
     # Transcribe the audio
     print("🎯 Transcribing audio...")
@@ -491,8 +492,9 @@ def transcribe_with_whisper(audio_path, output_path):
                 
             for segment in result["segments"]:
                 start_time = segment["start"]
-                text = segment["text"]
-                f.write(f"{start_time:.2f}s: {text}\n")
+                text = segment["text"].strip()
+                if text:  # Only write non-empty segments
+                    f.write(f"{start_time:.2f}s: {text}\n")
     except Exception as e:
         print(f"❌ Error in Whisper transcription: {e}")
         # Fallback to direct ffmpeg command for audio processing
@@ -515,8 +517,9 @@ def transcribe_with_whisper(audio_path, output_path):
                     
                 for segment in result["segments"]:
                     start_time = segment["start"]
-                    text = segment["text"]
-                    f.write(f"{start_time:.2f}s: {text}\n")
+                    text = segment["text"].strip()
+                    if text:  # Only write non-empty segments
+                        f.write(f"{start_time:.2f}s: {text}\n")
                     
             # Clean up temporary wav file
             if os.path.exists(wav_path):

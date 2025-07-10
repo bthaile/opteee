@@ -37,8 +37,9 @@ def download_audio(url, output_path):
         ydl.download([url])
 
 def transcribe_with_whisper(audio_path, output_path):
-    # Load the Whisper model (using 'base' model for faster processing)
-    model = whisper.load_model("base")
+    # Load the Whisper model (using centralized config)
+    from pipeline_config import WHISPER_MODEL
+    model = whisper.load_model(WHISPER_MODEL)
     
     # Transcribe the audio
     result = model.transcribe(audio_path)
@@ -47,8 +48,9 @@ def transcribe_with_whisper(audio_path, output_path):
     with open(output_path, 'w') as f:
         for segment in result["segments"]:
             start_time = segment["start"]
-            text = segment["text"]
-            f.write(f"{start_time:.2f}s: {text}\n")
+            text = segment["text"].strip()
+            if text:  # Only write non-empty segments
+                f.write(f"{start_time:.2f}s: {text}\n")
 
 # Read URLs and titles from the JSON file (not CSV)
 video_data = []
@@ -100,7 +102,9 @@ for video in video_data:
         transcript = YouTubeTranscriptApi.get_transcript(video_id)
         with open(filename, 'w') as f:
             for entry in transcript:
-                f.write(f"{entry['start']:.2f}s: {entry['text']}\n")
+                text = entry['text'].strip()
+                if text:  # Only write non-empty segments
+                    f.write(f"{entry['start']:.2f}s: {text}\n")
 
         processing_time = time.time() - start_time
         print(f"✅ YouTube transcript saved for {video['title']} (took {processing_time:.2f} seconds)")

@@ -40,7 +40,17 @@ CHANNEL_URLS = [
 YOUTUBE_API_KEY = os.getenv('YOUTUBE_API_KEY')
 
 # Processing Configuration
-WHISPER_MODEL = "base"  # Whisper model size (tiny, base, small, medium, large)
+WHISPER_MODEL = "tiny"  # Whisper model size (tiny, base, small, medium, large) - optimized for speed
+# Speed vs Accuracy trade-offs:
+# - "tiny": ~32x faster than base, ~10% less accurate
+# - "base": Current default, good balance
+# - "small": ~2x slower than base, ~5% more accurate
+WHISPER_MODEL_FAST = "tiny"  # For speed-optimized processing
+WHISPER_MODEL_PARALLEL = "base"  # For parallel processing (better CPU utilization)
+
+# Parallel processing settings
+PARALLEL_WORKERS = 8  # Number of parallel workers (adjust based on your CPU cores)
+PARALLEL_ENABLE = True  # Enable parallel processing by default
 BATCH_SIZE = 32  # Batch size for embedding generation
 MAX_RETRIES = 3  # Maximum retries for failed operations
 

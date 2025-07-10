@@ -598,9 +598,10 @@ def process_transcripts(missing_videos):
     os.makedirs(TRANSCRIPT_DIR, exist_ok=True)
     os.makedirs(AUDIO_DIR, exist_ok=True)
     
-    # Initialize Whisper model
-    print("Loading Whisper model...")
-    model = whisper.load_model("base")
+    # Initialize Whisper model (using centralized config)
+    from pipeline_config import WHISPER_MODEL
+    print(f"Loading Whisper model '{WHISPER_MODEL}'...")
+    model = whisper.load_model(WHISPER_MODEL)
     
     ffmpeg_path = find_ffmpeg()
     print(f"Using ffmpeg at: {ffmpeg_path}")

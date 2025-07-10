@@ -221,10 +221,11 @@ class VideoProcessor:
         
         print(f"🎤 Processing transcripts for {len(video_ids)} videos...")
         
-        # Load Whisper model
+        # Load Whisper model (using centralized config)
         try:
-            model = whisper.load_model("base")
-            print("✅ Whisper model loaded")
+            from pipeline_config import WHISPER_MODEL
+            model = whisper.load_model(WHISPER_MODEL)
+            print(f"✅ Whisper model '{WHISPER_MODEL}' loaded")
         except Exception as e:
             print(f"❌ Failed to load Whisper model: {e}")
             return

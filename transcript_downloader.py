@@ -56,8 +56,9 @@ class TranscriptDownloader:
         self.whisper_model = None
         if WHISPER_AVAILABLE:
             try:
-                print("🎤 Loading Whisper model...")
-                self.whisper_model = whisper.load_model("base")
+                from pipeline_config import WHISPER_MODEL
+                print(f"🎤 Loading Whisper model '{WHISPER_MODEL}'...")
+                self.whisper_model = whisper.load_model(WHISPER_MODEL)
                 print("✅ Whisper model loaded successfully")
             except Exception as e:
                 print(f"⚠️ Could not load Whisper model: {e}")

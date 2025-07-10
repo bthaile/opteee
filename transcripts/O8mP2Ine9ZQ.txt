@@ -1,1 +1,1338 @@
- What's up everybody, Eric here, back with you in and we have a bunch of stuff to talk about. It's been a few weeks since we've talked last, so I'm interested to learn a few things from you. The first thing is you just wrapped up a course. We've talked about that a little bit before we started recording, but how'd it go? Well, obviously it's not really up to me to say how it went, but the feedback we've got from the participants is really good. People really liked it. The Slack community's growing. It's pretty active. People are now sort of this cross-pollination of ideas. People are working on stuff and we've managed to keep it to very sort of evidence-based, very much like, I don't want to hear your fucking opinion on Tesla, whether it's going up or the Elon Musk is genius. I want you to like, on Thursday, Tesla calls are underpriced. Right, find the data, go and tell me is that true, that kind of thing. So it's working well in that regard. It was heavily oversubscribed. We'll probably do it again, maybe August. We limited it this time a little bit because we didn't know whether we could keep up with the questions and it kind of depends on, you got to get a workflow going, but that went pretty well. So I think if we did it again, we'd probably just have an open enrollment thing. So that's awesome. Yeah, I'm glad to hear one of the things I remember when we were first talking about it and I had a chance to look over some of the materials is like, I think you do such a good job balancing the higher theoretical slash math heavy aspects with the practical application. Because I think that's like one of the biggest niches, quote unquote, that's kind of missing when you talk about options is things tend to be either super theoretical or just some dude that doesn't really understand put-call parity, but it's just slinging options. And it doesn't seem like a lot of educated middle ground. How did you guys go about finding that balance between including enough theory, but not overwhelming theory, but including enough practical application, but not just focusing only on that? Yeah, I think in general, that's where you've got to be as a trader, right? I mean, there's options in our irreducibly mathematically complex and there's no point pretending none not. So on one hand, you've got the, you know, the the Chad who thinks it is edge everywhere and all you've got to do is fire out thousands of orders and he is going to make so much money and he's worrying about what kind of Ferrari he's going to get at the end of the year, you know, and that's, although I also, you know, but and then you've got the professor at the other end who's like only sees the math and he thinks there's an edge in the math and neither of these people's right, there's no edge in math, there's no edge in knowing about options, but if you don't know about options and you're trading them, you're going to blow up. Absolutely, like they are complicated and they will get away from you very quickly. So there is definitely stuff you need to know, but there's a lot of other stuff that you get taught in college courses that you don't need to know at all. Like you don't need to know stochastic calculus and I don't think you ever needed to, you know, no one, none of the research is using that now anyway because all the stuff that could be solved, that way's being solved. So I think you've got a lot of math professors teaching the course, you know, basically from 25 years ago and that's no real use to anyone. So that's what James and I are trying to do is find that middle ground. And I think that's what I tried to do in my books as well. Obviously the books are written at a more, probably at a more mathematically high level, but they're not mathematics books. And I never, I was never setting out to impress people with mathematics. That's not the point. But you should be able to read them and just read through the equation and just trust me on what's going on there if you need to because it's the phenomena that's the important thing. And this is one of the reasons I wanted to do it with James is because he's very much on the same pages me with that. He's got much more of a Delta one background than I do and the honest trading Delta one is much more of a, it's more heavy on the trading side because it's less heavy on the theory side. So that's normally the way it works as things get theoretically more complicated, they trade in a more and more simple manner. One of the other things that I was actually rereading through positional options trading, actually working through those differential equations the way that you are. So I'm curious if it's to help people understand the way that options are behaving in a real world or is it to give the theoretical background to them? I mean, it could be either, but the way my brain works normally with these things is say, I've got a problem. I want to figure out, I don't know, some sizing problem like if you're doing a certain trade, what's the best way to size it, right? So once you've got that idea, that you have to then convert it into a mathematical model so you can work through the implications of that model. So that's sort of the way I would do it with say the option pricing stuff as well, like the directional option pricing stuff, you're like, well, okay, what does it mean that there's a return in the underlying? Where does that flow through to the equations? You work through that and you see where it ends up the other end. So it's like you start with your assumption and you work through the mathematics to see where it takes you. So does that make sense? It does, yeah, absolutely. It's basically the way a physicist would approach the world. It's like you make an observation then you try and model that observation and see what the model leads you to. Hopefully it's something new. You want to get something new out of the model that wasn't just in the observation you made. Got it. Yeah, and I think that that's one of the cool things about when I was reading a lot of your work, even your older work is that it got me to think a lot more along those lines. People that took your course, what did you give them specific next steps on like, okay, this is what we showed you guys. This is what we think you should be focusing on next. How do you see their progression? I mean, to be honest, we call the course quant for retail. Because the idea was we were going to get a whole bunch of sort of retail traders or people who weren't options traders, like we had RIAs and money managers and so forth, we were going to teach them quantitative methods that worked. What it turned out to be more though is retail trading for costs. Because a lot of the people we had, a lot of people had very heavy math backgrounds, like we had math professors, we had engineers, computer scientists. Their problem is much more that are on the academic side of things and they want certainty before they do a trade. So we thought we were going to be taking the, no offense, but the YouTube was and telling them slow down, do some work first, make sure you understand it, then do a trade. Whereas what we ended up telling these people is like, just don't be a pussy, do a damn trade. Put something on it, yeah. You're going to learn a lot more when you've got a trade on than you are by thinking about it before you put the trade on. And a lot of these people, they would say something like sell options on Friday night. And I'd be like, what's the best time to sell them? I'm like, I don't know, Friday night. And they're like, well, five minutes before the close or 10 minutes before the close. And I'm like, literally, I don't know. If I want to go early, I'll do it 10 minutes before the close. If I'm sitting at my desk, I'll do it right on the close. It doesn't matter. And it's like, that's not the important thing. Two or three minutes here and there, it doesn't matter. And I'm like, well, could we find an optimal and I'm like, look, look, you're going about this the wrong way. You're going to waste time looking for an optimum, an optimal solution to something that doesn't exist. You'll find something, but it's meaningless. The only thing we know is we've got this broad effect. And the best you can do is throw shit at this broad effect and hope over time it wins. All these other little minuscule things really aren't the problem. So you'll learn a lot more. You can always make things better. But you've got to start doing the basic stuff before you really know what it is you have to improve. Because before you do a trade, honestly, you don't know what the weaknesses of your process are. Is it your execution? Is it your transaction costs? Is it the fact you're doing it on the wrong index? I don't know. You have to do the trade to figure that out. So that was really where we were bullying these guys to do. And they'll be like, have you tested this effect? Like we're giving them an effect, right? Very standard one. Bonds go up in the last week before the end of the month. Absolutely they do. So we're like, go and buy some futures, buy some TLT. And they're like, can I tell you some putts, brains? I'm like, look, you can do whatever you like. But why? Why are you doing this when the simplest thing? We've told you it goes up. What's the simplest way to make money from that? Buy it. OK, don't dick around and make it more complicated. The idea is to make things simpler, not more complicated. So you always want to trade the simplest, cheapest instrument. And that's never options. So if you need to trade options and trade options, but if you don't, that's great. That's a good thing. It's not a bad thing. So that's what we're hammering it. We're still hammering it about that. I like that. It reminds me of a saying that I tell a lot of people, perfection is the enemy of progress, right? Like the idea is do something that you think is relatively well thought out and then optimize it over time. But yeah, if you try to find that perfection, but it also seems to really affect like you're talking about that crowd of people, the people that are really smart, super analytical, that they get stuck in this loop that they can't escape from. So speaking specifically to that audience, it's, tell me. See, I was briefly an academic. And when you say perfections, the enemy of like progress, in the academic world, you can't be perfect. But if you don't try to be, you won't be good enough. It's such a, the best analogy is like professional sports. It's such a competitive place that you have to do everything to be as good as you can. So that's the game that these people are coming from. And it's just that they're trying to apply that game into a situation where it really doesn't fit. So what they're doing is understandable. And I was like that as well. Like I definitely, that was my problem. I had to overcome. It's like I, I would wait for a trade to be perfect. And by the time, as a market maker, by the time the perfect trade turned up, 50 other people already done it. Because they're prepared to do it when it's pretty good. Not perfect. So I know the thing that's struggling with. And it's very common for people to be like, these academics, they'll never be good traders, blah, blah, blah. But the YouTube chatter probably won't be either. Everyone's got a separate group of problems they've got to get through. It's hard for everyone. So whether you're starting at this end or at this end, it's going to be difficult. But in order to be good, you've all got to end up in the same place. You know, just throwing trades out there isn't well done. You're not under trading, but you've got other problems. Right. Yeah, and that makes total sense. I think the thing that I'm kind of referring to is when before somebody is willing to try something, they want it to be perfect. Or they want to have a well-formed essentially as good as they can possibly get it structure. And I think that they're, again, to your point that there's value in that. But I've always seen that same force, though, where the people that kind of trade long-term, they find this balance of both. And I definitely think that it's awesome that you guys talk so much about it. And I also think it's really cool that you continue to remind people. It's actually reentered my conversation cycle of trading the simplest product. Because one of the things that you'll, I'm sure you've heard, right? People are options traders or futures traders. And sometimes they might be, but it seems like from the retail perspective that might be limiting. So for that audience, though, that spends so much time trading, you know, specific products, what would you say to get them to be more open to trading a simpler product, i.e., maybe they think something's going to go up to go to Delta 1 versus buying out of the money calls or buying in the money calls that are far out in time. Like how would you get them to think about those two different value propositions? Well, I think part of the reason that people end up in the options world is a very sensible one. It's because volatility is more predictable in direction. But most of the time, you can't predict the direction of a stock. You just can't, right? Especially on the daily level, like it's the most difficult problem in the world. Like everyone's trying to do it. It's not going to happen. 99% of the time. So you go into the options world for a very good reason. But then you get really hyper focused on that. And you find a situation where that isn't, it doesn't apply. And your mind is just stuck in this other world. So I think the thing to do is just to be, and this applies to all trades all the time, be very clear on what your age actually is. Like, ask yourself, like, what am I trying to do in this trade? What is the phenomenon I'm trying to monetize? So it's, yeah, bonds go up. OK, what's the simplest way to do that? It's not to buy a call spread. It's not to buy a one-year leap. But it's not, it's to buy bonds. And I think you have to, a lot of this is just about being very, very clear about what your actual age in any case is. You know, so often, yeah, I don't, yeah, that's it. That's the answer. Period. Yeah, but I think that it's a great way to frame it, to get traders to simply ask themselves, what's the edge? And then finding the clearest way to express it. Because one of the things that I picked up from one of your books, and I think it's a great way to frame it, is as soon as you start trading options, you're introducing a lot of other forces that might not even be part of your hypothesis. IE bonds go up. OK, well, as soon as you're buying options, now you're introducing volatility, time to get, like, all these other things. So I think it's a really great way to think about it. And speaking about volatility, one of the members from my community was asking about, well, first they were asking about volatility regimes, but then we bracketed down really what they were asking about is volatility surface regimes. And they're curious how you determine what kind of regime that we're in at a given point in time. Like, how do you essentially analyze a volatility surface regime? I don't really know what they mean by regime. Yeah. You mean, if it's in terms of parameterizing the slope or the term structure, I mean, there are ways of doing that, but I'm not really sure. The thing that I think most people get a little bit wrong is that the volatility surface 95% of the time just is kind of constant. I mean, the level of vol changes, and the term structure does flip up and down, right? But the actual shape of the curve doesn't change nearly as much as people kind of hope it does. So I'm not really clear on exactly what they want. Yeah. So what they were referring to was Colin Bennett's book, Trading Volatility, there's a section in there that talks about idealized volatility regimes. So things like sticky delta, sticky strikes, sticky local vol and jumpy vol, essentially. But it's talking about them in relation to the vol surface. The thing about all of those things is they're all idealized states that the world is never sticky strike. It's never sticky, whatever, sticky. What is the other one, sticky strike? That's what I can't remember what they are, kind of tells you something, right? The world is never exactly one of those things. The world is always doing all of those things. And I think it's more of a, I don't know, an educational conceptual tool than actually one that you'd really hang your hat on too much. I mean, I really don't think about that stuff at all. So yeah. I think it makes sense to you how important it really is. Right. Yeah, no, and that makes total sense to me. I think there could be opportunities to trade it potentially. But when they first brought up vol regimes, I immediately interpreted it as is volatility in aggregate, high, low, or transient. That's what I originally thought. And then they kind of sent me the clip and I realized that they were actually talking about vol surface regimes. And I just similar kind of, because the following one question to that, which is what I'm genuinely curious about is how would you trade that? Okay, so if some of these vol regimes, if the market is really behaving like that, some of them are arbitrajable. Right. And I can't remember one of my books talks about it a bit. The problem is they're never perfectly in that regime. So it's not like an ab, and that you're buying something and immediately selling something else. It's kind of like an arbitrage process. So it'd be like if you find something that moves in a sine wave. I mean, that's arbitrajable because you sell it there and you buy it there. And you can, so it's dynamically arbitrajable. Sure. But you can do it. And so when I said I don't use it, I definitely shade my delts as their way. So I don't use black, shoulder, delta for hedging anything. I use a total delta, which also includes the effect of volatility change as the underlying changes. So you use a total derivative instead of a partial derivative. So you do have to make some assumptions there about how volatility is moving. So I do use it a little bit, but basically I'm just using an empirical model. I'm saying volatility is doing this. So the amount of volatility does this as the market moves. And it's typically neither sticky, vol, nor sticky strike. It's somewhere in the middle of those two. Yeah, you do use, I use basically an empirical version of it, which essentially is just looking at how that relationship has moved over the last, well, I think I tend to use like three to six months. Yeah, because I actually remember reading that book a while ago, and when I took a look at it, I started tracking it a little bit. And I noticed that most of the time it was like that sticky local vol and the other three scenarios were far less common, at least based on what I was observing. But it's interesting that you bring up like that total delta concept. Can you explain that a bit more? Okay, so this might be difficult to do without like a white board or something. Blacksholes delta is the derivative of the option price with respect to the underlying, assuming nothing else is changing. So it's a partial derivative. In reality, things other things are changing. In particular, the volatility is changing. So as well as devol, as well as the option DS, you have to have the option devol times devol DS. So you need to basically know your Vega times how much the volatility of that option is changing as the spots changing. I see. So it's like if you've got puts and you go down, you can expect the volatility of that put to go up. Right. But again, depending on what vol regime you're in, if the curve slides like that, it's going to do one thing. If the curve doesn't slide and the put's going to move, it's going to do another thing. Emmanuel Durman wrote a paper on this a long time ago. But yeah, like every market maker will use a total delta like that because if you don't, you really are going to be mis- hedged. But it also matters more to market makers because they want to stay on the market. Their delta hedge is really going to immunize them from what the market is doing. So it's really important that they're matching what the market's actually doing. So they're not going to just use one of these simple regime models. They're going to be using an empirical model as well. Otherwise, it's not going to match. Then for like a typical retail trader, what do you see the efficacy of a total delta tracking for them as worthwhile, not worthwhile? I think it's probably not even worth dealing with. It's one of those things that to do it is going to be a lot of work. Like you'd have to come up with your actual empirical model of how does the vol of this particular strike move as the underlying moves? And it's going to be different for all the strikes. Like the amount of money is the most important one. But you'll also have changes in the wings and changes in the risk reversals. And it's a lot of work to track all that stuff. And then I'm not sure how you're going to make any money out of it because I wouldn't recommend most retail traders do delta hedging anyway. So whether you think something, if you just bring up your ID screen and it says this is the 25 delta put and your model says no, it's actually on a 28 delta. I mean, who gives a shit? It's like for you in order, as a retail trader, there's no difference practically between 25 and 28. It's like it's going to be lost. And you think you've made a difference, but really once you take into account all the uncertainty and the modeling to get to that 28 over 25, I mean, who knows? You could just be completely wrong. So I can't see it being useful to retail at all. I mean, most crop, like longer term, prop guys wouldn't bother using it either. It's really a market-making tool. You can see right on the market all the time. And that's actually the only context I've heard it in as well. So that's why I was curious if there was a use kit. I don't use it at all. So yeah, I think it's a market-making thing. Fair. One of the other questions that I got that's actually, it's a really fun dialogue because there's a lot of papers and a lot of research out there on it. And it is holding leveraged ETFs to essentially just increase buying hold returns, right? So the idea is instead of holding spy or IWM and the queues, you're holding the leveraged counterpart. And there's pretty like, interestingly, two camps. There's the one camp that says, oh no, drag is so bad that you can't make any money. And then the other camp is saying, fuck you guys, it's good enough. I'm curious if it's something that you've studied and if so, what do you think about retail traders holding leveraged ETFs to enhance returns? Almost always not a good idea. There's a lot going on. It's not as simple as saying there's volatility drag. They always decay. They don't always decay. It's a very complicated process. For something very simple mathematically, it is a very complicated process, particularly because we don't know what the actual process of the stock itself is. So we know how leveraging it changes that process, but we don't really know what it was in the first place, see what I mean? So it's like you can say certain things if you assume it's a Brownian motion and then you leverage it, but it's not. So it's a very complicated process. So it's never as simple as saying they always go to zero. They do decay. The mean return will tend to be below zero, like I said. It doesn't have to be, and there are plenty of times when it isn't. Like some of these things have massively outperformed their reference product. Can't think of one off the top of my head, but I'm sure they have. It's basically a situation where as with any trade, there's an optimal size for the trade. So basically that comes back to the Kelly criterion. This is the optimal growth size. And if you leverage more than that, you're going to end up taking more risk and getting lower returns. And that's the side that most of these leverage ETFs are on. It's basically you've got the optimal Kelly size, which might be like 1.2 times leverage, and you've leveraged it to three times. So you're at the point where you're actually getting diminished returns because of that leverage effect. So if you want a really simple rule of thumb, take all of your long stock positions in your long-term stock holdings and replace them all by going short, the leveraged ETFs. So what's the leveraged cues? Does it SQQQ or something? That's one of them. And then there's T triple cues, yeah, because there's different layers of leverage, right? You can have a 2X3X. That's the typical breakdown. Yeah, and it's not again, okay. So normally the higher leverage ones will decay more, but there is a more volatile. But the bigger problem you have to really look at is your borrowing costs, which a lot of people don't look at. So like right now, there's, well, there's VXX, right? Then there's UVIXI and there's UVIXI. UVIXI is one and a half leveraged. UVIXI is two leveraged. So you might think that the two leveraged ones are better short than one and a half, but the two leveraged one right now has got a 22% borrow rate. Whereas the one and a half has got a 3% borrow rate. And if you look at the expected decay and put that in, turns out that the one and a half in this case is a better sale in terms of risk reward. Of course, it's UVIXI, which is now trading at like 2.7 or something because that determined for it to become completely irrelevant, I think. I don't know what the issue is doing there. I think they've just given up on it. Like they should have split it when it went to 20 and they should split it to get to like 200. It's a never, we know what's gonna happen. Or letting it go down to these levels, just you can't trade it. The transaction costs are just way too big. In like, what would the calculus be to just let it go as it's just becoming like too much of a burden or they're not making enough money on issuing, continuing to issue it? Like what's, to me, it seems like you've gone through all of the work to set it up. Why not maintain it until the wheels fall off? I have no idea what they're doing. Don't know, could be, could be a lot of things. Okay. But it's, it's got to the point where it's basically in a relevant product. You know, if you've got a bit asked spread of a cent and you're paying a ticket charge per share, why am I gonna trade something that's 2.7 instead of trading VXX like 35 or something? Yeah, it's just pointless. Got it. Another thing that is becoming more and more invoked lately that I find curious is the retail trader obsession with algos. And for retail traders, obviously, it's this brand new novel concept. And to me, it seems like there's just a tremendous amount of focus on it. And I think retail traders grossly misunderstand how it might fit into their world and also just how long it's been around otherwise. Specifically for retail traders, how do you view AI more importantly, algos for this question, fitting into their portfolios or trading portfolios? You mean them using it as a way of generating alpha? Right. Let me do it. It's very unlikely that someone who's not a specialist is going to get some AI algo that can beat the market. It's, I'm not saying no one can. But if you look at the firms that are really going into this, they've got people with PhDs and machine learning. You're not going to do a course online or even an undergrad course and figure out enough to beat the market. You're not as good as these guys. It's one of those games where you're just not going to win straight up against these guys. So you have to do something else. I kind of think, I mean, I use ChatGPT all the time. But basically, it's like an intern. It's like instead of me trying to do something, and one of the hard things about having an intern is you got to explain very carefully what you need done. And that's the same as the GPT app, right? It's like you've got to be very clear about, I want you to do this and then this and then this. And under those constraints, it's fantastic. I can write hundreds of lines of code, and it will do it pretty well. It will do it a lot faster than me. And it's a really great tool. But in terms of using it to predict volatility or whatever, I'm not even going to. That's just one of those problems that, even if I can do it, there's better uses of my time. It's, I think, we have to be very clear that every time you do a trade, you're making a forecast. Like, there's some people had this idea, I don't forecast. Well, yes, you do. You just bought something. So you're obviously thinking it's going to go up. Otherwise, you wouldn't have bought it. So the action of doing a trades and implicit forecast. But I think this idea of like trying to out forecast the market like that, it's just a very difficult problem. And I think people are being somewhat seduced by this idea of alpha. They've got to get alpha. You don't have to get alpha. You've got to get money. You know, beta counts as money too. It's much more likely that you're going to benefit by finding risk premier that are always there. And you are going to essentially get paid for taking that risk. It's a much more likely outcome than you genuinely finding alpha by out forecasting the market. Could you, yeah, sure. And if you really feel like, if you want to do it as a puzzle, instead of like, I don't know, Sedoku or something, yeah, knock yourself out. But it's just not, it's not a very good way to run this if you're thinking of it as a business and really trying to make money. It's not the right way to do it. It's like with sports gambling, right? Everyone goes into sports gambling thinking, I'm going to predict who's going to win this game. And that's not what the pros do at all. Like the pros are basically saying, the spreads this, the totals that, therefore what should the equivalent spread in the first quarter be? And they're just looking at all these relative value trades. Like they practically never try and predict who's going to win an NBA game because that market is so efficient. It's the same with the markets. Right. So you kind of alluded to another topic that I wanted to ask you about, which is chat GPT and kind of retail traders using AI to just enhance their process. So from a retail trading perspective, what are some of the things that you think retail traders could or should do with something like chat GPT or AI in their trading process? I would caution them against using it at all. I think most people use the computer too much. It's this idea that you should automate all the stuff you need to automate. And people are like, well, jump trading do it. So it must be the thing to do. Jump trading kind of have to do it because of the way they trade. Like if you're doing HFT, you need to automate everything. If you're doing a million trades a day, you can't do that by sitting in front of a computer. But I think for your average retail person, you don't want to speed things up. You want to slow things down. You want to actually be more engaged because you want to learn. And the way you learn is by reviewing every step in the process. So it should be like, look at an options trade, right? It's a complicated thing. You have to make a forecast of what volatility is going to be. You have to choose your strike. You have to choose your expiration. You have to choose your re- hedging frequency. How did each of those impact your trade? At the end of the trade, you go back and you're like, well, my forecast was slightly optimistic. So I shouldn't have made quite as much money as I thought I would. But then this happened, and this happened, and this happened. And you actually have to think through the whole process. And you might find that you're actually really good at forecasting volatility, but you're hedging too sloppy so you're getting too much luck involved, and that's masking the results. And if you don't go through that process, you won't find that out. And you're not going to find that out by automating everything. You know, people ask, you know, what's the software that you should use? Like maybe Excel, maybe a Word document, but maybe a piece of paper and a pen. You don't want to be doing this fast. You want to be doing it as slow as you can. And people, so there's this thing everyone kind of knows that you should keep records, right? And people have the wrong idea of what that process is for. It's not about so you can go back and do statistical analysis on all your results from three years ago or whatever. I mean, I keep records of everything I do every day, but I have no idea where they are. Like I couldn't tell you where my files from three years are going to are, because that's not what they're for. What the four is for the process of making them, because it makes you sit down and think about each thing. And the slower you go through it, the more you're going to learn. It's about active learning. It's not about statistics. So even if you just do it on a legal pad and then throw it away, that'll be fine. It's not the keeping of them. That's important. It's the making of them. I actually love that. And it's probably one of the most common things I tried to talk to people about is literally the process. One of the things I do find chat GPT useful for, and I'm curious what your thoughts are on this. Specifically, if there's a concept, let's say they're reading your book and they come across a part that they're just, they're struggling with. What do you think about using something like chat GPT to help them understand that concept or look it up? One of my favorite things to do with chat GPT is essentially the 80, 20% rule, whatever you want to call it. I think it's Bernoulli principle or whatever. But essentially, the parade always at it. Yeah, thank you. The parade will principle where essentially you get a synthesized list of the highest impact information. Do you think that accelerates the process too much and they're not respecting the process in that manner? Do you view that as an accelerator? No, that can be useful. I use it for, so one of the things I did, and this was basically I did it because a student was like, trying to convince me it was a useful thing. And so I did this as a little test, but it's a useful way to, it was a good project. I'm very big on using Monte Carlo simulations. And I typically, I used to have a really great little Excel and then I got free with some book a long time ago, but it doesn't work on the latest versions of Excel. So I'd had to get a bunch of stuff. And then basically I told Jack, Jack GPT to write me one. And I gave it like two instructions. And it pretty much wrote the whole thing, exactly as I wanted to, and thought the results, and it took me like 10 minutes. And it's like 150 lines of code. And if I'd done that, they would have taken me the best part of a week because I'm not very good at Python. So using it for that is fantastic. And I use it for the intraday volatility measurement stuff that I do, because I measure volatility at like all different frequencies. And then I aggregate it. And I can just do that by, I had it write all this code in Python. And now I can just hit run in a Jupyter Notebook and then off it goes, it's great. So if you go to stuff like that, it's fantastic. But in terms of actually, think of it as an intern. Interns are useful, right? But would you have one, but would you have one come up with your alpha? Would you get some guy that is just, he's finishing his third year of college and he's looking for a job in the summer. And you're like, how should I trade this option? I mean, you wouldn't do that, right? But that grays it like, hey, write me a Monte Carlo simulation. And off they go. It's like that, it's great. It's a fantastic tool. And I think that's all it is. It's a fantastic tool. But it's not for, it's not going to tell you how to beat the market because it doesn't know. Sure. Yeah, because the other thing I think that's good about integrating stuff like AI into the process is I also think it starts to introduce people to AI. Because I don't think it's going anywhere. I think it's going to continue to grow in prevalence, going forward and not just trading, just literally in different assets of life. So I feel like in general, it's a good way to get familiar with a tool that either you can kind of evolve with and learn alongside of it. Or you could just kind of not pay attention to it. And then you get left behind. But I think that I do think that AI has a place in accelerating learning curves. But to your point, I think especially for new concepts going through that process is really important for folks. What do you see the future of, and this is the last question, by the way, I don't want to keep you too long. But what do you see the future of AI in the markets in general? I could have visited just a situation where AI takes away most of the market liquidity providing stuff. Like we've seen in the crypto world these AMMs, these liquidity providing pools and uniswap and stuff. And obviously they've got problems, right? But that isn't even AI. That's just the simplest possible algorithm. Even going back to the early 2000s, I was developing a market-making system, kind of an automated market-making system, which was based on a very simple application of what a market-maker would do. And it basically encoded that. That was using technology that's 25 years old now. And I think AI is going to be able to do that way better than a human market-maker will. It'll be able to manage, it will see all the flows, and be able to react to all of them absolutely optimally, not just semi-optimally, like a human does. And a human basically is quoting a spread, not just to collect the spread, but to immunize themselves against the fact they're not doing everything perfectly. So AI won't need it anywhere near as big a spread. And it will be better. And I think a lot of those kind of jobs, like especially on the Delta one side, for sanitation desks, you know, market-making in vanilla, all that kind of stuff, I could see that completely being automated. The things that it won't be as good at, the things that don't have a set process, you know, the things where you might have a customer calling you up and saying, I kind of want to do this, but I'm not sure what do you think. You know, it's like this is an old joke that a computer can beat a grandmaster at chess, but they can't put the pieces back into the box. So computers are really good at doing hard stuff, but they're not actually all that good at doing ill-defined, easy stuff that people are good at. So I think that are the jobs that are going to stay around. But I also kind of think there's a decent chance that AI just takes a look at us and decides we're not worth a hassle. I mean, there's never been, this isn't my observation. This is the chief AI guy from Google who resigned while back. He said that there's never been a situation in the world where a less intelligent group ruled over a more intelligent group. I mean, you can make some joke about politicians here, but I think at the species level, that's absolutely true. Right. We're not being ruled by the pecs here. So I could definitely see that happening. I don't think all of the stuff around AI is alarmist. I think there are problems that it could come up with. So we'll see how that goes. Yeah, the other question I have specifically related to AI, how do you think the inclusion and I had a similar hypothesis where a lot of the market making liquidity provided roles likely could get phased out? How do you think that that would impact the long-standing market function slash forces that we see like the variance risk premium in indices or just put call skew, things like that? Do you think it would have any impact or would the overall disposition of human beings on the back end still wanting that protection, still willing to overpay, allow it to persist? Yeah, I think that's the sort of thing that is driven by people's desire to avoid risk. And it may become tighter. That's the computer might, it's like I'm always selling vault, right? And I also have a certain degree of risk aversion that would mean that I might not be doing it as aggressively as I should be. And a computer's not gonna have that. But on the other hand, the computer, it's not the computer's money, right? It's someone's money and they're going to have these issues too. So I think things like that will always be around. I think it's purely the matching of buyers and sellers that could change. And to be honest, that's happened already. You know, like 30 years ago, if you were an options market maker, you might make markets on three stocks. But now, I mean, when I left, it was an options market maker would make markets on a hundred. Now it's like five or 600. So the automation of that process is already well underway. So now instead of having one human do five or 600, why don't you just have a computer do the whole lot? I mean, it's not revolutionary. It's just continuing along that process. Right, I'm kind of scaling interesting. Okay, the very last question, because I always lie to you on the last question and then there's always one more. And then I'll let you go for real. But have you studied the volatility around the debt ceiling conversations? Yeah, kind of. We don't really have enough data to say anything. And each one has been against a fairly different backdrop. So I can't really find anything that I particularly believe. And if you look at this time, volatility really didn't do anything. The market really didn't do anything. The market had sort of got to the point where it's like watching a horror movie, right? Look, we know how this is going to play out. You know, you don't want to be the good looking blonde girl. We know what's going to happen to her. And why is she going into the basement all alone? But we know the whole thing, right? It's like that. It's like we kind of knew how it was going to end. We didn't know the exact steps, but really, it's very straightforward, right? Both sides want to basically blame the other side. Whatever happens, the president's the one who gets blamed the most. And that's pretty much that was like that under Obama and Trump and Biden, same old, same old. So this one, the market really didn't care. And there were a lot of people like, oh, the VIX is way too low because of this debt ceiling, right? Which is a classic example. Oh, really, it's too low. Well, the market's not moving. And do you think you're the only one who knows that this issue's out there? I mean, you're going to have to have a better reason for that for why the VIX is too low. So turns out the VIX wasn't too low. If anything, it was too high, right? The part that I find interesting is like, we know with relative certainty, the likely outcome, but we don't know with pure certainty. And if big if there wasn't, there was no agreement for whatever reason and there was a default. Like, obviously the risk there is just massive. So that's the part I find so curious about the event is that it's a very high probabilistic, determinable outcome, but the risk on the other side in that small percentage of cases that it could not happen would be pretty big. So it's curious how just longer term, I started looking at it myself, but obviously I'm like a fucking caveman with this stuff compared to what you can do. That's why I was asking you. I don't think this is, even if there was a default, right? Would you be huge? I don't think it would be nearly as big a deal as if it happened in say the 50s. America is not the world's overwhelming economic power to the way it was back then. And also to be honest, these idiots have been messing around with this stuff for so long that this whole idea of America being absolutely risk-free funds, no one believes that anymore. I wouldn't be surprised if there's another credit downgrade because if you keep acting like an idiot with the credit, eventually people aren't gonna be surprised when something bad happens. And it's not at this point where it's like Bolivia or anything, but it's not Switzerland now either. And we have seen sovereign nations have defaults before. Like and reasonably big sovereign nations, like I don't know what the biggest economy they have a default has been, but I don't know, because Italy defaulted, Mexico has defaulted a whole bunch of times, Mexico's huge. So if it did, I don't think the world would end. Obviously it would be bad for the US markets, but I don't think the market would crash 50% or anything. Right. Yeah, that makes sense. It's somewhat ludicrous that Congress can authorize spending and then decide not to pay for it. It's so funny you say that. I had an economist on the podcast last week and that was actually one of the questions I was talking to him about, because to me, it seems so strange to create a budget with the known spend, projected spends, like we know where we're going and yet we come into this. And I was also looking at the frequency specifically because I think like 1917 or something like that is when it was first instituted the debt ceiling. And then in the 40s is when it was starting being activated a lot more, but like in the last two decades is when we're having them at a decent clip. And to me, yeah, I just struggle with it. Like to me, it makes no fucking sense. Like we know where things are going. Why is this happening? Why don't we just have a bigger budget or whatever the fuck is or not overspend? But yeah, here we are. Well, right, it's not even about the level of spending. It's the fact that these are two separate processes. I mean, that's just no matter what you believe about government spending levels, that is just ridiculously done. And it's one of those things that people kind of, I think up until recently kind of just accepted because it didn't happen that often. But also it wouldn't happen. I don't think anywhere else in the world this could happen. The government could authorize spending and then say, oh, by the way, we're not paying for the stuff which is we were going to pay for. Right. Without defaulting, right? That is like, I'm voting to spend this money. Now I'm voting that we can't spend this money. Like, just welcome to America. This makes no sense at all. Well, you know, it's how America does what it does, right? You never let them know your next move because we don't know our next fucking move. Well, it's a lot of the stuff about the American bulls political system. There's always a reason why each incremental step happened, right? So we know why the electoral college came about. I get that. We know why the Senate has the structure it has. On the other hand, it is goddess to a place that makes no sense. Right. And it's like, I don't think it's a coincidence that every other democracy that's come along since had a chance to look at the American system. And no one has said, we've got to go with that. So that's what yeah, they've really worked that one out. It's yeah. And these are even like democratic governments that the Americans have installed. Like they didn't go to Afghanistan and said, come on guys, where's your electoral college? Yeah, it's it's interesting. And I think the part that always I find so intriguing about it is like, I know these aren't stupid people. That's what I always go back to is sure, you know, they have their leanings and all that kind of stuff. But most of the people there, they're legitimately not dumb. So it just tells you the amount of structural stuff around that kind of puts us in these interesting scenarios. Yeah, there's a whole bunch of problems, right? I think the fact that the highest level of the civil service is political appointees always creates this level of takes wild for people to get up to speed. Right. As opposed to the certainly the Commonwealth countries whether the civil services or, you know, that's their job. It's not a political appointment. So even if the politicians are all completely idiotic, the underlying machinery is run by people who know how to run that thing. It's, you know, it's like, and the military interestingly doesn't have this, right? I mean, the joint chiefs of staff are not like some guy who was a good campaign contributor, right? I mean, it's no, it's, it's got some ad ball. He spent 40 years in the Navy. But we don't do that with a lot of the other departments. Yeah, that's actually kind of an interesting juxtaposition, huh? Well, I think it probably tells us something, right? Yeah, I mean, and it's easy to make fun of, you know, there's the whole catch 22 and mash and everything about how the army is run so ridiculously. And a microvival, it kind of is, but it has a huge logistics operation. It's amazing. So I mean, it's really good at like, forget about the blowing things up there. The fact that the American military can put thousands of tons of provisions anywhere in the world in a matter of days. It's incredible. Yep. Yep. And I mean, you're, I'm a former logistician. So that's literally what, what we would do is we would look at how to put a giant force off of somebody's doorstep and be ready to put them closer, if need be. And it's exactly that point. It's funny like if you read anything with Sun Zoo or, you know, we're classmates. It's the ability to support a large fighting force that makes such a massive difference. So yeah, it's logistics of when wars. Yeah. I mean, everyone talks, you know, everyone's all enameled about the special forces and all this kind of stuff. But yeah, it's putting thousands and thousands of pounds of, you know, munitions in the right place is what you need. It doesn't matter how good your troops are if they can't eat. Right. Right. Wrap us up. I'm curious. Have you done any driving? Has it been nice weather there? Has it been very nice weather? I haven't read anything much. I've got a few problems, well, always. One of the problems is my pop-up headlights. I can have a choice of one being up or both being up. So I have to have both of them up all the time at the moment. So I've got to get that fixed. Also, my wipers aren't working. Which car is this? That's the 456. Got it. The 308 I think is working fine. But I haven't taken it out yet because the weather hasn't been very good. And also now that you've said that, I'm sure when you sit in the car, it probably will have heard that in the ether. And then it will find something to be upset about. Well, yeah, I mean, obviously things always break. Also, it might be too hot now. You don't really want to be driving an 80 degree weather. Well, 80 plus gets too hot. Are they, is that one air cooled or? No, it's not so much the engine. The engine's fine. It's neat. Got it. Oh, okay. The roof of it. So it acts like a little, it's got big windows, big engine behind you. X like a little greenhouse. Yeah, okay. It doesn't really do anything. And if you take the roof off, you just end up getting sunstroke. Got it. Yeah, because I was going to say that's, it would be mind blowing to me. I know there are some people that do air cool conversions just for two different purposes. But it would have been really interesting to me if you did that. So the gross heat factor makes a lot more sense. No, the gas. It's fine. Right. Just that I would probably die. Yeah. It gets really hot in there. Well, instead of going to a sauna, you just go for a drive, you know. Yeah, I also get deaf. You don't get deaf in the sauna. There's, yeah, the cars and coffee. I think I sent you a photo of a 48. I saw there one time, but there was a 40 this past weekend. That was just absolutely gorgeous. Beautiful car. I've never been a huge fan of them, to be honest. There are a little extreme. And it seems like based on your cars, at least of what I know that you have, it definitely seems contrary to your general style. But for what they are, 288, a lot. Right. You know, because it's basically a 308 on a Lloyds. I mean, it's got no panels the same as a 308, but it looks like a bigger one. But I don't know. That's an old car, you know, in an old super high performance car, just a lot of work. Probably isn't much fun to drive. Yeah, I never been in one myself, but I remember I looked into it. And I'm not like huge or anything, but the seat was so narrow. I was just looking at it as. Oh, yeah, it's got the big bolstered seats, right? Exactly. Yeah. It's actually a bit weird. A lot of the like the 308's got really, really, really thin seats. Because you know, they're astonishingly comfortable. I mean, for what they look like, you think there's no padding at all. And they're actually, they fit me perfectly. Well, I feel like you also kind of learn to respect the ergonomics of the seat as compared to, you know, how much thickness or cushion there is. If you have a well shaped, actually think, yeah, it makes a ton of sense that that would be way more comfortable. What do you think about the, the Lamborghini Diablos? Well, Diablos, nice. Okay. It's like the last, the last real Lamborghini. Yeah, I absolutely, I saw one of those. Now they're just outies. Yeah. Yeah. I don't like the Lamborghini's at all anymore, but all of the pre-outie ones are fantastic. I love them. Yeah. The, there was a Diablo there that was just, it was so cool, especially it wasn't too far away from the F40. So it was kind of a chance to check on both out next to one of the other. But hopefully the weather gets a little bit more decent for you guys there to get some wheel time in. I don't know, it's been cloudy here, but at least temperate. So it's actually been pretty good driving here. Yeah, we've, it's been overcast here a lot. Overcast kind of dull. This is the first hot day we've got. I don't know how hot it is. It's probably like 90. It got hot today. Yeah. Starting off the summer with the bang, I suppose. Yeah. Well, it was a long time coming, but yeah, it's hot. Yeah. Well, you and thanks so much for hanging out. I honestly, I just have a blast chatting with you. So thanks for sharing some of your experience with folks, talking some cars and looking forward to the next course. Whenever that gets announced, let me know. I'm happy to share with my community and yeah, get people in front of you because you share a lot of awesome information. So thank you. Well, thanks for chatting. Enjoyed it. Of course, take care of you. Thanks, partner.
+0.00s: What's up everybody, Eric here, back with you in
+2.68s: and we have a bunch of stuff to talk about.
+5.84s: It's been a few weeks since we've talked last,
+9.68s: so I'm interested to learn a few things from you.
+13.08s: The first thing is you just wrapped up a course.
+15.80s: We've talked about that a little bit
+17.00s: before we started recording, but how'd it go?
+21.16s: Well, obviously it's not really up to me to say how it went,
+23.48s: but the feedback we've got from the participants is really good.
+26.52s: People really liked it.
+28.68s: The Slack community's growing.
+30.16s: It's pretty active.
+32.36s: People are now sort of this cross-pollination of ideas.
+35.12s: People are working on stuff and we've managed to keep it to
+40.52s: very sort of evidence-based, very much like,
+44.08s: I don't want to hear your fucking opinion on Tesla,
+46.16s: whether it's going up or the Elon Musk is genius.
+49.16s: I want you to like, on Thursday, Tesla calls are underpriced.
+53.20s: Right, find the data, go and tell me is that true,
+55.56s: that kind of thing.
+56.56s: So it's working well in that regard.
+59.12s: It was heavily oversubscribed.
+61.04s: We'll probably do it again, maybe August.
+65.84s: We limited it this time a little bit
+67.80s: because we didn't know whether we could keep up
+69.88s: with the questions and it kind of depends on,
+73.96s: you got to get a workflow going, but that went pretty well.
+77.04s: So I think if we did it again,
+78.28s: we'd probably just have an open enrollment thing.
+80.44s: So that's awesome.
+81.92s: Yeah, I'm glad to hear one of the things I remember
+84.24s: when we were first talking about it
+85.88s: and I had a chance to look over some of the materials
+87.68s: is like, I think you do such a good job balancing
+91.52s: the higher theoretical slash math heavy aspects
+96.52s: with the practical application.
+98.40s: Because I think that's like one of the biggest
+100.28s: niches, quote unquote, that's kind of missing
+102.88s: when you talk about options is things tend to be either
+105.44s: super theoretical or just some dude
+107.88s: that doesn't really understand put-call parity,
+109.92s: but it's just slinging options.
+111.76s: And it doesn't seem like a lot of educated middle ground.
+115.68s: How did you guys go about finding that balance
+118.64s: between including enough theory,
+120.20s: but not overwhelming theory,
+121.76s: but including enough practical application,
+123.76s: but not just focusing only on that?
+126.96s: Yeah, I think in general,
+128.52s: that's where you've got to be as a trader, right?
+130.72s: I mean, there's options in our
+134.08s: irreducibly mathematically complex
+136.20s: and there's no point pretending none not.
+138.96s: So on one hand, you've got the, you know,
+141.96s: the the Chad who thinks it is edge everywhere
+144.80s: and all you've got to do is fire out thousands of orders
+146.80s: and he is going to make so much money
+148.08s: and he's worrying about what kind of Ferrari
+150.64s: he's going to get at the end of the year, you know,
+152.88s: and that's, although I also, you know,
+155.84s: but and then you've got the professor at the other end
+159.00s: who's like only sees the math
+160.96s: and he thinks there's an edge in the math
+162.96s: and neither of these people's right,
+164.96s: there's no edge in math,
+166.60s: there's no edge in knowing about options,
+168.92s: but if you don't know about options
+170.48s: and you're trading them, you're going to blow up.
+173.64s: Absolutely, like they are complicated
+177.84s: and they will get away from you very quickly.
+181.08s: So there is definitely stuff you need to know,
+184.40s: but there's a lot of other stuff
+186.12s: that you get taught in college courses
+187.72s: that you don't need to know at all.
+190.16s: Like you don't need to know stochastic calculus
+192.68s: and I don't think you ever needed to, you know,
+195.52s: no one, none of the research is using that now anyway
+198.84s: because all the stuff that could be solved,
+200.16s: that way's being solved.
+201.84s: So I think you've got a lot of math professors teaching
+204.24s: the course, you know, basically from 25 years ago
+208.04s: and that's no real use to anyone.
+211.16s: So that's what James and I are trying to do
+212.88s: is find that middle ground.
+214.68s: And I think that's what I tried to do in my books as well.
+218.08s: Obviously the books are written at a more,
+222.80s: probably at a more mathematically high level,
+225.28s: but they're not mathematics books.
+227.36s: And I never, I was never setting out
+230.24s: to impress people with mathematics.
+231.84s: That's not the point.
+233.16s: But you should be able to read them
+234.52s: and just read through the equation
+236.44s: and just trust me on what's going on there if you need to
+239.52s: because it's the phenomena that's the important thing.
+243.72s: And this is one of the reasons I wanted to do it with James
+245.76s: is because he's very much on the same pages me with that.
+249.04s: He's got much more of a Delta one background than I do
+253.88s: and the honest trading Delta one is much more of a,
+259.88s: it's more heavy on the trading side
+261.52s: because it's less heavy on the theory side.
+263.68s: So that's normally the way it works
+265.08s: as things get theoretically more complicated,
+267.16s: they trade in a more and more simple manner.
+269.20s: One of the other things that I was actually
+272.56s: rereading through positional options trading,
+275.36s: actually working through those differential equations
+277.60s: the way that you are.
+278.44s: So I'm curious if it's to help people understand
+281.16s: the way that options are behaving in a real world
+284.64s: or is it to give the theoretical background to them?
+289.68s: I mean, it could be either,
+291.44s: but the way my brain works normally with these things
+295.52s: is say, I've got a problem.
+297.16s: I want to figure out, I don't know,
+300.16s: some sizing problem like if you're doing a certain trade,
+303.20s: what's the best way to size it, right?
+305.48s: So once you've got that idea,
+307.68s: that you have to then convert it into a mathematical model
+311.12s: so you can work through the implications of that model.
+316.04s: So that's sort of the way I would do it
+317.72s: with say the option pricing stuff as well,
+320.16s: like the directional option pricing stuff,
+322.92s: you're like, well, okay,
+324.40s: what does it mean that there's a return in the underlying?
+327.00s: Where does that flow through to the equations?
+329.44s: You work through that and you see
+330.76s: where it ends up the other end.
+332.60s: So it's like you start with your assumption
+334.20s: and you work through the mathematics
+335.56s: to see where it takes you.
+337.32s: So does that make sense?
+338.68s: It does, yeah, absolutely.
+340.12s: It's basically the way a physicist would approach the world.
+343.24s: It's like you make an observation
+345.20s: then you try and model that observation
+347.04s: and see what the model leads you to.
+350.16s: Hopefully it's something new.
+352.56s: You want to get something new out of the model
+354.48s: that wasn't just in the observation you made.
+357.08s: Got it.
+358.24s: Yeah, and I think that that's one of the cool things
+361.08s: about when I was reading a lot of your work,
+362.56s: even your older work is that it got me to think
+366.60s: a lot more along those lines.
+368.64s: People that took your course,
+371.00s: what did you give them specific next steps on like,
+374.40s: okay, this is what we showed you guys.
+376.64s: This is what we think you should be focusing on next.
+380.08s: How do you see their progression?
+382.56s: I mean, to be honest, we call the course
+386.40s: quant for retail.
+388.32s: Because the idea was we were going to get a whole bunch
+389.96s: of sort of retail traders or people who weren't options traders,
+394.24s: like we had RIAs and money managers
+396.24s: and so forth, we were going to teach them
+398.92s: quantitative methods that worked.
+401.32s: What it turned out to be more though
+403.60s: is retail trading for costs.
+406.32s: Because a lot of the people we had,
+408.16s: a lot of people had very heavy math backgrounds,
+411.00s: like we had math professors,
+412.32s: we had engineers, computer scientists.
+415.68s: Their problem is much more
+418.80s: that are on the academic side of things
+420.52s: and they want certainty before they do a trade.
+424.00s: So we thought we were going to be taking the,
+427.92s: no offense, but the YouTube was
+430.16s: and telling them slow down, do some work first,
+432.88s: make sure you understand it, then do a trade.
+435.76s: Whereas what we ended up telling these people is like,
+438.56s: just don't be a pussy, do a damn trade.
+441.00s: Put something on it, yeah.
+442.24s: You're going to learn a lot more when you've got a trade on
+445.68s: than you are by thinking about it
+447.40s: before you put the trade on.
+449.40s: And a lot of these people,
+451.36s: they would say something like
+454.72s: sell options on Friday night.
+458.04s: And I'd be like, what's the best time to sell them?
+460.08s: I'm like, I don't know, Friday night.
+461.76s: And they're like,
+462.76s: well, five minutes before the close
+463.92s: or 10 minutes before the close.
+465.20s: And I'm like, literally, I don't know.
+466.52s: If I want to go early, I'll do it 10 minutes
+468.48s: before the close.
+469.64s: If I'm sitting at my desk, I'll do it right on the close.
+471.84s: It doesn't matter.
+473.44s: And it's like, that's not the important thing.
+475.60s: Two or three minutes here and there, it doesn't matter.
+478.12s: And I'm like, well, could we find an optimal
+480.12s: and I'm like, look, look, you're going about this the wrong way.
+483.44s: You're going to waste time looking for an optimum,
+487.16s: an optimal solution to something that doesn't exist.
+490.32s: You'll find something, but it's meaningless.
+492.88s: The only thing we know is we've got this broad effect.
+496.56s: And the best you can do is throw shit at this broad effect
+500.04s: and hope over time it wins.
+503.36s: All these other little minuscule things
+505.96s: really aren't the problem.
+508.32s: So you'll learn a lot more.
+509.68s: You can always make things better.
+511.88s: But you've got to start doing the basic stuff
+514.92s: before you really know what it is you have to improve.
+517.56s: Because before you do a trade, honestly,
+520.04s: you don't know what the weaknesses of your process are.
+525.12s: Is it your execution?
+527.00s: Is it your transaction costs?
+529.00s: Is it the fact you're doing it on the wrong index?
+532.64s: I don't know.
+534.16s: You have to do the trade to figure that out.
+537.60s: So that was really where we were bullying these guys to do.
+540.92s: And they'll be like, have you tested this effect?
+545.24s: Like we're giving them an effect, right?
+546.44s: Very standard one.
+547.84s: Bonds go up in the last week before the end of the month.
+553.08s: Absolutely they do.
+554.72s: So we're like, go and buy some futures, buy some TLT.
+557.56s: And they're like, can I tell you some putts, brains?
+559.84s: I'm like, look, you can do whatever you like.
+561.72s: But why?
+563.48s: Why are you doing this when the simplest thing?
+567.12s: We've told you it goes up.
+568.72s: What's the simplest way to make money from that?
+571.32s: Buy it.
+572.48s: OK, don't dick around and make it more complicated.
+576.12s: The idea is to make things simpler, not more complicated.
+580.04s: So you always want to trade the simplest, cheapest instrument.
+585.40s: And that's never options.
+587.84s: So if you need to trade options and trade options,
+590.80s: but if you don't, that's great.
+593.52s: That's a good thing.
+594.44s: It's not a bad thing.
+596.72s: So that's what we're hammering it.
+598.40s: We're still hammering it about that.
+601.24s: I like that.
+602.88s: It reminds me of a saying that I tell a lot of people,
+605.72s: perfection is the enemy of progress, right?
+608.32s: Like the idea is do something that you think is relatively
+612.24s: well thought out and then optimize it over time.
+614.72s: But yeah, if you try to find that perfection,
+617.24s: but it also seems to really affect
+619.04s: like you're talking about that crowd of people,
+620.68s: the people that are really smart, super analytical,
+623.20s: that they get stuck in this loop that they can't
+626.08s: escape from.
+626.76s: So speaking specifically to that audience,
+630.52s: it's, tell me.
+633.28s: See, I was briefly an academic.
+635.72s: And when you say perfections,
+638.48s: the enemy of like progress,
+640.44s: in the academic world, you can't be perfect.
+645.68s: But if you don't try to be, you won't be good enough.
+648.92s: It's such a, the best analogy is like professional sports.
+653.48s: It's such a competitive place
+657.36s: that you have to do everything to be as good as you can.
+660.64s: So that's the game that these people are coming from.
+663.72s: And it's just that they're trying to apply that game
+666.96s: into a situation where it really doesn't fit.
+669.84s: So what they're doing is understandable.
+672.68s: And I was like that as well.
+674.04s: Like I definitely, that was my problem.
+676.56s: I had to overcome.
+678.00s: It's like I, I would wait for a trade to be perfect.
+683.36s: And by the time, as a market maker,
+685.04s: by the time the perfect trade turned up,
+686.96s: 50 other people already done it.
+689.16s: Because they're prepared to do it when it's pretty good.
+692.44s: Not perfect.
+693.68s: So I know the thing that's struggling with.
+697.72s: And it's very common for people to be like,
+700.36s: these academics, they'll never be good traders, blah, blah, blah.
+703.76s: But the YouTube chatter probably won't be either.
+706.96s: Everyone's got a separate group of problems
+709.84s: they've got to get through.
+710.96s: It's hard for everyone.
+712.68s: So whether you're starting at this end or at this end,
+715.48s: it's going to be difficult.
+717.40s: But in order to be good, you've all got to end up
+719.44s: in the same place.
+721.20s: You know, just throwing trades out there isn't well done.
+725.52s: You're not under trading, but you've got other problems.
+729.40s: Right.
+729.88s: Yeah, and that makes total sense.
+731.24s: I think the thing that I'm kind of referring to
+734.20s: is when before somebody is willing to try something,
+737.56s: they want it to be perfect.
+738.88s: Or they want to have a well-formed essentially
+742.96s: as good as they can possibly get it structure.
+745.84s: And I think that they're, again, to your point
+747.80s: that there's value in that.
+749.04s: But I've always seen that same force, though,
+752.84s: where the people that kind of trade long-term,
+755.60s: they find this balance of both.
+757.48s: And I definitely think that it's awesome
+760.12s: that you guys talk so much about it.
+761.48s: And I also think it's really cool that you continue
+764.44s: to remind people.
+765.32s: It's actually reentered my conversation cycle
+769.12s: of trading the simplest product.
+772.12s: Because one of the things that you'll,
+774.52s: I'm sure you've heard, right?
+775.52s: People are options traders or futures traders.
+779.04s: And sometimes they might be, but it seems like
+781.96s: from the retail perspective that might be limiting.
+784.16s: So for that audience, though, that spends so much time
+788.32s: trading, you know, specific products,
+791.32s: what would you say to get them to be more open
+794.36s: to trading a simpler product, i.e., maybe they think
+798.12s: something's going to go up to go to Delta 1 versus buying
+802.56s: out of the money calls or buying in the money calls
+804.64s: that are far out in time.
+805.72s: Like how would you get them to think about
+808.04s: those two different value propositions?
+811.72s: Well, I think part of the reason that people end up
+814.04s: in the options world is a very sensible one.
+816.44s: It's because volatility is more predictable in direction.
+820.48s: But most of the time, you can't predict the direction
+825.08s: of a stock.
+825.76s: You just can't, right?
+827.04s: Especially on the daily level, like it's the most
+829.76s: difficult problem in the world.
+831.44s: Like everyone's trying to do it.
+834.20s: It's not going to happen.
+835.68s: 99% of the time.
+837.36s: So you go into the options world for a very good reason.
+840.20s: But then you get really hyper focused on that.
+842.88s: And you find a situation where that isn't, it doesn't apply.
+846.84s: And your mind is just stuck in this other world.
+851.68s: So I think the thing to do is just to be,
+853.80s: and this applies to all trades all the time,
+855.72s: be very clear on what your age actually is.
+859.48s: Like, ask yourself, like, what am I trying to do in this trade?
+864.28s: What is the phenomenon I'm trying to monetize?
+867.12s: So it's, yeah, bonds go up.
+869.28s: OK, what's the simplest way to do that?
+872.12s: It's not to buy a call spread.
+873.68s: It's not to buy a one-year leap.
+875.76s: But it's not, it's to buy bonds.
+878.40s: And I think you have to, a lot of this
+883.00s: is just about being very, very clear about what your actual
+886.60s: age in any case is.
+889.00s: You know, so often, yeah, I don't, yeah, that's it.
+895.52s: That's the answer.
+896.92s: Period.
+897.44s: Yeah, but I think that it's a great way to frame it,
+901.00s: to get traders to simply ask themselves, what's the edge?
+904.64s: And then finding the clearest way to express it.
+906.48s: Because one of the things that I picked up from one of your books,
+909.44s: and I think it's a great way to frame it,
+911.28s: is as soon as you start trading options,
+914.16s: you're introducing a lot of other forces
+916.56s: that might not even be part of your hypothesis.
+919.08s: IE bonds go up.
+920.76s: OK, well, as soon as you're buying options,
+922.88s: now you're introducing volatility,
+924.48s: time to get, like, all these other things.
+926.44s: So I think it's a really great way to think about it.
+928.72s: And speaking about volatility, one of the members
+932.88s: from my community was asking about, well,
+936.48s: first they were asking about volatility regimes,
+938.32s: but then we bracketed down really what they were asking about
+941.00s: is volatility surface regimes.
+944.32s: And they're curious how you determine what kind of regime
+950.28s: that we're in at a given point in time.
+951.92s: Like, how do you essentially analyze a volatility surface
+957.20s: regime?
+958.56s: I don't really know what they mean by regime.
+963.68s: Yeah.
+964.68s: You mean, if it's in terms of parameterizing the slope
+970.68s: or the term structure, I mean, there are ways of doing that,
+977.68s: but I'm not really sure.
+979.52s: The thing that I think most people get a little bit wrong
+986.52s: is that the volatility surface 95% of the time just
+991.64s: is kind of constant.
+993.60s: I mean, the level of vol changes, and the term structure
+996.60s: does flip up and down, right?
+998.56s: But the actual shape of the curve doesn't change nearly
+1002.80s: as much as people kind of hope it does.
+1006.48s: So I'm not really clear on exactly what they want.
+1010.84s: Yeah.
+1011.20s: So what they were referring to was Colin Bennett's book,
+1015.60s: Trading Volatility, there's a section in there
+1018.16s: that talks about idealized volatility regimes.
+1021.12s: So things like sticky delta, sticky strikes, sticky local
+1024.24s: vol and jumpy vol, essentially.
+1026.68s: But it's talking about them in relation to the vol surface.
+1031.80s: The thing about all of those things
+1033.68s: is they're all idealized states that the world
+1038.16s: is never sticky strike.
+1039.44s: It's never sticky, whatever, sticky.
+1043.52s: What is the other one, sticky strike?
+1045.24s: That's what I can't remember what they are,
+1047.40s: kind of tells you something, right?
+1049.32s: The world is never exactly one of those things.
+1051.72s: The world is always doing all of those things.
+1054.84s: And I think it's more of a, I don't know,
+1059.80s: an educational conceptual tool than actually one
+1062.84s: that you'd really hang your hat on too much.
+1067.52s: I mean, I really don't think about that stuff at all.
+1071.04s: So yeah.
+1073.80s: I think it makes sense to you how important it really is.
+1078.80s: Right. Yeah, no, and that makes total sense to me.
+1081.16s: I think there could be opportunities to trade it potentially.
+1085.04s: But when they first brought up vol regimes,
+1086.96s: I immediately interpreted it as is volatility
+1091.20s: in aggregate, high, low, or transient.
+1093.80s: That's what I originally thought.
+1095.52s: And then they kind of sent me the clip
+1096.92s: and I realized that they were actually talking about
+1098.36s: vol surface regimes.
+1099.52s: And I just similar kind of, because the following one
+1103.44s: question to that, which is what I'm genuinely curious about
+1106.20s: is how would you trade that?
+1109.20s: Okay, so if some of these vol regimes,
+1116.24s: if the market is really behaving like that,
+1119.04s: some of them are arbitrajable.
+1121.40s: Right.
+1122.24s: And I can't remember one of my books talks about it a bit.
+1125.60s: The problem is they're never perfectly in that regime.
+1129.96s: So it's not like an ab, and that you're buying something
+1134.12s: and immediately selling something else.
+1135.72s: It's kind of like an arbitrage process.
+1137.88s: So it'd be like if you find something
+1139.28s: that moves in a sine wave.
+1141.00s: I mean, that's arbitrajable because you sell it there
+1142.96s: and you buy it there.
+1143.68s: And you can, so it's dynamically arbitrajable.
+1147.88s: Sure.
+1148.72s: But you can do it.
+1151.16s: And so when I said I don't use it,
+1154.96s: I definitely shade my delts as their way.
+1158.00s: So I don't use black, shoulder, delta for hedging anything.
+1162.60s: I use a total delta, which also includes the effect
+1167.36s: of volatility change as the underlying changes.
+1171.60s: So you use a total derivative instead of a partial derivative.
+1176.68s: So you do have to make some assumptions there
+1178.64s: about how volatility is moving.
+1182.36s: So I do use it a little bit,
+1183.68s: but basically I'm just using an empirical model.
+1187.24s: I'm saying volatility is doing this.
+1189.12s: So the amount of volatility does this as the market moves.
+1194.16s: And it's typically neither sticky,
+1196.16s: vol, nor sticky strike.
+1197.40s: It's somewhere in the middle of those two.
+1202.60s: Yeah, you do use,
+1205.60s: I use basically an empirical version of it,
+1208.12s: which essentially is just looking at how that relationship
+1210.68s: has moved over the last, well,
+1213.68s: I think I tend to use like three to six months.
+1218.20s: Yeah, because I actually remember reading that book
+1221.44s: a while ago, and when I took a look at it,
+1223.92s: I started tracking it a little bit.
+1226.28s: And I noticed that most of the time it was like that sticky
+1228.88s: local vol and the other three scenarios were far less common,
+1234.48s: at least based on what I was observing.
+1235.88s: But it's interesting that you bring up like that total delta
+1239.08s: concept. Can you explain that a bit more?
+1242.52s: Okay, so this might be difficult to do without like a white board
+1246.88s: or something.
+1248.92s: Blacksholes delta is the derivative of the option price
+1253.48s: with respect to the underlying,
+1255.68s: assuming nothing else is changing.
+1257.64s: So it's a partial derivative.
+1259.92s: In reality, things other things are changing.
+1263.44s: In particular, the volatility is changing.
+1267.20s: So as well as devol, as well as the option DS,
+1272.36s: you have to have the option devol times devol DS.
+1276.96s: So you need to basically know your Vega
+1280.44s: times how much the volatility of that option
+1283.28s: is changing as the spots changing.
+1285.52s: I see.
+1286.36s: So it's like if you've got puts and you go down,
+1289.92s: you can expect the volatility of that put to go up.
+1294.24s: Right.
+1295.08s: But again, depending on what vol regime you're in,
+1298.04s: if the curve slides like that, it's going to do one thing.
+1301.40s: If the curve doesn't slide and the put's going to move,
+1303.68s: it's going to do another thing.
+1305.72s: Emmanuel Durman wrote a paper on this a long time ago.
+1310.84s: But yeah, like every market maker will use a total delta
+1314.60s: like that because if you don't,
+1316.56s: you really are going to be mis- hedged.
+1320.64s: But it also matters more to market makers
+1325.76s: because they want to stay on the market.
+1328.12s: Their delta hedge is really going to immunize them
+1332.56s: from what the market is doing.
+1334.80s: So it's really important that they're matching
+1336.72s: what the market's actually doing.
+1339.00s: So they're not going to just use one of these simple regime
+1341.68s: models.
+1342.20s: They're going to be using an empirical model as well.
+1345.48s: Otherwise, it's not going to match.
+1348.52s: Then for like a typical retail trader,
+1351.60s: what do you see the efficacy of a total delta
+1354.40s: tracking for them as worthwhile, not worthwhile?
+1360.56s: I think it's probably not even worth dealing with.
+1364.64s: It's one of those things that to do it
+1367.36s: is going to be a lot of work.
+1369.44s: Like you'd have to come up with your actual empirical model
+1372.48s: of how does the vol of this particular strike move
+1376.00s: as the underlying moves?
+1378.00s: And it's going to be different for all the strikes.
+1379.64s: Like the amount of money is the most important one.
+1381.88s: But you'll also have changes in the wings and changes
+1384.40s: in the risk reversals.
+1385.56s: And it's a lot of work to track all that stuff.
+1390.40s: And then I'm not sure how you're going to make any money out
+1392.80s: of it because I wouldn't recommend most retail traders
+1397.80s: do delta hedging anyway.
+1399.92s: So whether you think something, if you just bring up
+1403.24s: your ID screen and it says this is the 25 delta put
+1407.72s: and your model says no, it's actually on a 28 delta.
+1412.60s: I mean, who gives a shit?
+1414.04s: It's like for you in order, as a retail trader,
+1417.96s: there's no difference practically between 25 and 28.
+1421.36s: It's like it's going to be lost.
+1424.36s: And you think you've made a difference,
+1428.48s: but really once you take into account all the uncertainty
+1431.48s: and the modeling to get to that 28 over 25,
+1435.08s: I mean, who knows?
+1435.92s: You could just be completely wrong.
+1438.04s: So I can't see it being useful to retail at all.
+1442.60s: I mean, most crop, like longer term,
+1445.44s: prop guys wouldn't bother using it either.
+1447.24s: It's really a market-making tool.
+1450.04s: You can see right on the market all the time.
+1453.76s: And that's actually the only context I've heard it in as well.
+1456.68s: So that's why I was curious if there was a use kit.
+1461.08s: I don't use it at all.
+1462.64s: So yeah, I think it's a market-making thing.
+1467.00s: Fair.
+1468.08s: One of the other questions that I got that's actually,
+1470.48s: it's a really fun dialogue because there's a lot of papers
+1473.08s: and a lot of research out there on it.
+1474.76s: And it is holding leveraged ETFs
+1479.00s: to essentially just increase buying hold returns, right?
+1482.32s: So the idea is instead of holding spy or IWM and the queues,
+1487.36s: you're holding the leveraged counterpart.
+1489.56s: And there's pretty like, interestingly, two camps.
+1492.64s: There's the one camp that says,
+1494.84s: oh no, drag is so bad that you can't make any money.
+1499.12s: And then the other camp is saying,
+1500.92s: fuck you guys, it's good enough.
+1503.60s: I'm curious if it's something that you've studied
+1506.04s: and if so, what do you think about retail traders
+1508.92s: holding leveraged ETFs to enhance returns?
+1514.24s: Almost always not a good idea.
+1519.00s: There's a lot going on.
+1520.20s: It's not as simple as saying there's volatility drag.
+1522.40s: They always decay.
+1523.76s: They don't always decay.
+1525.68s: It's a very complicated process.
+1527.40s: For something very simple mathematically,
+1530.12s: it is a very complicated process,
+1531.88s: particularly because we don't know what the actual process
+1534.20s: of the stock itself is.
+1536.28s: So we know how leveraging it changes that process,
+1541.40s: but we don't really know what it was in the first place,
+1544.92s: see what I mean?
+1545.92s: So it's like you can say certain things
+1547.44s: if you assume it's a Brownian motion
+1549.52s: and then you leverage it, but it's not.
+1552.04s: So it's a very complicated process.
+1553.84s: So it's never as simple as saying they always go to zero.
+1558.32s: They do decay.
+1561.40s: The mean return will tend to be below zero, like I said.
+1564.96s: It doesn't have to be, and there are plenty of times
+1567.36s: when it isn't.
+1569.04s: Like some of these things have massively outperformed
+1572.32s: their reference product.
+1575.44s: Can't think of one off the top of my head,
+1576.72s: but I'm sure they have.
+1580.32s: It's basically a situation where as with any trade,
+1586.48s: there's an optimal size for the trade.
+1590.32s: So basically that comes back to the Kelly criterion.
+1593.20s: This is the optimal growth size.
+1595.52s: And if you leverage more than that,
+1597.80s: you're going to end up taking more risk
+1599.52s: and getting lower returns.
+1601.12s: And that's the side that most of these leverage ETFs are on.
+1605.88s: It's basically you've got the optimal Kelly size,
+1608.60s: which might be like 1.2 times leverage,
+1611.88s: and you've leveraged it to three times.
+1614.32s: So you're at the point where you're actually
+1616.32s: getting diminished returns because of that leverage effect.
+1619.88s: So if you want a really simple rule of thumb,
+1624.12s: take all of your long stock positions
+1628.16s: in your long-term stock holdings
+1630.80s: and replace them all by going short,
+1633.40s: the leveraged ETFs.
+1636.32s: So what's the leveraged cues?
+1640.44s: Does it SQQQ or something?
+1642.20s: That's one of them.
+1643.04s: And then there's T triple cues, yeah,
+1644.36s: because there's different layers of leverage, right?
+1647.16s: You can have a 2X3X.
+1648.60s: That's the typical breakdown.
+1650.56s: Yeah, and it's not again, okay.
+1654.32s: So normally the higher leverage ones will decay more,
+1657.96s: but there is a more volatile.
+1660.20s: But the bigger problem you have to really look at
+1662.32s: is your borrowing costs,
+1663.52s: which a lot of people don't look at.
+1665.44s: So like right now, there's, well, there's VXX, right?
+1671.64s: Then there's UVIXI and there's UVIXI.
+1675.12s: UVIXI is one and a half leveraged.
+1678.32s: UVIXI is two leveraged.
+1680.04s: So you might think that the two leveraged ones
+1682.24s: are better short than one and a half,
+1684.28s: but the two leveraged one right now
+1685.92s: has got a 22% borrow rate.
+1688.40s: Whereas the one and a half has got a 3% borrow rate.
+1692.28s: And if you look at the expected decay
+1694.12s: and put that in, turns out that the one and a half
+1697.16s: in this case is a better sale in terms of risk reward.
+1701.92s: Of course, it's UVIXI, which is now trading at like 2.7
+1705.68s: or something because that determined for it
+1708.24s: to become completely irrelevant, I think.
+1712.28s: I don't know what the issue is doing there.
+1714.16s: I think they've just given up on it.
+1716.60s: Like they should have split it when it went to 20
+1719.24s: and they should split it to get to like 200.
+1721.68s: It's a never, we know what's gonna happen.
+1724.36s: Or letting it go down to these levels,
+1726.20s: just you can't trade it.
+1728.28s: The transaction costs are just way too big.
+1732.16s: In like, what would the calculus be to just let it go
+1734.76s: as it's just becoming like too much of a burden
+1736.44s: or they're not making enough money on issuing,
+1739.12s: continuing to issue it?
+1740.04s: Like what's, to me, it seems like you've gone through
+1742.24s: all of the work to set it up.
+1743.44s: Why not maintain it until the wheels fall off?
+1745.84s: I have no idea what they're doing.
+1748.28s: Don't know, could be, could be a lot of things.
+1752.92s: Okay.
+1753.76s: But it's, it's got to the point where it's basically
+1757.48s: in a relevant product.
+1759.12s: You know, if you've got a bit asked spread of a cent
+1761.76s: and you're paying a ticket charge per share,
+1764.96s: why am I gonna trade something that's 2.7 instead
+1767.88s: of trading VXX like 35 or something?
+1770.72s: Yeah, it's just pointless.
+1773.32s: Got it.
+1774.56s: Another thing that is becoming more and more invoked lately
+1778.84s: that I find curious is the retail trader obsession
+1783.44s: with algos.
+1786.80s: And for retail traders, obviously, it's this brand new novel
+1791.04s: concept.
+1792.36s: And to me, it seems like there's just a tremendous amount
+1797.20s: of focus on it.
+1798.72s: And I think retail traders grossly misunderstand how it
+1802.52s: might fit into their world and also just how long it's been
+1805.64s: around otherwise.
+1807.88s: Specifically for retail traders, how do you view AI
+1812.88s: more importantly, algos for this question,
+1815.88s: fitting into their portfolios or trading portfolios?
+1821.04s: You mean them using it as a way of generating alpha?
+1825.36s: Right.
+1826.36s: Let me do it.
+1829.44s: It's very unlikely that someone who's not a specialist
+1834.72s: is going to get some AI algo that can beat the market.
+1839.52s: It's, I'm not saying no one can.
+1843.40s: But if you look at the firms that are really going into this,
+1847.44s: they've got people with PhDs and machine learning.
+1850.96s: You're not going to do a course online or even an undergrad
+1856.64s: course and figure out enough to beat the market.
+1859.52s: You're not as good as these guys.
+1861.40s: It's one of those games where you're just not
+1864.88s: going to win straight up against these guys.
+1867.08s: So you have to do something else.
+1869.64s: I kind of think, I mean, I use ChatGPT all the time.
+1873.96s: But basically, it's like an intern.
+1878.00s: It's like instead of me trying to do something,
+1880.76s: and one of the hard things about having an intern is you
+1883.64s: got to explain very carefully what you need done.
+1886.52s: And that's the same as the GPT app, right?
+1888.88s: It's like you've got to be very clear about,
+1891.44s: I want you to do this and then this and then this.
+1894.92s: And under those constraints, it's fantastic.
+1898.52s: I can write hundreds of lines of code,
+1900.20s: and it will do it pretty well.
+1901.36s: It will do it a lot faster than me.
+1902.88s: And it's a really great tool.
+1905.32s: But in terms of using it to predict volatility or whatever,
+1911.04s: I'm not even going to.
+1912.80s: That's just one of those problems that,
+1914.80s: even if I can do it, there's better uses of my time.
+1919.68s: It's, I think, we have to be very clear that every time you do
+1926.56s: a trade, you're making a forecast.
+1929.72s: Like, there's some people had this idea,
+1931.20s: I don't forecast.
+1932.20s: Well, yes, you do.
+1932.88s: You just bought something.
+1933.84s: So you're obviously thinking it's going to go up.
+1936.64s: Otherwise, you wouldn't have bought it.
+1937.84s: So the action of doing a trades and implicit forecast.
+1941.36s: But I think this idea of like trying to out forecast the market
+1945.60s: like that, it's just a very difficult problem.
+1950.04s: And I think people are being somewhat seduced
+1952.00s: by this idea of alpha.
+1954.00s: They've got to get alpha.
+1955.36s: You don't have to get alpha.
+1956.32s: You've got to get money.
+1957.92s: You know, beta counts as money too.
+1961.20s: It's much more likely that you're going to benefit
+1963.92s: by finding risk premier that are always there.
+1967.72s: And you are going to essentially get paid for taking that risk.
+1970.84s: It's a much more likely outcome
+1973.24s: than you genuinely finding alpha by out forecasting the market.
+1980.76s: Could you, yeah, sure.
+1982.04s: And if you really feel like, if you want to do it as a puzzle,
+1987.24s: instead of like, I don't know, Sedoku or something,
+1989.84s: yeah, knock yourself out.
+1990.96s: But it's just not, it's not a very good way
+1993.80s: to run this if you're thinking of it as a business
+1996.16s: and really trying to make money.
+1998.56s: It's not the right way to do it.
+2001.12s: It's like with sports gambling, right?
+2002.60s: Everyone goes into sports gambling thinking,
+2005.24s: I'm going to predict who's going to win this game.
+2008.32s: And that's not what the pros do at all.
+2011.44s: Like the pros are basically saying,
+2013.80s: the spreads this, the totals that,
+2016.72s: therefore what should the equivalent spread
+2018.68s: in the first quarter be?
+2020.44s: And they're just looking at all these relative value trades.
+2022.76s: Like they practically never try and predict
+2026.16s: who's going to win an NBA game
+2028.00s: because that market is so efficient.
+2031.08s: It's the same with the markets.
+2033.08s: Right.
+2034.28s: So you kind of alluded to another topic
+2038.20s: that I wanted to ask you about, which is chat GPT
+2041.08s: and kind of retail traders using AI to just enhance their process.
+2046.92s: So from a retail trading perspective,
+2049.52s: what are some of the things that you think
+2052.56s: retail traders could or should do
+2055.64s: with something like chat GPT or AI in their trading process?
+2061.76s: I would caution them against using it at all.
+2064.68s: I think most people use the computer too much.
+2067.72s: It's this idea that you should automate all the stuff
+2071.00s: you need to automate.
+2072.04s: And people are like, well, jump trading do it.
+2074.08s: So it must be the thing to do.
+2076.20s: Jump trading kind of have to do it
+2077.68s: because of the way they trade.
+2079.48s: Like if you're doing HFT,
+2081.28s: you need to automate everything.
+2082.88s: If you're doing a million trades a day,
+2086.16s: you can't do that by sitting in front of a computer.
+2089.16s: But I think for your average retail person,
+2092.80s: you don't want to speed things up.
+2094.32s: You want to slow things down.
+2096.24s: You want to actually be more engaged
+2099.64s: because you want to learn.
+2101.24s: And the way you learn is by reviewing every step in the process.
+2104.80s: So it should be like, look at an options trade, right?
+2106.88s: It's a complicated thing.
+2108.80s: You have to make a forecast of what volatility is going to be.
+2112.04s: You have to choose your strike.
+2113.88s: You have to choose your expiration.
+2115.36s: You have to choose your re- hedging frequency.
+2118.44s: How did each of those impact your trade?
+2121.28s: At the end of the trade, you go back and you're like,
+2123.88s: well, my forecast was slightly optimistic.
+2126.80s: So I shouldn't have made quite as much money
+2128.64s: as I thought I would.
+2129.96s: But then this happened, and this happened, and this happened.
+2132.72s: And you actually have to think through the whole process.
+2136.24s: And you might find that you're actually really good
+2138.44s: at forecasting volatility, but you're hedging too sloppy
+2142.76s: so you're getting too much luck involved,
+2145.28s: and that's masking the results.
+2147.24s: And if you don't go through that process,
+2148.96s: you won't find that out.
+2150.60s: And you're not going to find that out
+2151.88s: by automating everything.
+2153.68s: You know, people ask, you know,
+2155.44s: what's the software that you should use?
+2157.76s: Like maybe Excel, maybe a Word document,
+2161.56s: but maybe a piece of paper and a pen.
+2164.04s: You don't want to be doing this fast.
+2165.32s: You want to be doing it as slow as you can.
+2167.76s: And people, so there's this thing everyone kind of knows
+2172.64s: that you should keep records, right?
+2175.36s: And people have the wrong idea
+2178.24s: of what that process is for.
+2180.64s: It's not about so you can go back
+2182.40s: and do statistical analysis on all your results
+2184.96s: from three years ago or whatever.
+2186.76s: I mean, I keep records of everything I do every day,
+2190.20s: but I have no idea where they are.
+2192.20s: Like I couldn't tell you where my files from three years
+2194.76s: are going to are, because that's not what they're for.
+2197.76s: What the four is for the process of making them,
+2201.32s: because it makes you sit down and think about each thing.
+2204.96s: And the slower you go through it, the more you're going to learn.
+2207.24s: It's about active learning.
+2209.04s: It's not about statistics.
+2211.40s: So even if you just do it on a legal pad
+2214.68s: and then throw it away, that'll be fine.
+2217.60s: It's not the keeping of them.
+2219.16s: That's important.
+2220.00s: It's the making of them.
+2222.60s: I actually love that.
+2224.88s: And it's probably one of the most common things
+2226.84s: I tried to talk to people about is literally the process.
+2232.64s: One of the things I do find chat GPT useful for,
+2236.36s: and I'm curious what your thoughts are on this.
+2239.96s: Specifically, if there's a concept,
+2244.16s: let's say they're reading your book
+2246.20s: and they come across a part that they're just,
+2248.96s: they're struggling with.
+2250.56s: What do you think about using something like chat GPT
+2253.16s: to help them understand that concept or look it up?
+2256.56s: One of my favorite things to do with chat GPT
+2259.52s: is essentially the 80, 20% rule, whatever you want to call it.
+2263.32s: I think it's Bernoulli principle or whatever.
+2265.76s: But essentially, the parade always at it.
+2270.12s: Yeah, thank you.
+2271.16s: The parade will principle where essentially you get a synthesized list
+2275.04s: of the highest impact information.
+2277.28s: Do you think that accelerates the process too much
+2279.36s: and they're not respecting the process in that manner?
+2281.32s: Do you view that as an accelerator?
+2283.44s: No, that can be useful.
+2285.16s: I use it for, so one of the things I did,
+2289.32s: and this was basically I did it because a student was like,
+2292.68s: trying to convince me it was a useful thing.
+2294.92s: And so I did this as a little test,
+2296.52s: but it's a useful way to, it was a good project.
+2300.00s: I'm very big on using Monte Carlo simulations.
+2302.92s: And I typically, I used to have a really great little Excel
+2307.32s: and then I got free with some book a long time ago,
+2310.52s: but it doesn't work on the latest versions of Excel.
+2313.36s: So I'd had to get a bunch of stuff.
+2316.00s: And then basically I told Jack,
+2318.92s: Jack GPT to write me one.
+2320.96s: And I gave it like two instructions.
+2323.80s: And it pretty much wrote the whole thing,
+2326.24s: exactly as I wanted to,
+2327.52s: and thought the results, and it took me like 10 minutes.
+2332.28s: And it's like 150 lines of code.
+2334.92s: And if I'd done that,
+2336.24s: they would have taken me the best part of a week
+2337.96s: because I'm not very good at Python.
+2341.00s: So using it for that is fantastic.
+2343.44s: And I use it for the intraday volatility measurement stuff
+2347.60s: that I do, because I measure volatility
+2349.76s: at like all different frequencies.
+2351.48s: And then I aggregate it.
+2352.68s: And I can just do that by,
+2355.80s: I had it write all this code in Python.
+2357.60s: And now I can just hit run in a Jupyter Notebook
+2361.12s: and then off it goes, it's great.
+2362.88s: So if you go to stuff like that, it's fantastic.
+2365.88s: But in terms of actually,
+2368.36s: think of it as an intern.
+2370.88s: Interns are useful, right?
+2372.52s: But would you have one, but would you have one come up
+2376.64s: with your alpha?
+2378.72s: Would you get some guy that is just,
+2380.88s: he's finishing his third year of college
+2382.76s: and he's looking for a job in the summer.
+2385.08s: And you're like, how should I trade this option?
+2387.40s: I mean, you wouldn't do that, right?
+2389.76s: But that grays it like,
+2391.80s: hey, write me a Monte Carlo simulation.
+2394.20s: And off they go.
+2395.32s: It's like that, it's great.
+2396.56s: It's a fantastic tool.
+2399.00s: And I think that's all it is.
+2402.48s: It's a fantastic tool.
+2403.56s: But it's not for, it's not going to tell you
+2405.20s: how to beat the market because it doesn't know.
+2407.44s: Sure.
+2408.68s: Yeah, because the other thing I think
+2410.48s: that's good about integrating stuff like AI
+2413.60s: into the process is I also think it
+2415.80s: starts to introduce people to AI.
+2419.00s: Because I don't think it's going anywhere.
+2420.28s: I think it's going to continue to grow in prevalence,
+2422.80s: going forward and not just trading,
+2424.80s: just literally in different assets of life.
+2427.28s: So I feel like in general, it's a good way
+2431.48s: to get familiar with a tool that either you can kind of evolve
+2435.52s: with and learn alongside of it.
+2438.76s: Or you could just kind of not pay attention to it.
+2442.08s: And then you get left behind.
+2443.52s: But I think that I do think that AI has a place
+2450.04s: in accelerating learning curves.
+2451.96s: But to your point, I think especially
+2454.52s: for new concepts going through that process
+2457.12s: is really important for folks.
+2459.80s: What do you see the future of, and this is the last question,
+2463.88s: by the way, I don't want to keep you too long.
+2465.72s: But what do you see the future of AI in the markets in general?
+2477.56s: I could have visited just a situation where AI takes away
+2483.04s: most of the market liquidity providing stuff.
+2486.56s: Like we've seen in the crypto world these AMMs,
+2491.80s: these liquidity providing pools and uniswap and stuff.
+2495.32s: And obviously they've got problems, right?
+2497.12s: But that isn't even AI.
+2498.44s: That's just the simplest possible algorithm.
+2502.52s: Even going back to the early 2000s,
+2507.92s: I was developing a market-making system,
+2510.68s: kind of an automated market-making system,
+2512.84s: which was based on a very simple application
+2515.16s: of what a market-maker would do.
+2517.00s: And it basically encoded that.
+2519.44s: That was using technology that's 25 years old now.
+2523.12s: And I think AI is going to be able to do that way better
+2527.36s: than a human market-maker will.
+2529.16s: It'll be able to manage, it will see all the flows,
+2532.60s: and be able to react to all of them absolutely optimally,
+2536.44s: not just semi-optimally, like a human does.
+2540.72s: And a human basically is quoting a spread,
+2543.88s: not just to collect the spread,
+2546.84s: but to immunize themselves against the fact
+2548.72s: they're not doing everything perfectly.
+2550.64s: So AI won't need it anywhere near as big a spread.
+2553.84s: And it will be better.
+2555.80s: And I think a lot of those kind of jobs,
+2559.40s: like especially on the Delta one side, for sanitation desks,
+2564.16s: you know, market-making in vanilla,
+2566.16s: all that kind of stuff,
+2567.28s: I could see that completely being automated.
+2570.16s: The things that it won't be as good at,
+2575.16s: the things that don't have a set process,
+2578.76s: you know, the things where you might have a customer
+2581.68s: calling you up and saying,
+2583.84s: I kind of want to do this, but I'm not sure what do you think.
+2588.68s: You know, it's like this is an old joke
+2590.36s: that a computer can beat a grandmaster at chess,
+2595.08s: but they can't put the pieces back into the box.
+2598.76s: So computers are really good at doing hard stuff,
+2601.60s: but they're not actually all that good at doing
+2603.96s: ill-defined, easy stuff that people are good at.
+2607.40s: So I think that are the jobs that are going to stay around.
+2611.60s: But I also kind of think there's a decent chance
+2614.00s: that AI just takes a look at us
+2615.44s: and decides we're not worth a hassle.
+2618.96s: I mean, there's never been,
+2622.12s: this isn't my observation.
+2623.48s: This is the chief AI guy from Google who resigned
+2628.08s: while back.
+2629.36s: He said that there's never been a situation in the world
+2633.00s: where a less intelligent group ruled over a more intelligent group.
+2639.68s: I mean, you can make some joke about politicians here,
+2642.24s: but I think at the species level,
+2643.76s: that's absolutely true.
+2645.52s: Right.
+2646.36s: We're not being ruled by the pecs here.
+2650.28s: So I could definitely see that happening.
+2654.12s: I don't think all of the stuff around AI is alarmist.
+2658.28s: I think there are problems that it could come up with.
+2663.08s: So we'll see how that goes.
+2665.28s: Yeah, the other question I have specifically related to AI,
+2668.40s: how do you think the inclusion
+2671.24s: and I had a similar hypothesis
+2673.48s: where a lot of the market making liquidity provided roles
+2678.20s: likely could get phased out?
+2680.36s: How do you think that that would impact
+2682.28s: the long-standing market function slash forces
+2686.00s: that we see like the variance risk premium in indices
+2689.12s: or just put call skew, things like that?
+2691.72s: Do you think it would have any impact
+2693.32s: or would the overall disposition of human beings
+2696.28s: on the back end still wanting that protection,
+2699.08s: still willing to overpay, allow it to persist?
+2702.52s: Yeah, I think that's the sort of thing
+2704.80s: that is driven by people's desire to avoid risk.
+2710.32s: And it may become tighter.
+2712.56s: That's the computer might,
+2715.24s: it's like I'm always selling vault, right?
+2719.24s: And I also have a certain degree of risk aversion
+2723.68s: that would mean that I might not be doing it
+2725.52s: as aggressively as I should be.
+2727.68s: And a computer's not gonna have that.
+2729.96s: But on the other hand, the computer,
+2731.24s: it's not the computer's money, right?
+2733.20s: It's someone's money and they're going to have these issues too.
+2737.08s: So I think things like that will always be around.
+2742.48s: I think it's purely the matching of buyers
+2745.12s: and sellers that could change.
+2746.56s: And to be honest, that's happened already.
+2748.68s: You know, like 30 years ago,
+2751.12s: if you were an options market maker,
+2753.40s: you might make markets on three stocks.
+2756.60s: But now, I mean, when I left,
+2758.84s: it was an options market maker would make markets on a hundred.
+2762.48s: Now it's like five or 600.
+2764.28s: So the automation of that process is already well underway.
+2768.72s: So now instead of having one human do five or 600,
+2771.88s: why don't you just have a computer do the whole lot?
+2774.84s: I mean, it's not revolutionary.
+2776.92s: It's just continuing along that process.
+2780.44s: Right, I'm kind of scaling interesting.
+2784.84s: Okay, the very last question,
+2786.12s: because I always lie to you on the last question
+2788.28s: and then there's always one more.
+2790.00s: And then I'll let you go for real.
+2792.48s: But have you studied the volatility
+2795.40s: around the debt ceiling conversations?
+2799.44s: Yeah, kind of.
+2802.72s: We don't really have enough data to say anything.
+2807.72s: And each one has been against a fairly different backdrop.
+2812.80s: So I can't really find anything that I particularly believe.
+2818.68s: And if you look at this time,
+2820.72s: volatility really didn't do anything.
+2823.64s: The market really didn't do anything.
+2825.48s: The market had sort of got to the point where
+2828.72s: it's like watching a horror movie, right?
+2830.88s: Look, we know how this is going to play out.
+2833.56s: You know, you don't want to be the good looking blonde girl.
+2836.24s: We know what's going to happen to her.
+2838.04s: And why is she going into the basement all alone?
+2840.16s: But we know the whole thing, right?
+2842.28s: It's like that.
+2843.12s: It's like we kind of knew how it was going to end.
+2845.08s: We didn't know the exact steps, but really,
+2848.88s: it's very straightforward, right?
+2850.24s: Both sides want to basically blame the other side.
+2854.64s: Whatever happens, the president's the one
+2856.68s: who gets blamed the most.
+2858.72s: And that's pretty much that was like that under Obama
+2862.64s: and Trump and Biden, same old, same old.
+2866.64s: So this one, the market really didn't care.
+2871.44s: And there were a lot of people like,
+2872.68s: oh, the VIX is way too low because of this debt ceiling, right?
+2877.56s: Which is a classic example.
+2879.00s: Oh, really, it's too low.
+2880.08s: Well, the market's not moving.
+2882.04s: And do you think you're the only one who knows
+2883.96s: that this issue's out there?
+2885.68s: I mean, you're going to have to have a better reason
+2887.44s: for that for why the VIX is too low.
+2890.08s: So turns out the VIX wasn't too low.
+2893.00s: If anything, it was too high, right?
+2895.00s: The part that I find interesting is like,
+2899.44s: we know with relative certainty, the likely outcome,
+2903.92s: but we don't know with pure certainty.
+2906.84s: And if big if there wasn't, there was no agreement
+2912.64s: for whatever reason and there was a default.
+2914.68s: Like, obviously the risk there is just massive.
+2918.16s: So that's the part I find so curious about the event
+2920.92s: is that it's a very high probabilistic,
+2923.44s: determinable outcome, but the risk on the other side
+2927.60s: in that small percentage of cases
+2930.32s: that it could not happen would be pretty big.
+2932.44s: So it's curious how just longer term,
+2934.76s: I started looking at it myself,
+2935.92s: but obviously I'm like a fucking caveman
+2937.60s: with this stuff compared to what you can do.
+2939.08s: That's why I was asking you.
+2940.52s: I don't think this is, even if there was a default, right?
+2946.60s: Would you be huge?
+2948.64s: I don't think it would be nearly as big a deal
+2950.48s: as if it happened in say the 50s.
+2954.20s: America is not the world's overwhelming economic power
+2957.64s: to the way it was back then.
+2960.24s: And also to be honest, these idiots have been messing around
+2964.16s: with this stuff for so long
+2966.16s: that this whole idea of America being absolutely risk-free
+2969.96s: funds, no one believes that anymore.
+2972.68s: I wouldn't be surprised if there's another credit downgrade
+2976.04s: because if you keep acting like an idiot with the credit,
+2980.24s: eventually people aren't gonna be surprised
+2982.44s: when something bad happens.
+2983.96s: And it's not at this point where it's like
+2986.12s: Bolivia or anything, but it's not Switzerland now either.
+2991.64s: And we have seen sovereign nations have defaults before.
+2995.40s: Like and reasonably big sovereign nations,
+3000.28s: like I don't know what the biggest economy
+3002.72s: they have a default has been, but I don't know,
+3005.80s: because Italy defaulted, Mexico has defaulted
+3007.60s: a whole bunch of times, Mexico's huge.
+3010.00s: So if it did, I don't think the world would end.
+3014.72s: Obviously it would be bad for the US markets,
+3017.04s: but I don't think the market would crash 50% or anything.
+3021.20s: Right. Yeah, that makes sense.
+3023.24s: It's somewhat ludicrous that Congress can authorize spending
+3026.64s: and then decide not to pay for it.
+3028.84s: It's so funny you say that.
+3030.44s: I had an economist on the podcast last week
+3033.84s: and that was actually one of the questions
+3035.04s: I was talking to him about, because to me,
+3037.28s: it seems so strange to create a budget
+3040.08s: with the known spend, projected spends,
+3042.36s: like we know where we're going and yet we come into this.
+3046.36s: And I was also looking at the frequency specifically
+3049.92s: because I think like 1917 or something like that
+3052.84s: is when it was first instituted the debt ceiling.
+3055.64s: And then in the 40s is when it was starting
+3057.32s: being activated a lot more, but like in the last two decades
+3060.76s: is when we're having them at a decent clip.
+3064.16s: And to me, yeah, I just struggle with it.
+3067.20s: Like to me, it makes no fucking sense.
+3068.76s: Like we know where things are going.
+3070.64s: Why is this happening?
+3071.88s: Why don't we just have a bigger budget
+3074.00s: or whatever the fuck is or not overspend?
+3076.24s: But yeah, here we are.
+3078.36s: Well, right, it's not even about the level of spending.
+3081.20s: It's the fact that these are two separate processes.
+3084.16s: I mean, that's just no matter what you believe
+3087.36s: about government spending levels,
+3088.88s: that is just ridiculously done.
+3091.32s: And it's one of those things that people kind of,
+3093.64s: I think up until recently kind of just accepted
+3097.16s: because it didn't happen that often.
+3099.24s: But also it wouldn't happen.
+3100.92s: I don't think anywhere else in the world this could happen.
+3103.04s: The government could authorize spending and then say,
+3105.16s: oh, by the way, we're not paying for the stuff
+3106.84s: which is we were going to pay for.
+3108.48s: Right.
+3109.32s: Without defaulting, right?
+3110.60s: That is like, I'm voting to spend this money.
+3113.52s: Now I'm voting that we can't spend this money.
+3116.36s: Like, just welcome to America.
+3118.92s: This makes no sense at all.
+3122.16s: Well, you know, it's how America does what it does, right?
+3125.40s: You never let them know your next move
+3127.04s: because we don't know our next fucking move.
+3129.40s: Well, it's a lot of the stuff about the American bulls
+3136.84s: political system.
+3139.80s: There's always a reason why each incremental step
+3142.96s: happened, right?
+3143.80s: So we know why the electoral college came about.
+3146.76s: I get that.
+3147.80s: We know why the Senate has the structure it has.
+3151.28s: On the other hand, it is goddess to a place
+3153.72s: that makes no sense.
+3155.28s: Right.
+3156.12s: And it's like, I don't think it's a coincidence
+3157.92s: that every other democracy that's come along since
+3161.04s: had a chance to look at the American system.
+3163.88s: And no one has said, we've got to go with that.
+3167.08s: So that's what yeah, they've really worked that one out.
+3170.72s: It's yeah.
+3172.52s: And these are even like democratic governments
+3175.00s: that the Americans have installed.
+3177.96s: Like they didn't go to Afghanistan and said,
+3179.68s: come on guys, where's your electoral college?
+3183.68s: Yeah, it's it's interesting.
+3185.12s: And I think the part that always I find so intriguing
+3187.64s: about it is like, I know these aren't stupid people.
+3189.96s: That's what I always go back to is sure, you know,
+3192.92s: they have their leanings and all that kind of stuff.
+3194.92s: But most of the people there, they're legitimately not dumb.
+3198.76s: So it just tells you the amount of structural stuff
+3202.44s: around that kind of puts us in these interesting scenarios.
+3208.00s: Yeah, there's a whole bunch of problems, right?
+3210.24s: I think the fact that the highest level
+3212.96s: of the civil service is political appointees
+3216.68s: always creates this level of takes
+3219.88s: wild for people to get up to speed.
+3221.92s: Right.
+3222.92s: As opposed to the certainly the Commonwealth countries
+3225.44s: whether the civil services or, you know, that's their job.
+3230.28s: It's not a political appointment.
+3232.40s: So even if the politicians are all completely idiotic,
+3235.96s: the underlying machinery is run by people
+3238.72s: who know how to run that thing.
+3241.60s: It's, you know, it's like, and the military interestingly
+3245.00s: doesn't have this, right?
+3247.44s: I mean, the joint chiefs of staff are not like
+3250.52s: some guy who was a good campaign contributor, right?
+3253.56s: I mean, it's no, it's, it's got some ad ball.
+3256.24s: He spent 40 years in the Navy.
+3258.56s: But we don't do that with a lot of the other departments.
+3262.92s: Yeah, that's actually kind of an interesting juxtaposition, huh?
+3267.16s: Well, I think it probably tells us something, right?
+3271.24s: Yeah, I mean, and it's easy to make fun of, you know,
+3273.72s: there's the whole catch 22 and mash and everything
+3277.52s: about how the army is run so ridiculously.
+3280.96s: And a microvival, it kind of is, but it has a huge logistics
+3284.20s: operation. It's amazing.
+3286.44s: So I mean, it's really good at like, forget about the
+3291.48s: blowing things up there.
+3292.84s: The fact that the American military can put thousands of
+3297.04s: tons of provisions anywhere in the world in a matter of days.
+3301.36s: It's incredible.
+3302.64s: Yep.
+3303.80s: Yep.
+3304.60s: And I mean, you're, I'm a former logistician.
+3306.60s: So that's literally what, what we would do is we would look at how
+3310.40s: to put a giant force off of somebody's doorstep and be ready to
+3314.72s: put them closer, if need be.
+3316.84s: And it's exactly that point.
+3318.20s: It's funny like if you read anything with Sun Zoo or, you know,
+3321.76s: we're classmates.
+3323.40s: It's the ability to support a large fighting force that makes
+3327.12s: such a massive difference.
+3328.20s: So yeah, it's logistics of when wars.
+3331.40s: Yeah.
+3332.40s: I mean, everyone talks, you know, everyone's all enameled
+3335.20s: about the special forces and all this kind of stuff.
+3337.28s: But yeah, it's putting thousands and thousands of pounds of,
+3342.56s: you know, munitions in the right place is what you need.
+3345.36s: It doesn't matter how good your troops are if they can't eat.
+3348.84s: Right.
+3349.84s: Right.
+3350.84s: Wrap us up.
+3351.84s: I'm curious.
+3352.84s: Have you done any driving?
+3354.84s: Has it been nice weather there?
+3356.84s: Has it been very nice weather?
+3358.84s: I haven't read anything much.
+3360.84s: I've got a few problems, well, always.
+3364.16s: One of the problems is my pop-up headlights.
+3368.16s: I can have a choice of one being up or both being up.
+3372.52s: So I have to have both of them up all the time at the moment.
+3375.32s: So I've got to get that fixed.
+3377.52s: Also, my wipers aren't working.
+3379.60s: Which car is this?
+3381.28s: That's the 456.
+3383.60s: Got it.
+3384.28s: The 308 I think is working fine.
+3386.04s: But I haven't taken it out yet because the weather hasn't been
+3388.52s: very good.
+3390.68s: And also now that you've said that, I'm sure when you sit
+3393.76s: in the car, it probably will have heard that in the ether.
+3396.80s: And then it will find something to be upset about.
+3399.16s: Well, yeah, I mean, obviously things always break.
+3403.36s: Also, it might be too hot now.
+3404.96s: You don't really want to be driving an 80 degree weather.
+3407.84s: Well, 80 plus gets too hot.
+3410.20s: Are they, is that one air cooled or?
+3413.52s: No, it's not so much the engine.
+3415.52s: The engine's fine.
+3416.28s: It's neat.
+3417.56s: Got it.
+3418.40s: Oh, okay.
+3419.40s: The roof of it.
+3420.40s: So it acts like a little, it's got big windows, big engine
+3424.64s: behind you.
+3425.64s: X like a little greenhouse.
+3426.64s: Yeah, okay.
+3427.64s: It doesn't really do anything.
+3429.12s: And if you take the roof off, you just end up getting
+3432.16s: sunstroke.
+3433.16s: Got it.
+3434.16s: Yeah, because I was going to say that's, it would be mind blowing
+3436.12s: to me.
+3437.12s: I know there are some people that do air cool conversions just
+3439.52s: for two different purposes.
+3441.32s: But it would have been really interesting to me if you did that.
+3444.12s: So the gross heat factor makes a lot more sense.
+3447.12s: No, the gas.
+3448.36s: It's fine.
+3449.36s: Right.
+3450.36s: Just that I would probably die.
+3453.60s: Yeah.
+3454.60s: It gets really hot in there.
+3456.64s: Well, instead of going to a sauna, you just go for a drive, you
+3459.64s: know.
+3460.64s: Yeah, I also get deaf.
+3462.72s: You don't get deaf in the sauna.
+3464.60s: There's, yeah, the cars and coffee.
+3468.00s: I think I sent you a photo of a 48.
+3470.20s: I saw there one time, but there was a 40 this past weekend.
+3473.76s: That was just absolutely gorgeous.
+3477.32s: Beautiful car.
+3478.32s: I've never been a huge fan of them, to be honest.
+3480.56s: There are a little extreme.
+3481.64s: And it seems like based on your cars, at least of what I know
+3483.88s: that you have, it definitely seems contrary to your general
+3486.44s: style.
+3487.44s: But for what they are, 288, a lot.
+3491.24s: Right.
+3492.24s: You know, because it's basically a 308 on a Lloyds.
+3494.92s: I mean, it's got no panels the same as a 308, but it looks like
+3498.28s: a bigger one.
+3501.08s: But I don't know.
+3503.00s: That's an old car, you know, in an old super high performance
+3507.28s: car, just a lot of work.
+3509.32s: Probably isn't much fun to drive.
+3511.72s: Yeah, I never been in one myself, but I remember I looked into it.
+3515.40s: And I'm not like huge or anything, but the seat was so narrow.
+3521.32s: I was just looking at it as.
+3523.20s: Oh, yeah, it's got the big bolstered seats, right?
+3525.80s: Exactly.
+3526.80s: Yeah.
+3527.80s: It's actually a bit weird.
+3528.80s: A lot of the like the 308's got really, really, really thin seats.
+3532.32s: Because you know, they're astonishingly comfortable.
+3536.60s: I mean, for what they look like, you think there's no padding at all.
+3540.28s: And they're actually, they fit me perfectly.
+3541.88s: Well, I feel like you also kind of learn to respect the ergonomics of the seat as compared
+3547.00s: to, you know, how much thickness or cushion there is.
+3550.00s: If you have a well shaped, actually think, yeah, it makes a ton of sense that that would
+3555.20s: be way more comfortable.
+3556.56s: What do you think about the, the Lamborghini Diablos?
+3560.52s: Well, Diablos, nice.
+3562.32s: Okay.
+3563.32s: It's like the last, the last real Lamborghini.
+3565.52s: Yeah, I absolutely, I saw one of those.
+3568.88s: Now they're just outies.
+3571.36s: Yeah.
+3572.36s: Yeah.
+3573.36s: I don't like the Lamborghini's at all anymore, but all of the pre-outie ones are fantastic.
+3576.84s: I love them.
+3577.84s: Yeah.
+3578.84s: The, there was a Diablo there that was just, it was so cool, especially it wasn't too
+3583.72s: far away from the F40.
+3585.04s: So it was kind of a chance to check on both out next to one of the other.
+3587.44s: But hopefully the weather gets a little bit more decent for you guys there to get some
+3592.08s: wheel time in.
+3594.08s: I don't know, it's been cloudy here, but at least temperate.
+3596.40s: So it's actually been pretty good driving here.
+3598.76s: Yeah, we've, it's been overcast here a lot.
+3601.32s: Overcast kind of dull.
+3602.72s: This is the first hot day we've got.
+3604.12s: I don't know how hot it is.
+3605.36s: It's probably like 90.
+3606.36s: It got hot today.
+3607.96s: Yeah.
+3608.96s: Starting off the summer with the bang, I suppose.
+3612.56s: Yeah.
+3613.56s: Well, it was a long time coming, but yeah, it's hot.
+3616.76s: Yeah.
+3617.76s: Well, you and thanks so much for hanging out.
+3619.44s: I honestly, I just have a blast chatting with you.
+3621.48s: So thanks for sharing some of your experience with folks, talking some cars and looking
+3626.44s: forward to the next course.
+3627.52s: Whenever that gets announced, let me know.
+3629.40s: I'm happy to share with my community and yeah, get people in front of you because you
+3633.24s: share a lot of awesome information.
+3634.52s: So thank you.
+3635.52s: Well, thanks for chatting.
+3636.52s: Enjoyed it.
+3637.52s: Of course, take care of you.
+3639.00s: Thanks, partner.

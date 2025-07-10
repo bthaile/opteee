@@ -1,1 +1,1260 @@
- you you you you you you you you you you you you you you you you you you but so so see till And to actually make some money so that maybe you could take your partner out to a nice dinner or maybe take them on a trip somewhere as compared to the usual light the money on fire and then go hang out in the Wendy's parking lot behind a dumpster. So I argue by attending today, you really are a romantic. That's what that that's exactly what's happening right now. So the agenda for today is pretty straightforward. We're going to take a look first at a quiz. We're going to do a little bit of a recap from the last episode on volatility. And then we're going to dive into the world of the Greeks. Now you can already see up behind me and this has been up for like five minutes now during the the holding period. So hopefully everybody had a chance to take a look through what's up here now and then also to take a look through those two videos that I've shared yesterday in the discord and then also on X. If not, I will throw both of those videos in here now. This is actually reverse order by accident. So watch the second link first and then the first link. So the goal for our conversation around the Greeks today is to essentially be a hybrid a blend between those two videos that I sent you the second video goes through literally all of the Greeks, well, most of them that you would come into contact with. And it gives you the fundamental understanding of what they are that the first video, which is the second one you should watch gives you how to actually use the Greeks to fine tune your trades. So the session today is going to do a little bit of both we're going to do a run through I want to help you visualize how the Greeks behave in different time frames and then I want to help you think about actually using them to make trading decisions. So let's get started with a quiz. Okay, so last time we spoke about volatility. So the first question here, what does I V measure what does implied volatility measure. Feel free to throw it in the chat and if you're watching the recording, you can write it down, throw it as a comment, whatever you want, but give yourself an opportunity to actually see if you know without looking it up first. Now the reason why we spent a lot of time talking about the ins and outs of volatility is because volatility is essentially the heart and soul of options trading. Kevin says future movement expected, okay, James says market consensus a few future price range both of those are acceptable. Lauren says market expectations decent. Fuzzy says perception of market gods that's probably the most accurate. expected move one standard deviation of expected move. Thank you, Shrej. So Shrej already read my mind for everybody that was mentioning expected move. There's an amplifying data point that's really, really important. Really, really important. The reason why it's really important to acknowledge the fact that this is a one standard deviation move is because there's not an insignificant number of data points that will fall outside of that distribution. So let's take a look at an Eric special, terrible drawing that probably is going to add more obscurity to what I'm trying to show you, but it's the effort that counts right that's what they say fun fact is not the effort that counts it's the fucking output that counts always but the output of this is I enjoy attempting to draw and confusing everybody so. Okay, so here we have a mean. Standard deviation, who know. Who knows. So when we're talking about a one standard deviation expectation of forward price movement that represents this range. Inside this range is 68% of occurrences. If we go to this second standard deviation, it expands 95. The reason why this is important is because a non trivial number of movements will fall outside of this 68% probability. So a lot of people will say, oh, the expected range is 10 points and then they're blown away when it moves outside of 10 points, for example, you cannot be blown away in that instance, especially if you understand what we're talking about now the fact that it is a one standard deviation expectation. So what is the next. What is variance. What does variance measure. Now the cool part is some of these things are actually also giving you an inherent introduction to basics statistics specifically as it applies to trading that will be something that we're going to take a look at. So the fun name is saying standard deviation squared. Okay. What do we got. Anybody else. James says spread of data over a time series. I would take it. I mean, as difference between price and expected move that's a good guess, but that's incorrect in this context. Now what you're talking about is completely cracked the variance right the difference between unexpected and observed outcome. So full credit for the try there, but in this context that's not what we're talking about. So when we're trying to understand the movement pattern of something, let's say that we have a line of best fit. And let's say we have data points that are plotted randomly around it. What we can do is we can figure out what the difference is between all of these individual data points. And then we can assess how different they are from the total average. So we can look at variance of bunch of different ways in the context of markets. We have a very specific way of looking at it. But the high level note that I want you to pay attention to when with respect to variance is essentially the dispersion of something around a mean and the frequency of the dispersion. So we can understand if something has very high variance, which will bleed over into standard deviations and volatility. Valtility is essentially just variance square root. And the reason why we do things like we figure out the mean between each point. And we square it each one. The reason why we do the squaring process is because it normalizes all of the signs. The stuff above this is a plus sign. The stuff below this is a negative sign. You can't add those together cleanly. They also allow us to exacerbate some of the movements to see them more clearly. But most of the time when we're observing volatility, we're going to get back down to the base level, which is why we then later take the square root of it. So the important thing to remember with variance is it gives us an idea of how the data points of something behave compared to the average. And it's a really important use case with respect to trying to track volatility going forward and measure what it is. Okay, last one. What is the difference between historic volatility and realized volatility? What you got. Now, for those that were in the session last week, you will remember that we spent a little while talking about the different kinds of volatility that exist. What they mean, why they matter. And this one is actually a fairly important one. So I'm actually eager to see what you guys say about this one. I need to update our little timestamps that I can figure out when we got to the quiz, which is like eight forty while you're throwing your answers in eight forty. No guesses. All of the numbers on it. Yeah, very empty. No guesses. What's the difference? So. Shra says historic volatility would actually happened realize can be future. Yeah, exactly. There we go. That's right. That's exactly correct. So it's a nuanced question. So historic volatility is always a measure of what happened. And typically speaking, it's using longer term ranges realize volatility can be backwards looking or forwards looking. You can have future realize ball or you can have realize ball looking at historic data point. Now the important note here is that the way realize volatility and historic volatility when they're calculated real words looking is slightly different in general, we use them interchangeably, but there is a slight difference between this job. Let's jump into our recap. I got a pop up in the door for Thor. All right. So last time we essentially did all things volatility. We learned why it matters how it behaves how to analyze it. How we can use volatility to give us tradable information in terms of expected ranges. We looked at things like the curvature of volatility through things like term structure smile. We looked at the volatility surface. We looked at skew the difference between same term, volatility. And we learned that volatility is one of the more predictable elements of markets and it's one of the few examples of a true mean reverting assets. And you can break it out as its own asset class or you could just look at it as a true mean reverting effect depending on how you're visualizing volatility. This is very different than when we look at something like price. So not only does it inform the way that we build options trades, not only does it inform the way that we analyze and visualize the market, but it also gives us the opportunity to trade a very predictable effect, which is important for those traders out there. Sick. That is our recap on to today, which is about the Greeks. So your TLO, your terminal learning objective for today is to have an idea on how to use the Greeks to make better trades. That is the ultimate endpoint of the session. So notice how it's not to know the Greeks. Yes, you have to know the Greeks. But the main point here is that knowing the Greeks is not enough. So introduction to the Greeks. We need to always remember why we're learning this stuff. I refer to it as putting first things first. And it's like a lot of times traders when they're trying to solve a problem, they accidentally start trying to optimize for the wrong thing. So in the example here, we need to understand how we use the Greeks not to know what they are, not because it's fun, but because we use them to literally make better trading decisions. So I have a couple misconceptions up here. If you have others, I would absolutely love to capture those. The two primary ones that I have here are that the Greeks provide an edge and that there is a best Greek. And these aren't things that I'm kind of like just making up. These are things that I have literally come across in my conversations on places like Reddit. I actually show you this not in this post. This is somebody else's post I wanted to talk about in this post. Let me find. A specific person. No, no. There's a bunch of comments on this one. So we'll find it. So here's one. So this is from an actual post that I made. This is one comment. Okay, try reading in that. Try reading it now. Just kidding. This is one. And then there's one more. Let me find. The reason why I'm showing you these is like these are your peers. And they're my peers. These are other retail traders that these are people. And the reason why you have to know this is because one of the things we're trying to do is traders is avoid making the mistakes. Common common mistakes. So let's talk about these very quickly. And then we'll get into this one in the back that I had thrown up. And then there's a lot of things that I wanted to do. And then there's a lot of things that I wanted to do. And then there's a lot of things that I wanted to do. And then there's a lot of things that I wanted to do. And then there's a lot of things that I wanted to do. And then there's a lot of things that I wanted to do. And then there's a lot of things that I wanted to do. And then there's a lot of things that I wanted to do. And then there's a lot of things that I wanted to do. And then there's a lot of things that I wanted to do. Again, I want to talk about creating somethingloabive, arguably, in the fact that Hart from a book head-on-frame worldly community is written daily with a group of unsal Paper that Parlons show to us. B네요 Batte. the more common group of Greeks for people. The way to think about the Greeks is that they essentially are the instrument cluster to your car. So when you're driving your car, understanding how to read your tacometer, understanding how to read your speedometer, understanding what's oil temp is, what transmission fluid temp is or just trans temp depending on your car, what your coolant temp is. All of these different things are inputs to you. Understanding how to read the gauge cluster of your car doesn't inherently make you a good driver. And there are some people that can drive that don't really know that much about their car. Now that's simply an artifact of cars have a lot of controls in place for you. An example of this is if there's something wrong with the car, a check engine light will come on. That is literally the world creating structure for you to make it easier for you to know something's wrong. That doesn't exist in the markets. You have to be able to look at your coolant and see that your coolant is effectively boiling. And then you have to do something to change it. There's no check engine light that's going to tell you maybe the check engine lights like a margin call. That's when it's way too late. So the way to think about the Greeks is they give us a lens to measure different inputs that impact an option. Because if you'll recall when we're talking about options, there's intrinsic and extrinsic value. We know that these contracts have an expiration. We know that these contracts care about volatility. So what I'm showing you is that looking through just at a surface level, and you see like there's these different kinds of values that create the premium, we know that they expire at some point. So something that's going to expire in a day is inherently going to have different value than something that's going to expire in a year. So from an intuitive perspective, we can just postulate that there are other factors that impact the premium of an option versus just the underlying price movement. So the Greeks allow us to understand how all of these different factors impact premium. And then as we get into second order Greeks and third order Greeks, they help us understand how different factors impact other factors that ultimately impact your premium. So the way to think about it, and this isn't a perfect description by the way, but this is a way to think about it, a simplifying framework. First order Greeks, please pertain to the price or the premium. Right? So delta rate of change of premium per one point move in spot price, theta rate of change of premium. I guess I'll clarify those in here. Rate of change of rate of change of premium. Delta gamma note. We'll talk about that in a second. Oh, no, I already have premium in there. I'm an idiot. I'm sorry about that. I realize that it starts with premium. So notice how delta premium rate of change theta premium rate of change Vega premium rate of change row premium rate of change. All of these first order Greeks deal with premium rates of change. Then notice gamma. What's the difference in gamma? This is our first second order Greek. What do you notice? Gamma is telling us how delta works. So the second order Greek gamma is measuring a first order Greek. You see the point. So the way to think about first order, second order, third order Greeks is that they essentially tell you what they're measuring and they measure different things. So most traders will deal most commonly with the first order Greeks plus gamma. And we'll talk about the others in a little bit. Look now going back to this question back back to this. The Greeks are not mispriced. The Greeks are Bayesian. They provide a snapshot in time. And then they update immediately based on new market movement. So to this person's point, it's not a mispricing at all. It is simply the different that markets move as the underlying moves as volatility moves as new news enters the system that forces repricing of things. So it's not mispriced at all. It's simply a Bayesian system that integrates new information. So now this was another comment on that post. And essentially again, a reminder, the post is that the Greeks don't provide you an edge. And this person says, so yes and no, the no, I make an absolute dump truckload of money utilizing the Greeks in part of my SPX strategies and how I swing stock options. It's not the sole driver to my thesis, but it's a significant part of the evaluation. So you could tell like this clearly is just a person that wants to debate, right? Because they're literally saying no, but then they use the Greeks. So that that part of side, I don't even care. People are always quick to do that. It's actually funny to me. But the broader point is I want to talk about this individual person and their experience because their capacity to make what they consider to be a dump truckload of money, which here's another bet. I would happily bet hundreds of thousands of dollars that if we actually conducted a genuine audit of their returns, this would not be the case. Just saying. But that aside and granting the point in taking it as something to think about, right, a cognitive exercise, their ability to make money with or without using the Greeks has nothing to do with the post, which is that the Greeks do not provide an edge. The way that I think about the Greeks is that they provide table stakes. You are a artist of sorts and your medium is options. So you have to know when to use the chisel. You have to know when to use the sandpaper. You have to know when to use the polish, these different tools. So the Greeks are table stakes. The Greeks are what you need to understand in order to understand what the fuck is going on with your positions that are on. And this is why so very frequently in the simplest of sense, people will say the underlying move in my favor, but my trade lost money. Why did this happen? And it typically happens at a surface level of some sort of change in volatility and theta decay. That's generally the case. But it goes much deeper than that. So for example, sometimes people don't understand when they're in the markets selling tons of really far out of the money puts. And they think that their position is actually very safe because it's a low probability move. However, the position is way less safe than they think it is. And one of our Greeks help you understand that exact scenario. So if we're selling super far out of the money options, Vega can really hurt us. So if volatility starts to spike, Vega can lead to pretty significant expansion of a margin requirement. So if I'm selling super far out of the money options that are super cheap and because they're so far out of the money, they don't make much money. So then I have to sell a bunch of them. So then I sell a bunch of them. And as I'm doing this, I still have a pretty high probability trade. But if volatility starts to expand, that can hurt. Right? Our Vega in that case would be slightly problematic. However, if we go down and we look at a second order Greek like Vama, and we can see that Vega actually has convexity. So the problem with that is the position that that person selling super far out of the money puts, for example, thinks is super safe. And then volatility starts to expand. And all of a sudden, it's looking much worse than they thought, much faster than they thought. And it's because they have no concept of Vama. They're literally holding what I call a Vama bomb. And it's just ticking in their hands. And they don't even fucking know it's there. And it's because they don't know this. So the Greeks are what you need to know in order to play the game. Another example I use that might be useful for people is if I'm playing basketball, and I know that if I shoot a free throw, it gives me a point. So I know the rule. And in order to be able to shoot a free throw, I need to know the rules, right? I need to stay behind the line. Those of the team has to stay behind their lines before they can go for a rebound. I have to know the rules because if I violate the rules, then I can't make the point because they won't count the shot. But simply knowing the rules doesn't give me the point. I still need to make the shot. That's essentially what the Greeks help us do. So now let's go back. Thor is getting really antsy grumbling. He literally had like this little sad whimper. I was ignoring him. So now let's go back and I actually want to hone you in on this one. Do I really need to understand the Greeks? And they say, I'm making money consistently without technical analysis of the trades. Convince means worth taking the time to learn. This is the complete backwards way to think of the markets. This is somebody that is trying to prioritize their convenience and their preference. They're saying, it's going well so far. I would rather not do this because it's annoying or because it takes time and effort and I don't want to do it. So they're saying, do I actually have to do this? And the reality is, for this person, I can definitely tell over the long run that this kind of person, I don't know how long they've been trading. I can tell you it's not long. And I can also tell you that the probability of them, if they maintain this kind of course, of them being around for a long time is very low. We have to get over the fact that the markets are not based on our convenience. What we want them to be, what we want to be easier difficult, none of that matters. It all is what it is. So this person's question of, do I really need to understand the Greeks? You don't have to understand the Greeks. You absolutely can trade and you can even find short-term success. Or you can even find moderately long-term success by not knowing the Greeks. Certainly. But the thing is, that's finding success in spite of your lack of knowledge. There's nothing about this that actually helps you. The only outcome here that's positive is that you make money and you're making money in spite of your own lack of knowledge. So it's really important to understand the differentiation because trading is a very long-term game as I commonly remind you all. And over time, all of these little weaknesses are going to come out. You're going to find them all. Markets do that because you have to do a lot of things in markets. So do you need to understand the Greeks? No, you can absolutely choose not to understand the Greeks. Is that negatively going to impact your ability to make money? Absolutely. Unequivocally, yes. Without adept. So now, I'm going to take a pause on some of these misconceptions that we went through and the quick overview of what the Greeks are and what they do. And I want to see if there's any upfront questions you guys have as of right now. And I'm just updating our timestamps. Paulus says, I guess successful trades went to his head. And the funny thing is, is you're exactly right. Those successful trades go to their head, but in the worst way possible. The reason why it's the worst way possible is because they don't realize their own problem and their problem is that they're making money in spite of this, which means they're stacking the deck against themselves. And then it won't be that far further down the line when they actually lose money. And then they're like, oh, I wonder why I'm losing money. And it'll start to unravel this fundamental misunderstanding of option, which is always interesting to me. I never understand that perspective. It doesn't make sense. Why would you not want to know the tools for the trade? Obviously, because it's more work. But this comes down to the people that still are just overwhelmingly mistaken that this is going to fast easy money. And as I will always remind you, you ain't going to find that here. You are not going to find fast easy money in markets. It's simply not the case. James says, what exactly is convexity? It's a great question. So actually, I wonder, give me a sec. I bet you that there's going to be a cool graphic of it. I don't like any of these three. This one's okay. So a lot of the stuff that you're going to see is from bonds because the convexity of bonds is a hot topic. But I just want you to focus on this. So it's the same thing that you learned in, I actually don't know. It's like basic math. I don't know if it's algebra. I don't think it's algebra. I don't know where you learn it. But it's that concave convex wherever you learn that. So convexity, concavity. I don't remember where we learn that. But that's like middle school or probably middle school or something. So essentially, convexity is when something has this kind of shape. So it's when we have tails that rise up pretty significantly. And then we have a flatter midsection of some sort. Now, there can be all sorts of skew with convexity. It's not going to be an even distribution or anything like this always. But the main thing to know about convexity is this general shape. So you can have things that are positively convex like this. You can have things that are negatively convex or concave like this. And it gives us a really important read into the behavior of things. So when you look at options, an example of option convexity is gamma. So if we look at, well, actually, I think I have it here. Give me a sec. Yeah. So it's not smooth. Not smooth. But this is convexity. So what this is showing you is the steepness of gamma in two different instances. You can see that Vega has concavity. So convexity has things become more convex. They move faster. So in this case, with gamma, we can see that this yellow line is a 10 DTE option. The white line is a 30 DTE option. So notice how gamma's convexity increases as it goes up into 30 DTE from 30 DTE to 10 DTE. So that's what convexity is. In the theoretical sense, it's literally just this shape that we apply in different contexts. So you very, very frequently will hear about convexity in the bond market. Super, super common. Let me know if you have follow on questions on like what convexity is, but that's essentially what it is. Why not says who needs Greeks when you can guess my man? That's it. That's it. It's better off. We're better off just fucking straight up guessing. All right. So let's get a withdrawal here. So let's talk about how we can use the Greeks. As always, you will refer, well, you always hear me refer to the way that I plan things, which is always from the top down, like this, like a funnel, right? So the top level of using the Greeks for me is actually the portfolio level. The way that we can use the composite Greek position or Greek standing of our portfolio is very useful. This goes back to that example I was telling you before. If I'm selling a ton of super far out of the money options, even though they're very high probability to work in my favor, and I'm selling a whole bunch of them because they're cheap and I have to and I'm using more and more of my margin requirement, I will see that represented in the Vega. And I can also calculate that with respect to something like we talked about earlier, Vama. So we can use the Greeks to help us manage the overall portfolio. You can use things like a beta weighted delta. You can use portfolio level theta, portfolio level gamma, Vega, all of these different Greeks can be zoomed out to the composite level. And it helps us understand the lean of our entire portfolio. If I have a bunch of trades on that are all short premium, I'm going to have a really healthy looking positive theta metric. But I am really going to be at the mercy of gamma across the board. So then if I notice that I have really high positive theta higher than I typically would expect it to be, and then I notice that my gamma risk is significantly elevated that might inform me to go into my portfolio of individual trades and find things that might be really, really highly correlated and taking some of them down to reduce this correlation so that I can take down the overall portfolio level gamma and scrub off some of my overall beta weighted deltas. So I might take some of these positions down like this. So that's the portfolio level. It did not mean to get rid of everything. I'm too bad. The second is from an analysis perspective. And again, you can tell that this session we're not doing the basics of Greeks. The two videos that I shared are going to do all that for you. So I'm spending more time talking about this stuff. And there's actually a really good example of this that I came across recently. So if we take a look at, let me... This. So if we take a look at the actual effect of the various Greeks, and in terms of how to actually conceptualize their behavior in our brain, we can figure out where we see heightened or lower delta, height and or lower gamma theta, Vega, all of these. All of them are different inputs that we can custom tailor to our exact idea. This is one of the most important points of the video that I want you to key into. One of the true benefits of options is you can gain purposeful exposure to the precise effects that you want, and you can minimize your exposure to other effects that you don't want is involved in your position. So the Greeks allow us to do this. So let's take a look at something like, what was I looking at last night? There is... IonQ. If I go to IonQ, and then if I go to something that's like 700 days out, what do you notice about the deltas for IonQ that are 700 days out? So the deltas are this column right here. So this at the money, the deltas are 0.76 at the 40. 0.74 for the next strike. That's out of the money. The following strike is 0.70. The following strike after that is 0.67. So what you might notice that's different than what you typically see is that the deltas are very, very high for options that are out of the money. We typically see if we come closer in time, we typically see like a 50 delta that's right about the money. So what can we take from that? There are important context clues that the market tells you if you know how to understand them. So what the market is telling you in this specific instance is this stock is not only expected to go up, but I also can tell you that this stock has significantly elevated volatility. That's what this tells me. So the Greeks give us a lot of these small little tiny clues that we can piece together. Another example are things like Gax, Gama Exposure. So let's say we go into Spy and let's take a look at the Gama Exposure. We can look at Gama Exposure in a bunch of different contexts. But this is looking at a specific expiration. You can either do a composite so that you can see pretty much everything at once if you were so inclined. It's really up to what you're wanting to analyze. But we can use things like Gax to understand what dealer behavior might look like. We can figure out if Gax is higher on the collar, the put side, which nets out to a total Gax. We can look at things like volatility skew and use that to help us understand different pricing disparities and discrepancies between calls and puts are between different cycles. This can tell me in this instance that put call parity might be off. There's an arbitrage opportunity there. So the Greeks give you literally all of this and it starts from understanding what they are. Now this series of stuff that I'm explaining really tied to a slightly higher level use of the Greeks that takes time. It genuinely does take time to piece together all of these things. So what I want to do is spend a little time talking about how you can use the Greeks in a day-to-day context at least getting started with using them. So I need somebody to give me a strategy like it could be any sort of basic strategy. And then I will talk to you literally how you can use the Greeks in the context of that strategy. Any ideas? The straddle. Cool. Polly, do you want shorter along? We'll do a straddle. Short straddle. Got it. So let's say that we're going to pick a short straddle and I'm going to just turn it into a rough strategy off the top of my head so that we have something to work off of. So this now goes into the third level which is position. Which is exactly what we're going to talk about now. So I'll clear those off and we're going to have a short straddle. Let's say I'm going to trade this for variance-risk premiums. So I'm going to look for stocks that have higher IV relative to HV. And let's just say that's the starting point. Now for those that are familiar with the outlier strategy process, you know that step four is to build a strategy. One of the inputs for building a strategy is when we get more specific. This is where we pick things like our deltas, our days to expiration, and so on. So the good part is with a straddle. It's still you but case you don't know you still have to pick your deltas. You don't have to have a centered straddle. You can have straddles that are off-center but most people will default to an at the money straddle. And that really generally holds true in this case. So the first Greek I'm looking at for this specific strategy, which is based on trading risk premiums, is the delta input. And the delta input in this context is I'm really trying to trade primarily the volatility side of things. So I'm not really looking to take a big directional bet. So I'm actually going to start with something that's probably close to at the money. Now what happens? If this strategy, fair answer is premium, which is entirely based around the difference between implied volatility and historic volatility, what happens if the underlying moves? Who could tell me? In terms of the position. As the underlying starts to move, there's going to be a couple key changes in the position. And these key changes matter to me, actually quite a lot. And I want to see if you know why. There you go. Tommy's on it. The deltas of the leg move. So as the stock goes up and down, the deltas will move. And the movement of the deltas, which we know what's going to measure that, Yamma. So that's another thing I know I have to take a look at with this strategy. And believe it or not, we know that there's a relationship between gamma and days to expiration. So this also will inform this decision. So let's think about it. Because we as retail traders, we don't have the luxury of essentially continually being able to hedge. It's expensive for us to hedge. And at the onset of this, we know that we want our delta risk to be about zero. Ideal world, we don't want any delta risk. We want no directional risk. Because this idea is based on volatility, implied versus historic. So that means that I'm really trying to center on Vega. I want Vega to be a much larger part of my actual P&L. So what do we know about Vega? We know based on the way that the Greeks behave and based on those other videos that I paired with you. But we know that Vega is DTE sensitive. And we know that Vega is higher as there's more extrinsic value. Where's more extrinsic value the further out in time you go. So if I'm trying to isolate my impact to Vega, do I want to trade super short term? Maybe it's not a no. But these are inputs to the decision cycle. So then let's say, well, maybe I do want to trade this shorter term. I think it might be better for X, Y and Z reason. I'm going to go into SPX. And let's just do like a 4 DTE obviously because the market's closed. And let's take a look at this at the money straddle the 61 15. And we can see that we're getting 53 delta's on the call side. So let's take a look at this actual position. So I'm going to have I'm going to sell to open one call and then one put. And let's take a look at the Greek profile for this. Actually, it's probably easier to see if I put it in a workbook. So let's take a look at these different positions. We're going to have delta, gamma, theta, Vega. I'm not going to worry about row row. We're always kind of like the bastard child that most people don't care about most of the time. That's kind of the reality. Row really impacts longer term options a lot more. And let's take a first look at the short call. So we said that we're going to be short. I'm going to move this off to the side. Now I just wanted you to see what I was in putting. I'll bring it back over. But I want to move it off to the side of that we can look through this little faster. So the short 61 15 call. What's going to happen there? Well, we're going to get negative 53 delta's. Our gamma is going to be negative 0.01. Our theta is going to be positive 221. Our Vega is going to be negative 248. And then if we're short, the 61 15 puts our delta, we're going to get long 47 delta's. For gamma, we're going to be short 0.01. For theta, we're going to get a dollar 79. And for Vega, we're going to be short 248. So let's take a look at this position so far. If I net these out, here's what I can expect to see on a daily basis. I can expect to make about four bucks in theta. I have about negative five Vega. I'm negative 0.02 gamma and negative 0.06 delta. So you notice right from the onset, I'm not even delta neutral. So the entire origin of this position, if you remember, is I don't want any directional risk. I want to be able to just trade Vega. I care about the volatility side of this equation. I don't give a crap. I don't have an opinion on the direction side of things. So now I have some choices. I understanding the Greeks. I can figure out this is going to be a theoretical exercise. In reality, we use what's called delta bands. And that means that we don't hedge the delta as it moves every single time. It's just unrealistic. So the way we use delta bands is we say if delta gets to this point or this point, I will re-center the delta's. That's a suboptimal approach, but it's a realistic approach. And it's because there's a cost associated with the hedge. So important general context. So that's the facade from a theoretical perspective. Let's say that we want to keep our delta's zero. We want to be flat. Okay. So what do we have to do? We're going to buy six shares. That's easy. So then we're going to buy to open six shares. That's going to give us six delta's. I should do just to keep it the same. So it's essentially going to flatten out these delta's. I don't want to confuse you. I'm just going to multiply all these by 100. So then if I grab six shares, my new net position in terms of delta is flat. Great. Mission accomplished. There is a problem. Flocking gamma. As soon as this moves, my deltas are going to move. Also, my transacting in the shares does precisely jack shit for the gamma. So how do I clear off this gamma? I got to use options. That's the way that I can actually get rid of some of this gamma. So one of the ways that I can get rid of gamma is I can find something and I can trade unrelated option that essentially offset some of this. But as soon as I do that, all of these other things are going to change. So the way that we actually maintain delta neutrality for something like a short straddle, if we're actually trying to trade, a specific effect like variance risk premium is I use the Greeks to understand the overall position that I have. And then I can make adjustments. So the way that I would do this is actually not by buying shares upfront to flatten the deltas. This is kind of like putting a bandaid over a gaping wound. It doesn't actually fix the problem. The problem is going to come from my gamma. So I can flatten the gamma by buying options that offset this. Then I can delta hedge the remaining deltas off based on whatever that residual is. Now that becomes more complex. Because if I'm trying to sell straddles, I'm essentially saying I think there's variance risk premium. But then I'm coming in here and I'm buying options to offset the gamma. So it's a choice. It's a business decision. Do you want to truly isolate gamma? How long is your position going to be open? How impactful is gamma going to be? You can decide how you want to deal with gamma. Or you can just set more aggressive delta bands entirely up to you. But for me, a lot of times, I will try to find positions that are easier to manage for something like this. But going back to the original point of how to use the Greeks in something like a straddle is we define as always the profit mechanism that we're trying to trade. In this case, I use variance risk premiums for the example. And then I started listing out the specific effects that I'm trying to isolate. And based on those effects, I can literally quantify the impacts of these different positions. Let's see what happens. Net them out and then attain the actual risk that I want. Let's do unomas. And then we'll have plenty of time for like Q and A and stuff. But I want to I want to pick another example. I'm thinking something like buying calls or selling puts something like that. But you guys can pick if we want to do either of those. That's what I'm thinking. And really the main reason why I want to do that is because I think there's a little bit we can probably pull out of it. Long calls. Good. I love it. And you read my mind, by the way, Tommy. Thank you very much for giving me the this scenario of trying to play a big move because that's going to be one of the first questions. But before we do that, I need to finish my dinner order really fast. And for Valentine's Day, my wife oddly wants Jack in the box, which I have to be honest with, essentially never eat that shit. But I'm a romantic at heart. So Jack in the box, we go. I mean, I'm not like afraid of Jack in the box. I just think this stuff is fucking awful for you. It's like just straight disease food. But every once in a while, I feel like you got to put some trash in your body to remind it to not be you delicate. Here we go. So, this was in a straddle. And then now we are at 108.5. And then this will be how to use the Greeks in a long call. Okay. So along this is another just really, really common scenario. And I actually have a video that goes through this in detail. Let me find it for you. Here. So this video will talk about buying call options. And let's take a look at a practical example. So in Tommy's scenario, he was talking about wanting to trade something for a much more pronounced directional move. So let's say that we're looking at Ion Cueks. I was looking at this earlier. Actually, I think another probably better example like in video. So a lot of people have been trying to figure out how to play this move in Nvidia. I think this is fairly topical. Now, one of the notes that has earnings coming up. That's important to know because with earnings coming up, you have to either acknowledge that you're going to hold through earnings or not hold through earnings. And it's entirely your choice. But this is a binary move. Now, when we're trading long options, there are effectively for specifically long calls. There are two things that we are trying to gain exposure to. The primary top line item, though, is gamma. We are trying to find something that is likely to move and it's likely to move a lot. But that really comes down to leverage. That's the only reason why you trade something like a long call versus buying the stock. It's just for leverage. So if we take a look at buying 100 shares of Nvidia, but I wanted to buy 100 shares of Nvidia, I need to cough up 13,885 bucks, which I may or may not want to cough up, right? The other thing I can do is go super far out in time. And I can buy an option that's super deep in the money, like an 80 delta. And I can essentially control 80 shares of Nvidia at this point, 80 shares of Nvidia. And I can pay 40, 500 bucks. Call it. So for a fraction of the price, I can essentially control the same size position. This is an example of using options, essentially, as a stock replacement. Now, the way that we can structure our options trade based on our idea changes and we use the Greeks to do it. So let's say that we think there's going to be a big up move in Nvidia, big parabolic up move for whatever reason. Maybe we see the CEO sign another titty or who knows he might pull another chip out of another oven that people really like. Sky's the limit here. So let's say that scenario happens. We think it's going to happen. There's going to be a big move. There are a handful of choices that we have to move through in order to arrive at the actual position that we're going to put on. So one of those choices is based expiration. Another one of those choices is delta. Another one of those choices is gamma. Another one of those choices is theta. So let's see how we can actually build a position that truly reflects our idea. If we think Nvidia is going to move a lot, let's take a look at a couple examples. Let's do a seven day and we'll do something that's like at the money. So this option has 50 delta. And it's only $290. So it's pretty cheap. And before I was telling you that you have to cough up like $4500 to control 80 shares. This is putting up $290 to control 50 shares. You just do two of them. Pay $500, $600 and control even more shares. So from that perspective, it seems way better. Right. Doesn't it? Does to me. Here's the problem. If you take a look at the theta, theta on these options is losing 24 cents a day. So if we look at that in relation to the overall premium, call it $290, losing 24 cents, it's essentially 10% of the options premium is going to go away per day. The reason why that matters is because it then moves the goal post against you to get the move in your favor. And I'll show you what I mean by this. So let's say we get in at that $290 handle again, just for the example. And let's zoom this out. So let's pretend that a day passes right now our PNL is negative $2.50. It's just using the midpoint. So don't pay any mind to that. Let me get rid of one of these extra slices and probably this one. So it's about unchanged, right? On the day. Great. So if I fast forward one day, what starts to happen here? Well, what will start to happen is you'll notice that this purple line is actually going to move down towards that blue line. So if I fast forward another day, another day, all of a sudden, the stock hasn't moved against me. It hasn't moved for me, but I'm starting to lose money. That sucks. Why am I losing money? Well, I'm losing money because of Thadadike. So one of the inputs to your decision cycle here, understanding the Greeks, is that the cost for the leverage you get through a long call is Thadadike. The downside to this is let's say that you were expecting originally, maybe in video, what's the current price? In video is at 138. So let's say that you were expecting it to go to, you know, 140, 142, something like that. The issue here is if I continue to fast forward time, what ends up happening is I need a bigger and bigger move in order for this thing to get even back to break even, let alone to make money. That's the issue that you face. So that's the downside to using the cheaper at the money options that expire soon. And again, this is using a smaller position. Really, we would have a too lot on right now to simulate the same size. And if it doesn't move quickly enough in your favor, you bleed out through Thadadike. Okay, cool. What's the other benefit of this? Well, I just showed you that I can buy more of them. And we also know that the effect of gamma is the closer we get to expiration, gamma is going to go up. So I also get the effect of my delta rapidly compounding, which is awesome. What's the charge for that? The charge for that is Thadadike is literally the highest at this point. So then if we use the other example of going further out in time, what happens? Well, if I use this 80 delta option, let's take a look at what my gamma is, how fast I'm going to compound. Fucking zero. It's not actually zero. It's just further decimal points in. This is only going to two decimal points. So it's like three, four decimal points in. The broader point here is that you're actually not going to compound that much. You're so far out in time that your gamma is about flat. That kind of sucks. Why would I want that? Well, because if we take a look at our Thadadike, our Thadadike is just four cents. So if we look at that four cents relative to the total premium that we're buying into, it's very, very small. So what's the trade off here? The trade off by going further out in time is I'm buying something that's way more expensive. I can lose more money in total, but it's a little bit of a down payment style situation because as long as this thing doesn't move super far against me and I'm directionally wrong entirely. On a per day basis, I'm going to pay less Thadad even as a gross dollar amount, but definitely as a percentage, I'm going to give up the gamma. I'm not going to have anywhere near as much gamma unless I get a really big move in my favor. So this is how we can use the Greeks in something like a long call to decide what position makes the most sense for our idea. So going back to Nvidia, if our idea is gentsons about to sign another titty and Nvidia is going to go skyrocket, I can make more money by not going as far out in time by being closer in time and buying more of the options and allowing them to compound. If I don't know that that's going to happen, and my idea is more so that Nvidia got beaten down because of deep sea coming out and then the market having this crazy giant reaction, but Nvidia is still exceedingly well positioned to take advantage of this long term, and this is likely short term sentiment. So I think it's going to rally back up. At some point, let's pretend that that was back in this time frame somewhere down here. Then I go further out in time. I accept the fact that it's going to be slightly more expensive, but I have a position that can be maintained for longer durations. So these are some literally basic examples of how we can use the Greeks to inform our decision making. And I'll give you one more example that's fairly recent for me, which is Palantir, I put this trade on, and in Palantir it's a ratio called diagonal. So this is something that's designed to be a longer term trade. So the way that I built this trade is I went further out in time. I'll tell you where I went. I went out to the 16 Jan 26, and I had bought the 110s. So they were essentially right at the money. When I first got them, they were 64 delta. Now there are 69 delta. So I've gotten 0.05 delta's added to it in the price movement since I've been in it. So what have I done here? I've found a very delicate balance for the idea that I'm trying to trade. I wanted something that I can hold on to for maybe three, six months. So I go this far out in time so that I accept much lighter overall theta decay. But because I know that there's theta decay, what I can do is I can sell near term options against it, not to make a bunch of money off the short options, but because I understand the Greeks. So I'm losing theta in that long option position. So if I come in here and I sell premium, I'm now long theta. And in this case, I can see how much theta I'm gaining per day, 10 cents per day, just using this option as an example of the 140s. So I make 10 cents per day in theta on this trade. But then if I go out to this trade here and I analyze how much I'm losing per day, I'm losing five cents. So I can offset the daily theta decay via the shorter term position to subsidize the holding cost of the long option so that I can still enjoy the benefit of a leveraged directional position. But I can reduce the total cost I'm paying to do this. So this is another way to use the Greeks. I am going to pause here, open the door for Thor so we can go get his dinner. And then I would love to talk about any specific questions you guys have. And then I want to talk about these two misconceptions. We already covered the first one, but then we'll hit the second one. So the context here, Maxi says so a calendar spread. What about a calendar spread? Talk to me. Talk to me, send your Maxi. Talk to me about this calendar spread. Oh, he's asking about the position that I had on. Wait, is that right? Maxi, are you asking about the position that I had on? No, I mean technically, technically it is a spread. It's not wrong. Most people will take the term spread and they'll automatically apply it to verticals. Right? So the point of verticals is obviously very different. But for example, to Maxi's, I'm not exactly sure what Maxi, if you were referring to the position, but technically you could call it horizontal. I wouldn't exactly call it a calendar spread. So a horizontal spread calendar spread, it's about the same thing. The way to think about spreads is you can go vertical or horizontal. Vertical is in the same term, but higher or lower from whatever the base leg is. And then horizontal is using the time series component going out and time or in and time. Now, technically speaking, if I were to look at a true calendar spread, it would be the same option that I'm looking at. And a calendar spread is designed to do a specific thing. This technically speaking is called a diagonal spread. The reason why it's called a diagonal spread is because I'm combining two things. I'm combining a change in strike going vertical. And then I'm also going horizontal. So what happens if I combined vertical and horizontal, fucking diagonal? It's one of the easy things about options, no mink creature. Thankfully, the very little soak it up because there's very few instances of anything in this stuff that make any fucking sense whatsoever. But that is one of them. So technically, it's called a diagonal spread. Now, the more important element is the different directions we can go, but then also the relationship between the legs and the ratio of legs. Most of the stuff that I will trade will be a ratio in some capacity. So back to this, this idea that there is a best Greek. What is the Greek I should get? What Greeks should I use? The reality is there is no best Greek. What you should do is use the Greeks. Guide the position that you want. They inform via all of the different inputs how your position is going to behave. And then you run that through the filter of is this what I want? Another really simple example. Going back to the straddles. Let's say that I was trading the straddles from the context of earnings release. And we'll literally let's fucking do an example. Let's go to last after the market. I'm going to find something that's like reasonable. Let's do Mondalees. Let's go back to the fourth of Feb. We're going to go back in time. And I'm literally going to give you two different trades so that you can see exactly what this is. I learned best personally through seeing shit. Practical application. We're going to take a look at what did I say Mondalees. Right now it's loading. Damn boy. Look at that. Let's say that we want to trade this for earnings. So I think in this scenario earnings is after the close on this day. So technically speaking for an actual earnings play, I would get in much later. We'll just do that really quick so that it's at least somewhat accurate. And then I want to take a look at two different things. I want to take a look at selling the straddle in 7 Feb and then selling the straddle on 21 March. I actually don't fully remember what happened with this one if it worked or didn't work. But that doesn't actually matter. All right, where's the best choice looks like this one. So we'll throw this in there. It's going to look all fucked up because the days are fucked up in here. Don't pay attention to the risk profile. And then let's take a look at this one. Okay. We have our two straddles. They're locked in 232 and 420. Let's fast forward time. So we're literally just going to take it one day forward because the hypothesis that I'm trying to trade is various risk premiums. So I'm trying to trade various risk premiums through earnings. I'm not trying to trade the straddle in this long term. I'm simply taking it through earnings. The other thing I'm doing is I'm taking it closer to the morning so that we can observe what this looks like. So first things first, our first straddle that we put on for 420 is now trading at $3.75. So it went from 420 to 375. This is the 44-day to expiration straddle. If I go to the 7-FAB, we put this straddle on for wrong one for 232. This one is now trading at $1.25, actually $55. Sorry. Somewhere in here, let's call it $0.80, $0.90, let's call it $0.90, something like that. So what happened here? The Greeks happened here. Because I'm trying to trade the earnings release itself, volatility is going to be centered in the term that has the actual earnings release. That's what's happening here. So this moved way more, not because it has higher theta decay, that's part of it, but that's not why it moved so much more. Because we can literally do the math on the theta that should have came out. It should have been like $0.10, $0.14 on this side and $0.9 on this side, but over $1 came out. So it's not theta. What happened was a contraction in volatility. And because that volatility was primarily in this term versus this term, that's why it made so much more money. So in this context, based on my thesis and my trade idea, I know it makes more sense to trade this expiration cycle versus this expiration cycle. It's because this one actually grants me exposure to the effect I'm trying to capitalize on. This one does not. This one still made money, but it made way less money. And it's for those reasons. The Greeks literally tell you all of this, all of it. You just have to pay attention. They're there. Any other questions? I hope that the general concepts that we're talking about and the approach that we're talking about makes sense to you. This is something that's built over time. So don't let it overwhelm you. You don't have to know all of this at once. And one of my most important piece of advice to you is that you don't have to remember all this shit. What I used to do is I had a cheat sheet that I would reference that would help me understand how the premium of my option would behave based on all of these different conditions. That's exactly what I would use. So you can make your own cheat sheet. And I think it's important to make your own cheat sheet because the process of making it is part of the learning process. So it's valuable to do so. But if you go through those steps, you literally will make much better trade decisions that help you isolate what you're actually trying to trade. That's the broad idea. So that is a practical application of using the Greeks as an options trader. So if we take a look at what we have next for our series, next on our hit list is navigating the options chain. So the next video that we're going to do, we're going to talk about how to look through and identify opportunities, how to analyze things like liquidity, how to see if the options chain is telling you anything because very frequently it does simply if you pay the pocket tension. And then after that, we will have technical analysis, fundamental analysis, how to build a trade strategy process portfolio management, and then the actual trading process itself. And then we still have a handful of flex sessions. So this is still designed to be about 15 episodes. We are now obviously wrapping up episode six. And my intention is to fill these flex sessions with really whatever you want. So one of my ideas, the reason I'm talking to you about this is to get your input is I definitely think it makes sense to slot in a general Q&A. I don't know where you prefer to do that. I think it actually would make sense before the options chain or before building a trade itself. I think those are the two logical places for the like general overarching Q&A. And then I was planning on doing a second one at the very end. So then if there's a specific options trading topic that you really want to spend more time drilling in as we go through these, that's what the remaining flex session will be used for. But if you have a preference on when the Q&A is, let me know. The reason why I'm asking if you have a preference is because it really depends on if you feel like you're at a point that you have questions that are like burning in your brain that you're trying to get an answer for that you're not able to find on your own. But that happens when you get to a critical mass of kind of knowing enough to then have questions, right? If you're so new then you kind of don't know what you don't know and then it might make sense to hold off for a little bit. So if you have a preference, let me know. Reese says before building a trade, cool. I will earmark that and then everybody else you can just let me know as we work through the rest of the content. As always, if you need anything, let me know. Be an outlier. I'll see you all later.
+0.00s: you
+30.00s: you
+60.00s: you
+90.00s: you
+120.00s: you
+150.00s: you
+180.00s: you
+210.00s: you
+240.00s: you
+270.00s: you
+300.00s: you
+302.00s: you
+310.00s: you
+312.00s: you
+320.00s: you
+326.00s: you
+328.00s: What is up to all the outliers?
+331.14s: I hope the week was awesome.
+332.70s: And I know today's Valentine's Day,
+336.00s: a day that I think is absolutely absurd.
+339.52s: I think you should be nice to people
+340.90s: throughout the entire year.
+342.58s: But that aside, there is no better Valentine
+347.68s: than making the decision to stop lighting your money on fire,
+353.20s: trying to learn how to trade options
+355.48s: and to actually make some money.
+358.08s: So that maybe you could take your partner out
+360.40s: to a nice dinner or maybe take them on a trip somewhere
+364.84s: as compared to the usual light the money on fire
+368.44s: and then go hang out in the Wendy's parking lot
+372.68s: behind a dumpster.
+373.76s: So I argue by attending today,
+377.20s: you really are a romantic.
+379.68s: That's what that, that's exactly what's happening right now.
+383.04s: So the agenda for today is pretty straightforward.
+387.40s: We're gonna take a look first at a quiz.
+392.12s: We're gonna do a little bit of a recap
+394.90s: from the last episode on volatility.
+398.30s: And then we're gonna dive into the world of the Greeks.
+401.10s: Now you can already see up behind me
+402.76s: and this has been up for like five minutes now
+405.20s: during the holding period.
+406.64s: So hopefully everybody had a chance to take a look
+412.12s: through what's up here now.
+413.76s: And then also to take a look through those two videos
+416.92s: that I've shared yesterday in the discord
+420.24s: and then also on X, if not, I will throw both of those videos
+424.80s: in here now.
+425.76s: This is actually reverse order by accident.
+429.00s: So watch the second link first and then the first link.
+436.32s: So the goal for our conversation around the Greeks today
+441.04s: is to essentially be a hybrid, a blend
+443.36s: between those two videos that I sent you.
+445.52s: The second video goes through literally all of the Greeks,
+448.60s: well, most of them that you would come into contact with.
+451.76s: And it gives you the fundamental understanding of what they are.
+455.88s: That the first video, which is the second one you should watch,
+461.36s: gives you how to actually use the Greeks
+466.04s: to fine tune your trades.
+468.76s: So the session today is going to do a little bit of both.
+472.88s: We're going to do a run through.
+474.52s: I want to help you visualize how the Greeks behave
+477.92s: in different time frames.
+479.72s: And then I want to help you think about actually using them
+484.16s: to make trading decisions.
+487.04s: So let's get started with a quiz.
+493.84s: So last time we spoke about volatility.
+496.92s: So the first question here,
+498.52s: what does IV measure?
+502.40s: What does implied volatility measure?
+505.12s: Feel free, just throw it in the chat.
+506.92s: And if you're watching the recording,
+509.00s: you can write it down, throw it as a comment, whatever you want.
+512.12s: But give yourself an opportunity to actually see
+514.76s: if you know it without looking it up first.
+519.24s: Now, the reason why we spend a lot of time
+523.20s: talking about the ins and outs of volatility is because volatility
+527.52s: is essentially the heart and soul of options trading.
+534.76s: Kevin says future movement expected.
+538.64s: James says market consensus a future price range.
+542.16s: Both of those are acceptable.
+544.52s: Lauren says market expectations decent.
+549.08s: Pause, he says perception of market gods.
+551.16s: That's probably the most accurate.
+553.92s: Expected move.
+555.68s: One standard deviation of expected move.
+557.64s: Thank you, Shrej.
+558.52s: So Shrej already read my mind for everybody
+562.76s: that was mentioning expected move.
+565.60s: There's an amplifying data point.
+567.52s: That's really, really important.
+569.28s: Really, really important.
+571.16s: The reason why it's really important to acknowledge the fact
+574.68s: that this is a one standard deviation move
+578.00s: is because there's not an insignificant number of data points
+582.32s: that will fall outside of that distribution.
+585.20s: So let's take a look at an Eric special terrible drawing
+592.20s: that probably is going to add more obscurity
+594.40s: to what I'm trying to show you.
+595.56s: But it's the effort that counts, right?
+597.52s: That's what they say.
+598.36s: Fun fact is not the effort that counts.
+599.80s: It's the fucking output that counts always.
+601.60s: But the output of this is I enjoy attempting to draw
+605.80s: and confusing everybody.
+607.40s: So okay, so here we have a mean.
+612.20s: So what we're talking about a one standard deviation
+622.20s: who know who knows.
+632.20s: Please.
+637.40s: So when we're talking about a one standard deviation,
+642.20s: expectation of forward price movement
+644.84s: that represents this range.
+648.00s: Inside this range is 68% of occurrences.
+654.92s: If we go to this second standard deviation,
+658.52s: it expands 95.
+662.12s: The reason why this is important is because a non-trivial
+667.00s: number of movements will fall outside
+670.88s: of this 68% probability.
+673.84s: So a lot of people will say,
+675.48s: oh, the expected range is 10 points.
+678.24s: And then they're blown away when it moves outside
+682.84s: of 10 points, for example.
+684.84s: You cannot be blown away in that instance,
+687.20s: especially if you understand what we're talking about.
+689.44s: Now the fact that it is a one standard deviation expectation.
+693.28s: Okay, next, what is variance?
+698.28s: What does variance measure?
+705.20s: Now the cool part is some of these things are actually
+707.28s: also giving you an inherent introduction
+711.84s: to basic statistics, specifically as it applies to trading.
+715.28s: That'll be something that we're gonna take a look at.
+719.96s: Steve Shop, that's a fun name, is saying
+723.76s: standard deviation squared, okay?
+729.28s: What do we got?
+731.88s: Anybody else?
+737.08s: James says spread of data over a time series.
+741.52s: I would take it.
+745.48s: Joe says difference between price and expected move.
+748.12s: That's a good guess, but that's incorrect in this context.
+751.04s: Now what you're talking about is completely cracked,
+753.28s: the variance, right?
+754.20s: The difference between unexpected and observed outcome.
+757.24s: So full credit for the try there,
+759.56s: but in this context, that's not what we're talking about.
+762.76s: So when we're trying to understand
+766.04s: the movement pattern of something,
+768.48s: let's say that we have a line of best fit.
+772.92s: And let's say we have data points
+775.20s: that are plotted randomly around it.
+780.72s: What we can do is we can figure out
+787.20s: what the difference is between all of these individual data points
+792.20s: and then we can assess how different they are
+796.20s: from the total average.
+798.20s: So we can look at variance a bunch of different ways
+801.20s: in the context of markets.
+802.20s: We have a very specific way of looking at it.
+805.20s: But the high level note that I want you to pay attention
+808.20s: to when with respect to variance is essentially
+813.20s: the dispersion of something around a mean
+817.20s: and the frequency of the dispersion.
+820.20s: So we can understand if something has very high variance,
+825.20s: which will bleed over into standard deviations and volatility,
+829.20s: volatility is essentially just variance square root.
+834.20s: And the real difference between the two
+837.48s: and the reason why we do things like we figure out the mean
+843.48s: between each point and we square it each one.
+849.32s: The reason why we do the squaring process
+851.16s: is because it normalizes all of the signs.
+853.44s: The stuff above this is a plus sign.
+855.72s: The stuff below this is a negative sign.
+857.84s: You can't add those together cleanly.
+860.92s: They also allow us to exacerbate some of the movements
+864.56s: to see them more clearly.
+865.72s: But most of the time when we're observing volatility,
+868.52s: we're going to get back down to the base level,
+871.04s: which is why we then later take the square root of it.
+875.64s: So the important thing to remember with variance
+878.24s: is it gives us an idea of how the data points
+881.72s: of something behave compared to the average.
+884.40s: And it's a really important use case with respect
+887.64s: to trying to track volatility going forward
+890.20s: and measure what it is.
+892.28s: Okay, last one, what is the difference
+895.20s: between historic volatility and realized volatility?
+905.68s: What you got?
+907.60s: Now, for those that were in the session last week,
+910.56s: you will remember that we spent a little while talking about
+914.04s: the different kinds of volatility that exist,
+916.84s: what they mean, why they matter.
+919.28s: And this one is actually a fairly important one.
+924.00s: So I'm actually eager to see what you guys say about this one.
+930.32s: And then I need to update our little timestamps
+934.80s: that I can figure out when we got to the quiz,
+937.04s: which is like 840 while you're throwing your answers in.
+942.12s: 840, please.
+950.00s: No guesses?
+955.44s: So you salamanders on it.
+956.96s: Yeah, very empty.
+957.80s: No guesses.
+959.24s: What's the difference?
+961.16s: So,
+963.08s: traces historic volatility would actually happen
+965.52s: realized can be future.
+967.12s: Yeah, exactly.
+967.96s: There we go.
+968.80s: That's exactly correct.
+970.32s: So it's a nuanced question.
+973.64s: So historic volatility is always a measure of what happened.
+977.64s: And typically speaking, it's using longer term ranges.
+981.60s: Realized volatility can be backwards looking
+984.56s: or forwards looking.
+986.40s: You can have future realized ball
+988.68s: or you can have realized ball looking at historic data point.
+992.84s: Now, the important note here is that the way realize volatility
+996.28s: and historic volatility when they're calculated
+998.40s: rearwards looking is slightly different.
+1000.56s: In general, we use them interchangeably,
+1002.52s: but there is a slight difference between this job.
+1007.88s: Let's jump into our recap.
+1010.60s: I got a pop up in the door for a thought.
+1021.44s: All right.
+1025.52s: So last time, we essentially did all things volatility.
+1031.32s: We learned why it matters how it behaves,
+1037.52s: how to analyze it,
+1039.52s: how we can use volatility to give us
+1042.52s: tradable information in terms of expected ranges.
+1045.52s: We looked at things like the curvature
+1048.52s: of volatility through things like term structure, smile.
+1053.52s: We looked at the volatility surface.
+1058.52s: The volatility surface, we looked at skew
+1062.52s: the difference between same term,
+1065.68s: volatilities.
+1067.44s: And we learned that volatility is one of the more predictable
+1072.44s: elements of markets.
+1073.64s: And it's one of the few examples of a true mean
+1078.24s: reverting assets.
+1080.84s: And you can break it out as its own asset class
+1083.24s: or you could just look at it as a true mean reverting effect
+1087.00s: depending on how you're visualizing volatility.
+1090.16s: This is very different than when we look at something
+1092.16s: like price.
+1093.56s: So not only does it inform the way that we build
+1097.08s: options trades, not only does it inform the way
+1099.32s: that we analyze and visualize the market,
+1102.08s: but it also gives us the opportunity to trade
+1106.48s: a very predictable effect, which is important
+1111.32s: for those traders out there.
+1113.32s: Sick.
+1114.32s: That is our recap.
+1116.60s: Onto today, which is about the Greeks.
+1120.52s: So your TLO, your terminal learning objective for today
+1124.32s: is to have an idea on how to use the Greeks
+1129.56s: to make better trades.
+1131.72s: That is the ultimate endpoint of the session.
+1136.72s: So notice how it's not to know the Greeks.
+1140.36s: Yes, you have to know the Greeks.
+1142.44s: But the main point here is that knowing the Greeks
+1145.84s: is not enough.
+1148.00s: So introduction to the Greeks.
+1153.32s: We need to always remember why we're learning this stuff.
+1157.36s: I refer to it as putting first things first.
+1161.08s: And it's like a lot of times traders,
+1164.52s: when they're trying to solve a problem,
+1165.96s: they accidentally start trying to optimize for the wrong thing.
+1170.04s: So in the example here, we need to understand how we use the Greeks,
+1175.12s: not to know what they are, not because it's fun,
+1178.04s: but because we use them to literally make better trading decisions.
+1183.48s: So I have a couple misconceptions up here.
+1186.40s: If you have others, I would absolutely
+1189.08s: love to capture those.
+1190.76s: The two primary ones that I have here
+1193.08s: are that the Greeks provide an edge,
+1197.44s: and that there is a best Greek.
+1201.64s: And these aren't things that I'm kind of like just making up.
+1204.48s: These are things that I have literally come across
+1209.68s: in my conversations on places like Reddit.
+1213.16s: And I'll actually show you this, not in this post.
+1216.08s: This is somebody else's post I wanted to talk about in this post.
+1220.32s: Let me find...
+1226.40s: There is a specific person...
+1229.12s: No, no...
+1248.76s: There's a bunch of comments on this one, so we'll find it.
+1253.96s: Aha, so here's one.
+1256.60s: So this is from an actual post that I made.
+1262.28s: This is one comment.
+1266.96s: Okay, try reading it now, just kidding.
+1272.80s: So this is one...
+1274.80s: And then there's one more, let me find...
+1281.20s: Here you go.
+1288.64s: The reason why I'm showing you these is like,
+1291.24s: these are your peers, and they're my peers.
+1293.80s: These are other retail traders.
+1295.80s: And they're my peers.
+1297.80s: They're my peers.
+1299.80s: They're my peers.
+1302.80s: These are other retail traders that these are people
+1313.92s: that think this stuff.
+1317.72s: And the reason why you have to know this
+1320.44s: is because one of the things we're trying to do is traders
+1324.60s: is avoid making the mistakes, common, common mistakes.
+1329.12s: So let's talk about these very quickly.
+1332.40s: And then we'll get into this one in the back
+1334.16s: that I had thrown up.
+1336.00s: So this top one says the post for those that are wondering,
+1339.92s: the post is literally the Greeks do not provide you an edge.
+1344.92s: That's the gist of the post.
+1347.52s: And this person says Greeks can be mispriced in quotes
+1352.92s: based on market conditions.
+1354.60s: For instance, a 20-delted option, 30-DTE,
+1356.72s: and it goes in the money in three days.
+1358.20s: It was priced at a 20-delted when the trade was open.
+1361.40s: And now it's over 50-delted in the money.
+1363.60s: The probability is only so accurate.
+1365.60s: But in the bigger and more diverse picture,
+1367.12s: no one really knows.
+1368.12s: This is completely wrong, like entirely wrong through and
+1372.60s: through.
+1376.00s: And this shows a fundamental misunderstanding
+1379.20s: of what the Greeks are.
+1381.48s: The Greeks provide us inputs relative to a snapshot
+1387.60s: in time.
+1389.08s: So when we're looking at these top level Greeks,
+1393.52s: the ones that you're going to be most familiar with,
+1397.08s: Delta, Theta, I normally like to put gamma up here.
+1405.80s: I like gamma better there.
+1408.16s: Delta Theta, Gamma, Vega, and Ro.
+1410.24s: This is the more common group of Greeks for people.
+1414.84s: The way to think about the Greeks is that they essentially
+1419.20s: are the instrument cluster to your car.
+1422.60s: So when you're driving your car, understanding how to read
+1427.52s: your tacometer, understanding how to read your speedometer,
+1433.72s: understanding what's oil temp is, what transmission fluid
+1440.28s: temp is, or just trans temp, depending on your car,
+1443.36s: what your coolant temp is, all of these different things
+1448.40s: are inputs to you.
+1450.44s: Understanding how to read the gauge cluster of your car
+1454.08s: doesn't inherently make you a good driver.
+1456.64s: And there are some people that can drive that don't really know
+1459.76s: that much about their car.
+1460.80s: Now, that's simply an artifact of cars have a lot of controls
+1466.12s: in place for you.
+1468.84s: An example of this is if there's something wrong with the car,
+1471.00s: a check engine light will come on.
+1472.84s: That is literally the world creating structure for you
+1478.16s: to make it easier for you to know something's wrong.
+1482.00s: That doesn't exist in the markets.
+1484.64s: You have to be able to look at your coolant and see
+1487.64s: that your coolant is effectively boiling.
+1490.64s: And then you have to do something to change it.
+1492.76s: There's no check engine light that's going to tell you,
+1494.96s: maybe the check engine light's like a margin call.
+1497.12s: That's when it's way too late.
+1499.72s: So the way to think about the Greeks
+1502.44s: is they give us a lens to measure
+1505.96s: different inputs that impact an option.
+1511.08s: Because if you'll recall, when we're talking about options,
+1520.12s: there's intrinsic and extrinsic value.
+1529.48s: We know that these contracts have an expiration.
+1537.56s: We know that these contracts care about volatility.
+1544.52s: So what I'm showing you is that looking through just
+1549.20s: at a surface level, and you see like there's
+1552.72s: these different kinds of values that create the premium,
+1558.24s: we know that they expire at some point.
+1560.36s: So something that's going to expire in a day
+1563.12s: is inherently going to have different value
+1564.92s: than something that's going to expire in a year.
+1568.72s: So from an intuitive perspective,
+1570.68s: we can just postulate that there are other factors
+1575.04s: that impact the premium of an option
+1578.44s: versus just the underlying price movement.
+1583.32s: So the Greeks allow us to understand
+1587.92s: how all of these different factors impact premium.
+1593.92s: And then as we get into second order Greeks
+1596.52s: and third order Greeks, they help us understand
+1601.24s: how different factors impact other factors
+1607.72s: that ultimately impact your premium.
+1611.80s: So the way to think about it, and this isn't
+1613.68s: a perfect description by the way, but this is a way
+1616.60s: to think about it, a simplifying framework.
+1619.12s: First order Greeks pertain to the price or the premium.
+1627.12s: Right?
+1627.72s: So delta rate of change of premium per one point move
+1631.84s: in spot price, theta rate of change of premium.
+1635.36s: I guess I'll clarify those in here.
+1642.80s: Rate of change of rate of change of premium.
+1650.80s: Delta gamma note, we'll talk about that in a second.
+1654.80s: Oh, no, I already have premium in there.
+1656.64s: I'm an idiot.
+1657.80s: Sorry about that.
+1659.80s: I realize that it starts with premium.
+1661.80s: So notice how delta premium rate of change theta,
+1665.80s: premium rate of change, Vega premium rate of change,
+1668.80s: row premium rate of change.
+1671.08s: All of these first order Greeks deal with premium rates
+1674.56s: of change.
+1675.80s: Then notice gamma.
+1678.28s: What's the difference in gamma?
+1680.08s: This is our first second order Greek.
+1684.84s: What do you notice?
+1686.68s: Gamma is telling us how delta works.
+1692.96s: So the second order Greek gamma is measuring
+1697.32s: a first order Greek.
+1701.32s: You see the point.
+1702.80s: So the way to think about first order, second order,
+1705.80s: third order Greeks is that they essentially tell you
+1709.80s: what they're measuring and they measure different things.
+1713.80s: So most traders will deal most commonly
+1718.80s: with the first order Greeks plus gamma.
+1722.80s: And we'll talk about the others in a little bit.
+1725.80s: But we're going to talk about the first order Greeks
+1730.64s: that look now going back to this question, back, back to this.
+1734.20s: The Greeks are not mispriced, the Greeks are Bayesian.
+1741.20s: They provide a snapshot in time and then the update
+1747.84s: immediately based on new market movement.
+1752.00s: So to this person's point it's not a mispricing at all.
+1757.00s: It is simply the different that markets move as the underlying moves, as volatility moves,
+1767.00s: as new news enters the system that forces repricing of things.
+1773.00s: So it's not mispriced at all.
+1776.16s: It's simply a Bayesian system that integrates new information.
+1781.16s: So now this was another comment on that post.
+1784.32s: And essentially again, a reminder, the post is that the Greeks don't provide you an edge.
+1791.28s: And this person says, so yes and no, the no.
+1793.68s: I make an absolute dump truckload of money utilizing the Greeks in part of my SPX strategies
+1800.24s: and how I swing stock options.
+1802.48s: It's not the sole driver to my thesis, but it's a significant part of the evaluation.
+1806.00s: So you could tell like this clearly is just a person that wants to debate, right?
+1811.84s: They're literally saying no, but then they use the Greeks.
+1815.68s: So that that part of side, I don't even care.
+1818.64s: People are always quick to do that.
+1821.56s: It's actually funny to me.
+1823.40s: But the broader point is I want to talk about this individual person and their experience,
+1832.20s: because their capacity to make what they consider to be a dump truckload of money, which here's
+1838.68s: another bet.
+1839.68s: I had happily bet hundreds of thousands of dollars that if we actually conducted a genuine
+1846.76s: audit of their returns, this would not be the case.
+1850.48s: Just saying.
+1851.80s: But that aside and granting the point and taking it as something to think about, right,
+1860.56s: a cognitive exercise.
+1863.40s: Your ability to make money with or without using the Greeks has nothing to do with the
+1870.84s: post, which is that the Greeks do not provide an edge.
+1874.48s: The way that I think about the Greeks is that they provide table stakes.
+1882.96s: You are a artist of sorts and your medium is options.
+1891.28s: So you have to know when to use the chisel.
+1895.24s: You have to know when to use the sandpaper.
+1897.88s: You have to know when to use the polish, these different tools.
+1902.48s: So the Greeks are table stakes.
+1906.84s: The Greeks are what you need to understand in order to understand what the fuck is going
+1913.16s: on with your positions that are on.
+1915.96s: And this is why so very frequently in the simplest of sense, people will say the underlying
+1922.76s: move in my favor, but my trade lost money.
+1925.96s: Why did this happen?
+1927.40s: And it typically happens at a surface level of some sort of change in volatility and
+1931.72s: theta decay.
+1933.00s: That's generally the case.
+1934.88s: But it goes much deeper than that.
+1937.80s: So for example, sometimes people don't understand when they're in the markets selling tons
+1945.76s: of really far out of the money puts and they think that their position is actually very
+1951.72s: safe because it's a low probability move.
+1955.36s: However, the position is way less safe than they think it is.
+1961.36s: And one of our Greeks help you understand that exact scenario.
+1968.52s: So if we're selling super far out of the money options, Vega can really hurt us.
+1977.12s: So if volatility starts to spike, Vega can lead to pretty significant expansion of a margin
+1988.84s: requirement.
+1990.28s: So if I'm selling super far out of the money options that are super cheap and because
+1994.80s: they're so far out of the money, they don't make much money.
+1998.00s: So then I have to sell a bunch of them.
+1999.56s: So then I sell a bunch of them.
+2001.52s: And as I'm doing this, I still have a pretty high probability trade.
+2007.80s: But if volatility starts to expand, that can hurt, right?
+2013.84s: Our Vega in that case would be slightly problematic.
+2020.16s: However, if we go down and we look at a second order Greek like Vama, and we can see that
+2029.00s: Vega actually has convexity.
+2034.92s: So the problem with that is the position that that person selling super far out of the
+2039.76s: money puts, for example, thinks is super safe.
+2043.44s: And then volatility starts to expand.
+2045.80s: And all of a sudden it's looking much worse than they thought, much faster than they thought.
+2051.32s: And it's because they have no concept of Vama.
+2054.52s: They're literally holding what I call a Vama bomb.
+2058.76s: And it's just ticking in their hands and they don't even fucking know it's there.
+2063.60s: And it's because they don't know this.
+2066.32s: So the Greeks are what you need to know in order to play the game.
+2072.20s: Another example I use that might be useful for people is if I'm playing basketball and
+2078.76s: I know that if I shoot a free throw, it gives me a point.
+2085.36s: So I know the rule.
+2087.76s: And in order to be able to shoot a free throw, I need to know the rules, right?
+2091.76s: I need to stay behind the line.
+2093.76s: Most of the team has to stay behind their lines before they can go for a rebound.
+2097.84s: I have to know the rules because if I violate the rules, then I can't make the point.
+2102.16s: Because they won't count the shot.
+2105.04s: But simply knowing the rules doesn't give me the point.
+2110.68s: I still need to make the shot.
+2113.68s: That's essentially what the Greeks help us do.
+2117.68s: So now let's go back.
+2121.00s: Thor is getting really antsy grumbling.
+2133.16s: He literally had like this little sad whimper.
+2136.80s: I was ignoring him.
+2139.68s: So now let's go back and I actually want to hone you in on this one.
+2144.20s: Do I really need to understand the Greeks?
+2147.20s: And they say I'm making money consistently without technical analysis of the trades.
+2155.32s: Convince me it's worth taking the time to learn.
+2160.00s: This is the complete backwards way to think of the markets.
+2166.84s: This is somebody that is trying to prioritize their convenience and their preference.
+2173.72s: They're saying it's going well so far.
+2177.44s: I would rather not do this because it's annoying or because it takes time and effort and
+2183.12s: I don't want to do it.
+2184.56s: So they're saying do I actually have to do this?
+2189.16s: The reality is for this person I can definitely tell over the long run that this kind of person.
+2197.40s: I don't know how long they've been trading.
+2199.00s: I can tell you it's not long and I can also tell you that the probability of them if they
+2203.72s: maintain this kind of course of them being around for a long time is very low.
+2208.76s: We have to get over the fact that the markets are not based on our convenience.
+2213.80s: But we want them to be what we want to be easier difficult.
+2217.44s: None of that matters.
+2218.44s: It all is what it is.
+2221.64s: So this person's question of do I really need to understand the Greeks?
+2225.04s: You don't have to understand the Greeks.
+2227.36s: You absolutely can trade and you can even find short term success or you can even find
+2232.44s: moderately long term success by not knowing the Greeks.
+2236.44s: Certainly.
+2237.60s: But the thing is is that's finding success in spite of your lack of knowledge.
+2244.80s: There's nothing about this that actually helps you.
+2250.04s: The only outcome here that's positive is that you make money and you're making money
+2255.88s: in spite of your own lack of knowledge.
+2260.68s: So it's really important to understand the differentiation because.
+2265.44s: Trading is a very long term game as I commonly remind you all.
+2271.64s: And over time all of these little weaknesses are going to come out.
+2276.88s: You're going to find them all markets do that because you have to do a lot of things
+2281.24s: in markets.
+2282.60s: So do you need to understand the Greeks?
+2285.68s: No, you can absolutely choose not to understand the Greeks.
+2289.28s: Is that negatively going to impact your ability to make money?
+2292.56s: Absolutely.
+2293.56s: Specifically, yes, without the doubt.
+2297.84s: So now I'm going to take a pause on some of these misconceptions that we went through.
+2306.32s: And the quick overview of what the Greeks are and what they do.
+2313.00s: And I want to see if there's any upfront questions you guys have as of right now.
+2323.32s: And I'm just updating our timestamps.
+2330.12s: Paul says I guess successful trades went to his head.
+2332.92s: And the funny thing is is you're exactly right.
+2335.72s: Those successful trades go to their head, but in the worst way possible.
+2340.84s: The reason why it's the worst way possible is because they don't realize their own problem
+2346.60s: and their problem is that they're making money in spite of this, which means they're
+2352.36s: stacking the deck against themselves.
+2354.80s: And then it won't be that far further down the line when they actually lose money.
+2359.40s: And then they're like, oh, I wonder why I'm losing money.
+2363.24s: And it'll start to unravel this fundamental misunderstanding of option, which is always
+2369.80s: interesting to me.
+2371.92s: I never understand that perspective.
+2373.92s: It doesn't make sense.
+2374.92s: Why would you not want to know the tools for the trade?
+2378.20s: Obviously, because it's more work, but this comes down to the people that still are just
+2383.68s: overwhelmingly mistaken that this is going to fast easy money.
+2387.52s: And as I will always remind you, you ain't going to find that here.
+2391.48s: You are not going to find fast easy money in markets.
+2394.60s: It's simply not the case.
+2400.88s: James says what exactly is convexity?
+2404.04s: It's a great question.
+2405.44s: So actually, I wonder, give me a sec.
+2409.68s: I bet you that there's going to be a cool graphic of it.
+2416.04s: I don't like any of these three.
+2434.52s: This one's OK.
+2436.88s: So a lot of the stuff that you're going to see is from bonds because the convexity of
+2442.28s: bonds is a hot topic.
+2444.44s: But I just want you to focus on this.
+2451.12s: So it's the same thing that you learned in, I actually don't know.
+2455.20s: It's like basic math.
+2456.20s: I don't know if it's like algebra.
+2457.92s: I don't think it's algebra.
+2458.92s: I don't know where you learn it.
+2460.36s: But it's that concave convex wherever you learn that, right?
+2464.92s: So convexity, concavity.
+2466.72s: I don't remember where we learn that.
+2469.48s: But that's like middle school or probably middle school or something.
+2474.08s: So essentially, convexity is when something has this kind of shape.
+2479.20s: So it's when we have tails that rise up pretty significantly.
+2486.52s: And then we have a flatter midsection of some sort.
+2491.76s: Now there can be all sorts of skew with convexity.
+2495.16s: It's not going to be an even distribution or anything like this always.
+2499.76s: But the main thing to know about convexity is this general shape.
+2504.84s: So you can have things that are positively convex like this.
+2508.12s: You can have things that are negatively convex or concave like this.
+2513.36s: And it gives us a really important read into the behavior of things.
+2518.60s: So when you look at options, an example of option convexity is gamma.
+2525.00s: So if we look at, well, actually, I think I have it here.
+2530.04s: Give me a sec.
+2534.04s: Yeah.
+2540.60s: So it's not smooth, not smooth, but this is convexity.
+2545.64s: So what this is showing you is the steepness of gamma in two different instances.
+2551.60s: You can see that Vega has concavity.
+2559.60s: So convexity has things become more convex.
+2562.44s: They move faster.
+2564.60s: So in this case with gamma, we can see that this yellow line is a 10 DTE option.
+2573.28s: The white line is a 30 DTE option.
+2576.52s: So notice how gamma's convexity increases as it goes up into 30 DTE from 30 DTE to 10
+2586.24s: DTE.
+2587.72s: So that's what convexity is.
+2589.88s: In the theoretical sense, it's literally just this shape that we apply in different contexts.
+2597.60s: So you very, very frequently will hear about convexity in the bond market.
+2602.08s: Super, super common.
+2604.04s: Let me know if you have follow on questions on like what convexity is, but that's essentially
+2610.64s: what it is.
+2611.64s: Why not says who needs Greeks when you can guess my man?
+2615.80s: That's it.
+2616.80s: That's it.
+2617.80s: It's better off.
+2618.80s: Just fucking straight up guessing.
+2625.80s: All right.
+2631.36s: So let's get a withdrawal here.
+2637.68s: So let's talk about how we can use the Greeks.
+2648.80s: As always, you will refer, well, you always hear me refer to the way that I plan things,
+2661.08s: which is always from the top down like this, like a funnel, right?
+2666.84s: So the top level of using the Greeks for me is actually the portfolio level, the way
+2673.16s: that we can use the composite Greek position or Greek standing of our portfolio is very
+2682.24s: useful.
+2683.24s: This goes back to that example I was telling you before.
+2684.96s: If I'm selling a ton of super far out of the money options, even though they're very
+2690.48s: high probability to work in my favor, and I'm selling a whole bunch of them because they're
+2694.48s: cheap and I have to and I'm using more and more of my margin requirement, I will see that
+2700.44s: represented in the Vega.
+2702.92s: And I can also calculate that with respect to something like we talked about earlier,
+2707.68s: Vama.
+2708.88s: So we can use the Greeks to help us manage the overall portfolio.
+2714.64s: You can use things like a beta weighted delta.
+2720.20s: You can use portfolio level theta, portfolio level gamma, Vega, all of these different
+2729.84s: Greeks can be zoomed out to the composite level.
+2734.08s: And it helps us understand the lean of our entire portfolio.
+2739.28s: If I have a bunch of trades on that are all short premium, I'm going to have a really
+2746.12s: healthy looking positive theta metric.
+2749.80s: But I am really going to be at the mercy of gamma across the board.
+2756.60s: So then if I notice that I have really high positive theta higher than I typically would
+2762.64s: expect it to be, and then I notice that my gamma risk is significantly elevated, that
+2769.88s: might inform me to go into my portfolio of individual trades and find things that might
+2780.28s: be really, really highly correlated in taking some of them down to reduce this correlation
+2787.24s: so that I can take down the overall portfolio level gamma and scrub off some of my overall
+2794.28s: beta weighted delta.
+2796.68s: So I might take some of these positions down like this.
+2803.20s: So that's the portfolio level.
+2805.52s: Did not mean to get rid of everything.
+2808.80s: Too bad.
+2815.08s: The second is from an analysis perspective.
+2823.08s: And again, you can tell that this session we're not doing the basics of Greeks.
+2828.40s: The two videos that I shared are going to do all that for you.
+2832.52s: So I'm spending more time talking about this stuff.
+2835.68s: And there's actually a really good example of this that I came across recently.
+2840.20s: So if we take a look at, let me, this.
+2849.08s: So if we take a look at the actual effect of the various Greeks, and in terms of like
+2855.28s: how to actually conceptualize their behavior in our brain, we can figure out where we
+2862.48s: see heightened or lower delta, I enter lower gamma theta, Vega, all of these.
+2868.64s: All of them are different inputs that we can custom tailor to our exact idea.
+2875.48s: This is one of the most important points of the video that I want you to key into.
+2881.56s: One of the true benefits of options is you can gain purposeful exposure to the precise
+2888.56s: effects that you want.
+2890.92s: And you can minimize your exposure to other effects that you don't want is involved in
+2897.32s: your position.
+2899.52s: So the Greeks allow us to do this.
+2904.88s: So let's take a look at something like, what was I looking at last night?
+2910.04s: There is a ion cue.
+2917.40s: If I go to ion cue, and then if I go to something that's like 700 days out, what do you notice
+2925.08s: about the deltas for ion cue that are 700 days out?
+2935.28s: The deltas are this column right here.
+2941.52s: So this at the money, the deltas are 0.76 at the 40.
+2952.60s: 0.74 for the next strike.
+2955.20s: That's out of the money.
+2956.80s: The following strike is 0.70.
+2959.04s: The following strike after that is 0.67.
+2963.24s: So what you might notice that's different than what you typically see is that the deltas
+2969.04s: are very, very high for options that are out of the money.
+2973.08s: We typically see if we come closer in time, we typically see like a 50 delta that's
+2980.12s: right about the money.
+2982.68s: So what can we take from that?
+2986.28s: There are important context clues that the market tells you if you know how to understand
+2992.76s: them.
+2993.96s: Now what the market is telling you in this specific instance is this stock is not only
+3000.84s: expected to go up, but I also can tell you that this stock has significantly elevated
+3009.20s: volatility.
+3012.08s: That's what this tells me.
+3015.48s: So the Greeks give us a lot of these small little tiny clues that we can piece together.
+3025.48s: Another example are things like Gax, gamma exposure.
+3034.92s: So let's say we go into spy and let's take a look at the gamma exposure.
+3045.56s: We can look at gamma exposure in a bunch of different contexts.
+3050.60s: But this is looking at a specific expiration.
+3053.72s: You can either do a composite so that you can see pretty much everything at once if you
+3058.72s: are so inclined.
+3060.04s: It's really up to what you're wanting to analyze.
+3065.60s: But we can use things like Gax to understand what dealer behavior might look like.
+3074.60s: We can figure out if Gax is higher on the collar, the put side, which nets out to a total
+3081.64s: Gax.
+3083.12s: We can look at things like volatility skew and use that to help us understand different
+3091.68s: pricing disparities and discrepancies between calls and puts are between different cycles.
+3096.52s: This can tell me in this instance that put call parity might be off.
+3100.76s: There's an arbitrage opportunity there.
+3103.92s: So the Greeks give you literally all of this and it starts from understanding what they
+3112.08s: are.
+3113.08s: Now, this series of stuff that I'm explaining really tie to a slightly higher level use
+3120.16s: of the Greeks that takes time.
+3122.08s: It genuinely does take time to piece together all of these things.
+3126.24s: So what I want to do is spend a little time talking about how you can use the Greeks
+3131.84s: in a day to day context, at least getting started with using them.
+3137.60s: So I need somebody to give me a strategy like it could be any sort of basic strategy.
+3142.64s: And then I will talk to you literally how you can use the Greeks in the context of that
+3148.16s: strategy.
+3156.12s: Any ideas?
+3157.12s: The straddle?
+3158.12s: Cool.
+3160.12s: Paula, do you want shorter along?
+3164.76s: We'll do a straddle.
+3171.44s: Short straddle got it.
+3173.88s: So let's say that we're going to pick a short straddle and I'm going to just turn it into
+3180.92s: a rough strategy off the top of my head so that we have something to work off of.
+3186.80s: So this now goes into the third level, which is position, which is exactly what we're
+3195.20s: going to talk about now.
+3196.32s: So I'll clear those off and we're going to have a short straddle.
+3204.88s: Let's say I'm going to trade this for variance risk premiums.
+3209.72s: So I'm going to look for stocks that have higher IV relative to HV.
+3216.88s: And let's just say that's the starting point.
+3221.32s: Now for those that are familiar with the outlier strategy process, you know that step
+3226.92s: four is to build a strategy.
+3232.84s: One of the inputs for building a strategy is when we get more specific.
+3237.88s: This is where we pick things like our deltas, our days to expiration and so on.
+3246.04s: So the good part is with a straddle.
+3248.20s: It's still you, but case you don't know, you still have to pick your deltas.
+3251.80s: You don't have to have a centered straddle.
+3253.48s: You can have straddles that are off center, but most people will default to an at the
+3257.68s: money straddle.
+3259.28s: And that really generally holds true in this case.
+3263.28s: So the first Greek I'm looking at for this specific strategy, which is based on trading
+3267.76s: risk premiums, is the delta input.
+3271.28s: And the delta input in this context is I'm really trying to trade primarily the volatility
+3277.72s: side of things.
+3278.72s: So I'm not really looking to take a big directional bet.
+3281.60s: So I'm actually going to start with something that's probably close to at the money.
+3288.32s: Now what happens?
+3290.60s: If this strategy, fair and so is premium, which is entirely based around the difference
+3297.88s: between implied volatility and historic volatility, what happens if the underlying moves?
+3302.68s: Who could tell me?
+3306.28s: In terms of the position.
+3312.56s: As the underlying starts to move, there's going to be a couple key changes in the position.
+3317.64s: And these key changes matter to me, actually quite a lot.
+3320.40s: And I want to see if you know why.
+3330.20s: There you go.
+3331.20s: Tommy's on it.
+3332.20s: The delta's of the leg move.
+3334.64s: So as the stock goes up and down, the delta's will move.
+3340.00s: And the movement of the delta's, which we know what's going to measure that.
+3344.72s: Emma.
+3346.88s: So that's another thing I know I have to take a look at with this strategy.
+3351.76s: And believe it or not, we know that there's a relationship between gamma and days to expiration.
+3359.16s: So this also will inform this decision.
+3363.52s: So let's think about it.
+3365.80s: Because we as retail traders, we don't have the luxury of essentially continually being
+3371.28s: able to hedge.
+3373.00s: It's expensive for us to hedge.
+3375.16s: And at the onset of this, we know that we want our delta risk to be about zero ideal world.
+3386.88s: We don't want any delta risk.
+3388.20s: We want no directional risk.
+3391.20s: Because this idea is based on volatility in ply versus historic.
+3396.48s: So that means that I'm really trying to center on Vega.
+3401.20s: I want Vega to be a much larger part of my actual PNL.
+3408.56s: So what do we know about Vega?
+3411.84s: We know based on the way that the Greeks behave and based on those other videos that I
+3420.64s: paired with you.
+3422.04s: But we know that Vega is DTE sensitive.
+3427.04s: And we know that Vega is higher as there's more extrinsic value.
+3431.68s: Where's more extrinsic value the further out in time you go.
+3435.72s: So if I'm trying to isolate my impact to Vega, do I want to trade super short term?
+3441.80s: Maybe it's not a no, but these are inputs to the decision cycle.
+3447.08s: So then let's say, well, maybe I do want to trade this shorter term.
+3450.56s: I think it might be better for X, Y and Z reason.
+3453.36s: I'm going to go into SPX.
+3457.00s: And let's just do like a 4 DTE obviously because the market's closed.
+3462.44s: And let's take a look at this at the money straddle the 61 15.
+3467.48s: And we can see that we're getting 53 delta on the call side.
+3472.08s: So let's take a look at this actual position.
+3477.44s: So I'm going to have I'm going to sell to open.
+3482.24s: One call.
+3483.88s: And then one put.
+3485.52s: And let's take a look at the Greek profile for this actually.
+3491.00s: It's probably easier to see.
+3496.40s: If I put it in a workbook.
+3511.64s: So let's take a look at these different positions.
+3517.04s: We're going to have delta, gamma, data, Vega.
+3522.64s: I'm not going to worry about row row.
+3525.00s: We're always kind of like the bastard child that most people don't care about most of
+3528.60s: the time.
+3529.60s: That's kind of the reality.
+3530.60s: Row really impacts longer term options a lot more.
+3533.44s: And let's take a first look at the short call.
+3537.60s: So we said that we're going to be short.
+3540.12s: I'm going to move this off to the side.
+3541.40s: Now I just wanted you to see what I was in putting.
+3543.04s: I'll bring it back over.
+3544.52s: But I want to move it off to the side of that we can look through this little faster.
+3549.48s: So the short 61 15 call.
+3553.80s: What's going to happen there?
+3554.80s: What we're going to get negative 53 delta's.
+3558.28s: Our gamma is going to be negative 0.01.
+3565.84s: Our theta is going to be positive to 21.
+3570.84s: Our Vega is going to be negative 248.
+3576.24s: And then if we're short, the 61 15 puts our delta, we're going to get long 47 delta's.
+3588.24s: For gamma, we're going to be short 0.01.
+3597.16s: For theta, we're going to get $1.79.
+3604.68s: And for Vega, we're going to be short 248.
+3616.48s: So let's take a look at this position so far.
+3622.16s: I can't find out if I net these out.
+3630.32s: Here's what I can expect to see on a daily basis.
+3634.08s: I can expect to make about four bucks in theta.
+3636.96s: I have about negative five Vega.
+3641.36s: I'm negative 0.02 gamma and negative 0.06 delta.
+3645.12s: So you notice right from the onset, I'm not even delta neutral.
+3649.48s: So the entire origin of this position, if you'll remember, is I don't want any directional
+3654.52s: risk.
+3655.64s: I want to be able to just trade Vega.
+3658.20s: I care about the volatility side of this equation.
+3660.28s: I don't give a crap.
+3661.28s: I don't have an opinion on the direction side of things.
+3665.52s: So now I have some choices.
+3668.96s: I understand the Greeks.
+3672.64s: I can figure out this is going to be a theoretical exercise.
+3676.80s: In reality, we use what's called delta bands.
+3681.72s: And that means that we don't hedge the delta as it moves every single time.
+3687.40s: It's just unrealistic.
+3690.12s: So the way we use delta bands is we say if delta gets to this point or this point, I will
+3697.36s: recenter the delta's.
+3699.28s: That's a suboptimal approach, but it's a realistic approach.
+3703.12s: And it's because there's a cost associated with the hedge.
+3708.76s: So important general context.
+3712.20s: So that's the facade from a theoretical perspective.
+3716.44s: Let's say that we want to keep our delta's zero.
+3718.44s: We want to be flat.
+3719.44s: Okay.
+3720.44s: So what do we have to do?
+3721.44s: We got to buy six shares.
+3722.44s: That's easy.
+3723.44s: So then we're going to buy to open six shares.
+3727.36s: That's going to give us six delta's.
+3729.96s: I should do.
+3732.36s: I'm going to keep it the same.
+3737.20s: So it's essentially going to flatten out these delta's.
+3739.56s: I don't want to confuse you.
+3741.20s: I'm just going to multiply all these by 100.
+3754.40s: So then if I grab six shares, my new net position in terms of delta is flat.
+3762.32s: Great.
+3763.32s: Mission accomplished.
+3766.32s: There is a problem.
+3768.72s: Locking gamma.
+3771.32s: As soon as this moves, my delta's are going to move.
+3782.08s: So my transacting in the shares does precisely jack shit for the gamma.
+3792.56s: So how do I clear off this gamma?
+3810.20s: I got to use options.
+3814.12s: That's the way that I can actually get rid of some of this gamma.
+3821.72s: So one of the ways that I can get rid of gamma is I can find something and I can trade
+3830.00s: an unrelated option that essentially offset some of this.
+3835.92s: What is soon as I do that, all of these other things are going to change.
+3840.56s: So the way that we actually maintain delta neutrality for something like a short straddle,
+3846.80s: if we're actually trying to trade a specific effect like variance risk premium is I use the
+3854.74s: Greeks to understand the overall position that I have.
+3859.20s: And then I can make adjustments.
+3860.48s: So the way that I would do this is actually not by buying shares upfront to flatten the
+3864.80s: deltas.
+3866.08s: This is kind of like putting a bandaid over a gaping wound.
+3870.72s: It doesn't actually fix the problem.
+3872.68s: The problem is going to come from my gamma.
+3875.76s: So I can flatten the gamma by buying options that offset this.
+3883.00s: Then I can delta hedge the remaining deltas off based on whatever that residual is.
+3890.16s: Now that becomes more complex because if I'm trying to sell straddles, I'm essentially
+3895.56s: saying I think there's variance risk premium, but then I'm coming in here and I'm buying
+3898.82s: options to offset the gamma.
+3900.64s: So it's a choice.
+3901.64s: It's a business decision.
+3902.88s: Do you want to truly isolate gamma?
+3904.44s: How long is your position going to be open?
+3906.08s: How impactful is the gamma going to be?
+3909.24s: You can decide how you want to deal with gamma or you can just set more aggressive delta
+3914.08s: bands entirely up to you.
+3917.80s: For me, a lot of times, I will try to find positions that are easier to manage for something
+3924.72s: like this, but going back to the original point of how to use the Greeks in something
+3932.32s: like a straddle is we define as always the profit mechanism that we're trying to trade
+3937.60s: in this case.
+3938.60s: I use variance risk premiums for the example.
+3941.04s: And then I started listing out the specific effects that I'm trying to isolate.
+3947.40s: And based on those effects, I can literally quantify the impacts of these different positions,
+3962.04s: net them out, and then attain the actual risk that I want.
+3969.36s: Let's do unomas.
+3971.40s: And then we'll have plenty of time for like Q&A and stuff.
+3975.20s: But I want to pick another example.
+3978.24s: I'm thinking something like buying calls or selling puts something like that, but you
+3985.68s: guys can pick if we want to do either of those.
+3993.36s: That's what I'm thinking.
+3994.68s: And really the main reason why I want to do that is because I think there's a little
+4000.96s: bit we can probably pull out of it.
+4005.00s: Some calls good.
+4006.00s: I love it.
+4008.52s: And you read my mind, by the way, Tommy, thank you very much for giving me the scenario
+4017.08s: of trying to play a big move because that's going to be one of the first questions.
+4021.68s: But before we do that, I need to finish my dinner order really fast.
+4026.96s: And for Valentine's Day, my wife oddly wants to jack in the box, which I have to be honest
+4034.24s: we essentially never eat that shit.
+4037.20s: But I'm a romantic at heart.
+4043.16s: So jack in the box we go.
+4048.08s: And I'm not like afraid of jack in the box.
+4053.32s: I just think this stuff is fucking awful for you.
+4057.96s: It's like just straight disease food.
+4067.28s: But every once in a while, I feel like you got to put some trash in your body to remind
+4071.84s: it to not be you delicate.
+4079.08s: Here we go.
+4081.08s: Okay.
+4082.08s: So this was in a straddle.
+4091.64s: And then now we are at 108.5.
+4097.88s: And then this will be how to use the Greeks in a long call.
+4104.20s: Okay.
+4106.96s: So along this is another just really, really common scenario.
+4113.76s: And I actually have a video that goes through this in detail.
+4119.04s: Let me find it for you.
+4126.92s: Here.
+4136.84s: So this video will talk about buying call options.
+4145.04s: And let's take a look at a practical example.
+4149.44s: So in Tommy's scenario, he was talking about wanting to trade something for a much more
+4162.40s: pronounced directional move.
+4165.72s: So let's say that we're looking at Ion Cueks.
+4168.52s: I was looking at this earlier.
+4170.28s: Actually, I think another probably better example like Nvidia.
+4176.24s: So a lot of people have been trying to figure out how to play this move in Nvidia.
+4178.92s: I think this is fairly topical.
+4180.48s: Now one of the notes that has earnings coming up, that's important to know because with
+4184.80s: earnings coming up, you have to either acknowledge that you're going to hold through earnings
+4189.36s: or not hold through earnings.
+4190.72s: And it's entirely your choice.
+4192.28s: But this is a binary move.
+4195.08s: Now when we're trading long options, there are effectively for specifically long calls,
+4202.60s: there are two things that we are trying to gain exposure to.
+4207.12s: The primary top line item though is gamma.
+4212.64s: We are trying to find something that is likely to move and it's likely to move a lot.
+4220.88s: But that really comes down to leverage.
+4225.48s: That's the only reason why you trade something like a long call versus buying the stock.
+4235.08s: It's just for leverage.
+4237.24s: So if we take a look at buying 100 shares of Nvidia, but I wanted to buy 100 shares of
+4242.28s: Nvidia, I need to call up 13,885 bucks, which I may or may not want to call up, right?
+4253.16s: The other thing I can do is go super far out in time and I can buy an option that's super
+4260.48s: deep in the money, like an 80 delta.
+4264.04s: And I can essentially control 80 shares of Nvidia at this point, 80 shares of Nvidia, and
+4271.80s: I can pay 45, 100 bucks, call it.
+4277.36s: So for a fraction of the price, I can essentially control the same size position.
+4281.84s: This is an example of using options essentially as a stock replacement.
+4287.56s: Now, the way that we can structure our options trade based on our idea changes and we use
+4295.44s: the Greeks to do it.
+4297.36s: So let's say that we think there's going to be a big up move in Nvidia, big parabolic
+4302.32s: up move for whatever reason.
+4303.88s: Maybe we see the CEO sign another titty or who knows, he might pull another chip out of
+4309.92s: another oven that people really like.
+4314.20s: And that's the limit here.
+4315.96s: So let's say that scenario happens, we think it's going to happen, there's going to be a big
+4321.20s: move.
+4322.84s: There are a handful of choices that we have to move through in order to arrive at the
+4329.80s: actual position that we're going to put on.
+4332.08s: So one of those choices is days to expiration.
+4336.24s: Another one of those choices is delta.
+4338.44s: Another one of those choices is gamma.
+4340.16s: Another one of those choices is theta.
+4342.72s: So let's see how we can actually build a position that truly reflects our idea.
+4349.48s: If we think Nvidia is going to move a lot, let's take a look at a couple examples.
+4354.64s: Let's do a seven day and we'll do something that's like at the money.
+4360.64s: So this option has 50 delta and it's only $290, right?
+4367.40s: So it's pretty cheap.
+4369.48s: Before I was telling you that you have to cough up like $4,500 to control 80 shares.
+4374.36s: This is putting up $290 to control 50 shares.
+4377.36s: You just do two of them, pay $500, $600 and control even more shares.
+4383.04s: So from that perspective, it seems way better, right?
+4386.12s: Doesn't it?
+4386.92s: Does to me?
+4388.16s: Here's the problem.
+4389.76s: If you take a look at the theta, theta on these options is losing 24 cents a day.
+4396.84s: So if we look at that in relation to the overall premium, call it $290, losing 24 cents,
+4406.88s: it's essentially 10% of the options premium is going to go away per day.
+4413.04s: The reason why that matters is because it then moves the goal post against you to get
+4419.40s: the move in your favor.
+4420.40s: And I'll show you what I mean by this.
+4422.68s: So let's say we get in at that $290 handle, again, just for the example.
+4427.76s: And let's zoom this out.
+4429.80s: So let's pretend that a day passes.
+4435.20s: Right now our P&L is negative $2.50.
+4437.72s: It's just using the midpoint.
+4439.16s: So don't pay any mind to that.
+4441.68s: Let me get rid of one of these extra slices and probably this one.
+4446.72s: So it's about unchanged, right?
+4449.40s: On the day.
+4450.40s: Great.
+4451.40s: One day.
+4454.40s: What starts to happen here?
+4456.76s: Well, what will start to happen is you'll notice that this purple line is actually going
+4461.52s: to move down towards that blue line.
+4464.40s: So if I fast forward another day, another day, all of a sudden the stock hasn't moved against
+4470.56s: me.
+4471.56s: It hasn't moved for me, but I'm starting to lose money.
+4475.52s: That sucks.
+4476.52s: Why am I losing money?
+4477.52s: Well, I'm losing money because of theta decay.
+4480.52s: So one of the inputs to your decision cycle here, understanding the Greeks, is that the
+4485.60s: cost for the leverage you get through a long call is theta decay.
+4491.60s: The downside to this is let's say that you were expecting originally, maybe Nvidia, what's
+4501.56s: the current price?
+4503.12s: Nvidia is at 138.
+4505.20s: So let's say that you were expecting it to go to 140, 142, something like that.
+4515.12s: The issue here is if I continue to fast forward time, what ends up happening is I need a bigger
+4522.20s: and bigger move in order for this thing to get even back to break even, let alone to make
+4528.96s: money.
+4530.88s: That's the issue that you face.
+4533.28s: So that's the downside to using the cheaper at the money options that expire soon.
+4540.52s: And again, this is using a smaller position.
+4542.44s: Really we would have a too lot on right now to simulate the same size.
+4546.56s: And if it doesn't move quickly enough in your favor, you bleed out through theta decay.
+4551.80s: Okay, cool.
+4554.08s: What's the other benefit of this?
+4555.88s: Well, I just showed you that I can buy more of them.
+4559.32s: And we also know that the effect of gamma is the closer we get to expiration, gamma is
+4564.92s: going to go up.
+4566.56s: So I also get the effect of my delta rapidly compounding, which is awesome.
+4574.96s: What's the charge for that?
+4576.88s: The charge for that is theta decay is literally the highest at this point.
+4585.04s: So then if we use the other example of going further out in time, what happens?
+4591.40s: Well, if I use this 80 delta option, let's take a look at what my gamma is, how fast
+4597.64s: I'm going to compound.
+4600.00s: Fucking zero.
+4601.00s: It's not actually zero.
+4602.00s: It's just further decimal points in.
+4603.64s: This is only going to two decimal points.
+4605.36s: So it's like three, four decimal points in the broader point here is that you're actually
+4612.32s: not going to compound that much.
+4614.84s: So far out in time that your gamma is about flat.
+4618.00s: That kind of sucks.
+4619.60s: Why would I want that?
+4621.20s: Well, because if we take a look at our theta decay, our theta decay is just four cents.
+4627.44s: So if we look at that four cents relative to the total premium that we're buying into,
+4632.16s: it's very, very small.
+4635.00s: So what's the trade off here?
+4636.92s: The trade off by going further out in time is I'm buying something that's way more expensive.
+4642.40s: I can lose more money in total, but it's a little bit of a down payment style situation.
+4649.12s: Because as long as this thing doesn't move super far against me and I'm directionally
+4652.32s: wrong entirely on a per day basis, I'm going to pay less theta even as a gross dollar
+4659.08s: amount, but definitely as a percentage, I'm going to give up the gamma.
+4664.08s: I'm not going to have anywhere near as much gamma unless I get a really big move in my
+4667.88s: favor.
+4669.48s: So this is how we can use the Greeks in something like a long call to decide what position
+4676.48s: makes the most sense for our idea.
+4680.32s: So going back to Nvidia, if our idea is Jensen's about to sign another titty and Nvidia's
+4687.52s: going to go skyrocket, I can make more money by not going as far out in time, by being
+4693.64s: closer in time and buying more of the options and allowing them to compound.
+4698.88s: If I don't know that that's going to happen, and my idea is more so that Nvidia got beaten
+4704.32s: down because of deep sea coming out and then the market having this crazy, giant reaction,
+4709.88s: but Nvidia is still exceedingly well positioned to take advantage of this long term, and this
+4715.20s: is likely short term sentiment.
+4717.64s: So I think it's going to rally back up at some point.
+4720.32s: Let's pretend that that was back in this time frame somewhere down here.
+4724.20s: Then I go further out in time.
+4726.08s: I accept the fact that it's going to be slightly more expensive, but I have a position that
+4731.52s: can be maintained for longer durations.
+4735.84s: So these are some literally basic examples of how we can use the Greeks to inform our
+4742.70s: decision making.
+4744.28s: And I'll give you one more example that's fairly recent for me, which is Palantir, I put
+4752.12s: this trade on.
+4754.00s: And in Palantir, it's a ratio called diagonal.
+4757.68s: So this is something that's designed to be a longer term trade.
+4761.04s: So the way that I built this trade is I went further out in time.
+4765.80s: I'll tell you where I went.
+4768.60s: I went out to the 16 Jan 26 and I had bought the 110s.
+4777.20s: So they were essentially right at the money.
+4779.48s: My first Gotham, they were 64 Delta.
+4781.40s: Now there are 69 Delta.
+4785.28s: So I've gotten 0.05 Delta's added to it in the price movement since I've been in it.
+4791.88s: So what have I done here?
+4794.76s: I've found a very delicate balance for the idea that I'm trying to trade.
+4799.92s: I wanted something that I can hold on to for maybe three, six months.
+4805.12s: So I go this far out in time so that I accept much lighter overall Theta decay.
+4811.20s: But because I know that they're stated to K, what I can do is I can sell near term options
+4816.48s: against it, not to make a bunch of money off the short options, but because I understand
+4822.28s: the Greeks.
+4823.56s: So I'm losing Theta in that long option position.
+4827.52s: So if I come in here and I sell premium, I'm now long Theta.
+4832.52s: And in this case, I can see how much Theta I'm gaining per day, 10 cents per day, just
+4837.92s: using this option as an example of the 140s.
+4841.28s: So I make 10 cents per day in Theta on this trade.
+4844.52s: But then if I go out to this trade here and I analyze how much I'm losing per day, I'm
+4849.76s: losing five cents.
+4851.76s: Sick.
+4853.48s: So I can offset the daily Theta decay via the shorter term position to subsidize the holding
+4859.36s: cost of the long option so that I can still enjoy the benefit of a leveraged directional
+4866.64s: position, but I can reduce the total cost I'm paying to do this.
+4871.76s: So this is another way to use the Greeks.
+4875.88s: I am going to pause here, open the door for Thor so we can go get his dinner.
+4879.76s: And then I would love to talk about any specific questions you guys have.
+4884.52s: And then I want to talk about these two misconceptions.
+4887.80s: We already covered the first one, but then we'll hit the second one.
+4905.76s: So the context here, mexi says so a calendar spread.
+4909.44s: What about a calendar spread?
+4915.04s: Talk to me.
+4916.52s: Talk to me, send your mexi.
+4921.28s: Talk to me about this calendar spread.
+4925.12s: Oh, he's asking about the position that I had on.
+4932.88s: Wait, is that right?
+4935.28s: Yes, you're asking about the position that I had on.
+4942.28s: No, I mean technically, technically it is a spread.
+4950.68s: It's not wrong.
+4951.88s: Most people will take the term spread and they'll automatically apply it to verticals, right?
+4961.56s: So the point of verticals is obviously very different.
+4965.68s: But for example, to mexi's, I'm not exactly sure what mexi, if you were referring to the
+4972.24s: position, but technically you could call it horizontal.
+4975.96s: It's not, I wouldn't exactly call it a calendar spread.
+4979.20s: So horizontal spread calendar spread, it's about the same thing.
+4982.00s: The way to think about spreads is you can go vertical or horizontal.
+4985.64s: vertical is in the same term, but higher or lower from whatever the base leg is.
+4992.64s: And then horizontal is using the time series component going out and time or in and time.
+4998.24s: Now technically speaking, if I were to look at a true calendar spread, it would be the
+5004.68s: same option that I'm looking at.
+5007.00s: And a calendar spread is designed to do a specific thing.
+5009.80s: This technically speaking is called a is a diagonal spread.
+5015.08s: The reason why it's called a diagonal spread is because I'm combining two things.
+5020.52s: I'm combining a change in strike going vertical.
+5025.20s: And then I'm also going horizontal.
+5027.72s: So what happens if I combined vertical and horizontal, fucking diagonal?
+5032.80s: It's one of the easy things about options, no mink nature.
+5037.04s: Basically, the very little soak it up because there's very few instances of anything in
+5043.04s: this stuff that make any fucking sense whatsoever, but that is one of them.
+5047.28s: So technically it's called a diagonal spread.
+5049.68s: Now the more important element is the different directions we can go, but then also the relationship
+5060.44s: between the legs and the ratio of legs.
+5064.52s: This is the stuff that I will trade will be a ratio in some capacity.
+5069.28s: So back to this, this idea that there is a best Greek, what is the Greek I should get,
+5077.04s: what Greeks should I use?
+5080.40s: The reality is there is no best Greek.
+5084.52s: What you should do is use the Greeks, guide the position that you want.
+5092.84s: The inform via all of the different inputs, how your position is going to behave.
+5099.48s: And then you run that through the filter of is this what I want?
+5104.36s: Another really simple example going back to the straddles.
+5109.56s: Let's say that I was trading the straddles from the context of an earnings release.
+5117.36s: And we'll literally let's fucking do an example.
+5121.56s: Let's go to last after the market.
+5128.40s: I'm going to find something that's like reasonable.
+5134.96s: Now let's do Mondalees.
+5139.76s: Let's go back to the fourth of Feb.
+5142.64s: We're going to go back in time.
+5143.64s: And I'm literally going to give you two different traits so that you can see exactly what this
+5146.96s: is.
+5151.96s: I learn best personally through seeing shit, practical application.
+5158.40s: So we're going to take a look at what did I say Mondalees?
+5169.64s: Right now it's loading.
+5173.44s: Damn boy.
+5177.08s: Look at that.
+5181.20s: Let's say that we want to trade this for earnings.
+5183.88s: So I think in this scenario earnings is after the close on this day.
+5189.40s: So technically speaking for an actual earnings play, I would get in much later.
+5194.92s: We'll just do that really quick so that it's at least somewhat accurate.
+5200.20s: And then I want to take a look at two different things.
+5203.80s: I want to take a look at selling the straddle in 7 Feb and then selling the straddle on 21
+5208.84s: March.
+5209.84s: I actually don't fully remember what happened with this one if it worked or didn't work.
+5213.80s: But that doesn't actually matter.
+5217.04s: All right, where's the best choice looks like this one?
+5223.04s: So we'll throw this in there.
+5224.40s: It's going to look all fucked up because the days are fucked up in here.
+5226.96s: Don't pay attention to the risk profile.
+5230.32s: And then let's take a look at this one.
+5233.36s: Okay.
+5237.64s: We have our two straddles.
+5238.76s: They're locked in 232 and 420.
+5241.44s: Diginy.
+5242.44s: Let's fast forward time.
+5244.24s: So we're literally just going to take it one day forward because the hypothesis that I'm
+5249.28s: trying to trade is various risk premiums.
+5253.48s: So I'm trying to trade various risk premiums through earnings.
+5257.48s: I'm not trying to trade the straddle in this long term.
+5261.28s: I'm simply taking it through earnings.
+5263.88s: The other thing I'm doing is I'm taking it closer to the morning so that we can observe
+5270.12s: what this looks like.
+5275.00s: So first things first, our first straddle that we put on for 420 is now trading at $3.75.
+5287.32s: So when from 420 to 375, this is the 44-day to expiration straddle.
+5292.68s: If I go to the 7th, we put this straddle on for wrong one for 232.
+5303.84s: This one is now trading at $1.25.
+5307.84s: Actually $5.5.
+5308.92s: Sorry.
+5310.92s: Somewhere in here.
+5311.92s: Let's call it $0.80, $0.90.
+5313.92s: Call it $0.90, something like that.
+5316.80s: So what happened here?
+5319.28s: The Greeks happened here because I'm trying to trade the earnings release itself.
+5327.72s: Valtility is going to be centered in the term that has the actual earnings release.
+5337.92s: That's what's happening here.
+5340.04s: So this moved way more, not because it has higher theta decay.
+5344.12s: That's part of it, but that's not why it moved so much more.
+5348.48s: Because we can literally do the math on the theta that should have came out.
+5352.20s: It should have been like $0.10, $0.14 on this side and $0.9 on this side.
+5358.40s: But over $1 came out.
+5360.12s: It's not theta.
+5361.72s: What happened was a contraction in volatility.
+5366.88s: And because that volatility was primarily in this term versus this term, that's why it
+5374.68s: made so much more money.
+5376.84s: So in this context, based on my thesis and my trade idea, I know it makes more sense
+5385.04s: to trade this expiration cycle versus this expiration cycle.
+5389.80s: It's because this one actually grants me exposure to the effect I'm trying to capitalize
+5394.80s: on.
+5395.80s: This one does not.
+5397.32s: This one still made money, but it made way less money.
+5401.12s: And it's for those reasons.
+5404.04s: The Greeks literally tell you all of this, all of it.
+5409.36s: You just have to pay attention.
+5411.36s: They're there.
+5415.40s: Any other questions?
+5417.08s: I hope that the general concepts that we're talking about and the approach that we're
+5421.64s: talking about makes sense to you.
+5424.36s: This is something that's built over time.
+5426.56s: So don't let it overwhelm you.
+5428.08s: You don't have to know all of this at once.
+5429.76s: One of my most important piece of advice to you is that you don't have to remember all
+5434.76s: this shit.
+5435.84s: What I used to do is I had a cheat sheet that I would reference that would help me understand
+5442.36s: how the premium of my option would behave based on all of these different conditions.
+5447.76s: That's exactly what I would use.
+5449.96s: So you can make your own cheat sheet.
+5452.92s: And I think it's important to make your own cheat sheet because the process of making
+5457.60s: it is part of the learning process.
+5460.20s: So it's valuable to do so.
+5463.24s: But if you go through those steps, you literally will make much better trade decisions that
+5474.68s: help you isolate what you're actually trying to trade.
+5479.48s: That's the broad idea.
+5481.28s: So that is a practical application of using the Greeks as an options trader.
+5491.40s: So if we take a look at what we have next for our series, next on our hit list is navigating
+5502.68s: the options chain.
+5504.60s: So the next video that we're going to do, we're going to talk about how to look through
+5509.20s: and identify opportunities, how to analyze things like liquidity, how to see if the options
+5518.48s: chain is telling you anything because very frequently it does simply if you pay the
+5524.12s: pocket tension.
+5525.84s: And then after that, we will have technical analysis, fundamental analysis, how to build
+5532.60s: a trade strategy process portfolio management, and then the actual trading process itself.
+5538.32s: And then we still have a handful of flex sessions.
+5541.72s: So this is still designed to be about 15 episodes.
+5545.00s: We are now obviously wrapping up episode six.
+5549.48s: And my intention is to fill these flex sessions with really whatever you want.
+5557.76s: So one of my ideas, the reason I'm talking to you about this is to get your input is
+5563.80s: I definitely think it makes sense to slot in a general Q and A. I don't know where
+5569.80s: you prefer to do that.
+5571.52s: I think it actually would make sense before the options chain or before building a trade
+5580.48s: itself.
+5581.48s: I think those are the two logical places for the like general overarching Q and A. And then
+5591.44s: I was planning on doing a second one at the very end.
+5594.64s: So then if there's a specific options trading topic that you really want to spend more
+5599.68s: time drilling in as we go through these, that's what the remaining flex session will be
+5604.04s: used for.
+5605.28s: But if you have a preference on when the Q and A is, let me know the reason why I'm asking
+5609.72s: if you have a preference is because it really depends on if you feel like you're at a point
+5613.40s: that you have questions that are like burning in your brain that you're trying to get an
+5618.44s: answer for that you're not able to find on your own.
+5621.56s: But that happens when you get to a critical mass of kind of knowing enough to then have
+5626.16s: questions, right?
+5627.44s: If you're so new, then you kind of don't know what you don't know.
+5630.56s: And then it might make sense to hold off for a little bit.
+5633.76s: So if you have a preference, let me know.
+5637.88s: Reese says before building a trade, cool.
+5640.28s: I will earmark that and then everybody else, you can just let me know as we work through
+5646.44s: the rest of the content.
+5650.20s: As always, if you need anything, let me know.
+5655.28s: Be an outlier.
+5656.28s: I'll see you all later.

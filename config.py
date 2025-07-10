@@ -22,6 +22,11 @@ PROCESSED_TRANSCRIPTS_PATH = PROCESSED_DIR
 MODEL_NAME = "all-MiniLM-L6-v2"
 DEVICE = "cpu"  # Use "cuda" if GPU is available
 
+# Whisper-specific device detection
+import torch
+WHISPER_DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+print(f"Whisper will use device: {WHISPER_DEVICE}")
+
 # Search configuration
 TOP_K = 5
 CHUNK_SIZE = 500

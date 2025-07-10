@@ -248,8 +248,9 @@ def transcribe_with_whisper(video_id: str, video_url: str, audio_file: str, prog
     try:
         print(f"  🎤 Transcribing with Whisper...")
         
-        # Load Whisper model
-        model = whisper.load_model("base")
+        # Load Whisper model (using centralized config)
+        from pipeline_config import WHISPER_MODEL
+        model = whisper.load_model(WHISPER_MODEL)
         
         # Transcribe
         result = model.transcribe(audio_file)
