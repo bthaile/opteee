@@ -88,6 +88,7 @@ def run_video_scraping(force=False, non_interactive=False):
     
     print("🔍 Running video scraping...")
     import outlier_scraper
+    outlier_scraper.main()
     print("✅ Video scraping complete")
     
     # Run metadata collection if we have a YouTube API key

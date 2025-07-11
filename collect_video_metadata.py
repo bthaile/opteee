@@ -116,12 +116,25 @@ def get_video_details_from_youtube(video_ids):
                 stats = item.get('statistics', {})
                 content_details = item.get('contentDetails', {})
                 
+                # Format the upload_date from ISO 8601 to YYYYMMDD
+                upload_date = snippet.get('publishedAt')
+                if upload_date:
+                    try:
+                        from datetime import datetime
+                        dt = datetime.strptime(upload_date, '%Y-%m-%dT%H:%M:%SZ')
+                        formatted_upload_date = dt.strftime('%Y%m%d')
+                    except Exception as e:
+                        formatted_upload_date = upload_date  # Keep original if parsing fails
+                else:
+                    formatted_upload_date = None
+                
                 all_video_data[video_id] = {
                     'video_id': video_id,
                     'title': snippet.get('title'),
                     'url': f"https://www.youtube.com/watch?v={video_id}",  # Standard URL format
                     'channel_name': snippet.get('channelTitle'),
-                    'upload_date': snippet.get('publishedAt'),
+                    'upload_date': formatted_upload_date,  # Now properly formatted
+                    'published_at': upload_date,  # Keep original ISO format as well
                     'duration': content_details.get('duration'),
                     'view_count': stats.get('viewCount'),
                     'description': snippet.get('description'),
@@ -192,11 +205,13 @@ def get_channel_videos(channel_urls):
     """Fetch all videos from channel URLs using yt-dlp."""
     all_videos = []
     
+    # Use extract_flat for speed, but we'll enhance with API if available
     ydl_opts = {
-        'extract_flat': True,
+        'extract_flat': 'in_playlist',  # Get more metadata than just 'True'
         'skip_download': True,
         'ignoreerrors': True,
-        'quiet': True
+        'quiet': True,
+        'dateformat': '%Y%m%d',  # Format dates consistently
     }
     
     for url in channel_urls:
@@ -212,9 +227,11 @@ def get_channel_videos(channel_urls):
                                 'video_id': entry.get('id'),
                                 'url': f"https://www.youtube.com/watch?v={entry.get('id')}",
                                 'title': entry.get('title'),
-                                'upload_date': entry.get('upload_date'),
+                                'upload_date': entry.get('upload_date'),  # yt-dlp format (YYYYMMDD if available)
                                 'duration': entry.get('duration'),
                                 'view_count': entry.get('view_count'),
+                                'description': entry.get('description'),
+                                'channel_name': entry.get('uploader') or entry.get('channel'),
                             }
                             all_videos.append(video_data)
                     print(f"Found {len(result['entries'])} videos in {url}")
@@ -256,6 +273,27 @@ def main():
     print("Fetching all channel videos...")
     all_videos = get_channel_videos(channel_urls)
     print(f"Found total of {len(all_videos)} videos")
+    
+    # If we have a YouTube API key, enhance the metadata
+    if API_KEY:
+        print("🔍 Enhancing metadata with YouTube API...")
+        video_ids = [video['video_id'] for video in all_videos if video.get('video_id')]
+        print(f"Getting enhanced metadata for {len(video_ids)} videos...")
+        
+        enhanced_data = get_video_details_from_youtube(video_ids)
+        
+        # Merge enhanced data with basic data
+        for video in all_videos:
+            video_id = video.get('video_id')
+            if video_id and video_id in enhanced_data:
+                # Update with enhanced data, keeping existing data as fallback
+                enhanced_video = enhanced_data[video_id]
+                for key, value in enhanced_video.items():
+                    if value is not None:  # Only update if enhanced data has a value
+                        video[key] = value
+        print("✅ Metadata enhancement complete")
+    else:
+        print("⚠️ No YouTube API key found - using basic yt-dlp metadata only")
     
     # Save all videos metadata
     with open(OUTPUT_JSON, 'w', encoding='utf-8') as f:
