@@ -302,8 +302,8 @@ def main():
     if args.non_interactive:
         print("🤖 Running in non-interactive mode (CI/CD friendly)")
     
-    # Validate configuration
-    issues = validate_config()
+    # Validate configuration (context-aware for specific steps)
+    issues = validate_config(step=args.step)
     if issues:
         print("\n⚠️  Configuration Issues:")
         for issue in issues:

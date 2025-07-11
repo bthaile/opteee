@@ -56,6 +56,8 @@ jobs:
           echo "✅ Transcript generation completed"
 
       - name: Run transcript preprocessing
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: |
           echo "📝 Step 3: Processing transcripts into chunks..."
           python3 run_pipeline.py --step preprocess --non-interactive

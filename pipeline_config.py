@@ -75,12 +75,21 @@ def get_metadata_file():
         raise FileNotFoundError("No video metadata file found. Please run outlier_scraper.py first.")
 
 # Validation
-def validate_config():
-    """Validate configuration and environment"""
+def validate_config(step=None):
+    """Validate configuration and environment
+    
+    Args:
+        step: Optional step name to validate context-specific requirements
+              ('scrape', 'transcripts', 'preprocess', 'vectors')
+    """
     issues = []
     
-    if not YOUTUBE_API_KEY:
+    # Only validate YouTube API key for steps that actually need it
+    if step in ['scrape', 'transcripts'] and not YOUTUBE_API_KEY:
         issues.append("YouTube API key not found in environment variables")
+    elif step is None and not YOUTUBE_API_KEY:
+        # If no step specified (full pipeline), warn about missing API key
+        issues.append("YouTube API key not found in environment variables (optional for some steps)")
     
     if CHUNK_SIZE <= OVERLAP:
         issues.append(f"Chunk size ({CHUNK_SIZE}) must be larger than overlap ({OVERLAP})")
