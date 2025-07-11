@@ -37,14 +37,16 @@ The system automatically stays current with new Outlier Trading videos through a
 1. **🔍 Video Discovery** - Scans for new Outlier Trading videos
 2. **🎤 Transcript Generation** - Creates transcripts using OpenAI Whisper
 3. **📝 Text Processing** - Chunks transcripts into searchable segments
-4. **🔮 Vector Store Update** - Rebuilds the FAISS search index
-5. **📤 Deployment** - Automatically deploys updates to Hugging Face
+4. **📤 Deployment** - Commits processed files and triggers Hugging Face deployment
+5. **🔮 Vector Store Creation** - Happens automatically on Hugging Face during Docker build
 
 **Files automatically updated:**
 - `outlier_trading_videos.json` - Video metadata
 - `transcripts/` - Raw transcript files (timestamped)
 - `processed_transcripts/` - Chunked transcript data
-- `vector_store/` - FAISS vector database
+
+**Files created on Hugging Face:**
+- `vector_store/` - FAISS vector database (built during Docker image creation)
 
 ### **🎯 Smart Processing Logic**
 
@@ -69,13 +71,13 @@ Each workflow run generates:
 
 **Environment Variables Required:**
 - `YOUTUBE_API_KEY` - For enhanced video metadata
-- `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` - For RAG functionality
 - `GITHUB_TOKEN` - Automatically provided by GitHub
 
 **Performance Settings:**
 - **Timeout:** 3 hours for large processing jobs
 - **Processing Mode:** Non-interactive (CI/CD optimized)
 - **Chunk Configuration:** 250 words/chunk, 50 words overlap
+- **Architecture:** GitHub Actions handles steps 1-3, Hugging Face handles step 4
 
 ### **📱 Manual Triggering**
 
@@ -102,8 +104,8 @@ You can manually trigger the workflow:
 **Verify updates:**
 - New transcripts appear in `transcripts/` directory
 - Processed files appear in `processed_transcripts/` directory
-- Vector store files are updated in `vector_store/` directory
-- Hugging Face Space automatically rebuilds and deploys
+- Hugging Face Space automatically rebuilds and creates vector store
+- Vector store files appear in `vector_store/` directory on Hugging Face
 
 ### **🎉 Benefits**
 
@@ -134,25 +136,30 @@ python3 run_pipeline.py --step vectors
 
 **2. Test Non-Interactive Mode (CI/CD Simulation)**
 ```bash
-# Test the exact mode used by GitHub Actions
-python3 run_pipeline.py --non-interactive
+# Test the exact mode used by GitHub Actions (steps 1-3 only)
+python3 run_pipeline.py --step scrape --non-interactive
+python3 run_pipeline.py --step transcripts --non-interactive
+python3 run_pipeline.py --step preprocess --non-interactive
 
 # Test with force reprocessing in non-interactive mode
-python3 run_pipeline.py --non-interactive --force-reprocess
+python3 run_pipeline.py --step transcripts --non-interactive --force-reprocess
 
-# Test specific step in non-interactive mode
-python3 run_pipeline.py --step transcripts --non-interactive
+# Test the complete pipeline including vector store (for local testing)
+python3 run_pipeline.py --non-interactive
 ```
 
 **3. Test Smart Processing Logic**
 ```bash
-# First run - should process everything
-python3 run_pipeline.py --non-interactive
+# First run - should process everything (steps 1-3)
+python3 run_pipeline.py --step scrape --non-interactive
+python3 run_pipeline.py --step transcripts --non-interactive
+python3 run_pipeline.py --step preprocess --non-interactive
 
 # Second run - should detect no changes and skip processing
-python3 run_pipeline.py --non-interactive
+python3 run_pipeline.py --step transcripts --non-interactive
+python3 run_pipeline.py --step preprocess --non-interactive
 
-# Add a new video manually, then run again - should only process new content
+# Test complete pipeline locally (including vector store)
 python3 run_pipeline.py --non-interactive
 ```
 
@@ -189,7 +196,7 @@ gh workflow run process-transcripts.yml
 **Scenario A: Fresh Repository (First Run)**
 ```bash
 # Remove existing files to simulate fresh start
-rm -rf transcripts/ processed_transcripts/ vector_store/
+rm -rf transcripts/ processed_transcripts/
 rm -f outlier_trading_videos*.json
 
 # Push changes and trigger workflow
@@ -252,8 +259,8 @@ find transcripts -name "*.txt" | wc -l
 # Check processed transcripts
 find processed_transcripts -name "*.json" | wc -l
 
-# Check vector store
-ls -la vector_store/
+# Note: Vector store creation happens on Hugging Face during Docker build
+echo "Vector store will be created on Hugging Face"
 ```
 
 **2. Verify GitHub Actions Outputs**
@@ -273,8 +280,10 @@ python3 app.py
 
 **1. Local Pipeline Issues**
 ```bash
-# Run with verbose debugging
-python3 run_pipeline.py --non-interactive 2>&1 | tee pipeline_debug.log
+# Run GitHub Actions steps locally for debugging
+python3 run_pipeline.py --step scrape --non-interactive 2>&1 | tee scrape_debug.log
+python3 run_pipeline.py --step transcripts --non-interactive 2>&1 | tee transcripts_debug.log
+python3 run_pipeline.py --step preprocess --non-interactive 2>&1 | tee preprocess_debug.log
 
 # Check specific component issues
 python3 validate_system.py
@@ -295,6 +304,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 print(f'YouTube API Key: {bool(os.getenv(\"YOUTUBE_API_KEY\"))}')
+# Note: OpenAI/Anthropic API keys only needed for RAG functionality (not in GitHub Actions)
 print(f'OpenAI API Key: {bool(os.getenv(\"OPENAI_API_KEY\"))}')
 print(f'Anthropic API Key: {bool(os.getenv(\"ANTHROPIC_API_KEY\"))}')
 "
@@ -313,8 +323,10 @@ gh secret list | grep HF_TOKEN
 
 **Test Basic Functionality:**
 ```bash
-# Quick pipeline test (should complete in 5-10 minutes for testing)
+# Quick GitHub Actions simulation (should complete in 5-10 minutes for testing)
 python3 run_pipeline.py --step scrape --non-interactive
+python3 run_pipeline.py --step transcripts --non-interactive
+python3 run_pipeline.py --step preprocess --non-interactive
 python3 validate_system.py
 ```
 
@@ -344,14 +356,14 @@ time python3 run_pipeline.py --non-interactive
 - Video discovery: ~500+ videos found
 - Transcript generation: New transcripts created for missing videos
 - Processing: ~14,000+ chunks created
-- Vector store: FAISS index successfully built
+- Vector store: Created on Hugging Face during Docker build
 - No errors in validation steps
 
 **✅ Successful GitHub Actions Run Should Show:**
 - Workflow completes within 3 hours
-- All verification steps pass
+- All verification steps pass (video discovery, transcripts, preprocessing)
 - Changes committed to repository (if new content found)
-- Hugging Face deployment triggered
+- Hugging Face deployment triggered (creates vector store during Docker build)
 - Detailed processing summary in workflow logs
 
 **✅ Successful Non-Interactive Mode Should Show:**
@@ -718,10 +730,10 @@ python3 parallel_transcribe.py --resume
 8. **"Workflow failed"** → Check GitHub Actions logs for specific errors
 9. **"No changes committed"** → Workflow detected no new videos (expected behavior)
 10. **"API key missing in workflow"** → Add required secrets to GitHub repository settings:
-    - `YOUTUBE_API_KEY`
-    - `OPENAI_API_KEY` or `ANTHROPIC_API_KEY`
+    - `YOUTUBE_API_KEY` (required for video metadata)
 11. **"Timeout in workflow"** → Large processing jobs may take up to 3 hours
 12. **"Hugging Face deployment failed"** → Check `HF_TOKEN` secret and repository permissions
+13. **"Vector store missing"** → Vector store is created on Hugging Face during Docker build, not in GitHub Actions
 
 ### **Verification Commands**
 ```bash
@@ -765,10 +777,10 @@ source venv/bin/activate && python3 app.py
 
 ```
 YouTube Videos → Video Discovery → Transcript Generation → 
-Chunking & Metadata → Vector Store → RAG Pipeline → User Interface
-        ↑                                                    ↑
-    GitHub Actions                                    Hugging Face
-  (Weekly Updates)                                  (Auto-deployment)
+Chunking & Metadata → [GitHub Commit] → Vector Store → RAG Pipeline → User Interface
+        ↑                                     ↑                             ↑
+    GitHub Actions                     GitHub Actions                 Hugging Face
+  (Steps 1-3 Weekly)                   (Commits & Triggers)         (Step 4 + Deployment)
 ```
 
 **Key Components:**

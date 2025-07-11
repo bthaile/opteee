@@ -196,8 +196,8 @@ iface = gr.Interface(
         gr.Textbox(
             label="Number of Results",
             value=str(DEFAULT_TOP_K),
-            placeholder="Enter number of results (1-10)",
-            info="Enter a number between 1 and 10"
+            placeholder="Enter number of results (1-15)",
+            info="Enter a number between 1 and 15"
         ),
         gr.Dropdown(
             choices=get_available_providers(),

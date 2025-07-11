@@ -7,7 +7,7 @@ from sentence_transformers import SentenceTransformer
 # Configuration
 VECTOR_DIR = "vector_store"
 MODEL_NAME = "all-MiniLM-L6-v2"
-TOP_K = 5  # Number of results to return
+TOP_K = 10  # Number of results to return
 
 def load_vector_store():
     """Load the FAISS index and metadata"""
