@@ -9,11 +9,12 @@ This script orchestrates the entire video processing pipeline:
 4. Vector store creation
 
 Usage:
-    python3 run_pipeline.py [--step STEP_NAME] [--force-reprocess]
+    python3 run_pipeline.py [--step STEP_NAME] [--force-reprocess] [--non-interactive]
 
 Options:
     --step: Run only a specific step (scrape, transcripts, preprocess, vectors)
     --force-reprocess: Force reprocessing of all videos (ignores progress)
+    --non-interactive: Run without prompting for user input (useful for CI/CD)
 """
 
 import os
@@ -37,7 +38,34 @@ def print_step(step_num, total_steps, description):
     print(f"\n📋 Step {step_num}/{total_steps}: {description}")
     print("-" * 60)
 
-def run_video_scraping(force=False):
+def should_force_reprocess(directory, data_file, non_interactive=False):
+    """Determine if we should force reprocessing based on new content"""
+    if non_interactive:
+        # In non-interactive mode, we want to process if:
+        # 1. The data file is newer than the processed directory
+        # 2. The processed directory is empty
+        # 3. The data file doesn't exist yet (first run)
+        
+        if not os.path.exists(data_file):
+            return True
+            
+        if not os.path.exists(directory):
+            return True
+            
+        # Check if directory is empty
+        files = [f for f in os.listdir(directory) if not f.startswith('.')]
+        if not files:
+            return True
+            
+        # Check if data file is newer than the directory
+        data_mtime = os.path.getmtime(data_file)
+        dir_mtime = max([os.path.getmtime(os.path.join(directory, f)) 
+                        for f in files] + [0])
+        
+        return data_mtime > dir_mtime
+    return False
+
+def run_video_scraping(force=False, non_interactive=False):
     """Step 1: Scrape channel videos"""
     print_step(1, 4, "Video Discovery & Metadata Collection")
     
@@ -47,11 +75,16 @@ def run_video_scraping(force=False):
             videos = json.load(f)
         print(f"✅ Found existing {VIDEOS_JSON} with {len(videos)} videos")
         
-        # Ask user if they want to re-scrape
-        response = input("🤔 Re-scrape videos? (y/N): ").lower()
-        if response != 'y':
-            print("⏭️  Skipping video scraping")
-            return
+        if non_interactive:
+            print("🤖 Non-interactive mode: Checking for new videos...")
+            # In non-interactive mode, always scrape to check for new videos
+            # This is lightweight and ensures we don't miss new content
+        else:
+            # Ask user if they want to re-scrape
+            response = input("🤔 Re-scrape videos? (y/N): ").lower()
+            if response != 'y':
+                print("⏭️  Skipping video scraping")
+                return
     
     print("🔍 Running video scraping...")
     import outlier_scraper
@@ -67,7 +100,7 @@ def run_video_scraping(force=False):
     else:
         print("⚠️  No YouTube API key found - using basic metadata only")
 
-def run_transcript_processing(force=False):
+def run_transcript_processing(force=False, non_interactive=False):
     """Step 2: Process transcripts"""
     print_step(2, 4, "Transcript Generation")
     
@@ -81,10 +114,20 @@ def run_transcript_processing(force=False):
         transcript_files = [f for f in os.listdir(TRANSCRIPT_DIR) if f.endswith('.txt')]
         if transcript_files:
             print(f"✅ Found {len(transcript_files)} existing transcript files")
-            response = input("🤔 Re-process transcripts? (y/N): ").lower()
-            if response != 'y':
-                print("⏭️  Skipping transcript processing")
-                return True
+            
+            if non_interactive:
+                # In non-interactive mode, check if we need to process new videos
+                should_reprocess = should_force_reprocess(TRANSCRIPT_DIR, VIDEOS_JSON, non_interactive)
+                if should_reprocess:
+                    print("🤖 Non-interactive mode: Detected new videos, processing transcripts...")
+                else:
+                    print("🤖 Non-interactive mode: No new videos detected, skipping transcript processing")
+                    return True
+            else:
+                response = input("🤔 Re-process transcripts? (y/N): ").lower()
+                if response != 'y':
+                    print("⏭️  Skipping transcript processing")
+                    return True
     
     # Load missing transcripts and process them
     print("🎯 Processing missing transcripts with Whisper...")
@@ -95,7 +138,7 @@ def run_transcript_processing(force=False):
     print("✅ Transcript processing complete")
     return True
 
-def run_preprocessing(force=False):
+def run_preprocessing(force=False, non_interactive=False):
     """Step 3: Preprocess transcripts into chunks"""
     print_step(3, 4, "Transcript Preprocessing & Chunking")
     
@@ -115,10 +158,20 @@ def run_preprocessing(force=False):
         if processed_files:
             print(f"✅ Found {len(processed_files)} existing processed files")
             print(f"📊 Configuration: {CHUNK_SIZE} words/chunk, {OVERLAP} words overlap")
-            response = input("🤔 Re-process chunks? (y/N): ").lower()
-            if response != 'y':
-                print("⏭️  Skipping preprocessing")
-                return True
+            
+            if non_interactive:
+                # In non-interactive mode, check if we need to reprocess based on newer transcripts
+                should_reprocess = should_force_reprocess(PROCESSED_DIR, TRANSCRIPT_DIR, non_interactive)
+                if should_reprocess:
+                    print("🤖 Non-interactive mode: Detected new transcripts, reprocessing chunks...")
+                else:
+                    print("🤖 Non-interactive mode: No new transcripts detected, skipping preprocessing")
+                    return True
+            else:
+                response = input("🤔 Re-process chunks? (y/N): ").lower()
+                if response != 'y':
+                    print("⏭️  Skipping preprocessing")
+                    return True
     
     print(f"📝 Processing {len(transcript_files)} transcript files...")
     print(f"📊 Configuration: {CHUNK_SIZE} words/chunk, {OVERLAP} words overlap, min {MIN_CHUNK_WORDS} words")
@@ -128,7 +181,7 @@ def run_preprocessing(force=False):
     print("✅ Preprocessing complete")
     return True
 
-def run_vector_creation(force=False):
+def run_vector_creation(force=False, non_interactive=False):
     """Step 4: Create vector store"""
     print_step(4, 4, "Vector Store Creation")
     
@@ -145,10 +198,20 @@ def run_vector_creation(force=False):
     # Check if vector store already exists
     if os.path.exists('vector_store') and not force:
         print("✅ Found existing vector store")
-        response = input("🤔 Rebuild vector store? (y/N): ").lower()
-        if response != 'y':
-            print("⏭️  Skipping vector store creation")
-            return True
+        
+        if non_interactive:
+            # In non-interactive mode, check if we need to rebuild based on newer processed files
+            should_rebuild = should_force_reprocess('vector_store', PROCESSED_DIR, non_interactive)
+            if should_rebuild:
+                print("🤖 Non-interactive mode: Detected new processed files, rebuilding vector store...")
+            else:
+                print("🤖 Non-interactive mode: No new processed files detected, skipping vector store creation")
+                return True
+        else:
+            response = input("🤔 Rebuild vector store? (y/N): ").lower()
+            if response != 'y':
+                print("⏭️  Skipping vector store creation")
+                return True
     
     print(f"🔮 Creating vector store from {len(processed_files)} processed files...")
     
@@ -228,11 +291,16 @@ def main():
                         help='Run only a specific step')
     parser.add_argument('--force-reprocess', action='store_true', 
                         help='Force reprocessing of all steps')
+    parser.add_argument('--non-interactive', action='store_true',
+                        help='Run without prompting for user input (useful for CI/CD)')
     
     args = parser.parse_args()
     
     print_banner("Outlier Trading Video Processing Pipeline")
     print(f"🗓️  Started: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    
+    if args.non_interactive:
+        print("🤖 Running in non-interactive mode (CI/CD friendly)")
     
     # Validate configuration
     issues = validate_config()
@@ -250,23 +318,23 @@ def main():
     if args.step:
         force = args.force_reprocess
         if args.step == 'scrape':
-            run_video_scraping(force)
+            run_video_scraping(force, args.non_interactive)
         elif args.step == 'transcripts':
-            run_transcript_processing(force)
+            run_transcript_processing(force, args.non_interactive)
         elif args.step == 'preprocess':
-            run_preprocessing(force)
+            run_preprocessing(force, args.non_interactive)
         elif args.step == 'vectors':
-            run_vector_creation(force)
+            run_vector_creation(force, args.non_interactive)
     else:
         # Run full pipeline
         print("\n🎯 Running complete pipeline...")
         force = args.force_reprocess
         
         success = True
-        success &= run_video_scraping(force) is not False
-        success &= run_transcript_processing(force) is not False
-        success &= run_preprocessing(force) is not False
-        success &= run_vector_creation(force) is not False
+        success &= run_video_scraping(force, args.non_interactive) is not False
+        success &= run_transcript_processing(force, args.non_interactive) is not False
+        success &= run_preprocessing(force, args.non_interactive) is not False
+        success &= run_vector_creation(force, args.non_interactive) is not False
         
         if not success:
             print("\n❌ Pipeline failed! Check the errors above.")

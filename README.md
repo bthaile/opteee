@@ -25,6 +25,341 @@ python3 app.py
 # Visit: http://localhost:7860
 ```
 
+## 🤖 **Automated Weekly Updates**
+
+The system automatically stays current with new Outlier Trading videos through a **GitHub Actions workflow** that runs every Sunday at 8:00 PM UTC (3:00 PM CT).
+
+### **🔄 Automatic Processing Workflow**
+
+**Schedule:** Every Sunday at 8:00 PM UTC (3:00 PM CT - avoiding DST issues)
+
+**What it does:**
+1. **🔍 Video Discovery** - Scans for new Outlier Trading videos
+2. **🎤 Transcript Generation** - Creates transcripts using OpenAI Whisper
+3. **📝 Text Processing** - Chunks transcripts into searchable segments
+4. **🔮 Vector Store Update** - Rebuilds the FAISS search index
+5. **📤 Deployment** - Automatically deploys updates to Hugging Face
+
+**Files automatically updated:**
+- `outlier_trading_videos.json` - Video metadata
+- `transcripts/` - Raw transcript files (timestamped)
+- `processed_transcripts/` - Chunked transcript data
+- `vector_store/` - FAISS vector database
+
+### **🎯 Smart Processing Logic**
+
+The workflow uses **intelligent processing** to avoid unnecessary work:
+
+- **New videos only**: Only processes videos that don't already have transcripts
+- **Incremental updates**: Only rebuilds vector store when new content is added
+- **Change detection**: Only commits and deploys when new content is found
+- **Non-interactive mode**: Runs completely automated without user input
+
+### **📊 Processing Reports**
+
+Each workflow run generates:
+- **📋 Processing Summary** - Videos discovered, transcripts generated, chunks created
+- **🔄 GitHub Commit** - Detailed commit message with processing statistics
+- **📈 Workflow Summary** - GitHub Actions summary with results
+- **🚀 Auto-deployment** - Triggers Hugging Face Space update
+
+### **🔧 Workflow Configuration**
+
+**Location:** `.github/workflows/process-transcripts.yml`
+
+**Environment Variables Required:**
+- `YOUTUBE_API_KEY` - For enhanced video metadata
+- `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` - For RAG functionality
+- `GITHUB_TOKEN` - Automatically provided by GitHub
+
+**Performance Settings:**
+- **Timeout:** 3 hours for large processing jobs
+- **Processing Mode:** Non-interactive (CI/CD optimized)
+- **Chunk Configuration:** 250 words/chunk, 50 words overlap
+
+### **📱 Manual Triggering**
+
+You can manually trigger the workflow:
+
+1. **Via GitHub UI:**
+   - Go to Actions tab in the repository
+   - Select "Process Video Transcripts Weekly"
+   - Click "Run workflow"
+
+2. **Via GitHub CLI:**
+   ```bash
+   gh workflow run process-transcripts.yml
+   ```
+
+### **🔍 Monitoring**
+
+**Check workflow status:**
+- GitHub Actions tab shows all runs
+- Each run provides detailed logs
+- Workflow summaries show processing results
+- Commit messages include processing statistics
+
+**Verify updates:**
+- New transcripts appear in `transcripts/` directory
+- Processed files appear in `processed_transcripts/` directory
+- Vector store files are updated in `vector_store/` directory
+- Hugging Face Space automatically rebuilds and deploys
+
+### **🎉 Benefits**
+
+- **🔄 Always Current**: Never miss new Outlier Trading videos
+- **⚡ Fast Processing**: Optimized pipeline with parallel processing
+- **📊 Transparent**: Detailed reporting on what was processed
+- **🚀 Zero Maintenance**: Fully automated - no manual intervention needed
+- **💎 Smart**: Only processes new content, avoiding redundant work
+
+## 🧪 **Testing the New Pipeline**
+
+### **🔬 Local Testing**
+
+**1. Test Complete Pipeline (Interactive Mode)**
+```bash
+# Test the enhanced pipeline with all steps
+python3 run_pipeline.py
+
+# Test with force reprocessing
+python3 run_pipeline.py --force-reprocess
+
+# Test individual steps
+python3 run_pipeline.py --step scrape
+python3 run_pipeline.py --step transcripts
+python3 run_pipeline.py --step preprocess
+python3 run_pipeline.py --step vectors
+```
+
+**2. Test Non-Interactive Mode (CI/CD Simulation)**
+```bash
+# Test the exact mode used by GitHub Actions
+python3 run_pipeline.py --non-interactive
+
+# Test with force reprocessing in non-interactive mode
+python3 run_pipeline.py --non-interactive --force-reprocess
+
+# Test specific step in non-interactive mode
+python3 run_pipeline.py --step transcripts --non-interactive
+```
+
+**3. Test Smart Processing Logic**
+```bash
+# First run - should process everything
+python3 run_pipeline.py --non-interactive
+
+# Second run - should detect no changes and skip processing
+python3 run_pipeline.py --non-interactive
+
+# Add a new video manually, then run again - should only process new content
+python3 run_pipeline.py --non-interactive
+```
+
+**4. Validate Pipeline Results**
+```bash
+# Run comprehensive system validation
+python3 validate_system.py
+
+# Test RAG pipeline with sample questions
+python3 rag_pipeline.py "What is gamma in options trading?" --provider claude
+
+# Check file counts and structure
+python3 count_files.py transcripts
+python3 count_files.py processed_transcripts
+ls -la vector_store/
+```
+
+### **🤖 GitHub Actions Testing**
+
+**1. Test Workflow Manually**
+```bash
+# Using GitHub CLI
+gh workflow run process-transcripts.yml
+
+# Or via GitHub web interface:
+# 1. Go to your repository on GitHub
+# 2. Click "Actions" tab
+# 3. Select "Process Video Transcripts Weekly"
+# 4. Click "Run workflow" button
+```
+
+**2. Test Workflow with Different Scenarios**
+
+**Scenario A: Fresh Repository (First Run)**
+```bash
+# Remove existing files to simulate fresh start
+rm -rf transcripts/ processed_transcripts/ vector_store/
+rm -f outlier_trading_videos*.json
+
+# Push changes and trigger workflow
+git add -A && git commit -m "Test: Fresh repository state"
+git push
+gh workflow run process-transcripts.yml
+```
+
+**Scenario B: Incremental Update (New Videos)**
+```bash
+# Simulate new videos by removing some transcripts
+rm transcripts/[some_video_id].txt
+
+# Push changes and trigger workflow
+git add -A && git commit -m "Test: Simulate new videos"
+git push
+gh workflow run process-transcripts.yml
+```
+
+**Scenario C: No Changes (Skip Processing)**
+```bash
+# Run workflow when everything is up to date
+gh workflow run process-transcripts.yml
+# Should detect no changes and skip processing
+```
+
+**3. Monitor Workflow Execution**
+```bash
+# Watch workflow in real-time
+gh run watch
+
+# List recent workflow runs
+gh run list --workflow=process-transcripts.yml
+
+# View specific run details
+gh run view [RUN_ID]
+
+# Download workflow logs
+gh run download [RUN_ID]
+```
+
+### **🔍 Verification Steps**
+
+**1. Check Workflow Results**
+```bash
+# After workflow completes, verify files were created/updated
+git pull  # Get latest changes from GitHub
+
+# Check video discovery
+python3 -c "
+import json
+with open('outlier_trading_videos.json') as f:
+    data = json.load(f)
+print(f'✅ Videos discovered: {len(data)}')
+"
+
+# Check transcripts
+find transcripts -name "*.txt" | wc -l
+
+# Check processed transcripts
+find processed_transcripts -name "*.json" | wc -l
+
+# Check vector store
+ls -la vector_store/
+```
+
+**2. Verify GitHub Actions Outputs**
+- Check the "Actions" tab for workflow status
+- Review the workflow summary (should show processing results)
+- Check commit messages for processing statistics
+- Verify Hugging Face deployment was triggered
+
+**3. Test End-to-End Functionality**
+```bash
+# Test the complete system after workflow updates
+python3 app.py
+# Visit http://localhost:7860 and test search functionality
+```
+
+### **🐛 Debugging Failed Tests**
+
+**1. Local Pipeline Issues**
+```bash
+# Run with verbose debugging
+python3 run_pipeline.py --non-interactive 2>&1 | tee pipeline_debug.log
+
+# Check specific component issues
+python3 validate_system.py
+python3 check_audio_files.py
+```
+
+**2. GitHub Actions Issues**
+```bash
+# Check workflow logs
+gh run view [RUN_ID] --log
+
+# Check repository secrets
+gh secret list
+
+# Test API keys locally
+python3 -c "
+import os
+from dotenv import load_dotenv
+load_dotenv()
+print(f'YouTube API Key: {bool(os.getenv(\"YOUTUBE_API_KEY\"))}')
+print(f'OpenAI API Key: {bool(os.getenv(\"OPENAI_API_KEY\"))}')
+print(f'Anthropic API Key: {bool(os.getenv(\"ANTHROPIC_API_KEY\"))}')
+"
+```
+
+**3. Hugging Face Deployment Issues**
+```bash
+# Check deployment webhook
+gh run view [RUN_ID] --log | grep "repository-dispatch"
+
+# Verify Hugging Face token
+gh secret list | grep HF_TOKEN
+```
+
+### **⚡ Quick Testing Commands**
+
+**Test Basic Functionality:**
+```bash
+# Quick pipeline test (should complete in 5-10 minutes for testing)
+python3 run_pipeline.py --step scrape --non-interactive
+python3 validate_system.py
+```
+
+**Test GitHub Actions Locally:**
+```bash
+# Install act (GitHub Actions local runner)
+brew install act  # macOS
+# OR
+curl https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash
+
+# Run GitHub Actions workflow locally
+act workflow_dispatch -W .github/workflows/process-transcripts.yml
+```
+
+**Test Performance:**
+```bash
+# Time the complete pipeline
+time python3 run_pipeline.py --non-interactive
+
+# Check memory usage
+/usr/bin/time -v python3 run_pipeline.py --non-interactive
+```
+
+### **📊 Expected Test Results**
+
+**✅ Successful Pipeline Run Should Show:**
+- Video discovery: ~500+ videos found
+- Transcript generation: New transcripts created for missing videos
+- Processing: ~14,000+ chunks created
+- Vector store: FAISS index successfully built
+- No errors in validation steps
+
+**✅ Successful GitHub Actions Run Should Show:**
+- Workflow completes within 3 hours
+- All verification steps pass
+- Changes committed to repository (if new content found)
+- Hugging Face deployment triggered
+- Detailed processing summary in workflow logs
+
+**✅ Successful Non-Interactive Mode Should Show:**
+- No user prompts or input requests
+- Intelligent skipping of up-to-date content
+- Proper error handling and logging
+- Clean exit codes (0 for success)
+
 ## 📋 **Complete Processing Pipeline with Verification**
 
 ### **Step 1: Video Discovery & Metadata Collection**
@@ -378,6 +713,16 @@ python3 parallel_transcribe.py --resume
 6. **"Transcription too slow"** → Use parallel processing: `python3 parallel_transcribe.py`
 7. **"Worker process crashed"** → Reduce workers: `python3 parallel_transcribe.py --workers 4`
 
+### **GitHub Actions Issues**
+
+8. **"Workflow failed"** → Check GitHub Actions logs for specific errors
+9. **"No changes committed"** → Workflow detected no new videos (expected behavior)
+10. **"API key missing in workflow"** → Add required secrets to GitHub repository settings:
+    - `YOUTUBE_API_KEY`
+    - `OPENAI_API_KEY` or `ANTHROPIC_API_KEY`
+11. **"Timeout in workflow"** → Large processing jobs may take up to 3 hours
+12. **"Hugging Face deployment failed"** → Check `HF_TOKEN` secret and repository permissions
+
 ### **Verification Commands**
 ```bash
 # Check system health
@@ -421,6 +766,9 @@ source venv/bin/activate && python3 app.py
 ```
 YouTube Videos → Video Discovery → Transcript Generation → 
 Chunking & Metadata → Vector Store → RAG Pipeline → User Interface
+        ↑                                                    ↑
+    GitHub Actions                                    Hugging Face
+  (Weekly Updates)                                  (Auto-deployment)
 ```
 
 **Key Components:**
@@ -429,6 +777,8 @@ Chunking & Metadata → Vector Store → RAG Pipeline → User Interface
 - **OpenAI/Claude**: Answer generation
 - **Gradio**: Web interface
 - **Discord.py**: Bot interface
+- **GitHub Actions**: Automated weekly processing workflow
+- **Hugging Face Spaces**: Production hosting with auto-deployment
 
 ## 🎉 **Success Indicators**
 
@@ -437,12 +787,16 @@ Chunking & Metadata → Vector Store → RAG Pipeline → User Interface
 - RAG answers include source attribution
 - Search returns relevant results
 - All validation checks pass
+- GitHub Actions workflow runs successfully every Sunday
+- New videos are automatically processed and deployed
 
 ❌ **Issues to Fix:**
 - Links go to `&t=0` (timestamp issue)
 - No source attribution in answers
 - Empty search results
 - Validation errors
+- GitHub Actions workflow failures
+- Missing API keys in workflow secrets
 
 ---
 

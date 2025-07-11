@@ -4,6 +4,10 @@ This ensures consistency across all scripts.
 """
 
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # File Paths
 VIDEOS_JSON = 'outlier_trading_videos.json'  # Output from outlier_scraper.py

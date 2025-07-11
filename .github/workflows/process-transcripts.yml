@@ -2,17 +2,18 @@ name: Process Video Transcripts Weekly
 
 on:
   schedule:
-    - cron: '0 20 * * 0'  # Run at 8:00 PM UTC every Sunday
+    - cron: '0 20 * * 0'  # Run at 8:00 PM UTC every Sunday (3:00 PM CT, avoiding DST issues)
   workflow_dispatch:  # Allow manual triggering of the workflow
 
 jobs:
   process-transcripts:
     runs-on: ubuntu-latest
+    timeout-minutes: 180  # 3 hours timeout for large transcript processing
     permissions:
       contents: write  # Add explicit write permission
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Fetch all history for proper git operations
           token: ${{ secrets.GITHUB_TOKEN }}  # Use token for checkout
@@ -22,32 +23,168 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install yt-dlp pytube whisper google-api-python-client python-dotenv pandas tqdm
-
-      - name: Install ffmpeg
+      - name: Install system dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg
 
-      - name: Process videos
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Create necessary directories
+        run: |
+          mkdir -p transcripts
+          mkdir -p processed_transcripts
+          mkdir -p vector_store
+          mkdir -p audio_files
+
+      - name: Run complete pipeline
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-        run: python process_outlier_videos.py
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "🚀 Starting complete video processing pipeline..."
+          python3 run_pipeline.py --non-interactive
+          echo "✅ Pipeline completed successfully"
 
-      - name: Commit changes
+      - name: Verify pipeline outputs
+        run: |
+          echo "📊 Verifying pipeline outputs..."
+          
+          # Check video discovery
+          if [ -f "outlier_trading_videos.json" ]; then
+            VIDEO_COUNT=$(python3 -c "import json; print(len(json.load(open('outlier_trading_videos.json'))))")
+            echo "✅ Videos discovered: $VIDEO_COUNT"
+          else
+            echo "❌ No video data found"
+          fi
+          
+          # Check transcripts
+          if [ -d "transcripts" ]; then
+            TRANSCRIPT_COUNT=$(find transcripts -name "*.txt" | wc -l)
+            echo "✅ Transcripts generated: $TRANSCRIPT_COUNT"
+          else
+            echo "❌ No transcripts directory found"
+          fi
+          
+          # Check processed transcripts
+          if [ -d "processed_transcripts" ]; then
+            PROCESSED_COUNT=$(find processed_transcripts -name "*.json" | wc -l)
+            echo "✅ Processed transcript files: $PROCESSED_COUNT"
+          else
+            echo "❌ No processed transcripts directory found"
+          fi
+          
+          # Check vector store
+          if [ -d "vector_store" ]; then
+            if [ -f "vector_store/transcript_embeddings.faiss" ]; then
+              echo "✅ Vector store created successfully"
+            else
+              echo "❌ Vector store files missing"
+            fi
+          else
+            echo "❌ No vector store directory found"
+          fi
+
+      - name: Run system validation
+        run: |
+          echo "🔍 Running system validation..."
+          python3 validate_system.py || echo "⚠️ System validation had issues (non-critical)"
+
+      - name: Generate processing report
+        run: |
+          echo "📋 Generating processing report..."
+          cat > processing_report.md << 'EOF'
+          # Weekly Transcript Processing Report
+          
+          **Processing Date:** $(date '+%Y-%m-%d %H:%M:%S UTC')
+          **Pipeline Version:** Enhanced with parallel processing
+          
+          ## Processing Summary
+          
+          - **Videos Discovered:** $(python3 -c "import json; print(len(json.load(open('outlier_trading_videos.json'))))" 2>/dev/null || echo "0")
+          - **Transcripts Generated:** $(find transcripts -name "*.txt" 2>/dev/null | wc -l)
+          - **Processed Chunks:** $(find processed_transcripts -name "*.json" 2>/dev/null | wc -l)
+          - **Vector Store:** $([ -f "vector_store/transcript_embeddings.faiss" ] && echo "✅ Created" || echo "❌ Missing")
+          
+          ## Processing Configuration
+          
+          - **Chunk Size:** 250 words
+          - **Overlap:** 50 words
+          - **Vector Model:** all-MiniLM-L6-v2
+          - **Processing Mode:** Non-interactive (CI/CD)
+          
+          ## Files Updated
+          
+          - `outlier_trading_videos.json` - Video metadata
+          - `transcripts/` - Raw transcript files
+          - `processed_transcripts/` - Chunked transcript data
+          - `vector_store/` - FAISS vector database
+          
+          ---
+          *This report was generated automatically by GitHub Actions*
+          EOF
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git add .
+          if git diff --staged --quiet; then
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "No changes to commit"
+          else
+            echo "changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected, preparing to commit"
+          fi
+
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changes == 'true'
         run: |
           git config --global user.email "github-actions@github.com"
-          git config --global user.name "GitHub Actions"
+          git config --global user.name "GitHub Actions Bot"
+          
+          # Add all generated files
           git add .
-          git commit -m "Weekly transcript update $(date +'%Y-%m-%d')" || echo "No changes to commit"
+          
+          # Create commit message with details
+          COMMIT_MSG="Weekly transcript update $(date +'%Y-%m-%d')
+
+          Automated processing results:
+          - Videos: $(python3 -c "import json; print(len(json.load(open('outlier_trading_videos.json'))))" 2>/dev/null || echo "0")
+          - Transcripts: $(find transcripts -name "*.txt" 2>/dev/null | wc -l)
+          - Processed: $(find processed_transcripts -name "*.json" 2>/dev/null | wc -l)
+          - Vector store: $([ -f "vector_store/transcript_embeddings.faiss" ] && echo "updated" || echo "missing")
+          
+          Generated by: GitHub Actions workflow"
+          
+          git commit -m "$COMMIT_MSG"
           git push
 
-      - name: Trigger deployment
-        uses: peter-evans/repository-dispatch@v2
+      - name: Trigger Hugging Face deployment
+        if: steps.check_changes.outputs.changes == 'true'
+        uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          event-type: transcript-update 
+          event-type: transcript-update
+          client-payload: '{"updated_files": ["transcripts", "processed_transcripts", "vector_store"]}'
+
+      - name: Create workflow summary
+        if: always()
+        run: |
+          echo "## 🎯 Weekly Transcript Processing Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Date:** $(date '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📊 Processing Results" >> $GITHUB_STEP_SUMMARY
+          echo "- Videos discovered: $(python3 -c "import json; print(len(json.load(open('outlier_trading_videos.json'))))" 2>/dev/null || echo "0")" >> $GITHUB_STEP_SUMMARY
+          echo "- Transcripts generated: $(find transcripts -name "*.txt" 2>/dev/null | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- Processed chunks: $(find processed_transcripts -name "*.json" 2>/dev/null | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- Vector store: $([ -f "vector_store/transcript_embeddings.faiss" ] && echo "✅ Updated" || echo "❌ Missing")" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔄 Changes Committed" >> $GITHUB_STEP_SUMMARY
+          echo "- Changes detected: ${{ steps.check_changes.outputs.changes }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Hugging Face deployment: ${{ steps.check_changes.outputs.changes == 'true' && 'Triggered' || 'Skipped' }}" >> $GITHUB_STEP_SUMMARY 
