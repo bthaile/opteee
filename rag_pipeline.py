@@ -152,6 +152,18 @@ class CustomFAISSRetriever:
         self.texts = []
         self.metadata = []
         
+        # Load the main video metadata file for enrichment
+        self.video_metadata_map = {}
+        try:
+            metadata_path = 'outlier_trading_videos_metadata.json'
+            if os.path.exists(metadata_path):
+                with open(metadata_path, 'r') as f:
+                    videos_data = json.load(f)
+                self.video_metadata_map = {video['video_id']: video for video in videos_data}
+                print("✅ Loaded video metadata for data enrichment.")
+        except Exception as e:
+            print(f"⚠️ Warning: Could not load main video metadata file: {e}")
+
         # Check if vector store exists
         if not os.path.exists(VECTOR_STORE_DIR):
             print(f"❌ Error: Vector store directory '{VECTOR_STORE_DIR}' not found.")
@@ -211,10 +223,22 @@ class CustomFAISSRetriever:
                 continue
                 
             text = self.texts[idx]
-            meta = self.metadata[idx]
+            meta = self.metadata[idx].copy() # Use a copy to avoid modifying the original
             score = float(distances[0][i])
             meta['score'] = score
             
+            # --- Data Enrichment Step ---
+            # If duration or upload_date is missing, enrich from the main metadata file
+            video_id = meta.get('video_id')
+            if video_id and video_id in self.video_metadata_map:
+                main_video_meta = self.video_metadata_map[video_id]
+                if 'duration' not in meta or not meta['duration']:
+                    meta['duration'] = main_video_meta.get('duration')
+                if 'upload_date' not in meta or not meta['upload_date']:
+                    meta['upload_date'] = main_video_meta.get('upload_date')
+                if 'published_at' not in meta or not meta['published_at']:
+                    meta['published_at'] = main_video_meta.get('publishedAt') # Note the camelCase from YouTube API
+
             # Parse upload date
             try:
                 from datetime import datetime

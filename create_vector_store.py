@@ -32,15 +32,16 @@ def load_processed_transcripts():
         try:
             file_path = os.path.join(PROCESSED_DIR, filename)
             with open(file_path, 'r', encoding='utf-8') as f:
-                chunk_data = json.load(f)
+                # The file now contains a list of chunks
+                video_chunks = json.load(f)
                 
-                for chunk in chunk_data:
+                for chunk in video_chunks:
                     text = chunk.get('text', '')
-                    metadata = chunk.get('metadata', {})
                     
                     if text and len(text.strip()) > 0:
                         all_chunks.append(text)
-                        all_metadatas.append(metadata)
+                        # The entire chunk dictionary is the metadata
+                        all_metadatas.append(chunk)
         except Exception as e:
             print(f"Error loading {filename}: {e}")
     

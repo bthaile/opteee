@@ -254,106 +254,82 @@ def process_transcripts(metadata_dict):
     total_chunks = 0
     processed_files = 0
     
-    # Process each transcript
+    # Process each transcript file
     print("\n[3/3] Beginning processing of transcript files...")
     print("="*80)
-    for filename in tqdm(transcript_files):
+    for filename in tqdm(transcript_files, desc="Processing transcripts"):
         try:
-            file_path = os.path.join(TRANSCRIPT_DIR, filename)
+            # Find metadata for this transcript
+            video_id, video_metadata = find_metadata_for_transcript(filename, metadata_dict)
+
+            # Read and clean the transcript text
+            with open(os.path.join(TRANSCRIPT_DIR, filename), 'r', encoding='utf-8') as f:
+                raw_text = f.read()
             
-            # Find the best matching metadata for this transcript
-            video_id, metadata = find_metadata_for_transcript(filename, metadata_dict)
+            cleaned_text, timestamps = extract_timestamps_and_clean(raw_text)
             
-            # Read the transcript
-            with open(file_path, 'r', encoding='utf-8') as f:
-                transcript_text = f.read()
-            
-            # Clean the transcript and extract timestamps
-            cleaned_text, timestamps = extract_timestamps_and_clean(transcript_text)
-            
-            # Skip if cleaned text is too short
-            if len(cleaned_text.split()) < MIN_CHUNK_WORDS:
-                skipped_files['insufficient_content'].append({
-                    'filename': filename,
-                    'word_count': len(cleaned_text.split()),
-                    'reason': f'Text too short after cleaning (< {MIN_CHUNK_WORDS} words)'
-                })
+            if not cleaned_text:
+                skipped_files['empty_after_cleaning'].append(filename)
                 continue
+
+            # Chunk the text
+            chunks = chunk_text_with_timestamps(cleaned_text, timestamps)
+            total_chunks_for_file = len(chunks)
             
-            # Split into chunks with timestamp information
-            chunks_with_timestamps = chunk_text_with_timestamps(cleaned_text, timestamps)
-            
-            # Create JSON for each chunk with metadata
-            chunk_data = []
-            for i, chunk_info in enumerate(chunks_with_timestamps):
-                # Ensure we have a proper video URL and ID
-                valid_id = video_id if len(video_id) == 11 else "unknown"
-                
-                # Construct proper URL with timestamp
-                timestamp_seconds = int(chunk_info['start_timestamp_seconds'])
-                video_url = metadata.get('url', '') or f"https://www.youtube.com/watch?v={valid_id}"
-                
-                # Extract clean video ID for timestamp URL
-                url_video_id = valid_id
-                url_match = re.search(r'(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s?]+)', video_url)
-                if url_match:
-                    url_video_id = url_match.group(1)
-                
-                # Create proper timestamp URL
-                video_url_with_timestamp = f"https://www.youtube.com/watch?v={url_video_id}&t={timestamp_seconds}"
-                
-                chunk_obj = {
+            video_chunks = []
+            # Process each chunk and add it to a list for the current video
+            for i, chunk_info in enumerate(chunks):
+                # Create the final chunk object
+                final_chunk = {
+                    'video_id': video_id,
+                    'title': video_metadata.get('title', 'Unknown Title'),
+                    'url': video_metadata.get('url', f"https://www.youtube.com/watch?v={video_id}"),
+                    'upload_date': video_metadata.get('upload_date') or video_metadata.get('publishedAt'),
+                    'duration': video_metadata.get('duration'),
+                    'channel_name': video_metadata.get('channel_name', ''),
+                    'description': video_metadata.get('description', ''),
+                    'chunk_index': i + 1,
+                    'total_chunks': total_chunks_for_file,
                     'text': chunk_info['text'],
-                    'metadata': {
-                        'video_id': valid_id,
-                        'title': metadata.get('title', filename.replace('.txt', '').replace('_', ' ')),
-                        'url': f"https://www.youtube.com/watch?v={url_video_id}",
-                        'upload_date': metadata.get('published_at', ''),
-                        'duration': metadata.get('duration', ''),
-                        'channel_name': metadata.get('channel_title', ''),
-                        'description': metadata.get('description', ''),
-                        'content_summary': metadata.get('content_summary', ''),
-                        'chunk_index': i,
-                        'total_chunks': len(chunks_with_timestamps),
-                        'start_timestamp': chunk_info['start_timestamp'],
-                        'start_timestamp_seconds': chunk_info['start_timestamp_seconds'],
-                        'video_url_with_timestamp': video_url_with_timestamp
-                    }
+                    'start_timestamp_seconds': chunk_info['start_timestamp_seconds'],
+                    'start_timestamp': chunk_info['start_timestamp']
                 }
-                chunk_data.append(chunk_obj)
-            
-            # Save processed chunks to JSON file
-            output_path = os.path.join(PROCESSED_DIR, f"{video_id}_processed.json")
-            with open(output_path, 'w', encoding='utf-8') as f:
-                json.dump(chunk_data, f, indent=2)
-            
-            total_chunks += len(chunks_with_timestamps)
-            processed_files += 1
-            
+
+                # Add the timestamped URL
+                timestamp_sec = int(final_chunk['start_timestamp_seconds'])
+                final_chunk['video_url_with_timestamp'] = f"https://www.youtube.com/watch?v={video_id}&t={timestamp_sec}"
+                video_chunks.append(final_chunk)
+
+            # Write all chunks for this video to a single JSON file
+            if video_chunks:
+                output_filename = os.path.join(PROCESSED_DIR, f"{video_id}_processed.json")
+                with open(output_filename, 'w', encoding='utf-8') as f:
+                    json.dump(video_chunks, f, indent=2)
+                
+                processed_files += 1
+                total_chunks += total_chunks_for_file
+
         except Exception as e:
-            skipped_files['processing_error'].append({
-                'filename': filename,
-                'error': str(e),
-                'reason': 'Error during processing'
-            })
+            skipped_files[str(e)].append(filename)
+            print(f"❌ Error processing {filename}: {e}")
+            continue
     
-    print("="*80)
-    print(f"\n✅ Processing complete!")
+    # Print summary
+    print("\n" + "="*80)
+    print("✅ Processing complete!")
     print(f"✅ Processed {processed_files} transcript files")
     print(f"✅ Created {total_chunks} total chunks")
+
+    if skipped_files:
+        print("\n⚠️ Skipped Files Report:")
+        for reason, files in skipped_files.items():
+            print(f"\nREASON: {reason} ({len(files)} files)")
+            for file_info in files:
+                if isinstance(file_info, dict):
+                    print(f"- {file_info.get('filename', 'Unknown file')}: {file_info.get('reason', 'No reason specified')}")
+                else:
+                    print(f"- {file_info}") # Handle cases where it's just a filename string
     
-    # Print detailed skipped files report
-    print("\n⚠️ Skipped Files Report:")
-    for reason, files in skipped_files.items():
-        print(f"\n{reason.upper()} ({len(files)} files):")
-        for file_info in files:
-            print(f"- {file_info['filename']}: {file_info.get('reason', 'Unknown reason')}")
-            if 'word_count' in file_info:
-                print(f"  Word count: {file_info['word_count']}")
-            if 'error' in file_info:
-                print(f"  Error: {file_info['error']}")
-    
-    print(f"\n📁 Results saved to {PROCESSED_DIR}/")
     print("="*80)
 
 def main():
