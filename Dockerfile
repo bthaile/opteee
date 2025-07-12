@@ -19,6 +19,9 @@ RUN mkdir -p /app/vector_store /app/static /app/templates
 # Copy all Python files first (this layer will be cached)
 COPY *.py /app/
 
+# Copy static assets
+COPY static /app/static
+
 # Copy processed transcripts (this layer will be cached)
 COPY processed_transcripts /app/processed_transcripts
 

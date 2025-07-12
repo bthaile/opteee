@@ -88,6 +88,32 @@ def validate_model_configuration(provider: str, model: str, temperature: float) 
     
     return config
 
+def iso_duration_to_seconds(iso_duration: str) -> int:
+    """Convert ISO 8601 duration string to seconds"""
+    if not isinstance(iso_duration, str) or not iso_duration or iso_duration.startswith('P0D'):
+        return 0
+    
+    from isodate import parse_duration
+    try:
+        duration = parse_duration(iso_duration)
+        return int(duration.total_seconds())
+    except Exception:
+        return 0
+
+def iso_duration_to_hhmmss(iso_duration: str) -> str:
+    """Convert ISO 8601 duration to HH:MM:SS"""
+    seconds = iso_duration_to_seconds(iso_duration)
+    if seconds == 0:
+        return ""
+    
+    hours, remainder = divmod(seconds, 3600)
+    minutes, seconds = divmod(remainder, 60)
+    
+    if hours > 0:
+        return f"{hours:02d}:{minutes:02d}:{seconds:02d}"
+    else:
+        return f"{minutes:02d}:{seconds:02d}"
+
 def get_available_providers() -> List[str]:
     """Get a list of available LLM providers based on API keys"""
     providers = []
@@ -449,40 +475,6 @@ User Question: {question}""")
     
     return retriever, chain
 
-def iso_duration_to_hhmmss(duration_str: str) -> str:
-    """Convert ISO 8601 duration to HH:MM:SS format"""
-    if not duration_str:
-        return ""
-        
-    try:
-        # Remove 'PT' prefix
-        duration = duration_str.replace('PT', '')
-        
-        # Initialize hours, minutes, seconds
-        hours = 0
-        minutes = 0
-        seconds = 0
-        
-        # Parse hours if present
-        if 'H' in duration:
-            hours_str, duration = duration.split('H')
-            hours = int(hours_str)
-            
-        # Parse minutes if present
-        if 'M' in duration:
-            minutes_str, duration = duration.split('M')
-            minutes = int(minutes_str)
-            
-        # Parse seconds if present
-        if 'S' in duration:
-            seconds_str = duration.replace('S', '')
-            seconds = int(seconds_str)
-            
-        # Format as HH:MM:SS
-        return f"{hours:02d}:{minutes:02d}:{seconds:02d}"
-    except:
-        return duration_str  # Return original if parsing fails
-
 def run_rag_query(retriever, chain, query: str) -> Dict[str, Any]:
     """Run a RAG query and return the result with sources"""
     # Get relevant documents (already sorted by score)
@@ -513,23 +505,24 @@ def run_rag_query(retriever, chain, query: str) -> Dict[str, Any]:
             timestamp_seconds = 0
             
         video_url = f"https://www.youtube.com/watch?v={video_id}"
-        video_url_with_timestamp = f"{video_url}&t={timestamp_seconds}" if video_id else ""
+        video_url_with_timestamp = f"{video_url}&t={timestamp_seconds}" if video_id and timestamp_seconds > 0 else video_url
         
         # Convert duration to HH:MM:SS format
         duration = meta.get("duration", "")
-        formatted_duration = iso_duration_to_hhmmss(duration)
-        
+        duration_seconds = iso_duration_to_seconds(duration)
+
         source = {
             "title": meta.get("title", "Unknown"),
             "video_id": video_id,
-            "url": video_url_with_timestamp or meta.get("video_url", ""),
+            "url": video_url,
+            "video_url_with_timestamp": video_url_with_timestamp,
+            "start_timestamp_seconds": timestamp_seconds,
             "timestamp": meta.get("start_timestamp", ""),
             "channel": meta.get("channel_name", meta.get("channel", "Unknown")),
             "upload_date": meta.get("published_at", meta.get("upload_date", "Unknown")),  # Use published_at first
             "score": meta.get("score", 0.0),
             "content": doc.page_content,  # Include the actual transcript content
-            "duration": formatted_duration,  # Use formatted duration
-            "start_timestamp": meta.get("start_timestamp", "")  # Ensure start_timestamp is included
+            "duration_seconds": duration_seconds,  # Pass raw seconds
         }
         sources.append(source)
     
