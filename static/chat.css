@@ -1,0 +1,1144 @@
+/* OPTEEE Chat Interface Styles - Consolidated */
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --sidebar-width: 280px;
+    --border-color: #e2e8f0;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-tertiary: #f1f5f9;
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --accent-color: #0f766e;
+    --accent-hover: #0d9488;
+    --accent-light: #f0fdfa;
+    --success-color: #059669;
+    --warning-color: #d97706;
+    --error-color: #dc2626;
+    --info-color: #0284c7;
+    --border-radius: 8px;
+    --border-radius-sm: 6px;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Main Layout */
+#main-container {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr;
+    min-height: 100vh;
+    background-color: var(--bg-secondary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Sidebar Styles */
+#sidebar {
+    background-color: var(--bg-primary);
+    border-right: 1px solid var(--border-color);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* Override for sidebar header row */
+#sidebar .gr-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#sidebar .gr-row h3 {
+    margin: 0;
+    flex: 1;
+}
+
+.new-chat-btn {
+    background-color: var(--accent-color) !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: var(--border-radius-sm) !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.new-chat-btn:hover {
+    background-color: var(--accent-hover) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+.chat-history {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.history-item {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.history-item:hover {
+    background-color: var(--accent-light);
+    border-color: var(--accent-color);
+}
+
+.history-item.active {
+    background-color: var(--accent-light);
+    border-color: var(--accent-color);
+    box-shadow: var(--shadow-md);
+}
+
+.history-question {
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.history-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.history-empty {
+    color: var(--text-muted);
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.875rem;
+}
+
+/* Recent Prompts Styles */
+.prompts-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 1.5rem 0 0.75rem 0;
+}
+
+.prompts-container {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.prompt-item {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.25rem;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    background-color: var(--bg-secondary);
+    font-size: 0.8rem;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.prompt-item:hover {
+    background-color: var(--accent-light);
+    border-color: var(--accent-color);
+}
+
+.prompt-text {
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+    padding-right: 0.5rem;
+}
+
+.prompt-delete-btn {
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.2rem;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.prompt-delete-btn:hover {
+    background-color: var(--error-color, #ef4444);
+    color: white;
+}
+
+.prompts-empty {
+    color: var(--text-muted);
+    font-style: italic;
+    text-align: center;
+    padding: 0.75rem;
+    font-size: 0.8rem;
+}
+
+/* Main Panel Styles */
+#main-panel {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.main-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.main-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.main-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+/* Example Questions */
+.example-questions {
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.example-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+.example-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.example-button {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 0.75rem !important;
+    border-radius: var(--border-radius) !important;
+    text-align: left !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    font-size: 0.875rem !important;
+    line-height: 1.4 !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.example-button:hover {
+    background-color: var(--accent-light) !important;
+    border-color: var(--accent-color) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+/* User Input Area */
+.user-input-section {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+}
+
+.input-container {
+    position: relative;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s ease;
+    width: 100%;
+    max-width: none;
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+    height: auto !important;
+}
+
+.input-container:focus-within {
+    border-color: var(--accent-color);
+    box-shadow: var(--shadow-md);
+}
+
+/* Override any Gradio flex-grow that's making containers too tall */
+#user-input-section, #user-input-section > *, .user-input-section, .user-input-section > * {
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+}
+
+/* Target the specific Gradio container classes */
+.gap.svelte-vt1mxs, .contain.svelte-vt1mxs {
+    flex-grow: 0 !important;
+    min-height: auto !important;
+}
+
+/* Processing Bar */
+.processing-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-hover), var(--accent-color));
+    background-size: 200% 100%;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+.processing-bar.active {
+    opacity: 1;
+    transform: scaleX(1);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Processing bar container */
+#processing-bar-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.input-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.input-wrapper textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    border: none !important;
+    background: var(--bg-secondary) !important;
+    resize: vertical !important;
+    outline: none !important;
+    box-shadow: none !important;
+    padding: 0.75rem !important;
+    padding-right: 2.5rem !important;
+    padding-bottom: 0.75rem !important;
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+    height: 60px !important;
+    min-height: 60px !important;
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+    color: #000000 !important;
+}
+
+.input-wrapper textarea:focus {
+    border: none !important;
+    box-shadow: none !important;
+    background: var(--bg-secondary) !important;
+    color: #000000 !important;
+}
+
+.input-wrapper textarea::placeholder {
+    color: #666666 !important;
+    opacity: 0.7 !important;
+}
+
+.submit-btn {
+    position: absolute !important;
+    bottom: 0.5rem !important;
+    right: 0.5rem !important;
+    background-color: var(--accent-color) !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.5rem 1.5rem !important;
+    border-radius: 4px !important;
+    font-size: 0.7rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    box-shadow: var(--shadow-sm) !important;
+    width: 2rem !important;
+    height: 1.5rem !important;
+    z-index: 10 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.submit-btn:hover {
+    background-color: var(--accent-hover) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+.submit-btn:disabled {
+    background-color: var(--text-muted) !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+}
+
+/* Answer Display */
+.answer-section {
+    margin-bottom: 2rem;
+}
+
+.answer-content {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    min-height: 100px;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Enhanced Markdown content styling within answer */
+.answer-content h1, .answer-content h2, .answer-content h3, .answer-content h4, .answer-content h5, .answer-content h6 {
+    color: var(--accent-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.answer-content h1:first-child, .answer-content h2:first-child, .answer-content h3:first-child, .answer-content h4:first-child, .answer-content h5:first-child, .answer-content h6:first-child {
+    margin-top: 0;
+}
+
+.answer-content h1 { font-size: 1.5rem; }
+.answer-content h2 { font-size: 1.25rem; }
+.answer-content h3 { font-size: 1.125rem; }
+.answer-content h4 { font-size: 1rem; }
+
+.answer-content p {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.answer-content ul, .answer-content ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+.answer-content li {
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.answer-content strong, .answer-content b {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.answer-content em, .answer-content i {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+.answer-content code {
+    background-color: var(--bg-tertiary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.875rem;
+    color: var(--accent-color);
+    border: 1px solid var(--border-color);
+}
+
+.answer-content pre {
+    background-color: var(--bg-tertiary);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.answer-content pre code {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+.answer-content blockquote {
+    border-left: 4px solid var(--accent-color);
+    padding-left: 1rem;
+    margin: 1rem 0;
+    color: var(--text-secondary);
+    font-style: italic;
+    background-color: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.answer-content a {
+    color: var(--accent-color);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.answer-content a:hover {
+    color: var(--accent-hover);
+    border-bottom-color: var(--accent-hover);
+}
+
+.answer-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.answer-content th, .answer-content td {
+    border: 1px solid var(--border-color);
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.answer-content th {
+    background-color: var(--bg-secondary);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.answer-content hr {
+    border: none;
+    height: 2px;
+    background-color: var(--border-color);
+    margin: 1.5rem 0;
+}
+
+.answer-placeholder {
+    color: var(--text-muted);
+    font-style: italic;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Video Reference Cards */
+.video-references {
+    display: grid;
+    gap: 1rem;
+}
+
+.video-card {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-color);
+}
+
+.video-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 0.75rem; /* Reduced margin */
+    gap: 1rem;
+}
+
+.video-title-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.video-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin: 0;
+    line-height: 1.4;
+    flex: 1;
+}
+
+.video-title:hover {
+    text-decoration: underline;
+}
+
+.relevance-score, .video-score {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid var(--accent-color);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.video-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.75rem;
+}
+
+.video-metadata {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--text-primary);
+}
+
+.metadata-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.metadata-item svg {
+    flex-shrink: 0;
+    color: currentColor;
+}
+
+.transcript-snippet {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.transcript-snippet p {
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.video-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.video-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-secondary) !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 0.35rem !important;
+    border-radius: var(--border-radius-sm) !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    box-shadow: none !important;
+}
+
+.video-action-btn:hover {
+    background-color: var(--accent-light) !important;
+    color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+    transform: translateY(-1px);
+}
+
+.video-action-btn.copied {
+    color: var(--success-color) !important;
+    border-color: var(--success-color) !important;
+}
+
+.video-link-btn {
+    background-color: var(--accent-color) !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.75rem 1.25rem !important;
+    border-radius: var(--border-radius-sm) !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.video-link-btn:hover {
+    background-color: var(--accent-hover) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #main-container {
+        grid-template-columns: 1fr;
+    }
+    
+    #sidebar {
+        display: none;
+    }
+    
+    #main-panel {
+        padding: 1rem;
+    }
+    
+    .main-title {
+        font-size: 1.75rem;
+    }
+    
+    .example-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .user-input-section {
+        padding: 0 0.5rem;
+    }
+    
+    .input-wrapper textarea {
+        padding-right: 2.25rem !important;
+    }
+    
+    .submit-btn {
+        width: 2rem !important;
+        height: 1.25rem !important;
+        font-size: 0.65rem !important;
+        bottom: 0.4rem !important;
+        right: 0.4rem !important;
+    }
+    
+    .video-metadata {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+    
+    .video-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-metadata {
+        grid-template-columns: 1fr;
+    }
+    
+    .user-input-section {
+        padding: 0 0.25rem;
+    }
+    
+    .input-wrapper textarea {
+        padding-right: 2rem !important;
+    }
+    
+    .submit-btn {
+        width: 2rem !important;
+        height: 1rem !important;
+        font-size: 0.6rem !important;
+        bottom: 0.3rem !important;
+        right: 0.3rem !important;
+    }
+    
+    .example-grid {
+        gap: 0.5rem;
+    }
+    
+    .example-button {
+        padding: 0.5rem !important;
+        font-size: 0.8rem !important;
+    }
+}
+
+/* Gradio Overrides */
+.gradio-container {
+    background-color: var(--bg-secondary) !important;
+}
+
+.gradio-container .wrap {
+    background-color: transparent !important;
+}
+
+/* Input field styling - Override for textareas outside input-wrapper */
+textarea:not(.input-wrapper textarea), input[type="text"] {
+    background-color: var(--bg-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+    border-radius: var(--border-radius) !important;
+    padding: 0.75rem !important;
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+    transition: all 0.2s ease !important;
+}
+
+textarea:focus, input[type="text"]:focus {
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1) !important;
+    outline: none !important;
+}
+
+/* Ensure Gradio components take full width */
+#user-input,
+#user-input .gr-textbox,
+#user-input textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.gr-textbox,
+.gr-textbox-container {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Dropdown styling */
+.dropdown select {
+    background-color: var(--bg-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+    border-radius: var(--border-radius-sm) !important;
+    padding: 0.5rem !important;
+    font-size: 0.875rem !important;
+}
+
+/* Slider styling */
+.slider input[type="range"] {
+    accent-color: var(--accent-color) !important;
+}
+
+/* Settings accordion specific styling - Enhanced and more robust */
+#sidebar .gr-accordion,
+#sidebar .settings-accordion {
+    background-color: var(--bg-primary) !important;
+    border: 2px solid var(--border-color) !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--shadow-md) !important;
+    margin-top: 1rem !important;
+    overflow: hidden !important;
+}
+
+/* Accordion header - comprehensive targeting for maximum compatibility */
+#sidebar .gr-accordion details summary,
+#sidebar .gr-accordion > div:first-child,
+#sidebar .settings-accordion details summary,
+#sidebar .settings-accordion > div:first-child,
+#sidebar .gr-accordion-header,
+#sidebar .gr-accordion summary,
+#sidebar details summary {
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)) !important;
+    color: var(--text-primary) !important;
+    padding: 1rem !important;
+    font-weight: 700 !important;
+    border: none !important;
+    border-bottom: 2px solid var(--border-color) !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    transition: all 0.3s ease !important;
+    font-size: 0.95rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    position: relative !important;
+}
+
+/* Accordion header hover states */
+#sidebar .gr-accordion details summary:hover,
+#sidebar .gr-accordion > div:first-child:hover,
+#sidebar .settings-accordion details summary:hover,
+#sidebar .settings-accordion > div:first-child:hover,
+#sidebar .gr-accordion-header:hover,
+#sidebar .gr-accordion summary:hover,
+#sidebar details summary:hover {
+    background: linear-gradient(135deg, var(--accent-light), var(--bg-secondary)) !important;
+    color: var(--accent-color) !important;
+    box-shadow: inset 0 0 0 2px var(--accent-color) !important;
+}
+
+/* Accordion content */
+#sidebar .gr-accordion details > div,
+#sidebar .gr-accordion > div:last-child,
+#sidebar .settings-accordion details > div,
+#sidebar .settings-accordion > div:last-child,
+#sidebar .gr-accordion-content {
+    background-color: var(--bg-primary) !important;
+    padding: 1.5rem !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Settings form elements - Enhanced styling with better contrast */
+#sidebar .gr-accordion label,
+#sidebar .settings-accordion label,
+#sidebar .gr-accordion .gr-box label,
+#sidebar .settings-accordion .gr-box label {
+    color: var(--text-primary) !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    margin-bottom: 0.75rem !important;
+    display: block !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.8px !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Dropdown styling - Enhanced with better visual hierarchy */
+#sidebar .gr-accordion select,
+#sidebar .settings-accordion select,
+#sidebar .gr-dropdown select,
+#sidebar .gr-accordion .gr-box select,
+#sidebar .settings-accordion .gr-box select {
+    background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary)) !important;
+    border: 2px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+    border-radius: var(--border-radius) !important;
+    padding: 0.875rem 1rem !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    width: 100% !important;
+    box-shadow: var(--shadow-sm) !important;
+    cursor: pointer !important;
+}
+
+#sidebar .gr-accordion select:hover,
+#sidebar .settings-accordion select:hover,
+#sidebar .gr-dropdown select:hover,
+#sidebar .gr-accordion .gr-box select:hover,
+#sidebar .settings-accordion .gr-box select:hover {
+    border-color: var(--accent-color) !important;
+    background: var(--bg-primary) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+#sidebar .gr-accordion select:focus,
+#sidebar .settings-accordion select:focus,
+#sidebar .gr-dropdown select:focus,
+#sidebar .gr-accordion .gr-box select:focus,
+#sidebar .settings-accordion .gr-box select:focus {
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.2) !important;
+    outline: none !important;
+    background: var(--bg-primary) !important;
+}
+
+/* Slider styling - Enhanced with better visual feedback */
+#sidebar .gr-accordion input[type="range"],
+#sidebar .settings-accordion input[type="range"],
+#sidebar .gr-slider input[type="range"],
+#sidebar .gr-accordion .gr-box input[type="range"],
+#sidebar .settings-accordion .gr-box input[type="range"] {
+    width: 100% !important;
+    height: 8px !important;
+    border-radius: 4px !important;
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)) !important;
+    margin: 0.75rem 0 !important;
+    cursor: pointer !important;
+    appearance: none !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+#sidebar .gr-accordion input[type="range"]::-webkit-slider-thumb,
+#sidebar .settings-accordion input[type="range"]::-webkit-slider-thumb,
+#sidebar .gr-slider input[type="range"]::-webkit-slider-thumb,
+#sidebar .gr-accordion .gr-box input[type="range"]::-webkit-slider-thumb,
+#sidebar .settings-accordion .gr-box input[type="range"]::-webkit-slider-thumb {
+    appearance: none !important;
+    height: 24px !important;
+    width: 24px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover)) !important;
+    cursor: pointer !important;
+    border: 3px solid var(--bg-primary) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.2s ease !important;
+}
+
+#sidebar .gr-accordion input[type="range"]::-webkit-slider-thumb:hover,
+#sidebar .settings-accordion input[type="range"]::-webkit-slider-thumb:hover,
+#sidebar .gr-slider input[type="range"]::-webkit-slider-thumb:hover,
+#sidebar .gr-accordion .gr-box input[type="range"]::-webkit-slider-thumb:hover,
+#sidebar .settings-accordion .gr-box input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+#sidebar .gr-accordion input[type="range"]::-moz-range-thumb,
+#sidebar .settings-accordion input[type="range"]::-moz-range-thumb,
+#sidebar .gr-slider input[type="range"]::-moz-range-thumb,
+#sidebar .gr-accordion .gr-box input[type="range"]::-moz-range-thumb,
+#sidebar .settings-accordion .gr-box input[type="range"]::-moz-range-thumb {
+    height: 24px !important;
+    width: 24px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover)) !important;
+    cursor: pointer !important;
+    border: 3px solid var(--bg-primary) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Settings container styling - Remove default Gradio styling */
+#sidebar .gr-accordion .gr-form,
+#sidebar .settings-accordion .gr-form,
+#sidebar .gr-accordion .gr-box,
+#sidebar .settings-accordion .gr-box {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* Settings row and column spacing */
+#sidebar .gr-accordion .gr-row,
+#sidebar .settings-accordion .gr-row,
+#sidebar .gr-accordion .gr-column,
+#sidebar .settings-accordion .gr-column {
+    margin-bottom: 1.5rem !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* Accordion expand/collapse indicator - Gear icon */
+#sidebar .gr-accordion details summary::after,
+#sidebar .settings-accordion details summary::after,
+#sidebar .gr-accordion > div:first-child::after,
+#sidebar .settings-accordion > div:first-child::after,
+#sidebar .gr-accordion-header::after,
+#sidebar .gr-accordion summary::after,
+#sidebar details summary::after {
+    content: "⚙️" !important;
+    color: var(--accent-color) !important;
+    font-size: 1.2rem !important;
+    margin-left: auto !important;
+    transition: transform 0.3s ease !important;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1)) !important;
+}
+
+#sidebar .gr-accordion[open] details summary::after,
+#sidebar .settings-accordion[open] details summary::after,
+#sidebar .gr-accordion[open] > div:first-child::after,
+#sidebar .settings-accordion[open] > div:first-child::after,
+#sidebar .gr-accordion[open] .gr-accordion-header::after,
+#sidebar .gr-accordion[open] summary::after,
+#sidebar details[open] summary::after {
+    transform: rotate(180deg) !important;
+}
+
+/* Force visibility and proper display */
+#sidebar .gr-accordion *,
+#sidebar .settings-accordion * {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Settings title styling in accordion header */
+#sidebar .gr-accordion details summary span,
+#sidebar .settings-accordion details summary span,
+#sidebar .gr-accordion > div:first-child span,
+#sidebar .settings-accordion > div:first-child span,
+#sidebar .gr-accordion-header span,
+#sidebar .gr-accordion summary span,
+#sidebar details summary span {
+    color: var(--text-primary) !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    margin: 0 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Slider value display */
+#sidebar .gr-accordion .gr-box .gr-column:last-child,
+#sidebar .settings-accordion .gr-box .gr-column:last-child {
+    text-align: center !important;
+    font-weight: 600 !important;
+    color: var(--accent-color) !important;
+    background: var(--bg-secondary) !important;
+    padding: 0.5rem !important;
+    border-radius: var(--border-radius-sm) !important;
+    margin-top: 0.5rem !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+/* Loading and status indicators */
+.loading {
+    color: var(--info-color);
+}
+
+.success {
+    color: var(--success-color);
+}
+
+.warning {
+    color: var(--warning-color);
+}
+
+.error {
+    color: var(--error-color);
+} 
