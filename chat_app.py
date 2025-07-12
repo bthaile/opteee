@@ -915,12 +915,12 @@ def create_chat_interface():
                     "sources": response_data["sources"]
                 }) + "|HIDE_PROCESSING"
                 
-                return "", new_history, gr.update(value=answer_html), response_data["sources"], save_trigger
+                return message, new_history, gr.update(value=answer_html), response_data["sources"], save_trigger
                 
             except Exception as e:
                 error_msg = f"Error processing question: {str(e)}"
                 error_html = f'<div class="answer-content" style="color: var(--error-color);">{error_msg}</div>'
-                return "", history, gr.update(value=error_html), "", "HIDE_PROCESSING"
+                return message, history, gr.update(value=error_html), "", "HIDE_PROCESSING"
         
         # Wire up the interface
         msg_input.submit(
