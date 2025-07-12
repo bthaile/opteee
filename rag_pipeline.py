@@ -543,7 +543,7 @@ def run_rag_query(retriever, chain, query: str) -> Dict[str, Any]:
             "start_timestamp_seconds": timestamp_seconds,
             "timestamp": meta.get("start_timestamp", ""),
             "channel": meta.get("channel_name", meta.get("channel", "Unknown")),
-            "upload_date": meta.get("published_at", meta.get("upload_date", "Unknown")),  # Use published_at first
+            "upload_date": meta.get("upload_date") or meta.get("published_at") or "Unknown",
             "score": meta.get("score", 0.0),
             "content": doc.page_content,  # Include the actual transcript content
             "duration_seconds": duration_seconds,  # Pass raw seconds
