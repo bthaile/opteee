@@ -220,26 +220,8 @@ def chat_response(message: str, history: List[Dict], provider: str = "openai", n
 def create_chat_interface():
     """Create the modern sidebar + main panel interface using Gradio"""
     
-    custom_loading_css = """
-    @keyframes loading-animation {
-        0% { background-position: 200% 0; }
-        100% { background-position: -200% 0; }
-    }
-    #loading-indicator {
-        height: 3px;
-        background: linear-gradient(270deg, #d1d5db, #3b82f6, #d1d5db);
-        background-size: 200% 200%;
-        animation: loading-animation 2s linear infinite;
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-    }
-    #loading-indicator.active {
-        opacity: 1;
-    }
-    """
-    
     with gr.Blocks(
-        css=load_chat_css() + custom_loading_css,
+        css=load_chat_css(),
         title="OPTEEE - Options Trading Expert",
         theme=gr.themes.Soft()
     ) as demo:
@@ -313,7 +295,6 @@ def create_chat_interface():
                             elem_id="user-input",
                             elem_classes="input-wrapper"
                         )
-                        loading_indicator = gr.HTML('<div id="loading-indicator"></div>')
                         submit_btn = gr.Button(
                             "Send",
                             variant="primary",
@@ -386,14 +367,6 @@ def create_chat_interface():
                     const trigger = document.querySelector('#js-trigger');
                     if (trigger && trigger.innerHTML) {
                         const content = trigger.innerHTML;
-                        
-                        // Handle processing bar triggers
-                        if (content.includes('SHOW_PROCESSING')) {
-                            if (window.loadingIndicator) window.loadingIndicator.show();
-                        }
-                        if (content.includes('HIDE_PROCESSING')) {
-                            if (window.loadingIndicator) window.loadingIndicator.hide();
-                        }
                         
                         // Handle chat save triggers
                         if (content.includes('SAVE_CHAT:')) {
@@ -772,18 +745,6 @@ def create_chat_interface():
             
             // Initialize prompt history manager
             window.promptHistory = new PromptHistoryManager();
-
-            // Loading indicator management
-            window.loadingIndicator = {
-                show: function() {
-                    const indicator = document.querySelector('#loading-indicator');
-                    if (indicator) indicator.classList.add('active');
-                },
-                hide: function() {
-                    const indicator = document.querySelector('#loading-indicator');
-                    if (indicator) indicator.classList.remove('active');
-                }
-            };
             
             // Example question selection
             window.selectExample = function(button) {
@@ -817,21 +778,6 @@ def create_chat_interface():
                 });
             };
 
-            // Add event listeners for submit events
-            setTimeout(() => {
-                const submitBtn = document.querySelector('#submit-btn');
-                
-                // Show processing bar and loading state on submit button click
-                if (submitBtn) {
-                    submitBtn.addEventListener('click', function() {
-                        const input = document.querySelector('#user-input textarea');
-                        if (input && input.value.trim()) {
-                            if (window.loadingIndicator) window.loadingIndicator.show();
-                        }
-                    });
-                }
-                
-            }, 1000);
         }
         """)
         
@@ -870,7 +816,7 @@ def create_chat_interface():
         def handle_submit(message, history, provider, num_results):
             """Handle user message submission"""
             if not message.strip():
-                return "", history, gr.update(value='<div class="answer-placeholder">Ask a question to get started</div>'), "", "HIDE_PROCESSING"
+                return "", history, gr.update(value='<div class="answer-placeholder">Ask a question to get started</div>'), "", ""
             
             try:
                 # Get response from RAG pipeline
@@ -888,7 +834,7 @@ def create_chat_interface():
                 answer_html_content = response_data["answer"]
                 answer_html = f'<div class="answer-content">{answer_html_content}</div>'
                 
-                # Trigger localStorage save and hide processing bar
+                # Trigger localStorage save
                 json_payload = json.dumps({
                     "question": message,
                     "answer": answer_html_content,  # Save the HTML version
@@ -896,14 +842,14 @@ def create_chat_interface():
                 }).encode('utf-8')
                 b64_payload = base64.b64encode(json_payload).decode('utf-8')
                 
-                save_trigger = f"SAVE_CHAT:{b64_payload}|HIDE_PROCESSING"
+                save_trigger = f"SAVE_CHAT:{b64_payload}"
                 
                 return message, new_history, gr.update(value=answer_html), response_data["sources"], save_trigger
                 
             except Exception as e:
                 error_msg = f"Error processing question: {str(e)}"
                 error_html = f'<div class="answer-content" style="color: var(--error-color);">{error_msg}</div>'
-                return message, history, gr.update(value=error_html), "", "HIDE_PROCESSING"
+                return message, history, gr.update(value=error_html), "", ""
         
         # Wire up the interface
         submit_btn.click(
