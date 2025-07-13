@@ -7,6 +7,7 @@ import gradio as gr
 import json
 import os
 import markdown
+import base64
 from datetime import datetime
 from typing import List, Dict, Any, Optional, Tuple
 from vector_search import search_vector_store, build_vector_store
@@ -219,8 +220,26 @@ def chat_response(message: str, history: List[Dict], provider: str = "openai", n
 def create_chat_interface():
     """Create the modern sidebar + main panel interface using Gradio"""
     
+    custom_loading_css = """
+    @keyframes loading-animation {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+    }
+    #loading-indicator {
+        height: 3px;
+        background: linear-gradient(270deg, #d1d5db, #3b82f6, #d1d5db);
+        background-size: 200% 200%;
+        animation: loading-animation 2s linear infinite;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+    #loading-indicator.active {
+        opacity: 1;
+    }
+    """
+    
     with gr.Blocks(
-        css=load_chat_css(),
+        css=load_chat_css() + custom_loading_css,
         title="OPTEEE - Options Trading Expert",
         theme=gr.themes.Soft()
     ) as demo:
@@ -242,6 +261,13 @@ def create_chat_interface():
                         elem_classes="new-chat-btn",
                         size="sm"
                     )
+                
+                # Chat History section
+                gr.HTML(
+                    value='<div class="history-empty">No previous chats</div>',
+                    elem_id="history-list",
+                    elem_classes="chat-history-container"
+                )
                 
                 # Recent Prompts section
                 gr.HTML('<h4 class="prompts-title">Recent Prompts</h4>')
@@ -287,17 +313,12 @@ def create_chat_interface():
                             elem_id="user-input",
                             elem_classes="input-wrapper"
                         )
+                        loading_indicator = gr.HTML('<div id="loading-indicator"></div>')
                         submit_btn = gr.Button(
                             "Send",
                             variant="primary",
                             elem_classes="submit-btn",
                             elem_id="submit-btn"
-                        )
-                        # Processing bar
-                        processing_bar = gr.HTML(
-                            value='<div class="processing-bar" id="processing-bar"></div>',
-                            elem_id="processing-bar-container",
-                            visible=True
                         )
                 
                 # Answer Display Section
@@ -368,20 +389,17 @@ def create_chat_interface():
                         
                         // Handle processing bar triggers
                         if (content.includes('SHOW_PROCESSING')) {
-                            if (window.processingBar) {
-                                window.processingBar.show();
-                            }
+                            if (window.loadingIndicator) window.loadingIndicator.show();
                         }
                         if (content.includes('HIDE_PROCESSING')) {
-                            if (window.processingBar) {
-                                window.processingBar.hide();
-                            }
+                            if (window.loadingIndicator) window.loadingIndicator.hide();
                         }
                         
                         // Handle chat save triggers
                         if (content.includes('SAVE_CHAT:')) {
                             try {
-                                const chatData = content.split('SAVE_CHAT:')[1].split('|')[0];
+                                const b64Data = content.split('SAVE_CHAT:')[1].split('|')[0];
+                                const chatData = atob(b64Data);
                                 const data = JSON.parse(chatData);
                                 this.addChatSession(data.question, data.answer, data.sources);
                             } catch (e) {
@@ -568,13 +586,30 @@ def create_chat_interface():
                     console.log('Initializing Prompt History Manager');
                     this.displayPrompts();
                     this.setupPromptCapture();
+                    this.setupPromptSelection();
+                }
+
+                setupPromptSelection() {
+                    setTimeout(() => {
+                        const container = document.querySelector('#prompts-list');
+                        if (container) {
+                            container.addEventListener('click', (e) => {
+                                const promptItem = e.target.closest('.prompt-item');
+                                if (promptItem && !e.target.closest('.prompt-delete-btn')) {
+                                    const promptText = promptItem.dataset.prompt;
+                                    if (promptText) {
+                                        this.selectPrompt(promptText);
+                                    }
+                                }
+                            });
+                        }
+                    }, 1000);
                 }
                 
                 setupPromptCapture() {
-                    // Monitor for submit button clicks and Enter key presses
+                    // Monitor for submit button clicks
                     setTimeout(() => {
                         const submitBtn = document.querySelector('#submit-btn');
-                        const userInput = document.querySelector('#user-input textarea');
                         
                         if (submitBtn) {
                             submitBtn.addEventListener('click', () => {
@@ -582,13 +617,6 @@ def create_chat_interface():
                             });
                         }
                         
-                        if (userInput) {
-                            userInput.addEventListener('keydown', (e) => {
-                                if (e.key === 'Enter' && !e.shiftKey) {
-                                    this.capturePrompt();
-                                }
-                            });
-                        }
                     }, 1000);
                 }
                 
@@ -647,29 +675,44 @@ def create_chat_interface():
                     }
                     
                     console.log('Updating prompts container:', container.id || container.className);
-                    
                     const prompts = this.loadPromptsFromStorage();
+
+                    // Clear existing content before re-rendering
+                    container.innerHTML = ''; 
                     
                     if (prompts.length === 0) {
                         container.innerHTML = '<div class="prompts-empty">No recent prompts</div>';
                         return;
                     }
                     
-                    let html = '';
                     prompts.forEach((prompt, index) => {
                         const truncatedText = prompt.text.length > 60 
                             ? prompt.text.substring(0, 57) + '...' 
                             : prompt.text;
                         
-                        html += `
-                            <div class="prompt-item" title="${this.escapeHtml(prompt.text)}">
-                                <div class="prompt-text" onclick="promptHistory.selectPrompt('${this.escapeHtml(prompt.text)}')">${this.escapeHtml(truncatedText)}</div>
-                                <button class="prompt-delete-btn" onclick="event.stopPropagation(); promptHistory.deletePrompt(${index})" title="Remove prompt">×</button>
-                            </div>
-                        `;
+                        // Create elements programmatically
+                        const promptItem = document.createElement('div');
+                        promptItem.className = 'prompt-item';
+                        promptItem.title = prompt.text;
+                        promptItem.dataset.prompt = prompt.text; // Store raw text
+
+                        const promptTextDiv = document.createElement('div');
+                        promptTextDiv.className = 'prompt-text';
+                        promptTextDiv.textContent = truncatedText;
+
+                        const deleteButton = document.createElement('button');
+                        deleteButton.className = 'prompt-delete-btn';
+                        deleteButton.title = 'Remove prompt';
+                        deleteButton.innerHTML = '×';
+                        deleteButton.onclick = (e) => {
+                            e.stopPropagation();
+                            this.deletePrompt(index);
+                        };
+
+                        promptItem.appendChild(promptTextDiv);
+                        promptItem.appendChild(deleteButton);
+                        container.appendChild(promptItem);
                     });
-                    
-                    container.innerHTML = html;
                 }
                 
                 findPromptsContainer() {
@@ -693,7 +736,7 @@ def create_chat_interface():
                 selectPrompt(promptText) {
                     const input = document.querySelector('#user-input textarea');
                     if (input) {
-                        input.value = promptText;
+                        input.value = promptText; // Use raw text directly
                         input.focus();
                         // Trigger input event to ensure Gradio recognizes the change
                         input.dispatchEvent(new Event('input', { bubbles: true }));
@@ -701,9 +744,14 @@ def create_chat_interface():
                 }
                 
                 escapeHtml(text) {
-                    const div = document.createElement('div');
-                    div.textContent = text;
-                    return div.innerHTML;
+                    const map = {
+                        '&': '&amp;',
+                        '<': '&lt;',
+                        '>': '&gt;',
+                        '"': '&quot;',
+                        "'": '&#039;'
+                    };
+                    return text.replace(/[&<>"']/g, function(m) { return map[m]; });
                 }
                 
                 deletePrompt(index) {
@@ -724,26 +772,16 @@ def create_chat_interface():
             
             // Initialize prompt history manager
             window.promptHistory = new PromptHistoryManager();
-            
-            // Processing bar management
-            window.processingBar = {
+
+            // Loading indicator management
+            window.loadingIndicator = {
                 show: function() {
-                    const bar = document.querySelector('#processing-bar');
-                    if (bar) {
-                        bar.classList.add('active');
-                    }
+                    const indicator = document.querySelector('#loading-indicator');
+                    if (indicator) indicator.classList.add('active');
                 },
                 hide: function() {
-                    const bar = document.querySelector('#processing-bar');
-                    if (bar) {
-                        bar.classList.remove('active');
-                    }
-                    // Also remove loading state from submit button
-                    const submitBtn = document.querySelector('#submit-btn');
-                    if (submitBtn) {
-                        submitBtn.classList.remove('loading');
-                        submitBtn.disabled = false;
-                    }
+                    const indicator = document.querySelector('#loading-indicator');
+                    if (indicator) indicator.classList.remove('active');
                 }
             };
             
@@ -775,79 +813,24 @@ def create_chat_interface():
                     }, 2000);
                     
                 }).catch(function(err) {
-                    // Fallback for older browsers
                     console.error('Could not copy text: ', err);
-                    
-                    // Try fallback method
-                    const textArea = document.createElement('textarea');
-                    textArea.value = text;
-                    document.body.appendChild(textArea);
-                    textArea.focus();
-                    textArea.select();
-                    
-                    try {
-                        document.execCommand('copy');
-                        // Show success feedback
-                        const originalIcon = button.innerHTML;
-                        const originalClass = button.className;
-                        
-                        button.innerHTML = '✓';
-                        button.classList.add('copied');
-                        
-                        setTimeout(function() {
-                            button.innerHTML = originalIcon;
-                            button.className = originalClass;
-                        }, 2000);
-                        
-                    } catch (err) {
-                        console.error('Fallback copy failed: ', err);
-                        // Show error feedback
-                        const originalIcon = button.innerHTML;
-                        button.innerHTML = '✗';
-                        button.style.color = '#dc3545';
-                        
-                        setTimeout(function() {
-                            button.innerHTML = originalIcon;
-                            button.style.color = '';
-                        }, 2000);
-                    }
-                    
-                    document.body.removeChild(textArea);
                 });
             };
-            
+
             // Add event listeners for submit events
             setTimeout(() => {
                 const submitBtn = document.querySelector('#submit-btn');
-                const userInput = document.querySelector('#user-input textarea');
                 
                 // Show processing bar and loading state on submit button click
                 if (submitBtn) {
                     submitBtn.addEventListener('click', function() {
                         const input = document.querySelector('#user-input textarea');
                         if (input && input.value.trim()) {
-                            window.processingBar.show();
-                            this.classList.add('loading');
-                            this.disabled = true;
+                            if (window.loadingIndicator) window.loadingIndicator.show();
                         }
                     });
                 }
                 
-                                        // Show processing bar and loading state on Enter key press
-                        if (userInput) {
-                            userInput.addEventListener('keydown', function(e) {
-                                if (e.key === 'Enter' && !e.shiftKey) {
-                                    if (this.value.trim()) {
-                                        window.processingBar.show();
-                                        const submitButton = document.querySelector('#submit-btn');
-                                        if (submitButton) {
-                                            submitButton.classList.add('loading');
-                                            submitButton.disabled = true;
-                                        }
-                                    }
-                                }
-                            });
-                        }
             }, 1000);
         }
         """)
@@ -906,27 +889,23 @@ def create_chat_interface():
                 answer_html = f'<div class="answer-content">{answer_html_content}</div>'
                 
                 # Trigger localStorage save and hide processing bar
-                import json
-                save_trigger = "SAVE_CHAT:" + json.dumps({
+                json_payload = json.dumps({
                     "question": message,
                     "answer": answer_html_content,  # Save the HTML version
                     "sources": response_data["sources"]
-                }) + "|HIDE_PROCESSING"
+                }).encode('utf-8')
+                b64_payload = base64.b64encode(json_payload).decode('utf-8')
                 
-                return "", new_history, gr.update(value=answer_html), response_data["sources"], save_trigger
+                save_trigger = f"SAVE_CHAT:{b64_payload}|HIDE_PROCESSING"
+                
+                return message, new_history, gr.update(value=answer_html), response_data["sources"], save_trigger
                 
             except Exception as e:
                 error_msg = f"Error processing question: {str(e)}"
                 error_html = f'<div class="answer-content" style="color: var(--error-color);">{error_msg}</div>'
-                return "", history, gr.update(value=error_html), "", "HIDE_PROCESSING"
+                return message, history, gr.update(value=error_html), "", "HIDE_PROCESSING"
         
         # Wire up the interface
-        msg_input.submit(
-            handle_submit,
-            inputs=[msg_input, chat_history, provider_dropdown, num_results_input],
-            outputs=[msg_input, chat_history, answer_display, sources_display, js_trigger]
-        )
-        
         submit_btn.click(
             handle_submit,
             inputs=[msg_input, chat_history, provider_dropdown, num_results_input],
@@ -935,12 +914,13 @@ def create_chat_interface():
         
         # New Chat functionality
         def start_new_chat():
-            """Start a new chat session"""
-            return [], '<div class="answer-placeholder">Ask a question to get started</div>', "", "NEW_CHAT"
+            """Start a new chat session by resetting server-side history"""
+            return []
         
         new_chat_btn.click(
             start_new_chat,
-            outputs=[chat_history, answer_display, sources_display, js_trigger],
+            inputs=[],
+            outputs=[chat_history],
             js="() => { if (window.chatHistory) window.chatHistory.startNewChat(); }"
         )
     
