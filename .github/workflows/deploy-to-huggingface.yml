@@ -37,8 +37,8 @@ jobs:
           echo "Current directory: $(pwd)"
           echo "Current user: $(whoami)"
           
-          # Run the application
-          python app.py
+          # Run the FastAPI application
+          python main.py
           EOF
           
           chmod +x startup.sh

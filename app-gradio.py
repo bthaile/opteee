@@ -228,9 +228,6 @@ def create_chat_interface():
         
         # Global state for chat history
         chat_history = gr.State(value=[])
-        current_question = gr.State(value="")
-        current_answer = gr.State(value="")
-        current_sources = gr.State(value="")
         
         # Main container with two columns
         with gr.Row(elem_id="main-container"):
@@ -244,12 +241,6 @@ def create_chat_interface():
                         size="sm"
                     )
                 
-                # Chat History section
-                gr.HTML(
-                    value='<div class="history-empty">No previous chats</div>',
-                    elem_id="history-list",
-                    elem_classes="chat-history-container"
-                )
                 
                 # Recent Prompts section
                 gr.HTML('<h4 class="prompts-title">Recent Prompts</h4>')
@@ -315,405 +306,105 @@ def create_chat_interface():
                         value="",
                         elem_id="sources-display"
                     )
-                
-                # Hidden component for JavaScript triggers
-                js_trigger = gr.HTML(
-                    value="",
-                    elem_id="js-trigger",
-                    visible=False
-                )
         
-        # JavaScript for localStorage chat history and UI interactions
+        # JavaScript with proper localStorage management
         demo.load(lambda: None, js="""
         () => {
-            // Chat History Management
-            class ChatHistoryManager {
-                constructor() {
-                    this.storageKey = 'opteee_chat_history';
-                    this.currentSessionId = null;
-                    this.init();
-                }
-                
-                init() {
-                    console.log('Initializing Chat History Manager');
-                    this.setupEventListeners();
-                    this.loadAndDisplayHistory();
-                }
-                
-                setupEventListeners() {
-                    // Monitor for save triggers
-                    const observer = new MutationObserver(() => {
-                        this.checkForSaveTrigger();
-                    });
-                    
-                    // Find and observe the trigger element
-                    const findTrigger = () => {
-                        const trigger = document.querySelector('#js-trigger');
-                        if (trigger) {
-                            observer.observe(trigger, { childList: true, subtree: true });
-                            console.log('Trigger observer set up');
-                        } else {
-                            setTimeout(findTrigger, 500);
-                        }
-                    };
-                    
-                    findTrigger();
-                    
-                    // Also check periodically
-                    setInterval(() => this.checkForSaveTrigger(), 1000);
-                }
-                
-                checkForSaveTrigger() {
-                    const trigger = document.querySelector('#js-trigger');
-                    if (trigger && trigger.innerHTML) {
-                        const content = trigger.innerHTML;
-                        
-                        // Handle chat save triggers
-                        if (content.includes('SAVE_CHAT:')) {
-                            try {
-                                const b64Data = content.split('SAVE_CHAT:')[1].split('|')[0];
-                                const chatData = atob(b64Data);
-                                const data = JSON.parse(chatData);
-                                this.addChatSession(data.question, data.answer, data.sources);
-                            } catch (e) {
-                                console.error('Error parsing chat data:', e);
-                            }
-                        }
-                        
-                        trigger.innerHTML = '';
-                    }
-                }
-                
-                generateSessionId() {
-                    return 'chat_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-                }
-                
-                loadHistoryFromStorage() {
-                    try {
-                        const stored = localStorage.getItem(this.storageKey);
-                        return stored ? JSON.parse(stored) : [];
-                    } catch (e) {
-                        console.error('Error loading chat history:', e);
-                        return [];
-                    }
-                }
-                
-                saveHistoryToStorage(history) {
-                    try {
-                        localStorage.setItem(this.storageKey, JSON.stringify(history));
-                    } catch (e) {
-                        console.error('Error saving chat history:', e);
-                    }
-                }
-                
-                addChatSession(question, answer, sources) {
-                    console.log('Adding chat session:', question);
-                    
-                    const history = this.loadHistoryFromStorage();
-                    const sessionId = this.generateSessionId();
-                    
-                    const newSession = {
-                        id: sessionId,
-                        question: question,
-                        answer: answer,
-                        sources: sources,
-                        timestamp: new Date().toISOString(),
-                        title: this.generateChatTitle(question)
-                    };
-                    
-                    history.unshift(newSession);
-                    
-                    // Keep only last 50 conversations
-                    if (history.length > 50) {
-                        history.splice(50);
-                    }
-                    
-                    this.saveHistoryToStorage(history);
-                    this.currentSessionId = sessionId;
-                    this.displayHistory();
-                }
-                
-                generateChatTitle(question) {
-                    if (question.length <= 50) return question;
-                    return question.substring(0, 47) + '...';
-                }
-                
-                displayHistory() {
-                    const history = this.loadHistoryFromStorage();
-                    const container = this.findHistoryContainer();
-                    
-                    if (!container) {
-                        console.error('Chat history container not found');
-                        return;
-                    }
-                    
-                    console.log('Updating chat history container:', container.id || container.className);
-                    
-                    if (history.length === 0) {
-                        container.innerHTML = '<div class="history-empty">No previous chats</div>';
-                        return;
-                    }
-                    
-                    let html = '';
-                    history.forEach(session => {
-                        const date = new Date(session.timestamp).toLocaleDateString();
-                        const isActive = session.id === this.currentSessionId ? 'active' : '';
-                        
-                        html += `
-                            <div class="history-item ${isActive}" onclick="chatHistory.loadSession('${session.id}')">
-                                <div class="history-question">${session.title}</div>
-                                <div class="history-date">${date}</div>
-                            </div>
-                        `;
-                    });
-                    
-                    container.innerHTML = html;
-                }
-                
-                findHistoryContainer() {
-                    // Try specific selectors only - no fallback to avoid conflicts
-                    const selectors = [
-                        '#history-list', 
-                        '[data-testid="history-list"]', 
-                        '.chat-history-container'
-                    ];
-                    
-                    for (let selector of selectors) {
-                        const element = document.querySelector(selector);
-                        if (element) return element;
-                    }
-                    
-                    console.warn('Chat history container not found');
-                    return null;
-                }
-                
-                loadSession(sessionId) {
-                    console.log('Loading session:', sessionId);
-                    
-                    const history = this.loadHistoryFromStorage();
-                    const session = history.find(s => s.id === sessionId);
-                    
-                    if (!session) {
-                        console.error('Session not found:', sessionId);
-                        return;
-                    }
-                    
-                    this.currentSessionId = sessionId;
-                    
-                    // Update UI
-                    this.updateAnswer(session.answer);
-                    this.updateSources(session.sources);
-                    this.clearInput();
-                    this.displayHistory();
-                }
-                
-                updateAnswer(answer) {
-                    const answerDisplay = document.querySelector('#answer-display');
-                    if (answerDisplay) {
-                        answerDisplay.innerHTML = `<div class="answer-content">${answer}</div>`;
-                    }
-                }
-                
-                updateSources(sources) {
-                    const sourcesDisplay = document.querySelector('#sources-display');
-                    if (sourcesDisplay) {
-                        sourcesDisplay.innerHTML = sources || '';
-                    }
-                }
-                
-                clearInput() {
-                    const input = document.querySelector('#user-input textarea');
-                    if (input) {
-                        input.value = '';
-                    }
-                }
-                
-                startNewChat() {
-                    console.log('Starting new chat');
-                    this.currentSessionId = null;
-                    this.clearInput();
-                    this.updateAnswer('<div class="answer-placeholder">Ask a question to get started</div>');
-                    this.updateSources('');
-                    this.displayHistory();
-                }
-                
-                loadAndDisplayHistory() {
-                    setTimeout(() => {
-                        this.displayHistory();
-                    }, 500);
-                }
-            }
+            console.log('Initializing OPTEEE Chat Interface with localStorage');
             
-            // Initialize chat history manager
-            window.chatHistory = new ChatHistoryManager();
-            
-            // Prompt History Management
-            class PromptHistoryManager {
+            // Prompt management with localStorage
+            class PromptManager {
                 constructor() {
                     this.storageKey = 'opteee_prompt_history';
-                    this.maxPrompts = 10; // Keep last 10 prompts
+                    this.maxPrompts = 10;
+                    this.container = null;
                     this.init();
                 }
                 
                 init() {
-                    console.log('Initializing Prompt History Manager');
-                    this.displayPrompts();
-                    this.setupPromptCapture();
-                    this.setupPromptSelection();
-                }
-
-                setupPromptSelection() {
+                    // Find the prompts container
                     setTimeout(() => {
-                        const container = document.querySelector('#prompts-list');
-                        if (container) {
-                            container.addEventListener('click', (e) => {
-                                const promptItem = e.target.closest('.prompt-item');
-                                if (promptItem && !e.target.closest('.prompt-delete-btn')) {
-                                    const promptText = promptItem.dataset.prompt;
-                                    if (promptText) {
-                                        this.selectPrompt(promptText);
-                                    }
-                                }
-                            });
+                        this.container = document.querySelector('#prompts-list');
+                        if (this.container) {
+                            this.loadAndDisplay();
+                            this.setupSubmitCapture();
                         }
                     }, 1000);
                 }
                 
-                setupPromptCapture() {
-                    // Monitor for submit button clicks
-                    setTimeout(() => {
-                        const submitBtn = document.querySelector('#submit-btn');
-                        
-                        if (submitBtn) {
-                            submitBtn.addEventListener('click', () => {
-                                this.capturePrompt();
-                            });
-                        }
-                        
-                    }, 1000);
+                loadAndDisplay() {
+                    const prompts = this.getPrompts();
+                    this.displayPrompts(prompts);
                 }
                 
-                capturePrompt() {
-                    const input = document.querySelector('#user-input textarea');
-                    if (input && input.value.trim()) {
-                        const prompt = input.value.trim();
-                        this.savePrompt(prompt);
-                    }
-                }
-                
-                loadPromptsFromStorage() {
+                getPrompts() {
                     try {
                         const stored = localStorage.getItem(this.storageKey);
                         return stored ? JSON.parse(stored) : [];
                     } catch (e) {
-                        console.error('Error loading prompt history:', e);
+                        console.error('Error loading prompts:', e);
                         return [];
                     }
                 }
                 
-                savePromptsToStorage(prompts) {
+                savePrompts(prompts) {
                     try {
                         localStorage.setItem(this.storageKey, JSON.stringify(prompts));
                     } catch (e) {
-                        console.error('Error saving prompt history:', e);
+                        console.error('Error saving prompts:', e);
                     }
                 }
                 
-                savePrompt(prompt) {
-                    let prompts = this.loadPromptsFromStorage();
+                addPrompt(prompt) {
+                    let prompts = this.getPrompts();
                     
-                    // Remove duplicate if exists
-                    prompts = prompts.filter(p => p.text !== prompt);
+                    // Remove duplicate
+                    prompts = prompts.filter(p => p !== prompt);
                     
-                    // Add new prompt at the beginning
-                    prompts.unshift({
-                        text: prompt,
-                        timestamp: new Date().toISOString()
-                    });
+                    // Add at beginning
+                    prompts.unshift(prompt);
                     
-                    // Keep only the last maxPrompts
+                    // Keep only last maxPrompts
                     if (prompts.length > this.maxPrompts) {
                         prompts = prompts.slice(0, this.maxPrompts);
                     }
                     
-                    this.savePromptsToStorage(prompts);
-                    this.displayPrompts();
+                    this.savePrompts(prompts);
+                    this.displayPrompts(prompts);
                 }
                 
-                displayPrompts() {
-                    const container = this.findPromptsContainer();
-                    if (!container) {
-                        console.error('Prompts container not found');
-                        return;
+                removePrompt(index) {
+                    let prompts = this.getPrompts();
+                    if (index >= 0 && index < prompts.length) {
+                        prompts.splice(index, 1);
+                        this.savePrompts(prompts);
+                        this.displayPrompts(prompts);
                     }
-                    
-                    console.log('Updating prompts container:', container.id || container.className);
-                    const prompts = this.loadPromptsFromStorage();
-
-                    // Clear existing content before re-rendering
-                    container.innerHTML = ''; 
+                }
+                
+                displayPrompts(prompts) {
+                    if (!this.container) return;
                     
                     if (prompts.length === 0) {
-                        container.innerHTML = '<div class="prompts-empty">No recent prompts</div>';
+                        this.container.innerHTML = '<div class="prompts-empty">No recent prompts</div>';
                         return;
                     }
                     
+                    let html = '';
                     prompts.forEach((prompt, index) => {
-                        const truncatedText = prompt.text.length > 60 
-                            ? prompt.text.substring(0, 57) + '...' 
-                            : prompt.text;
+                        const truncated = prompt.length > 60 ? prompt.substring(0, 57) + '...' : prompt;
+                        const escaped = this.escapeHtml(prompt);
+                        const escapedTruncated = this.escapeHtml(truncated);
                         
-                        // Create elements programmatically
-                        const promptItem = document.createElement('div');
-                        promptItem.className = 'prompt-item';
-                        promptItem.title = prompt.text;
-                        promptItem.dataset.prompt = prompt.text; // Store raw text
-
-                        const promptTextDiv = document.createElement('div');
-                        promptTextDiv.className = 'prompt-text';
-                        promptTextDiv.textContent = truncatedText;
-
-                        const deleteButton = document.createElement('button');
-                        deleteButton.className = 'prompt-delete-btn';
-                        deleteButton.title = 'Remove prompt';
-                        deleteButton.innerHTML = '×';
-                        deleteButton.onclick = (e) => {
-                            e.stopPropagation();
-                            this.deletePrompt(index);
-                        };
-
-                        promptItem.appendChild(promptTextDiv);
-                        promptItem.appendChild(deleteButton);
-                        container.appendChild(promptItem);
+                        html += `
+                            <div class="prompt-item" onclick="promptManager.selectPrompt(${index})">
+                                <div class="prompt-text" title="${escaped}">${escapedTruncated}</div>
+                                <button class="prompt-delete-btn" onclick="promptManager.deletePrompt(${index}); event.stopPropagation();" title="Remove prompt">×</button>
+                            </div>
+                        `;
                     });
-                }
-                
-                findPromptsContainer() {
-                    const selectors = [
-                        '#prompts-list',
-                        '.prompts-container'
-                    ];
                     
-                    for (let selector of selectors) {
-                        const element = document.querySelector(selector);
-                        if (element) {
-                            console.log('Found prompts container with selector:', selector);
-                            return element;
-                        }
-                    }
-                    
-                    console.warn('Prompts container not found');
-                    return null;
-                }
-                
-                selectPrompt(promptText) {
-                    const input = document.querySelector('#user-input textarea');
-                    if (input) {
-                        input.value = promptText; // Use raw text directly
-                        input.focus();
-                        // Trigger input event to ensure Gradio recognizes the change
-                        input.dispatchEvent(new Event('input', { bubbles: true }));
-                    }
+                    this.container.innerHTML = html;
                 }
                 
                 escapeHtml(text) {
@@ -724,27 +415,41 @@ def create_chat_interface():
                         '"': '&quot;',
                         "'": '&#039;'
                     };
-                    return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+                    return text.replace(/[&<>"']/g, m => map[m]);
                 }
                 
-                deletePrompt(index) {
-                    let prompts = this.loadPromptsFromStorage();
-                    
+                selectPrompt(index) {
+                    const prompts = this.getPrompts();
                     if (index >= 0 && index < prompts.length) {
-                        prompts.splice(index, 1);
-                        this.savePromptsToStorage(prompts);
-                        this.displayPrompts();
+                        const prompt = prompts[index];
+                        const input = document.querySelector('#user-input textarea');
+                        if (input) {
+                            input.value = prompt;
+                            input.focus();
+                            input.dispatchEvent(new Event('input', { bubbles: true }));
+                        }
                     }
                 }
                 
-                clearPrompts() {
-                    this.savePromptsToStorage([]);
-                    this.displayPrompts();
+                deletePrompt(index) {
+                    this.removePrompt(index);
+                }
+                
+                setupSubmitCapture() {
+                    const submitBtn = document.querySelector('#submit-btn');
+                    if (submitBtn) {
+                        submitBtn.addEventListener('click', () => {
+                            const input = document.querySelector('#user-input textarea');
+                            if (input && input.value.trim()) {
+                                this.addPrompt(input.value.trim());
+                            }
+                        });
+                    }
                 }
             }
             
-            // Initialize prompt history manager
-            window.promptHistory = new PromptHistoryManager();
+            // Initialize prompt manager
+            window.promptManager = new PromptManager();
             
             // Example question selection
             window.selectExample = function(button) {
@@ -813,16 +518,18 @@ def create_chat_interface():
                 error_msg = f"❌ Error: {str(e)}"
                 return {"answer": error_msg, "sources": ""}
         
+
+        
         def handle_submit(message, history, provider, num_results):
-            """Handle user message submission"""
+            """Handle user message submission - simplified without prompt management"""
             if not message.strip():
-                return "", history, gr.update(value='<div class="answer-placeholder">Ask a question to get started</div>'), "", ""
+                return "", history, '<div class="answer-placeholder">Ask a question to get started</div>', ""
             
             try:
                 # Get response from RAG pipeline
                 response_data = process_question(message, provider, num_results)
                 
-                # Update history (for server-side state)
+                # Update chat history (for server-side state)
                 new_history = history + [{
                     "question": message,
                     "answer": response_data["answer"],
@@ -830,44 +537,32 @@ def create_chat_interface():
                     "timestamp": datetime.now().isoformat()
                 }]
                 
-                # Format answer display - the answer is already HTML from format_chat_response
-                answer_html_content = response_data["answer"]
-                answer_html = f'<div class="answer-content">{answer_html_content}</div>'
+                # Format answer display
+                answer_html = f'<div class="answer-content">{response_data["answer"]}</div>'
                 
-                # Trigger localStorage save
-                json_payload = json.dumps({
-                    "question": message,
-                    "answer": answer_html_content,  # Save the HTML version
-                    "sources": response_data["sources"]
-                }).encode('utf-8')
-                b64_payload = base64.b64encode(json_payload).decode('utf-8')
-                
-                save_trigger = f"SAVE_CHAT:{b64_payload}"
-                
-                return message, new_history, gr.update(value=answer_html), response_data["sources"], save_trigger
+                return "", new_history, answer_html, response_data["sources"]
                 
             except Exception as e:
                 error_msg = f"Error processing question: {str(e)}"
                 error_html = f'<div class="answer-content" style="color: var(--error-color);">{error_msg}</div>'
-                return message, history, gr.update(value=error_html), "", ""
+                return "", history, error_html, ""
         
         # Wire up the interface
         submit_btn.click(
             handle_submit,
             inputs=[msg_input, chat_history, provider_dropdown, num_results_input],
-            outputs=[msg_input, chat_history, answer_display, sources_display, js_trigger]
+            outputs=[msg_input, chat_history, answer_display, sources_display]
         )
         
-        # New Chat functionality
+        # New Chat functionality - simplified
         def start_new_chat():
-            """Start a new chat session by resetting server-side history"""
-            return []
+            """Start a new chat session"""
+            return [], '<div class="answer-placeholder">Ask a question to get started</div>', ""
         
         new_chat_btn.click(
             start_new_chat,
             inputs=[],
-            outputs=[chat_history],
-            js="() => { if (window.chatHistory) window.chatHistory.startNewChat(); }"
+            outputs=[chat_history, answer_display, sources_display]
         )
     
     return demo
