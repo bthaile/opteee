@@ -114,8 +114,8 @@ class RAGService:
         Format the chat response with enhanced video reference cards
         Extracted from original format_chat_response function
         """
-        # Format the answer text - convert markdown to HTML
-        formatted_answer = markdown.markdown(answer)
+        # Process markdown but keep structure simple for frontend compatibility
+        formatted_answer = self._process_markdown_simple(answer)
         
         # Create enhanced video reference cards
         if not sources:
@@ -214,4 +214,101 @@ class RAGService:
             "answer": formatted_answer,
             "sources": sources_content,
             "raw_sources": sources
-        } 
+        }
+    
+    def _process_markdown_simple(self, text: str) -> str:
+        """
+        Process markdown text into simple HTML without nested structures
+        This avoids the nested div issues while still formatting content properly
+        """
+        import re
+        
+        # Process headers - convert ### to h3, #### to h4, etc.
+        text = re.sub(r'^### (.+)$', r'<h3>\1</h3>', text, flags=re.MULTILINE)
+        text = re.sub(r'^#### (.+)$', r'<h4>\1</h4>', text, flags=re.MULTILINE)
+        
+        # Process bold text
+        text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+        
+        # Process code blocks
+        text = re.sub(r'`(.+?)`', r'<code>\1</code>', text)
+        
+        # Process simple bullet points (but not nested ones to avoid complexity)
+        lines = text.split('\n')
+        processed_lines = []
+        in_list = False
+        
+        for line in lines:
+            stripped = line.strip()
+            
+            # Check if this is a bullet point
+            if stripped.startswith('- '):
+                if not in_list:
+                    processed_lines.append('<ul>')
+                    in_list = True
+                # Simple list item without nested paragraphs
+                processed_lines.append(f'<li>{stripped[2:].strip()}</li>')
+            else:
+                # If we were in a list and this isn't a list item, close the list
+                if in_list:
+                    processed_lines.append('</ul>')
+                    in_list = False
+                
+                # Add regular content
+                if stripped:
+                    processed_lines.append(stripped)
+                elif processed_lines:  # Only add empty lines if we have content
+                    processed_lines.append('')
+        
+        # Close list if still open
+        if in_list:
+            processed_lines.append('</ul>')
+        
+        # Join lines and create paragraphs
+        content = '\n'.join(processed_lines)
+        
+        # Split into paragraphs and wrap non-HTML content
+        paragraphs = content.split('\n\n')
+        formatted_paragraphs = []
+        
+        for para in paragraphs:
+            para = para.strip()
+            if para:
+                # If it's already HTML (starts with <), don't wrap
+                if para.startswith('<'):
+                    formatted_paragraphs.append(para)
+                else:
+                    # Convert single newlines to <br> within paragraph
+                    para = para.replace('\n', '<br>')
+                    formatted_paragraphs.append(f'<p>{para}</p>')
+        
+        return '\n'.join(formatted_paragraphs)
+
+    def _clean_html_structure(self, html_content: str) -> str:
+        """
+        Clean up HTML structure to remove any wrapper divs that would conflict with frontend
+        The frontend will add its own .answer-content wrapper, so we return clean content only
+        """
+        import re
+        
+        # Remove ANY outer div wrappers (markdown might add these)
+        while re.match(r'^\s*<div[^>]*>.*</div>\s*$', html_content, flags=re.DOTALL):
+            html_content = re.sub(r'^\s*<div[^>]*>\s*(.*?)\s*</div>\s*$', r'\1', html_content, flags=re.DOTALL)
+        
+        # Remove empty paragraphs
+        html_content = re.sub(r'<p>\s*</p>', '', html_content)
+        
+        # Remove empty divs
+        html_content = re.sub(r'<div[^>]*>\s*</div>', '', html_content)
+        
+        # Clean up excessive whitespace
+        html_content = re.sub(r'\s+', ' ', html_content)
+        html_content = re.sub(r'>\s+<', '><', html_content)
+        
+        # Ensure proper spacing after block elements for readability
+        html_content = re.sub(r'</h([1-6])>', r'</h\1>\n', html_content)
+        html_content = re.sub(r'</p>', r'</p>\n', html_content)
+        html_content = re.sub(r'</ul>', r'</ul>\n', html_content)
+        html_content = re.sub(r'</ol>', r'</ol>\n', html_content)
+        
+        return html_content.strip() 

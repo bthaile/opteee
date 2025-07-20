@@ -1,16 +1,3 @@
-FROM node:18-slim as frontend-builder
-
-# Build React frontend
-WORKDIR /frontend
-
-# Copy package files (will be created later)
-# For now, create a placeholder structure
-RUN mkdir -p public src
-RUN echo '{"name": "opteee-frontend", "version": "1.0.0", "dependencies": {"react": "^18.0.0", "react-dom": "^18.0.0"}, "scripts": {"build": "echo No frontend build yet && mkdir -p build && echo Frontend placeholder > build/index.html"}}' > package.json
-RUN npm install
-RUN npm run build
-
-# Python backend stage
 FROM python:3.9-slim
 
 WORKDIR /app
@@ -20,20 +7,26 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements and install Python dependencies
-COPY requirements-fastapi.txt /app/requirements.txt
+# First, copy only requirements to leverage cache for pip install
+COPY requirements.txt /app/requirements.txt
+
+# Install Python dependencies (this layer will be cached)
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Create necessary directories
-RUN mkdir -p /app/vector_store /app/static /app/app/models /app/app/services
+RUN mkdir -p /app/vector_store /app/static /app/templates
 
-# Copy Python files
-COPY main.py /app/
-COPY app/ /app/app/
+# Copy all Python files first (this layer will be cached)
 COPY *.py /app/
 
-# Copy static assets (CSS, etc.) 
+# Copy app directory
+COPY app /app/app
+
+# Copy static assets
 COPY static /app/static
+
+# Copy frontend build
+COPY frontend/build /app/frontend/build
 
 # Copy processed transcripts (this layer will be cached)
 COPY processed_transcripts /app/processed_transcripts
@@ -45,8 +38,11 @@ RUN mkdir -p /tmp/processed_transcripts /tmp/vector_store && \
     cp -r /tmp/vector_store/* /app/vector_store/ && \
     rm -rf /tmp/processed_transcripts /tmp/vector_store
 
-# Copy React build from frontend stage
-COPY --from=frontend-builder /frontend/build /app/frontend/build
+# Copy the startup script
+COPY startup.sh /app/
+
+# Make startup script executable
+RUN chmod +x /app/startup.sh
 
 # Create cache and flagged directories
 RUN mkdir -p /app/cache/matplotlib /app/cache/huggingface /app/flagged
@@ -62,8 +58,5 @@ ENV TRANSFORMERS_CACHE=/app/cache/huggingface
 ENV XDG_CACHE_HOME=/app/cache
 ENV XDG_CONFIG_HOME=/app/cache
 
-# Expose port for HuggingFace compatibility
-EXPOSE 7860
-
-# Run the FastAPI app
-CMD ["python", "main.py"] 
+# Run the app using startup script
+CMD ["/app/startup.sh"]

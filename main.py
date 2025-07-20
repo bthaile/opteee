@@ -66,6 +66,8 @@ async def chat(request: ChatRequest):
             num_results=request.num_results
         )
         
+        # Return clean response
+        
         return ChatResponse(
             answer=result["answer"],
             sources=result["sources"],
