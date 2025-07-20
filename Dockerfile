@@ -13,6 +13,9 @@ COPY requirements.txt /app/requirements.txt
 # Install Python dependencies (this layer will be cached)
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Pre-download the sentence transformer model during build
+RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')"
+
 # Create necessary directories
 RUN mkdir -p /app/vector_store /app/static /app/templates
 
@@ -45,7 +48,7 @@ COPY startup.sh /app/
 RUN chmod +x /app/startup.sh
 
 # Create cache and flagged directories
-RUN mkdir -p /app/cache/matplotlib /app/cache/huggingface /app/flagged
+RUN mkdir -p /app/cache/matplotlib /app/cache/huggingface /app/cache/sentence_transformers /app/flagged
 
 # Set permissions on the entire /app directory
 RUN chmod -R 777 /app
@@ -55,6 +58,7 @@ ENV VECTOR_STORE_PREBUILT=true
 ENV PYTHONPATH="${PYTHONPATH}:/app"
 ENV MPLCONFIGDIR=/app/cache/matplotlib
 ENV TRANSFORMERS_CACHE=/app/cache/huggingface
+ENV SENTENCE_TRANSFORMERS_HOME=/app/cache/sentence_transformers
 ENV XDG_CACHE_HOME=/app/cache
 ENV XDG_CONFIG_HOME=/app/cache
 

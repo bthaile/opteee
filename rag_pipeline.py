@@ -180,9 +180,20 @@ class CustomFAISSRetriever:
         try:
             print(f"Loading embedding model: {self.model_name}")
             self.model = SentenceTransformer(self.model_name)
+            print("✅ Model loaded successfully")
         except Exception as e:
             print(f"❌ Error loading model: {str(e)}")
-            sys.exit(1)
+            print("💡 Trying to download model with explicit cache settings...")
+            try:
+                # Try with explicit cache directory
+                os.environ['TRANSFORMERS_CACHE'] = '/app/cache/huggingface'
+                os.environ['SENTENCE_TRANSFORMERS_HOME'] = '/app/cache/sentence_transformers'
+                self.model = SentenceTransformer(self.model_name, cache_folder='/app/cache/sentence_transformers')
+                print("✅ Model loaded with custom cache settings")
+            except Exception as e2:
+                print(f"❌ Final attempt failed: {str(e2)}")
+                print("🔧 Model loading failed. Application will exit.")
+                sys.exit(1)
         
         # Load the index
         try:
