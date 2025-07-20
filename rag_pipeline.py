@@ -506,7 +506,7 @@ def run_rag_query(retriever, chain, query: str) -> Dict[str, Any]:
     
     if not docs:
         return {
-            "answer": "I couldn't find any relevant information to answer your question.",
+            "answer": "",  # Return empty - let frontend handle no results messaging
             "sources": []
         }
     

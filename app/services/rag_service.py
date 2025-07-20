@@ -65,6 +65,7 @@ class RAGService:
             raise RuntimeError("RAG service not initialized")
         
         if not query.strip():
+            # Return empty content - let frontend handle placeholder messaging
             return {
                 "answer": "",
                 "sources": "",
@@ -104,7 +105,7 @@ class RAGService:
         except Exception as e:
             error_msg = f"❌ Error: {str(e)}"
             return {
-                "answer": error_msg,
+                "answer": error_msg,  # Return raw error message - frontend will wrap it
                 "sources": "",
                 "raw_sources": []
             }
@@ -117,6 +118,9 @@ class RAGService:
         # Process markdown but keep structure simple for frontend compatibility
         formatted_answer = self._process_markdown_simple(answer)
         
+        # Clean the HTML to remove any wrapper divs that would conflict with frontend
+        formatted_answer = self._clean_html_structure(formatted_answer)
+        
         # Create enhanced video reference cards
         if not sources:
             return {
@@ -125,6 +129,7 @@ class RAGService:
                 "raw_sources": []
             }
         
+        # Don't add outer wrapper - frontend will handle main container
         sources_content = '<div class="video-references">'
         
         for i, source in enumerate(sources):
