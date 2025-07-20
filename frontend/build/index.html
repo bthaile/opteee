@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OPTEEE - Options Trading Education Expert</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            min-height: 100vh;
+        }
+        
+        /* Main Layout - Sidebar + Main Panel */
+        .main-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar {
+            width: 280px;
+            background: white;
+            border-right: 1px solid #e1e5e9;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+        
+        .sidebar-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #374151;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .new-chat-btn {
+            background: #0f766e;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        .new-chat-btn:hover {
+            background: #0d6259;
+        }
+        
+        .prompts-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem 0;
+            color: #374151;
+        }
+        
+        .prompts-container {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .prompts-empty {
+            color: #9ca3af;
+            font-style: italic;
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        .prompt-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .prompt-item:hover {
+            background: #f3f4f6;
+            border-color: #d1d5db;
+        }
+        
+        .prompt-text {
+            flex: 1;
+            font-size: 0.9rem;
+            color: #374151;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .prompt-delete-btn {
+            background: transparent;
+            color: #9ca3af;
+            border: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 0.5rem;
+            opacity: 0;
+            transition: all 0.2s ease;
+        }
+        
+        .prompt-item:hover .prompt-delete-btn {
+            opacity: 1;
+        }
+        
+        .prompt-delete-btn:hover {
+            background: #f3f4f6;
+            color: #6b7280;
+            transform: scale(1.1);
+        }
+        
+        /* Main Panel Styles */
+        .main-panel {
+            flex: 1;
+            background: white;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .main-header {
+            padding: 2rem 2rem 1rem 2rem;
+            border-bottom: 1px solid #e1e5e9;
+            text-align: center;
+        }
+        
+        .main-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+        
+        .example-questions {
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #e1e5e9;
+        }
+        
+        .example-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+        
+        .example-button {
+            background: #f3f4f6;
+            border: 1px solid #d1d5db;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: #374151;
+            transition: all 0.2s;
+        }
+        
+        .example-button:hover {
+            background: #e5e7eb;
+            border-color: #9ca3af;
+        }
+        
+        .user-input-section {
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #e1e5e9;
+        }
+        
+        .input-container {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-end;
+        }
+        
+        #user-input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 1rem;
+            resize: none;
+            min-height: 50px;
+            max-height: 200px;
+            overflow-y: auto;
+            line-height: 1.5;
+            font-family: inherit;
+        }
+        
+        #user-input:focus {
+            outline: none;
+            border-color: #0f766e;
+        }
+        
+        .submit-btn {
+            background: #0f766e;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        
+        .submit-btn:hover {
+            background: #0d6259;
+        }
+        
+        .submit-btn:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+        
+        .answer-section {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+            background: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+       
+        .answer-placeholder {
+            text-align: center;
+            color: #9ca3af;
+            font-style: italic;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 1px solid #e1e5e9;
+            width: 100%;
+            max-width: 900px;
+        }
+        
+        .answer-content {
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 1px solid #e1e5e9;
+            width: 100%;
+            max-width: 900px;
+        }
+        
+        .answer-content h1, .answer-content h2, .answer-content h3, .answer-content h4 {
+            color: #0f766e;
+            margin: 2rem 0 1rem 0;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        .answer-content h1:first-child, .answer-content h2:first-child, .answer-content h3:first-child, .answer-content h4:first-child {
+            margin-top: 0;
+        }
+        
+        .answer-content h1 { font-size: 1.4rem; }
+        .answer-content h2 { font-size: 1.2rem; }
+        .answer-content h3 { font-size: 1.1rem; }
+        .answer-content h4 { 
+            font-size: 1.05rem; 
+            margin: 1.5rem 0 0.75rem 0;
+            color: #374151;
+            font-weight: 600;
+        }
+        
+        /* Main section styling */
+        .answer-content > p:first-child {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #1f2937;
+        }
+        
+        .answer-content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            color: #374151;
+            text-align: left;
+        }
+        
+        .answer-content em {
+            color: #4b5563;
+            font-style: italic;
+        }
+        
+        /* Fix any center-aligned content */
+        .answer-content * {
+            text-align: left;
+        }
+        
+        /* Exception for headers which can be centered if needed */
+        .answer-content h1, .answer-content h2, .answer-content h3, .answer-content h4 {
+            text-align: left;
+        }
+        
+        .answer-content ul, .answer-content ol {
+            margin: 1rem 0;
+            padding-left: 0;
+        }
+        
+        /* Main level lists */
+        .answer-content > ul, .answer-content > ol {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .answer-content > ul > li {
+            position: relative;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            padding-left: 1.5rem;
+            color: #374151;
+        }
+        
+        .answer-content > ul > li:before {
+            content: "•";
+            color: #0f766e;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        /* Nested lists */
+        .answer-content ul ul {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            list-style: none;
+        }
+        
+        .answer-content ul ul li {
+            position: relative;
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            padding-left: 1.2rem;
+            color: #4b5563;
+        }
+        
+        .answer-content ul ul li:before {
+            content: "◦";
+            color: #6b7280;
+            font-weight: normal;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        /* Third level nesting */
+        .answer-content ul ul ul li:before {
+            content: "▪";
+            color: #9ca3af;
+        }
+        
+        /* Ordered lists */
+        .answer-content ol {
+            counter-reset: item;
+            list-style: none;
+        }
+        
+        .answer-content ol li {
+            display: block;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            padding-left: 2rem;
+            position: relative;
+            color: #374151;
+        }
+        
+        .answer-content ol li:before {
+            content: counter(item) ".";
+            counter-increment: item;
+            color: #0f766e;
+            font-weight: 600;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .answer-content strong {
+            color: #1f2937;
+            font-weight: 600;
+        }
+        
+        .answer-content code {
+            background: #f1f5f9;
+            color: #0f766e;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        .answer-content pre {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .answer-content pre code {
+            background: none;
+            color: #334155;
+            padding: 0;
+        }
+        
+        /* Video Reference Cards */
+        .video-references {
+            margin-top: 2rem;
+            border-top: 2px solid #e1e5e9;
+            padding-top: 2rem;
+        }
+        
+        .video-references::before {
+            content: "Source References";
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0f766e;
+            margin-bottom: 1rem;
+        }
+        
+        .video-card {
+            background: #f8fafc;
+            border: 1px solid #e1e5e9;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.2s;
+        }
+        
+        .video-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-color: #0f766e;
+        }
+        
+        .video-title {
+            color: #0f766e;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .video-title-link {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .video-title-link:hover {
+            text-decoration: underline;
+        }
+        
+        .transcript-snippet {
+            background: white;
+            padding: 1rem;
+            border-left: 4px solid #0f766e;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .transcript-snippet p {
+            font-style: italic;
+            color: #4b5563;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .video-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+        
+        .video-metadata {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .metadata-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+        
+        .metadata-item svg {
+            flex-shrink: 0;
+        }
+        
+        .video-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .video-action-btn {
+            background: #f3f4f6;
+            border: 1px solid #d1d5db;
+            padding: 0.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        
+        .video-action-btn:hover {
+            background: #e5e7eb;
+            border-color: #0f766e;
+        }
+        
+        .video-action-btn.copied {
+            background: #dcfce7;
+            border-color: #16a34a;
+            color: #16a34a;
+        }
+        
+        /* Loading State */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            color: #6b7280;
+        }
+        
+        .loading.show {
+            display: block;
+        }
+        
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #e1e5e9;
+            }
+            
+            .example-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-title">
+                <button class="new-chat-btn" onclick="startNewChat()">+ New Chat</button>
+            </div>
+            
+            <div class="prompts-title">Recent Prompts</div>
+            <div class="prompts-container" id="prompts-list">
+                <div class="prompts-empty">No recent prompts</div>
+            </div>
+        </div>
+        
+        <!-- Main Panel -->
+        <div class="main-panel">
+            <!-- Header -->
+            <div class="main-header">
+                <div class="main-subtitle">Options Trading Education Expert</div>
+            </div>
+            
+            <!-- Example Questions -->
+            <div class="example-questions">
+                <div class="example-grid">
+                    <button class="example-button" onclick="setQuery(this.textContent)">Explain covered calls and when to use them</button>
+                    <button class="example-button" onclick="setQuery(this.textContent)">How does implied volatility affect option pricing?</button>
+                    <button class="example-button" onclick="setQuery(this.textContent)">What are the Greeks in options trading?</button>
+                    <button class="example-button" onclick="setQuery(this.textContent)">How do you manage theta decay in options?</button>
+                </div>
+            </div>
+            
+            <!-- User Input -->
+            <div class="user-input-section">
+                <div class="input-container">
+                    <textarea id="user-input" placeholder="Ask me anything about options trading..."></textarea>
+                    <button class="submit-btn" id="submit-btn" onclick="askQuestion()">Send</button>
+                </div>
+            </div>
+            
+            <!-- Answer Display -->
+            <div class="answer-section" id="answer-section">
+                <div class="loading" id="loading">Thinking...</div>
+                <div id="response" class="answer-placeholder">Ask a question to get started</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize promptManager first to avoid reference errors
+        let promptManager;
+        
+        // Prompt History Management
+        class PromptManager {
+            constructor() {
+                this.storageKey = 'opteee_prompt_history';
+                this.maxPrompts = 10;
+                this.init();
+            }
+            
+            init() {
+                this.displayPrompts();
+                this.testAPI();
+            }
+            
+            getPrompts() {
+                try {
+                    const stored = localStorage.getItem(this.storageKey);
+                    const parsed = stored ? JSON.parse(stored) : [];
+                    // Ensure all prompts are strings and filter out invalid data
+                    return Array.isArray(parsed) ? parsed.filter(p => typeof p === 'string' && p.trim() !== '') : [];
+                } catch (e) {
+                    console.error('Error loading prompts:', e);
+                    // Clear corrupted data
+                    localStorage.removeItem(this.storageKey);
+                    return [];
+                }
+            }
+            
+            savePrompts(prompts) {
+                try {
+                    localStorage.setItem(this.storageKey, JSON.stringify(prompts));
+                } catch (e) {
+                    console.error('Error saving prompts:', e);
+                }
+            }
+            
+            addPrompt(prompt) {
+                // Validate prompt is a non-empty string
+                if (typeof prompt !== 'string' || !prompt.trim()) {
+                    console.warn('Invalid prompt passed to addPrompt:', prompt);
+                    return;
+                }
+                
+                console.log('🔍 AddPrompt Debug:', { prompt: prompt });
+                let prompts = this.getPrompts();
+                console.log('🔍 Current prompts before add:', prompts);
+                
+                // Remove duplicate if exists
+                prompts = prompts.filter(p => p !== prompt);
+                
+                // Add at beginning
+                prompts.unshift(prompt);
+                
+                // Keep only last maxPrompts
+                if (prompts.length > this.maxPrompts) {
+                    prompts = prompts.slice(0, this.maxPrompts);
+                }
+                
+                console.log('🔍 Prompts after processing:', prompts);
+                this.savePrompts(prompts);
+                this.displayPrompts();
+            }
+            
+            removePrompt(index) {
+                let prompts = this.getPrompts();
+                if (index >= 0 && index < prompts.length) {
+                    prompts.splice(index, 1);
+                    this.savePrompts(prompts);
+                    this.displayPrompts();
+                }
+            }
+            
+            displayPrompts() {
+                const container = document.getElementById('prompts-list');
+                const prompts = this.getPrompts();
+                
+                console.log('🔍 DisplayPrompts Debug:', {
+                    container: container ? 'found' : 'NOT FOUND',
+                    promptsCount: prompts.length,
+                    prompts: prompts
+                });
+                
+                if (!container) {
+                    console.error('❌ Prompts container not found!');
+                    return;
+                }
+                
+                if (prompts.length === 0) {
+                    container.innerHTML = '<div class="prompts-empty">No recent prompts</div>';
+                    return;
+                }
+                
+                let html = '';
+                prompts.forEach((prompt, index) => {
+                    // Additional safety check - skip non-string prompts
+                    if (typeof prompt !== 'string') {
+                        console.warn('Skipping non-string prompt in display:', prompt);
+                        return;
+                    }
+                    
+                    const truncated = prompt.length > 60 ? prompt.substring(0, 57) + '...' : prompt;
+                    html += `
+                        <div class="prompt-item" data-index="${index}">
+                            <div class="prompt-text" title="${this.escapeHtml(prompt)}">${this.escapeHtml(truncated)}</div>
+                            <button class="prompt-delete-btn" data-index="${index}" title="Remove prompt">×</button>
+                        </div>
+                    `;
+                });
+                
+                container.innerHTML = html;
+                
+                // Add event listeners after HTML is set
+                container.querySelectorAll('.prompt-item').forEach((item, index) => {
+                    item.addEventListener('click', () => this.selectPrompt(index));
+                });
+                
+                container.querySelectorAll('.prompt-delete-btn').forEach((btn, index) => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        this.deletePrompt(index);
+                    });
+                });
+            }
+            
+            selectPrompt(index) {
+                const prompts = this.getPrompts();
+                if (index >= 0 && index < prompts.length) {
+                    const prompt = prompts[index];
+                    const input = document.getElementById('user-input');
+                    if (input) {
+                        input.value = prompt;
+                        autoResizeTextarea(input);
+                        input.focus();
+                    }
+                }
+            }
+            
+            deletePrompt(index) {
+                this.removePrompt(index);
+            }
+            
+            escapeHtml(text) {
+                // Ensure text is a string
+                if (typeof text !== 'string') {
+                    console.warn('escapeHtml called with non-string value:', text);
+                    return String(text || '');
+                }
+                
+                const map = {
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    '"': '&quot;',
+                    "'": '&#039;'
+                };
+                return text.replace(/[&<>"']/g, m => map[m]);
+            }
+            
+            async testAPI() {
+                try {
+                    const response = await fetch('/api/health');
+                    if (response.ok) {
+                        console.log('✅ API is connected and healthy');
+                    } else {
+                        console.warn('⚠️ API health check failed');
+                    }
+                } catch (error) {
+                    console.error('❌ API connection failed:', error);
+                }
+            }
+        }
+        
+        // Auto-resize textarea function
+        function autoResizeTextarea(textarea) {
+            textarea.style.height = 'auto';
+            textarea.style.height = Math.min(textarea.scrollHeight, 200) + 'px';
+        }
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize prompt manager
+            promptManager = new PromptManager();
+            
+            // Set up textarea functionality
+            const userInput = document.getElementById('user-input');
+            if (userInput) {
+                // Auto-resize on input
+                userInput.addEventListener('input', function() {
+                    autoResizeTextarea(this);
+                });
+                
+                // Enter key event listener
+                userInput.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        askQuestion();
+                    }
+                });
+                
+                // Initial sizing
+                autoResizeTextarea(userInput);
+            }
+        });
+        
+        // Main chat functions
+        async function askQuestion() {
+            const input = document.getElementById('user-input');
+            const button = document.getElementById('submit-btn');
+            const loading = document.getElementById('loading');
+            const response = document.getElementById('response');
+            
+            const query = input.value.trim();
+            if (!query) {
+                alert('Please enter a question!');
+                return;
+            }
+            
+            // Show loading state
+            button.disabled = true;
+            loading.classList.add('show');
+            response.style.display = 'none';
+            
+            try {
+                const result = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        query: query,
+                        provider: 'openai',
+                        num_results: 5
+                    })
+                });
+                
+                if (!result.ok) {
+                    throw new Error(`HTTP error! status: ${result.status}`);
+                }
+                
+                const data = await result.json();
+                
+                // Check if we have any content to display
+                if (!data.answer.trim() && !data.sources) {
+                    // No content found - show appropriate message
+                    response.innerHTML = '<div class="answer-content">I couldn\'t find any relevant information to answer your question. Please try rephrasing your query or asking about a different options trading topic.</div>';
+                } else {
+                    // Display the content - frontend controls the wrapper
+                    let responseHtml = `<div class="answer-content">${data.answer}</div>`;
+                    
+                    // Add sources if available
+                    if (data.sources) {
+                        responseHtml += data.sources;
+                    }
+                    
+                    response.innerHTML = responseHtml;
+                }
+                
+                // Add prompt to history
+                if (promptManager) {
+                    promptManager.addPrompt(query);
+                }
+                
+                // Clear input
+                input.value = '';
+                autoResizeTextarea(input);
+                
+            } catch (error) {
+                response.innerHTML = `
+                    <div class="answer-content" style="color: #dc2626;">
+                        <strong>Error:</strong> ${error.message}
+                        <br><br>
+                        Make sure the FastAPI backend is running and try again.
+                    </div>
+                `;
+            } finally {
+                // Hide loading state
+                button.disabled = false;
+                loading.classList.remove('show');
+                response.style.display = 'block';
+            }
+        }
+        
+        function setQuery(text) {
+            const input = document.getElementById('user-input');
+            if (input) {
+                input.value = text;
+                autoResizeTextarea(input);
+                input.focus();
+            }
+        }
+        
+        function startNewChat() {
+            const response = document.getElementById('response');
+            response.innerHTML = '<div class="answer-placeholder">Ask a question to get started</div>';
+            
+            const input = document.getElementById('user-input');
+            if (input) {
+                input.value = '';
+                autoResizeTextarea(input);
+                input.focus();
+            }
+        }
+        
+        // Copy to clipboard functionality
+        window.copyToClipboard = function(text, button) {
+            navigator.clipboard.writeText(text).then(function() {
+                const originalContent = button.innerHTML;
+                const originalClass = button.className;
+                
+                button.innerHTML = '✓';
+                button.classList.add('copied');
+                
+                setTimeout(function() {
+                    button.innerHTML = originalContent;
+                    button.className = originalClass;
+                }, 2000);
+                
+            }).catch(function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        };
+        
+
+    </script>
+</body>
+</html> 
