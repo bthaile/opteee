@@ -2,6 +2,12 @@ import os
 import faiss
 import numpy as np
 import json
+
+# Set up environment variables for model caching before importing SentenceTransformer
+os.environ.setdefault('TRANSFORMERS_CACHE', '/app/cache/huggingface')
+os.environ.setdefault('SENTENCE_TRANSFORMERS_HOME', '/app/cache/sentence_transformers')
+os.environ.setdefault('HF_HOME', '/app/cache/huggingface')
+
 from sentence_transformers import SentenceTransformer
 from config import VECTOR_STORE_PATH, PROCESSED_TRANSCRIPTS_PATH, MODEL_NAME, TOP_K
 

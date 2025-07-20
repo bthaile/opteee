@@ -4,6 +4,12 @@ import numpy as np
 from tqdm import tqdm
 import faiss
 import pickle
+
+# Set up environment variables for model caching before importing SentenceTransformer
+os.environ.setdefault('TRANSFORMERS_CACHE', '/app/cache/huggingface')
+os.environ.setdefault('SENTENCE_TRANSFORMERS_HOME', '/app/cache/sentence_transformers')
+os.environ.setdefault('HF_HOME', '/app/cache/huggingface')
+
 from sentence_transformers import SentenceTransformer
 import argparse
 from pipeline_config import PROCESSED_DIR, VECTOR_STORE_DIR, BATCH_SIZE

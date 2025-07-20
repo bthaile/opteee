@@ -7,6 +7,12 @@ from typing import List, Dict, Any, Tuple
 import numpy as np
 import faiss
 from dotenv import load_dotenv
+
+# Set up environment variables for model caching before importing SentenceTransformer
+os.environ.setdefault('TRANSFORMERS_CACHE', '/app/cache/huggingface')
+os.environ.setdefault('SENTENCE_TRANSFORMERS_HOME', '/app/cache/sentence_transformers')
+os.environ.setdefault('HF_HOME', '/app/cache/huggingface')
+
 from sentence_transformers import SentenceTransformer
 from config import VECTOR_DIR, SYSTEM_PROMPT
 
@@ -176,24 +182,56 @@ class CustomFAISSRetriever:
                 print("   Please run create_vector_store.py first.")
                 sys.exit(1)
         
-        # Load the model
-        try:
-            print(f"Loading embedding model: {self.model_name}")
-            self.model = SentenceTransformer(self.model_name)
-            print("✅ Model loaded successfully")
-        except Exception as e:
-            print(f"❌ Error loading model: {str(e)}")
-            print("💡 Trying to download model with explicit cache settings...")
+        # Load the model with multiple fallback strategies
+        self.model = None
+        loading_strategies = [
+            # Strategy 1: Default loading
+            {"name": "default", "func": lambda: SentenceTransformer(self.model_name)},
+            
+            # Strategy 2: With explicit cache folder
+            {"name": "explicit_cache", "func": lambda: SentenceTransformer(
+                self.model_name, 
+                cache_folder='/app/cache/sentence_transformers'
+            )},
+            
+            # Strategy 3: Force download with cache
+            {"name": "force_download", "func": lambda: SentenceTransformer(
+                self.model_name,
+                cache_folder='/app/cache/sentence_transformers',
+                use_auth_token=False
+            )},
+            
+            # Strategy 4: Direct from HuggingFace Hub (no cache)
+            {"name": "no_cache", "func": lambda: SentenceTransformer(
+                self.model_name,
+                cache_folder=None
+            )}
+        ]
+        
+        print(f"Loading embedding model: {self.model_name}")
+        
+        for strategy in loading_strategies:
             try:
-                # Try with explicit cache directory
-                os.environ['TRANSFORMERS_CACHE'] = '/app/cache/huggingface'
-                os.environ['SENTENCE_TRANSFORMERS_HOME'] = '/app/cache/sentence_transformers'
-                self.model = SentenceTransformer(self.model_name, cache_folder='/app/cache/sentence_transformers')
-                print("✅ Model loaded with custom cache settings")
-            except Exception as e2:
-                print(f"❌ Final attempt failed: {str(e2)}")
-                print("🔧 Model loading failed. Application will exit.")
-                sys.exit(1)
+                print(f"💡 Attempting {strategy['name']} loading strategy...")
+                
+                # Set environment variables for this attempt
+                if strategy['name'] in ['explicit_cache', 'force_download']:
+                    os.environ['TRANSFORMERS_CACHE'] = '/app/cache/huggingface'
+                    os.environ['SENTENCE_TRANSFORMERS_HOME'] = '/app/cache/sentence_transformers'
+                    os.environ['HF_HOME'] = '/app/cache/huggingface'
+                
+                self.model = strategy['func']()
+                print(f"✅ Model loaded successfully using {strategy['name']} strategy")
+                break
+                
+            except Exception as e:
+                print(f"❌ {strategy['name']} strategy failed: {str(e)}")
+                continue
+        
+        if self.model is None:
+            print("🔧 All model loading strategies failed. Application will exit.")
+            print("This might be due to network restrictions in the deployment environment.")
+            sys.exit(1)
         
         # Load the index
         try:
