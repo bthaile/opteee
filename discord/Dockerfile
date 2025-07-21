@@ -9,11 +9,6 @@ RUN apt-get update && apt-get install -y \
     dnsutils \
     && rm -rf /var/lib/apt/lists/*
 
-# Fix DNS resolution by setting reliable DNS servers
-RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf && \
-    echo "nameserver 8.8.4.4" >> /etc/resolv.conf && \
-    echo "nameserver 1.1.1.1" >> /etc/resolv.conf
-
 # Copy requirements first for better caching
 COPY requirements.txt /app/requirements.txt
 
@@ -36,6 +31,10 @@ RUN mkdir -p /app/logs && chmod 777 /app/logs
 ENV PYTHONPATH=/app
 ENV PYTHONUNBUFFERED=1
 ENV PORT=8080
+
+# Set DNS environment variables as fallback
+ENV RESOLV_CONF_OVERRIDE=1
+ENV DNS_SERVERS="8.8.8.8,8.8.4.4,1.1.1.1"
 
 # Health check for HuggingFace Spaces
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \

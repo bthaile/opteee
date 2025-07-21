@@ -685,6 +685,20 @@ def main():
     if uvloop is not None:
         asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
     
+    # Try to configure DNS environment for better resolution
+    import os
+    os.environ['PYTHONDONTWRITEBYTECODE'] = '1'  # Prevent .pyc files
+    
+    # Test DNS resolution before attempting connection
+    logger.info("Pre-flight DNS check...")
+    try:
+        import socket
+        discord_ip = socket.gethostbyname('discord.com')
+        logger.info(f"✅ DNS Pre-check: discord.com -> {discord_ip}")
+    except Exception as dns_error:
+        logger.warning(f"⚠️ DNS Pre-check failed: {dns_error}")
+        logger.info("Will attempt connection anyway...")
+    
     try:
         # Use HuggingFace's recommended pattern
         bot.run(DISCORD_TOKEN, log_handler=None)
