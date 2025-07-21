@@ -18,11 +18,18 @@ def test_dns_resolution():
         try:
             import subprocess
             result = subprocess.run(['nslookup', 'discord.com'], capture_output=True, text=True, timeout=5)
-            if result.returncode == 0:
-                print(f"✅ nslookup worked: {result.stdout.strip()}")
+            output = result.stdout + result.stderr
+            
+            # Check if nslookup actually resolved (not just exit code)
+            if "No answer" in output or "can't find" in output or "NXDOMAIN" in output:
+                print(f"❌ nslookup failed to resolve: {output.strip()}")
+                return False
+            elif "Address:" in output and any(c.isdigit() for c in output):
+                print(f"✅ nslookup resolved discord.com successfully")
                 return True
             else:
-                print(f"❌ nslookup also failed: {result.stderr}")
+                print(f"❌ nslookup unclear result: {output.strip()}")
+                return False
         except Exception as ns_error:
             print(f"❌ nslookup test failed: {ns_error}")
         return False
@@ -64,11 +71,12 @@ if __name__ == "__main__":
     print(f"Discord API: {'✅' if discord_ok else '❌'}")
     
     if not discord_ok and https_ok and not dns_ok:
-        print("\n🔧 CONCLUSION: DNS resolution issue - not a platform block")
-        print("💡 Try fixing DNS servers in Dockerfile")
+        print("\n🚫 CONCLUSION: HuggingFace DNS server cannot resolve discord.com")
+        print("💡 DNS server responds but says 'No answer' for Discord domains")
+        print("🔧 Attempting /etc/hosts fallback in startup script")
         sys.exit(1)
     elif not discord_ok and https_ok and dns_ok:
-        print("\n🚫 CONCLUSION: Discord API specifically blocked by platform")
+        print("\n🚫 CONCLUSION: Discord API blocked (DNS works but API fails)")
         sys.exit(1)
     elif not https_ok:
         print("\n🌐 CONCLUSION: General network connectivity issue")  

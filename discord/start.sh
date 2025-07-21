@@ -34,21 +34,33 @@ fi
 
 # Test DNS resolution manually
 echo "Testing Discord DNS resolution:"
-if ! nslookup discord.com; then
-    echo "❌ DNS lookup failed - trying fallback methods"
+NSLOOKUP_OUTPUT=$(nslookup discord.com 2>&1)
+echo "$NSLOOKUP_OUTPUT"
+
+# Check if nslookup actually resolved (not just returned exit code 0)
+if echo "$NSLOOKUP_OUTPUT" | grep -q "No answer\|can't find\|NXDOMAIN\|not found"; then
+    echo "❌ DNS resolution failed - server responds but no answer for discord.com"
     
     # Try adding Discord IPs to /etc/hosts as fallback
     echo "Attempting to add Discord IPs to /etc/hosts..."
     if echo "162.159.133.233 discord.com" >> /etc/hosts 2>/dev/null; then
         echo "162.159.134.233 gateway.discord.gg" >> /etc/hosts 2>/dev/null
+        echo "162.159.135.233 discordapp.com" >> /etc/hosts 2>/dev/null
         echo "✅ Added Discord IPs to /etc/hosts"
-        echo "Testing DNS resolution after hosts update:"
-        nslookup discord.com || echo "Still failing - will try direct connection"
+        echo "Updated /etc/hosts entries:"
+        grep discord /etc/hosts || echo "No Discord entries found"
+        echo "Testing resolution after hosts update:"
+        getent hosts discord.com || echo "getent failed"
+        nslookup discord.com || echo "nslookup still using DNS server"
     else
-        echo "⚠️ Cannot modify /etc/hosts either - using direct connection"
+        echo "⚠️ Cannot modify /etc/hosts - will attempt direct IP connection"
+        echo "Current /etc/hosts permissions:"
+        ls -la /etc/hosts
     fi
+elif echo "$NSLOOKUP_OUTPUT" | grep -q "Address:.*[0-9]"; then
+    echo "✅ DNS lookup successful - Discord resolved to IP"
 else
-    echo "✅ DNS lookup successful"
+    echo "⚠️ DNS lookup unclear - will attempt connection anyway"
 fi
 
 # Quick connectivity test
