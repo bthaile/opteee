@@ -672,9 +672,21 @@ def main():
         return
     
     try:
-        bot.run(DISCORD_TOKEN)
+        # Add retry logic for network connectivity issues
+        import asyncio
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        bot.run(DISCORD_TOKEN, reconnect=True)
     except Exception as e:
         logger.error(f"Failed to start bot: {str(e)}")
+        # Wait and retry once
+        import time
+        time.sleep(5)
+        try:
+            logger.info("Retrying bot connection...")
+            bot.run(DISCORD_TOKEN, reconnect=True)
+        except Exception as e2:
+            logger.error(f"Retry failed: {str(e2)}")
 
 if __name__ == "__main__":
     main() 

@@ -13,6 +13,11 @@ sleep 2
 
 echo "🤖 Starting Discord bot..."
 
+# Test network connectivity
+echo "🔍 Testing network connectivity..."
+nslookup discord.com || echo "DNS lookup failed"
+ping -c 1 8.8.8.8 || echo "Internet connectivity test failed"
+
 # Start the Discord bot in the foreground
 python discord_bot.py &
 BOT_PID=$!

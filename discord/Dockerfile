@@ -2,9 +2,11 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-# Install system dependencies (curl for health checks)
+# Install system dependencies (curl for health checks + DNS tools)
 RUN apt-get update && apt-get install -y \
     curl \
+    ca-certificates \
+    dnsutils \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements first for better caching
