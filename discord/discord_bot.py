@@ -36,13 +36,45 @@ HEALTH_ENDPOINT = f"{API_BASE_URL}/api/health"
 DEFAULT_PROVIDER = os.getenv('DEFAULT_PROVIDER', 'openai')
 DEFAULT_RESULTS = int(os.getenv('DEFAULT_RESULTS', '5'))
 
-# Set up Discord bot with intents (HuggingFace simple pattern)
+# Set up Discord bot with intents and custom DNS resolver
 intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
 
-# Simple bot configuration - no custom connectors
-bot = commands.Bot(command_prefix='!', intents=intents)
+# Configure custom DNS resolver to bypass system DNS
+import aiohttp
+import asyncio
+
+# Try to create custom DNS resolver
+try:
+    from aiohttp.resolver import AsyncResolver
+    
+    # Use Google DNS and Cloudflare DNS
+    custom_resolver = AsyncResolver(nameservers=['8.8.8.8', '8.8.4.4', '1.1.1.1'])
+    
+    # Create connector with custom DNS resolver
+    custom_connector = aiohttp.TCPConnector(
+        resolver=custom_resolver,
+        ttl_dns_cache=300,
+        use_dns_cache=True,
+        limit=100,
+        limit_per_host=10
+    )
+    
+    logger.info("✅ Created custom DNS resolver with Google/Cloudflare DNS")
+    
+    # Bot with custom DNS resolver
+    bot = commands.Bot(command_prefix='!', intents=intents, connector=custom_connector)
+    
+except ImportError as e:
+    logger.warning(f"⚠️ AsyncResolver not available: {e}")
+    logger.info("Falling back to default connector")
+    bot = commands.Bot(command_prefix='!', intents=intents)
+    
+except Exception as e:
+    logger.warning(f"⚠️ Failed to create custom DNS resolver: {e}")
+    logger.info("Falling back to default connector")
+    bot = commands.Bot(command_prefix='!', intents=intents)
 
 def format_answer_for_discord(html_content: str) -> str:
     """Convert HTML content to Discord-native markdown format using html_to_markdown library"""
@@ -694,10 +726,19 @@ def main():
     try:
         import socket
         discord_ip = socket.gethostbyname('discord.com')
-        logger.info(f"✅ DNS Pre-check: discord.com -> {discord_ip}")
+        logger.info(f"✅ System DNS resolved discord.com -> {discord_ip}")
     except Exception as dns_error:
-        logger.warning(f"⚠️ DNS Pre-check failed: {dns_error}")
-        logger.info("Will attempt connection anyway...")
+        logger.warning(f"⚠️ System DNS failed: {dns_error}")
+        logger.info("🔧 Custom DNS resolver in bot should bypass this issue")
+    
+    # Test if bot has custom resolver
+    if hasattr(bot, 'http') and hasattr(bot.http, 'connector'):
+        if hasattr(bot.http.connector, 'resolver'):
+            logger.info("✅ Bot configured with custom DNS resolver")
+        else:
+            logger.info("⚠️ Bot using default system DNS resolver")
+    else:
+        logger.info("ℹ️ Cannot determine bot DNS resolver configuration")
     
     try:
         # Use HuggingFace's recommended pattern
