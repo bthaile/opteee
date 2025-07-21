@@ -1,15 +1,17 @@
 [Unit]
-Description=Opteee Discord Bot
+Description=OPTEEE Discord Bot
 After=network.target
 
 [Service]
 Type=simple
-User=bthaile
-WorkingDirectory=/Users/bthaile/gitrepos/opteee/discord
-Environment=PYTHONPATH=/Users/bthaile/gitrepos/opteee/discord
-ExecStart=/Users/bthaile/gitrepos/opteee/venv/bin/python discord_bot.py
+User=%i
+WorkingDirectory=%h/gitrepos/opteee/discord
+Environment=PYTHONPATH=%h/gitrepos/opteee/discord
+ExecStart=%h/gitrepos/opteee/venv/bin/python discord_bot.py
 Restart=always
 RestartSec=10
+StandardOutput=journal
+StandardError=journal
 
 [Install]
-WantedBy=multi-user.target 
+WantedBy=multi-user.target

@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  opteee-discord-bot:
+    build: .
+    container_name: opteee-discord-bot
+    restart: unless-stopped
+    environment:
+      # Discord Bot Configuration
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      # OPTEEE API Configuration (defaults to production)
+      - OPTEEE_API_URL=${OPTEEE_API_URL:-https://bthaile-opteee.hf.space}
+      # Optional settings
+      - DEFAULT_PROVIDER=${DEFAULT_PROVIDER:-openai}
+      - DEFAULT_RESULTS=${DEFAULT_RESULTS:-5}
+    env_file:
+      - .env
+    volumes:
+      # Mount logs directory for persistence
+      - ./logs:/app/logs
+    networks:
+      - opteee-network
+    healthcheck:
+      test: ["CMD", "ps", "aux", "|", "grep", "-v", "grep", "|", "grep", "discord_bot.py"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  opteee-network:
+    driver: bridge 

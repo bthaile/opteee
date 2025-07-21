@@ -1,0 +1,72 @@
+name: Deploy Discord Bot to Hugging Face Space
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'discord/**'  # Only trigger when Discord bot files change
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: discord
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+
+      - name: Prepare Discord Bot for HuggingFace
+        run: |
+          echo "📋 Files being deployed:"
+          ls -la
+          echo ""
+          echo "📝 README.md content:"
+          head -20 README.md
+
+      - name: Create deployment directory
+        run: |
+          mkdir -p /tmp/discord-bot-deploy
+          
+          # Copy Discord bot files
+          cp discord_bot.py /tmp/discord-bot-deploy/
+          cp health_server.py /tmp/discord-bot-deploy/
+          cp start.sh /tmp/discord-bot-deploy/
+          cp requirements.txt /tmp/discord-bot-deploy/
+          cp Dockerfile /tmp/discord-bot-deploy/
+          cp README.md /tmp/discord-bot-deploy/
+          
+          echo "✅ Deployment directory prepared"
+          ls -la /tmp/discord-bot-deploy/
+
+      - name: Deploy to Hugging Face Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          DISCORD_SPACE_NAME: ${{ secrets.DISCORD_SPACE_NAME }}  # e.g., "bthaile/opteee-discord-bot"
+        run: |
+          # Set up Git credentials
+          git config --global credential.helper store
+          echo "https://USER:${HF_TOKEN}@huggingface.co" > ~/.git-credentials
+          
+          # Navigate to deployment directory
+          cd /tmp/discord-bot-deploy
+          
+          # Initialize new git repository
+          git init
+          git add .
+          git commit -m "Deploy OPTEEE Discord Bot to HuggingFace Space"
+          
+          # Add HuggingFace Space as remote
+          git remote add space https://huggingface.co/spaces/$DISCORD_SPACE_NAME
+          
+          # Force push to HuggingFace Space
+          git push --force space main
+          
+          echo "🎉 Discord bot deployed to HuggingFace Space: $DISCORD_SPACE_NAME" 
