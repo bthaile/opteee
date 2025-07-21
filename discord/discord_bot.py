@@ -51,7 +51,9 @@ try:
     import aiohttp
     import asyncio
     from aiohttp.resolver import AsyncResolver
+    import discord
     import discord.http
+    import discord.gateway
     custom_resolver_available = True
     logger.info("✅ Custom DNS resolver dependencies available")
 except ImportError as e:
@@ -158,7 +160,6 @@ async def setup_discord_patches():
         
         # 3. Patch WebSocket connections for gateway
         try:
-            import discord.gateway
             original_websocket_from_client = discord.gateway.DiscordWebSocket.from_client
             
             @classmethod
