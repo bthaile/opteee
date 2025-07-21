@@ -14,12 +14,20 @@ sleep 2
 echo "🤖 Starting Discord bot..."
 
 # Test network connectivity
-echo "🔍 Basic network check..."
+echo "🔍 DNS and network check..."
+
+# Check DNS configuration
+echo "DNS servers:"
+cat /etc/resolv.conf
+
+# Test DNS resolution manually
+echo "Testing Discord DNS resolution:"
+nslookup discord.com || echo "nslookup not available"
 
 # Quick connectivity test
 python test_discord_connection.py || echo "Network test completed"
 
-echo "📡 Starting Discord bot with minimal configuration..."
+echo "📡 Starting Discord bot with DNS fix applied..."
 
 # Start the Discord bot in the foreground
 python discord_bot.py &

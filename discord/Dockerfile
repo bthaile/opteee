@@ -2,11 +2,17 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-# Install system dependencies (minimal HuggingFace pattern)
+# Install system dependencies with DNS tools
 RUN apt-get update && apt-get install -y \
     curl \
     ca-certificates \
+    dnsutils \
     && rm -rf /var/lib/apt/lists/*
+
+# Fix DNS resolution by setting reliable DNS servers
+RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf && \
+    echo "nameserver 8.8.4.4" >> /etc/resolv.conf && \
+    echo "nameserver 1.1.1.1" >> /etc/resolv.conf
 
 # Copy requirements first for better caching
 COPY requirements.txt /app/requirements.txt

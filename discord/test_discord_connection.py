@@ -14,6 +14,17 @@ def test_dns_resolution():
         return True
     except Exception as e:
         print(f"❌ DNS Resolution Failed: {e}")
+        # Try alternative test
+        try:
+            import subprocess
+            result = subprocess.run(['nslookup', 'discord.com'], capture_output=True, text=True, timeout=5)
+            if result.returncode == 0:
+                print(f"✅ nslookup worked: {result.stdout.strip()}")
+                return True
+            else:
+                print(f"❌ nslookup also failed: {result.stderr}")
+        except Exception as ns_error:
+            print(f"❌ nslookup test failed: {ns_error}")
         return False
 
 def test_discord_api():
@@ -52,8 +63,12 @@ if __name__ == "__main__":
     print(f"HTTPS General: {'✅' if https_ok else '❌'}")  
     print(f"Discord API: {'✅' if discord_ok else '❌'}")
     
-    if not discord_ok and https_ok:
-        print("\n🚫 CONCLUSION: Discord specifically blocked by platform")
+    if not discord_ok and https_ok and not dns_ok:
+        print("\n🔧 CONCLUSION: DNS resolution issue - not a platform block")
+        print("💡 Try fixing DNS servers in Dockerfile")
+        sys.exit(1)
+    elif not discord_ok and https_ok and dns_ok:
+        print("\n🚫 CONCLUSION: Discord API specifically blocked by platform")
         sys.exit(1)
     elif not https_ok:
         print("\n🌐 CONCLUSION: General network connectivity issue")  

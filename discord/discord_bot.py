@@ -690,11 +690,19 @@ def main():
         bot.run(DISCORD_TOKEN, log_handler=None)
     except Exception as e:
         logger.error(f"Bot failed to start: {str(e)}")
-        logger.info("Checking basic connectivity...")
+        logger.info("Diagnosing DNS and connectivity...")
         
-        # Simple connectivity test without external tools
+        # Test DNS resolution first
         try:
             import socket
+            discord_ip = socket.gethostbyname('discord.com')
+            logger.info(f"✅ DNS Resolution: discord.com -> {discord_ip}")
+        except Exception as dns_error:
+            logger.error(f"❌ DNS Resolution Failed: {dns_error}")
+            logger.error("💡 This indicates a DNS configuration issue, not a platform block")
+        
+        # Test basic internet
+        try:
             socket.create_connection(("8.8.8.8", 53), timeout=3).close()
             logger.info("✅ Internet connectivity OK")
         except Exception:
@@ -708,7 +716,7 @@ def main():
             bot.run(DISCORD_TOKEN)
         except Exception as e2:
             logger.error(f"Recovery attempt failed: {str(e2)}")
-            logger.error("Bot startup failed completely")
+            logger.error("Bot startup failed - likely DNS issue")
 
 if __name__ == "__main__":
     main() 
