@@ -21,8 +21,8 @@ COPY start.sh /app/
 # Make startup script executable
 RUN chmod +x /app/start.sh
 
-# Create logs directory
-RUN mkdir -p /app/logs
+# Create logs directory with write permissions
+RUN mkdir -p /app/logs && chmod 777 /app/logs
 
 # Set environment variables
 ENV PYTHONPATH=/app
