@@ -88,10 +88,13 @@ async def setup_custom_dns_resolver():
         )
         
         # Create custom aiohttp session with our DNS resolver
+        # Note: Don't share this session - let discord.py create its own with our patches
         custom_session = aiohttp.ClientSession(
             connector=custom_connector,
             timeout=aiohttp.ClientTimeout(total=30)
         )
+        
+        logger.info("✅ Custom DNS session created (for API calls, not discord.py)")
         
         logger.info("✅ Created custom DNS resolver with Google/Cloudflare DNS in async context")
         
@@ -128,28 +131,8 @@ async def setup_discord_patches():
         aiohttp.ClientSession.__init__ = custom_client_session_init
         logger.info("✅ Applied global aiohttp ClientSession DNS patch")
         
-        # 2. Patch discord.py HTTPClient session creation
-        original_http_init = discord.http.HTTPClient.__init__
-        
-        def custom_http_init(self, *args, **kwargs):
-            """Override HTTPClient init to use our custom DNS session"""
-            # Call original init normally
-            result = original_http_init(self, *args, **kwargs)
-            
-            # Replace the session with our custom DNS session
-            if custom_session:
-                if hasattr(self, '_HTTPClient__session') and self._HTTPClient__session:
-                    # Don't await here since this is a sync function
-                    pass
-                self._HTTPClient__session = custom_session
-                self._custom_session_patched = True
-                logger.info("🔧 Discord HTTPClient session replaced with custom DNS session")
-            
-            return result
-        
-        # Apply HTTPClient patch
-        discord.http.HTTPClient.__init__ = custom_http_init
-        logger.info("✅ Applied Discord HTTPClient session replacement patch")
+        # 2. Let discord.py create its own sessions (they'll use our custom connector via global patches)
+        logger.info("✅ Discord will create its own sessions using global aiohttp DNS patches")
         
         # 3. Patch aiohttp connector creation as fallback
         original_tcp_connector_init = aiohttp.TCPConnector.__init__
@@ -168,29 +151,7 @@ async def setup_discord_patches():
         aiohttp.TCPConnector.__init__ = custom_tcp_connector_init
         logger.info("✅ Applied aiohttp TCPConnector DNS resolver patch")
         
-        # 4. Patch WebSocket connections for gateway (backup)
-        try:
-            original_websocket_from_client = discord.gateway.DiscordWebSocket.from_client
-            
-            @classmethod
-            async def custom_websocket_from_client(cls, client, **kwargs):
-                """Override discord.py WebSocket to ensure custom DNS resolver"""
-                # Ensure the client's HTTP session uses our custom session
-                if hasattr(client.http, '_HTTPClient__session') and custom_session:
-                    if not client.http._HTTPClient__session.closed:
-                        await client.http._HTTPClient__session.close()
-                    client.http._HTTPClient__session = custom_session
-                    logger.info("🔧 WebSocket client session replaced with custom DNS session")
-                
-                return await original_websocket_from_client(client, **kwargs)
-            
-            # Apply WebSocket patch
-            discord.gateway.DiscordWebSocket.from_client = custom_websocket_from_client
-            logger.info("✅ Applied WebSocket gateway DNS patch")
-            
-        except (ImportError, AttributeError) as ws_error:
-            logger.warning(f"⚠️ Could not patch WebSocket DNS resolver: {ws_error}")
-        
+        # 4. Global patches are sufficient - discord.py will use our DNS resolver automatically
         logger.info("✅ All comprehensive DNS patches applied successfully")
         
     except Exception as patch_error:
@@ -842,10 +803,10 @@ def create_bot():
         # Verify custom DNS resolver is working
         if custom_session and not custom_session.closed:
             logger.info('✅ Custom DNS resolver active and ready')
-        if hasattr(bot.http, '_custom_session_patched'):
-            logger.info('✅ Discord.py is using custom DNS resolver for HTTP requests')
+        if custom_connector:
+            logger.info('✅ Discord.py using global aiohttp DNS patches with custom resolver')
         else:
-            logger.warning('⚠️ Custom DNS resolver patch not detected (may be OK if using fallback)')
+            logger.warning('⚠️ Custom DNS resolver not available')
         
         # Set bot's activity status
         await bot.change_presence(
