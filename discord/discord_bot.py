@@ -36,11 +36,35 @@ HEALTH_ENDPOINT = f"{API_BASE_URL}/api/health"
 DEFAULT_PROVIDER = os.getenv('DEFAULT_PROVIDER', 'openai')
 DEFAULT_RESULTS = int(os.getenv('DEFAULT_RESULTS', '5'))
 
-# Set up Discord bot with intents
+# Set up Discord bot with intents and connector options
 intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
-bot = commands.Bot(command_prefix='!', intents=intents)
+
+# Configure aiohttp connector for better network resilience
+import aiohttp
+import asyncio
+import ssl
+
+# Create SSL context that's more permissive
+ssl_context = ssl.create_default_context()
+ssl_context.check_hostname = False
+ssl_context.verify_mode = ssl.CERT_NONE
+
+# Create connector with custom settings
+connector = aiohttp.TCPConnector(
+    ssl=ssl_context,
+    ttl_dns_cache=300,
+    use_dns_cache=True,
+    limit=100,
+    limit_per_host=10
+)
+
+bot = commands.Bot(
+    command_prefix='!', 
+    intents=intents,
+    connector=connector
+)
 
 def format_answer_for_discord(html_content: str) -> str:
     """Convert HTML content to Discord-native markdown format using html_to_markdown library"""
