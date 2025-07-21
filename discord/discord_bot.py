@@ -114,15 +114,16 @@ async def setup_discord_patches():
         # 1. Patch HTTPClient initialization to use our custom session
         original_http_init = discord.http.HTTPClient.__init__
         
-        def custom_http_init(self, connector=None, **kwargs):
+        def custom_http_init(self, *args, **kwargs):
             """Override HTTPClient init to use our custom session and connector"""
-            # Use our custom connector if available
+            # Extract connector from kwargs if present, or use our custom one
+            connector = kwargs.get('connector')
             if custom_connector and not connector:
-                connector = custom_connector
+                kwargs['connector'] = custom_connector
                 logger.info("🔧 HTTPClient using custom DNS connector")
             
-            # Call original init
-            result = original_http_init(self, connector=connector, **kwargs)
+            # Call original init with all arguments
+            result = original_http_init(self, *args, **kwargs)
             
             # If we have a custom session, use it immediately
             if custom_session:
@@ -806,9 +807,6 @@ async def setup_custom_dns_and_patches():
     
     if dns_success and custom_connector and custom_session:
         logger.info("✅ Custom DNS resolver setup successful")
-        
-        # Apply discord.py patches BEFORE creating bot
-        await setup_discord_patches()
         logger.info("✅ Discord.py patches applied before bot creation")
         return True
     else:
