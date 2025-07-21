@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Simple startup script for OPTEEE Discord Bot
+# Note: DNS resolution is handled by the custom async resolver in discord_bot.py
+
 echo "🚀 Starting OPTEEE Discord Bot Health Server..."
 
 # Start the health server in the background
@@ -12,13 +15,6 @@ echo "✅ Health server started (PID: $HEALTH_PID)"
 sleep 2
 
 echo "🤖 Starting Discord bot..."
-
-# Quick network connectivity test using custom DNS resolver
-echo "🔍 Testing network connectivity with custom DNS resolver..."
-echo "ℹ️  DNS resolution handled by async custom resolver in discord_bot.py"
-python test_discord_connection.py || echo "Network test completed"
-
-echo "🚀 Starting Discord bot with async custom DNS resolver..."
 
 # Start the Discord bot in the foreground
 python discord_bot.py &
@@ -42,7 +38,7 @@ trap cleanup SIGTERM SIGINT
 
 echo "🎉 All services running!"
 echo "   Health server: http://localhost:${PORT:-8080}"
-echo "   Discord bot: Connected to Discord"
+echo "   Discord bot: Starting with custom DNS resolver"
 echo ""
 echo "Use Ctrl+C to stop all services"
 

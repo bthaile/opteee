@@ -58,18 +58,8 @@ except ImportError as e:
     logger.warning(f"⚠️ AsyncResolver not available: {e}")
     custom_resolver_available = False
 
-# Create bot with default intents (DNS resolver will be set up later)
-bot = commands.Bot(command_prefix='!', intents=intents)
-
-@bot.event
-async def setup_hook():
-    """Set up custom DNS resolver before connecting to Discord"""
-    logger.info("🔧 Bot setup_hook called - initializing custom DNS resolver...")
-    dns_success = await setup_custom_dns_resolver()
-    if dns_success:
-        logger.info("✅ Custom DNS resolver setup complete")
-    else:
-        logger.warning("⚠️ Custom DNS resolver setup failed - using system DNS")
+# Bot will be created after setting up DNS resolver (see main function)
+bot = None
 
 async def setup_custom_dns_resolver():
     """Set up custom DNS resolver in async context"""
@@ -113,34 +103,60 @@ async def setup_custom_dns_resolver():
         return False
 
 async def setup_discord_patches():
-    """Set up discord.py patches to use custom DNS resolver"""
-    global custom_session
+    """Set up comprehensive discord.py patches to use custom DNS resolver"""
+    global custom_session, custom_connector
     
     try:
-        # 1. Patch HTTP requests
+        logger.info("🔧 Applying comprehensive discord.py DNS patches...")
+        
+        # 1. Patch HTTPClient initialization to use our custom session
+        original_http_init = discord.http.HTTPClient.__init__
+        
+        def custom_http_init(self, connector=None, **kwargs):
+            """Override HTTPClient init to use our custom session and connector"""
+            # Use our custom connector if available
+            if custom_connector and not connector:
+                connector = custom_connector
+                logger.info("🔧 HTTPClient using custom DNS connector")
+            
+            # Call original init
+            result = original_http_init(self, connector=connector, **kwargs)
+            
+            # If we have a custom session, use it immediately
+            if custom_session:
+                if hasattr(self, '_HTTPClient__session') and not self._HTTPClient__session.closed:
+                    # Don't await here since this is a sync function - close will happen later
+                    pass
+                self._HTTPClient__session = custom_session
+                self._custom_session_patched = True
+                logger.info("🔧 HTTPClient session replaced with custom DNS session")
+            
+            return result
+        
+        # Apply HTTPClient init patch
+        discord.http.HTTPClient.__init__ = custom_http_init
+        logger.info("✅ Applied HTTPClient initialization patch")
+        
+        # 2. Patch HTTP requests (backup/fallback)
         original_request = discord.http.HTTPClient.request
         
         async def custom_request(self, route, **kwargs):
             """Override discord.py HTTP requests to use our custom session"""
-            # Use our custom session instead of discord.py's default
-            if hasattr(self, '_custom_session_patched'):
-                return await original_request(self, route, **kwargs)
-            
-            # Replace discord.py's session with ours
-            if hasattr(self, '_HTTPClient__session') and custom_session:
-                if not self._HTTPClient__session.closed:
+            # Ensure we're using our custom session
+            if not hasattr(self, '_custom_session_patched') and custom_session:
+                if hasattr(self, '_HTTPClient__session') and not self._HTTPClient__session.closed:
                     await self._HTTPClient__session.close()
                 self._HTTPClient__session = custom_session
                 self._custom_session_patched = True
-                logger.info("🔧 Patched discord.py HTTP client to use custom DNS resolver")
+                logger.info("🔧 Late-patched HTTP client to use custom DNS resolver")
             
             return await original_request(self, route, **kwargs)
         
-        # Apply the HTTP patch
+        # Apply the HTTP request patch
         discord.http.HTTPClient.request = custom_request
-        logger.info("✅ Applied HTTP client DNS patch")
+        logger.info("✅ Applied HTTP request patch")
         
-        # 2. Patch WebSocket connections for gateway
+        # 3. Patch WebSocket connections for gateway
         try:
             import discord.gateway
             original_websocket_from_client = discord.gateway.DiscordWebSocket.from_client
@@ -148,20 +164,23 @@ async def setup_discord_patches():
             @classmethod
             async def custom_websocket_from_client(cls, client, **kwargs):
                 """Override discord.py WebSocket to use custom DNS resolver"""
-                # Ensure the client's session uses our custom connector
+                # Ensure the client's HTTP session uses our custom session
                 if hasattr(client.http, '_HTTPClient__session') and custom_session:
                     if not client.http._HTTPClient__session.closed:
                         await client.http._HTTPClient__session.close()
                     client.http._HTTPClient__session = custom_session
+                    logger.info("🔧 WebSocket client session replaced with custom DNS session")
                 
                 return await original_websocket_from_client(client, **kwargs)
             
             # Apply WebSocket patch
             discord.gateway.DiscordWebSocket.from_client = custom_websocket_from_client
-            logger.info("✅ Applied WebSocket gateway DNS patch")
+            logger.info("✅ Applied WebSocket gateway patch")
             
         except (ImportError, AttributeError) as ws_error:
             logger.warning(f"⚠️ Could not patch WebSocket DNS resolver: {ws_error}")
+        
+        logger.info("✅ All discord.py DNS patches applied successfully")
         
     except Exception as patch_error:
         logger.error(f"❌ Failed to apply discord.py DNS patches: {patch_error}")
@@ -486,31 +505,9 @@ async def query_opteee(query: str, num_results: int = 5, provider: str = "openai
             "error": error_msg
         }
 
-@bot.event
-async def on_ready():
-    """Called when the bot is ready and connected to Discord"""
-    logger.info(f'🎉 Bot is ready! Logged in as {bot.user.name}')
-    logger.info('Use !search <query> to search for options trading information')
-    logger.info('Use !show_help to see all available commands')
-    
-    # Verify custom DNS resolver is working
-    if custom_session and not custom_session.closed:
-        logger.info('✅ Custom DNS resolver active and ready')
-    if hasattr(bot.http, '_custom_session_patched'):
-        logger.info('✅ Discord.py is using custom DNS resolver for HTTP requests')
-    else:
-        logger.warning('⚠️ Custom DNS resolver patch not detected (may be OK if using fallback)')
-    
-    # Set bot's activity status
-    await bot.change_presence(
-        activity=discord.Activity(
-            type=discord.ActivityType.listening,
-            name="!show_help for options trading info"
-        )
-    )
+# Command handler functions (will be added to bot dynamically)
 
-@bot.command(name='search')
-async def search(ctx, *, query: str):
+async def search_handler(ctx, query: str):
     """Search for options trading information"""
     logger.info(f'Search query from {ctx.author}: {query}')
     
@@ -615,8 +612,7 @@ async def search(ctx, *, query: str):
         logger.error(error_msg)
         await ctx.send(error_msg)
 
-@bot.command(name='search_advanced')
-async def search_advanced(ctx, num_results: int, *, query: str):
+async def search_advanced_handler(ctx, num_results: int, query: str):
     """Advanced search with custom result count"""
     # Validate inputs
     if not 1 <= num_results <= 10:
@@ -728,8 +724,7 @@ async def search_advanced(ctx, num_results: int, *, query: str):
         logger.error(error_msg)
         await ctx.send(error_msg)
 
-@bot.command(name='health')
-async def health_check(ctx):
+async def health_handler(ctx):
     """Check if the OPTEEE API is healthy"""
     await ctx.send("**System Health Check**\n*Testing connection to OPTEEE API...*")
     
@@ -752,8 +747,7 @@ async def health_check(ctx):
     except Exception as e:
         await ctx.send(f"**Connection Failed**\n*Unable to reach OPTEEE API*\n```\n{str(e)[:100]}...\n```")
 
-@bot.command(name='show_help')
-async def show_help(ctx):
+async def show_help_handler(ctx):
     """Show help information"""
     help_text = f"""
 **OPTEEE Discord Bot - Options Trading Knowledge Search**
@@ -785,23 +779,7 @@ async def show_help(ctx):
 """
     await ctx.send(help_text)
 
-@bot.event
-async def on_command_error(ctx, error):
-    """Handle command errors"""
-    if isinstance(error, commands.MissingRequiredArgument):
-        if ctx.command.name == 'search_advanced':
-            await ctx.send("Please provide result count and query. Example: `!search_advanced 8 What is gamma?`")
-        else:
-            await ctx.send("Please provide a search query. Example: `!search What is gamma?`")
-    else:
-        error_msg = f"An error occurred: {str(error)}"
-        logger.error(error_msg)
-        await ctx.send(error_msg)
-
-@bot.event
-async def close():
-    """Clean up resources when bot shuts down"""
-    await cleanup_custom_session()
+# Note: Event handlers are added dynamically in create_bot_with_dns()
 
 async def cleanup_custom_session():
     """Clean up custom aiohttp session and connector"""
@@ -816,13 +794,107 @@ async def cleanup_custom_session():
     except Exception as e:
         logger.warning(f"⚠️ Error during cleanup: {e}")
 
+async def setup_custom_dns_and_patches():
+    """Set up custom DNS resolver and apply discord.py patches before bot creation"""
+    global custom_session, custom_connector
+    
+    logger.info("🔧 Setting up custom DNS resolver and discord.py patches...")
+    
+    # Set up custom DNS resolver
+    dns_success = await setup_custom_dns_resolver()
+    
+    if dns_success and custom_connector and custom_session:
+        logger.info("✅ Custom DNS resolver setup successful")
+        
+        # Apply discord.py patches BEFORE creating bot
+        await setup_discord_patches()
+        logger.info("✅ Discord.py patches applied before bot creation")
+        return True
+    else:
+        logger.warning("⚠️ Custom DNS resolver setup failed - will use system DNS")
+        return False
+
+def create_bot():
+    """Create bot instance (DNS resolver patches should already be applied)"""
+    global bot
+    
+    logger.info("🔧 Creating bot instance...")
+    
+    # Create bot with intents
+    bot = commands.Bot(command_prefix='!', intents=intents)
+    
+    # Add event handlers to the bot
+    @bot.event
+    async def on_ready():
+        """Called when the bot is ready and connected to Discord"""
+        logger.info(f'🎉 Bot is ready! Logged in as {bot.user.name}')
+        logger.info('Use !search <query> to search for options trading information')
+        logger.info('Use !show_help to see all available commands')
+        
+        # Verify custom DNS resolver is working
+        if custom_session and not custom_session.closed:
+            logger.info('✅ Custom DNS resolver active and ready')
+        if hasattr(bot.http, '_custom_session_patched'):
+            logger.info('✅ Discord.py is using custom DNS resolver for HTTP requests')
+        else:
+            logger.warning('⚠️ Custom DNS resolver patch not detected (may be OK if using fallback)')
+        
+        # Set bot's activity status
+        await bot.change_presence(
+            activity=discord.Activity(
+                type=discord.ActivityType.listening,
+                name="!show_help for options trading info"
+            )
+        )
+
+    @bot.event
+    async def close():
+        """Clean up resources when bot shuts down"""
+        await cleanup_custom_session()
+    
+    @bot.event
+    async def on_command_error(ctx, error):
+        """Handle command errors"""
+        if isinstance(error, commands.MissingRequiredArgument):
+            if ctx.command.name == 'search_advanced':
+                await ctx.send("Please provide result count and query. Example: `!search_advanced 8 What is gamma?`")
+            else:
+                await ctx.send("Please provide a search query. Example: `!search What is gamma?`")
+        else:
+            error_msg = f"An error occurred: {str(error)}"
+            logger.error(error_msg)
+            await ctx.send(error_msg)
+    
+    # Add command handlers
+    @bot.command(name='search')
+    async def search_command(ctx, *, query: str):
+        """Search for options trading information"""
+        await search_handler(ctx, query)
+    
+    @bot.command(name='search_advanced')
+    async def search_advanced_command(ctx, num_results: int, *, query: str):
+        """Advanced search with custom result count"""
+        await search_advanced_handler(ctx, num_results, query)
+    
+    @bot.command(name='health')
+    async def health_command(ctx):
+        """Check API health status"""
+        await health_handler(ctx)
+    
+    @bot.command(name='show_help')
+    async def show_help_command(ctx):
+        """Show help information"""
+        await show_help_handler(ctx)
+    
+    return bot
+
 def main():
-    """Main function to run the bot with proper async DNS resolver setup"""
+    """Main function to run the bot with custom DNS resolver set up before connection"""
     if not DISCORD_TOKEN:
         logger.error("DISCORD_TOKEN not found in environment variables")
         return
     
-    logger.info("Starting Discord bot with async custom DNS resolver...")
+    logger.info("Starting Discord bot with pre-configured custom DNS resolver...")
     
     # Set up event loop properly (HuggingFace pattern)
     try:
@@ -844,52 +916,71 @@ def main():
         logger.info(f"✅ System DNS resolved discord.com -> {discord_ip}")
     except Exception as dns_error:
         logger.warning(f"⚠️ System DNS failed: {dns_error}")
-        logger.info("🔧 Custom async DNS resolver should bypass this issue")
+        logger.info("🔧 Custom DNS resolver will bypass this issue")
     
     # Report resolver availability
     if custom_resolver_available:
-        logger.info("✅ Custom DNS resolver dependencies available - will initialize in async context")
+        logger.info("✅ Custom DNS resolver dependencies available")
     else:
         logger.warning("⚠️ Custom DNS resolver dependencies not available - using system DNS")
     
-    try:
-        # Use HuggingFace's recommended pattern
-        logger.info("🚀 Starting bot (DNS resolver will be initialized in setup_hook)...")
-        bot.run(DISCORD_TOKEN, log_handler=None)
-    except Exception as e:
-        logger.error(f"Bot failed to start: {str(e)}")
-        logger.info("Diagnosing the issue...")
-        
-        # Quick connectivity diagnostics
+    async def run_bot_with_custom_dns():
+        """Main async function: set up DNS resolver, then create and start bot"""
         try:
-            import socket
-            socket.create_connection(("8.8.8.8", 53), timeout=3).close()
-            logger.info("✅ Internet connectivity OK")
-        except Exception:
-            logger.error("❌ No internet connectivity")
-        
-        # Check if it's still a DNS issue
-        try:
-            discord_ip = socket.gethostbyname('discord.com')
-            logger.info(f"✅ System DNS works: discord.com -> {discord_ip}")
-            logger.error("💡 Issue may not be DNS-related")
-        except Exception as dns_error:
-            logger.error(f"❌ System DNS still failing: {dns_error}")
-            logger.error("💡 Custom async DNS resolver was supposed to fix this")
+            logger.info("🚀 Phase 1: Setting up custom DNS resolver...")
             
-        # Single retry attempt
-        logger.info("Attempting one retry...")
-        try:
-            import time
-            time.sleep(3)
-            bot.run(DISCORD_TOKEN, log_handler=None)
-        except Exception as e2:
-            logger.error(f"Retry failed: {str(e2)}")
-            logger.error("Bot startup failed - async DNS resolver approach unsuccessful")
+            # Step 1: Set up custom DNS resolver and discord.py patches
+            dns_success = await setup_custom_dns_and_patches()
+            
+            if dns_success:
+                logger.info("✅ Custom DNS resolver and patches ready")
+            else:
+                logger.warning("⚠️ Using system DNS (custom resolver failed)")
+            
+            logger.info("🚀 Phase 2: Creating bot instance...")
+            
+            # Step 2: Create bot instance (patches already applied)
+            create_bot()
+            logger.info("✅ Bot instance created")
+            
+            logger.info("🚀 Phase 3: Starting bot with custom DNS resolver...")
+            
+            # Step 3: Start the bot (should now use our custom DNS for all connections)
+            await bot.start(DISCORD_TOKEN)
+            
+        except Exception as e:
+            logger.error(f"Bot failed to start: {str(e)}")
+            logger.info("Diagnosing the issue...")
+            
+            # Quick connectivity diagnostics
+            try:
+                import socket
+                socket.create_connection(("8.8.8.8", 53), timeout=3).close()
+                logger.info("✅ Internet connectivity OK")
+            except Exception:
+                logger.error("❌ No internet connectivity")
+            
+            # Check if it's still a DNS issue
+            try:
+                discord_ip = socket.gethostbyname('discord.com')
+                logger.info(f"✅ System DNS works: discord.com -> {discord_ip}")
+                logger.error("💡 Issue may not be DNS-related")
+            except Exception as dns_error:
+                logger.error(f"❌ System DNS still failing: {dns_error}")
+                logger.error("💡 Custom DNS resolver should have bypassed this")
+                
+            raise  # Re-raise the exception
+        finally:
+            # Clean up custom sessions and connectors
+            logger.info("🧹 Cleaning up custom DNS resolver resources...")
+            await cleanup_custom_session()
     
-    finally:
-        # Cleanup handled by the cleanup function
-        logger.info("Main function cleanup - custom sessions will be cleaned up by bot events")
+    try:
+        # Run the bot with custom DNS resolver setup
+        asyncio.run(run_bot_with_custom_dns())
+    except Exception as e:
+        logger.error(f"Bot startup failed: {str(e)}")
+        logger.error("Custom DNS resolver approach was unsuccessful")
 
 if __name__ == "__main__":
     main() 
