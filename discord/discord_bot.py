@@ -41,21 +41,29 @@ intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
 
+# DNS Resolver Configuration - Needed for HuggingFace DNS issues
+ENABLE_CUSTOM_DNS = os.getenv('ENABLE_CUSTOM_DNS', 'true').lower() == 'true'
+
 # Global variables for custom session management
 custom_session = None
 custom_connector = None
 custom_resolver_available = False
 
+# Save original aiohttp functions before patching for clean API calls
+original_client_session_init = None
+original_tcp_connector_init = None
+
 # Import aiohttp components (but don't initialize yet)
 try:
     import aiohttp
     import asyncio
-    from aiohttp.resolver import AsyncResolver
+    if ENABLE_CUSTOM_DNS:
+        from aiohttp.resolver import AsyncResolver
     import discord
     import discord.http
     import discord.gateway
-    custom_resolver_available = True
-    logger.info("✅ Custom DNS resolver dependencies available")
+    custom_resolver_available = ENABLE_CUSTOM_DNS
+    logger.info(f"✅ Custom DNS resolver {'enabled' if ENABLE_CUSTOM_DNS else 'disabled'}")
 except ImportError as e:
     logger.warning(f"⚠️ AsyncResolver not available: {e}")
     custom_resolver_available = False
@@ -67,8 +75,8 @@ async def setup_custom_dns_resolver():
     """Set up custom DNS resolver in async context"""
     global custom_session, custom_connector
     
-    if not custom_resolver_available:
-        logger.warning("⚠️ Custom DNS resolver dependencies not available")
+    if not custom_resolver_available or not ENABLE_CUSTOM_DNS:
+        logger.info("ℹ️ Using system DNS (custom DNS resolver disabled)")
         return False
     
     try:
@@ -109,13 +117,16 @@ async def setup_custom_dns_resolver():
 
 async def setup_discord_patches():
     """Set up comprehensive aiohttp and discord.py DNS patches"""
-    global custom_session, custom_connector
+    global custom_session, custom_connector, original_client_session_init, original_tcp_connector_init
     
     try:
         logger.info("🔧 Applying comprehensive aiohttp and discord.py DNS patches...")
         
-        # 1. Patch aiohttp ClientSession creation at the core level
+        # Save original functions before patching
         original_client_session_init = aiohttp.ClientSession.__init__
+        original_tcp_connector_init = aiohttp.TCPConnector.__init__
+        
+        # 1. Patch aiohttp ClientSession creation at the core level
         
         def custom_client_session_init(self, *args, **kwargs):
             """Override all aiohttp ClientSession creation to use our custom connector"""
@@ -159,21 +170,64 @@ async def setup_discord_patches():
         raise
 
 async def query_opteee(query: str, num_results: int = 5, provider: str = "openai", format: str = "discord") -> dict:
-    """Query the opteee application using the new FastAPI backend with Discord formatting"""
+    """Query the opteee application using clean session isolated from Discord DNS patches"""
+    global original_client_session_init, original_tcp_connector_init
+    
     try:
-        async with aiohttp.ClientSession() as session:
+        timeout = aiohttp.ClientTimeout(total=30, connect=10)
+        
+        # Use original functions if available (before patching), otherwise fallback to standard
+        if original_tcp_connector_init and original_client_session_init:
+            logger.info("Using original aiohttp functions for clean API call")
+            
+            # Create connector using original constructor
+            connector = aiohttp.TCPConnector.__new__(aiohttp.TCPConnector)
+            original_tcp_connector_init(
+                connector,
+                limit=100,
+                limit_per_host=30,
+                ttl_dns_cache=300,
+                use_dns_cache=True,
+                enable_cleanup_closed=True
+            )
+            
+            # Create session using original constructor  
+            session = aiohttp.ClientSession.__new__(aiohttp.ClientSession)
+            original_client_session_init(
+                session,
+                connector=connector,
+                timeout=timeout,
+                headers={"Content-Type": "application/json"}
+            )
+        else:
+            logger.info("Using standard aiohttp functions for API call")
+            # Fallback to standard session creation
+            connector = aiohttp.TCPConnector(
+                limit=100,
+                limit_per_host=30,
+                ttl_dns_cache=300,
+                use_dns_cache=True,
+                enable_cleanup_closed=True
+            )
+            session = aiohttp.ClientSession(
+                connector=connector,
+                timeout=timeout,
+                headers={"Content-Type": "application/json"}
+            )
+        
+        try:
             payload = {
                 "query": query,
                 "provider": provider,
                 "num_results": num_results,
-                "format": format  # Server-side formatting handles everything
+                "format": format
             }
             
-            headers = {
-                "Content-Type": "application/json"
-            }
+            logger.info(f"Making clean API request to {CHAT_ENDPOINT}")
             
-            async with session.post(CHAT_ENDPOINT, json=payload, headers=headers) as response:
+            async with session.post(CHAT_ENDPOINT, json=payload) as response:
+                logger.info(f"API response status: {response.status}")
+                
                 if response.status == 200:
                     result = await response.json()
                     return {
@@ -190,9 +244,15 @@ async def query_opteee(query: str, num_results: int = 5, provider: str = "openai
                         "success": False,
                         "error": error_msg
                     }
+        finally:
+            # Clean up the session
+            if session and not session.closed:
+                await session.close()
+                
     except Exception as e:
         error_msg = f"Connection error: {str(e)}"
-        logger.error(error_msg)
+        logger.error(f"Clean API request failed: {error_msg}")
+        logger.error(f"API endpoint: {CHAT_ENDPOINT}")
         return {
             "success": False,
             "error": error_msg
@@ -298,10 +358,26 @@ async def search_advanced_handler(ctx, num_results: int, query: str):
 
 async def health_handler(ctx):
     """Check if the OPTEEE API is healthy"""
+    global original_client_session_init, original_tcp_connector_init
+    
     await ctx.send("**🔍 System Health Check**\n*Testing connection to OPTEEE API...*")
     
     try:
-        async with aiohttp.ClientSession() as session:
+        timeout = aiohttp.ClientTimeout(total=15)
+        
+        # Use original functions for clean health check if available
+        if original_tcp_connector_init and original_client_session_init:
+            connector = aiohttp.TCPConnector.__new__(aiohttp.TCPConnector)
+            original_tcp_connector_init(connector, limit=10, ttl_dns_cache=60)
+            
+            session = aiohttp.ClientSession.__new__(aiohttp.ClientSession)
+            original_client_session_init(session, connector=connector, timeout=timeout)
+        else:
+            # Fallback to standard session creation
+            connector = aiohttp.TCPConnector(limit=10, ttl_dns_cache=60)
+            session = aiohttp.ClientSession(connector=connector, timeout=timeout)
+        
+        try:
             async with session.get(HEALTH_ENDPOINT) as response:
                 if response.status == 200:
                     data = await response.json()
@@ -316,7 +392,12 @@ async def health_handler(ctx):
 *Ready to search thousands of options trading transcripts!*""")
                 else:
                     await ctx.send(f"**⚠️ API Unhealthy** (HTTP {response.status})\n*The OPTEEE API may be temporarily unavailable.*")
+        finally:
+            if session and not session.closed:
+                await session.close()
+                
     except Exception as e:
+        logger.error(f"Health check failed: {str(e)}")
         await ctx.send(f"**❌ Connection Failed**\n*Unable to reach OPTEEE API*\n```\n{str(e)[:100]}...\n```")
 
 async def show_help_handler(ctx):
