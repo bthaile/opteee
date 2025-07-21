@@ -2,13 +2,10 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-# Install system dependencies (curl for health checks + network tools)
+# Install system dependencies (minimal HuggingFace pattern)
 RUN apt-get update && apt-get install -y \
     curl \
     ca-certificates \
-    dnsutils \
-    iputils-ping \
-    net-tools \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements first for better caching

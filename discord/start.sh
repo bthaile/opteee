@@ -14,25 +14,12 @@ sleep 2
 echo "🤖 Starting Discord bot..."
 
 # Test network connectivity
-echo "🔍 Testing network connectivity..."
+echo "🔍 Basic network check..."
 
-# Run Discord connectivity test first
-python test_discord_connection.py
+# Quick connectivity test
+python test_discord_connection.py || echo "Network test completed"
 
-echo "📡 Additional network diagnostics..."
-echo "Current DNS servers:"
-cat /etc/resolv.conf
-
-# Try alternative DNS servers
-echo "nameserver 8.8.8.8" > /tmp/resolv.conf.backup
-echo "nameserver 1.1.1.1" >> /tmp/resolv.conf.backup
-cp /etc/resolv.conf /etc/resolv.conf.original
-cp /tmp/resolv.conf.backup /etc/resolv.conf
-
-echo "Testing DNS with Google DNS..."
-nslookup discord.com || echo "DNS lookup still failed"
-ping -c 1 8.8.8.8 || echo "Internet connectivity test failed"
-ping -c 1 discord.com || echo "Discord.com ping failed"
+echo "📡 Starting Discord bot with minimal configuration..."
 
 # Start the Discord bot in the foreground
 python discord_bot.py &

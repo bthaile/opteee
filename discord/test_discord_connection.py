@@ -19,8 +19,11 @@ def test_dns_resolution():
 def test_discord_api():
     """Test Discord API connectivity"""
     try:
-        response = requests.get('https://discord.com/api/v10/gateway', timeout=10)
+        # Simple GET request to Discord API
+        response = requests.get('https://discord.com/api/v10/gateway', timeout=5)
         print(f"✅ Discord API: Status {response.status_code}")
+        if response.status_code == 200:
+            print(f"✅ Discord Gateway URL: {response.json().get('url', 'Unknown')}")
         return True
     except Exception as e:
         print(f"❌ Discord API Failed: {e}")

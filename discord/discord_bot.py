@@ -36,35 +36,13 @@ HEALTH_ENDPOINT = f"{API_BASE_URL}/api/health"
 DEFAULT_PROVIDER = os.getenv('DEFAULT_PROVIDER', 'openai')
 DEFAULT_RESULTS = int(os.getenv('DEFAULT_RESULTS', '5'))
 
-# Set up Discord bot with intents and connector options
+# Set up Discord bot with intents (HuggingFace simple pattern)
 intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
 
-# Configure aiohttp connector for better network resilience
-import aiohttp
-import asyncio
-import ssl
-
-# Create SSL context that's more permissive
-ssl_context = ssl.create_default_context()
-ssl_context.check_hostname = False
-ssl_context.verify_mode = ssl.CERT_NONE
-
-# Create connector with custom settings
-connector = aiohttp.TCPConnector(
-    ssl=ssl_context,
-    ttl_dns_cache=300,
-    use_dns_cache=True,
-    limit=100,
-    limit_per_host=10
-)
-
-bot = commands.Bot(
-    command_prefix='!', 
-    intents=intents,
-    connector=connector
-)
+# Simple bot configuration - no custom connectors
+bot = commands.Bot(command_prefix='!', intents=intents)
 
 def format_answer_for_discord(html_content: str) -> str:
     """Convert HTML content to Discord-native markdown format using html_to_markdown library"""
@@ -690,27 +668,47 @@ async def on_command_error(ctx, error):
         await ctx.send(error_msg)
 
 def main():
-    """Main function to run the bot"""
+    """Main function to run the bot - using HuggingFace's approach"""
     if not DISCORD_TOKEN:
         logger.error("DISCORD_TOKEN not found in environment variables")
         return
     
+    logger.info("Starting Discord bot with HuggingFace-compatible configuration...")
+    
+    # Set up event loop properly (HuggingFace pattern)
     try:
-        # Add retry logic for network connectivity issues
         import asyncio
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        bot.run(DISCORD_TOKEN, reconnect=True)
+        import uvloop
+    except ImportError:
+        uvloop = None
+    
+    if uvloop is not None:
+        asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
+    
+    try:
+        # Use HuggingFace's recommended pattern
+        bot.run(DISCORD_TOKEN, log_handler=None)
     except Exception as e:
-        logger.error(f"Failed to start bot: {str(e)}")
-        # Wait and retry once
-        import time
-        time.sleep(5)
+        logger.error(f"Bot failed to start: {str(e)}")
+        logger.info("Checking basic connectivity...")
+        
+        # Simple connectivity test without external tools
         try:
-            logger.info("Retrying bot connection...")
-            bot.run(DISCORD_TOKEN, reconnect=True)
+            import socket
+            socket.create_connection(("8.8.8.8", 53), timeout=3).close()
+            logger.info("✅ Internet connectivity OK")
+        except Exception:
+            logger.error("❌ No internet connectivity")
+            
+        # Single retry with minimal delay
+        logger.info("Attempting recovery with basic configuration...")
+        try:
+            import time
+            time.sleep(2)
+            bot.run(DISCORD_TOKEN)
         except Exception as e2:
-            logger.error(f"Retry failed: {str(e2)}")
+            logger.error(f"Recovery attempt failed: {str(e2)}")
+            logger.error("Bot startup failed completely")
 
 if __name__ == "__main__":
     main() 
