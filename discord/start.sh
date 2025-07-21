@@ -15,6 +15,11 @@ echo "🤖 Starting Discord bot..."
 
 # Test network connectivity
 echo "🔍 Testing network connectivity..."
+
+# Run Discord connectivity test first
+python test_discord_connection.py
+
+echo "📡 Additional network diagnostics..."
 echo "Current DNS servers:"
 cat /etc/resolv.conf
 

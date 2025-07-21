@@ -21,6 +21,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY discord_bot.py /app/
 COPY health_server.py /app/
 COPY start.sh /app/
+COPY test_discord_connection.py /app/
 
 # Make startup script executable
 RUN chmod +x /app/start.sh

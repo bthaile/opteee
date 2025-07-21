@@ -42,6 +42,7 @@ jobs:
           cp requirements.txt /tmp/discord-bot-deploy/
           cp Dockerfile /tmp/discord-bot-deploy/
           cp README.md /tmp/discord-bot-deploy/
+          cp test_discord_connection.py /tmp/discord-bot-deploy/
           
           echo "✅ Deployment directory prepared"
           ls -la /tmp/discord-bot-deploy/
