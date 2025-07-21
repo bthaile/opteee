@@ -20,6 +20,8 @@ logger = logging.getLogger(__name__)
 # Load environment variables
 load_dotenv()
 
+# Force refresh deployment
+
 # Bot configuration
 DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
 logger.info(f"Token loaded: {'Yes' if DISCORD_TOKEN else 'No'}")
