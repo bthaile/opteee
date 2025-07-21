@@ -111,34 +111,31 @@ async def setup_discord_patches():
     try:
         logger.info("🔧 Applying comprehensive discord.py DNS patches...")
         
-        # 1. Patch HTTPClient initialization to use our custom session
+        # 1. Patch session creation after HTTPClient initialization
         original_http_init = discord.http.HTTPClient.__init__
         
         def custom_http_init(self, *args, **kwargs):
-            """Override HTTPClient init to use our custom session and connector"""
-            # Extract connector from kwargs if present, or use our custom one
-            connector = kwargs.get('connector')
-            if custom_connector and not connector:
-                kwargs['connector'] = custom_connector
-                logger.info("🔧 HTTPClient using custom DNS connector")
-            
-            # Call original init with all arguments
+            """Override HTTPClient init to replace session after normal initialization"""
+            # Call original init normally - let it handle all arguments properly
             result = original_http_init(self, *args, **kwargs)
             
-            # If we have a custom session, use it immediately
+            # After initialization, replace the session with our custom DNS session
             if custom_session:
-                if hasattr(self, '_HTTPClient__session') and not self._HTTPClient__session.closed:
-                    # Don't await here since this is a sync function - close will happen later
+                # Close the default session if it exists
+                if hasattr(self, '_HTTPClient__session') and self._HTTPClient__session and not self._HTTPClient__session.closed:
+                    # Schedule closure for later (can't await in sync function)
                     pass
+                
+                # Replace with our custom DNS session
                 self._HTTPClient__session = custom_session
                 self._custom_session_patched = True
                 logger.info("🔧 HTTPClient session replaced with custom DNS session")
             
             return result
         
-        # Apply HTTPClient init patch
+        # Apply HTTPClient init patch  
         discord.http.HTTPClient.__init__ = custom_http_init
-        logger.info("✅ Applied HTTPClient initialization patch")
+        logger.info("✅ Applied HTTPClient session replacement patch")
         
         # 2. Patch HTTP requests (backup/fallback)
         original_request = discord.http.HTTPClient.request
