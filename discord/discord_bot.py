@@ -11,7 +11,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('discord_bot.log'),
+        logging.FileHandler('/app/logs/discord_bot.log'),
         logging.StreamHandler()
     ]
 )
