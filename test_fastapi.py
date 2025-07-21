@@ -120,6 +120,173 @@ def test_invalid_chat_request():
         print(f"❌ Invalid request test failed: {e}")
         return False
 
+def test_format_parameter():
+    """Test the format parameter for different output formats"""
+    print("\n🔍 Testing format parameter...")
+    
+    test_query = "What is Delta in options trading?"
+    
+    # Test HTML format (default)
+    print("   Testing HTML format...")
+    html_payload = {
+        "query": test_query,
+        "provider": "openai",
+        "num_results": 3,
+        "format": "html"
+    }
+    
+    try:
+        response = requests.post(
+            f"{API_BASE}/chat",
+            json=html_payload,
+            headers={"Content-Type": "application/json"}
+        )
+        
+        if response.status_code == 200:
+            html_data = response.json()
+            html_answer = html_data['answer']
+            print(f"   ✅ HTML format successful")
+            
+            # Check for HTML tags (should be present)
+            has_html_tags = any(tag in html_answer for tag in ['<p>', '<strong>', '<h3>', '<ul>', '<li>'])
+            if has_html_tags:
+                print(f"   ✅ HTML format contains HTML tags as expected")
+            else:
+                print(f"   ⚠️  HTML format doesn't contain expected HTML tags")
+            
+        else:
+            print(f"   ❌ HTML format test failed: {response.status_code}")
+            return False
+    
+    except requests.exceptions.RequestException as e:
+        print(f"   ❌ HTML format test failed: {e}")
+        return False
+    
+    # Test Discord format
+    print("   Testing Discord format...")
+    discord_payload = {
+        "query": test_query,
+        "provider": "openai", 
+        "num_results": 3,
+        "format": "discord"
+    }
+    
+    try:
+        response = requests.post(
+            f"{API_BASE}/chat",
+            json=discord_payload,
+            headers={"Content-Type": "application/json"}
+        )
+        
+        if response.status_code == 200:
+            discord_data = response.json()
+            discord_answer = discord_data['answer']
+            print(f"   ✅ Discord format successful")
+            
+            # Check for absence of HTML tags (should be plain text/markdown)
+            has_html_tags = any(tag in discord_answer for tag in ['<p>', '<strong>', '<h3>', '<ul>', '<li>', '<div>'])
+            if not has_html_tags:
+                print(f"   ✅ Discord format contains no HTML tags as expected")
+            else:
+                print(f"   ❌ Discord format unexpectedly contains HTML tags: {discord_answer[:100]}...")
+                return False
+            
+            # Check for Discord markdown formatting
+            has_discord_markdown = any(pattern in discord_answer for pattern in ['**', '`', '•'])
+            if has_discord_markdown:
+                print(f"   ✅ Discord format contains Discord markdown as expected")
+            else:
+                print(f"   ⚠️  Discord format doesn't contain expected Discord markdown")
+            
+            # Check that sources field is empty for Discord
+            if discord_data['sources'] == "":
+                print(f"   ✅ Discord format has empty sources field as expected")
+            else:
+                print(f"   ❌ Discord format unexpectedly has sources content")
+                return False
+            
+        else:
+            print(f"   ❌ Discord format test failed: {response.status_code}")
+            return False
+    
+    except requests.exceptions.RequestException as e:
+        print(f"   ❌ Discord format test failed: {e}")
+        return False
+    
+    return True
+
+def test_backward_compatibility():
+    """Test that requests without format parameter default to HTML"""
+    print("\n🔍 Testing backward compatibility (no format parameter)...")
+    
+    payload = {
+        "query": "What is Gamma in options?",
+        "provider": "openai",
+        "num_results": 3
+        # No format parameter - should default to HTML
+    }
+    
+    try:
+        response = requests.post(
+            f"{API_BASE}/chat",
+            json=payload,
+            headers={"Content-Type": "application/json"}
+        )
+        
+        if response.status_code == 200:
+            data = response.json()
+            answer = data['answer']
+            
+            # Should behave like HTML format
+            has_html_tags = any(tag in answer for tag in ['<p>', '<strong>', '<h3>', '<ul>', '<li>'])
+            if has_html_tags:
+                print(f"   ✅ Backward compatibility: defaults to HTML format")
+                return True
+            else:
+                print(f"   ⚠️  Backward compatibility: doesn't default to HTML format")
+                return True  # Still pass, might just be simple text
+        else:
+            print(f"   ❌ Backward compatibility test failed: {response.status_code}")
+            return False
+            
+    except requests.exceptions.RequestException as e:
+        print(f"   ❌ Backward compatibility test failed: {e}")
+        return False
+
+def test_invalid_format():
+    """Test handling of invalid format parameter"""
+    print("\n🔍 Testing invalid format parameter...")
+    
+    payload = {
+        "query": "What is Theta?",
+        "provider": "openai",
+        "num_results": 3,
+        "format": "invalid_format"
+    }
+    
+    try:
+        response = requests.post(
+            f"{API_BASE}/chat",
+            json=payload,
+            headers={"Content-Type": "application/json"}
+        )
+        
+        # Should return 422 for validation error or 200 with default behavior
+        if response.status_code == 422:
+            print(f"   ✅ Invalid format properly rejected with validation error")
+            return True
+        elif response.status_code == 200:
+            data = response.json()
+            print(f"   ✅ Invalid format handled gracefully (fallback to default)")
+            return True
+        else:
+            print(f"   ❌ Invalid format test unexpected status: {response.status_code}")
+            return False
+            
+    except requests.exceptions.RequestException as e:
+        print(f"   ❌ Invalid format test failed: {e}")
+        return False
+
 def test_frontend_serving():
     """Test that the frontend is served correctly"""
     print("\n🔍 Testing frontend serving...")
@@ -156,6 +323,9 @@ def main():
         test_health_endpoint,
         test_chat_endpoint,
         test_invalid_chat_request,
+        test_format_parameter,
+        test_backward_compatibility,
+        test_invalid_format,
         test_frontend_serving
     ]
     

@@ -158,181 +158,15 @@ async def setup_discord_patches():
         logger.error(f"❌ Failed to apply comprehensive DNS patches: {patch_error}")
         raise
 
-def format_answer_for_discord(markdown_content: str) -> str:
-    """Convert markdown content to Discord-compatible format
-    
-    Uses python-markdown + markdownify for robust conversion that handles Discord quirks.
-    """
-    import re
-    
-    try:
-        import markdown
-        from markdownify import markdownify
-        libraries_available = True
-    except ImportError as e:
-        logger.warning(f"Markdown libraries not available: {e}")
-        libraries_available = False
-    
-    if not markdown_content or not markdown_content.strip():
-        return "No answer available."
-    
-    # Use advanced processing if libraries are available
-    if libraries_available:
-        try:
-            # Step 1: Convert markdown to clean HTML using python-markdown
-            html = markdown.markdown(
-                markdown_content, 
-                extensions=[
-                    'markdown.extensions.tables',
-                    'markdown.extensions.codehilite', 
-                    'markdown.extensions.fenced_code',
-                    'markdown.extensions.nl2br'  # Preserve line breaks
-                ]
-            )
-            
-            # Step 2: Convert HTML back to Discord-safe markdown using markdownify
-            discord_markdown = markdownify(
-                html,
-                heading_style="ATX",  # Use # headers (we'll convert these)
-                bullets="-",  # Use - for bullets (we'll convert to •)
-                strip=['img', 'script', 'style'],  # Remove unwanted elements
-                escape_asterisks=False,  # Don't escape * - Discord needs them
-                escape_underscores=False  # Don't escape _ 
-            )
-            
-            # Step 3: Apply Discord-specific formatting fixes
-            content = discord_markdown.strip()
-            
-            # Fix headers: Convert # headers to **bold** (Discord doesn't render # headers)
-            content = re.sub(r'^#{1,6}\s*(.+?)$', r'**\1**', content, flags=re.MULTILINE)
-            
-            # Fix bullet points: Convert - to • (looks better in Discord)
-            content = re.sub(r'^-\s+', '• ', content, flags=re.MULTILINE)
-            
-            # Fix bold text spacing issues (Discord is sensitive to spaces around **)
-            content = re.sub(r'\*\*\s+(.+?)\s+\*\*', r'**\1**', content)  # Remove spaces inside **
-            content = re.sub(r'\*\*(.+?)\*\*', lambda m: f'**{m.group(1).strip()}**', content)  # Ensure no trailing spaces
-            
-            # Clean up [Document N] references for later processing
-            content = re.sub(r'\[Document\s+(\d+)\]', r'[Document \1]', content, flags=re.IGNORECASE)
-            
-            # Enhance key terms with code formatting (Discord renders `code` well)
-            key_terms = [
-                r'\b(Delta|Gamma|Theta|Vega|Rho)\b',  # Options Greeks
-                r'\b(ITM|OTM|ATM|IV|Greeks)\b',       # Options terminology  
-                r'\b(Call|Put|Strike|Expiration|Premium)\b'  # Common terms
-            ]
-            
-            for term_pattern in key_terms:
-                # Only apply if not already formatted with `, *, [, or ]
-                content = re.sub(
-                    rf'(?<![`*\[\]]){term_pattern}(?![`*\]\)])', 
-                    lambda m: f'`{m.group(1)}`', 
-                    content
-                )
-            
-            # Emphasize financial values 
-            content = re.sub(r'(?<!\*)\$(\d+(?:\.\d{2})?)\b', r'**$\1**', content)
-            content = re.sub(r'\b(\d+(?:\.\d+)?)%\b(?!\*)', r'**\1%**', content)
-            
-            # Clean up excessive whitespace
-            content = re.sub(r'\n\s*\n\s*\n+', '\n\n', content)  # Max 2 consecutive newlines
-            content = re.sub(r'^\s+|\s+$', '', content)  # Trim edges
-            
-            # Add block quotes for special sections
-            content = re.sub(r'^(\*\*Quick Answer\*\*.*?)$', r'> \1', content, flags=re.MULTILINE)
-            
-            return content
-            
-        except Exception as e:
-            # Fallback: if markdown processing fails, use basic processing
-            logger.warning(f"Markdown processing failed: {e}, using fallback")
-    
-    # Fallback processing (either libraries not available or processing failed)
-    content = markdown_content.strip()
-    
-    # Basic Discord compatibility fixes
-    content = re.sub(r'^#{1,6}\s*(.+?)$', r'**\1**', content, flags=re.MULTILINE)
-    content = re.sub(r'^[\-\*\+]\s+', '• ', content, flags=re.MULTILINE)
-    content = re.sub(r'\n\s*\n\s*\n+', '\n\n', content)
-    
-    return content
-
-def improve_document_references(answer: str, sources: list) -> str:
-    """Replace [Document N] references with Discord-friendly video links"""
-    import re
-    
-    if not sources:
-        # Remove any remaining document references if no sources available
-        answer = re.sub(r'\[Document \d+\]', '', answer, flags=re.IGNORECASE)
-        return answer
-    
-    # Create a mapping of document numbers to video info
-    doc_mapping = {}
-    for i, source in enumerate(sources, 1):
-        timestamp_seconds = source.get('start_timestamp_seconds', 0)
-        
-        # Format timestamp for display
-        timestamp_str = ""
-        if timestamp_seconds and timestamp_seconds > 0:
-            minutes = int(timestamp_seconds // 60)
-            seconds = int(timestamp_seconds % 60)
-            timestamp_str = f" @ {minutes}:{seconds:02d}"
-        
-        # Get the best available title
-        title = source.get('title', 'Untitled Video')
-        
-        # Clean up video ID titles
-        if len(title) == 11 and title.isalnum():  # Likely a video ID
-            title = source.get('filename', source.get('file_name', title))
-            title = title.replace('.mp3', '').replace('.wav', '').replace('.mp4', '')
-        
-        # Get URL with timestamp
-        url = source.get('video_url_with_timestamp') or source.get('url', '#')
-        if url == '#' or not url:
-            video_id = source.get('video_id') or source.get('id')
-            if video_id and timestamp_seconds:
-                url = f"https://www.youtube.com/watch?v={video_id}&t={int(timestamp_seconds)}s"
-            elif video_id:
-                url = f"https://www.youtube.com/watch?v={video_id}"
-        
-        doc_mapping[i] = {
-            'title': title,
-            'url': url,
-            'timestamp_str': timestamp_str
-        }
-    
-    def replace_doc_ref(match):
-        doc_num = int(match.group(1))
-        if doc_num in doc_mapping:
-            title = doc_mapping[doc_num]['title']
-            url = doc_mapping[doc_num]['url']
-            timestamp_str = doc_mapping[doc_num]['timestamp_str']
-            
-            # Clean up title for Discord display
-            title = title.replace('|', '-').replace('[', '(').replace(']', ')')
-            if len(title) > 30:  # Shorter for Discord
-                title = title[:27] + "..."
-            
-            # Create Discord link with timestamp (suppress preview with < >)
-            return f"**[Video {doc_num}{timestamp_str}: {title}](<{url}>)**"
-        else:
-            return f"**[Video {doc_num}]**"
-    
-    # Replace [Document N] with video references
-    answer = re.sub(r'\[Document (\d+)\]', replace_doc_ref, answer, flags=re.IGNORECASE)
-    
-    return answer
-
-async def query_opteee(query: str, num_results: int = 5, provider: str = "openai") -> dict:
-    """Query the opteee application using the new FastAPI backend"""
+async def query_opteee(query: str, num_results: int = 5, provider: str = "openai", format: str = "discord") -> dict:
+    """Query the opteee application using the new FastAPI backend with Discord formatting"""
     try:
         async with aiohttp.ClientSession() as session:
-            # Use the new FastAPI ChatRequest format
             payload = {
                 "query": query,
                 "provider": provider,
-                "num_results": num_results
+                "num_results": num_results,
+                "format": format  # Server-side formatting handles everything
             }
             
             headers = {
@@ -364,228 +198,107 @@ async def query_opteee(query: str, num_results: int = 5, provider: str = "openai
             "error": error_msg
         }
 
-# Command handler functions (will be added to bot dynamically)
+async def send_discord_response(ctx, response_text: str):
+    """Send response to Discord, handling message length limits"""
+    # Discord has a 2000 character limit per message
+    if len(response_text) <= 2000:
+        await ctx.send(response_text)
+    else:
+        # Split into chunks at reasonable boundaries
+        chunks = []
+        current_chunk = ""
+        
+        for line in response_text.split('\n'):
+            # If adding this line would exceed limit, start new chunk
+            if len(current_chunk) + len(line) + 1 > 1900:  # Leave some buffer
+                if current_chunk.strip():
+                    chunks.append(current_chunk.strip())
+                current_chunk = line
+            else:
+                current_chunk += '\n' + line if current_chunk else line
+        
+        # Add the last chunk
+        if current_chunk.strip():
+            chunks.append(current_chunk.strip())
+        
+        # Send all chunks
+        for chunk in chunks:
+            await ctx.send(chunk)
 
 async def search_handler(ctx, query: str):
-    """Search for options trading information"""
+    """Search for options trading information - simplified with server-side formatting"""
     logger.info(f'Search query from {ctx.author}: {query}')
     
-    # Send initial response with more engaging format
+    # Send initial response
     await ctx.send(f"**Searching the knowledge base...**\n> {query}\n*Analyzing thousands of transcript segments...*")
     
     try:
-        # Query opteee with default settings
-        response = await query_opteee(query, num_results=DEFAULT_RESULTS, provider=DEFAULT_PROVIDER)
+        # Query with Discord format - server handles all formatting
+        response = await query_opteee(query, num_results=DEFAULT_RESULTS, provider=DEFAULT_PROVIDER, format="discord")
         
         if not response["success"]:
-            await ctx.send(f"{response['error']}")
+            await ctx.send(f"❌ {response['error']}")
             return
         
-        answer = response["answer"]
-        sources = response["sources"]
+        # Server returns pre-formatted Discord content
+        formatted_answer = response["answer"]
         
-        # First convert HTML to Discord markdown
-        formatted_answer = format_answer_for_discord(answer)
+        # Add simple footer
+        footer = f"\n\n━━━━━━━━━━━━━━━━━━━━\n*💡 Tip: Use `!search_advanced {min(10, DEFAULT_RESULTS + 2)} your question` for more detailed results*"
+        final_response = formatted_answer + footer
         
-        # Then improve document references (after HTML processing to avoid corruption)
-        formatted_answer = improve_document_references(formatted_answer, sources)
-        
-        # Format the response for Discord (Discord doesn't support ## headers)
-        formatted_response = f"{formatted_answer}"
-        
-        # Add source information if available
-        if sources:
-            source_text = f"\n\n**Video Sources**\n"
-            for i, source in enumerate(sources[:5], 1):  # Show up to 5 sources
-                title = source.get('title', 'Untitled Video')
-                url = source.get('video_url_with_timestamp', source.get('url', '#'))
-                timestamp = source.get('start_timestamp_seconds', 0)
-                upload_date = source.get('upload_date', '')
-                
-                # Format timestamp (specific location in video)
-                if timestamp > 0:
-                    minutes = int(timestamp // 60)
-                    seconds = int(timestamp % 60)
-                    time_str = f"▶️ {minutes}:{seconds:02d}"
-                else:
-                    time_str = "▶️ 0:00"
-                
-                # Format total duration for context
-                total_duration = source.get('duration_seconds', 0)
-                duration_context = ""
-                if total_duration and total_duration > 0:
-                    dur_minutes = int(total_duration // 60)
-                    dur_seconds = int(total_duration % 60)
-                    duration_context = f" / {dur_minutes}:{dur_seconds:02d} total"
-                
-                # Format upload date
-                date_str = ""
-                if upload_date and upload_date != 'Unknown':
-                    try:
-                        if len(upload_date) == 8:  # YYYYMMDD format
-                            from datetime import datetime
-                            date_obj = datetime.strptime(upload_date, '%Y%m%d')
-                            date_str = f" • {date_obj.strftime('%b %Y')}"
-                    except:
-                        pass
-                
-                # Get transcript content
-                content = source.get('content', source.get('text', ''))
-                if content:
-                    # Truncate if too long and clean up
-                    max_content_length = 200
-                    if len(content) > max_content_length:
-                        truncated_content = content[:max_content_length].strip()
-                        # Try to end at a sentence or word boundary
-                        if '.' in truncated_content[-50:]:
-                            truncated_content = truncated_content[:truncated_content.rfind('.') + 1]
-                        elif ' ' in truncated_content[-20:]:
-                            truncated_content = truncated_content[:truncated_content.rfind(' ')]
-                        truncated_content += "..."
-                    else:
-                        truncated_content = content.strip()
-                    
-                    # Create professional source entry with transcript and duration context (suppress preview)
-                    source_text += f"**{i}.** **[{title}](<{url}>)** `{time_str}{duration_context}`{date_str}\n"
-                    source_text += f"*\"{truncated_content}\"*\n\n"
-                else:
-                    # Fallback without transcript content (suppress preview)
-                    source_text += f"**{i}.** **[{title}](<{url}>)** `{time_str}{duration_context}`{date_str}\n"
-            
-            formatted_response += source_text
-        
-        # Add footer with helpful context  
-        footer = f"\n\n━━━━━━━━━━━━━━━━━━━━\n*Refine your search to get better results!*"
-        formatted_response += footer
-        
-        # Split response into chunks if it's too long (Discord has 2000 char limit)
-        if len(formatted_response) > 1900:
-            chunks = [formatted_response[i:i+1900] for i in range(0, len(formatted_response), 1900)]
-            for chunk in chunks:
-                await ctx.send(chunk)
-        else:
-            await ctx.send(formatted_response)
+        # Send the response (handles splitting automatically)
+        await send_discord_response(ctx, final_response)
             
     except Exception as e:
-        error_msg = f"Unexpected error: {str(e)}"
+        error_msg = f"❌ Unexpected error: {str(e)}"
         logger.error(error_msg)
         await ctx.send(error_msg)
 
 async def search_advanced_handler(ctx, num_results: int, query: str):
-    """Advanced search with custom result count"""
+    """Advanced search with custom result count - simplified with server-side formatting"""
     # Validate inputs
     if not 1 <= num_results <= 10:
-        await ctx.send("Number of results must be between 1 and 10")
+        await ctx.send("❌ Number of results must be between 1 and 10")
         return
     
-    # Use default provider
     provider = DEFAULT_PROVIDER
     
     logger.info(f'Advanced search from {ctx.author}: {query} (provider: {provider}, results: {num_results})')
-    await ctx.send(f"**Advanced Search Mode**\n> {query}\n*Using {provider.upper()} AI • Retrieving {num_results} sources • Processing...*")
+    await ctx.send(f"**🔍 Advanced Search Mode**\n> {query}\n*Using {provider.upper()} AI • Retrieving {num_results} sources • Processing...*")
     
     try:
-        response = await query_opteee(query, num_results=num_results, provider=provider)
+        # Query with Discord format - server handles all formatting
+        response = await query_opteee(query, num_results=num_results, provider=provider, format="discord")
         
         if not response["success"]:
-            await ctx.send(f"{response['error']}")
+            await ctx.send(f"❌ {response['error']}")
             return
         
-        answer = response["answer"]
-        sources = response["sources"]
+        # Server returns pre-formatted Discord content
+        formatted_answer = response["answer"]
         
-        # First convert HTML to Discord markdown
-        formatted_answer = format_answer_for_discord(answer)
+        # Add provider info and footer
+        provider_header = f"**🤖 {provider.upper()} Response ({num_results} sources):**\n\n"
         
-        # Then improve document references (after HTML processing to avoid corruption)
-        formatted_answer = improve_document_references(formatted_answer, sources)
-        
-        # Format response with provider info (Discord doesn't support ## headers)
-        formatted_response = f"**{provider.upper()} Response:**\n{formatted_answer}"
-        
-        if sources:
-            source_text = f"\n\n**Video Sources**\n"
-            for i, source in enumerate(sources[:5], 1):  # Show up to 5 sources
-                title = source.get('title', 'Untitled Video')
-                url = source.get('video_url_with_timestamp', source.get('url', '#'))
-                timestamp = source.get('start_timestamp_seconds', 0)
-                upload_date = source.get('upload_date', '')
-                
-                # Format timestamp (specific location in video)
-                if timestamp > 0:
-                    minutes = int(timestamp // 60)
-                    seconds = int(timestamp % 60)
-                    time_str = f"▶️ {minutes}:{seconds:02d}"
-                else:
-                    time_str = "▶️ 0:00"
-                
-                # Format total duration for context
-                total_duration = source.get('duration_seconds', 0)
-                duration_context = ""
-                if total_duration and total_duration > 0:
-                    dur_minutes = int(total_duration // 60)
-                    dur_seconds = int(total_duration % 60)
-                    duration_context = f" / {dur_minutes}:{dur_seconds:02d} total"
-                
-                # Format upload date
-                date_str = ""
-                if upload_date and upload_date != 'Unknown':
-                    try:
-                        if len(upload_date) == 8:  # YYYYMMDD format
-                            from datetime import datetime
-                            date_obj = datetime.strptime(upload_date, '%Y%m%d')
-                            date_str = f" • {date_obj.strftime('%b %Y')}"
-                    except:
-                        pass
-                
-                # Get transcript content
-                content = source.get('content', source.get('text', ''))
-                if content:
-                    # Truncate if too long and clean up
-                    max_content_length = 200
-                    if len(content) > max_content_length:
-                        truncated_content = content[:max_content_length].strip()
-                        # Try to end at a sentence or word boundary
-                        if '.' in truncated_content[-50:]:
-                            truncated_content = truncated_content[:truncated_content.rfind('.') + 1]
-                        elif ' ' in truncated_content[-20:]:
-                            truncated_content = truncated_content[:truncated_content.rfind(' ')]
-                        truncated_content += "..."
-                    else:
-                        truncated_content = content.strip()
-                    
-                    # Create professional source entry with transcript and duration context (suppress preview)
-                    source_text += f"**{i}.** **[{title}](<{url}>)** `{time_str}{duration_context}`{date_str}\n"
-                    source_text += f"*\"{truncated_content}\"*\n\n"
-                else:
-                    # Fallback without transcript content (suppress preview)
-                    source_text += f"**{i}.** **[{title}](<{url}>)** `{time_str}{duration_context}`{date_str}\n"
-            
-            formatted_response += source_text
-        
-        # Add footer with helpful suggestions
         if num_results < 8:
-            footer = f"\n\n━━━━━━━━━━━━━━━━━━━━\n*Try more sources for detailed analysis:*\n`!search_advanced {min(10, num_results + 3)} your question`"
+            footer = f"\n\n━━━━━━━━━━━━━━━━━━━━\n*💡 Try more sources for detailed analysis: `!search_advanced {min(10, num_results + 3)} your question`*"
         else:
-            footer = f"\n\n━━━━━━━━━━━━━━━━━━━━\n*Try basic search for quicker results:*\n`!search your question`"
-        formatted_response += footer
+            footer = f"\n\n━━━━━━━━━━━━━━━━━━━━\n*💡 Try basic search for quicker results: `!search your question`*"
         
-        # Split if too long
-        if len(formatted_response) > 1900:
-            chunks = [formatted_response[i:i+1900] for i in range(0, len(formatted_response), 1900)]
-            for chunk in chunks:
-                await ctx.send(chunk)
-        else:
-            await ctx.send(formatted_response)
+        final_response = provider_header + formatted_answer + footer
+        
+        # Send the response (handles splitting automatically)
+        await send_discord_response(ctx, final_response)
             
     except Exception as e:
-        error_msg = f"Error: {str(e)}"
+        error_msg = f"❌ Error: {str(e)}"
         logger.error(error_msg)
         await ctx.send(error_msg)
 
 async def health_handler(ctx):
     """Check if the OPTEEE API is healthy"""
-    await ctx.send("**System Health Check**\n*Testing connection to OPTEEE API...*")
+    await ctx.send("**🔍 System Health Check**\n*Testing connection to OPTEEE API...*")
     
     try:
         async with aiohttp.ClientSession() as session:
@@ -594,47 +307,43 @@ async def health_handler(ctx):
                     data = await response.json()
                     status = data.get('status', 'unknown')
                     version = data.get('version', 'unknown')
-                    await ctx.send(f"""**All Systems Operational**
-                    
-**API Status:** `{status.title()}`
+                    await ctx.send(f"""**✅ All Systems Operational**
+
+**Status:** `{status.title()}`
 **Version:** `{version}`
 **Endpoint:** `{API_BASE_URL}`
 
 *Ready to search thousands of options trading transcripts!*""")
                 else:
-                    await ctx.send(f"**API Status:** `Unhealthy` (HTTP {response.status})\n*The main OPTEEE API may be temporarily unavailable.*")
+                    await ctx.send(f"**⚠️ API Unhealthy** (HTTP {response.status})\n*The OPTEEE API may be temporarily unavailable.*")
     except Exception as e:
-        await ctx.send(f"**Connection Failed**\n*Unable to reach OPTEEE API*\n```\n{str(e)[:100]}...\n```")
+        await ctx.send(f"**❌ Connection Failed**\n*Unable to reach OPTEEE API*\n```\n{str(e)[:100]}...\n```")
 
 async def show_help_handler(ctx):
     """Show help information"""
-    help_text = f"""
-**OPTEEE Discord Bot - Options Trading Knowledge Search**
+    help_text = f"""**🤖 OPTEEE Discord Bot - Options Trading Knowledge Search**
 
-**Basic Commands:**
-`!search <query>` - Search with transcript excerpts, timestamps, and clickable video links
-`!search_advanced <num_results> <query>` - Advanced search with custom result count
-`!health` - Check API status
-`!show_help` - Show this help message
+**Commands:**
+• `!search <query>` - Search with video links and timestamps
+• `!search_advanced <count> <query>` - Advanced search (1-10 results)
+• `!health` - Check API status
+• `!show_help` - Show this help
 
 **Examples:**
-`!search What is gamma in options trading?`
-`!search_advanced 8 Explain butterfly spread strategies`
-`!health`
-
-**Advanced Search Options:**
-• **Results:** 1-10 (more results = more comprehensive but longer response)
+```
+!search What is gamma in options trading?
+!search_advanced 8 Explain butterfly spread strategies
+!health
+```
 
 **Current Settings:**
-• Default Provider: `{DEFAULT_PROVIDER}`
-• Default Results: `{DEFAULT_RESULTS}`
-• API Endpoint: `{API_BASE_URL}`
+• **Provider:** `{DEFAULT_PROVIDER.upper()}`
+• **Default Results:** `{DEFAULT_RESULTS}`
+• **API:** `{API_BASE_URL}`
 
-*This bot searches through thousands of options trading video transcripts to provide accurate, sourced answers with user-friendly video references.*
-
-**Note:** Technical references like "[Document 4]" are automatically converted to **clickable video links with timestamps** like "**[Video 4 @ 66:10: Options Greeks Explained](url)**" that take you directly to the relevant moment in the video!
-
-*Current AI Provider: {DEFAULT_PROVIDER.upper()}*
+*🎯 Searches thousands of options trading transcripts with intelligent formatting*
+*📺 Document references become clickable video links with timestamps*
+*🚀 Powered by server-side Discord formatting for clean, readable results*
 """
     await ctx.send(help_text)
 

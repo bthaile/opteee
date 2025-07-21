@@ -63,7 +63,8 @@ async def chat(request: ChatRequest):
         result = await rag_service.process_query(
             query=request.query,
             provider=request.provider,
-            num_results=request.num_results
+            num_results=request.num_results,
+            format=request.format
         )
         
         # Return clean response

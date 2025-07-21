@@ -15,6 +15,7 @@ from rag_pipeline import (
     get_available_providers,
     DEFAULT_TOP_K
 )
+from app.services.formatters import ResponseFormatter
 
 class RAGService:
     """Service class to handle all RAG-related operations"""
@@ -22,6 +23,7 @@ class RAGService:
     def __init__(self):
         self.retriever = None
         self.provider_chains = {}
+        self.formatter = ResponseFormatter()
         self.initialized = False
     
     async def initialize(self):
@@ -57,7 +59,7 @@ class RAGService:
             except Exception as e:
                 print(f"❌ Failed to initialize {provider} chain: {e}")
     
-    async def process_query(self, query: str, provider: str = "openai", num_results: int = 10) -> Dict[str, Any]:
+    async def process_query(self, query: str, provider: str = "openai", num_results: int = 10, format: str = "html") -> Dict[str, Any]:
         """
         Process a user query and return formatted response
         """
@@ -90,11 +92,14 @@ class RAGService:
             # Run the RAG query
             result = run_rag_query(self.retriever, chain, query)
             
-            # Format the response
-            formatted_response = self._format_chat_response(
-                result.get('answer', ''), 
-                result.get('sources', [])
+            # Format the response using the new formatter
+            formatted_result = self.formatter.format_response(
+                result.get('answer', ''),
+                result.get('sources', []),
+                format_type=format
             )
+            
+            formatted_response = formatted_result["formatted_content"]
             
             return {
                 "answer": formatted_response["answer"],
