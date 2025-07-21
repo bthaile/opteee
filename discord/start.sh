@@ -13,60 +13,12 @@ sleep 2
 
 echo "🤖 Starting Discord bot..."
 
-# Test network connectivity
-echo "🔍 DNS and network check..."
-
-# Check current DNS configuration
-echo "Current DNS servers:"
-cat /etc/resolv.conf
-
-# Try to configure reliable DNS servers (may fail if read-only)
-echo "Attempting to configure DNS servers..."
-if ! echo "nameserver 8.8.8.8" > /etc/resolv.conf 2>/dev/null; then
-    echo "⚠️ Cannot modify /etc/resolv.conf - using system DNS"
-else
-    echo "nameserver 8.8.4.4" >> /etc/resolv.conf
-    echo "nameserver 1.1.1.1" >> /etc/resolv.conf
-    echo "✅ DNS servers configured"
-    echo "Updated DNS servers:"
-    cat /etc/resolv.conf
-fi
-
-# Test DNS resolution manually
-echo "Testing Discord DNS resolution:"
-NSLOOKUP_OUTPUT=$(nslookup discord.com 2>&1)
-echo "$NSLOOKUP_OUTPUT"
-
-# Check if nslookup actually resolved (not just returned exit code 0)
-if echo "$NSLOOKUP_OUTPUT" | grep -q "No answer\|can't find\|NXDOMAIN\|not found"; then
-    echo "❌ DNS resolution failed - server responds but no answer for discord.com"
-    
-    # Try adding Discord IPs to /etc/hosts as fallback
-    echo "Attempting to add Discord IPs to /etc/hosts..."
-    if echo "162.159.133.233 discord.com" >> /etc/hosts 2>/dev/null; then
-        echo "162.159.134.233 gateway.discord.gg" >> /etc/hosts 2>/dev/null
-        echo "162.159.135.233 discordapp.com" >> /etc/hosts 2>/dev/null
-        echo "✅ Added Discord IPs to /etc/hosts"
-        echo "Updated /etc/hosts entries:"
-        grep discord /etc/hosts || echo "No Discord entries found"
-        echo "Testing resolution after hosts update:"
-        getent hosts discord.com || echo "getent failed"
-        nslookup discord.com || echo "nslookup still using DNS server"
-    else
-        echo "⚠️ Cannot modify /etc/hosts - will attempt direct IP connection"
-        echo "Current /etc/hosts permissions:"
-        ls -la /etc/hosts
-    fi
-elif echo "$NSLOOKUP_OUTPUT" | grep -q "Address:.*[0-9]"; then
-    echo "✅ DNS lookup successful - Discord resolved to IP"
-else
-    echo "⚠️ DNS lookup unclear - will attempt connection anyway"
-fi
-
-# Quick connectivity test
+# Quick network connectivity test using custom DNS resolver
+echo "🔍 Testing network connectivity with custom DNS resolver..."
+echo "ℹ️  DNS resolution handled by async custom resolver in discord_bot.py"
 python test_discord_connection.py || echo "Network test completed"
 
-echo "📡 Starting Discord bot with DNS configuration..."
+echo "🚀 Starting Discord bot with async custom DNS resolver..."
 
 # Start the Discord bot in the foreground
 python discord_bot.py &

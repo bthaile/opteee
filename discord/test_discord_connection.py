@@ -48,41 +48,126 @@ def test_discord_api():
         return False
 
 def test_custom_dns_resolver():
-    """Test custom DNS resolver approach"""
+    """Test comprehensive custom DNS resolver approach with proper async context"""
     try:
         import asyncio
         import aiohttp
         from aiohttp.resolver import AsyncResolver
         
-        async def test_custom_resolver():
-            # Create custom DNS resolver with Google DNS
-            resolver = AsyncResolver(nameservers=['8.8.8.8', '8.8.4.4'])
-            connector = aiohttp.TCPConnector(resolver=resolver)
+        async def test_comprehensive_resolver():
+            print("🔧 Setting up custom DNS resolver in async context...")
             
-            async with aiohttp.ClientSession(connector=connector) as session:
+            # Create custom DNS resolver with multiple servers
+            resolver = AsyncResolver(nameservers=['8.8.8.8', '8.8.4.4', '1.1.1.1'])
+            connector = aiohttp.TCPConnector(
+                resolver=resolver,
+                ttl_dns_cache=300,
+                use_dns_cache=True,
+                limit=100,
+                limit_per_host=30,
+                enable_cleanup_closed=True
+            )
+            
+            print("✅ Custom DNS resolver created in async context")
+            
+            try:
+                # Create session with our custom DNS resolver
+                session = aiohttp.ClientSession(
+                    connector=connector,
+                    timeout=aiohttp.ClientTimeout(total=30)
+                )
+                
+                print("✅ Custom DNS session created")
+                
                 try:
+                    # Test 1: Discord API endpoint
+                    print("🔍 Testing Discord API with custom DNS resolver...")
                     async with session.get('https://discord.com/api/v10/gateway', timeout=10) as response:
                         if response.status == 200:
                             data = await response.json()
-                            print(f"✅ Custom DNS Resolver: Successfully connected to Discord API")
-                            print(f"✅ Gateway URL: {data.get('url', 'Unknown')}")
+                            print(f"✅ Custom DNS: Discord API reachable (Status {response.status})")
+                            gateway_url = data.get('url', '')
+                            print(f"✅ Gateway URL: {gateway_url}")
+                            
+                            # Test 2: Gateway WebSocket endpoint hostname resolution
+                            if gateway_url:
+                                import urllib.parse
+                                parsed = urllib.parse.urlparse(gateway_url)
+                                gateway_host = parsed.hostname
+                                
+                                print(f"🔍 Testing gateway hostname resolution: {gateway_host}")
+                                
+                                # Test direct hostname resolution with our resolver
+                                try:
+                                    # Use the resolver directly to test hostname resolution
+                                    resolved_hosts = await resolver.resolve(gateway_host, 443)
+                                    if resolved_hosts:
+                                        print(f"✅ Custom DNS: Gateway {gateway_host} resolved successfully")
+                                        # Try to show some IP addresses if available
+                                        for i, host_info in enumerate(resolved_hosts[:3]):  # Show first 3
+                                            if hasattr(host_info, 'host'):
+                                                print(f"   → IP {i+1}: {host_info.host}")
+                                            else:
+                                                print(f"   → Record {i+1}: {host_info}")
+                                    else:
+                                        print(f"⚠️ Custom DNS: Gateway {gateway_host} resolved but no hosts returned")
+                                        
+                                except Exception as gateway_error:
+                                    print(f"⚠️ Custom DNS: Gateway resolution error: {gateway_error}")
+                                    # Try simpler approach - just test if we can make a basic request to the gateway
+                                    try:
+                                        # Extract just the base URL for testing
+                                        test_url = f"https://{gateway_host}/"
+                                        async with session.get(test_url, timeout=5) as gw_response:
+                                            print(f"✅ Custom DNS: Gateway {gateway_host} accessible via HTTP (Status: {gw_response.status})")
+                                    except Exception as simple_test_error:
+                                        print(f"⚠️ Custom DNS: Gateway {gateway_host} not accessible: {simple_test_error}")
+                            
                             return True
-                except Exception as e:
-                    print(f"❌ Custom DNS Resolver failed: {e}")
+                        else:
+                            print(f"❌ Custom DNS: Discord API returned status {response.status}")
+                            return False
+                            
+                except asyncio.TimeoutError:
+                    print(f"❌ Custom DNS Resolver: Connection timeout to Discord API")
                     return False
+                except Exception as e:
+                    print(f"❌ Custom DNS Resolver request failed: {e}")
+                    return False
+                
+                finally:
+                    # Clean up session
+                    if not session.closed:
+                        await session.close()
+                        print("✅ Cleaned up custom DNS session")
+                        
+            finally:
+                # Clean up connector
+                await connector.close()
+                print("✅ Cleaned up custom DNS connector")
             
-        # Run the async test
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        result = loop.run_until_complete(test_custom_resolver())
-        loop.close()
-        return result
+        # Run the comprehensive async test with proper event loop handling
+        try:
+            # Try to use existing event loop if available
+            loop = asyncio.get_event_loop()
+            if loop.is_running():
+                # Create a new loop for our test if one is already running
+                import concurrent.futures
+                with concurrent.futures.ThreadPoolExecutor() as executor:
+                    future = executor.submit(asyncio.run, test_comprehensive_resolver())
+                    return future.result()
+            else:
+                return loop.run_until_complete(test_comprehensive_resolver())
+        except RuntimeError:
+            # No event loop exists, create a new one
+            return asyncio.run(test_comprehensive_resolver())
         
     except ImportError as e:
-        print(f"❌ Custom DNS Resolver not available: {e}")
+        print(f"❌ Custom DNS Resolver dependencies not available: {e}")
+        print(f"💡 Required: pip install aiohttp aiodns")
         return False
     except Exception as e:
-        print(f"❌ Custom DNS Resolver test failed: {e}")
+        print(f"❌ Custom DNS Resolver test setup failed: {e}")
         return False
 
 def test_generic_https():
