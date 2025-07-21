@@ -158,222 +158,113 @@ async def setup_discord_patches():
         logger.error(f"❌ Failed to apply comprehensive DNS patches: {patch_error}")
         raise
 
-def format_answer_for_discord(html_content: str) -> str:
-    """Convert HTML content to Discord-native markdown format using html_to_markdown library"""
+def format_answer_for_discord(markdown_content: str) -> str:
+    """Convert markdown content to Discord-compatible format
+    
+    Uses python-markdown + markdownify for robust conversion that handles Discord quirks.
+    """
+    import re
+    
     try:
-        from html_to_markdown import convert_to_markdown
-        from bs4 import BeautifulSoup
-        import re
-        
-        # Use html_to_markdown for robust HTML to markdown conversion
-        markdown_content = convert_to_markdown(
-            html_content,
-            heading_style='atx',  # Use # headers initially, we'll convert to bold for Discord
-            bullets='*',
-            strong_em_symbol='*',
-            escape_asterisks=False,  # We'll handle escaping ourselves
-            escape_underscores=False,
-            extract_metadata=False,  # Don't add metadata comments
-            strip_newlines=True,
-            wrap=False
-        )
-        
-        content = markdown_content
-        
-    except ImportError:
-        # Fallback to old method if html_to_markdown is not available
-        from bs4 import BeautifulSoup
+        import markdown
         from markdownify import markdownify
-        import re
-        
-        # Parse HTML properly with BeautifulSoup
-        soup = BeautifulSoup(html_content, 'html.parser')
-        
-        # Clean up source references before converting
-        for elem in soup.find_all(['div', 'section', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'], string=re.compile(r'Source References?', re.I)):
-            elem.decompose()
-        
-        for elem in soup.find_all(string=re.compile(r'Source References?', re.I)):
-            parent = elem.parent
-            if parent:
-                parent.decompose()
-        
-        # Convert HTML to markdown using markdownify
-        markdown_content = markdownify(str(soup), 
-                                      heading_style="ATX",  # Use # for headers
-                                      bullets="-",          # Use - for bullets
-                                      strip=['img', 'script', 'style'])  # Remove unwanted elements
-        
-        content = markdown_content
+        libraries_available = True
+    except ImportError as e:
+        logger.warning(f"Markdown libraries not available: {e}")
+        libraries_available = False
     
-    # Convert ATX headers (# ## ###) to Discord bold format since Discord doesn't render them well
-    content = re.sub(r'^#+\s*(.*?)$', r'**\1**', content, flags=re.MULTILINE)
+    if not markdown_content or not markdown_content.strip():
+        return "No answer available."
     
-    # Convert bullet points to Discord format (• instead of -)
-    content = re.sub(r'^[\-\*]\s+', '• ', content, flags=re.MULTILINE)
-    
-    # Essential Discord-specific formatting
-    
-    # Handle LaTeX formulas - simplified approach for better Discord compatibility
-    def convert_latex_formulas(text_content):
-        
-        def clean_latex_formula(formula):
-            """Clean and convert a LaTeX formula to readable text"""
-            # Start with the raw formula
-            cleaned = formula.strip()
+    # Use advanced processing if libraries are available
+    if libraries_available:
+        try:
+            # Step 1: Convert markdown to clean HTML using python-markdown
+            html = markdown.markdown(
+                markdown_content, 
+                extensions=[
+                    'markdown.extensions.tables',
+                    'markdown.extensions.codehilite', 
+                    'markdown.extensions.fenced_code',
+                    'markdown.extensions.nl2br'  # Preserve line breaks
+                ]
+            )
             
-            # Clean up \text{} commands first - handle both single and double backslashes
-            cleaned = re.sub(r'\\\\text\s*\{([^}]*)\}', r'\1', cleaned)
-            cleaned = re.sub(r'\\text\s*\{([^}]*)\}', r'\1', cleaned)
+            # Step 2: Convert HTML back to Discord-safe markdown using markdownify
+            discord_markdown = markdownify(
+                html,
+                heading_style="ATX",  # Use # headers (we'll convert these)
+                bullets="-",  # Use - for bullets (we'll convert to •)
+                strip=['img', 'script', 'style'],  # Remove unwanted elements
+                escape_asterisks=False,  # Don't escape * - Discord needs them
+                escape_underscores=False  # Don't escape _ 
+            )
             
-            # Handle LaTeX symbol replacements - account for double backslashes from HTML
-            replacements = {
-                # Double backslash versions (from HTML)
-                r'\\\\sum\b': '∑', r'\\\\prod\b': '∏', r'\\\\times\b': '×',
-                r'\\\\cdot\b': '·', r'\\\\div\b': '÷', r'\\\\pm\b': '±',
-                r'\\\\alpha\b': 'α', r'\\\\beta\b': 'β', r'\\\\gamma\b': 'γ',
-                r'\\\\delta\b': 'δ', r'\\\\epsilon\b': 'ε', r'\\\\zeta\b': 'ζ',
-                r'\\\\eta\b': 'η', r'\\\\theta\b': 'θ', r'\\\\lambda\b': 'λ',
-                r'\\\\mu\b': 'μ', r'\\\\pi\b': 'π', r'\\\\rho\b': 'ρ',
-                r'\\\\sigma\b': 'σ', r'\\\\tau\b': 'τ', r'\\\\phi\b': 'φ',
-                r'\\\\chi\b': 'χ', r'\\\\psi\b': 'ψ', r'\\\\omega\b': 'ω',
-                # Single backslash versions (fallback)
-                r'\\sum\b': '∑', r'\\prod\b': '∏', r'\\times\b': '×',
-                r'\\cdot\b': '·', r'\\div\b': '÷', r'\\pm\b': '±',
-                r'\\alpha\b': 'α', r'\\beta\b': 'β', r'\\gamma\b': 'γ',
-                r'\\delta\b': 'δ', r'\\epsilon\b': 'ε', r'\\zeta\b': 'ζ',
-                r'\\eta\b': 'η', r'\\theta\b': 'θ', r'\\lambda\b': 'λ',
-                r'\\mu\b': 'μ', r'\\pi\b': 'π', r'\\rho\b': 'ρ',
-                r'\\sigma\b': 'σ', r'\\tau\b': 'τ', r'\\phi\b': 'φ',
-                r'\\chi\b': 'χ', r'\\psi\b': 'ψ', r'\\omega\b': 'ω',
-                # Math operators
-                r'\\sqrt\b': '√', r'\\infty\b': '∞', r'\\approx\b': '≈',
-                r'\\leq\b': '≤', r'\\geq\b': '≥', r'\\neq\b': '≠'
-            }
+            # Step 3: Apply Discord-specific formatting fixes
+            content = discord_markdown.strip()
             
-            for latex_cmd, unicode_symbol in replacements.items():
-                cleaned = re.sub(latex_cmd, unicode_symbol, cleaned)
+            # Fix headers: Convert # headers to **bold** (Discord doesn't render # headers)
+            content = re.sub(r'^#{1,6}\s*(.+?)$', r'**\1**', content, flags=re.MULTILINE)
             
-            # Remove remaining LaTeX commands (both single and double backslashes)
-            cleaned = re.sub(r'\\\\[a-zA-Z]+\*?', '', cleaned)
-            cleaned = re.sub(r'\\[a-zA-Z]+\*?', '', cleaned)
+            # Fix bullet points: Convert - to • (looks better in Discord)
+            content = re.sub(r'^-\s+', '• ', content, flags=re.MULTILINE)
             
-            # Remove leftover braces and backslashes
-            cleaned = re.sub(r'[{}]+', '', cleaned)
-            cleaned = re.sub(r'\\+', '', cleaned)
+            # Fix bold text spacing issues (Discord is sensitive to spaces around **)
+            content = re.sub(r'\*\*\s+(.+?)\s+\*\*', r'**\1**', content)  # Remove spaces inside **
+            content = re.sub(r'\*\*(.+?)\*\*', lambda m: f'**{m.group(1).strip()}**', content)  # Ensure no trailing spaces
             
-            # Handle superscripts and subscripts
-            superscript_map = {
-                '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴',
-                '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹',
-                '+': '⁺', '-': '⁻', '=': '⁼', '(': '⁽', ')': '⁾'
-            }
+            # Clean up [Document N] references for later processing
+            content = re.sub(r'\[Document\s+(\d+)\]', r'[Document \1]', content, flags=re.IGNORECASE)
             
-            subscript_map = {
-                '0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄',
-                '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉',
-                '+': '₊', '-': '₋', '=': '₌', '(': '₍', ')': '₎'
-            }
+            # Enhance key terms with code formatting (Discord renders `code` well)
+            key_terms = [
+                r'\b(Delta|Gamma|Theta|Vega|Rho)\b',  # Options Greeks
+                r'\b(ITM|OTM|ATM|IV|Greeks)\b',       # Options terminology  
+                r'\b(Call|Put|Strike|Expiration|Premium)\b'  # Common terms
+            ]
             
-            # Convert simple superscripts (like ^2, ^3)
-            def convert_superscript(match):
-                char = match.group(1)
-                return superscript_map.get(char, f'^{char}')
+            for term_pattern in key_terms:
+                # Only apply if not already formatted with `, *, [, or ]
+                content = re.sub(
+                    rf'(?<![`*\[\]]){term_pattern}(?![`*\]\)])', 
+                    lambda m: f'`{m.group(1)}`', 
+                    content
+                )
             
-            def convert_subscript(match):
-                char = match.group(1)
-                return subscript_map.get(char, f'_{char}')
-            
-            # Apply superscript/subscript conversions
-            cleaned = re.sub(r'\^([0-9+\-=()])', convert_superscript, cleaned)
-            cleaned = re.sub(r'_([0-9+\-=()])', convert_subscript, cleaned)
-            
-            # Fix spacing around operators
-            cleaned = re.sub(r'\s*([+\-×÷=])\s*', r' \1 ', cleaned)
-            cleaned = re.sub(r'\s*([()])\s*', r'\1', cleaned)
+            # Emphasize financial values 
+            content = re.sub(r'(?<!\*)\$(\d+(?:\.\d{2})?)\b', r'**$\1**', content)
+            content = re.sub(r'\b(\d+(?:\.\d+)?)%\b(?!\*)', r'**\1%**', content)
             
             # Clean up excessive whitespace
-            cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+            content = re.sub(r'\n\s*\n\s*\n+', '\n\n', content)  # Max 2 consecutive newlines
+            content = re.sub(r'^\s+|\s+$', '', content)  # Trim edges
             
-            return cleaned
-        
-        # Process different LaTeX formula patterns with better detection
-        patterns = [
-            # Display math patterns
-            (r'\\\[(.*?)\\\]', lambda m: f'\n```\n{clean_latex_formula(m.group(1))}\n```\n'),
-            (r'\$\$(.*?)\$\$', lambda m: f'\n```\n{clean_latex_formula(m.group(1))}\n```\n'),
-            # Inline math patterns  
-            (r'\\\((.*?)\\\)', lambda m: f' `{clean_latex_formula(m.group(1))}` '),
-            (r'\$([^$\n]{1,50})\$', lambda m: f' `{clean_latex_formula(m.group(1))}` '),
-        ]
-        
-        for pattern, replacement in patterns:
-            text_content = re.sub(pattern, replacement, text_content, flags=re.DOTALL)
-        
-        return text_content
+            # Add block quotes for special sections
+            content = re.sub(r'^(\*\*Quick Answer\*\*.*?)$', r'> \1', content, flags=re.MULTILINE)
+            
+            return content
+            
+        except Exception as e:
+            # Fallback: if markdown processing fails, use basic processing
+            logger.warning(f"Markdown processing failed: {e}, using fallback")
     
-    # Apply LaTeX formula conversion
-    content = convert_latex_formulas(content)
+    # Fallback processing (either libraries not available or processing failed)
+    content = markdown_content.strip()
     
-    # Remove source references sections
-    source_patterns = [
-        r'\*\*Source References?\*\*.*$',
-        r'Source References?.*$', 
-        r'^.*Source References?.*$'
-    ]
+    # Basic Discord compatibility fixes
+    content = re.sub(r'^#{1,6}\s*(.+?)$', r'**\1**', content, flags=re.MULTILINE)
+    content = re.sub(r'^[\-\*\+]\s+', '• ', content, flags=re.MULTILINE)
+    content = re.sub(r'\n\s*\n\s*\n+', '\n\n', content)
     
-    for pattern in source_patterns:
-        content = re.sub(pattern, '', content, flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
-    
-    # Remove citation patterns
-    citation_patterns = [
-        r'\n\d+\.\s+".*?"\s*\(Score:.*?\).*?\n',  # Numbered citations with scores
-        r'\n\d+\.\s+".*?"\s*-\s*Upload Date:.*?\n',  # Numbered citations with dates
-        r'^•\s*".*?"\s*\(Score:.*?\).*$',  # Bullet citations with scores
-        r'^•\s*".*?"\s*-\s*Upload Date:.*$'  # Bullet citations with dates
-    ]
-    
-    for pattern in citation_patterns:
-        content = re.sub(pattern, '', content, flags=re.MULTILINE | re.DOTALL)
-    
-    # Enhanced bullet point labels
-    bullet_enhancements = {
-        '• Definition:': '• **Definition:**',
-        '• Formula:': '• **Formula:**', 
-        '• Example:': '• **Example:**',
-        '• Purpose:': '• **Purpose:**',
-        '• Note:': '• **Note:**',
-        '• Key Point:': '• **Key Point:**'
-    }
-    
-    for old, new in bullet_enhancements.items():
-        content = content.replace(old, new)
-    
-    # Format financial values and percentages
-    content = re.sub(r'(?<!\*)\$(\d+(?:\.\d{2})?)\b', r'**$\1**', content)  # Dollar amounts
-    content = re.sub(r'\b(\d+(?:\.\d+)?)%\b(?!\*)', r'**\1%**', content)   # Percentages
-    
-    # Format technical terms
-    technical_terms = ['Theta', 'Delta', 'Gamma', 'Vega', 'Rho', 'Greeks', 'IV', 'ATM', 'ITM', 'OTM']
-    for term in technical_terms:
-        content = re.sub(rf'(?<![`*\[\]])\b{re.escape(term)}\b(?![`*\]\)])', f'`{term}`', content)
-    
-    # Clean up excessive whitespace and backslashes
-    content = re.sub(r'\s\\+\s', ' ', content)  # Multiple backslashes between spaces
-    content = re.sub(r'^\s*\\+\s*$', '', content, flags=re.MULTILINE)  # Lines with only backslashes
-    content = re.sub(r'\n\s*\n\s*\n+', '\n\n', content)  # Multiple newlines to double newlines
-    content = re.sub(r'^\s+|\s+$', '', content)  # Leading/trailing whitespace
-    
-    # Add block quote for Quick Answer (if present)
-    content = re.sub(r'^(\*\*Quick Answer\*\*)', r'> \1', content, flags=re.MULTILINE)
-    
-    return content.strip()
+    return content
 
 def improve_document_references(answer: str, sources: list) -> str:
-    """Replace [Document N] references with more user-friendly video link references"""
+    """Replace [Document N] references with Discord-friendly video links"""
     import re
     
     if not sources:
+        # Remove any remaining document references if no sources available
+        answer = re.sub(r'\[Document \d+\]', '', answer, flags=re.IGNORECASE)
         return answer
     
     # Create a mapping of document numbers to video info
@@ -381,7 +272,7 @@ def improve_document_references(answer: str, sources: list) -> str:
     for i, source in enumerate(sources, 1):
         timestamp_seconds = source.get('start_timestamp_seconds', 0)
         
-        # Format timestamp for inline display
+        # Format timestamp for display
         timestamp_str = ""
         if timestamp_seconds and timestamp_seconds > 0:
             minutes = int(timestamp_seconds // 60)
@@ -391,17 +282,14 @@ def improve_document_references(answer: str, sources: list) -> str:
         # Get the best available title
         title = source.get('title', 'Untitled Video')
         
-        # If title looks like a video ID, try to get a better title
-        if len(title) == 11 and title.isalnum():  # YouTube video ID format
-            # Try to use filename or other fields
+        # Clean up video ID titles
+        if len(title) == 11 and title.isalnum():  # Likely a video ID
             title = source.get('filename', source.get('file_name', title))
-            # Clean up filename extensions
             title = title.replace('.mp3', '').replace('.wav', '').replace('.mp4', '')
         
-        # Ensure we have a reasonable URL
+        # Get URL with timestamp
         url = source.get('video_url_with_timestamp') or source.get('url', '#')
         if url == '#' or not url:
-            # Try to construct from video ID if available
             video_id = source.get('video_id') or source.get('id')
             if video_id and timestamp_seconds:
                 url = f"https://www.youtube.com/watch?v={video_id}&t={int(timestamp_seconds)}s"
@@ -421,18 +309,17 @@ def improve_document_references(answer: str, sources: list) -> str:
             url = doc_mapping[doc_num]['url']
             timestamp_str = doc_mapping[doc_num]['timestamp_str']
             
-            # Clean up title and truncate if too long for inline display
+            # Clean up title for Discord display
             title = title.replace('|', '-').replace('[', '(').replace(']', ')')
-            # Reduce title length more to accommodate timestamp
-            if len(title) > 25:
-                title = title[:22] + "..."
+            if len(title) > 30:  # Shorter for Discord
+                title = title[:27] + "..."
             
-            # Create clickable link with timestamp info in Discord format (suppress preview with < >)
+            # Create Discord link with timestamp (suppress preview with < >)
             return f"**[Video {doc_num}{timestamp_str}: {title}](<{url}>)**"
         else:
             return f"**[Video {doc_num}]**"
     
-    # Replace [Document N] with enhanced video references (case insensitive)
+    # Replace [Document N] with video references
     answer = re.sub(r'\[Document (\d+)\]', replace_doc_ref, answer, flags=re.IGNORECASE)
     
     return answer
