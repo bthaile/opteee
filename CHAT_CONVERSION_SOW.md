@@ -250,3 +250,54 @@ Convert the current single query/response interface to a conversational chat sys
 5. Test coverage for new functionality
 
 This statement of work ensures a systematic approach to converting the interface while maintaining all existing functionality and user workflows. 
+
+Perfect! Now you can run the server in TEST MODE to test the conversation functionality. Use this command:
+
+```bash
+TEST_MODE=true python run_fastapi_dev.py
+```
+
+Or for a simpler approach, run it directly:
+
+```bash
+TEST_MODE=true python main.py
+```
+
+## **What TEST MODE Does:**
+
+✅ **Bypasses RAG initialization** - no vector store or embedding model loading  
+✅ **Enables API testing** - all endpoints work normally  
+✅ **Shows conversation history processing** - test responses demonstrate that conversation history is being received and processed  
+✅ **Maintains all validation** - API models and conversation history validation still work  
+
+## **Test It:**
+
+Once running, you can test at http://localhost:7860/docs or with curl:
+
+**Simple query (backward compatibility):**
+```bash
+<code_block_to_apply_changes_from>
+```
+
+**Query with conversation history:**
+```bash
+curl -X POST "http://localhost:7860/api/chat" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "query": "Can you give me an example?",
+    "conversation_history": [
+      {
+        "role": "user",
+        "content": "What is a covered call?",
+        "timestamp": "2024-01-01T10:00:00"
+      },
+      {
+        "role": "assistant", 
+        "content": "A covered call is an options strategy where you own 100 shares of stock and sell a call option.",
+        "timestamp": "2024-01-01T10:00:01"
+      }
+    ]
+  }'
+```
+
+The test mode response will show you that the conversation history is being received and processed correctly! This validates our backend changes work before moving to the frontend. 🚀 

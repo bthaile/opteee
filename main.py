@@ -16,6 +16,9 @@ from datetime import datetime
 from app.services.rag_service import RAGService
 from app.models.chat_models import ChatRequest, ChatResponse, HealthResponse
 
+# Check if we're in test mode (no RAG initialization)
+TEST_MODE = os.getenv("TEST_MODE", "false").lower() == "true"
+
 # Initialize FastAPI app
 app = FastAPI(
     title="OPTEEE API",
@@ -39,6 +42,12 @@ rag_service = None
 async def startup_event():
     """Initialize the RAG service on startup"""
     global rag_service
+    
+    if TEST_MODE:
+        print("🧪 Starting in TEST MODE - RAG service disabled")
+        print("✅ API endpoints available for testing")
+        return
+    
     print("🚀 Initializing OPTEEE API...")
     rag_service = RAGService()
     await rag_service.initialize()
@@ -48,7 +57,7 @@ async def startup_event():
 async def health_check():
     """Health check endpoint"""
     return HealthResponse(
-        status="healthy",
+        status="healthy" if not TEST_MODE else "healthy (test mode)",
         timestamp=datetime.now().isoformat(),
         version="1.0.0"
     )
@@ -56,6 +65,33 @@ async def health_check():
 @app.post("/api/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest):
     """Main chat endpoint for RAG queries"""
+    
+    if TEST_MODE:
+        # Return a test response that demonstrates conversation history processing
+        conversation_summary = ""
+        if request.conversation_history:
+            conversation_summary = f"\n\n[Test Mode] I can see our conversation history with {len(request.conversation_history)} previous messages. "
+            if len(request.conversation_history) > 0:
+                last_msg = request.conversation_history[-1]
+                conversation_summary += f"Your last message was: '{last_msg.content[:50]}...'"
+        
+        test_answer = f"""[TEST MODE RESPONSE]
+        
+Thank you for your question: "{request.query}"
+
+Provider: {request.provider}
+Number of results requested: {request.num_results}
+Format: {request.format}{conversation_summary}
+
+This is a test response to validate the conversation history functionality. In production, this would be answered using the RAG system with options trading knowledge."""
+
+        return ChatResponse(
+            answer=test_answer,
+            sources="<div class='test-mode'>Test mode - no real sources</div>",
+            raw_sources=[],
+            timestamp=datetime.now().isoformat()
+        )
+    
     if not rag_service:
         raise HTTPException(status_code=503, detail="RAG service not initialized")
     
