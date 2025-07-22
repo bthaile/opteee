@@ -51,7 +51,7 @@ def make_request(url, params, max_retries=3):
 
 def get_channel_id_from_handle():
     """Get channel ID from handle using channel lookup"""
-    print(f"🔍 Getting channel ID for @{CHANNEL_HANDLE}...")
+    print(f" Getting channel ID for @{CHANNEL_HANDLE}...")
     
     url = "https://www.googleapis.com/youtube/v3/search"
     params = {
@@ -74,7 +74,7 @@ def get_channel_id_from_handle():
 
 def get_channel_videos():
     """Get all videos from the channel using YouTube Data API"""
-    print("🔍 Getting video metadata...")
+    print(" Getting video metadata...")
     
     if not YOUTUBE_API_KEY:
         print("❌ No YouTube API key found in environment!")

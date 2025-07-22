@@ -28,7 +28,7 @@ def test_single_video():
     downloader = TranscriptDownloader()
     
     # Test each method individually
-    print("\n🔍 Testing YouTube Transcript API...")
+    print("\n Testing YouTube Transcript API...")
     transcript_api_result = downloader.get_transcript_via_transcript_api(test_video_id)
     if transcript_api_result:
         print(f"✅ Success! Found {len(transcript_api_result)} segments")
@@ -36,7 +36,7 @@ def test_single_video():
     else:
         print("❌ No transcript found via YouTube Transcript API")
     
-    print("\n🔍 Testing yt-dlp subtitle extraction...")
+    print("\n Testing yt-dlp subtitle extraction...")
     ytdlp_result = downloader.get_transcript_via_yt_dlp(test_video_url)
     if ytdlp_result:
         print(f"✅ Success! Found {len(ytdlp_result)} segments")
@@ -44,7 +44,7 @@ def test_single_video():
     else:
         print("❌ No transcript found via yt-dlp")
     
-    print("\n🔍 Testing Whisper transcription...")
+    print("\n Testing Whisper transcription...")
     if downloader.whisper_model:
         whisper_result = downloader.download_audio_and_transcribe(test_video_url, test_video_id)
         if whisper_result:

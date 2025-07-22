@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "🚀 Testing OPTEEE Docker Setup"
+echo " Testing OPTEEE Docker Setup"
 echo "================================"
 
 # Check if Docker is running

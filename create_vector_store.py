@@ -5,10 +5,12 @@ from tqdm import tqdm
 import faiss
 import pickle
 
-# Set up environment variables for model caching before importing SentenceTransformer
-os.environ.setdefault('TRANSFORMERS_CACHE', '/app/cache/huggingface')
-os.environ.setdefault('SENTENCE_TRANSFORMERS_HOME', '/app/cache/sentence_transformers')
-os.environ.setdefault('HF_HOME', '/app/cache/huggingface')
+# Set up environment variables for model caching before importing SentenceTransformer  
+# Use local cache paths for development, /app paths for deployment
+cache_base = '/app/cache' if os.path.exists('/app') else os.path.expanduser('~/.cache')
+os.environ.setdefault('TRANSFORMERS_CACHE', f'{cache_base}/huggingface')
+os.environ.setdefault('SENTENCE_TRANSFORMERS_HOME', f'{cache_base}/sentence_transformers')
+os.environ.setdefault('HF_HOME', f'{cache_base}/huggingface')
 
 from sentence_transformers import SentenceTransformer
 import argparse
@@ -145,7 +147,7 @@ def test_search(index, embeddings, metadatas, model_name=MODEL_NAME, top_k=5):
             print(f"{i+1}. {result_text} (at {timestamp}, distance: {distance:.4f})")
             print(f"   🔗 {video_url}")
             if content_summary:
-                print(f"   📝 Summary: {content_summary}")
+                print(f"    Summary: {content_summary}")
             if description:
                 print(f"   📄 Description: {description}")
             print("")
@@ -176,7 +178,7 @@ def main(args):
         test_search(index, embeddings, metadatas, model_name=args.model)
     
     print("\n"+"="*80)
-    print("📝 Vector store creation complete!")
+    print(" Vector store creation complete!")
     print(f"✅ Model used: {args.model}")
     print(f"✅ Total chunks indexed: {len(texts)}")
     print(f"📁 Vector store saved to {VECTOR_OUTPUT_DIR}/")

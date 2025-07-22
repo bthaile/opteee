@@ -144,7 +144,7 @@ class CleanVideoTracker:
     
     def scan_existing_files(self):
         """Scan existing audio and transcript files to update status"""
-        print("🔍 Scanning existing files to update status...")
+        print(" Scanning existing files to update status...")
         
         updated_count = 0
         
@@ -156,7 +156,7 @@ class CleanVideoTracker:
                 video_info["status"] = new_status
                 video_info["last_updated"] = datetime.now().isoformat()
                 updated_count += 1
-                print(f"📝 {video_id}: {old_status} → {new_status}")
+                print(f" {video_id}: {old_status} → {new_status}")
         
         print(f"✅ Updated status for {updated_count} videos")
         self.save_state()

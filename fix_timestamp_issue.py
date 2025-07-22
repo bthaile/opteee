@@ -80,7 +80,7 @@ def regenerate_transcripts_with_timestamps(use_parallel=False, num_workers=None)
         if num_workers is None:
             num_workers = min(multiprocessing.cpu_count(), len(audio_files))
         
-        print(f"🚀 Using parallel processing with {num_workers} workers")
+        print(f" Using parallel processing with {num_workers} workers")
         
         # Process files in parallel
         successful = 0
@@ -217,7 +217,7 @@ def verify_fix():
     """
     Verify that the fix worked by checking some timestamps
     """
-    print("🔍 Verifying timestamp fix...")
+    print(" Verifying timestamp fix...")
     
     try:
         import pickle
@@ -264,7 +264,7 @@ def main():
     
     args = parser.parse_args()
     
-    print("🚀 Starting timestamp fix process...")
+    print(" Starting timestamp fix process...")
     print("="*60)
     
     # Step 1: Regenerate transcripts with timestamps

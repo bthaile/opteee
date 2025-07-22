@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "🚀 OPTEEE - HuggingFace Deployment Test Environment"
+echo " OPTEEE - HuggingFace Deployment Test Environment"
 echo "================================================="
 echo ""
 
@@ -221,4 +221,4 @@ echo "  • Stop app:      docker stop opteee-hf-test"
 echo "  • Remove app:    docker rm opteee-hf-test"
 echo "  • Rebuild:       docker build -t opteee-hf-test . --no-cache"
 echo ""
-echo "If everything works here, it will work on HuggingFace! 🚀" 
+echo "If everything works here, it will work on HuggingFace! " 

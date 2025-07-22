@@ -3,7 +3,7 @@
 # Fast Development Environment for OPTEEE
 # Runs FastAPI directly for instant UI updates (no Docker rebuilds needed)
 
-echo "🚀 Starting OPTEEE Fast Development Environment"
+echo " Starting OPTEEE Fast Development Environment"
 echo "=============================================="
 
 # Check if .env file exists
@@ -24,7 +24,7 @@ if ! command -v python &> /dev/null; then
 fi
 
 # Check if we have the required dependencies
-echo "🔍 Checking dependencies..."
+echo " Checking dependencies..."
 if [ ! -f "requirements.txt" ]; then
     echo "❌ Error: requirements.txt not found!"
     exit 1
@@ -77,17 +77,33 @@ fi
 echo "✅ Environment checks passed!"
 echo ""
 echo "🔥 Starting FastAPI development server..."
-echo "📝 Edit frontend/build/index.html and refresh browser for instant updates!"
+echo " Edit frontend/build/index.html and refresh browser for instant updates!"
 echo "🌐 Open http://localhost:7860 in your browser"
 echo "🔧 API endpoints available at http://localhost:7860/docs"
 echo ""
 echo "⚡ FAST DEVELOPMENT MODE:"
 echo "   • UI changes: Edit frontend/build/index.html → refresh browser"
-echo "   • Backend changes: Stop (Ctrl+C) → restart script"
+echo "   • Backend changes: Auto-reload enabled! ✨"
 echo "   • No Docker rebuilds needed!"
 echo ""
 echo "⏹️  Press Ctrl+C to stop the server"
 echo "==========================================="
 
-# Start the FastAPI server
-python main.py 
+# Check for test mode parameter
+if [[ "$1" == "--test" ]] || [[ "$1" == "test" ]]; then
+    export TEST_MODE=true
+    echo "🧪 Running in TEST MODE (mock responses)"
+else
+    echo "🎯 Running in PRODUCTION MODE (real RAG responses)"
+    echo "⚠️  This requires vector store and API keys to be properly configured"
+fi
+
+# Check if uvicorn is available for auto-reload
+if command -v uvicorn &> /dev/null; then
+    echo "🔥 Starting with uvicorn auto-reload..."
+    uvicorn main:app --host 0.0.0.0 --port 7860 --reload
+else
+    echo "⚠️  uvicorn not found - install with: pip install uvicorn"
+    echo " Falling back to standard Python (manual restart required)"
+    python main.py
+fi 

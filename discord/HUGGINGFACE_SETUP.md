@@ -12,7 +12,7 @@ Discord Bot (HF Space #2)
 OPTEEE Web App (HF Space #1)
 ```
 
-## 🚀 Step-by-Step Setup
+##  Step-by-Step Setup
 
 ### 1. Create New HuggingFace Space for Discord Bot
 
@@ -162,4 +162,4 @@ git push
 ✅ **Easy Monitoring**: Health endpoints and logging  
 ✅ **No Infrastructure**: HuggingFace handles everything  
 
-Your Discord bot is now running as a completely separate service that connects to your main OPTEEE API! 🚀 
+Your Discord bot is now running as a completely separate service that connects to your main OPTEEE API!  

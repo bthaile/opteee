@@ -90,7 +90,7 @@ def main():
             print(f"   Using top_k: {args.top_k}, temperature: {args.temperature}")
             
             # Process the question
-            print(f"\n🔍 Processing: '{args.question}'")
+            print(f"\n Processing: '{args.question}'")
             start_time = time()
             result = run_rag_query(retriever, chain, args.question)
             end_time = time()

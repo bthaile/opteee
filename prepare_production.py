@@ -9,7 +9,7 @@ import json
 
 def create_startup_script():
     """Create startup.sh script exactly like GitHub Actions"""
-    print("📝 Creating startup.sh script...")
+    print(" Creating startup.sh script...")
     
     startup_script = """#!/bin/bash
 set -e
@@ -34,7 +34,7 @@ python main.py
 
 def create_production_dockerfile():
     """Create Dockerfile for production deployment"""
-    print("📝 Creating production Dockerfile...")
+    print(" Creating production Dockerfile...")
     
     dockerfile_content = """FROM python:3.9-slim
 
@@ -107,7 +107,7 @@ CMD ["/app/startup.sh"]
 
 def create_huggingface_readme():
     """Create README.md for HuggingFace deployment"""
-    print("📝 Creating HuggingFace README...")
+    print(" Creating HuggingFace README...")
     
     # Backup original README
     if os.path.exists("README.md"):
@@ -173,7 +173,7 @@ def ensure_required_directories():
 
 def check_required_files():
     """Check that all required files exist"""
-    print("🔍 Checking required files...")
+    print(" Checking required files...")
     
     required_files = [
         "main.py",
@@ -199,9 +199,9 @@ def check_required_files():
 
 def main():
     """Main function to prepare production files"""
-    print("🚀 OPTEEE Production File Preparation")
+    print(" OPTEEE Production File Preparation")
     print("=" * 50)
-    print("📝 Creating files needed for HuggingFace deployment")
+    print(" Creating files needed for HuggingFace deployment")
     print()
     
     try:
@@ -223,7 +223,7 @@ def main():
         print("   ✅ startup.sh - Application startup script")
         print("   ✅ Dockerfile - Production Docker image")
         print("   ✅ README.md - HuggingFace format (original backed up)")
-        print("\n🚀 Next steps:")
+        print("\n Next steps:")
         print("   1. Start Docker Desktop")
         print("   2. Run: ./run_local.sh")
         print("   3. Test at http://localhost:7860")

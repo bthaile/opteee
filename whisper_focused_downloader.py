@@ -198,7 +198,7 @@ def download_audio_with_cookies(video_url: str, video_id: str, progress: Dict) -
                 
                 # Save progress immediately after successful download
                 save_progress(progress)
-                print(f"  📝 Progress saved: audio downloaded")
+                print(f"   Progress saved: audio downloaded")
                 
                 return True
             else:
@@ -217,7 +217,7 @@ def download_audio_with_cookies(video_url: str, video_id: str, progress: Dict) -
                         
                         # Save progress immediately after successful download
                         save_progress(progress)
-                        print(f"  📝 Progress saved: audio downloaded")
+                        print(f"   Progress saved: audio downloaded")
                         
                         return True
                 
@@ -276,7 +276,7 @@ def transcribe_with_whisper(video_id: str, video_url: str, audio_file: str, prog
         
         # Save progress immediately after successful transcription
         save_progress(progress)
-        print(f"  📝 Progress saved: transcript processed")
+        print(f"   Progress saved: transcript processed")
         
         return True
         
@@ -411,7 +411,7 @@ def main():
         show_status(progress, videos)
         return
     
-    print(f"🚀 Whisper-Focused Transcript Downloader (Browser-Based)")
+    print(f" Whisper-Focused Transcript Downloader (Browser-Based)")
     print(f"============================================================")
     print(f"🔧 Using browser-extracted cookies to avoid detection")
     print(f"🆕 Updated yt-dlp with latest anti-bot countermeasures")

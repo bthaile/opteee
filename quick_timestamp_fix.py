@@ -140,7 +140,7 @@ def verify_fix():
     """
     Verify that the fix worked by checking some timestamps
     """
-    print("🔍 Verifying timestamp fix...")
+    print(" Verifying timestamp fix...")
     
     try:
         import pickle
@@ -182,7 +182,7 @@ def main():
     """
     Main function for quick timestamp fix
     """
-    print("🚀 Starting quick timestamp fix...")
+    print(" Starting quick timestamp fix...")
     print("="*60)
     print("ℹ️  This creates estimated timestamps based on chunk position.")
     print("ℹ️  For exact timestamps, use fix_timestamp_issue.py instead.")

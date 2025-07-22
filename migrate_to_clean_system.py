@@ -13,7 +13,7 @@ from datetime import datetime
 
 def analyze_current_mess():
     """Analyze the current state of dummy files and tracking mess"""
-    print("🔍 ANALYZING CURRENT DUMMY FILE MESS...")
+    print(" ANALYZING CURRENT DUMMY FILE MESS...")
     print("=" * 50)
     
     audio_dir = Path("audio_files")
@@ -90,7 +90,7 @@ def analyze_current_mess():
 
 def show_migration_plan():
     """Show what the migration will do"""
-    print("\n🚀 MIGRATION PLAN: DUMMY FILES → CLEAN JSON TRACKING")
+    print("\n MIGRATION PLAN: DUMMY FILES → CLEAN JSON TRACKING")
     print("=" * 60)
     
     print("📋 STEP 1: Import all tracking data into clean JSON")
@@ -143,7 +143,7 @@ def show_benefits():
 
 def migrate_now():
     """Perform the migration"""
-    print("\n🚀 PERFORMING MIGRATION...")
+    print("\n PERFORMING MIGRATION...")
     print("=" * 40)
     
     # Run the clean video tracker

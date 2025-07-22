@@ -1,4 +1,4 @@
-# 🚀 Beginner's Guide to Running Python Scripts
+#  Beginner's Guide to Running Python Scripts
 
 ## 📋 **You Don't Need to Configure Anything!**
 

@@ -21,7 +21,7 @@ def find_audio_files():
     """
     Search for audio files in common locations
     """
-    print("🔍 Searching for audio files...")
+    print(" Searching for audio files...")
     
     # Common audio file extensions
     audio_extensions = ['.mp3', '.wav', '.m4a', '.mp4', '.mkv', '.webm']
@@ -121,7 +121,7 @@ def check_current_audio_status():
     note_files = glob.glob("audio_files/*.note.txt")
     
     print(f"  🎵 Audio files available: {len(audio_files)}")
-    print(f"  📝 Note files (failed downloads): {len(note_files)}")
+    print(f"   Note files (failed downloads): {len(note_files)}")
     
     if audio_files:
         print("\n🎵 Available audio files:")
@@ -132,7 +132,7 @@ def check_current_audio_status():
             print(f"  ... and {len(audio_files) - 10} more")
     
     if note_files:
-        print("\n📝 Failed downloads (need manual download):")
+        print("\n Failed downloads (need manual download):")
         for file in note_files[:5]:  # Show first 5
             video_id = os.path.basename(file).replace('.note.txt', '')
             print(f"  - {video_id}")
@@ -151,7 +151,7 @@ def show_next_steps(audio_count):
         print(f"✅ You have {audio_count} audio files ready for transcription!")
         print("\n📋 To get exact timestamps, run:")
         print("   python3 fix_timestamp_issue.py")
-        print("\n🚀 Or to transcribe new/missing files only:")
+        print("\n Or to transcribe new/missing files only:")
         print("   python3 whisper_transcribe.py")
     else:
         print("❌ No audio files found.")

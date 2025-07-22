@@ -8,7 +8,7 @@ import sys
 
 def test_imports():
     """Test that all modules can be imported correctly"""
-    print("🔍 Testing imports...")
+    print(" Testing imports...")
     
     try:
         from pipeline_config import CHUNK_SIZE, OVERLAP, VIDEOS_JSON, METADATA_JSON
@@ -38,7 +38,7 @@ def test_imports():
 
 def test_file_consistency():
     """Test that files are using consistent formats"""
-    print("\n🔍 Testing file consistency...")
+    print("\n Testing file consistency...")
     
     # Check that CSV file is gone
     if os.path.exists('outlier_trading_videos.csv'):
@@ -58,7 +58,7 @@ def test_file_consistency():
 
 def test_configuration_consistency():
     """Test that all scripts use consistent configuration"""
-    print("\n🔍 Testing configuration consistency...")
+    print("\n Testing configuration consistency...")
     
     from pipeline_config import CHUNK_SIZE, OVERLAP, MIN_CHUNK_WORDS
     
@@ -79,7 +79,7 @@ def test_configuration_consistency():
 
 def test_script_organization():
     """Test that all required scripts exist"""
-    print("\n🔍 Testing script organization...")
+    print("\n Testing script organization...")
     
     required_scripts = [
         'pipeline_config.py',

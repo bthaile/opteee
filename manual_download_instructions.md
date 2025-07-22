@@ -264,7 +264,7 @@ python3 run_pipeline.py --step transcripts
 - **Failed Downloads:** 502 (all need manual download)
 - **Interactive Tracker:** `download_tracker.html`
 
-## 🔍 **Troubleshooting**
+##  **Troubleshooting**
 
 ### **"No new files to process"**
 - Check your files are in `audio_files/` directory

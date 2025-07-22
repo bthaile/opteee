@@ -30,7 +30,7 @@ from pipeline_config import (
 def print_banner(title):
     """Print a formatted banner"""
     print("\n" + "="*80)
-    print(f"🚀 {title}")
+    print(f" {title}")
     print("="*80)
 
 def print_step(step_num, total_steps, description):
@@ -86,7 +86,7 @@ def run_video_scraping(force=False, non_interactive=False):
                 print("⏭️  Skipping video scraping")
                 return
     
-    print("🔍 Running video scraping...")
+    print(" Running video scraping...")
     import outlier_scraper
     outlier_scraper.main()
     print("✅ Video scraping complete")
@@ -94,7 +94,7 @@ def run_video_scraping(force=False, non_interactive=False):
     # Run metadata collection if we have a YouTube API key
     from pipeline_config import YOUTUBE_API_KEY
     if YOUTUBE_API_KEY:
-        print("\n🔍 Running metadata collection...")
+        print("\n Running metadata collection...")
         import collect_video_metadata
         collect_video_metadata.main()
         print("✅ Metadata collection complete")
@@ -174,7 +174,7 @@ def run_preprocessing(force=False, non_interactive=False):
                     print("⏭️  Skipping preprocessing")
                     return True
     
-    print(f"📝 Processing {len(transcript_files)} transcript files...")
+    print(f" Processing {len(transcript_files)} transcript files...")
     print(f"📊 Configuration: {CHUNK_SIZE} words/chunk, {OVERLAP} words overlap, min {MIN_CHUNK_WORDS} words")
     
     import preprocess_transcripts

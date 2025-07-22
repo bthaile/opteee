@@ -112,7 +112,7 @@ def main():
         print(f"❌ No audio files found in {input_dir}")
         return
     
-    print(f"🔍 Checking {len(audio_files)} audio files...")
+    print(f" Checking {len(audio_files)} audio files...")
     
     # Check each file
     valid_files = []

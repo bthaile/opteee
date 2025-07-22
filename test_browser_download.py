@@ -205,7 +205,7 @@ def main():
         print(f"🧪 Testing single video download")
         print(f"📹 Video ID: {video_id}")
         print(f"🔗 URL: {video_url}")
-        print(f"📝 Title: {test_video.get('title', 'Unknown')}")
+        print(f" Title: {test_video.get('title', 'Unknown')}")
         
         # Test 1: Browser access
         browser_success = test_browser_access(video_url)

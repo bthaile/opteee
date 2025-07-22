@@ -4,7 +4,7 @@ from collections import defaultdict
 
 def verify_chunks():
     """Verify that all transcripts have been properly chunked"""
-    print("\n🔍 Starting chunk verification...")
+    print("\n Starting chunk verification...")
     
     # Directories to check
     TRANSCRIPT_DIR = "transcripts"

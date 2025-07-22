@@ -67,7 +67,7 @@ def find_ffmpeg():
 
 # Get the ffmpeg path
 FFMPEG_PATH = find_ffmpeg()
-print(f"🔍 Using ffmpeg at: {FFMPEG_PATH}")
+print(f" Using ffmpeg at: {FFMPEG_PATH}")
 
 def load_progress():
     # First try to load missing_transcripts.json
@@ -113,7 +113,7 @@ def save_manual_processing_list(video_list):
     with open(MANUAL_PROCESSING_FILE, 'w') as f:
         json.dump(merged_list, f, indent=2)
     
-    print(f"📝 Saved {len(merged_list)} videos for manual processing to {MANUAL_PROCESSING_FILE}")
+    print(f" Saved {len(merged_list)} videos for manual processing to {MANUAL_PROCESSING_FILE}")
 
 def clean_dummy_files(audio_dir="audio_files"):
     """Remove existing dummy/small files to try fresh downloads"""
@@ -651,7 +651,7 @@ def main():
                     raise Exception("Audio file not found after download")
                     
                 # Print file info
-                print(f"🔍 Audio file info: {os.path.getsize(audio_filename)} bytes")
+                print(f" Audio file info: {os.path.getsize(audio_filename)} bytes")
                 
                 # Transcribe with Whisper
                 transcribe_with_whisper(audio_filename, transcript_filename)
@@ -700,7 +700,7 @@ def main():
         for url in still_failed:
             print(f"- {url}")
             
-    print("\n🔍 Next steps suggestions:")
+    print("\n Next steps suggestions:")
     print("1. If many videos failed, try using a VPN to change your IP address")
     print("2. For videos requiring manual processing, consider:")
     print("   - Using a browser extension to download the audio")

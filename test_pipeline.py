@@ -244,7 +244,7 @@ def run_all_tests():
     
     results = {}
     for test_name, test_func in tests:
-        print(f"\n🚀 Running {test_name} test...")
+        print(f"\n Running {test_name} test...")
         try:
             result = test_func()
             results[test_name] = result

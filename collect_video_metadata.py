@@ -276,7 +276,7 @@ def main():
     
     # If we have a YouTube API key, enhance the metadata
     if API_KEY:
-        print("🔍 Enhancing metadata with YouTube API...")
+        print(" Enhancing metadata with YouTube API...")
         video_ids = [video['video_id'] for video in all_videos if video.get('video_id')]
         print(f"Getting enhanced metadata for {len(video_ids)} videos...")
         

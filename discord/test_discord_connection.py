@@ -81,7 +81,7 @@ def test_custom_dns_resolver():
                 
                 try:
                     # Test 1: Discord API endpoint
-                    print("🔍 Testing Discord API with custom DNS resolver...")
+                    print(" Testing Discord API with custom DNS resolver...")
                     async with session.get('https://discord.com/api/v10/gateway', timeout=10) as response:
                         if response.status == 200:
                             data = await response.json()
@@ -95,7 +95,7 @@ def test_custom_dns_resolver():
                                 parsed = urllib.parse.urlparse(gateway_url)
                                 gateway_host = parsed.hostname
                                 
-                                print(f"🔍 Testing gateway hostname resolution: {gateway_host}")
+                                print(f" Testing gateway hostname resolution: {gateway_host}")
                                 
                                 # Test direct hostname resolution with our resolver
                                 try:
@@ -181,7 +181,7 @@ def test_generic_https():
         return False
 
 if __name__ == "__main__":
-    print("🔍 Testing Discord Connectivity from Container...")
+    print(" Testing Discord Connectivity from Container...")
     print("=" * 50)
     
     dns_ok = test_dns_resolution()

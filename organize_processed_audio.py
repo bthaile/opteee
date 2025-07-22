@@ -39,7 +39,7 @@ def organize_processed_audio():
     moved_count = 0
     skipped_count = 0
     
-    print(f"🔍 Found {len(audio_files)} MP3 files in audio_files/")
+    print(f" Found {len(audio_files)} MP3 files in audio_files/")
     print(f"📁 Moving processed files to: {processed_dir}")
     print("="*60)
     
@@ -82,7 +82,7 @@ def show_directory_status():
     print("="*50)
     print(f"📁 audio_files/")
     print(f"   🎵 MP3 files: {len(audio_files)}")
-    print(f"   📝 Note files (failed): {len(note_files)}")
+    print(f"    Note files (failed): {len(note_files)}")
     print(f"📁 audio_files_processed/")
     print(f"   🎵 Processed MP3 files: {len(processed_files)}")
     print()

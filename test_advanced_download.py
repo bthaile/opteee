@@ -254,7 +254,7 @@ def main():
         print(f"🧪 Testing Advanced Download Strategies")
         print(f"📹 Video ID: {video_id}")
         print(f"🔗 URL: {video_url}")
-        print(f"📝 Title: {test_video.get('title', 'Unknown')}")
+        print(f" Title: {test_video.get('title', 'Unknown')}")
         print(f"🔄 Using updated yt-dlp version")
         
         # Test 1: Fresh cookies from browser

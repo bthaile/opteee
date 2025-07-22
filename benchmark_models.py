@@ -163,7 +163,7 @@ def main():
     audio_files = audio_files[:args.test_files]
     models = args.models.split(',')
     
-    print(f"🚀 Benchmarking Whisper Models")
+    print(f" Benchmarking Whisper Models")
     print(f"   Audio files: {len(audio_files)}")
     print(f"   Models: {models}")
     print(f"   Max workers: {args.max_workers}")
@@ -199,7 +199,7 @@ def main():
         best_throughput = max(all_results, key=lambda x: x['throughput'])
         best_efficiency = max(all_results, key=lambda x: x['efficiency'])
         
-        print(f"\n🚀 Best Throughput:")
+        print(f"\n Best Throughput:")
         print(f"   {best_throughput['model']} model with {best_throughput['workers']} workers")
         print(f"   {best_throughput['throughput']:.2f} files/sec")
         

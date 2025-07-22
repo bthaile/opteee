@@ -815,7 +815,7 @@ def main():
     async def run_bot_with_custom_dns():
         """Main async function: set up DNS resolver, then create and start bot"""
         try:
-            logger.info("🚀 Phase 1: Setting up custom DNS resolver...")
+            logger.info(" Phase 1: Setting up custom DNS resolver...")
             
             # Step 1: Set up custom DNS resolver and discord.py patches
             dns_success = await setup_custom_dns_and_patches()
@@ -825,13 +825,13 @@ def main():
             else:
                 logger.warning("⚠️ Using system DNS (custom resolver failed)")
             
-            logger.info("🚀 Phase 2: Creating bot instance...")
+            logger.info(" Phase 2: Creating bot instance...")
             
             # Step 2: Create bot instance (patches already applied)
             create_bot()
             logger.info("✅ Bot instance created")
             
-            logger.info("🚀 Phase 3: Starting bot with custom DNS resolver...")
+            logger.info(" Phase 3: Starting bot with custom DNS resolver...")
             
             # Step 3: Start the bot (should now use our custom DNS for all connections)
             await bot.start(DISCORD_TOKEN)

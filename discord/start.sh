@@ -3,7 +3,7 @@
 # Simple startup script for OPTEEE Discord Bot
 # Note: DNS resolution is handled by the custom async resolver in discord_bot.py
 
-echo "🚀 Starting OPTEEE Discord Bot Health Server..."
+echo " Starting OPTEEE Discord Bot Health Server..."
 
 # Start the health server in the background
 python health_server.py &

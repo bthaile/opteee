@@ -3,7 +3,7 @@
 echo "🎨 UI Development Mode - No Docker Rebuilds!"
 echo "=============================================="
 echo "✅ Dependencies fixed and ready"
-echo "🚀 Starting local Gradio app..."
+echo " Starting local Gradio app..."
 echo "🌐 Access at: http://localhost:7860"
 echo ""
 echo "💡 Tips for UI iteration:"

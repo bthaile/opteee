@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 
 def test_basic_functionality():
-    print("🔍 Testing manual video processor...")
+    print(" Testing manual video processor...")
     
     # Check if tracking files exist
     files_to_check = [

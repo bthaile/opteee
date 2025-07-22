@@ -20,7 +20,7 @@ from rag_pipeline import (
 )
 
 # Initialize vector store and chains
-print("🚀 Initializing OPTEEE Chat Interface...")
+print(" Initializing OPTEEE Chat Interface...")
 
 # Check if we need to build the vector store
 index_path = os.path.join("/app/vector_store", "faiss.index")
@@ -569,7 +569,7 @@ def create_chat_interface():
 
 # Launch the chat interface
 if __name__ == "__main__":
-    print("🚀 Starting OPTEEE Chat Interface...")
+    print(" Starting OPTEEE Chat Interface...")
     demo = create_chat_interface()
     demo.launch(
         server_name="0.0.0.0",

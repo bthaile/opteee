@@ -157,7 +157,7 @@ def load_custom_css():
     return CUSTOM_CSS
 
 # Initialize vector store and chains
-print("🚀 Initializing OPTEEE Enhanced Interface...")
+print(" Initializing OPTEEE Enhanced Interface...")
 if DEV_MODE:
     print("🔥 Development mode enabled - hot reload active!")
 
@@ -285,7 +285,7 @@ with gr.Blocks(
         
         with gr.Column(scale=1):
             submit_btn = gr.Button(
-                "🔍 Search",
+                " Search",
                 variant="primary",
                 scale=1
             )
@@ -352,7 +352,7 @@ with gr.Blocks(
 
 # Launch the app
 if __name__ == "__main__":
-    print("🚀 Launching OPTEEE Enhanced Interface...")
+    print(" Launching OPTEEE Enhanced Interface...")
     demo.launch(
         server_name="0.0.0.0",
         server_port=7860,

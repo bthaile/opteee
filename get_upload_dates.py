@@ -16,7 +16,7 @@ CHANNEL_URLS = [
 
 def main():
     """Get upload dates for all videos"""
-    print("🔍 Getting video metadata...")
+    print(" Getting video metadata...")
     
     ydl_opts = {
         'ignoreerrors': True,
@@ -62,7 +62,7 @@ def main():
         if video['video_id'] not in seen_ids:
             seen_ids.add(video['video_id'])
             unique_videos.append(video)
-            print(f"\n📝 Unique video {video['video_id']}")
+            print(f"\n Unique video {video['video_id']}")
             print(f"  Upload date: {video.get('upload_date', 'None')}")
 
     # Save to JSON

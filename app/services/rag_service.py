@@ -16,6 +16,8 @@ from rag_pipeline import (
     DEFAULT_TOP_K
 )
 from app.services.formatters import ResponseFormatter
+from app.models.chat_models import ConversationMessage
+from config import VECTOR_DIR
 
 class RAGService:
     """Service class to handle all RAG-related operations"""
@@ -31,13 +33,14 @@ class RAGService:
         if self.initialized:
             return
         
-        print("🚀 Initializing RAG Service...")
+        print(" Initializing RAG Service...")
         
         # Check if we need to build the vector store
-        index_path = os.path.join("/app/vector_store", "faiss.index")
+        index_path = os.path.join(VECTOR_DIR, "faiss.index")
         vector_store_exists = os.path.exists(os.path.dirname(index_path))
         if not vector_store_exists:
             print(f"⚠️ WARNING: Vector store not found at {index_path}")
+            print(f"📍 Using vector directory: {VECTOR_DIR}")
         
         # Initialize the retriever
         self.retriever = CustomFAISSRetriever(top_k=DEFAULT_TOP_K)
@@ -59,7 +62,7 @@ class RAGService:
             except Exception as e:
                 print(f"❌ Failed to initialize {provider} chain: {e}")
     
-    async def process_query(self, query: str, provider: str = "openai", num_results: int = 10, format: str = "html", conversation_history: Optional[List[Dict[str, Any]]] = None) -> Dict[str, Any]:
+    async def process_query(self, query: str, provider: str = "openai", num_results: int = 10, format: str = "html", conversation_history: Optional[List[ConversationMessage]] = None) -> Dict[str, Any]:
         """
         Process a user query and return formatted response
         Now supports conversation history for context
@@ -215,7 +218,7 @@ Please answer the current question considering the conversation history above. R
             "sources": sources
         }
     
-    def _format_conversation_history(self, conversation_history: List[Dict[str, Any]]) -> str:
+    def _format_conversation_history(self, conversation_history: List[ConversationMessage]) -> str:
         """
         Format conversation history for inclusion in the prompt
         """
@@ -224,9 +227,9 @@ Please answer the current question considering the conversation history above. R
         
         formatted_messages = []
         for msg in conversation_history:
-            role = msg.get("role", "user")
-            content = msg.get("content", "")
-            timestamp = msg.get("timestamp", "")
+            role = msg.role
+            content = msg.content
+            timestamp = msg.timestamp
             
             # Truncate very long messages to avoid prompt bloat
             if len(content) > 500:

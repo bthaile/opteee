@@ -59,7 +59,7 @@ class VideoProcessor:
     
     def scan_current_state(self):
         """Scan current files and update status for all videos"""
-        print("🔍 Scanning current state of all videos...")
+        print(" Scanning current state of all videos...")
         
         # Load failed videos from existing tracking files
         failed_videos = self.load_failed_videos()

@@ -354,7 +354,7 @@ class TranscriptDownloader:
             if v.get('url') not in processed_urls and v.get('url') not in failed_urls
         ]
         
-        print(f"📝 {len(processed_urls)} already processed")
+        print(f" {len(processed_urls)} already processed")
         print(f"❌ {len(failed_urls)} previously failed")
         print(f"🎯 {len(remaining_videos)} remaining to process")
         

@@ -185,7 +185,7 @@ def test_search(index, texts, metadatas, model_name=MODEL_NAME, top_k=5):
             
             print(f"{i+1}. {title} (at {timestamp}, distance: {distance:.4f})")
             print(f"   🔗 {video_url}")
-            print(f"   📝 {text_snippet}")
+            print(f"    {text_snippet}")
 
 def main():
     print("="*80)
@@ -224,7 +224,7 @@ def main():
     test_search(index, texts, metadatas)
     
     print("\n" + "="*80)
-    print("📝 Vector store fix complete!")
+    print(" Vector store fix complete!")
     print(f"✅ Total chunks indexed: {len(texts)}")
     print(f"📁 Fixed vector store saved to {VECTOR_DIR}/")
     print("="*80)

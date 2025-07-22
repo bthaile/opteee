@@ -53,7 +53,7 @@ def main():
         providers = get_available_providers()
         if not providers:
             print("   ❌ No API keys found")
-            print("   📝 Please set OPENAI_API_KEY or ANTHROPIC_API_KEY in .env file")
+            print("    Please set OPENAI_API_KEY or ANTHROPIC_API_KEY in .env file")
         else:
             for provider in providers:
                 print(f"   ✅ {provider.upper()} API key found")
@@ -92,7 +92,7 @@ def main():
         print("\n6. Recommendations:")
         if success:
             print("   🎉 System is ready! No critical issues found.")
-            print(f"   🚀 Default models: OpenAI={DEFAULT_LLM_MODEL}, Claude={DEFAULT_CLAUDE_MODEL}")
+            print(f"    Default models: OpenAI={DEFAULT_LLM_MODEL}, Claude={DEFAULT_CLAUDE_MODEL}")
             print(f"   🌡️ Default temperature: {DEFAULT_TEMPERATURE}")
         else:
             print("   ⚠️ Some issues detected. Check the messages above.")

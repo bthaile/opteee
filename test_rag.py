@@ -48,9 +48,9 @@ def load_environment():
 
 def test_pipeline(provider, top_k=DEFAULT_TOP_K, specific_questions=None, model=None):
     """Test the RAG pipeline with a set of questions"""
-    print(f"🔍 Testing RAG pipeline with {provider} provider and top_k={top_k}")
+    print(f" Testing RAG pipeline with {provider} provider and top_k={top_k}")
     if model:
-        print(f"🔍 Using model: {model}")
+        print(f" Using model: {model}")
     
     # Initialize retriever
     try:

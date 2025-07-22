@@ -333,7 +333,7 @@ class TranscriptDownloader:
             if v.get('url') not in processed_urls and v.get('url') not in failed_urls
         ]
         
-        print(f"📝 {len(processed_urls)} already processed")
+        print(f" {len(processed_urls)} already processed")
         print(f"❌ {len(failed_urls)} previously failed")
         print(f"🎯 {len(remaining_videos)} remaining to process")
         
@@ -399,13 +399,13 @@ class TranscriptDownloader:
 
 def main():
     """Main function to run the transcript downloader."""
-    print("🚀 Starting YouTube Transcript Downloader")
+    print(" Starting YouTube Transcript Downloader")
     print("=" * 50)
     
     downloader = TranscriptDownloader()
     
     # Check dependencies
-    print("🔍 Checking dependencies...")
+    print(" Checking dependencies...")
     if not WHISPER_AVAILABLE:
         print("⚠️  Whisper not available. Install with: pip install openai-whisper")
         print("   Only YouTube transcript methods will be used.")

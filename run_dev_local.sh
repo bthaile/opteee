@@ -3,7 +3,7 @@
 # Local development script for fastest UI iteration
 # No Docker needed - runs directly on your machine
 
-echo "🚀 Starting OPTEEE Local Development (No Docker)"
+echo " Starting OPTEEE Local Development (No Docker)"
 echo "================================================="
 
 # Check if we're in a virtual environment
@@ -45,7 +45,7 @@ fi
 export GRADIO_RELOAD=true
 
 echo "🔥 Starting enhanced development server..."
-echo "📝 Edit app_enhanced.py, static/*, templates/* and save to see changes!"
+echo " Edit app_enhanced.py, static/*, templates/* and save to see changes!"
 echo "🌐 Open http://localhost:7860 in your browser"
 echo "⏹️ Press Ctrl+C to stop"
 echo "🔄 Server will auto-reload when you save files"

@@ -207,7 +207,7 @@ def parallel_transcribe(input_dir, output_dir, model_name="tiny", num_workers=No
         if response.lower() != 'y':
             num_workers = suggested
     
-    print(f"🚀 Using {num_workers} workers with '{model_name}' model")
+    print(f" Using {num_workers} workers with '{model_name}' model")
     
     # Find audio files
     input_path = Path(input_dir)
@@ -300,7 +300,7 @@ def parallel_transcribe(input_dir, output_dir, model_name="tiny", num_workers=No
     if successful > 0:
         avg_time = total_duration / successful
         print(f"  ⏱️  Average time per file: {avg_time:.1f}s")
-        print(f"  🚀 Total processing time: {total_duration:.1f}s")
+        print(f"   Total processing time: {total_duration:.1f}s")
     
     return True
 
@@ -343,7 +343,7 @@ def main():
         print(f"\n🎯 Suggested workers for '{args.model}' model: {suggested}")
         return
     
-    print("🚀 Starting parallel audio transcription...")
+    print(" Starting parallel audio transcription...")
     print("=" * 60)
     
     start_time = time.time()

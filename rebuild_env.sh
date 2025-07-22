@@ -3,7 +3,7 @@
 # Exit on error
 set -e
 
-echo "🚀 Rebuilding virtual environment for opteee..."
+echo " Rebuilding virtual environment for opteee..."
 
 # Check if Python3 is available
 if ! command -v python3 &> /dev/null; then

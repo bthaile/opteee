@@ -360,7 +360,7 @@ def main():
         processed_files = [f for f in os.listdir(PROCESSED_DIR) if f.endswith('.json')]
         print(f"Created {len(processed_files)} processed files: {processed_files}")
     
-    print("\n📝 Script execution complete! Your transcripts are now ready for RAG.")
+    print("\n Script execution complete! Your transcripts are now ready for RAG.")
 
 if __name__ == "__main__":
     main() 

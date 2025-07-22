@@ -13,7 +13,7 @@ API_BASE = f"{BASE_URL}/api"
 
 def test_health_endpoint():
     """Test the health endpoint"""
-    print("🔍 Testing health endpoint...")
+    print(" Testing health endpoint...")
     
     try:
         response = requests.get(f"{API_BASE}/health")
@@ -34,7 +34,7 @@ def test_health_endpoint():
 
 def test_chat_endpoint():
     """Test the chat endpoint with a sample query"""
-    print("\n🔍 Testing chat endpoint...")
+    print("\n Testing chat endpoint...")
     
     test_query = "What are the Greeks in options trading?"
     
@@ -92,7 +92,7 @@ def test_chat_endpoint():
 
 def test_invalid_chat_request():
     """Test chat endpoint with invalid request"""
-    print("\n🔍 Testing chat endpoint with invalid request...")
+    print("\n Testing chat endpoint with invalid request...")
     
     payload = {
         "query": "",  # Empty query should be handled gracefully
@@ -122,7 +122,7 @@ def test_invalid_chat_request():
 
 def test_format_parameter():
     """Test the format parameter for different output formats"""
-    print("\n🔍 Testing format parameter...")
+    print("\n Testing format parameter...")
     
     test_query = "What is Delta in options trading?"
     
@@ -217,7 +217,7 @@ def test_format_parameter():
 
 def test_backward_compatibility():
     """Test that requests without format parameter default to HTML"""
-    print("\n🔍 Testing backward compatibility (no format parameter)...")
+    print("\n Testing backward compatibility (no format parameter)...")
     
     payload = {
         "query": "What is Gamma in options?",
@@ -255,7 +255,7 @@ def test_backward_compatibility():
 
 def test_invalid_format():
     """Test handling of invalid format parameter"""
-    print("\n🔍 Testing invalid format parameter...")
+    print("\n Testing invalid format parameter...")
     
     payload = {
         "query": "What is Theta?",
@@ -289,7 +289,7 @@ def test_invalid_format():
 
 def test_frontend_serving():
     """Test that the frontend is served correctly"""
-    print("\n🔍 Testing frontend serving...")
+    print("\n Testing frontend serving...")
     
     try:
         response = requests.get(BASE_URL)
@@ -312,7 +312,7 @@ def test_frontend_serving():
 
 def main():
     """Run all tests"""
-    print("🚀 Starting FastAPI Backend Tests")
+    print(" Starting FastAPI Backend Tests")
     print("=" * 50)
     
     # Wait a moment for server to be ready

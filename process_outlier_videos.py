@@ -53,11 +53,11 @@ def save_manual_processing_list(video_list):
     with open(MANUAL_PROCESSING_FILE, 'w') as f:
         json.dump(merged_list, f, indent=2)
     
-    print(f"📝 Saved {len(merged_list)} videos for manual processing to {MANUAL_PROCESSING_FILE}")
+    print(f" Saved {len(merged_list)} videos for manual processing to {MANUAL_PROCESSING_FILE}")
 
 def find_ffmpeg():
     """Find ffmpeg executable in common locations"""
-    print("\n🔍 Looking for ffmpeg...")
+    print("\n Looking for ffmpeg...")
     
     # Try using which command
     try:
@@ -125,7 +125,7 @@ def collect_video_metadata(videos_data):
         print("✅ YouTube API client initialized successfully")
         
         # Test the API key with a simple request
-        print("🔍 Testing API key with a sample request...")
+        print(" Testing API key with a sample request...")
         test_response = youtube.videos().list(part='snippet', id='dQw4w9WgXcQ').execute()
         print("✅ API key test successful!")
     except HttpError as e:
@@ -145,7 +145,7 @@ def collect_video_metadata(videos_data):
                 print(f"⚠️ Skipping video with no ID: {video}")
                 continue
                 
-            print(f"\n🔍 Processing video {video_id}")
+            print(f"\n Processing video {video_id}")
                 
             # Get video details
             video_response = youtube.videos().list(
@@ -244,7 +244,7 @@ def generate_content_summary(description):
 
 def scrape_channel_videos():
     """Step 1: Scrape all videos from the channel"""
-    print("\n🔍 Step 1: Scraping channel videos...")
+    print("\n Step 1: Scraping channel videos...")
     
     ydl_opts = {
         'ignoreerrors': True,
@@ -313,20 +313,20 @@ def scrape_channel_videos():
         if video['video_id'] not in seen_ids:
             seen_ids.add(video['video_id'])
             unique_videos.append(video)
-            print(f"\n📝 Unique video {video['video_id']}")
+            print(f"\n Unique video {video['video_id']}")
             print(f"  Title: {video.get('title', 'No Title')}")
             print(f"  Upload date: {video.get('upload_date', 'None')}")
 
     # Save scheduled videos to a separate file
     if scheduled_videos:
-        print("\n📝 Saving scheduled videos list...")
+        print("\n Saving scheduled videos list...")
         with open('scheduled_videos.json', 'w', encoding='utf-8') as f:
             json.dump(scheduled_videos, f, indent=2)
         print(f"✅ Saved {len(scheduled_videos)} scheduled videos to scheduled_videos.json")
 
     # Try to enhance metadata with YouTube API if available
     if YOUTUBE_API_KEY:
-        print("\n🔍 Attempting to enhance metadata with YouTube API...")
+        print("\n Attempting to enhance metadata with YouTube API...")
         unique_videos = collect_video_metadata(unique_videos)
         
         # Debug: Print first video metadata after API enhancement
@@ -370,7 +370,7 @@ def scrape_channel_videos():
             print(f"  Duration: {sample_video.get('duration', 'MISSING')}")
 
     # Save to metadata file
-    print("\n📝 Saving metadata to file...")
+    print("\n Saving metadata to file...")
     with open('outlier_trading_videos_metadata.json', 'w', encoding='utf-8') as jsonfile:
         json.dump(unique_videos, jsonfile, indent=4, ensure_ascii=False)
     print("✅ Saved to outlier_trading_videos_metadata.json")
@@ -384,7 +384,7 @@ def scrape_channel_videos():
 
 def find_missing_transcripts(videos_data):
     """Step 2: Identify videos missing transcripts"""
-    print("\n🔍 Step 2: Finding videos without transcripts...")
+    print("\n Step 2: Finding videos without transcripts...")
     
     # First, check if transcripts directory exists
     if not os.path.exists(TRANSCRIPT_DIR):
@@ -408,7 +408,7 @@ def find_missing_transcripts(videos_data):
             f"{video.get('title', '').replace(' ', '_')}.txt"
         ]
         
-        print(f"\n🔍 Checking video {video_id}:")
+        print(f"\n Checking video {video_id}:")
         print(f"  Title: {video.get('title', 'No Title')}")
         print(f"  Looking for files: {possible_filenames}")
         
@@ -651,7 +651,7 @@ def process_transcripts(missing_videos):
                     raise Exception("Audio file not found after download")
                 
                 # Print file info
-                print(f"🔍 Audio file info: {os.path.getsize(audio_path)} bytes")
+                print(f" Audio file info: {os.path.getsize(audio_path)} bytes")
                 
                 # Transcribe
                 print("Transcribing audio...")
@@ -680,7 +680,7 @@ def process_transcripts(missing_videos):
 
 def perform_transcript_preprocessing(metadata):
     """Process all transcripts in the transcript directory using the imported module"""
-    print("\n📝 Step 4: Preprocessing transcripts...")
+    print("\n Step 4: Preprocessing transcripts...")
     
     # Convert to dictionary if it's a list
     metadata_dict = {}
@@ -717,14 +717,14 @@ def perform_transcript_preprocessing(metadata):
         raise  # Re-raise the error to be handled by the caller
 
 def main():
-    print("🚀 Starting Outlier Trading video processing pipeline...")
+    print(" Starting Outlier Trading video processing pipeline...")
     
     # Step 1: Scrape videos (force this step)
     print("\n📥 Step 1: Scraping channel videos...")
     videos = scrape_channel_videos()
     
     # Step 2: Find missing transcripts
-    print("\n🔍 Step 2: Finding videos without transcripts...")
+    print("\n Step 2: Finding videos without transcripts...")
     missing_videos = find_missing_transcripts(videos)
     
     if missing_videos:
@@ -734,7 +734,7 @@ def main():
         print("✅ No videos need processing!")
     
     # Step 4: Use preprocess_transcripts module for chunking
-    print("\n📝 Step 4: Preprocessing transcripts...")
+    print("\n Step 4: Preprocessing transcripts...")
     
     # Important: Don't use the videos list directly, load the metadata from the saved JSON file
     # This ensures we're using the same metadata that preprocess_transcripts.py would use

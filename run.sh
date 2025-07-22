@@ -23,7 +23,7 @@ check_venv() {
 # Main script
 case "$1" in
     "setup")
-        echo "🚀 Setting up project..."
+        echo " Setting up project..."
         python3 -m venv venv
         source venv/bin/activate
         pip3 install -r requirements.txt

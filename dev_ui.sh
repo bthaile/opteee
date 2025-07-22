@@ -14,8 +14,8 @@ if [ -f .env ]; then
     export $(cat .env | xargs) 2>/dev/null
 fi
 
-echo "🚀 Starting UI development server..."
-echo "📝 Edit app_enhanced.py and save to see changes!"
+echo " Starting UI development server..."
+echo " Edit app_enhanced.py and save to see changes!"
 echo "🌐 http://localhost:7860"
 echo ""
 

@@ -81,7 +81,7 @@ def get_video_id(url):
 
 # Load progress
 progress = load_progress()
-print(f"📝 Found {len(progress['processed'])} previously processed videos")
+print(f" Found {len(progress['processed'])} previously processed videos")
 print(f"🎯 Found {len(progress['whisper_processed'])} previously whisper-processed videos")
 print(f"❌ Found {len(progress['failed'])} previously failed videos")
 
@@ -112,7 +112,7 @@ for video in video_data:
         save_progress(progress)
 
     except (TranscriptsDisabled, NoTranscriptFound):
-        print(f"📝 No YouTube transcript found for {video['url']}, trying Whisper...")
+        print(f" No YouTube transcript found for {video['url']}, trying Whisper...")
         try:
             # Create a temporary directory for audio files
             with tempfile.TemporaryDirectory() as temp_dir:

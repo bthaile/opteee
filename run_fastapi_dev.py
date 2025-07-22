@@ -49,7 +49,7 @@ def check_vector_store():
 
 def run_fastapi_server():
     """Run the FastAPI server"""
-    print("🚀 Starting FastAPI server...")
+    print(" Starting FastAPI server...")
     
     try:
         import uvicorn
@@ -90,7 +90,7 @@ def run_tests_after_startup():
 
 def main():
     """Main development script"""
-    print("🚀 OPTEEE FastAPI Development Server")
+    print(" OPTEEE FastAPI Development Server")
     print("=" * 50)
     
     # Check dependencies
@@ -104,7 +104,7 @@ def main():
     
     print("\n🌐 Starting server on http://localhost:7860")
     print("📚 API documentation will be available at http://localhost:7860/docs")
-    print("🔍 Health check: http://localhost:7860/api/health")
+    print(" Health check: http://localhost:7860/api/health")
     print("\nPress Ctrl+C to stop the server")
     print("=" * 50)
     

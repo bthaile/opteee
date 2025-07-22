@@ -72,7 +72,7 @@ def generate_html_tracker():
     total_videos = len(video_ids)
     
     print(f"🎬 Found {total_videos} failed videos")
-    print("📝 Generating HTML tracker page with titles...")
+    print(" Generating HTML tracker page with titles...")
     
     # Create video data with metadata
     video_data = []
@@ -374,7 +374,7 @@ def generate_html_tracker():
     </div>
 
     <div class="filter-box">
-        <input type="text" id="searchFilter" placeholder="🔍 Search by title or video ID..." onkeyup="filterVideos()">
+        <input type="text" id="searchFilter" placeholder=" Search by title or video ID..." onkeyup="filterVideos()">
     </div>
 
     <div class="view-toggle">

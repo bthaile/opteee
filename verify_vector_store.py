@@ -18,7 +18,7 @@ PROCESSED_DIR = "processed_transcripts"
 
 def load_vector_store():
     """Load the vector store index and metadata"""
-    print("\n🔍 Loading vector store...")
+    print("\n Loading vector store...")
     
     # Check if all required files exist
     index_path = os.path.join(VECTOR_STORE_DIR, "transcript_index.faiss") 
@@ -55,7 +55,7 @@ def load_vector_store():
 
 def get_processed_transcripts():
     """Get list of processed transcript files and count total chunks"""
-    print("\n🔍 Checking processed transcripts...")
+    print("\n Checking processed transcripts...")
     if not os.path.exists(PROCESSED_DIR):
         print(f"❌ Error: {PROCESSED_DIR} directory not found!")
         return [], {}
@@ -97,7 +97,7 @@ def extract_video_ids_from_metadata(metadata):
 
 def compare_transcript_coverage(transcript_chunks, vector_store_chunks):
     """Compare transcript chunks between processed files and vector store"""
-    print("\n🔍 Comparing transcript coverage...")
+    print("\n Comparing transcript coverage...")
     
     all_video_ids = set(transcript_chunks.keys()) | set(vector_store_chunks.keys())
     
@@ -156,7 +156,7 @@ def compare_transcript_coverage(transcript_chunks, vector_store_chunks):
 
 def check_metadata_quality(metadata):
     """Check the quality of metadata in the vector store"""
-    print("\n🔍 Checking metadata quality...")
+    print("\n Checking metadata quality...")
     
     total_items = len(metadata)
     if total_items == 0:

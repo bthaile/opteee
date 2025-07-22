@@ -12,7 +12,7 @@ pinned: false
 
 AI-powered search through Outlier Trading educational videos using RAG (Retrieval-Augmented Generation).
 
-## 🚀 Quick Start
+##  Quick Start
 
 **Every new terminal session requires these commands:**
 
@@ -34,9 +34,9 @@ The system automatically stays current with new Outlier Trading videos through a
 **Schedule:** Every Sunday at 8:00 PM UTC (3:00 PM CT - avoiding DST issues)
 
 **What it does:**
-1. **🔍 Video Discovery** - Scans for new Outlier Trading videos
+1. ** Video Discovery** - Scans for new Outlier Trading videos
 2. **🎤 Transcript Generation** - Creates transcripts using OpenAI Whisper
-3. **📝 Text Processing** - Chunks transcripts into searchable segments
+3. ** Text Processing** - Chunks transcripts into searchable segments
 4. **📤 Deployment** - Commits processed files and triggers Hugging Face deployment
 5. **🔮 Vector Store Creation** - Happens automatically on Hugging Face during Docker build
 
@@ -63,7 +63,7 @@ Each workflow run generates:
 - **📋 Processing Summary** - Videos discovered, transcripts generated, chunks created
 - **🔄 GitHub Commit** - Detailed commit message with processing statistics
 - **📈 Workflow Summary** - GitHub Actions summary with results
-- **🚀 Auto-deployment** - Triggers Hugging Face Space update
+- ** Auto-deployment** - Triggers Hugging Face Space update
 
 ### **🔧 Workflow Configuration**
 
@@ -93,7 +93,7 @@ You can manually trigger the workflow:
    gh workflow run process-transcripts.yml
    ```
 
-### **🔍 Monitoring**
+### ** Monitoring**
 
 **Check workflow status:**
 - GitHub Actions tab shows all runs
@@ -112,7 +112,7 @@ You can manually trigger the workflow:
 - **🔄 Always Current**: Never miss new Outlier Trading videos
 - **⚡ Fast Processing**: Optimized pipeline with parallel processing
 - **📊 Transparent**: Detailed reporting on what was processed
-- **🚀 Zero Maintenance**: Fully automated - no manual intervention needed
+- ** Zero Maintenance**: Fully automated - no manual intervention needed
 - **💎 Smart**: Only processes new content, avoiding redundant work
 
 ## 🧪 **Testing the New Pipeline**
@@ -238,7 +238,7 @@ gh run view [RUN_ID]
 gh run download [RUN_ID]
 ```
 
-### **🔍 Verification Steps**
+### ** Verification Steps**
 
 **1. Check Workflow Results**
 ```bash
@@ -522,7 +522,7 @@ import re
 
 ## ⚡ **Parallel Processing & Performance Optimization**
 
-### **🚀 High-Performance Transcription**
+### ** High-Performance Transcription**
 
 For systems with multiple CPU cores (especially M1 Max, M2, or high-end Intel/AMD), parallel processing can dramatically speed up transcription:
 
@@ -757,7 +757,7 @@ python3 check_audio_files.py
 python3 benchmark_models.py --test-files 5
 ```
 
-## 🚀 **Deployment**
+##  **Deployment**
 
 ### **Local Development**
 ```bash

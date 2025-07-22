@@ -4,9 +4,11 @@ import numpy as np
 import json
 
 # Set up environment variables for model caching before importing SentenceTransformer
-os.environ.setdefault('TRANSFORMERS_CACHE', '/app/cache/huggingface')
-os.environ.setdefault('SENTENCE_TRANSFORMERS_HOME', '/app/cache/sentence_transformers')
-os.environ.setdefault('HF_HOME', '/app/cache/huggingface')
+# Use local cache paths for development, /app paths for deployment
+cache_base = '/app/cache' if os.path.exists('/app') else os.path.expanduser('~/.cache')
+os.environ.setdefault('TRANSFORMERS_CACHE', f'{cache_base}/huggingface')
+os.environ.setdefault('SENTENCE_TRANSFORMERS_HOME', f'{cache_base}/sentence_transformers')
+os.environ.setdefault('HF_HOME', f'{cache_base}/huggingface')
 
 from sentence_transformers import SentenceTransformer
 from config import VECTOR_STORE_PATH, PROCESSED_TRANSCRIPTS_PATH, MODEL_NAME, TOP_K

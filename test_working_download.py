@@ -164,7 +164,7 @@ def main():
             title = video.get('title', 'Unknown')
             
             print(f"\n📹 Video {i}/{len(test_videos)}: {video_id}")
-            print(f"   📝 Title: {title}")
+            print(f"    Title: {title}")
             
             success = download_single_video(video_url, video_id)
             if success:

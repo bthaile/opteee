@@ -48,7 +48,7 @@ async def startup_event():
         print("✅ API endpoints available for testing")
         return
     
-    print("🚀 Initializing OPTEEE API...")
+    print(" Initializing OPTEEE API...")
     rag_service = RAGService()
     await rag_service.initialize()
     print("✅ RAG service initialized successfully")
@@ -126,14 +126,9 @@ if os.path.exists("frontend/build/static"):
 else:
     print("⚠️  Frontend static files not found - serving API only")
 
-@app.get("/{full_path:path}")
-async def serve_react_app(full_path: str):
-    """Serve React app for all non-API routes"""
-    # If it's an API route, let it 404 normally
-    if full_path.startswith("api/"):
-        raise HTTPException(status_code=404, detail="API endpoint not found")
-    
-    # For all other routes, serve the React app
+@app.get("/")
+async def serve_index():
+    """Serve the main frontend page"""
     react_build_path = "frontend/build"
     index_file = os.path.join(react_build_path, "index.html")
     

@@ -55,7 +55,7 @@ def simulate_github_workflow():
     print("🔄 Simulating GitHub Actions workflow steps...")
     
     # Step 1: Create startup script (exactly like the workflow)
-    print("📝 Creating startup.sh script...")
+    print(" Creating startup.sh script...")
     startup_script = """#!/bin/bash
 set -e
 
@@ -80,7 +80,7 @@ python main.py
         return False
     
     # Step 2: Update README for HuggingFace (exactly like the workflow)
-    print("📝 Creating HuggingFace README...")
+    print(" Creating HuggingFace README...")
     huggingface_readme = """---
 title: opteee
 emoji: 🔥
@@ -116,7 +116,7 @@ This application provides semantic search across a collection of options trading
 
 def create_test_dockerfile():
     """Create the original Dockerfile that HuggingFace will use"""
-    print("📝 Creating production Dockerfile...")
+    print(" Creating production Dockerfile...")
     
     # Use the EXACT same Dockerfile from your original system
     dockerfile_content = """FROM python:3.9-slim
@@ -265,7 +265,7 @@ def build_docker_image():
 
 def test_docker_container():
     """Test the Docker container"""
-    print("🚀 Testing Docker container...")
+    print(" Testing Docker container...")
     
     # Stop any existing container
     run_command("docker stop opteee-test-container 2>/dev/null || true")
@@ -400,9 +400,9 @@ def cleanup_test_resources():
 
 def main():
     """Main test function"""
-    print("🚀 OPTEEE GitHub Actions Workflow Simulation - HuggingFace Deployment Test")
+    print(" OPTEEE GitHub Actions Workflow Simulation - HuggingFace Deployment Test")
     print("=" * 70)
-    print("📝 This test simulates your EXACT deploy-to-huggingface.yml workflow")
+    print(" This test simulates your EXACT deploy-to-huggingface.yml workflow")
     print(f"📅 Test started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print()
     
@@ -449,7 +449,7 @@ def main():
         print("   ✅ All API endpoints respond correctly")
         print("   ✅ Frontend serves successfully")
         print("   ✅ Port 7860 works (HuggingFace requirement)")
-        print("\n🚀 You can now safely push to GitHub - HuggingFace deployment will work!")
+        print("\n You can now safely push to GitHub - HuggingFace deployment will work!")
         
         return True
         

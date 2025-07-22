@@ -43,7 +43,7 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: |
-          echo "🔍 Step 1: Discovering videos..."
+          echo " Step 1: Discovering videos..."
           python3 run_pipeline.py --step scrape --non-interactive
           echo "✅ Video discovery completed"
 
@@ -59,7 +59,7 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: |
-          echo "📝 Step 3: Processing transcripts into chunks..."
+          echo " Step 3: Processing transcripts into chunks..."
           python3 run_pipeline.py --step preprocess --non-interactive
           echo "✅ Transcript preprocessing completed"
 
@@ -96,7 +96,7 @@ jobs:
 
       - name: Run system validation
         run: |
-          echo "🔍 Running system validation..."
+          echo " Running system validation..."
           python3 validate_system.py || echo "⚠️ System validation had issues (non-critical)"
 
       - name: Generate processing report

@@ -60,7 +60,7 @@ def validate_scripts():
             all_present = False
     
     # Test imports
-    print(f"\n🔍 Testing imports...")
+    print(f"\n Testing imports...")
     try:
         import pipeline_config
         check_mark(True, "pipeline_config module imports successfully")
@@ -304,7 +304,7 @@ def print_recommendations():
 
 def main():
     """Main validation function"""
-    print("🔍 PIPELINE VALIDATION REPORT")
+    print(" PIPELINE VALIDATION REPORT")
     print("=" * 80)
     print(f"📅 Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     
@@ -338,7 +338,7 @@ def main():
     print(f"\n🎯 Overall Status: {'✅ READY' if overall_status else '❌ NEEDS FIXES'}")
     
     if overall_status:
-        print("\n🚀 Pipeline is ready for execution!")
+        print("\n Pipeline is ready for execution!")
         print_recommendations()
     else:
         print("\n🔧 Please fix the issues above before running the pipeline.")

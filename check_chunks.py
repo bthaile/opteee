@@ -25,7 +25,7 @@ TEST_QUERIES = [
 
 def load_vector_store():
     """Load the vector store index and metadata"""
-    print("\n🔍 Loading vector store...")
+    print("\n Loading vector store...")
     
     # Check if all required files exist
     index_path = os.path.join(VECTOR_STORE_DIR, "transcript_index.faiss") 
@@ -103,7 +103,7 @@ def check_sample_chunks():
     
     # Choose a random file
     sample_file = np.random.choice(files)
-    print(f"\n📝 Sample chunks from: {sample_file}")
+    print(f"\n Sample chunks from: {sample_file}")
     
     try:
         with open(os.path.join(PROCESSED_DIR, sample_file), 'r', encoding='utf-8') as f:
@@ -125,7 +125,7 @@ def check_sample_chunks():
 
 def test_search_queries():
     """Test search queries against the vector store"""
-    print("\n🔍 Loading embedding model...")
+    print("\n Loading embedding model...")
     try:
         model = SentenceTransformer(MODEL_NAME)
         print(f"✅ Model loaded: {MODEL_NAME}")
