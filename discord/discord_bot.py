@@ -38,15 +38,15 @@ DEFAULT_RESULTS = int(os.getenv('DEFAULT_RESULTS', '5'))
 
 # Discord Message Templates
 VIDEO_REFERENCE_TEMPLATES = {
-    # Full template with all details
+    # Full template with all details - matches user's request
     'full': {
         'header': "**Video Sources:**\n",
-        'entry': "**{index}.** **[{title}](<{url}>)** | `{timestamp}` | `{duration}`{date}\n{content}\n",
+        'entry': "**{index}.** **[{title}](<{url}>)** | `Start: {timestamp}` | `Duration: {duration}`{date}\n{content}\n\n",
         'content': "*\"{preview}\"*",
         'no_content': "",
         'date_format': " • {formatted_date}",
-        'max_title_length': 45,
-        'max_content_length': 100
+        'max_title_length': 999,  # Show full titles
+        'max_content_length': 200  # 200 characters as requested
     },
     
     # Compact template for space-saving
@@ -56,7 +56,7 @@ VIDEO_REFERENCE_TEMPLATES = {
         'content': "",  # No content preview in compact mode
         'no_content': "",
         'date_format': " • {formatted_date}",
-        'max_title_length': 35,
+        'max_title_length': 60,  # Longer titles for compact
         'max_content_length': 0
     },
     
@@ -67,7 +67,7 @@ VIDEO_REFERENCE_TEMPLATES = {
         'content': "",
         'no_content': "",
         'date_format': "",
-        'max_title_length': 30,
+        'max_title_length': 40,
         'max_content_length': 0
     }
 }
@@ -493,18 +493,16 @@ async def search_handler(ctx, query: str, template_override: str = None):
         formatted_answer = response["answer"]
         raw_sources = response["sources"]
         
-        # Template selection - user override or smart selection
+        # Template selection - user override or smart selection (default to most verbose)
         if template_override:
             template_name = template_override
         else:
-            # Smart template selection based on content length
+            # Always use full verbose format unless response is extremely long
             base_length = len(formatted_answer)
-            if base_length > 1200:
-                template_name = 'minimal'  # Very long answer, use minimal sources
-            elif base_length > 800:
-                template_name = 'compact'  # Long answer, use compact sources
+            if base_length > 1800:
+                template_name = 'compact'  # Only use compact for very long answers
             else:
-                template_name = 'full'     # Normal answer, use full sources
+                template_name = 'full'     # Default: most verbose with full details
         
         # Add video sources with selected template
         video_sources = format_video_sources(raw_sources, max_sources=5, template_name=template_name)
@@ -550,10 +548,10 @@ async def search_advanced_handler(ctx, num_results: int, query: str):
         raw_sources = response["sources"]
         
         # Add provider info header
-        provider_header = f"**🤖 {provider.upper()} Response ({num_results} sources):**\n\n"
+        provider_header = f"**{provider.upper()} Response ({num_results} sources):**\n\n"
         
-        # Add video sources with template selection based on number of results
-        template_name = 'compact' if num_results >= 8 else 'full'
+        # Always use full verbose format for advanced search (user wants details)
+        template_name = 'full'  # Most verbose format with all details
         video_sources = format_video_sources(raw_sources, max_sources=num_results, template_name=template_name)
         
         # Add footer
