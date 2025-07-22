@@ -425,7 +425,9 @@ def _extract_source_data(source: dict, template: dict) -> dict:
             else:
                 content_clean += "..."
         content_text = template['content'].format(preview=content_clean)
+        logger.info(f"Content preview: {len(content_clean)} chars from {len(content)} total")
     else:
+        logger.info(f"No content: content={bool(content)}, max_length={max_content_length}")
         content_text = template['no_content']
     
     return {
@@ -493,18 +495,12 @@ async def search_handler(ctx, query: str, template_override: str = None):
         formatted_answer = response["answer"]
         raw_sources = response["sources"]
         
-        # Template selection - user override or smart selection (default to most verbose)
-        if template_override:
-            template_name = template_override
-        else:
-            # Always use full verbose format unless response is extremely long
-            base_length = len(formatted_answer)
-            if base_length > 1800:
-                template_name = 'compact'  # Only use compact for very long answers
-            else:
-                template_name = 'full'     # Default: most verbose with full details
+        # Template selection - FORCE full template for debugging
+        template_name = template_override if template_override else 'full'
+        logger.info(f"Template override: {template_override}, Selected: {template_name}")
         
         # Add video sources with selected template
+        logger.info(f"Using template: {template_name} for {len(raw_sources)} sources")
         video_sources = format_video_sources(raw_sources, max_sources=5, template_name=template_name)
         
         # Add footer with format options
@@ -550,8 +546,8 @@ async def search_advanced_handler(ctx, num_results: int, query: str):
         # Add provider info header
         provider_header = f"**{provider.upper()} Response ({num_results} sources):**\n\n"
         
-        # Always use full verbose format for advanced search (user wants details)
-        template_name = 'full'  # Most verbose format with all details
+        # Force full verbose format for advanced search (always show transcript content)
+        template_name = 'full'  # Force most verbose format with 200-char transcript content
         video_sources = format_video_sources(raw_sources, max_sources=num_results, template_name=template_name)
         
         # Add footer
