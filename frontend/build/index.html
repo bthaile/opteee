@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>OPTEEE - Options Trading Education Expert</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <style>
         * {
             margin: 0;
@@ -478,6 +479,75 @@
             margin: 0;
         }
         
+        /* Compact video card styles */
+        .video-card-compact {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            background: #ffffff;
+        }
+        
+        .video-header {
+            padding: 14px 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.2s;
+        }
+        
+        .video-header:hover {
+            background-color: #f9fafb;
+        }
+        
+        .video-title-line {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+        
+        .video-title-line a {
+            color: #1f2937;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            flex: 1;
+            margin-right: 12px;
+        }
+        
+        .video-title-line a:hover {
+            color: #0066cc;
+            text-decoration: underline;
+        }
+        
+        .video-meta-line {
+            font-size: 0.8rem;
+            color: #6b7280;
+            line-height: 1.3;
+        }
+        
+        .expand-icon {
+            color: #9ca3af;
+            font-size: 0.75rem;
+            transition: transform 0.2s;
+        }
+        
+        .expand-icon.expanded {
+            transform: rotate(90deg);
+        }
+        
+        .video-details {
+            border-top: 1px solid #e5e7eb;
+            padding: 12px 16px;
+            background-color: #f9fafb;
+        }
+        
+        .video-details .transcript-snippet {
+            font-size: 0.875rem;
+            line-height: 1.5;
+            color: #374151;
+        }
+        
         /* Compact Video Reference Links */
         .message .video-card {
             background: #f8fafc;
@@ -942,7 +1012,19 @@
             }
             
             makeSourcesCollapsible(content) {
-                // Check if content contains video references
+                console.log('🎬 makeSourcesCollapsible called with content length:', content.length);
+                
+                // Skip processing if content already contains new video references structure
+                if (content.includes('video-card-compact') || content.includes('sources-collapsible')) {
+                    console.log('🎬 Content already processed with new video references, skipping old processing');
+                    return content;
+                }
+                
+                console.log('🎬 Content preview:', content.substring(0, 300) + '...');
+                console.log('🎬 Contains video-references:', content.includes('video-references'));
+                console.log('🎬 Contains video-card:', content.includes('video-card'));
+                
+                // Check if content contains OLD video references (legacy processing)
                 if (content.includes('video-references') || content.includes('video-card')) {
                     // Split content into main content and sources
                     const sourcesRegex = /<div[^>]*class[^>]*video-references[^>]*>[\s\S]*?(?=<\/div>\s*$|$)/i;
@@ -954,9 +1036,12 @@
                         
                         // Extract video data for inline references
                         const videoData = this.extractVideoData(sourcesContent);
+                        console.log('🎬 Extracted video data:', videoData);
+                        console.log('📝 Main content before replacement:', mainContent.substring(0, 200) + '...');
                         
                         // Replace inline references in main content
                         mainContent = this.replaceInlineReferences(mainContent, videoData);
+                        console.log('📝 Main content after replacement:', mainContent.substring(0, 200) + '...');
                         
                         // Transform video cards to compact expandable format
                         sourcesContent = this.transformVideoCards(sourcesContent);
@@ -981,15 +1066,101 @@
                 return content;
             }
             
+            // NEW METHOD: Process inline references using raw sources data
+            processInlineReferences(content, rawSources) {
+                if (!rawSources || !Array.isArray(rawSources)) {
+                    console.log('📝 No raw sources available for inline references');
+                    return content;
+                }
+                
+                // Create video data from raw sources
+                const videoData = rawSources.map((source, index) => ({
+                    index: index + 1, // 1-based indexing for [Document 1], [Document 2], etc.
+                    title: source.title || 'Untitled Video',
+                    url: source.video_url_with_timestamp || source.url || '#',
+                    truncatedTitle: source.title ? 
+                        (source.title.length > 20 ? source.title.substring(0, 20) + '...' : source.title) 
+                        : 'Video'
+                }));
+                
+                console.log('🎬 Video data from raw sources:', videoData);
+                console.log('📝 Processing inline references in content length:', content.length);
+                
+                // Replace inline references
+                return this.replaceInlineReferences(content, videoData);
+            }
+            
+            // NEW METHOD: Generate video references HTML from raw sources
+            generateVideoReferencesHTML(rawSources) {
+                if (!rawSources || !Array.isArray(rawSources) || rawSources.length === 0) {
+                    return '';
+                }
+                
+                console.log('🏗️ Generating video references HTML for', rawSources.length, 'sources');
+                
+                let videoCardsHTML = '';
+                rawSources.forEach((source, index) => {
+                    const title = source.title || 'Untitled Video';
+                    const baseURL = source.url || '#';
+                    const timestampURL = source.video_url_with_timestamp || baseURL;
+                    const uploadDate = source.upload_date ? 
+                        new Date(source.upload_date.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3')).toLocaleDateString() 
+                        : 'N/A';
+                    const duration = source.duration_seconds ? 
+                        Math.floor(source.duration_seconds / 60) + ' min' 
+                        : 'N/A';
+                    const timestamp = source.start_timestamp_seconds ?
+                        Math.floor(source.start_timestamp_seconds / 60) + ':' + String(source.start_timestamp_seconds % 60).padStart(2, '0')
+                        : '0:00';
+                    const content = source.content || 'No transcript available';
+                    
+                                         videoCardsHTML += `
+                         <div class="video-card-compact">
+                             <div class="video-header" onclick="toggleVideoDetails(${index})">
+                                 <div class="video-title-line">
+                                     <a href="${timestampURL}" target="_blank">${title}</a>
+                                     <span class="expand-icon" id="icon-${index}">▶</span>
+                                 </div>
+                                 <div class="video-meta-line">
+                                     @${timestamp} | ${duration} | ${uploadDate}
+                                 </div>
+                             </div>
+                             <div class="video-details" id="details-${index}" style="display: none;">
+                                 <div class="transcript-snippet">${content}</div>
+                             </div>
+                         </div>
+                     `;
+                });
+                
+                                 return `
+                     <div class="sources-collapsible">
+                         <button class="sources-toggle">
+                             <span class="sources-toggle-icon">▶</span>
+                             <span>Source References</span>
+                         </button>
+                         <div class="sources-content">
+                             <div class="video-references-inner">
+                                 ${videoCardsHTML}
+                             </div>
+                         </div>
+                     </div>
+                 `;
+            }
+            
             extractVideoData(sourcesHTML) {
                 // Extract video data for inline reference replacement
+                console.log('🔍 Extracting video data from sources HTML length:', sourcesHTML.length);
                 const videoData = [];
                 const cardMatches = sourcesHTML.matchAll(/<div class="video-card">([\s\S]*?)<\/div>/g);
+                
+                console.log('🃏 Found video card matches:', [...sourcesHTML.matchAll(/<div class="video-card">/g)].length);
                 
                 let index = 1;
                 for (const match of cardMatches) {
                     const cardContent = match[1];
                     const titleMatch = cardContent.match(/<div class="video-title">([\s\S]*?)<\/div>/);
+                    
+                    console.log(`🃏 Processing card ${index}:`, titleMatch ? 'title found' : 'no title');
                     
                     if (titleMatch) {
                         // Extract title and clean HTML tags
@@ -999,6 +1170,8 @@
                         // Extract URL if available
                         const urlMatch = titleMatch[1].match(/href="([^"]+)"/);
                         const url = urlMatch ? urlMatch[1] : '#';
+                        
+                        console.log(`🃏 Card ${index} data:`, { title, url });
                         
                         videoData.push({
                             index: index,
@@ -1010,6 +1183,7 @@
                     }
                 }
                 
+                console.log('🎬 Final extracted video data:', videoData);
                 return videoData;
             }
             
@@ -1024,14 +1198,27 @@
                 ];
                 
                 let processedContent = content;
+                console.log('🔍 Looking for inline references in content:', content.length, 'characters');
+                console.log('🔍 Available video data:', videoData.map(v => `${v.index}: ${v.title}`));
                 
                 for (const pattern of patterns) {
+                    const matches = content.match(pattern);
+                    if (matches) {
+                        console.log(`🎯 Found matches for pattern ${pattern}:`, matches);
+                    }
+                    
                     processedContent = processedContent.replace(pattern, (match, docNum) => {
                         const docIndex = parseInt(docNum);
+                        console.log(`🎯 Processing reference: ${match} -> docIndex: ${docIndex}`);
+                        
                         const video = videoData.find(v => v.index === docIndex);
                         
                         if (video) {
-                            return `<a href="${video.url}" target="_blank" class="inline-video-ref" title="${video.title}">${video.truncatedTitle}</a>`;
+                            const replacement = `<a href="${video.url}" target="_blank" class="inline-video-ref" title="${video.title}">${video.truncatedTitle}</a>`;
+                            console.log(`✅ Replaced "${match}" with: ${replacement}`);
+                            return replacement;
+                        } else {
+                            console.log(`❌ No video found for index ${docIndex}`);
                         }
                         
                         return match; // Return original if not found
@@ -1127,6 +1314,12 @@
                 const container = document.getElementById('chat-messages');
                 if (container) {
                     // Force scroll to very bottom
+                    console.log('📜 Scrolling to bottom:', {
+                        scrollHeight: container.scrollHeight,
+                        currentScrollTop: container.scrollTop,
+                        clientHeight: container.clientHeight
+                    });
+                    
                     container.scrollTo({
                         top: container.scrollHeight,
                         behavior: 'smooth'
@@ -1141,6 +1334,12 @@
                         // Scroll to position user message near the top of the container
                         const userMessageTop = userMessageElement.offsetTop;
                         const targetScrollPosition = Math.max(0, userMessageTop - 50); // 50px padding from top
+                        
+                        console.log('📜 Scrolling user message to top:', {
+                            userMessageTop: userMessageTop,
+                            targetScrollPosition: targetScrollPosition,
+                            containerHeight: container.clientHeight
+                        });
                         
                         container.scrollTo({
                             top: targetScrollPosition,
@@ -1437,15 +1636,29 @@
                 
                 const data = await result.json();
                 
+                // Hide typing indicator before displaying response
+                conversationManager.hideTypingIndicator();
+                
+                console.log('📦 API Response data:', data);
+                
                 // Prepare response content
                 let responseContent = '';
-                if (!data.answer.trim() && !data.sources) {
+                if (!data.answer.trim() && (!data.raw_sources || data.raw_sources.length === 0)) {
                     responseContent = 'I couldn\'t find any relevant information to answer your question. Please try rephrasing your query or asking about a different options trading topic.';
                 } else {
-                    responseContent = data.answer;
-                    // Add sources if available
-                    if (data.sources) {
-                        responseContent += data.sources;
+                    // Start with the main answer
+                    let mainAnswer = data.answer;
+                    
+                    // Process inline references using raw sources data
+                    if (data.raw_sources && data.raw_sources.length > 0) {
+                        console.log('🎬 Processing inline references with raw sources:', data.raw_sources);
+                        mainAnswer = conversationManager.processInlineReferences(mainAnswer, data.raw_sources);
+                        
+                        // Generate video references HTML from raw sources
+                        const videoReferencesHTML = conversationManager.generateVideoReferencesHTML(data.raw_sources);
+                        responseContent = mainAnswer + videoReferencesHTML;
+                    } else {
+                        responseContent = mainAnswer;
                     }
                 }
                 
@@ -1454,12 +1667,14 @@
                 conversationManager.displayMessage('assistant', responseContent, assistantMessage.timestamp);
                 
             } catch (error) {
+                // Hide typing indicator on error
+                conversationManager.hideTypingIndicator();
+                
                 const errorContent = `<strong>Error:</strong> ${error.message}<br><br>Make sure the FastAPI backend is running and try again.`;
                 const assistantMessage = conversationManager.addMessage('assistant', errorContent);
                 conversationManager.displayMessage('assistant', `<div style="color: #dc2626;">${errorContent}</div>`, assistantMessage.timestamp);
             } finally {
-                // Hide typing indicator and re-enable button
-                conversationManager.hideTypingIndicator();
+                // Re-enable button
                 button.disabled = false;
             }
         }
@@ -1521,20 +1736,42 @@
             });
         };
         
-        // Toggle video details
-        window.toggleVideoDetails = function(headerElement) {
-            const videoCard = headerElement.parentElement;
-            const details = videoCard.querySelector('.video-details');
-            const icon = headerElement.querySelector('.video-expand-icon');
+        // Toggle video details - support both index and element approaches
+        window.toggleVideoDetails = function(indexOrElement) {
+            let details, icon;
             
-            if (details.classList.contains('show')) {
-                details.classList.remove('show');
-                videoCard.classList.remove('expanded');
-                icon.textContent = '▶';
+            if (typeof indexOrElement === 'number') {
+                // Index approach for new compact cards
+                details = document.getElementById(`details-${indexOrElement}`);
+                icon = document.getElementById(`icon-${indexOrElement}`);
             } else {
-                details.classList.add('show');
-                videoCard.classList.add('expanded');
-                icon.textContent = '▼';
+                // Element approach for existing cards
+                const headerElement = indexOrElement;
+                const videoCard = headerElement.parentElement;
+                details = videoCard.querySelector('.video-details');
+                icon = headerElement.querySelector('.video-expand-icon');
+            }
+            
+            if (details && icon) {
+                if (details.style.display === 'none' || details.style.display === '' || !details.classList.contains('show')) {
+                    // Show details
+                    details.style.display = 'block';
+                    details.classList.add('show');
+                    icon.textContent = '▼';
+                    icon.classList.add('expanded');
+                    if (details.parentElement) {
+                        details.parentElement.classList.add('expanded');
+                    }
+                } else {
+                    // Hide details
+                    details.style.display = 'none';
+                    details.classList.remove('show');
+                    icon.textContent = '▶';
+                    icon.classList.remove('expanded');
+                    if (details.parentElement) {
+                        details.parentElement.classList.remove('expanded');
+                    }
+                }
             }
         };
         
