@@ -278,6 +278,9 @@ class DiscordFormatter:
         if not mixed_content or not mixed_content.strip():
             return "No answer available."
         
+        # PRE-PROCESS: Convert markdown headers to HTML before BeautifulSoup processing
+        mixed_content = self._preprocess_markdown_headers(mixed_content)
+        
         if soup_available:
             try:
                 # Step 1: Parse mixed HTML/text content with BeautifulSoup
@@ -411,6 +414,9 @@ class DiscordFormatter:
         # Basic HTML to text conversion using regex
         content = mixed_content.strip()
         
+        # First, process any remaining markdown headers that weren't caught earlier
+        content = self._preprocess_markdown_headers(content)
+        
         # Remove HTML tags (basic cleanup for fallback)
         content = re.sub(r'<h[1-6][^>]*>(.*?)</h[1-6]>', r'\n**\1**\n', content)  # Headers to bold
         content = re.sub(r'<strong[^>]*>(.*?)</strong>', r'**\1**', content)  # Strong to bold
@@ -427,6 +433,27 @@ class DiscordFormatter:
         content = re.sub(r'^\s+|\s+$', '', content)
         
         return content
+
+    def _preprocess_markdown_headers(self, text: str) -> str:
+        """Convert markdown headers to HTML before processing
+        
+        This ensures Discord gets proper **bold** formatting instead of raw #### syntax
+        """
+        import re
+        
+        # Convert markdown headers to HTML (same pattern as HtmlFormatter)
+        # ## Header -> <h2>Header</h2>
+        text = re.sub(r'^## (.+)$', r'<h2>\1</h2>', text, flags=re.MULTILINE)
+        # ### Header -> <h3>Header</h3>  
+        text = re.sub(r'^### (.+)$', r'<h3>\1</h3>', text, flags=re.MULTILINE)
+        # #### Header -> <h4>Header</h4>
+        text = re.sub(r'^#### (.+)$', r'<h4>\1</h4>', text, flags=re.MULTILINE)
+        # ##### Header -> <h5>Header</h5>
+        text = re.sub(r'^##### (.+)$', r'<h5>\1</h5>', text, flags=re.MULTILINE)
+        # ###### Header -> <h6>Header</h6>
+        text = re.sub(r'^###### (.+)$', r'<h6>\1</h6>', text, flags=re.MULTILINE)
+        
+        return text
 
     def _improve_document_references(self, answer: str, sources: list) -> str:
         """Replace [Document N] references with Discord-friendly video links"""
