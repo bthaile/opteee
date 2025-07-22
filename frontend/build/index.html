@@ -401,50 +401,7 @@
             padding-top: 1.5rem;
         }
         
-        /* Collapsible Sources Section */
-        .sources-collapsible {
-            margin-top: 1.5rem;
-            border-top: 2px solid #e1e5e9;
-            padding-top: 1.5rem;
-        }
-        
-        .sources-toggle {
-            background: none;
-            border: none;
-            padding: 0;
-            color: #0f766e;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-            transition: color 0.2s;
-        }
-        
-        .sources-toggle:hover {
-            color: #0d6259;
-        }
-        
-        .sources-toggle-icon {
-            transition: transform 0.2s;
-            font-size: 0.9rem;
-        }
-        
-        .sources-toggle.expanded .sources-toggle-icon {
-            transform: rotate(90deg);
-        }
-        
-        .sources-content {
-            display: none;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .sources-content.show {
-            display: block;
-        }
+
         
         /* Style video references inside collapsible section */
         .message .video-references-inner {
@@ -479,18 +436,32 @@
             margin: 0;
         }
         
-        /* Compact video card styles */
+        /* Video references section styling */
+        .video-references-section {
+            margin-top: 1.5rem;
+            border-top: 2px solid #e1e5e9;
+            padding-top: 1rem;
+        }
+        
+        .sources-header {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0f766e;
+            margin-bottom: 0.75rem;
+        }
+        
+        /* Compact video card styles - tightened up */
         .video-card-compact {
             border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            margin-bottom: 12px;
+            border-radius: 6px;
+            margin-bottom: 8px;
             background: #ffffff;
         }
         
         .video-header {
-            padding: 14px 16px;
+            padding: 10px 12px;
             cursor: pointer;
-            border-radius: 8px;
+            border-radius: 6px;
             transition: background-color 0.2s;
         }
         
@@ -502,34 +473,35 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
         
         .video-title-line a {
-            color: #1f2937;
+            color: #0f766e;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            line-height: 1.4;
+            font-weight: 500;
+            font-size: 0.9rem;
+            line-height: 1.3;
             flex: 1;
-            margin-right: 12px;
+            margin-right: 8px;
         }
         
         .video-title-line a:hover {
-            color: #0066cc;
+            color: #0d6259;
             text-decoration: underline;
         }
         
         .video-meta-line {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #6b7280;
-            line-height: 1.3;
+            line-height: 1.2;
         }
         
         .expand-icon {
             color: #9ca3af;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             transition: transform 0.2s;
+            flex-shrink: 0;
         }
         
         .expand-icon.expanded {
@@ -538,13 +510,13 @@
         
         .video-details {
             border-top: 1px solid #e5e7eb;
-            padding: 12px 16px;
+            padding: 10px 12px;
             background-color: #f9fafb;
         }
         
         .video-details .transcript-snippet {
-            font-size: 0.875rem;
-            line-height: 1.5;
+            font-size: 0.8rem;
+            line-height: 1.4;
             color: #374151;
         }
         
@@ -1020,58 +992,42 @@
             }
             
             makeSourcesCollapsible(content) {
-                console.log('🎬 makeSourcesCollapsible called with content length:', content.length);
-                
-                // Skip processing if content already contains new video references structure
-                if (content.includes('video-card-compact') || content.includes('sources-collapsible')) {
-                    console.log('🎬 Content already processed with new video references, skipping old processing');
-                    return content;
-                }
-                
-                console.log('🎬 Content preview:', content.substring(0, 300) + '...');
-                console.log('🎬 Contains video-references:', content.includes('video-references'));
-                console.log('🎬 Contains video-card:', content.includes('video-card'));
-                
-                // Check if content contains OLD video references (legacy processing)
-                if (content.includes('video-references') || content.includes('video-card')) {
-                    // Split content into main content and sources
-                    const sourcesRegex = /<div[^>]*class[^>]*video-references[^>]*>[\s\S]*?(?=<\/div>\s*$|$)/i;
-                    const sourcesMatch = content.match(sourcesRegex);
-                    
-                    if (sourcesMatch) {
-                        let mainContent = content.replace(sourcesRegex, '');
-                        let sourcesContent = sourcesMatch[0];
-                        
-                        // Extract video data for inline references
-                        const videoData = this.extractVideoData(sourcesContent);
-                        console.log('🎬 Extracted video data:', videoData);
-                        console.log('📝 Main content before replacement:', mainContent.substring(0, 200) + '...');
-                        
-                        // Replace inline references in main content
-                        mainContent = this.replaceInlineReferences(mainContent, videoData);
-                        console.log('📝 Main content after replacement:', mainContent.substring(0, 200) + '...');
-                        
-                        // Transform video cards to compact expandable format
-                        sourcesContent = this.transformVideoCards(sourcesContent);
-                        
-                        // Wrap sources in collapsible structure
-                        const collapsibleSources = `
-                            <div class="sources-collapsible">
-                                <button class="sources-toggle">
-                                    <span class="sources-toggle-icon">▶</span>
-                                    <span>Source References</span>
-                                </button>
-                                <div class="sources-content">
-                                    ${sourcesContent.replace('video-references', 'video-references-inner')}
-                                </div>
-                            </div>
-                        `;
-                        
-                        return mainContent + collapsibleSources;
-                    }
-                }
-                
+                // This function is now deprecated since we handle video references directly
+                // Just return content as-is since we're using the new generateVideoReferencesHTML approach
                 return content;
+            }
+            
+            // NEW METHOD: Remove server-generated source references section
+            removeServerSourceReferences(content) {
+                console.log('🧹 Removing server source references from content');
+                
+                // Remove various patterns of source references that come from the server
+                let cleanedContent = content;
+                
+                // Pattern 1: Remove "Source References" or "Sources" headings followed by bullet points
+                cleanedContent = cleanedContent.replace(
+                    /(?:<h[1-6][^>]*>|^|\n)\s*(?:Source References?|Sources?)\s*(?:<\/h[1-6]>|:)?\s*(?:\n|<br\s*\/?>)*(?:<ul[^>]*>[\s\S]*?<\/ul>|(?:\s*[-•*]\s*[^\n]+(?:\n|<br\s*\/?>)*)+)/gmi,
+                    ''
+                );
+                
+                // Pattern 2: Remove markdown-style source references
+                cleanedContent = cleanedContent.replace(
+                    /(?:^|\n)#+\s*(?:Source References?|Sources?)\s*\n(?:(?:\s*[-•*]\s*[^\n]+\n?)+)/gmi,
+                    ''
+                );
+                
+                // Pattern 3: Remove any remaining bullet point lists that look like source references
+                cleanedContent = cleanedContent.replace(
+                    /(?:\n|<br\s*\/?>)*(?:\s*[-•*]\s*"[^"]+"\s*-[^\n]*(?:\n|<br\s*\/?>)*){2,}/gmi,
+                    ''
+                );
+                
+                // Clean up extra whitespace and line breaks
+                cleanedContent = cleanedContent.replace(/\n\s*\n\s*\n/g, '\n\n');
+                cleanedContent = cleanedContent.replace(/(<br\s*\/?>){3,}/g, '<br><br>');
+                
+                console.log('🧹 Content cleaned, removed server source references');
+                return cleanedContent.trim();
             }
             
             // NEW METHOD: Process inline references using raw sources data
@@ -1122,37 +1078,32 @@
                         : '0:00';
                     const content = source.content || 'No transcript available';
                     
-                                         videoCardsHTML += `
-                         <div class="video-card-compact">
-                             <div class="video-header" onclick="toggleVideoDetails(${index})">
-                                 <div class="video-title-line">
-                                     <a href="${timestampURL}" target="_blank">${title}</a>
-                                     <span class="expand-icon" id="icon-${index}">▶</span>
-                                 </div>
-                                 <div class="video-meta-line">
-                                     @${timestamp} | ${duration} | ${uploadDate}
-                                 </div>
-                             </div>
-                             <div class="video-details" id="details-${index}" style="display: none;">
-                                 <div class="transcript-snippet">${content}</div>
-                             </div>
-                         </div>
-                     `;
+                    videoCardsHTML += `
+                        <div class="video-card-compact">
+                            <div class="video-header" onclick="toggleVideoDetails(${index})">
+                                <div class="video-title-line">
+                                    <a href="${timestampURL}" target="_blank">${title}</a>
+                                    <span class="expand-icon" id="icon-${index}">▶</span>
+                                </div>
+                                <div class="video-meta-line">
+                                    @${timestamp} | ${duration} | ${uploadDate}
+                                </div>
+                            </div>
+                            <div class="video-details" id="details-${index}" style="display: none;">
+                                <div class="transcript-snippet">${content}</div>
+                            </div>
+                        </div>
+                    `;
                 });
                 
-                                 return `
-                     <div class="sources-collapsible">
-                         <button class="sources-toggle">
-                             <span class="sources-toggle-icon">▶</span>
-                             <span>Source References</span>
-                         </button>
-                         <div class="sources-content">
-                             <div class="video-references-inner">
-                                 ${videoCardsHTML}
-                             </div>
-                         </div>
-                     </div>
-                 `;
+                return `
+                    <div class="video-references-section">
+                        <div class="sources-header">Source References</div>
+                        <div class="video-references-inner">
+                            ${videoCardsHTML}
+                        </div>
+                    </div>
+                `;
             }
             
             extractVideoData(sourcesHTML) {
@@ -1675,6 +1626,9 @@
                 } else {
                     // Start with the main answer
                     let mainAnswer = data.answer;
+                    
+                    // Remove any existing "Source References" section from server response
+                    mainAnswer = conversationManager.removeServerSourceReferences(mainAnswer);
                     
                     // Process inline references using raw sources data
                     if (data.raw_sources && data.raw_sources.length > 0) {
