@@ -3,6 +3,8 @@ name: Deploy to Hugging Face Space
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - 'discord/**'  # Exclude discord directory - it has its own deployment
   workflow_dispatch:  # Allows manual triggering
   repository_dispatch:
     types:
