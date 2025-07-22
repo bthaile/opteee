@@ -60,11 +60,15 @@ async def chat(request: ChatRequest):
         raise HTTPException(status_code=503, detail="RAG service not initialized")
     
     try:
+        # Extract conversation history if provided
+        conversation_history = request.conversation_history or []
+        
         result = await rag_service.process_query(
             query=request.query,
             provider=request.provider,
             num_results=request.num_results,
-            format=request.format
+            format=request.format,
+            conversation_history=conversation_history
         )
         
         # Return clean response

@@ -6,12 +6,22 @@ from pydantic import BaseModel, Field
 from typing import List, Dict, Any, Optional
 from datetime import datetime
 
+class ConversationMessage(BaseModel):
+    """Model for individual conversation messages"""
+    role: str = Field(..., description="Message role: 'user' or 'assistant'", pattern="^(user|assistant)$")
+    content: str = Field(..., description="Message content", min_length=1)
+    timestamp: str = Field(..., description="Message timestamp in ISO format")
+
 class ChatRequest(BaseModel):
     """Request model for chat endpoint"""
     query: str = Field(..., description="User's question", min_length=1)
     provider: str = Field(default="openai", description="LLM provider to use")
     num_results: int = Field(default=10, description="Number of search results to retrieve", ge=1, le=20)
     format: str = Field(default="html", description="Response format: 'html' or 'discord'", pattern="^(html|discord)$")
+    conversation_history: Optional[List[ConversationMessage]] = Field(
+        default=None, 
+        description="Optional conversation history for context"
+    )
 
 class VideoSource(BaseModel):
     """Model for video source information"""

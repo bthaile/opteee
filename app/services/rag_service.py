@@ -59,9 +59,10 @@ class RAGService:
             except Exception as e:
                 print(f"❌ Failed to initialize {provider} chain: {e}")
     
-    async def process_query(self, query: str, provider: str = "openai", num_results: int = 10, format: str = "html") -> Dict[str, Any]:
+    async def process_query(self, query: str, provider: str = "openai", num_results: int = 10, format: str = "html", conversation_history: Optional[List[Dict[str, Any]]] = None) -> Dict[str, Any]:
         """
         Process a user query and return formatted response
+        Now supports conversation history for context
         """
         if not self.initialized:
             raise RuntimeError("RAG service not initialized")
@@ -89,8 +90,12 @@ class RAGService:
             
             chain = self.provider_chains[provider]
             
-            # Run the RAG query
-            result = run_rag_query(self.retriever, chain, query)
+            # Run the RAG query with conversation context if provided
+            if conversation_history and len(conversation_history) > 0:
+                result = self._run_rag_query_with_context(self.retriever, chain, query, conversation_history)
+            else:
+                # Use existing run_rag_query for backward compatibility
+                result = run_rag_query(self.retriever, chain, query)
             
             # Format the response using the new formatter
             formatted_result = self.formatter.format_response(
@@ -114,6 +119,130 @@ class RAGService:
                 "sources": "",
                 "raw_sources": []
             }
+    
+    def _run_rag_query_with_context(self, retriever, chain, query: str, conversation_history: List[Dict[str, Any]]) -> Dict[str, Any]:
+        """
+        Run a RAG query with conversation history context
+        This creates a modified prompt that includes conversation history
+        """
+        from langchain.prompts import ChatPromptTemplate
+        from langchain.schema.output_parser import StrOutputParser
+        from langchain.schema.runnable import RunnablePassthrough
+        from rag_pipeline import format_documents
+        from config import SYSTEM_PROMPT
+        
+        # Get relevant documents (same as standard flow)
+        docs = retriever.get_relevant_documents(query)
+        
+        if not docs:
+            return {
+                "answer": "",  # Return empty - let frontend handle no results messaging
+                "sources": []
+            }
+        
+        # Format conversation history for the prompt
+        conversation_context = self._format_conversation_history(conversation_history)
+        
+        # Create a modified prompt template that includes conversation history
+        template = ChatPromptTemplate.from_messages([
+            ("system", SYSTEM_PROMPT),
+            ("user", """Conversation History:
+{conversation_context}
+
+Context for answering the current question:
+{context}
+
+Current User Question: {question}
+
+Please answer the current question considering the conversation history above. Refer back to previous parts of the conversation when relevant, but focus primarily on answering the current question using the provided context.""")
+        ])
+        
+        # Create a modified chain with conversation context
+        context_chain = (
+            {
+                "conversation_context": lambda _: conversation_context,
+                "context": lambda q: format_documents(docs),
+                "question": RunnablePassthrough()
+            }
+            | template
+            | chain.last  # Get the LLM from the existing chain
+            | StrOutputParser()
+        )
+        
+        # Generate answer with conversation context
+        answer = context_chain.invoke(query)
+        
+        # Extract sources (maintaining order) - same as run_rag_query
+        sources = []
+        for doc in docs:
+            meta = doc.metadata
+            
+            # Get video ID and ensure it's valid
+            video_id = meta.get("video_id", "")
+            
+            # Fix any URL issues by reconstructing with the proper video_id
+            timestamp_seconds = meta.get("start_timestamp_seconds", 0)
+            if isinstance(timestamp_seconds, float) or isinstance(timestamp_seconds, int):
+                timestamp_seconds = int(timestamp_seconds)
+            else:
+                timestamp_seconds = 0
+                
+            video_url = f"https://www.youtube.com/watch?v={video_id}"
+            video_url_with_timestamp = f"{video_url}&t={timestamp_seconds}" if video_id and timestamp_seconds > 0 else video_url
+            
+            # Convert duration to seconds - use existing logic from run_rag_query
+            from rag_pipeline import iso_duration_to_seconds
+            duration = meta.get("duration", "")
+            duration_seconds = iso_duration_to_seconds(duration)
+
+            source = {
+                "title": meta.get("title", "Unknown"),
+                "video_id": video_id,
+                "url": video_url,
+                "video_url_with_timestamp": video_url_with_timestamp,
+                "start_timestamp_seconds": timestamp_seconds,
+                "timestamp": meta.get("start_timestamp", ""),
+                "channel": meta.get("channel_name", meta.get("channel", "Unknown")),
+                "upload_date": meta.get("upload_date") or meta.get("published_at") or "Unknown",
+                "score": meta.get("score", 0.0),
+                "content": doc.page_content,  # Include the actual transcript content
+                "duration_seconds": duration_seconds,  # Pass raw seconds
+            }
+            sources.append(source)
+        
+        return {
+            "answer": answer,
+            "sources": sources
+        }
+    
+    def _format_conversation_history(self, conversation_history: List[Dict[str, Any]]) -> str:
+        """
+        Format conversation history for inclusion in the prompt
+        """
+        if not conversation_history:
+            return "No previous conversation."
+        
+        formatted_messages = []
+        for msg in conversation_history:
+            role = msg.get("role", "user")
+            content = msg.get("content", "")
+            timestamp = msg.get("timestamp", "")
+            
+            # Truncate very long messages to avoid prompt bloat
+            if len(content) > 500:
+                content = content[:497] + "..."
+            
+            if role == "user":
+                formatted_messages.append(f"User: {content}")
+            elif role == "assistant":
+                formatted_messages.append(f"Assistant: {content}")
+        
+        # Limit to last 10 messages to keep prompt manageable
+        if len(formatted_messages) > 10:
+            formatted_messages = formatted_messages[-10:]
+            formatted_messages.insert(0, "[Earlier conversation truncated...]")
+        
+        return "\n".join(formatted_messages)
     
     def _format_chat_response(self, answer: str, sources: List[Dict]) -> Dict[str, Any]:
         """
