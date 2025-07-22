@@ -965,6 +965,12 @@
                 const messageDiv = document.createElement('div');
                 messageDiv.className = `message ${role}`;
                 
+                // Add unique ID for user messages to enable smooth scrolling
+                if (role === 'user') {
+                    const messageId = `user-message-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+                    messageDiv.id = messageId;
+                }
+                
                 const contentDiv = document.createElement('div');
                 contentDiv.className = 'message-content';
                 
@@ -995,17 +1001,19 @@
                     this.setupSourcesToggle(messageDiv);
                 }
                 
-                // Smart scrolling based on message type
+                // Smooth scroll to anchor user messages at the top
                 if (role === 'user') {
-                    // For user messages, scroll to show the message near the top
-                    this.scrollToShowUserMessage(messageDiv);
+                    // Smooth scroll to position user message at top of container
+                    this.scrollToUserMessage(messageDiv.id);
                 } else {
-                    // For assistant messages, scroll to bottom after content is rendered
-                    // Use longer delay to ensure all content including sources are rendered
-                    setTimeout(() => {
-                        this.scrollToBottom();
-                        console.log('📜 Scrolled to bottom for assistant message');
-                    }, 500); // Increased delay for complex content
+                    // For assistant messages, find the most recent user message and scroll to it
+                    const userMessages = messagesContainer.querySelectorAll('.message.user');
+                    if (userMessages.length > 0) {
+                        const lastUserMessage = userMessages[userMessages.length - 1];
+                        if (lastUserMessage.id) {
+                            this.scrollToUserMessage(lastUserMessage.id);
+                        }
+                    }
                 }
                 
                 return messageDiv; // Return the element for further manipulation if needed
@@ -1327,31 +1335,50 @@
                 }
             }
             
-            scrollToShowUserMessage(userMessageElement) {
+            scrollToUserMessage(messageId) {
+                if (!messageId) return;
+                
                 const container = document.getElementById('chat-messages');
-                if (container && userMessageElement) {
-                    setTimeout(() => {
-                        // Scroll to position user message near the top of the container
-                        const userMessageTop = userMessageElement.offsetTop;
-                        const targetScrollPosition = Math.max(0, userMessageTop - 50); // 50px padding from top
-                        
-                        console.log('📜 Scrolling user message to top:', {
-                            userMessageTop: userMessageTop,
-                            targetScrollPosition: targetScrollPosition,
-                            containerHeight: container.clientHeight
-                        });
-                        
-                        container.scrollTo({
-                            top: targetScrollPosition,
-                            behavior: 'smooth'
-                        });
-                        
-                        // Add subtle highlight effect
-                        userMessageElement.classList.add('highlight');
-                        setTimeout(() => {
-                            userMessageElement.classList.remove('highlight');
-                        }, 2000);
-                    }, 150);
+                const messageElement = document.getElementById(messageId);
+                
+                if (container && messageElement) {
+                    console.log('📜 Attempting to scroll to message:', {
+                        messageId: messageId,
+                        messageElement: messageElement,
+                        container: container
+                    });
+                    
+                    // Use requestAnimationFrame for better timing
+                    requestAnimationFrame(() => {
+                        try {
+                            // Use scrollIntoView for more reliable scrolling
+                            messageElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start',
+                                inline: 'nearest'
+                            });
+                            
+                            console.log('📜 scrollIntoView executed for:', messageId);
+                            
+                            // Add subtle highlight effect
+                            messageElement.classList.add('highlight');
+                            setTimeout(() => {
+                                messageElement.classList.remove('highlight');
+                            }, 3000);
+                            
+                        } catch (error) {
+                            console.error('📜 Error scrolling to message:', error);
+                            
+                            // Fallback: try manual scroll calculation
+                            const messageTop = messageElement.offsetTop;
+                            const targetScrollPosition = Math.max(0, messageTop - 20);
+                            
+                            container.scrollTo({
+                                top: targetScrollPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
                 }
             }
             
