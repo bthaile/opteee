@@ -47,6 +47,19 @@ jobs:
           echo "✅ Deployment directory prepared"
           ls -la /tmp/discord-bot-deploy/
 
+      - name: Check for recent deployments
+        id: check_recent
+        run: |
+          # Check if there was a deployment in the last 5 minutes
+          LAST_COMMIT=$(git log -1 --format="%ct")
+          CURRENT_TIME=$(date +%s)
+          TIME_DIFF=$((CURRENT_TIME - LAST_COMMIT))
+          
+          if [ $TIME_DIFF -lt 300 ]; then
+            echo "⏳ Recent deployment detected. Waiting to avoid rate limiting..."
+            sleep 30
+          fi
+
       - name: Deploy to Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
@@ -70,7 +83,18 @@ jobs:
           # Add HuggingFace Space as remote
           git remote add space https://huggingface.co/spaces/$DISCORD_SPACE_NAME
           
-          # Force push to HuggingFace Space
-          git push --force space main
+          # Force push to HuggingFace Space with retry logic
+          echo "📤 Attempting to deploy to HuggingFace Space..."
           
-          echo "🎉 Discord bot deployed to HuggingFace Space: $DISCORD_SPACE_NAME" 
+          for i in {1..3}; do
+            if git push --force space main; then
+              echo "🎉 Discord bot deployed to HuggingFace Space: $DISCORD_SPACE_NAME"
+              exit 0
+            else
+              echo "⚠️ Deployment attempt $i failed. Waiting 30 seconds before retry..."
+              sleep 30
+            fi
+          done
+          
+          echo "❌ Deployment failed after 3 attempts. HuggingFace may be rate limiting."
+          exit 1 
