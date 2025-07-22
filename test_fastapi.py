@@ -20,7 +20,7 @@ def test_health_endpoint():
         
         if response.status_code == 200:
             data = response.json()
-            print(f"✅ Health check passed: {data['status']}")
+            print(f" Health check passed: {data['status']}")
             print(f"   Version: {data['version']}")
             print(f"   Timestamp: {data['timestamp']}")
             return True
@@ -60,7 +60,7 @@ def test_chat_endpoint():
         if response.status_code == 200:
             data = response.json()
             
-            print(f"✅ Chat request successful (took {response_time:.2f}s)")
+            print(f" Chat request successful (took {response_time:.2f}s)")
             print(f"   Answer length: {len(data['answer'])} characters")
             print(f"   Sources provided: {len(data['raw_sources'])} videos")
             print(f"   Response timestamp: {data['timestamp']}")
@@ -109,7 +109,7 @@ def test_invalid_chat_request():
         
         if response.status_code == 200:
             data = response.json()
-            print("✅ Empty query handled gracefully")
+            print(" Empty query handled gracefully")
             print(f"   Answer: '{data['answer']}'")
             return True
         else:
@@ -145,12 +145,12 @@ def test_format_parameter():
         if response.status_code == 200:
             html_data = response.json()
             html_answer = html_data['answer']
-            print(f"   ✅ HTML format successful")
+            print(f"    HTML format successful")
             
             # Check for HTML tags (should be present)
             has_html_tags = any(tag in html_answer for tag in ['<p>', '<strong>', '<h3>', '<ul>', '<li>'])
             if has_html_tags:
-                print(f"   ✅ HTML format contains HTML tags as expected")
+                print(f"    HTML format contains HTML tags as expected")
             else:
                 print(f"   ⚠️  HTML format doesn't contain expected HTML tags")
             
@@ -181,12 +181,12 @@ def test_format_parameter():
         if response.status_code == 200:
             discord_data = response.json()
             discord_answer = discord_data['answer']
-            print(f"   ✅ Discord format successful")
+            print(f"    Discord format successful")
             
             # Check for absence of HTML tags (should be plain text/markdown)
             has_html_tags = any(tag in discord_answer for tag in ['<p>', '<strong>', '<h3>', '<ul>', '<li>', '<div>'])
             if not has_html_tags:
-                print(f"   ✅ Discord format contains no HTML tags as expected")
+                print(f"    Discord format contains no HTML tags as expected")
             else:
                 print(f"   ❌ Discord format unexpectedly contains HTML tags: {discord_answer[:100]}...")
                 return False
@@ -194,13 +194,13 @@ def test_format_parameter():
             # Check for Discord markdown formatting
             has_discord_markdown = any(pattern in discord_answer for pattern in ['**', '`', '•'])
             if has_discord_markdown:
-                print(f"   ✅ Discord format contains Discord markdown as expected")
+                print(f"    Discord format contains Discord markdown as expected")
             else:
                 print(f"   ⚠️  Discord format doesn't contain expected Discord markdown")
             
             # Check that sources field is empty for Discord
             if discord_data['sources'] == "":
-                print(f"   ✅ Discord format has empty sources field as expected")
+                print(f"    Discord format has empty sources field as expected")
             else:
                 print(f"   ❌ Discord format unexpectedly has sources content")
                 return False
@@ -240,7 +240,7 @@ def test_backward_compatibility():
             # Should behave like HTML format
             has_html_tags = any(tag in answer for tag in ['<p>', '<strong>', '<h3>', '<ul>', '<li>'])
             if has_html_tags:
-                print(f"   ✅ Backward compatibility: defaults to HTML format")
+                print(f"    Backward compatibility: defaults to HTML format")
                 return True
             else:
                 print(f"   ⚠️  Backward compatibility: doesn't default to HTML format")
@@ -273,11 +273,11 @@ def test_invalid_format():
         
         # Should return 422 for validation error or 200 with default behavior
         if response.status_code == 422:
-            print(f"   ✅ Invalid format properly rejected with validation error")
+            print(f"    Invalid format properly rejected with validation error")
             return True
         elif response.status_code == 200:
             data = response.json()
-            print(f"   ✅ Invalid format handled gracefully (fallback to default)")
+            print(f"    Invalid format handled gracefully (fallback to default)")
             return True
         else:
             print(f"   ❌ Invalid format test unexpected status: {response.status_code}")
@@ -297,7 +297,7 @@ def test_frontend_serving():
         if response.status_code == 200:
             content = response.text
             if "OPTEEE" in content or "Options Trading" in content:
-                print("✅ Frontend served successfully")
+                print(" Frontend served successfully")
                 return True
             else:
                 print("⚠️  Frontend served but content might be placeholder")

@@ -31,5 +31,5 @@ python -m pip install --upgrade pip setuptools wheel
 echo "📦 Installing required packages..."
 python -m pip install -r requirements.txt
 
-echo "✅ Environment setup complete! To activate the environment, run:"
+echo " Environment setup complete! To activate the environment, run:"
 echo "   source env/bin/activate" 

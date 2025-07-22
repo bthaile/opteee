@@ -168,7 +168,7 @@ class CustomFAISSRetriever:
                 with open(metadata_path, 'r') as f:
                     videos_data = json.load(f)
                 self.video_metadata_map = {video['video_id']: video for video in videos_data}
-                print("✅ Loaded video metadata for data enrichment.")
+                print(" Loaded video metadata for data enrichment.")
         except Exception as e:
             print(f"⚠️ Warning: Could not load main video metadata file: {e}")
 
@@ -223,7 +223,7 @@ class CustomFAISSRetriever:
                     os.environ['HF_HOME'] = '/app/cache/huggingface'
                 
                 self.model = strategy['func']()
-                print(f"✅ Model loaded successfully using {strategy['name']} strategy")
+                print(f" Model loaded successfully using {strategy['name']} strategy")
                 break
                 
             except Exception as e:
@@ -246,7 +246,7 @@ class CustomFAISSRetriever:
             with open(get_vector_store_path("transcript_metadata.pkl"), 'rb') as f:
                 self.metadata = pickle.load(f)
             
-            print(f"✅ Loaded {len(self.texts)} vectors")
+            print(f" Loaded {len(self.texts)} vectors")
             
         except Exception as e:
             print(f"❌ Error loading vector store: {str(e)}")
@@ -339,13 +339,13 @@ def create_openai_model_with_fallback(model: str, temperature: float) -> ChatOpe
     is_known_no_temp = any(no_temp_model in model.lower() for no_temp_model in no_temperature_models)
     
     if is_known_no_temp:
-        print(f"✅ Using OpenAI model: {model} (temperature not supported)")
+        print(f" Using OpenAI model: {model} (temperature not supported)")
         return ChatOpenAI(model_name=model)
     
     # Layer 2: Try with temperature first (most models support it)
     try:
         llm = ChatOpenAI(model_name=model, temperature=temperature)
-        print(f"✅ Using OpenAI model: {model} (temperature: {temperature})")
+        print(f" Using OpenAI model: {model} (temperature: {temperature})")
         return llm
     except Exception as e:
         error_msg = str(e).lower()
@@ -363,7 +363,7 @@ def create_openai_model_with_fallback(model: str, temperature: float) -> ChatOpe
             print(f"🔄 Retrying without temperature...")
             try:
                 llm = ChatOpenAI(model_name=model)
-                print(f"✅ Using OpenAI model: {model} (no temperature)")
+                print(f" Using OpenAI model: {model} (no temperature)")
                 return llm
             except Exception as fallback_error:
                 print(f"❌ Failed to create model without temperature: {fallback_error}")
@@ -374,7 +374,7 @@ def create_openai_model_with_fallback(model: str, temperature: float) -> ChatOpe
             print(f"🔄 Attempting fallback without temperature...")
             try:
                 llm = ChatOpenAI(model_name=model)
-                print(f"✅ Fallback successful: {model} (no temperature)")
+                print(f" Fallback successful: {model} (no temperature)")
                 return llm
             except Exception as final_error:
                 print(f"❌ All fallback attempts failed for model {model}")
@@ -388,7 +388,7 @@ def create_claude_model_with_fallback(model: str, temperature: float) -> ChatAnt
     """
     try:
         llm = ChatAnthropic(model_name=model, temperature=temperature)
-        print(f"✅ Using Claude model: {model} (temperature: {temperature})")
+        print(f" Using Claude model: {model} (temperature: {temperature})")
         return llm
     except Exception as e:
         error_msg = str(e).lower()
@@ -398,7 +398,7 @@ def create_claude_model_with_fallback(model: str, temperature: float) -> ChatAnt
             print(f"🔄 Retrying without temperature...")
             try:
                 llm = ChatAnthropic(model_name=model)
-                print(f"✅ Using Claude model: {model} (no temperature)")
+                print(f" Using Claude model: {model} (no temperature)")
                 return llm
             except Exception as fallback_error:
                 print(f"❌ Failed to create Claude model: {fallback_error}")
@@ -444,7 +444,7 @@ def validate_system_configuration(verbose: bool = False) -> bool:
         print("❌ No API keys found. Please set OPENAI_API_KEY or ANTHROPIC_API_KEY.")
         return False
     
-    print(f"✅ Available providers: {', '.join(available_providers)}")
+    print(f" Available providers: {', '.join(available_providers)}")
     
     # Test default configurations
     all_valid = True
@@ -476,7 +476,7 @@ def validate_system_configuration(verbose: bool = False) -> bool:
             print(f"ℹ️ Claude model {DEFAULT_CLAUDE_MODEL} doesn't support temperature (will use fallback)")
     
     if all_valid:
-        print("✅ System configuration validation complete - no critical issues found")
+        print(" System configuration validation complete - no critical issues found")
     
     return all_valid
 
@@ -660,7 +660,7 @@ def main():
         provider = args.provider
         model = args.test_temp
         supports_temp = test_model_temperature_support(model, provider)
-        print(f"Model {model} ({'✅ supports' if supports_temp else '❌ does not support'}) temperature parameter")
+        print(f"Model {model} ({' supports' if supports_temp else '❌ does not support'}) temperature parameter")
         return
         
     if not args.query:

@@ -18,7 +18,7 @@ if ! pyenv versions | grep -q "3.11.7"; then
     echo "🔄 Installing Python 3.11.7 with pyenv..."
     pyenv install 3.11.7
 else
-    echo "✅ Python 3.11.7 is already installed"
+    echo " Python 3.11.7 is already installed"
 fi
 
 # Set local Python version for this project
@@ -30,7 +30,7 @@ if [ ! -d "venv" ]; then
     echo "🔄 Creating a new virtual environment..."
     python -m venv venv
 else
-    echo "✅ Virtual environment already exists"
+    echo " Virtual environment already exists"
 fi
 
 # Activate the virtual environment
@@ -61,10 +61,10 @@ if [ ! -f "transcript_progress.json" ]; then
 }' > transcript_progress.json
     echo "⚠️ Note: Created a new empty progress file. If you have a backup, replace it with your original."
 else
-    echo "✅ Progress file already exists"
+    echo " Progress file already exists"
 fi
 
-echo "✅ Setup complete! You can now run:"
+echo " Setup complete! You can now run:"
 echo "   source venv/bin/activate  # To activate the environment"
 echo "   python whisper_transcribe.py  # To run the transcription script"
 echo ""

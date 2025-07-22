@@ -34,7 +34,7 @@ def run_command(cmd, description=""):
         elapsed = time.time() - start_time
         
         if result.returncode == 0:
-            print(f"✅ Success ({elapsed:.1f}s)")
+            print(f" Success ({elapsed:.1f}s)")
             if result.stdout.strip():
                 print(f"Output: {result.stdout.strip()}")
         else:
@@ -54,10 +54,10 @@ def check_file_exists(filepath, description=""):
     if os.path.exists(filepath):
         if os.path.isfile(filepath):
             size = os.path.getsize(filepath)
-            print(f"✅ {description or filepath}: {size:,} bytes")
+            print(f" {description or filepath}: {size:,} bytes")
         else:
             count = len([f for f in os.listdir(filepath) if not f.startswith('.')])
-            print(f"✅ {description or filepath}: {count} files")
+            print(f" {description or filepath}: {count} files")
         return True
     else:
         print(f"❌ {description or filepath}: Not found")
@@ -117,7 +117,7 @@ def test_non_interactive_mode():
     success2, stdout2, stderr2 = run_command("python3 run_pipeline.py --non-interactive")
     
     if "No new" in stdout2 or "Skipping" in stdout2:
-        print("✅ Smart processing logic working: Detected no changes")
+        print(" Smart processing logic working: Detected no changes")
     else:
         print("⚠️ Smart processing logic unclear: Check logs")
     
@@ -182,7 +182,7 @@ def test_end_to_end():
     success, stdout, stderr = run_command('python3 rag_pipeline.py "What is gamma in options trading?" --provider claude')
     
     if success and len(stdout) > 100:  # Reasonable answer length
-        print("✅ RAG pipeline working: Generated response")
+        print(" RAG pipeline working: Generated response")
     else:
         print("❌ RAG pipeline issue: Short or no response")
     
@@ -190,7 +190,7 @@ def test_end_to_end():
     success2, stdout2, stderr2 = run_command('python3 search_transcripts.py "covered calls" --top-k 3')
     
     if success2 and "youtube.com" in stdout2:
-        print("✅ Search working: Found video links")
+        print(" Search working: Found video links")
     else:
         print("❌ Search issue: No video links found")
     
@@ -248,7 +248,7 @@ def run_all_tests():
         try:
             result = test_func()
             results[test_name] = result
-            status = "✅ PASS" if result else "❌ FAIL"
+            status = " PASS" if result else "❌ FAIL"
             print(f"📊 {test_name}: {status}")
         except Exception as e:
             print(f"❌ {test_name}: ERROR - {e}")
@@ -262,7 +262,7 @@ def run_all_tests():
     print(f"📊 Overall Results: {passed}/{total} tests passed")
     
     for test_name, result in results.items():
-        status = "✅ PASS" if result else "❌ FAIL"
+        status = " PASS" if result else "❌ FAIL"
         print(f"  {status} {test_name}")
     
     if passed == total:

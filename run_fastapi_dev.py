@@ -15,7 +15,7 @@ def check_dependencies():
     try:
         import fastapi
         import uvicorn
-        print("✅ FastAPI dependencies found")
+        print(" FastAPI dependencies found")
         return True
     except ImportError:
         print("❌ FastAPI dependencies not found")
@@ -27,7 +27,7 @@ def check_rag_dependencies():
     try:
         import vector_search
         import rag_pipeline
-        print("✅ RAG dependencies found")
+        print(" RAG dependencies found")
         return True
     except ImportError as e:
         print(f"❌ RAG dependencies not found: {e}")
@@ -40,7 +40,7 @@ def check_vector_store():
     local_vector_store_path = "vector_store"
     
     if os.path.exists(vector_store_path) or os.path.exists(local_vector_store_path):
-        print("✅ Vector store found")
+        print(" Vector store found")
         return True
     else:
         print("⚠️  Vector store not found")
@@ -81,7 +81,7 @@ def run_tests_after_startup():
             print("Errors:", result.stderr)
             
         if result.returncode == 0:
-            print("✅ All tests passed!")
+            print(" All tests passed!")
         else:
             print("⚠️  Some tests failed")
             

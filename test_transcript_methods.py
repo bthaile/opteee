@@ -31,7 +31,7 @@ def test_single_video():
     print("\n Testing YouTube Transcript API...")
     transcript_api_result = downloader.get_transcript_via_transcript_api(test_video_id)
     if transcript_api_result:
-        print(f"✅ Success! Found {len(transcript_api_result)} segments")
+        print(f" Success! Found {len(transcript_api_result)} segments")
         print(f"First segment: {transcript_api_result[0]['text'][:100]}...")
     else:
         print("❌ No transcript found via YouTube Transcript API")
@@ -39,7 +39,7 @@ def test_single_video():
     print("\n Testing yt-dlp subtitle extraction...")
     ytdlp_result = downloader.get_transcript_via_yt_dlp(test_video_url)
     if ytdlp_result:
-        print(f"✅ Success! Found {len(ytdlp_result)} segments")
+        print(f" Success! Found {len(ytdlp_result)} segments")
         print(f"First segment: {ytdlp_result[0]['text'][:100]}...")
     else:
         print("❌ No transcript found via yt-dlp")
@@ -48,7 +48,7 @@ def test_single_video():
     if downloader.whisper_model:
         whisper_result = downloader.download_audio_and_transcribe(test_video_url, test_video_id)
         if whisper_result:
-            print(f"✅ Success! Found {len(whisper_result)} segments")
+            print(f" Success! Found {len(whisper_result)} segments")
             print(f"First segment: {whisper_result[0]['text'][:100]}...")
         else:
             print("❌ Whisper transcription failed")
@@ -56,9 +56,9 @@ def test_single_video():
         print("⚠️  Whisper not available")
     
     print("\n📊 Test Summary:")
-    print(f"YouTube Transcript API: {'✅' if transcript_api_result else '❌'}")
-    print(f"yt-dlp subtitles: {'✅' if ytdlp_result else '❌'}")
-    print(f"Whisper: {'✅' if downloader.whisper_model and whisper_result else '❌'}")
+    print(f"YouTube Transcript API: {'' if transcript_api_result else '❌'}")
+    print(f"yt-dlp subtitles: {'' if ytdlp_result else '❌'}")
+    print(f"Whisper: {'' if downloader.whisper_model and whisper_result else '❌'}")
 
 def test_with_your_videos():
     """Test with a few videos from your collection."""
@@ -86,14 +86,14 @@ def test_with_your_videos():
         # Test transcript API
         transcript = downloader.get_transcript_via_transcript_api(video_id)
         if transcript:
-            print(f"✅ YouTube Transcript API: {len(transcript)} segments")
+            print(f" YouTube Transcript API: {len(transcript)} segments")
         else:
             print("❌ YouTube Transcript API: No transcript")
         
         # Test yt-dlp
         transcript = downloader.get_transcript_via_yt_dlp(video.get('url'))
         if transcript:
-            print(f"✅ yt-dlp subtitles: {len(transcript)} segments")
+            print(f" yt-dlp subtitles: {len(transcript)} segments")
         else:
             print("❌ yt-dlp subtitles: No transcript")
 

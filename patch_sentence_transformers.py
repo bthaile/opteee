@@ -40,7 +40,7 @@ def patch_sentence_transformers():
                 with open(file_path, 'w') as f:
                     f.write(content)
                 
-                print(f"✅ Successfully patched {file_path}")
+                print(f" Successfully patched {file_path}")
         
         print("Patching complete!")
         return True

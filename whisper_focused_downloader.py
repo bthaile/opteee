@@ -134,7 +134,7 @@ def load_videos() -> List[Dict]:
                     data = json.load(f)
                     if isinstance(data, list):
                         videos = data
-                        print(f"✅ Loaded {len(videos)} videos from {filename}")
+                        print(f" Loaded {len(videos)} videos from {filename}")
                         break
             except Exception as e:
                 print(f"⚠️ Could not load {filename}: {e}")
@@ -190,7 +190,7 @@ def download_audio_with_cookies(video_url: str, video_id: str, progress: Dict) -
             expected_file = os.path.join(AUDIO_DIR, f"{video_id}.mp3")
             if os.path.exists(expected_file):
                 size_mb = os.path.getsize(expected_file) / (1024 * 1024)
-                print(f"  ✅ Audio downloaded: {size_mb:.1f} MB")
+                print(f"   Audio downloaded: {size_mb:.1f} MB")
                 
                 # Update progress tracking - audio successfully downloaded
                 if video_url not in progress.get('audio_downloaded', []):
@@ -209,7 +209,7 @@ def download_audio_with_cookies(video_url: str, video_id: str, progress: Dict) -
                         # Rename to .mp3 for consistency
                         os.rename(alt_file, expected_file)
                         size_mb = os.path.getsize(expected_file) / (1024 * 1024)
-                        print(f"  ✅ Audio downloaded: {size_mb:.1f} MB (renamed from {ext})")
+                        print(f"   Audio downloaded: {size_mb:.1f} MB (renamed from {ext})")
                         
                         # Update progress tracking - audio successfully downloaded
                         if video_url not in progress.get('audio_downloaded', []):
@@ -265,7 +265,7 @@ def transcribe_with_whisper(video_id: str, video_url: str, audio_file: str, prog
         with open(transcript_file, 'w', encoding='utf-8') as f:
             f.write(result["text"])
         
-        print(f"  ✅ Transcript saved: {transcript_file}")
+        print(f"   Transcript saved: {transcript_file}")
         
         # Update progress tracking - transcript successfully created
         if video_url not in progress.get('whisper_processed', []):
@@ -299,7 +299,7 @@ def process_video(video: Dict, progress: Dict, reprocess: bool = False) -> bool:
     
     # Check if already processed (skip if not reprocessing)
     if not reprocess and video_url in progress.get('whisper_processed', []):
-        print(f"  ✅ Already processed")
+        print(f"   Already processed")
         return True
     
     # If reprocessing, remove from all tracking lists
@@ -365,7 +365,7 @@ def show_status(progress: Dict, videos: List[Dict]):
     print(f"============================================================")
     print(f"📚 Total videos discovered: {total_videos}")
     print(f"🎵 Audio files downloaded: {audio_downloaded_count}")
-    print(f"✅ Transcripts completed: {transcripts_completed_count}")
+    print(f" Transcripts completed: {transcripts_completed_count}")
     print(f"❌ Failed: {failed_count}")
     print(f"🎯 Remaining: {total_videos - transcripts_completed_count - failed_count}")
     print(f"📈 Completion rate: {(transcripts_completed_count / total_videos * 100) if total_videos > 0 else 0:.1f}%")
@@ -414,7 +414,7 @@ def main():
     print(f" Whisper-Focused Transcript Downloader (Browser-Based)")
     print(f"============================================================")
     print(f"🔧 Using browser-extracted cookies to avoid detection")
-    print(f"🆕 Updated yt-dlp with latest anti-bot countermeasures")
+    print(f" Updated yt-dlp with latest anti-bot countermeasures")
     print(f"📦 Processing in batches of {args.batch_size} videos")
     print(f"⏱️ Delays: {DELAY_BETWEEN_VIDEOS}s between videos, {DELAY_BETWEEN_BATCHES}s between batches")
     
@@ -439,7 +439,7 @@ def main():
                 videos_to_process.append(video)
     
     if not videos_to_process:
-        print(f"\n✅ All videos processed or failed!")
+        print(f"\n All videos processed or failed!")
         return
     
     print(f"\n🎯 Found {len(videos_to_process)} videos to process")
@@ -474,7 +474,7 @@ def main():
             
             if process_video(video, progress, reprocess=args.reprocess):
                 batch_successes += 1
-                print(f"    ✅ Success!")
+                print(f"     Success!")
             else:
                 print(f"    ❌ Failed")
             
@@ -492,7 +492,7 @@ def main():
         batch_success_rate = (batch_successes / len(batch_videos) * 100) if batch_videos else 0
         
         print(f"\n📊 Batch {batch_num + 1}/{total_batches} Complete!")
-        print(f"    ✅ Successes: {batch_successes}")
+        print(f"     Successes: {batch_successes}")
         print(f"    ❌ Failures: {len(batch_videos) - batch_successes}")
         print(f"    ⏱️  Batch time: {batch_time:.1f}s")
         print(f"    📈 Batch success rate: {batch_success_rate:.1f}%")

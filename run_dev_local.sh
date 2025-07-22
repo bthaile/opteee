@@ -8,13 +8,13 @@ echo "================================================="
 
 # Check if we're in a virtual environment
 if [[ "$VIRTUAL_ENV" != "" ]]; then
-    echo "✅ Virtual environment active: $VIRTUAL_ENV"
+    echo " Virtual environment active: $VIRTUAL_ENV"
 else
     echo "⚠️  No virtual environment detected"
     echo "🔧 Activating virtual environment..."
     if [ -f "venv/bin/activate" ]; then
         source venv/bin/activate
-        echo "✅ Virtual environment activated"
+        echo " Virtual environment activated"
     else
         echo "❌ Virtual environment not found at venv/bin/activate"
         echo "Please run: python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt"

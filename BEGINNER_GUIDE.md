@@ -3,10 +3,10 @@
 ## 📋 **You Don't Need to Configure Anything!**
 
 **Good news:** Your system is already set up! You have:
-- ✅ Python 3.9.6 installed
-- ✅ Virtual environment created (`venv/`)
-- ✅ All required packages installed
-- ✅ Project ready to use
+-  Python 3.9.6 installed
+-  Virtual environment created (`venv/`)
+-  All required packages installed
+-  Project ready to use
 
 ## 🖥️ **How to Open Terminal (Mac)**
 
@@ -74,7 +74,7 @@ python3 whisper_transcribe.py
 (venv) [bthaile@mbp:~/gitrepos/opteee]$ python3 whisper_transcribe.py
 🎵 Starting Whisper transcription...
 📁 Scanning audio_files/ for MP3 files...
-✅ Found 3 new MP3 files to process
+ Found 3 new MP3 files to process
 🔄 Processing oOyjSHIJSPs.mp3...
 ```
 
@@ -158,9 +158,9 @@ audio_files/_bB29g2ofI0.note.txt  (error log)
 python3 whisper_transcribe.py
 
 # System will:
-# ✅ Process the real MP3 file
-# ✅ Create transcripts/_bB29g2ofI0.txt
-# ✅ Clean up the .note.txt file automatically
+#  Process the real MP3 file
+#  Create transcripts/_bB29g2ofI0.txt
+#  Clean up the .note.txt file automatically
 ```
 
 ## 📋 **Summary of Current Situation**

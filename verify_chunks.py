@@ -84,7 +84,7 @@ def verify_chunks():
     
     # Final status
     if not missing_chunks and not extra_chunks:
-        print("\n✅ All transcripts have been properly chunked!")
+        print("\n All transcripts have been properly chunked!")
     else:
         print("\n⚠️ Some transcripts need attention:")
         if missing_chunks:

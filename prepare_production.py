@@ -30,7 +30,7 @@ python main.py
     
     # Make it executable
     os.chmod("startup.sh", 0o755)
-    print("✅ startup.sh created and made executable")
+    print(" startup.sh created and made executable")
 
 def create_production_dockerfile():
     """Create Dockerfile for production deployment"""
@@ -103,7 +103,7 @@ CMD ["/app/startup.sh"]
     with open("Dockerfile", "w") as f:
         f.write(dockerfile_content)
     
-    print("✅ Dockerfile created")
+    print(" Dockerfile created")
 
 def create_huggingface_readme():
     """Create README.md for HuggingFace deployment"""
@@ -140,7 +140,7 @@ This application provides semantic search across a collection of options trading
     with open("README.md", "w") as f:
         f.write(huggingface_readme)
     
-    print("✅ HuggingFace README.md created")
+    print(" HuggingFace README.md created")
 
 def ensure_required_directories():
     """Ensure all required directories exist"""
@@ -169,7 +169,7 @@ def ensure_required_directories():
         with open("processed_transcripts/test_chunk.json", "w") as f:
             json.dump(test_chunk, f)
     
-    print("✅ Required directories ensured")
+    print(" Required directories ensured")
 
 def check_required_files():
     """Check that all required files exist"""
@@ -194,7 +194,7 @@ def check_required_files():
         print(f"❌ Missing required files: {missing_files}")
         return False
     
-    print("✅ All required files present")
+    print(" All required files present")
     return True
 
 def main():
@@ -220,9 +220,9 @@ def main():
         print("\n" + "=" * 50)
         print("🎉 SUCCESS! Production files prepared")
         print("\n📋 Files created:")
-        print("   ✅ startup.sh - Application startup script")
-        print("   ✅ Dockerfile - Production Docker image")
-        print("   ✅ README.md - HuggingFace format (original backed up)")
+        print("    startup.sh - Application startup script")
+        print("    Dockerfile - Production Docker image")
+        print("    README.md - HuggingFace format (original backed up)")
         print("\n Next steps:")
         print("   1. Start Docker Desktop")
         print("   2. Run: ./run_local.sh")

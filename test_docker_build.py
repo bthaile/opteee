@@ -41,13 +41,13 @@ def check_docker_installed():
     if not success:
         print("❌ Docker not installed. Please install Docker Desktop")
         return False
-    print(f"✅ Docker found: {output.strip()}")
+    print(f" Docker found: {output.strip()}")
     
     success, output = run_command("docker info")
     if not success:
         print("❌ Docker not running. Please start Docker Desktop")
         return False
-    print("✅ Docker is running")
+    print(" Docker is running")
     return True
 
 def simulate_github_workflow():
@@ -111,7 +111,7 @@ This application provides semantic search across a collection of options trading
     with open("README.md", "w") as f:
         f.write(huggingface_readme)
     
-    print("✅ GitHub workflow steps simulated")
+    print(" GitHub workflow steps simulated")
     return True
 
 def create_test_dockerfile():
@@ -186,7 +186,7 @@ CMD ["/app/startup.sh"]
     with open("Dockerfile", "w") as f:
         f.write(dockerfile_content)
     
-    print("✅ Production Dockerfile created")
+    print(" Production Dockerfile created")
     return True
 
 def prepare_build_context():
@@ -237,7 +237,7 @@ def prepare_build_context():
     if not os.path.exists("static"):
         os.makedirs("static", exist_ok=True)
     
-    print("✅ Build context prepared")
+    print(" Build context prepared")
     return True
 
 def build_docker_image():
@@ -260,7 +260,7 @@ def build_docker_image():
         print("❌ Docker image not found after build")
         return False
     
-    print("✅ Docker image built successfully")
+    print(" Docker image built successfully")
     return True
 
 def test_docker_container():
@@ -280,7 +280,7 @@ def test_docker_container():
         print(f"❌ Failed to start container: {output}")
         return False
     
-    print("✅ Container started successfully")
+    print(" Container started successfully")
     
     # Wait for container to be ready
     print("⏳ Waiting for container to initialize...")
@@ -289,7 +289,7 @@ def test_docker_container():
         try:
             response = requests.get("http://localhost:7860/api/health", timeout=5)
             if response.status_code == 200:
-                print("✅ Container is healthy and responding")
+                print(" Container is healthy and responding")
                 return True
         except:
             pass
@@ -361,7 +361,7 @@ def test_api_endpoints():
     total = len(tests)
     for test_name, success, message in tests:
         if success:
-            print(f"✅ {test_name}: {message}")
+            print(f" {test_name}: {message}")
             passed += 1
         else:
             print(f"❌ {test_name}: {message}")
@@ -396,7 +396,7 @@ def cleanup_test_resources():
         os.rename("README.md.backup", "README.md")
         print("   Restored original README.md")
     
-    print("✅ Cleanup completed")
+    print(" Cleanup completed")
 
 def main():
     """Main test function"""
@@ -437,18 +437,18 @@ def main():
         
         print("\n" + "=" * 70)
         print("🎉 SUCCESS! HuggingFace deployment simulation passed!")
-        print("✅ Your application is ready for production deployment")
+        print(" Your application is ready for production deployment")
         print("\n📋 What this test verified (EXACT GitHub Actions workflow):")
-        print("   ✅ GitHub Actions workflow steps simulated")
-        print("   ✅ Startup script created (startup.sh)")
-        print("   ✅ HuggingFace README format correct")
-        print("   ✅ Production Dockerfile builds successfully")
-        print("   ✅ All dependencies install correctly") 
-        print("   ✅ Vector store builds during Docker build")
-        print("   ✅ FastAPI server starts with startup script")
-        print("   ✅ All API endpoints respond correctly")
-        print("   ✅ Frontend serves successfully")
-        print("   ✅ Port 7860 works (HuggingFace requirement)")
+        print("    GitHub Actions workflow steps simulated")
+        print("    Startup script created (startup.sh)")
+        print("    HuggingFace README format correct")
+        print("    Production Dockerfile builds successfully")
+        print("    All dependencies install correctly") 
+        print("    Vector store builds during Docker build")
+        print("    FastAPI server starts with startup script")
+        print("    All API endpoints respond correctly")
+        print("    Frontend serves successfully")
+        print("    Port 7860 works (HuggingFace requirement)")
         print("\n You can now safely push to GitHub - HuggingFace deployment will work!")
         
         return True

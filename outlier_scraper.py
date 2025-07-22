@@ -73,7 +73,7 @@ def main():
     # Print detailed statistics
     print(f"\n📊 Discovery Results:")
     print(f"=" * 60)
-    print(f"✅ {len(unique_videos)} unique videos saved to {VIDEOS_JSON}")
+    print(f" {len(unique_videos)} unique videos saved to {VIDEOS_JSON}")
     print(f"🔄 {duplicate_count} duplicates removed")
     print(f"📺 {len(all_videos_data)} total videos found (including duplicates)")
 

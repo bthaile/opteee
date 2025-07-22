@@ -45,7 +45,7 @@ jobs:
         run: |
           echo " Step 1: Discovering videos..."
           python3 run_pipeline.py --step scrape --non-interactive
-          echo "✅ Video discovery completed"
+          echo " Video discovery completed"
 
       - name: Run transcript generation
         env:
@@ -53,7 +53,7 @@ jobs:
         run: |
           echo "🎤 Step 2: Generating transcripts..."
           python3 run_pipeline.py --step transcripts --non-interactive
-          echo "✅ Transcript generation completed"
+          echo " Transcript generation completed"
 
       - name: Run transcript preprocessing
         env:
@@ -61,7 +61,7 @@ jobs:
         run: |
           echo " Step 3: Processing transcripts into chunks..."
           python3 run_pipeline.py --step preprocess --non-interactive
-          echo "✅ Transcript preprocessing completed"
+          echo " Transcript preprocessing completed"
 
       - name: Verify processing outputs
         run: |
@@ -70,7 +70,7 @@ jobs:
           # Check video discovery
           if [ -f "outlier_trading_videos.json" ]; then
             VIDEO_COUNT=$(python3 -c "import json; print(len(json.load(open('outlier_trading_videos.json'))))")
-            echo "✅ Videos discovered: $VIDEO_COUNT"
+            echo " Videos discovered: $VIDEO_COUNT"
           else
             echo "❌ No video data found"
           fi
@@ -78,7 +78,7 @@ jobs:
           # Check transcripts
           if [ -d "transcripts" ]; then
             TRANSCRIPT_COUNT=$(find transcripts -name "*.txt" | wc -l)
-            echo "✅ Transcripts generated: $TRANSCRIPT_COUNT"
+            echo " Transcripts generated: $TRANSCRIPT_COUNT"
           else
             echo "❌ No transcripts directory found"
           fi
@@ -86,7 +86,7 @@ jobs:
           # Check processed transcripts
           if [ -d "processed_transcripts" ]; then
             PROCESSED_COUNT=$(find processed_transcripts -name "*.json" | wc -l)
-            echo "✅ Processed transcript files: $PROCESSED_COUNT"
+            echo " Processed transcript files: $PROCESSED_COUNT"
           else
             echo "❌ No processed transcripts directory found"
           fi

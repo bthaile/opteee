@@ -9,7 +9,7 @@ echo " Starting OPTEEE Discord Bot Health Server..."
 python health_server.py &
 HEALTH_PID=$!
 
-echo "✅ Health server started (PID: $HEALTH_PID)"
+echo " Health server started (PID: $HEALTH_PID)"
 
 # Wait a moment for health server to initialize
 sleep 2
@@ -20,7 +20,7 @@ echo "🤖 Starting Discord bot..."
 python discord_bot.py &
 BOT_PID=$!
 
-echo "✅ Discord bot started (PID: $BOT_PID)"
+echo " Discord bot started (PID: $BOT_PID)"
 
 # Function to handle cleanup on exit
 cleanup() {
@@ -29,7 +29,7 @@ cleanup() {
     kill $BOT_PID 2>/dev/null
     wait $HEALTH_PID 2>/dev/null
     wait $BOT_PID 2>/dev/null
-    echo "✅ Cleanup completed"
+    echo " Cleanup completed"
     exit 0
 }
 

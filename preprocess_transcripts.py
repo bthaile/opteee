@@ -174,7 +174,7 @@ def find_metadata_for_transcript(filename, metadata_dict):
         # First attempt: Direct video ID extraction and lookup
         video_id = extract_video_id_from_filename(filename)
         if video_id in metadata_dict:
-            print(f"✅ Found metadata by direct ID match: {video_id}")
+            print(f" Found metadata by direct ID match: {video_id}")
             return video_id, metadata_dict[video_id]
         
         # Second attempt: Try to match by title or filename pattern
@@ -210,7 +210,7 @@ def find_metadata_for_transcript(filename, metadata_dict):
                     best_match = vid_id
         
         if best_match and best_score > 0.5:  # Threshold for a good match
-            print(f"✅ Found metadata by title match: {best_match} (score: {best_score:.2f})")
+            print(f" Found metadata by title match: {best_match} (score: {best_score:.2f})")
             return best_match, metadata_dict[best_match]
         
         # If no good match found, construct basic metadata
@@ -316,9 +316,9 @@ def process_transcripts(metadata_dict):
     
     # Print summary
     print("\n" + "="*80)
-    print("✅ Processing complete!")
-    print(f"✅ Processed {processed_files} transcript files")
-    print(f"✅ Created {total_chunks} total chunks")
+    print(" Processing complete!")
+    print(f" Processed {processed_files} transcript files")
+    print(f" Created {total_chunks} total chunks")
 
     if skipped_files:
         print("\n⚠️ Skipped Files Report:")

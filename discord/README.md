@@ -29,8 +29,8 @@ A Discord bot that provides access to the OPTEEE options trading knowledge base 
    - Go to the "Bot" section and click "Add Bot"
    - Copy the bot token
    - Enable the following bot intents:
-     - **Message Content Intent** ✅
-     - **Server Members Intent** ✅
+     - **Message Content Intent** 
+     - **Server Members Intent** 
 
 ### 2. Install Dependencies:
    ```bash
@@ -165,9 +165,9 @@ OPTEEE_API_URL=https://bthaile-opteee.hf.space
 
 #### Log Messages to Expect
 ```
-✅ Custom DNS resolver dependencies available
+ Custom DNS resolver dependencies available
 🔧 Setting up custom DNS resolver in async context...
-✅ Applied comprehensive aiohttp and discord.py DNS patches
+ Applied comprehensive aiohttp and discord.py DNS patches
 Using original aiohttp functions for clean API call
 Making clean API request to https://...
 API response status: 200

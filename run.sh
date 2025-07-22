@@ -27,7 +27,7 @@ case "$1" in
         python3 -m venv venv
         source venv/bin/activate
         pip3 install -r requirements.txt
-        echo "✅ Setup complete!"
+        echo " Setup complete!"
         ;;
     "activate")
         check_venv

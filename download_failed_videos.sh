@@ -40,7 +40,7 @@ for note_file in audio_files/*.note.txt; do
             # Get file size
             size=$(stat -f%z "audio_files/$video_id.mp3" 2>/dev/null || stat -c%s "audio_files/$video_id.mp3" 2>/dev/null)
             if [ "$size" -gt 10000 ]; then
-                echo "  ✅ Success: $video_id.mp3 (${size} bytes)"
+                echo "   Success: $video_id.mp3 (${size} bytes)"
                 # Remove the note file since we succeeded
                 rm "$note_file"
             else
@@ -57,6 +57,6 @@ done
 
 echo
 echo "================================================"
-echo "✅ Download process complete!"
+echo " Download process complete!"
 echo "📊 Check audio_files/ directory for downloaded files"
 echo "🔄 Run 'python3 run_pipeline.py --step transcripts' to process" 

@@ -59,15 +59,15 @@ The GitHub Actions workflow is set up to deploy from the `discord/` directory. M
 
 ```
 discord/
-├── discord_bot.py          ✅ Main bot code
-├── health_server.py        ✅ Health monitoring
-├── start.sh               ✅ Startup script
-├── Dockerfile             ✅ Container definition
-├── requirements.txt       ✅ Python dependencies
-├── README.md              ✅ HF Space metadata
+├── discord_bot.py           Main bot code
+├── health_server.py         Health monitoring
+├── start.sh                Startup script
+├── Dockerfile              Container definition
+├── requirements.txt        Python dependencies
+├── README.md               HF Space metadata
 └── .github/
     └── workflows/
-        └── deploy-discord-bot.yml  ✅ Deployment workflow
+        └── deploy-discord-bot.yml   Deployment workflow
 ```
 
 ### 5. Test Local Deployment (Optional)
@@ -156,10 +156,10 @@ git push
 
 ## ✨ Benefits of This Setup
 
-✅ **Free Hosting**: Both services run free on HuggingFace  
-✅ **Auto-Deployment**: GitHub push → automatic deployment  
-✅ **Independent Scaling**: Each service manages its own resources  
-✅ **Easy Monitoring**: Health endpoints and logging  
-✅ **No Infrastructure**: HuggingFace handles everything  
+ **Free Hosting**: Both services run free on HuggingFace  
+ **Auto-Deployment**: GitHub push → automatic deployment  
+ **Independent Scaling**: Each service manages its own resources  
+ **Easy Monitoring**: Health endpoints and logging  
+ **No Infrastructure**: HuggingFace handles everything  
 
 Your Discord bot is now running as a completely separate service that connects to your main OPTEEE API!  

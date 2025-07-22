@@ -193,7 +193,7 @@ def parallel_transcribe(input_dir, output_dir, model_name="tiny", num_workers=No
     print(f"🖥️  System Info:")
     print(f"   CPU cores: {system_info['cpu_count']}")
     print(f"   Memory: {system_info['memory_gb']} GB")
-    print(f"   GPU: {'✅' if system_info['gpu_available'] else '❌'}")
+    print(f"   GPU: {'' if system_info['gpu_available'] else '❌'}")
     
     # Determine optimal workers
     if num_workers is None:
@@ -233,7 +233,7 @@ def parallel_transcribe(input_dir, output_dir, model_name="tiny", num_workers=No
         print(f"📋 Resume mode: {len(audio_files)} files remaining")
     
     if not audio_files:
-        print("✅ All files already processed!")
+        print(" All files already processed!")
         return True
     
     # Prepare arguments for workers
@@ -272,7 +272,7 @@ def parallel_transcribe(input_dir, output_dir, model_name="tiny", num_workers=No
                     
                     # Print progress (optional - can be noisy)
                     if not result["skipped"]:
-                        print(f"✅ {Path(audio_file).name}: {result['duration']:.1f}s")
+                        print(f" {Path(audio_file).name}: {result['duration']:.1f}s")
                 else:
                     failed += 1
                     progress["failed"].append(audio_file)
@@ -292,7 +292,7 @@ def parallel_transcribe(input_dir, output_dir, model_name="tiny", num_workers=No
     
     # Summary
     print(f"\n📊 Processing Summary:")
-    print(f"  ✅ Successful: {successful}")
+    print(f"   Successful: {successful}")
     print(f"  ⏭️  Skipped: {skipped}")
     print(f"  ❌ Failed: {failed}")
     print(f"  📁 Total: {len(audio_files)}")
@@ -335,7 +335,7 @@ def main():
         print("🖥️  System Information:")
         print(f"   CPU cores: {system_info['cpu_count']}")
         print(f"   Memory: {system_info['memory_gb']} GB")
-        print(f"   GPU available: {'✅' if system_info['gpu_available'] else '❌'}")
+        print(f"   GPU available: {'' if system_info['gpu_available'] else '❌'}")
         if system_info['gpu_available']:
             print(f"   GPU memory: {system_info['gpu_memory_gb']} GB")
         

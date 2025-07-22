@@ -49,7 +49,7 @@ class RAGService:
         await self._initialize_chains()
         
         self.initialized = True
-        print("✅ RAG service initialization complete")
+        print(" RAG service initialization complete")
     
     async def _initialize_chains(self):
         """Initialize chains for all available providers"""
@@ -58,7 +58,7 @@ class RAGService:
             try:
                 _, chain = create_rag_chain(self.retriever, provider=provider)
                 self.provider_chains[provider] = chain
-                print(f"✅ Initialized chain for {provider}")
+                print(f" Initialized chain for {provider}")
             except Exception as e:
                 print(f"❌ Failed to initialize {provider} chain: {e}")
     
@@ -123,7 +123,7 @@ class RAGService:
                 "raw_sources": []
             }
     
-    def _run_rag_query_with_context(self, retriever, chain, query: str, conversation_history: List[Dict[str, Any]]) -> Dict[str, Any]:
+    def _run_rag_query_with_context(self, retriever, chain, query: str, conversation_history: List[ConversationMessage]) -> Dict[str, Any]:
         """
         Run a RAG query with conversation history context
         This creates a modified prompt that includes conversation history
@@ -160,20 +160,15 @@ Current User Question: {question}
 Please answer the current question considering the conversation history above. Refer back to previous parts of the conversation when relevant, but focus primarily on answering the current question using the provided context.""")
         ])
         
-        # Create a modified chain with conversation context
-        context_chain = (
-            {
-                "conversation_context": lambda _: conversation_context,
-                "context": lambda q: format_documents(docs),
-                "question": RunnablePassthrough()
-            }
-            | template
-            | chain.last  # Get the LLM from the existing chain
-            | StrOutputParser()
-        )
+        # Simplified approach: modify the query to include conversation context
+        # and use the existing chain which already handles documents properly
+        enhanced_query = f"""Previous conversation:
+{conversation_context}
+
+Current question: {query}"""
         
-        # Generate answer with conversation context
-        answer = context_chain.invoke(query)
+        # Use the existing chain but with enhanced query that includes context
+        answer = chain.invoke(enhanced_query)
         
         # Extract sources (maintaining order) - same as run_rag_query
         sources = []

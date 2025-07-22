@@ -144,7 +144,7 @@ try:
     import discord.http
     import discord.gateway
     custom_resolver_available = ENABLE_CUSTOM_DNS
-    logger.info(f"✅ Custom DNS resolver {'enabled' if ENABLE_CUSTOM_DNS else 'disabled'}")
+    logger.info(f" Custom DNS resolver {'enabled' if ENABLE_CUSTOM_DNS else 'disabled'}")
 except ImportError as e:
     logger.warning(f"⚠️ AsyncResolver not available: {e}")
     custom_resolver_available = False
@@ -183,9 +183,9 @@ async def setup_custom_dns_resolver():
             timeout=aiohttp.ClientTimeout(total=30)
         )
         
-        logger.info("✅ Custom DNS session created (for API calls, not discord.py)")
+        logger.info(" Custom DNS session created (for API calls, not discord.py)")
         
-        logger.info("✅ Created custom DNS resolver with Google/Cloudflare DNS in async context")
+        logger.info(" Created custom DNS resolver with Google/Cloudflare DNS in async context")
         
         # Comprehensive monkey patching for discord.py
         await setup_discord_patches()
@@ -221,10 +221,10 @@ async def setup_discord_patches():
         
         # Apply global aiohttp patch
         aiohttp.ClientSession.__init__ = custom_client_session_init
-        logger.info("✅ Applied global aiohttp ClientSession DNS patch")
+        logger.info(" Applied global aiohttp ClientSession DNS patch")
         
         # 2. Let discord.py create its own sessions (they'll use our custom connector via global patches)
-        logger.info("✅ Discord will create its own sessions using global aiohttp DNS patches")
+        logger.info(" Discord will create its own sessions using global aiohttp DNS patches")
         
         # 3. Patch aiohttp connector creation as fallback
         original_tcp_connector_init = aiohttp.TCPConnector.__init__
@@ -241,10 +241,10 @@ async def setup_discord_patches():
         
         # Apply TCPConnector patch
         aiohttp.TCPConnector.__init__ = custom_tcp_connector_init
-        logger.info("✅ Applied aiohttp TCPConnector DNS resolver patch")
+        logger.info(" Applied aiohttp TCPConnector DNS resolver patch")
         
         # 4. Global patches are sufficient - discord.py will use our DNS resolver automatically
-        logger.info("✅ All comprehensive DNS patches applied successfully")
+        logger.info(" All comprehensive DNS patches applied successfully")
         
     except Exception as patch_error:
         logger.error(f"Failed to apply comprehensive DNS patches: {patch_error}")
@@ -663,10 +663,10 @@ async def cleanup_custom_session():
     try:
         if custom_session and not custom_session.closed:
             await custom_session.close()
-            logger.info("✅ Cleaned up custom aiohttp session")
+            logger.info(" Cleaned up custom aiohttp session")
         if custom_connector:
             await custom_connector.close()
-            logger.info("✅ Cleaned up custom DNS connector")
+            logger.info(" Cleaned up custom DNS connector")
     except Exception as e:
         logger.warning(f"⚠️ Error during cleanup: {e}")
 
@@ -680,8 +680,8 @@ async def setup_custom_dns_and_patches():
     dns_success = await setup_custom_dns_resolver()
     
     if dns_success and custom_connector and custom_session:
-        logger.info("✅ Custom DNS resolver setup successful")
-        logger.info("✅ Discord.py patches applied before bot creation")
+        logger.info(" Custom DNS resolver setup successful")
+        logger.info(" Discord.py patches applied before bot creation")
         return True
     else:
         logger.warning("⚠️ Custom DNS resolver setup failed - will use system DNS")
@@ -706,9 +706,9 @@ def create_bot():
         
         # Verify custom DNS resolver is working
         if custom_session and not custom_session.closed:
-            logger.info('✅ Custom DNS resolver active and ready')
+            logger.info(' Custom DNS resolver active and ready')
         if custom_connector:
-            logger.info('✅ Discord.py using global aiohttp DNS patches with custom resolver')
+            logger.info(' Discord.py using global aiohttp DNS patches with custom resolver')
         else:
             logger.warning('⚠️ Custom DNS resolver not available')
         
@@ -788,7 +788,7 @@ def main():
     try:
         import uvloop
         asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
-        logger.info("✅ Using uvloop for improved performance")
+        logger.info(" Using uvloop for improved performance")
     except ImportError:
         logger.info("⚠️ uvloop not available - using default asyncio")
     
@@ -801,14 +801,14 @@ def main():
     try:
         import socket
         discord_ip = socket.gethostbyname('discord.com')
-        logger.info(f"✅ System DNS resolved discord.com -> {discord_ip}")
+        logger.info(f" System DNS resolved discord.com -> {discord_ip}")
     except Exception as dns_error:
         logger.warning(f"⚠️ System DNS failed: {dns_error}")
         logger.info("🔧 Custom DNS resolver will bypass this issue")
     
     # Report resolver availability
     if custom_resolver_available:
-        logger.info("✅ Custom DNS resolver dependencies available")
+        logger.info(" Custom DNS resolver dependencies available")
     else:
         logger.warning("⚠️ Custom DNS resolver dependencies not available - using system DNS")
     
@@ -821,7 +821,7 @@ def main():
             dns_success = await setup_custom_dns_and_patches()
             
             if dns_success:
-                logger.info("✅ Custom DNS resolver and patches ready")
+                logger.info(" Custom DNS resolver and patches ready")
             else:
                 logger.warning("⚠️ Using system DNS (custom resolver failed)")
             
@@ -829,7 +829,7 @@ def main():
             
             # Step 2: Create bot instance (patches already applied)
             create_bot()
-            logger.info("✅ Bot instance created")
+            logger.info(" Bot instance created")
             
             logger.info(" Phase 3: Starting bot with custom DNS resolver...")
             
@@ -844,14 +844,14 @@ def main():
             try:
                 import socket
                 socket.create_connection(("8.8.8.8", 53), timeout=3).close()
-                logger.info("✅ Internet connectivity OK")
+                logger.info(" Internet connectivity OK")
             except Exception:
                 logger.error("❌ No internet connectivity")
             
             # Check if it's still a DNS issue
             try:
                 discord_ip = socket.gethostbyname('discord.com')
-                logger.info(f"✅ System DNS works: discord.com -> {discord_ip}")
+                logger.info(f" System DNS works: discord.com -> {discord_ip}")
                 logger.error("Issue may not be DNS-related")
             except Exception as dns_error:
                 logger.error(f"System DNS still failing: {dns_error}")

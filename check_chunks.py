@@ -40,7 +40,7 @@ def load_vector_store():
     # Load the index
     try:
         index = faiss.read_index(index_path)
-        print(f"✅ FAISS index loaded: {index.ntotal} vectors with dimension {index.d}")
+        print(f" FAISS index loaded: {index.ntotal} vectors with dimension {index.d}")
         
         # Load texts and metadata
         with open(texts_path, 'rb') as f:
@@ -49,8 +49,8 @@ def load_vector_store():
         with open(metadata_path, 'rb') as f:
             metadata = pickle.load(f)
         
-        print(f"✅ Loaded {len(texts)} text chunks")
-        print(f"✅ Loaded {len(metadata)} metadata entries")
+        print(f" Loaded {len(texts)} text chunks")
+        print(f" Loaded {len(metadata)} metadata entries")
         
         if len(texts) != index.ntotal or len(metadata) != index.ntotal:
             print(f"⚠️ Warning: Mismatch in counts - FAISS: {index.ntotal}, Texts: {len(texts)}, Metadata: {len(metadata)}")
@@ -128,7 +128,7 @@ def test_search_queries():
     print("\n Loading embedding model...")
     try:
         model = SentenceTransformer(MODEL_NAME)
-        print(f"✅ Model loaded: {MODEL_NAME}")
+        print(f" Model loaded: {MODEL_NAME}")
     except Exception as e:
         print(f"❌ Error loading model: {e}")
         return
@@ -193,7 +193,7 @@ def main():
     print("="*80)
     
     if files_count > 0 and load_vector_store()[0] is not None:
-        print("\n✅ The system appears to be set up correctly!")
+        print("\n The system appears to be set up correctly!")
         print("   You can now use the RAG pipeline with:")
         print("   python rag_pipeline.py \"Your question about options trading?\"")
     else:

@@ -39,7 +39,7 @@ def initialize_chains():
         try:
             _, chain = create_rag_chain(retriever, provider=provider)
             provider_chains[provider] = chain
-            print(f"✅ Initialized chain for {provider}")
+            print(f" Initialized chain for {provider}")
         except Exception as e:
             print(f"❌ Failed to initialize {provider} chain: {e}")
 

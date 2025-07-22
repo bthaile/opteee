@@ -22,13 +22,13 @@ from datetime import datetime
 
 def check_mark(condition, message):
     """Print a formatted check message"""
-    status = "✅" if condition else "❌"
+    status = "" if condition else "❌"
     print(f"{status} {message}")
     return condition
 
 def warning_mark(condition, message):
     """Print a formatted warning message"""
-    status = "⚠️ " if condition else "✅"
+    status = "⚠️ " if condition else ""
     print(f"{status} {message}")
     return condition
 
@@ -335,7 +335,7 @@ def main():
         for key, value in data_status.items():
             print(f"   • {key.title()}: {value}")
     
-    print(f"\n🎯 Overall Status: {'✅ READY' if overall_status else '❌ NEEDS FIXES'}")
+    print(f"\n🎯 Overall Status: {' READY' if overall_status else '❌ NEEDS FIXES'}")
     
     if overall_status:
         print("\n Pipeline is ready for execution!")

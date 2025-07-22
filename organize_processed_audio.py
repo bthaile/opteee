@@ -57,7 +57,7 @@ def organize_processed_audio():
             title = get_video_title(video_id, metadata)
             title_display = title[:50] + "..." if len(title) > 50 else title
             
-            print(f"✅ {video_id} - {title_display}")
+            print(f" {video_id} - {title_display}")
             moved_count += 1
         else:
             print(f"⏸️ {video_id} - No transcript found, keeping in audio_files/")
@@ -65,7 +65,7 @@ def organize_processed_audio():
     
     print("="*60)
     print(f"📊 SUMMARY:")
-    print(f"✅ Moved to processed: {moved_count} files")
+    print(f" Moved to processed: {moved_count} files")
     print(f"⏸️ Kept in audio_files: {skipped_count} files")
     print(f"📁 Processed files location: {processed_dir}")
     
@@ -91,7 +91,7 @@ def show_directory_status():
         print(f"💡 You have {len(audio_files)} MP3 files that can be organized")
         print("   Run: python3 organize_processed_audio.py --move")
     else:
-        print("✅ All MP3 files are already organized!")
+        print(" All MP3 files are already organized!")
 
 if __name__ == "__main__":
     import sys

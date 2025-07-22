@@ -53,7 +53,7 @@ def load_processed_transcripts():
         except Exception as e:
             print(f"Error loading {filename}: {e}")
     
-    print(f"✅ Loaded {len(all_chunks)} transcript chunks")
+    print(f" Loaded {len(all_chunks)} transcript chunks")
     return all_chunks, all_metadatas
 
 def create_embeddings(texts, model_name=MODEL_NAME, batch_size=BATCH_SIZE):
@@ -71,7 +71,7 @@ def create_embeddings(texts, model_name=MODEL_NAME, batch_size=BATCH_SIZE):
         embeddings.extend(batch_embeddings)
     
     embeddings = np.array(embeddings).astype('float32')
-    print(f"✅ Created embeddings with shape: {embeddings.shape}")
+    print(f" Created embeddings with shape: {embeddings.shape}")
     return embeddings
 
 def create_faiss_index(embeddings, metadatas, texts):
@@ -88,24 +88,24 @@ def create_faiss_index(embeddings, metadatas, texts):
     
     # Add vectors to the index
     index.add(embeddings)
-    print(f"✅ Added {index.ntotal} vectors to the index")
+    print(f" Added {index.ntotal} vectors to the index")
     
     # Save the index
     index_path = os.path.join(VECTOR_OUTPUT_DIR, "transcript_index.faiss")
     faiss.write_index(index, index_path)
-    print(f"✅ Saved FAISS index to {index_path}")
+    print(f" Saved FAISS index to {index_path}")
     
     # Save the metadata mapping (needed for retrieval)
     metadata_path = os.path.join(VECTOR_OUTPUT_DIR, "transcript_metadata.pkl")
     with open(metadata_path, 'wb') as f:
         pickle.dump(metadatas, f)
-    print(f"✅ Saved metadata mapping to {metadata_path}")
+    print(f" Saved metadata mapping to {metadata_path}")
     
     # Save raw texts for retrieval
     texts_path = os.path.join(VECTOR_OUTPUT_DIR, "transcript_texts.pkl")
     with open(texts_path, 'wb') as f:
         pickle.dump(texts, f)
-    print(f"✅ Saved raw texts to {texts_path}")
+    print(f" Saved raw texts to {texts_path}")
     
     return index
 
@@ -179,8 +179,8 @@ def main(args):
     
     print("\n"+"="*80)
     print(" Vector store creation complete!")
-    print(f"✅ Model used: {args.model}")
-    print(f"✅ Total chunks indexed: {len(texts)}")
+    print(f" Model used: {args.model}")
+    print(f" Total chunks indexed: {len(texts)}")
     print(f"📁 Vector store saved to {VECTOR_OUTPUT_DIR}/")
     print("="*80)
     print("\nTo search your vector store, use search_transcripts.py")

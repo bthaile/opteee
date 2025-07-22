@@ -28,7 +28,7 @@ def convert_mp4_to_mp3(mp4_file: Path, mp3_file: Path) -> bool:
         result = subprocess.run(cmd, capture_output=True, text=True)
         
         if result.returncode == 0:
-            print(f"✅ Converted: {mp4_file.name} → {mp3_file.name}")
+            print(f" Converted: {mp4_file.name} → {mp3_file.name}")
             return True
         else:
             print(f"❌ Failed to convert {mp4_file.name}: {result.stderr}")
@@ -62,7 +62,7 @@ def main():
     mp4_files = list(audio_dir.glob("*.mp4"))
     
     if not mp4_files:
-        print("✅ No MP4 files found in audio_files directory")
+        print(" No MP4 files found in audio_files directory")
         return
     
     print(f"🎬 Found {len(mp4_files)} MP4 files to convert")
@@ -89,7 +89,7 @@ def main():
             failed += 1
     
     print(f"\n📊 Conversion complete:")
-    print(f"   ✅ Converted: {converted} files")
+    print(f"    Converted: {converted} files")
     print(f"   ❌ Failed: {failed} files")
     
     if converted > 0:

@@ -20,7 +20,7 @@ def show_clean_state():
             size_mb = file.stat().st_size / 1024 / 1024
             print(f"   📄 {file.name} ({size_mb:.1f}MB)")
     else:
-        print("   ✅ Empty (no dummy files!)")
+        print("    Empty (no dummy files!)")
     
     # Check transcript files
     transcript_dir = Path("transcripts")
@@ -32,7 +32,7 @@ def show_clean_state():
             size_kb = file.stat().st_size / 1024
             print(f"   📄 {file.name} ({size_kb:.1f}KB)")
     else:
-        print("   ✅ Empty (no error files!)")
+        print("    Empty (no error files!)")
     
     # Count tracking files
     tracking_files = []
@@ -48,9 +48,9 @@ def show_clean_state():
         print(f"   📄 {file}")
     
     print(f"\n📊 SUMMARY:")
-    print(f"   🧹 Dummy files removed: ✅ ALL GONE!")
-    print(f"   📁 Clean directories: ✅ YES") 
-    print(f"   🎯 Ready for downloads: ✅ YES")
+    print(f"   🧹 Dummy files removed:  ALL GONE!")
+    print(f"   📁 Clean directories:  YES") 
+    print(f"   🎯 Ready for downloads:  YES")
     
     print(f"\n🎯 NEXT STEPS:")
     print("   1. Download MP3 files (not MP4) from y2mate")

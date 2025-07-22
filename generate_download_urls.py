@@ -33,7 +33,7 @@ def generate_urls_from_note_files():
     
     print()
     print("="*70)
-    print(f"✅ Generated {len(urls)} YouTube URLs")
+    print(f" Generated {len(urls)} YouTube URLs")
     
     # Save to file
     with open("failed_video_urls.txt", "w") as f:

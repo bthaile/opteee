@@ -67,7 +67,7 @@ def extract_cookies_from_browser(video_url):
             cookie_file.write(line)
         
         cookie_file.close()
-        print(f"✅ Extracted {len(cookies)} cookies")
+        print(f" Extracted {len(cookies)} cookies")
         return cookie_file.name
         
     except Exception as e:
@@ -119,7 +119,7 @@ def download_single_video(video_url, video_id, output_dir="audio_files"):
             expected_file = os.path.join(output_dir, f"{video_id}.mp3")
             if os.path.exists(expected_file):
                 size_mb = os.path.getsize(expected_file) / (1024 * 1024)
-                print(f"  ✅ Downloaded: {expected_file} ({size_mb:.1f} MB)")
+                print(f"   Downloaded: {expected_file} ({size_mb:.1f} MB)")
                 return True
             else:
                 # Check for other possible filenames
@@ -127,7 +127,7 @@ def download_single_video(video_url, video_id, output_dir="audio_files"):
                     alt_file = os.path.join(output_dir, f"{video_id}.{ext}")
                     if os.path.exists(alt_file):
                         size_mb = os.path.getsize(alt_file) / (1024 * 1024)
-                        print(f"  ✅ Downloaded: {alt_file} ({size_mb:.1f} MB)")
+                        print(f"   Downloaded: {alt_file} ({size_mb:.1f} MB)")
                         return True
                 
                 print(f"  ❌ No output file found")
@@ -169,7 +169,7 @@ def main():
             success = download_single_video(video_url, video_id)
             if success:
                 successes += 1
-                print(f"   ✅ SUCCESS!")
+                print(f"    SUCCESS!")
             else:
                 print(f"   ❌ Failed")
             

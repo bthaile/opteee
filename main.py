@@ -45,13 +45,13 @@ async def startup_event():
     
     if TEST_MODE:
         print("🧪 Starting in TEST MODE - RAG service disabled")
-        print("✅ API endpoints available for testing")
+        print(" API endpoints available for testing")
         return
     
     print(" Initializing OPTEEE API...")
     rag_service = RAGService()
     await rag_service.initialize()
-    print("✅ RAG service initialized successfully")
+    print(" RAG service initialized successfully")
 
 @app.get("/api/health", response_model=HealthResponse)
 async def health_check():

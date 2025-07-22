@@ -18,7 +18,7 @@ def test_basic_functionality():
     for file in files_to_check:
         if os.path.exists(file):
             size = os.path.getsize(file)
-            print(f"✅ {file} - {size} bytes")
+            print(f" {file} - {size} bytes")
         else:
             print(f"❌ {file} - not found")
     

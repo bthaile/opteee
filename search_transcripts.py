@@ -24,13 +24,13 @@ def load_vector_store():
         raise FileNotFoundError(f"Index file not found at {index_path}. Run create_vector_store.py first.")
     
     index = faiss.read_index(index_path)
-    print(f"✅ Loaded FAISS index with {index.ntotal} vectors")
+    print(f" Loaded FAISS index with {index.ntotal} vectors")
     
     # Load metadata
     metadata_path = os.path.join(VECTOR_DIR, "transcript_metadata.pkl")
     with open(metadata_path, 'rb') as f:
         metadatas = pickle.load(f)
-    print(f"✅ Loaded metadata for {len(metadatas)} chunks")
+    print(f" Loaded metadata for {len(metadatas)} chunks")
     
     return index, metadatas
 

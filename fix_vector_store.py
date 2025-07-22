@@ -48,7 +48,7 @@ def load_processed_transcripts():
         except Exception as e:
             print(f"Error loading {filename}: {e}")
     
-    print(f"✅ Loaded {len(chunks)} transcript chunks")
+    print(f" Loaded {len(chunks)} transcript chunks")
     return chunks, metadatas
 
 def create_embeddings(texts, model_name=MODEL_NAME, batch_size=BATCH_SIZE):
@@ -66,7 +66,7 @@ def create_embeddings(texts, model_name=MODEL_NAME, batch_size=BATCH_SIZE):
         embeddings.extend(batch_embeddings)
     
     embeddings = np.array(embeddings).astype('float32')
-    print(f"✅ Created embeddings with shape: {embeddings.shape}")
+    print(f" Created embeddings with shape: {embeddings.shape}")
     return embeddings
 
 def create_and_save_index(embeddings, texts, metadatas):
@@ -83,24 +83,24 @@ def create_and_save_index(embeddings, texts, metadatas):
     
     # Add vectors to the index
     index.add(embeddings)
-    print(f"✅ Added {index.ntotal} vectors to the index")
+    print(f" Added {index.ntotal} vectors to the index")
     
     # Save the index
     index_path = os.path.join(VECTOR_DIR, "transcript_index.faiss")
     faiss.write_index(index, index_path)
-    print(f"✅ Saved FAISS index to {index_path}")
+    print(f" Saved FAISS index to {index_path}")
     
     # Save the metadata
     metadata_path = os.path.join(VECTOR_DIR, "transcript_metadata.pkl")
     with open(metadata_path, 'wb') as f:
         pickle.dump(metadatas, f)
-    print(f"✅ Saved metadata to {metadata_path}")
+    print(f" Saved metadata to {metadata_path}")
     
     # Save raw texts (important: save texts, not embeddings)
     texts_path = os.path.join(VECTOR_DIR, "transcript_texts.pkl")
     with open(texts_path, 'wb') as f:
         pickle.dump(texts, f)
-    print(f"✅ Saved raw texts to {texts_path}")
+    print(f" Saved raw texts to {texts_path}")
     
     return index
 
@@ -112,7 +112,7 @@ def verify_saved_data():
         # Check index
         index_path = os.path.join(VECTOR_DIR, "transcript_index.faiss")
         index = faiss.read_index(index_path)
-        print(f"✅ FAISS index verified: {index.ntotal} vectors with dimension {index.d}")
+        print(f" FAISS index verified: {index.ntotal} vectors with dimension {index.d}")
         
         # Check texts
         texts_path = os.path.join(VECTOR_DIR, "transcript_texts.pkl")
@@ -121,7 +121,7 @@ def verify_saved_data():
         
         # Ensure texts is a list of strings
         if isinstance(texts, list) and (not texts or isinstance(texts[0], str)):
-            print(f"✅ Texts verified: {len(texts)} text chunks")
+            print(f" Texts verified: {len(texts)} text chunks")
             print(f"   Sample text: {texts[0][:100]}..." if texts else "No texts")
         else:
             print(f"❌ Texts file has incorrect format")
@@ -133,11 +133,11 @@ def verify_saved_data():
         metadata_path = os.path.join(VECTOR_DIR, "transcript_metadata.pkl")
         with open(metadata_path, 'rb') as f:
             metadata = pickle.load(f)
-        print(f"✅ Metadata verified: {len(metadata)} metadata entries")
+        print(f" Metadata verified: {len(metadata)} metadata entries")
         
         # Check consistency
         if len(texts) == len(metadata) == index.ntotal:
-            print(f"✅ Data consistency verified: all components have {len(texts)} items")
+            print(f" Data consistency verified: all components have {len(texts)} items")
             return True
         else:
             print(f"❌ Data inconsistency detected:")
@@ -198,7 +198,7 @@ def main():
         print(f"Creating backup of existing vector store to {backup_dir}")
         os.system(f"rm -rf {backup_dir}")
         os.system(f"cp -r {VECTOR_DIR} {backup_dir}")
-        print(f"✅ Backup created")
+        print(f" Backup created")
         
         # Remove existing vector store
         print(f"Removing existing vector store")
@@ -215,7 +215,7 @@ def main():
     
     # Verify data
     if verify_saved_data():
-        print("\n✅ Vector store has been successfully fixed!")
+        print("\n Vector store has been successfully fixed!")
     else:
         print("\n❌ Issues detected with the fixed vector store. Please check the logs.")
         return
@@ -225,7 +225,7 @@ def main():
     
     print("\n" + "="*80)
     print(" Vector store fix complete!")
-    print(f"✅ Total chunks indexed: {len(texts)}")
+    print(f" Total chunks indexed: {len(texts)}")
     print(f"📁 Fixed vector store saved to {VECTOR_DIR}/")
     print("="*80)
 

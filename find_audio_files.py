@@ -59,10 +59,10 @@ def find_audio_files():
                 # YouTube video IDs are typically 11 characters
                 if len(name_without_ext) == 11 and name_without_ext.replace('-', '').replace('_', '').isalnum():
                     found_files.append(file)
-                    print(f"  ✅ Found: {file}")
+                    print(f"   Found: {file}")
                 elif any(char in name_without_ext for char in ['youtube', 'video', 'outlier']):
                     found_files.append(file)
-                    print(f"  ✅ Found: {file}")
+                    print(f"   Found: {file}")
     
     return found_files
 
@@ -93,7 +93,7 @@ def organize_audio_files(found_files):
             
             # Don't move if it's already in the right place
             if os.path.abspath(file_path) == os.path.abspath(destination):
-                print(f"  ✅ Already in place: {new_filename}")
+                print(f"   Already in place: {new_filename}")
                 continue
             
             # Don't overwrite existing files
@@ -148,7 +148,7 @@ def show_next_steps(audio_count):
     print(f"\n🎯 Next Steps:")
     
     if audio_count > 0:
-        print(f"✅ You have {audio_count} audio files ready for transcription!")
+        print(f" You have {audio_count} audio files ready for transcription!")
         print("\n📋 To get exact timestamps, run:")
         print("   python3 fix_timestamp_issue.py")
         print("\n Or to transcribe new/missing files only:")
@@ -161,10 +161,10 @@ def show_next_steps(audio_count):
         print("   3. Move audio files from other locations to audio_files/")
     
     print("\n📚 After transcription, the system will:")
-    print("   ✅ Generate transcripts with exact timestamps")
-    print("   ✅ Process chunks with proper timestamp metadata") 
-    print("   ✅ Rebuild vector store with correct video links")
-    print("   ✅ Enable precise video navigation")
+    print("    Generate transcripts with exact timestamps")
+    print("    Process chunks with proper timestamp metadata") 
+    print("    Rebuild vector store with correct video links")
+    print("    Enable precise video navigation")
 
 def main():
     """

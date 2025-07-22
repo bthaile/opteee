@@ -179,10 +179,10 @@ head transcripts/{VIDEO_ID}.txt
 - ❌ Manually update any tracking files
 
 ### **The System Automatically:**
-- ✅ Detects new MP3 files
-- ✅ Skips already processed files
-- ✅ Updates progress tracking
-- ✅ Removes successfully processed videos from failed list
+-  Detects new MP3 files
+-  Skips already processed files
+-  Updates progress tracking
+-  Removes successfully processed videos from failed list
 
 ### **Real Example:**
 ```bash

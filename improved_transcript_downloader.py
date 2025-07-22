@@ -315,7 +315,7 @@ class TranscriptDownloader:
                         for entry in transcript:
                             f.write(f"{entry['start']:.2f}s: {entry['text']}\n")
                     
-                    print(f"  ✅ Success with {method_name} for {video_id}")
+                    print(f"   Success with {method_name} for {video_id}")
                     self.progress['processed'].append(url)
                     self.progress['methods'][video_id] = method_name
                     self.stats[f"{method_name.lower().replace(' ', '_')}_success"] += 1
@@ -359,7 +359,7 @@ class TranscriptDownloader:
         print(f"🎯 {len(remaining_videos)} remaining to process")
         
         if not remaining_videos:
-            print("✅ All videos have been processed!")
+            print(" All videos have been processed!")
             return
         
         # Process remaining videos
@@ -385,9 +385,9 @@ class TranscriptDownloader:
         # Final statistics
         elapsed_time = time.time() - start_time
         print(f"\n📊 Processing Summary:")
-        print(f"✅ YouTube API successes: {self.stats['youtube_api_success']}")
-        print(f"✅ Transcript API successes: {self.stats['youtube_transcript_api_success']}")
-        print(f"✅ yt-dlp successes: {self.stats['yt_dlp_success']}")
+        print(f" YouTube API successes: {self.stats['youtube_api_success']}")
+        print(f" Transcript API successes: {self.stats['youtube_transcript_api_success']}")
+        print(f" yt-dlp successes: {self.stats['yt_dlp_success']}")
         print(f"⏭️  Skipped existing: {self.stats['skipped_existing']}")
         print(f"❌ Total failures: {self.stats['total_failures']}")
         print(f"⏱️  Total time: {elapsed_time:.2f} seconds")

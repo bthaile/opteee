@@ -19,7 +19,7 @@ def check_directory():
     """Check if vector store directory exists"""
     print(f"Checking for vector store directory: {VECTOR_STORE_DIR}")
     if os.path.exists(VECTOR_STORE_DIR):
-        print(f"✅ Directory exists")
+        print(f" Directory exists")
         print(f"Contents: {os.listdir(VECTOR_STORE_DIR)}")
     else:
         print(f"❌ Directory does not exist")
@@ -30,7 +30,7 @@ def check_file(path):
     """Check if a file exists and get its size"""
     if os.path.exists(path):
         size = os.path.getsize(path)
-        print(f"✅ File exists: {path}")
+        print(f" File exists: {path}")
         print(f"   Size: {size / 1024 / 1024:.2f} MB")
         return True
     else:
@@ -47,7 +47,7 @@ def load_texts():
         with open(TEXTS_PATH, 'rb') as f:
             texts = pickle.load(f)
             
-        print(f"✅ Successfully loaded texts")
+        print(f" Successfully loaded texts")
         print(f"   Type: {type(texts)}")
         
         if isinstance(texts, list):
@@ -76,7 +76,7 @@ def load_metadata():
         with open(METADATA_PATH, 'rb') as f:
             metadata = pickle.load(f)
             
-        print(f"✅ Successfully loaded metadata")
+        print(f" Successfully loaded metadata")
         print(f"   Type: {type(metadata)}")
         
         if isinstance(metadata, list):
@@ -97,7 +97,7 @@ def load_index():
     
     try:
         index = faiss.read_index(INDEX_PATH)
-        print(f"✅ Successfully loaded FAISS index")
+        print(f" Successfully loaded FAISS index")
         print(f"   Number of vectors: {index.ntotal}")
         print(f"   Dimension: {index.d}")
         return index
@@ -123,7 +123,7 @@ def check_consistency(texts, metadata, index):
     print(f"Index vectors: {index_count}")
     
     if texts_count == metadata_count == index_count:
-        print("✅ All components have the same number of items")
+        print(" All components have the same number of items")
         return True
     else:
         print("❌ Inconsistent item counts between components")
@@ -153,7 +153,7 @@ def main():
     print("="*80)
     
     if is_consistent and texts is not None and metadata is not None and index is not None:
-        print("✅ Vector store appears to be in good condition")
+        print(" Vector store appears to be in good condition")
         
         # Check format of texts
         if isinstance(texts, np.ndarray):

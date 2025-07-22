@@ -12,7 +12,7 @@ def test_imports():
     
     try:
         from pipeline_config import CHUNK_SIZE, OVERLAP, VIDEOS_JSON, METADATA_JSON
-        print(f"✅ pipeline_config imported successfully")
+        print(f" pipeline_config imported successfully")
         print(f"   Chunk size: {CHUNK_SIZE}, Overlap: {OVERLAP}")
         print(f"   Videos file: {VIDEOS_JSON}")
         print(f"   Metadata file: {METADATA_JSON}")
@@ -22,14 +22,14 @@ def test_imports():
     
     try:
         import preprocess_transcripts
-        print(f"✅ preprocess_transcripts imported successfully")
+        print(f" preprocess_transcripts imported successfully")
     except Exception as e:
         print(f"❌ preprocess_transcripts import failed: {e}")
         return False
     
     try:
         import outlier_scraper
-        print(f"✅ outlier_scraper imported successfully")
+        print(f" outlier_scraper imported successfully")
     except Exception as e:
         print(f"❌ outlier_scraper import failed: {e}")
         return False
@@ -45,14 +45,14 @@ def test_file_consistency():
         print("❌ Old CSV file still exists - should be removed")
         return False
     else:
-        print("✅ Old CSV file removed")
+        print(" Old CSV file removed")
     
     # Check that backup files are gone
     if os.path.exists('app.py.backup'):
         print("❌ Backup file still exists - should be removed")
         return False
     else:
-        print("✅ Backup files removed")
+        print(" Backup files removed")
     
     return True
 
@@ -70,7 +70,7 @@ def test_configuration_consistency():
         print(f"❌ Invalid configuration: min chunk words ({MIN_CHUNK_WORDS}) must be > 0")
         return False
     
-    print(f"✅ Configuration is valid:")
+    print(f" Configuration is valid:")
     print(f"   Chunk size: {CHUNK_SIZE} words")
     print(f"   Overlap: {OVERLAP} words")
     print(f"   Min chunk words: {MIN_CHUNK_WORDS}")
@@ -96,7 +96,7 @@ def test_script_organization():
     all_present = True
     for script in required_scripts:
         if os.path.exists(script):
-            print(f"✅ {script}")
+            print(f" {script}")
         else:
             print(f"❌ {script} missing")
             all_present = False

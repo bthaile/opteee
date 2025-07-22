@@ -52,7 +52,7 @@ def run_flask():
 # Start Flask app in background
 flask_thread = threading.Thread(target=run_flask, daemon=True)
 flask_thread.start()
-print("✅ Flask app started in background thread")
+print(" Flask app started in background thread")
 
 # Create Gradio interface
 def empty_fn():
@@ -71,13 +71,13 @@ demo = gr.Interface(
 gradio_app = demo
 """)
 
-print("\n✅ Created gradio_app.py directly")
+print("\n Created gradio_app.py directly")
 
 # Try running the main command that would normally be run
 print("\nTrying to run gradio_app module:")
 try:
     from gradio_app import gradio_app
-    print("✅ Successfully imported gradio_app")
+    print(" Successfully imported gradio_app")
 except Exception as e:
     print(f"❌ Error importing gradio_app: {e}")
     import traceback

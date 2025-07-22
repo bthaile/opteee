@@ -64,7 +64,7 @@ def find_ffmpeg():
         result = subprocess.run(['which', 'ffmpeg'], capture_output=True, text=True)
         if result.returncode == 0 and result.stdout.strip():
             ffmpeg_path = result.stdout.strip()
-            print(f"✅ Found ffmpeg at: {ffmpeg_path}")
+            print(f" Found ffmpeg at: {ffmpeg_path}")
             return ffmpeg_path
     except:
         pass
@@ -81,7 +81,7 @@ def find_ffmpeg():
     
     for path in common_paths:
         if os.path.exists(path):
-            print(f"✅ Found ffmpeg at: {path}")
+            print(f" Found ffmpeg at: {path}")
             return path
     
     print("\n❌ ffmpeg not found! Please install it:")
@@ -122,12 +122,12 @@ def collect_video_metadata(videos_data):
     try:
         print("🔌 Initializing YouTube API client...")
         youtube = build('youtube', 'v3', developerKey=YOUTUBE_API_KEY)
-        print("✅ YouTube API client initialized successfully")
+        print(" YouTube API client initialized successfully")
         
         # Test the API key with a simple request
         print(" Testing API key with a sample request...")
         test_response = youtube.videos().list(part='snippet', id='dQw4w9WgXcQ').execute()
-        print("✅ API key test successful!")
+        print(" API key test successful!")
     except HttpError as e:
         print(f"❌ ERROR: Invalid API key! Error: {e}")
         print("Please check your API key in the .env file")
@@ -322,7 +322,7 @@ def scrape_channel_videos():
         print("\n Saving scheduled videos list...")
         with open('scheduled_videos.json', 'w', encoding='utf-8') as f:
             json.dump(scheduled_videos, f, indent=2)
-        print(f"✅ Saved {len(scheduled_videos)} scheduled videos to scheduled_videos.json")
+        print(f" Saved {len(scheduled_videos)} scheduled videos to scheduled_videos.json")
 
     # Try to enhance metadata with YouTube API if available
     if YOUTUBE_API_KEY:
@@ -331,7 +331,7 @@ def scrape_channel_videos():
         
         # Debug: Print first video metadata after API enhancement
         if unique_videos and len(unique_videos) > 0:
-            print("\n✅ API Metadata Enhancement Sample:")
+            print("\n API Metadata Enhancement Sample:")
             sample_video = unique_videos[0]
             print(f"  Video ID: {sample_video.get('video_id', 'MISSING')}")
             print(f"  Title: {sample_video.get('title', 'MISSING')}")
@@ -361,7 +361,7 @@ def scrape_channel_videos():
         
         # Debug: Print first video metadata after yt-dlp enhancement
         if unique_videos and len(unique_videos) > 0:
-            print("\n✅ yt-dlp Metadata Enhancement Sample:")
+            print("\n yt-dlp Metadata Enhancement Sample:")
             sample_video = unique_videos[0]
             print(f"  Video ID: {sample_video.get('video_id', 'MISSING')}")
             print(f"  Title: {sample_video.get('title', 'MISSING')}")
@@ -373,7 +373,7 @@ def scrape_channel_videos():
     print("\n Saving metadata to file...")
     with open('outlier_trading_videos_metadata.json', 'w', encoding='utf-8') as jsonfile:
         json.dump(unique_videos, jsonfile, indent=4, ensure_ascii=False)
-    print("✅ Saved to outlier_trading_videos_metadata.json")
+    print(" Saved to outlier_trading_videos_metadata.json")
     
     print(f"\n📊 Final Summary:")
     print(f"  Total videos found: {len(unique_videos)}")
@@ -416,7 +416,7 @@ def find_missing_transcripts(videos_data):
             full_path = os.path.join(TRANSCRIPT_DIR, filename)
             if os.path.exists(full_path):
                 transcript_exists = True
-                print(f"  ✅ Found transcript: {filename}")
+                print(f"   Found transcript: {filename}")
                 break
         
         if not transcript_exists:
@@ -484,7 +484,7 @@ def download_audio(url, output_path, ffmpeg_path):
             raise Exception(f"FFmpeg failed with code {result.returncode}")
             
         if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-            print(f"✅ Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
+            print(f" Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
             return True
     except Exception as e:
         print(f"Method 1 (direct FFmpeg) failed: {str(e)}")
@@ -529,7 +529,7 @@ def download_audio(url, output_path, ffmpeg_path):
                 raise e
             
             if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-                print(f"✅ Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
+                print(f" Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
                 return True
     except Exception as e:
         print(f"Method 2 (mobile API) failed: {str(e)}")
@@ -573,7 +573,7 @@ def download_audio(url, output_path, ffmpeg_path):
                 raise e
             
             if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-                print(f"✅ Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
+                print(f" Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
                 return True
     except Exception as e:
         print(f"Method 3 (browser API) failed: {str(e)}")
@@ -628,7 +628,7 @@ def process_transcripts(missing_videos):
                 if os.path.exists(audio_path):
                     file_size = os.path.getsize(audio_path)
                     if file_size > 10000:  # More than 10KB
-                        print(f"✅ Found existing audio file: {audio_path} ({file_size} bytes)")
+                        print(f" Found existing audio file: {audio_path} ({file_size} bytes)")
                     else:
                         print(f"⚠️ Found small audio file ({file_size} bytes), will try to download again")
                         os.remove(audio_path)  # Remove small file
@@ -663,7 +663,7 @@ def process_transcripts(missing_videos):
                         f.write(f"{segment['start']:.2f}s: {segment['text']}\n")
                 
                 successful.append(video)
-                print(f"✅ Successfully processed {video_id}")
+                print(f" Successfully processed {video_id}")
                 break  # Success, exit retry loop
                 
             except Exception as e:
@@ -710,7 +710,7 @@ def perform_transcript_preprocessing(metadata):
     # Hand off processing to the imported module
     try:
         transcript_processor.process_transcripts(metadata_dict)
-        print(f"\n✅ Transcript preprocessing complete using preprocess_transcripts module!")
+        print(f"\n Transcript preprocessing complete using preprocess_transcripts module!")
     except Exception as e:
         print(f"❌ Error in preprocess_transcripts module: {e}")
         print(f"Error details: {str(e)}")
@@ -731,7 +731,7 @@ def main():
         # Step 3: Process missing transcripts
         successful, failed = process_transcripts(missing_videos)
     else:
-        print("✅ No videos need processing!")
+        print(" No videos need processing!")
     
     # Step 4: Use preprocess_transcripts module for chunking
     print("\n Step 4: Preprocessing transcripts...")
@@ -759,7 +759,7 @@ def main():
         if metadata_dict and len(metadata_dict) > 0:
             first_key = list(metadata_dict.keys())[0]
             sample_video = metadata_dict[first_key]
-            print("\n✅ Sample Metadata for Preprocessing:")
+            print("\n Sample Metadata for Preprocessing:")
             print(f"  Video ID: {sample_video.get('video_id', 'MISSING')}")
             print(f"  Title: {sample_video.get('title', 'MISSING')}")
             print(f"  Channel: {sample_video.get('channel_title', 'MISSING')}")

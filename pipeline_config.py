@@ -105,7 +105,7 @@ if __name__ == "__main__":
     print(f"Overlap: {OVERLAP} words")
     print(f"Min Chunk Words: {MIN_CHUNK_WORDS}")
     print(f"Whisper Model: {WHISPER_MODEL}")
-    print(f"YouTube API Key: {'✅ Found' if YOUTUBE_API_KEY else '❌ Missing'}")
+    print(f"YouTube API Key: {' Found' if YOUTUBE_API_KEY else '❌ Missing'}")
     
     issues = validate_config()
     if issues:
@@ -113,4 +113,4 @@ if __name__ == "__main__":
         for issue in issues:
             print(f"  - {issue}")
     else:
-        print("\n✅ Configuration looks good!") 
+        print("\n Configuration looks good!") 

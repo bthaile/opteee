@@ -57,7 +57,7 @@ def test_browser_access(video_url):
                 EC.presence_of_element_located((By.CSS_SELECTOR, "h1.ytd-video-primary-info-renderer"))
             )
             title = title_element.text
-            print(f"✅ Successfully accessed video: {title}")
+            print(f" Successfully accessed video: {title}")
             
             # Check if there are any error messages
             error_messages = driver.find_elements(By.CSS_SELECTOR, ".yt-alert-message")
@@ -147,7 +147,7 @@ def test_yt_dlp_strategies(video_url, video_id):
             with yt_dlp.YoutubeDL(strategy['options']) as ydl:
                 # First, try to extract info without downloading
                 info = ydl.extract_info(video_url, download=False)
-                print(f"      ✅ Successfully extracted video info")
+                print(f"       Successfully extracted video info")
                 print(f"      📹 Title: {info.get('title', 'Unknown')}")
                 print(f"      ⏱️ Duration: {info.get('duration', 'Unknown')} seconds")
                 
@@ -157,7 +157,7 @@ def test_yt_dlp_strategies(video_url, video_id):
                 # Check if file was created
                 if os.path.exists(audio_path) and os.path.getsize(audio_path) > 1000:
                     size_mb = os.path.getsize(audio_path) / (1024 * 1024)
-                    print(f"      ✅ Downloaded successfully: {size_mb:.1f} MB")
+                    print(f"       Downloaded successfully: {size_mb:.1f} MB")
                     
                     # Clean up test file
                     os.remove(audio_path)
@@ -216,7 +216,7 @@ def main():
             ytdlp_success = test_yt_dlp_strategies(video_url, video_id)
             
             if ytdlp_success:
-                print(f"\n✅ SUCCESS! Found working approach for {video_id}")
+                print(f"\n SUCCESS! Found working approach for {video_id}")
             else:
                 print(f"\n❌ All yt-dlp strategies failed for {video_id}")
         else:

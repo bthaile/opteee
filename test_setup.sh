@@ -9,7 +9,7 @@ if ! docker info > /dev/null 2>&1; then
     exit 1
 fi
 
-echo "✅ Docker is running"
+echo " Docker is running"
 
 # Check if .env file exists
 if [ ! -f ".env" ]; then
@@ -18,11 +18,11 @@ if [ ! -f ".env" ]; then
 OPENAI_API_KEY=your_openai_api_key_here
 ANTHROPIC_API_KEY=your_anthropic_api_key_here
 EOF
-    echo "✅ Created .env file. Please add your API keys and try again."
+    echo " Created .env file. Please add your API keys and try again."
     exit 1
 fi
 
-echo "✅ .env file found"
+echo " .env file found"
 
 # Check if API keys are set
 if grep -q "your_.*_api_key_here" .env; then
@@ -30,7 +30,7 @@ if grep -q "your_.*_api_key_here" .env; then
     echo "   Please replace with your actual API keys"
 fi
 
-echo "✅ Ready to build and run!"
+echo " Ready to build and run!"
 echo ""
 echo "Run the following command to start the application:"
 echo "  ./run_local.sh"

@@ -102,7 +102,7 @@ def regenerate_transcripts_with_timestamps(use_parallel=False, num_workers=None)
                             skipped += 1
                         else:
                             successful += 1
-                        print(f"✅ {result['video_id']}: {result['message']}")
+                        print(f" {result['video_id']}: {result['message']}")
                     else:
                         failed += 1
                         print(f"❌ {result['video_id']}: {result['message']}")
@@ -146,7 +146,7 @@ def regenerate_transcripts_with_timestamps(use_parallel=False, num_workers=None)
                         if text:  # Only write non-empty segments
                             f.write(f"{start_time:.2f}s: {text}\n")
                 
-                print(f"✅ Saved {output_file}")
+                print(f" Saved {output_file}")
                 successful += 1
                 
             except Exception as e:
@@ -156,12 +156,12 @@ def regenerate_transcripts_with_timestamps(use_parallel=False, num_workers=None)
     
     # Summary
     print(f"\n📊 Processing Summary:")
-    print(f"  ✅ Successful: {successful}")
+    print(f"   Successful: {successful}")
     print(f"  ⏭️  Skipped: {skipped}")
     print(f"  ❌ Failed: {failed}")
     print(f"  📁 Total: {len(audio_files)}")
     
-    print("✅ Transcript regeneration complete!")
+    print(" Transcript regeneration complete!")
     return True
 
 def reprocess_chunks():
@@ -178,7 +178,7 @@ def reprocess_chunks():
             text=True,
             check=True
         )
-        print("✅ Chunk processing complete!")
+        print(" Chunk processing complete!")
         return True
     except subprocess.CalledProcessError as e:
         print(f"❌ Error during chunk processing: {e}")
@@ -205,7 +205,7 @@ def rebuild_vector_store():
             text=True,
             check=True
         )
-        print("✅ Vector store rebuild complete!")
+        print(" Vector store rebuild complete!")
         return True
     except subprocess.CalledProcessError as e:
         print(f"❌ Error during vector store rebuild: {e}")
@@ -243,7 +243,7 @@ def verify_fix():
         ]
         
         if non_zero_examples:
-            print(f"\n✅ Success! Found {len(non_zero_examples)} examples with proper timestamps:")
+            print(f"\n Success! Found {len(non_zero_examples)} examples with proper timestamps:")
             for i, entry in enumerate(non_zero_examples[:3]):
                 print(f"  {i+1}. {entry['title'][:50]}...")
                 print(f"     Timestamp: {entry['start_timestamp_seconds']}s")

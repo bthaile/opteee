@@ -81,7 +81,7 @@ class VideoProcessor:
             }
         
         self.save_status()
-        print(f"✅ Scanned {len(self.status_data['videos'])} videos")
+        print(f" Scanned {len(self.status_data['videos'])} videos")
     
     def load_failed_videos(self) -> List[Dict]:
         """Load failed videos from various tracking files"""
@@ -163,7 +163,7 @@ class VideoProcessor:
             emoji = {
                 "FAILED_DOWNLOAD": "❌",
                 "HAVE_VIDEO_NO_TRANSCRIPT": "🎵",
-                "COMPLETED": "✅",
+                "COMPLETED": "",
                 "REQUIRES_MANUAL": "🔧"
             }.get(status, "❓")
             
@@ -183,13 +183,13 @@ class VideoProcessor:
         ]
         
         if not matching_videos:
-            print(f"✅ No videos with status: {status}")
+            print(f" No videos with status: {status}")
             return
         
         status_names = {
             "FAILED_DOWNLOAD": "❌ Need Manual Download",
             "HAVE_VIDEO_NO_TRANSCRIPT": "🎵 Need Transcript Generation",
-            "COMPLETED": "✅ Completed Successfully",
+            "COMPLETED": " Completed Successfully",
             "REQUIRES_MANUAL": "🔧 Requires Manual Intervention"
         }
         
@@ -216,7 +216,7 @@ class VideoProcessor:
             ]
         
         if not video_ids:
-            print("✅ No videos need transcript processing")
+            print(" No videos need transcript processing")
             return
         
         print(f"🎤 Processing transcripts for {len(video_ids)} videos...")
@@ -225,7 +225,7 @@ class VideoProcessor:
         try:
             from pipeline_config import WHISPER_MODEL
             model = whisper.load_model(WHISPER_MODEL)
-            print(f"✅ Whisper model '{WHISPER_MODEL}' loaded")
+            print(f" Whisper model '{WHISPER_MODEL}' loaded")
         except Exception as e:
             print(f"❌ Failed to load Whisper model: {e}")
             return
@@ -257,7 +257,7 @@ class VideoProcessor:
                 self.status_data["videos"][video_id]["last_checked"] = datetime.now().isoformat()
                 
                 char_count = len(result['text'])
-                print(f"✅ Transcript saved: {char_count} characters")
+                print(f" Transcript saved: {char_count} characters")
                 successful += 1
                 
             except Exception as e:
@@ -311,7 +311,7 @@ class VideoProcessor:
                 print(f"⚠️  Error reading {transcript_file}: {e}")
         
         self.save_status()
-        print(f"✅ Cleanup complete: {cleaned_audio} audio files, {cleaned_transcripts} transcript files")
+        print(f" Cleanup complete: {cleaned_audio} audio files, {cleaned_transcripts} transcript files")
     
     def export_download_list(self, filename: str = "download_list.txt"):
         """Export a list of videos that need manual download"""
@@ -321,7 +321,7 @@ class VideoProcessor:
         ]
         
         if not failed_videos:
-            print("✅ No videos need manual download")
+            print(" No videos need manual download")
             return
         
         with open(filename, 'w') as f:

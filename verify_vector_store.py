@@ -33,7 +33,7 @@ def load_vector_store():
     # Load the index
     try:
         index = faiss.read_index(index_path)
-        print(f"✅ FAISS index loaded: {index.ntotal} vectors with dimension {index.d}")
+        print(f" FAISS index loaded: {index.ntotal} vectors with dimension {index.d}")
         
         # Load texts and metadata
         with open(texts_path, 'rb') as f:
@@ -42,8 +42,8 @@ def load_vector_store():
         with open(metadata_path, 'rb') as f:
             metadata = pickle.load(f)
         
-        print(f"✅ Loaded {len(texts)} text chunks")
-        print(f"✅ Loaded {len(metadata)} metadata entries")
+        print(f" Loaded {len(texts)} text chunks")
+        print(f" Loaded {len(metadata)} metadata entries")
         
         if len(texts) != index.ntotal or len(metadata) != index.ntotal:
             print(f"⚠️ Warning: Mismatch in counts - FAISS: {index.ntotal}, Texts: {len(texts)}, Metadata: {len(metadata)}")
@@ -127,7 +127,7 @@ def compare_transcript_coverage(transcript_chunks, vector_store_chunks):
             only_in_vector_store += 1
             missing_in_processed.append(video_id)
     
-    print(f"✅ Transcripts in both: {in_both}")
+    print(f" Transcripts in both: {in_both}")
     print(f"⚠️ Transcripts only in processed files: {only_in_processed}")
     print(f"⚠️ Transcripts only in vector store: {only_in_vector_store}")
     print(f"⚠️ Transcripts with chunk count mismatches: {chunk_mismatches}")
@@ -179,7 +179,7 @@ def check_metadata_quality(metadata):
         if missing_count > 0:
             print(f"⚠️ {field}: Missing in {missing_count}/{total_items} entries ({percent:.2f}%)")
         else:
-            print(f"✅ {field}: Present in all entries")
+            print(f" {field}: Present in all entries")
 
 def main():
     """Main function to verify vector store completeness"""
@@ -223,8 +223,8 @@ def main():
     print("="*80)
     
     if only_in_processed == 0 and chunk_mismatches == 0:
-        print("\n✅ All processed transcripts are correctly included in the vector store!")
-        print(f"✅ Total of {len(transcript_chunks)} transcripts with {len(metadata)} chunks are ready for RAG.")
+        print("\n All processed transcripts are correctly included in the vector store!")
+        print(f" Total of {len(transcript_chunks)} transcripts with {len(metadata)} chunks are ready for RAG.")
     else:
         print("\n⚠️ There are some issues with the vector store:")
         if only_in_processed > 0:

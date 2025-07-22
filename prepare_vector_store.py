@@ -24,7 +24,7 @@ def main():
     # Copy the necessary files to the temp directory
     try:
         shutil.copytree(VECTOR_STORE_DIR, os.path.join(temp_dir, "vector_store"))
-        print(f"✅ Copied vector store files to {temp_dir}")
+        print(f" Copied vector store files to {temp_dir}")
     except Exception as e:
         print(f"❌ Error copying files: {str(e)}")
         return False
@@ -33,7 +33,7 @@ def main():
     try:
         with tarfile.open(OUTPUT_FILE, "w:gz") as tar:
             tar.add(temp_dir, arcname=".")
-        print(f"✅ Created compressed archive: {OUTPUT_FILE}")
+        print(f" Created compressed archive: {OUTPUT_FILE}")
     except Exception as e:
         print(f"❌ Error creating archive: {str(e)}")
         return False

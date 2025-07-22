@@ -55,7 +55,7 @@ async def root():
         <p>This Discord bot provides access to the OPTEEE options trading knowledge base.</p>
         
         <div class="status-card status-healthy">
-            <h3>✅ Service Status</h3>
+            <h3> Service Status</h3>
             <p><strong>Status:</strong> {bot_status["status"].title()}</p>
             <p><strong>Message:</strong> {bot_status["message"]}</p>
             <p><strong>Uptime Since:</strong> {bot_status["uptime_start"]}</p>

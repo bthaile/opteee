@@ -21,7 +21,7 @@ if ! grep -q "html-to-markdown" requirements.txt; then
     exit 1
 fi
 
-echo "✅ Requirements file looks good"
+echo " Requirements file looks good"
 
 # Build the Docker image
 echo ""
@@ -29,7 +29,7 @@ echo "🏗️  Building Docker image..."
 docker build -t opteee-discord-bot-test .
 
 if [ $? -eq 0 ]; then
-    echo "✅ Docker build successful!"
+    echo " Docker build successful!"
     
     # Run a quick test inside the container
     echo ""

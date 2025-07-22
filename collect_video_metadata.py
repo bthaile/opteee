@@ -291,7 +291,7 @@ def main():
                 for key, value in enhanced_video.items():
                     if value is not None:  # Only update if enhanced data has a value
                         video[key] = value
-        print("✅ Metadata enhancement complete")
+        print(" Metadata enhancement complete")
     else:
         print("⚠️ No YouTube API key found - using basic yt-dlp metadata only")
     

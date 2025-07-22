@@ -25,7 +25,7 @@ except ImportError:
         subprocess.run(["pip", "install", "browser-cookie3"], check=True, capture_output=True)
         import browser_cookie3
         BROWSER_COOKIE_AVAILABLE = True
-        print("✅ Successfully installed browser_cookie3")
+        print(" Successfully installed browser_cookie3")
     except Exception as e:
         print(f"❌ Failed to install browser_cookie3: {e}")
         BROWSER_COOKIE_AVAILABLE = False
@@ -140,7 +140,7 @@ def clean_dummy_files(audio_dir="audio_files"):
                     os.remove(note_path)
                 count += 1
     
-    print(f"✅ Removed {count} dummy/small audio files")
+    print(f" Removed {count} dummy/small audio files")
     return count
 
 def extract_browser_cookies():
@@ -157,7 +157,7 @@ def extract_browser_cookies():
             cookies = browser_cookie3.chrome(domain_name='.youtube.com')
             cookie_jar = yt_dlp.utils.cookiejar_from_dict({c.name: c.value for c in cookies})
             yt_dlp.utils.cookiejar_to_netscape(cookie_jar, cookie_file)
-            print("✅ Successfully extracted cookies from Chrome")
+            print(" Successfully extracted cookies from Chrome")
             return cookie_file
         except Exception as e:
             print(f"⚠️ Could not extract Chrome cookies: {e}")
@@ -167,7 +167,7 @@ def extract_browser_cookies():
             cookies = browser_cookie3.firefox(domain_name='.youtube.com')
             cookie_jar = yt_dlp.utils.cookiejar_from_dict({c.name: c.value for c in cookies})
             yt_dlp.utils.cookiejar_to_netscape(cookie_jar, cookie_file)
-            print("✅ Successfully extracted cookies from Firefox")
+            print(" Successfully extracted cookies from Firefox")
             return cookie_file
         except Exception as e:
             print(f"⚠️ Could not extract Firefox cookies: {e}")
@@ -177,7 +177,7 @@ def extract_browser_cookies():
             cookies = browser_cookie3.safari(domain_name='.youtube.com')
             cookie_jar = yt_dlp.utils.cookiejar_from_dict({c.name: c.value for c in cookies})
             yt_dlp.utils.cookiejar_to_netscape(cookie_jar, cookie_file)
-            print("✅ Successfully extracted cookies from Safari")
+            print(" Successfully extracted cookies from Safari")
             return cookie_file
         except Exception as e:
             print(f"⚠️ Could not extract Safari cookies: {e}")
@@ -237,7 +237,7 @@ def download_audio(url, output_path):
             raise Exception(f"FFmpeg failed with code {result.returncode}")
             
         if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-            print(f"✅ Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
+            print(f" Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
             return True
     except Exception as e:
         print(f"Method 1 (direct FFmpeg) failed: {str(e)}")
@@ -287,7 +287,7 @@ def download_audio(url, output_path):
             ydl.download([url])
             
             if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-                print(f"✅ Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
+                print(f" Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
                 return True
     except Exception as e:
         print(f"Method 2 (mobile API) failed: {str(e)}")
@@ -319,7 +319,7 @@ def download_audio(url, output_path):
             ydl.download([url])
             
             if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-                print(f"✅ Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
+                print(f" Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
                 return True
     except Exception as e:
         print(f"Method 3 (browser API) failed: {str(e)}")
@@ -343,7 +343,7 @@ def download_audio(url, output_path):
         subprocess.run(cmd, check=True, capture_output=True)
         
         if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-            print(f"✅ Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
+            print(f" Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
             return True
     except Exception as e:
         print(f"Method 4 (direct yt-dlp) failed: {str(e)}")
@@ -376,7 +376,7 @@ def download_audio(url, output_path):
                 os.remove(temp_file)
                 
             if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-                print(f"✅ Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
+                print(f" Successfully downloaded to {output_path} (size: {os.path.getsize(output_path)} bytes)")
                 return True
     except Exception as e:
         print(f"Method 5 (pytube) failed: {str(e)}")
@@ -405,7 +405,7 @@ def download_audio(url, output_path):
                         shutil.copy(file_path, output_path)
                 
                 if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-                    print(f"✅ Successfully copied/converted to {output_path} (size: {os.path.getsize(output_path)} bytes)")
+                    print(f" Successfully copied/converted to {output_path} (size: {os.path.getsize(output_path)} bytes)")
                     return True
     
     # Record this URL for manual processing
@@ -578,7 +578,7 @@ def main():
     failed_videos = progress['failed']
     
     if not failed_videos:
-        print("✅ No failed videos to process!")
+        print(" No failed videos to process!")
         return
     
     print(f"📚 Found {len(failed_videos)} failed videos to process with Whisper")
@@ -605,7 +605,7 @@ def main():
         # Check if transcript already exists
         transcript_path = os.path.join(output_dir, f"{video_id}.txt")
         if os.path.exists(transcript_path):
-            print(f"✅ Transcript already exists for video {video_id}, skipping...")
+            print(f" Transcript already exists for video {video_id}, skipping...")
             successful.append(url)
             continue
         
@@ -637,7 +637,7 @@ def main():
                 if not os.path.exists(audio_filename):
                     download_audio(url, audio_filename)
                 else:
-                    print(f"✅ Audio file already exists: {audio_filename}")
+                    print(f" Audio file already exists: {audio_filename}")
                 
                 # Check for possible double extension
                 double_ext_path = audio_filename + '.mp3'
@@ -657,7 +657,7 @@ def main():
                 transcribe_with_whisper(audio_filename, transcript_filename)
                 
                 processing_time = time.time() - start_time
-                print(f"✅ Transcript saved for {video_id} (took {processing_time:.2f} seconds)")
+                print(f" Transcript saved for {video_id} (took {processing_time:.2f} seconds)")
                 
                 # Update progress
                 successful.append(url)
@@ -692,7 +692,7 @@ def main():
             print(f"These are saved in {MANUAL_PROCESSING_FILE} for later reference")
     
     print("\n📊 Processing Summary:")
-    print(f"✅ Successfully processed with Whisper: {len(successful)} videos")
+    print(f" Successfully processed with Whisper: {len(successful)} videos")
     print(f"❌ Still failed: {len(still_failed)} videos")
     
     if still_failed:

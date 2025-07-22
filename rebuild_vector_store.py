@@ -116,7 +116,7 @@ def main():
     
     # Check if rebuild is needed
     if not is_rebuild_needed():
-        print("✅ Vector store is up to date")
+        print(" Vector store is up to date")
         return True
     
     print("\n" + "=" * 50)
@@ -140,7 +140,7 @@ def main():
             
         create_vector_store_main(args)
         update_vector_store_timestamp()
-        print("✅ Vector store rebuilt successfully")
+        print(" Vector store rebuilt successfully")
         return True
     except Exception as e:
         print(f"❌ Error rebuilding vector store: {str(e)}")

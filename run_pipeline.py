@@ -73,7 +73,7 @@ def run_video_scraping(force=False, non_interactive=False):
     if os.path.exists(VIDEOS_JSON) and not force:
         with open(VIDEOS_JSON, 'r') as f:
             videos = json.load(f)
-        print(f"✅ Found existing {VIDEOS_JSON} with {len(videos)} videos")
+        print(f" Found existing {VIDEOS_JSON} with {len(videos)} videos")
         
         if non_interactive:
             print("🤖 Non-interactive mode: Checking for new videos...")
@@ -89,7 +89,7 @@ def run_video_scraping(force=False, non_interactive=False):
     print(" Running video scraping...")
     import outlier_scraper
     outlier_scraper.main()
-    print("✅ Video scraping complete")
+    print(" Video scraping complete")
     
     # Run metadata collection if we have a YouTube API key
     from pipeline_config import YOUTUBE_API_KEY
@@ -97,7 +97,7 @@ def run_video_scraping(force=False, non_interactive=False):
         print("\n Running metadata collection...")
         import collect_video_metadata
         collect_video_metadata.main()
-        print("✅ Metadata collection complete")
+        print(" Metadata collection complete")
     else:
         print("⚠️  No YouTube API key found - using basic metadata only")
 
@@ -114,7 +114,7 @@ def run_transcript_processing(force=False, non_interactive=False):
     if os.path.exists(TRANSCRIPT_DIR) and not force:
         transcript_files = [f for f in os.listdir(TRANSCRIPT_DIR) if f.endswith('.txt')]
         if transcript_files:
-            print(f"✅ Found {len(transcript_files)} existing transcript files")
+            print(f" Found {len(transcript_files)} existing transcript files")
             
             if non_interactive:
                 # In non-interactive mode, check if we need to process new videos
@@ -136,7 +136,7 @@ def run_transcript_processing(force=False, non_interactive=False):
     
     # Run the main function from whisper_transcribe
     whisper_transcribe.main()
-    print("✅ Transcript processing complete")
+    print(" Transcript processing complete")
     return True
 
 def run_preprocessing(force=False, non_interactive=False):
@@ -157,7 +157,7 @@ def run_preprocessing(force=False, non_interactive=False):
     if os.path.exists(PROCESSED_DIR) and not force:
         processed_files = [f for f in os.listdir(PROCESSED_DIR) if f.endswith('.json')]
         if processed_files:
-            print(f"✅ Found {len(processed_files)} existing processed files")
+            print(f" Found {len(processed_files)} existing processed files")
             print(f"📊 Configuration: {CHUNK_SIZE} words/chunk, {OVERLAP} words overlap")
             
             if non_interactive:
@@ -179,7 +179,7 @@ def run_preprocessing(force=False, non_interactive=False):
     
     import preprocess_transcripts
     preprocess_transcripts.main()
-    print("✅ Preprocessing complete")
+    print(" Preprocessing complete")
     return True
 
 def run_vector_creation(force=False, non_interactive=False):
@@ -198,7 +198,7 @@ def run_vector_creation(force=False, non_interactive=False):
     
     # Check if vector store already exists
     if os.path.exists('vector_store') and not force:
-        print("✅ Found existing vector store")
+        print(" Found existing vector store")
         
         if non_interactive:
             # In non-interactive mode, check if we need to rebuild based on newer processed files
@@ -228,7 +228,7 @@ def run_vector_creation(force=False, non_interactive=False):
     )
     
     create_vector_store.main(vector_args)
-    print("✅ Vector store creation complete")
+    print(" Vector store creation complete")
     return True
 
 def print_summary():
@@ -271,7 +271,7 @@ def print_summary():
     print(f"  • Transcripts generated: {stats.get('transcripts', 0)}")
     print(f"  • Processed files: {stats.get('processed_files', 0)}")
     print(f"  • Total chunks: {stats.get('total_chunks', 0)}")
-    print(f"  • Vector store: {'✅ Created' if stats.get('vector_store') else '❌ Missing'}")
+    print(f"  • Vector store: {' Created' if stats.get('vector_store') else '❌ Missing'}")
     
     print(f"\n🎯 Configuration Used:")
     print(f"  • Chunk size: {CHUNK_SIZE} words")

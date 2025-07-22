@@ -63,8 +63,8 @@ def analyze_current_mess():
     print(f"   🗑️  Dummy audio files: {dummy_audio}")
     print(f"   🗑️  Dummy transcripts: {dummy_transcripts}")
     print(f"   🗑️  Error note files: {note_files}")
-    print(f"   ✅  Real audio files: {real_audio}")
-    print(f"   ✅  Real transcripts: {real_transcripts}")
+    print(f"     Real audio files: {real_audio}")
+    print(f"     Real transcripts: {real_transcripts}")
     print(f"   📋  Tracking files: {len(tracking_files)}")
     
     total_dummy = dummy_audio + dummy_transcripts + note_files
@@ -118,7 +118,7 @@ def show_migration_plan():
 
 def show_benefits():
     """Show benefits of clean system"""
-    print("\n✅ BENEFITS OF CLEAN SYSTEM:")
+    print("\n BENEFITS OF CLEAN SYSTEM:")
     print("=" * 40)
     
     print("🧹 CLEANER DIRECTORIES:")
@@ -150,7 +150,7 @@ def migrate_now():
     os.system("python3 clean_video_tracker.py --import")
     os.system("python3 clean_video_tracker.py --scan")
     
-    print("\n✅ MIGRATION COMPLETE!")
+    print("\n MIGRATION COMPLETE!")
     print("Your system now uses clean JSON tracking.")
     
     # Show new status
@@ -189,7 +189,7 @@ def main():
             print("\n👍 No migration performed.")
             print("Run 'python3 clean_video_tracker.py --import' when ready.")
     else:
-        print("\n✅ No dummy files found - you may already be using a clean system!")
+        print("\n No dummy files found - you may already be using a clean system!")
 
 if __name__ == "__main__":
     main() 

@@ -59,7 +59,7 @@ class TranscriptDownloader:
                 from pipeline_config import WHISPER_MODEL
                 print(f"🎤 Loading Whisper model '{WHISPER_MODEL}'...")
                 self.whisper_model = whisper.load_model(WHISPER_MODEL)
-                print("✅ Whisper model loaded successfully")
+                print(" Whisper model loaded successfully")
             except Exception as e:
                 print(f"⚠️ Could not load Whisper model: {e}")
     
@@ -286,7 +286,7 @@ class TranscriptDownloader:
                         for entry in transcript:
                             f.write(f"{entry['start']:.2f}s: {entry['text']}\n")
                     
-                    print(f"  ✅ Success with {method_name} for {video_id} ({len(transcript)} segments)")
+                    print(f"   Success with {method_name} for {video_id} ({len(transcript)} segments)")
                     self.progress['processed'].append(url)
                     self.progress['methods'][video_id] = method_name
                     
@@ -338,7 +338,7 @@ class TranscriptDownloader:
         print(f"🎯 {len(remaining_videos)} remaining to process")
         
         if not remaining_videos:
-            print("✅ All videos have been processed!")
+            print(" All videos have been processed!")
             return
         
         # Process remaining videos
@@ -364,9 +364,9 @@ class TranscriptDownloader:
         # Final statistics
         elapsed_time = time.time() - start_time
         print(f"\n📊 Processing Summary:")
-        print(f"✅ YouTube Transcript API successes: {self.stats['transcript_api_success']}")
-        print(f"✅ yt-dlp subtitle successes: {self.stats['yt_dlp_success']}")
-        print(f"✅ Whisper transcription successes: {self.stats['whisper_success']}")
+        print(f" YouTube Transcript API successes: {self.stats['transcript_api_success']}")
+        print(f" yt-dlp subtitle successes: {self.stats['yt_dlp_success']}")
+        print(f" Whisper transcription successes: {self.stats['whisper_success']}")
         print(f"⏭️  Skipped existing: {self.stats['skipped_existing']}")
         print(f"❌ Total failures: {self.stats['total_failures']}")
         print(f"⏱️  Total time: {elapsed_time:.2f} seconds")

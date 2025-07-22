@@ -25,7 +25,7 @@ def download_vector_store():
         with tarfile.open(fileobj=fileobj, mode="r:gz") as tar:
             tar.extractall(path=".")
         
-        print("✅ Vector store downloaded and extracted successfully")
+        print(" Vector store downloaded and extracted successfully")
         return True
     except Exception as e:
         print(f"❌ Error downloading vector store: {str(e)}")
@@ -51,12 +51,12 @@ def main():
     
     # Check if vector store already exists
     if check_vector_store():
-        print("✅ Vector store already exists")
+        print(" Vector store already exists")
         return True
     
     # Download vector store
     if download_vector_store():
-        print("✅ Setup completed successfully")
+        print(" Setup completed successfully")
         return True
     
     print("❌ Setup failed")

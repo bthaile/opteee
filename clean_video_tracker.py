@@ -139,7 +139,7 @@ class CleanVideoTracker:
                             }
                             imported_count += 1
         
-        print(f"✅ Imported {imported_count} videos into clean tracking system")
+        print(f" Imported {imported_count} videos into clean tracking system")
         self.save_state()
     
     def scan_existing_files(self):
@@ -158,7 +158,7 @@ class CleanVideoTracker:
                 updated_count += 1
                 print(f" {video_id}: {old_status} → {new_status}")
         
-        print(f"✅ Updated status for {updated_count} videos")
+        print(f" Updated status for {updated_count} videos")
         self.save_state()
     
     def determine_status(self, video_id: str) -> str:
@@ -227,7 +227,7 @@ class CleanVideoTracker:
             note_file.unlink()
             cleaned_notes += 1
         
-        print(f"✅ Cleanup complete:")
+        print(f" Cleanup complete:")
         print(f"   🗑️  Dummy audio files: {cleaned_audio}")
         print(f"   🗑️  Error transcripts: {cleaned_transcripts}")
         print(f"   🗑️  Note files: {cleaned_notes}")
@@ -242,7 +242,7 @@ class CleanVideoTracker:
         print("\n📊 CLEAN VIDEO TRACKER STATUS")
         print("=" * 50)
         print(f"📹 Total Videos: {meta['total_videos']}")
-        print(f"✅ Completed: {meta['completed']}")
+        print(f" Completed: {meta['completed']}")
         print(f"❌ Failed Downloads: {meta['failed_downloads']}")
         print(f"🎵 Pending Transcripts: {meta['pending_transcripts']}")
         
@@ -262,14 +262,14 @@ class CleanVideoTracker:
         status_names = {
             "FAILED_DOWNLOAD": "❌ Need Manual Download",
             "HAVE_AUDIO_NO_TRANSCRIPT": "🎵 Need Transcript Processing",
-            "COMPLETED": "✅ Completed Successfully"
+            "COMPLETED": " Completed Successfully"
         }
         
         print(f"\n{status_names.get(status, status)}")
         print("=" * 50)
         
         if not matching:
-            print("✅ No videos with this status")
+            print(" No videos with this status")
             return
         
         for i, (video_id, info) in enumerate(matching[:limit]):
@@ -309,7 +309,7 @@ class CleanVideoTracker:
             ]
         
         if not video_ids:
-            print("✅ No videos need transcript processing")
+            print(" No videos need transcript processing")
             return
         
         print(f"🎤 Processing transcripts for {len(video_ids)} videos...")
@@ -318,7 +318,7 @@ class CleanVideoTracker:
         try:
             from pipeline_config import WHISPER_MODEL
             model = whisper.load_model(WHISPER_MODEL)
-            print(f"✅ Whisper model '{WHISPER_MODEL}' loaded")
+            print(f" Whisper model '{WHISPER_MODEL}' loaded")
         except Exception as e:
             print(f"❌ Failed to load Whisper model: {e}")
             return
@@ -350,7 +350,7 @@ class CleanVideoTracker:
                 self.state["videos"][video_id]["last_updated"] = datetime.now().isoformat()
                 
                 char_count = len(result['text'])
-                print(f"✅ Transcript saved: {char_count} characters")
+                print(f" Transcript saved: {char_count} characters")
                 successful += 1
                 
             except Exception as e:

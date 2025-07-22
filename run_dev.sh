@@ -74,7 +74,7 @@ if [ ! -f "frontend/build/index.html" ]; then
     fi
 fi
 
-echo "✅ Environment checks passed!"
+echo " Environment checks passed!"
 echo ""
 echo "🔥 Starting FastAPI development server..."
 echo " Edit frontend/build/index.html and refresh browser for instant updates!"

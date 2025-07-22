@@ -79,7 +79,7 @@ def extract_cookies_from_browser(video_url):
             cookie_file.write(line)
         
         cookie_file.close()
-        print(f"✅ Extracted {len(cookies)} cookies to {cookie_file.name}")
+        print(f" Extracted {len(cookies)} cookies to {cookie_file.name}")
         return cookie_file.name
         
     except Exception as e:
@@ -127,7 +127,7 @@ def test_with_fresh_cookies(video_url, video_id):
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             print("      🔄 Trying to extract info...")
             info = ydl.extract_info(video_url, download=False)
-            print(f"      ✅ Info extracted: {info.get('title', 'Unknown')}")
+            print(f"       Info extracted: {info.get('title', 'Unknown')}")
             
             print("      🔄 Trying to download...")
             ydl.download([video_url])
@@ -135,7 +135,7 @@ def test_with_fresh_cookies(video_url, video_id):
             # Check if file was created
             if os.path.exists(audio_path) and os.path.getsize(audio_path) > 1000:
                 size_mb = os.path.getsize(audio_path) / (1024 * 1024)
-                print(f"      ✅ Downloaded successfully: {size_mb:.1f} MB")
+                print(f"       Downloaded successfully: {size_mb:.1f} MB")
                 
                 # Clean up test file
                 os.remove(audio_path)
@@ -208,7 +208,7 @@ def test_alternative_formats(video_url, video_id):
                 # Check if file was created
                 if os.path.exists(audio_path) and os.path.getsize(audio_path) > 1000:
                     size_mb = os.path.getsize(audio_path) / (1024 * 1024)
-                    print(f"      ✅ Downloaded successfully: {size_mb:.1f} MB")
+                    print(f"       Downloaded successfully: {size_mb:.1f} MB")
                     
                     # Clean up test file
                     os.remove(audio_path)
@@ -265,12 +265,12 @@ def main():
             success2 = test_alternative_formats(video_url, video_id)
             
             if success2:
-                print(f"\n✅ SUCCESS! Alternative format worked for {video_id}")
+                print(f"\n SUCCESS! Alternative format worked for {video_id}")
             else:
                 print(f"\n❌ All advanced strategies failed for {video_id}")
                 print(f"💡 YouTube may have completely blocked automated access")
         else:
-            print(f"\n✅ SUCCESS! Cookie-based approach worked for {video_id}")
+            print(f"\n SUCCESS! Cookie-based approach worked for {video_id}")
             
     except FileNotFoundError:
         print("❌ outlier_trading_videos.json not found. Run outlier_scraper.py first.")

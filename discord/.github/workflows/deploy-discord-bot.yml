@@ -43,7 +43,7 @@ jobs:
           cp Dockerfile /tmp/discord-bot-deploy/
           cp README.md /tmp/discord-bot-deploy/
           
-          echo "✅ Deployment directory prepared"
+          echo " Deployment directory prepared"
           ls -la /tmp/discord-bot-deploy/
 
       - name: Deploy to Hugging Face Space

@@ -63,7 +63,7 @@ def test_pipeline(provider, top_k=DEFAULT_TOP_K, specific_questions=None, model=
             llm_model=model
         )
         
-        print(f"✅ Successfully initialized the RAG pipeline with {provider}")
+        print(f" Successfully initialized the RAG pipeline with {provider}")
         
     except Exception as e:
         print(f"❌ Error initializing the RAG pipeline: {e}")
@@ -94,7 +94,7 @@ def test_pipeline(provider, top_k=DEFAULT_TOP_K, specific_questions=None, model=
             results.append(result_with_stats)
             
             # Print summary
-            print(f"✅ Retrieved {len(result['sources'])} sources in {end_time - start_time:.2f} seconds")
+            print(f" Retrieved {len(result['sources'])} sources in {end_time - start_time:.2f} seconds")
             print(f"   Answer length: {len(result['answer'])} characters")
             
             # Print a short preview of the answer
@@ -142,7 +142,7 @@ def save_results(results, output_file="rag_test_results.txt"):
             
             f.write("\n" + "="*80 + "\n\n")
     
-    print(f"✅ Results saved to {output_file}")
+    print(f" Results saved to {output_file}")
 
 def main():
     """Main function"""

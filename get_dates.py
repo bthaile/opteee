@@ -65,7 +65,7 @@ def get_channel_id_from_handle():
         data = make_request(url, params)
         if data and data.get('items'):
             channel_id = data['items'][0]['id']['channelId']
-            print(f"✅ Found channel ID: {channel_id}")
+            print(f" Found channel ID: {channel_id}")
             return channel_id
     except Exception as e:
         print(f"❌ Error getting channel ID: {e}")

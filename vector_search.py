@@ -59,7 +59,7 @@ def build_vector_store():
         except Exception as e:
             print(f"Error processing {filename}: {e}")
     
-    print(f"\n✅ Loaded {len(all_chunks)} transcript chunks")
+    print(f"\n Loaded {len(all_chunks)} transcript chunks")
     
     if len(all_chunks) == 0:
         print("No valid chunks found!")
@@ -81,7 +81,7 @@ def build_vector_store():
     with open(os.path.join(VECTOR_STORE_PATH, "metadata.json"), 'w') as f:
         json.dump(chunk_metadata, f)
     
-    print(f"✅ Vector store built successfully with {len(all_chunks)} chunks")
+    print(f" Vector store built successfully with {len(all_chunks)} chunks")
     return True
 
 def search_vector_store(query, top_k=TOP_K):

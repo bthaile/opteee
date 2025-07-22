@@ -367,7 +367,7 @@ def generate_html_tracker():
     </div>
 
     <div class="controls">
-        <button class="btn" onclick="checkAll()">✅ Check All</button>
+        <button class="btn" onclick="checkAll()"> Check All</button>
         <button class="btn secondary" onclick="uncheckAll()">🔲 Uncheck All</button>
         <button class="btn" onclick="exportProgress()">📊 Export Progress</button>
         <button class="btn secondary" onclick="importProgress()">📥 Import Progress</button>
@@ -694,7 +694,7 @@ def generate_html_tracker():
     with open('download_tracker.html', 'w') as f:
         f.write(html_content)
     
-    print(f"✅ Generated download_tracker.html with {total_videos} videos and titles")
+    print(f" Generated download_tracker.html with {total_videos} videos and titles")
     print("📁 Open download_tracker.html in your browser to start tracking downloads")
     
     return total_videos

@@ -16,7 +16,7 @@ mkdir -p vector_store transcripts processed_transcripts
 # Check if vector store already exists
 echo "===== Checking vector store status ====="
 if [ -f "vector_store/transcript_index.faiss" ] && [ -f "vector_store/transcript_metadata.pkl" ]; then
-    echo "✅ Vector store files found"
+    echo " Vector store files found"
 else
     echo "⚠️ Vector store doesn't exist"
     # Since we have processed transcripts, we can try to rebuild

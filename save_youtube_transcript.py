@@ -107,7 +107,7 @@ for video in video_data:
                     f.write(f"{entry['start']:.2f}s: {text}\n")
 
         processing_time = time.time() - start_time
-        print(f"✅ YouTube transcript saved for {video['title']} (took {processing_time:.2f} seconds)")
+        print(f" YouTube transcript saved for {video['title']} (took {processing_time:.2f} seconds)")
         progress['processed'].append(video['url'])
         save_progress(progress)
 
@@ -127,7 +127,7 @@ for video in video_data:
                 transcribe_with_whisper(audio_path, filename)
                 
                 processing_time = time.time() - start_time
-                print(f"✅ Whisper transcript saved for {video['title']} (took {processing_time:.2f} seconds)")
+                print(f" Whisper transcript saved for {video['title']} (took {processing_time:.2f} seconds)")
                 progress['whisper_processed'].append(video['url'])
                 save_progress(progress)
 
@@ -142,7 +142,7 @@ for video in video_data:
         save_progress(progress)
 
 print("\n📊 Processing Summary:")
-print(f"✅ Successfully processed with YouTube transcript: {len(progress['processed'])} videos")
-print(f"✅ Successfully processed with Whisper: {len(progress['whisper_processed'])} videos")
+print(f" Successfully processed with YouTube transcript: {len(progress['processed'])} videos")
+print(f" Successfully processed with Whisper: {len(progress['whisper_processed'])} videos")
 print(f"❌ Failed to process: {len(progress['failed'])} videos")
 print(f"⏱️ Total processing time: {time.time() - start_time:.2f} seconds")

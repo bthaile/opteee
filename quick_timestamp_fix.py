@@ -100,7 +100,7 @@ def estimate_timestamps_for_chunks():
             print(f"❌ Error processing {file_path}: {e}")
             continue
     
-    print(f"✅ Updated {updated_files} files with estimated timestamps")
+    print(f" Updated {updated_files} files with estimated timestamps")
     return updated_files > 0
 
 def format_timestamp(seconds):
@@ -128,7 +128,7 @@ def rebuild_vector_store():
             text=True,
             check=True
         )
-        print("✅ Vector store rebuild complete!")
+        print(" Vector store rebuild complete!")
         return True
     except subprocess.CalledProcessError as e:
         print(f"❌ Error during vector store rebuild: {e}")
@@ -167,7 +167,7 @@ def verify_fix():
         ][:5]
         
         if non_zero_examples:
-            print(f"\n✅ Success! Examples with estimated timestamps:")
+            print(f"\n Success! Examples with estimated timestamps:")
             for i, entry in enumerate(non_zero_examples):
                 print(f"  {i+1}. {entry['title'][:50]}...")
                 print(f"     Timestamp: {entry['start_timestamp_seconds']:.1f}s ({entry['start_timestamp']})")

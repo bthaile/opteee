@@ -111,7 +111,7 @@ def config_menu(current_settings):
             top_k = int(input(f"Enter number of sources to retrieve (1-20, current: {current_settings['top_k']}): "))
             if 1 <= top_k <= 20:
                 current_settings['top_k'] = top_k
-                print(f"✅ Updated to retrieve {top_k} sources")
+                print(f" Updated to retrieve {top_k} sources")
             else:
                 print("❌ Invalid input. Please enter a number between 1 and 20.")
         except ValueError:
@@ -135,7 +135,7 @@ def config_menu(current_settings):
                     current_settings['provider'] = available_providers[idx]
                     # Reset model to None (default) when changing provider
                     current_settings['model'] = None
-                    print(f"✅ Updated provider to {current_settings['provider']}")
+                    print(f" Updated provider to {current_settings['provider']}")
                 else:
                     print("❌ Invalid choice. Settings not changed.")
             except ValueError:
@@ -162,7 +162,7 @@ def config_menu(current_settings):
             if model_choice in openai_model_map:
                 current_settings['model'] = openai_model_map[model_choice]
                 model_name = current_settings['model'] or DEFAULT_LLM_MODEL
-                print(f"✅ Updated model to {model_name}")
+                print(f" Updated model to {model_name}")
             else:
                 print("❌ Invalid choice. Settings not changed.")
                 
@@ -186,7 +186,7 @@ def config_menu(current_settings):
             if model_choice in claude_model_map:
                 current_settings['model'] = claude_model_map[model_choice]
                 model_name = current_settings['model'] or DEFAULT_CLAUDE_MODEL
-                print(f"✅ Updated model to {model_name}")
+                print(f" Updated model to {model_name}")
             else:
                 print("❌ Invalid choice. Settings not changed.")
     
@@ -195,7 +195,7 @@ def config_menu(current_settings):
             temp = float(input(f"Enter temperature (0.0-1.0, current: {current_settings['temperature']}): "))
             if 0.0 <= temp <= 1.0:
                 current_settings['temperature'] = temp
-                print(f"✅ Updated temperature to {temp}")
+                print(f" Updated temperature to {temp}")
             else:
                 print("❌ Invalid input. Please enter a number between 0.0 and 1.0.")
         except ValueError:
@@ -205,10 +205,10 @@ def config_menu(current_settings):
         show = input(f"Show sources? (y/n, current: {'yes' if current_settings['show_sources'] else 'no'}): ").strip().lower()
         if show in ('y', 'yes'):
             current_settings['show_sources'] = True
-            print("✅ Sources will be shown")
+            print(" Sources will be shown")
         elif show in ('n', 'no'):
             current_settings['show_sources'] = False
-            print("✅ Sources will be hidden")
+            print(" Sources will be hidden")
         else:
             print("❌ Invalid input. Settings not changed.")
     
@@ -227,7 +227,7 @@ def config_menu(current_settings):
                 temperature=current_settings['temperature'],
                 provider=current_settings['provider']
             )
-            print("\n✅ Pipeline updated with new settings")
+            print("\n Pipeline updated with new settings")
         except Exception as e:
             print(f"\n❌ Error updating pipeline: {str(e)}")
             print("Please check your settings and API keys.")
@@ -258,8 +258,8 @@ def main():
         )
         
         model_name = settings['model'] or (DEFAULT_CLAUDE_MODEL if settings['provider'] == 'claude' else DEFAULT_LLM_MODEL)
-        print(f"✅ System ready! Using {settings['provider']} ({model_name}) with {settings['top_k']} sources")
-        print(f"✅ Ask any question about options trading...")
+        print(f" System ready! Using {settings['provider']} ({model_name}) with {settings['top_k']} sources")
+        print(f" Ask any question about options trading...")
         
     except Exception as e:
         print(f"❌ Error initializing the RAG pipeline: {str(e)}")

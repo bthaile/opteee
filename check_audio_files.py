@@ -124,7 +124,7 @@ def main():
         result = check_audio_file(audio_file)
         
         if result["valid"]:
-            print("✅")
+            print("")
             valid_files.append((audio_file, result))
         else:
             print(f"❌ {result.get('issue', result.get('error', 'Unknown error'))}")
@@ -132,7 +132,7 @@ def main():
     
     # Summary
     print(f"\n📊 Summary:")
-    print(f"  ✅ Valid files: {len(valid_files)}")
+    print(f"   Valid files: {len(valid_files)}")
     print(f"  ❌ Problematic files: {len(problematic_files)}")
     
     if problematic_files:
@@ -157,7 +157,7 @@ def main():
                     success, error_msg = fix_audio_file(file_path, output_file)
                     
                     if success:
-                        print(f"    ✅ Fixed: {output_file}")
+                        print(f"     Fixed: {output_file}")
                     else:
                         print(f"    ❌ Failed: {error_msg[:100]}")
     

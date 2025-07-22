@@ -250,7 +250,7 @@ python3 -c "
 import json
 with open('outlier_trading_videos.json') as f:
     data = json.load(f)
-print(f'✅ Videos discovered: {len(data)}')
+print(f' Videos discovered: {len(data)}')
 "
 
 # Check transcripts
@@ -352,21 +352,21 @@ time python3 run_pipeline.py --non-interactive
 
 ### **📊 Expected Test Results**
 
-**✅ Successful Pipeline Run Should Show:**
+** Successful Pipeline Run Should Show:**
 - Video discovery: ~500+ videos found
 - Transcript generation: New transcripts created for missing videos
 - Processing: ~14,000+ chunks created
 - Vector store: Created on Hugging Face during Docker build
 - No errors in validation steps
 
-**✅ Successful GitHub Actions Run Should Show:**
+** Successful GitHub Actions Run Should Show:**
 - Workflow completes within 3 hours
 - All verification steps pass (video discovery, transcripts, preprocessing)
 - Changes committed to repository (if new content found)
 - Hugging Face deployment triggered (creates vector store during Docker build)
 - Detailed processing summary in workflow logs
 
-**✅ Successful Non-Interactive Mode Should Show:**
+** Successful Non-Interactive Mode Should Show:**
 - No user prompts or input requests
 - Intelligent skipping of up-to-date content
 - Proper error handling and logging
@@ -391,7 +391,7 @@ python3 -c "
 import json
 with open('outlier_trading_videos.json') as f:
     data = json.load(f)
-print(f'✅ Discovered {len(data)} videos')
+print(f' Discovered {len(data)} videos')
 "
 ```
 
@@ -457,9 +457,9 @@ files = glob.glob('processed_transcripts/*.json')
 if files:
     with open(files[0]) as f:
         chunk = json.load(f)
-    print(f'✅ Sample chunk has {len(chunk)} fields')
-    print(f'✅ Required fields: {\"start_timestamp_seconds\" in chunk}')
-    print(f'✅ Video URL: {chunk.get(\"video_url_with_timestamp\", \"Missing\")}')
+    print(f' Sample chunk has {len(chunk)} fields')
+    print(f' Required fields: {\"start_timestamp_seconds\" in chunk}')
+    print(f' Video URL: {chunk.get(\"video_url_with_timestamp\", \"Missing\")}')
 "
 ```
 
@@ -485,9 +485,9 @@ python3 -c "
 import pickle
 with open('vector_store/transcript_metadata.pkl', 'rb') as f:
     metadata = pickle.load(f)
-print(f'✅ Vector store contains {len(metadata)} chunks')
+print(f' Vector store contains {len(metadata)} chunks')
 timestamps = sum(1 for chunk in metadata if chunk.get('start_timestamp_seconds', 0) > 0)
-print(f'✅ Chunks with timestamps: {timestamps}')
+print(f' Chunks with timestamps: {timestamps}')
 "
 ```
 
@@ -794,7 +794,7 @@ Chunking & Metadata → [GitHub Commit] → Vector Store → RAG Pipeline → Us
 
 ## 🎉 **Success Indicators**
 
-✅ **Working System:**
+ **Working System:**
 - Video links include `&t=XXX` timestamps
 - RAG answers include source attribution
 - Search returns relevant results

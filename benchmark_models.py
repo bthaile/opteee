@@ -105,7 +105,7 @@ def benchmark_model(audio_files, model_name, num_workers):
             results.append(result)
             
             if result["success"]:
-                print(f"  ✅ Worker {result['worker_id']}: {result['transcribe_time']:.1f}s "
+                print(f"   Worker {result['worker_id']}: {result['transcribe_time']:.1f}s "
                       f"(RTF: {result['realtime_factor']:.2f})")
             else:
                 print(f"  ❌ Worker {result['worker_id']}: {result['error']}")

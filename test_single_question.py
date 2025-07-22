@@ -84,7 +84,7 @@ def main():
                 provider=provider
             )
             
-            print(f"✅ RAG pipeline initialized with {provider}")
+            print(f" RAG pipeline initialized with {provider}")
             if args.model:
                 print(f"   Using model: {args.model}")
             print(f"   Using top_k: {args.top_k}, temperature: {args.temperature}")
@@ -105,7 +105,7 @@ def main():
         except Exception as e:
             print(f"❌ Error: {str(e)}")
     
-    print("\n✅ Testing complete!")
+    print("\n Testing complete!")
 
 if __name__ == "__main__":
     main() 

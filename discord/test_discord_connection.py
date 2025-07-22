@@ -10,7 +10,7 @@ def test_dns_resolution():
     """Test DNS resolution for discord.com"""
     try:
         result = socket.gethostbyname('discord.com')
-        print(f"✅ DNS Resolution: discord.com -> {result}")
+        print(f" DNS Resolution: discord.com -> {result}")
         return True
     except Exception as e:
         print(f"❌ DNS Resolution Failed: {e}")
@@ -25,7 +25,7 @@ def test_dns_resolution():
                 print(f"❌ nslookup failed to resolve: {output.strip()}")
                 return False
             elif "Address:" in output and any(c.isdigit() for c in output):
-                print(f"✅ nslookup resolved discord.com successfully")
+                print(f" nslookup resolved discord.com successfully")
                 return True
             else:
                 print(f"❌ nslookup unclear result: {output.strip()}")
@@ -39,9 +39,9 @@ def test_discord_api():
     try:
         # Simple GET request to Discord API
         response = requests.get('https://discord.com/api/v10/gateway', timeout=5)
-        print(f"✅ Discord API: Status {response.status_code}")
+        print(f" Discord API: Status {response.status_code}")
         if response.status_code == 200:
-            print(f"✅ Discord Gateway URL: {response.json().get('url', 'Unknown')}")
+            print(f" Discord Gateway URL: {response.json().get('url', 'Unknown')}")
         return True
     except Exception as e:
         print(f"❌ Discord API Failed: {e}")
@@ -68,7 +68,7 @@ def test_custom_dns_resolver():
                 enable_cleanup_closed=True
             )
             
-            print("✅ Custom DNS resolver created in async context")
+            print(" Custom DNS resolver created in async context")
             
             try:
                 # Create session with our custom DNS resolver
@@ -77,7 +77,7 @@ def test_custom_dns_resolver():
                     timeout=aiohttp.ClientTimeout(total=30)
                 )
                 
-                print("✅ Custom DNS session created")
+                print(" Custom DNS session created")
                 
                 try:
                     # Test 1: Discord API endpoint
@@ -85,9 +85,9 @@ def test_custom_dns_resolver():
                     async with session.get('https://discord.com/api/v10/gateway', timeout=10) as response:
                         if response.status == 200:
                             data = await response.json()
-                            print(f"✅ Custom DNS: Discord API reachable (Status {response.status})")
+                            print(f" Custom DNS: Discord API reachable (Status {response.status})")
                             gateway_url = data.get('url', '')
-                            print(f"✅ Gateway URL: {gateway_url}")
+                            print(f" Gateway URL: {gateway_url}")
                             
                             # Test 2: Gateway WebSocket endpoint hostname resolution
                             if gateway_url:
@@ -102,7 +102,7 @@ def test_custom_dns_resolver():
                                     # Use the resolver directly to test hostname resolution
                                     resolved_hosts = await resolver.resolve(gateway_host, 443)
                                     if resolved_hosts:
-                                        print(f"✅ Custom DNS: Gateway {gateway_host} resolved successfully")
+                                        print(f" Custom DNS: Gateway {gateway_host} resolved successfully")
                                         # Try to show some IP addresses if available
                                         for i, host_info in enumerate(resolved_hosts[:3]):  # Show first 3
                                             if hasattr(host_info, 'host'):
@@ -119,7 +119,7 @@ def test_custom_dns_resolver():
                                         # Extract just the base URL for testing
                                         test_url = f"https://{gateway_host}/"
                                         async with session.get(test_url, timeout=5) as gw_response:
-                                            print(f"✅ Custom DNS: Gateway {gateway_host} accessible via HTTP (Status: {gw_response.status})")
+                                            print(f" Custom DNS: Gateway {gateway_host} accessible via HTTP (Status: {gw_response.status})")
                                     except Exception as simple_test_error:
                                         print(f"⚠️ Custom DNS: Gateway {gateway_host} not accessible: {simple_test_error}")
                             
@@ -139,12 +139,12 @@ def test_custom_dns_resolver():
                     # Clean up session
                     if not session.closed:
                         await session.close()
-                        print("✅ Cleaned up custom DNS session")
+                        print(" Cleaned up custom DNS session")
                         
             finally:
                 # Clean up connector
                 await connector.close()
-                print("✅ Cleaned up custom DNS connector")
+                print(" Cleaned up custom DNS connector")
             
         # Run the comprehensive async test with proper event loop handling
         try:
@@ -174,7 +174,7 @@ def test_generic_https():
     """Test generic HTTPS connectivity"""
     try:
         response = requests.get('https://httpbin.org/get', timeout=10)
-        print(f"✅ HTTPS Works: Status {response.status_code}")
+        print(f" HTTPS Works: Status {response.status_code}")
         return True
     except Exception as e:
         print(f"❌ HTTPS Failed: {e}")
@@ -192,10 +192,10 @@ if __name__ == "__main__":
     custom_dns_ok = test_custom_dns_resolver()
     
     print("\n📋 Results:")
-    print(f"DNS Resolution: {'✅' if dns_ok else '❌'}")
-    print(f"HTTPS General: {'✅' if https_ok else '❌'}")  
-    print(f"Discord API: {'✅' if discord_ok else '❌'}")
-    print(f"Custom DNS Resolver: {'✅' if custom_dns_ok else '❌'}")
+    print(f"DNS Resolution: {'' if dns_ok else '❌'}")
+    print(f"HTTPS General: {'' if https_ok else '❌'}")  
+    print(f"Discord API: {'' if discord_ok else '❌'}")
+    print(f"Custom DNS Resolver: {'' if custom_dns_ok else '❌'}")
     
     if custom_dns_ok:
         print("\n🎉 CONCLUSION: Custom DNS resolver successfully bypassed system DNS!")
@@ -213,5 +213,5 @@ if __name__ == "__main__":
         print("\n🌐 CONCLUSION: General network connectivity issue")  
         sys.exit(1)
     else:
-        print("\n✅ CONCLUSION: Discord should work!")
+        print("\n CONCLUSION: Discord should work!")
         sys.exit(0) 

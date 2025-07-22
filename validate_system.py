@@ -42,7 +42,7 @@ def main():
             for file in vector_files:
                 file_path = os.path.join(VECTOR_DIR, file)
                 if os.path.exists(file_path):
-                    print(f"   ✅ {file}")
+                    print(f"    {file}")
                 else:
                     print(f"   ❌ {file} - Missing")
         except Exception as e:
@@ -56,7 +56,7 @@ def main():
             print("    Please set OPENAI_API_KEY or ANTHROPIC_API_KEY in .env file")
         else:
             for provider in providers:
-                print(f"   ✅ {provider.upper()} API key found")
+                print(f"    {provider.upper()} API key found")
         
         # 3. Model Validation
         print("\n3. Model Validation:")
@@ -65,7 +65,7 @@ def main():
             print(f"   🧪 Testing OpenAI model: {DEFAULT_LLM_MODEL}")
             supports_temp = test_model_temperature_support(DEFAULT_LLM_MODEL, "openai")
             if supports_temp:
-                print(f"   ✅ {DEFAULT_LLM_MODEL} supports temperature")
+                print(f"    {DEFAULT_LLM_MODEL} supports temperature")
             else:
                 print(f"   ⚠️ {DEFAULT_LLM_MODEL} doesn't support temperature (fallback will be used)")
         
@@ -73,7 +73,7 @@ def main():
             print(f"   🧪 Testing Claude model: {DEFAULT_CLAUDE_MODEL}")
             supports_temp = test_model_temperature_support(DEFAULT_CLAUDE_MODEL, "claude")
             if supports_temp:
-                print(f"   ✅ {DEFAULT_CLAUDE_MODEL} supports temperature")
+                print(f"    {DEFAULT_CLAUDE_MODEL} supports temperature")
             else:
                 print(f"   ⚠️ {DEFAULT_CLAUDE_MODEL} doesn't support temperature (fallback will be used)")
         
@@ -83,10 +83,10 @@ def main():
         
         # 5. Temperature Error Prevention Summary
         print("\n5. Temperature Error Prevention:")
-        print("   ✅ Multi-layer fallback system active")
-        print("   ✅ Automatic error detection and retry")
-        print("   ✅ Known model compatibility checks")
-        print("   ✅ Graceful degradation for unsupported models")
+        print("    Multi-layer fallback system active")
+        print("    Automatic error detection and retry")
+        print("    Known model compatibility checks")
+        print("    Graceful degradation for unsupported models")
         
         # 6. Recommendations
         print("\n6. Recommendations:")
@@ -98,7 +98,7 @@ def main():
             print("   ⚠️ Some issues detected. Check the messages above.")
         
         print("\n" + "=" * 50)
-        print("✅ Validation complete")
+        print(" Validation complete")
         
         return success
         
