@@ -36,6 +36,87 @@ HEALTH_ENDPOINT = f"{API_BASE_URL}/api/health"
 DEFAULT_PROVIDER = os.getenv('DEFAULT_PROVIDER', 'openai')
 DEFAULT_RESULTS = int(os.getenv('DEFAULT_RESULTS', '5'))
 
+# Discord Message Templates
+VIDEO_REFERENCE_TEMPLATES = {
+    # Full template with all details
+    'full': {
+        'header': "**Video Sources:**\n",
+        'entry': "**{index}.** **[{title}](<{url}>)** | `{timestamp}` | `{duration}`{date}\n{content}\n",
+        'content': "*\"{preview}\"*",
+        'no_content': "",
+        'date_format': " • {formatted_date}",
+        'max_title_length': 45,
+        'max_content_length': 100
+    },
+    
+    # Compact template for space-saving
+    'compact': {
+        'header': "**Sources:**\n",
+        'entry': "**{index}.** **[{title}](<{url}>)** `{timestamp}` `{duration}`{date}\n",
+        'content': "",  # No content preview in compact mode
+        'no_content': "",
+        'date_format': " • {formatted_date}",
+        'max_title_length': 35,
+        'max_content_length': 0
+    },
+    
+    # Minimal template for very long responses
+    'minimal': {
+        'header': "**Videos:**\n",
+        'entry': "**{index}.** **[{title}](<{url}>)** `{timestamp}`\n",
+        'content': "",
+        'no_content': "",
+        'date_format': "",
+        'max_title_length': 30,
+        'max_content_length': 0
+    }
+}
+
+"""
+VIDEO REFERENCE TEMPLATE SYSTEM DOCUMENTATION
+===========================================
+
+Template Structure:
+- header: Section header text
+- entry: Main entry template with placeholders
+- content: Template for content preview (when content exists)
+- no_content: Template when no content available
+- date_format: Format for upload date
+- max_title_length: Maximum title length before truncation
+- max_content_length: Maximum content preview length (0 = no preview)
+
+Available Placeholders:
+- {index}: Source number (1, 2, 3...)
+- {title}: Video title (truncated if needed)
+- {url}: Video URL with timestamp
+- {timestamp}: Start timestamp (MM:SS format)
+- {duration}: Video duration (MM:SS format) 
+- {date}: Formatted upload date
+- {content}: Content preview (if enabled)
+- {preview}: Raw content text (for use in {content} template)
+- {formatted_date}: Raw formatted date (for use in {date_format})
+
+Usage Examples:
+- format_video_sources(sources, template_name='full')     # Full details
+- format_video_sources(sources, template_name='compact')  # Space-saving
+- format_video_sources(sources, template_name='minimal')  # Ultra-compact
+
+Custom Templates:
+To add a new template, add an entry to VIDEO_REFERENCE_TEMPLATES:
+
+'custom_name': {
+    'header': "**My Custom Header:**\n",
+    'entry': "**{index}.** [{title}]({url}) at {timestamp}\n",
+    'content': "Preview: {preview}",
+    'no_content': "",
+    'date_format': " ({formatted_date})",
+    'max_title_length': 40,
+    'max_content_length': 80
+}
+
+Then use: format_video_sources(sources, template_name='custom_name')
+"""
+
 # Set up Discord bot with intents and custom DNS resolver
 intents = discord.Intents.default()
 intents.message_content = True
@@ -166,7 +247,7 @@ async def setup_discord_patches():
         logger.info("✅ All comprehensive DNS patches applied successfully")
         
     except Exception as patch_error:
-        logger.error(f"❌ Failed to apply comprehensive DNS patches: {patch_error}")
+        logger.error(f"Failed to apply comprehensive DNS patches: {patch_error}")
         raise
 
 async def query_opteee(query: str, num_results: int = 5, provider: str = "openai", format: str = "discord") -> dict:
@@ -258,6 +339,113 @@ async def query_opteee(query: str, num_results: int = 5, provider: str = "openai
             "error": error_msg
         }
 
+def format_video_sources(raw_sources: list, max_sources: int = 5, template_name: str = 'full') -> str:
+    """Format raw_sources for Discord display using standardized templates
+    
+    Args:
+        raw_sources: List of source dictionaries from API response
+        max_sources: Maximum number of sources to display
+        template_name: Template to use ('full', 'compact', 'minimal')
+        
+    Returns:
+        Formatted string ready for Discord display
+    """
+    if not raw_sources:
+        return ""
+    
+    # Get template configuration
+    template = VIDEO_REFERENCE_TEMPLATES.get(template_name, VIDEO_REFERENCE_TEMPLATES['full'])
+    
+    sources_text = "\n\n" + template['header']
+    
+    for i, source in enumerate(raw_sources[:max_sources], 1):
+        # Extract source data
+        source_data = _extract_source_data(source, template)
+        
+        # Format the entry using template
+        entry_text = template['entry'].format(
+            index=i,
+            title=source_data['title'],
+            url=source_data['url'],
+            timestamp=source_data['timestamp'],
+            duration=source_data['duration'],
+            date=source_data['date'],
+            content=source_data['content']
+        )
+        
+        sources_text += entry_text
+    
+    return sources_text
+
+def _extract_source_data(source: dict, template: dict) -> dict:
+    """Extract and format source data according to template specifications"""
+    # Get raw data
+    title = source.get('title', 'Untitled Video')
+    url = source.get('video_url_with_timestamp', source.get('url', '#'))
+    start_seconds = source.get('start_timestamp_seconds', 0)
+    duration_seconds = source.get('duration_seconds', 0)
+    content = source.get('content', '')
+    upload_date = source.get('upload_date', '')
+    
+    # Format timestamp
+    timestamp = _format_time(start_seconds) if start_seconds else "0:00"
+    
+    # Format duration  
+    duration = _format_time(duration_seconds) if duration_seconds else "Unknown"
+    
+    # Format upload date
+    date = ""
+    if upload_date and upload_date != 'Unknown' and len(upload_date) == 8:
+        try:
+            from datetime import datetime
+            date_obj = datetime.strptime(upload_date, '%Y%m%d')
+            formatted_date = date_obj.strftime('%b %Y')
+            date = template['date_format'].format(formatted_date=formatted_date)
+        except:
+            pass
+    
+    # Clean up title (handle video IDs)
+    if len(title) == 11 and title.isalnum():  # Likely a video ID
+        title = "Video " + title[:8] + "..."
+    
+    # Truncate title if too long
+    max_title_length = template['max_title_length']
+    if len(title) > max_title_length:
+        title = title[:max_title_length-3] + "..."
+    
+    # Format content preview
+    content_text = ""
+    max_content_length = template['max_content_length']
+    if content and max_content_length > 0:
+        content_clean = content.strip()[:max_content_length]
+        if len(content) > max_content_length:
+            # Try to end at word boundary
+            if ' ' in content_clean[-20:]:
+                content_clean = content_clean[:content_clean.rfind(' ')] + "..."
+            else:
+                content_clean += "..."
+        content_text = template['content'].format(preview=content_clean)
+    else:
+        content_text = template['no_content']
+    
+    return {
+        'title': title,
+        'url': url,
+        'timestamp': timestamp,
+        'duration': duration,
+        'date': date,
+        'content': content_text
+    }
+
+def _format_time(seconds: float) -> str:
+    """Convert seconds to MM:SS format"""
+    if not seconds or seconds <= 0:
+        return "0:00"
+    
+    minutes = int(seconds // 60)
+    secs = int(seconds % 60)
+    return f"{minutes}:{secs:02d}"
+
 async def send_discord_response(ctx, response_text: str):
     """Send response to Discord, handling message length limits"""
     # Discord has a 2000 character limit per message
@@ -285,33 +473,55 @@ async def send_discord_response(ctx, response_text: str):
         for chunk in chunks:
             await ctx.send(chunk)
 
-async def search_handler(ctx, query: str):
+async def search_handler(ctx, query: str, template_override: str = None):
     """Search for options trading information - simplified with server-side formatting"""
-    logger.info(f'Search query from {ctx.author}: {query}')
+    logger.info(f'Search query from {ctx.author}: {query} (template: {template_override or "auto"})')
     
-    # Send initial response
-    await ctx.send(f"**Searching the knowledge base...**\n> {query}\n*Analyzing thousands of transcript segments...*")
+    # Send initial response with template info
+    template_info = f" [{template_override} format]" if template_override else ""
+    await ctx.send(f"**Searching the knowledge base...**{template_info}\n> {query}\n*Analyzing thousands of transcript segments...*")
     
     try:
         # Query with Discord format - server handles all formatting
         response = await query_opteee(query, num_results=DEFAULT_RESULTS, provider=DEFAULT_PROVIDER, format="discord")
         
         if not response["success"]:
-            await ctx.send(f"❌ {response['error']}")
+            await ctx.send(f"Error: {response['error']}")
             return
         
         # Server returns pre-formatted Discord content
         formatted_answer = response["answer"]
+        raw_sources = response["sources"]
         
-        # Add simple footer
-        footer = f"\n\n━━━━━━━━━━━━━━━━━━━━\n*💡 Tip: Use `!search_advanced {min(10, DEFAULT_RESULTS + 2)} your question` for more detailed results*"
-        final_response = formatted_answer + footer
+        # Template selection - user override or smart selection
+        if template_override:
+            template_name = template_override
+        else:
+            # Smart template selection based on content length
+            base_length = len(formatted_answer)
+            if base_length > 1200:
+                template_name = 'minimal'  # Very long answer, use minimal sources
+            elif base_length > 800:
+                template_name = 'compact'  # Long answer, use compact sources
+            else:
+                template_name = 'full'     # Normal answer, use full sources
+        
+        # Add video sources with selected template
+        video_sources = format_video_sources(raw_sources, max_sources=5, template_name=template_name)
+        
+        # Add footer with format options
+        if template_override:
+            footer = f"\n\n━━━━━━━━━━━━━━━━━━━━\nTry other formats: `!search_full`, `!search_compact`, `!search_minimal`"
+        else:
+            footer = f"\n\n━━━━━━━━━━━━━━━━━━━━\nTip: Use `!search_advanced {min(10, DEFAULT_RESULTS + 2)} your question` for more detailed results"
+        
+        final_response = formatted_answer + video_sources + footer
         
         # Send the response (handles splitting automatically)
         await send_discord_response(ctx, final_response)
             
     except Exception as e:
-        error_msg = f"❌ Unexpected error: {str(e)}"
+        error_msg = f"Unexpected error: {str(e)}"
         logger.error(error_msg)
         await ctx.send(error_msg)
 
@@ -319,40 +529,46 @@ async def search_advanced_handler(ctx, num_results: int, query: str):
     """Advanced search with custom result count - simplified with server-side formatting"""
     # Validate inputs
     if not 1 <= num_results <= 10:
-        await ctx.send("❌ Number of results must be between 1 and 10")
+        await ctx.send("Number of results must be between 1 and 10")
         return
     
     provider = DEFAULT_PROVIDER
     
     logger.info(f'Advanced search from {ctx.author}: {query} (provider: {provider}, results: {num_results})')
-    await ctx.send(f"**🔍 Advanced Search Mode**\n> {query}\n*Using {provider.upper()} AI • Retrieving {num_results} sources • Processing...*")
+    await ctx.send(f"**Advanced Search Mode**\n> {query}\n*Using {provider.upper()} AI • Retrieving {num_results} sources • Processing...*")
     
     try:
         # Query with Discord format - server handles all formatting
         response = await query_opteee(query, num_results=num_results, provider=provider, format="discord")
         
         if not response["success"]:
-            await ctx.send(f"❌ {response['error']}")
+            await ctx.send(f"Error: {response['error']}")
             return
         
         # Server returns pre-formatted Discord content
         formatted_answer = response["answer"]
+        raw_sources = response["sources"]
         
-        # Add provider info and footer
+        # Add provider info header
         provider_header = f"**🤖 {provider.upper()} Response ({num_results} sources):**\n\n"
         
-        if num_results < 8:
-            footer = f"\n\n━━━━━━━━━━━━━━━━━━━━\n*💡 Try more sources for detailed analysis: `!search_advanced {min(10, num_results + 3)} your question`*"
-        else:
-            footer = f"\n\n━━━━━━━━━━━━━━━━━━━━\n*💡 Try basic search for quicker results: `!search your question`*"
+        # Add video sources with template selection based on number of results
+        template_name = 'compact' if num_results >= 8 else 'full'
+        video_sources = format_video_sources(raw_sources, max_sources=num_results, template_name=template_name)
         
-        final_response = provider_header + formatted_answer + footer
+        # Add footer
+        if num_results < 8:
+            footer = f"\n\n━━━━━━━━━━━━━━━━━━━━\nTry more sources for detailed analysis: `!search_advanced {min(10, num_results + 3)} your question`"
+        else:
+            footer = f"\n\n━━━━━━━━━━━━━━━━━━━━\nTry basic search for quicker results: `!search your question`"
+        
+        final_response = provider_header + formatted_answer + video_sources + footer
         
         # Send the response (handles splitting automatically)
         await send_discord_response(ctx, final_response)
             
     except Exception as e:
-        error_msg = f"❌ Error: {str(e)}"
+        error_msg = f"Error: {str(e)}"
         logger.error(error_msg)
         await ctx.send(error_msg)
 
@@ -360,7 +576,7 @@ async def health_handler(ctx):
     """Check if the OPTEEE API is healthy"""
     global original_client_session_init, original_tcp_connector_init
     
-    await ctx.send("**🔍 System Health Check**\n*Testing connection to OPTEEE API...*")
+    await ctx.send("**System Health Check**\n*Testing connection to OPTEEE API...*")
     
     try:
         timeout = aiohttp.ClientTimeout(total=15)
@@ -383,7 +599,7 @@ async def health_handler(ctx):
                     data = await response.json()
                     status = data.get('status', 'unknown')
                     version = data.get('version', 'unknown')
-                    await ctx.send(f"""**✅ All Systems Operational**
+                    await ctx.send(f"""**All Systems Operational**
 
 **Status:** `{status.title()}`
 **Version:** `{version}`
@@ -391,40 +607,57 @@ async def health_handler(ctx):
 
 *Ready to search thousands of options trading transcripts!*""")
                 else:
-                    await ctx.send(f"**⚠️ API Unhealthy** (HTTP {response.status})\n*The OPTEEE API may be temporarily unavailable.*")
+                    await ctx.send(f"**API Unhealthy** (HTTP {response.status})\n*The OPTEEE API may be temporarily unavailable.*")
         finally:
             if session and not session.closed:
                 await session.close()
                 
     except Exception as e:
         logger.error(f"Health check failed: {str(e)}")
-        await ctx.send(f"**❌ Connection Failed**\n*Unable to reach OPTEEE API*\n```\n{str(e)[:100]}...\n```")
+        await ctx.send(f"**Connection Failed**\n*Unable to reach OPTEEE API*\n```\n{str(e)[:100]}...\n```")
 
 async def show_help_handler(ctx):
     """Show help information"""
-    help_text = f"""**🤖 OPTEEE Discord Bot - Options Trading Knowledge Search**
+    help_text = f"""**OPTEEE Discord Bot - Options Trading Knowledge Search**
 
-**Commands:**
-• `!search <query>` - Search with video links and timestamps
+**Basic Commands:**
+• `!search <query>` - Smart search (auto-selects video format)
 • `!search_advanced <count> <query>` - Advanced search (1-10 results)
 • `!health` - Check API status
 • `!show_help` - Show this help
 
+**Video Format Commands:**
+• `!search_full <query>` - Full details (title, time, duration, content preview)
+• `!search_compact <query>` - Compact format (title, time, duration only)  
+• `!search_minimal <query>` - Minimal format (title and timestamp only)
+
 **Examples:**
 ```
 !search What is gamma in options trading?
-!search_advanced 8 Explain butterfly spread strategies
+!search_full Explain butterfly spread strategies  
+!search_compact How does theta decay work?
+!search_minimal Quick gamma definition
+!search_advanced 8 Complex iron condor strategies
 !health
 ```
+
+**Video Reference Formats:**
+
+**Full:** `[Title](link) | 63:55 | 80:29 • Apr 2025`
+         `"Content preview of first 100 characters..."`
+
+**Compact:** `[Title](link) 63:55 80:29 • Apr 2025`
+
+**Minimal:** `[Title](link) 63:55`
 
 **Current Settings:**
 • **Provider:** `{DEFAULT_PROVIDER.upper()}`
 • **Default Results:** `{DEFAULT_RESULTS}`
 • **API:** `{API_BASE_URL}`
 
-*🎯 Searches thousands of options trading transcripts with intelligent formatting*
-*📺 Document references become clickable video links with timestamps*
-*🚀 Powered by server-side Discord formatting for clean, readable results*
+*Choose your preferred video reference style for optimal Discord experience*
+*All formats include clickable video links with exact timestamps*
+*Powered by server-side Discord formatting for clean, readable results*
 """
     await ctx.send(help_text)
 
@@ -522,6 +755,21 @@ def create_bot():
         """Advanced search with custom result count"""
         await search_advanced_handler(ctx, num_results, query)
     
+    @bot.command(name='search_full')
+    async def search_full_command(ctx, *, query: str):
+        """Search with full video details (title, timestamp, duration, content preview)"""
+        await search_handler(ctx, query, template_override='full')
+    
+    @bot.command(name='search_compact')
+    async def search_compact_command(ctx, *, query: str):
+        """Search with compact video details (title, timestamp, duration only)"""
+        await search_handler(ctx, query, template_override='compact')
+    
+    @bot.command(name='search_minimal')
+    async def search_minimal_command(ctx, *, query: str):
+        """Search with minimal video details (title and timestamp only)"""
+        await search_handler(ctx, query, template_override='minimal')
+    
     @bot.command(name='health')
     async def health_command(ctx):
         """Check API health status"""
@@ -610,10 +858,10 @@ def main():
             try:
                 discord_ip = socket.gethostbyname('discord.com')
                 logger.info(f"✅ System DNS works: discord.com -> {discord_ip}")
-                logger.error("💡 Issue may not be DNS-related")
+                logger.error("Issue may not be DNS-related")
             except Exception as dns_error:
-                logger.error(f"❌ System DNS still failing: {dns_error}")
-                logger.error("💡 Custom DNS resolver should have bypassed this")
+                logger.error(f"System DNS still failing: {dns_error}")
+                logger.error("Custom DNS resolver should have bypassed this")
                 
             raise  # Re-raise the exception
         finally:

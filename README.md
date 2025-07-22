@@ -142,6 +142,40 @@ opteee/
 4. **Production Prep**: Run `python prepare_production_files.py` before deployment
 5. **Deploy**: Push to `main` branch for automatic HuggingFace deployment
 
+## HuggingFace Deployment Notes
+
+### DNS Resolution Issues
+HuggingFace Spaces environments often experience DNS resolution problems that can affect network connections. This project includes several strategies to handle these issues:
+
+#### Main Application
+- **Robust Error Handling**: API endpoints include comprehensive error handling for network failures
+- **Timeout Configuration**: Proper timeouts configured for all external requests
+- **Health Checks**: `/api/health` endpoint for monitoring service availability
+
+#### Discord Bot (Special Considerations)
+The Discord bot requires more complex DNS handling due to HuggingFace DNS limitations:
+
+- **Custom DNS Resolver**: Uses Google DNS (8.8.8.8) and Cloudflare DNS (1.1.1.1) as fallbacks
+- **Selective Patching**: Custom DNS resolver applied only to Discord.py connections
+- **Isolated API Sessions**: API calls use clean sessions isolated from DNS patches
+- **Dual-Mode Operation**: 
+  - Discord connections: Custom DNS resolver (bypasses HF DNS issues)
+  - API calls: Standard sessions (avoids "Session is closed" errors)
+
+#### Environment Variables
+```bash
+# Discord bot DNS configuration
+ENABLE_CUSTOM_DNS=true  # Enable custom DNS resolver (default: true)
+```
+
+#### Troubleshooting DNS Issues
+If you encounter DNS-related errors:
+
+1. **Check logs** for DNS resolution failures
+2. **Monitor health endpoint** at `/api/health` 
+3. **For Discord bot**: Set `ENABLE_CUSTOM_DNS=false` to disable custom DNS if causing issues
+4. **Network issues**: HuggingFace DNS problems typically resolve automatically after 1-5 minutes
+
 ## Contributing
 
 1. Fork the repository

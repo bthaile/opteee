@@ -115,4 +115,106 @@ A Discord bot that provides access to the OPTEEE options trading knowledge base 
 - The bot uses the opteee application hosted on Hugging Face Spaces
 - Responses are formatted in Markdown for better readability
 - Long responses are automatically split into multiple messages to comply with Discord's message length limits
-- Logs are saved to `discord_bot.log` for debugging purposes 
+- Logs are saved to `discord_bot.log` for debugging purposes
+
+## DNS Resolution & HuggingFace Deployment
+
+### The DNS Challenge
+HuggingFace Spaces environments frequently experience DNS resolution failures that prevent Discord bots from connecting. Common errors include:
+- `[Errno -5] No address associated with hostname`
+- `Session is closed` 
+- Connection timeouts to Discord gateway
+
+### Complex DNS Solution
+This bot implements a sophisticated DNS resolution strategy to handle HuggingFace's network limitations:
+
+#### Architecture Overview
+```
+Discord Gateway Connection
+    ↓ (Custom DNS Resolver)
+Discord.py ← [Google DNS 8.8.8.8, Cloudflare 1.1.1.1]
+    ↓
+Bot Commands ← (Clean Sessions)  
+    ↓
+OPTEEE API ← [Isolated from DNS patches]
+```
+
+#### Technical Implementation
+1. **Custom DNS Resolver**: Uses Google DNS (8.8.8.8) and Cloudflare DNS (1.1.1.1) as alternative resolvers
+2. **Selective Patching**: Applies custom DNS only to Discord.py connections via monkey patching
+3. **Session Isolation**: API calls use clean aiohttp sessions that bypass DNS patches
+4. **Dual-Mode Operation**: 
+   - Discord connections: Custom DNS resolver (works around HF DNS)
+   - API calls: Original aiohttp functions (prevents session conflicts)
+
+#### Key Components
+- **`setup_custom_dns_resolver()`**: Creates alternative DNS resolver with Google/Cloudflare DNS
+- **`setup_discord_patches()`**: Monkey patches aiohttp for Discord connections only  
+- **`query_opteee()`**: Uses saved original functions for clean API calls
+- **Fallback Logic**: Gracefully handles DNS resolver failures
+
+#### Environment Configuration
+```bash
+# Enable/disable custom DNS resolver (default: enabled)
+ENABLE_CUSTOM_DNS=true
+
+# Discord bot configuration
+DISCORD_TOKEN=your_token_here
+OPTEEE_API_URL=https://bthaile-opteee.hf.space
+```
+
+#### Log Messages to Expect
+```
+✅ Custom DNS resolver dependencies available
+🔧 Setting up custom DNS resolver in async context...
+✅ Applied comprehensive aiohttp and discord.py DNS patches
+Using original aiohttp functions for clean API call
+Making clean API request to https://...
+API response status: 200
+```
+
+### Troubleshooting DNS Issues
+
+#### Common Problems & Solutions
+
+**Problem: "Session is closed" errors**
+- **Cause**: DNS patches interfering with API session creation
+- **Solution**: Bot automatically uses clean sessions with original aiohttp functions
+- **Check**: Look for "Using original aiohttp functions for clean API call" in logs
+
+**Problem: Discord connection failures**  
+- **Cause**: HuggingFace DNS can't resolve discord.com
+- **Solution**: Custom DNS resolver with Google/Cloudflare DNS
+- **Check**: Look for "Custom DNS resolver active and ready" in logs
+
+**Problem: Bot startup hanging**
+- **Cause**: DNS resolver initialization failure
+- **Solution**: Set `ENABLE_CUSTOM_DNS=false` to disable custom DNS
+- **Fallback**: Bot will use system DNS (may have connection issues)
+
+#### Debug Steps
+1. **Check logs** for DNS resolver status messages
+2. **Verify API endpoint** is reachable from your environment
+3. **Test with custom DNS disabled**: Set `ENABLE_CUSTOM_DNS=false`
+4. **Monitor health**: Use `!health` command to check API connectivity
+5. **Wait for HF recovery**: DNS issues often resolve automatically after 1-5 minutes
+
+#### Advanced Debugging
+```bash
+# Test DNS resolution manually
+nslookup discord.com 8.8.8.8
+
+# Check if API is reachable  
+curl -s https://bthaile-opteee.hf.space/api/health
+
+# Monitor bot logs in real-time
+tail -f discord_bot.log
+```
+
+### Why This Complexity is Necessary
+- **HuggingFace Limitation**: Spaces environments have unreliable DNS resolution
+- **Discord Requirement**: Discord.py needs reliable DNS for gateway connections  
+- **API Isolation**: Prevents DNS patches from breaking HTTP API calls
+- **Production Stability**: Ensures bot works reliably in HF deployment environment
+
+This implementation prioritizes stability and reliability over simplicity, ensuring the bot works consistently despite HuggingFace's DNS challenges.
