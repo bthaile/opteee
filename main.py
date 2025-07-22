@@ -120,6 +120,16 @@ This is a test response to validate the conversation history functionality. In p
         print(f"❌ Error processing query: {e}")
         raise HTTPException(status_code=500, detail=f"Error processing query: {str(e)}")
 
+# Serve favicon.ico
+@app.get("/favicon.ico")
+async def serve_favicon():
+    """Serve the favicon"""
+    favicon_path = "favicon.ico"
+    if os.path.exists(favicon_path):
+        return FileResponse(favicon_path, media_type="image/x-icon")
+    else:
+        raise HTTPException(status_code=404, detail="Favicon not found")
+
 # Serve React static files (if they exist)
 if os.path.exists("frontend/build/static"):
     app.mount("/static", StaticFiles(directory="frontend/build/static"), name="static")
