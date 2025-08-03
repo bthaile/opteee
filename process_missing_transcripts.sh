@@ -1,9 +1,9 @@
 #!/bin/bash
 
-python whisper_transcribe.py "https://www.youtube.com/watch?v=HM1wtbKEDzw"
-python whisper_transcribe.py "https://www.youtube.com/watch?v=GVrANU08cAU"
-python whisper_transcribe.py "https://www.youtube.com/watch?v=FuuVCSD5QVc"
-python whisper_transcribe.py "https://www.youtube.com/watch?v=kaYgLPcybfA"
-python whisper_transcribe.py "https://www.youtube.com/watch?v=ozUnmSa7qy4"
-python whisper_transcribe.py "https://www.youtube.com/watch?v=HM1wtbKEDzw"
-python whisper_transcribe.py "https://www.youtube.com/watch?v=GVrANU08cAU"
+python whisper_transcribe.py "https://www.youtube.com/watch?v=fNW7e0SdtG0"
+python whisper_transcribe.py "https://www.youtube.com/watch?v=TxQPn4WGJBc"
+python whisper_transcribe.py "https://www.youtube.com/watch?v=JuqhsVCGUCA"
+python whisper_transcribe.py "https://www.youtube.com/watch?v=CzBpxADkCk0"
+python whisper_transcribe.py "https://www.youtube.com/watch?v=WWVsuoWX8mU"
+python whisper_transcribe.py "https://www.youtube.com/watch?v=fNW7e0SdtG0"
+python whisper_transcribe.py "https://www.youtube.com/watch?v=TxQPn4WGJBc"
