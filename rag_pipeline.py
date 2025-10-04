@@ -38,7 +38,7 @@ METADATA_PATH = os.path.join(VECTOR_STORE_DIR, "transcript_metadata.pkl")
 INDEX_PATH = os.path.join(VECTOR_STORE_DIR, "transcript_index.faiss")
 
 DEFAULT_TOP_K = 5
-DEFAULT_LLM_MODEL = "gpt-4o"  # Current OpenAI model that supports temperature
+DEFAULT_LLM_MODEL = "gpt-5-mini"  # Current OpenAI model that supports temperature
 DEFAULT_CLAUDE_MODEL = "claude-sonnet-4-20250514"  # Latest Claude Sonnet 4 model
 DEFAULT_TEMPERATURE = 0.2
 DEFAULT_LLM_PROVIDER = "openai"  # "openai" or "claude"
@@ -332,7 +332,7 @@ def create_openai_model_with_fallback(model: str, temperature: float) -> ChatOpe
         "o1-preview", "o1-mini", "o1-pro", "o1", 
         "o3-mini", "o3-medium", "o3", "o3-pro", 
         "o4-mini", "o4", "o4-pro",
-        "gpt-4o-mini"  # Some versions don't support temperature
+        "gpt-4o-mini", "gpt-5-mini"  # Some versions don't support temperature
     ]
     
     # Check if model is known to not support temperature
