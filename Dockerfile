@@ -26,13 +26,7 @@ ENV XDG_CONFIG_HOME=/app/cache
 
 # Pre-download the sentence transformer model during build with proper cache settings
 # If download fails, continue anyway (model will be downloaded at runtime)
-RUN python -c "try:
-    from sentence_transformers import SentenceTransformer
-    SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2', cache_folder='/app/cache/sentence_transformers')
-    print('✓ Model pre-downloaded successfully')
-except Exception as e:
-    print(f'⚠️ Model pre-download failed: {e}')
-    print('Model will be downloaded at runtime instead')" || echo "Model download failed, continuing..."
+RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2', cache_folder='/app/cache/sentence_transformers'); print('Model pre-downloaded successfully')" || echo "Model download failed, continuing..."
 
 # Copy all Python files first (this layer will be cached)
 COPY *.py /app/
