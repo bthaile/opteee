@@ -63,12 +63,86 @@ def load_chat_css():
 # JavaScript functionality removed to avoid compatibility issues with Gradio
 # The chat interface works perfectly without custom JavaScript
 
+def extract_quotes_from_answer(answer: str) -> List[str]:
+    """
+    Extract quoted text from the LLM's answer.
+    Looks for text in [brackets], "quotes", or other citation patterns.
+    """
+    import re
+    quotes = []
+    
+    # Pattern 1: Text in [square brackets]
+    bracket_quotes = re.findall(r'\[([^\]]+)\]', answer)
+    quotes.extend([q.strip() for q in bracket_quotes if len(q.strip()) > 15])
+    
+    # Pattern 2: Text in "regular quotes" (but not in URLs or markdown)
+    # Avoid matching URLs and short phrases
+    regular_quotes = re.findall(r'"([^"]{20,}?)"', answer)
+    quotes.extend([q.strip() for q in regular_quotes])
+    
+    # Pattern 3: Look for phrases like "As stated in..." or "According to..."
+    # followed by quoted text
+    contextual_quotes = re.findall(r'(?:as stated|according to|mentions that|explains that|states)[:\s]+"([^"]+)"', answer, re.IGNORECASE)
+    quotes.extend([q.strip() for q in contextual_quotes if len(q.strip()) > 15])
+    
+    # Remove duplicates while preserving order
+    seen = set()
+    unique_quotes = []
+    for q in quotes:
+        q_lower = q.lower()
+        if q_lower not in seen:
+            seen.add(q_lower)
+            unique_quotes.append(q)
+    
+    return unique_quotes[:5]  # Limit to top 5 quotes to avoid over-highlighting
+
+def highlight_text_in_content(content: str, quotes: List[str]) -> str:
+    """
+    Highlight quoted passages in the transcript content.
+    Uses fuzzy matching to handle minor variations.
+    """
+    if not quotes or not content:
+        return content
+    
+    highlighted_content = content
+    
+    for quote in quotes:
+        # Clean quote for matching (remove extra spaces, normalize)
+        quote_clean = ' '.join(quote.split()).lower()
+        
+        # Find the quote in the content (case-insensitive, flexible spacing)
+        content_words = content.split()
+        quote_words = quote_clean.split()
+        
+        # Simple sliding window to find matches
+        for i in range(len(content_words) - len(quote_words) + 1):
+            window = ' '.join(content_words[i:i+len(quote_words)]).lower()
+            window_normalized = ' '.join(window.split())
+            
+            # Check for close match (handles minor variations)
+            if quote_clean in window_normalized or window_normalized in quote_clean:
+                # Get the original text (with proper capitalization)
+                original_text = ' '.join(content_words[i:i+len(quote_words)])
+                
+                # Replace with highlighted version
+                highlighted_content = highlighted_content.replace(
+                    original_text,
+                    f'<mark class="quote-highlight">{original_text}</mark>',
+                    1  # Only replace first occurrence
+                )
+                break
+    
+    return highlighted_content
+
 def format_chat_response(answer: str, sources: List[Dict]) -> Dict[str, Any]:
     """
     Format the chat response with enhanced video reference cards
     """
     # Format the answer text - convert markdown to HTML
     formatted_answer = markdown.markdown(answer)
+    
+    # Extract quotes from the answer for highlighting
+    quotes = extract_quotes_from_answer(answer)
     
     # Create enhanced video reference cards
     if not sources:
@@ -121,11 +195,32 @@ def format_chat_response(answer: str, sources: List[Dict]) -> Dict[str, Any]:
         else:
             upload_date_formatted = 'Unknown'
         
-        # Get transcript content
+        # Get transcript content and highlight quotes
         content = source.get('content', source.get('text', ''))
-        truncated_content = content[:200] + "..." if len(content) > 200 else content
+        score = source.get('score', 0.0)
+        
+        # Highlight quotes in the full content
+        highlighted_content = highlight_text_in_content(content, quotes)
+        
+        # Show more context if quotes were found - expand to 400 chars
+        display_length = 400 if any(q.lower() in content.lower() for q in quotes) else 200
+        
+        # Truncate after highlighting (preserve HTML tags)
+        if len(content) > display_length:
+            truncated_content = highlighted_content[:display_length + 50] + '... <button class="expand-transcript" onclick="expandTranscript(this)" style="color: var(--accent-color); font-size: 0.75rem; background: none; border: none; cursor: pointer; text-decoration: underline;">Show full transcript</button>'
+        else:
+            truncated_content = highlighted_content
+        
+        # Add relevance indicator
+        if score < 50:
+            relevance_badge = '<span class="relevance-badge high" title="High relevance match">🎯 Highly Relevant</span>'
+        elif score < 100:
+            relevance_badge = '<span class="relevance-badge medium" title="Medium relevance match">✓ Relevant</span>'
+        else:
+            relevance_badge = '<span class="relevance-badge low" title="Lower relevance - may be tangential">⚠️ Partial Match</span>'
 
         meta_items = [
+            relevance_badge,
             f'''<div class="metadata-item" title="Jump to timestamp in video"><svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='#0f766e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'></circle><polygon points='10 8 16 12 10 16 10 8'></polygon></svg><span>{timestamp_formatted}</span></div>''',
             f'''<div class="metadata-item" title="Total video duration"><svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='#0f766e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'></circle><polyline points='12 6 12 12 16 14'></polyline></svg><span>{duration_formatted}</span></div>''',
             f'''<div class="metadata-item" title="Video upload date"><svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='#0f766e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'></rect><line x1='16' y1='2' x2='16' y2='6'></line><line x1='8' y1='2' x2='8' y2='6'></line><line x1='3' y1='10' x2='21' y2='10'></line></svg><span>{upload_date_formatted}</span></div>'''
@@ -142,7 +237,7 @@ def format_chat_response(answer: str, sources: List[Dict]) -> Dict[str, Any]:
                     </a>
                 </div>
 
-                <div class="transcript-snippet">
+                <div class="transcript-snippet" data-full-content='{json.dumps(highlighted_content).replace("'", "&#39;")}'>
                     <p>"{truncated_content}"</p>
                 </div>
 
@@ -481,6 +576,23 @@ def create_chat_interface():
                 }).catch(function(err) {
                     console.error('Could not copy text: ', err);
                 });
+            };
+            
+            // Expand transcript functionality
+            window.expandTranscript = function(button) {
+                const snippetDiv = button.closest('.transcript-snippet');
+                const paragraphElem = snippetDiv.querySelector('p');
+                const fullContent = snippetDiv.getAttribute('data-full-content');
+                
+                if (fullContent) {
+                    try {
+                        const content = JSON.parse(fullContent);
+                        paragraphElem.innerHTML = '"' + content + '"';
+                        button.remove(); // Remove the expand button after expanding
+                    } catch (e) {
+                        console.error('Error expanding transcript:', e);
+                    }
+                }
             };
 
         }

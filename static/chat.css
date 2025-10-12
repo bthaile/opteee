@@ -583,6 +583,79 @@
     gap: 1rem;
 }
 
+/* Sources explanation header */
+.sources-header {
+    background: linear-gradient(135deg, var(--accent-light), var(--bg-secondary));
+    border: 2px solid var(--accent-color);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.sources-header h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--accent-color);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sources-header p {
+    margin: 0.25rem 0;
+    line-height: 1.5;
+}
+
+.sources-header .highlight-legend {
+    display: inline-block;
+    background: linear-gradient(120deg, #fef3c7 0%, #fde68a 100%);
+    padding: 0.125rem 0.35rem;
+    border-radius: 3px;
+    border-left: 3px solid var(--accent-color);
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+/* Relevance badges - subtle and intuitive */
+.relevance-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    border: 1px solid;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+.relevance-badge:hover {
+    opacity: 1;
+}
+
+.relevance-badge.high {
+    background-color: #dcfce7;
+    color: #166534;
+    border-color: #86efac;
+}
+
+.relevance-badge.medium {
+    background-color: #dbeafe;
+    color: #1e40af;
+    border-color: #93c5fd;
+}
+
+.relevance-badge.low {
+    background-color: #fef3c7;
+    color: #854d0e;
+    border-color: #fcd34d;
+}
+
 .video-card {
     background-color: var(--bg-primary);
     border: 1px solid var(--border-color);
@@ -669,6 +742,32 @@
 .transcript-snippet p {
     color: var(--text-primary);
     margin: 0;
+}
+
+/* Highlighting for quoted text that was used in the answer */
+.quote-highlight {
+    background: linear-gradient(120deg, #fef3c7 0%, #fde68a 100%);
+    padding: 0.125rem 0.25rem;
+    border-radius: 3px;
+    font-weight: 500;
+    border-left: 3px solid var(--accent-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin: 0 0.125rem;
+    transition: all 0.2s ease;
+}
+
+.quote-highlight:hover {
+    background: linear-gradient(120deg, #fde68a 0%, #fbbf24 100%);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Alternative highlight style for better readability */
+mark.quote-highlight {
+    background: linear-gradient(120deg, #e0f2fe 0%, #bae6fd 100%);
+    border-left: 3px solid var(--accent-color);
+    color: var(--text-primary);
 }
 
 .video-actions {
