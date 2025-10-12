@@ -70,6 +70,9 @@ class HtmlFormatter:
                 </div>
             '''
         
+        # Create a new list to store sources with highlighted content
+        highlighted_sources = []
+        
         for i, source in enumerate(sources):
             title = source.get('title', 'Untitled Video')
             url = source.get('url', '#')
@@ -159,6 +162,11 @@ class HtmlFormatter:
                     </div>
                 </div>
             '''
+            
+            # Add this source to highlighted_sources with highlighted content
+            source_with_highlighting = source.copy()
+            source_with_highlighting['content'] = highlighted_content
+            highlighted_sources.append(source_with_highlighting)
         
         sources_content += '</div>'
         
@@ -166,7 +174,7 @@ class HtmlFormatter:
             "formatted_content": {
                 "answer": formatted_answer,
                 "sources": sources_content,
-                "raw_sources": sources
+                "raw_sources": highlighted_sources
             },
             "format": "html"
         }
