@@ -44,6 +44,9 @@ class HtmlFormatter:
         # Clean the HTML to remove any wrapper divs that would conflict with frontend
         formatted_answer = self._clean_html_structure(formatted_answer)
         
+        # Extract quotes from the answer for highlighting
+        quotes = self._extract_quotes_from_answer(answer)
+        
         # Create enhanced video reference cards
         if not sources:
             return {
@@ -57,6 +60,15 @@ class HtmlFormatter:
         
         # Don't add outer wrapper - frontend will handle main container
         sources_content = '<div class="video-references">'
+        
+        # Add informative header if we have highlights
+        if quotes and len(quotes) > 0:
+            sources_content += '''
+                <div class="sources-header">
+                    <h4>📚 Source Videos with Highlighted Quotes</h4>
+                    <p>Key phrases from the AI's answer are <span class="highlight-legend">highlighted</span> in the transcript snippets below for easy reference.</p>
+                </div>
+            '''
         
         for i, source in enumerate(sources):
             title = source.get('title', 'Untitled Video')
@@ -98,9 +110,18 @@ class HtmlFormatter:
             else:
                 upload_date_formatted = 'Unknown'
             
-            # Get transcript content
+            # Get transcript content and apply highlighting
             content = source.get('content', source.get('text', ''))
-            truncated_content = content[:200] + "..." if len(content) > 200 else content
+            highlighted_content = self._highlight_text_in_content(content, quotes)
+            
+            # Show more context if quotes were found - expand to 400 chars
+            display_length = 400 if any(q.lower() in content.lower() for q in quotes) else 200
+            
+            # Truncate after highlighting (preserve HTML tags)
+            if len(content) > display_length:
+                truncated_content = highlighted_content[:display_length + 50] + '...'
+            else:
+                truncated_content = highlighted_content
 
             meta_items = [
                 f'''<div class="metadata-item" title="Jump to timestamp in video"><svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='#0f766e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'></circle><polygon points='10 8 16 12 10 16 10 8'></polygon></svg><span>{timestamp_formatted}</span></div>''',
@@ -242,6 +263,125 @@ class HtmlFormatter:
         html_content = re.sub(r'</ol>', r'</ol>\n', html_content)
         
         return html_content.strip()
+    
+    def _extract_quotes_from_answer(self, answer: str) -> List[str]:
+        """
+        Extract quoted text from the LLM's answer.
+        Looks for text in "quotes" or other citation patterns.
+        """
+        quotes = []
+        
+        # Pattern 1: Text in "regular quotes" (most common)
+        # Match quotes with at least 10 characters (lowered threshold)
+        regular_quotes = re.findall(r'"([^"]{10,}?)"', answer)
+        quotes.extend([q.strip() for q in regular_quotes])
+        
+        # Pattern 2: Text in 'single quotes' (alternative quoting style)
+        single_quotes = re.findall(r"'([^']{15,}?)'", answer)
+        quotes.extend([q.strip() for q in single_quotes])
+        
+        # Pattern 3: Look for contextual phrases followed by quoted text
+        contextual_phrases = [
+            r'(?:as stated|according to|mentions that|explains that|states that|notes that)',
+            r'(?:the expert says|the video explains|the speaker mentions)',
+            r'(?:as mentioned|as explained|as described)'
+        ]
+        
+        for phrase_pattern in contextual_phrases:
+            contextual_quotes = re.findall(
+                f'{phrase_pattern}[:\s]+"([^"]+)"', 
+                answer, 
+                re.IGNORECASE
+            )
+            quotes.extend([q.strip() for q in contextual_quotes if len(q.strip()) > 10])
+        
+        # Remove duplicates while preserving order
+        seen = set()
+        unique_quotes = []
+        for q in quotes:
+            q_lower = q.lower()
+            if q_lower not in seen:
+                seen.add(q_lower)
+                unique_quotes.append(q)
+        
+        # Debug logging
+        if unique_quotes:
+            print(f"✅ Extracted {len(unique_quotes)} quotes for highlighting:")
+            for i, q in enumerate(unique_quotes[:5], 1):
+                print(f"   {i}. \"{q[:60]}...\"" if len(q) > 60 else f"   {i}. \"{q}\"")
+        else:
+            print("⚠️ No quotes extracted from AI answer - highlighting will not work")
+            print("   Tip: The AI needs to use \"direct quotes\" from the source material")
+        
+        return unique_quotes[:5]  # Limit to top 5 quotes to avoid over-highlighting
+    
+    def _highlight_text_in_content(self, content: str, quotes: List[str]) -> str:
+        """
+        Highlight quoted passages in the transcript content.
+        Uses fuzzy matching to handle minor variations.
+        """
+        if not quotes or not content:
+            return content
+        
+        highlighted_content = content
+        highlights_found = 0
+        
+        for quote in quotes:
+            # Clean quote for matching (remove extra spaces, normalize)
+            quote_clean = ' '.join(quote.split()).lower()
+            
+            # Try direct substring match first (case-insensitive)
+            content_lower = content.lower()
+            if quote_clean in content_lower:
+                # Find the exact position in the original content
+                start_idx = content_lower.find(quote_clean)
+                end_idx = start_idx + len(quote_clean)
+                
+                # Get the original text with proper capitalization
+                original_text = content[start_idx:end_idx]
+                
+                # Replace with highlighted version (only if not already highlighted)
+                if '<mark' not in highlighted_content[max(0, start_idx-10):min(len(highlighted_content), end_idx+10)]:
+                    highlighted_content = highlighted_content.replace(
+                        original_text,
+                        f'<mark class="quote-highlight">{original_text}</mark>',
+                        1  # Only replace first occurrence
+                    )
+                    highlights_found += 1
+                    print(f"   ✓ Highlighted: \"{original_text[:50]}...\"" if len(original_text) > 50 else f"   ✓ Highlighted: \"{original_text}\"")
+                continue
+            
+            # Fallback: Try fuzzy matching with sliding window
+            content_words = content.split()
+            quote_words = quote_clean.split()
+            
+            # Simple sliding window to find matches
+            for i in range(len(content_words) - len(quote_words) + 1):
+                window = ' '.join(content_words[i:i+len(quote_words)]).lower()
+                window_normalized = ' '.join(window.split())
+                
+                # Check for close match (handles minor variations)
+                if quote_clean in window_normalized or window_normalized in quote_clean:
+                    # Get the original text (with proper capitalization)
+                    original_text = ' '.join(content_words[i:i+len(quote_words)])
+                    
+                    # Replace with highlighted version (only if not already highlighted)
+                    if '<mark' not in highlighted_content:
+                        highlighted_content = highlighted_content.replace(
+                            original_text,
+                            f'<mark class="quote-highlight">{original_text}</mark>',
+                            1  # Only replace first occurrence
+                        )
+                        highlights_found += 1
+                        print(f"   ✓ Highlighted (fuzzy): \"{original_text[:50]}...\"" if len(original_text) > 50 else f"   ✓ Highlighted (fuzzy): \"{original_text}\"")
+                    break
+        
+        if highlights_found == 0:
+            print("   ⚠️ No highlights applied - quotes not found in source content")
+        else:
+            print(f"   ✅ Applied {highlights_found} highlight(s) to source content")
+        
+        return highlighted_content
 
 
 class DiscordFormatter:

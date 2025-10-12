@@ -72,8 +72,8 @@ def extract_quotes_from_answer(answer: str) -> List[str]:
     quotes = []
     
     # Pattern 1: Text in "regular quotes" (most common)
-    # Match quotes with at least 15 characters to avoid short phrases
-    regular_quotes = re.findall(r'"([^"]{15,}?)"', answer)
+    # Match quotes with at least 10 characters (lowered threshold)
+    regular_quotes = re.findall(r'"([^"]{10,}?)"', answer)
     quotes.extend([q.strip() for q in regular_quotes])
     
     # Pattern 2: Text in 'single quotes' (alternative quoting style)
@@ -114,6 +114,15 @@ def extract_quotes_from_answer(answer: str) -> List[str]:
         print("   Tip: The AI needs to use \"direct quotes\" from the source material")
     
     return unique_quotes[:5]  # Limit to top 5 quotes to avoid over-highlighting
+
+def normalize_for_matching(text: str) -> str:
+    """Normalize text for fuzzy matching - handles numbers and spacing"""
+    import re
+    # Remove extra spaces
+    text = ' '.join(text.split())
+    # Normalize common number formats: "6.12" -> "612", "5.14" -> "514"
+    # But keep the original for display
+    return text.lower()
 
 def highlight_text_in_content(content: str, quotes: List[str]) -> str:
     """
