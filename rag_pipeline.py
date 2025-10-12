@@ -252,16 +252,65 @@ class CustomFAISSRetriever:
             print(f"❌ Error loading vector store: {str(e)}")
             sys.exit(1)
     
+    def expand_query(self, query: str) -> str:
+        """
+        Expand query with common trading acronyms and related terms.
+        This helps with semantic search by providing more context.
+        """
+        # Common options trading acronyms and their expansions
+        acronym_expansions = {
+            'PEAD': 'PEAD post-earnings announcement drift earnings surprise',
+            'IV': 'implied volatility IV options pricing',
+            'DTE': 'DTE days to expiration options time decay',
+            'ITM': 'in the money ITM strike price',
+            'OTM': 'out of the money OTM strike price',
+            'ATM': 'at the money ATM strike price',
+            'PMCC': 'PMCC poor man covered call diagonal spread',
+            'CSP': 'CSP cash secured put selling puts',
+            'CC': 'covered call CC writing calls',
+            'LEAPS': 'LEAPS long term equity anticipation securities',
+            'VIX': 'VIX volatility index fear gauge',
+            'VEGA': 'vega volatility sensitivity options greeks',
+            'THETA': 'theta time decay options greeks',
+            'DELTA': 'delta directional risk options greeks',
+            'GAMMA': 'gamma delta sensitivity options greeks',
+            'RHO': 'rho interest rate sensitivity options greeks',
+        }
+        
+        # Check if query is a known acronym (case-insensitive, whole word)
+        query_upper = query.upper().strip()
+        for acronym, expansion in acronym_expansions.items():
+            if query_upper == acronym or query_upper == acronym.lower():
+                print(f"🔍 Expanding query '{query}' → '{expansion}'")
+                return expansion
+        
+        # If query contains an acronym, append the expansion
+        words = query.upper().split()
+        expansions_to_add = []
+        for word in words:
+            if word in acronym_expansions:
+                expansions_to_add.append(acronym_expansions[word])
+        
+        if expansions_to_add:
+            expanded = query + ' ' + ' '.join(expansions_to_add)
+            print(f"🔍 Expanding query '{query}' → '{expanded}'")
+            return expanded
+        
+        return query
+    
     def get_relevant_documents(self, query: str) -> List[Document]:
         """Get relevant documents for a query"""
         if self.model is None or self.index is None:
             raise ValueError("Retriever not properly initialized")
         
+        # Expand query if it contains known acronyms
+        expanded_query = self.expand_query(query)
+        
         # Fetch 2x the requested number of results
         fetch_k = self.top_k * self.fetch_multiplier
         
-        # Encode the query
-        query_embedding = self.model.encode([query])[0]
+        # Encode the expanded query
+        query_embedding = self.model.encode([expanded_query])[0]
         query_embedding = np.array([query_embedding]).astype('float32')
         
         # Search the index for more results than needed
