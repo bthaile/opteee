@@ -250,7 +250,7 @@ async def setup_discord_patches():
         logger.error(f"Failed to apply comprehensive DNS patches: {patch_error}")
         raise
 
-async def query_opteee(query: str, num_results: int = 5, provider: str = "openai", format: str = "discord") -> dict:
+async def query_opteee(query: str, num_results: int = 5, provider: str = "claude", format: str = "discord") -> dict:
     """Query the opteee application using clean session isolated from Discord DNS patches"""
     global original_client_session_init, original_tcp_connector_init
     

@@ -62,7 +62,7 @@ class RAGService:
             except Exception as e:
                 print(f"❌ Failed to initialize {provider} chain: {e}")
     
-    async def process_query(self, query: str, provider: str = "openai", num_results: int = 10, format: str = "html", conversation_history: Optional[List[ConversationMessage]] = None) -> Dict[str, Any]:
+    async def process_query(self, query: str, provider: str = "claude", num_results: int = 10, format: str = "html", conversation_history: Optional[List[ConversationMessage]] = None) -> Dict[str, Any]:
         """
         Process a user query and return formatted response
         Now supports conversation history for context

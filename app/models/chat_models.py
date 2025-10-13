@@ -15,7 +15,7 @@ class ConversationMessage(BaseModel):
 class ChatRequest(BaseModel):
     """Request model for chat endpoint"""
     query: str = Field(..., description="User's question", min_length=1)
-    provider: str = Field(default="openai", description="LLM provider to use")
+    provider: str = Field(default="claude", description="LLM provider to use")
     num_results: int = Field(default=10, description="Number of search results to retrieve", ge=1, le=20)
     format: str = Field(default="html", description="Response format: 'html' or 'discord'", pattern="^(html|discord)$")
     conversation_history: Optional[List[ConversationMessage]] = Field(

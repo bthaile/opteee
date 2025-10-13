@@ -41,7 +41,7 @@ DEFAULT_TOP_K = 5
 DEFAULT_LLM_MODEL = "gpt-4o-mini"  # Current OpenAI model that supports temperature
 DEFAULT_CLAUDE_MODEL = "claude-sonnet-4-20250514"  # Latest Claude Sonnet 4 model
 DEFAULT_TEMPERATURE = 0.2
-DEFAULT_LLM_PROVIDER = "openai"  # "openai" or "claude"
+DEFAULT_LLM_PROVIDER = "claude"  # "openai" or "claude"
 
 # Load environment variables
 load_dotenv()
