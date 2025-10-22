@@ -10,180 +10,349 @@ env:
   - PYTHONPATH=/app
 ---
 
-# Options Trading Knowledge Search
+# OPTEEE - Options Trading Education Expert
 
-A modern web application providing semantic search across a collection of options trading transcripts and videos. Built with FastAPI backend and React frontend for optimal performance and user experience.
+A powerful semantic search application providing intelligent Q&A across a curated collection of options trading educational content. Built with modern technologies for fast, accurate, and context-aware responses.
+
+## Overview
+
+OPTEEE uses advanced natural language processing and vector similarity search to help traders learn from a comprehensive knowledge base of options trading transcripts and educational videos. Ask questions in plain English and get detailed answers with direct links to relevant source material.
+
+## Features
+
+- **Semantic Search**: Advanced NLP-powered search that understands meaning, not just keywords
+- **Fast Retrieval**: FAISS vector database delivers millisecond search responses
+- **Video Integration**: Direct links to specific timestamps in source YouTube videos
+- **Chat Interface**: Modern, responsive chat UI with conversation history
+- **Source Citations**: Every answer includes clickable references with timestamps
+- **Context-Aware**: Maintains conversation history for follow-up questions
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
 
 ## Architecture
 
 - **Backend**: FastAPI with RESTful API endpoints
 - **Frontend**: React with modern UI components
 - **Search Engine**: Sentence-transformers with FAISS vector database
-- **Deployment**: Docker containerization for HuggingFace Spaces
+- **NLP Model**: all-MiniLM-L6-v2 for semantic embeddings
+- **Deployment**: Docker containerization for easy deployment
 
-## Features
-
-- **Semantic Search**: Advanced natural language search using sentence-transformers
-- **Fast Retrieval**: FAISS vector database for millisecond search responses
-- **Video Integration**: Direct links to specific timestamps in relevant YouTube videos
-- **Chat Interface**: Modern chat UI with conversation history
-- **Prompt History**: Sidebar with recent queries for easy re-use
-- **Source Citations**: Clickable video references with timestamps
-- **Responsive Design**: Works on desktop and mobile devices
-
-## API Endpoints
-
-- `GET /api/health` - Health check endpoint
-- `POST /api/chat` - Main chat endpoint accepting queries and returning answers with sources
-- `GET /` - Serves the React frontend application
-
-## Local Development
+## Quick Start
 
 ### Prerequisites
 
-- Python 3.9+
-- Docker (for containerized deployment)
+- Python 3.9 or higher
+- Docker (optional, for containerized deployment)
 - Git
 
-### Setup
+### Local Development Setup
 
-1. Clone the repository:
+1. **Clone the repository**:
 ```bash
-git clone <repository-url>
+git clone https://github.com/yourusername/opteee.git
 cd opteee
 ```
 
-2. Install dependencies:
+2. **Install dependencies**:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Set up environment variables:
-```bash
-# Create .env file with necessary API keys and configuration
-cp .env.example .env
-```
-
-4. Run the development server:
+3. **Run the development server**:
 ```bash
 python main.py
 ```
 
 The application will be available at `http://localhost:7860`
 
-### Docker Development
+### Docker Deployment
 
-For local Docker testing that matches the production environment:
-
-```bash
-# Build and run with Docker
-./run_local.sh
-```
-
-This script:
-- Stops any existing containers
-- Builds a fresh Docker image
-- Runs the container with environment variables
-
-## Production Deployment
-
-### HuggingFace Spaces
-
-The application is configured for automatic deployment to HuggingFace Spaces via GitHub Actions:
-
-1. **Automatic Deployment**: Pushes to `main` branch trigger deployment
-2. **Manual Deployment**: Use GitHub Actions "Deploy to Hugging Face Space" workflow
-3. **Docker Build**: Production builds include both backend and frontend assets
-
-### Local Production Testing
-
-To test the full production build locally:
+Build and run with Docker:
 
 ```bash
-# Prepare production files
-python prepare_production_files.py
+# Build the Docker image
+docker build -t opteee .
 
-# Build and test with Docker
-./run_local.sh
+# Run the container
+docker run -p 7860:7860 opteee
 ```
+
+Or use Docker Compose:
+
+```bash
+docker-compose up
+```
+
+## API Documentation
+
+### Endpoints
+
+- **GET `/api/health`** - Health check endpoint
+  - Returns service status and version information
+
+- **POST `/api/chat`** - Main chat endpoint
+  - Request body:
+    ```json
+    {
+      "query": "What is a covered call?",
+      "provider": "huggingface",
+      "num_results": 5,
+      "format": "detailed",
+      "conversation_history": []
+    }
+    ```
+  - Returns answer with sources and timestamps
+
+- **GET `/`** - Serves the React frontend application
 
 ## Project Structure
 
 ```
 opteee/
-├── main.py                 # FastAPI application entry point
-├── api/                    # API route handlers
-├── services/              # Business logic (RAG pipeline, vector search)
-├── models/                # Pydantic models for API
-├── frontend/              # React frontend source
-│   ├── build/            # Production build files
-│   └── src/              # React components and styles
-├── vector_store/          # FAISS vector database
-├── transcripts/           # Processed video transcripts
-├── audio_files_processed/ # Audio processing cache
-└── docker-compose.yml     # Container orchestration
+├── main.py                      # FastAPI application entry point
+├── config.py                    # Configuration and settings
+├── rag_pipeline.py              # RAG implementation
+├── vector_search.py             # Vector similarity search
+├── create_vector_store.py       # Vector store creation
+├── rebuild_vector_store.py      # Vector store rebuilding
+├── app/
+│   ├── models/                  # Pydantic models
+│   │   └── chat_models.py       # Chat request/response models
+│   └── services/                # Business logic services
+│       ├── rag_service.py       # RAG service implementation
+│       └── formatters.py        # Response formatting
+├── frontend/
+│   └── build/                   # React production build
+├── vector_store/                # FAISS vector database files
+├── processed_transcripts/       # Processed video transcripts
+├── transcripts/                 # Raw transcript data
+├── static/                      # Static assets
+├── templates/                   # HTML templates
+├── discord/                     # Discord bot integration
+│   ├── discord_bot.py           # Discord bot implementation
+│   └── ...                      # Bot configuration files
+├── docs/                        # Documentation
+├── archive/                     # Archived utilities and scripts
+├── Dockerfile                   # Docker configuration
+├── docker-compose.yml           # Docker Compose configuration
+└── requirements.txt             # Python dependencies
 ```
 
 ## Key Technologies
 
-- **FastAPI**: High-performance Python web framework
-- **React**: Modern frontend JavaScript library
-- **Sentence Transformers**: Semantic embedding models
-- **FAISS**: Efficient similarity search library
-- **Docker**: Containerization platform
-- **GitHub Actions**: CI/CD pipeline
-- **HuggingFace Spaces**: Deployment platform
+- **[FastAPI](https://fastapi.tiangolo.com/)** - High-performance Python web framework
+- **[React](https://reactjs.org/)** - Modern frontend JavaScript library
+- **[Sentence Transformers](https://www.sbert.net/)** - State-of-the-art sentence embeddings
+- **[FAISS](https://github.com/facebookresearch/faiss)** - Efficient similarity search and clustering
+- **[Docker](https://www.docker.com/)** - Containerization platform
+- **[HuggingFace](https://huggingface.co/)** - Model hosting and deployment
 
 ## Development Workflow
 
-1. **Backend Changes**: Modify API endpoints in `api/` or services in `services/`
-2. **Frontend Changes**: Update React components in `frontend/src/`
-3. **Testing**: Run locally with `python main.py` or `./run_local.sh`
-4. **Production Prep**: Run `python prepare_production_files.py` before deployment
-5. **Deploy**: Push to `main` branch for automatic HuggingFace deployment
+1. **Backend Changes**: Modify FastAPI endpoints in `main.py` or services in `app/services/`
+2. **Frontend Changes**: Update React components in `frontend/src/` (requires separate build)
+3. **Testing**: Run locally with `python main.py`
+4. **Vector Store Updates**: Rebuild with `python rebuild_vector_store.py`
+5. **Deploy**: Build and push Docker image
 
-## HuggingFace Deployment Notes
+## Configuration
 
-### DNS Resolution Issues
-HuggingFace Spaces environments often experience DNS resolution problems that can affect network connections. This project includes several strategies to handle these issues:
+Key configuration options in `config.py`:
 
-#### Main Application
-- **Robust Error Handling**: API endpoints include comprehensive error handling for network failures
-- **Timeout Configuration**: Proper timeouts configured for all external requests
-- **Health Checks**: `/api/health` endpoint for monitoring service availability
+- `MODEL_NAME`: Sentence transformer model (default: "all-MiniLM-L6-v2")
+- `TOP_K`: Number of top results to retrieve (default: 5)
+- `CHUNK_SIZE`: Size of text chunks for processing (default: 500)
+- `CHUNK_OVERLAP`: Overlap between chunks (default: 50)
 
-#### Discord Bot (Special Considerations)
-The Discord bot requires more complex DNS handling due to HuggingFace DNS limitations:
+## Updating Knowledgebase
 
-- **Custom DNS Resolver**: Uses Google DNS (8.8.8.8) and Cloudflare DNS (1.1.1.1) as fallbacks
-- **Selective Patching**: Custom DNS resolver applied only to Discord.py connections
-- **Isolated API Sessions**: API calls use clean sessions isolated from DNS patches
-- **Dual-Mode Operation**: 
-  - Discord connections: Custom DNS resolver (bypasses HF DNS issues)
-  - API calls: Standard sessions (avoids "Session is closed" errors)
+OPTEEE uses an automated GitHub Actions workflow to keep the knowledge base up-to-date with the latest educational content. The system automatically discovers new videos, generates transcripts, and deploys updates.
 
-#### Environment Variables
-```bash
-# Discord bot DNS configuration
-ENABLE_CUSTOM_DNS=true  # Enable custom DNS resolver (default: true)
+### Automated Weekly Updates
+
+The knowledge base is automatically updated every Sunday at 8:00 PM UTC (3:00 PM CT) through the **Process Video Transcripts Weekly** workflow:
+
+**What happens automatically:**
+
+1. **Video Discovery** - Scans YouTube channels for new educational content
+2. **Transcript Generation** - Creates text transcripts from videos using YouTube API and Whisper
+3. **Text Processing** - Chunks transcripts into searchable segments (250 words with 50-word overlap)
+4. **Repository Update** - Commits new transcripts and processed data to the repository
+5. **Deployment Trigger** - Automatically triggers HuggingFace Space deployment
+6. **Vector Store Rebuild** - HuggingFace rebuilds the FAISS vector database during Docker build
+
+**Processing Pipeline:**
+```
+GitHub Actions:                           HuggingFace Spaces:
+┌─────────────────────┐                  ┌──────────────────────┐
+│ 1. Video Discovery  │                  │ 5. Docker Build      │
+│ 2. Transcripts      │  ───(push)───>   │ 6. Vector Store      │
+│ 3. Text Processing  │                  │ 7. Deploy App        │
+│ 4. Commit & Push    │                  └──────────────────────┘
+└─────────────────────┘
 ```
 
-#### Troubleshooting DNS Issues
-If you encounter DNS-related errors:
+### Manual Workflow Triggering
 
-1. **Check logs** for DNS resolution failures
-2. **Monitor health endpoint** at `/api/health` 
-3. **For Discord bot**: Set `ENABLE_CUSTOM_DNS=false` to disable custom DNS if causing issues
-4. **Network issues**: HuggingFace DNS problems typically resolve automatically after 1-5 minutes
+You can manually trigger the knowledge base update at any time:
+
+**Via GitHub Web Interface:**
+1. Navigate to the **Actions** tab in the GitHub repository
+2. Select **"Process Video Transcripts Weekly"** workflow
+3. Click **"Run workflow"** button
+4. Choose the branch (usually `main`)
+5. Click **"Run workflow"** to start
+
+**Via GitHub CLI:**
+```bash
+gh workflow run "Process Video Transcripts Weekly"
+```
+
+### Local Knowledge Base Rebuild
+
+To rebuild the vector store locally (for development or testing):
+
+```bash
+# Rebuild the entire vector store from processed transcripts
+python rebuild_vector_store.py
+
+# Or use the create script directly
+python create_vector_store.py
+```
+
+**Note:** The vector store files (`vector_store/`) are large and should not be committed to the repository. They are rebuilt automatically during deployment.
+
+### Workflow Configuration
+
+The automated pipeline is configured in `.github/workflows/process-transcripts.yml`:
+
+**Key Settings:**
+- **Schedule:** Weekly on Sunday at 20:00 UTC
+- **Timeout:** 180 minutes (3 hours) for large processing jobs
+- **Python Version:** 3.10
+- **Dependencies:** FFmpeg (for audio processing), PyTorch, Sentence-Transformers
+
+**Required Secrets:**
+- `YOUTUBE_API_KEY` - For accessing YouTube API to fetch video metadata and transcripts
+- `HF_TOKEN` - For deploying to HuggingFace Spaces
+
+### Deployment Pipeline
+
+After transcripts are processed, the **Deploy to Hugging Face Space** workflow automatically:
+
+1. **Triggers On:**
+   - Push to `main` branch
+   - Manual trigger via workflow dispatch
+   - Automatic trigger after transcript updates
+
+2. **Deployment Steps:**
+   - Checks out the latest code
+   - Creates Docker startup script
+   - Pushes to HuggingFace Space repository
+   - HuggingFace rebuilds Docker image
+   - Vector store is created during image build
+   - Application is automatically redeployed
+
+3. **Result:**
+   - New transcripts are searchable within minutes
+   - Zero-downtime deployment
+   - Automatic rollback on failure
+
+### Monitoring Updates
+
+**Check Processing Status:**
+- View workflow runs in the GitHub Actions tab
+- Each run generates a processing report showing:
+  - Number of videos discovered
+  - Transcripts generated
+  - Processed chunks created
+  - Deployment status
+
+**Verify Deployment:**
+- Check HuggingFace Space build logs
+- Test the `/api/health` endpoint
+- Run a sample query to verify new content is searchable
+
+### Adding New Video Sources
+
+To add new YouTube channels or playlists to the discovery process:
+
+1. Update the scraper configuration in the pipeline scripts
+2. The next automated run will discover videos from the new sources
+3. Or manually trigger the workflow to process immediately
+
+### Troubleshooting
+
+**If automated updates fail:**
+
+1. **Check GitHub Actions logs** - View detailed error messages in the workflow run
+2. **Verify secrets** - Ensure `YOUTUBE_API_KEY` and `HF_TOKEN` are valid
+3. **Check API quotas** - YouTube API has daily limits
+4. **Manual rebuild** - Trigger the workflow manually if the scheduled run missed
+5. **Local testing** - Run the pipeline locally to debug issues
+
+**Common Issues:**
+- **YouTube API quota exceeded** - Wait for quota reset (midnight Pacific Time)
+- **Transcripts not available** - Some videos may not have captions enabled
+- **Long processing times** - Large batches may take 1-2 hours
+
+## Docker Integration
+
+The project includes comprehensive Docker support:
+
+- **Dockerfile**: Production-ready Docker image
+- **docker-compose.yml**: Multi-service orchestration
+- **docker-compose.dev.yml**: Development configuration
+
+### Environment Variables
+
+```bash
+PORT=7860                    # Application port
+PYTHONPATH=/app              # Python module path
+TEST_MODE=false              # Enable test mode (no RAG initialization)
+```
+
+## Discord Bot
+
+The project includes a Discord bot integration in the `discord/` directory. The bot provides the same semantic search capabilities directly in Discord channels.
+
+See `discord/README.md` for setup instructions.
+
+## Additional Documentation
+
+- `docs/BEGINNER_GUIDE.md` - Getting started guide
+- `docs/DEPLOYMENT_STEPS.md` - Deployment instructions
+- `docs/HUGGINGFACE_SETUP.md` - HuggingFace Spaces setup
+- `discord/README.md` - Discord bot setup
 
 ## Contributing
 
+Contributions are welcome! Here's how you can help:
+
 1. Fork the repository
-2. Create a feature branch
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Make your changes
-4. Test locally with Docker
-5. Submit a pull request
+4. Run tests to ensure everything works
+5. Commit your changes (`git commit -m 'Add amazing feature'`)
+6. Push to the branch (`git push origin feature/amazing-feature`)
+7. Open a Pull Request
+
+Please ensure your code follows the existing style and includes appropriate documentation.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Thanks to all contributors who have helped build this project
+- Built with open-source technologies and libraries
+- Educational content from various options trading educators
+
+## Contact & Support
+
+- **Issues**: Please use [GitHub Issues](https://github.com/bthaile/opteee/issues) for bug reports and feature requests
+- **Discussions**: Join the conversation in [GitHub Discussions](https://github.com/bthaile/opteee/discussions)
+
+---
+
+**Note**: This is an educational tool. Always do your own research and consult with financial professionals before making trading decisions.
