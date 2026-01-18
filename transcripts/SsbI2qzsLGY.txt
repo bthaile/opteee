@@ -1,0 +1,781 @@
+0.00s: What's up everyone?
+2.54s: Welcome back to Outlier podcast, Chris and I are in the middle of talking about a bunch
+6.96s: of random bullshit about VOL and I would love to get back to that quickly.
+12.08s: But before that is always awesome to chat with you.
+14.52s: Welcome back on.
+15.52s: Thanks Eric.
+16.52s: It's a pleasure to be here as always.
+18.52s: Okay.
+19.52s: So we were literally just talking about risk premiums across the curve and you were saying
+24.52s: in generally you would expect to see slightly fatter risk premiums for the longer tail.
+30.44s: Does your understanding of that with that extent out is pretty much in a perpetuity or is
+36.04s: the point that you think it actually starts to roll over?
+38.68s: Well, I think for us in S&P typically the VOL term structure is in contango when you're sort
+46.00s: of like normal level to evolve.
+47.64s: So the back month falls will trade at a premium to the realized VOLs generally.
+51.80s: I mean to the front month falls.
+54.32s: So it just tends to be more risk premium as you go as you go out in time.
+61.12s: And you're one of the only people I've seen actually discuss the difference between at the
+67.08s: money and at the forward.
+69.20s: And I actually had a couple conversations because it's something I actually came across
+74.16s: in that book over there.
+75.48s: It's kind of shaded out.
+77.16s: But that's options is a strategic investment by Larry MacMillon.
+81.24s: Good book.
+82.64s: And it doesn't seem like it's normal of a conversation at least for retail.
+87.32s: Like I think most of the time retail is completely unaware that there's a difference marginally
+92.40s: depending on where you're looking.
+93.84s: Could you talk about the difference between at the money at the forward?
+96.92s: Yeah.
+97.92s: So the, let's funny.
+100.28s: It's been a topic I've been writing a lot about this year in general option funding and
+106.80s: how that how that how interest rates and cost of carry plays into the value of option.
+114.08s: So what that at the forward is doing is it's saying, so let's say you're your stock or
+121.60s: your index is at a hundred dollars and the interest rates are four percent.
+126.76s: Just assume no dividends.
+128.80s: You're at the forward price is going to be 104.
+134.16s: And that that's going to be a four percent premium to the spot price one year out.
+140.68s: The reason is is, it has to do it's basically a no arbitrage reason.
+145.20s: It's for example, if you wanted, if you were wanted to buy a one year, the S&P synthetic
+154.56s: feature a year in advance, right, you could, it needs to trade at 104.
+161.00s: Let's just say if it traded 100, there would be free money because if it traded for 100,
+165.08s: you could buy the future, you could short the S&P at 100.
+168.88s: You could buy the future for 100.
+171.56s: And you would have no directional risk, you'd be long and short.
+177.00s: And you would collect four percent interest on your short, assuming you're collecting
+183.08s: able to collect four percent on your short proceeds on your S&P, you would basically
+188.84s: be earning a free four percent.
+191.96s: Because it takes almost no very little capital to do that trade, it's not infinite return,
+199.08s: but it's like a really fat return, that four percent, because it doesn't take much capital
+202.48s: to do it.
+204.60s: Therefore, the price that makes it so that there is no arbitrage is 104.
+209.40s: You would need to pay 104 for that synthetic feature.
+216.28s: So the 104 price is the at the forward.
+222.60s: And the at the forward price is also the price that a lot of people may be familiar with
+227.72s: the approximation that the straddle is 0.8 of the wall.
+233.76s: That is true at the forward, and that is where the derivation for that formula comes
+240.20s: from the at the forward price.
+243.44s: And generally speaking, there's multiple strikes that are of major interest to option traders,
+249.44s: that the strikes are, excuse me, use your spot price, is you're at the forward price,
+256.72s: which is the sort of like mean of the distribution that blacksholes prices, it's options are around.
+262.40s: And then as you're 50 delta strike, because you're 50 delta strike will be a bit higher than
+267.28s: you're at the forward price.
+268.96s: And the 50 delta strike is important because it is the point at which the Vega in Gamma of an option
+277.04s: are that that's where they're maximized.
+280.88s: The maximum Vega is happening at the 50 delta option.
+285.20s: So that's why those strikes are of special interest.
+288.56s: So again, spot at the forward 50 delta.
+291.60s: If I open the 20 fed in spy 160s out,
+295.76s: walk me through what you're seeing here.
+300.24s: So right now, I just, 675s on the call side are a 53 delta.
+305.60s: And then we essentially get a 50 delta at the 60 80s.
+309.04s: Okay, let me do this thing which I like to do before I look at the numbers, is I try to say,
+315.04s: what do I think it would be?
+316.24s: Like I've really just fucked that up for you, sorry.
+319.84s: No, no, no, no, I didn't, I didn't know where I could get my perfect.
+322.56s: I didn't hear you fast enough.
+324.56s: So I was saying, what do I think it would be?
+326.00s: So you say the 160s out.
+327.52s: So that's about one, one third of the year.
+330.96s: I know that a one year interest rate is about in the market right now in the yield curve.
+335.52s: Is somewhere around 4%.
+338.24s: I also suspect the S&P has a dividend yield of something in the one and a half percent
+344.00s: to 2% ballpark.
+345.84s: So 1.1.
+349.28s: All right, I'm high.
+350.24s: All right, so 1.1.
+351.76s: So let's say you have a 4% interest rate, but you have to take out the dividend yield to get to the forward.
+358.24s: So we're going to call that just 3%.
+360.48s: So if the index, I would expect that the forward be 3% higher than the index for one year.
+367.36s: But we're talking about a third of a year.
+369.20s: So I would expect that the forward is 1% higher than the index and it be index is 670.
+376.72s: Then we're talking about 6, almost 677.
+382.40s: So that's what I would expect the forward price to be.
+385.36s: And the forward price is where the call and the put should be equal.
+389.76s: So the mid mark. So if we look at the 677 strike,
+393.60s: we don't have one of those. I can go to the 85s, which will probably have.
+398.80s: Yes, there we go.
+399.68s: I just moved us in a little bit like 15 or 20 days or so just so that because the wheat leaves have
+406.32s: single strikes, the primary expiration just moves in five or five strikes.
+410.72s: So we're five points.
+411.76s: So you, okay, so you cut 15 days off of it?
+414.96s: I did.
+415.76s: So that cuts 10% off of the amount of premium right in there.
+419.44s: So let's drop it to the 676 strike.
+422.80s: Which,
+423.68s: 20 now if I actually think the 677 was perfect here, probably because of the rest of the number
+427.76s: estimations. But the 676 is a 51 delta on the call side.
+435.60s: And put side is about a 50 delta. It's 49 and a half.
+440.56s: What, and what, what are the mid market price of the options?
+443.76s: Do we have them here?
+445.04s: Yeah, I see 2143 by 50.
+450.40s: So 2146.
+453.36s: Okay, and what's the mid price of the put?
+456.24s: Mid price of the put at 76, 2127.
+461.76s: Okay, so there you go. So 2146 minus 2127 is a
+468.32s: 20 cent premium to the call.
+470.32s: So the forward here is implied to be like we're really close.
+473.68s: The forward there is implied to be 676.2.
+478.48s: So that is the forward price, which is what did we say?
+482.00s: We said 677 originally and it's like we just said we lowered it the 676.
+487.36s: And here we're getting 676.2.
+489.60s: So that's the forward.
+491.60s: Notice the delta.
+492.80s: Now what's interesting is the delta, the delta is slightly higher.
+496.64s: So remember that that's not the 50 delta option.
+498.64s: The at the forward option is not the 50 delta option.
+502.16s: So here we see that the at the 50 delta option is a little bit higher.
+506.40s: I look to the 679 strike.
+508.80s: E78 or 678 strike.
+513.12s: Counting around a little bit. But yeah, yeah.
+514.88s: So the 50 delta 678, the forward is 676.
+519.04s: And the spot is 673.
+523.04s: And what's the practical use or this information?
+530.88s: Yeah, I think of I just think of the at the forward is the the center of the distribution.
+536.40s: So it's like it's like it's the it represents the sort of like the
+543.44s: expected return of the stock and sort of a risk neutral world.
+546.48s: So it's it's the it's the zero point of the black shoals distribution.
+551.28s: If you're looking at like the histogram.
+553.68s: That you're at the forward is zero point.
+556.72s: And you know that will matter if
+560.80s: for example, it's kind of it's it's a
+566.88s: like if you're thinking of a spot price of 678.
+571.20s: And you're talking about a near data option.
+572.96s: The forward doesn't really matter.
+574.08s: It's going to be close to 678.
+575.68s: But it's a little jarring when you look out and you're like, wait a minute.
+579.92s: If I look out a year in advance, it's like, you know, it's like 4% higher than than
+586.08s: 6070 is, you know, a call it 25 bucks or whatever.
+590.80s: It's like, wow, the forwards like way way up there.
+593.84s: And it looks weird if you're not aware that that's kind of how this works.
+597.28s: So you'd be like, why is the, you know, the $700 synthetic, the one that costs
+602.80s: zero, you know, the call on the put or the or the say the call on the put of the same value
+607.76s: on like maybe like the 700 strike, but you would be like, well, wait a minute,
+611.84s: it shouldn't put be worth way more because it's like, it's, you know, it's 25 dollars in the money.
+618.16s: So it's like, it looks like option prices could like look confusing to you.
+623.36s: If you don't understand like, oh, no, that that actually makes sense because that's the point
+628.72s: where the synthetic is worth zero, meaning that the call on the put or worth exactly the same.
+633.92s: Even though the put is 25 dollars in the money. So that that's, I think the practical use of it
+639.20s: there is just, you know, it's the center of your distribution and you're thinking about terms
+644.32s: sort of like probabilities, but it's also just to make sense at the option chain when you're looking at it.
+650.48s: Yeah, that's absolutely awesome. And then another thing that I don't know if you've written about,
+655.44s: I presume this is part of your, your broader, your correct me if I'm wrong, but
+660.96s: sometimes people will ask me when looking at a platform like this is a good question,
+666.08s: which is like, why is it that sometimes your delta's for the calls and puts can add up to greater than one,
+676.96s: which typically opens the conversation between spot delta, forward delta, but I'm curious the way
+684.00s: that you would describe that reason.
+687.84s: Yeah, there's there's there's a I'll point to two reasons why that can happen.
+694.16s: One thing is the, so one thing is that depending on the platform and how they're computing
+703.44s: the implied walls, if they're just using the mid market of the option and they're
+710.40s: giving it a rate, like when you when you can compute like a blacksholes, like you can
+716.56s: give it an interest rate, but the other thing you can do is you could have like work backwards and
+721.60s: said, let's assume put call parity is true. So if put call parity is true, that is the same thing
+730.72s: is saying I must make the implied volatility on the call and the put exactly the same.
+735.76s: So what happens is then you can back the rate out that must make that true.
+740.40s: That's just sort of like the professional way to build a ball surface is to, is to start with the
+745.52s: premise that put call parity is true. But that's not how a lot of platforms might do it.
+752.00s: What they might say is I'm going to give it a 4% interest rate and then look at what the call
+759.28s: implied wall is and what the put implied wall is. And what if you just do that, but let's say the
+765.04s: markets implied rate is a different number than the one you give it. What will happen is you're
+769.68s: going to get a different call ball and a different put ball. And once you have like a different
+774.24s: ball on both, well now we can see that the delta is not necessarily have to be coherent anymore.
+778.80s: So we're just running a different ball on each, each both the call and the put. So that and
+784.40s: itself can create sort of a, like if you have a really high call ball, it might just give that
+792.48s: option like a really large delta and because the call ball on the put ball are not the same,
+797.76s: there's no reason that they need to add up to one. That's one. That's one reason, the second
+804.48s: reason you can have delta that don't add up to one is the actually, if you think about the delta
+812.56s: of a synthetic, it actually is greater than one because again we can go back to our example.
+819.12s: We'll use that our fake stock that's a hundred dollars in the synthetic future is 104.
+826.08s: But let's say that we doubled the price of the index.
+833.60s: So the index goes from 100 to 200. Interest rates are still 4%.
+837.76s: Well, the synthetic is now 208. It's the 4% of 200 is added to it's 208. So the synthetic,
+849.92s: the underlying moved 100 dollars. The synthetic went from 104 to 208. It went up by 104 dollars.
+858.00s: So if the underlying moved 100 dollars in the synthetic moves 104, then it actually acted on a
+863.84s: 1.04 delta. So by literally the definition of delta, like change in option divided by change in
+872.40s: underlying. So just from that fact we know that the delta can be greater than one on a strike.
+881.76s: And that's because what's happening here is that delta is actually 1 plus the interest rate
+886.96s: in on the synthetic. So if the combined delta of the long call short put is greater than 100,
+894.64s: then your call plus your put don't have to be 100.
+897.76s: Or they don't have to they don't have to be 0. Right. Yeah. So that's the other reason.
+904.00s: It just comes back to the cost of carry. Now when you're trying to compute or playing with
+912.24s: different, vol surface models, obviously they can get like pretty complex pretty quick,
+918.88s: especially as you start accounting for difficult factors, jumps, diffusion, things like that.
+926.00s: When the broker is just plotting whatever the current implied vol is, on the back ends,
+935.76s: the actual pricing mechanics for the market maker who might be providing the quotes.
+941.52s: What kind of games are they playing to actually hide the vol that they actually think it is versus
+947.52s: what they're laying out? Well, I don't I don't I don't think that we I wouldn't say that they
+954.24s: are hiding the vol. I just think you know, vol is just this attempt to be sort of a measuring stick.
+960.88s: It's not you know, again the day you're trading prices, your P&L comes down to a price. Like,
+970.08s: P&L is how much of this options price change times the size of my position.
+975.52s: Vol is is a way to sort of normalize across things that we can we can make a coherent comparison
+982.96s: between different between different options. But it's not really anything that comes into play
+990.32s: at least in equity options between the broker and the the market maker or anything like that.
+995.92s: Like the broker doesn't say to you, I'm going to pay 22. Now in FX they do do that. So in FX
+1002.40s: and I was never you know, over the counter FX trader or anything, but I know that in FX they do quote
+1008.16s: things in terms of vol and so a broker could say, I'll you know, I'll pay you 7% vol and the
+1015.52s: market maker could say sold and they're actually trading a vol number, not a price. But I would imagine
+1021.92s: in that market that they've kind of you know, coal last on a convention so that they make sure that
+1027.44s: they know what price they're trading at. Because again, again, the day price determines, you know,
+1031.84s: your P&L and that's whatever it cares about. Yeah, and I guess to clarify that question,
+1038.96s: I'm thinking more in terms of the bid asks that's offered and actually shown like, hey,
+1045.76s: you can transact at these prices. That's obviously going to yield a vol based on, you know,
+1050.24s: like we're saying the broker might have might use the mid price or whatever. But I assume there's
+1055.76s: a competitive game being played between different market makers in terms of knowing what other
+1061.36s: people are pricing walls at versus what your pricing walls at. And sometimes, and I don't know if
+1068.48s: this is connected, sometimes I'll find happen literally just today where I'll go to get a fill
+1075.60s: and I'll even go to the bitter of the offer. I won't even play the middle because I know it's not
+1080.48s: happening there. I'll go either or I'll be within the size and then nothing. So then I'll, you know,
+1088.08s: just slowly walk it. But I can see that there's something being offered. Maybe it's being
+1091.68s: consumed by other people on the queue. I can't see M&T and S, maybe they're there. But then I can see
+1096.56s: like there's actually a price that they want to transact at that seems different than the price
+1101.28s: that I'm seeing quoted. So then I immediately assume there's some sort of gamesmanship going on
+1107.76s: between the different market makers and liquidity providers in terms of what they want to show
+1114.08s: versus what they want to transact at. Yeah, I would say all market makers have all kinds of
+1122.80s: different strategies for how what they want to show versus what they want to trade. Like for example,
+1131.04s: and I would just kind of depart a little bit from the implied wall part because I don't,
+1135.92s: I don't actually, I think the implied wall part of it is just very specific to each firm.
+1140.48s: But every every single pair of option price stock price, whatever interest rate,
+1151.20s: the firm wants is running based upon like what their prime brokerage situation is and what their
+1155.92s: stock balance is are right because like are they pricing this option off of the long rate off of the
+1160.80s: short rate? Like all of that stuff is idiosyncratic to to the firm. I mean, this is like the
+1167.68s: kind of gets back to like when you're looking when you're pricing an option, you know, we do
+1171.84s: what we all we make all these short cuts where we're like we act because if there's one risk free rate.
+1176.08s: But like there's lots of rates and everybody has a longer short rate and it's all a lot more
+1181.44s: detailed than that. But let's just so the implied wall we can just say like pay whatever
+1188.96s: broker platform you're using has some implied wall, whatever analytics you're using has some
+1193.60s: implied wall. I would say that we didn't really care what implied wall was given to us by any vendor
+1200.64s: like in a professional setting because we were just going to take all those numbers and translate
+1204.88s: them into our internal way of looking at wall. Which we needed to do because especially if you
+1211.60s: trade cross asset, different assets have different calendars. So it's like, you know, crude oil
+1218.72s: expires, you know, say like, whatever is an hour and a half earlier than the equity market.
+1225.12s: Like is the settlement time for crude? So, you know, a European option and crude like settles like
+1230.80s: 230 PM Eastern time and equity options settle at 4 PM Eastern time. So you may have how you
+1239.76s: figure out what the wall corresponds between like USO and crude oil really kind of depends on
+1245.60s: like how much time is left in the day. All depends on how much time is left. And so there's
+1249.60s: different amounts of time left in each one of those options. So everybody can have a different
+1254.80s: wall and you have to have in a professional setting where you're trading for small margins,
+1260.16s: you're going to have a very detailed approach to how you look at the wall. Separately,
+1266.80s: execution strategies can be, you could have people are streaming and then in the context of
+1277.28s: streaming, you may have, this is what the bid ask you're willing to sort of show. And now one of
+1284.16s: the things that happens is you show the bid ask and like, people don't generally want to trade
+1290.72s: really large size with electronic order necessarily because of adverse selection problems.
+1296.08s: So you want to show, you want to show an amount of, you want to show like a certain amount of
+1301.68s: size that you can trade, you don't want to get picked off. However, the base upon like the
+1308.40s: Qing rules at the exchange, like if you have a pro-reddit, pro-rata exchange which says,
+1315.44s: your the amount you will be filled on. Let's say a hundred contracts comes into buy.
+1320.96s: And a typical Q is like first in, you know, the forever's first on the order book gets,
+1327.44s: gets the, you know, if you place 200 contracts on the offer on your order book, you're the first
+1331.92s: person to do it, 100 lots comes in the buy, you get them all. But on a pro-rata exchange,
+1337.04s: it could be the case that everybody's on equal standing and your fill is parada to how much
+1342.80s: size you show. So if you have five market makers who each show 200 lots on the offer for a
+1349.60s: thousand lots of total size on the offer and everybody's showing 200 each, they are all entitled
+1355.84s: to 20% of the order that comes in. So 100 lots comes into buy, everybody gets 20.
+1362.48s: You're just going to get your parada there. So what's happening there is when exchange does that,
+1366.48s: it's incentivizing you to show more size than you want to trade because you really don't
+1372.16s: want to trade 200 contracts on the offer necessarily. There are various metrics about like how many,
+1379.12s: you know, when these market makers study this stuff like how many lots, you know, if you trade
+1386.72s: over 15 lots, you start to see adverse selection in it. So like ultimately, just what they just want
+1392.48s: to trade against like smaller orders, right? They just want to trade against retail ones and too.
+1396.32s: They're happy to trade against that. So, but in this case, they're being incentivized to offer
+1402.00s: more than they want to by the exchanges rules. But there are other situations where,
+1409.28s: you know, the bitask, the bitask is always a game because you're framing the market,
+1415.28s: you're framing, you're trying to paint it, like you're trying to paint a picture. And if you're
+1421.76s: trading something super liquid, there's not a lot of room for gamesmanship. Like because there's
+1427.68s: so much order flow that if you show like a quote unquote like low market, there's so much
+1433.28s: flow that someone might come in and lift you. But if you trade something that's relatively liquid,
+1439.20s: and you know that the next order in this name is like 75% to be a seller,
+1446.16s: then if fair value is $5, you might make your market a 48-bit offered at $5 instead of making it
+1454.48s: for 90-bit at $5, 10. So, you're going to frame your market and what will happen in that case is let's
+1460.64s: say you make the market that way, but you said it on electronic eye that says if something comes
+1466.24s: in offer at $490, lift and take it. So, don't show for 90-bit, but if offered at $490,
+1474.00s: then lift. So, that's how, so, a market maker is going to have these electronic eyes that have
+1481.68s: their real limit, you know, hidden from the marketplace, but at the same time,
+1488.48s: there are then platforms, execution platforms that you can like off the shelf stuff that you can get,
+1493.84s: like a spider rock, it's sort of like probably the most famous one in equity options, where they
+1499.28s: have algos themselves, which allow you to stream your quote. So, basically to move your bids and
+1507.28s: offers on options based upon how the stock price is moving, and then you also give you all kinds
+1514.64s: of functionality, like auto-hatch. Like if I get hit on these calls, go out and sell the shares.
+1519.52s: If I get hit on these calls, go out and leg this other option. And then they will have different
+1525.12s: levels of aggression, they will have electronic eyes. I mean, they're trying to give you as much
+1531.36s: they're trying to give you as close to the tools that market makers probably already have built
+1537.28s: in-house. They're just in off the shelf version of that. So, that's, but the whole game of
+1544.16s: bid-ask is definitely a game, but there's a lot more room for that little poker match if something
+1550.40s: is less liquid. If there's just like tons of two-way flow, I mean, you don't even need a market
+1555.04s: maker as much if there's tons of two-way. If you have enough like liquidity and something,
+1558.00s: you don't like a market, there's very little room for a market maker to sort of like insert themselves into that.
+1562.00s: Right, right, right, right, super interesting. And you mentioned something before that I want to
+1566.96s: follow up on in a slightly different context, which is like what the market maker or whoever,
+1573.44s: again, is providing liquidity there has in their book. And there's a retail, autistic level of focus
+1583.68s: on stuff like Gax, Dax, Charm, Bana. And a lot of these different tools that it seems like retail
+1593.36s: thing that these are like novel, new stuff, and maybe for them it is, but obviously it's stuff
+1599.04s: on the institutional side you guys have been looking at and working with for some time. Now,
+1605.60s: the main question I have here is my hypothesis with stuff like that has always been,
+1613.12s: it's of exceedingly limited utility and it goes back to what you were talking about before.
+1619.68s: The fact that if we look at Gax or Dax, we would assume some sort of behavior on the end of
+1627.92s: whoever's providing that liquidity, but that also has a massive assumption that they don't have
+1634.08s: other stuff that's interacting with that individual position thus actually leading to a different
+1638.40s: behavior. Could you talk a little bit about just general concepts around those kind of metrics,
+1645.60s: Gax, Bosa, Delta Exposure? And one, if you think that there's any actual practical utility
+1653.04s: for the retail side of the world, but then also your rendition of like how they actually work
+1659.92s: and how they impact things. Yeah, that's a big question. Let me, let me, let me,
+1667.28s: let's let's start with, I'll start with the first of all, the outstanding amount of
+1678.40s: Gama, these things absolutely, they matter. As far as, if there's a bunch of short Gama in the market
+1686.16s: and the stock rock starts running there and the short Gama is held by hedgers, they're going to have to
+1692.56s: respond. So, you can, you can always kind of, you can think of Greeks as sort of like an order
+1698.32s: book through time in a way. But, so it's true that these things matter, I think it's very difficult
+1710.00s: to tell how they matter. Like, for example, it's because the problem is like adversarial, it's,
+1720.16s: if you think about how somebody has to generate those metrics, like there's this much Gama, what they're
+1726.08s: doing is they're looking at, they're saying there was this much options, water sold, and this region
+1732.08s: of the surface, and we know that the deltas of those options are this. But, are those are deltas that
+1741.76s: they got from where, first of all, like, like the, the, the, the market makers may not be running the
+1748.56s: exact same deltas, there could be certainly be variations of them, I, I used to run deltas on my books
+1754.56s: that were like five deltas different on, on, at the money, then they were in the marketplace for oil.
+1760.40s: So, that, so that's one is like, your deltas themselves could easily have like sort of like a 10%
+1769.20s: debt variation in them, especially like a sort of like, at the money. The other thing is that,
+1775.68s: well, in the bigger problem is like, there's, you're saying that the market makers are short,
+1784.40s: like, this is the example I used, like, you look at this and you say, well, that's, look,
+1788.48s: market makers are short, like, all these 30 deltas and, uh, SNP puts, let's say.
+1795.12s: But, market makers job is not to just like, nakedly sell these SNP puts, right? It's like,
+1800.72s: so they're running, they're, they're like out there buying single stock puts against it. Like,
+1804.48s: they're pricing the SNP puts versus where they can get liquidity in something else. Like,
+1809.04s: to a market maker, the price for anything is dependent upon the price of, like, they're, they're
+1814.48s: offer for anything depends on where something else is offered. So, if they're running a book,
+1820.64s: where they sell a bunch of 30 deltas and P puts, they go out there and they buy a bunch of 30
+1826.80s: delta, uh, single stock puts against it. Now you've got the situation where, well, first of all,
+1833.20s: what do you think the outstanding gamma in the market then is like, they've bought and they've sold.
+1837.20s: So, like, are you only showing me half the picture? We're not showing me that there's all this
+1842.56s: other singles stock gamma. That's one. So, this is like, and the thing is, that's a snapshot
+1850.80s: right there, 30 delta on both. But now the market starts moving around. Everything starts doing its own
+1856.56s: wiggles. So, let's say that the SNP, that 30 delta puts, like, down 10%.
+1862.32s: This is the SNP drops 10%. And let's say that the single stocks that drop, they, they under
+1872.24s: perform on the cell-off. So, the stock to drop even more, meaning on that cell-off. So, now,
+1880.56s: you have gotten to short, your short gamma on your SNP leg and you've, you've went
+1889.36s: blown through the strikes on the single stock leg. So, the market makers have, like, done very well
+1895.52s: on the move. But, at this moment, at now, at this snapshot in time, they are, the market makers
+1903.20s: are now short in, in the money put, or equivalently, and out of the money call, and they're,
+1909.44s: sorry, they're long those, and they're short at the money SNP puts now, because we're sitting
+1915.04s: on their, on their short strike. So, now they started off hedged. Maybe they were, maybe they
+1922.32s: were over hedged by the way. Like, you're like, hey, there was all this short gamma down there. But,
+1926.56s: like, how do you know the, the market makers didn't over buy single stocks. So, maybe market makers
+1931.44s: were actually net long gamma on the move, and here you're advertising that they were short,
+1936.72s: but they were actually long, because you're not showing that set of the picture necessarily.
+1940.80s: And then when we move down there, now the market makers are short, because they're,
+1946.16s: they're shorts are at the money, and their longs are in the money puts. So, you know,
+1952.40s: accounting for all this is just very difficult problem, and then the other, okay, and then
+1956.40s: here's the, here's the, here's the complicates you'd even further. Let's take this example and say,
+1963.84s: first of all, the market makers know, because the skewlet even tell you, if
+1969.36s: put skew is super jacked, more than, you know, it's always a premium, but it's even more of a
+1974.56s: premium to that. That's because there's buyers. So, the market makers are,
+1981.20s: for so many needs get to tell me that the market makers were short those puts, because they're
+1986.24s: really, really expensive compared to their own history. So, how did they get expensive? Well,
+1991.68s: somebody bought them from the market makers. So, the market makers know that there's a bunch of
+1997.92s: short puts down. There's a bunch of short gamut down there. So, now they have to think to them
+2004.00s: themselves, well, how do I, how do I want to deal with this? Do I want to be overhanged against them?
+2010.48s: Like extra short delta going into them? And a lot of times they may do that, but then what's their
+2017.60s: risk? Their risk is that's the stock market rallies, like it rips, because they were overheading
+2023.76s: on the short side. And I'll just tell you from my own experience, the amount of times I've been
+2029.20s: screwed by the market going in the opposite direction of my short, because I'm overhanged.
+2037.68s: It's like, you know, this is this is kind of thing that would happen a lot.
+2042.48s: Look, this is like a 5-B thing based upon like pattern recognition, but like, I would say,
+2047.68s: whenever I have been short calls, that have gotten really expensive. So, I'm short them.
+2054.08s: The way I get F is the market tanking, lower, because I'm short the calls and worried about,
+2064.32s: you know, the call is getting super big if we rally. So, I over-head my delta going into them.
+2069.12s: So, I'm running this like long delta book to lean into my calls, and then I get screwed as the market
+2075.52s: and so my short calls go away and then I'm just like riding these long delta's down, right?
+2081.04s: So, like you would tend to get beat up in the opposite direction of where the short gamut,
+2087.20s: which is just leaves me in this place where I'm like, what are you supposed to do with this knowledge
+2092.56s: that there's a bunch of short gamut down there? Because if you lean into it, you expose yourself
+2098.16s: in the other direction. So, and one of the other things that happens is you not only expose yourself
+2106.24s: in the other direction, there's a very good chance that because again, you're running relatively
+2111.52s: vol-neutral books, if I'm short of a bunch of downside puts, yes, I might be long single stock puts,
+2117.44s: but I'm probably long upside calls because I'm not just naked short S&P Vega necessarily,
+2125.04s: right? So, I'm probably absolutely like weird risk reversal on, or some long upside calls.
+2128.56s: So, if I lean super short into those short puts and the market rips higher,
+2138.24s: I get worked on my being short too many shares against the puts. I also get worked
+2144.80s: if those calls that I'm long, if their falls get pounded even more than like they're probably
+2151.12s: already kind of cheap calls because that part of the skew has gotten kind of maybe might have
+2156.32s: been kind of hit, but like they can underpour onto perform that too. So, like I get really crushed on
+2162.40s: the up move where like I lose not only on directional shares, I lose on the wall and not on the
+2167.92s: option that I actually own getting hit. So, it's actually it's very difficult to like,
+2174.72s: you know, be able to predict what is going to happen on the surface net of what's already
+2179.76s: priced into the surface. Like that's the whole, that's the difficulty. So, so I guess it's like
+2186.64s: I'm not really sure how people are supposed to take this information. Like if you're like,
+2192.08s: well, if we go down there we're going to be more volatile. But I don't know that kind of thing is
+2197.60s: I don't know if that's like what we call as like value over replacement information. Like,
+2202.80s: why I already knew that if we go down there we're going to be volatile. And I'll get the skew
+2207.12s: and tell you that. But it's another, so maybe at the margin it could be the kind of thing that helps
+2216.56s: portfolio like like delta 1 portfolio managers. I don't really, I just don't, I don't see it.
+2223.52s: Like and I don't see the, but again, there's so much talk of that online and some of the people that
+2234.56s: are in that doing that stuff. You know, I know that there's smart people. So I, you know,
+2241.12s: I don't like to discount things if I haven't done the work. So it's not fair to me to like,
+2245.52s: but I'm just giving you my, my, my, my, my, my like impression from what I know.
+2251.76s: Yeah, and really that's the, that's the basis of the question. And it's also due to that same
+2256.96s: fact that there are sometimes smart people that seem to be talking about
+2263.68s: some of this stuff. Part of me is always curious if like it happened to be the kind of thing where
+2268.88s: they mentioned it, then it became part of their brand and then they kind of have to lean into that
+2272.88s: in order for the, like, I don't know, because it always just seemed strange to me to like
+2278.08s: crop it up quite as much as it seems, but I also have no idea. So that's why as people smarter
+2283.60s: than me with their ideas. And then hopefully sooner or later I could piece together,
+2287.04s: aid somewhat in tell you a position that I yet do not have. Now you mentioned another thing that
+2292.88s: I'm super interested in. I funny enough right before we started recording. I said that there was
+2297.68s: something I wanted to ask you about when we started, which 48 minutes in now I will ask you,
+2302.40s: because there's a perfect preamble. Right before we got on, I was looking at a zero DTE trade
+2310.32s: that I had on in SMB. And I run a couple different things in there. Long story short,
+2319.12s: I pick up on periods where it seems like the last 30 minutes, 15 minutes, I can kind of get more
+2327.44s: scalpled because I track it that we start to get like little runs and depending on when you enter
+2333.52s: and how you trade your ZERD's, especially I'm a typical in the short ball side, that last two
+2338.64s: minutes can undo the preceding X hours. So I have a specific system built and every once in a while,
+2347.60s: I'll look at it and I will overwrite the system overwrite the system in terms of like what I'm
+2352.96s: optimally supposed to do versus like what I'm seeing and I'm always super hesitant to do that.
+2358.48s: Because I know that the human brain is always trying to find patterns that's super fallible.
+2363.12s: So rather than overriding and just looking back in confirmation bias saying like, oh yeah,
+2368.80s: this worked out. I crushed it. I started tracking it and every single time I overwrite the system,
+2374.40s: I log it. And the system overrides so far. It's like a 300 in something samples. Again, it's zero DTEs.
+2381.84s: So there's a lot of samples. But it has a exceedingly high success rate in terms of the
+2390.40s: better decision based on what ended up happening. You had mentioned pattern recognition.
+2396.80s: I have spent a lot of time trying to figure out why sometimes when I'm looking, I decide to overwrite
+2405.60s: and other times I don't. I try to decode everything. I try to look at the move the move
+2411.36s: the day before the way vault everything. And I can't fucking figure out why, sometimes I look at this
+2416.96s: and like this just seems like something that I need to do something on. What is that? And is there
+2425.44s: a way that you've found to crack the nut on trying to parameterize some of it so that I can at least
+2433.12s: try to like integrate it into a plan versus how I fucking happen to feel?
+2438.08s: So I have, I don't know, I've been really, I have generally, so as a discretionary trader,
+2450.64s: I was never, you know, you don't have like models but I would have models that would have
+2457.28s: like signals like what I thought like the right wall should be and all that. But as a pure discretionary
+2463.76s: trader, I basically use vibes all the time. It's, I don't, I think that if you have a very specific
+2478.00s: strategy that was sort of like tuned out a bunch of parameters and where to the point where you're
+2486.56s: confident enough to put it in production and you're using it and the, you know, sort of the results
+2496.08s: are reasonable compared to what you thought there would be. Then I probably wouldn't
+2502.08s: try to, uh, I probably would have void over writing that thing and just letting it be what it was
+2509.04s: doing and then, so it's almost like I would almost separate, like, is that thing that I'm doing
+2519.60s: truly programmatic and then I should just leave it alone or if it's not, then let me stay,
+2527.84s: let me continue to just accept the vibe trading. But, and when I say the vibe trading, it's still
+2536.00s: doing the same thing that you're doing. It's like you are trying to be like, why do I feel this way?
+2540.32s: I mean, when I was, uh, when I was on the desk, a lot of that was, I mean, the solution to it was talking.
+2549.04s: Really, I mean, it's that's what you did is like you would just turn, you would, you would explain
+2552.88s: the situation to somebody and then what happens is you kind of get into this like, um, it's not
+2558.56s: sparring, but it's like it's almost a critic where you're growing, the person's like, just keeps
+2563.36s: clarifying. So, uh, you know, so you're saying, so what is it? It's because this person bought them from you
+2570.40s: and the last time you saw them, the stock went up after they bought calls and you kind of like,
+2578.40s: uh, yeah, and they're like, okay, and how often have you traded against them, um, what broker
+2584.08s: did they come through? Like, it's like, um, what was the vault was the vault also higher in the vault.
+2591.36s: Also, or the the vault screen high when they bought last time or did they come, did they bid when
+2596.16s: the vault when you got the vault was low? Like, it's kind of like trying to rebuild the circumstances
+2602.88s: of the scenarios that they were happening, but it's, it's really hard to do this yourself. I think
+2609.68s: it's, uh, because we can't see our own blind spots like literally by definition. So it's, it's more
+2616.24s: of like this banter thing and I guess that that's, that was my solutions of this. It was just,
+2621.44s: I was just talking about trades with people, um, and I think it's hard to do when you're like running,
+2628.80s: you're running your own trading strategy that you're the only one who runs that trading strategy.
+2635.68s: So if you try to talk to somebody else about it, like they're not, it's hard for them to maybe
+2641.60s: because they're not in their all day like doing that. But like when when I was on a,
+2645.28s: uh, I wanted to desk, like, well, the people next to me all kind of do the same job. And we all kind
+2650.40s: of see the same things, we all write similar tools. So we're, uh, it's easier to relate. It's probably,
+2656.96s: so what you mean, it's easier to ask sort of the, the, the right questions. It's, it's a funny thing
+2662.00s: how you can ask, you can ask the right questions to your neighbor and they're hard to ask yourself
+2669.04s: or to be a reliable witness with the way you answer yourself. So, um, and I think that I've just
+2677.04s: accepted this. Like this is, this is that, that where they really have to be okay. It's sort of like
+2683.52s: asking somebody else to the, I mean, obviously, you're going to do the best you can as far as like
+2688.24s: what you're doing as far as like, why am I doing this? What's going, like, like, you know, like,
+2692.80s: the logging the notebook, all that stuff? And I would say when I, when I first started
+2698.48s: to trade in my first few years, I did, I, I kept the notebook and I would say, you know, at this,
+2704.48s: you know, at this time, in the day, uh, you know, I sold uh, 2000, 27 delta calls, the stock
+2714.32s: price was here. It was at this implied wall. Um, the open interest was this. And then,
+2722.64s: if I got a chance to close those on it was a big trade, well, now that was useful because it
+2728.08s: they could pick, because some of like, you might have got into the trade, it was chunky. And the
+2732.88s: question is like, are you going to get back that trade in a chunky way too, meaning that the customer
+2737.44s: either came back and closed or they rolled, um, but sometimes it doesn't happen. And like, you
+2742.24s: actually never got them back or you missed the trade where the person came back and sold them and
+2746.88s: like, you weren't on the ticket, you passed, you didn't get the look, whatever it was. But like,
+2752.56s: over time, you'd kind of like build up these log. And that was just like, I did it for the first few
+2756.40s: years. Um, I probably didn't do it for like, probably the first quarter of my career. I kind of did that,
+2761.76s: but then I kind of stopped doing it and, um, for better words, maybe I should have kept doing it.
+2767.84s: But the, uh, I would say overall, I felt pretty, I was pretty comfortable with the whole like
+2775.44s: this revolutionary aspect to it and being okay with, um, you know, it was all overwriting all the time,
+2783.92s: you know, but, but, but I would say the thing that you would get back all the time, it was a lot of like,
+2790.32s: I feel weird about this. Like, um, like, I feel like this feels like a trap kind of thing. Like, uh,
+2801.20s: you know, the, the, uh, I kind of gave it, I've done this example many times, but like, when
+2806.72s: you are so traded at a premium in, in a, uh, uh, you know, normally like the ETF, like, goes premium,
+2814.48s: whatever, you're going to be like, I'm going to sell these balls and then you're like, this
+2818.80s: kind of feels like a trap, like what's going on? And then you have to like slow down and like,
+2822.72s: think through the problem a little bit a little bit more and I think it makes a lot of sense to sort of,
+2831.04s: uh, listen to yourself because what's happening is they go a bunch of things that you don't
+2835.12s: understand that are happening in your intuition. Like, it's just, you have to trust the fact that
+2839.76s: sitting there and looking at markets all damn day. Yes, they can fool you, but also you are
+2846.08s: perceiving something with your senses that are, uh, that, that you're not able to actually
+2853.44s: log, but it's being log somewhere and people can, you know, it's one of those things where it's like,
+2862.32s: people push back against that, but you know, it's, um, I don't know what to tell you, it's like,
+2868.80s: I, I've watched many people do very well, but the thing that's common about the people is they
+2879.28s: have a ton of reps and I think at the end of the day that's probably all it is is like, you can
+2884.88s: trust your intuition if your intuition is earned the right to be trusted by having lots of, like, reps.
+2892.40s: So it's one of those, uh, things that, you know, it sounds you lead us to say that like, you
+2897.28s: gotta do this for a long time and then you can trust yourself. But I don't know what else
+2903.28s: to tell you. Well, it's funny because the, the way that I've approached stuff is like pretty
+2910.72s: regimented, I just try to, like, box a standard process around like ideation, scoping, planning,
+2917.60s: testing, live testing, then, you know, start moving stuff. And I started, I, I know
+2924.48s: the way that the human brain likes to look for patterns, how fallible it is, but also how powerful
+2930.64s: it is in the same capacity. So I've always found, like, those sensations fascinating, which is
+2936.64s: exactly why I started tracking it, right? Turn into a science experiment. See if this is actually
+2940.48s: net value at or not. But the, the thing that you said towards the end is something that I've also
+2947.60s: found difficult to explain to people, because I mean, you've been trading longer and I have,
+2953.92s: but I, I started in 2007, so I've also been doing it for a minute. And there is a weird spot that
+2962.48s: I found where it feels like you can start trusting yourself to not make a lot of those mistakes
+2969.84s: that you might otherwise not be aware of, right? Easy part in this example is feeling some sort of
+2975.04s: way about S&P getting out, then it does the thing that I thought it was going to do and be like,
+2979.60s: oh, yeah, I knew that was going to happen, right? And it's like, the funny thing is when I look at
+2983.28s: what happened today, I said to myself, like, no fucking idea if it was going to happen, just thought
+2987.36s: that it might, and it felt like it was more likely to, so then the decisions made. Now,
+2992.80s: when you're describing that kind of concept to people though, and you actually framed it really,
+2996.80s: really well, the idea of like you can trust your intuition when it deserves and earns the trust.
+3004.16s: Is there a way that you can conceptualize that for people? Like, the question I would have if I were them,
+3013.44s: is how do I know if I'm at that point?
+3020.32s: I think I think the end of the day kind of comes down to like, if you don't a lot of, just if you've done a lot of trades,
+3026.80s: we pulled on one second, I'm going to close the door here. Of course.
+3033.84s: We back. Yeah. So, yeah, how do you know that you're at that point? Well, you know,
+3042.32s: you will, you probably first of all. There's no amount of luck. There's no time where like
+3049.44s: self doubt doesn't live. You'd like within you, right? Okay, you never like escape self doubt.
+3054.40s: This is like the nature of the game. And so I think, and then I think that's good and important,
+3059.04s: because paranoia is a survival mechanism. So you need to kind of be paranoid. But,
+3067.44s: by the end of the day, it's what I find is if you're doing a lot of trades and things are going well,
+3077.28s: it's like the way these things work, it's kind of hard to do lots of trades, because trading costs
+3082.96s: do something. Like there's there's slippage, there's like adverse selection, like,
+3090.16s: you in other words, like there's like an anti, you could think about it as like there's an anti in the market.
+3096.88s: You may think like it's not caught, but like you're you are getting, you are losing a little bit
+3102.24s: in terms of execution on every single trade that you do. So you are paying an anti all the time.
+3108.24s: And it's very hard sort of like over many, many, many trades. It's like, I think that's the
+3117.28s: things like, I mean, I traded a lot of contracts. Like when it's like at the fun, like it's trading
+3122.80s: tons of contracts. And so I traded, I traded a lot of, I traded, I mean, we're talking about like
+3129.52s: close to a hundred thousand like a day. So it's kind of hard to trade that many contracts
+3136.96s: for a long time and just like you're not losing. Like if like if you're winning
+3144.96s: to it, it's not random. I mean, it's like so that's one. The other, but there, but that doesn't mean
+3155.28s: you don't go through losing streaks. And so the losing streaks are really the things that test you.
+3160.80s: It's like, okay, because you're always kind of like, whoa, is the thing, is the thing that I've
+3166.64s: like figured out or is what I'm doing sort of like solve, this get more competitive in some way
+3172.64s: that's like, that happens invisibly? Like it might be like this, you know, God, this all seems like way
+3180.64s: harder. Like I normally normally, when somebody came in and buy these things, it's like, I used to be
+3187.52s: able to get like three cents of edge on them. Now I'm like, it feels like it trades for fair value
+3193.04s: every time. So it's like, there's like, does everybody know about the straight now? Is there more
+3198.48s: risk capital that, like maybe there's the same number of people trading, but they're not a risk
+3204.24s: capital. They're willing to put the behind the trade. It's grown. Maybe people are willing to
+3208.72s: accept worse risk or war. That also happens. So all of these things can happen. And it does
+3217.68s: so it's like your understanding, the situation, the same, but it's gotten more competitive.
+3223.60s: Like people will trade it for less. So that's, that tends to be the thing that's actually happening.
+3232.24s: So much more so than like, I don't know what a good trade is anymore. I never really, I don't
+3238.24s: think like that is this a good trade is that a bad trade was kind of like not the hardest part.
+3243.36s: It's like getting actually getting on a good trade is the hard part. It's not like
+3249.36s: necessarily knowing the trade is good or bad. So the, so I would say that in that when that happens,
+3258.40s: the thing that I found that's really important is like this back to the basics thing. Because you need
+3263.76s: to weigh to like re-center yourself when you're running kind of bad. And so my back to basics thing
+3270.56s: is that I probably become, I become stricter about my discretionary, the way I'm trading discretionary.
+3277.68s: So like for example, I let less vibes come into the entire equation. If you're running, you might
+3285.20s: be running good in your confident and you're like, man, I'm just, whatever, I feel like I'm seeing
+3289.76s: the ball really well right now. So you kind of get a little bit more bold and like you're like,
+3296.24s: oh, you know what? Like I don't normally even trade that thing and I'm going to go like over there
+3300.24s: and I'm like I'm going to buy a bunch of calls on that thing because like I'm just, you know,
+3304.48s: for some reason I think I know something. When you're running bad, you pull everything in and you
+3310.40s: start to say, you know what? I'm only going, the only reason I'm going to buy this is because this
+3315.12s: other thing is bid here. And in other words, like I'm really going to narrow my focus and be like,
+3322.88s: I'm buying this because this is bid here and I like that and I'm comfortable with that spread.
+3327.52s: And I'm going to do it at a size where I can sort of like be roughly evenly even risk on both
+3333.60s: unbolt sides of this rather than what you would I would often do is like, I might, I might say,
+3341.92s: hey, this thing is cheap. This thing is cheap because this thing is bid here. So this other thing
+3348.08s: is cheap and I'm just going to buy everything that's offered here and I'm not even going to hedge it.
+3352.48s: I'm not going to worry about it and I'm not going to like complete the, you know, complete the,
+3357.68s: not an orb, complete the relative value. I'm just, I think this is the good side. I'm just going to buy
+3362.56s: the good side and not trade the fair side and leave it at that. And I would be less inclined to do
+3368.96s: that when I was running bad and I'd be like, I should just do, I should just do the basic blocking
+3374.24s: and tackling because I need to, I need to like know that I need to rebuild my confidence. I need
+3384.24s: to know that the basics are working. So I think that's almost, and I don't think that ever goes away.
+3394.56s: Like you can get really, really experienced. You're going to have a bad run and you're probably
+3397.76s: going to need to rescind yourself, go back to the basics and some fashion. So I think that's just a good habit.
+3403.84s: It's just like, no, how to get back to your fundamentals. So yeah, that's, that's a, that's
+3412.40s: my, I guess that's, that's all I can think about that for that. Yeah, that's super useful. And I
+3417.44s: appreciate the, the thought where a lot of the stuff that we're talking about anyways, it's a little
+3421.92s: bit conceptual in nature, but I think there are things that impact, especially retail traders at
+3428.48s: different points and sometimes it's actually really difficult to navigate, especially on your own.
+3433.04s: So I think it's super useful. And I know that we're at time, I had one more question for you.
+3437.76s: There's a really, really common concept that gets thrown around, especially for the
+3445.68s: option sellers, the theta gang crowd, that kind of thing, where there's a perception that theta
+3454.64s: is their edge. Did you talk about that?
+3459.04s: Yeah, I mean, theta's not an edge. It's a grief. I mean, I don't even, like, okay,
+3467.68s: have you heard this before? Yeah, I mean, it's just, yeah, it's just like, yeah, I mean, it's so like,
+3476.80s: even if you, okay, so you can, here's where you can make it really obvious.
+3488.72s: If, let's say that you have, this is the example I was kind of gifted to this because it's so,
+3494.64s: it's just so obvious. If you have a stock, it's 100 bucks and the stock has a 25% chance of going up
+3505.92s: 50 bucks, okay? So what's the one, the one, the one 10 call worth? So the one 10 call has a 25%
+3514.72s: chance of being $40 in the money, okay? So the one 10 calls worth, it's worth $10.
+3523.92s: So like, if you sell the call, and now like it may decay, like, I guess that's the first question,
+3532.64s: it's like, does that option, how does that option even decay? Like, let's say that a little bit of
+3537.76s: time passes every day and then like, you don't know at what point, some point, that it could make
+3543.44s: that move, but the question is like, if you sold the option for like $9.50, like the option has
+3549.28s: beta, but is there, do you think you have any edge? Like, you have negative 50 cents edge,
+3554.88s: the options were $10.00, you sold it at $9.50, like, I really can't even understand, like,
+3560.08s: how you can look at that and be like the theta is an edge here, like you sold something worth
+3564.32s: for less than what it's worth. So, in the other way, you can look in a more complicated way of looking at it,
+3571.52s: but it's still not even that complicated, it's just recognizing that like gamma,
+3576.32s: that your gamma P&L, there's a formula for it, it's one half, your gamma times the stock price
+3582.48s: move squared. Your gamma P&L and your theta P&L, your gamma P&L is always positive,
+3589.44s: your own an option and the stock moves, that number is always positive because the move is squared.
+3595.20s: So it's always a positive number. The theta is a negative number, it's like, options decay every day.
+3602.08s: If the theta is greater than the gamma, then you want to be short and vice versa. So,
+3608.88s: there are two sides of the same coin. So, to say that the theta is an edge, is to say that the stock
+3616.80s: is not going to move. If the stock moves, you've lost, like, the stock moves more than what was
+3625.36s: implied in the theta. Basically, because the gamma number and the theta number are both
+3630.96s: derived from what the volume number is. So, the theta is just a hurdle for the gamma. That's all it is.
+3638.32s: It's the cost of the gamma, the hurdle for the gamma. So, I don't even understand, it sounds so
+3645.20s: incoherent to me to say that it's an edge when it's just a hurdle.
+3651.36s: Now, one of the common retorts is, I think, typically conflating things, because normally,
+3663.60s: if that, we open with that theta as an edge, we hear it's not, then a slightly more advanced
+3672.64s: option trader will say, well, isn't implied volatility typically slightly higher than realized
+3678.88s: bowl. It is. That's saying something different. That's saying that there's a risk premium
+3686.96s: to option prices. That is a perfectly fine statement. It's not enough of a statement to be like,
+3698.56s: I can make money knowing that because, well, how do you know that the premium is not
+3707.04s: always the same size and it's not always present. It's not always present all over the term structure.
+3713.60s: It's, it is, it's not, it's not this constant piggy bank that you can take. And the reason is
+3723.76s: why how could it be a constant piggy bank? Like, if it was and everybody would just do that,
+3729.68s: all these, you know, we see how much, look how much money people get paid to go work for
+3736.40s: 10 Griffin. It's like, if this thing is just free money sitting there, why aren't these guys going
+3741.84s: to go take it? Like, it's not, it's not like they don't have access to the option markets. So
+3748.88s: there's no reason to think it's simple just because it's there, which is the same thing. So,
+3754.80s: like, okay, this is, this is something I was just kind of working on a little bit this morning.
+3761.36s: I was just napkin stuff, okay. But let's say that we want to go with this risk premium idea,
+3771.92s: so you've got, let's say you have a, you've got a $100, give a $100 stock and it's 30, it's 30
+3780.64s: to 30, all $100 stock. And we're going to say that we're going to just say that the,
+3789.36s: the wall is over priced by 10%. So it's, it's going to, God told you that it's going to move
+3794.96s: at 27%. And it's implied wall is 30. Okay. So if that's a one-month straddle, that straddle is
+3803.76s: going to be, so, okay, 0.8, remember, it's 0.8 of the standard deviation is what the straddles
+3813.36s: worth. So that is $100 stock. So the one-standard deviation is 30 bucks. 0.8 of 30 is 24 bucks.
+3821.68s: And, but that's for one year. So to get it to one month, we can't just divide by 12,
+3827.12s: if it divide by the square root of 12. So we have to take, so we've got a $24 straddle divided by the
+3834.88s: square root of 12. The square root of 12 is, well, the square root of 12 is somewhere in between three and four.
+3841.12s: So, so that's, we'll call it three and a half. So you have a $24 straddle divided by like three and a half.
+3849.20s: That's about seven bucks. Okay. So you have a $7. Yeah, about seven dollars. Okay. So you have a
+3856.08s: seven, a one month, $7 straddle. Okay. We say that the fall is 10% overpriced. So that straddle
+3867.12s: has 70 cents in it of edge in the selling it. We'll say it's like the true value of the straddle should be 630
+3873.44s: and it's trading for seven, so you sell it for $7. Okay. That's 70 cents of edge. You're going to hold it for
+3880.72s: a month. Okay. There's 20 trading days in a month. So you're going to, you're going to make 70 cents
+3890.40s: divided by 20 days. So you're making like 14 cents a day on that. And then you're paying slippage on that.
+3906.48s: So it's, it's four, let's say it's 14 cents dead. You got it right by the way. 70 cents divided by
+3916.32s: I'm just watching you. I'm just here to be the pretty face. Yeah. I'll be the, no, that's about right.
+3924.72s: It's about, sorry. It's more like it's a, it's a, it's a, you're, let me pull up a calculator real quick.
+3930.72s: I want to, what do we do when I got one right here? Yeah, I got it. It's, it's a, do you have 70 cents?
+3937.20s: You might have by 20 days. Sorry, it's three and a half. I'm doubled the wrong number. So
+3946.16s: three and a half cents a day. Okay. A veg. Now let's say your slippage is 10 basis points on your
+3953.12s: delta head. You're going to hedge and you're just going to hedge once a day and you're going to, so
+3957.60s: what happens is your slippage is going to end up being something like it's 10 basis points,
+3964.56s: which is a dime, but you're not hedging the full amount every day because like your adjustments
+3970.16s: are like, you know, like this straddle had 20 deltas today. It's got 24 delta today, whatever. So
+3974.88s: let's say you have 10 cents a slippage, but you're only trading 10 deltas worth a day. So that
+3980.08s: it cost you a penny. So now right now we're now down from like I'm making three and a half cents a day
+3985.44s: to like two and a half cents a day on this trade. And then, so the question is like it's two and a half
+3992.00s: cents a day and then I say like the Vega, the Vega that option is something like 24 cents. It's about
+3999.36s: 24 cents. So and we say fall can move around, let's say fall can move around 1.2 day on average.
+4006.00s: I could oscillates 1.8. So that's 24 cents a variation and then your realized fall is going to
+4013.68s: bounce around reality to some some degree every day. There's going to be some gamatheta like tug of
+4018.88s: war, P&L every day as well. That's probably another dime worth the variation. So here's the
+4024.80s: situation. You have you are making two and a half cents a day and you have about 35 cents a variation
+4033.28s: a day in the trade with part of that coming from implied fall moving around and part of that
+4040.56s: coming from the type of war between realized fall and theta like your gamatheta, first your theta.
+4046.16s: So you are making so the risk of war here is about I'm making three cents and I got 30 cents
+4056.08s: a variation a day. So that's it's 10 to 1. It's actually not like that different from if I just
+4066.56s: bought the S&P because what is the S&P? You make three base it works out so you make about three
+4073.60s: bases points a day. Three bases points a day over 250 trading days is 7.5% a year. Whatever.
+4081.84s: Four bases points a day. You make 10% a year. And what's the daily
+4087.28s: standification of the S&P? It's like 100 BIPs a day. That's about 16V. So you're you're getting here
+4095.20s: that's like 25 to 1. So you're getting a little bit better on the on the on the you're getting
+4102.80s: 10 to 1 a day versus 25 to 1 a day on the S&P in terms of like risk and reward.
+4110.48s: So you can make so that's 20% a year rather than 10% a year trading the options. Let's say.
+4120.24s: But you've got to manage this you have to do a bunch of work and your
+4125.92s: or it's also not like it's not necessarily it's like worst taxes right because you're trading.
+4134.80s: So you're getting short term capital gains tax and like your S&P you can just buy and hold that thing.
+4140.64s: So like your risk of reward you like you can there's something there.
+4146.40s: Right? If you think that there's a 10% premium of volatility to realize in the marketplace.
+4152.56s: There is something there but is the juice sort of like worth the squeeze as far as like you now
+4159.44s: have to like go do that all the like you have to run a business sort of around that. And that's
+4164.96s: that's kind of the point like do I think that there's something there? Yes. Do I think it's a lot of
+4171.20s: work to do it also yes. So it's not this passive thing and like we don't really know
+4179.60s: and then it's like there's another question of like how confident are you in that 10% premium?
+4186.56s: You know if you are only getting filled when you know when the when the premium is
+4194.24s: 3% and you don't get filled when the premium is 15%. You're being sort of like you're only
+4201.36s: getting filled when when it's not a good trade. So that's like goes into it as well. So it's like
+4209.60s: if the 10% is sort of like your best case scenario. So that's why which that's the reason you
+4214.24s: have to build a whole sort of like operation around it because you're trying you need to try to like
+4218.64s: be in the weeds to separate like you know am I you know when I'm trading is it like worse for me
+4226.80s: when I actually get filled versus not and that's so that's kind of like I think there's something
+4232.96s: there first of all I know that there's something there because there are no as people doing this like
+4238.24s: there's there are retail trader but you're doing it's like retail traders I know successful
+4243.12s: retail traders but I guess my point is it's a job. So if you're going to do all the things that
+4252.24s: you're doing then it makes sense that there could be money for doing it but this concept of like
+4259.44s: I'm just going to sell these options and walk away and like it's passive income and all that.
+4264.48s: I think it's I just don't think it's that easy. I think if it was that easy there would be
+4270.48s: there would be a lot more sort of like um professional money managers kind of doing it and you'd have to
+4275.92s: have you'd have to have a really good counter argument for why there isn't like why
+4281.92s: that edge should be sitting right in front of you. It's one of those interesting things because
+4289.60s: I also find even going back to the original question like some of the times when I've had
+4295.04s: try to have conversations with people about like theta is not an edge. It's almost like talking to a
+4301.12s: flat earther where it's like you can kind of show a lot of different things but it doesn't necessarily
+4307.04s: resonate or connect and it's it's almost like a belief system which is even more bizarre or it's like
+4314.80s: you know you're taking away Santa Claus. I want to think this thing exists so bad therefore it exists.
+4320.56s: So I'm going to I'm going to do this thing I'm going to do this thing where like I borrow a story
+4325.44s: that I heard on another interview but it's perfect because it's great. So there's this uh uh it was uh
+4335.04s: it was um it was like it was a guy from C actually described this uh he he kind of like uh
+4340.16s: helped build the education system there and key was talking there's a very famous like condiment
+4346.16s: and tiberski sort of like study where they it's uh it's almost like a like a mathematical
+4351.44s: optical illusion so people well the question is is um you tell somebody that there's a bat in a ball
+4356.64s: in the ball the ball uh the bat costs the bat in the ball together costs $1 10 and the bat costs
+4362.72s: $1 more than the ball does okay and the question is like how much the ball costs and everybody says 10
+4369.04s: cents. It's a good thing. Right but that's like everyone's like gut reaction it's 10 cents and um
+4376.48s: that that can't be true because if that's 10 cents then the bat is $1 10 and $1 10 plus the
+4381.68s: 10 cents is $1 20. That's right so it's a it's a it's a the ball's five cents. Right $1 5 and 5
+4388.64s: $1 but you have to slow it out the sort of like uh to be able to do this and this is like one of these
+4395.52s: it's just like a very funny optical illusion because it works on like almost everybody if they don't
+4401.52s: stop for a second like it's basically kind of in kind of it was like his good demonstration of
+4407.44s: like system one versus them two thinking but you got to switch and system two to get this anyway.
+4412.88s: This particular study has been like the the the the the person I listen to the podcast he had mentioned
+4419.28s: that they have like read done this study there was a couple of research and they're read the
+4423.44s: the study with like 80 different variations on it and they're really and I've actually I have
+4429.36s: read the paper for this they're really trying to like understand where in the process people are
+4436.96s: sort of like tripping up on this but what that's crazy is some of the variations so okay most people
+4444.08s: get get this they get it they get it wrong and then they'll do variations where they say they
+4450.24s: ask the question and then they say um are you sure and that causes people's accuracy to go up a little bit
+4458.72s: okay but it's still less than 50% then they do a variation where they say have you considered
+4467.68s: that the ball is worth a nickel okay so now it's like the kind of gave you the answer right and then
+4474.24s: uh the accuracy believe it only goes up to like two thirds so like you think you would go to like
+4481.68s: a hundred but it goes to two thirds right then they do another one of variation where they say
+4487.12s: the ball is worth a nickel right a nickel for the answer and then it's like the accuracy only
+4494.56s: goes up to like 75% or something okay so now you know and it's not like the researchers are like
+4502.96s: just blunt it's like they're they're like trying to understand is it like possible the people think
+4506.96s: they're being tricked like what is going on here but I will just tell you the conclusion of the paper
+4512.08s: is like there's just a certain percentage of the population that they call the hopeless
+4515.52s: that's where they kind of landed on this it's just like they are unable to like have their minds changed
+4525.60s: and I think about that I think about that story a lot man like like you try and sometimes you're
+4536.56s: just like I'm just talking to wall and it's over like there's no it's like I'm like hey man I'm
+4545.28s: happy for you like like it's all it's all good like believe what you want to believe and that's it
+4551.36s: and so like that study kind of tells it tells me quite a bit about like how much energy I should
+4556.40s: expand it's so awesome I love that like the hopeless just yeah it's I can send you the paper
+4569.68s: it's actually I would love to check it out because those kinds of things are fascinating to me I love
+4574.96s: SSR and I love going through there and just kind of pulling up different piece of information like
+4581.52s: have you heard of Barbara Lino Dean there out of Berkeley but they do a bunch of like investor
+4587.84s: behavior research and it's it's the same just stuff that I know you know and most people
+4595.52s: probably intuitively know but it's similar variations of that they they do a test with like cost basis
+4603.44s: effectively a scenario where cost basis like wave low and then you sell it higher than another one
+4609.92s: where you're below you sell it halfway and then you sell the rest of it halfway and like what's
+4613.60s: the difference in those like people that fucks people up massively so yeah it's yeah the the hopeless
+4620.16s: I really love that so much it's so in in the Marine Corps we call those like the window likers
+4626.00s: or like the lowest common denominator these are like the people that you just gotta get them where they
+4630.32s: need to be tell them have a great day and then move on with your life so I now know the term for
+4636.00s: traders beautiful yeah that will window likers is cold man damn well we're not necessarily
+4643.20s: known for our warmth so I had a buddy I had a buddy in the like operations section is called S3
+4651.44s: and I would go visit him because he he was always the just most disenfranchised human being and
+4658.88s: I don't know why but I fucking loved it so every time I had a chance like go visit him I'd be like
+4664.16s: dude how's your day going he would just bitch about everything motherfuck this that you know and
+4668.72s: or Halloween when you are walking and they have a bowl of candy for Halloween and on the candy
+4674.00s: literally says not for fat Marines and I was just like I fucking love this place these are my people
+4686.40s: so we actually covered up a pretty good bit of ground today so I appreciate the the information
+4693.36s: the context obviously going into the detail that the hope is to try to like explore some of this a
+4698.96s: little bit more I'd love to have you on again and I'm thinking for a follow up it could be really
+4703.28s: cool to actually talk about some of like market effects or dynamics that are viable for retail
+4712.64s: and give some concepts around like how to build something around those ideas and how you
+4718.56s: vision that but that is for another time Chris people can find you at noon tower you have your
+4724.96s: sub stack I can throw links to all that anywhere else that you want to send people there they can go to
+4731.84s: which hour dot sub stack everything they can everything the whole world opens from there and then the
+4737.44s: hopeless they'll just get lost so we'll let that be what it is great seeing your brother thanks for hanging out

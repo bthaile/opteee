@@ -1,0 +1,154 @@
+0.00s: What's up, outliers? We're back with another option Greek simplified video today. We're talking about charm.
+7.00s: This is also known as Delta decay. Now, it's a little confusing because a lot of people don't even know that this exists.
+16.00s: And I want to explain what it is. If we take a look at this plot here, this is plotting Delta by days to expiration.
+27.00s: I think this was spy at the time. You can see that the at the money at the time is like right here.
+34.00s: And the important thing to note is how for the very same strikes, say for example, the 350 strike,
+42.00s: I'm going to tell the Delta is different. This one has a 70 Delta, yet this one has a 90 plus Delta.
+50.00s: This is charm. What's going on here is every single option has to make a choice.
+56.00s: It's either going to be out of the money with a Delta of zero or in the money with a Delta of one.
+63.00s: This changes as time changes. So if you trade options buying or selling, being aware of charm in how it can impact your positions is super important.
+76.00s: And I'm going to explain why this is one of those sneaky little things that you can get a lot of stuff right.
+81.00s: But if you're unaware of this, your idea could still completely not pan out as you would like.
+88.00s: So let's double click into this effect.
+93.00s: First thing is first, we have to go through some very, very basic terms and definitions. Again, this is all available in a deeper video.
+101.00s: I have on my channel about the Greeks. We're not going to go through all this.
+104.00s: But I want you to know first that charm is a second order Greek. What is the second order Greek? It's effectively telling us something about a first order Greek.
+115.00s: This is the same thing as gamma. A lot of traders are very used to gamma. Gamma is the second order Greek. Gamma tells us the rate of change of Delta.
+124.00s: This is focusing on rate of change of Delta per one point moving the underlying.
+130.00s: Charm tells us rate of change of Delta per the passage of time.
+137.00s: So going back to this example, we can see that as time is passing as we go from 325 days in approximately 31 days.
+148.00s: We can see two things happening.
+150.00s: We can see that in the money options are gaining Delta. This line is becoming steeper and steeper.
+161.00s: Because at expiration, again, everything in the money is going to be a one.
+168.00s: Everything out of the money is going to be a zero.
+171.00s: So to give you a visual of what that looks like, it would be pretend that this is completely flat along the top there.
+178.00s: And we would go vertically down through the at the money.
+183.00s: Don't worry. We're not in danger here because there's only one part to this, which is this.
+188.00s: And then this is the rest. This is the out of the money. They're all at zero.
+192.00s: So you can see how this is approximating in this direction.
+196.00s: And this is approximating in this direction.
+199.00s: So let's take a look at how this can impact your position in play.
+206.00s: What I did was look at spy.
+209.00s: And I plotted very simply the terms and Delta's for the very same strike.
+216.00s: I was looking at the 700.
+218.00s: So at 441 days, that was a 56 delta.
+222.00s: Then at 91 days, that same strike is a 42 delta.
+227.00s: 28 days, it's a 26 delta, 7 days, 4 delta, 3 days, 1 delta.
+232.00s: What's going on here?
+234.00s: As an option has more time and more volatility, it has a greater potential to fall in the money.
+241.00s: As we have less and less time, that options probability of falling in the money decreases naturally.
+249.00s: So you can logically think of it this way.
+252.00s: If we pull up spy and you were to just mentally ballpark, what do you think has a higher probability?
+260.00s: Do you think it's more likely that spy will hit 700 sometime in the next 441 days?
+269.00s: Or do you think it's more likely that spy will hit 700 sometime in the next three days?
+276.00s: And this is what spy at 682.
+280.00s: Of course, we would say 441 days as more time to move towards that price.
+285.00s: That's what's happening here.
+287.00s: Now, here's the functional issue.
+290.00s: If we take a look at premiums, I'll throw those in now.
+293.00s: Here's what's happening.
+295.00s: As time is passing, if nothing else changes, this out of the money option because the call strike of 700 is
+304.00s: greater than spot price of 682.
+307.00s: These are out of the money even though Delta is a 56 for those wondering.
+312.00s: There's a difference between the at the money and at the forward.
+315.00s: That's a topic for another video if you're interested.
+318.00s: But even though these have a 56 delta, they're out of the money.
+322.00s: As time is passing, if nothing else changes, which is what this underlying assumption is,
+327.00s: your Delta is declining pretty significantly.
+330.00s: Now, your premium is also declining pretty significantly.
+334.00s: And this has to do with the passage of time.
+337.00s: And it also has to do with the overall duration of your contract.
+341.00s: So how does this impact your decision making?
+344.00s: Well, let's take a look at a practical example.
+346.00s: Let's say that you wanted to buy a call.
+349.00s: And let's say that you were going to buy this 42 delta call that was 91 days out.
+354.00s: You like that one. You got it for 1498.
+357.00s: Great.
+358.00s: And let's say that you hold it for 60 days or so so that you end up around this this point here.
+364.00s: This 28 DTE 26 delta point.
+368.00s: Notice what happens to your premium.
+370.00s: That's just from the passage of time.
+372.00s: Now, let's say we look at one thing.
+378.00s: Even though time is passed, now your Delta has gone from 0.42 to 0.26.
+387.00s: Here's the issue.
+389.00s: If you do get an accommodating move.
+392.00s: Let's say that spy has a pretty decent move.
+396.00s: Let's say it moves by 50 points.
+399.00s: The issue here is that the total premium that you now will collect on these two scenarios.
+407.00s: Originally, you would have gotten 21 bucks.
+412.00s: Now with Delta decaying, you're only getting $13.
+418.00s: You're getting a significantly less amount of premium at this point from this factor.
+425.00s: So let's take a look at where this gets most aggressive.
+429.00s: We can see from down here, I'm just plotting the differences between the top and the bottom number,
+436.00s: rotating down like that.
+438.00s: So this one is looking at 441 to 91.
+441.00s: That represents a change of 350 days.
+445.00s: The total Delta change is only 0.14.
+450.00s: So even though Delta has moved meaningfully, it's over a 350 day period.
+456.00s: So it's not moving that quickly there.
+459.00s: Then if we go from 91 to 28, that represents 63 days.
+463.00s: We go from 42 Delta to 26.
+465.00s: That's a 16 Delta change.
+468.00s: We've lost more Delta in 63 days than we did in 350 days.
+476.00s: What is this reminding you of?
+479.00s: It should be reminding you of other Greeks, like gamma, like bigger.
+487.00s: The difference in sensitivity with relationship to time now, it's closer to gamma.
+494.00s: And it's because let's continue the exercise inverse, but same behavior.
+501.00s: If we go from 28 days to 7, that's 21 days.
+506.00s: We go from a 26 Delta to a 4 Delta.
+509.00s: That's a 22 point change or 22 cent change in your Delta.
+516.00s: Yet that's over the course of just 21 days.
+520.00s: You lose 0.22 Delta.
+523.00s: Whereas over 350 days, you only lost 0.14.
+526.00s: So what is this showing you?
+528.00s: As you get closer in time, this accelerates very meaningfully.
+532.00s: And you can see that represented here, but notice a very important detail.
+536.00s: Notice the slope between 350 days and then this 91 days.
+542.00s: And the 63 days or so.
+545.00s: Those slopes are not that significant.
+550.00s: Then when we go from 63 to 21 to slope is huge.
+554.00s: And then when we go from 21 to 3 or 4 days, what happens?
+559.00s: It drops off a cliff.
+560.00s: Why?
+561.00s: It's because you have less total Delta to give up.
+566.00s: Going from 7 days to 3, you already are starting with the Delta of 0.004.
+573.00s: Your Delta is effectively 0.
+575.00s: So it can't decay that much more.
+578.00s: Because it's already decayed.
+580.00s: There's not much left.
+582.00s: So if we were to do the same exercise, but re-center to being at the money,
+588.00s: you would see a more significant change.
+592.00s: Although there is a very interesting effect with being at the money.
+598.00s: So if we take a look at that example, we go 7 days out.
+603.00s: Let's go to at the money.
+605.00s: And we can see our Delta is 0.511.
+609.00s: Let's go to 3 days and let's look at those same 682s.
+613.00s: What's your Delta 0.50?
+615.00s: It didn't change much.
+616.00s: Why?
+617.00s: Because you're at the money.
+619.00s: There's still a really, really good chance that these 682s will be in the money.
+625.00s: So that's why the Delta remains so high.
+629.00s: But if we take a look at one strike in the money or one strike out of the money,
+634.00s: let's take a look at the difference here.
+636.00s: Let's go two strikes just to make the point a little more clear.
+640.00s: These are a 45 Delta going to the 684s.
+644.00s: And then if we go to the 684s, those are now a 35 Delta big change.
+651.00s: So as soon as you are off that dance floor of being right at the money,
+656.00s: and you're this close in time, your Delta will decay very quick.
+660.00s: Now it doesn't just decay.
+661.00s: It also expands.
+663.00s: So options that are in the money become more likely to stay in the money.
+668.00s: So let's take a look at this option here. This 57 Delta 680.
+672.00s: If I go to the 680, notice how this is a 63 Delta, the Delta went up.
+679.00s: That's because it's in the money and it's more likely to stay in the money.
+683.00s: As you get closer to expiration, if it's in the money.
+686.00s: So that is the concept of Delta decay.
+689.00s: This is part of the reason why when you see me trading things like the ratio called diagonal,
+692.00s: I prefer to be at the money or slightly in the money.
+695.00s: Because if I'm going to hold it for some duration,
+698.00s: I don't want to lose too many Delta's in case I do get my move.
+703.00s: And then I lose on profitability by the main profit factor I have by being further out in time via Delta.
+709.00s: This is Cliff Notes on Charm.
+712.00s: If you have any questions, let me know.
+714.00s: Be an Outlier.

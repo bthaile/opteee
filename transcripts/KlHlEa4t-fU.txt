@@ -1,0 +1,116 @@
+0.00s: What's up out lives?
+1.56s: Today we're going to talk about calculating risk adjusted returns for short puts.
+8.00s: Why does this matter?
+9.00s: Well, it's pretty simple.
+11.40s: When we look at the habits of a lot of traders, they make a unilateral decision, maybe
+18.48s: when they're comparing two different products that they're potentially going to sell
+23.60s: some short puts in.
+25.40s: So I want to talk about that habit and then the fix, I'm going to show you a couple
+29.40s: different formulas that you can easily use to make better decisions between what kind
+35.36s: of thing are you going to sell your short puts in.
+38.16s: So what's the habit?
+40.64s: Really simple.
+42.12s: Most people that are selling short puts are really just focusing on which one gives them the
+48.12s: highest credit, the largest number that fits in their account.
+53.16s: That's pretty common.
+55.16s: The better way to think about this is to calculate a risk adjusted return for your premium.
+62.44s: There's different ways to do risk adjusted returns.
+64.48s: I'm going to show you one of them today to keep things simple and succinct.
+69.88s: So let's talk about some basic return metrics.
+72.92s: We have return, uninvested capital in this context.
+76.92s: Sometimes you'll hear it referred to as yield, which I honestly don't like simply because
+82.44s: I think they can get confusing within underlying and a dividend yield, but technically
+87.56s: it seems same.
+88.96s: So to calculate that you take the premium that you're getting and you divide that by the
+94.52s: margin requirement.
+96.52s: Notice I say margin requirement.
+98.80s: The next one return on risk is your premium divided by your value at risk and you technically
+106.24s: can define that for yourself.
+108.48s: For example, you can use something like a margin requirement.
+112.52s: You can use a cash secured put requirement in the event that you're cash securing a put
+118.48s: or you could use whatever you intend to manage that trade at.
+124.60s: So a few different ways to look at that.
+127.16s: Then there's just a quick formula to show you how to annualize the return.
+134.16s: Now let's take a quick look at the risk adjusted return metric, the one that I want to show
+139.48s: you, which is literally just, vologesting.
+144.20s: So what we can do is take the implied volatility and we can integrate that into our return
+151.00s: on invested capital, your return on risk, your value at risk, really whatever metric
+156.28s: you want to use for that to then have a better comparison tool.
+160.92s: And I'll show you why.
+162.68s: First, let's just work through these formulas super fast so that you feel comfortable
+166.48s: with them left hand side is just giving some metrics for this is using spy.
+173.92s: So those are just basic metrics so that you can see what's being fed into the formulas.
+179.20s: So let's start with the return on invested capital.
+182.12s: In this case, we're going to have a $856 premium.
+188.04s: And we're going to divide that by, in this case, the margin requirement is 6859.
+193.00s: This is for a portfolio margin account that equals a 12.5% return over that duration, which
+199.56s: is pretty solid.
+201.16s: If you annualize that return, it literally takes you to 104.7%.
+206.52s: Now, before anybody starts like jumping and thinking, oh man, I cracked the code here.
+211.48s: It is the reality of these kinds of trades is the margin requirement here.
+217.96s: Obviously, it's really favorable because of the portfolio margin.
+221.32s: But you're not going to win all of these.
+223.32s: Just make that super clear in case you see that number and you get stoked.
+226.80s: It's good, but it's not what most people think that might turn into.
+231.40s: Now let's take a look at another version of this, which is calculating the cash secured return
+236.44s: on a VESA capital.
+237.84s: So instead of using 6859, we're going to use in the denominator what we need to cash
+244.88s: secured the position, which in this case is $64,900.
+248.48s: That gives us a 1.3% return over the duration, which is 5.6% return annualized, which is very
+256.16s: standard for something like this.
+258.24s: This is using a 30 delta put that 60 days out.
+263.52s: So these are just the base formulas again to get you comfortable with what they look like.
+268.40s: The implied volatility adjusted version of this metric, we're taking the return on a VESA
+273.60s: capital, so that 1.3% in this case, I didn't use return on a VESA capital.
+279.12s: I'm using the cash secured put requirement.
+281.92s: That's why in this instance, I'm using 1.3 instead of the 12.5.
+286.32s: The main reason is I just want to blow out the metrics that can fuse people.
+289.92s: So this is the VESA capital in this case is cash secured.
+296.00s: So I take that 1.3% return and I divide that by the volatility.
+301.92s: In this case, I'm using the volatility for the option itself.
+306.00s: You can do that. You can use the term as well.
+309.52s: You could use the underlying, but I honestly don't think that makes sense when you have access
+314.88s: to the option volatility and term volatility, which is slightly more accurate.
+319.04s: So we take the option, vol, times the duration divided by 252, which is the number of trading
+325.20s: days. Sometimes people like to use 365 here. It's fine. Do whatever you want, but just make
+331.12s: sure it's normalized across whatever else you're doing.
+334.88s: So that gives us our 1.3% divided by 7.9%.
+341.76s: Then we get this number 0.17. What is this number? This number literally just means those are the units
+350.32s: of return that you're getting per unit of volatility, of implied volatility in the option.
+357.44s: So this number itself doesn't really mean anything. It's not like some of these are good,
+362.16s: some of them are bad. This is more used as a comparison metric. So let's make a simple calculator
+370.00s: so that we can make this comparison in order to build something like this in Google Sheets as you can see
+375.92s: is a series of inputs. It's not difficult. I literally just took what was on the last side,
+380.72s: slide and through it into this. Now we have two columns. You're not limited to two. You can compare
+386.32s: as many of these as you would like. But all I'm doing is to noting what are the required input cells.
+394.64s: That's why they're shaded green. I know when I see that I have to input something in those.
+400.96s: And then the formula is down at the bottom. You're not going to see they're not in green because
+405.20s: those are calculated based on these. So in this scenario, I'm comparing spy against cues. And I'm
+414.40s: saying to myself, they're about the same price. So which one of these is giving me a better
+420.24s: vol adjusted return? And it's really easy to figure out in this case. It's about flat.
+428.16s: They're literally about the same. So even though you see QQQ with a higher volatility of 20.78,
+437.52s: you see it with a lower strike. And you see it with a higher premium when we normalize these against
+444.00s: one another, including the volatility component. They're literally about the same. You have to go
+448.88s: up to a third decimal to see a difference, which by the way, a lot of times I will take these out to a third
+454.32s: decimal if I need to. So in this case, adding that third decimal, you can see that QQQQQ is
+462.08s: actually providing a slightly better implied volatility return on invested capital.
+470.80s: Now, let's take a look at another comparison. If I show you Upro and SSO, Upro is a three times
+477.36s: levered S&P index ETF, SSO is two times. So a lot of people would immediately assume, oh,
+485.76s: the three times levered is going to be more volatile, good assumption. And then for that volatility,
+490.56s: you typically are going to see them make a little bit more money. So also good assumption,
+495.68s: especially if they're about the same price, which they are right now. When we take a look at the
+500.88s: return on invested, the return on volatility adjusted return on invested capital, you can see
+507.68s: literally Upro is skewing slightly in terms of what you're getting in between the
+515.20s: wallet you're putting up in the premium that you're getting. So another way to visualize this is we
+521.12s: can calculate the percent difference between Upro and SSO, both in terms of the IV and premium.
+527.52s: So in this case, the IV and Upro is 26.7% higher than that of SSO. Yet the premium is 30.77% higher.
+540.64s: So we can see that there's a little extra risk premium price densities. So then if a trader was
+547.76s: making a decision between these two based on the Valle adjusted returns, they might lean towards
+554.64s: Upro and maybe putting on a slightly smaller position, but capturing that heightened Valle premium.
+562.48s: So really, really simple tool to add to your tool kit so that you're not just making random
+566.96s: decisions based on nominal premiums, you can include slightly better metrics like this. And you can
+574.48s: get even more detailed than this. So one of the projects that I have for the Pro members is to show
+581.84s: not just how to build this, which is easy. You can make this on your own. You can literally take a
+585.12s: screenshot throw it into GPT and it'll do it for you. But to show how there are some other really cool
+592.00s: follow on metrics that can add a lot of clarity versus just using premium. But this is a great
+598.16s: starting point for everybody being out on our CL letter.

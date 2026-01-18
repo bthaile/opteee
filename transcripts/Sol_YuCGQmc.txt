@@ -1,0 +1,87 @@
+0.00s: Option Greek simplified today we're honing in on Delta and Gamma. Most of this will be about Gamma, but I have a couple fun things to show you about Delta that you may not know or at least intuitively.
+14.00s: The session here, like the last session which a link to below on Theta, is designed to give you a better intuitive relationship with Delta and Gamma.
+27.00s: And understand better how to integrate these functions to inform your decision making as you're putting on different positions.
+38.00s: It's super important to understand how these work and we're going to get into it first. We will start with a quick overview of another video that goes through all of the Greeks in detail.
+50.00s: I will link to that in the notes as well, but we will start here very very quick with both Delta and Gamma. Delta simply tells us the rate of change of an option's premium per 1.5 in the underlying.
+66.00s: And then Gamma is actually a second order Greek because it's telling us how much Delta is going to change per 1.5 in the underlying.
+79.00s: Fun fact, not really that fun or anything. It's going to impress anybody, but this is actually a second order Greek. Where is everything else in terms of the primary Greeks Delta Gamma Theta Vega and Ro lives here. It's just really not that impactful for most people.
+96.00s: They're all first order, but Gamma is actually second order. All right, let's now talk about Delta and Gamma. I want to talk about some of the actual practical ways to interpret in use both of these.
+114.00s: So first, the way to think about Delta is it gives us an understanding of exposure and I'll show you.
+123.00s: If we take a look at spy, I have the six 65 calls that are 39 days out highlighted. These have a Delta of 53. What that tells us is that if spy goes up by a dollar, the premium here will increase by 53 cents.
+144.00s: Cetarist, Perivis, meaning everything else remaining the same, which isn't the case as we know multiple effects have counter counter effects that impact one another. You'll understand a couple of those with respect to Delta in just a few moments.
+159.00s: So, I think that's not theoretically and to as a baseline concept. That's all this tells us. Another way to think about this, we know every single option's contract relates to 100 shares of the underlying that's the standard size.
+178.00s: Right now, these 65 calls are actually behaving like 53 shares it moves just a little bit 53 shares of spy, not the 100. That's really, really important to understand.
+196.00s: So what this means is if you had 100 shares of spy and it moved to dollar, you get that full one dollar move in your P&L.
+206.00s: If you have one call right now looking at the 65, you only get 53 cents if spy moves that full dollar.
+217.00s: And there's a specific reason why this works, this has to do with convexity, which you will understand a little bit more in detail with gamma.
+224.00s: Now, let's talk about some of the specific traits. The relationship with time is linear and nonlinear that might sound a little confusing, but I will explain why actually with a graph.
+240.00s: This is showing you a plot of four days to expiration 39.95459.
+248.00s: These are the deltas for the six 70 call. So we can see it four days to expiration. It has 28 deltas at 39. It is 47 deltas at 95. 52 deltas at 459. 59 deltas.
+264.00s: The deltas for this six 70 call change in different expiration. This is the nonlinear aspect. You actually notice that delta de case as you get closer in time looking at the same option.
+282.00s: So again, if I am looking at the 60 70 call out 459 days, it is a 59 deltas. But if I'm looking at that very same strike at four days, it only is a 28 delta effectively half of what it is 459 days out.
+296.00s: That's the nonlinear element to delta. And for those wondering, this decay in delta is known as charm, which the more in depth video on the Greeks goes over all of those in detail, but that's what you observe here.
+313.00s: The linear element to delta has to do with raw deltas. So what this means is if I look at this 50 delta, the 6067 calls.
+326.00s: If I look at a 50 delta option, it's 50 deltas no matter what time frame. So 50 deltas in 39 days is the very same 50 deltas. If there was a 50 delta here in four days.
+343.00s: That means removing everything else, if the underlying moves up by a dollar, it doesn't matter if your 50 deltas are four days or four hundred days, you get 50 cents doesn't matter.
+357.00s: So when we normalize it off of delta, it's the same regardless of expiration delta is delta. But when we normalize it off of the strike, that's when we see the nonlinear function of delta.
+371.00s: Let's talk about a couple other things. We already know the standard relationship with delta, which is as options go in the money delta approximates to one.
+383.00s: And as delta's go further and further out of the money delta approximates to zero. Every single option at expiration has to make a choice.
+394.00s: It's either going to be a delta of one or a delta of zero. Delta's of zero have no intrinsic value. They expire worthless. Any option with a delta of one has some amount of intrinsic value and is not going to expire worthless. That doesn't mean it's going to be a profit. It's just not worthless.
+419.00s: That is probably one of the most understood elements. I don't think that's too crazy for anybody. Again, though, have a little bit of a basic video that you can check out. This is really designed to give you more of an intuitive understanding.
+434.00s: But I now want to talk about these two things on the unique traits. The end of the money probability and volatility skew. I have a video that talks about the probability calculation itself so that you can understand how an option's probability is actually calculated.
+452.00s: But we often use delta as a quick approximation and I'm going to show you how that works.
+460.00s: Let's start with these four day options. If I look at this 40 delta call, this is the 667 call.
+470.00s: That would infer a 40% probability of being in the money at expiration and an 80% probability of a touch prior to expiration. The way this works is when you use delta as a proxy.
+486.00s: If you look at the probability of a touch, if you look at the actual calculated probabilities, which is a different formula, very, very important to understand. It's close, but not the same.
+504.00s: The probability, the actual probability is 39.6%. That's pretty damn close, like right on the money effectively. However, if I go out here now, further out in time, 459 days, and I find that same 40 delta option. This is now the 730s.
+530.00s: The probability calculated here is 34.3%. That is now almost a 6 point variance between these two metrics. That's massive.
+544.00s: This gets blown out even more when we look at really volatile names that are not like spying.
+556.00s: For example, if I just go super far out in the money, not even that far, but if we go to the 15G and 27G, I go to the 50 delta options here. Take a look. These are a 50 delta that would infer a 50% probability of being in the money. If I look at the actual calculated probability, it's 25.7%.
+579.00s: That's a 25 point variance. That's massive. So this is why delta as a probability is okay to use in lower volatility names, and when you are closer in time.
+595.00s: Once you start getting outside of the 60 day window, that relationship starts to break apart pretty bad. If we take a look in Tesla, this 49 delta is calculated at a 39%.
+609.00s: That's still in same difference. It's a 10 point difference for something that's 67 days. That's because of the volatility.
+617.00s: If we look in spy and we look at the same window, this 50 delta option here, that is a 47% probability. Much, much closer.
+626.00s: So keep that in mind. Essentially, once you start getting outside of 60 days, the variance gets bigger. And if you're trading something that's volatile, the variance is massive.
+635.00s: And we actually just talked a little bit about that volatility skew. This is why delta shifts the way it does, is because of the way that time is used in correspondence with volatility, which is the square root of time.
+652.00s: This starts getting into some formulas, which again, that other video that I cited about the specifics on the relationship between delta is a probability and the actual calculation of probability of probability being in the money.
+669.00s: I have those formulas broken out for you, so you can see them specifically. But this is part why you see the change that you do.
+678.00s: And you can also see that charm or delta decay really accelerates as you get closer in time.
+686.00s: All right, let's talk about gamma. Gamma is completely nonlinear. It's the highest or the at the money options. It gets lower when you're deep in the money or deep out of the money.
+700.00s: Gamma is effectively what provides an option convexity, which is how much the thing moves per point move in the underlying. So here's how this works.
+711.00s: I have the same delta, which is the x axis here. I used a 10 delta 30 delta 50 delta 70 delta 90 delta.
+725.00s: I plotted those across different durations for days 39 95 459. So take a look at the relationship here. This is all in spy, by the way.
+739.00s: Looking at the four days to expiration notice how much gamma moves the at the money the 50 delta is quite high.
+748.00s: And then as you go in the money, it almost cuts in half and it cuts more in half as you go super deep in the money versus out of the money.
+757.00s: Notice how that flat ends out as you go further out in time. This is because gamma is the highest at the money and it's higher as you get closer in time.
+769.00s: So for example, if we look in spy, we just look at the at the money numbers. You can see gamma is like 0.04 something for the at the money's.
+780.00s: I go far out in time to 248 days just using the 50 delta again. Gamma is 0.004. Why is that? Why is it so low?
+791.00s: Look at this chart or flip the page that also can happen. Look at this chart over here.
+799.00s: Every single option here has to make a big decision as it gets closer to expiration. It's either going to be in the money or out of the money.
+807.00s: That is why you see gamma spike because all of these options have to make big changes before expiration either delta of 1 or delta of 0.
+819.00s: Options that have more time don't have to make that big decision quite as fast. So how does this impact decision making?
+829.00s: Well, we know then if we sell options that are near in time, your P and L is going to move a lot. And it's because gamma is going to move a lot, which impacts delta, which is the measure of the rate of change of premium.
+843.00s: We also know that if you go further out in time, you're going to get less gamma. Why does that matter?
+850.00s: Really, really simple. If we take a look at different options positions. I'm looking at the 671 call out in those different expressions that we were just looking at four days out to 400 plus.
+864.00s: I want you to take a look at the really near term call the four day call.
+869.00s: Take a look at the P and L at the extremes plus 15% move minus 15% move. Notice how cheap this option is a dollar 39.
+881.00s: Take a look at the P and L if it goes up 15% you make 9200 bucks the most you can lose is 139.
+889.00s: That is like the pure definition of an asymmetric profit opportunity. So why would this exist? Because this is highly improbable in this timeframe. This is what they call lot of tickets.
+903.00s: Now let's take a look at roughly the 40 day option. Notice how the top side P and L looks about the same. You start losing a little bit.
+913.00s: You start losing more the downside. Because your option is now more expensive. Why? Because the contract has more time.
+923.00s: Let's go out again to like the 90 day options. Notice how your P and L now has come down over a thousand dollars.
+930.00s: And compared to the short why? Because it has less gamma. What this means is every single time that spy goes up a dollar.
+943.00s: This option is going to compound much faster. You can take a look at it multiplied out here. Your gamma is 3.758. This is multiplied out for 100 shares.
+956.00s: So your gamma is going to absolutely skyrocket as you get a move in your favor. If I go out to those 90 day options take a look at your gamma.
+965.00s: This is again multiplied out for 100 options. It's 0.778.
+971.00s: So as you deal with options that are further out in time, they're going to have less gamma overall.
+977.00s: But that should be a massive decision point, especially if you choose to say for example, buy options.
+984.00s: Because when you buy options that are further out in time, you're not benefiting from gamma anywhere near as much barely at all.
+992.00s: You still have a leveraged play because it's cheaper for you to buy the by the option than 100 shares.
+1000.00s: But nonetheless, it's going to behave a lot differently. This is exactly why having an intuitive understanding of the Greeks is super, super important.
+1008.00s: We spend a lot of time in the outlier pro workshops building different ways to visualize this kind of stuff to make the decision making a little bit faster.
+1017.00s: So that when you're deciding to buy a vertical spread, sell a vertical spread, buy an option, sell an option. You understand how all of these different things impact your position very quickly.
+1026.00s: Doesn't have to be this massive sit down exercise once you learn it. But this is also why people light their money on fire. People will sell options that are really close in time.
+1036.00s: Just see them get wrecked because of gamma or people will buy options that are super far out in time to try and decrease your a theta decay.
+1044.00s: However, you don't benefit from gamma. So if you get a really low delta that's super far out in time because you're picking the strike you want it to hit.
+1052.00s: You might not make much at all even if there's a massive move and it's because delta is low, gamma is low. So your delta is not going to change that much.
+1061.00s: If you have any questions, let me know. Be an outlier. See you later.

@@ -1,0 +1,160 @@
+0.00s: What's up, Alias?
+1.00s: Today we're going to talk about how this can destroy your options trades continuing
+7.68s: with the option Greeks simplified series today we're looking at Vega.
+13.56s: At the end of the video you will have an understanding, a reminder of what Vega is, but
+17.36s: more importantly how to practically apply it to your trading.
+22.00s: Let's start with a reminder, Vega essentially tells us the rate of change of premium per
+28.00s: one point change in implied volatility.
+32.04s: There are certain traits of Vega that are really, really important to keep in mind.
+38.24s: And that's actually what this shows us.
+41.32s: On the left hand side what I've done is look at four different expirations, five days,
+47.96s: 30, 86, 450.
+50.68s: And I plotted three different deltas.
+53.84s: I plotted a 20 delta, a 50 delta, and an 80 delta.
+58.16s: I picked these so that you can understand the relationship of Vega across time and across
+65.12s: moniness.
+66.84s: So if we focus first on day-to-day expiration notice how the further out in time you go, the
+74.84s: higher this line is.
+77.68s: This means longer dated options have more overall Vega period.
+84.92s: And you can see that this actually goes down in descending order.
+89.32s: So as we go from 450 to the 86 expiration to 30 to 5.
+93.88s: This is not hypothetical market data.
+96.04s: This is real market data.
+97.20s: This is taken from an actual options chain.
+101.04s: That's the first thing you have to be aware of.
+103.32s: The second thing is the relationship to moniness.
+105.88s: Notice how all of these have this little peak that happens at around 50 delta.
+111.32s: Vega is going to be highest in any expiration around at the money.
+117.12s: Why?
+118.12s: Because that's where the most extrinsic value is.
+120.88s: That's where there's more total value for Vega volatility to impact because it cannot
+126.36s: impact intrinsic value.
+129.28s: And if you're super far out of the money there isn't that much extrinsic value out there
+134.12s: at all.
+135.56s: This is why you normally see it peak around at the money.
+140.80s: Why does all of this matter?
+142.80s: Well when you decide to trade options, you're going through a bunch of different inputs.
+149.84s: Some of which are how does selling premium become impacted by stuff like gamma.
+155.52s: And if you're buying options, how does volatility help or hurt me?
+161.44s: And I will show you.
+163.12s: If we take a look at this plot, this is in RGTI today's 25 October just to give you
+169.52s: a sense of what the data is.
+171.68s: And I want to show you this peak.
+173.80s: So this is looking at seven day IV.
+178.00s: I want to show you a couple other things.
+179.96s: Notice the relationship between the seven day vol, again something like the 30 day
+186.86s: vol.
+189.38s: Notice how they don't necessarily move the same.
+193.38s: The reason why this matter so much is a lot of times people will make their trade
+197.26s: decision based on what the underlying implied volatility is.
+202.38s: That's 30 day vol.
+205.10s: So if, for example, you choose to trade something in RGTI because you think 30 day
+211.62s: vol is really cheap down here at 96%.
+214.70s: We can look at what that is in terms of a percentile, but let's just pretend that this
+218.02s: is relatively cheap.
+219.70s: And you're like, I think it's going to go up in the near term.
+222.34s: And so you buy cheaper seven day options.
+226.34s: You've now made a massive mistake.
+228.62s: You've made your vault decision based on 30 day vol yet you're trading seven day
+232.96s: vol.
+233.96s: This example, 30 day vol is absolutely crushed compared to seven day vol.
+243.12s: So let's take a look at a practical scenario.
+245.24s: Let's say that you choose to buy an at the money call that seven days out in RGTI.
+252.12s: And I'm going to pretend that this was on the 12th of August.
+255.96s: What happens if we fast forward one day from the 12th of August to the 13th?
+262.52s: What is what happens to implied volatility?
+264.96s: It goes from 152% down to 91.6.
+269.84s: Let's see what that does to an option.
+271.80s: I plotted an option calculator here with a bunch of different stuff in it.
+275.40s: This is actually something that the outlier pro members are building right now for themselves
+279.28s: to help do this kind of analysis in a little more hands-on way.
+282.48s: So it's useful.
+283.48s: It's useful information to have.
+285.28s: But you can build your own leveraging what you see here.
+287.88s: Easy enough.
+289.12s: But I want to show you a specific thing.
+291.08s: I've input an option detail.
+293.20s: The only thing to note is everything is the same.
+296.12s: Except I fast forwarded one day and then I mirror that change involved that you saw in this example here.
+306.00s: So going from 152 to mid 90s.
+309.00s: Low 90s I should say.
+311.04s: And I didn't change any of the Greeks.
+314.04s: I purposely want to isolate as much as I can.
+318.64s: What everything else looks like.
+321.48s: So I have everything else the same.
+324.48s: What happens to implied volatility?
+326.28s: Imply volatility dumped by 60 points.
+329.48s: It's a 39.7% contraction involved.
+333.48s: How does this impact your P&L?
+335.24s: So again, picture this with me.
+337.12s: You bought a call.
+338.48s: You paid whatever you paid for it.
+340.80s: And then one day passes.
+342.60s: Nothing else changes.
+343.96s: Price stayed the same.
+345.40s: Delta stayed the same.
+347.08s: I'm just pretending even theta stayed the same.
+349.60s: Everything stayed the same.
+350.52s: Vega didn't move.
+351.40s: Everything stayed the same.
+352.36s: Price didn't move.
+353.36s: Just volatility fell.
+355.84s: What happened to your option?
+358.56s: It gets cut in half.
+360.36s: Your option is now worth 52% less than it was one day before.
+367.36s: Why does this matter?
+368.32s: Well, let's say you bought that call and let's say that it actually went up a little bit.
+372.76s: Let's say it goes up by a dollar.
+374.48s: Let's say it went up to 39, 84.
+377.40s: So we get a dollar change in our delta.
+380.36s: What's our net?
+382.64s: We still are losing money.
+384.08s: We got a dollar change.
+385.64s: Okay?
+386.64s: Maybe we try getting a $2 change.
+388.88s: Maybe now we got to two bucks in.
+392.28s: We're still losing money.
+395.32s: So the point that I'm making here is that you can have something that moves in your favor
+400.20s: directionally.
+401.20s: But if you were not paying attention to the vault component to it, then you can lose
+405.76s: money.
+406.76s: Now there's one other thing you have to be aware of.
+410.44s: Impact to a volatility surface do not impact all of the terms the same.
+418.24s: Typically speaking, when you have some sort of catalyst, something that's going on in the
+422.40s: front, it will impact the front more.
+426.96s: And then as you have stuff going on further out, that's not is common.
+431.28s: The back doesn't change as much.
+433.44s: Again, why does this matter?
+435.60s: It's because when we look at a graph like this and we say like, oh shit, those 450 dates
+443.60s: to expiration options have a lot of Vega.
+446.24s: So if I buy an option and then volatility goes up, I should make a ton of money, which
+451.52s: is a good initial thought.
+454.16s: But as usual, an option to small nuance than that, you would again probably lose money.
+458.88s: Why?
+459.88s: It's because the overall volatility doesn't change as much 450 days out.
+467.32s: That's a long time for a near term catalyst news to digest and bounce around.
+472.48s: That's why you don't see it move as a gross value that much.
+476.04s: And again, you can see that represented here.
+478.76s: If I keep the seven day vol on and I bring this out to 365 days, just notice the difference
+485.64s: in those lines.
+487.88s: What do you see?
+489.24s: The total deviation off of the 365 days, there's still deviation for sure.
+494.92s: But it's nothing like what you see in this near term.
+497.92s: Why does this matter?
+499.52s: It's because you have to pay attention to two factors that are happening in unison.
+503.96s: The first factor is the fact that further out in time has higher Vega, but raw
+510.88s: vol doesn't change as much.
+513.04s: And then that switches.
+514.68s: Near term has lower Vega.
+517.00s: But you tend to see much bigger changes in vol.
+520.12s: You have to take that into account whether you're buying or selling so that you're not
+524.68s: trading vol in the wrong term.
+526.72s: Remember, match it to the term that you're trading.
+529.40s: But then the second thing is to understand those two very important details on how it
+533.04s: behaves so that you do not do stuff.
+536.36s: Something happens and then you're like, why did I lose money?
+539.64s: It happens a lot.
+540.64s: There's no reason for it to happen.
+542.36s: Who's now you know this?
+543.36s: Be an outlier?
+544.36s: See you later.

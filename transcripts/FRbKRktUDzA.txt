@@ -1,0 +1,83 @@
+0.00s: What's up, Boutliers? Today I want to talk about how to improve the wheel option strategy.
+6.50s: It's super common and it's a logical starting point. So first let's review what the wheel is.
+14.00s: And I'm literally going to draw it for you so that you can kind of experience the evolution of it real time with me.
+20.00s: So we typically start with cash secured puts. This would be step one.
+25.00s: Then step two is based on step one. There's two scenarios either they're going to be out of the money or they're going to be in the money.
+35.00s: Now if they're out of the money, we just circle back and go back into a cash secured put.
+43.00s: If they're in the money we have two choices. We can either take a assignment or we can adjust.
+51.00s: So adjusting is stuff like rolling and things like that or you can do a combination of those.
+58.00s: So you could conceivably take some adjust some that kind of thing.
+63.00s: So after this first step, if we do end up with inventory meaning we choose this scenario.
+72.00s: We now have long shares.
+77.00s: And then we add short calls.
+85.00s: Then this completes the wheel effectively.
+89.00s: Then it's just a matter of cycling through these different scenarios.
+96.00s: So the beauty in here, it's super simple.
+100.00s: The downside is that it often mislead traders into thinking that they're doing better than they are.
+108.00s: And there are some very clear weaknesses that we have to discuss because there's really a few ways to make the wheel strategy just way better.
+122.00s: And it's not that difficult. It's not like some sort of massive change to the wheel. I'm not looking to claim some sort of new trade name.
+131.00s: It's nothing like that. But this is how the wheel typically is employed.
+137.00s: So let's take a look at what that actually looks like on a risk profile. So this is just using spy.
+144.00s: So in this scenario, we're going to start by selling three puts in spy.
+150.00s: So here is our trade. I'm zooming in just a little bit to make it a little more clear.
+154.00s: So we can see some very, very defined traits of our starting position.
+161.00s: Namely, that we have undefined loss potential.
+165.00s: And then we have defined profit.
+168.00s: What's the problem with this?
+170.00s: The problem with this is that this is designed to be a bullish trade.
+176.00s: We want it to go up. So if we get what we want and it goes up, we end up capping how much money we can make.
+186.00s: What's the trade offer that? What we get a little bit of a buffer in case we're wrong.
+190.00s: And it's a higher probability play. Not that bad.
+193.00s: So what's one of the very first things we can do to make this better?
+199.00s: The very first one is that we can manage the deltas on our short put.
+207.00s: And instead of managing the short put by some sort of arbitrary number of x% profit in y% time, we can create delta bands.
+220.00s: And let me show you what I mean by this.
+223.00s: So if we go into the options, change this is just using 36 day options.
+227.00s: Let's say that we sell this 645 put.
+232.00s: And let's say that the stock starts to go up.
+237.00s: And let's say that it goes from 645 and the stock goes up about 10 points.
+247.00s: If I wanted to understand what this 635 option would look like if the stock goes up 10 points, I would look at the 635s.
+255.00s: So we could see that's about 4 bucks. We originally sold for like 5 and change.
+260.00s: Okay. So this isn't 50% max profit.
+264.00s: However, what's one of the most important things that you can see based on this scenario.
+271.00s: When you're trading stuff like short puts, you begin disadvantaged because if the stock goes up by a dollar, your option, your short put to be specific is only increasing by 30 cents.
+288.00s: So you're missing 70 cents that the underlying made this gets worse as it goes further and further in your direction, meaning the stock is going up.
+300.00s: Your delta gets lower and lower and using this surrogate option would be about at a 21 delta.
+307.00s: So that means you're getting 21 cents 9 cents less than what you were getting from the beginning. It's a big change.
+314.00s: So rather than using these arbitrary x% profits and y% time, we can literally just say whenever my option falls below a set delta.
+326.00s: Let's call it 25. I'm going to move myself back to a 30 delta or whatever my starting delta is why do we do this.
+335.00s: The reason why we might do this is because if the S&P is going through this rally phase, you make way more money as it's doing this.
+347.00s: What's the downside you're going to continue to be closer to the strike.
+351.00s: Your strike is going to be continually closer to the spot price, but that goes back into a couple other ways that we can improve the strategy.
+358.00s: So the very first one is not waiting till your option expires. It's not picking some sort of random x% profit and y% time.
+367.00s: But establishing delta bands that allow you to actually capture the movement as it's happening because remember if you sell a plate, you want it to go up.
+376.00s: But at some point each dollar it's going up. You're making 20 cents.
+381.00s: That's you're missing 80 cents of the profit that the underlying is making. This is one of the reasons why systemically covered calls tend to underperform the underlying just by and hold approach and they get smashed by dollar cost averaging in its for this capping the upside potential.
+400.00s: So we have our short put. Let's talk about the scenario where you get assigned. Now we're assigned and we're long shares in short calls. What does this look like?
+411.00s: Looks like a short put again doesn't it. So what's the downside here. The main downside here is the same as before.
+419.00s: We still have capped upside profit potential. How do we fix this super super easy?
+428.00s: Rather than selling three options. So in this case three calls against our 300 shares.
+438.00s: Instead maybe we sell two or we sell one. What's the downside? The downside in this is that you collect less premium upfront. What's the benefit. The benefit is if it continues to move up you make more money.
+458.00s: How do we determine what point we need it to go to so that we can make a good decision? Because sometimes selling it at a one to one can make sense.
+467.00s: So there's no reason to guess whether it's the right decision or not. You can literally calculate it. So let's see our max profit in this trade is 5136.
+477.00s: So if I move this down to a two lot on the calls I literally just need to see where do I make 5150. I make that about here.
+490.00s: So I need it to go up less than 5% in order for me to be better selling two calls versus three.
+501.00s: So then I can make a logical decision. I don't just default to selling one to one short calls to long shares. I can make a logical choice because let's say that we're going through this phase here.
+515.00s: Where things are just ripping and they're super bullish. Maybe I take this down even further and go down to a one law.
+523.00s: And then there will be some pushback and say, well, you could just roll the short calls and stuff like that. That's just tying up the money longer and longer. And you still have that roof over your head.
+533.00s: It's just slowly moving in the right direction. So this is way more efficient. A lot of people that get stuck trying to collect more premium for getting that the main way that this thing is going to make money.
+544.00s: If the stock goes up and you have that underlying appreciation.
+549.00s: This leads to my personal favorite strategy called a covered triangle, which is a very, very close cousin to the wheel. What is a covered triangle? It's a very different scenario.
+562.00s: The covered triangle in step one begins with cash secure puts or long shares or a combo.
+576.00s: This beginning difference is super important because what happens in this scenario? You're better off with equity than short puts by far.
+587.00s: So we can again make a decision. If we're hovering near a point where we think we might trend or whatever the case is, maybe we favor more cash secured puts.
+598.00s: If we're going through a phase where there's a massive mass of amount of volume coming into the S&P, things are rallying super hard.
+608.00s: Maybe we scale down our cash secured puts and we just buy more long shares. And we maintain this combo position. This is the first leg.
+621.00s: Leg 2 is the same thing you just saw in the terminal state of the wheel, which is called a ratio covered call.
+635.00s: Now these exist at the same time. These all go on at the same time. So what might a trade like this look like? Well, we might buy to open 200 shares.
+648.00s: We might sell to open one put and we might sell to open one call. This is the same overall aggregate exposure of those 300 shares is just distributed slightly differently.
+662.00s: And then we add this ratio component so that we do not have capped upside profit potential. And then if we want to roll these will have way more choices on rolling because if our short call gets breached massively and we want to roll it out in up.
+678.00s: If it gets breached too much, that can be very difficult, but you can always now add more size. So then I typically apply a trend following approach, meaning I'll use stops.
+689.00s: So that I'm not needlessly holding long shares as things are plummeting. And then I move into an out of the underlying in short puts based on what's going on.
+699.00s: I have an entire playlist that breaks down the coverage triangle, which is a really, really great progression from the wheel. But even if you don't feel like doing that, there are two main improvements you can make to the wheel.
+712.00s: Manage your short put by delta bands versus random numbers. And then sell the calls against your long shares at a ratio and stop capping your upside profit potential being out there. It's your letter.

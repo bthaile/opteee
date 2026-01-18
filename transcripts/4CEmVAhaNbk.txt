@@ -1,0 +1,98 @@
+0.00s: Option Greek simplified. I want to talk to you today specifically about
+5.00s: Theta. I have several videos that go through the Greeks in detail. I will link to all of those,
+11.00s: but I want to give a holistic and quick look at Theta, more as a general reference guide.
+18.00s: So for those that are unfamiliar with Theta, it simply tells us the rate of change of
+27.00s: an options premium per one day passing. So if we go into an options chain, I happen to
+34.00s: have video up that will work just fine. And if we look at this 30 delta 170 put that is 41 days out,
+43.00s: we can see that the theta here is negative 0.135. The reason why this is negative is because this option,
+55.00s: after the passage of a day is going to lose 0.135 of its premium, which is right now called at $6.92.
+64.00s: That is Theta decay. A couple really important things to know out of the gates, Theta decays continuously.
+71.00s: It's not just same value, same value, same value, end of day, Theta decay is now added. That's not it at all.
+79.00s: There's also smart acceleration and deceleration of Theta decay that the market makers and those who are quoting and providing liquidity apply.
+89.00s: So for example, over a weekend, the market is closed. Nothing is trading. Things typically don't move that much.
+97.00s: So a lot of people intuitively think like, oh, if I sell premium on a Friday and then buy it back Monday to close,
+104.00s: we can make that Theta decay over the weekend over a relatively quiet period, which is a good instinct.
+110.00s: But the market knows this. So it's actually going to decay some of the weekend premium out early.
+117.00s: And then also adjust the volatility so that when the market opens Monday, there isn't some arbitrage opportunity or arbitrage,
+126.00s: that's opportunity to capture really quiet Theta decay. Options are pretty smart in that way.
+134.00s: So we know fundamentally what it is. Now, what I want to specifically talk about is how it behaves.
+140.00s: I want you to have a better intuitive understanding of the way Theta impacts trade decisions.
+148.00s: When you trade options, the Greeks only give you information. There's nothing special baked into any of them.
+156.00s: But we should use them to inform what makes the most sense in the position that we want to put on.
+164.00s: So by the end of the video, you'll have a much better intuitive understanding of that relationship.
+168.00s: Okay. Let's start with a really small graph. You'll probably have to zoom in a little bit, but I'll also explain what you see here.
+176.00s: What I'm doing is I'm showing you different deltas. This is actually in in video.
+182.00s: At I'm looking at a 10 delta 30 delta 50 delta 70 delta. This is focusing on the call side just because I picked the call side.
+190.00s: Doesn't make a big difference call or puts.
+194.00s: And I'm looking at different days to expiration. So you can see that I have six here and then I have others that you'll see in a moment.
+204.00s: So inside the six DTE calls in in video. We're going to look at those different deltas.
+212.00s: For each of those deltas, I'm going to show you what the current premium is.
+216.00s: What the current theta is as a raw number.
+220.00s: And then what that percentage of theta is of the premium.
+226.00s: What you're going to find is a very, very important relationship between moneyness and the duration of the option.
+234.00s: But some of you are actually going to be genuinely slightly surprised because there are quirks to this that break away from the standard mold that you're used to seeing, which is this, which is for an at a money option.
+248.00s: Sometimes there actually are kinks in this relationship, which you will see.
+256.00s: So this is the base that I pulled everything from. I'll give this to you guys in case you want to tinker with it.
+264.00s: I'll drop a screenshot of this in the discord so that you can grab everything a little bit more zoomed in.
+270.00s: Let's go through this example. So as I mentioned, we're going to look at 60 T. E. 20 41, 180, 8 and 461.
+280.00s: I'm giving you different looks at different times. Now a couple things that should naturally stick out to you.
+288.00s: I applied color shading on the theta columns against the theta columns.
+295.00s: And then the theta percent columns on the theta percent columns. So we can clearly see a super important relationship of theta, for example.
+309.00s: If we look at a 6 d t E option, it looks like that the out of the money option has relatively low theta compared to the other deltas.
+321.00s: The theta or the 10 delta 60 T E is negative 0.09.
+328.00s: So you might think that the theta here is cheaper relative to the 30 delta 50 delta or 70 delta because the number is lower.
+337.00s: But if we look at that theta as a percentage of the remaining premium, we see a completely different story.
+344.00s: We see that this 19 sense of theta represents 30 percent of the premium remaining.
+352.00s: That's a really, really important factor because when you're trading options, both of these numbers matter to you in two different ways, which again, I will give you an intuitive understanding in just a few minutes.
+365.00s: So you have to pay attention to both the raw number, but then also the percentage.
+372.00s: Let's just talk about generally what we see here and some people prefer graphs a little easier to visualize what you see above.
+381.00s: The first thing that you should unequivocally notice is that theta as a raw number is much higher as you get close and time.
+395.00s: Also, as a percentage, it's higher as you are closer in time.
+403.00s: You should also notice that theta as a raw number.
+408.00s: E, for the 50 delta, when you're wrapped around being at the money is when theta is generally the highest.
+419.00s: And then as you go further out of the money, it declines. So using an option change to give you a viewing here.
+427.00s: Theta will be very, very low for these super deep in the money calls and it's because there's not much extra traffic value left that can even come out of them.
+438.00s: Then this theta number will get higher higher higher higher as we get closer to the at the money.
+444.00s: And then it's going to decline down as you go further out of the money as a raw number.
+450.00s: It does that because the at the money options have the highest extrinsic value.
+457.00s: As you go further and further out your these options are all extrinsic value and that as you can see goes down down down down down down.
+466.00s: So there's literally less that can come out of them via theta decay. There's not much left.
+471.00s: That is another really important component to always keep in the back of your mind the relationship of theta with moneyness.
+480.00s: Now I want you to hone in on this graph here this theta decay over time by delta.
+486.00s: So this is plotting a 10 delta 30 delta 50 delta in 70 delta.
+494.00s: Further out in time starts here. So this is the one 88 DTE and then it goes 41 20 and then the sex.
+505.00s: Notice how most of these generally are downward sloping there is some plateauing in some of these options over the 41 to 20 DTE again.
+517.00s: So this is the one that is going to be on a perfect relationship realistically if we went out to additional decimal points.
+522.00s: This would still be downward sloping.
+525.00s: But notice what happens at this 10 delta.
+528.00s: The 10 delta at 41 days to expiration gives us right here as you can see negative five cents ish.
+541.00s: 20 it goes to seven cents and then again once we're at six it's like 19 cents.
+548.00s: But then as you go out to the 188 it's like three cents.
+554.00s: So interestingly enough there are periods that you can find these small kinks where as you get closer in time your theta is actually expanding.
+567.00s: Always occur a lot of times that's because there's an event over this duration any time you see small anomalies like this it tells you something.
+575.00s: So in this case this has earnings coming up.
+578.00s: So that's exactly why you see this spike because there's a little more wall priced into these.
+584.00s: But that's also why it's important to understand the nuance.
+587.00s: It's not always linear downward sloping that accelerates exponentially at the end.
+591.00s: It's just not how it works in a practical sense.
+594.00s: Okay, now the last thing I want to talk to you about quickly is this.
+599.00s: This is why.
+601.00s: Buying seemingly cheap out of the money options is typically a great way to light your money on fire here.
+609.00s: We're honing in on the six DTE 10 delta those have that 19 cent theta.
+615.00s: I then give you two looks in time time zero which is right now and then time one T plus one which is a day later.
+623.00s: After the passage of one day we're going to erode about 44 cents of this options premium.
+633.00s: So we're going to lose 19 cents of our 43 which takes us down to 24 cents to significant drop between these.
+642.00s: Why does this matter?
+644.00s: Because if nothing else changes, setters, parabas everything else remains the same.
+649.00s: And this passes.
+652.00s: The problem is when you first bought this option for 43 cents, if the underlying went up a dollar, you would have made a dime.
+662.00s: Here's the that's not including gamma by the way would have been a little bit more.
+666.00s: Here's the problem.
+668.00s: As nothing else changes time simply passes because so much relative value of this option just bled out.
+677.00s: You now need a one dollar 90 cent move to get back to break even.
+683.00s: You're making nothing.
+685.00s: So you effectively now need it to make a two dollar move just to get back to scratch.
+691.00s: This is what makes these out of the money options like hot potatoes because the longer you hold on to them.
+697.00s: You literally now need larger and larger moves to even get back to break even let alone to start making money.
+705.00s: If you have any questions let me know be an outlier.
+707.00s: See you later.

@@ -1,0 +1,136 @@
+0.00s: What's up, Alias?
+1.48s: Today we're going to talk about managing an options trade.
+5.92s: Seems pretty simple at face value, but there's a little bit more detail that goes into
+10.32s: doing this successfully long term.
+12.68s: So we're going to talk first about what we should not do and why we should not do it
+19.44s: this way.
+20.44s: And then I'm going to show you some concepts on a different way to approach this.
+24.88s: Now one really important overarching concept here is that when we trade options, it's
+31.64s: very easy to get sucked into each individual trade.
+35.68s: What I mean by that is sometimes we forget that our trades should be treated as a process,
+44.00s: where we start to value the way that we adhere to the process as compared to the
+49.56s: outcome of individual trades.
+51.00s: That might not sound like much if you're a new trader, but it goes something like this.
+54.92s: If you put on a trade and you see it going against you, you might think to yourself,
+59.28s: oh, I could fix this.
+60.60s: I could do these different kind of management things in salvage this trade.
+64.64s: But if you don't manage everything in that strategy that way, you realize that you don't
+72.56s: have anything to control for to figure out what actually makes sense over the long run
+77.68s: for your strategy.
+79.20s: So the underpinning concept here is that we acknowledge the fact that we need to treat
+85.56s: the way that we manage trades in the context of this is a process that we're expecting
+91.88s: to do over the long run, not something that we're just doing this one-off instance to make
+97.48s: a few bucks.
+98.72s: That doesn't work well long term.
+100.56s: Okay.
+101.56s: What not to do?
+102.88s: What about the percentage at 50%?
+104.60s: Never risk more than one percent of your account on an individual trade.
+109.08s: Cell half and keep half.
+110.88s: What should I do now?
+112.56s: Always roll for a net credit.
+114.64s: Why are these things you should not do?
+117.20s: Any one of them might be completely fine.
+119.44s: Well, really accept this one for sure.
+121.84s: But the thing that I'm highlighting here is that all of this shit is advice that you probably
+128.44s: heard in different places that is completely random.
+132.76s: In reality, the reason why this doesn't make sense is the specific profit mechanism that
+138.72s: you're trying to trade behaves differently.
+141.64s: Let's look at an example to make the point clear.
+145.72s: If you focus on these bottom two charts, I have X on mobile and Tesla.
+150.24s: If I was trading some sort of bullish strategy in both of these, would I want to manage
+157.28s: it the same way, meaning would I want to not risk more than one percent or would I want
+162.96s: to sell half and keep half after it hit a certain profit level?
+166.88s: The reality is absolutely not.
+169.60s: Why is that?
+170.96s: Because if I look over the last six month lifespan for X on mobile effectively, it's
+177.08s: moved about 8%.
+179.44s: If we look at the total range high to low, that represents 16.76%.
+188.20s: If I do that same exercise and I look at the high low range in Tesla, it's 82.5%.
+196.60s: So what am I highlighting?
+198.20s: I'm highlighting the fact that these two things move so unbelievably different that if I did
+203.92s: the same exact strategy in terms of managing my long call or my short put, it wouldn't
+209.52s: work well.
+211.68s: You have to make things specific to what you are attempting to capture what the specific
+218.44s: profit mechanism is.
+220.04s: So let's talk about what to do.
+221.44s: We should start with the outlier strategy process.
+224.80s: I have a video, I'll link to that in the notes below.
+227.24s: The reason why I think this is the place to start is because this provides the framework.
+232.00s: Most traders begin trading options by learning some sort of random option structure.
+237.48s: You learn verticals, you learn iron condors and whatever structures you come across.
+244.48s: Then the way traders start is they say, oh, I'm going to figure out how to use this vertical
+248.84s: spread.
+249.84s: I got to figure out how to manage this vertical spread.
+253.24s: Warren reality, it's completely backwards.
+255.48s: The correct place to start with stuff like this is to look at a profit mechanism to assess
+261.04s: the profit mechanism.
+262.04s: So again, going back to this example, if I was looking at price direction up,
+267.44s: meaning I think the thing is going to go up.
+270.64s: And I'm analyzing the behavior of X on mobile versus Tesla.
+275.36s: The profit mechanism looks different in these two types of names.
+279.40s: How so?
+280.40s: Clearly, Tesla is way more volatile.
+283.60s: And we can see that represented in some really simple volatility metrics, like average
+288.16s: true range or average daily range, where it's two to three times what you see in X on
+294.48s: mobile.
+295.48s: So because of that and because of analyzing the specific profit mechanism that I'm trying
+299.88s: to capture, that will directly inform how I might want to manage my trade.
+307.24s: So let's take a look at an example.
+308.76s: I'm going to take a look at zero DTE index volatility risk premium.
+313.84s: So this is like zero DTSPX options and stuff like that.
+317.24s: The first thing I need to do is take a look at SPX options.
+321.08s: I need to take a look also at SPX on zero DTE timeframes.
+324.92s: And I need to look at how does it behave.
+328.04s: So let's go to a chart.
+329.24s: Let's throw in SPX and let's just see eyeball.
+334.36s: What does it look like to me?
+335.56s: Well, I can clearly see some standard tendencies across the size of these candles on an
+341.72s: intraday timeframe.
+343.08s: I can see that every once in a while there are these really big candles.
+347.64s: Those are going to be difficult to manage.
+350.20s: What I'm doing down here is I'm actually creating a standard deviation price spike
+355.40s: plots.
+356.28s: They'll help me understand how frequently do we have moves that are outside one
+360.84s: standard deviation two, three, four, plus and so on.
+364.28s: So what I'm doing is I'm quantifying in qualifying.
+368.20s: How does this thing tend to behave on an intraday basis?
+372.92s: Then I can do the same for volatility.
+375.96s: Now again, you have to remember to match volatility to what you're looking at.
+380.28s: All of this is like seven day vault, 30 day vault that doesn't match zero day vault.
+385.24s: So the way that I can sample zero day vault is maybe by looking at the straddle for zero
+390.12s: days.
+390.68s: And I can compare that against the prior moves to have an understanding of what is the current
+397.64s: vault compared to recent history.
+400.04s: Maybe I can assess variance risk premiums off of that.
+404.44s: So once I understand the profit mechanism, notice how I haven't even talked about attempting
+409.80s: to trade as specific strategies.
+411.32s: It doesn't matter yet.
+412.28s: I need to understand the profit mechanism.
+415.08s: Then after doing that exercise, I say to myself, well, short straddles or
+419.08s: strangles seem to be appropriate here in some capacity.
+422.36s: So what I need to do now is test.
+426.04s: I need to think about the different ways I can manage these positions.
+429.48s: I can close it for a loss.
+431.00s: I can roll it in some capacity.
+433.48s: I can define the risk.
+434.84s: I can take it to expiration.
+436.76s: There's effectively only a handful of things you can do with your options.
+442.04s: So you can shrink the universe that you're exploring by starting by outlining those things.
+447.80s: Then I test what I want to do is understand what works, what doesn't work,
+455.40s: and what holds up over time.
+457.64s: So this is a plot where I'm analyzing different delta straddles and strangles entered
+464.44s: at different timeframes managed in different methodologies, changing specific parameters at each step.
+471.88s: I do this for a broad timeframe, and then I shrink it into smaller timeframes.
+477.08s: This is how I test how robust the concept is.
+481.16s: And at the end of this exercise, I now have an understanding of what management style makes sense
+487.72s: in guess what it isn't, managing it at 50%.
+491.32s: Or managing it at some arbitrary timeframe.
+494.76s: I know what works for this specific profit mechanism that I turn into a strategy.
+501.08s: And then I optimize.
+502.84s: It's not building the plane as you're flying it where you're in the trade, and then you're like,
+507.32s: oh, what should I do now? If you go through Reddit, you'll see a hundred of those posts.
+511.08s: It's so common. But it's the exact wrong way to do this. You start profit mechanism, then you fit
+518.20s: structures to see what might make sense. You turn those into strategies. You test those strategies,
+524.36s: and you tinker with different management approach. Then you codify.
+530.20s: That's the way you manage an option straight, not randomly being outlier, see all that.

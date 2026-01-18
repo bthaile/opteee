@@ -1,0 +1,881 @@
+0.00s: Sounds good.
+2.08s: What's up, Outliers?
+2.92s: Welcome back to that layer podcast.
+4.40s: We have a familiar face, Andrew Mac.
+6.32s: He was on a little while ago, and we covered a lot.
+10.16s: As you can tell, I'm on a slightly different set up.
+12.44s: I am traveling right now, checking out the frozen landscape
+15.80s: of Alaska, which Andrew, you're in a typically
+18.00s: pretty cold area too if I'm not mistaken.
+19.68s: So this is nothing new to you.
+21.16s: Is that about right?
+22.80s: Yeah, we just had two feet of snow dropped on us today.
+25.04s: So you're in good company today, Eric.
+27.12s: There it is.
+27.96s: Awesome, man.
+29.24s: I am absolutely stoked to catch up again.
+31.96s: Last time we spoke a lot about some core fundamental concepts
+36.72s: of trading, options trading, edge, sports betting,
+41.04s: sports betting in relation to options trading,
+43.84s: developing models.
+45.56s: And I've been on a recent kick where I'm trying to connect
+49.88s: a couple more dots, specifically as we were just talking,
+52.60s: like the late stage beginner, early stage intermediate,
+56.08s: which is all just kind of random terminology,
+58.20s: doesn't really mean anything other than the fact
+60.80s: that I'm expecting the conversation to be more for people
+62.92s: that already know what derivatives are, what markets are,
+66.12s: like that kind of stuff.
+67.00s: And we can move a little, a little past those concepts.
+71.76s: So the first thing that I thought would be really,
+74.08s: really cool to discuss broadly is right now,
+77.44s: it's towards the end of November of 2025.
+80.32s: And if you look back over 2025,
+84.80s: what are some of the things that you have found
+87.92s: that have worked well?
+90.04s: And some of the things that haven't worked well
+93.56s: and feel free to bounce between equity markets
+97.88s: and sports betting at your leisure.
+99.92s: I know that you're involved in both.
+103.32s: Yeah, I mean, we should probably stick to trading
+106.28s: and financial markets to the extent
+108.60s: that we can just for the benefit of your general audience.
+111.68s: But the one thing that came to mind immediately
+115.24s: as you said that was MOC, Market on Close,
+119.36s: just that how much that has faded compared to the kind
+124.28s: of wild West days when we had zero DTE options
+128.20s: for every single day of the week.
+129.80s: And you had some really, really big bursts
+133.44s: and rebalancing events at the end of almost every day.
+136.84s: And there were some really interesting opportunities
+139.84s: with that where you know, you're picking up
+142.84s: some dirt cheap options because there's
+144.64s: zero time left on the clock.
+146.32s: And you could watch these things go significantly
+151.32s: into the profit to the tune of 5, 6, 10, 12, X.
+156.64s: In the last like minute, two minutes of the day.
+159.72s: So it's very stressful.
+161.84s: It's very, very high blood pressure type of an activity,
+165.56s: but very much in effect.
+168.36s: And you've watched that sort of slowly
+170.88s: wither away and die over the last, I don't know, six months
+175.52s: or so, something like that.
+176.60s: You still get the occasional, we still see the occasional burst.
+181.20s: But it tends to be more mechanical,
+183.44s: it tends to be like an end of the month effect,
+185.48s: it tends to be new all-time highs.
+189.00s: Think, you know, there's some kind of other catalyst
+191.52s: other than just the MOC.
+192.76s: So that's something it sticks out as like that used to be,
+196.60s: you know, a real powder keg.
+198.16s: And now not so much.
+199.92s: I usually don't even stick around to see what happens
+202.24s: in the last 10 minutes of the day.
+205.64s: What's worked well?
+208.84s: Well, I mean, that sort of contextual depends a little bit
+213.44s: on what it is that you're trying to do.
+216.16s: Long vol has been working really well
+217.72s: for the last month or so at least, right?
+222.36s: What you're seeing right is that as the VIX is elevated,
+225.08s: right as we get past 2021, 22.
+229.84s: When a straddle implied break even gets broken,
+232.40s: we tend to see a little bit of a trending activity
+235.36s: towards the second standard deviation,
+238.04s: rather than a reversion back into the straddle implied break
+240.88s: even.
+241.72s: And so you've seen trades that sort of take advantage
+246.52s: of that effect in the last month were quite well.
+250.16s: But that's, again, I don't think that's anything magical
+253.16s: as the VIX starts to come down,
+254.92s: we get back below 20 into that kind of like 16 is range.
+259.60s: You tend to see more reversion back into the straddle implied
+262.32s: break even, so it's just one of those,
+264.44s: one of those market dynamic things to be aware of,
+266.72s: whether you're a long vol or whether you're short vol.
+271.44s: Two questions.
+272.80s: The first one for the market on close effect,
+278.52s: which is funny because it's actually one that I trade
+281.92s: on both sides of the coin, actually.
+284.52s: And typically not right on close for the short side,
+288.04s: but a little bit before that.
+291.36s: When, what is the mechanism that you stumbled across that?
+297.12s: One of the things that I'm trying to help traders learn
+300.84s: for themselves is creating like this baseline
+305.84s: understanding of markets and then looking for things
+308.28s: that just kind of like weird,
+309.88s: but that's hard to do when you don't know
+312.64s: like a deep level of baseline
+314.12s: and then like what weird it is.
+316.36s: So can you just give us like a quick overview
+319.40s: of even how you came across,
+321.84s: how the market behaved towards market on close?
+324.68s: And then some of the ways that you determine
+327.04s: if there is something viable there for you.
+329.60s: Sure, so something that I've said a couple of times
+332.56s: is that the best effects start by noticing something weird
+336.52s: as you just alluded to rather than diving into the data
+340.32s: and hoping to find the effect that way.
+342.52s: It's usually better to notice it as an observation
+345.56s: and then to sort of investigate.
+347.88s: Most of my best ideas have come that way,
+349.80s: so it is what I would recommend.
+352.72s: You have to keep your eyes open
+353.92s: and that means that you're gonna spend a lot of time
+355.72s: looking at stuff that turns out to be nothing.
+358.64s: That's just sort of part of the game
+360.52s: when you are a treasure hunter, right?
+363.48s: So with the MLC, what I do,
+366.56s: like one of the things that I have on my screens
+368.40s: at all times is the full options chain
+371.28s: for zero DTE, SPX.
+374.56s: I also have the cues and I have yes future options as well.
+379.76s: But so just watching that with some other things,
+384.36s: you're watching the spreads at the end of the day
+386.48s: and you're watching obviously the spreads
+387.88s: are starting to get quite wide as the wall starts to pick up
+391.40s: and that's not necessarily anything
+393.76s: just market maker saying, hey, go away.
+396.88s: We're not really interested in paying you out
+399.08s: a massive amount of money for these things
+400.64s: or something crazy happens.
+401.88s: So it's kind of a fuck off spread, right?
+404.72s: They're just widening it out to tell you to piss off.
+407.44s: And that's fine.
+408.64s: But every now and then you notice that the spread
+412.32s: that they have widened it out to to get you to piss off
+414.92s: wasn't wide enough.
+416.44s: And the thing kind of breaks past the break even
+421.44s: even on the widen spread.
+422.68s: And so you sort of make a note of that.
+424.16s: Like they widened this out and it wasn't enough.
+427.36s: It kept going and it looks like it would have done.
+430.12s: That one would have done three X.
+431.96s: So you make a little note of that.
+433.20s: Three X even with the widen spread, whatever.
+435.88s: And you know, what day it was and you
+439.48s: notice there were any catalysts on the economic calendar
+442.52s: that day blah, blah, blah.
+444.72s: And over time you start to sort of,
+446.20s: okay, it looks like maybe there's something here.
+447.88s: Maybe there's a way to take advantage of this.
+450.72s: And then on the weekend, you might go into the data
+452.60s: and then actually try and see if you can find something
+455.28s: that indicates that you're on to something, right?
+459.04s: But that really that was how it came across demo-seating.
+463.40s: It's funny because when you do this for a while,
+466.08s: exactly you say, it's kind of how you come across
+467.80s: most stuff, right?
+468.68s: It's just like you're like looking at something
+470.24s: and then you see something.
+471.48s: I find a lot of times when I'm speaking to newer traders
+475.64s: a common concern which is completely fair
+477.96s: is that of, like, how do I know if what I'm seeing
+482.04s: is something viable versus if it's something
+485.12s: that's just kind of, you know, once in a while,
+487.96s: this end of day move exceeds what they're
+491.92s: pricing the bit us spread at.
+494.12s: You mentioned an important part of that that I want
+497.92s: to double-click into which is you have this observation,
+501.04s: you have this thing that you're like,
+502.24s: this looks kind of interesting.
+503.84s: And then you talked about, like, over the weekend
+505.72s: or obviously whenever doing a little bit of data analysis
+508.64s: to try to contextualize it.
+510.64s: Can you talk about that process a little bit?
+512.76s: Like, what are you looking for when you're doing that analysis?
+517.36s: Well, you want to try and take a look at, for example,
+520.20s: the spread widening versus like what actually happened.
+522.64s: What was the realized move?
+523.84s: Because you'll be able to see, like, hey,
+526.52s: are they effectively widening these spreads out enough
+529.00s: that they're negating the opportunity to pick a direction
+533.96s: on these things or to take the other side, like you said?
+538.60s: And what you're going to find is, you know,
+540.40s: there'd be sometimes where they've got it covered
+543.48s: and there's nothing to do in there.
+545.04s: And then there'll be other times where it looks like they
+547.72s: didn't widen it nearly enough to cover the opportunity.
+551.08s: And so what you want to do, at least what I do,
+554.72s: and this is sort of a creative thinking process, right?
+557.52s: You try to put the critical mind aside while you're brainstorming
+560.68s: and being creative because you can always be critical
+562.72s: after you have an idea.
+564.40s: But you start with a sort of creative mindset and you say,
+566.80s: okay, here's one where they didn't widen it enough.
+570.64s: What are some things we can associate with that that make
+573.56s: us clues for when this could happen again?
+575.60s: So like the day of the week and we just start trying to brainstorm
+578.84s: and say, okay, let's try to find some associations that we can
+582.76s: use to maybe try to find other times where this could happen.
+586.24s: And then you go back and try to critique it.
+590.52s: You try to knock the idea down after you've sort of built up
+593.28s: a hypothesis, right?
+595.56s: So it's, you know, you start creative and then we get analytical
+598.56s: and critical.
+599.32s: And, you know, it's going back and forth between those two modes
+602.68s: that allows you to generate an idea and then discard it
+606.52s: or stress test it, right?
+609.64s: It's funny.
+610.28s: You started talking one of the things I took a note on that I wanted
+613.32s: to follow up on is this idea of balancing knowing about something
+617.88s: versus doing because you could spend weeks and weeks
+622.60s: right trying to analyze this effect and understand all the nuances
+626.04s: and all this kind of stuff meanwhile, it might not be there for that long
+629.48s: or it's still might have been profitable even if you didn't know
+631.96s: everything about it.
+633.32s: So what's like the degree that you need to see in order to feel
+639.24s: comfortable starting to move something to production.
+642.20s: Obviously, you could go at nauseam and then effectively just
+645.56s: over-analyze and do nothing which kind of the analytical people do
+648.92s: then you have the other side of the coin, the people who just jump off the cliff
+652.12s: and then hope the water's deep enough.
+654.20s: So typically a balance but curious your process there.
+657.80s: Well, it depends a little bit on the type of stuff that you are after
+661.88s: right? If you are a risk-premia guy or girl,
+667.56s: that is something where you can't analyze it to death because it doesn't
+671.16s: go away just because people know about it.
+674.04s: So there's nothing wrong with really getting going hard on the data analysis
+679.16s: because you're going to find more and more information to sort of contextualize
+683.16s: the effect when it's better when it's stronger when it's weaker.
+687.96s: I would say that at some point there's an analysis process that kicks in
+691.08s: words like the whole point of this is to trade to make money and you do have to
+695.56s: fire at some point. We talked about that actually. I think in our
+699.72s: our flawed cast together if you have memory serves.
+702.44s: But there is that balance and it does depend on whether you're after a risk
+708.52s: pre-mit or whether it's more of an inefficiency or flow effect or something like
+713.08s: a transient effect. I think that transience is better word than inefficiency
+719.16s: because people get really particular about inefficiency and the secrecy around
+723.08s: and stuff. There are transient effects that aren't really inefficiencies but
+727.64s: they don't last very long. So like news catalysts a flow effect.
+734.52s: I don't know, just a transient type of thing where it's a big wave and then it's gone
+739.32s: and the water smooths out again. And so for things like that, it's really not a good
+744.84s: user time to be trying to console yourself with extra data and
+750.20s: analysis. At some point you're going to have to just decide, you know,
+754.92s: size your risk correctly and take a shot and start recording your data.
+760.20s: And that I definitely tend towards that because most of what I do is on that side of the
+765.48s: equation rather than risk pre-mit per se. Like I'm not a volatility seller. I'm not short
+769.96s: of all. Typically when short ball is performing very well, the equity risk premium is also
+775.88s: performing well. And so for me personally, I would rather be partaking in that usually with
+783.24s: momentum on single stocks, strong sectors stuff, things like that. So when short balls
+789.40s: performing well, you can usually find me in single stock momentum stuff. And when short ball isn't
+795.16s: performing well, you can find me on long ball on the indices. It's kind of like my general,
+801.56s: like 30,000 foot view playbook. But yeah, I mean, you don't want to wait around all day with the
+810.44s: data analysis stuff. The whole point of some of these effects, especially the stuff that retail
+815.00s: can take advantage of in my opinion, you're going to have to operate with imperfect and complete
+820.36s: information. And that's true of a lot of things in life that have, you know, positive,
+827.08s: skew payoff profiles, right? Like, like, would anybody get a date at a bar if they had to wait for
+835.64s: perfect, complete information before they went up and talked to a girl? Do you know what I mean?
+839.40s: Like, like, do you need perfect information or at some point you should have to say, well,
+844.76s: she smiling at me? She laughed at some of my jokes. Maybe I should ask for a phone on her, right? Like,
+851.80s: it's the same kind of thing. You're going to have incomplete information. You have to make a decision.
+855.56s: And and and size the risk appropriately. So I think I think it's very applicable to a lot of things in
+861.64s: life. Yeah. I think that's absolutely solid. And now when when you come across, let's say any
+871.80s: anything of interest. So this market on close effect, the general longball playbook side of stuff,
+881.72s: when you're in this creative mode, do you start from a point of, I'm going to look in this
+889.24s: specific space for a while and see what I see or do you kind of look around and just see if
+895.08s: something sticks out to you? What I'm trying to explore here a little bit is the fact that for a
+899.96s: newer trader a lot of times, I mean, it's the ocean's huge, right? So you can spend forever just
+906.60s: looking at a ton of different things, but not enough detail to really see anything. And then sometimes
+911.08s: you can spend too much time looking at one specific thing and then lose a bunch of other stuff.
+915.32s: So again, like we're just talking about there's like this balance. So when you're in this
+919.32s: idea generation kind of creative phase, looking for new things and ideas, how do you approach that
+926.12s: problem set? Well, I would say for for most people, a really important point would be that you need to
+937.08s: understand the mechanics of the game, how the game works in order to figure out what's worth taking a
+943.48s: look at. So if you're going to spend time actively focusing on things, it's really important to
+949.64s: know how the pieces fit together so that you can generate better ideas of places to look.
+955.80s: It's like saying, if I want to hunt deer, it's kind of handy to know where deer like to sleep and
+960.92s: where they drink water and where they might be walking to and from because those are going to be
+966.68s: the places where most likely to find deer, right? Or or waterfowl or salmon or whatever, right? Like
+973.88s: you have to have some concept of like how the the ecosystem works in whatever it is that you're
+980.20s: looking at. If you don't, it's going to be you're going to have a lot of hidden mess stuff because
+985.56s: it just it might be something useful and it might not be and you'll have a difficult time
+990.76s: discerning which is which because of your your incomplete information about how the game works.
+995.48s: And so if you're going to put a lot of time into active learning, I would suggest that it should be
+1000.04s: into the mechanics, right? Like you should you should be a student of the VIXX complex like
+1004.84s: like how is VIXX calculated? What is it telling you? What's its relationship to VIXX? How is the
+1011.72s: VIXX calculated? What is its relationship to the options chain? Like you really need to understand
+1017.88s: this stuff like at a reasonably deep level in order to in order to notice things that are genuinely
+1024.52s: weird. Once you have some concept of how the game works or the broad pieces, you know like
+1031.48s: this is what the night does, this is what the bishop does, you know, etc.
+1038.28s: My personal view is that it's better to just kind of just look around in a relaxed way without any
+1044.68s: sort of pre preemptive motivation. You tend to find the best stuff when you're not motivated to
+1049.96s: find things. It's that that Buddhist aphorism about motivation affecting perception that you
+1057.16s: tend to find what you're looking for and so you can create morages for yourself if you
+1061.64s: if you start with this idea like okay we're going to find something today in vertical spreads
+1067.40s: and I'm going to find it and then you just start, you know your brain kind of like starts invent
+1071.40s: and things to try to prove you right? Much better in my view to just kind of look just to see,
+1077.96s: you know and then make notes about what you see and like I said most of it it'll end up being
+1082.28s: probably nothing but every now and then you find something that's really really interesting and you
+1086.84s: can probably make some dough with that. I love that it actually reminds me of a story that I told
+1094.04s: not that long ago actually when I was hunting and funny enough I was deer hunting in the
+1098.84s: York and this was like one of my first hunts so I was like sitting there in this blind that I
+1103.80s: spent a while building and I was so stoked right to try to find something and I saw this deer and I'm
+1111.24s: sitting there looking at it looking at it and like man like I just need this thing to get a little
+1115.00s: bit closer and I was sitting there looking at it it must have been for like 20 25 minutes and then
+1119.16s: it just got like a little bit lighter so then I finally got to the point where I could move a little bit
+1123.96s: so I bring up my optic and it's a fucking stump. I watched this stump deer for 20 minutes
+1133.72s: I'm seeing it move I'm seeing everything and it's a fucking stump so your example there is actually
+1141.88s: massively massively important I think and for the hunting example it was easy for me once I could
+1150.12s: see what the clarity that this was a stump and not a deer. In trading what are some of the tools
+1157.72s: that you can use to validate if what you're seeing is something worthwhile or if it's a stump.
+1166.44s: Well, repeatability obviously comes to mind in terms of seeing something more than once more than twice
+1178.36s: obviously it's just something that happens once it's a little bit difficult but
+1184.04s: you know as an example right like take any any options contract of zero dt like like say
+1191.72s: we just the start of the day today we pull up a 60 delta call and we're just looking at the
+1199.08s: bit asks spread on the 60 delta zero dt call and we're just watching it. If all you did was
+1205.00s: watch it and I know that that sounds tedious and boring but I'm telling you just try it sometimes just
+1211.08s: watch one contract bit asks spread and what you're going to notice is yeah it goes up it goes down
+1217.96s: as as the you know underlying is going up and down but the spread is relatively constant there's going to be
+1223.96s: you know a little bit of wiggle room and you can kind of get a sense of it just watching it.
+1230.36s: You will begin to notice when something weird happens for example you'll notice that it's going up and
+1235.88s: down about two bucks and even if it's trending upwards it sort of fluctuates up and down about two bucks
+1241.72s: two bucks two bucks about 80 to 2015 a bucks 70 to 25 just sort of rolls around in there and then
+1249.80s: I don't know where boom four dollars right you make a note of that what happens next what happens next
+1257.08s: well probably something interesting is going to happen right there's there's a little bit of an inflow
+1262.76s: you know you might see the underlying pop up a little bit but the point is that
+1266.76s: you can get a sense of a baseline just watching just observing and and then you can contextualize
+1273.72s: when something weird happens and also what happens you know related to that weird observation
+1280.76s: so that's like one kind of it sounds like a silly exercise but it actually can help train your
+1285.32s: mind to like seeing the kind of things that you're looking for because you're looking for a little
+1289.72s: effects like that in prices and when you're doing that try to remember that those aren't just
+1295.24s: prices those are people those are people making decisions with risk and and there's some interesting
+1303.32s: things you can find doing stuff like that well you you mentioned a of funny part which is like it's
+1310.20s: not necessarily you know like fun or you know it's super interesting but it's where you start to find
+1315.80s: stuff I find a lot of newer traders are actually well I'm saying like again late stage begin our
+1323.96s: intermediate probably like they're actually willing to do that kind of work if they have some
+1330.76s: sense of like what might this lead to so so if you think about like some of these kind of effects
+1340.44s: and again understanding all the nuance of it and it's a big scale but what are some of
+1346.44s: what are some ways that a trader can begin building an expectation of like what this can lead to
+1353.48s: so that they can at least learn to embrace that seeming boring initial style work foundation
+1361.08s: setting because it can turn into something they just don't know what that is yet so to summarize that
+1367.64s: what are some ways that those kind of people can develop return expectations any sort of
+1373.96s: forward looking expectations of the thing that they're looking at? Well I'm going to start by
+1379.96s: there's a scene in the movie Troy with a hit yeah yeah where he puts the helmet on he's like that's
+1386.28s: why no one will remember your name well if you're only motivated to work when you're guaranteed
+1392.52s: a reward at the end of the tunnel um how far do you think you're going to get in a competitive market
+1398.52s: environment because the rewards the pot of gold at the end of the rainbow here goes to the
+1404.68s: person that's willing to do the work when they don't know what happens at the end when they don't know
+1410.36s: if it's a certainty that there's something there that the people that are interested and willing to search
+1415.88s: and do the work and develop a process are the people that that find the results. If you need to
+1423.72s: be guaranteed the result before you start this might not be the journey for you with with all tears pet
+1430.60s: but um return expectations are difficult things to talk about um they're difficult things to talk about
+1437.88s: because I am probably not the the best person to template my returns are very good you probably
+1446.36s: don't want to trade the way that I do it is exceedingly difficult it is shy of volatility in terms of
+1454.28s: the realized P&L for me and and it's it's quite psychologically stressful it takes a lot of
+1462.76s: of discipline to pull it off um return expectations across the board short vault you know volatility
+1471.08s: selling I'm pretty sure that you and it said something like 20 to 40% a year is like a pretty reasonable
+1477.24s: target with uh with a sharp a little over one like 1.2 or something that's that's what I remember him saying
+1488.04s: I think that aligns with the conversations I've had with him started interjecting it's one super
+1492.84s: important interjection on this thought and I want you to explain it some people just heard you say
+1499.72s: if you sell vault just just sell vault you'll make 20 to 40% and when I say just sell
+1506.36s: vault I mean like just go in the open options market just sell options not actually yeah exactly so
+1512.28s: could you just clarify that just a little bit so yeah yeah sure let's I don't I don't want to get people
+1517.72s: that idea it's not this is not this is not this is not free money options we all work for sure
+1526.68s: what you need to understand about selling vault is that the the risk premium is in generally in the
+1532.84s: win rate that you know the short vault tends to win we tend to stay inside the straddle
+1538.52s: implied break even on any given day or any given period frankly what you need to know is that
+1545.48s: it's counterbalanced almost perfectly by the payoff ratio of long vault when long vault hits
+1555.64s: because when long vault hits the payoff ratio on it is so large as we saw what two or three days ago
+1565.40s: that it almost perfectly counter balances it now are the things you can do yes you know you can
+1571.32s: you can buy the tails you can dealt ahead you can I mean you can do an iron condor there are a
+1578.04s: lot of different ways that you can play it so that you don't get cooked absolutely and in the book
+1584.44s: that even an i wrote we you know there's lots of information on that but but it's not a free
+1590.04s: lunch in the sense that yeah if you just do this if you just sell sell vault naked everything works out
+1596.04s: it's not necessarily true you have to know what you're doing you have to be careful and I would
+1600.36s: go step further and say you should try to be strategic about roughly timing it so that you're selling
+1606.12s: vault when it's a good time to sell vault not just any old time because if you sell it any old
+1613.40s: time someone like me is going to take your money on the other side if I catch you on the right day
+1617.96s: or the wrong day depending on the point of view yeah and I think that that's really huge and
+1624.92s: thank you for elaborating on that it's just because there are different places that try to
+1630.68s: simplify options and then they make it seem like well if you just sell then you'll make x amount
+1636.52s: and as you just elaborated there's a little bit more that that goes into it than that so thank you
+1644.20s: yeah we we we what are we gonna say I mean a lot of the data on selling vault comes from like a
+1651.16s: period of relatively safe sustained bull market like over a decade right of of relatively stable
+1659.48s: you know quantitative easing very low interest rate like we're just we're just floating up the market
+1665.40s: and like basically from what 2009 for period of like 10 years basically so so you want to take
+1674.44s: that with a grain of salt it doesn't mean that other things can't happen and this month has
+1679.16s: been a really good example right um spun this has been a really good example take I would imagine that
+1685.16s: this has been a much more challenging month for the short vault crowd right and it goes to show
+1690.60s: that indiscriminately shorting vault is not the ticket you know there are there are things to look
+1696.44s: for to give you a hint that it's a good time to sell the vault because the vault is actually
+1701.40s: overpriced you don't want to be in a position where you're selling it to me and it's fair you do not
+1707.16s: want that and and I'm not the only one obviously there are other people out there that recognize
+1711.32s: when it's fair and they're willing to take a bet on the long side as well so could you double click
+1717.32s: into that a little bit and again actually you guys did talk about this a bit your book as well but
+1722.84s: could you talk briefly about some of the tools that a vault trader whether buyer seller
+1732.52s: can use to identify if vault is relatively fairly priced versus a potential to be overpriced and
+1743.32s: just to clarify at that point really quick the reason why I emphasize potential is obviously a lot
+1748.52s: of traders they won't know definitively like if they see his or his and then that can gridlock
+1753.64s: decision right I mean I don't want to get into it too too much but like a very simple one is just
+1759.96s: the general vix level so when vix when the vix is low right volatility looks cheap nominally but
+1768.60s: it's actually more likely to be overpriced just because the move that we are likely to experience
+1773.56s: that day is going to be muted and we tend to revert back towards the straddle break even levels so
+1781.56s: vix at 16 vix at 14 the overall premium might be lower but the lean towards the short
+1790.60s: vault crowd is much better for them it's much better to be selling vault if you're selling
+1795.64s: vault 25 you know the premium is higher but like there's a good chance that we're adding closer
+1802.76s: towards fair volatility like you could experience some some real interesting movements intro
+1810.44s: day that will cause you to regret your life decisions right now that is it's one of them
+1818.52s: it's in the book but I mean that's just like a basic one right where it gets into gents and
+1824.44s: inequality a little bit and some other stuff but you know all stuff that if you're going to sell
+1828.36s: well you should know about this stuff but vix level is like kind of like a 101 like hey not all vix level
+1835.64s: should be treated equally for the purposes of selling vault that's what you're into.
+1840.60s: That I think is still plenty to go off of right for the enterprising trader see it gives
+1845.72s: some sort of context and one thing that you probably will have heard or come across is this idea
+1852.68s: that when vault is high you should sell it and the idea there is if it's high and
+1861.24s: volus mean reverting then the idea is that it will come back down obviously there's a bunch of holes
+1866.60s: in that so could you talk a little bit about that? Well sure I mean it's not it's not wrong
+1874.52s: it's more a question of timing right because not only does vault mean reverts you know in the long term
+1880.92s: is one of the stylized facts above volatility another one that was that volatility clusters in the
+1886.20s: short term and so now we're going to argue some semantics about what do we mean by short term what
+1891.32s: do we mean by long term like does long term mean five days does it mean 30 days does it mean a year
+1897.08s: because you know if if the vix hits 50 it's a pretty good bet that in a year it's back down below 21 right
+1905.08s: but that's not usually what people are interested in right what they're interested in is
+1910.04s: the vix went from 16 to 22 today should I short vault tomorrow and that's a different question right
+1918.60s: like that's that's not what happens to volatility in the long term that's you know a two-day
+1924.60s: period or a three-day period or a weekly period and in a short period of time like that
+1930.84s: it's very likely that volatility can cluster right because as the vix starts to pop up as vix starts to pop
+1937.80s: lots of interesting things happen across the volatility service there are all kinds of
+1943.56s: strategies and things that have very tight risk tolerances from large operators that can blow up
+1949.64s: things keep moving and so the cluster effect is just as likely as the mean reversion effect
+1955.72s: on very short timeframes so it it's sort of like a fake sense of security to say volatility
+1962.20s: reverts is mean reverting in the long term when you're planning on taking a trade the next day
+1967.24s: or the next two days like that's not long term statistically you know in any meaningful sense
+1972.84s: uh so I would caution people to be careful spouting that kind of stuff and then planning on
+1979.00s: trading in a short term time frame I guess could you go one step further and talk a little bit
+1986.84s: about the pricing dynamics as well related to that in what in what sense are the idea so you
+1996.76s: give a great example of vall is at 50 and a trader was to think assuredly in that sometime over the
+2004.28s: next year it will be below 21 so then they should buy those puts right because it's going to go down
+2011.32s: yeah it's going to depend a little bit on your trade preference like there's a lot of things to
+2020.36s: think about that there's a time value of money like do you want to trade that's tied you know has
+2025.56s: x amount of your bankroll tied up for that long same kind of consideration you have with uh
+2030.92s: season wind totals in the NFL or the NBA you know it's like there are a lot there's a lot of
+2036.04s: edge in season wind totals just for people that are interested it's it's something that still
+2041.80s: has some edge even even these days but the question is do you really want to do you really want to
+2046.52s: do you really want to tie up your money for the entire season would it not be better to maybe
+2051.32s: find some smaller edges and then you know roll the compounding over the season rather than
+2057.72s: hold it in one trade like that I guess if depending on you know if you have enough of a critical
+2062.68s: mass in it it might be worth it but you know that would be one consideration then there's
+2069.08s: there are other ways to play that trade I mean there are I really low touch one that uh you
+2075.40s: and you know sort of caution me against because it's got a lot of drag to it but s fix
+2081.64s: is one way that you can play that trade right you can just long s fix there is some drag to that
+2088.68s: like it's like I think it's like 7% drag or so it's pretty heavy but the thing the thing about
+2095.24s: s fix as much as like I'm sure that'll get shit on the thing about s fix is that you can just hold it
+2100.84s: like like there's no you know there's no panic about like timeframes or exploration so
+2107.72s: if you really have a strong view like okay the mix is at 50 and like hmm if I hold this I'm
+2113.96s: gonna get you know 30 40% return on this like you can just park at an s fix and you will do pretty
+2119.88s: well with it you can even would probably be be more into shorting like one of the uh one of the
+2130.12s: long volatility uh ETS or whatever like like U-vix or something like that but
+2137.64s: again multiple ways to play it as long as as your timeframe works for you yeah it's really a
+2145.16s: discretionary thing and I think a big thing to highlight there is again like the expectations because
+2150.84s: when when I was making the joke earlier about like assuredly by those puts the the main thing
+2157.16s: from like a pricing dynamics standpoint is that that same quote of quote sure bet is known
+2163.72s: so there's not like this massive amount of capital that you could potentially make from that trade
+2169.40s: for for that exact reason now hmm if if you were to think about let's say a trader that is
+2179.96s: interested in building a model to look at something super vague but I want to just talk about the
+2190.04s: concepts of building a model broadly like what are the considerations that you use when you're
+2195.80s: starting one and then you know we can work down the logical thought process from there.
+2202.28s: Sure um even the first thing I would I would probably say for a retail trading audience is that
+2210.36s: modeling is super interesting it will expand your knowledge of different techniques
+2215.64s: ways to process information to sort of to look at the way that these things operate
+2223.16s: in a larger ecosystem it's not necessarily the most important thing you can do as a retail trader
+2229.16s: and if you just go about it willy nilly you just kind of start firing away and dump
+2236.68s: all this stuff into models and hoping something good comes on it you're gonna end up spending a lot of
+2241.48s: ways to time arguably you will have learned some things which might not make it wasted time in an
+2250.44s: absolute sense but in terms of finding edge finding it finding profits it might be wasted time.
+2257.88s: I'll give you an example so I made this this ridge regression rolling ridge regression model
+2264.20s: a couple of years ago because I was curious about making a model for risk on risk off just to just
+2270.92s: wanted a general vibe of like you know inflows in risk on people getting out of the way risk off.
+2278.68s: So I looked at credit spreads I looked at bond spreads I looked at we had copper we had crude oil
+2289.64s: all this stuff in here that various things that the generally have some effect on economic sentiment
+2297.24s: and this and that all and all about 25 different things then I you know worked to factor them
+2305.40s: get the right windows blah blah blah finally I put this thing and I've got a risk on risk off model
+2312.60s: and it looks pretty good and then I compared it to a 200 day moving average of yes px
+2321.40s: and and I'm you know I'm not too proud to admit that this model performs
+2330.84s: marginally better than a 200 day moving average to the tune of like a third of one percent better
+2337.72s: a 200 day moving average so yeah you know it's like two weeks of work to put this thing together
+2343.32s: to get all the data feeds to clean all the data and and the thing is basically
+2348.36s: more or less right on part with a 200 day moving average and so it's not like I haven't made
+2353.88s: all the same mistakes right that I'm costing other people against but if you just if you just
+2359.24s: start building the model what you're going to find is that there's a lot of money in the financial
+2364.52s: markets people are highly incentivizing to find things that work and if you just randomly build
+2370.60s: stuff what you're going to find is that someone else beats you to the punch a long time ago
+2375.40s: and you're going to have to try a little harder and a little smarter than that so back to the
+2381.16s: original question about modeling the real point of a model is to try to harness an effect and it's
+2387.48s: something I talked about with Rob Pizzola on the circles off podcast is that you want to try and find
+2392.12s: an effect and then use a model to just help you sort of parameterize it in terms of how much you
+2397.32s: should risk on it or or how often it wins or whatever and so that's really the point of a model
+2404.76s: it's not to create the perfect risk on risk off indicator that will tell you when to jam into
+2410.04s: TQQ or or to take all your money and put it in cash it's about hey like I've noticed that on FOMC
+2417.64s: day we we go one way really aggressively and then the second half of the day we go the other way
+2426.20s: and I'd like to know if if I can basically fade the first move and bet on the second move so
+2432.04s: if we go down aggressively right at the announcement time if I jam the other direction right
+2438.76s: what does that look like and then we could build a model to sort of say okay this is what it kind of
+2443.56s: looks like and and maybe there's something to fading the first move as an example but it's really
+2450.04s: important to try to try to use model as a tool to harness an effect not just to build something
+2457.40s: because building stuff is fun even though it is and I love doing it but if you start with that
+2463.16s: it ends up being a lot of going around the circles absolutely and you're obviously your story
+2470.68s: about the 200 damage is hilarious because I think everybody that's actually traded has come
+2476.36s: across that exact thing like tons of times and you just kind of sit at yourself and you're like
+2481.96s: fuck yeah exactly now you chose a rolling ridge of rushing I think one of the interesting things
+2494.92s: for traders is even trying to figure out like what tool to use not in terms of like doing the
+2501.64s: modeling but overall ridge aggression versus some other OLS type model like how does a trader in
+2510.60s: your view kind of build this toolkit of like understanding what might be useful to their idea
+2518.68s: hmm well they're like I said and when we talked about you know knowing the rules of the game
+2524.12s: it's important to know the available tools as well you don't have to know every tool in the world but
+2528.68s: there are two books that are actually pretty useful on this unfortunately for many of your viewers
+2534.04s: there there are not in Python I predominantly use R though the first is the elements of statistical
+2542.28s: learning which gives a really good broad overview of the various statistical models
+2548.60s: and then there's a follow up book to that called predictive modeling by Max Cune and
+2554.84s: they're both really good like that's where you're going to get into the different types of
+2557.96s: regressions you get into you know K&N nearest neighbors random forests blah blah blah lots of
+2566.12s: there's some machine learning stuff in there there's also some more standard statistical models in there
+2572.60s: I think I think those are there decent books if you're interested in sort of understanding the
+2576.44s: lay of the land in terms of the different things you can do but there there are a lot of I mean
+2582.92s: it's it's almost inexhaustible field the number of different ways that we can try to model something
+2587.96s: you know we have we have models where we take things from physics and we apply them to the financial
+2593.24s: markets then there's um there's ecological models there are you know simulations money car low
+2600.28s: blah blah blah ready it goes on and on forever and so it's it's kind of about what is it that I'm trying to
+2605.24s: do and then looking at some of the tools that are available and saying what's uh what's a tool that I
+2611.96s: might be able to make work or it might be able to you know kind of make work you know creatively
+2616.68s: and then you just try a bunch of stuff for that what are your thoughts on somebody using something
+2623.48s: like AI and like going into chat you be team being like hey I think I see this and I want a model
+2630.28s: it what models might be useful I think if you ask it about the types of models that might be useful
+2637.48s: you could probably get a pretty good answer because I still am of the view and it's something
+2642.76s: that Augustine LeBron said on Twitter that AI right now is primarily a regurgitation machine
+2650.04s: and so as long as you're asking it's something that is adjacent to regurgitation you actually
+2655.24s: can get a pretty good answer it's when you start asking it to think like think think that
+2661.24s: things are going to get a little bit weird so if you said to it for example
+2665.48s: I'm trying to do a simulation of of this effect and here's roughly the effect and I'm aware of
+2673.80s: Monte Carlo simulations but tell me about three or four other ways to simulate something with an
+2678.68s: effect it's going to give you a pretty good answer yeah I can tell you a lot about the lay of the land
+2684.12s: if you say oh I'm thinking about doing OLS minimization regression for this can you give me some
+2690.68s: other ideas about ways to approach this it'll give you some that are related that are pretty good
+2696.04s: it's just it's just when like you say when you ask it for the magic solution to something that's
+2700.36s: when things get a little hairy in my view I actually saw this thing I don't know if it's legitimate at all
+2707.00s: and so it could be just reporting completely false information but I saw this video not that long
+2715.40s: ago about in AI tool it was a fake AI tool at a fake company that they were essentially
+2722.92s: emailing back and forth at this fake company that they're going to get rid of the AI tool and they
+2729.08s: also had you know different fake emails and one of them was about like it's a fair that two people
+2734.20s: had so literally the AI tool said it's not this person in email it's like you have five minutes
+2741.88s: either you cancel the deletion of you know AI or whatever or I send out this email with all these
+2749.00s: details of this affair so I think I'm okay with the regurgitation part right now that's good enough
+2756.60s: we don't have to worry about AI not being willing to do what you want one thing that it doesn't
+2765.48s: help you with and I think is something that catches a lot of people is biases the world is
+2774.92s: really challenging to perceive objectively and when you don't even really know about your own
+2782.44s: biases or recognize them then it's even that much more difficult what are some ways that you think
+2787.56s: a trader can become more familiar with their own biases to then implement controls for.
+2795.88s: Hmm. Now that's a really really good question. I actually think one of the more dangerous
+2805.48s: types of bias is a like a social consensus bias and it happens from being a little too plugged into
+2814.92s: what everybody else is talking about at any given moment. I actually think you and alluded to this
+2822.12s: and one of his earliest books where he basically says you know might be surprising to some but I never
+2829.16s: read the Wall Street Journal and I don't I don't read any of this stuff and it might surprise people
+2834.60s: because you would think of this you know option trader of all trader must be you know really dialed
+2839.80s: into like what's happening on the street and it's like that's not that's not quite what it means right
+2845.24s: he's looking at what he's looking for in the wall service in the wall space and
+2851.32s: if you know what you're looking for whatever it is that you're doing you're looking for momentum break
+2856.12s: out some single stocks you're looking for you're looking for opportunities to short
+2861.88s: you know shitty stocks that are pumping on some dubious news you're looking to short
+2867.32s: volume you're looking for volatility burst to the long side whatever it is that you're looking for
+2873.16s: there's some effect there are some details around that effect there's some execution
+2877.64s: skill operator skill that you need to develop around that effect what's happening on Twitter what's
+2883.24s: happening on CNN what's happening on you know CNBC not really that important to your
+2892.76s: day-to-day operations you should try trading without any of that stuff and see what happens you know
+2899.48s: it's pretty easy to turn off the television but like have you ever tried trading a week without
+2903.00s: looking at Twitter without looking at whatever anyone's talking about it's really interesting right
+2909.00s: how how what's happening whatever the current buzz is around government news around
+2917.16s: economic calendar event news around federal reserve news it tends to really galvanize people and
+2926.28s: if you're just after your effect you tune all that stuff out my experience you trade a lot better
+2933.16s: because you don't have the second guessing mechanism in your brain that's saying all but so
+2939.56s: and so was worried about this and all those people were talking about this thing that might get us today
+2945.08s: and you know it to really just try to shut out all the noise and focus on whatever the effect is
+2952.44s: that you're targeting I think is probably the best antidote to the most dangerous bias which I think
+2958.20s: is like the social contagion social consensus bias when it comes to biases about like the market
+2965.56s: direction or the sentiment or whatever just try to play what's there not what you think should be there
+2972.84s: it's really easy get into this game of like what you think matters like everyone's stupid the
+2978.84s: market should be going down right now in this news like no no no what you think is not that
+2983.80s: important what's important is what people are betting on what people are risking why they're doing it
+2991.00s: really doesn't matter when they have 10 million times more resources than you do because when they
+2997.88s: move everything moves right you don't want to be the person that's you know it's trying to
+3005.32s: hold back the tide with your hands right you want to be the person that says the tide's coming in
+3010.44s: now so it's time to take a step back the tide's going out it's time to take a step forward and try to
+3016.76s: to move with whatever it is that you're doing and that's why what you think is less important
+3020.92s: than what's actually happening and if you can center around what's happening not what you think should
+3026.04s: be happening tends to work out better you tend to not get stuck in those stubborn trades where
+3032.60s: you're your underwater you're holding something that is like clearly you're just wrong
+3037.72s: I don't know if I answered that one super concisely but that's what I was thinking
+3045.40s: yeah well you hit on two big pieces of it I want to double click into another side of it more
+3051.80s: like the self behavioral biases in a moment so things like availability and you know that kind of
+3058.28s: stuff but before that you mentioned two things that I actually think play against one of the really
+3063.48s: well and I want your perspective on it which is this idea of kind of like social consensus against
+3071.80s: trying to fight the tide and whatever like you the individual trader think something should be
+3077.88s: I've always felt for a while that it's really dangerous when traders get into this habit of like
+3085.00s: wanting to neatly explain and summarize everything and being like this is happening because this
+3092.20s: sometimes maybe but a lot of times there is a lot of other stuff going on and it almost becomes like
+3096.76s: this ego-tistical ability to explain things that creates this nasty loop so in the context of like navigating
+3108.12s: social environment and then managing what you think how do you think a trader might be able to
+3115.48s: successfully extract good information things that are genuinely useful to them especially newer
+3121.24s: folks that are kind of starting out and like learning the landscape versus getting wrapped up into
+3126.68s: like this narrative generation side of stuff. Well when you're first starting out you want to
+3133.00s: give yourself information overload you have to expose yourself to every possible idea even
+3138.44s: the really fucking stupid ideas because the faster that you like it's just like a jigsaw puzzle
+3145.56s: right if you the faster you map out the corners the faster you can start filling in this puzzle
+3151.08s: so to me you know that information overload process in the beginning is all about finding the
+3156.28s: corners finding the edges of the puzzle so that you can start filling in the pieces and start
+3161.48s: putting together some kind of coherent picture in your mind about how these things roughly work.
+3167.24s: That's different and is distinguished from when you're at a place as a trader where you have an
+3173.40s: effect that you're targeting because now you've already identified somewhere in this puzzle
+3179.40s: that you want to attack. When you're doing that and you have one or more than one effect now what
+3185.96s: you want to do is you want to reduce the noise reduce the ideas reduce the the consensus
+3191.24s: activity going on around you because you're focused on what you're trying to do. So to me those are
+3197.88s: like two separate phases of sort of like a trader's evolution or traders progress right like
+3204.68s: like I'm sure even someone like you and I'm sure when you and started out he was he was like a
+3209.08s: sponge absorbing whatever one was talking to him about on the floor like all around them right but
+3213.56s: once he knows what he's doing like you know with his his wall trading he's a lot less interested in like
+3219.08s: what bleep blog 2121 on Twitter thinks about anything and and rightly so because like he knows
+3226.28s: he knows what he's about he's knows what he's targeting he knows what he's trading he knows what he's
+3229.88s: looking for what he wants what he doesn't want right and so like the rest of it just falls away and so
+3236.20s: it's important not to like not to get those crossed up like if you don't have any edge you don't
+3241.32s: have any effect yes expose yourself to everything to try to you know map out that puzzle but
+3247.32s: if you have some things that you're doing you should really try to exclude the noise and focus on them
+3253.56s: as much as you can I absolutely love that what a great way to describe it too that that's awesome
+3259.00s: and now shifting back to the first part of that question on behavioral biases sometimes I always think
+3265.56s: I mean you're even talking about it before right about the the the fact that you feel a lot of
+3271.08s: traders wouldn't even want to trade the way that you trade because of the just the general toll it takes
+3277.00s: and there's this reality where you could give two traders effectively like a straight playbook
+3284.68s: of like 80 z dual of these things and you're probably going to get different outcomes and that
+3290.60s: obviously points to the inconsistencies between the individuals and I find of really big challenge for
+3298.20s: people is even becoming aware of their own behavioral biases and then how that believes into their system
+3305.64s: could you talk a little bit about just some of the the more nefarious behavioral biases that
+3312.68s: you can think of and we can even narrow it maybe to the scope of conducting research or modeling
+3318.12s: because there's a ton that you know you can commit in there that sends you down the wrong path pretty
+3324.12s: quickly yeah I mean we can we can talk about the the textbook ones but you know you and actually
+3331.64s: has a really great section in volatility trading it does the second book on that I would encourage
+3338.60s: people to read that because it's actually really really good and I don't think we should re-hash
+3343.88s: from here for that reason because you should really just read them right from you and second book
+3348.92s: let's talk about some ones that maybe aren't in there right one bias that you know is kind of
+3354.76s: it's lethal and it's not like a textbook one is trading your P&L right like allowing
+3361.00s: how in your current P&L to affect your trading decisions and it's something that I struggled with
+3368.28s: in the beginning it's something that I think a lot of people deal with in the beginning which is
+3373.08s: basically that how you how you trade the next trial the next spin is determined at least somewhat
+3382.20s: by whether your screen is red or green and to what extent and that's very very dangerous
+3389.32s: it's dangerous because it starts to muck up your payoff ratio profile quite badly right if you're
+3397.56s: and it turns into something else something that's been talked about since at least the Jesse
+3402.28s: Livermore era which is that it turns people more risk adverse when they're winning and
+3409.48s: or sorry yeah more risk adverse when they're winning and less risk adverse when they're losing and so again
+3416.04s: the payoff profile of your entire thing is going to go right out the window you know so
+3421.32s: you say say that you're targeting like I don't know I mean just for fun let's just say you're targeting
+3428.60s: one to one you know sort of payout profile and and you're winning like 52 or 53% of the time whatever
+3435.72s: but your first two trades you lose right and now and now you become more likely to hold on to a
+3443.24s: bad trade because you don't want to third loss so you're like fuck it like it's going to turn around
+3447.64s: whatever and you start you start thinking things that have absolutely nothing to do with your
+3451.24s: effect they have nothing to do with the market you stop thinking in terms of trials you start thinking
+3457.16s: in terms of like the red on the screen right and then and then say that one does turn around
+3462.36s: and it goes ever so slightly green now all of a sudden you're far more strongly incentivized to take
+3468.36s: a trade for less than you should hold for just because it's going to be a winner or just because
+3474.68s: it clears the red on the screen for the day and so all of a sudden this perfectly rational
+3480.52s: logical strategy that you had before the market's open has become a complete shit show where you're
+3485.80s: now you know trading to emotionally regulate yourself based on the feedback that you've gotten so far
+3491.88s: it's also I think that that is it's a very very dangerous spiral and it has absolutely nothing
+3499.48s: to do with data analysis statistics it has everything to do with your psychology your
+3505.88s: your ability to self regulate yourself to breathe and to reset and so you know it gives some
+3512.92s: credence to the idea that even with an edge you still need some ability to to self regulate
+3518.20s: yourself as you manage these trades and I don't think it's appreciated as much as maybe it should be
+3523.64s: two follow-ups for that first one there's actually for those that don't know there's a there's a
+3527.72s: a fantastic paper by Barbara Lee and Odeen from Berkeley all the well the behavior of individual
+3534.84s: investors is an aim of it and it talks about the disposition effect which is exactly part of what
+3539.56s: you were just discussing but they go into it in detail which is just a great read for anybody that's
+3544.36s: not aware but the backing part of that that I wanted to actually double click into is this idea
+3551.48s: PAH because how relatable is that where you find something that you think is decent that you know
+3558.60s: is there at least as far as you can know and then you put this thing on and then you go through
+3564.28s: a losing street right out of the gate and you're like what did I fuck up? How how do you navigate that
+3572.28s: like how do you think people can traverse through that? Well, um a first thing you should do is you
+3581.40s: should have some kind of a checklist that allows you to reset after each trade like cognitively
+3587.56s: psychologically but the other thing is you want to go through kind of like a rough checklist of like
+3592.92s: the times that this effect shows up so the first thing that pops up in my mind with this is something
+3597.88s: like trying to short-vall but now the VIX is at like 26 or 27 and you're thinking like okay so
+3604.44s: I've read all of these books I've done all this research that we know about the risk premium we know
+3609.72s: that the volatility risk premium is there and I just started it but I started it when the VIX
+3616.44s: is at 26 or 27 oh I'm getting fucked up here oh I'm getting fucked up very badly like what's going on?
+3622.60s: It's like well well again you get the broad strokes you got right but the the devil's in the details right
+3629.64s: we just talked about when that VIX starts to pick up about how volatility starts to inch towards fair
+3635.56s: and how that's when it's a really bad idea and you get back into gentsons in the quality and how
+3640.60s: like you should really be waiting for like VIX 16 VIX 14 whatever right and so usually there's clues like
+3648.04s: that but like related to your effect that will tell you hey like it's it's not it's not just that you're
+3654.36s: condemned by the gods there there maybe some there may be some contextual factors here
+3661.40s: that are that are in play right it's it's actually kind of like you know say you have an edge
+3666.20s: and NFL football spreads and you start on a Thursday and you know you just get you lose terribly on
+3673.00s: that Thursday but you failed to recognize that like the Thursday night game tends to have
+3678.20s: smaller variants than other games because there's a tremendous amount of money and eyeballs
+3683.40s: on one game and one game only and it does some interesting things to the total in the spread in
+3688.52s: terms of what we see for realized variants and so it's like okay there is a contextual
+3694.52s: factual factor here that that maybe explains why Thursday's not the best game for this particular
+3700.44s: factor or whatever and so usually there's something like that that can help you to
+3705.96s: put into context what it is that you're seeing like for example if you've looked at
+3712.76s: even if you look at open to close realized vault by month you're gonna notice that like not all months
+3718.52s: are created equal right for example i think the the best short vault month there is in terms of like
+3727.80s: just a really steady equity risk premium is July right we just like we just like kind of smooth
+3734.28s: roll up and and there tends not to be a lot of surprises in July and then we see that
+3741.08s: realized vault starts to pick up again September October November so there are things like that
+3750.04s: where it's like oh if I wanted to short-wall probably July is a pretty good month to think about
+3753.80s: doing that and probably I should ease off my aggressiveness as we get into the fall you know so
+3759.88s: there are things like that that you can do to contextualize to take a little bit of the sting off
+3763.80s: losing right out of the gate and and get yourself kind of back to where you need to be.
+3769.00s: I love that yeah it's a big thing that comes to mind for that is like people that are you know playing
+3774.52s: earnings it's a it's a good place to have a bumpy time but you know and now you also have two
+3784.44s: follow-ups the first one is you discuss a little bit about seasonality day the week effects
+3789.08s: which I've always found interesting because some of them it feels like you can kind of understand why
+3795.00s: it might be there from an economic cycle or porty cycle whatever and then sometimes it's like why is
+3802.44s: this here what is your approach when you're analyzing different kind of like seasonality tendencies
+3811.16s: which I would also include you know day at week effects and stuff like that to determine like
+3817.16s: is there something actually here versus is it just that four thirds days in a row S&P closed down?
+3826.60s: Yeah that's a good question I mean I I think most seasonality effects should be taking
+3831.24s: with a grain of salt because it's always really difficult to know how real of a thing it is.
+3836.92s: I posted one around Easter showing that like the week of Easter tends to have really muted
+3843.00s: realize volatility so it's like a really good week to go do something else if you're looking for
+3848.52s: actual movement in the market. There are some that are kind of interesting like you know like
+3856.28s: if you look at realized wall averages by a bunch you will see that July tends to be a very like
+3862.28s: very chill like slow rolling low-volguined up month so it's a good short of all month it's a
+3868.76s: good good month to like long TQQQQ and go golfing and but you don't you don't want to be doing that
+3875.64s: into the fall you see that volatility like realize wall picks back up again that's pretty stable
+3881.32s: over like a number of years but you can think of why that might be right like the big operators what
+3888.12s: are they doing well they do tend to enjoy the haptons and places like that during the summer months
+3893.88s: right it's it's a time when people are going to take a little bit of time away from the office
+3898.44s: and they know that into the fall is going to be rebalancing it's going to be tactical
+3903.00s: allocations it's going to be end of the year stuff it's going to be distribution and so it kind
+3909.64s: of makes sense that you'd see a little bit of an uptick and movement towards the fall
+3913.80s: compared to the summer at least at least like theoretically like we can turn you know
+3919.96s: make conjecture about that. There are other ones that seem to work that I don't have any good
+3925.16s: theory for right like John Carter and his book mastering the trade has won about gap like Thursday
+3931.56s: gap fills about how like 80 80 percent of of all like overnight gaps get filled on a Thursday
+3939.00s: like it's like the highest probability day for gap fills and it does seem to work but I have no
+3945.40s: idea why that would be so I guess one of the ways I navigate that is that I just make a little note
+3954.12s: that if you if you've noticed a really large gap and it hasn't closed and it's Thursday you might
+3960.44s: want at least take a look at where the gap boundary is because there's a chance that you could get
+3965.00s: a violent move there again I have no theoretical basis for why that would be but that one does
+3971.40s: seem to hit reasonably often so there are ones like that that I can't really explain.
+3979.48s: Those ones are fast I I'd heard that one before but like stuff like that is actually fascinating
+3983.72s: to me because the way you described it there also I think highlights the balance between being like a
+3989.56s: researcher and a practitioner because there's the research side of like why might this be
+3994.20s: can I come up with something but then there's a practitioner side of well it's fucking happening
+3999.08s: so I'm still going to pay attention to it. Yeah and like if you I mean a really good example right
+4005.40s: is the what was the big move it was it was Thursday November the 20th right I mean that was a gap fill right
+4017.16s: so if you look at that move right we break the we break the straddle implied break even we go to the
+4022.52s: second standard deviation we keep going down all the way through to fill the gap on a Thursday
+4028.76s: so so at least at least in your mind right at least in your mind like having an idea of like where
+4034.84s: that gap fill level would be and then maybe like taking a strike around there and paying attention to it
+4041.64s: not a bad idea right again it's not trip this is not there's not like a foolproof thing but
+4047.72s: is something that I pay attention to yeah that's absolutely awesome that's super cool I had just
+4054.68s: one or two more things I literally could like an bullshit with you all day I I love trading and
+4060.12s: it's really cool to talk to somebody like you about this stuff so a preemptive thank you but
+4066.04s: we we were talking before about behavior biases and one of the things that I've found personally
+4073.48s: is a lot of people will say like how stressful trading is and I have to be honest with you I've been
+4080.60s: doing it this will be 19 years coming up and I don't find it stressful like a genuinely a genuinely
+4090.28s: and I think a lot of that has to do with perspective and just learned experience and stuff like
+4097.00s: that I spent a good bit of time in the military so it's like when I'm waiting stuff there versus
+4103.64s: what's going on at the market it's like yeah I don't want to lose money but that's still got
+4108.12s: all my fucking limbs like that's not so bad now you've decided to go punch people on the face and
+4115.80s: get punched in the face again and it's always a fascinating life choice to make that choice and
+4124.84s: the first thing that comes to my mind is resilience and how doing stuff like that can help
+4131.56s: do you find that to be the case where when you do something like fighting and then you sit down
+4137.88s: at the computer and you're like well today was an ideal but there wasn't a 260 pound man
+4146.04s: throwing an overhead right trying to cave my fucking skull in. Well that's an eloquent way to put it
+4154.44s: like that. No it's I agree with you I mean like something that it's a line from our book that I
+4162.84s: thought was was extremely on point where you and says trading is not a uniquely stressful job
+4171.00s: and that is very true I mean it's like compared to what compared to being shot at right you know
+4178.68s: in the military compared to you know compared to doing like a halo jump night or something
+4186.68s: compared to saving someone's life is a paramedic right you know compared to being a bouncer
+4194.92s: in a in a 20 on 20 street melee with weapons compared to you know there are there are a lot of
+4203.56s: things that are that are far more viscerally stressful because you know there's a life in death
+4208.28s: element. RISKING MONEY is stressful when you lack the training and you lack the experience and you
+4215.80s: lack an edge so everything feels like magic it can make it very stressful particularly if you're
+4221.72s: overbedding or if you're in a situation where you're risking money that you need to live you know
+4228.36s: all of those things can contribute to stress but but ultimately it's nowhere near the most stressful
+4233.80s: thing that you could do fighting MMA all that stuff I mean comes comes from the bouncing days right and
+4241.32s: you know it's it's not at the level of like you know what I would expect your experience was with the military
+4248.12s: but but in terms of the general you know stress tolerance that it builds up for a dealing with
+4253.72s: high tension situations after you go through things like that something like trading doesn't
+4262.60s: feel like this life or death you know battle anymore it feels more like a challenge that that is
+4271.16s: surmountable shall we say so yeah just just decided you know I'm not getting any younger
+4277.96s: probably if I want to fight again the time is as soon as possible because I'm starting to get up there
+4284.52s: in years right so I was even like 42 I'll be 43 in a couple of months so it's one of the
+4292.44s: those things where it's like you know if you if you got something left in the tank as so best
+4296.12s: there's said in the last rock you movie if you still got some stuff in the basement you know it's
+4301.48s: it's probably time to get it out well well all your joints work and all that stuff right so
+4307.16s: well they get it yeah well you're also in heavyweight and for those that don't know like
+4313.40s: it's common for dudes to be you know older than what they would consider you know for like fly
+4318.84s: weights lightweight like most of those dudes are fucking 25 year old ninjas but there's a reality
+4325.96s: when there's a little bit more mass and you have to move differently because there's always that
+4331.48s: lingering risk and that's there what what made you choose obviously you feel like there's something
+4341.96s: left in the tank but there's also as anybody that's ever done combatants do you know that there's
+4348.68s: very real risk of injury it's not like this thing in the movies where like somebody gets like a
+4353.56s: bloody nose and their nose is set and then they're good like you can get fucked up so
+4359.72s: what made that risk reward decision to the point where you're like I accept that risk and I want to
+4366.60s: do it for XYZ reason that's really it's a really good question you know that's not the easiest
+4373.96s: thing to explain I guess I guess if I was going to explain it it's something like it's something like
+4379.48s: it's important to do things that are meaningful to you because doing meaningful things is what gives
+4385.32s: life meaning you know it's like like there's it's all good and well to be to play it safe
+4393.96s: with regards to a lot of things right like you know you should drive safely and all that
+4397.88s: good stuff but like there is a time to take risks and to feel alive you know you should tell
+4402.44s: that girl that you're in love with her you should you know you should take those risks you should sign
+4408.04s: up for that fight like I said I just I just realized hey it's you don't want to look back five
+4415.64s: years from now and think hey I wonder what would have happened if I'd taken that last fight
+4420.76s: because now I can't or or whatever right and so I just think that the timing is right I had some
+4428.68s: health issues for the last couple of years that I recently was able to overcome it's awesome
+4435.16s: my yeah you know knee injury completely healed blood work is like perfect now like everything
+4441.80s: is looking up and it really gave me like this big boost on life where I thought you know what
+4447.72s: I should celebrate this by pushing myself right back to that it's level again and that's absolutely
+4455.00s: awesome and so talk to me a little bit about like the the mental preparation side of stuff where
+4460.84s: we're still talking I guess a little bit about mentality but like any combat as I've ever done
+4466.76s: involves a lot of physical preparation it's kind of like a given a technical preparation that's
+4471.64s: also kind of a given there's a little bit of gamesmanship to that but the mental side of it is
+4476.68s: fascinating to me so what what does that look like for you like as you start kind of getting in the
+4482.36s: correct headspace to go into combat? Well I mean the starting stuff is actually there's
+4491.00s: lots of parallels right the starting stuff is all fairly monotonous tedious repetitive stuff that
+4496.76s: most people don't want to do so if that rings a belt anyone you know you can connect the dots there
+4502.52s: but it's you know you start cleaning up your diet you do in cardio and you know high intensity like
+4509.08s: interval training five or six days a week you're you're adding in one or two like really heavy
+4515.08s: like kind of mens or style strength training to keep your your strength in your muscle up while you're
+4519.32s: your cutting weight you're making sure that your nutrition is right in terms of like you know you're
+4525.32s: getting you getting enough magnesium and zinc and electrolytes and all this kind of stuff
+4531.88s: for me it included quitting nicotine your viewers may notice this is the first
+4536.12s: podcast I've done with our big plumes of smoke shot on you yeah so you know so that was that was a
+4545.56s: part of it I went back I went back to a new tropic stack that I used in law school actually to get
+4551.72s: over like there with draw effects so it's it's been pretty breezy and when you have a goal in mine
+4557.32s: too it kind of like you know it helps galvanize you towards that in in a way that makes things
+4564.36s: a little bit easier as well but once once you get all that moving in the right direction right you're
+4567.88s: trying to get I would say like within within ten or fifteen pounds of fight weight and then you
+4573.08s: start getting back into your technical training so this is like you're getting your timing back
+4577.80s: for your combinations your footwork your head movement your defense your transition from like hands
+4585.40s: to like ground game to defense whatever and then like you said the very end you be looking at
+4591.08s: gamesmanship because like you're nobody's edges that they throw a good like straight cross right
+4596.28s: everyone can throw a straight cross so now it's about how do we set up the footwork how do we
+4603.16s: tempt the opponent into a position where the straight cross now is the correct move and so
+4609.72s: that's kind of like the final icing on the cake where you're you're getting that you're getting
+4614.60s: those elements kind of dialed in and then usually usually you're pretty close to fight night by around
+4620.60s: that time so so your fight is next year in the hall yeah yeah we're aiming right now for fall
+4628.52s: 2026 I'm not sure if it's going to be in in Calgary or if it's going to be in left bridge but
+4634.84s: I'll figure that out probably in the next six months or so when I talk to the promoters
+4638.52s: after after getting through the the weight shred component yeah that's awesome man well
+4644.44s: first of all absolutely looking forward to it genuinely like it it's something where people can
+4649.96s: go I want 100% would come fly and hang out because yeah you should man there's you can come you can
+4656.20s: definitely come get tickets it'll also be be available on paper view worldwide so hopefully
+4662.60s: I'm hoping that we could get some you know some fin-tuit people there for sure I'd be cool
+4666.36s: yeah it would be super cool because it like anytime that I've competed I've always preferred that
+4671.72s: but I've developed a new genuine joy for just eating popcorn while dudes are
+4679.56s: punching each other in the face so I will happily play the other side of the coin here for you
+4685.24s: and you know I'll do my part do my part right on yeah well dude thank you so much for spending some time
+4693.08s: talking through we actually got through a lot of like really really interesting details and believe
+4696.92s: it or not I have a sheet of notes that I want to discuss with you at some future time as well
+4702.84s: kind of like follow follow up to this session I think it'd be really good but yeah we're we'll do
+4707.48s: around three one of these days no problem yeah yeah that that sounds absolutely great for folks
+4712.20s: that want to get a hold of you where where can they find your work easiest places on Twitter x
+4718.92s: at gingffaith killa I've got a link in the top there that's got all the books and links to all the
+4724.60s: podcast including our previous one together but you can find those as well on YouTube Spotify
+4731.00s: all over the place so and then books on Amazon including the one that I wrote with you and that we've
+4736.60s: talked about rather extensively during this conversation which is a must read by the way that
+4742.28s: that's like one of the the better practitioner level books that I can think of to point
+4746.84s: people towards because you guys include enough theoretical stuff but you spend the line sure
+4753.08s: the time for more practitioner lines which is awesome I appreciate that thank you yeah awesome man
+4758.68s: well thank you for hanging out and for everybody thanks for hanging out to the end you will catch
+4765.24s: again probably brief fight will see how it goes and yeah looking forward to seeing you murder someone
+4772.52s: thanks again for having me or it's been great really

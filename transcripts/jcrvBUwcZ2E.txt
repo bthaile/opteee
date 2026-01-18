@@ -1,0 +1,81 @@
+0.00s: I want to show you how a simple tweak in your short put management approach can make a pretty meaningful difference on your performance.
+11.00s: Here we have a base scenario in spy that we're going to look at.
+16.00s: And this isn't for the entire year.
+19.00s: It's kind of for the first month and change just to give you a sense of how these things perform.
+26.00s: It's a test in 2022 and in 2024.
+31.00s: We have two scenarios here.
+33.00s: Both of them, again, are in spy with 35 days to expiration is when they're opened.
+40.00s: We're targeting 30 delta short puts and we're rolling them at when we hit 20 days to expiration or managed based on the protocol.
+53.00s: There are two protocols we look at here. The first one is 50% max profit.
+60.00s: The second protocol is based on a delta band which we are going to talk about.
+67.00s: So let's first start with what goes into managing short puts is a quick recap.
+75.00s: We already have some entry criteria, which is to give you an idea of what people tend to look at when they're entering.
+80.00s: Management, there's a couple key spots we need to think about management profit loss.
+85.00s: If you have some sort of inventory preference, meaning how you feel about getting assigned on your short puts and how defensive do you want to be about that.
+94.00s: Event based management if you're trading an individual names is their a corporate action coming up like earnings and do you want to manage through that differently.
+105.00s: In duration, meaning if you're in the trade for some sort of duration and nothing is happening, then do you want to make a decision.
+114.00s: And some common methods are duration based.
+119.00s: So once you get within a certain amount of time rolling or based on some sort of max credit received.
+128.00s: We're going to look at both of these and talk about the concept of delta bands.
+134.00s: When I'm looking through management of short puts.
+139.00s: One of the more important things that isn't really discussed is the underlying movement.
+146.00s: Now, if we think about what happens when you sell a put.
+152.00s: We ultimately want the underlying to go up.
+156.00s: Now, a lot of people will say it's like a neutral to bullish strategy, but realistically speaking,
+162.00s: if the underlying trend sideways with your short put, you make money like really, really slowly, so you don't actually want that ideal scenario for a short put would be for the underlying to trickle up.
+174.00s: However, when this happens, there's a massive gap in your performance and you'll get a sense of what I mean by that.
+185.00s: If we look at just really, really basic scenario, delta is your exposure.
+192.00s: So if you're selling at 30 delta's, that means you're expecting your position to behave similar to 30 shares of the underlying out of 100 lot.
+206.00s: So what that means is if the stock goes up by a dollar, your short put is only making 30 cents.
+214.00s: So what that means is as the underlying is going up, you are missing out on 70 cents for each dollar.
+222.00s: If we're talking about a 30 delta short put, this is a problem that gets exacerbated by the two common management approaches that you've seen.
+235.00s: The first management approach is based on 50% max profit.
+243.00s: What's wrong with this? The problem with this is that as the underlying is going up, you start with your 30 delta's.
+253.00s: Maybe your 30 delta's to make this a little more clear.
+257.00s: If I draw a stock chart, your 30 delta's, let's say you start by selling your 30 delta's here.
+263.00s: And then the underlying goes up, as the underlying goes up, you lose delta's. So now you're at a 28 delta.
+270.00s: So what that means is as the underlying makes this full dollar move, you're only getting now 28 cents.
+277.00s: And this problem exacerbates as the thing moves in your direction. Now one of the benefits of 50% max profit is that you will get to a point where as your delta's are going down, your premium is going down. So at some point this catches that.
+297.00s: The issue with it is that it's slow. The other issue is with 20 days, 21 days, whatever set duration, realistically, it's not picking on the tasty methodology. It's just picking an arbitrary duration. Also, doesn't really help you that much in terms of optimizing your P and L.
+321.00s: But that really is designed for is to help prevent you from walking into a more aggressive part of the option behavior cycle with respect to things like gamma and the volatility of your P and L.
+334.00s: So it doesn't really fit into the profit maximization standpoint.
+339.00s: So what's the idea of a delta band? It's really, really simple.
+345.00s: If we sell to open a 30 delta, but rather than worrying about what our max profit is, rather than worrying about what our current unrealized losses, as the underlying moves, let's say plus or minus 10 delta's, we rebalance and get back to where we want it to be. Why does this matter?
+372.00s: As the underlying is going up, let's say again, you start at your 30 delta. And then let's say that you get down to a 20 delta.
+384.00s: And let's say in this scenario, you're not yet at 50% max profit.
+389.00s: Well, you've already given up a significant amount of upside profit potential based on what your remaining delta is. So rather than just waiting until 50% max profit.
+400.00s: Instead, we've rebalance this and we say, well, I want to get back to my 30 delta's.
+405.00s: And then the inverse is true as it's going down.
+409.00s: Because if you start with a 30 delta, as the underlying goes down on the put side, you gain delta's. So let's say you go to 40 delta's, you go to 50 delta's.
+419.00s: What happens here? You're gaining downside velocity.
+425.00s: Because if the underlying goes down, you make you lose 30 cents.
+431.00s: But then if it goes down more, you now lose 40 cents on the dollar, 50 cents. You're accelerating to the downside.
+438.00s: So just like this scenario, rather than just sitting and holding, maybe once we get to around a 40 delta, we just go back to a 30 delta.
+447.00s: And you'll see how this generally plays out in a quick scenario. Let's take a look together.
+455.00s: I have a breakdown. And by the way, this actually isn't perfectly optimized. I was a little lazy with it just because I wanted to convey the point.
+465.00s: But I didn't bother going through making sure that I was managing exactly at a 10 delta rebounds, which would improve the performance slightly.
+474.00s: But the major notes that you should pay attention to are what's happening on both sides of this equation.
+483.00s: You'll notice that the 10 delta rebounds makes way more money as the underlying goes up. That would make sense.
+490.00s: Because you're decreasing the lack of participation.
+496.00s: So you're trying to play more dollar for dollars, the underlying moves as compared to a 50% max profit or 20 day choice.
+506.00s: This extends to the downside. But you can see the downside's actually pretty close.
+511.00s: The reason why this is close in the 2022 examples, because I didn't go that far.
+515.00s: I only went out to 10 February. So what this means is there's a lot of path, right? Like when did the trade happen to get managed and how did that impact things?
+528.00s: What you would expect to see as this goes on is the overall P&L during a down market, a prolonged down market, would be worse here and slightly less worse here.
+541.00s: How does this ultimately end up outperforming pretty significantly by almost 50%? Well, it's mostly because of this.
+549.00s: It's because during the upsides you participate way more. So it has a small dampening effect to the downside.
+557.00s: To the upside is really where it shines. This delta band management approach.
+564.00s: Now, one thing you will know is that there's more traits. There's quite a few more traits. So you're absolutely going to be more active re balancing your delta's. So there is that reality.
+576.00s: But again, it's a question of how active do you want to be against what performance difference.
+585.00s: Because here in your total P&L, you're like 55% better.
+592.00s: What does that comment the cost of additional traits? You're going to be a little bit more active.
+600.00s: So this is a really, really simple way to think a little bit differently about what you're doing.
+606.00s: This still maintains if you get to 20 days that 20 days of expiration were still changing where we're at, meaning we're still rolling.
+616.00s: And or once we get too far outside of our delta's. So in this case, like I said, it wasn't exactly perfect.
+624.00s: I was doing sometimes like 12 delta's just based on the options that were available.
+629.00s: This is more to give you inspiration to do your own test.
+632.00s: Now for the outlier pro members, I have a full rundown of multiple years of performance here that will go through as a collective.
+640.00s: But for everybody else, you can 100% do this on your own and it's worth your time, especially if you sell puts.
+647.00s: There's one small change that has a pretty profound change on your P&L.
+653.00s: It's worth doing the work.
+655.00s: Be in outlier. See you all later.
