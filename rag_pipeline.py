@@ -635,8 +635,12 @@ def run_rag_query(retriever, chain, query: str) -> Dict[str, Any]:
         duration = meta.get("duration", "")
         duration_seconds = iso_duration_to_seconds(duration)
 
+        # Determine source type (pdf or video)
+        source_type = meta.get("source_type", "video")
+        
         source = {
             "title": meta.get("title", "Unknown"),
+            "source_type": source_type,
             "video_id": video_id,
             "url": video_url,
             "video_url_with_timestamp": video_url_with_timestamp,
@@ -648,6 +652,16 @@ def run_rag_query(retriever, chain, query: str) -> Dict[str, Any]:
             "content": doc.page_content,  # Include the actual transcript content
             "duration_seconds": duration_seconds,  # Pass raw seconds
         }
+        
+        # Add PDF-specific fields if this is a PDF source
+        if source_type == "pdf":
+            source["document_id"] = meta.get("document_id", "")
+            source["source_file"] = meta.get("source_file", "")
+            source["page_number"] = meta.get("page_number", 0)
+            source["page_range"] = meta.get("page_range", "")
+            source["section"] = meta.get("section", "")
+            source["author"] = meta.get("author", "")
+        
         sources.append(source)
     
     return {

@@ -193,8 +193,12 @@ Current question: {query}"""
             duration = meta.get("duration", "")
             duration_seconds = iso_duration_to_seconds(duration)
 
+            # Determine source type
+            source_type = meta.get("source_type", "video")
+            
             source = {
                 "title": meta.get("title", "Unknown"),
+                "source_type": source_type,
                 "video_id": video_id,
                 "url": video_url,
                 "video_url_with_timestamp": video_url_with_timestamp,
@@ -203,9 +207,19 @@ Current question: {query}"""
                 "channel": meta.get("channel_name", meta.get("channel", "Unknown")),
                 "upload_date": meta.get("upload_date") or meta.get("published_at") or "Unknown",
                 "score": meta.get("score", 0.0),
-                "content": doc.page_content,  # Include the actual transcript content
-                "duration_seconds": duration_seconds,  # Pass raw seconds
+                "content": doc.page_content,
+                "duration_seconds": duration_seconds,
             }
+            
+            # Add PDF-specific fields
+            if source_type == "pdf":
+                source["document_id"] = meta.get("document_id", "")
+                source["source_file"] = meta.get("source_file", "")
+                source["page_number"] = meta.get("page_number", 0)
+                source["page_range"] = meta.get("page_range", "")
+                source["section"] = meta.get("section", "")
+                source["author"] = meta.get("author", "")
+            
             sources.append(source)
         
         return {
