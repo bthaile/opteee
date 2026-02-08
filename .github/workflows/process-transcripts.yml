@@ -31,7 +31,8 @@ jobs:
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          # Use requirements-ci.txt (excludes openai-whisper) to avoid pkg_resources build failure in CI
+          pip install -r requirements-ci.txt
 
       - name: Create necessary directories
         run: |
