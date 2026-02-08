@@ -450,6 +450,20 @@
             margin-bottom: 0.75rem;
         }
         
+        .source-ref-block {
+            margin-bottom: 1rem;
+        }
+        .source-ref-header {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .book-card-compact .book-title { font-weight: 600; color: #4f46e5; }
+        .book-meta-line { color: #6b7280; font-size: 0.8125rem; }
+        
         /* Compact video card styles - tightened up */
         .video-card-compact {
             border: 1px solid #e5e7eb;
@@ -1063,56 +1077,47 @@
                 return this.replaceInlineReferences(content, videoData);
             }
             
-            // NEW METHOD: Generate video references HTML from raw sources
+            // Generate source references HTML: video and book/PDF separated with headers
             generateVideoReferencesHTML(rawSources) {
                 if (!rawSources || !Array.isArray(rawSources) || rawSources.length === 0) {
                     return '';
                 }
-                
-                console.log('🏗️ Generating video references HTML for', rawSources.length, 'sources');
-                
-                let videoCardsHTML = '';
-                rawSources.forEach((source, index) => {
-                    const title = source.title || 'Untitled Video';
-                    const baseURL = source.url || '#';
-                    const timestampURL = source.video_url_with_timestamp || baseURL;
-                    const uploadDate = source.upload_date ? 
-                        new Date(source.upload_date.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3')).toLocaleDateString() 
-                        : 'N/A';
-                    const duration = source.duration_seconds ? 
-                        Math.floor(source.duration_seconds / 60) + ' min' 
-                        : 'N/A';
-                    const timestamp = source.start_timestamp_seconds ?
-                        Math.floor(source.start_timestamp_seconds / 60) + ':' + String(source.start_timestamp_seconds % 60).padStart(2, '0')
-                        : '0:00';
-                    const content = source.content || 'No transcript available';
-                    
-                    videoCardsHTML += `
-                        <div class="video-card-compact">
-                            <div class="video-header" onclick="toggleVideoDetails(${index})">
-                                <div class="video-title-line">
-                                    <a href="${timestampURL}" target="_blank" onclick="event.stopPropagation()">${title}</a>
-                                    <span class="expand-icon" id="icon-${index}">▶</span>
-                                </div>
-                                <div class="video-meta-line">
-                                    @${timestamp} | ${duration} | ${uploadDate}
-                                </div>
-                            </div>
-                            <div class="video-details" id="details-${index}" style="display: none;">
-                                <div class="transcript-snippet">${content}</div>
-                            </div>
-                        </div>
-                    `;
-                });
-                
-                return `
-                    <div class="video-references-section">
-                        <div class="sources-header">Source References</div>
-                        <div class="video-references-inner">
-                            ${videoCardsHTML}
-                        </div>
-                    </div>
-                `;
+                const videoSources = rawSources.filter(function(s) { return s.source_type !== 'pdf'; });
+                const bookSources = rawSources.filter(function(s) { return s.source_type === 'pdf'; });
+                console.log('Generating source references:', videoSources.length, 'video,', bookSources.length, 'book/PDF');
+                var cardIndex = 0;
+                var sections = [];
+                if (videoSources.length > 0) {
+                    var videoCardsHTML = '';
+                    videoSources.forEach(function(source) {
+                        var title = source.title || 'Untitled Video';
+                        var timestampURL = source.video_url_with_timestamp || source.url || '#';
+                        var uploadDate = source.upload_date ? new Date(source.upload_date.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3')).toLocaleDateString() : 'N/A';
+                        var duration = source.duration_seconds ? Math.floor(source.duration_seconds / 60) + ' min' : 'N/A';
+                        var ts = source.start_timestamp_seconds || 0;
+                        var timestamp = Math.floor(ts / 60) + ':' + String(Math.floor(ts % 60)).padStart(2, '0');
+                        var content = source.content || 'No transcript available';
+                        var i = cardIndex++;
+                        videoCardsHTML += '<div class="video-card-compact"><div class="video-header" onclick="toggleVideoDetails(' + i + ')"><div class="video-title-line"><a href="' + timestampURL + '" target="_blank" onclick="event.stopPropagation()">' + title + '</a><span class="expand-icon" id="icon-' + i + '">▶</span></div><div class="video-meta-line">@' + timestamp + ' | ' + duration + ' | ' + uploadDate + '</div></div><div class="video-details" id="details-' + i + '" style="display:none;"><div class="transcript-snippet">' + content + '</div></div></div>';
+                    });
+                    sections.push('<div class="source-ref-block"><div class="source-ref-header">Video references</div><div class="video-references-inner">' + videoCardsHTML + '</div></div>');
+                }
+                if (bookSources.length > 0) {
+                    var bookCardsHTML = '';
+                    bookSources.forEach(function(source) {
+                        var title = source.title || 'Untitled Document';
+                        var pageRange = source.page_range || (source.page_number ? 'p. ' + source.page_number : '');
+                        var section = source.section || '';
+                        var author = source.author || '';
+                        var content = source.content || source.text || '';
+                        var metaParts = [pageRange, section, author].filter(Boolean);
+                        var metaLine = metaParts.length ? metaParts.join(' · ') : 'Research paper';
+                        var i = cardIndex++;
+                        bookCardsHTML += '<div class="video-card-compact book-card-compact"><div class="video-header" onclick="toggleVideoDetails(' + i + ')"><div class="video-title-line"><span class="book-title">' + title + '</span><span class="expand-icon" id="icon-' + i + '">▶</span></div><div class="video-meta-line book-meta-line">' + metaLine + '</div></div><div class="video-details" id="details-' + i + '" style="display:none;"><div class="transcript-snippet">' + content + '</div></div></div>';
+                    });
+                    sections.push('<div class="source-ref-block"><div class="source-ref-header">Book &amp; research references</div><div class="video-references-inner">' + bookCardsHTML + '</div></div>');
+                }
+                return '<div class="video-references-section"><div class="sources-header">Source References</div>' + sections.join('') + '</div>';
             }
             
             extractVideoData(sourcesHTML) {
