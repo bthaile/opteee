@@ -55,7 +55,7 @@ WHISPER_MODEL_PARALLEL = "base"  # For parallel processing (better CPU utilizati
 # Parallel processing settings
 PARALLEL_WORKERS = 8  # Number of parallel workers (adjust based on your CPU cores)
 PARALLEL_ENABLE = True  # Enable parallel processing by default
-BATCH_SIZE = 32  # Batch size for embedding generation
+BATCH_SIZE = 64  # Batch size for embedding generation (optimized from 32)
 MAX_RETRIES = 3  # Maximum retries for failed operations
 
 # File Validation

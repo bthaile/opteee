@@ -22,11 +22,24 @@ OPTEEE uses advanced natural language processing and vector similarity search to
 
 - **Semantic Search**: Advanced NLP-powered search that understands meaning, not just keywords
 - **Fast Retrieval**: FAISS vector database delivers millisecond search responses
+- **Multi-Source Knowledge Base**: Combines video transcripts and academic research papers
 - **Video Integration**: Direct links to specific timestamps in source YouTube videos
+- **Research Paper Support**: Academic papers with page references and section context
 - **Chat Interface**: Modern, responsive chat UI with conversation history
-- **Source Citations**: Every answer includes clickable references with timestamps
+- **Source Citations**: Every answer includes clickable references with timestamps or page numbers
 - **Context-Aware**: Maintains conversation history for follow-up questions
 - **Responsive Design**: Works seamlessly on desktop and mobile devices
+
+## Knowledge Base
+
+OPTEEE draws from two primary sources:
+
+| Source Type | Content | Count |
+|-------------|---------|-------|
+| **Video Transcripts** | Options trading tutorials, strategy explanations, market analysis | 17,200+ chunks |
+| **Research Papers** | Academic papers on PEAD, volatility, retail trading behavior | 8,900+ chunks |
+
+**Total:** 26,100+ searchable knowledge chunks
 
 ## Architecture
 
@@ -112,20 +125,22 @@ opteee/
 ├── config.py                    # Configuration and settings
 ├── rag_pipeline.py              # RAG implementation
 ├── vector_search.py             # Vector similarity search
-├── create_vector_store.py       # Vector store creation
+├── create_vector_store.py       # Vector store creation (transcripts + PDFs)
 ├── rebuild_vector_store.py      # Vector store rebuilding
+├── process_pdfs.py              # PDF semantic chunking utility
 ├── app/
 │   ├── models/                  # Pydantic models
-│   │   └── chat_models.py       # Chat request/response models
+│   │   └── chat_models.py       # Chat request/response models (supports video + PDF)
 │   └── services/                # Business logic services
 │       ├── rag_service.py       # RAG service implementation
-│       └── formatters.py        # Response formatting
+│       └── formatters.py        # Response formatting (HTML + Discord)
 ├── frontend/
 │   └── build/                   # React production build
 ├── vector_store/                # FAISS vector database files
-├── processed_transcripts/       # Processed video transcripts
+├── processed_transcripts/       # Processed video transcript chunks (JSON)
+├── processed_pdfs/              # Processed PDF document chunks (JSON)
 ├── transcripts/                 # Raw transcript data
-├── static/                      # Static assets
+├── static/                      # Static assets (CSS, JS)
 ├── templates/                   # HTML templates
 ├── discord/                     # Discord bot integration
 │   ├── discord_bot.py           # Discord bot implementation
@@ -279,6 +294,39 @@ To add new YouTube channels or playlists to the discovery process:
 1. Update the scraper configuration in the pipeline scripts
 2. The next automated run will discover videos from the new sources
 3. Or manually trigger the workflow to process immediately
+
+### Adding Research Papers (PDFs)
+
+To add academic papers or PDF documents to the knowledge base:
+
+1. **Prepare PDFs**: Place PDF files in a local directory (e.g., `~/research-papers/`)
+
+2. **Process PDFs locally**:
+   ```bash
+   # Process PDFs with semantic chunking
+   python process_pdfs.py ~/research-papers/
+   
+   # Analyze first without processing (preview)
+   python process_pdfs.py ~/research-papers/ --analyze-only
+   ```
+
+3. **Commit processed chunks**:
+   ```bash
+   git add processed_pdfs/
+   git commit -m "Add research papers: [description]"
+   git push
+   ```
+
+4. **Automatic deployment**: The push triggers HuggingFace rebuild with new papers
+
+**PDF Processing Features:**
+- **Semantic chunking**: Preserves paragraph boundaries and section context
+- **Section detection**: Identifies headers and includes section names in metadata
+- **Page tracking**: Each chunk includes page number and range
+- **Author extraction**: Extracts author metadata when available
+- **Lightweight storage**: Raw PDFs stay local, only JSON chunks are committed (~95% smaller)
+
+**Note:** Raw PDF files are not committed to the repository (see `.gitignore`). Only the processed JSON chunks in `processed_pdfs/` are stored in Git.
 
 ### Troubleshooting
 

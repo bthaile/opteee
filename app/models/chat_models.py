@@ -23,21 +23,44 @@ class ChatRequest(BaseModel):
         description="Optional conversation history for context"
     )
 
-class VideoSource(BaseModel):
-    """Model for video source information"""
-    title: str = Field(..., description="Video title")
-    url: str = Field(..., description="Base video URL")
-    video_url_with_timestamp: str = Field(..., description="Video URL with timestamp")
-    upload_date: str = Field(..., description="Video upload date")
-    duration_seconds: float = Field(..., description="Video duration in seconds")
-    start_timestamp_seconds: float = Field(..., description="Start timestamp for relevant segment")
-    content: str = Field(..., description="Transcript content")
+class Source(BaseModel):
+    """Model for source information (video or PDF)"""
+    title: str = Field(..., description="Source title")
+    content: str = Field(..., description="Source content/transcript")
+    
+    # Source type identifier (default 'video' for backwards compatibility)
+    source_type: Optional[str] = Field(default="video", description="Source type: 'video' or 'pdf'")
+    
+    # Video-specific fields (optional for PDF sources)
+    url: Optional[str] = Field(default="", description="Base video URL")
+    video_url_with_timestamp: Optional[str] = Field(default="", description="Video URL with timestamp")
+    video_id: Optional[str] = Field(default="", description="YouTube video ID")
+    upload_date: Optional[str] = Field(default="", description="Upload/publication date")
+    duration_seconds: Optional[float] = Field(default=0, description="Video duration in seconds")
+    start_timestamp_seconds: Optional[float] = Field(default=0, description="Start timestamp for relevant segment")
+    start_timestamp: Optional[str] = Field(default="", description="Formatted timestamp string")
+    channel: Optional[str] = Field(default="", description="Channel name")
+    
+    # PDF-specific fields (optional for video sources)
+    document_id: Optional[str] = Field(default="", description="PDF document ID")
+    source_file: Optional[str] = Field(default="", description="PDF filename")
+    page_number: Optional[int] = Field(default=0, description="Page number in PDF")
+    page_range: Optional[str] = Field(default="", description="Page range string")
+    section: Optional[str] = Field(default="", description="Section name in PDF")
+    author: Optional[str] = Field(default="", description="PDF author")
+    
+    # Common fields
+    score: Optional[float] = Field(default=0.0, description="Relevance score")
+    chunk_index: Optional[int] = Field(default=0, description="Chunk index")
+
+# Backwards compatibility alias
+VideoSource = Source
 
 class ChatResponse(BaseModel):
     """Response model for chat endpoint"""
     answer: str = Field(..., description="RAG-generated answer")
     sources: str = Field(..., description="Formatted HTML sources")
-    raw_sources: List[VideoSource] = Field(default=[], description="Raw source data")
+    raw_sources: List[Dict[str, Any]] = Field(default=[], description="Raw source data (video and PDF)")
     timestamp: str = Field(..., description="Response timestamp")
 
 class HealthResponse(BaseModel):

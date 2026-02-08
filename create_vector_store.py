@@ -53,7 +53,36 @@ def load_processed_transcripts():
         except Exception as e:
             print(f"Error loading {filename}: {e}")
     
-    print(f" Loaded {len(all_chunks)} transcript chunks")
+    transcript_count = len(all_chunks)
+    print(f"✅ Loaded {transcript_count} transcript chunks")
+    
+    # Also load processed PDFs if they exist
+    pdf_dir = 'processed_pdfs'
+    if os.path.exists(pdf_dir):
+        pdf_files = [f for f in os.listdir(pdf_dir) if f.endswith('.json')]
+        print(f"\nFound {len(pdf_files)} processed PDF files")
+        
+        for filename in tqdm(pdf_files, desc="Loading PDF files"):
+            try:
+                file_path = os.path.join(pdf_dir, filename)
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    pdf_chunks = json.load(f)
+                    
+                for chunk in pdf_chunks:
+                    text = chunk.get('text', '')
+                    
+                    if text and len(text.strip()) > 0:
+                        all_chunks.append(text)
+                        all_metadatas.append(chunk)
+            except Exception as e:
+                print(f"Error loading PDF {filename}: {e}")
+        
+        pdf_count = len(all_chunks) - transcript_count
+        print(f"✅ Loaded {pdf_count} PDF chunks")
+    else:
+        print(f"\nℹ️  No processed_pdfs/ directory found (optional)")
+    
+    print(f"\n📊 TOTAL: {len(all_chunks)} chunks (transcripts + PDFs)")
     return all_chunks, all_metadatas
 
 def create_embeddings(texts, model_name=MODEL_NAME, batch_size=BATCH_SIZE):

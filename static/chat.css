@@ -1231,4 +1231,102 @@ textarea:focus, input[type="text"]:focus {
 
 .error {
     color: var(--error-color);
+}
+
+/* ===== Source Sections (Video & PDF) ===== */
+.source-section {
+    margin-bottom: 1.5rem;
+}
+
+.source-section .section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.video-section .section-title {
+    border-bottom-color: var(--accent-color);
+}
+
+.pdf-section .section-title {
+    border-bottom-color: #6366f1;
+}
+
+/* ===== PDF Card Styles ===== */
+.pdf-card {
+    border-left: 4px solid #6366f1 !important;
+}
+
+.pdf-card:hover {
+    border-color: #6366f1 !important;
+}
+
+.pdf-card .video-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.source-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pdf-badge {
+    background-color: #eef2ff;
+    color: #6366f1;
+    border: 1px solid #c7d2fe;
+}
+
+.pdf-title {
+    color: #4f46e5 !important;
+}
+
+.pdf-snippet {
+    background-color: #f8fafc;
+    border-left: 3px solid #c7d2fe;
+    padding: 0.75rem !important;
+    margin: 0.75rem 0 !important;
+    border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+}
+
+.pdf-metadata {
+    color: #6366f1 !important;
+}
+
+.pdf-metadata .metadata-item svg {
+    stroke: #6366f1 !important;
+}
+
+.pdf-metadata .metadata-item span {
+    color: var(--text-secondary) !important;
+}
+
+/* ===== Source Type Differentiation ===== */
+.video-card:not(.pdf-card) {
+    border-left: 4px solid var(--accent-color);
+}
+
+/* Responsive adjustments for source sections */
+@media (max-width: 768px) {
+    .source-section .section-title {
+        font-size: 0.9rem;
+    }
+    
+    .pdf-card .video-card-header {
+        flex-direction: column;
+    }
 } 

@@ -42,6 +42,10 @@ vector_store_backup/*
 !vector_store_backup/.gitkeep
 audio_files/
 
+# Raw PDFs (too large for git) - only processed JSON chunks are committed
+pdfs/
+# processed_pdfs/ is NOT ignored - it contains the lightweight JSON chunks
+
 # Keep transcript data (these will be used to rebuild the vector store)
 # transcripts/
 # processed_transcripts/

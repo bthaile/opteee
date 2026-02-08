@@ -58,6 +58,10 @@ class HtmlFormatter:
                 "format": "html"
             }
         
+        # Separate sources by type
+        video_sources = [s for s in sources if s.get('source_type') != 'pdf']
+        pdf_sources = [s for s in sources if s.get('source_type') == 'pdf']
+        
         # Don't add outer wrapper - frontend will handle main container
         sources_content = '<div class="video-references">'
         
@@ -65,15 +69,22 @@ class HtmlFormatter:
         if quotes and len(quotes) > 0:
             sources_content += '''
                 <div class="sources-header">
-                    <h4>📚 Source Videos with Highlighted Quotes</h4>
-                    <p>Key phrases from the AI's answer are <span class="highlight-legend">highlighted</span> in the transcript snippets below for easy reference.</p>
+                    <h4>📚 Sources with Highlighted Quotes</h4>
+                    <p>Key phrases from the AI's answer are <span class="highlight-legend">highlighted</span> in the snippets below for easy reference.</p>
                 </div>
             '''
         
         # Create a new list to store sources with highlighted content
         highlighted_sources = []
         
-        for i, source in enumerate(sources):
+        # Add video sources section if any exist
+        if video_sources:
+            sources_content += f'''
+                <div class="source-section video-section">
+                    <h4 class="section-title">🎬 Video Sources ({len(video_sources)})</h4>
+            '''
+        
+        for i, source in enumerate(video_sources):
             title = source.get('title', 'Untitled Video')
             url = source.get('url', '#')
             video_url_with_timestamp = source.get('video_url_with_timestamp', url)
@@ -168,7 +179,77 @@ class HtmlFormatter:
             source_with_highlighting['content'] = highlighted_content
             highlighted_sources.append(source_with_highlighting)
         
-        sources_content += '</div>'
+        # Close video section if it was opened
+        if video_sources:
+            sources_content += '</div>'  # Close video-section
+        
+        # Add PDF/Research Papers section if any exist
+        if pdf_sources:
+            sources_content += f'''
+                <div class="source-section pdf-section">
+                    <h4 class="section-title">📄 Research Papers ({len(pdf_sources)})</h4>
+            '''
+            
+            for source in pdf_sources:
+                title = source.get('title', 'Untitled Document')
+                section = source.get('section', 'Document')
+                page_range = source.get('page_range', '')
+                page_number = source.get('page_number', 1)
+                author = source.get('author', '')
+                source_file = source.get('source_file', '')
+                
+                # Get content and apply highlighting
+                content = source.get('content', source.get('text', ''))
+                highlighted_content = self._highlight_text_in_content(content, quotes)
+                
+                # Show more context for PDFs
+                display_length = 300
+                if len(content) > display_length:
+                    truncated_content = highlighted_content[:display_length + 50] + '...'
+                else:
+                    truncated_content = highlighted_content
+                
+                # Build metadata items for PDF
+                pdf_meta_items = []
+                if page_range:
+                    pdf_meta_items.append(f'''<div class="metadata-item" title="Page reference"><svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='#6366f1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'></path><polyline points='14 2 14 8 20 8'></polyline></svg><span>{page_range}</span></div>''')
+                if section and section != 'Document':
+                    # Truncate long section names
+                    section_display = section[:30] + '...' if len(section) > 30 else section
+                    pdf_meta_items.append(f'''<div class="metadata-item" title="Section: {section}"><svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='#6366f1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='8' y1='6' x2='21' y2='6'></line><line x1='8' y1='12' x2='21' y2='12'></line><line x1='8' y1='18' x2='21' y2='18'></line><line x1='3' y1='6' x2='3.01' y2='6'></line><line x1='3' y1='12' x2='3.01' y2='12'></line><line x1='3' y1='18' x2='3.01' y2='18'></line></svg><span>{section_display}</span></div>''')
+                if author:
+                    pdf_meta_items.append(f'''<div class="metadata-item" title="Author"><svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='#6366f1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'></path><circle cx='12' cy='7' r='4'></circle></svg><span>{author[:20]}</span></div>''')
+                
+                pdf_metadata_html = ''.join(pdf_meta_items) if pdf_meta_items else '<div class="metadata-item">Academic Paper</div>'
+                
+                # Create PDF card HTML
+                sources_content += f'''
+                    <div class="video-card pdf-card">
+                        <div class="video-card-header">
+                            <span class="source-badge pdf-badge">PDF</span>
+                            <h4 class='video-title pdf-title'>{title}</h4>
+                        </div>
+
+                        <div class="transcript-snippet pdf-snippet">
+                            <p>"{truncated_content}"</p>
+                        </div>
+
+                        <div class="video-footer">
+                            <div class="video-metadata pdf-metadata">
+                                {pdf_metadata_html}
+                            </div>
+                        </div>
+                    </div>
+                '''
+                
+                # Add to highlighted sources
+                source_with_highlighting = source.copy()
+                source_with_highlighting['content'] = highlighted_content
+                highlighted_sources.append(source_with_highlighting)
+            
+            sources_content += '</div>'  # Close pdf-section
+        
+        sources_content += '</div>'  # Close video-references
         
         return {
             "formatted_content": {
@@ -604,65 +685,90 @@ class DiscordFormatter:
         return text
 
     def _improve_document_references(self, answer: str, sources: list) -> str:
-        """Replace [Document N] references with Discord-friendly video links"""
+        """Replace [Document N] references with Discord-friendly source links"""
         if not sources:
             # Remove any remaining document references if no sources available
             answer = re.sub(r'\[Document \d+\]', '', answer, flags=re.IGNORECASE)
             return answer
         
-        # Create a mapping of document numbers to video info
+        # Create a mapping of document numbers to source info
         doc_mapping = {}
         for i, source in enumerate(sources, 1):
-            timestamp_seconds = source.get('start_timestamp_seconds', 0)
+            source_type = source.get('source_type', 'video')
+            title = source.get('title', 'Untitled')
             
-            # Format timestamp for display
-            timestamp_str = ""
-            if timestamp_seconds and timestamp_seconds > 0:
-                minutes = int(timestamp_seconds // 60)
-                seconds = int(timestamp_seconds % 60)
-                timestamp_str = f" @ {minutes}:{seconds:02d}"
-            
-            # Get the best available title
-            title = source.get('title', 'Untitled Video')
-            
-            # Clean up video ID titles
-            if len(title) == 11 and title.isalnum():  # Likely a video ID
-                title = source.get('filename', source.get('file_name', title))
-                title = title.replace('.mp3', '').replace('.wav', '').replace('.mp4', '')
-            
-            # Get URL with timestamp
-            url = source.get('video_url_with_timestamp') or source.get('url', '#')
-            if url == '#' or not url:
-                video_id = source.get('video_id') or source.get('id')
-                if video_id and timestamp_seconds:
-                    url = f"https://www.youtube.com/watch?v={video_id}&t={int(timestamp_seconds)}s"
-                elif video_id:
-                    url = f"https://www.youtube.com/watch?v={video_id}"
-            
-            doc_mapping[i] = {
-                'title': title,
-                'url': url,
-                'timestamp_str': timestamp_str
-            }
+            if source_type == 'pdf':
+                # Handle PDF sources
+                page_range = source.get('page_range', '')
+                page_info = f" (p.{page_range})" if page_range else ""
+                
+                # Clean up title for Discord display
+                title = title.replace('|', '-').replace('[', '(').replace(']', ')')
+                if len(title) > 35:
+                    title = title[:32] + "..."
+                
+                doc_mapping[i] = {
+                    'title': title,
+                    'source_type': 'pdf',
+                    'page_info': page_info,
+                    'url': ''  # PDFs don't have URLs
+                }
+            else:
+                # Handle video sources (existing logic)
+                timestamp_seconds = source.get('start_timestamp_seconds', 0)
+                
+                # Format timestamp for display
+                timestamp_str = ""
+                if timestamp_seconds and timestamp_seconds > 0:
+                    minutes = int(timestamp_seconds // 60)
+                    seconds = int(timestamp_seconds % 60)
+                    timestamp_str = f" @ {minutes}:{seconds:02d}"
+                
+                # Clean up video ID titles
+                if len(title) == 11 and title.isalnum():  # Likely a video ID
+                    title = source.get('filename', source.get('file_name', title))
+                    title = title.replace('.mp3', '').replace('.wav', '').replace('.mp4', '')
+                
+                # Get URL with timestamp
+                url = source.get('video_url_with_timestamp') or source.get('url', '#')
+                if url == '#' or not url:
+                    video_id = source.get('video_id') or source.get('id')
+                    if video_id and timestamp_seconds:
+                        url = f"https://www.youtube.com/watch?v={video_id}&t={int(timestamp_seconds)}s"
+                    elif video_id:
+                        url = f"https://www.youtube.com/watch?v={video_id}"
+                
+                # Clean up title for Discord display
+                title = title.replace('|', '-').replace('[', '(').replace(']', ')')
+                if len(title) > 30:
+                    title = title[:27] + "..."
+                
+                doc_mapping[i] = {
+                    'title': title,
+                    'source_type': 'video',
+                    'url': url,
+                    'timestamp_str': timestamp_str
+                }
         
         def replace_doc_ref(match):
             doc_num = int(match.group(1))
             if doc_num in doc_mapping:
-                title = doc_mapping[doc_num]['title']
-                url = doc_mapping[doc_num]['url']
-                timestamp_str = doc_mapping[doc_num]['timestamp_str']
+                info = doc_mapping[doc_num]
+                title = info['title']
                 
-                # Clean up title for Discord display
-                title = title.replace('|', '-').replace('[', '(').replace(']', ')')
-                if len(title) > 30:  # Shorter for Discord
-                    title = title[:27] + "..."
-                
-                # Create Discord link with timestamp (suppress preview with < >)
-                return f"**[Video {doc_num}{timestamp_str}: {title}](<{url}>)**"
+                if info['source_type'] == 'pdf':
+                    # PDF reference (no URL)
+                    page_info = info.get('page_info', '')
+                    return f"**[Paper {doc_num}: {title}{page_info}]**"
+                else:
+                    # Video reference with link
+                    url = info['url']
+                    timestamp_str = info.get('timestamp_str', '')
+                    return f"**[Video {doc_num}{timestamp_str}: {title}](<{url}>)**"
             else:
-                return f"**[Video {doc_num}]**"
+                return f"**[Source {doc_num}]**"
         
-        # Replace [Document N] with video references
+        # Replace [Document N] with source references
         answer = re.sub(r'\[Document (\d+)\]', replace_doc_ref, answer, flags=re.IGNORECASE)
         
         return answer 
