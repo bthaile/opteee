@@ -457,21 +457,41 @@ def create_claude_model_with_fallback(model: str, temperature: float) -> ChatAnt
             raise e
 
 def format_documents(docs: List[Document]) -> str:
-    """Format documents for the prompt"""
+    """Format documents for the prompt, adapting metadata to source type."""
     formatted_docs = []
     
     for i, doc in enumerate(docs):
         content = doc.page_content
         meta = doc.metadata
+        source_type = meta.get('source_type', 'video')
         
-        # Format metadata including upload date
-        meta_str = "\n".join([
-            f"Title: {meta.get('title', 'Unknown')}",
-            f"URL: {meta.get('video_url', 'Unknown')}",
-            f"Timestamp: {meta.get('timestamp', 'Unknown')}",
-            f"Channel: {meta.get('channel', 'Unknown')}",
-            f"Upload Date: {meta.get('upload_date', 'Unknown')}"
-        ])
+        if source_type == 'pdf':
+            # Format metadata for book/research paper sources
+            meta_parts = [f"Title: {meta.get('title', 'Unknown')}"]
+            author = meta.get('author', '')
+            if author:
+                meta_parts.append(f"Author: {author}")
+            section = meta.get('section', '')
+            if section and section != 'Document':
+                meta_parts.append(f"Section: {section}")
+            page_range = meta.get('page_range', '')
+            page_number = meta.get('page_number', '')
+            if page_range:
+                meta_parts.append(f"Pages: {page_range}")
+            elif page_number:
+                meta_parts.append(f"Page: {page_number}")
+            meta_parts.append("Type: Research Paper / Book")
+            meta_str = "\n".join(meta_parts)
+        else:
+            # Format metadata for video transcript sources
+            meta_str = "\n".join([
+                f"Title: {meta.get('title', 'Unknown')}",
+                f"URL: {meta.get('video_url', 'Unknown')}",
+                f"Timestamp: {meta.get('timestamp', 'Unknown')}",
+                f"Channel: {meta.get('channel', 'Unknown')}",
+                f"Upload Date: {meta.get('upload_date', 'Unknown')}",
+                "Type: Video Transcript"
+            ])
         
         # Format document
         doc_str = f"[Document {i+1}]\n{content}\n\n{meta_str}"
