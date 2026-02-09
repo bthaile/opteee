@@ -461,8 +461,9 @@
             padding-bottom: 0.25rem;
             border-bottom: 1px solid #e5e7eb;
         }
-        .book-card-compact .book-title { font-weight: 600; color: #4f46e5; }
+        .book-card-compact .book-title { font-weight: 600; color: #1f2937; cursor: default; }
         .book-meta-line { color: #6b7280; font-size: 0.8125rem; }
+        .book-card-compact .transcript-snippet { border-left-color: #6366f1; }
         
         /* Compact video card styles - tightened up */
         .video-card-compact {
@@ -557,8 +558,8 @@
             border-color: #0f766e;
         }
         
-        /* Compact video header - single line */
-        .video-header {
+        /* Compact video header - single line (scoped to old .video-card format) */
+        .video-card .video-header {
             padding: 0.75rem 1rem;
             display: flex;
             align-items: center;
@@ -567,7 +568,7 @@
             transition: background 0.2s;
         }
         
-        .video-header:hover {
+        .video-card .video-header:hover {
             background: #f1f5f9;
         }
         
@@ -653,6 +654,30 @@
             margin: 0;
             line-height: 1.5;
             font-size: 0.85rem;
+        }
+        
+        /* Highlighting for quoted text that was used in the answer */
+        .quote-highlight {
+            background: linear-gradient(120deg, #fef3c7 0%, #fde68a 100%);
+            padding: 0.125rem 0.25rem;
+            border-radius: 3px;
+            font-weight: 500;
+            border-left: 3px solid #0f766e;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            display: inline;
+            margin: 0 0.125rem;
+            transition: all 0.2s ease;
+        }
+        
+        .quote-highlight:hover {
+            background: linear-gradient(120deg, #fde68a 0%, #fbbf24 100%);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+        
+        mark.quote-highlight {
+            background: linear-gradient(120deg, #e0f2fe 0%, #bae6fd 100%);
+            border-left: 3px solid #0f766e;
+            color: #1f2937;
         }
         
         .message .video-footer {
@@ -1085,6 +1110,8 @@
                 const videoSources = rawSources.filter(function(s) { return s.source_type !== 'pdf'; });
                 const bookSources = rawSources.filter(function(s) { return s.source_type === 'pdf'; });
                 console.log('Generating source references:', videoSources.length, 'video,', bookSources.length, 'book/PDF');
+                // Use a unique prefix per message to avoid ID collisions across messages
+                var msgId = 'ref-' + Date.now() + '-' + Math.random().toString(36).substr(2, 6);
                 var cardIndex = 0;
                 var sections = [];
                 if (videoSources.length > 0) {
@@ -1097,8 +1124,8 @@
                         var ts = source.start_timestamp_seconds || 0;
                         var timestamp = Math.floor(ts / 60) + ':' + String(Math.floor(ts % 60)).padStart(2, '0');
                         var content = source.content || 'No transcript available';
-                        var i = cardIndex++;
-                        videoCardsHTML += '<div class="video-card-compact"><div class="video-header" onclick="toggleVideoDetails(' + i + ')"><div class="video-title-line"><a href="' + timestampURL + '" target="_blank" onclick="event.stopPropagation()">' + title + '</a><span class="expand-icon" id="icon-' + i + '">▶</span></div><div class="video-meta-line">@' + timestamp + ' | ' + duration + ' | ' + uploadDate + '</div></div><div class="video-details" id="details-' + i + '" style="display:none;"><div class="transcript-snippet">' + content + '</div></div></div>';
+                        var uid = msgId + '-' + (cardIndex++);
+                        videoCardsHTML += '<div class="video-card-compact"><div class="video-header" onclick="toggleVideoDetails(\'' + uid + '\')"><div class="video-title-line"><a href="' + timestampURL + '" target="_blank" onclick="event.stopPropagation()">' + title + '</a><span class="expand-icon" id="icon-' + uid + '">▶</span></div><div class="video-meta-line">@' + timestamp + ' | ' + duration + ' | ' + uploadDate + '</div></div><div class="video-details" id="details-' + uid + '" style="display:none;"><div class="transcript-snippet">' + content + '</div></div></div>';
                     });
                     sections.push('<div class="source-ref-block"><div class="source-ref-header">Video references</div><div class="video-references-inner">' + videoCardsHTML + '</div></div>');
                 }
@@ -1112,8 +1139,8 @@
                         var content = source.content || source.text || '';
                         var metaParts = [pageRange, section, author].filter(Boolean);
                         var metaLine = metaParts.length ? metaParts.join(' · ') : 'Research paper';
-                        var i = cardIndex++;
-                        bookCardsHTML += '<div class="video-card-compact book-card-compact"><div class="video-header" onclick="toggleVideoDetails(' + i + ')"><div class="video-title-line"><span class="book-title">' + title + '</span><span class="expand-icon" id="icon-' + i + '">▶</span></div><div class="video-meta-line book-meta-line">' + metaLine + '</div></div><div class="video-details" id="details-' + i + '" style="display:none;"><div class="transcript-snippet">' + content + '</div></div></div>';
+                        var uid = msgId + '-' + (cardIndex++);
+                        bookCardsHTML += '<div class="video-card-compact book-card-compact"><div class="video-header" onclick="toggleVideoDetails(\'' + uid + '\')"><div class="video-title-line"><span class="book-title">' + title + '</span><span class="expand-icon" id="icon-' + uid + '">▶</span></div><div class="video-meta-line book-meta-line">' + metaLine + '</div></div><div class="video-details" id="details-' + uid + '" style="display:none;"><div class="transcript-snippet">' + content + '</div></div></div>';
                     });
                     sections.push('<div class="source-ref-block"><div class="source-ref-header">Book &amp; research references</div><div class="video-references-inner">' + bookCardsHTML + '</div></div>');
                 }
@@ -1731,12 +1758,16 @@
             });
         };
         
-        // Toggle video details - support both index and element approaches
+        // Toggle video details - support string ID, numeric index, and element approaches
         window.toggleVideoDetails = function(indexOrElement) {
             let details, icon;
             
-            if (typeof indexOrElement === 'number') {
-                // Index approach for new compact cards
+            if (typeof indexOrElement === 'string') {
+                // String ID approach for unique compact cards
+                details = document.getElementById(`details-${indexOrElement}`);
+                icon = document.getElementById(`icon-${indexOrElement}`);
+            } else if (typeof indexOrElement === 'number') {
+                // Legacy numeric index approach
                 details = document.getElementById(`details-${indexOrElement}`);
                 icon = document.getElementById(`icon-${indexOrElement}`);
             } else {
