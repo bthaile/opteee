@@ -67,6 +67,39 @@ KNOWN_SECTIONS = [
 ]
 
 
+def normalize_pdf_date(value: Optional[str]) -> str:
+    """
+    Normalize PDF CreationDate and other date formats to YYYYMMDD.
+    Handles PDF spec format (D:YYYYMMDDHHmmss+tz) and standard formats.
+    Returns empty string if unparseable.
+    """
+    if not value or not isinstance(value, str):
+        return ""
+    value = value.strip()
+    if not value or value.lower() in {"unknown", "n/a", "none", "null"}:
+        return ""
+    # PDF CreationDate: D:20030901031723+02'00' or D:20030901031723
+    if value.startswith("D:") and len(value) >= 10:
+        try:
+            yyyymmdd = value[2:10]
+            if yyyymmdd.isdigit():
+                return yyyymmdd
+        except (IndexError, TypeError):
+            pass
+    # Already YYYYMMDD
+    if re.fullmatch(r"\d{8}", value):
+        return value
+    # ISO or YYYY-MM-DD
+    try:
+        if "T" in value:
+            dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
+            return dt.strftime("%Y%m%d")
+        dt = datetime.strptime(value.split("T")[0], "%Y-%m-%d")
+        return dt.strftime("%Y%m%d")
+    except ValueError:
+        return ""
+
+
 def extract_pdf_metadata(pdf_path: str) -> Dict:
     """Extract metadata from PDF"""
     metadata = {
@@ -345,7 +378,7 @@ def process_pdf(
             'video_url_with_timestamp': '',
             'start_timestamp': f"{chunk['section']} ({page_range})",
             'start_timestamp_seconds': 0,
-            'upload_date': metadata.get('creation_date', ''),
+            'upload_date': normalize_pdf_date(metadata.get('creation_date', '')),
             'duration': None,
         }
         processed_chunks.append(processed_chunk)

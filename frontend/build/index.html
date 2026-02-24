@@ -1149,7 +1149,17 @@
                         var uid = msgId + '-v' + entry.origIdx;
                         var title = source.title || 'Untitled Video';
                         var timestampURL = source.video_url_with_timestamp || source.url || '#';
-                        var uploadDate = source.upload_date ? new Date(source.upload_date.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3')).toLocaleDateString() : 'N/A';
+                        var rawUploadDate = (source.upload_date || '').toString().trim();
+                        var uploadDate = 'N/A';
+                        if (rawUploadDate && !['unknown', 'n/a', 'none', 'null'].includes(rawUploadDate.toLowerCase())) {
+                            var normalizedDate = /^\d{8}$/.test(rawUploadDate)
+                                ? rawUploadDate.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3')
+                                : rawUploadDate;
+                            var parsedDate = new Date(normalizedDate);
+                            if (!Number.isNaN(parsedDate.getTime())) {
+                                uploadDate = parsedDate.toLocaleDateString();
+                            }
+                        }
                         var duration = source.duration_seconds ? Math.floor(source.duration_seconds / 60) + ' min' : 'N/A';
                         var ts = source.start_timestamp_seconds || 0;
                         var timestamp = Math.floor(ts / 60) + ':' + String(Math.floor(ts % 60)).padStart(2, '0');

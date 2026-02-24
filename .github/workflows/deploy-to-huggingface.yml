@@ -76,20 +76,24 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           SPACE_NAME: "bthaile/opteee"
         run: |
-          # Set credentials helper to store token
-          git config --global credential.helper store
+          set -e
+          # Deploy in a staging directory so we never touch the original .git
+          # This keeps the checkout intact if push fails and avoids destructive rm -rf
+          DEPLOY_DIR="hf_deploy"
+          rm -rf "$DEPLOY_DIR"
+          mkdir -p "$DEPLOY_DIR"
           
-          # Store the Hugging Face token in the credentials helpers
+          # Copy repo contents (exclude .git to keep deploy lean)
+          rsync -a --exclude='.git' --exclude="$DEPLOY_DIR" . "$DEPLOY_DIR/"
+          cd "$DEPLOY_DIR"
+          
+          # Configure git for the deploy artifact
+          git config --global credential.helper store
           echo "https://USER:${HF_TOKEN}@huggingface.co" > ~/.git-credentials
           
-          # Create a new repository with only the current content
-          rm -rf .git
           git init
           git add .
           git commit -m "Deploy to Hugging Face with Docker"
           
-          # Add Hugging Face Space as a Git remote
-          git remote add space https://huggingface.co/spaces/$SPACE_NAME
-          
-          # Force push to Hugging Face Space
-          git push --force space main 
+          # Push using token URL for reliable auth
+          git push --force "https://USER:${HF_TOKEN}@huggingface.co/spaces/${SPACE_NAME}" main 

@@ -20,7 +20,7 @@ from tqdm import tqdm
 
 from pipeline_config import (
     VIDEOS_JSON, TRANSCRIPT_DIR, PROCESSED_DIR,
-    CHUNK_SIZE, OVERLAP, MIN_CHUNK_WORDS, ensure_directories
+    CHUNK_SIZE, OVERLAP, MIN_CHUNK_WORDS, ensure_directories, get_metadata_file
 )
 
 
@@ -45,18 +45,73 @@ def format_timestamp(seconds):
         return f"{minutes:02d}:{secs:02d}"
 
 
+def normalize_upload_date(value):
+    """Normalize upload/publish date values to YYYYMMDD when possible."""
+    if value is None:
+        return None
+
+    if isinstance(value, (int, float)):
+        value = str(int(value))
+
+    if not isinstance(value, str):
+        return None
+
+    value = value.strip()
+    if not value or value.lower() in {"unknown", "n/a", "none", "null"}:
+        return None
+
+    if re.fullmatch(r"\d{8}", value):
+        return value
+
+    try:
+        if "T" in value:
+            dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
+            return dt.strftime("%Y%m%d")
+        dt = datetime.strptime(value.split("T")[0], "%Y-%m-%d")
+        return dt.strftime("%Y%m%d")
+    except ValueError:
+        return None
+
+
 def load_video_metadata():
     """Load video metadata from the videos JSON file"""
-    if not os.path.exists(VIDEOS_JSON):
+    try:
+        metadata_file = get_metadata_file()
+    except FileNotFoundError:
         print(f"⚠️  {VIDEOS_JSON} not found. Metadata will be limited.")
         return {}
     
     try:
-        with open(VIDEOS_JSON, 'r', encoding='utf-8') as f:
+        with open(metadata_file, 'r', encoding='utf-8') as f:
             videos = json.load(f)
         
-        # Create lookup by video_id
-        return {v['video_id']: v for v in videos if v.get('video_id')}
+        # Create lookup by video_id and normalize date keys across metadata formats
+        metadata_lookup = {}
+        for video in videos:
+            video_id = video.get('video_id')
+            if not video_id:
+                continue
+
+            normalized = dict(video)
+            normalized_upload_date = normalize_upload_date(
+                video.get('upload_date')
+                or video.get('published_at')
+                or video.get('publishedAt')
+                or video.get('publish_date')
+            )
+            normalized['upload_date'] = normalized_upload_date
+
+            published_at = (
+                video.get('published_at')
+                or video.get('publishedAt')
+                or video.get('publish_date')
+            )
+            if published_at:
+                normalized['published_at'] = published_at
+
+            metadata_lookup[video_id] = normalized
+
+        return metadata_lookup
     except Exception as e:
         print(f"⚠️  Error loading video metadata: {e}")
         return {}
@@ -198,6 +253,12 @@ def process_transcript(video_id, transcript_path, video_metadata, force_reproces
     
     # Add full metadata to each chunk
     processed_chunks = []
+    resolved_upload_date = normalize_upload_date(
+        metadata.get('upload_date')
+        or metadata.get('published_at')
+        or metadata.get('publishedAt')
+    )
+
     for chunk in chunks:
         start_seconds = chunk['start_timestamp_seconds']
         
@@ -212,7 +273,8 @@ def process_transcript(video_id, transcript_path, video_metadata, force_reproces
             'video_url_with_timestamp': f"{base_url}&t={int(start_seconds)}",
             'chunk_index': chunk['chunk_index'],
             'word_count': chunk['word_count'],
-            'upload_date': metadata.get('upload_date'),
+            'upload_date': resolved_upload_date,
+            'published_at': metadata.get('published_at') or metadata.get('publishedAt'),
             'duration': metadata.get('duration'),
         }
         processed_chunks.append(processed_chunk)

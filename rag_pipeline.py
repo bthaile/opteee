@@ -122,6 +122,39 @@ def iso_duration_to_hhmmss(iso_duration: str) -> str:
     else:
         return f"{minutes:02d}:{seconds:02d}"
 
+def normalize_upload_date(value: Any) -> str:
+    """Normalize upload/publish date to YYYYMMDD when possible."""
+    if value is None:
+        return ""
+
+    if isinstance(value, (int, float)):
+        value = str(int(value))
+
+    if not isinstance(value, str):
+        return ""
+
+    value = value.strip()
+    if not value or value.lower() in {"unknown", "n/a", "none", "null"}:
+        return ""
+
+    from datetime import datetime
+
+    if len(value) == 8 and value.isdigit():
+        return value
+
+    # PDF CreationDate: D:20030901031723+02'00' or D:20030901031723
+    if value.startswith("D:") and len(value) >= 10 and value[2:10].isdigit():
+        return value[2:10]
+
+    try:
+        if "T" in value:
+            dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
+            return dt.strftime("%Y%m%d")
+        dt = datetime.strptime(value.split("T")[0], "%Y-%m-%d")
+        return dt.strftime("%Y%m%d")
+    except ValueError:
+        return ""
+
 def get_available_providers() -> List[str]:
     """Get a list of available LLM providers based on API keys"""
     providers = []
@@ -335,15 +368,30 @@ class CustomFAISSRetriever:
                 if 'duration' not in meta or not meta['duration']:
                     meta['duration'] = main_video_meta.get('duration')
                 if 'upload_date' not in meta or not meta['upload_date']:
-                    meta['upload_date'] = main_video_meta.get('upload_date')
+                    meta['upload_date'] = (
+                        main_video_meta.get('upload_date')
+                        or main_video_meta.get('published_at')
+                        or main_video_meta.get('publishedAt')
+                    )
                 if 'published_at' not in meta or not meta['published_at']:
-                    meta['published_at'] = main_video_meta.get('publishedAt') # Note the camelCase from YouTube API
+                    meta['published_at'] = (
+                        main_video_meta.get('published_at')
+                        or main_video_meta.get('publishedAt')
+                    )
+
+            # Normalize and align dates so downstream formatting is consistent
+            normalized_upload_date = normalize_upload_date(
+                meta.get('upload_date')
+                or meta.get('published_at')
+                or meta.get('publishedAt')
+            )
+            meta['upload_date'] = normalized_upload_date
 
             # Parse upload date
             try:
                 from datetime import datetime
                 # Try to parse published_at first, then fallback to upload_date
-                date_str = meta.get('published_at', meta.get('upload_date', '1970-01-01'))
+                date_str = meta.get('published_at') or meta.get('upload_date') or '19700101'
                 # Handle both ISO format and YYYYMMDD format
                 if 'T' in date_str:  # ISO format
                     upload_date = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
@@ -667,7 +715,9 @@ def run_rag_query(retriever, chain, query: str) -> Dict[str, Any]:
             "start_timestamp_seconds": timestamp_seconds,
             "timestamp": meta.get("start_timestamp", ""),
             "channel": meta.get("channel_name", meta.get("channel", "Unknown")),
-            "upload_date": meta.get("upload_date") or meta.get("published_at") or "Unknown",
+            "upload_date": normalize_upload_date(
+                meta.get("upload_date") or meta.get("published_at") or meta.get("publishedAt")
+            ),
             "score": meta.get("score", 0.0),
             "content": doc.page_content,  # Include the actual transcript content
             "duration_seconds": duration_seconds,  # Pass raw seconds
