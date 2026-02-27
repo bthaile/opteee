@@ -97,6 +97,7 @@ Use `requirements-serve.txt` for serving only. The full `requirements.txt` inclu
       "conversation_id": "optional-existing-conversation-id"
     }
     ```
+  - `format` supports `html`, `json`, and `bot` (prefer `json` for chat bots)
   - Returns answer with sources, timestamps, and `conversation_id`
 
 - **POST `/api/conversations`** - Create a new persisted conversation
@@ -129,7 +130,7 @@ opteee/
 │       ├── rag_service.py       # RAG service implementation
 │       ├── conversation_service.py # Conversation/message persistence service
 │       ├── history_utils.py     # History sanitization for prompt context
-│       └── formatters.py        # Response formatting (HTML + Discord)
+│       └── formatters.py        # Response formatting (HTML + JSON/bot-friendly)
 ├── frontend/
 │   └── build/                   # React production build
 ├── vector_store/                # FAISS vector database files
@@ -138,9 +139,9 @@ opteee/
 ├── transcripts/                 # Raw transcript data
 ├── static/                      # Static assets (CSS, JS)
 ├── templates/                   # HTML templates
-├── discord/                     # Discord bot integration
-│   ├── discord_bot.py           # Discord bot implementation
-│   └── ...                      # Bot configuration files
+├── bots/                        # Platform-agnostic bot integration docs/examples
+│   ├── README.md                # Canonical bot integration guide
+│   └── examples/                # Minimal client examples
 ├── docs/                        # Documentation
 ├── archive/                     # Archived utilities and scripts
 ├── Dockerfile                   # Production Docker image (full pipeline)
@@ -402,17 +403,21 @@ Launchd output logs are written to:
 - The script skips `git pull` if your repo has uncommitted changes to avoid clobbering local edits.
 - Keep Docker Desktop running so scheduled refresh jobs can rebuild/restart successfully.
 
-## Discord Bot
+## Bots
 
-The project includes a Discord bot integration in the `discord/` directory. The bot provides the same semantic search capabilities directly in Discord channels.
+OPTEEE supports simple bot clients across platforms (Telegram, Slack, webhooks, custom chat apps).
 
-See `discord/README.md` for setup instructions.
+Use `bots/README.md` as the canonical integration guide (includes conversation state support).
+
+`bots/` is the only supported bot integration path.
 
 ## Additional Documentation
 
 - `docs/BEGINNER_GUIDE.md` - Getting started guide
 - `docs/DEPLOYMENT_STEPS.md` - Deployment instructions
-- `discord/README.md` - Discord bot setup
+- `bots/README.md` - Canonical bot integration guide (includes conversation support)
+- `bots/examples/python_client.py` - Minimal Python bot client example
+- `docs/BOT_INTEGRATION.md` - Redirect/compatibility bot guide
 
 ## Contributing
 

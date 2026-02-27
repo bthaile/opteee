@@ -17,7 +17,11 @@ class ChatRequest(BaseModel):
     query: str = Field(..., description="User's question", min_length=1)
     provider: str = Field(default="claude", description="LLM provider to use")
     num_results: int = Field(default=10, description="Number of search results to retrieve", ge=1, le=20)
-    format: str = Field(default="html", description="Response format: 'html' or 'discord'", pattern="^(html|discord)$")
+    format: str = Field(
+        default="html",
+        description="Response format: 'html', 'json', or 'bot' (alias of json)",
+        pattern="^(html|json|bot)$"
+    )
     conversation_history: Optional[List[ConversationMessage]] = Field(
         default=None, 
         description="Optional conversation history for context"
@@ -63,7 +67,7 @@ VideoSource = Source
 class ChatResponse(BaseModel):
     """Response model for chat endpoint"""
     answer: str = Field(..., description="RAG-generated answer")
-    sources: str = Field(..., description="Formatted HTML sources")
+    sources: str = Field(..., description="Formatted sources for the selected output format")
     raw_sources: List[Dict[str, Any]] = Field(default=[], description="Raw source data (video and PDF)")
     timestamp: str = Field(..., description="Response timestamp")
     conversation_id: Optional[str] = Field(default=None, description="Conversation ID for this chat")

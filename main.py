@@ -80,7 +80,17 @@ async def chat(request: ChatRequest, db: Session = Depends(get_db)):
     """Main chat endpoint for RAG queries"""
     
     if TEST_MODE:
-        # Return a test response that demonstrates conversation history processing
+        # Return a deterministic response while still exercising conversation persistence.
+        conversation = None
+        if request.conversation_id:
+            conversation = ConversationService.get_conversation(db, request.conversation_id)
+            if not conversation:
+                raise HTTPException(status_code=404, detail="Conversation not found")
+        else:
+            conversation = ConversationService.create_conversation(db)
+
+        ConversationService.add_message(db, conversation, "user", request.query)
+
         conversation_summary = ""
         if request.conversation_history:
             conversation_summary = f"\n\n[Test Mode] I can see our conversation history with {len(request.conversation_history)} previous messages. "
@@ -98,11 +108,14 @@ Format: {request.format}{conversation_summary}
 
 This is a test response to validate the conversation history functionality. In production, this would be answered using the RAG system with options trading knowledge."""
 
+        ConversationService.add_message(db, conversation, "assistant", test_answer)
+
         return ChatResponse(
             answer=test_answer,
-            sources="<div class='test-mode'>Test mode - no real sources</div>",
+            sources="[]",
             raw_sources=[],
-            timestamp=datetime.now().isoformat()
+            timestamp=datetime.now().isoformat(),
+            conversation_id=conversation.id,
         )
     
     if not rag_service:

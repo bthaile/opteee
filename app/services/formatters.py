@@ -1,9 +1,10 @@
 """
-Response formatters for different output formats (HTML, Discord, etc.)
+Response formatters for different output formats (HTML, bot-friendly markdown, etc.)
 """
 
 import re
 import os
+import json
 from datetime import datetime
 from typing import List, Dict, Any, Optional
 
@@ -14,7 +15,9 @@ class ResponseFormatter:
     def __init__(self):
         self.formatters = {
             "html": HtmlFormatter(),
-            "discord": DiscordFormatter()
+            # Preferred for bot clients: plain text answer + structured JSON sources.
+            "json": JsonFormatter(),
+            "bot": JsonFormatter(),
         }
     
     def format_response(self, answer: str, sources: List[Dict], format_type: str = "html") -> Dict[str, Any]:
@@ -24,7 +27,7 @@ class ResponseFormatter:
         Args:
             answer: The RAG-generated answer
             sources: List of source documents
-            format_type: Format type ("html" or "discord")
+            format_type: Format type ("html", "json", or "bot")
             
         Returns:
             Dictionary with formatted_content and format
@@ -473,13 +476,67 @@ class HtmlFormatter:
         return highlighted_content
 
 
-class DiscordFormatter:
-    """Discord formatter - converts HTML to Discord-friendly markdown"""
+class JsonFormatter:
+    """JSON formatter - plain text answer plus structured source objects"""
+
+    def format(self, answer: str, sources: List[Dict]) -> Dict[str, Any]:
+        plain_answer = self._to_plain_text(answer)
+        normalized_sources = [self._normalize_source(source) for source in sources]
+
+        return {
+            "formatted_content": {
+                "answer": plain_answer,
+                # Keep string field machine-friendly while preserving schema compatibility.
+                "sources": json.dumps(normalized_sources, ensure_ascii=True),
+                "raw_sources": normalized_sources,
+            },
+            "format": "json",
+        }
+
+    def _normalize_source(self, source: Dict[str, Any]) -> Dict[str, Any]:
+        # Keep high-value fields; trim content payload for bot context windows.
+        content = self._to_plain_text(str(source.get("content", "")))
+        excerpt = content[:500] + "..." if len(content) > 500 else content
+        normalized = {
+            "source_type": source.get("source_type", "video"),
+            "title": self._to_plain_text(str(source.get("title", ""))),
+            "url": source.get("url", ""),
+            "video_url_with_timestamp": source.get("video_url_with_timestamp", ""),
+            "start_timestamp_seconds": source.get("start_timestamp_seconds", 0),
+            "start_timestamp": source.get("start_timestamp", source.get("timestamp", "")),
+            "channel": source.get("channel", ""),
+            "upload_date": source.get("upload_date", ""),
+            "score": source.get("score", 0.0),
+            "excerpt": excerpt,
+            "document_id": source.get("document_id", ""),
+            "source_file": source.get("source_file", ""),
+            "page_number": source.get("page_number", 0),
+            "page_range": source.get("page_range", ""),
+            "section": source.get("section", ""),
+            "author": source.get("author", ""),
+        }
+        return normalized
+
+    def _to_plain_text(self, value: str) -> str:
+        text = value or ""
+        # Remove HTML tags.
+        text = re.sub(r"<[^>]+>", " ", text)
+        # Convert markdown links [label](url) -> label
+        text = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text)
+        # Remove markdown decorators.
+        text = re.sub(r"[*_`#>-]+", " ", text)
+        # Collapse whitespace.
+        text = re.sub(r"\s+", " ", text).strip()
+        return text
+
+
+class BotFormatter:
+    """Bot formatter - converts mixed HTML/text into bot-friendly markdown"""
     
     def format(self, answer: str, sources: List[Dict]) -> Dict[str, Any]:
-        """Format response for Discord (plain text with markdown)"""
-        # Convert HTML answer to Discord markdown
-        formatted_answer = self._format_answer_for_discord(answer)
+        """Format response for bots (plain text with markdown)"""
+        # Convert HTML answer to bot-friendly markdown
+        formatted_answer = self._format_answer_for_bot(answer)
         
         # Replace document references with video links using raw source data
         formatted_answer = self._improve_document_references(formatted_answer, sources)
@@ -487,14 +544,14 @@ class DiscordFormatter:
         return {
             "formatted_content": {
                 "answer": formatted_answer,
-                "sources": "",  # Discord doesn't use HTML sources
+                "sources": "",  # Bots generally don't use HTML sources
                 "raw_sources": sources
             },
-            "format": "discord"
+            "format": "bot"
         }
     
-    def _format_answer_for_discord(self, mixed_content: str) -> str:
-        """Convert mixed HTML/text content from RAG system to Discord-compatible format
+    def _format_answer_for_bot(self, mixed_content: str) -> str:
+        """Convert mixed HTML/text content from RAG system to bot-compatible format
         
         Uses BeautifulSoup to reliably handle mixed HTML and text content.
         """
@@ -515,7 +572,7 @@ class DiscordFormatter:
                 # Step 1: Parse mixed HTML/text content with BeautifulSoup
                 soup = BeautifulSoup(mixed_content, 'html.parser')
                 
-                # Step 2: Convert HTML elements to Discord markdown
+                # Step 2: Convert HTML elements to markdown-friendly text
                 # Handle headers (h1-h6) -> **bold**
                 for tag in soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']):
                     tag_text = tag.get_text().strip()
