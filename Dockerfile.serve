@@ -1,0 +1,39 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y build-essential && rm -rf /var/lib/apt/lists/*
+
+COPY requirements-serve.txt /app/requirements.txt
+
+# Install CPU-only PyTorch first (~200MB vs ~2GB for full torch)
+# Then install the rest of the dependencies
+RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu && \
+    pip install --no-cache-dir -r requirements.txt
+
+# Cache directories for ML models
+RUN mkdir -p /app/cache/huggingface /app/cache/sentence_transformers
+
+ENV TRANSFORMERS_CACHE=/app/cache/huggingface
+ENV SENTENCE_TRANSFORMERS_HOME=/app/cache/sentence_transformers
+ENV HF_HOME=/app/cache/huggingface
+ENV PYTHONPATH="/app"
+
+# Pre-download the embedding model during build
+RUN python -c "\
+from sentence_transformers import SentenceTransformer; \
+SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2', \
+cache_folder='/app/cache/sentence_transformers'); \
+print('Model cached')" || echo "Model will download at runtime"
+
+# Copy application code only (data mounted as volumes)
+COPY main.py config.py rag_pipeline.py vector_search.py pipeline_config.py startup.sh /app/
+COPY app /app/app
+COPY static /app/static
+COPY frontend/build /app/frontend/build
+
+ENV VECTOR_STORE_PREBUILT=true
+
+EXPOSE 7860
+
+CMD ["python", "main.py"]
