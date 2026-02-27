@@ -3,7 +3,7 @@ OPTEEE - Options Trading Education Expert
 FastAPI Backend with React Frontend
 """
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Depends
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -12,9 +12,21 @@ from typing import List, Dict, Any, Optional
 import os
 import uvicorn
 from datetime import datetime
+from sqlalchemy.orm import Session
 
 from app.services.rag_service import RAGService
-from app.models.chat_models import ChatRequest, ChatResponse, HealthResponse
+from app.models.chat_models import (
+    ChatRequest,
+    ChatResponse,
+    HealthResponse,
+    ConversationDetail,
+    ConversationSummary,
+    ConversationMessage,
+)
+from app.db.init_db import init_db
+from app.db.database import get_db
+from app.services.conversation_service import ConversationService
+from app.services.history_utils import sanitize_history_content
 
 # Check if we're in test mode (no RAG initialization)
 TEST_MODE = os.getenv("TEST_MODE", "false").lower() == "true"
@@ -42,6 +54,7 @@ rag_service = None
 async def startup_event():
     """Initialize the RAG service on startup"""
     global rag_service
+    init_db()
     
     if TEST_MODE:
         print("🧪 Starting in TEST MODE - RAG service disabled")
@@ -63,7 +76,7 @@ async def health_check():
     )
 
 @app.post("/api/chat", response_model=ChatResponse)
-async def chat(request: ChatRequest):
+async def chat(request: ChatRequest, db: Session = Depends(get_db)):
     """Main chat endpoint for RAG queries"""
     
     if TEST_MODE:
@@ -96,9 +109,33 @@ This is a test response to validate the conversation history functionality. In p
         raise HTTPException(status_code=503, detail="RAG service not initialized")
     
     try:
-        # Extract conversation history if provided
-        conversation_history = request.conversation_history or []
-        
+        # Resolve or create persisted conversation for this chat turn.
+        conversation = None
+        if request.conversation_id:
+            conversation = ConversationService.get_conversation(db, request.conversation_id)
+            if not conversation:
+                raise HTTPException(status_code=404, detail="Conversation not found")
+        else:
+            conversation = ConversationService.create_conversation(db)
+
+        # Persist user message first.
+        ConversationService.add_message(db, conversation, "user", request.query)
+
+        # Prefer server-side history when conversation_id is present.
+        if request.conversation_id:
+            refreshed = ConversationService.get_conversation(db, conversation.id)
+            history_messages = refreshed.messages if refreshed else []
+            conversation_history = [
+                ConversationMessage(
+                    role=m.role,
+                    content=sanitize_history_content(m.role, m.content),
+                    timestamp=m.created_at.isoformat(),
+                )
+                for m in history_messages[:-1]  # exclude current user message
+            ]
+        else:
+            conversation_history = request.conversation_history or []
+
         result = await rag_service.process_query(
             query=request.query,
             provider=request.provider,
@@ -106,6 +143,10 @@ This is a test response to validate the conversation history functionality. In p
             format=request.format,
             conversation_history=conversation_history
         )
+
+        # Persist assistant output (answer + formatted sources for replay).
+        assistant_content = result["answer"] + (result.get("sources") or "")
+        ConversationService.add_message(db, conversation, "assistant", assistant_content)
         
         # Return clean response
         
@@ -113,22 +154,85 @@ This is a test response to validate the conversation history functionality. In p
             answer=result["answer"],
             sources=result["sources"],
             raw_sources=result["raw_sources"],
-            timestamp=datetime.now().isoformat()
+            timestamp=datetime.now().isoformat(),
+            conversation_id=conversation.id
         )
     
+    except HTTPException:
+        raise
     except Exception as e:
         print(f"❌ Error processing query: {e}")
         raise HTTPException(status_code=500, detail=f"Error processing query: {str(e)}")
 
+
+@app.post("/api/conversations", response_model=ConversationSummary)
+async def create_conversation(db: Session = Depends(get_db)):
+    conversation = ConversationService.create_conversation(db)
+    return ConversationSummary(
+        id=conversation.id,
+        title=conversation.title,
+        created_at=conversation.created_at.isoformat(),
+        updated_at=conversation.updated_at.isoformat(),
+    )
+
+
+@app.get("/api/conversations", response_model=List[ConversationSummary])
+async def list_conversations(limit: int = 20, db: Session = Depends(get_db)):
+    safe_limit = max(1, min(limit, 100))
+    conversations = ConversationService.list_conversations(db, limit=safe_limit)
+    return [
+        ConversationSummary(
+            id=c.id,
+            title=c.title,
+            created_at=c.created_at.isoformat(),
+            updated_at=c.updated_at.isoformat(),
+        )
+        for c in conversations
+    ]
+
+
+@app.get("/api/conversations/{conversation_id}", response_model=ConversationDetail)
+async def get_conversation(conversation_id: str, db: Session = Depends(get_db)):
+    conversation = ConversationService.get_conversation(db, conversation_id)
+    if not conversation:
+        raise HTTPException(status_code=404, detail="Conversation not found")
+
+    return ConversationDetail(
+        id=conversation.id,
+        title=conversation.title,
+        created_at=conversation.created_at.isoformat(),
+        updated_at=conversation.updated_at.isoformat(),
+        messages=[
+            ConversationMessage(
+                role=m.role,
+                content=m.content,
+                timestamp=m.created_at.isoformat(),
+            )
+            for m in conversation.messages
+        ],
+    )
+
 # Serve favicon.ico
 @app.get("/favicon.ico")
 async def serve_favicon():
-    """Serve the favicon"""
-    favicon_path = "favicon.ico"
-    if os.path.exists(favicon_path):
-        return FileResponse(favicon_path, media_type="image/x-icon")
-    else:
-        raise HTTPException(status_code=404, detail="Favicon not found")
+    """Serve the favicon (ICO preferred, SVG fallback)."""
+    ico_path = "favicon.ico"
+    svg_path = "favicon.svg"
+
+    if os.path.exists(ico_path):
+        return FileResponse(ico_path, media_type="image/x-icon")
+    if os.path.exists(svg_path):
+        return FileResponse(svg_path, media_type="image/svg+xml")
+    raise HTTPException(status_code=404, detail="Favicon not found")
+
+
+@app.get("/favicon.svg")
+async def serve_favicon_svg():
+    """Serve the SVG favicon directly."""
+    svg_path = "favicon.svg"
+    if os.path.exists(svg_path):
+        return FileResponse(svg_path, media_type="image/svg+xml")
+    raise HTTPException(status_code=404, detail="Favicon SVG not found")
 
 # Serve React static files (if they exist)
 if os.path.exists("frontend/build/static"):

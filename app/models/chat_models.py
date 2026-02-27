@@ -22,6 +22,10 @@ class ChatRequest(BaseModel):
         default=None, 
         description="Optional conversation history for context"
     )
+    conversation_id: Optional[str] = Field(
+        default=None,
+        description="Existing conversation ID to append messages to"
+    )
 
 class Source(BaseModel):
     """Model for source information (video or PDF)"""
@@ -62,6 +66,7 @@ class ChatResponse(BaseModel):
     sources: str = Field(..., description="Formatted HTML sources")
     raw_sources: List[Dict[str, Any]] = Field(default=[], description="Raw source data (video and PDF)")
     timestamp: str = Field(..., description="Response timestamp")
+    conversation_id: Optional[str] = Field(default=None, description="Conversation ID for this chat")
 
 class HealthResponse(BaseModel):
     """Response model for health check endpoint"""
@@ -74,3 +79,18 @@ class ErrorResponse(BaseModel):
     error: str = Field(..., description="Error message")
     detail: Optional[str] = Field(None, description="Error details")
     timestamp: str = Field(..., description="Error timestamp") 
+
+
+class ConversationSummary(BaseModel):
+    id: str
+    title: str
+    created_at: str
+    updated_at: str
+
+
+class ConversationDetail(BaseModel):
+    id: str
+    title: str
+    created_at: str
+    updated_at: str
+    messages: List[ConversationMessage]

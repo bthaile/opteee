@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>OPTEEE - Options Trading Education Expert</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
     <style>
         * {
             margin: 0;
@@ -935,16 +936,42 @@
             
             startNewConversation() {
                 this.currentConversation = {
-                    id: this.generateConversationId(),
+                    id: null,
                     messages: [],
                     isNewConversation: true
                 };
                 this.displayWelcomeMessage();
                 console.log(' New conversation started:', this.currentConversation.id);
             }
-            
-            generateConversationId() {
-                return 'conv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+
+            setConversationId(conversationId) {
+                this.currentConversation.id = conversationId || null;
+            }
+
+            loadConversation(conversation) {
+                this.currentConversation = {
+                    id: conversation.id,
+                    messages: Array.isArray(conversation.messages) ? conversation.messages : [],
+                    isNewConversation: false
+                };
+
+                this.displayWelcomeMessage();
+                this.renderMessages(this.currentConversation.messages);
+            }
+
+            renderMessages(messages) {
+                if (!messages || messages.length === 0) {
+                    this.displayWelcomeMessage();
+                    return;
+                }
+
+                const messagesContainer = document.getElementById('chat-messages');
+                if (!messagesContainer) return;
+                messagesContainer.innerHTML = '';
+
+                messages.forEach((msg) => {
+                    this.displayMessage(msg.role, msg.content, msg.timestamp);
+                });
             }
             
             addMessage(role, content, timestamp = null) {
@@ -1428,158 +1455,77 @@
             }
         }
         
-        // Enhanced Prompt History Management - UPDATED
+        // Conversation Sidebar Management (server-backed)
         class PromptManager {
             constructor() {
-                this.storageKey = 'opteee_conversation_history';
-                this.maxPrompts = 10;
+                this.conversations = [];
                 this.init();
             }
-            
-            init() {
-                this.displayPrompts();
+
+            async init() {
+                await this.refreshConversations();
                 this.testAPI();
             }
-            
-            getPrompts() {
+
+            async refreshConversations() {
+                const container = document.getElementById('prompts-list');
+                if (!container) return;
+
                 try {
-                    const stored = localStorage.getItem(this.storageKey);
-                    const parsed = stored ? JSON.parse(stored) : [];
-                    // Ensure all prompts are strings and filter out invalid data
-                    return Array.isArray(parsed) ? parsed.filter(p => typeof p === 'string' && p.trim() !== '') : [];
-                } catch (e) {
-                    console.error('Error loading prompts:', e);
-                    // Clear corrupted data
-                    localStorage.removeItem(this.storageKey);
-                    return [];
+                    const response = await fetch('/api/conversations?limit=25');
+                    if (!response.ok) throw new Error('Failed to load conversations');
+                    this.conversations = await response.json();
+                } catch (error) {
+                    console.error('Failed to refresh conversations:', error);
+                    this.conversations = [];
                 }
-            }
-            
-            savePrompts(prompts) {
-                try {
-                    localStorage.setItem(this.storageKey, JSON.stringify(prompts));
-                } catch (e) {
-                    console.error('Error saving prompts:', e);
-                }
-            }
-            
-            addInitialPrompt(prompt) {
-                // Only save initial prompts (first message of conversation)
-                // Validate prompt is a non-empty string
-                if (typeof prompt !== 'string' || !prompt.trim()) {
-                    console.warn('Invalid prompt passed to addInitialPrompt:', prompt);
-                    return;
-                }
-                
-                console.log(' AddInitialPrompt Debug:', { prompt: prompt });
-                let prompts = this.getPrompts();
-                console.log(' Current prompts before add:', prompts);
-                
-                // Remove duplicate if exists
-                prompts = prompts.filter(p => p !== prompt);
-                
-                // Add at beginning
-                prompts.unshift(prompt);
-                
-                // Keep only last maxPrompts
-                if (prompts.length > this.maxPrompts) {
-                    prompts = prompts.slice(0, this.maxPrompts);
-                }
-                
-                console.log(' Prompts after processing:', prompts);
-                this.savePrompts(prompts);
+
                 this.displayPrompts();
             }
-            
-            removePrompt(index) {
-                let prompts = this.getPrompts();
-                if (index >= 0 && index < prompts.length) {
-                    prompts.splice(index, 1);
-                    this.savePrompts(prompts);
-                    this.displayPrompts();
-                }
-            }
-            
+
             displayPrompts() {
                 const container = document.getElementById('prompts-list');
-                const prompts = this.getPrompts();
-                
-                console.log(' DisplayPrompts Debug:', {
-                    container: container ? 'found' : 'NOT FOUND',
-                    promptsCount: prompts.length,
-                    prompts: prompts
-                });
-                
-                if (!container) {
-                    console.error('❌ Prompts container not found!');
-                    return;
-                }
-                
-                if (prompts.length === 0) {
+                if (!container) return;
+
+                if (!this.conversations.length) {
                     container.innerHTML = '<div class="prompts-empty">No recent conversations</div>';
                     return;
                 }
-                
+
                 let html = '';
-                prompts.forEach((prompt, index) => {
-                    // Additional safety check - skip non-string prompts
-                    if (typeof prompt !== 'string') {
-                        console.warn('Skipping non-string prompt in display:', prompt);
-                        return;
-                    }
-                    
-                    const truncated = prompt.length > 60 ? prompt.substring(0, 57) + '...' : prompt;
+                this.conversations.forEach((conv, index) => {
+                    const title = (conv.title || 'Untitled conversation').trim();
+                    const truncated = title.length > 60 ? title.substring(0, 57) + '...' : title;
                     html += `
                         <div class="prompt-item" data-index="${index}">
-                            <div class="prompt-text" title="${this.escapeHtml(prompt)}">${this.escapeHtml(truncated)}</div>
-                            <button class="prompt-delete-btn" data-index="${index}" title="Remove prompt">×</button>
+                            <div class="prompt-text" title="${this.escapeHtml(title)}">${this.escapeHtml(truncated)}</div>
                         </div>
                     `;
                 });
-                
+
                 container.innerHTML = html;
-                
-                // Add event listeners after HTML is set
                 container.querySelectorAll('.prompt-item').forEach((item, index) => {
                     item.addEventListener('click', () => this.selectPrompt(index));
                 });
-                
-                container.querySelectorAll('.prompt-delete-btn').forEach((btn, index) => {
-                    btn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        this.deletePrompt(index);
-                    });
-                });
             }
-            
-            selectPrompt(index) {
-                const prompts = this.getPrompts();
-                if (index >= 0 && index < prompts.length) {
-                    const prompt = prompts[index];
-                    
-                    // Start a new conversation when selecting from sidebar
-                    startNewChat();
-                    
-                    const input = document.getElementById('user-input');
-                    if (input) {
-                        input.value = prompt;
-                        autoResizeTextarea(input);
-                        input.focus();
-                    }
+
+            async selectPrompt(index) {
+                if (index < 0 || index >= this.conversations.length) return;
+                const selected = this.conversations[index];
+
+                try {
+                    const response = await fetch(`/api/conversations/${selected.id}`);
+                    if (!response.ok) throw new Error('Failed to load conversation');
+                    const conversation = await response.json();
+
+                    conversationManager.loadConversation(conversation);
+                } catch (error) {
+                    console.error('Could not load conversation:', error);
                 }
             }
-            
-            deletePrompt(index) {
-                this.removePrompt(index);
-            }
-            
+
             escapeHtml(text) {
-                // Ensure text is a string
-                if (typeof text !== 'string') {
-                    console.warn('escapeHtml called with non-string value:', text);
-                    return String(text || '');
-                }
-                
+                if (typeof text !== 'string') return String(text || '');
                 const map = {
                     '&': '&amp;',
                     '<': '&lt;',
@@ -1589,13 +1535,11 @@
                 };
                 return text.replace(/[&<>"']/g, m => map[m]);
             }
-            
+
             async testAPI() {
                 try {
                     const response = await fetch('/api/health');
-                    if (response.ok) {
-                        console.log(' API is connected and healthy');
-                    } else {
+                    if (!response.ok) {
                         console.warn('⚠️ API health check failed');
                     }
                 } catch (error) {
@@ -1655,11 +1599,6 @@
             const userMessage = conversationManager.addMessage('user', query);
             conversationManager.displayMessage('user', query, userMessage.timestamp);
             
-            // Save to sidebar history only if it's the first message
-            if (isFirstMessage && promptManager) {
-                promptManager.addInitialPrompt(query);
-            }
-            
             // Clear input and disable button
             input.value = '';
             autoResizeTextarea(input);
@@ -1676,9 +1615,13 @@
                     provider: 'openai',
                     num_results: 5
                 };
+
+                if (conversationManager.currentConversation.id) {
+                    requestBody.conversation_id = conversationManager.currentConversation.id;
+                }
                 
                 // Include conversation history if not the first message
-                if (!isFirstMessage) {
+                if (!conversationManager.currentConversation.id && !isFirstMessage) {
                     // Include previous messages but not the current user message
                     // since the backend will process the current query separately
                     requestBody.conversation_history = conversationHistory.slice(0, -1);
@@ -1703,6 +1646,10 @@
                 }
                 
                 const data = await result.json();
+
+                if (data.conversation_id) {
+                    conversationManager.setConversationId(data.conversation_id);
+                }
                 
                 // Hide typing indicator before displaying response
                 conversationManager.hideTypingIndicator();
@@ -1738,6 +1685,10 @@
                 // Add assistant message to conversation and display
                 const assistantMessage = conversationManager.addMessage('assistant', responseContent);
                 conversationManager.displayMessage('assistant', responseContent, assistantMessage.timestamp);
+
+                if (promptManager && isFirstMessage) {
+                    await promptManager.refreshConversations();
+                }
                 
             } catch (error) {
                 // Hide typing indicator on error

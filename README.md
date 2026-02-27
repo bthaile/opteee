@@ -14,6 +14,7 @@ OPTEEE uses advanced natural language processing and vector similarity search to
 - **Video Integration**: Direct links to specific timestamps in source YouTube videos
 - **Research Paper Support**: Academic papers with page references and section context
 - **Chat Interface**: Modern, responsive chat UI with conversation history
+- **Persistent Conversation History**: Full user/assistant threads stored in SQL (Postgres recommended)
 - **Source Citations**: Every answer includes clickable references with timestamps or page numbers
 - **Context-Aware**: Maintains conversation history for follow-up questions
 - **Responsive Design**: Works seamlessly on desktop and mobile devices
@@ -92,10 +93,20 @@ Use `requirements-serve.txt` for serving only. The full `requirements.txt` inclu
       "provider": "claude",
       "num_results": 5,
       "format": "html",
-      "conversation_history": []
+      "conversation_history": [],
+      "conversation_id": "optional-existing-conversation-id"
     }
     ```
-  - Returns answer with sources and timestamps
+  - Returns answer with sources, timestamps, and `conversation_id`
+
+- **POST `/api/conversations`** - Create a new persisted conversation
+  - Returns conversation metadata (`id`, `title`, timestamps)
+
+- **GET `/api/conversations?limit=25`** - List recent conversations
+  - Returns newest-first conversation summaries for sidebar/history UIs
+
+- **GET `/api/conversations/{conversation_id}`** - Load one conversation with full message history
+  - Returns all persisted `user` and `assistant` messages for replay/rebuild
 
 - **GET `/`** - Serves the React frontend application
 
@@ -111,10 +122,13 @@ opteee/
 ├── rebuild_vector_store.py      # Vector store rebuilding
 ├── process_pdfs.py              # PDF semantic chunking utility
 ├── app/
+│   ├── db/                      # SQLAlchemy engine, models, and DB init
 │   ├── models/                  # Pydantic models
 │   │   └── chat_models.py       # Chat request/response models (supports video + PDF)
 │   └── services/                # Business logic services
 │       ├── rag_service.py       # RAG service implementation
+│       ├── conversation_service.py # Conversation/message persistence service
+│       ├── history_utils.py     # History sanitization for prompt context
 │       └── formatters.py        # Response formatting (HTML + Discord)
 ├── frontend/
 │   └── build/                   # React production build
@@ -133,7 +147,8 @@ opteee/
 ├── Dockerfile.serve             # Slim Docker image (serving only, CPU-only PyTorch)
 ├── docker-compose.yml           # Local Docker serving with resource limits
 ├── requirements.txt             # Full dependencies (pipeline + serving)
-└── requirements-serve.txt       # Slim dependencies (serving only)
+├── requirements-serve.txt       # Slim dependencies (serving only)
+└── tests/                       # Unit tests for persistence and history logic
 ```
 
 ## Key Technologies
@@ -309,7 +324,18 @@ Two Dockerfiles are provided:
 # .env file (see .env.example)
 CLAUDE_API_KEY=...           # Anthropic API key (at least one LLM key required)
 OPENAI_API_KEY=...           # OpenAI API key (optional)
+DATABASE_URL=...             # Optional; enables persisted conversation history (Postgres recommended)
 ```
+
+For Docker + host Postgres on macOS, use:
+
+```bash
+DATABASE_URL=postgresql+psycopg://postgres:postgres@host.docker.internal:5432/opteee
+```
+
+Notes:
+- If `DATABASE_URL` is not set, OPTEEE falls back to local SQLite (`opteee.db`).
+- Conversation tables are created automatically on app startup.
 
 ### Resource Limits
 

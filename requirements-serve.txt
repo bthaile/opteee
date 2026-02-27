@@ -10,7 +10,7 @@ python-multipart==0.0.20
 # ML / Embeddings
 sentence-transformers>=2.5.1
 faiss-cpu==1.7.4
-numpy>=1.26.2
+numpy>=1.26.2,<2.0
 
 # LLM providers
 langchain==0.3.21
@@ -31,3 +31,5 @@ markdown
 beautifulsoup4>=4.12.2
 pydantic==2.10.6
 pydantic-settings==2.8.1
+SQLAlchemy==2.0.39
+psycopg[binary]==3.2.6
