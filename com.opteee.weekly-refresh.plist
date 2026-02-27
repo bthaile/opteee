@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.opteee.weekly-refresh</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>/Users/bradfordhaile/clawd/opteee/weekly-refresh.sh</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/bradfordhaile/clawd/opteee</string>
+
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Weekday</key>
+    <integer>0</integer>
+    <key>Hour</key>
+    <integer>23</integer>
+    <key>Minute</key>
+    <integer>0</integer>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/Users/bradfordhaile/clawd/opteee/logs/weekly-refresh.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/bradfordhaile/clawd/opteee/logs/weekly-refresh.err.log</string>
+
+  <key>RunAtLoad</key>
+  <false/>
+</dict>
+</plist>

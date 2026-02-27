@@ -1,15 +1,3 @@
----
-title: opteee
-emoji: 🔥
-colorFrom: blue
-colorTo: red
-sdk: docker
-app_port: 7860
-pinned: false
-env:
-  - PYTHONPATH=/app
----
-
 # OPTEEE - Options Trading Education Expert
 
 A powerful semantic search application providing intelligent Q&A across a curated collection of options trading educational content. Built with modern technologies for fast, accurate, and context-aware responses.
@@ -47,7 +35,7 @@ OPTEEE draws from two primary sources:
 - **Frontend**: React with modern UI components
 - **Search Engine**: Sentence-transformers with FAISS vector database
 - **NLP Model**: all-MiniLM-L6-v2 for semantic embeddings
-- **Deployment**: Docker containerization for easy deployment
+- **Deployment**: Docker containerization with resource-limited local serving
 
 ## Quick Start
 
@@ -57,43 +45,37 @@ OPTEEE draws from two primary sources:
 - Docker (optional, for containerized deployment)
 - Git
 
-### Local Development Setup
+### Docker (Recommended)
 
 1. **Clone the repository**:
 ```bash
-git clone https://github.com/yourusername/opteee.git
+git clone https://github.com/bthaile/opteee.git
 cd opteee
 ```
 
-2. **Install dependencies**:
+2. **Create your `.env` file**:
 ```bash
-pip install -r requirements.txt
+cp .env.example .env
+# Edit .env with your API key(s)
 ```
 
-3. **Run the development server**:
+3. **Build and run**:
 ```bash
-python main.py
+docker compose up --build
 ```
 
 The application will be available at `http://localhost:7860`
 
-### Docker Deployment
+The Docker setup uses `Dockerfile.serve` — a slim image with CPU-only PyTorch, no Whisper/Selenium overhead, and mounts the pre-built vector store as a volume. Resource limits (2GB RAM, 2 CPUs) are configured in `docker-compose.yml`.
 
-Build and run with Docker:
-
-```bash
-# Build the Docker image
-docker build -t opteee .
-
-# Run the container
-docker run -p 7860:7860 opteee
-```
-
-Or use Docker Compose:
+### Local Development (Without Docker)
 
 ```bash
-docker-compose up
+pip install -r requirements-serve.txt
+python main.py
 ```
+
+Use `requirements-serve.txt` for serving only. The full `requirements.txt` includes pipeline dependencies (Whisper, YouTube downloaders) needed for transcript processing.
 
 ## API Documentation
 
@@ -107,9 +89,9 @@ docker-compose up
     ```json
     {
       "query": "What is a covered call?",
-      "provider": "huggingface",
+      "provider": "claude",
       "num_results": 5,
-      "format": "detailed",
+      "format": "html",
       "conversation_history": []
     }
     ```
@@ -147,9 +129,11 @@ opteee/
 │   └── ...                      # Bot configuration files
 ├── docs/                        # Documentation
 ├── archive/                     # Archived utilities and scripts
-├── Dockerfile                   # Docker configuration
-├── docker-compose.yml           # Docker Compose configuration
-└── requirements.txt             # Python dependencies
+├── Dockerfile                   # Production Docker image (full pipeline)
+├── Dockerfile.serve             # Slim Docker image (serving only, CPU-only PyTorch)
+├── docker-compose.yml           # Local Docker serving with resource limits
+├── requirements.txt             # Full dependencies (pipeline + serving)
+└── requirements-serve.txt       # Slim dependencies (serving only)
 ```
 
 ## Key Technologies
@@ -159,7 +143,7 @@ opteee/
 - **[Sentence Transformers](https://www.sbert.net/)** - State-of-the-art sentence embeddings
 - **[FAISS](https://github.com/facebookresearch/faiss)** - Efficient similarity search and clustering
 - **[Docker](https://www.docker.com/)** - Containerization platform
-- **[HuggingFace](https://huggingface.co/)** - Model hosting and deployment
+- **[LangChain](https://www.langchain.com/)** - LLM orchestration and RAG pipeline
 
 ## Development Workflow
 
@@ -167,7 +151,7 @@ opteee/
 2. **Frontend Changes**: Update React components in `frontend/src/` (requires separate build)
 3. **Testing**: Run locally with `python main.py`
 4. **Vector Store Updates**: Rebuild with `python rebuild_vector_store.py`
-5. **Deploy**: Build and push Docker image
+5. **Deploy**: `docker compose up --build`
 
 ## Configuration
 
@@ -192,18 +176,12 @@ The knowledge base is automatically updated every Sunday at 8:00 PM UTC (3:00 PM
 2. **Transcript Generation** - Creates text transcripts from videos using YouTube API and Whisper
 3. **Text Processing** - Chunks transcripts into searchable segments (250 words with 50-word overlap)
 4. **Repository Update** - Commits new transcripts and processed data to the repository
-5. **Deployment Trigger** - Automatically triggers HuggingFace Space deployment
-6. **Vector Store Rebuild** - HuggingFace rebuilds the FAISS vector database during Docker build
 
-**Processing Pipeline:**
-```
-GitHub Actions:                           HuggingFace Spaces:
-┌─────────────────────┐                  ┌──────────────────────┐
-│ 1. Video Discovery  │                  │ 5. Docker Build      │
-│ 2. Transcripts      │  ───(push)───>   │ 6. Vector Store      │
-│ 3. Text Processing  │                  │ 7. Deploy App        │
-│ 4. Commit & Push    │                  └──────────────────────┘
-└─────────────────────┘
+After the weekly pipeline commits new transcripts, rebuild the vector store locally to make new content searchable:
+
+```bash
+python rebuild_vector_store.py
+docker compose up --build
 ```
 
 ### Manual Workflow Triggering
@@ -248,29 +226,6 @@ The automated pipeline is configured in `.github/workflows/process-transcripts.y
 
 **Required Secrets:**
 - `YOUTUBE_API_KEY` - For accessing YouTube API to fetch video metadata and transcripts
-- `HF_TOKEN` - For deploying to HuggingFace Spaces
-
-### Deployment Pipeline
-
-After transcripts are processed, the **Deploy to Hugging Face Space** workflow automatically:
-
-1. **Triggers On:**
-   - Push to `main` branch
-   - Manual trigger via workflow dispatch
-   - Automatic trigger after transcript updates
-
-2. **Deployment Steps:**
-   - Checks out the latest code
-   - Creates Docker startup script
-   - Pushes to HuggingFace Space repository
-   - HuggingFace rebuilds Docker image
-   - Vector store is created during image build
-   - Application is automatically redeployed
-
-3. **Result:**
-   - New transcripts are searchable within minutes
-   - Zero-downtime deployment
-   - Automatic rollback on failure
 
 ### Monitoring Updates
 
@@ -280,10 +235,8 @@ After transcripts are processed, the **Deploy to Hugging Face Space** workflow a
   - Number of videos discovered
   - Transcripts generated
   - Processed chunks created
-  - Deployment status
 
-**Verify Deployment:**
-- Check HuggingFace Space build logs
+**Verify Locally:**
 - Test the `/api/health` endpoint
 - Run a sample query to verify new content is searchable
 
@@ -317,7 +270,7 @@ To add academic papers or PDF documents to the knowledge base:
    git push
    ```
 
-4. **Automatic deployment**: The push triggers HuggingFace rebuild with new papers
+4. **Rebuild vector store**: `python rebuild_vector_store.py && docker compose up --build`
 
 **PDF Processing Features:**
 - **Semantic chunking**: Preserves paragraph boundaries and section context
@@ -333,7 +286,7 @@ To add academic papers or PDF documents to the knowledge base:
 **If automated updates fail:**
 
 1. **Check GitHub Actions logs** - View detailed error messages in the workflow run
-2. **Verify secrets** - Ensure `YOUTUBE_API_KEY` and `HF_TOKEN` are valid
+2. **Verify secrets** - Ensure `YOUTUBE_API_KEY` is valid
 3. **Check API quotas** - YouTube API has daily limits
 4. **Manual rebuild** - Trigger the workflow manually if the scheduled run missed
 5. **Local testing** - Run the pipeline locally to debug issues
@@ -343,21 +296,85 @@ To add academic papers or PDF documents to the knowledge base:
 - **Transcripts not available** - Some videos may not have captions enabled
 - **Long processing times** - Large batches may take 1-2 hours
 
-## Docker Integration
+## Docker Setup
 
-The project includes comprehensive Docker support:
+Two Dockerfiles are provided:
 
-- **Dockerfile**: Production-ready Docker image
-- **docker-compose.yml**: Multi-service orchestration
-- **docker-compose.dev.yml**: Development configuration
+- **`Dockerfile.serve`** (default in docker-compose) - Slim image for serving: CPU-only PyTorch, no Whisper/Selenium, mounts pre-built vector store
+- **`Dockerfile`** - Full image for production: includes vector store build step, all pipeline dependencies
 
 ### Environment Variables
 
 ```bash
-PORT=7860                    # Application port
-PYTHONPATH=/app              # Python module path
-TEST_MODE=false              # Enable test mode (no RAG initialization)
+# .env file (see .env.example)
+CLAUDE_API_KEY=...           # Anthropic API key (at least one LLM key required)
+OPENAI_API_KEY=...           # OpenAI API key (optional)
 ```
+
+### Resource Limits
+
+Docker Compose is configured with sensible limits for local development:
+- **Memory:** 2GB
+- **CPUs:** 2
+
+## Local Auto-Refresh (macOS launchd)
+
+Use this when running OPTEEE locally with Docker and you want an automatic weekly refresh that:
+1. Pulls latest changes from GitHub
+2. Rebuilds/restarts the Docker service
+3. Verifies `/api/health` on port `7860`
+
+### Files to keep in this repo
+
+- `weekly-refresh.sh` - refresh script used by launchd
+- `com.opteee.weekly-refresh.plist` - launchd job definition (template tracked in git)
+
+### One-time setup
+
+```bash
+cd /Users/bradfordhaile/clawd/opteee
+mkdir -p logs
+chmod +x weekly-refresh.sh
+cp com.opteee.weekly-refresh.plist ~/Library/LaunchAgents/com.opteee.weekly-refresh.plist
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.opteee.weekly-refresh.plist
+launchctl enable gui/$(id -u)/com.opteee.weekly-refresh
+```
+
+### Schedule
+
+The tracked plist is configured to run every Sunday at 11:00 PM local time:
+- `Weekday=0` (Sunday)
+- `Hour=23`
+- `Minute=0`
+
+### Useful operations
+
+```bash
+# Run immediately (manual test)
+launchctl kickstart -k gui/$(id -u)/com.opteee.weekly-refresh
+
+# Check status
+launchctl print gui/$(id -u)/com.opteee.weekly-refresh
+
+# Disable/enable
+launchctl disable gui/$(id -u)/com.opteee.weekly-refresh
+launchctl enable gui/$(id -u)/com.opteee.weekly-refresh
+
+# Reload after plist edits
+launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.opteee.weekly-refresh.plist
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.opteee.weekly-refresh.plist
+```
+
+### Logs
+
+Launchd output logs are written to:
+- `logs/weekly-refresh.out.log`
+- `logs/weekly-refresh.err.log`
+
+### Notes
+
+- The script skips `git pull` if your repo has uncommitted changes to avoid clobbering local edits.
+- Keep Docker Desktop running so scheduled refresh jobs can rebuild/restart successfully.
 
 ## Discord Bot
 
@@ -369,7 +386,6 @@ See `discord/README.md` for setup instructions.
 
 - `docs/BEGINNER_GUIDE.md` - Getting started guide
 - `docs/DEPLOYMENT_STEPS.md` - Deployment instructions
-- `docs/HUGGINGFACE_SETUP.md` - HuggingFace Spaces setup
 - `discord/README.md` - Discord bot setup
 
 ## Contributing
