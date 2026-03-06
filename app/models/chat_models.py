@@ -2,9 +2,15 @@
 Pydantic models for API requests and responses
 """
 
+import os
 from pydantic import BaseModel, Field
 from typing import List, Dict, Any, Optional
 from datetime import datetime
+
+
+def _default_provider() -> str:
+    return os.getenv("LLM_PROVIDER", "claude")
+
 
 class ConversationMessage(BaseModel):
     """Model for individual conversation messages"""
@@ -15,7 +21,7 @@ class ConversationMessage(BaseModel):
 class ChatRequest(BaseModel):
     """Request model for chat endpoint"""
     query: str = Field(..., description="User's question", min_length=1)
-    provider: str = Field(default="claude", description="LLM provider to use")
+    provider: str = Field(default_factory=_default_provider, description="LLM provider (openai, claude, ollama)")
     num_results: int = Field(default=10, description="Number of search results to retrieve", ge=1, le=20)
     format: str = Field(
         default="html",

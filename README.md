@@ -344,6 +344,36 @@ Docker Compose is configured with sensible limits for local development:
 - **Memory:** 2GB
 - **CPUs:** 2
 
+### Restart and Rebuild
+
+| Action | Command |
+|--------|---------|
+| **Stop containers** | `docker compose down` |
+| **Stop and remove volumes** | `docker compose down -v` |
+| **Build and start** | `docker compose up --build` |
+| **Build and start (detached)** | `docker compose up --build -d` |
+| **Clean rebuild** (no cache) | `docker compose build --no-cache && docker compose up -d` |
+| **View logs** | `docker compose logs -f` |
+| **View last 50 lines** | `docker compose logs --tail 50` |
+
+**Typical workflow after code or config changes:**
+
+```bash
+# Stop current containers
+docker compose down
+
+# Rebuild and restart
+docker compose up --build -d
+```
+
+**After vector store rebuild** (e.g. after `python rebuild_vector_store.py`):
+
+```bash
+docker compose up --build -d
+```
+
+The `--build` flag ensures the image is rebuilt with any code changes; the vector store is mounted as a volume, so a rebuild picks up updated `vector_store/` files without rebuilding the image.
+
 ## Local Auto-Refresh (macOS launchd)
 
 Use this when running OPTEEE locally with Docker and you want an automatic weekly refresh that:
@@ -402,6 +432,7 @@ Launchd output logs are written to:
 
 - The script skips `git pull` if your repo has uncommitted changes to avoid clobbering local edits.
 - Keep Docker Desktop running so scheduled refresh jobs can rebuild/restart successfully.
+- **macOS compatibility**: These `launchctl` commands use the modern `bootstrap`/`bootout` syntax (not legacy `load`/`unload`) and work on macOS Tahoe 26 and earlier.
 
 ## Bots
 

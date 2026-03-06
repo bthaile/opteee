@@ -19,9 +19,10 @@ def main():
     try:
         # Import after loading env vars
         from rag_pipeline import (
-            validate_system_configuration, 
+            validate_system_configuration,
             get_available_providers,
             test_model_temperature_support,
+            _get_model_for_provider,
             DEFAULT_LLM_MODEL,
             DEFAULT_CLAUDE_MODEL,
             DEFAULT_TEMPERATURE
@@ -52,8 +53,8 @@ def main():
         print("\n2. API Key Check:")
         providers = get_available_providers()
         if not providers:
-            print("   ❌ No API keys found")
-            print("    Please set OPENAI_API_KEY or ANTHROPIC_API_KEY in .env file")
+            print("   ❌ No LLM provider configured")
+            print("    Set OPENAI_API_KEY, CLAUDE_API_KEY, or OLLAMA_BASE_URL/LLM_PROVIDER=ollama")
         else:
             for provider in providers:
                 print(f"    {provider.upper()} API key found")
@@ -76,7 +77,16 @@ def main():
                 print(f"    {DEFAULT_CLAUDE_MODEL} supports temperature")
             else:
                 print(f"   ⚠️ {DEFAULT_CLAUDE_MODEL} doesn't support temperature (fallback will be used)")
-        
+
+        if "ollama" in providers:
+            ollama_model = _get_model_for_provider("ollama")
+            print(f"   🧪 Testing Ollama model: {ollama_model}")
+            supports_temp = test_model_temperature_support(ollama_model, "ollama")
+            if supports_temp:
+                print(f"    {ollama_model} supports temperature")
+            else:
+                print(f"   ⚠️ {ollama_model} doesn't support temperature (fallback will be used)")
+
         # 4. Full system validation
         print("\n4. Full System Validation:")
         success = validate_system_configuration(verbose=True)
@@ -92,7 +102,7 @@ def main():
         print("\n6. Recommendations:")
         if success:
             print("   🎉 System is ready! No critical issues found.")
-            print(f"    Default models: OpenAI={DEFAULT_LLM_MODEL}, Claude={DEFAULT_CLAUDE_MODEL}")
+            print(f"    Default models: OpenAI={DEFAULT_LLM_MODEL}, Claude={DEFAULT_CLAUDE_MODEL}, Ollama={_get_model_for_provider('ollama')}")
             print(f"   🌡️ Default temperature: {DEFAULT_TEMPERATURE}")
         else:
             print("   ⚠️ Some issues detected. Check the messages above.")

@@ -3,6 +3,7 @@ import sys
 import json
 import pickle
 import argparse
+from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeoutError
 from typing import List, Dict, Any, Tuple
 import numpy as np
 import faiss
@@ -30,6 +31,9 @@ from langchain_openai import ChatOpenAI
 # Claude imports
 from langchain_anthropic import ChatAnthropic
 
+# Ollama imports
+from langchain_ollama import ChatOllama
+
 # Constants
 VECTOR_STORE_DIR = VECTOR_DIR
 TMP_VECTOR_STORE_DIR = "/tmp/vector_store"
@@ -40,32 +44,138 @@ INDEX_PATH = os.path.join(VECTOR_STORE_DIR, "transcript_index.faiss")
 DEFAULT_TOP_K = 5
 DEFAULT_LLM_MODEL = "gpt-5-mini"  # Current OpenAI model that supports temperature
 DEFAULT_CLAUDE_MODEL = "claude-haiku-4-5"  # Latest Claude Sonnet 4 model
+DEFAULT_OLLAMA_MODEL = "gemma2:2b"  # Ollama model (e.g. gemma2:2b, gemma3:270m)
+# Fallback models when primary Ollama model returns 404 (not installed)
+OLLAMA_FALLBACK_MODELS = ["gemma2:2b", "llama3.2", "llama3.2:3b", "mistral", "phi3", "llama2"]
 DEFAULT_TEMPERATURE = 0.2
-DEFAULT_LLM_PROVIDER = "claude"  # "openai" or "claude"
+
+# Models that do NOT support temperature - omit temperature param to avoid API errors.
+# Use substring match (e.g. "o1" matches "o1-mini", "o1-preview").
+MODELS_NO_TEMPERATURE = {
+    "openai": [
+        "o1-preview", "o1-mini", "o1-pro", "o1",
+        "o2", "o2-mini",
+        "o3-mini", "o3-medium", "o3", "o3-pro",
+        "o4-mini", "o4", "o4-pro",
+        "gpt-4o-mini", "gpt-5-mini",
+    ],
+    "claude": [
+        # Claude generally supports temperature; add exceptions if discovered
+    ],
+    "ollama": [
+        "gemma3:270m", "gemma3:1b",  # Gemma 3 small models may not support temp
+        # Add others as discovered
+    ],
+}
+DEFAULT_LLM_PROVIDER = "claude"  # "openai", "claude", or "ollama"
+DEFAULT_LLM_TIMEOUT_SECONDS = 60  # Timeout before falling back to next provider
 
 # Load environment variables
 load_dotenv()
 
+
+def _get_timeout_seconds() -> int:
+    """Timeout from env, else default."""
+    try:
+        return int(os.getenv("LLM_TIMEOUT_SECONDS", str(DEFAULT_LLM_TIMEOUT_SECONDS)))
+    except ValueError:
+        return DEFAULT_LLM_TIMEOUT_SECONDS
+
+
+def _get_fallback_providers(primary_provider: str) -> List[str]:
+    """Return providers to try as fallbacks after primary times out."""
+    env_fallback = os.getenv("LLM_FALLBACK_PROVIDER", "").strip()
+    if env_fallback:
+        return [f.strip() for f in env_fallback.split(",") if f.strip() and f.strip() != primary_provider]
+    available = get_available_providers()
+    return [p for p in available if p != primary_provider]
+
+
+def invoke_chain_with_timeout(chain, query: str, timeout: int = None) -> str:
+    """
+    Invoke the RAG chain with a timeout. Raises TimeoutError if the LLM
+    does not respond within the given seconds.
+    """
+    timeout = timeout or _get_timeout_seconds()
+    with ThreadPoolExecutor(max_workers=1) as executor:
+        future = executor.submit(chain.invoke, query)
+        try:
+            return future.result(timeout=timeout)
+        except FuturesTimeoutError:
+            raise TimeoutError(f"LLM did not respond within {timeout} seconds")
+
+
+def _get_provider() -> str:
+    """Provider from env, else default."""
+    return os.getenv("LLM_PROVIDER", DEFAULT_LLM_PROVIDER)
+
+
+def _get_model_for_provider(provider: str) -> str:
+    """Model from env or provider default. LLM_MODEL only applies to primary provider."""
+    primary = _get_provider()
+    env_model = os.getenv("LLM_MODEL")
+    if env_model and provider == primary:
+        return env_model
+    if provider == "openai":
+        return os.getenv("OPENAI_MODEL") or DEFAULT_LLM_MODEL
+    if provider == "claude":
+        return os.getenv("CLAUDE_MODEL") or DEFAULT_CLAUDE_MODEL
+    if provider == "ollama":
+        return os.getenv("OLLAMA_MODEL") or DEFAULT_OLLAMA_MODEL
+    return DEFAULT_LLM_MODEL
+
+
+def _is_model_not_found_error(exc: Exception) -> bool:
+    """Detect 404 / model not found errors from LLM providers."""
+    msg = str(exc).lower()
+    return (
+        "404" in msg
+        or "not_found" in msg
+        or "model:" in msg and ("not found" in msg or "not_found" in msg)
+    )
+
+
+def model_supports_temperature(provider: str, model: str) -> bool:
+    """
+    Check if a model supports the temperature parameter.
+    Uses MODELS_NO_TEMPERATURE mapping - returns False for known incompatible models.
+    Env override: OLLAMA_NO_TEMPERATURE_MODELS, OPENAI_NO_TEMPERATURE_MODELS, CLAUDE_NO_TEMPERATURE_MODELS
+    (comma-separated) extend the built-in list.
+    """
+    no_temp = list(MODELS_NO_TEMPERATURE.get(provider, []))
+    env_key = f"{provider.upper()}_NO_TEMPERATURE_MODELS"
+    env_extra = os.getenv(env_key, "").strip()
+    if env_extra:
+        no_temp.extend(m.strip() for m in env_extra.split(",") if m.strip())
+    model_lower = model.lower()
+    if any(pat in model_lower for pat in no_temp):
+        return False
+    return True
+
+
 def test_model_temperature_support(model_name: str, provider: str) -> bool:
     """
-    Test if a model supports the temperature parameter without failing the application.
-    Returns True if temperature is supported, False otherwise.
+    Test if a model supports the temperature parameter.
+    Uses MODELS_NO_TEMPERATURE mapping first; only calls API for unknown models.
     """
+    if not model_supports_temperature(provider, model_name):
+        return False
     try:
         if provider == "openai":
-            # Quick test with minimal parameters
             ChatOpenAI(model_name=model_name, temperature=0.1, max_tokens=1)
             return True
         elif provider == "claude":
             ChatAnthropic(model_name=model_name, temperature=0.1, max_tokens=1)
             return True
+        elif provider == "ollama":
+            base_url = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
+            ChatOllama(model=model_name, base_url=base_url, temperature=0.1)
+            return True
     except Exception as e:
         error_msg = str(e).lower()
         if any(indicator in error_msg for indicator in ["temperature", "unsupported parameter", "invalid parameter"]):
             return False
-        # If it's a different error (like auth), we can't determine temperature support
-        return True  # Assume it supports temperature, let the main function handle auth errors
-    
+        return True  # Unknown error - assume support, let main flow handle
     return True
 
 def validate_model_configuration(provider: str, model: str, temperature: float) -> dict:
@@ -156,15 +266,19 @@ def normalize_upload_date(value: Any) -> str:
         return ""
 
 def get_available_providers() -> List[str]:
-    """Get a list of available LLM providers based on API keys"""
+    """Get a list of available LLM providers based on API keys and config."""
     providers = []
-    
+
     if os.getenv("OPENAI_API_KEY"):
         providers.append("openai")
-        
+
     if os.getenv("CLAUDE_API_KEY") or os.getenv("ANTHROPIC_API_KEY"):
         providers.append("claude")
-        
+
+    # Ollama: available when OLLAMA_BASE_URL is set or LLM_PROVIDER=ollama
+    if os.getenv("OLLAMA_BASE_URL") or _get_provider() == "ollama":
+        providers.append("ollama")
+
     return providers
 
 def get_vector_store_path(filename):
@@ -419,90 +533,30 @@ class CustomFAISSRetriever:
         return documents[:self.top_k]
 
 def create_openai_model_with_fallback(model: str, temperature: float) -> ChatOpenAI:
-    """
-    Create OpenAI model with comprehensive temperature error handling.
-    This function ensures we NEVER get temperature errors by using multiple fallback layers.
-    """
-    
-    # Layer 1: Known models that don't support temperature (fastest check)
-    no_temperature_models = [
-        "o1-preview", "o1-mini", "o1-pro", "o1", 
-        "o3-mini", "o3-medium", "o3", "o3-pro", 
-        "o4-mini", "o4", "o4-pro",
-        "gpt-4o-mini", "gpt-5-mini"  # Some versions don't support temperature
-    ]
-    
-    # Check if model is known to not support temperature
-    is_known_no_temp = any(no_temp_model in model.lower() for no_temp_model in no_temperature_models)
-    
-    if is_known_no_temp:
-        print(f" Using OpenAI model: {model} (temperature not supported)")
-        return ChatOpenAI(model_name=model)
-    
-    # Layer 2: Try with temperature first (most models support it)
-    try:
-        llm = ChatOpenAI(model_name=model, temperature=temperature)
+    """Create OpenAI model. Uses MODELS_NO_TEMPERATURE mapping to avoid temp errors."""
+    if model_supports_temperature("openai", model):
         print(f" Using OpenAI model: {model} (temperature: {temperature})")
-        return llm
-    except Exception as e:
-        error_msg = str(e).lower()
-        
-        # Layer 3: Check for specific temperature-related errors
-        temperature_error_indicators = [
-            "temperature", "unsupported parameter", "invalid parameter",
-            "not supported", "temperature is not supported"
-        ]
-        
-        is_temp_error = any(indicator in error_msg for indicator in temperature_error_indicators)
-        
-        if is_temp_error:
-            print(f"⚠️ Model {model} doesn't support temperature parameter")
-            print(f"🔄 Retrying without temperature...")
-            try:
-                llm = ChatOpenAI(model_name=model)
-                print(f" Using OpenAI model: {model} (no temperature)")
-                return llm
-            except Exception as fallback_error:
-                print(f"❌ Failed to create model without temperature: {fallback_error}")
-                raise fallback_error
-        else:
-            # Layer 4: Unknown error - still try without temperature as last resort
-            print(f"⚠️ Unknown error with model {model}: {e}")
-            print(f"🔄 Attempting fallback without temperature...")
-            try:
-                llm = ChatOpenAI(model_name=model)
-                print(f" Fallback successful: {model} (no temperature)")
-                return llm
-            except Exception as final_error:
-                print(f"❌ All fallback attempts failed for model {model}")
-                print(f"Original error: {e}")
-                print(f"Fallback error: {final_error}")
-                raise final_error
+        return ChatOpenAI(model_name=model, temperature=temperature)
+    print(f" Using OpenAI model: {model} (temperature not supported)")
+    return ChatOpenAI(model_name=model)
+
+def create_ollama_model_with_fallback(model: str, temperature: float):
+    """Create Ollama model with base_url from env. Uses MODELS_NO_TEMPERATURE mapping."""
+    base_url = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434").rstrip("/")
+    if model_supports_temperature("ollama", model):
+        print(f" Using Ollama model: {model} at {base_url} (temperature: {temperature})")
+        return ChatOllama(model=model, base_url=base_url, temperature=temperature)
+    print(f" Using Ollama model: {model} at {base_url} (temperature not supported)")
+    return ChatOllama(model=model, base_url=base_url)
+
 
 def create_claude_model_with_fallback(model: str, temperature: float) -> ChatAnthropic:
-    """
-    Create Claude model with error handling (Claude generally supports temperature).
-    """
-    try:
-        llm = ChatAnthropic(model_name=model, temperature=temperature)
+    """Create Claude model. Uses MODELS_NO_TEMPERATURE mapping."""
+    if model_supports_temperature("claude", model):
         print(f" Using Claude model: {model} (temperature: {temperature})")
-        return llm
-    except Exception as e:
-        error_msg = str(e).lower()
-        
-        if "temperature" in error_msg:
-            print(f"⚠️ Claude model {model} doesn't support temperature parameter")
-            print(f"🔄 Retrying without temperature...")
-            try:
-                llm = ChatAnthropic(model_name=model)
-                print(f" Using Claude model: {model} (no temperature)")
-                return llm
-            except Exception as fallback_error:
-                print(f"❌ Failed to create Claude model: {fallback_error}")
-                raise fallback_error
-        else:
-            print(f"❌ Error creating Claude model {model}: {e}")
-            raise e
+        return ChatAnthropic(model_name=model, temperature=temperature)
+    print(f" Using Claude model: {model} (temperature not supported)")
+    return ChatAnthropic(model_name=model)
 
 def format_documents(docs: List[Document]) -> str:
     """Format documents for the prompt, adapting metadata to source type."""
@@ -555,10 +609,9 @@ def validate_system_configuration(verbose: bool = False) -> bool:
     
     print(" Validating system configuration...")
     
-    # Check API keys
     available_providers = get_available_providers()
     if not available_providers:
-        print("❌ No API keys found. Please set OPENAI_API_KEY or ANTHROPIC_API_KEY.")
+        print("❌ No LLM provider configured. Set OPENAI_API_KEY, CLAUDE_API_KEY, or OLLAMA_BASE_URL/LLM_PROVIDER=ollama.")
         return False
     
     print(f" Available providers: {', '.join(available_providers)}")
@@ -591,7 +644,17 @@ def validate_system_configuration(verbose: bool = False) -> bool:
         
         if not config["supports_temperature"]:
             print(f"ℹ️ Claude model {DEFAULT_CLAUDE_MODEL} doesn't support temperature (will use fallback)")
-    
+
+    if "ollama" in available_providers:
+        ollama_model = _get_model_for_provider("ollama")
+        if verbose:
+            print(f"🧪 Testing Ollama default model: {ollama_model}")
+        config = validate_model_configuration("ollama", ollama_model, DEFAULT_TEMPERATURE)
+        if config["warnings"]:
+            print(f"⚠️ Ollama warnings: {'; '.join(config['warnings'])}")
+        if not config["supports_temperature"]:
+            print(f"ℹ️ Ollama model {ollama_model} doesn't support temperature (will use fallback)")
+
     if all_valid:
         print(" System configuration validation complete - no critical issues found")
     
@@ -606,16 +669,18 @@ def create_rag_chain(retriever, llm_model=None, temperature=DEFAULT_TEMPERATURE,
     
     available_providers = get_available_providers()
     
-    # Validate provider
+    # Resolve provider and model from env when not passed
+    provider = provider or _get_provider()
     if provider not in available_providers:
         if not available_providers:
-            print("❌ Error: No API keys found.")
-            print("   Please set OPENAI_API_KEY or CLAUDE_API_KEY in .env file.")
+            print("❌ Error: No LLM provider configured.")
+            print("   Set OPENAI_API_KEY, CLAUDE_API_KEY, or OLLAMA_BASE_URL / LLM_PROVIDER=ollama in .env")
             sys.exit(1)
-        else:
-            print(f"⚠️ Warning: Provider '{provider}' not available. Using {available_providers[0]} instead.")
-            provider = available_providers[0]
-    
+        print(f"⚠️ Warning: Provider '{provider}' not available. Using {available_providers[0]} instead.")
+        provider = available_providers[0]
+
+    model = llm_model or _get_model_for_provider(provider)
+
     # Initialize the language model
     if provider == "openai":
         # Check for API key
@@ -624,25 +689,20 @@ def create_rag_chain(retriever, llm_model=None, temperature=DEFAULT_TEMPERATURE,
             print("   Please set your OpenAI API key in the .env file.")
             sys.exit(1)
         
-        # Initialize OpenAI model
-        model = llm_model or DEFAULT_LLM_MODEL
-        
         # Robust temperature handling with multiple fallback layers
         llm = create_openai_model_with_fallback(model, temperature)
-        
+
     elif provider == "claude":
-        # Check for API key
         claude_key = os.getenv("CLAUDE_API_KEY") or os.getenv("ANTHROPIC_API_KEY")
         if not claude_key:
-            print("❌ Error: CLAUDE_API_KEY or ANTHROPIC_API_KEY not found in environment variables or .env file.")
-            print("   Please set your Claude API key in the .env file.")
+            print("❌ Error: CLAUDE_API_KEY or ANTHROPIC_API_KEY not found in .env")
             sys.exit(1)
-        
-        # Initialize Claude model with fallback handling
-        model = llm_model or DEFAULT_CLAUDE_MODEL
-        os.environ["ANTHROPIC_API_KEY"] = claude_key  # Ensure the key is set for Anthropic
+        os.environ["ANTHROPIC_API_KEY"] = claude_key
         llm = create_claude_model_with_fallback(model, temperature)
-    
+
+    elif provider == "ollama":
+        llm = create_ollama_model_with_fallback(model, temperature)
+
     else:
         print(f"❌ Error: Unsupported provider '{provider}'")
         sys.exit(1)
@@ -667,19 +727,19 @@ User Question: {question}""")
     
     return retriever, chain
 
-def run_rag_query(retriever, chain, query: str) -> Dict[str, Any]:
-    """Run a RAG query and return the result with sources"""
+def run_rag_query(retriever, chain, query: str, timeout: int = None) -> Dict[str, Any]:
+    """Run a RAG query and return the result with sources. Raises TimeoutError if LLM does not respond in time."""
     # Get relevant documents (already sorted by score)
     docs = retriever.get_relevant_documents(query)
-    
+
     if not docs:
         return {
             "answer": "",  # Return empty - let frontend handle no results messaging
             "sources": []
         }
-    
-    # Generate answer
-    answer = chain.invoke(query)
+
+    # Generate answer (with timeout)
+    answer = invoke_chain_with_timeout(chain, query, timeout=timeout)
     
     # Extract sources (maintaining order)
     sources = []
@@ -778,7 +838,7 @@ def main():
     parser.add_argument("--top-k", type=int, default=DEFAULT_TOP_K, help=f"Number of documents to retrieve (default: {DEFAULT_TOP_K})")
     parser.add_argument("--model", type=str, default=None, help=f"LLM model to use (default: {DEFAULT_LLM_MODEL} for OpenAI, {DEFAULT_CLAUDE_MODEL} for Claude)")
     parser.add_argument("--temperature", type=float, default=DEFAULT_TEMPERATURE, help=f"Temperature for the LLM (default: {DEFAULT_TEMPERATURE})")
-    parser.add_argument("--provider", type=str, default=DEFAULT_LLM_PROVIDER, choices=["openai", "claude"], help=f"LLM provider to use (default: {DEFAULT_LLM_PROVIDER})")
+    parser.add_argument("--provider", type=str, default=None, choices=["openai", "claude", "ollama"], help="LLM provider (default from LLM_PROVIDER env)")
     parser.add_argument("--validate", action="store_true", help="Validate system configuration and exit")
     parser.add_argument("--test-temp", type=str, help="Test if a specific model supports temperature")
     
@@ -804,23 +864,24 @@ def main():
     # Get available providers
     available_providers = get_available_providers()
     if not available_providers:
-        print("❌ Error: No API keys found. Please set OPENAI_API_KEY or CLAUDE_API_KEY in .env file.")
+        print("❌ Error: No LLM provider configured. Set OPENAI_API_KEY, CLAUDE_API_KEY, or OLLAMA_BASE_URL/LLM_PROVIDER=ollama.")
         sys.exit(1)
     
-    # Validate provider
-    if args.provider not in available_providers:
-        print(f"⚠️ Warning: Provider '{args.provider}' not available. Using {available_providers[0]} instead.")
-        args.provider = available_providers[0]
+    # Resolve provider from env if not passed
+    provider = args.provider or _get_provider()
+    if provider not in available_providers:
+        print(f"⚠️ Warning: Provider '{provider}' not available. Using {available_providers[0]} instead.")
+        provider = available_providers[0]
     
     # Initialize retriever
     retriever = CustomFAISSRetriever(top_k=args.top_k)
     
     # Create RAG chain
     retriever, chain = create_rag_chain(
-        retriever, 
-        llm_model=args.model, 
+        retriever,
+        llm_model=args.model,
         temperature=args.temperature,
-        provider=args.provider
+        provider=provider
     )
     
     # Run the query
