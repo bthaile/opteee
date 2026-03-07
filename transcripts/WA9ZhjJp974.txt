@@ -1,141 +1,484 @@
-0.00s: I love me a good anomaly in the options market and what better than GameStop.
-5.92s: We have a really interesting position today and even if you're not necessarily a big GameStop
-11.12s: person, there's some really important details in here for options traders writ large.
-16.68s: There's a great lesson.
-18.28s: So today in the 19 July 24 expiration cycle, the 30 calls, they had pretty high volume and
-27.04s: they actually kicked off a couple different alerts that I have except this one was really
-33.64s: weird.
-34.64s: Let me show you why.
-36.32s: If we first start with what is a bid, what is an ask?
-41.52s: The bid is the most somebody is willing to buy something for right now and then the
-47.36s: ask is the cheapest somebody is willing to sell for right now.
-52.00s: So that means that if I want to buy something as a trader, you have to essentially be near
-57.60s: the ask to do it right now, right the second.
-60.08s: You can always try to play the mid price.
-62.56s: That's more of a negotiation process of back and forth, typically.
-66.56s: So if I want to buy something right now, this second and get a fill, you got to go towards
-70.64s: the ask.
-71.80s: If I want to sell something right now, I would have to go towards the bid.
-77.04s: So what's going on here?
-79.04s: Well, this is looking at the 30s, a lot of transactions today and this is filtering by
-86.84s: stuff that's 50 lots and over.
-88.68s: There's way more than this, but these are kind of most of the larger transactions and
-93.00s: it's a shotgun blast.
-94.00s: It's all over the place.
-95.00s: There's a lot of cells which are red.
-96.76s: There's a lot of buys which are green and then there's this one at the top right there.
-102.84s: Game through a 1248, a one Pacific time.
-106.12s: It was a 4,688 lot, fascinating trade size.
-111.72s: The price it came through was 50 cents.
-115.00s: Came through on the C-Bull Exchange.
-117.36s: This is the weird part.
-119.20s: The market was 50 bid 49 offered.
-124.72s: This inversion doesn't happen normally.
-130.00s: This actually represents an arbitrage opportunity.
-133.24s: This means that if I could transact actually at these prices, I can collect the spread
-138.52s: between these essentially risk free.
-140.88s: You can be a market maker for a second.
-143.40s: Now the probability of you actually transacting fast enough at those prices is essentially
-147.28s: no, but as a scholastic exercise, you very rarely will see bids higher than the offers
-155.96s: that is inherently arbitrage.
-159.20s: That means that if I wanted to sell something, I could sell it for 50 and then buy it back
-164.72s: at 49.
-165.72s: I can make money right away.
-167.92s: Now this to me seems like an error of sorts because take a look at this.
-175.20s: The platform has it labeled red, meaning it was something that was sold.
-180.96s: The logic that the platform uses which I can clearly tell is if it's below the bid,
-188.16s: even though the bid is actually higher than the offer, which is very strange.
-192.40s: This is classifying it as a sell.
-195.08s: Then I have to look at some other places to try to see what's going on here.
-198.20s: I take a look at unusual whales.
-200.56s: I see a ton of different transactions here for today for this specific strike.
-206.84s: These all came through at 1248, a bunch of them, right?
-209.84s: Ten lot, a bunch of single lots, a seven, a ten, a seven, and then there's this one,
-213.44s: the 4688, $203, $4,000 trade.
-218.68s: And they're flagging it as a buy.
-221.80s: So if I close this out and we take a look at that position up here, they are classifying
-228.28s: this as a purchased option bullish.
-231.60s: They're saying that it is transacted at or above the ask, which is clearly also possible,
-236.60s: right?
-237.60s: Because they're also showing it bid 50 offered at 49.
-242.88s: So then was this bought or sold?
-246.56s: This opens up a whole other subject, which is the fact of the matter is when platforms
-252.56s: like this do these different color coding rules, how could it be that this one colors
-259.20s: it red and this one colors it essentially green for a buy versus a sell?
-265.16s: They just use different logic orders.
-267.84s: This one is looking at the bid side first and saying is it at or below the bid if so sell.
-275.64s: That's what this is telling you.
-276.64s: However, if we take a look at this, it's telling you essentially the inverse.
-282.16s: If it's above the offer, then it's a buy, even though the bid is 50 here as well.
-289.64s: So then we had to go to an arbiter, a third data source and funny enough, bar chart flags
-296.68s: it as green, meaning that this was bought.
-300.36s: However, their logic is clearly using if it's above the offer, which is 49 cents.
-305.56s: It's kind of bowling in where it thinks it transacted above that, which is not wrong.
-310.44s: Here's what I find fascinating.
-312.16s: Look at the size of the purchase that this is showing you.
-316.04s: 49 cents offered by 31.
-320.04s: Here there's a 50 bid at 4688.
-325.68s: Within the bar chart platform, there's an inherent discrepancy because this is saying it's
-331.08s: above this price, but look at the size.
-334.16s: 4688 against 4688 on the bid.
-338.72s: So what happened here?
-340.04s: Well, there's a couple different ways you could try to decipher the information.
-343.64s: For me, this is actually very important.
-345.60s: This is probably one of the more important data points in this whole thing is to figure
-349.40s: out the sizes because then I can see when it came through.
-354.68s: If I look at it on this platform and we take a look at all of these different transactions
-359.92s: that happen, these are a lot of buys that are flagged here.
-364.96s: And then one big giant sell, if we use the other two data points, I'm not so sure about that.
-372.40s: So I cannot say definitively what this is.
-376.24s: My instincts lead me to believe that it would be bought.
-380.72s: That would be my guess because that also aligns with the incentives of being able to transact.
-387.12s: Because again, otherwise there's an arbitrage opportunity.
-390.12s: I would expect that to be priced out faster than a human could see it.
-394.96s: That's my instinct.
-396.64s: What calls into question my instinct is this right here and this size.
-401.20s: The fact that the bid size here lines up perfectly with the size of this transaction,
-407.36s: which lines up with what I see here, them tracking it as a sell leads me to believe sell.
-416.40s: And that overrides my instincts, my instincts think that this is a buy.
-421.52s: Doesn't really matter.
-422.40s: Like if we're talking about all this in the grand scheme of things, none of this really matters.
-426.00s: You're watching somebody right now who's been in options markets for so long
-431.04s: that these small little nuance things are fascinating to me and probably only to me.
-436.72s: This is like watching somebody like Michael Jordan, not that I'm anywhere near the goat,
-441.36s: but it's like watching somebody like him shoot free throws for somebody like him.
-446.24s: He's focusing on like how does the ball feel on the pinky on the 39th shot compared to the 60 second shot,
-453.36s: something that's imperceptible to most of us that play pickup basketball.
-456.80s: That's kind of what I'm doing here, but this is fascinating to me.
-460.08s: So I'm sharing it with you for that reason.
-462.56s: So I hope other people find this at least somewhat curious because I do.
-466.24s: I would also love for the platforms to tell me what's going on here.
-469.28s: So what's going to end up happening is I have another data source that I'm going to download
-474.72s: all of the options trades from today and do my best to see what the sizes were that this came
-481.20s: through at because if it is this, that would lead me to believe sold.
-487.36s: If it is not this and this is an error for some reason,
-490.72s: then it would lead me to believe bought, which falls in line with the vast majority
-496.72s: of other volume that we saw today here.
-499.36s: But absolutely, absolutely interesting, especially to see this,
-504.32s: this is a market unicorn to a degree in something like this.
-507.52s: This happens in small sloppy products.
-509.52s: It's not like that special, but it is very rare because algorithms are looking for this exact
-516.16s: thing and they're very, very fast and they can price this out very, very fast.
-521.68s: So the fact that this even printed like that and it's if it's not an error will be very interesting
-527.68s: to me. So super, super interesting trade today. I am very eager to see what this actually is,
-535.44s: but just note, despite what a lot of people will say online because they want to share what they know,
-541.68s: it's impossible to tell decisively from this information.
-544.72s: Just because you pull it up on a platform and this one says,
-547.84s: oh, this came in as a buy and we're going to color it like that.
-551.92s: You got to be careful with data sources because they're processing large vats of data
-559.36s: that's not perfect. You still have to be a thinking trader out here and say, wait a minute,
-564.24s: there's a lot of weird things that happened here. Again, it absolutely could have been a buy,
-569.60s: it could have been a sale. I don't know, but I can tell I don't know because of these reasons.
-573.92s: I don't just see the color and say, yes, sale for sure.
-578.00s: Sale, but bid at 50 offered at 49, taken at 50. Very weird. I do not know. But like I said, instinct,
-588.32s: I think buy based on the rest of the volume today, based on the data, I would have to lean towards
-594.32s: a sale. Again, leaning primarily on the size offered here, matching perfect here.
-601.20s: So I will have a better answer tomorrow for sure because I will download all of the trades
-605.84s: from today and I'll see what size they came through and what the market was offered at that time.
-610.40s: So yeah, again, personal little pet project that really doesn't impact much of anything,
-615.20s: but I do find very, very interesting. And if these were buys, this is a very interesting position
-621.12s: because this is out for the next primary expiration at the 30s. It's a big position. So
-626.08s: TBD, we'll see. If you have any questions, let me know being outlier. See you guys later.
+0.84s: I love me a good anomaly in the options
+3.88s: I love me a good anomaly in the options market and what better than GameStop we
+6.07s: market and what better than GameStop we
+6.08s: market and what better than GameStop we have a really interesting position today
+8.55s: have a really interesting position today
+8.56s: have a really interesting position today and even if you're not necessarily a big
+10.55s: and even if you're not necessarily a big
+10.56s: and even if you're not necessarily a big GameStop person there's some really
+12.75s: GameStop person there's some really
+12.76s: GameStop person there's some really important details in here for options
+15.23s: important details in here for options
+15.24s: important details in here for options Traders RIT large there's a great lesson
+18.19s: Traders RIT large there's a great lesson
+18.20s: Traders RIT large there's a great lesson so today in the 19 July 24 expiration
+21.99s: so today in the 19 July 24 expiration
+22.00s: so today in the 19 July 24 expiration cycle the 30 calls they had pretty high
+25.83s: cycle the 30 calls they had pretty high
+25.84s: cycle the 30 calls they had pretty high volume and they actually kicked off a
+28.75s: volume and they actually kicked off a
+28.76s: volume and they actually kicked off a couple different alerts
+30.55s: couple different alerts
+30.56s: couple different alerts that I have except this one was really
+33.75s: that I have except this one was really
+33.76s: that I have except this one was really weird let me show you why if we first
+37.55s: weird let me show you why if we first
+37.56s: weird let me show you why if we first start with what is a bid what is an ask
+41.39s: start with what is a bid what is an ask
+41.40s: start with what is a bid what is an ask the bid is the most somebody is willing
+44.67s: the bid is the most somebody is willing
+44.68s: the bid is the most somebody is willing to buy something for right now and then
+47.23s: to buy something for right now and then
+47.24s: to buy something for right now and then the ask is the cheapest somebody is
+49.55s: the ask is the cheapest somebody is
+49.56s: the ask is the cheapest somebody is willing to sell for right now so that
+52.11s: willing to sell for right now so that
+52.12s: willing to sell for right now so that means that if I want to buy something as
+54.59s: means that if I want to buy something as
+54.60s: means that if I want to buy something as a Trader you have to essentially be near
+57.63s: a Trader you have to essentially be near
+57.64s: a Trader you have to essentially be near the ask to do it right now right the
+59.55s: the ask to do it right now right the
+59.56s: the ask to do it right now right the second you can always try to play the
+61.19s: second you can always try to play the
+61.20s: second you can always try to play the mid price that's more of a negotiation
+63.83s: mid price that's more of a negotiation
+63.84s: mid price that's more of a negotiation process of back and forth typically so
+67.15s: process of back and forth typically so
+67.16s: process of back and forth typically so if I want to buy something right now
+68.79s: if I want to buy something right now
+68.80s: if I want to buy something right now this second and get a fill you got to go
+70.39s: this second and get a fill you got to go
+70.40s: this second and get a fill you got to go towards the ask if I want to sell
+72.47s: towards the ask if I want to sell
+72.48s: towards the ask if I want to sell something right now I would have to go
+74.91s: something right now I would have to go
+74.92s: something right now I would have to go towards the bid so what's going on here
+79.03s: towards the bid so what's going on here
+79.04s: towards the bid so what's going on here well this I was looking at the 30s a lot
+83.51s: well this I was looking at the 30s a lot
+83.52s: well this I was looking at the 30s a lot of lot of transactions today and this is
+86.27s: of lot of transactions today and this is
+86.28s: of lot of transactions today and this is filtering by stuff that's 50 lots and
+88.23s: filtering by stuff that's 50 lots and
+88.24s: filtering by stuff that's 50 lots and over there's way more than this but but
+89.99s: over there's way more than this but but
+90.00s: over there's way more than this but but these were kind of most of the larger
+91.75s: these were kind of most of the larger
+91.76s: these were kind of most of the larger transactions and it's a shotgun blast
+94.03s: transactions and it's a shotgun blast
+94.04s: transactions and it's a shotgun blast it's all over the place there's a lot of
+95.19s: it's all over the place there's a lot of
+95.20s: it's all over the place there's a lot of sells which are red there's a lot of
+97.35s: sells which are red there's a lot of
+97.36s: sells which are red there's a lot of buys which are green and then there's
+99.71s: buys which are green and then there's
+99.72s: buys which are green and then there's this one at the top right there came
+102.83s: this one at the top right there came
+102.84s: this one at the top right there came through at 12481 Pacific time it was a
+107.15s: through at 12481 Pacific time it was a
+107.16s: through at 12481 Pacific time it was a 4,688 lot fascinating trade
+110.63s: 4,688 lot fascinating trade
+110.64s: 4,688 lot fascinating trade size the price it came through at was0
+113.79s: size the price it came through at was0
+113.80s: size the price it came through at was0 50s came through on the SEO exchange
+117.23s: 50s came through on the SEO exchange
+117.24s: 50s came through on the SEO exchange this is the weird part the market was 50
+121.27s: this is the weird part the market was 50
+121.28s: this is the weird part the market was 50 bid 49
+123.63s: bid 49
+123.64s: bid 49 offered this inversion doesn't happen
+128.87s: offered this inversion doesn't happen
+128.88s: offered this inversion doesn't happen normally this actually represents an
+131.27s: normally this actually represents an
+131.28s: normally this actually represents an Arbitrage opportunity this means that if
+133.87s: Arbitrage opportunity this means that if
+133.88s: Arbitrage opportunity this means that if I could transact actually at these
+135.95s: I could transact actually at these
+135.96s: I could transact actually at these prices I can collect the spread between
+139.11s: prices I can collect the spread between
+139.12s: prices I can collect the spread between these essentially risk-free you can be a
+141.47s: these essentially risk-free you can be a
+141.48s: these essentially risk-free you can be a market maker for a second now the
+143.71s: market maker for a second now the
+143.72s: market maker for a second now the probability of you actually transacting
+145.59s: probability of you actually transacting
+145.60s: probability of you actually transacting fast enough at those prices is
+146.87s: fast enough at those prices is
+146.88s: fast enough at those prices is essentially null but as a Scholastic
+150.15s: essentially null but as a Scholastic
+150.16s: essentially null but as a Scholastic exercise you very rarely will see bids
+153.95s: exercise you very rarely will see bids
+153.96s: exercise you very rarely will see bids higher than the offers that is
+156.55s: higher than the offers that is
+156.56s: higher than the offers that is inherently
+158.11s: inherently
+158.12s: inherently Arbitrage that means that if I wanted to
+161.51s: Arbitrage that means that if I wanted to
+161.52s: Arbitrage that means that if I wanted to sell something I could sell it for 50
+163.87s: sell something I could sell it for 50
+163.88s: sell something I could sell it for 50 and then buy it back at 49 I can make
+166.59s: and then buy it back at 49 I can make
+166.60s: and then buy it back at 49 I can make money right away now this to me seems
+170.15s: money right away now this to me seems
+170.16s: money right away now this to me seems like an error of sorts because take a
+172.67s: like an error of sorts because take a
+172.68s: like an error of sorts because take a look at
+174.15s: look at
+174.16s: look at this the platform has it labeled red
+178.07s: this the platform has it labeled red
+178.08s: this the platform has it labeled red meaning it was something that was so
+179.83s: meaning it was something that was so
+179.84s: meaning it was something that was so sold and the logic that the platform
+182.35s: sold and the logic that the platform
+182.36s: sold and the logic that the platform uses which I can clearly tell is if it's
+186.23s: uses which I can clearly tell is if it's
+186.24s: uses which I can clearly tell is if it's below the bid even though the bid is
+188.91s: below the bid even though the bid is
+188.92s: below the bid even though the bid is actually higher than the offer which is
+190.47s: actually higher than the offer which is
+190.48s: actually higher than the offer which is very strange so this is classifying it
+193.55s: very strange so this is classifying it
+193.56s: very strange so this is classifying it as a sell so then I have to look at some
+195.87s: as a sell so then I have to look at some
+195.88s: as a sell so then I have to look at some other places to try to see what's going
+197.31s: other places to try to see what's going
+197.32s: other places to try to see what's going on here so I take a look at unusual
+200.19s: on here so I take a look at unusual
+200.20s: on here so I take a look at unusual whales and I see a ton of different
+203.31s: whales and I see a ton of different
+203.32s: whales and I see a ton of different transactions here for today for this
+205.43s: transactions here for today for this
+205.44s: transactions here for today for this specific strike these all came through
+207.63s: specific strike these all came through
+207.64s: specific strike these all came through at 1248 a bunch of them right 10 lot
+210.35s: at 1248 a bunch of them right 10 lot
+210.36s: at 1248 a bunch of them right 10 lot bunch of single lots a seven a 10 a
+212.03s: bunch of single lots a seven a 10 a
+212.04s: bunch of single lots a seven a 10 a seven and then there's this one the 4688
+216.39s: seven and then there's this one the 4688
+216.40s: seven and then there's this one the 4688 $234,000 trade and they're flagging it
+220.51s: $234,000 trade and they're flagging it
+220.52s: $234,000 trade and they're flagging it as a buy so if I close this out and we
+224.15s: as a buy so if I close this out and we
+224.16s: as a buy so if I close this out and we take a look at that position up here
+226.95s: take a look at that position up here
+226.96s: take a look at that position up here they are classifying this as a purchased
+230.35s: they are classifying this as a purchased
+230.36s: they are classifying this as a purchased option bullish they're saying that it
+232.51s: option bullish they're saying that it
+232.52s: option bullish they're saying that it transacted at or above the ask which is
+234.91s: transacted at or above the ask which is
+234.92s: transacted at or above the ask which is clearly also possible right because
+237.11s: clearly also possible right because
+237.12s: clearly also possible right because they're also showing it bid 50 offered
+240.23s: they're also showing it bid 50 offered
+240.24s: they're also showing it bid 50 offered at
+241.75s: at
+241.76s: at 49 so then was this bought or
+245.43s: 49 so then was this bought or
+245.44s: 49 so then was this bought or sold this opens up a whole other subject
+249.19s: sold this opens up a whole other subject
+249.20s: sold this opens up a whole other subject which is the fact of the matter is when
+252.07s: which is the fact of the matter is when
+252.08s: which is the fact of the matter is when platforms like this do these different
+254.51s: platforms like this do these different
+254.52s: platforms like this do these different color coding
+255.95s: color coding
+255.96s: color coding rules how could it be that this one
+258.83s: rules how could it be that this one
+258.84s: rules how could it be that this one colors it red and this one colors it
+261.75s: colors it red and this one colors it
+261.76s: colors it red and this one colors it essentially green for a buy versus a
+264.35s: essentially green for a buy versus a
+264.36s: essentially green for a buy versus a cell they just use different logic
+266.75s: cell they just use different logic
+266.76s: cell they just use different logic orders this one is looking at the bid
+270.03s: orders this one is looking at the bid
+270.04s: orders this one is looking at the bid side first and saying is it at or below
+273.99s: side first and saying is it at or below
+274.00s: side first and saying is it at or below the bid if so sell that's what this is
+276.03s: the bid if so sell that's what this is
+276.04s: the bid if so sell that's what this is telling you however if we take a look at
+278.95s: telling you however if we take a look at
+278.96s: telling you however if we take a look at this it's telling you essentially the
+281.11s: this it's telling you essentially the
+281.12s: this it's telling you essentially the inverse if it's above the offer then
+285.31s: inverse if it's above the offer then
+285.32s: inverse if it's above the offer then it's a buy even though the bid is 50
+287.99s: it's a buy even though the bid is 50
+288.00s: it's a buy even though the bid is 50 here as well so then we had to go to an
+290.31s: here as well so then we had to go to an
+290.32s: here as well so then we had to go to an Arbiter a third data source and funny
+294.27s: Arbiter a third data source and funny
+294.28s: Arbiter a third data source and funny enough bar chart Flags it as green
+298.07s: enough bar chart Flags it as green
+298.08s: enough bar chart Flags it as green meaning that this was bought
+300.55s: meaning that this was bought
+300.56s: meaning that this was bought however their logic is clearly using if
+303.47s: however their logic is clearly using if
+303.48s: however their logic is clearly using if it's above the offer which is 49 it's
+305.79s: it's above the offer which is 49 it's
+305.80s: it's above the offer which is 49 it's kind of Bolding in where it thinks it
+307.51s: kind of Bolding in where it thinks it
+307.52s: kind of Bolding in where it thinks it transacted above that which is not wrong
+310.27s: transacted above that which is not wrong
+310.28s: transacted above that which is not wrong here's what I find fascinating look at
+312.27s: here's what I find fascinating look at
+312.28s: here's what I find fascinating look at the size of the purchase that this is
+314.99s: the size of the purchase that this is
+315.00s: the size of the purchase that this is showing you
+316.23s: showing you
+316.24s: showing you 49 offered by
+318.91s: 49 offered by
+318.92s: 49 offered by 31 here there's a 50 bid at
+323.59s: 31 here there's a 50 bid at
+323.60s: 31 here there's a 50 bid at 46.88 So within the bar chart platform
+327.19s: 46.88 So within the bar chart platform
+327.20s: 46.88 So within the bar chart platform there's an inherent discrepancy
+329.95s: there's an inherent discrepancy
+329.96s: there's an inherent discrepancy because this is saying it's above this
+331.71s: because this is saying it's above this
+331.72s: because this is saying it's above this price but look at the size 4688 against
+335.71s: price but look at the size 4688 against
+335.72s: price but look at the size 4688 against 4688 on the
+337.59s: 4688 on the
+337.60s: 4688 on the bid so what happened here well there's a
+340.99s: bid so what happened here well there's a
+341.00s: bid so what happened here well there's a couple different ways you could try to
+342.27s: couple different ways you could try to
+342.28s: couple different ways you could try to decipher the information for me this is
+344.39s: decipher the information for me this is
+344.40s: decipher the information for me this is actually very important this is probably
+346.07s: actually very important this is probably
+346.08s: actually very important this is probably one of the more important data points in
+347.71s: one of the more important data points in
+347.72s: one of the more important data points in this whole thing is to figure out the
+349.83s: this whole thing is to figure out the
+349.84s: this whole thing is to figure out the sizes because then I can see when it
+351.35s: sizes because then I can see when it
+351.36s: sizes because then I can see when it came
+352.47s: came
+352.48s: came through
+354.03s: through
+354.04s: through but if I look at it on this platform and
+357.83s: but if I look at it on this platform and
+357.84s: but if I look at it on this platform and we take a look at all of these different
+359.31s: we take a look at all of these different
+359.32s: we take a look at all of these different trans actions that happen these are a
+362.15s: trans actions that happen these are a
+362.16s: trans actions that happen these are a lot of buys that are flagged here and
+365.07s: lot of buys that are flagged here and
+365.08s: lot of buys that are flagged here and then one big giant sell if we use the
+368.19s: then one big giant sell if we use the
+368.20s: then one big giant sell if we use the other two data points I'm not so sure
+370.75s: other two data points I'm not so sure
+370.76s: other two data points I'm not so sure about that so I cannot say definitively
+375.43s: about that so I cannot say definitively
+375.44s: about that so I cannot say definitively what this is my instincts lead me to
+378.43s: what this is my instincts lead me to
+378.44s: what this is my instincts lead me to believe that it would be bought that
+380.91s: believe that it would be bought that
+380.92s: believe that it would be bought that would be my guess because that also
+383.75s: would be my guess because that also
+383.76s: would be my guess because that also aligns with the incentives of being able
+386.35s: aligns with the incentives of being able
+386.36s: aligns with the incentives of being able to transact because again otherwise
+388.43s: to transact because again otherwise
+388.44s: to transact because again otherwise there's an Arbitrage opportunity
+390.15s: there's an Arbitrage opportunity
+390.16s: there's an Arbitrage opportunity I would expect that to be priced out
+391.67s: I would expect that to be priced out
+391.68s: I would expect that to be priced out faster than a human could see
+394.03s: faster than a human could see
+394.04s: faster than a human could see it that's my instinct what calls into
+397.59s: it that's my instinct what calls into
+397.60s: it that's my instinct what calls into question my instinct is this right here
+399.75s: question my instinct is this right here
+399.76s: question my instinct is this right here and this size the fact that the bid size
+403.35s: and this size the fact that the bid size
+403.36s: and this size the fact that the bid size here lines up perfectly with the size of
+406.11s: here lines up perfectly with the size of
+406.12s: here lines up perfectly with the size of this transaction which lines up with
+408.43s: this transaction which lines up with
+408.44s: this transaction which lines up with what I see here them tracking it as a
+412.99s: what I see here them tracking it as a
+413.00s: what I see here them tracking it as a cell leads me to believe
+415.55s: cell leads me to believe
+415.56s: cell leads me to believe cell and that overwrites my instincts my
+419.19s: cell and that overwrites my instincts my
+419.20s: cell and that overwrites my instincts my instin things think that this is a buy
+421.59s: instin things think that this is a buy
+421.60s: instin things think that this is a buy doesn't really matter like if we're
+422.91s: doesn't really matter like if we're
+422.92s: doesn't really matter like if we're talking about all this in the grand
+424.23s: talking about all this in the grand
+424.24s: talking about all this in the grand scheme of things none of this really
+425.71s: scheme of things none of this really
+425.72s: scheme of things none of this really matters you're watching somebody right
+427.43s: matters you're watching somebody right
+427.44s: matters you're watching somebody right now who's been in options markets for so
+430.47s: now who's been in options markets for so
+430.48s: now who's been in options markets for so long that these small little Nuance
+433.11s: long that these small little Nuance
+433.12s: long that these small little Nuance things are fascinating to me and
+434.99s: things are fascinating to me and
+435.00s: things are fascinating to me and probably only to me this is like
+437.35s: probably only to me this is like
+437.36s: probably only to me this is like watching somebody like Michael Jordan
+439.27s: watching somebody like Michael Jordan
+439.28s: watching somebody like Michael Jordan not that I'm anywhere near the goat but
+441.79s: not that I'm anywhere near the goat but
+441.80s: not that I'm anywhere near the goat but it's like watching somebody like him
+443.91s: it's like watching somebody like him
+443.92s: it's like watching somebody like him shoot free throws for somebody like him
+446.35s: shoot free throws for somebody like him
+446.36s: shoot free throws for somebody like him he's focusing on like how does the ball
+448.43s: he's focusing on like how does the ball
+448.44s: he's focusing on like how does the ball feel on the pink
+450.11s: feel on the pink
+450.12s: feel on the pink on the 39th shot compared to the 62nd
+453.11s: on the 39th shot compared to the 62nd
+453.12s: on the 39th shot compared to the 62nd shot something that's imperceptible to
+455.27s: shot something that's imperceptible to
+455.28s: shot something that's imperceptible to most of us that play pickup basketball
+456.95s: most of us that play pickup basketball
+456.96s: most of us that play pickup basketball that's kind of what I'm doing here but
+458.87s: that's kind of what I'm doing here but
+458.88s: that's kind of what I'm doing here but this is fascinating to me so I'm sharing
+460.83s: this is fascinating to me so I'm sharing
+460.84s: this is fascinating to me so I'm sharing it with you for that reason so I hope
+463.55s: it with you for that reason so I hope
+463.56s: it with you for that reason so I hope other people find this at least somewhat
+465.07s: other people find this at least somewhat
+465.08s: other people find this at least somewhat curious because I do I would also love
+466.95s: curious because I do I would also love
+466.96s: curious because I do I would also love for the platforms to tell me what's
+468.11s: for the platforms to tell me what's
+468.12s: for the platforms to tell me what's going on here so what's going to end up
+470.39s: going on here so what's going to end up
+470.40s: going on here so what's going to end up happening is I have another data source
+473.07s: happening is I have another data source
+473.08s: happening is I have another data source that I'm going to download all of the
+475.23s: that I'm going to download all of the
+475.24s: that I'm going to download all of the options trades from today and do my best
+478.91s: options trades from today and do my best
+478.92s: options trades from today and do my best to see what the sizes were that this
+481.07s: to see what the sizes were that this
+481.08s: to see what the sizes were that this came through at because if it is this
+484.67s: came through at because if it is this
+484.68s: came through at because if it is this that would lead me to believe sold if it
+487.75s: that would lead me to believe sold if it
+487.76s: that would lead me to believe sold if it is not this and this is an error for
+489.75s: is not this and this is an error for
+489.76s: is not this and this is an error for some reason then it would lead me to
+491.91s: some reason then it would lead me to
+491.92s: some reason then it would lead me to believe bot which falls in line with the
+494.99s: believe bot which falls in line with the
+495.00s: believe bot which falls in line with the vast majority of other volume that we
+498.15s: vast majority of other volume that we
+498.16s: vast majority of other volume that we saw today here but absolutely absolutely
+501.83s: saw today here but absolutely absolutely
+501.84s: saw today here but absolutely absolutely interesting especially to see this this
+504.71s: interesting especially to see this this
+504.72s: interesting especially to see this this is a market unicorn to a degree and
+506.95s: is a market unicorn to a degree and
+506.96s: is a market unicorn to a degree and something like this this happens in
+508.43s: something like this this happens in
+508.44s: something like this this happens in small sloppy product it's not like that
+510.95s: small sloppy product it's not like that
+510.96s: small sloppy product it's not like that special but it is very rare because
+513.19s: special but it is very rare because
+513.20s: special but it is very rare because algorithms are looking for this exact
+516.27s: algorithms are looking for this exact
+516.28s: algorithms are looking for this exact thing and they're very very fast and
+519.07s: thing and they're very very fast and
+519.08s: thing and they're very very fast and they can price this out very very fast
+521.79s: they can price this out very very fast
+521.80s: they can price this out very very fast so the fact that this even printed like
+523.59s: so the fact that this even printed like
+523.60s: so the fact that this even printed like that and it's if it's not an error will
+526.75s: that and it's if it's not an error will
+526.76s: that and it's if it's not an error will be very interesting to me so super super
+530.91s: be very interesting to me so super super
+530.92s: be very interesting to me so super super interesting trade today I am very eager
+533.51s: interesting trade today I am very eager
+533.52s: interesting trade today I am very eager to see what this actually is but just
+536.03s: to see what this actually is but just
+536.04s: to see what this actually is but just note despite what a lot of people will
+538.03s: note despite what a lot of people will
+538.04s: note despite what a lot of people will say online because they want want to you
+540.03s: say online because they want want to you
+540.04s: say online because they want want to you know share what they know it's it's
+542.39s: know share what they know it's it's
+542.40s: know share what they know it's it's impossible to tell decisively from this
+544.27s: impossible to tell decisively from this
+544.28s: impossible to tell decisively from this information just because you pull it up
+545.67s: information just because you pull it up
+545.68s: information just because you pull it up on a platform and this one says oh this
+548.39s: on a platform and this one says oh this
+548.40s: on a platform and this one says oh this came in as a buy and we're going to
+551.03s: came in as a buy and we're going to
+551.04s: came in as a buy and we're going to color it like that you got to be careful
+553.87s: color it like that you got to be careful
+553.88s: color it like that you got to be careful with data sources because they're
+556.11s: with data sources because they're
+556.12s: with data sources because they're processing large Vats of data that's not
+560.07s: processing large Vats of data that's not
+560.08s: processing large Vats of data that's not perfect you still have to be a thinking
+562.15s: perfect you still have to be a thinking
+562.16s: perfect you still have to be a thinking Trader out here and say wait a minute
+564.31s: Trader out here and say wait a minute
+564.32s: Trader out here and say wait a minute there's a lot of weird things that
+565.79s: there's a lot of weird things that
+565.80s: there's a lot of weird things that happened here again it absolutely could
+568.43s: happened here again it absolutely could
+568.44s: happened here again it absolutely could have been a buy it could have been a
+570.19s: have been a buy it could have been a
+570.20s: have been a buy it could have been a sale I don't know but I can tell I don't
+572.63s: sale I don't know but I can tell I don't
+572.64s: sale I don't know but I can tell I don't know because of these reasons I don't
+574.27s: know because of these reasons I don't
+574.28s: know because of these reasons I don't just see the color and say Yes sale for
+577.03s: just see the color and say Yes sale for
+577.04s: just see the color and say Yes sale for sure sale but bid at 50 offered at 49
+582.63s: sure sale but bid at 50 offered at 49
+582.64s: sure sale but bid at 50 offered at 49 taken at 50 very weird I do not know but
+587.07s: taken at 50 very weird I do not know but
+587.08s: taken at 50 very weird I do not know but like I said Instinct I think buy based
+589.67s: like I said Instinct I think buy based
+589.68s: like I said Instinct I think buy based on the rest of the volume today based on
+592.19s: on the rest of the volume today based on
+592.20s: on the rest of the volume today based on the data I would have to lean towards a
+594.55s: the data I would have to lean towards a
+594.56s: the data I would have to lean towards a sale again leaning primarily on the size
+598.19s: sale again leaning primarily on the size
+598.20s: sale again leaning primarily on the size offered here matching perfect here so I
+601.79s: offered here matching perfect here so I
+601.80s: offered here matching perfect here so I will have a better answer tomorrow for
+603.27s: will have a better answer tomorrow for
+603.28s: will have a better answer tomorrow for sure because I will download all of the
+605.55s: sure because I will download all of the
+605.56s: sure because I will download all of the trades from today and I'll see what size
+607.55s: trades from today and I'll see what size
+607.56s: trades from today and I'll see what size they came through and what the market
+608.71s: they came through and what the market
+608.72s: they came through and what the market was offered at that time so yeah again
+611.79s: was offered at that time so yeah again
+611.80s: was offered at that time so yeah again personal little pet project that really
+613.83s: personal little pet project that really
+613.84s: personal little pet project that really doesn't impact much of anything but I do
+615.71s: doesn't impact much of anything but I do
+615.72s: doesn't impact much of anything but I do find very very interesting and if these
+618.11s: find very very interesting and if these
+618.12s: find very very interesting and if these were buys this is a very interesting
+620.39s: were buys this is a very interesting
+620.40s: were buys this is a very interesting position because this is out for the
+622.15s: position because this is out for the
+622.16s: position because this is out for the next primary expiration at the 30s it's
+624.63s: next primary expiration at the 30s it's
+624.64s: next primary expiration at the 30s it's a big position so TBD we'll see if you
+628.87s: a big position so TBD we'll see if you
+628.88s: a big position so TBD we'll see if you have any question let me know be an
+629.99s: have any question let me know be an
+630.00s: have any question let me know be an outlier see you guys later

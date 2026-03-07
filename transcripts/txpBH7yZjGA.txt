@@ -1,415 +1,450 @@
-0.00s: Ben using chatchipiti to help with options.
-4.20s: It's kinda blowing my mind.
-7.32s: Same, bro.
-9.00s: Same, Mr. Puzzlehead, underscore, water, underscore, eight.
-14.56s: Is onto a really fun topic here,
-17.60s: which revolves around the use of chatchipiti,
-20.56s: specifically AI more broadly in your trading.
-24.48s: And I can say unequivocally,
-27.44s: it is the biggest game changer.
-29.92s: Or retail trader that's come across essentially
-32.28s: since electronic trading.
-33.36s: It's that big.
-34.92s: So the goal of this video is to walk through this post,
-37.40s: see what they're seeing, find some cool things,
-40.72s: and maybe some gaps in how they're using it.
-43.32s: And then at the end of the video,
-44.44s: I'm actually going to walk you through
-46.32s: a comprehensive grouping of queries,
-50.28s: specific queries you can use in your trading career
-55.28s: using AI.
-56.72s: So let's get right into it.
-59.36s: So he starts off by saying that he's using GPT
-62.48s: to help them figure out options traits,
-65.32s: and saying that it's been really helpful,
-66.80s: which completely agree with.
-68.56s: He's saying one of the ways that they'll use it
-70.64s: is by typing in a strike price expiration,
-72.92s: what I pay target price, and it spits out all the math.
-75.28s: It tells me how much profit I'd make in different stock prices,
-78.56s: my break even, how much I'd lose per one point drop,
-81.00s: stuff like that, stuff I should be calculating,
-83.12s: but always don't always feel like doing this,
-86.16s: is actually the first problem to be honest.
-88.48s: It is completely cool that a model can do this,
-91.60s: but if this is the end result,
-94.56s: don't feel like doing this is a massive problem,
-98.28s: because your job as a trader is literally to do this.
-104.08s: There's nothing that says that there's anything wrong
-106.20s: with using something to assist you,
-108.68s: but there's also limitations when you're using something
-111.56s: like chatchipiti.
-112.40s: So for example, in your price modeling,
-114.68s: you're going to have to account for non-linear changes
-119.76s: of Greeks, which is what chatchipiti is going to use
-123.84s: linear calculations for Greeks.
-126.32s: So if you say two days pass, the stock goes up five points,
-130.44s: then chatchipiti is just gonna apply linear movements
-133.76s: of the Greeks, and it's a simplifying assumption.
-135.40s: It's fine to do in a vacuum,
-137.60s: but if you're really trying to take trading seriously,
-140.76s: you shouldn't be leaning into chatchipiti to do this stuff
-143.56s: because you don't feel like doing it,
-145.64s: you should lean into it to teach you how to do it,
-148.88s: to teach you different ways to think about it,
-151.76s: but if it perpetuates this element of it,
-156.60s: that's actually net negative added in my opinion.
-160.64s: Next, they're saying that they're starting
-162.52s: to upload screenshots of full options chains,
-165.84s: and they'll say something like,
-170.24s: I don't see what they actually said.
-173.24s: I don't see what their prompt was,
-175.24s: but here it says, and it actually reads the bit
-177.00s: as spreads volume, interest, open interest,
-179.96s: IV trends gives back pretty clear answer.
-181.92s: Like it will say, this looks like bullish accumulation
-184.04s: at the 95 call strike or heavy put volume at the 90,
-187.00s: suggest hedging or downside risk.
-189.32s: So let's take a look at these.
-191.24s: So if we take a look at the 95 call here,
-194.92s: and they're saying that they're seeing bullish accumulation.
-198.92s: Well, if we take a look at the volume,
-200.64s: there's seven contracts,
-203.28s: and then if you look at the open interest,
-204.72s: there's 514 contracts.
-207.36s: Do I as a regular optionist trader,
-211.12s: would I consider this bullish accumulation
-214.80s: compared to something down here that might have 1069 contracts?
-219.80s: Well, probably not,
-220.96s: but the other thing is that the volume here is really low.
-224.00s: So unless they're looking at some sort of multi-day
-226.64s: over-day trend seeing this build out,
-229.40s: then it's a different story.
-231.44s: So one of the things to keep in mind is when you're using
-235.04s: chatchipiti, it will give you inputs and sound
-240.08s: super-remly confident,
-243.04s: but it will lie directly to you.
-245.88s: And I'm not saying that inherently,
-247.32s: but this case, there's actually a scenario
-248.80s: I'm gonna show you in a few moments that is that for sure.
-251.92s: But the other things if we take a look,
-253.56s: heavy-put volume at 90 suggests edging or downside risk.
-257.76s: So let's go to 90, let's take a look at the put volume.
-260.12s: What's the put volume?
-262.08s: One.
-264.44s: Not heavy at all.
-265.88s: So this is the broader point.
-267.24s: Now they might be using examples of responses
-270.00s: that might give, I would be surprised,
-272.28s: instead of just copying and pasting it,
-273.68s: it would be easier than typing this out for chatchipiti.
-276.40s: So my guess is this is from chatchipiti,
-278.44s: and it's wrong, like this is wrong.
-280.76s: And there's nothing wrong with giving chatchipiti
-284.80s: something like this and saying, hey, like,
-286.48s: what do you see here?
-288.16s: But again, you have to temper what you're receiving
-291.16s: in understanding the models that you're using.
-293.84s: So it says it's been weirdly accurate
-295.76s: and it helps me avoid sketchy setups
-297.24s: or over-priced premiums.
-298.76s: This is also tricky, right?
-300.64s: Because chatchipiti can't help you
-302.44s: with over-priced premiums.
-303.48s: There's nothing chatchipiti could tell you
-305.84s: to tell you that it premium is over-priced.
-309.72s: But reason being is because if you go back
-312.24s: to options 101, the only unknown in an option,
-316.84s: premium itself is the implied volatility
-319.28s: and we implied out.
-320.72s: So it's actually the forecast volatility.
-323.32s: So unless chatchipiti is providing you
-326.04s: with a more accurate, vol number
-328.76s: than what the market consensus is, then it's not really
-332.44s: helping you.
-333.32s: Now one thing you could ask it to do is say,
-335.84s: hey, calculate the theoretical value of this option
-338.60s: and see what it sets.
-339.72s: And if you notice that the bid asks spread
-341.76s: is completely off from that theoretical value,
-344.24s: then you at least know where you should probably start
-346.68s: pinging your trade if you're trying to get in at that point.
-350.28s: So over-priced premiums is really, really tricky
-353.40s: to identify in this way because it essentially
-356.00s: makes the assumption that you can forecast volatility
-359.36s: better than the market and some people might say,
-361.96s: well, AI can probably do that.
-363.52s: I can't.
-364.36s: It absolutely cannot.
-365.72s: And it's also important to remember
-367.84s: from a retail trader lens, AI is not new.
-370.56s: It's new to us.
-371.72s: We've had it for a few years now
-373.44s: and it's growing massively.
-375.72s: AI in artificial intelligence and automation
-378.88s: has been used for a long time on the institutional side.
-382.28s: And they're the people that price
-385.00s: fall that we then use.
-387.68s: So that's not to say that falls always perfectly priced.
-390.36s: You might think that it's going to expand.
-392.96s: So meaning it's relatively cheap now compared
-394.92s: to your expectations.
-396.40s: But that's different than saying something like it's overpriced.
+0.33s: [Music]
+0.72s: been using chat GPT to help with
+3.36s: options. It's kind of blowing my mind.
+7.52s: Same, bro. Same. Mr.
+13.64s: Puzzlehead_water_8 is on to a really fun
+16.96s: topic here which revolves around the use
+19.36s: of chat GPT specifically AI more broadly
+23.20s: in your trading. And I can say
+26.56s: unequivocally, it is the biggest
+28.88s: gamecher for a retail trader that's come
+31.44s: across essentially since electronic
+33.12s: trading. It's that big. So the goal of
+35.76s: this video is to walk through this post,
+37.52s: see what they're seeing, find some cool
+40.40s: things and maybe some gaps in how
+42.64s: they're using it. And then at the end of
+44.00s: the video, I'm actually going to walk
+45.68s: you through a
+47.64s: comprehensive grouping of queries,
+50.40s: specific queries you can use in your
+54.00s: trading career using AI. So, let's get
+57.68s: right into it. So, he starts off by
+60.64s: saying that he's using GPT to help them
+63.84s: figure out options trades and saying
+65.76s: that it's been really helpful, which
+67.12s: completely agree with. He's saying one
+69.44s: of the ways that they'll use it is by
+71.28s: typing in a strike price expiration.
+72.96s: what I pay target price and it spits out
+74.80s: all the math. It tells me how much
+76.72s: profit I'd make in different stock
+78.16s: prices, my break even, how much I'd lose
+79.92s: per one point drop, stuff like that,
+81.76s: stuff I should be calculating but always
+83.92s: don't always feel like doing this is
+86.32s: actually the first problem to be honest.
+88.48s: It is completely cool that a model can
+90.96s: do this, but if this is the end result,
+94.80s: don't feel like doing this is a massive
+97.36s: problem because your job as a trader is
+101.44s: literally to do this. There's nothing
+104.56s: that says that there's anything wrong
+106.16s: with using something to assist you, but
+108.88s: there's also limitations when you're
+110.96s: using something like chatpt. So, for
+112.72s: example, in your price modeling, you're
+115.04s: going to have to account for nonlinear
+119.04s: changes of Greeks, which is what CHACHP
+122.72s: is going to use linear calculations for
+126.00s: Greeks. So, if you say 2 days pass, the
+128.72s: stock goes up five points, then Chacht
+131.44s: is just going to apply linear movements
+133.68s: of the Greeks. And it's a simplifying
+135.04s: assumption. It's fine to do in a vacuum,
+137.68s: but if you're really trying to take
+139.44s: trading seriously, you shouldn't be
+141.60s: leaning into chat GPT to do this stuff
+143.60s: because you don't feel like doing it.
+145.76s: You should lean into it to teach you how
+147.84s: to do it, to teach you different ways to
+150.64s: think about it. But if it perpetuates
+154.44s: this this element of it, that's actually
+158.08s: ne negative ad in my opinion. Next,
+161.36s: they're saying that they're starting to
+162.80s: upload screenshots of full options
+165.36s: chains. And they'll say something like
+169.28s: um I don't see what they actually
+172.28s: said. I don't see their what their
+174.48s: prompt was, but here it says and it
+176.32s: actually reads the bid as spreads volume
+178.64s: interest open interest IV trends gives
+180.88s: back pretty clear answer like it'll say
+182.80s: this looks like bullish accumulation at
+184.32s: the 95 call strike or heavy put volume
+186.24s: at the 90 suggest hedging or downside
+188.80s: risk. So, let's take a look at these.
+191.52s: So, if we take a look at the 95 call
+194.20s: here, and they're saying that they're
+196.56s: seeing bullish accumulation. Well, if we
+199.36s: take a look at the volume, there's seven
+202.28s: contracts. And then if we look at the
+204.16s: open interest, there's 514 contracts. Do
+207.84s: I, as a regular options trader, would I
+211.68s: consider this bullish accumulation
+214.96s: compared to something down here that
+217.12s: might have 1069 contracts? Well,
+220.16s: probably not. But the other thing is
+222.00s: that the volume here is really low. So
+224.32s: unless they're looking at some sort of
+226.00s: multi-day overday trend, seeing this
+228.52s: buildout, then it's a different story.
+231.52s: So, one of the things to keep in mind is
+233.92s: when you're using chat GPT, it will give
+237.44s: you inputs and sound
+241.08s: supremely confident, but it will lie
+244.48s: directly to you. And I'm not saying that
+246.80s: inherently with this case. There's
+248.16s: actually a scenario I'm going to show
+249.20s: you in a few moments that is that for
+251.20s: sure. But the other thing is if we take
+253.28s: a look, heavy put volume at 90 suggests
+256.48s: hedging or downside risk. So, let's go
+258.08s: to 90. Let's take a look at the put
+259.36s: volume. What's the put volume
+263.40s: one? Not heavy at all. So this is the
+266.72s: broader point. Now they might be using
+268.56s: examples of responses it might give. I
+271.44s: would be surprised instead of just
+272.80s: copying and pasting it. It would be
+274.08s: easier than typing this out for chatpt.
+276.32s: So my guess is this is from chatpt and
+278.64s: it's wrong. Like this is wrong. And
+281.28s: there's nothing wrong with giving chatpt
+284.96s: something like this and saying hey like
+286.56s: what do you see here? But again, you
+289.04s: have to temper what you're receiving in
+291.52s: understanding the models that you're
+292.88s: using. So it says it's been weirdly
+295.28s: accurate and it helps me avoid sketchy
+296.96s: setups or overpriced premiums. This is
+299.52s: also tricky, right? Because chatpt can't
+302.00s: help you with overpriced premiums.
+303.60s: There's nothing chatpt could tell you to
+306.96s: tell you that it a premium is
+308.64s: overpriced. The reason being is because
+311.52s: if you go back to options 101, the only
+314.48s: unknown in a option premium itself is
+317.92s: the implied volatility and we implied
+320.48s: out. So it's actually the forecast
+322.36s: volatility. So unless Chad GPT is
+325.28s: providing you with a more accurate V
+328.40s: number than what the market consensus
+330.44s: is, then it's not really helping you.
+333.28s: Now, one thing you could ask it to do is
+335.68s: say, "Hey, calculate the theoretical
+337.28s: value of this option and see what it
+339.28s: says." And if you notice that the bid
+341.12s: ass spread is completely off from that
+343.04s: theoretical value, then you at least
+344.96s: know where you should probably start
+346.64s: pinging your trade if you're trying to
+348.16s: get in at that point. So, overpriced
+351.68s: premiums is really, really tricky to
+353.76s: identify in this way because it
+355.36s: essentially makes the assumption that
+357.68s: you can forecast volatility better than
+360.56s: the market. And some people might say,
+362.00s: well, AI can probably do that. It can't.
+364.32s: It absolutely cannot. And it's also
+367.04s: important to remember from a retail
+368.56s: trader lens, AI is not new. It's new to
+371.20s: us. We've had it for a few years now,
+373.36s: and it's growing
+374.76s: massively. AI and artificial
+377.12s: intelligence and automation has been
+379.36s: used for a long time on the
+381.12s: institutional side. And they're the
+383.12s: people that price V that we then use. So
+388.16s: that's not to say that V is always
+389.68s: perfectly priced. You might think that
+391.04s: it's going to expand. So, meaning it's
+393.68s: relatively cheap now compared to your
+395.32s: expectations, but that's different than
+397.76s: saying something like it's overpriced.
 399.52s: That's tricky to arrive at with this.
-401.52s: And again, the reason why I'm giving you this level of details
-404.12s: because this could mislead somebody.
-407.40s: If you take this at face value, you could think
-409.60s: that AI is able to do this successfully for you,
-413.04s: which is a different story.
-414.32s: And again, I'm going to give you a couple of ways
-416.20s: to tweak some of these to have a more productive conversation
-420.24s: with AI.
-422.24s: Next they say, I've also been feeding a charts.
-424.40s: So candles, boule and your bands, EMAs, volume breakdown
-427.12s: technicals, that's super cool.
-428.36s: That's useful.
-429.36s: Not generic copy and paste chunk real analysis
-431.36s: that I've been decided if I should wait or enter.
-432.96s: This is completely reasonable.
-435.00s: And you can even code it with what you want to see.
-438.80s: And you could ask it to look at a list of names.
-442.48s: And honestly, you don't even have to put in the charts.
-445.56s: You can typically tell it to look up the chart
-447.84s: and it can pull it for you.
-449.36s: So you don't even necessarily have to do this step.
-452.08s: I used to just follow hyperguess,
-453.80s: help me make smarter calls.
-454.92s: That's awesome.
-456.04s: I think there's a couple things we can do to tighten this up,
-458.28s: but literally anything that helps somebody go from this stage
-462.08s: of just guessing to being more practical, that's a win.
-466.60s: Especially on longer data trades.
-468.76s: Not saying it replaces DD,
-470.00s: having a second brain that doesn't miss small stuff.
-471.76s: That's correct.
-472.48s: Now, this is again tricky,
-475.16s: because the second brain component completely agree with
-478.16s: but it misses tons of stuff.
-480.04s: And again, these are like two great examples
-482.04s: right here.
-482.88s: It's telling us that the 90 strike has hedging or downside
-486.56s: risk because of the heavy put volume.
-488.04s: The volume is one.
-489.48s: That's not heavy.
-490.56s: So again, you still have to be the practical thinking
-494.16s: elements of this.
-495.80s: All right, so let's take a look at a couple prompts
-498.28s: that you can use.
-499.16s: Now again, this is geared more so for beginners.
-501.48s: This is not for your power users.
-503.72s: If you're interested in that,
-504.84s: we absolutely could do a separate video
-506.48s: that really clicks into more heavy utilization of it.
-511.48s: This is more so for people that are just looking to get started.
-514.24s: So I've broken it down into three buckets.
-516.28s: It's not limited to this.
-518.00s: This is just a starting point.
-519.60s: But things to help you learn,
-520.88s: things to help you research,
-522.00s: and then things to help you analyze.
-523.76s: So you can read these prompts on your own.
-525.32s: I'm just gonna grab a couple from each
-526.84s: and literally run it through the prompt with you now.
-529.16s: So I grab this one.
-530.88s: I just learned about XX, give me 25 questions.
-534.08s: This is effectively using chatchipT
-537.04s: or whatever model you prefer,
-539.12s: literally as a learning tool.
-541.24s: Now I subscribe to a ton of different models
-544.48s: because I find it fascinating.
-546.16s: I like learning the differences.
-547.72s: ChatchipT is great.
-549.04s: And it's like a really solid consistent middle of the road.
-552.72s: It's sometimes it'll be really good at something lag
-555.20s: and others like right now what I noticed in the model
-557.40s: is it's way too friendly, way too agreeable,
-560.44s: which is a problem because you want it to be objective.
-563.76s: So anyways, back to this,
-565.64s: I literally grab this, paste it in,
-568.36s: and I kept it as is because I literally kept it
-571.04s: exactly as it is.
-572.28s: And notice how it prompts back,
-573.40s: and it says, sure,
-574.64s: but what the hell is XX?
-577.52s: And chatchipT is probably going through some
-579.80s: not safe for work references if I had one more X,
-582.40s: but I didn't.
-583.52s: And I was just like, oh yeah, duh,
-586.04s: I actually need to give it something.
-587.72s: So I just input that we learned about Greeks in options.
-592.28s: Give me a quiz.
-593.84s: And it literally builds a quiz based on my specifications
-598.04s: that I can run through.
-599.52s: And I use a mix of different questions.
-601.92s: You can mix up even more if you'd like.
-604.48s: And then at the end,
+401.52s: And again, the reason why I'm giving you
+403.20s: this level of detail is because this
+405.84s: could mislead somebody. If you take this
+408.24s: at face value, you could think that AI
+410.64s: is able to do this successfully for you,
+413.04s: which is a different story. And again,
+414.80s: I'm going to give you a couple ways to
+416.48s: tweak some of these to have a more
+418.64s: productive conversation. with
+421.16s: AI. Next, they say, "I've also been
+423.28s: feeding it charts." So, candles,
+425.20s: Ballinger bands, EMAs, volume breakdown,
+427.20s: technicals. That's super cool. That's
+428.64s: useful. Not generic copy and paste,
+430.56s: junk, real analysis that have me decide
+432.00s: if I should wait or enter. This is
+433.52s: completely reasonable. And you can even
+436.16s: code it with what you want to see. And
+440.00s: you could ask it to look at a list of
+442.16s: names. And honestly, you don't even have
+443.76s: to put in the charts. You can typically
+446.48s: tell it to look up the chart and it can
+448.40s: pull it for you. So, you don't even
+450.00s: necessarily have to do this step. I used
+452.32s: to just follow hyper guess. Help me make
+454.32s: smarter calls. That's awesome. I think
+456.32s: there's a couple things we can do to
+457.68s: tighten this up. But literally anything
+459.68s: that helps somebody go from this stage
+462.00s: of just guessing to being more
+464.40s: practical, that's a win. Especially on
+467.36s: longer data trades, not saying it
+469.28s: replaces DD, having a second brain that
+470.96s: doesn't miss small stuff. That's
+472.08s: correct. Now, this is again tricky
+475.20s: because the second brain component
+477.36s: completely agree with, but it misses
+479.04s: tons of stuff. And again, these are like
+481.12s: two great examples right here. It's
+483.04s: telling us that the 90 strike has
+485.60s: hedging or downside risk because of the
+487.28s: heavy put volume. The volume is one
+489.44s: that's not heavy. So again, you still
+491.92s: have to be the practical thinking
+494.16s: element of this. All right, so let's
+496.48s: take a look at a couple prompts that you
+498.80s: can use. Now, again, this is geared more
+500.32s: so for beginners. This is not for your
+502.80s: power users. If you're interested in
+504.64s: that, we absolutely could do a separate
+506.24s: video that really clicks into more heavy
+509.60s: utilization of it. This is more so for
+512.16s: people that are just looking to get
+513.28s: started. So, I've broken it down into
+515.60s: three buckets. It's not list, it's not
+517.36s: limited to this. This is just a starting
+518.88s: point, but things to help you learn,
+520.96s: things to help you research, and then
+522.32s: things to help you analyze. So, you can
+524.24s: read these prompts on your own. I'm just
+525.68s: going to grab a couple from each and
+527.04s: literally run it through the prompt with
+528.48s: you now. So, I grabbed this one. I just
+531.28s: learned about XX. Give me 25 questions.
+534.16s: This is effectively using chat GPT or
+537.28s: whatever model you prefer literally as a
+540.56s: learning tool. Now, I subscribe to a ton
+543.84s: of different models cuz I find it
+545.68s: fascinating. I like learning the
+547.04s: differences. Chat PT is great and it's
+549.60s: like a really solid consistent middle of
+551.84s: the road. It's sometimes it'll be really
+554.32s: good at something, lag in others. It's
+555.76s: like right now what I noticed in the
+557.20s: model is it's way too friendly, way too
+559.40s: agreeable, which is a problem because
+561.84s: you want it to be objective. So anyways,
+564.48s: back to this. I literally grabbed this,
+567.44s: pasted it in, and I kept it as is
+569.76s: because I literally kept it exactly as
+571.92s: it is. And notice how it prompts back
+573.36s: and it says, "Sure, but what the hell is
+576.60s: XX?" And ChatgPT is probably going
+579.20s: through some not safe for work
+580.88s: references if I had one more X, but I
+582.72s: didn't. And I was just like, "Oh yeah,
+585.68s: duh. I actually need to give it
+587.52s: something." So I just input that we
+589.60s: learned about Greeks in options. Give me
+592.64s: a quiz. And it literally builds a quiz
+596.24s: based on my specifications that I can
+598.96s: run through. And I use a mix of
+601.04s: different questions. You can mix up even
+603.04s: more if you'd like. And then at the end,
 605.76s: you can literally answer all of these.
-607.80s: So the way that I would go through and take this test,
-609.92s: I would say like one is A, two is A, three is A,
-614.92s: like that.
-616.00s: And then when you get down to the extended responses,
-618.32s: the short answer, so 11, delta is the rate of,
-624.48s: not ratio, rate of change of premium.
-629.04s: Her points change in spot.
-634.24s: And so on and so forth,
-635.32s: you can literally have it evaluate your responses
-638.20s: or you could literally say at the end.
-641.52s: It's asking you do you want an answer key.
-643.20s: And even if it doesn't prompt you for this,
-645.52s: you could say, yeah, build the answer key.
-648.92s: And then you can compare your responses against it.
-653.52s: So this is useful, really in an educational sense.
-657.68s: Now the next one I want to show you is where we move a little
-660.60s: bit closer to the research phase.
-661.92s: So let's say that you've been learning about the outlier
-665.24s: strategy process, which I've a video that goes through.
-667.40s: This is just a framework to think about how to build
-669.88s: strategies that actually make money.
-672.44s: And you're learning about this concept called profit mechanisms,
-675.88s: which really takes us into identifying
-679.00s: and analyzing specific market effects.
-681.28s: And you're trying to figure out what our market effects
-683.72s: and how can I try to make money off of them.
-686.64s: AI's got your backdog.
-688.56s: So if you say something like this and you dump that into chat
-693.12s: UPD, it will literally give you an entire starting point.
-699.12s: Now again, this isn't comprehensive.
-700.84s: But this is saying, help me identify different market effects.
-703.72s: And it's saying, well, there's a few things we can do.
-706.64s: Now this upfront, notice how this is talking about network
-710.84s: effects, economies of scale, because it took out
-713.64s: a lot of strategy process completely out of context.
-716.00s: It had no idea what the guiding function was.
-718.08s: And I left this in here on purpose, because this answer is
-720.48s: useless to me.
-721.88s: So what you'll notice is in the next iteration,
-725.08s: I'm an options trader.
-727.72s: So what I'm trying to show you is that you need to be
-730.20s: thoughtful about what you give the model.
-732.36s: If you give the model what is just occurring in your brain
-735.36s: with all the subcontext that you have, the model can't
-738.84s: read your mind yet.
-740.76s: So you have to give it information in order to help you.
-745.12s: So this is a great example of that.
-746.52s: So after I corrected it and I said, oh, I'm an option
-749.00s: trader looking to apply this.
-751.28s: Well, all of a sudden it starts going into different kinds
-753.44s: of market effects, inefficiencies, misprison, risk
-757.44s: priniya talking about ways to capitalize from theta to k,
-761.24s: liquidity, and flow based ideas.
-763.64s: Then from here, you can just start double clicking
-765.80s: into these.
-766.24s: You can say, hey, I want to learn more about dealer gamma.
-769.36s: How can I make money from that?
-770.96s: Boom, off you go.
-771.92s: You're now analyzing a profit mechanism based on an
-774.40s: actual thing.
-775.68s: Another prompt you could give here is something like, hey,
-778.96s: find me peer reviewed research and link to based on
-783.56s: this topic.
-784.92s: See what else it comes up with.
-787.24s: Another way we can use it is this is a live example
-790.00s: by the way.
-790.84s: I've noticed for the last couple weeks, definitely
-793.80s: the last week, that the S&P 500 is
-796.20s: had seemingly large moves in the tail half of the day,
-800.52s: specifically the last hour, specifically the last half hour
-803.52s: to like 15 minutes.
-805.44s: So I built a question for it and I said, hey, analyze this.
-809.20s: So what I did was I ran and I grabbed data in five minute
-813.48s: increments downloaded it, then I literally uploaded it
-818.24s: into chatchipt and I gave it that exact prompt.
-821.32s: And I asked it to look at it.
-822.80s: So it runs through and it gives you an overview
-825.96s: of what it's doing.
-826.80s: So this is showing you the average return by five minute interval.
-830.52s: So then I say, okay, this is for the entire data set
-833.84s: that I selected, which again is for,
-836.16s: it doesn't go this far because it runs out of columns.
-839.76s: This only uses 20,000 records, so it does not go back to 2018.
-842.76s: It's like less than a year.
-844.32s: But for the sake of the example here.
-848.28s: So what I did was I said, okay, well,
-849.96s: based on this population that I created,
-852.92s: I want to take a sample of that.
-854.84s: And I want to compare it against the recent five days.
-858.28s: What do I notice about the average return over the last half hour
-862.40s: in the last five days compared to historic?
-865.96s: This completely validates the colloquial thing
-869.28s: that my eyes are picking up.
-871.28s: Because you can see that the last five minutes
-873.20s: are literally schizophrenic parabolic moves
-876.56s: for the recent five days compared to the historical.
-879.48s: Now again, you would expect this
-881.40s: because the recent five days is a very small sample.
-884.00s: And the more data you have, the closer you expect it
-887.00s: to perform on average.
-888.60s: So we can build out these studies to tease out that idea more,
-892.48s: but the premise is fully displayed here.
-896.00s: And it shows average volume.
-897.76s: This is an example of chat you'd be being wrong.
-900.20s: It's plotting average volume, but this is SPX.
-902.88s: There is no volume.
-904.08s: So it's just showing you zero, but if you start to ask it
-906.96s: about volume, it can try to manufacture answers
-911.04s: that literally don't exist.
-912.96s: So then we could say, well, I want you to actually run a T-test
-917.32s: on it because I want to see if this is statistically significant
-920.40s: or not.
-920.76s: And it literally can show you where it's statistically
-923.20s: significant or not.
-925.00s: This is, again, just another way you can use it
-928.48s: for basic research purposes.
-930.12s: Okay, last example.
-931.72s: Let's say that you're trying to figure out
-933.52s: everything going on in the market.
-934.72s: There's a ton of stuff happening,
-936.00s: but you think that there's some opportunities out there.
-938.80s: Literally you can drop a prompt like this
-940.88s: into chat you PT.
-942.68s: And I'll go all the way up to where I first dropped it,
-944.64s: that exact prompt, and it gave me a very high level overview
-948.48s: of what it's seen.
-949.76s: So then based on these investment opportunities,
-951.88s: I said, hey, go away further in detail,
-955.00s: up the quality tremendously, and give me specific things
-959.44s: to look at.
-960.04s: So I asked it based on the sector,
-962.24s: look at individual stocks,
-964.52s: for those individual stocks,
-966.12s: I want to see fundamental analysis based on its performance.
-969.32s: I want you to include price targets based on your research
-972.08s: timelines for those price targets.
-973.96s: And off we go.
-976.80s: One of the things you'll notice that I think is really pertinent
-981.40s: is I said, okay, great.
-983.04s: I want you to put it in a table,
-984.40s: so it's easier for me to see,
-986.12s: but then I want you to not just focus on large caps,
-988.80s: but include growth stocks of some sort.
-992.64s: So I get my table with what its expectations are,
-996.24s: but what's one thing I notice down here
-999.60s: when I get to Palantir?
-1001.84s: What does it say at the current price for Palantir?
-1003.44s: It's 25.
-1005.76s: What is the current price for Palantir?
-1007.96s: 117.
-1010.08s: Again, you have to fact check it.
-1013.04s: So this is the point of you can use it as a starting point,
-1017.40s: but it is not omnipotent,
-1019.04s: and it will tell you things very confidently.
-1021.88s: However, this is dead wrong, completely wrong,
-1026.68s: and it won't flag that for you.
-1029.08s: So you have to continue to be thinking,
-1031.20s: and this is why when I go back to this person
-1034.20s: that says, well, I don't really feel like doing it,
-1036.56s: to me, that's a massive red flag,
-1038.96s: because what it gives you can be wrong,
-1041.40s: you have to fact check it.
-1043.36s: But the cool part is you can teach it to teach you
-1047.32s: how to analyze whatever it is you ask it to look at,
-1049.92s: so you can validate it on your own to make sure it's correct.
-1053.64s: This is literally the absolute tip of the iceberg,
-1057.60s: because so much deeper if you have any questions,
-1059.44s: let me know.
-1060.28s: Be an outlier, see you later.
+607.84s: So the way that I would go through and
+609.20s: take this test that I would say like one
+610.96s: is a two is a three is a like that and
+616.00s: then when you get down to the extended
+617.68s: responses the short answer so 11
+621.56s: delta is the rate of not ratio rate of
+626.16s: change of
+628.20s: premium per point change in
+633.32s: spot and so on and so forth. You can
+635.92s: literally have it evaluate your
+637.68s: responses or you could literally say at
+641.20s: the end it's asking you do you want an
+642.80s: answer key and you even if it doesn't
+645.04s: prompt you for this you could say yeah
+646.80s: build the answer key and then you can
+649.68s: compare your responses against it. So
+654.40s: this is useful really in an educational
+657.52s: sense. Now the next one I want to show
+658.88s: you is where we move a little bit closer
+661.12s: to the research phase. So, let's say
+663.20s: that you've been learning about the
+664.80s: outlier strategy process, which I have a
+666.72s: video that goes through. This is just a
+668.16s: framework to think about how to build
+670.00s: strategies that actually make money, and
+672.88s: you're learning about this concept
+674.72s: called profit mechanisms, which really
+676.88s: takes us into identifying and analyzing
+679.76s: specific market effects, and you're
+681.52s: trying to figure out, well, what are
+683.12s: market effects, and how can I try to
+684.72s: make money off of them? AI's got your
+687.36s: back, dog. So if you say something like
+690.52s: this and you dump that into chat
+694.20s: GPT, it will literally give you an
+697.36s: entire starting point. Now again, this
+699.60s: isn't comprehensive, but this is saying
+701.60s: help me identify different market
+703.36s: effects and it's saying, well, there's a
+705.76s: few things we can do. Now, this upfront,
+709.12s: notice how this is talking about network
+710.88s: effects, economies of scale, because it
+713.20s: took outlier strategy process completely
+715.20s: out of context. It had no idea what the
+717.20s: guiding function was and I left this in
+718.80s: here on purpose because this answer is
+720.64s: useless to me. So what you'll notice is
+722.96s: in the next iteration I'm an options
+726.84s: trader. So what I'm trying to show you
+729.20s: is that you need to be thoughtful about
+730.96s: what you give the model. If you give the
+733.20s: model what is just occurring in your
+735.20s: brain with all the subcontext that you
+737.36s: have, the model can't read your mind
+739.88s: yet. So you have to give it information
+743.60s: in order to help you. So this is a great
+745.92s: example of that. So after I corrected it
+747.76s: and I said, "Oh, I'm an options trader
+749.84s: looking to apply this." Well, all of a
+751.84s: sudden it starts going into different
+753.28s: kinds of market effects, inefficiencies,
+755.52s: re mispricing, risk premia, talking
+758.96s: about ways to capitalize from faded
+760.88s: decay, liquidity, and flow-based ideas.
+763.60s: Then from here, you can just start
+765.20s: double clicking into these. You could
+766.56s: say, "Hey, I want to learn more about
+768.40s: dealer gamma. How can I make money from
+770.48s: that?" Boom. Off you go. You're now
+772.40s: analyzing a profit mechanism based on an
+774.56s: actual thing. Another prompt you could
+776.56s: give here is something like, "Hey, find
+779.28s: me peer-reviewed research and link to
+783.12s: based on this topic. See what else it
+785.60s: comes up with." Another way we can use
+788.32s: it is, this is a live example, by the
+790.32s: way. I've noticed for the last couple
+792.88s: weeks, definitely the last week, that
+794.96s: the S&P 500 has had seemingly large
+798.40s: moves in the tail half of the day,
+800.64s: specifically the last hour, specifically
+802.56s: the last half hour to like 15 minutes.
+805.44s: So, I built a question for it and I
+807.52s: said, "Hey, analyze this." So what I did
+810.00s: was I ran and I grabbed data in 5m
+813.20s: minute increments, downloaded it. Then I
+815.68s: literally uploaded it into chat GPT and
+819.44s: I gave it that exact prompt and I asked
+821.76s: it to look at it. So it runs through and
+824.56s: it gives you an overview of what it's
+826.48s: doing. So this is showing you the
+827.84s: average return by 5 minute interval. So
+830.64s: then I say, okay, this is for the entire
+833.20s: data set that I selected, which again is
+835.40s: for it's it doesn't go this far because
+838.24s: it runs out of columns. This only uses
+840.48s: 20,000 records, so it does not go back
+842.16s: to 2018. It's like less than a year. But
+845.36s: for the sake of the example here, so
+848.48s: what I did was I said, okay, well based
+850.32s: on this population that I created, I
+853.12s: want to take a sample of that and I want
+855.20s: to compare it against the recent 5 days.
+858.24s: What do I notice about the average
+859.92s: return over the last half hour in the
+862.80s: last 5 days compared to
+864.92s: historic? This completely validates the
+868.04s: colloquial thing that my eyes are
+870.32s: picking up because you can see that the
+872.48s: last 5 minutes are like literally
+874.56s: schizophrenic parabolic moves for the
+876.96s: recent 5 days compared to the
+878.96s: historical. Now again, you would expect
+880.72s: this because the recent 5 days is a very
+882.96s: small sample and the more data you have,
+885.76s: the closer you expect it to perform on
+887.76s: average. So we can build out these
+890.48s: studies to tease out that idea more. But
+893.12s: the premise is fully displayed here. And
+896.40s: it shows average volume. This is an
+898.24s: example of chatt being wrong. It's
+900.48s: plotting average volume, but this is
+902.32s: SPX. There is no volume. So it's just
+904.64s: showing you zero. But if you start to
+906.48s: ask it about volume, it can try to
+909.32s: manufacture answers that literally don't
+912.00s: exist. So then we could say, well, I
+914.96s: want you to actually run a tea test on
+917.52s: it because I want to see if this is
+919.28s: statistically significant or not. And it
+921.12s: literally can show you where it's
+922.64s: statistically significant or not. This
+925.28s: is again just another way you can use it
+928.48s: for basic research purposes. Okay, last
+930.76s: example. Let's say that you're trying to
+932.80s: figure out everything going on in the
+934.56s: market. there's a ton of stuff
+935.60s: happening, but you think that there's
+936.88s: some opportunities out there. Literally,
+939.12s: you can drop a prompt like this into
+941.04s: chat GPT and I'll go all the way up to
+943.68s: where I first dropped it, that exact
+945.36s: prompt, and it gave me a very highlevel
+947.84s: overview of what it's seen. So then
+950.16s: based on these investment opportunities,
+951.84s: I said, "Hey, go way further in detail,
+954.96s: up the quality
+956.36s: tremendously, and give me specific
+959.12s: things to look at." So I asked it based
+961.60s: on the sector look at individual stocks
+964.40s: for those individual stocks. I want to
+966.72s: see fundamental analysis based on its
+968.72s: performance. I want you to include price
+970.80s: targets based on your research and
+972.16s: timelines for those price targets. And
+975.36s: off we go. One of the things you'll
+977.80s: notice that I think is really pertinent
+981.36s: is I said, "Okay, great. I want you to
+983.60s: put it in a table so it's easier for me
+985.36s: to see, but then I want you to not just
+987.60s: focus on large caps, but include growth
+990.72s: stocks of some sort. So, I get my table
+994.56s: with what its expectations are, but
+996.64s: what's one thing I notice down here when
+999.76s: I get to
+1000.76s: Palunteer? What does it say? The current
+1002.72s: price for Palanteer is 25. What is the
+1006.24s: current price for Palanteer?
+1009.00s: 117. Again, you have to fact check it.
+1013.12s: So, this is the point of you can use it
+1015.92s: as a starting point, but it is not
+1018.24s: omnipotent and it will tell you things
+1020.24s: very confidently. However, this is dead
+1024.24s: wrong, completely wrong and it won't
+1027.68s: flag that for you. So, you have to
+1029.92s: continue to be thinking and you this is
+1032.00s: why when I go back to this person that
+1034.48s: says, "Well, I don't really feel like
+1036.08s: doing it." To me, that's a massive red
+1038.24s: flag because what it gives you can be
+1041.04s: wrong. You have to fact check it. But
+1043.52s: the cool part is is you can teach it to
+1046.08s: teach you how to analyze whatever it is
+1049.04s: you asked it to look at so you can
+1050.48s: validate it on your own to make sure
+1052.56s: it's correct. This is literally the
+1055.68s: absolute tip of the iceberg. It goes so
+1058.16s: much deeper. If you have any questions,
+1059.52s: let me know. Be an outlier. See you
+1060.96s: later.

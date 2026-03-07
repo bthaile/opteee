@@ -1,99 +1,590 @@
-0.00s: Max Payne theory in options. What is it? We're going to talk about exactly that. We're going to start with what it is and then what it is then how you can use it. What's up everybody Eric here welcome back to all the outliers is shout out to the Patreon family. You guys make creating content like this possible. And if you enjoy my content.
-17.28s: Consider signing up helps me out a bunch so as per usual I want to start with what it isn't and if you're like me and you were playing video games in the late 90s really 2000s you would think it's this dude which is kind of like OG to the taken guy it's the video game where his family was killed and he was a undercover detective that's not the Max Payne we're talking about today next we have that feeling you have in the bottom of your stomach when you open up your portfolio and this is what you see where
-47.28s: you're down 94% all time that is also not Max Payne although both technically are also Max Payne. Let's talk about what it actually is. So first off I want to start with kind of a quick definition from
-64.10s: investopedia you can read that at your leisure I'm going to summarize it for you because I mean that's what I'm here for and essentially it's the strike price in an individual series meaning an expiration cycle where the most options expire worthless.
-79.42s: Why does that matter well there's a couple things that lead into that the first being this bullet point right here. The assumption we start with is that on the
-89.70s: counter side to most purchased options are market makers they're the people that typically make markets so if a lot of people are buying options they're
-98.58s: typically selling options and there's a reason why this is important it's because market makers tend to hedge their
-104.74s: position so the ability to move rice at least somewhat but those same sellers they would much rather the
-111.94s: options they sold expire worthless it's just a simpler transaction for them they don't have to move any
-117.46s: inventory there's no weekend risk anything like that so the theory in general is market makers are the vast majority of sellers out there on the open marketplace they would
-127.94s: prefer their options to expire worthless so come expiration day they are then incentivized to quite literally manipulate the price of the stock to land at maximum
-140.26s: pain and I'm going to show you exactly how to find what that looks like on the left hand side over here we have the calculation
-146.02s: for it there's a lot of websites that do it for you but I'm also just going to show it to you in think or swim because that's a platform I
-151.14s: use and then I'm sure you can find a proxy if you use any sort of regular platform cough cough probably not fucking Robinhood but other than those dorks
-159.70s: but come on man you have one fatal flaw Robinhood such a dork most things will give you a proxy for maximum pain although they may or
-168.42s: may not call it that and I'll show you what that looks like in a second but first let's understand how it's calculated what we need to do is
-173.94s: understand the series value for all of the individual strikes in an expiration cycle so what does that mean well if we pop
-181.94s: open the platform here let's say we're going to go to the 25 July expiration and typically you want to use the closest
-188.26s: expiration it's really prevalent on expiration date itself but because I'm filming this over a weekend there is no zero
-194.42s: DTE available right now but this will serve as a proxy essentially what we need to do is see where the vast majority of
-201.46s: option value exists so there's two things we have to look at one is the open interest which is this column and then we have to look at the
-208.50s: intrinsic value because essentially that would be the value if it expired in the money so you do that for all of the options
-215.30s: again there's a simple way to do it don't worry I'm just explaining how it's actually calculated once you get the value for
-221.62s: all of the options in that chain then we understand the series the expiration cycle value and we need to find the
-230.42s: specific strike price where the vast majority of the greatest value as a dollar amount of options expire worthless that's the maximum
-239.54s: pain strikes yet at pain strikes I hope somebody picked that up and then down here like I said it does become more
-245.86s: pronounced when expiration cycle gets closer and that's because that's when a lot of hedging is happening and again this
-252.26s: comes into play at expiration when the options are about to expire so we talked a little bit about what it's
-258.42s: not now hopefully we have an idea of what it is but before I show you exactly how to find it in the
-263.94s: platform I want you to take a look at the study not gonna go through it in detail here you are more than
-268.66s: capable of looking this up on SSRN as I always say you shouldn't take my word for any of this stuff I'm
-274.58s: literally just a dude that talks on the internet like all the other finance content creator youtubers we are
-280.66s: just people sharing anecdotes essentially I have a really comprehensive data set on this actually but
-287.30s: mine's not peer reviewed this is and this is actually a pretty recent study this is from 19 of
-291.62s: ember 2022 and it says no max pain no gain stock return predictability at option expiration and there
-298.02s: are some actually really interesting bits in here so I've highlighted those for you but let's take a
-302.18s: look this says we construct a measure of potential max pain gain loss stores stocks according to this
-308.10s: measure and find that a spread portfolio that buys high max pain stock and sells low max pain stocks
-314.82s: generates large positive and statistically significant returns and alphas so essentially with
-320.18s: that entire line means if you're new to reading these kinds of things it means that there's an
-324.90s: observable tradable trend then down here it says our results provide strong evidence of stock return
-330.18s: predictability at the expiration of options we find that these returns reverse after options
-335.14s: expiration that's super important because this is talking about stock manipulation the fact that
-340.10s: it happens at expiration but then reverse is post would definitely be indicative of some sort of
-344.82s: market force causing that movement and then the last thing here this is probably the most important
-348.66s: things I can already see the dollar signs lighting up in your eyes but it says our results are
-353.86s: especially strong for relatively small in a liquid stocks so all the people that are out there
-359.38s: trading zero dte options I will tell you that there is some semblance of it existing but it's very
-364.10s: difficult for those to be moved in x like spx or even spy there's a lot of money in those indices
-370.82s: so now let's take a quick look on how we can find it so for example what I'm going to do is pull
-377.54s: up some options product depth details and right now I have it set to show me the average so this
-384.18s: is combining calls and puts into one individual chart for me it's easier to see the other thing you'll
-391.06s: notice over here is I have intrinsic value so if we go back really quick and we take a look at
-396.26s: if you'll recall the calculation we need to calculate the intrinsic value so that's exactly what
-401.54s: we're doing here I'm finding the spot where the intrinsic value is actually the lowest because
-407.94s: again that will tell me that that's where maximum pain lives so if we take a look at this graph we
-413.06s: can change it to be whatever series you want you want to isolate whatever expiration cycle you're
-417.22s: looking at so going off of this 25 July series we can see that maximum pain is right around 45 32 is
-423.86s: what I would say options you know it has to move in the full strike price so even though this will
-428.34s: show you you know distances between strikes meaning it goes from you know 4400 and then it has
-433.38s: decimal point the strikes don't have a decimal point so you just round and you get kind of the
-437.14s: closest idea that you have based on what I'm seeing here it's right around like 45 maybe 30 yeah
-443.30s: it's like right or somewhere right around 45 35 something like that and what this is really
-448.34s: showing us is if I actually change this to open interest we can find the strikes where there's
-454.66s: a lot of debt and realistically you would want to do it for calls and puts so that you can get an
-459.46s: idea and you know where that strike might live but we can see again pretty simply if you just use
-464.82s: this tool over here that we can see the intrinsic value and again we want it to be combined if it's
-470.18s: not combined it's kind of more difficult to find now let's take a look at what this looks like
-474.34s: in practice I actually went into think or swim and I ran this in on demand so this is kind of the
-481.22s: tool where you can look back in time and so this is one clip I think this was from 2018 march of
-486.74s: 2018 is when I went back to in time it's just a random day so I went to the open of the day there
-493.06s: and it was 275 87 in spy and maximum pain at that point in time was 276 I'm going to show you
-501.38s: something this is at the end of the day this was right after the close it closed at 278 76 maximum
-507.06s: pain was then 278 what happened Eric you just said at the open of the day it was 276 but then it
-512.74s: was 278 alas markets move they don't stay static that's actually one of the issues with using this
-519.78s: as a strategy is some people believe that once you understand maximum pain at one point in time
-524.42s: that you're good that you're set you know where it's probably going to get pinned to if it's likely to
-528.42s: get pinned but the problem is is options move the vast majority of options 60% of them are traded
-534.90s: before expiration an important figure because what that means is this is an aesthetic data point if
-540.02s: you want to try to use this it typically is a little bit more effective to be closer to actual
-545.62s: expiration and then the other thing is depending on where maximum pain lives if we're 10 points off
-551.70s: of maximum pain probably not going to trend to maximum pain that's a really difficult leap to make
-557.30s: because again it's really important to remember that if we're very close to maximum pain it is
-562.26s: entirely possible for market manipulation to occur so that market makers can just bump price just
-567.86s: a bit and that's what that study indicates observing so is this the silver bullet you now have the
-573.78s: secret recipe to making money and options unfortunately no you're still going to struggle like the
-578.26s: rest of us but this isn't interesting phenomenon so my suggestion to people is if you're interested in
-584.26s: this kind of stuff track it take a look at it for the next few weeks going forward with things like
-589.14s: spy and spx there's an expiration nearly every day so you could do this you can create a data sample
-594.34s: like really quick now with all the expressions available to us and you can see does it trend to
-598.82s: this or does it not and then you can start to think about different trade hypothesis that you use
-603.22s: around that so for example personally i like to trade zero dt spx short straddles sometimes iron
-608.82s: flies and i purposefully wait until later in the day and i will look at maximum pain that's not
-615.38s: the center of my universe for the trade but it's an additive input because then if i realize that
-621.14s: where a couple points off of maximum pain i might tend to move my strikes a little bit or wait
-627.14s: a little bit longer until i kind of get some confirmation if we're moving in that direction
-631.06s: it's the kind of thing that there is efficacy behind it but this isn't gonna fix all your problems
-635.86s: so if you have any questions any follow-ups on this let me know don't forget to like,
-639.78s: subscribe, join our discord it's completely free be an outlier and i'll see you guys later
+0.00s: Max Payne Theory and options what is it
+4.02s: Max Payne Theory and options what is it we're going to talk about exactly that
+5.57s: we're going to talk about exactly that
+5.58s: we're going to talk about exactly that we're going to start with what it isn't
+7.01s: we're going to start with what it isn't
+7.02s: we're going to start with what it isn't then what it is then how you can use it
+9.35s: then what it is then how you can use it
+9.36s: then what it is then how you can use it what's up everybody Eric here welcome
+10.97s: what's up everybody Eric here welcome
+10.98s: what's up everybody Eric here welcome back to all the outliers a shout out to
+12.71s: back to all the outliers a shout out to
+12.72s: back to all the outliers a shout out to the patreon family you guys make
+14.27s: the patreon family you guys make
+14.28s: the patreon family you guys make creating content like this possible and
+16.13s: creating content like this possible and
+16.14s: creating content like this possible and if you enjoy my content consider signing
+18.29s: if you enjoy my content consider signing
+18.30s: if you enjoy my content consider signing up helps me out a bunch so as per usual
+20.33s: up helps me out a bunch so as per usual
+20.34s: up helps me out a bunch so as per usual I want to start with what it isn't and
+23.09s: I want to start with what it isn't and
+23.10s: I want to start with what it isn't and if you're like me and you were playing
+24.95s: if you're like me and you were playing
+24.96s: if you're like me and you were playing video games in the late 90s early 2000s
+27.11s: video games in the late 90s early 2000s
+27.12s: video games in the late 90s early 2000s you would think it's this dude which is
+28.91s: you would think it's this dude which is
+28.92s: you would think it's this dude which is kind of like OG to the taken guy it's
+31.55s: kind of like OG to the taken guy it's
+31.56s: kind of like OG to the taken guy it's the video game where his family was
+34.37s: the video game where his family was
+34.38s: the video game where his family was killed and he was a undercover detective
+36.89s: killed and he was a undercover detective
+36.90s: killed and he was a undercover detective that's not the Max Payne we're talking
+38.39s: that's not the Max Payne we're talking
+38.40s: that's not the Max Payne we're talking about today next we have that feeling
+41.09s: about today next we have that feeling
+41.10s: about today next we have that feeling you have in the bottom of your stomach
+43.55s: you have in the bottom of your stomach
+43.56s: you have in the bottom of your stomach when you open up your portfolio and this
+46.43s: when you open up your portfolio and this
+46.44s: when you open up your portfolio and this is what you see where you're down 94 all
+50.45s: is what you see where you're down 94 all
+50.46s: is what you see where you're down 94 all time that is also not Max Payne although
+53.75s: time that is also not Max Payne although
+53.76s: time that is also not Max Payne although both technically are also Max Payne
+56.93s: both technically are also Max Payne
+56.94s: both technically are also Max Payne let's talk about what it actually is so
+59.99s: let's talk about what it actually is so
+60.00s: let's talk about what it actually is so first off I want to start with kind of a
+62.87s: first off I want to start with kind of a
+62.88s: first off I want to start with kind of a quick definition from Investopedia you
+65.45s: quick definition from Investopedia you
+65.46s: quick definition from Investopedia you can read that at your leisure I'm going
+67.43s: can read that at your leisure I'm going
+67.44s: can read that at your leisure I'm going to summarize it for you because I mean
+69.53s: to summarize it for you because I mean
+69.54s: to summarize it for you because I mean that's what I'm here for and essentially
+71.21s: that's what I'm here for and essentially
+71.22s: that's what I'm here for and essentially it's the strike price in an individual
+73.67s: it's the strike price in an individual
+73.68s: it's the strike price in an individual series meaning an expiration cycle where
+76.37s: series meaning an expiration cycle where
+76.38s: series meaning an expiration cycle where the most options expire worthless why
+80.15s: the most options expire worthless why
+80.16s: the most options expire worthless why does that matter well there's a couple
+82.13s: does that matter well there's a couple
+82.14s: does that matter well there's a couple things that lead into that the first
+84.59s: things that lead into that the first
+84.60s: things that lead into that the first being this bullet point right here the
+87.23s: being this bullet point right here the
+87.24s: being this bullet point right here the Assumption we start with is that on the
+90.11s: Assumption we start with is that on the
+90.12s: Assumption we start with is that on the counter side to most purchased options
+93.35s: counter side to most purchased options
+93.36s: counter side to most purchased options are market makers they're the people
+95.51s: are market makers they're the people
+95.52s: are market makers they're the people that typically make markets so if a lot
+97.49s: that typically make markets so if a lot
+97.50s: that typically make markets so if a lot of people are buying options they're
+98.75s: of people are buying options they're
+98.76s: of people are buying options they're typically selling options and there's a
+100.91s: typically selling options and there's a
+100.92s: typically selling options and there's a reason why this is important it's
+102.41s: reason why this is important it's
+102.42s: reason why this is important it's because market makers tend to hedge
+104.81s: because market makers tend to hedge
+104.82s: because market makers tend to hedge their positions so they have the ability
+106.31s: their positions so they have the ability
+106.32s: their positions so they have the ability to move rice at least somewhat but those
+109.49s: to move rice at least somewhat but those
+109.50s: to move rice at least somewhat but those same sellers they would much rather the
+112.31s: same sellers they would much rather the
+112.32s: same sellers they would much rather the options they sold expire worthless it's
+115.25s: options they sold expire worthless it's
+115.26s: options they sold expire worthless it's just a simpler transaction for them they
+116.87s: just a simpler transaction for them they
+116.88s: just a simpler transaction for them they don't have to move any inventory there's
+118.91s: don't have to move any inventory there's
+118.92s: don't have to move any inventory there's no weekend risk and anything like that
+120.83s: no weekend risk and anything like that
+120.84s: no weekend risk and anything like that so the theory in general is market
+123.83s: so the theory in general is market
+123.84s: so the theory in general is market makers are the vast majority of sellers
+126.17s: makers are the vast majority of sellers
+126.18s: makers are the vast majority of sellers out there on the Open Marketplace they
+128.03s: out there on the Open Marketplace they
+128.04s: out there on the Open Marketplace they would prefer their options to expire
+129.89s: would prefer their options to expire
+129.90s: would prefer their options to expire worthless so come expiration day they
+132.95s: worthless so come expiration day they
+132.96s: worthless so come expiration day they are then incentivized to quite literally
+135.37s: are then incentivized to quite literally
+135.38s: are then incentivized to quite literally manipulate the price of the stock to
+138.89s: manipulate the price of the stock to
+138.90s: manipulate the price of the stock to land at maximum pain and I'm going to
+141.35s: land at maximum pain and I'm going to
+141.36s: land at maximum pain and I'm going to show you exactly how to find what that
+143.15s: show you exactly how to find what that
+143.16s: show you exactly how to find what that looks like on the left hand side over
+144.71s: looks like on the left hand side over
+144.72s: looks like on the left hand side over here we have the calculations for it
+146.45s: here we have the calculations for it
+146.46s: here we have the calculations for it there's a lot of websites that do it for
+148.01s: there's a lot of websites that do it for
+148.02s: there's a lot of websites that do it for you but I'm also just going to show it
+149.45s: you but I'm also just going to show it
+149.46s: you but I'm also just going to show it to you in thinkorswim because that's the
+150.83s: to you in thinkorswim because that's the
+150.84s: to you in thinkorswim because that's the platform I use and then I'm sure you can
+152.27s: platform I use and then I'm sure you can
+152.28s: platform I use and then I'm sure you can find a proxy if you use any sort of
+154.55s: find a proxy if you use any sort of
+154.56s: find a proxy if you use any sort of regular platform cough cough probably
+157.01s: regular platform cough cough probably
+157.02s: regular platform cough cough probably not [&nbsp;__&nbsp;] Robin Hood but other than
+159.11s: not [&nbsp;__&nbsp;] Robin Hood but other than
+159.12s: not [&nbsp;__&nbsp;] Robin Hood but other than those dorks come on man you had one
+161.87s: those dorks come on man you had one
+161.88s: those dorks come on man you had one fatal flaw Robin Hood such a dork most
+165.59s: fatal flaw Robin Hood such a dork most
+165.60s: fatal flaw Robin Hood such a dork most things will give you a proxy for maximum
+167.75s: things will give you a proxy for maximum
+167.76s: things will give you a proxy for maximum pain although they may or may not call
+169.01s: pain although they may or may not call
+169.02s: pain although they may or may not call it that and I'll show you what that
+169.97s: it that and I'll show you what that
+169.98s: it that and I'll show you what that looks like in a second but first let's
+171.65s: looks like in a second but first let's
+171.66s: looks like in a second but first let's understand how it's calculated what we
+173.21s: understand how it's calculated what we
+173.22s: understand how it's calculated what we need to do is understand the series
+175.61s: need to do is understand the series
+175.62s: need to do is understand the series value for all of the individual strikes
+178.85s: value for all of the individual strikes
+178.86s: value for all of the individual strikes in an expiration site cycle so what does
+180.89s: in an expiration site cycle so what does
+180.90s: in an expiration site cycle so what does that mean well if we pop open the
+182.57s: that mean well if we pop open the
+182.58s: that mean well if we pop open the platform here let's say we're going to
+184.13s: platform here let's say we're going to
+184.14s: platform here let's say we're going to go to the 25 July expiration and
+186.65s: go to the 25 July expiration and
+186.66s: go to the 25 July expiration and typically you want to use the closest
+188.21s: typically you want to use the closest
+188.22s: typically you want to use the closest expiration it's really prevalent on
+190.37s: expiration it's really prevalent on
+190.38s: expiration it's really prevalent on expiration date itself but because I'm
+192.53s: expiration date itself but because I'm
+192.54s: expiration date itself but because I'm filming this over a weekend there is no
+194.21s: filming this over a weekend there is no
+194.22s: filming this over a weekend there is no zero DTE available right now but this
+196.31s: zero DTE available right now but this
+196.32s: zero DTE available right now but this will serve as a proxy essentially what
+198.17s: will serve as a proxy essentially what
+198.18s: will serve as a proxy essentially what we need to do is see where the vast
+200.57s: we need to do is see where the vast
+200.58s: we need to do is see where the vast majority of option value exists so
+203.09s: majority of option value exists so
+203.10s: majority of option value exists so there's two things we have to look at
+204.17s: there's two things we have to look at
+204.18s: there's two things we have to look at one is the open interest which is this
+206.39s: one is the open interest which is this
+206.40s: one is the open interest which is this column and then we have to look at the
+208.73s: column and then we have to look at the
+208.74s: column and then we have to look at the intrinsic value because essentially that
+210.65s: intrinsic value because essentially that
+210.66s: intrinsic value because essentially that would be the value if it expired in the
+212.45s: would be the value if it expired in the
+212.46s: would be the value if it expired in the money so you do that for all of the
+214.85s: money so you do that for all of the
+214.86s: money so you do that for all of the options again there's a simple way to do
+216.77s: options again there's a simple way to do
+216.78s: options again there's a simple way to do it don't worry I'm just explaining how
+218.81s: it don't worry I'm just explaining how
+218.82s: it don't worry I'm just explaining how it's actually calculated once you get
+220.97s: it's actually calculated once you get
+220.98s: it's actually calculated once you get the value for all of the options in that
+223.25s: the value for all of the options in that
+223.26s: the value for all of the options in that chain then we understand the series the
+226.13s: chain then we understand the series the
+226.14s: chain then we understand the series the expiration cycle value and we need to
+229.61s: expiration cycle value and we need to
+229.62s: expiration cycle value and we need to find the specific strike price where the
+232.73s: find the specific strike price where the
+232.74s: find the specific strike price where the vast majority of the greatest value as a
+236.09s: vast majority of the greatest value as a
+236.10s: vast majority of the greatest value as a dollar amount of options expire
+238.01s: dollar amount of options expire
+238.02s: dollar amount of options expire worthless that's the maximum change
+239.87s: worthless that's the maximum change
+239.88s: worthless that's the maximum change strikes get it pain strikes I hope
+242.09s: strikes get it pain strikes I hope
+242.10s: strikes get it pain strikes I hope somebody picked that up and then down
+243.53s: somebody picked that up and then down
+243.54s: somebody picked that up and then down here like I said it does become more
+246.11s: here like I said it does become more
+246.12s: here like I said it does become more pronounced when expiration cycle gets
+248.09s: pronounced when expiration cycle gets
+248.10s: pronounced when expiration cycle gets closer and that's because that's when a
+249.95s: closer and that's because that's when a
+249.96s: closer and that's because that's when a lot of hedging is happening and again
+252.05s: lot of hedging is happening and again
+252.06s: lot of hedging is happening and again this comes into play at expiration when
+254.63s: this comes into play at expiration when
+254.64s: this comes into play at expiration when the options are about to expire so we
+256.85s: the options are about to expire so we
+256.86s: the options are about to expire so we talked a little bit about what it's not
+258.77s: talked a little bit about what it's not
+258.78s: talked a little bit about what it's not now hopefully we have an idea of what it
+261.53s: now hopefully we have an idea of what it
+261.54s: now hopefully we have an idea of what it is but before I show you exactly how to
+263.63s: is but before I show you exactly how to
+263.64s: is but before I show you exactly how to find it in the platform I want you to
+265.55s: find it in the platform I want you to
+265.56s: find it in the platform I want you to take a look at this study not going to
+267.11s: take a look at this study not going to
+267.12s: take a look at this study not going to go through it in detail here you are
+268.55s: go through it in detail here you are
+268.56s: go through it in detail here you are more than capable of looking this up on
+270.41s: more than capable of looking this up on
+270.42s: more than capable of looking this up on ssrn as I always say you shouldn't take
+272.93s: ssrn as I always say you shouldn't take
+272.94s: ssrn as I always say you shouldn't take my word for any of this stuff I'm
+274.73s: my word for any of this stuff I'm
+274.74s: my word for any of this stuff I'm literally just a dude that talks on the
+277.01s: literally just a dude that talks on the
+277.02s: literally just a dude that talks on the internet like all the other Finance
+278.87s: internet like all the other Finance
+278.88s: internet like all the other Finance content creator YouTubers we're just
+281.09s: content creator YouTubers we're just
+281.10s: content creator YouTubers we're just people sharing anecdotes essentially I
+283.79s: people sharing anecdotes essentially I
+283.80s: people sharing anecdotes essentially I have a really comprehensive data set on
+286.25s: have a really comprehensive data set on
+286.26s: have a really comprehensive data set on this actually but mine's not peer
+288.35s: this actually but mine's not peer
+288.36s: this actually but mine's not peer reviewed this is and this is actually a
+290.33s: reviewed this is and this is actually a
+290.34s: reviewed this is and this is actually a pretty recent study this is from 19
+291.59s: pretty recent study this is from 19
+291.60s: pretty recent study this is from 19 November 2022 and it says no Max Payne
+294.47s: November 2022 and it says no Max Payne
+294.48s: November 2022 and it says no Max Payne no gains stock return predictability at
+296.69s: no gains stock return predictability at
+296.70s: no gains stock return predictability at option expiration and there are some
+298.79s: option expiration and there are some
+298.80s: option expiration and there are some actually really interesting bits in here
+300.41s: actually really interesting bits in here
+300.42s: actually really interesting bits in here so I've highlighted those for you but
+302.09s: so I've highlighted those for you but
+302.10s: so I've highlighted those for you but let's take a look this says we construct
+303.89s: let's take a look this says we construct
+303.90s: let's take a look this says we construct a measure of potential max pain gain
+306.59s: a measure of potential max pain gain
+306.60s: a measure of potential max pain gain loss sort stocks according to this
+308.33s: loss sort stocks according to this
+308.34s: loss sort stocks according to this measure and find that a spread portfolio
+311.09s: measure and find that a spread portfolio
+311.10s: measure and find that a spread portfolio that buys High Max paying stock and
+313.61s: that buys High Max paying stock and
+313.62s: that buys High Max paying stock and sells Low Max Payne stocks generates
+315.53s: sells Low Max Payne stocks generates
+315.54s: sells Low Max Payne stocks generates large positive and statistically
+317.45s: large positive and statistically
+317.46s: large positive and statistically significant returns and Alphas so
+319.61s: significant returns and Alphas so
+319.62s: significant returns and Alphas so essentially what that entire line means
+321.89s: essentially what that entire line means
+321.90s: essentially what that entire line means if you're new to reading these kinds of
+323.57s: if you're new to reading these kinds of
+323.58s: if you're new to reading these kinds of things it means that there's an
+325.19s: things it means that there's an
+325.20s: things it means that there's an observable tradable Trend then down here
+327.41s: observable tradable Trend then down here
+327.42s: observable tradable Trend then down here it says our results provide strong
+329.09s: it says our results provide strong
+329.10s: it says our results provide strong evidence of stock return predictability
+330.95s: evidence of stock return predictability
+330.96s: evidence of stock return predictability at the expiration of options we find
+332.69s: at the expiration of options we find
+332.70s: at the expiration of options we find that these returns reverse after options
+335.27s: that these returns reverse after options
+335.28s: that these returns reverse after options expiration that's super important
+337.01s: expiration that's super important
+337.02s: expiration that's super important because this is talking about stock
+338.93s: because this is talking about stock
+338.94s: because this is talking about stock manipulation the fact that it happens at
+341.21s: manipulation the fact that it happens at
+341.22s: manipulation the fact that it happens at expiration but then reverses post would
+343.31s: expiration but then reverses post would
+343.32s: expiration but then reverses post would definitely be indicative of some sort of
+345.05s: definitely be indicative of some sort of
+345.06s: definitely be indicative of some sort of Market Force causing that movement and
+346.67s: Market Force causing that movement and
+346.68s: Market Force causing that movement and then the last thing here this is
+348.05s: then the last thing here this is
+348.06s: then the last thing here this is probably the most important thing
+349.01s: probably the most important thing
+349.02s: probably the most important thing because I can already see the dollar
+350.39s: because I can already see the dollar
+350.40s: because I can already see the dollar signs lighting up in your eyes but it
+352.61s: signs lighting up in your eyes but it
+352.62s: signs lighting up in your eyes but it says our results are especially strong
+354.89s: says our results are especially strong
+354.90s: says our results are especially strong for relatively small in a liquid stocks
+357.77s: for relatively small in a liquid stocks
+357.78s: for relatively small in a liquid stocks so all the people that are out there
+359.51s: so all the people that are out there
+359.52s: so all the people that are out there Trading zero DTE options I will tell you
+361.91s: Trading zero DTE options I will tell you
+361.92s: Trading zero DTE options I will tell you that there is some semblance of it
+363.41s: that there is some semblance of it
+363.42s: that there is some semblance of it existing but it's very difficult for
+365.21s: existing but it's very difficult for
+365.22s: existing but it's very difficult for those to be moved index like SPX or even
+368.39s: those to be moved index like SPX or even
+368.40s: those to be moved index like SPX or even spy there's a lot of money in those
+370.37s: spy there's a lot of money in those
+370.38s: spy there's a lot of money in those indices so now let's take a quick look
+373.79s: indices so now let's take a quick look
+373.80s: indices so now let's take a quick look on how we can find it so for example
+376.43s: on how we can find it so for example
+376.44s: on how we can find it so for example what I'm going to do is pull up some
+378.41s: what I'm going to do is pull up some
+378.42s: what I'm going to do is pull up some options product depth details and right
+381.17s: options product depth details and right
+381.18s: options product depth details and right now I have it set to show me the average
+383.63s: now I have it set to show me the average
+383.64s: now I have it set to show me the average so this is combining calls and puts into
+387.59s: so this is combining calls and puts into
+387.60s: so this is combining calls and puts into one individual chart for me it's easier
+390.29s: one individual chart for me it's easier
+390.30s: one individual chart for me it's easier to see the other thing you'll notice
+391.49s: to see the other thing you'll notice
+391.50s: to see the other thing you'll notice over here is I have intrinsic value so
+393.35s: over here is I have intrinsic value so
+393.36s: over here is I have intrinsic value so if we go back really quick and we take a
+395.81s: if we go back really quick and we take a
+395.82s: if we go back really quick and we take a look at if you'll recall the calculation
+397.91s: look at if you'll recall the calculation
+397.92s: look at if you'll recall the calculation we need to calculate the intrinsic value
+399.95s: we need to calculate the intrinsic value
+399.96s: we need to calculate the intrinsic value so that's exactly what we're doing here
+402.35s: so that's exactly what we're doing here
+402.36s: so that's exactly what we're doing here I'm finding the spot where the intrinsic
+405.65s: I'm finding the spot where the intrinsic
+405.66s: I'm finding the spot where the intrinsic value is actually the lowest because
+407.93s: value is actually the lowest because
+407.94s: value is actually the lowest because again that will tell me that that's
+409.55s: again that will tell me that that's
+409.56s: again that will tell me that that's where maximum pain lives so if we take a
+412.01s: where maximum pain lives so if we take a
+412.02s: where maximum pain lives so if we take a look at this graph we can change it to
+413.99s: look at this graph we can change it to
+414.00s: look at this graph we can change it to be whatever series you want you want to
+415.79s: be whatever series you want you want to
+415.80s: be whatever series you want you want to isolate whatever expiration cycle you're
+417.41s: isolate whatever expiration cycle you're
+417.42s: isolate whatever expiration cycle you're looking at so going off of this 25 July
+419.51s: looking at so going off of this 25 July
+419.52s: looking at so going off of this 25 July series is we can see that maximum pain
+421.61s: series is we can see that maximum pain
+421.62s: series is we can see that maximum pain is right around 45 32 is what I would
+424.43s: is right around 45 32 is what I would
+424.44s: is right around 45 32 is what I would say options you know it has to move in
+426.77s: say options you know it has to move in
+426.78s: say options you know it has to move in the full strike price so even though
+428.21s: the full strike price so even though
+428.22s: the full strike price so even though this will show you you know distances
+429.95s: this will show you you know distances
+429.96s: this will show you you know distances between strikes meaning it goes from you
+431.93s: between strikes meaning it goes from you
+431.94s: between strikes meaning it goes from you know 4 400 and then it has decimal point
+434.09s: know 4 400 and then it has decimal point
+434.10s: know 4 400 and then it has decimal point the strikes don't have a decimal point
+435.47s: the strikes don't have a decimal point
+435.48s: the strikes don't have a decimal point so you just round and you get kind of
+437.27s: so you just round and you get kind of
+437.28s: so you just round and you get kind of the closest idea that you have based on
+439.01s: the closest idea that you have based on
+439.02s: the closest idea that you have based on what I'm seeing here it's right around
+440.09s: what I'm seeing here it's right around
+440.10s: what I'm seeing here it's right around like 45 maybe 30 yeah it's like right or
+444.47s: like 45 maybe 30 yeah it's like right or
+444.48s: like 45 maybe 30 yeah it's like right or somewhere right around 45 35 something
+446.69s: somewhere right around 45 35 something
+446.70s: somewhere right around 45 35 something like that and what this is really
+448.43s: like that and what this is really
+448.44s: like that and what this is really showing us is if I actually change this
+450.41s: showing us is if I actually change this
+450.42s: showing us is if I actually change this to open interest we can find the strikes
+453.95s: to open interest we can find the strikes
+453.96s: to open interest we can find the strikes where there's a lot of depth and
+456.65s: where there's a lot of depth and
+456.66s: where there's a lot of depth and realistically you would want to do it
+457.97s: realistically you would want to do it
+457.98s: realistically you would want to do it for calls and puts so that you can get
+459.59s: for calls and puts so that you can get
+459.60s: for calls and puts so that you can get an idea on you know where that strike
+461.27s: an idea on you know where that strike
+461.28s: an idea on you know where that strike might live but we can see again pretty
+463.73s: might live but we can see again pretty
+463.74s: might live but we can see again pretty simply if you just use this tool over
+465.89s: simply if you just use this tool over
+465.90s: simply if you just use this tool over here that we can see the intrinsic value
+468.11s: here that we can see the intrinsic value
+468.12s: here that we can see the intrinsic value and again we want it to be combined if
+470.27s: and again we want it to be combined if
+470.28s: and again we want it to be combined if it's not combined it's kind of more
+471.71s: it's not combined it's kind of more
+471.72s: it's not combined it's kind of more difficult to find now let's take a look
+473.69s: difficult to find now let's take a look
+473.70s: difficult to find now let's take a look at what this looks like in practice I
+475.61s: at what this looks like in practice I
+475.62s: at what this looks like in practice I actually went into thinkorswim and I ran
+478.67s: actually went into thinkorswim and I ran
+478.68s: actually went into thinkorswim and I ran this in on demand so this is kind of the
+481.55s: this in on demand so this is kind of the
+481.56s: this in on demand so this is kind of the tool where you can look back in time and
+483.29s: tool where you can look back in time and
+483.30s: tool where you can look back in time and so this is one clip I think this was
+485.39s: so this is one clip I think this was
+485.40s: so this is one clip I think this was from 2018 March of 2018 is when I went
+488.93s: from 2018 March of 2018 is when I went
+488.94s: from 2018 March of 2018 is when I went back to in time it's just a random day
+490.61s: back to in time it's just a random day
+490.62s: back to in time it's just a random day so I went to the open of the day there
+493.25s: so I went to the open of the day there
+493.26s: so I went to the open of the day there and it was 275 87 in spy and maximum
+498.05s: and it was 275 87 in spy and maximum
+498.06s: and it was 275 87 in spy and maximum pain at that point in time was 276. I
+501.17s: pain at that point in time was 276. I
+501.18s: pain at that point in time was 276. I want to show you something this is at
+502.37s: want to show you something this is at
+502.38s: want to show you something this is at the end of the day this is right after
+503.63s: the end of the day this is right after
+503.64s: the end of the day this is right after the close it closed at 278.76 maximum
+507.29s: the close it closed at 278.76 maximum
+507.30s: the close it closed at 278.76 maximum pain was then 278. what happened Eric
+510.05s: pain was then 278. what happened Eric
+510.06s: pain was then 278. what happened Eric you just said at the open of the day it
+511.85s: you just said at the open of the day it
+511.86s: you just said at the open of the day it was 276 but then it was 278. alas
+514.51s: was 276 but then it was 278. alas
+514.52s: was 276 but then it was 278. alas markets move they don't stay static
+517.31s: markets move they don't stay static
+517.32s: markets move they don't stay static that's actually one of the issues with
+519.29s: that's actually one of the issues with
+519.30s: that's actually one of the issues with using this as a strategy is some people
+521.57s: using this as a strategy is some people
+521.58s: using this as a strategy is some people believe that once you understand maximum
+523.61s: believe that once you understand maximum
+523.62s: believe that once you understand maximum pain at one point in time that you're
+524.99s: pain at one point in time that you're
+525.00s: pain at one point in time that you're good that you're set you know where it's
+526.43s: good that you're set you know where it's
+526.44s: good that you're set you know where it's probably gonna get pinned to if it's
+528.23s: probably gonna get pinned to if it's
+528.24s: probably gonna get pinned to if it's likely to get pinned but the problem is
+529.91s: likely to get pinned but the problem is
+529.92s: likely to get pinned but the problem is is options move the vast majority of
+532.37s: is options move the vast majority of
+532.38s: is options move the vast majority of options 60 of them are traded before
+535.43s: options 60 of them are traded before
+535.44s: options 60 of them are traded before expiration it's an important figure
+537.29s: expiration it's an important figure
+537.30s: expiration it's an important figure because what that means is this isn't a
+539.03s: because what that means is this isn't a
+539.04s: because what that means is this isn't a static data if you want to try to use
+541.49s: static data if you want to try to use
+541.50s: static data if you want to try to use this it typically is a little bit more
+543.53s: this it typically is a little bit more
+543.54s: this it typically is a little bit more effective to be closer to actual
+545.81s: effective to be closer to actual
+545.82s: effective to be closer to actual expiration and then the other thing is
+547.55s: expiration and then the other thing is
+547.56s: expiration and then the other thing is depending on where maximum pain lives if
+550.43s: depending on where maximum pain lives if
+550.44s: depending on where maximum pain lives if we're 10 points off of Maximum pain
+552.83s: we're 10 points off of Maximum pain
+552.84s: we're 10 points off of Maximum pain probably not going to Trend to maximum
+555.11s: probably not going to Trend to maximum
+555.12s: probably not going to Trend to maximum pain that's a really difficult leap to
+557.27s: pain that's a really difficult leap to
+557.28s: pain that's a really difficult leap to make because again it's really important
+558.83s: make because again it's really important
+558.84s: make because again it's really important to remember that if we're very close to
+561.35s: to remember that if we're very close to
+561.36s: to remember that if we're very close to maximum pain it is entirely possible for
+563.87s: maximum pain it is entirely possible for
+563.88s: maximum pain it is entirely possible for Market manipulation to occur so that
+565.73s: Market manipulation to occur so that
+565.74s: Market manipulation to occur so that market makers can just bump price just a
+568.13s: market makers can just bump price just a
+568.14s: market makers can just bump price just a bit and that's what that study indicates
+569.87s: bit and that's what that study indicates
+569.88s: bit and that's what that study indicates observing so is this the Silver Bullet
+573.05s: observing so is this the Silver Bullet
+573.06s: observing so is this the Silver Bullet you now have the secret recipe to making
+575.27s: you now have the secret recipe to making
+575.28s: you now have the secret recipe to making money and options unfortunately no
+577.07s: money and options unfortunately no
+577.08s: money and options unfortunately no you're still going to struggle like the
+578.57s: you're still going to struggle like the
+578.58s: you're still going to struggle like the rest of us but this is an interesting
+580.37s: rest of us but this is an interesting
+580.38s: rest of us but this is an interesting phenomenon so my suggestion to people is
+583.55s: phenomenon so my suggestion to people is
+583.56s: phenomenon so my suggestion to people is if you're interested in this kind of
+584.93s: if you're interested in this kind of
+584.94s: if you're interested in this kind of stuff track it take a look at it for the
+587.15s: stuff track it take a look at it for the
+587.16s: stuff track it take a look at it for the next few weeks going forward with things
+589.07s: next few weeks going forward with things
+589.08s: next few weeks going forward with things like spy and SPX there's an expiration
+591.23s: like spy and SPX there's an expiration
+591.24s: like spy and SPX there's an expiration nearly every day so you could do this
+593.03s: nearly every day so you could do this
+593.04s: nearly every day so you could do this you can create a data sample like really
+595.07s: you can create a data sample like really
+595.08s: you can create a data sample like really quick now with all the expirations
+596.51s: quick now with all the expirations
+596.52s: quick now with all the expirations available to us and you can see does it
+598.67s: available to us and you can see does it
+598.68s: available to us and you can see does it Trend to this or does it not and then
+600.47s: Trend to this or does it not and then
+600.48s: Trend to this or does it not and then you can start to think about different
+601.67s: you can start to think about different
+601.68s: you can start to think about different trait hypothesis that you use around
+603.65s: trait hypothesis that you use around
+603.66s: trait hypothesis that you use around that so for example personally I like to
+605.69s: that so for example personally I like to
+605.70s: that so for example personally I like to trade zero DTE SPX short straddles
+608.09s: trade zero DTE SPX short straddles
+608.10s: trade zero DTE SPX short straddles sometimes iron flies and I purposefully
+610.97s: sometimes iron flies and I purposefully
+610.98s: sometimes iron flies and I purposefully wait until later in the day and I will
+613.91s: wait until later in the day and I will
+613.92s: wait until later in the day and I will look at maximum pain that's not the
+615.95s: look at maximum pain that's not the
+615.96s: look at maximum pain that's not the Center of My Universe for the trade but
+617.93s: Center of My Universe for the trade but
+617.94s: Center of My Universe for the trade but it's an additive input because then if I
+620.51s: it's an additive input because then if I
+620.52s: it's an additive input because then if I realize that we're a couple points off
+622.37s: realize that we're a couple points off
+622.38s: realize that we're a couple points off of Maximum pain I might tend to move my
+625.61s: of Maximum pain I might tend to move my
+625.62s: of Maximum pain I might tend to move my strikes a little bit or wait a little
+627.65s: strikes a little bit or wait a little
+627.66s: strikes a little bit or wait a little bit longer until I kind of get some
+629.45s: bit longer until I kind of get some
+629.46s: bit longer until I kind of get some confirmation if we're moving in that
+630.71s: confirmation if we're moving in that
+630.72s: confirmation if we're moving in that direction it's the kind of thing that
+632.45s: direction it's the kind of thing that
+632.46s: direction it's the kind of thing that there is efficacy behind it but this
+634.37s: there is efficacy behind it but this
+634.38s: there is efficacy behind it but this isn't going to fix all your problems so
+636.23s: isn't going to fix all your problems so
+636.24s: isn't going to fix all your problems so if you have any questions any follow-ups
+637.73s: if you have any questions any follow-ups
+637.74s: if you have any questions any follow-ups on this let me know don't forget to like
+639.95s: on this let me know don't forget to like
+639.96s: on this let me know don't forget to like subscribe join our Discord it's
+641.51s: subscribe join our Discord it's
+641.52s: subscribe join our Discord it's completely free be an outlier and I'll
+643.31s: completely free be an outlier and I'll
+643.32s: completely free be an outlier and I'll see you guys later

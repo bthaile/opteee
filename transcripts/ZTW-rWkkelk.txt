@@ -1,8 +1,514 @@
-⚠️ DOWNLOAD FAILED: Could not access the original audio for this video
-
-This transcript is a placeholder because YouTube blocked all download attempts.
-You may need to manually transcribe this video by watching it on YouTube.
-
-Failed to download audio for: https://www.youtube.com/watch?v=ZTW-rWkkelk
-Created dummy audio file on 2025-07-20 20:08:46.673905
-This video has been flagged for manual processing.
+0.64s: What's up outliers? Today we're going to
+2.64s: talk about how to evaluate an options or
+6.72s: really any trading strategy. This is one
+9.28s: of those videos that's a little bit
+10.64s: technical. It's not going to be super
+12.56s: fun or flashy, but this is the back end
+15.60s: of what it takes to be a successful
+17.84s: trader long term. You have to be able to
+20.40s: at least conduct this style of analysis.
+22.88s: Because if we take a look what normal
+24.88s: people do, this is looking on Reddit and
+27.28s: we have this person that says that
+28.64s: they're green 16 out of 17 months in a
+32.32s: row selling options. So obviously they
+34.48s: think that this is a great performance.
+36.40s: They that's why they're posting it here.
+37.92s: They think it's good. Then we have this
+39.84s: person where they've, you know, won 18
+43.44s: or 18 months and my strategy been
+45.44s: consistently winning with a high success
+47.76s: rate. And again, this is common. This is
+50.56s: what most people do. Yet this is
+52.40s: completely wrong. These people are not
+54.64s: actually arriving at any useful
+57.68s: information. So let's talk about how we
+59.52s: can do that. First things first, we
+60.88s: start with a quick overview of the
+62.96s: outlier strategy process. I have a video
+64.64s: that goes through this in detail. You
+66.08s: can look at that in the notes below. The
+68.32s: main point to this is that you have to
+71.28s: have a defined approach to building a
+73.44s: strategy that's based on something you
+75.92s: observe. And I'll show you exactly why.
+78.64s: So if we take a look at the evaluation
+80.48s: of a trading strategy, we have to start
+83.28s: with understanding the effect that we're
+86.08s: trying to capture. Without this, you
+89.28s: cannot accurately evaluate how well your
+93.76s: strategy is actually capturing this
+96.64s: idea. So a lot of traders what they do
+99.52s: is they'll just start trading. They'll
+101.60s: just start putting on trades. So, this
+103.28s: person says they buy a call debit spread
+107.36s: on SPY, strike price $5 under the
+110.32s: current trading value, da da da, and
+112.32s: they're essentially saying like, does
+113.76s: this make sense? Does this does this
+115.76s: work? And sure, this kind of thing might
+119.12s: make money, but does this mean that it's
+121.52s: something that's going to be suitable
+122.88s: long-term? And you'll understand why I
+126.08s: emphasize that point, suitable long
+127.76s: term. So this top section is just going
+131.12s: to go over the typical strategy testing
+133.76s: process. I'm going to go over traps and
+136.32s: then individual metrics that you might
+138.64s: find useful to consider. So the overall
+141.84s: process after we have the profit
+143.28s: mechanism, the idea, we analyze it. That
+145.44s: means that we're quantifying it. We have
+146.88s: a decent idea on how this thing works.
+149.68s: Then we develop the strategy that we're
+153.52s: going to use to try to capture it and
+155.36s: we're going to test it. This testing
+156.88s: phase can be back testing, live testing,
+159.76s: forward testing, using Monte Carlo
+161.68s: simulations, so on and so forth. Now is
+165.04s: when we actually apply that first round
+168.40s: of analysis, and we're going to use some
+170.32s: of the metrics you see over here. I'm
+171.84s: also going to give you a trade log
+174.56s: template that you can use to capture
+178.72s: some of these metrics to then evaluate
+180.88s: your strategy.
+182.80s: So we go through this first round. Then
+186.08s: we have a second round. Now we move from
+190.64s: testing again paper trading all those
+193.28s: different kinds of non-live tests to
+195.68s: actually testing the strategy live with
+197.44s: a minimal viable product real money in
+199.28s: the real market observing
+202.16s: its performance and then again iterating
+205.44s: applying any adjustments that we think
+207.20s: it might need. After our live test, we
+211.28s: can then actually move the strategy to
+213.36s: full scale size, continuing to observe
+216.80s: and iterate. So let's talk about some of
+218.96s: these traps.
+221.20s: If we are analyzing a strategy, most
+224.88s: people honestly miss most of these and
+228.16s: they all boil down to these two broad
+230.64s: buckets. The cognitive biases that we
+232.96s: have and then basic statistical traps.
+235.84s: So, there's that saying, there's lies,
+237.28s: damn lies, then there's statistics. That
+238.96s: applies here. Except the problem is most
+240.80s: of us exhibit some level of Goldilocks
+242.80s: analysis. This is a concept I often
+245.92s: refer to. I This isn't like a real
+247.92s: thing. It's just something I use and
+250.08s: it's where we want to see something so
+252.80s: bad that we kind of ignore the red
+255.36s: flags. And an example I use for this is
+258.56s: when I would go hunting a lot of times I
+261.92s: would see something that's moving a
+263.68s: little bit that I'm positive is a deer.
+267.04s: I'm observing cuz I can't get a great
+269.20s: look at it. I'm looking looking and then
+271.28s: all of a sudden after looking at long
+272.80s: enough I realize it literally is a
+275.44s: stump. It's something that's inadimate,
+278.72s: doesn't move. Yet my brain, because I
+282.00s: wanted to see a deer so bad, convinced
+285.04s: me that it was moving and that this
+288.00s: thing was actually a deer when it's
+290.64s: obviously not. It's a stump. So, we do
+293.84s: this in trading all the time and it's
+296.48s: something that catches most people. It's
+298.08s: where we essentially see what we want to
+299.84s: see. I have a video that goes through
+301.68s: all these different cognitive biases, so
+303.68s: I'll throw a link to that below, but all
+306.00s: of that ties to when you're evaluating a
+308.00s: strategy. Let's talk about some of the
+310.16s: specific things that really catch people
+312.24s: most frequently. Regime impact. A great
+315.84s: way to think about the regime is that
+318.16s: different strategies will behave
+320.40s: differently at different periods of
+321.92s: time. So if we take a look at SPY long
+324.56s: term and we're thinking about a
+326.08s: strategy, let's just say it's a long
+328.08s: stock strategy of some sort. We're
+329.76s: buying the top, we're doing a sector
+331.92s: rotation strategy where we're buying the
+333.76s: top three sectors, selling the bottom
+335.44s: three, and that's going to be our
+337.04s: approach. Well, if we tested that for an
+339.60s: entire year, seems like a long time. If
+342.64s: we test that for an entire year, but we
+344.40s: happened to start in 2022, guess what
+346.64s: probably happened with that strategy? We
+348.08s: probably lost money. Does that mean that
+349.92s: the sector rotation strategy is bad? No.
+352.72s: It means in this market regime, it
+355.04s: didn't work. It didn't make sense. So
+358.16s: when we're thinking about a trading
+361.76s: strategy, the overarching regime that
+364.56s: we're in matters quite a lot. So the way
+368.64s: that I think about this is that we can
+371.52s: bucket regime a few different ways. I
+374.00s: typically start from the top down. We
+376.08s: have the economy.
+378.24s: We have a stock market level. So this is
+381.44s: things like the indices, how they're
+384.88s: behaving, commodities, volatility at a
+387.04s: high level. Then we have a sector level
+391.20s: slash stocks. So this is when we're
+393.68s: looking at right now, for example, it's
+396.80s: June of 25. And we know some individual
+400.56s: sector themes such as nuclear energy
+402.96s: right now is doing pretty well because
+404.56s: of some of the new initiatives that are
+406.16s: coming out. That's relevant.
+408.88s: Then we get down into the portfolio
+411.20s: level and stuff like that. So all of
+413.92s: these will have regimes. The funny thing
+416.40s: about regimes is that they can be really
+418.64s: long windows. So if I were to think
+421.20s: about a really long-term stock market
+424.00s: theme, well, it's that if I observe over
+426.80s: the last 10 years, they go up. That's a
+429.52s: long-term regime. But there was a sub
+431.20s: regime here where over the year of 2022,
+435.04s: they went down. Does that mean that that
+437.28s: long-term regime isn't relevant anymore?
+439.20s: No, of course it is. Positive drift is
+441.36s: one of the most important regimes we can
+442.80s: think of. Yet, that doesn't mean it's
+444.88s: always going to be the case. So, regimes
+447.12s: become relevant to individual time
+449.20s: frames. And again, the reason why this
+451.12s: is so important is because if I'm
+452.72s: testing a strategy that happens to not
+455.76s: align well with the current regime,
+457.28s: whatever that is, it doesn't
+458.56s: automatically mean that that's bad. It
+461.52s: just means that it doesn't fit that
+463.20s: regime for some reason. Next is the
+466.24s: sequence path, the sequence of returns.
+468.80s: And this really dovetales with small
+470.88s: sample. And here's the way to think
+473.28s: about this. If we have a return plot for
+478.16s: a strategy, let's say that this is the
+479.92s: zero line.
+482.00s: And let's say that we have five trades
+485.20s: in the sample. Let's say we're trading a
+486.56s: zero DTE strategy. So it means we're
+489.12s: going to get a bunch of observations.
+491.44s: And if I plot the first five trades and
+494.80s: they look like this, what can I tell?
+498.00s: Well, I can tell that the current path
+499.76s: is very positive. I can also tell that
+502.00s: this is a tiny sample relative to this
+505.20s: strategy. Yet, if this strategy instead
+509.20s: was trading some sort of market effect
+511.28s: that happens once every year, well, that
+515.12s: same series gives me five years of data
+518.56s: of this effect. So it might be the kind
+520.80s: of market effect that just does not have
+523.04s: that many instances. You have to take
+524.88s: that into account when you're
+526.40s: considering whether something is
+528.32s: statistically viable or not. There are
+531.12s: basic statistical practices that we can
+534.00s: apply including minimum sample size.
+536.80s: Although it'll get a little more
+538.00s: complicated than that once we include
+539.52s: deviation which I'll talk about under
+541.36s: metrics. So sequence of path can be one
+544.96s: of the most confusing things that people
+547.44s: will come across. This person is
+551.76s: thinking that because they've won 16 out
+555.04s: of 17 months that the thing that they're
+557.44s: doing is working well. Yet, if I take a
+559.92s: look at the return since 2024 to current
+562.96s: state, this is 22 days ago, so the
+564.96s: beginning of June, they're only up 8%.
+567.92s: The market's up way more than that in
+569.68s: buy and hold, but the sequence of the
+571.84s: returns has caught their eye. And this
+574.08s: comes down to a really common trader
+577.12s: mistake, which is when they're so
+579.12s: focused on win rate that they forget to
+584.16s: holistically analyze what they're doing.
+586.16s: This goes back into the cognitive biases
+588.16s: that we have. So, let's talk about some
+590.32s: of these metrics that we can look at and
+592.40s: I'm actually going to show you them in a
+593.92s: log as well. Trade count is as simple as
+597.04s: it sounds like. This is tracking things
+599.36s: like the total number of trades, number
+601.12s: of winners, percents of winners,
+602.48s: percents of losers, that kind of thing.
+604.48s: P&L, we can include our average P&L, the
+609.20s: median P&L, the deviation of the P&L.
+612.08s: I'll show you all those. The expected
+614.72s: return, expected return, I have an
+616.96s: entire video about that. It's way more
+619.36s: useful than something like your win
+621.52s: rate, and it gives us context. So you
+624.64s: can compare expectancy against your
+628.08s: average P&L. They sometimes can be the
+630.40s: same, sometimes they'll deviate slightly
+632.48s: depending on how you calculate. I'll
+634.08s: show you how to do that. Then we'll take
+636.40s: a look at standard deviation. Standard
+638.48s: deviation tells us simply the magnitude
+642.24s: of our individual samples over whatever
+645.92s: time frame we're looking. So if
+647.60s: something has really big standard
+648.80s: deviation, it means it moves a lot. If
+650.88s: we have something that doesn't have a
+652.48s: big standard deviation, it means it
+653.84s: doesn't move a whole lot. Coefficient
+656.16s: variance is kind of a another click into
+659.12s: standard deviation, but it makes things
+661.28s: now relative. It's typically expressed
+664.16s: as a percentage. And again, if these
+666.40s: terms sound slightly overwhelming, don't
+668.64s: don't let the terms scare you. They're
+670.24s: just words. If you were to teach me
+672.96s: something that you know that I don't
+674.64s: know, there's going to be words that I
+676.16s: won't know either. So, these aren't like
+678.40s: some crazy things. They're they're just
+680.96s: basic terms that you might not know, but
+683.84s: you can throw them into chat GPT, have
+685.84s: it give you some examples, and then you
+687.92s: will quickly know as well as I do. We
+690.80s: literally just did this on a stream
+694.32s: tonight. And I want to show you the
+696.72s: example to literally show you the
+698.64s: difference between standard deviation
+700.00s: and coefficient variance because it came
+701.76s: up. I asked Gemini
+704.56s: and it gave me a fantastic example. The
+708.00s: point I'm showing you is that if one of
+709.68s: these terms doesn't make sense, you
+711.76s: literally have access to a teacher that
+714.48s: can get you to a graduate level in a few
+717.12s: moments. So, it gave this entire example
+719.84s: about coffee shops showing you how to
+722.56s: calculate both of the metrics and then
+724.80s: it tells you how to examine the
+727.28s: difference metrics and the differences
+730.08s: between them. And then I even asked it
+731.60s: for a table at the bottom. So, if these
+735.60s: things seem confusing, don't let it get
+738.00s: at you. You literally have access to all
+739.84s: of it. The cool part is once you do
+741.28s: this, you just got to do it once. Max
+743.68s: draw down. So, max draw down is a
+746.40s: really, really useful metric. And the
+748.96s: way that we can calculate that is we can
+751.28s: go into a trade log and we can say hey I
+754.24s: want you to look for sequential losing
+758.48s: trades and find the sequence that led to
+761.76s: the largest overall loss. That's how we
+764.32s: can find this. Then there's sharp and
+767.44s: sortino ratios which are again other
+770.64s: risk adjusted return measures. Sortino,
+774.16s: I tend to prefer this simply because it
+776.56s: uses downside, meaning losing, and sharp
+780.32s: uses overall. It's kind of like the
+782.32s: difference between standard deviation
+783.60s: and downside. Standard deviation just
+785.92s: gives us a slightly better view of what
+788.40s: we're looking at. The return sequence,
+791.12s: this is the path of returns. The easiest
+793.04s: way to do this is to plot your P&L of
+795.84s: each trade and then you can visualize
+798.00s: the actual return sequence. days in
+800.48s: trade. It can give us some idea on how
+802.64s: much we're moving and if there's any
+804.48s: trends that we're seeing. And then the
+806.64s: required trade count. This is something
+809.92s: a lot of people don't know you can
+811.36s: calculate, but if you're trading a
+812.72s: strategy
+814.24s: and you're saying, "Well, how many times
+816.48s: do I have to do this before I'm
+817.92s: confident in it?" This will literally
+820.00s: tell you based on an input confidence
+822.08s: interval how many times you would need
+824.80s: to trade this strategy based on the
+826.88s: standard deviation to be confident in
+829.84s: the results. Now let's take a look at
+832.48s: the log.
+834.24s: This is a highly highly broken down
+837.84s: simple log that you can start with. This
+839.84s: is a section where you input your live
+842.08s: trades. This is the input section and
+844.96s: then this is the section that's
+846.56s: calculated for you based on formulas
+848.48s: that you make once. These are your open
+851.28s: trades and then these are your closed
+853.84s: trades. This section up here is just a
+856.96s: summary that breaks it out by individual
+859.68s: strategy. And then up top, normally what
+862.48s: I do is I create a population and a
+866.24s: sample version of this. So population
+869.20s: would be all of the instances of the
+871.20s: strategy and then the sample is a
+874.32s: timebound
+875.92s: version of this and we can create
+879.12s: different versions of a sample. So we
+881.60s: can time bound it. We can time bound it
+884.16s: but then also give it a specific DTE
+886.56s: that we want to analyze. So then that
+889.28s: would populate in this line here so that
+892.24s: you can compare whatever that sample is
+895.60s: against the total strategy. So these are
+898.24s: all those individual metrics that you
+900.64s: heard me talk about on the last slide.
+903.20s: The reason why I'm giving it to you in
+904.56s: this way is so that you can literally
+906.16s: copy this. You can make your own. No,
+908.32s: there isn't a version of this available
+909.84s: for you to download. I get asked that
+911.52s: all the time. You have to build your
+913.36s: own. And it's because you learn a lot in
+916.88s: building your own. So if we go through
+919.84s: all of these different things, I want to
+921.92s: give you a couple examples on how you
+924.80s: can use the data in here to come up with
+928.00s: decisions. Now, one important note is
+931.12s: for that thing I was telling you about
+932.72s: graphs and stuff like that, I normally
+934.80s: build all of those over here. So what I
+938.08s: would do is essentially pull whatever I
+942.96s: want from the population and the sample
+945.28s: from this series of filters that would
+947.20s: populate up here and then I would have
+949.60s: it create plots over here for me so that
+953.36s: I can distinctly see the trend of
+956.24s: individual data points. It's really
+957.92s: important because for example, if I plot
+961.44s: some sort of P&L
+964.08s: graph here and I notice that in the
+967.20s: beginning the strategy is doing this and
+969.76s: then all of a sudden it starts doing
+971.36s: this. Well, this tells me something has
+974.00s: changed. If I put a line of best fit, it
+976.08s: went from something that looked like
+977.44s: this up until this point and then it
+979.76s: switched into this. So, there's
+981.68s: something happening in this stage. This
+985.12s: could be a regime shift that makes this
+988.56s: no longer suitable. But the thing is is
+991.68s: by plotting these individual data points
+993.52s: you get a ton of information about the
+996.00s: performance of what you're doing.
+998.48s: So now let's talk about the actual
+1001.60s: analysis and it's again it's pretty
+1003.76s: simple. So we can start by using summary
+1008.08s: level statistics. So our P&L average P&L
+1012.08s: things like our expected return and we
+1014.64s: can see at a very high level is this
+1016.96s: thing working well. Then what we can do
+1020.40s: is we can actually create small subsets
+1023.68s: of these so that we can say how does my
+1026.16s: average P&L or my total P&L shift if I
+1029.92s: take off the extremes the biggest trade
+1033.36s: winner and loser. Does that cause a
+1036.24s: massive change in this? If so, that
+1039.04s: tells me I need to take a look at the
+1041.12s: tails of this strategy and see if
+1043.68s: there's a way to cut off the tails or
+1045.20s: modify the tails. If I don't see a big
+1047.68s: change, well, then it tells me that the
+1049.36s: strategy itself is operating close to
+1052.80s: how it typically might operate if we get
+1054.88s: rid of those extremes. Your average win,
+1058.00s: win rate, number of wins. This gives you
+1061.20s: a really important series of data. For
+1063.44s: example, I have a long call strategy
+1066.56s: where my win rate is 47% right now. It
+1071.20s: means I lose over half the time. Yet the
+1075.68s: P&L and the average P&L is severely
+1078.80s: profitable.
+1080.32s: What does this tell me? Well, it tells
+1081.68s: me that win rate is only part of the
+1083.84s: equation, but the rest of the context
+1085.76s: matters a lot. And in the context here,
+1088.08s: it immediately tells me that when I look
+1090.56s: at the losses, my average loss is going
+1092.96s: to be much smaller than what the average
+1095.84s: win is. So even though I'm booking small
+1098.40s: losses more regularly, when the strategy
+1100.72s: hits, the severity to the upside is very
+1102.72s: big. So that gives me all sorts of ideas
+1105.52s: on how I need to make sure that I'm
+1107.44s: trend following the strategy very
+1109.84s: carefully. I'm avoiding bad habits like
+1111.68s: the disposition effect where I want to
+1114.16s: take the trade down as soon as it's
+1116.16s: showing a win. And then again, if I look
+1118.48s: at my plot over here and I notice that
+1121.20s: in the beginning, I'm getting these
+1122.48s: really nice upside wins and then I see
+1124.88s: it start trailing off and then my
+1128.08s: average win is now really low. That
+1130.80s: tells me I've made a management change
+1133.20s: that's negatively impacting the way that
+1135.52s: the strategy is supposed to work. But
+1137.52s: again, remember all the way at at the
+1139.52s: beginning, we need to know how this
+1141.36s: thing is typically supposed to work. The
+1143.68s: strategy I'm referring to is a breakout
+1145.36s: strategy. In general, I expect it to
+1147.84s: lose because it's timing based. I'm
+1149.36s: going to get most of them wrong, but I
+1151.84s: expect it to be a big win when it hits.
+1154.00s: And it's because I know what the profit
+1155.52s: mechanism is that I'm trading and I have
+1157.52s: a good idea on how I should be able to
+1160.80s: capture it. So, the last thing I want to
+1163.20s: show you is the required number of
+1165.28s: trades. The formula is really simple.
+1168.40s: All we do is define a confidence
+1171.20s: interval. So you can use 90%, 95%, 98%,
+1175.60s: whatever confidence interval that you
+1177.04s: want. This is just a standard
+1178.24s: statistical measure. Then we're going to
+1181.28s: take our standard deviation. I often
+1184.24s: will use the downside deviation, which
+1186.96s: just isolates the losing trades. And
+1189.44s: then we're going to divide that by a
+1191.76s: margin of error. So, this is using a 15%
+1194.80s: margin of error. You could do 10%, 15%,
+1197.28s: 25%. And then we're going to multiply
+1199.84s: that by the expected return and then
+1202.48s: bring that up to a power of two. So,
+1206.48s: more often than not, what you're going
+1207.84s: to notice is that the required trades is
+1209.76s: going to be a huge number. But it
+1212.48s: doesn't mean that whatever you're doing
+1214.16s: is useless unless you hit this number.
+1216.56s: What it means is that you need to track
+1219.68s: your progress. So, what that means is if
+1222.40s: I'm trading the strategy, let's say it's
+1223.92s: something that needs 10,000 trades. That
+1226.08s: doesn't mean I'm going to wait till
+1227.04s: 10,000 trades. What it means is that as
+1228.88s: I'm trading it, I'm going to observe the
+1230.80s: performance. And is the required number
+1233.28s: of trades calculated? Is it getting
+1235.20s: bigger or is it contracting? Because if
+1238.48s: it's contracting, that means that what
+1240.80s: I'm doing is tightening up the
+1242.40s: consistency of this thing and I'm moving
+1244.40s: in the right direction. So, this is
+1247.28s: literally an absolute crash course on
+1249.92s: how you can evaluate a trading strategy,
+1252.64s: including some of the key metrics you
+1254.16s: might consider, and then a configuration
+1256.16s: to place these metrics in so that you
+1258.64s: have a way to look at what you're doing
+1261.44s: and actually quantify your performance
+1263.60s: as compared to what most people do. As
+1265.76s: always, if you have any questions, let
+1267.12s: me know. Be an outlier. See you later.

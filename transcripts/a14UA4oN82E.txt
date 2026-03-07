@@ -1,8 +1,524 @@
-⚠️ DOWNLOAD FAILED: Could not access the original audio for this video
-
-This transcript is a placeholder because YouTube blocked all download attempts.
-You may need to manually transcribe this video by watching it on YouTube.
-
-Failed to download audio for: https://www.youtube.com/watch?v=a14UA4oN82E
-Created dummy audio file on 2025-08-31 20:08:47.733816
-This video has been flagged for manual processing.
+0.40s: What's up outliers? Today's video is
+2.24s: going to be about trading leaps. So,
+5.28s: we're going to walk through how to build
+7.60s: a leaps option trading strategy so that
+11.60s: you can ball like none other than the
+15.04s: fan favorite Nancy Pelosi. Now, this is
+18.40s: all obviously inest. It's because her
+20.88s: husband owns a fund, but they do use
+26.08s: LEAPS all the time. This is a snapshot
+28.56s: of their portfolio and a big part of
+30.96s: what they do is literally using LEAPS.
+34.64s: So what are LEAPS? Super simple. LEAPS
+38.56s: is an acronym and it stands for
+40.96s: long-term equity anticipation security.
+43.52s: This is essentially designed to be a
+46.00s: stock replacement. Just gives you a
+49.76s: little bit of leverage. And I'll walk
+51.60s: you through how that works. So, one
+54.64s: admin note is you'll notice that the
+56.40s: correct way to refer to it is LEAPS.
+59.76s: This is not making it plural. This is
+62.48s: part of the acronym. Now, if you take a
+65.68s: look at an options chain, you'll see
+67.92s: this is, I think, using SPY. You'll see
+70.16s: that there's all these different
+71.44s: expirations and then as you get further
+72.96s: and further out, you start to get to
+74.96s: really long-term options. Now, LEAPS
+78.80s: typically means that you're trading
+81.44s: something that has an expiration greater
+83.76s: than a year. That's the technical term,
+85.76s: but I mean, you could use it for pretty
+87.68s: like 343 days. That's close enough. I'd
+90.32s: still consider that a LEAPS option.
+92.08s: These are things that are just designed
+93.52s: to be longer term in nature. Now, a
+96.96s: really important thing to note is that
+98.80s: you don't have to hold them for that
+100.40s: long. And I'll give you an example, but
+102.56s: first let's talk about this leverage
+105.12s: aspect
+106.80s: here. I'm simulating owning 100 shares
+109.60s: of SPY at a spot price of 62081.
+114.08s: So this trade requires you to pay
+116.80s: $62,81.
+120.08s: Now instead you can buy a LEAPS option.
+124.32s: This one is 15g27 out at the 625 strike
+130.24s: and these are going for $69.50.
+133.76s: So again, using standard options math,
+136.96s: this is about $7,000.
+139.44s: So you can control up to the same size
+143.20s: position as those 100 shares, but you're
+145.20s: only putting up 7 grand versus 62 grand.
+148.00s: That's leverage. Now notice how I say
+150.64s: control up to 100 shares and it's
+154.08s: because the delta of this option the 625
+157.12s: is a 61 delta. So that means right now
+160.48s: the position will behave like 61 shares
+163.20s: whereas if it continues to go up and
+164.56s: your delta grows then it can be the full
+167.36s: 100 shares. If you're wondering what a
+170.08s: full 100 share replacement would look
+172.40s: like we actually have to go deeper in
+174.80s: the money. So, let's go to like uh
+176.88s: something like these 90s, 90 deltas or
+180.16s: something like that. Cuz once you get
+182.16s: super super deep in the money, you'll
+184.16s: see that the deltas move slow. But for
+186.56s: example, like the 375s here, these have
+188.80s: a 92 delta. These would cost you 27
+191.92s: grand. So to get those extra deltas,
+195.28s: they're expensive. And it's because it's
+197.52s: going to behave more and more like the
+199.36s: underlying. So this is the primary
+202.48s: reason why somebody like Pelosi would
+206.32s: use LEAPS to make a ton of money is
+208.32s: because if you have decent directional
+210.80s: assumptions and rather than parking a
+213.60s: bunch of money in long equity, you can
+216.32s: use LEAPS instead to speculate on the
+219.68s: same style position. And it actually
+222.64s: comes with a lot of very important
+225.28s: behavioral considerations which is what
+227.12s: I want to talk about next. This is
+229.68s: effectively a quick stroll through the
+232.40s: Greeks because understanding how the
+236.00s: Greeks behave across expirations is
+238.88s: really really important because the next
+240.72s: logical question might be well Eric if
+243.76s: we're out here in the 15 Jan 27 how do
+247.28s: we pick what what strike to use within
+251.84s: the expiration? Do I do the 625s, the
+254.80s: 630s? A common mistake is to pick the
+257.68s: strike that you think it's going to go
+259.20s: to. That's a mistake. There's no reason
+260.72s: to do that. The way to decide the strike
+263.12s: is based on the Greek profile that you
+266.64s: want. Understanding how the Greeks work.
+268.88s: So, let's talk about it. The first thing
+271.04s: to note is delta really is going to be
+275.28s: about the same when you're this far out
+278.32s: in time. What that means is this 61
+281.76s: delta is going to be 61 deltas. Now, as
+284.72s: time passes, your delta is going to
+287.52s: change much more slowly. Whereas, if you
+290.32s: take a look at this 31 delta option, you
+292.88s: notice how the slope is more peaky. That
+296.48s: represents larger changes in delta based
+301.28s: on spot movement. And that is everything
+303.44s: to do with options approximating to
+305.92s: either in the money or out of the money,
+307.92s: a delta of one or a delta of zero.
+309.92s: That's as you get closer and closer to
+311.36s: expiration. So further out in time, your
+314.08s: delta is not going to move as much for
+316.64s: two reasons. One, because of changes in
+318.64s: delta. There is a Greek that measures
+320.16s: that specifically, but that part aside,
+323.60s: it's also going to have much lower
+328.32s: gamma. So gamma measures the rate of
+331.20s: change of delta as the underlying itself
+333.84s: moves. So you'll notice that gamma is
+336.32s: typically going to be the highest for at
+338.16s: the money options, but as you go further
+339.76s: and further out in time, even for at the
+342.00s: money options, your gamma is going to be
+343.36s: lower. So let's take a look at our gamma
+345.60s: on these. And it's essentially 0.003.
+350.88s: Really, really low gamma. Whereas for a
+354.40s: comparison sake quickly, if we go to the
+356.32s: 15 AUG and we look at a 60 or at the
+359.36s: money options, your gamma is 0.013
+364.78s: [Music]
+366.24s: or 0.012.
+368.16s: So significantly higher. Gamma for at
+370.80s: the money options will increase as you
+372.80s: get closer in time. Why does this
+374.24s: matter? Well, it's because you're going
+375.60s: to get less of that compounding effect.
+378.08s: your your option is going to gain deltas
+381.76s: more slowly as the underlying moves in
+384.64s: your favor. And it's because gamma is
+386.64s: lower. So why does that matter? Well,
+388.40s: when we're picking our strike, we should
+390.48s: take that into account because if we
+392.32s: think something is going to slowly move
+394.72s: up over time, well, if you go too low on
+398.08s: your delta, you can get that slow move
+400.32s: up on your time, but you're not actually
+402.08s: going to see a lot of the profit because
+404.00s: again, even for each dollar move in SPY,
+406.88s: you're going to see $61 or 61, which
+410.48s: comes out to $61 per contract versus the
+414.08s: $100 that you would make if you were
+416.56s: holding 100 shares. comparatively. So
+420.00s: the thing to take away from that section
+423.44s: is that delta moves more slowly and you
+425.84s: have less gamma. The next component is
+428.72s: theta decay. Do you notice how
+431.76s: theta changes in two spectrums? Well,
+435.28s: technically more, but two primary. The
+437.68s: first one is moneyiness. So theta is
+440.00s: going to be the highest for at the money
+441.68s: options. And then it's going to decrease
+443.76s: as you go further in the money or
+445.44s: further out of the money. And that's
+446.64s: simply because there's less extrinsic
+448.16s: value. The other component is you go
+450.80s: further out in time, the relative theta
+453.84s: decay tends to contract. So let's take a
+456.16s: look at that next idea. So if we take a
+458.72s: look at the at the monies that are 551
+462.08s: days out, your daily theta is 0.074.
+467.12s: So really really relatively cheap. Now,
+471.92s: if you go into the 33dT and we take a
+476.00s: look at theta, your theta is 0.212.
+482.24s: So, it's like three times what you get
+485.76s: from being this far out 500 days plus.
+490.48s: So, your daily holding cost is much
+492.80s: cheaper. Now, your overall holding cost
+495.60s: is much more expensive. And that's part
+497.84s: of the equation of figuring out what
+500.00s: expiration you might want to pick. The
+502.80s: difference between 18DS and 15 Jan.
+506.16s: We'll get to that in just a second. How
+508.00s: to pick the actual expiration. The last
+509.92s: thing I want to talk about is Vega cuz
+511.52s: this one confuses a lot of people. Vega
+514.40s: is higher for at the money options and
+517.04s: it's higher as you go further out in
+519.92s: time. So what that means is the
+522.00s: volatility sensitivity to long-term
+523.92s: options is much higher. However, the
+527.04s: part that trips everybody up is if you
+531.60s: see a change in the implied volatility
+534.24s: for the underlying or a change in the
+536.08s: implied volatility percentile.
+538.88s: This is different. This is a different
+541.92s: term. So, this is looking at 30-day V.
+545.92s: So, one of the biggest mistakes you can
+547.52s: make is you could say, "Oh, implied
+549.04s: volatility percentiles really, really
+550.72s: cheap. let me buy leaps because I think
+554.16s: V is going to go up. That's a mistake.
+557.04s: And it's because implied volatility
+559.04s: percentile as reported by most platforms
+561.04s: is going to use one year. So you could
+564.88s: you're trading a completely different
+566.64s: term V. And that's represented by this.
+570.16s: I have AVGO up just cuz it's here. But I
+572.96s: want you to pay attention to the
+574.40s: difference between 30-day V, 60-day V,
+576.80s: and 36 365day V. As you look through all
+581.04s: of these, they're quite different. And
+583.76s: then if we took a look at the implied
+586.08s: volatility percentile for these
+588.88s: different expirations, you notice how
+590.64s: even more different they are. So, for
+592.88s: example, in AVGO, you might take a look
+596.08s: at near-term implied volatility
+598.48s: percentile 30-day, and see that it's in
+600.72s: like the teens. So, you're like, let me
+603.12s: buy LEAPS. Well, when you go by the
+604.80s: leaps, you're actually buying really
+607.52s: expensive V because it's almost 50
+610.72s: percentile comparatively. So, don't let
+614.00s: that confuse you. And if what I just
+616.48s: said is a little confusing, you can
+618.40s: either ask a question in the comments or
+620.56s: just rewind what we just talked about
+623.28s: because it's really, really important
+624.88s: and is a direct transfer into how do we
+628.72s: pick the expiration cycle? It's actually
+632.24s: really really simple. The first thing
+634.32s: that I focus on is liquidity because
+636.64s: liquidity is going to naturally decrease
+640.00s: as you go further out in time. So if we
+642.88s: take a look at the at the monies, let's
+644.72s: take a look at the 18ds 26 and we look
+647.92s: at the bid ass spread. These are bid
+650.80s: 6304 offered at 68. If we go to the 15
+655.92s: GN27s, the at the monies, these are bid
+658.48s: 6478 offered 69 12. So you can see that
+662.48s: the liquidity comes out as you go
+664.56s: further out in time. Typically spy
+666.64s: something like this is penny wide. So
+669.12s: you definitely want to pay attention to
+670.88s: the bid ass spreads because especially
+673.52s: if things start moving, they widen even
+675.84s: more. The next thing that I typically
+678.40s: pay the most attention to is actually V.
+681.28s: And I'll show you if we look at the
+683.92s: underlying V, we know again that we're
+688.16s: sitting at 17.3%.
+691.60s: Which is a relatively low implied
+694.96s: volatility percentile. So if I go across
+698.32s: the terms, I can find terms that might
+701.28s: be slightly cheaper compared to others.
+703.68s: A good example is this out here. The 30
+707.52s: June 26s are at 18.8% 8% V versus the 18
+713.20s: steps which go up to 20.26%
+715.76s: V. So the other thing we can do is
+718.64s: literally just use a tool like this that
+721.68s: allows us not just to plot the V
+724.48s: outright itself. So we can see that
+727.76s: 365day V here is 17.4% we're 30 days at
+732.16s: 13.7 and so on. But we can also plot the
+734.96s: implied volatility percentile. So then
+737.68s: if I take a look at the difference, for
+739.84s: example, between 180 days and 365, you
+743.36s: notice how they're pretty close, but 180
+746.32s: days is actually 2% lower on the implied
+750.00s: volatility percentile. So, I can use
+752.80s: this as a way to help me figure out
+756.16s: where I can get cheaper V, which is
+759.04s: really, really important when you're
+760.40s: trading longdated options because Vega,
+764.80s: if you get something expensive, you can
+766.72s: get smashed. But again, it's important
+769.28s: to remember that those options are going
+771.84s: to behave differently in terms of Vault
+774.64s: than when you're looking at the
+776.16s: underlying vault. It's a different term.
+778.40s: Let's talk about a strategy. So first
+781.44s: with any strategy based on the outlier
+784.32s: strategy process that most of you
+786.16s: probably are familiar with. If not, I
+787.60s: have a video on the topic itself, we
+790.16s: need to start with understanding the
+791.44s: profit mechanisms. What is it that we're
+793.76s: trying to trade when we're using LEAPS?
+795.60s: LEAPS are just options. And as I noted
+798.08s: before, it's essentially a stock
+799.84s: replacement. So for me, these are the
+802.72s: primary profit mechanisms that I'm
+804.88s: looking to trade with LEAPS, longerterm
+807.68s: holding options, things like actual
+810.72s: fundamental growth expectations of a
+813.20s: business, thinking something is going to
+815.04s: be worth significantly more in the
+816.64s: future than it is today. That comes
+818.88s: through stuff like drift. You can trade
+821.28s: elements of V like we were just talking
+822.96s: about that's always part of the
+824.32s: equation, momentum, so on. So if we take
+827.44s: a look at this general graph, this is
+830.40s: literally just showing the growth of the
+832.24s: stock market. This is positive drift.
+834.48s: The overall phenomenon is the stock
+837.04s: market goes up over time. That's a
+840.00s: highly documented effect that can be
+843.84s: turned into a profit mechanism through
+846.56s: something like this. So the key things
+850.48s: that matter to us with respect to
+852.72s: fundamental growth are looking at
+855.44s: earnings growth, the multiple expansion,
+857.76s: which is kind of like the ratio, how
+859.52s: efficient something is growing relative
+861.20s: to price. And then dividends, dividends
+864.56s: impact these a little bit less. So, so
+868.00s: this is the profit mechanism that we're
+869.68s: looking to capture. Let's take a look at
+872.32s: the strategy that I use and give you an
+875.76s: example of a strategy that's on
+877.36s: literally right now. One admin note is I
+880.80s: have videos that go through all of these
+883.12s: in detail, but we're going to talk about
+885.28s: a ratio call diagonal. So, we're going
+889.20s: to start with a quick overview of what
+891.20s: this thing is and then I'll show you the
+893.68s: example. So the purpose of a ratio
+896.00s: called diagonal is to trade those profit
+898.72s: mechanisms as we discussed. So what's
+901.84s: the setup? I'm going to look for things
+904.48s: that have liquid longdated options and
+907.92s: I'm going to apply my standard analysis
+911.04s: suite to that profit mechanism in that
+913.76s: time frame which takes strongly into
+916.72s: account both fundamentals and
+918.80s: technicals. It's not just a technical
+920.96s: style trade like shorterterm holdings.
+923.84s: So, I do care about how profitable
+927.36s: something is. I do care about how sales
+930.64s: are growing. I do care about its
+934.00s: business pipeline and if it's growing,
+936.40s: things like that. So, for me, when I'm
+939.84s: trading ratio diagonals, you can trade
+942.72s: ratio diagonals either for calls to the
+945.52s: upside or puts to the downside. So, in
+948.40s: this example, we're talking about a
+949.44s: ratio call diagonal. And the way that it
+952.88s: works is generally I'm going to have a
+954.80s: long option that is longer than 90 days
+957.84s: out. Sometimes I'll come in as close as
+959.68s: 60 days, but that's for a relatively
+961.44s: short-term holding. The overwhelming
+963.12s: majority is going to be greater than 90
+965.12s: days out. And I'm going to layer on
+968.32s: short legs that are closer in time,
+970.88s: paying very very close attention to the
+973.68s: delta ratio to make sure that there is
+976.00s: no upside risk. And I'll show you what
+977.68s: this all looks like. So, let's take a
+980.96s: look at an actual example trade. I just
+984.48s: explained that there are two legs. We're
+986.96s: going to have a long fardated option and
+989.52s: then short nearated options. These don't
+992.00s: have to go on at the same time. Often
+994.16s: for me, they don't. So, here's what it
+997.28s: looks like. And I want to pop you over
+999.84s: to a live example so that you can get a
+1002.56s: better sense of how this behaves. Now,
+1005.84s: poor man covered call is the more
+1008.64s: colloquial term for a diagonal. And the
+1012.48s: whole purpose of the ratio component of
+1014.96s: a diagonal is again paying attention to
+1017.76s: the relationship of deltas between long
+1020.00s: and short. So here's what this looks
+1022.16s: like. Right now, this is simulating
+1024.32s: having a 100 lot in the 22 calls that
+1028.32s: were bought for 420. And if I take a
+1031.68s: look at being short 100 calls against
+1035.84s: those, do you notice how if it goes too
+1039.76s: far in my direction, I actually start to
+1042.56s: lose money? This is bad. So the way that
+1045.20s: we cure this is by maintaining a lighter
+1049.84s: ratio of short calls to long calls. And
+1054.00s: the way that I determine the ratio that
+1055.92s: I want is twofold. I'm essentially using
+1058.80s: the short calls as just a way to offset
+1062.24s: some of the holding theta of these
+1065.28s: options. So if we take a look at what
+1068.00s: that looks like going far out in time to
+1071.52s: the 18 step 26 options, my theta on
+1075.20s: these is 0.007
+1078.00s: cents per day. That's
+1081.76s: what it is on a daily basis. So, I can
+1084.88s: find options that are near-term in time
+1087.68s: that can overcome this entire amount.
+1090.64s: And I'll show you how to calculate all
+1092.08s: this. If we take a look at both of these
+1095.20s: positions and break them down. So, we
+1098.08s: have the 100 lot of the long options and
+1100.80s: then we have the 10 lot of the short
+1102.96s: options. You can see the premiums here,
+1105.20s: the relative deltas here, the total
+1107.04s: deltas here. So, the first thing is the
+1109.20s: net deltas is long 5290. So this is
+1113.28s: going to behave as if it is long 5,290
+1116.08s: shares. Then I have the relative theta
+1119.76s: between both of these positions. And
+1122.32s: then I have the theta calculated out. So
+1125.92s: this is per day at scale for the entire
+1129.76s: position size. So this is losing $42 a
+1133.36s: day in total theta. I would be losing
+1136.72s: 70. I'm collecting 28 from here. Net
+1139.92s: negative 42. The duration for these
+1143.76s: short options is 39 days. So the total
+1146.88s: theta that this can offset is $760 over
+1151.20s: this 39day period because these are all
+1154.08s: exttrinsic value. The total theta that's
+1156.96s: going to be paid in holding these
+1158.72s: options is 2730. So I'm going to net
+1161.84s: negative 1970. So how can I modify this?
+1166.40s: How can I fix this? Well, it's really
+1167.84s: simple. I can add more to the shorts
+1170.96s: because you notice how this is
+1172.96s: essentially a really light ratio 1:10.
+1176.00s: Why is this so light? It's because in
+1178.96s: SoFi I'm not putting the cart ahead of
+1182.16s: the horse. It's in the middle of this
+1184.08s: really aggressive up move. So, I'm
+1187.36s: letting that play out before I worry
+1189.84s: about adding too many short options and
+1191.76s: slowing it down. Because if we take a
+1194.00s: look at what the position looks like
+1196.24s: today, this is the position that was
+1198.80s: built. And as of today, 13th July, those
+1203.84s: 22 calls that are in 18 SAP are at
+1206.88s: $5.60. So that's making $140 per
+1210.64s: contract, which is a 33% return on
+1212.72s: invested capital. The 22 calls and 15
+1216.08s: AUG, the near-term short options, those
+1218.48s: are around $1.50. Those are losing $79
+1221.92s: per contract cuz they're up. They're
+1223.36s: still all exttrinsic value. So the net
+1226.56s: P&L on these is $21 per 2:1 lot. So this
+1232.80s: is at the lowest common size for the
+1236.56s: conversation. So what will end up
+1239.52s: happening is as SoFi slows down then I
+1244.72s: can simply add more of these short
+1248.64s: options because the premium will also be
+1250.88s: higher so that I can offset more of the
+1254.08s: total holding duration theta. This is a
+1257.36s: balance of not getting too excited about
+1260.80s: offsetting the theta accepting the
+1262.56s: holding cost because right now it's
+1264.88s: making the directional move that I want
+1267.04s: it to make. So then what's the
+1269.44s: management? The management is using
+1272.48s: stops. As this thing moves over time, I
+1276.64s: will set stops in this circumstance to
+1279.92s: not exit the whole thing but to scale
+1282.08s: out. I do not have an upside profit
+1285.84s: target beyond general concepts and it's
+1289.68s: simply because this is a long-term
+1292.48s: holding. So the way I determine those
+1295.52s: general concepts is I'll take an example
+1298.08s: move like it's made from this midpoint
+1300.72s: to where it is now and this represents a
+1304.16s: 41% move. So what I can do is use this
+1307.36s: as a speculation. I can say based on the
+1309.68s: next consolidation it makes plot out
+1312.00s: another 40% move that'll be to the high
+1315.44s: side. The reason is because as things
+1317.44s: grow in price the percentage that they
+1319.28s: move typically is less. So that's one
+1322.56s: way. The other way is literally just to
+1325.04s: use a probability analysis and I can
+1328.80s: plot what the probability of us being at
+1331.28s: different prices is over different time
+1333.36s: frames. So if I want to say over the
+1335.28s: next 180 days, what does it look like we
+1338.88s: might hit within one standard deviation?
+1341.28s: Well, to the upside it would be 33, to
+1343.52s: the downside 1055. So the way that I
+1346.80s: size these trades is that the max risk
+1349.92s: is whatever the bought to open option
+1354.16s: is. And it's because with these really
+1356.88s: long-term ideas, I like to give them
+1359.12s: plenty of room to move. Now, if I was
+1362.08s: sizing this up so that it was a bigger
+1364.80s: trade, I would simply set a spot on the
+1368.32s: chart where my thesis is disproven. So,
+1371.76s: this can be something like either a
+1373.92s: technical level that I care about, or
+1376.24s: this can be based on the underlying
+1378.96s: fundamentals of the company changing.
+1381.04s: Let's say EPS growth is slowing. Let's
+1383.20s: say sales are growing. Let's say it's
+1385.12s: losing business lines. All of those
+1387.52s: kinds of things impact the long-term
+1390.00s: expectation of the stock, which would
+1392.48s: lead me to thus change my position. So,
+1396.32s: this is one example of a ratio called
+1400.16s: diagonal. I have an entire playlist on
+1402.40s: these, so I'll throw that in the notes
+1405.28s: below. A really important thing to pay
+1407.36s: attention to is the ratio because what
+1410.48s: you do not want is to sell too many
+1414.08s: options against your long options and
+1416.40s: then have directional risk in the
+1419.68s: direction you want it to go. And another
+1422.08s: common mistake is to way overemphasize
+1424.56s: how much credit you're collecting
+1426.08s: upfront, which again, if you're holding
+1428.64s: something with the expectation of it
+1430.32s: going up, I don't want to sell a lot of
+1432.16s: these. I want to allow it to go up. As
+1435.68s: always, if you have any questions, let
+1437.60s: me know. But this is a very basic and
+1439.84s: efficient LEAPS option trading strategy
+1442.88s: based on a defined profit mechanism. Be
+1445.44s: an outer. See you later.

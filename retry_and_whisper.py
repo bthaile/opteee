@@ -13,7 +13,7 @@ from datetime import datetime
 # Add project root to path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from pipeline_config import TRANSCRIPT_DIR, AUDIO_DIR, WHISPER_MODEL, ensure_directories
+from pipeline_config import TRANSCRIPT_DIR, AUDIO_DIR, WHISPER_MODEL, TRANSCRIPT_REQUEST_DELAY, ensure_directories
 
 def load_progress():
     """Load transcript progress."""
@@ -35,11 +35,14 @@ def get_video_id(url):
         return url.split('/')[-1].split('?')[0]
     return url
 
-def retry_youtube_transcripts(urls_to_retry, progress, delay=2):
+def retry_youtube_transcripts(urls_to_retry, progress, delay=None):
+    if delay is None:
+        delay = TRANSCRIPT_REQUEST_DELAY
     """Retry getting YouTube transcripts for failed videos."""
     from youtube_transcript_api import YouTubeTranscriptApi
-    from youtube_transcript_api._errors import TranscriptsDisabled, NoTranscriptFound
-    
+    from youtube_transcript_api._errors import CouldNotRetrieveTranscript
+    ytt_api = YouTubeTranscriptApi()
+
     successful = []
     still_failed = []
     
@@ -56,7 +59,7 @@ def retry_youtube_transcripts(urls_to_retry, progress, delay=2):
             continue
         
         try:
-            transcript = YouTubeTranscriptApi.get_transcript(video_id)
+            transcript = ytt_api.fetch(video_id).to_raw_data()
             
             # Save transcript
             with open(transcript_path, 'w', encoding='utf-8') as f:
@@ -73,7 +76,7 @@ def retry_youtube_transcripts(urls_to_retry, progress, delay=2):
                 progress['processed'].append(url)
             save_progress(progress)
             
-        except (TranscriptsDisabled, NoTranscriptFound):
+        except CouldNotRetrieveTranscript:
             print(f"  ❌ [{i}/{len(urls_to_retry)}] {video_id} - no YouTube captions")
             still_failed.append(url)
             

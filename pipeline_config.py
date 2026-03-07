@@ -43,6 +43,9 @@ CHANNEL_URLS = [
 # API Configuration
 YOUTUBE_API_KEY = os.getenv('YOUTUBE_API_KEY')
 
+# Delay between YouTube transcript requests (seconds). Increase if getting IpBlocked.
+TRANSCRIPT_REQUEST_DELAY = float(os.getenv('TRANSCRIPT_REQUEST_DELAY', '5'))
+
 # Processing Configuration
 WHISPER_MODEL = "tiny"  # Whisper model size (tiny, base, small, medium, large) - optimized for speed
 # Speed vs Accuracy trade-offs:

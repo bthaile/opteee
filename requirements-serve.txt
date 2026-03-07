@@ -9,28 +9,28 @@ python-multipart==0.0.20
 
 # ML / Embeddings
 sentence-transformers>=2.5.1
-faiss-cpu==1.7.4
-numpy>=1.26.2,<2.0
+faiss-cpu>=1.12.0
+numpy>=1.26.2
 
 # LLM providers
-langchain==0.3.21
+langchain==0.3.28
 langchain-ollama>=0.3.4,<0.4
 langchain-core>=0.3.76,<1.0.0
-langchain-anthropic==0.3.10
-langchain-openai==0.3.9
-langchain-text-splitters==0.3.7
-langchain-community==0.3.20
-langsmith>=0.3.45,<1.0.0
-anthropic==0.49.0
-openai==1.68.2
-tiktoken==0.9.0
+langchain-anthropic==0.3.22
+langchain-openai==0.3.35
+langchain-text-splitters==0.3.11
+langchain-community==0.3.31
+langsmith>=0.3.45
+anthropic>=0.69.0
+openai>=1.104.2
+tiktoken>=0.9.0
 
 # Utilities
 python-dotenv==1.0.0
 isodate
 markdown
 beautifulsoup4>=4.12.2
-pydantic==2.10.6
-pydantic-settings==2.8.1
+pydantic>=2.10.6
+pydantic-settings>=2.10.1
 SQLAlchemy==2.0.39
-psycopg[binary]==3.2.6
+psycopg[binary]>=3.1.0

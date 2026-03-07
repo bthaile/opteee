@@ -1,205 +1,496 @@
-0.00s: What's up to all the outliers?
-3.10s: Welcome.
-3.96s: And if you're new to the channel,
-5.56s: what's going on?
-6.40s: My name's Eric and welcome to you as well.
-8.40s: So today I want to talk about portfolio margin
-11.64s: as well as margin.
-13.12s: And I got a couple of questions about some best practices.
-16.38s: So we'll talk about that as well at the end.
-19.16s: So to kick us off,
-20.62s: let's start with what is margin?
-23.80s: Margin in a nutshell is leverage.
-26.52s: It is your broker allowing you a little bit
-30.76s: of fiscal freedom, essentially,
-33.48s: to maybe trade more value,
-36.88s: notional value of a product than you have in the account.
-40.16s: Or it's when they're asking you to set aside
-43.64s: potentially a smaller amount than otherwise required
-47.56s: if it were a cash-secured position.
-49.56s: So what I have here is actually a couple excerpts
-52.92s: directly from the SEC.
-55.08s: So we will go ahead and link to this
-57.52s: in the video description below
-58.84s: if you want to check out any of the articles
-60.88s: I'm going to go over today.
-62.72s: But you'll notice a few things.
-64.52s: We have an initial margin, maintenance margin,
-68.12s: and margin calls.
-69.84s: Let's start with initial margin.
-71.60s: This is essentially the amount of money
-73.32s: that the broker asks you to have in the account
-76.96s: up front to cover a position.
-79.56s: And as you can see, very frequently it's up to 50%
-83.32s: of the purchase price of a security.
-85.08s: So this is right now we're talking about stock.
-86.92s: We'll talk about options as well.
-88.60s: But right now we're talking about stock.
-90.24s: So if you want to buy $100 worth of stock,
-93.56s: whatever it is, essentially the broker would ask you
-96.32s: for 50 bucks.
-98.08s: Then when we actually establish the position
-101.32s: we have what's called maintenance margin.
-103.44s: And there's something I want to highlight here.
-105.92s: You'll see that for maintenance margin technically speaking,
-110.24s: it says at least 25% of the total market value
-113.52s: of securities in your margin account.
-115.20s: So it means that your initial margin is going to be higher
-117.80s: than the maintenance margin going forward.
-120.08s: So this is just a broker protecting themselves essentially.
-123.20s: The interesting part though is this part down here,
-126.80s: which as many brokerage firms have higher maintenance requirements
-129.80s: typically between 30% and 40%.
-131.68s: I typically see 30%.
-133.72s: So it's just important to note that all of the discussion
-136.48s: that we have today is going to be specific
-139.12s: to your broker because for regulation T,
-142.76s: this is set by SEC and FINRA.
-145.52s: However, your broker can be more strict.
-148.96s: They can't be less strict.
-151.40s: So most of them adhere to the 50% on initial
-154.16s: where you'll see the variances on maintenance.
-156.88s: All right, so let's talk about portfolio margin,
-159.48s: the purpose of this video.
-161.80s: There's a big difference between portfolio margin
-164.32s: and regulation T.
-165.36s: Regulation T has already standing permutations
-169.80s: that are ran to determine how much money
-171.84s: you need to keep in your account at a given point in time.
-175.36s: This applies to stock positions.
-177.76s: This applies to options positions.
-180.00s: And essentially, not all positions are treated as equals.
-185.32s: And what I mean by that is, for example,
-188.20s: your brokerage might look at an index product,
-192.60s: let's call it spy, or Apple,
-195.88s: they might look at them differently
-197.28s: in terms of how much money they want you to set aside.
-199.96s: So for example, more often than not,
-203.00s: index products are going to be slightly less margined than none.
-209.52s: And it's because there's a perceived lower amount
-211.60s: of risk there.
-212.80s: So when we're looking at portfolio margin,
-215.20s: there's a couple of things that are happening here.
-217.40s: The first one is this, and this is kind of an important highlight,
-222.40s: is it's based on the, well, I mean across it out,
-226.04s: that one, right?
-228.36s: It's based on the overall portfolio risk,
-232.44s: not each individual trade.
-234.76s: Now, if your portfolio is concentrated into one product,
-238.96s: then obviously it's still going to assess a higher risk there.
-242.20s: Because one of the things your broker is including
-244.20s: in their calculation is the overall perceived risk
-249.20s: of your portfolio, part of that being how diversified you are.
-253.60s: So notice how I say it's a proprietary account margining
-258.40s: based on overall portfolio risk.
-260.40s: The reason I say proprietary is because it's broker specific.
-263.40s: Different brokers will have different computations
-266.60s: on how they arrive at how much margin they want for a portfolio
-271.40s: or for individual positions.
-273.40s: So what I'm going to go over down here is for TD Ameritrade
-276.40s: because that's who I use.
-278.40s: So just make sure you check with your broker
-281.00s: and what their requirements are.
-283.40s: So when we look at portfolio margin accounts,
-287.20s: a couple important notes.
-288.80s: The first one is IRAs are not applicable.
-291.00s: It has to be a standard margin account.
-293.28s: It also requires a minimum amount of capital,
-295.80s: typically 125,000 initials and then 100,000 maintenance.
-300.20s: Again, check with your broker and many require a written test.
-304.00s: It's super easy, but they require you to do it.
-307.00s: For regulation T, you pretty much just need $2,000.
-310.60s: But for portfolio margin because there's increased leverage,
-315.40s: they're a little more strict.
-317.40s: So rather than using those standard calculations
-320.40s: that you see in regulation T,
-322.20s: portfolio margin uses specific ranges
-327.00s: for positions based on the product, as I was mentioning before.
-332.00s: So they like right now TD Ameritrade
-334.80s: using minus 15% positive 15% for stocks
-338.80s: and option positions in minus 12 and plus 10%
-342.80s: for large and small cap broad based indices.
-345.60s: So notice that difference I was referencing before.
-348.40s: And then they also goes into a little bit of detail
-351.40s: on how they incorporate implied volatility calculation.
-354.88s: So they use what's called sticky strike, sticky delta.
-357.68s: Sticky strike is when there's a constant IV computation,
-361.20s: sticky delta is when there's a slope involved.
-364.00s: And essentially they run through their calculation
-366.80s: and they decide how much they want you to have in the account.
-370.20s: And notice this last note here,
-372.80s: wider stress test parameters that result in a larger,
-375.60s: larger requirement may be enforced at any time.
-377.60s: Here's the deal.
-378.60s: Margin is a luxury afforded to us.
-380.80s: It gives us greater leverage, the ability to be more efficient
-384.20s: in our portfolios.
-385.80s: But this, their broker's not doing this out of the kindness
-389.20s: of their heart.
-390.20s: They're doing it because it's a selling point.
-392.80s: We want to be efficient.
-394.40s: But at no point does that mean that the broker is not going
-398.60s: to cover their risk?
-399.60s: That is their job.
-401.20s: So as soon as we see or the broker starts to calculate
-405.60s: different volatility metrics and they see increased risk,
-408.80s: you would better believe the larger requirements are going
-411.60s: to increase.
-412.60s: They're not going to cover your risk for you.
-415.20s: All right.
-415.60s: So a couple of things.
-416.80s: This is the SEC site that I was talking about.
-418.80s: I will link to this.
-420.00s: This one is just a quick comparison
-423.60s: of different amounts of capital required for different positions.
-426.80s: This is again for TD Ameritrade.
-428.80s: So when we're looking at stock, this is showing you
-431.40s: that it's a long 100 shares of a random stock at $100.
-435.20s: And it's showing you what the initial margin is,
-438.80s: what the maintenance margin is, and then what the portfolio margin is.
-442.20s: So this is assuming, again, we're a long 100 shares of stock
-447.60s: that's valued at a hundred bucks.
-448.80s: So we can see for initial, again, 50%.
-451.40s: We know that.
-452.40s: So that's going to be $5,000.
-454.20s: Then you can see for them, they don't use a 25% metric.
-457.40s: They use 30%.
-459.00s: And then for portfolio margin, you can see it's just $1,500.
-463.40s: So there's pretty significant leverage here.
-465.80s: Let's take a look at a short iron condor.
-468.20s: So there's four legs here now.
-470.20s: So for the traditional margin requirement,
-473.20s: you could see on this trade, it's $50,000.
-476.40s: And then for the portfolio margin is $31,896.
-480.20s: So depending on the positions that you have on
-483.40s: and depending on how diverse they are,
-485.60s: you will see slight variance in what the requirements are
-489.00s: as an entire portfolio is assessed.
-492.40s: So the other thing I wanted to show you is this right here.
-496.60s: This is what talks about their actual computations.
-500.60s: And I think it's important for anybody
-502.80s: that's trading with portfolio margin to take a look at
-505.80s: how your individual broker thinks about things
-508.60s: like expected price ranges or points of no returns.
-511.40s: Because that's part and parcel to actually existing
-514.30s: with an margin account, specifically portfolio margin account.
-517.60s: So if you have any questions like this
-521.00s: or this content's helpful for you,
-522.60s: make sure you like and subscribe
-524.20s: so that we can continue growing
-526.20s: and I can add content that helps you all out.
-529.20s: I think margin is a great tool.
-531.70s: And it's really important to understand
-533.30s: that there's some best practices that go with it.
-535.80s: Like not always redlining it.
-538.50s: One of the greatest things we can do is trade
-540.90s: how we need to trade, but have more room.
-543.80s: If we want to take advantage of things
-545.90s: or if we want to leave room for buying power expansion
-548.90s: in case the market goes through a downturn,
-551.30s: tons of utility from portfolio margin.
-555.10s: Obviously with more margin comes more risk.
-557.90s: So it's important to think through how we deploy it
-560.60s: and make sure that we have a solid plan
-562.30s: when we're doing so until next time.
-564.90s: Be an outlier.
+1.04s: what's up to all the outliers welcome
+4.00s: what's up to all the outliers welcome and if you're new to the channel what's
+5.67s: and if you're new to the channel what's
+5.68s: and if you're new to the channel what's going on my name is eric and welcome to
+7.75s: going on my name is eric and welcome to
+7.76s: going on my name is eric and welcome to you as well so today i want to talk
+9.83s: you as well so today i want to talk
+9.84s: you as well so today i want to talk about portfolio margin as well as margin
+13.11s: about portfolio margin as well as margin
+13.12s: about portfolio margin as well as margin and i got a couple questions about some
+15.43s: and i got a couple questions about some
+15.44s: and i got a couple questions about some best practices so we'll talk about that
+17.35s: best practices so we'll talk about that
+17.36s: best practices so we'll talk about that as well at the end so to kick us off
+20.63s: as well at the end so to kick us off
+20.64s: as well at the end so to kick us off let's start with what is margin margin
+24.47s: let's start with what is margin margin
+24.48s: let's start with what is margin margin in a nutshell is leverage it is your
+27.19s: in a nutshell is leverage it is your
+27.20s: in a nutshell is leverage it is your broker
+28.39s: broker
+28.40s: broker allowing you a little bit of fiscal
+31.83s: allowing you a little bit of fiscal
+31.84s: allowing you a little bit of fiscal freedom essentially to maybe trade more
+36.15s: freedom essentially to maybe trade more
+36.16s: freedom essentially to maybe trade more value notional value of a product than
+38.55s: value notional value of a product than
+38.56s: value notional value of a product than you have in the account
+40.07s: you have in the account
+40.08s: you have in the account or it's when they're asking you to set
+42.71s: or it's when they're asking you to set
+42.72s: or it's when they're asking you to set aside potentially a smaller amount than
+46.23s: aside potentially a smaller amount than
+46.24s: aside potentially a smaller amount than otherwise required if it were a cash
+48.15s: otherwise required if it were a cash
+48.16s: otherwise required if it were a cash secured position
+49.51s: secured position
+49.52s: secured position so what i have here is actually a couple
+51.99s: so what i have here is actually a couple
+52.00s: so what i have here is actually a couple excerpts directly from the sec so we
+55.59s: excerpts directly from the sec so we
+55.60s: excerpts directly from the sec so we will go ahead and link to this in the
+57.59s: will go ahead and link to this in the
+57.60s: will go ahead and link to this in the video description below if you want to
+59.35s: video description below if you want to
+59.36s: video description below if you want to check out any of the articles i'm going
+60.95s: check out any of the articles i'm going
+60.96s: check out any of the articles i'm going to go over today
+62.55s: to go over today
+62.56s: to go over today but you'll notice a few things
+64.39s: but you'll notice a few things
+64.40s: but you'll notice a few things we have an initial margin maintenance
+67.11s: we have an initial margin maintenance
+67.12s: we have an initial margin maintenance margin and margin calls let's start with
+70.31s: margin and margin calls let's start with
+70.32s: margin and margin calls let's start with initial margin this is essentially the
+72.47s: initial margin this is essentially the
+72.48s: initial margin this is essentially the amount of money that the broker asks you
+75.27s: amount of money that the broker asks you
+75.28s: amount of money that the broker asks you to have in the account up front to cover
+78.39s: to have in the account up front to cover
+78.40s: to have in the account up front to cover a position and as you can see very
+81.11s: a position and as you can see very
+81.12s: a position and as you can see very frequently it's up to 50
+83.19s: frequently it's up to 50
+83.20s: frequently it's up to 50 of the purchase price of a security so
+85.11s: of the purchase price of a security so
+85.12s: of the purchase price of a security so this is right now we're talking about
+86.39s: this is right now we're talking about
+86.40s: this is right now we're talking about stock we'll talk about options as well
+88.39s: stock we'll talk about options as well
+88.40s: stock we'll talk about options as well but right now we're talking about stock
+90.15s: but right now we're talking about stock
+90.16s: but right now we're talking about stock so
+91.19s: so
+91.20s: so if you want to buy a hundred dollars
+92.71s: if you want to buy a hundred dollars
+92.72s: if you want to buy a hundred dollars worth of stock whatever it is
+94.15s: worth of stock whatever it is
+94.16s: worth of stock whatever it is essentially the broker would ask you for
+96.63s: essentially the broker would ask you for
+96.64s: essentially the broker would ask you for 50 bucks
+98.07s: 50 bucks
+98.08s: 50 bucks then when we actually establish the
+100.79s: then when we actually establish the
+100.80s: then when we actually establish the position we have what's called
+101.99s: position we have what's called
+102.00s: position we have what's called maintenance margin and there's something
+104.15s: maintenance margin and there's something
+104.16s: maintenance margin and there's something i want to highlight here you'll see that
+107.35s: i want to highlight here you'll see that
+107.36s: i want to highlight here you'll see that for maintenance margin technically
+109.35s: for maintenance margin technically
+109.36s: for maintenance margin technically speaking it says at least 25 of the
+112.47s: speaking it says at least 25 of the
+112.48s: speaking it says at least 25 of the total market value of securities in your
+114.15s: total market value of securities in your
+114.16s: total market value of securities in your margin account so it means that your
+115.83s: margin account so it means that your
+115.84s: margin account so it means that your initial margin is going to be higher
+117.67s: initial margin is going to be higher
+117.68s: initial margin is going to be higher than the maintenance margin going
+119.03s: than the maintenance margin going
+119.04s: than the maintenance margin going forward
+119.99s: forward
+120.00s: forward so this is just a broker protecting
+121.59s: so this is just a broker protecting
+121.60s: so this is just a broker protecting themselves essentially
+123.11s: themselves essentially
+123.12s: themselves essentially the interesting part though is this part
+125.83s: the interesting part though is this part
+125.84s: the interesting part though is this part down here which is many brokerage firms
+127.99s: down here which is many brokerage firms
+128.00s: down here which is many brokerage firms have higher maintenance requirements
+129.67s: have higher maintenance requirements
+129.68s: have higher maintenance requirements typically between thirty and forty
+131.11s: typically between thirty and forty
+131.12s: typically between thirty and forty percent i typically see thirty percent
+133.67s: percent i typically see thirty percent
+133.68s: percent i typically see thirty percent so it's just important to note that all
+135.75s: so it's just important to note that all
+135.76s: so it's just important to note that all the discussion that we have today is
+137.43s: the discussion that we have today is
+137.44s: the discussion that we have today is going to be specific to your broker
+140.39s: going to be specific to your broker
+140.40s: going to be specific to your broker because for regulation t this is set by
+143.75s: because for regulation t this is set by
+143.76s: because for regulation t this is set by sec and finra
+145.35s: sec and finra
+145.36s: sec and finra however your broker can be more strict
+148.87s: however your broker can be more strict
+148.88s: however your broker can be more strict they can't be less strict so most of
+151.91s: they can't be less strict so most of
+151.92s: they can't be less strict so most of them adhere to the 50 on initial where
+154.23s: them adhere to the 50 on initial where
+154.24s: them adhere to the 50 on initial where you'll see the variances on maintenance
+156.71s: you'll see the variances on maintenance
+156.72s: you'll see the variances on maintenance all right so let's talk about portfolio
+158.95s: all right so let's talk about portfolio
+158.96s: all right so let's talk about portfolio margin the purpose of this video
+161.75s: margin the purpose of this video
+161.76s: margin the purpose of this video there's a big difference between
+163.35s: there's a big difference between
+163.36s: there's a big difference between portfolio margin and regulation t
+165.19s: portfolio margin and regulation t
+165.20s: portfolio margin and regulation t regulation t has already
+168.07s: regulation t has already
+168.08s: regulation t has already standing permutations that are ran to
+170.55s: standing permutations that are ran to
+170.56s: standing permutations that are ran to determine how much money you need to
+172.15s: determine how much money you need to
+172.16s: determine how much money you need to keep in your account at a given point in
+174.23s: keep in your account at a given point in
+174.24s: keep in your account at a given point in time
+175.19s: time
+175.20s: time this applies to stock positions this
+177.83s: this applies to stock positions this
+177.84s: this applies to stock positions this applies to options positions and
+180.71s: applies to options positions and
+180.72s: applies to options positions and essentially not all positions are
+183.35s: essentially not all positions are
+183.36s: essentially not all positions are treated as equals and what i mean by
+185.99s: treated as equals and what i mean by
+186.00s: treated as equals and what i mean by that is for example
+188.15s: that is for example
+188.16s: that is for example your brokerage might look at an indus
+191.59s: your brokerage might look at an indus
+191.60s: your brokerage might look at an indus index product let's call it spy
+194.31s: index product let's call it spy
+194.32s: index product let's call it spy or apple they might look at them
+196.47s: or apple they might look at them
+196.48s: or apple they might look at them differently in terms of how much money
+198.39s: differently in terms of how much money
+198.40s: differently in terms of how much money they want you to set aside so for
+200.63s: they want you to set aside so for
+200.64s: they want you to set aside so for example more often than not
+202.95s: example more often than not
+202.96s: example more often than not index products are going to be slightly
+205.83s: index products are going to be slightly
+205.84s: index products are going to be slightly less
+207.67s: less
+207.68s: less margined than none and it's because
+209.99s: margined than none and it's because
+210.00s: margined than none and it's because there's a perceived lower amount of risk
+211.91s: there's a perceived lower amount of risk
+211.92s: there's a perceived lower amount of risk there so when we're looking at portfolio
+214.63s: there so when we're looking at portfolio
+214.64s: there so when we're looking at portfolio margin there's a couple things that are
+216.15s: margin there's a couple things that are
+216.16s: margin there's a couple things that are happening here the first one is this and
+219.51s: happening here the first one is this and
+219.52s: happening here the first one is this and this is kind of an important highlight
+222.39s: this is kind of an important highlight
+222.40s: this is kind of an important highlight is it's based on the oh didn't mean to
+225.19s: is it's based on the oh didn't mean to
+225.20s: is it's based on the oh didn't mean to cross it out that one right
+227.51s: cross it out that one right
+227.52s: cross it out that one right um it's based on the overall portfolio
+231.75s: um it's based on the overall portfolio
+231.76s: um it's based on the overall portfolio risk not each individual trade now if
+235.19s: risk not each individual trade now if
+235.20s: risk not each individual trade now if your portfolio is concentrated into one
+238.39s: your portfolio is concentrated into one
+238.40s: your portfolio is concentrated into one product then obviously it's still going
+240.39s: product then obviously it's still going
+240.40s: product then obviously it's still going to assess a higher risk there because
+242.39s: to assess a higher risk there because
+242.40s: to assess a higher risk there because one of the things your broker is
+243.59s: one of the things your broker is
+243.60s: one of the things your broker is including in their calculation
+246.71s: including in their calculation
+246.72s: including in their calculation is
+247.75s: is
+247.76s: is the overall perceived risk of your
+250.31s: the overall perceived risk of your
+250.32s: the overall perceived risk of your portfolio part of that being how
+251.91s: portfolio part of that being how
+251.92s: portfolio part of that being how diversified you are
+253.67s: diversified you are
+253.68s: diversified you are so notice how i say it's a proprietary
+256.95s: so notice how i say it's a proprietary
+256.96s: so notice how i say it's a proprietary account margining based on overall
+259.67s: account margining based on overall
+259.68s: account margining based on overall portfolio risk the reason why i say
+260.87s: portfolio risk the reason why i say
+260.88s: portfolio risk the reason why i say proprietary is because it's broker
+262.63s: proprietary is because it's broker
+262.64s: proprietary is because it's broker specific different brokers will have
+265.27s: specific different brokers will have
+265.28s: specific different brokers will have different computations on how they
+267.35s: different computations on how they
+267.36s: different computations on how they arrive at how much margin they want for
+270.55s: arrive at how much margin they want for
+270.56s: arrive at how much margin they want for a portfolio or for individual positions
+273.35s: a portfolio or for individual positions
+273.36s: a portfolio or for individual positions so what i'm going to go over down here
+275.11s: so what i'm going to go over down here
+275.12s: so what i'm going to go over down here is for td ameritrade because that's who
+277.35s: is for td ameritrade because that's who
+277.36s: is for td ameritrade because that's who i use so just make sure you check with
+279.83s: i use so just make sure you check with
+279.84s: i use so just make sure you check with your broker and what their requirements
+282.47s: your broker and what their requirements
+282.48s: your broker and what their requirements are
+283.27s: are
+283.28s: are so when we look at
+285.67s: so when we look at
+285.68s: so when we look at portfolio margin accounts a couple
+287.67s: portfolio margin accounts a couple
+287.68s: portfolio margin accounts a couple important notes the first one is iras
+289.91s: important notes the first one is iras
+289.92s: important notes the first one is iras are not applicable it has to be a
+291.59s: are not applicable it has to be a
+291.60s: are not applicable it has to be a standard margin account it also requires
+294.15s: standard margin account it also requires
+294.16s: standard margin account it also requires a minimum amount of capital typically
+296.67s: a minimum amount of capital typically
+296.68s: a minimum amount of capital typically 125 000 initial and then 100 000
+299.51s: 125 000 initial and then 100 000
+299.52s: 125 000 initial and then 100 000 maintenance again check with your broker
+301.59s: maintenance again check with your broker
+301.60s: maintenance again check with your broker and many require a written test it's
+304.15s: and many require a written test it's
+304.16s: and many require a written test it's super easy but they require you to do it
+306.87s: super easy but they require you to do it
+306.88s: super easy but they require you to do it for regulation t you pretty much just
+308.55s: for regulation t you pretty much just
+308.56s: for regulation t you pretty much just need two thousand dollars
+310.63s: need two thousand dollars
+310.64s: need two thousand dollars but
+311.35s: but
+311.36s: but for portfolio margin because there's
+313.59s: for portfolio margin because there's
+313.60s: for portfolio margin because there's increased leverage
+315.35s: increased leverage
+315.36s: increased leverage they're a little more strict
+317.35s: they're a little more strict
+317.36s: they're a little more strict so rather than using those standard
+319.67s: so rather than using those standard
+319.68s: so rather than using those standard calculations that you see in regulation
+321.43s: calculations that you see in regulation
+321.44s: calculations that you see in regulation t portfolio margin uses
+324.47s: t portfolio margin uses
+324.48s: t portfolio margin uses specific ranges
+326.87s: specific ranges
+326.88s: specific ranges for positions based on the product as i
+330.47s: for positions based on the product as i
+330.48s: for positions based on the product as i was mentioning before so they like right
+333.43s: was mentioning before so they like right
+333.44s: was mentioning before so they like right now td ameritrades using minus 15
+336.47s: now td ameritrades using minus 15
+336.48s: now td ameritrades using minus 15 positive 15 for stocks and option
+339.35s: positive 15 for stocks and option
+339.36s: positive 15 for stocks and option positions in minus 12 and plus 10
+342.79s: positions in minus 12 and plus 10
+342.80s: positions in minus 12 and plus 10 for large and small cap broad-based
+345.03s: for large and small cap broad-based
+345.04s: for large and small cap broad-based indices so notice that difference i was
+346.71s: indices so notice that difference i was
+346.72s: indices so notice that difference i was referencing before
+348.31s: referencing before
+348.32s: referencing before and then it also goes into a little bit
+350.63s: and then it also goes into a little bit
+350.64s: and then it also goes into a little bit of detail on how they incorporate
+352.79s: of detail on how they incorporate
+352.80s: of detail on how they incorporate implied volatility calculations so they
+355.03s: implied volatility calculations so they
+355.04s: implied volatility calculations so they use what's called sticky strike sticky
+356.79s: use what's called sticky strike sticky
+356.80s: use what's called sticky strike sticky delta sticky strike is when there's a
+359.03s: delta sticky strike is when there's a
+359.04s: delta sticky strike is when there's a constant iv computation sticky deltas
+361.83s: constant iv computation sticky deltas
+361.84s: constant iv computation sticky deltas when there's a slope involved and
+364.39s: when there's a slope involved and
+364.40s: when there's a slope involved and essentially they run through their
+365.99s: essentially they run through their
+366.00s: essentially they run through their calculation and they decide how much you
+367.99s: calculation and they decide how much you
+368.00s: calculation and they decide how much you want they want you to have in the
+369.11s: want they want you to have in the
+369.12s: want they want you to have in the account
+370.15s: account
+370.16s: account and notice this last note here
+372.79s: and notice this last note here
+372.80s: and notice this last note here wider stress test parameters that result
+374.71s: wider stress test parameters that result
+374.72s: wider stress test parameters that result in a larger margin requirement may be
+376.71s: in a larger margin requirement may be
+376.72s: in a larger margin requirement may be enforced at any time here's the deal
+378.63s: enforced at any time here's the deal
+378.64s: enforced at any time here's the deal margin is a luxury afforded to us it
+380.95s: margin is a luxury afforded to us it
+380.96s: margin is a luxury afforded to us it gives us greater leverage the ability to
+383.11s: gives us greater leverage the ability to
+383.12s: gives us greater leverage the ability to be more efficient in our portfolios but
+386.55s: be more efficient in our portfolios but
+386.56s: be more efficient in our portfolios but this their broker's not doing this out
+388.47s: this their broker's not doing this out
+388.48s: this their broker's not doing this out of the kindness of their heart they're
+390.39s: of the kindness of their heart they're
+390.40s: of the kindness of their heart they're doing it because it's a selling point we
+392.95s: doing it because it's a selling point we
+392.96s: doing it because it's a selling point we want to be efficient
+394.39s: want to be efficient
+394.40s: want to be efficient but at no point does that mean that the
+396.71s: but at no point does that mean that the
+396.72s: but at no point does that mean that the broker is not going to cover their risk
+399.43s: broker is not going to cover their risk
+399.44s: broker is not going to cover their risk that is their job so as soon as we see
+403.83s: that is their job so as soon as we see
+403.84s: that is their job so as soon as we see or the broker starts to calculate
+405.43s: or the broker starts to calculate
+405.44s: or the broker starts to calculate different volatility metrics and they
+407.51s: different volatility metrics and they
+407.52s: different volatility metrics and they see increased risk you would better
+409.11s: see increased risk you would better
+409.12s: see increased risk you would better believe the margin requirements are
+411.19s: believe the margin requirements are
+411.20s: believe the margin requirements are going to increase they are not going to
+413.35s: going to increase they are not going to
+413.36s: going to increase they are not going to cover your risk for you
+415.11s: cover your risk for you
+415.12s: cover your risk for you all right so a couple other things this
+416.71s: all right so a couple other things this
+416.72s: all right so a couple other things this is the sec site that i was talking about
+418.63s: is the sec site that i was talking about
+418.64s: is the sec site that i was talking about i will link to this this one is just a
+421.67s: i will link to this this one is just a
+421.68s: i will link to this this one is just a quick comparison of different amounts of
+425.11s: quick comparison of different amounts of
+425.12s: quick comparison of different amounts of capital required for different positions
+426.79s: capital required for different positions
+426.80s: capital required for different positions this is again for td ameritrade so when
+429.03s: this is again for td ameritrade so when
+429.04s: this is again for td ameritrade so when we're looking at stock this is showing
+431.11s: we're looking at stock this is showing
+431.12s: we're looking at stock this is showing you that it's a long 100 shares of a
+433.11s: you that it's a long 100 shares of a
+433.12s: you that it's a long 100 shares of a random stock at a hundred dollars and
+435.35s: random stock at a hundred dollars and
+435.36s: random stock at a hundred dollars and it's showing you
+436.63s: it's showing you
+436.64s: it's showing you what the initial margin is what the
+439.27s: what the initial margin is what the
+439.28s: what the initial margin is what the maintenance margin is and then what the
+440.71s: maintenance margin is and then what the
+440.72s: maintenance margin is and then what the portfolio margin is so this is assuming
+444.07s: portfolio margin is so this is assuming
+444.08s: portfolio margin is so this is assuming again we're long 100 shares of
+447.11s: again we're long 100 shares of
+447.12s: again we're long 100 shares of stock that's valued at 100 bucks so we
+448.87s: stock that's valued at 100 bucks so we
+448.88s: stock that's valued at 100 bucks so we can see for initial again 50 we know
+451.59s: can see for initial again 50 we know
+451.60s: can see for initial again 50 we know that so that's gonna be five thousand
+453.35s: that so that's gonna be five thousand
+453.36s: that so that's gonna be five thousand dollars then you can see for them they
+455.43s: dollars then you can see for them they
+455.44s: dollars then you can see for them they don't use the 25 metric they use 30
+458.87s: don't use the 25 metric they use 30
+458.88s: don't use the 25 metric they use 30 and then for a portfolio margin you can
+461.11s: and then for a portfolio margin you can
+461.12s: and then for a portfolio margin you can see it's just 1500 bucks so there's
+463.75s: see it's just 1500 bucks so there's
+463.76s: see it's just 1500 bucks so there's pretty significant leverage here let's
+465.91s: pretty significant leverage here let's
+465.92s: pretty significant leverage here let's take a look at a short iron condor so
+468.31s: take a look at a short iron condor so
+468.32s: take a look at a short iron condor so there's four legs here now
+469.99s: there's four legs here now
+470.00s: there's four legs here now so for the traditional margin
+472.39s: so for the traditional margin
+472.40s: so for the traditional margin requirement you could see on this trade
+474.47s: requirement you could see on this trade
+474.48s: requirement you could see on this trade it's fifty thousand dollars and then for
+476.79s: it's fifty thousand dollars and then for
+476.80s: it's fifty thousand dollars and then for the portfolio margin is 31 896. so
+480.47s: the portfolio margin is 31 896. so
+480.48s: the portfolio margin is 31 896. so depending on the positions that you have
+482.79s: depending on the positions that you have
+482.80s: depending on the positions that you have on and depending on how diverse they are
+485.51s: on and depending on how diverse they are
+485.52s: on and depending on how diverse they are you will see slight variance in what the
+487.59s: you will see slight variance in what the
+487.60s: you will see slight variance in what the requirements are as
+489.99s: requirements are as
+490.00s: requirements are as an entire portfolio is assessed so
+493.67s: an entire portfolio is assessed so
+493.68s: an entire portfolio is assessed so the other thing i wanted to show you is
+495.67s: the other thing i wanted to show you is
+495.68s: the other thing i wanted to show you is this right here this is what talks about
+497.75s: this right here this is what talks about
+497.76s: this right here this is what talks about their actual
+499.03s: their actual
+499.04s: their actual computations
+500.63s: computations
+500.64s: computations and i think it's important for anybody
+502.71s: and i think it's important for anybody
+502.72s: and i think it's important for anybody that's trading with portfolio margin to
+504.31s: that's trading with portfolio margin to
+504.32s: that's trading with portfolio margin to take a look at how your individual
+506.79s: take a look at how your individual
+506.80s: take a look at how your individual broker thinks about things like expected
+509.27s: broker thinks about things like expected
+509.28s: broker thinks about things like expected price ranges or points of no returns
+511.35s: price ranges or points of no returns
+511.36s: price ranges or points of no returns because that's part and parcel to
+513.19s: because that's part and parcel to
+513.20s: because that's part and parcel to actually existing within a margin
+514.87s: actually existing within a margin
+514.88s: actually existing within a margin account specifically portfolio margin
+516.55s: account specifically portfolio margin
+516.56s: account specifically portfolio margin account
+517.60s: account so
+518.88s: so if you have any questions like this or
+521.19s: if you have any questions like this or
+521.20s: if you have any questions like this or this content's helpful for you make sure
+522.87s: this content's helpful for you make sure
+522.88s: this content's helpful for you make sure you like and subscribe so that we can
+525.11s: you like and subscribe so that we can
+525.12s: you like and subscribe so that we can continue growing and i can add content
+527.43s: continue growing and i can add content
+527.44s: continue growing and i can add content that helps you all out i think margin is
+530.47s: that helps you all out i think margin is
+530.48s: that helps you all out i think margin is a great tool and it's really important
+532.63s: a great tool and it's really important
+532.64s: a great tool and it's really important to understand that there's some best
+533.91s: to understand that there's some best
+533.92s: to understand that there's some best practices that go with it like not
+536.63s: practices that go with it like not
+536.64s: practices that go with it like not always redlining it one of the greatest
+539.11s: always redlining it one of the greatest
+539.12s: always redlining it one of the greatest things we can do is trade how we need to
+541.35s: things we can do is trade how we need to
+541.36s: things we can do is trade how we need to trade but have more room if we want to
+544.71s: trade but have more room if we want to
+544.72s: trade but have more room if we want to take advantage of things or if we want
+546.47s: take advantage of things or if we want
+546.48s: take advantage of things or if we want to leave room for buying power expansion
+548.79s: to leave room for buying power expansion
+548.80s: to leave room for buying power expansion in case the market goes through a
+550.23s: in case the market goes through a
+550.24s: in case the market goes through a downturn
+551.35s: downturn
+551.36s: downturn tons of utility from portfolio margin
+555.03s: tons of utility from portfolio margin
+555.04s: tons of utility from portfolio margin obviously with more margin comes more
+557.19s: obviously with more margin comes more
+557.20s: obviously with more margin comes more risk so it's important to think through
+559.59s: risk so it's important to think through
+559.60s: risk so it's important to think through how we deploy it and make sure that we
+561.11s: how we deploy it and make sure that we
+561.12s: how we deploy it and make sure that we have a solid plan when we're doing so
+563.51s: have a solid plan when we're doing so
+563.52s: have a solid plan when we're doing so until next time be an outlier

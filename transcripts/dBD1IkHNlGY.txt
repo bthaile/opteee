@@ -1,368 +1,579 @@
-0.00s: What's up, outliers?
-1.64s: Let's talk about the basics of back testing.
-4.60s: The goal of this video is to give you a framework to work off of when you're trying to come
-10.00s: up with trading approaches.
-12.36s: Now back testing is so nuanced that this video will not capture everything, but it will
-18.88s: capture 80% of the stuff that matters.
-22.28s: So let's get straight into what this is all about.
-25.08s: We're going to cover why back testing is useful, shortfalls, some key steps to follow,
-32.12s: and then we're actually going to use an example that came up during a recent pro livestream
-37.44s: where I worked through this exact example with the actual folks on the stream live.
-43.08s: And I think it serves a good general overview and pulls everything together in a relatively
-49.00s: nice way for you all.
-50.48s: So first off, let's talk about why back test.
-54.08s: The entire concept of back testing I think is widely misunderstood.
-58.56s: Most people would think of it as, oh, this is a way for me to find if this strategy works.
-62.56s: So this is for me to find the optimized strategy, the best strategy.
-65.64s: It's really not the point at all.
-68.08s: The context of a back test is for you to simply be able to say, is this idea viable or should
-74.68s: I throw it out?
-75.92s: It is so easy to make a back test that looks good because of some of the common shortfalls
-81.44s: such as overfitting which we'll touch on, that if you attempt to apply a back test going
-87.72s: forward, that seemed to do really well, you're probably going to be really sad with the
-93.00s: results.
-94.00s: And it's because the past is always nuance and relevant to the past.
-99.40s: The future can look like flavors of the past, but it's never the past.
-105.20s: So we're going to talk about what to look out for.
-108.40s: So keep this in the back of your mind as you go through all of this.
-112.68s: The idea is not to find or build optimized strategies that perform the best.
-118.76s: This is literally just to remove bad ideas.
-122.40s: The other thing to pay attention here is this component, improve execution and to better
-129.32s: understand the strategy itself.
-132.08s: The reason why that's so important is because a lot of times when traders strategy hop,
-136.52s: for example, you have a strategy that tends to work well, you go through a losing streak,
-140.72s: you say, oh, this isn't working anymore.
-142.04s: I'm going to try something else.
-143.68s: The problem with that kind of approach is you're never going to get anywhere as a trader
-146.44s: because every single trade is going to go through different paths and not all of them
-150.40s: are going to be perpetually winning paths.
-152.68s: Now if you back test an idea, you have an understanding of how the approach generally
-157.72s: works.
-158.72s: You are pretty comfortable with the general concepts of it.
-162.00s: And when you go through those not ideal paths, you're not as shaken up because you're
-167.16s: like, oh, yeah, I saw this before.
-169.48s: I think I know this is part of the strategy and I think I'm comfortable continuing to execute.
-174.84s: Maybe you even develop some filters based on the paths where maybe you size your strategy
-178.96s: down if it goes through X number of losing trades.
-181.88s: So on and so forth.
-183.56s: Now this section cannot be understated because one of the largest shortfalls for back testing
-190.40s: is the trader.
-191.80s: And whoever is running the back test because it is so easy to come across a back test that
-196.80s: looks super, super good and you are ultimately confident in.
-201.16s: For example, I had somebody in the discord a while back that showed this portfolio and
-207.52s: they were essentially saying, oh, this is what I'm going to do.
-210.88s: And I even think they might operate a hedge fund, which is crazy to me.
-215.04s: Now take a look at the compound annual growth rate.
-219.12s: 66.6% with a max drawdown of 6%.
-224.92s: What does that tell me?
-227.36s: That tells me that this is so overfit.
-230.96s: It's not even funny.
-232.56s: And the reason being is because if this kind of portfolio were to attain this kind of performance,
-239.28s: guess what you probably would see more broadly in hedge funds and different kinds of institutional
-244.32s: trading, probably stuff that looks more like this, but they don't.
-248.48s: And it doesn't look like that.
-249.76s: Why?
-250.76s: Because this is a great strategy for the historic timeframe it was built within.
-259.76s: This is something that we call not robust.
-263.76s: Meaning if you were to apply this to an out of sample experience, meaning forward testing
-269.40s: or trading live data, attempting to get the actual fills, all that kind of stuff, you
-273.60s: would all of a sudden see this breakdown pretty fast.
-276.72s: So when we're talking about the shortfalls of that is toxic because it's really fun to
-281.60s: iterate on something and try to make it better and better and better.
-284.44s: But that will lead you down this really nasty path that's going to set you up for failure.
-290.68s: A couple other things to pay attention to beyond the overfitting component and to expand
-295.96s: on that a little bit more.
-297.20s: It's really simple.
-298.20s: It's essentially saying, if I have this idea and then I apply a filter on it, then I apply
-303.36s: another filter on it.
-304.52s: And I apply another filter on it.
-306.00s: My performance in the back test will probably go up because I'm literally shaping something
-311.24s: around a prior timeframe.
-314.52s: But one of the most important things that you have to pay attention to when you're back
-319.36s: testing is how well something holds up under other conditions.
-325.44s: We refer to that as robustness even at it here so you can see.
-330.12s: So one of the downsides to this is if you apply some of these shortfalls and you believe
-336.56s: what you're doing, then it leads to this false confidence.
-340.28s: You feel like you're going to go get that 66.6% return and you feel super confident about
-344.76s: it.
-345.76s: But then all of a sudden you're like, wait a minute, this isn't what's going on.
-348.56s: This isn't painting out the way I thought.
-350.64s: And again, the same improved execution that can come from back testing can happen on
-357.68s: the negative side if you're not thoughtful about what you're doing.
-362.12s: Now the way I think about back testing is that it actually pairs beautifully with things
-366.40s: like forward testing, doing random sampling simulations like money, car low, paper trading,
-372.72s: I have a video on paper trading talks about that.
-375.68s: And we'll throw that in the notes below.
-377.48s: But the way that I think about this hierarchy of exploring ideas is back testing is a way
-383.24s: to quickly look at stuff that you want to click into.
-387.44s: So if we take something like this, the outlier strategy process, which I have a video
-390.92s: on that, if you're curious, it just creates a framework to test ideas effectively.
-395.44s: And we start with the profit mechanism.
-397.60s: So when I'm thinking about this idea of back testing, we'll talk about the general approach
-402.52s: in just a moment.
-404.00s: But one of the things I want you to pay attention to is that there's several steps that
-408.04s: have to happen here.
-409.68s: So if you spend a bunch of time building a strategy around something that you're not
-414.24s: sure if it works well, it's kind of a waste of time.
-417.44s: So the whole point of back testing is for you to get a sense of does this thing tend
-422.64s: to work well and is it worthy of additional time from me?
-428.12s: So that leads us to some of the things to pay attention to when you're actually executing
-434.68s: a back test.
-435.96s: The first thing is to come up with an idea.
-437.96s: And for options traders, I actually think it's much easier than you think because your
-441.80s: idea starts with the profit mechanism.
-444.32s: It doesn't start with what delta, what DTE, what volatility matters.
-448.60s: Like none of that matters at this point.
-450.40s: Actually, when we're thinking about trying to trade a profit mechanism, it's agnostic
-455.92s: to an option typically.
-457.12s: Now there are some option strategies that essentially become the profit mechanism, but that's
-463.92s: seldom.
-465.12s: So the example that came up during the stream earlier was about pre-earnings move in
-471.56s: so-fi.
-472.76s: Now I typically don't overemphasize individual names like this, but it's served as a good foundation.
-478.44s: So the profit mechanism is some sort of pre-earnings drift that was thought to have occurred based
-485.84s: on a general observation in so-fi.
-489.20s: So what this looks like is we start with this idea.
-493.24s: Then we kind of crafted a little more carefully after we start with something I call the eyeball
-499.88s: test, just looking at it.
-501.20s: So if we grab a chart of so-fi and we just grab a handful of prior earnings releases
-508.04s: and we literally just eyeball it, we just say how does price seem to move into the earnings
-513.44s: release?
-514.44s: This one seems to go up, this one seems to go down, this one seems to go up, and so
-518.80s: on.
-519.80s: Now there are different ways you can track all of this, but in the beginning, I literally
-524.00s: just look at it and see if anything sticks out to me.
-526.92s: And in this case, it seems like there might be some merit to it.
-530.32s: I don't know yet, but it's worth the next step.
-534.20s: Now if I looked at this in 85% of these were going down into earnings, I might still
-540.36s: proceed, but for a different reason.
-541.92s: Maybe there's a completely different trade that could be had there.
-545.32s: But this does seem to have some sort of positive drift going on into it.
-550.68s: So then we can move on to the next step, which is to think about the profit mechanism
-556.04s: itself and to analyze it.
-558.96s: After that, we can overlay strategies.
-561.76s: Then we can move into different forms of live testing, forward testing.
-566.20s: So we're really going to focus on these two things here, the profit mechanism backtest
-571.00s: and the strategy backtest.
-572.80s: A couple of notes, there are different ways to go about this testing.
-576.96s: You can do something super manual, so that would be like coming here, manually log the
-583.32s: dates in Google Sheets, manually log the price behavior, preimpost, then start doing your
-590.16s: general data analysis on top of it.
-593.04s: All in Google Sheets, all handmade formulas, that kind of thing.
-595.44s: There's no reason to do that anymore with the advent of artificial intelligence AI.
-599.44s: I'm going to show you how we can use AI to essentially fast track all of this.
-605.72s: So there's no reason to go full manual.
-608.64s: Am I automated or things like packaged back testing tools and software that exist?
-613.60s: And then there's other versions like code base where you build your own.
-616.60s: That's what I've done.
-617.96s: But the cool part is just about everybody has access to AI and some capacity now, which
-622.44s: can help a lot.
-623.84s: You have to figure out where you're going to get your data from.
-625.88s: Now this is a bit of a drawback when you're trying to trade options because getting good
-630.48s: data typically is expensive and the file sizes are pretty large.
-634.48s: So you can choose to buy your own.
-637.40s: You can choose to use an API to tie into somebody else that already has data from a back
-643.32s: testing software platform, something like that.
-646.12s: Now one of the cool things again is most option strategies that you might choose to express
-651.64s: with options.
-652.64s: You don't even really have to test the option side of it.
-654.60s: So going back to this sofa thing, do I need to get a bunch of options data?
-659.80s: One side rough out this idea to test how the options would behave?
-663.64s: No.
-664.64s: Because I can quantify and qualify the movements coming into the earnings release.
-668.48s: I can measure it.
-669.72s: So then I can literally just reason through with my knowledge of options and say, if something
-675.80s: moves a lot, do I want to sell a put or buy a call?
-679.76s: Probably buy a call.
-680.76s: Now the change in volatility would matter to that.
-682.84s: But we know there's ways we can minimize the change in volatility around an earnings
-686.84s: release.
-687.84s: We can close before the earnings release.
-689.16s: We know implied volatility expands going into earnings, all these different kind of things
-693.12s: that come with understanding options.
-694.88s: So like, you don't have to have options data in order to test these ideas.
-698.96s: That's the main point here.
-701.20s: So now a couple of things to keep in mind as we go through the testing itself.
-705.72s: And again, in this example, we're going to use sofa and we're literally going to test
-709.16s: the idea that was observed by one of the members and saying, is there something about pre-earnings
-714.68s: release movement?
-717.00s: So we're going to start zoomed out and then we're going to slowly zoom in.
-722.36s: What that means is what I like to do is this is the same thing you've seen in some of my
-728.08s: zero DTE videos.
-730.04s: I'll take a look at the total performance of something and then I'll break it down into
-735.60s: different variations into different time frames.
-738.88s: The reason for doing this for segmenting and then tweaking the settings is to check for
-744.32s: robustness.
-745.60s: So for example, if I'm doing I sell a 30 delta put, that's 30 days out.
-750.28s: And I find that that works super well.
-752.80s: And then all of a sudden, I change it to 31 days out and it falls apart.
-757.56s: That's a problem.
-758.80s: There shouldn't be that big of a difference between 30 days and 31 days.
-762.20s: Now one could be better than the other for a list of reasons, but it shouldn't be that
-765.44s: different.
-766.44s: So the idea of segmenting the data and then tweaking the settings is to give you a sense
-770.64s: of how robust this thing is and how well it tracks.
-773.92s: And the way to do this is really simple.
-777.24s: If we're looking at a larger time series of data, right?
-781.20s: So something like this.
-783.52s: And let's say that this is 10 years of data you want to test this idea across.
-787.72s: All I'm going to do is first split it in half and look at this five year period and
-792.20s: this five year period.
-793.20s: Then I'm going to split that in half.
-794.52s: And I'm going to look at two and a half year period here, two and a half period here,
-798.04s: two and a half year period here and two and a half year period here.
-802.20s: And so on.
-803.20s: I'm literally just going to keep cutting this into pieces.
-806.20s: And by doing this, I can deconstruct any sort of smoothing effect that comes with time.
-815.48s: Because for example, if you look at buy and hold in something like T triple cues, it
-821.40s: might look something like this and you might see something like a good, Jillian percent
-826.28s: return because three times leverage tech has done well.
-829.64s: But this move here can be very minimized compared to what it actually was.
-835.72s: So then if we're segmenting that data as I just discussed, we might find that during
-841.96s: that period, if you didn't have this gain coming into it, your account could have gone
-849.68s: insolvent.
-851.56s: We have to detect that kind of stuff.
-853.76s: Now you can also detect it based on draw downs and things like that.
-857.92s: By segmenting it in this way, you get a much higher fidelity view.
-862.52s: And then again, that idea of tweaking settings is just taken random variables and just moving
-867.68s: them to different numbers and seeing how much things change.
-870.88s: It shouldn't change a ton.
-873.44s: Now another thing with respect to stress tests and the actual T triple cues example is
-879.32s: a great one because we know that recently if we plot T triple cues, it's had a draw
-886.04s: down of 82% plus where it drew down over 82%.
-893.00s: Now this is post GFC and if we think about trying to test what the maximum move might
-901.52s: have been, well, we're not going to use 82% because we know it likely is more than that.
-908.44s: So we can either use the data itself to inform what we might want to pad this by.
-914.92s: So for example, we can add standard error bars around the data and just essentially do
-921.44s: the same here.
-923.16s: Or we can just look at what the worst move was and add some onto it.
-928.08s: But that's just one setting that you can think about with respect to a stress test.
-934.24s: The stress test is going to be relevant to the strategy that you're trading.
-937.96s: Okay.
-939.20s: So now let's talk about this idea in SoFi.
-943.04s: I ball it.
-943.96s: We think we see something there.
-945.88s: So then the next step is just to go download data.
-949.00s: So in this case, I literally would just go to bar chart.
-952.16s: I would type in SoFi.
-955.40s: And then all I'm doing is downloading the actual data, the daily data here.
-960.68s: Now you can download intraday for higher fidelity periods, all that kind of stuff doesn't
-964.08s: matter for this one.
-965.08s: I'm going to start there.
-966.52s: The next thing I'm going to do is I know that I need to take a look at the price behavior
-971.32s: around these different earnings periods.
-972.84s: So I'm going to think maybe I'll start from 90 days out, 60 days out, 20 days out,
-979.08s: 10 days out, five days, four days, three days, two days, one day, right?
-982.68s: So I might come up with that coming into the release and then post release because the
-988.08s: profit mechanism that we're analyzing here is price movement, ideally direction up or
-993.48s: down.
-994.48s: It doesn't matter that much, but we need to quantify and qualify it, which is exactly
-998.24s: what we're able to do.
-999.24s: Now you can do all of this manually if you so choose, but you don't have to.
-1004.56s: We now have a handy dandy thing called chat GPT.
-1007.96s: So the first thing I did is tell chat GPT go back a period, go back a spell and look
-1013.16s: at earnings dates.
-1014.24s: Now it didn't go back as far as I wanted.
-1016.36s: I could tell it to go back further and make it do it again.
-1018.84s: I don't really care.
-1020.28s: But the first thing I'm going to do is absolutely analyze these dates because you cannot trust
-1025.16s: chat GPT.
-1026.16s: It literally can just make stuff up.
-1028.00s: So I'm going to fact check these.
-1029.44s: I'm going to say do I see 29 up 24 on this is that correct?
-1034.68s: And I do see it right here and I would literally check the sample and make sure that it lines
-1039.76s: up.
-1040.76s: I already did and it does, but just an important step.
-1043.84s: Now as I'm looking at this, there's other ideas that can come into my mind, right?
-1048.20s: I can see maybe there's a relationship between the quarter moves.
-1051.04s: Maybe there's a relationship between EPS, actual and estimate impact on the movement, pre
-1055.62s: and post probably post that kind of stuff.
-1058.42s: Now an important step to do here is to leverage what already exists.
-1066.02s: So part of this idea generation is actually researching.
-1071.14s: So what I've done here is literally go to SSRN type in pre earnings move.
-1075.30s: There's a bunch of papers that pop up.
-1076.74s: I see this one that catches my eyes pretty popular and I also know these names because
-1080.70s: I look at these a lot and I see that it's from a university.
-1083.94s: It tells me it's not some sort of entity that has an agenda to push.
-1087.78s: So we click this one and then we read it.
-1091.70s: We understand what kind of things they're identifying.
-1095.94s: The reason why this part's important is so that as we go through our analysis, I know
-1100.46s: this one's specific again to SoFi, but the idea of a pre earnings move probably applies
-1105.46s: to other stuff too and it might be a broader effect that we can trade.
-1109.98s: By doing this, we will have an idea of what kind of inputs matter a lot based on the
-1116.22s: existing research.
-1118.14s: So rather than us just randomly throwing out why I think if RSI is high coming into earnings
-1123.10s: release, then it's going to be bad.
-1124.86s: Well, who knows, but that would be a ton of research to figure that out with any level
-1129.34s: of fidelity that you don't have to do.
-1130.74s: You can see what people in a peer reviewed setting are already finding.
-1135.54s: Now let's go back into our chat GPT prompt.
-1138.70s: We get our earnings dates.
-1140.54s: So now what I did was I uploaded the data that I downloaded and I told it to essentially
-1147.78s: analyze the price performance behavior pre and post earnings in these durations.
-1153.78s: I told it that I wanted to calculate those percent returns to allow me to analyze how
-1159.42s: it changes between 90 and 60 days, but then also 90 days out to their earnings release.
-1165.10s: It gives me a table that I can download, run analysis on or what I can do is just have
-1169.86s: it turn it into a plot.
-1172.42s: So it started with a post earnings change, which is fine, but I wanted to focus in this
-1177.38s: context on a pre earnings change.
-1180.30s: So then I move it to pre earnings changes and I can see a couple things.
-1184.42s: It plots the earnings date for each and it gives me the percent change based on these
-1189.42s: different durations.
-1190.42s: So then I can start running some sort of robustness analysis off of this.
-1196.06s: Instead of looking at each individual one, I ask it to collate into the average and
-1201.86s: the mean or median.
-1204.46s: In this case, typically doing some sort of median makes the most sense, which is why it
-1210.30s: actually knew that's what I wanted, even though I put mean.
-1214.38s: So it plots the median, so it helps us get rid of some of the outlier tails, be an outlier,
-1221.54s: by the way.
-1222.74s: And we can see that there's some sort of trends here.
-1225.22s: So then the next thing we need to figure out is, well, this is just general price movement
-1230.10s: coming into earnings.
-1231.22s: How do we isolate that price movement from the standard drift that the stock clearly
-1236.90s: exhibits from the actual earnings move?
-1239.62s: Well, that's super easy.
-1241.38s: One, if you don't know how to do it, you can ask it how to do it.
-1244.90s: But the simple answer is just take a couple random samples of a duration and look at what
-1249.86s: the move is on average between those.
-1252.42s: That becomes your average move provided that it's not wrapped around a catalyst.
-1256.54s: So from there, we ask it to effectively do that.
-1260.22s: I isolate the earnings move and then show me these plots again.
-1263.86s: Then I can go through and say, okay, well, there's clearly some sort of excess move at
-1269.78s: different periods coming into the earnings release after we isolate the earnings move
-1275.82s: itself.
-1277.34s: So then I can ask it stuff like, well, how is this trending over time?
-1281.62s: Is it getting bigger as it's smaller?
-1283.70s: And as you can see, as time progresses, the move is actually getting smaller both upside
-1288.90s: and downside.
-1289.90s: Why would that be?
-1291.38s: Because there's enough information coverage at this point that you're not seeing these
-1297.22s: massive pre-moves anymore.
-1299.66s: This is also why using averages and mediums are so important because these two would absolutely
-1304.82s: skew this entire sample.
-1308.06s: So this is the game.
-1310.34s: We've just analyzed the profit mechanism.
-1312.74s: We have a general idea that something seems to exist here.
-1316.26s: So now we can simulate using a stock strategy.
-1320.14s: Again, going back to what I said before, you can just use stock to see how the stock
-1324.70s: strategies would perform.
-1326.50s: And then you can interpolate and infer what option structures would make the most sense
-1330.66s: based on your knowledge of options.
-1332.66s: Now, if you're trading something like a volatility or an earnings release move that's
-1337.74s: based on changes in volatility, then you need options for those.
-1341.74s: But a lot of things you don't need options.
-1344.62s: And you can figure out general concepts without them.
-1349.30s: And again, this is literally all using ChatGPT.
-1353.50s: The next thing I can see is, well, there's definitely some sort of decent pre-earnings
-1358.06s: return overall across the different time frames.
-1363.06s: And I can see that it's higher for the further duration stuff.
-1365.94s: Why would that be?
-1366.94s: Well, it's because it has more time to compound.
-1369.10s: So then if I isolated to the more recent time frames and I asked you to do it on an annualized
-1374.46s: return basis, which takes into account holding duration, we actually see that the near-term
-1378.78s: holdings on an annualized return basis can hold off better.
-1383.02s: So this is literally a crash course intro into back testing.
-1387.58s: This is absolutely the tip of the iceberg.
-1390.10s: If we should go deeper, let me know.
-1391.86s: Be an outlier.
-1392.86s: See you guys later.
+0.56s: What's up outliers? Let's talk about the
+2.64s: basics of back testing. The goal of this
+5.20s: video is to give you a framework to work
+7.68s: off of when you're trying to come up
+10.16s: with trading approaches. Now, back
+13.28s: testing is so nuanced that this video
+16.48s: will not capture everything, but it will
+19.04s: capture 80% of the stuff that matters.
+22.16s: So, let's get straight into what this is
+24.56s: all about. We're going to cover why back
+27.68s: testing is useful. shortfalls, some key
+31.04s: steps to follow, and then we're actually
+32.48s: going to use an example that came up
+35.12s: during a recent pro live stream where I
+38.00s: worked through this exact example with
+40.16s: the actual folks on the stream live and
+43.12s: I think it serves a good general
+45.52s: overview and pulls everything together
+48.00s: in a relatively nice way for you all.
+50.32s: So, first off, let's talk about why back
+53.00s: test. The entire concept of back
+56.16s: testing, I think, is widely
+57.68s: misunderstood. Most people would think
+59.12s: of it as, oh, this is a way for me to
+61.20s: find if this strategy works or this is
+62.96s: for me to find the optimized strategy,
+64.80s: the best strategy. That's really not the
+66.88s: point at all. The context of a back test
+69.92s: is for you to simply be able to say, is
+72.88s: this idea viable or should I throw it
+75.20s: out? It is so easy to make a back test
+78.32s: that looks good because of some of the
+80.64s: common shortfalls such as overfitting,
+82.40s: which we'll touch on, that if you
+84.96s: attempt to apply a back test going
+87.76s: forward that seem to do really well,
+90.48s: you're probably going to be really sad
+92.40s: with the results. And it's because the
+95.76s: past is always nuance and relevant to
+98.80s: the past. The future can look like
+101.68s: flavors of the past, but it's never the
+104.08s: past. So, we're going to talk about what
+106.56s: to look out for. So, keep this in the
+110.48s: back of your mind as you go through all
+111.84s: of this. The idea is not to find or
+115.52s: build optimized strategies that perform
+118.00s: the best. This is literally just to
+119.92s: remove bad ideas. The other thing to pay
+123.92s: attention here is this component,
+126.16s: improve execution and to better
+129.44s: understand the strategy itself. The
+132.16s: reason why that's so important is
+133.52s: because a lot of times when traders
+135.68s: strategy hop, for example, you have a
+137.92s: strategy that tends to work well. You go
+139.68s: through a losing streak, you say, "Oh,
+141.12s: this isn't working anymore. I'm going to
+142.32s: try something else." The problem with
+144.16s: that kind of approach is you're never
+145.28s: going to get anywhere as a trader
+146.48s: because every single trade is going to
+148.08s: go through different paths and not all
+150.16s: of them are going to be perpetually
+151.36s: winning paths. Now if you back test an
+154.56s: idea, you have an understanding of how
+156.72s: the approach generally works, you are
+159.28s: pretty comfortable with the general
+160.72s: concepts of it, then when you go through
+162.96s: those not ideal paths, you're not as
+166.24s: shaken up because you're like, "Oh yeah,
+167.84s: I saw this before. I think I know this
+170.64s: is part of the strategy and I think I'm
+172.48s: comfortable continuing to execute."
+174.64s: Maybe you even develop some filters
+176.32s: based on the paths where maybe you size
+178.16s: your strategy down if it goes through X
+180.32s: number of losing trades so on and so
+182.44s: forth. Now this section cannot be
+185.92s: understated because one of the largest
+188.72s: shortfalls for back testing is the
+190.80s: trader and whoever is running the back
+193.04s: test because it is so easy to come
+195.60s: across a back test that looks super
+197.60s: super good and you are ultimately
+199.60s: confident in. For example, I had
+202.32s: somebody in the Discord a while back
+204.24s: that showed this portfolio and they were
+207.84s: essentially saying, "Oh, this is what
+210.08s: I'm going to do." And I even think they
+211.68s: might operate a hedge fund, which is
+213.60s: crazy to me. Now, take a look at the
+217.28s: compound annual growth rate.
+220.20s: 66.6% with a max draw down of
+223.72s: 6%. What does that tell me?
+227.12s: That tells me that this is so overfit
+230.80s: it's not even funny. And the reason
+233.20s: being is because if this kind of
+236.48s: portfolio were to attain this kind of
+238.64s: performance, guess what you probably
+240.08s: would see more broadly in hedge funds
+242.24s: and different kinds of institutional
+244.40s: trading? Probably stuff that looks more
+246.00s: like this. But they don't. And it
+248.80s: doesn't look like that. Why? because
+251.44s: this is a great strategy for the
+255.24s: historic time frame it was built within.
+259.60s: This is something that we call not
+262.52s: robust. Meaning if you were to apply
+264.72s: this to an out of sample experience,
+268.16s: meaning forward testing or trading live
+270.24s: data, attempting to get the actual
+271.68s: fills, all that kind of stuff, you would
+273.68s: all of a sudden see this break down
+275.12s: pretty fast. So, when we're talking
+277.92s: about the shortfalls of that is like
+279.92s: toxic because it's really fun to iterate
+282.00s: on something and try to make it better
+283.20s: and better and better, but that will
+285.20s: lead you down this really nasty path
+288.32s: that's going to set you up for failure.
+290.64s: A couple other things to pay attention
+292.32s: to beyond the overfitting component. And
+295.28s: to expand on that a little bit more,
+296.88s: it's it's really simple. It's
+298.16s: essentially saying if I have this idea
+300.88s: and then I apply a filter on it, then I
+303.12s: apply another filter on it, then I apply
+304.96s: another filter on it, my performance in
+306.88s: the back test will probably go up
+308.80s: because I'm literally shaping something
+311.28s: around a prior time frame. But one of
+315.04s: the most important things that you have
+317.76s: to pay attention to when you're back
+319.52s: testing is how well something holds up
+323.84s: under other conditions. We refer to that
+325.92s: as robustness.
+327.76s: even added it here so you can see. So,
+330.72s: one of the downsides to this is if you
+333.92s: apply some of these shortfalls and you
+336.32s: believe what you're doing, then it leads
+338.00s: to this false confidence. You feel like
+340.80s: you're going to go get that 66.6% return
+343.28s: and you feel super confident about it,
+345.04s: but then all of a sudden you're like,
+346.40s: "Wait a minute. This isn't what's going
+348.16s: on. This isn't panning out the way I
+349.76s: thought." And again, the same improved
+354.00s: execution that can come from back
+355.44s: testing can happen on the negative side
+358.64s: if you're not thoughtful about what
+360.96s: you're doing. Now, the way I think about
+363.04s: back testing is that it actually pairs
+365.28s: beautifully with things like forward
+367.16s: testing, doing random sampling
+370.00s: simulations like Monte Carlo, paper
+372.24s: trading. I have a video on paper trading
+374.00s: talks about that and we'll throw that in
+376.56s: the notes below. But the way that I
+378.64s: think about this hierarchy of exploring
+380.96s: ideas is back testing is a way to
+383.76s: quickly look at stuff that you want to
+385.84s: click into. So if we take something like
+388.48s: this, the outlier strategy process,
+390.24s: which I have a video on that if you're
+391.68s: curious, it just creates a framework to
+393.20s: test ideas effectively. And we start
+396.16s: with the profit mechanism. So, when I'm
+398.64s: thinking about this idea of back
+400.72s: testing, we'll talk about the general
+402.24s: approach in just a moment, but one of
+404.56s: the things I want you to pay attention
+406.08s: to is that there's several steps that
+408.16s: have to happen here. So, if you spend a
+411.28s: bunch of time building a strategy around
+413.44s: something that you're not sure if it
+414.88s: works well, it's kind of a waste of
+416.72s: time. So the whole point of back testing
+419.36s: is for you to get a sense of does this
+421.92s: thing tend to work well and is it worthy
+425.36s: of additional time from me. So that
+429.60s: leads us to some of the things to pay
+432.48s: attention to when you're actually
+434.16s: executing a back test. The first thing
+436.24s: is to come up with an idea. And for
+438.08s: options traders, I actually think it's
+439.76s: much easier than you think because your
+441.84s: idea starts with a profit mechanism. It
+444.48s: doesn't start with what delta, what DTE,
+446.96s: what volatility matters. Like none of
+448.96s: that matters at this point actually when
+450.96s: we're thinking about trying to trade a
+453.92s: profit mechanism. It's agnostic to an
+456.24s: option typically. Now, there are some
+457.68s: option strategies that essentially
+459.76s: compromise or become the profit
+462.48s: mechanism, but that's seldom. So, the
+465.84s: example that came up during the stream
+468.08s: earlier was about pre-earnings move in
+471.60s: SoFi. Now, I typically don't
+473.88s: overemphasize individual names like
+475.92s: this, but it served as a good
+477.24s: foundation. So, the profit mechanism is
+480.00s: some sort of pre-earnings drift that was
+484.56s: thought to have occurred based on a
+486.16s: general observation in SoFi. So, what
+489.84s: this looks like is we start with this
+492.32s: idea, then we kind of craft it a little
+494.88s: more carefully after we start with
+497.92s: something I call the eyeball test. Just
+500.56s: looking at it. So, if we grab a chart of
+503.28s: SoFi and we just grab a handful of prior
+506.56s: earnings releases and we literally just
+508.88s: eyeball it. We just say, "How does price
+511.44s: seem to move into the earnings release?
+514.32s: This one seems to go up. This one seems
+516.48s: to go down. This one seemed to go up."
+518.56s: And so on. Now, there are different ways
+521.36s: you can track all of this, but in the
+523.28s: beginning, I literally just look at it
+524.64s: and see if anything sticks out to me.
+526.72s: And in this case, it seems like there
+528.96s: might be some merit to it. don't know
+530.64s: yet, but it's worth the next step. Now,
+534.24s: if I looked at this and 85% of these
+537.20s: were going down into earnings, I might
+540.16s: still proceed, but for a different
+541.44s: reason. Maybe there's a completely
+542.72s: different trade that could be had there.
+545.28s: But this does seem to have some sort of
+547.76s: positive drift going on into it. So then
+550.96s: we can move on to the next step, which
+553.60s: is to think about the profit mechanism
+556.08s: itself and to analyze it. After that, we
+559.84s: can overlay strategies. Then we can move
+562.32s: into different forms of live testing,
+565.04s: forward testing. So, we're really going
+566.88s: to focus on these two things here. The
+569.60s: profit mechanism back test and the
+571.36s: strategy back test. A couple notes.
+573.60s: There are different ways to go about
+575.52s: this testing. You can do something super
+578.40s: manual. So that would be like come in
+581.24s: here, manually log the dates in Google
+584.32s: Sheets, manually log the price behavior
+586.72s: pre and post, then start doing your
+590.40s: general data analysis on top of it, all
+592.96s: in Google Sheets, all handmade formulas,
+594.88s: that kind of thing. There's no reason to
+596.00s: do that anymore with the advent of
+597.92s: artificial intelligence, AI. I'm going
+599.84s: to show you how we can use AI to
+602.32s: essentially fasttrack all of this.
+605.68s: So there's no reason to go full manual.
+608.40s: Semi-automated are things like packaged
+610.96s: back testing tools and software that
+612.80s: exist. And then there's other versions
+614.72s: like codebase where you build your own.
+616.48s: That's what I've done. But the cool part
+618.56s: is just about everybody has access to AI
+621.36s: in some capacity now which can help a
+622.96s: lot. You have to figure out where you're
+624.80s: going to get your data from. Now this is
+626.80s: a bit of a drawback when you're trying
+628.88s: to trade options because getting good
+630.56s: data typically is expensive and the file
+632.80s: sizes are pretty large. So, you can
+635.20s: choose to buy your own. You can choose
+637.92s: to use an API to tie into somebody else
+640.24s: that already has um data from a back
+643.28s: testing software platform, something
+645.04s: like that. Now, one of the cool things
+647.84s: again is most option strategies that you
+650.88s: might choose to express with options,
+652.16s: you don't even really have to test the
+653.60s: option side of it. So, going back to
+655.36s: this SoFi thing, do I need to get a
+658.16s: bunch of options data once I rough out
+660.72s: this idea to test how the options would
+662.88s: behave? No, because I can quantify and
+666.00s: qualify the movements coming into the
+667.76s: earnings release. I can measure it. So
+669.84s: then I can literally just reason through
+672.48s: with my knowledge of options and say if
+675.52s: something moves a lot, do I want to sell
+677.68s: a put or buy a call? Probably buy a
+680.16s: call. Now the change in volatility would
+681.92s: matter to that. But we know there's ways
+684.24s: we can minimize the change in volatility
+686.08s: around an earnings release. We can close
+687.52s: before the earnings release. We know
+689.44s: implied volatility expands going into
+691.36s: earnings. all these different kind of
+692.56s: things that come with understanding
+694.40s: options. So like you don't have to have
+696.56s: options data in order to test these
+698.40s: ideas. That's the main point here. So
+701.56s: now a couple things to keep in mind as
+704.16s: we go through the testing itself. And
+705.76s: again in this example we're going to use
+707.20s: SoFi and we're literally going to test
+709.12s: the idea that was observed by one of the
+711.36s: members and saying is there something
+713.76s: about pre- earnings release movement.
+717.00s: So, we're going to start zoomed out and
+720.08s: then we're going to slowly zoom in. What
+722.40s: that means is what I like to do is this
+726.48s: is the same thing you've seen in some of
+727.92s: my zero DTE videos. I'll take a look at
+731.52s: the total performance of something and
+733.92s: then I'll break it down into different
+736.00s: variations into different time frames.
+738.80s: The reason for doing this for segmenting
+741.52s: and then tweaking the settings is to
+743.92s: check for robustness. So, for example,
+746.40s: if I'm doing I sell a 30 delta put
+748.56s: that's 30 days out and I find that that
+751.44s: works super well and then all of a
+753.44s: sudden I change it to 31 days out and it
+756.08s: falls apart. That's a problem. There
+758.96s: shouldn't be that big of a difference
+760.32s: between 30 days and 31 days. Now, one
+762.72s: could be better than the other for a
+764.08s: list of reasons, but it shouldn't be
+765.28s: that different. So, the idea of
+767.36s: segmenting the data and then tweaking
+769.28s: the settings is to give you a sense of
+770.80s: how robust this thing is and how well it
+773.28s: tracks. And the way to do this is really
+776.04s: simple. If we're looking at a larger
+779.20s: time series of data, right? So something
+781.68s: like this. And let's say that this is 10
+784.72s: years of data. You want to test this
+786.32s: idea across. All I'm going to do is
+788.80s: first split it in half and look at this
+791.36s: 5-year period and this 5-year period.
+792.96s: Then I'm going to split that in half.
+794.88s: And I'm going to look at 2 and 1/2 year
+796.40s: period here, 2 and 1/2 period here, 2
+798.08s: and 1/2 year period year, and 2 and 1/2
+800.80s: year period here, and so on. I'm
+802.96s: literally just gonna keep cutting this
+804.64s: into pieces. And by doing this, I can
+808.92s: deconstruct any sort of smoothing effect
+812.56s: that comes with time. Because for
+815.84s: example, if you look at buy and hold in
+819.36s: something like TQ's, it might look
+821.92s: something like this. And you might see
+823.76s: something like a gajillion% return
+826.72s: because three times leverage tech has
+828.32s: done well. But this move here can be
+831.68s: very minimized compared to what it
+833.60s: actually was. So then if we're
+836.48s: segmenting that data as I just
+839.12s: discussed, we might find that during
+842.00s: that period if you didn't have this gain
+846.40s: coming into it, your account could have
+849.36s: gone
+850.36s: insolvent. We have to detect that kind
+852.64s: of stuff. Now you can also detect it
+854.88s: based on drawdowns and things like that.
+857.44s: But by segmenting it in this way, you
+859.76s: get a much higher fidelity view. And
+862.48s: then again, that idea of tweaking
+864.72s: settings, it's just taking random
+866.56s: variables and just moving them to
+868.08s: different numbers and seeing how much
+870.16s: things change. It shouldn't change a
+872.24s: ton. Now another thing with respect to
+875.36s: stress tests and the actual TQ's example
+879.20s: is a great one because we know that
+881.92s: recently if we plot TQ's it's had a draw
+886.20s: down of 82% plus where it drew down over
+891.20s: 82%.
+892.88s: Now, this is post GFC. And if we think
+897.76s: about trying to test what the maximum
+900.88s: move might have been, well, we're not
+903.20s: going to use 82%. Because we know it
+906.32s: likely is more than that. So, we can
+909.44s: either use the data itself to inform
+913.20s: what we might want to pad this by. So,
+915.28s: for example, we can add standard error
+917.80s: bars around the data and just
+920.96s: essentially do the same here. Or we can
+923.92s: just look at what the worst move was and
+926.32s: add some on to it. But that's just one
+930.00s: setting that you can think about with
+932.48s: respect to a stress test. The stress
+934.56s: test is going to be relevant to the
+936.08s: strategy that you're trading. Okay. So,
+939.20s: now let's talk about this idea in SoFi.
+942.64s: We eyeball it. We think we see something
+944.96s: there. So then the next step is just to
+947.20s: go download data. So in this case, I
+950.32s: literally would just go to bar chart. I
+952.32s: would type in
+954.20s: SoFi and then all I'm doing is
+957.84s: downloading the actual data, the daily
+959.92s: data here. Now you can download intraday
+962.08s: for higher fidelity periods, all that
+963.60s: kind of stuff. Doesn't matter for this
+964.64s: one. I'm going to start there. The next
+966.72s: thing I'm going to do is I know that I
+968.96s: need to take a look at the price
+970.96s: behavior around these different earnings
+972.32s: periods. So I'm going to think maybe
+973.92s: I'll start from 90 days out, 60 days
+976.64s: out, 20 days out, 10 days out, 5 days, 4
+980.80s: days, 3 days, 2 days, 1 day. Right? So I
+983.04s: might come up with that coming into the
+986.08s: release and then postrelease because the
+988.16s: profit mechanism that we're analyzing
+989.76s: here is price movement ideally direction
+993.12s: up or down. It doesn't matter that much,
+994.64s: but we need to quantify and qualify it,
+997.36s: which is exactly what we're able to do.
+999.20s: Now, you can do all of this manually if
+1001.60s: you so choose, but you don't have to. We
+1004.32s: we now have a handy dandy thing called
+1006.76s: chatbt. So, the first thing I did is
+1009.04s: tell chatbt go back a period, go back a
+1011.92s: spell and look at earnings dates. Now,
+1014.32s: it didn't go back as far as I wanted. I
+1016.56s: could tell it to go back further and
+1018.00s: make it do it again. I don't really
+1019.36s: care. But the first thing I'm going to
+1021.36s: do is absolutely analyze these dates cuz
+1024.32s: you cannot trust ChatgPT. It literally
+1026.56s: can just make stuff up. So, I'm going to
+1028.56s: fact check these. I'm going to say, do I
+1030.48s: see 29 o 24 on this? Is that correct?
+1034.40s: And I do see it right here. And I would
+1037.44s: literally check the sample and make sure
+1039.20s: that it lines up. I already did and it
+1041.12s: does. But just an important step. Now,
+1043.84s: as I'm looking at this, there's other
+1045.20s: ideas that can come into my my mind,
+1048.00s: right? I can see maybe there's a
+1049.28s: relationship between the quarter moves.
+1050.88s: Maybe there's a relationship between EPS
+1052.96s: actual and estimate impact on the
+1054.72s: movement pre and post probably post that
+1057.28s: kind of stuff. Now an important step to
+1060.40s: do here is to leverage what already
+1064.84s: exists. So part of this idea generation
+1068.08s: is actually
+1069.96s: researching. So what I've done here is
+1072.24s: literally go to SSRN, type in
+1074.24s: pre-earnings move. There's a bunch of
+1075.68s: papers that pop up. I see this one that
+1077.60s: catches my eye. It's pretty popular. And
+1079.44s: I also know these names cuz I look at
+1081.04s: these a lot. And I see that it's from a
+1083.04s: university. So it tells me it's not some
+1085.04s: sort of entity that has an agenda to
+1086.96s: push. So we click this one. And then we
+1090.96s: read it. We understand what kind of
+1094.08s: things they're identifying. The reason
+1096.24s: why this part's important is so that as
+1098.48s: we go through our analysis, I know this
+1100.64s: one's specific again to SoFi, but the
+1103.12s: idea of a pre-earnings move probably
+1105.12s: applies to other stuff too. And it might
+1106.88s: be a broader effect that we can trade.
+1109.68s: And by doing this, we will have an idea
+1112.72s: of what kind of inputs matter a lot
+1115.36s: based on the existing research. So
+1118.24s: rather than us just randomly throwing
+1120.56s: out, well, I think if RSI is high coming
+1122.48s: into earnings release, then it's going
+1123.92s: to be bad. Well, who knows? But that
+1126.72s: would be a ton of research to figure
+1128.08s: that out with any level of fidelity that
+1130.08s: you don't have to do. You can see what
+1131.44s: people in a peer-reviewed setting are
+1133.84s: already finding. Now let's go back into
+1136.96s: our chat GBT prompt. We get our earnings
+1139.60s: dates. So now what I did was I uploaded
+1143.92s: the data that I downloaded and I told it
+1147.04s: to essentially analyze the price
+1148.80s: performance behavior pre and post
+1151.76s: earnings in these durations. I told it
+1154.24s: that I want to calculate those percent
+1156.52s: returns to allow me to analyze how it
+1159.68s: changes between 90 and 60 days, but then
+1161.84s: also 90 days out to the earnings
+1164.08s: release. It gives me a table that I can
+1166.40s: download run analysis on or what I can
+1168.96s: do is just have it turn it into a plot.
+1172.24s: So it started with a post earnings
+1174.64s: change which is fine but I wanted to
+1176.80s: focus in this context on a pre- earnings
+1179.68s: change. So then I move it to pre-
+1181.28s: earnings changes and I can see a couple
+1184.00s: things. It plots the earnings date for
+1185.76s: each and it gives me the percent change
+1188.80s: based on these different durations. So
+1190.48s: then I can start running some sort of
+1192.88s: robustness analysis off of this. Instead
+1196.08s: of looking at each individual one, I ask
+1198.96s: it to collate into the average and the
+1202.24s: mean or median. In this case, typically
+1205.92s: doing some sort of median makes the most
+1208.16s: sense, which is why it actually knew
+1211.92s: that's what I wanted even though I put
+1213.44s: mean. So it plots the median. So it
+1216.48s: helps us get rid of some of the outlier
+1219.48s: tails. Be an outlier by the way. And we
+1222.96s: can see that there's some sort of trends
+1224.40s: here. So then the next thing we need to
+1226.72s: figure out is well this is just general
+1229.28s: price movement coming into earnings. How
+1231.28s: do we isolate that price movement from
+1234.32s: the standard drift that the stock
+1236.56s: clearly exhibits from the actual
+1238.80s: earnings move? Well, that's super easy.
+1241.36s: One, if you don't know how to do it, you
+1243.36s: can ask it how to do it. But the simple
+1245.60s: answer is just take a couple random
+1247.44s: samples of a duration and look at what
+1249.92s: the move is on average between those.
+1252.24s: That becomes your average move provided
+1253.92s: that it's not wrapped around a catalyst.
+1256.48s: So from there we ask it to effectively
+1259.76s: do that. Isolate the earnings move and
+1261.52s: then show me these plots again. Then I
+1264.48s: can go through and say, okay, well,
+1266.32s: there's clearly some sort of excess move
+1269.52s: at different periods coming into the
+1271.68s: earnings release after we isolate the
+1275.04s: earnings move itself. So then I can ask
+1279.12s: it stuff like, well, how is this
+1280.64s: trending over time? Is it getting
+1282.08s: bigger? Is it smaller? And as you can
+1284.32s: see, as time progresses, the move is
+1286.88s: actually getting smaller both upside and
+1289.28s: downside. Why would that be? because
+1291.60s: there's enough information coverage at
+1294.80s: this point that you're not seeing these
+1297.60s: massive premoves anymore. This is also
+1300.16s: why using averages and medians are so
+1302.48s: important because these two would
+1304.08s: absolutely skew this entire sample. So
+1308.56s: this is the game. We've just analyzed
+1311.60s: the profit mechanism. We have a general
+1313.52s: idea that something seems to exist here.
+1316.16s: So now we can simulate using a stock
+1319.40s: strategy. Again, going back to what I
+1321.92s: said before, you can just use stock to
+1324.00s: see how the stock strategies would
+1325.52s: perform and then you can interpolate and
+1327.92s: infer what option structures would make
+1330.08s: the most sense based on your knowledge
+1331.60s: of options. Now, if you're trading
+1333.60s: something like a volatility or an
+1336.32s: earnings release move that's based on
+1338.32s: changes in volatility, then you need
+1340.56s: options for those. But a lot of things
+1342.80s: you don't need options and you can
+1345.20s: figure out general concepts without
+1348.24s: them. And again, this is literally all
+1351.20s: using chatbt. The next thing I can see
+1354.56s: is well, there's definitely some sort of
+1356.88s: decent pre- earnings
+1359.08s: return overall across the different time
+1362.00s: frames and I can see that it's higher
+1364.24s: for the further duration stuff. Why
+1366.00s: would that be? Well, it's because it has
+1367.52s: more time to compound. So then if I
+1370.00s: isolate it to the more recent time
+1372.16s: frames and I ask it to do it on an
+1373.92s: annualized return basis, which takes
+1375.68s: into account holding duration, we
+1377.60s: actually see that the near-term holdings
+1379.28s: on an annualized return basis can hold
+1381.68s: off better. So this is literally a crash
+1385.04s: course intro into back testing. This is
+1388.32s: absolutely the tip of the iceberg. If we
+1390.32s: should go deeper, let me know. Be an
+1392.24s: outlier. See you guys later.

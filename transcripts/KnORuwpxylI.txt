@@ -1,348 +1,960 @@
-0.00s: Nothing says masterclass like a shirtless dude.
-2.88s: So today we're going to talk about rolling options.
-6.72s: And I'm going to walk you through a quick overview of what it is.
-9.88s: You probably already know.
-11.28s: I want to get into some of the mechanics
-12.72s: that people mess up quite literally all the time.
-15.40s: And then at the end of the video, I want to walk you through
-17.36s: a bunch of best practices and kind of some commonly asked
-21.24s: questions to make sure that we're fully
-23.76s: thinking through this process because I can tell you
-26.32s: from my own experience and what I regularly see in places like
-30.88s: Reddit and on my YouTube comments are when people talk about
-35.16s: rolling options, it is very clear that we don't fully understand
-38.72s: them. The first time we see them, we have an immediate perception
-41.68s: that this is the greatest thing ever.
-43.32s: It's going to fix all of our problems.
-44.60s: We can just roll things and everything's great.
-47.00s: And that's not so much of the case.
-49.16s: So I want to walk you through exactly that.
-51.36s: And we're going to talk about things like once the best time to roll,
-54.20s: should you roll out or up or in or down all of those things are
-59.56s: on the docket.
-60.72s: So what's up everybody?
-61.68s: Welcome back to the outliers and a shout out to the Patreon family,
-64.80s: the people in the Patreon actually get free access to the shop,
-69.72s: weekly workshops.
-71.04s: So if what I do helps you out, consider signing up link in the
-74.60s: notes below.
-75.28s: Let's get right to it.
-76.16s: So here is the beginning.
-78.68s: What is rolling really simple?
-80.12s: It's closing a trade, entering a new one.
-82.28s: The what differentiates rolling from closing a trade and opening a new one
-86.84s: simple, we tie the accounting together.
-90.80s: So what does that look like in practice?
-93.12s: Well, we have the first trade where we enter, then we exit and then we enter
-97.52s: again.
-98.04s: So where's the role in this instance right there?
-100.72s: So as we enter this first trade, it's on its working.
-103.88s: Then we choose to exit it and then enter a new one and tie the accounting
-108.48s: between this position and this new open position together.
-112.68s: So what does this look like in terms of money?
-114.68s: Well, in this first trade, if we sell to open a put, I just picked a random one for
-119.52s: a dollar, then we close it for two dollars.
-123.80s: What happened here?
-125.64s: We simple.
-126.36s: We realized a $100 loss.
-129.80s: We collected $1.
-131.64s: We close the trade for $2.
-134.56s: That means we give up the dollar that we collected up front and then we give up
-138.32s: another dollar on top of that.
-140.92s: That is $100 because obviously you multiply this out by 100 for options.
-146.12s: This is where the trade lands.
-148.24s: So where's the role?
-149.48s: It's right here.
-150.48s: If we buy to close at two bucks and then we sell to open at whatever price, you've now
-155.88s: completed a role.
-157.40s: Common misconception is that roles are only conducted on losing positions.
-161.44s: You can roll a winning trade.
-163.40s: It's just in generality and parlance.
-165.56s: When we talk about it, it's normally referred to in the context of a losing trade, which
-170.44s: is actually quite telling when it comes to the mindset of when we roll.
-175.32s: This is something I do want to speak about for just a second because it's a common problem
-179.40s: people have is that if this was a winning trade that you closed and then opened, you probably
-184.88s: wouldn't consider a role.
-186.56s: Why is that?
-187.56s: Well, it's because you're happy with your win.
-190.96s: That's off the books.
-191.96s: Now we're entering a new trade.
-193.48s: You don't want to tie the accounting to it because you have a win.
-196.36s: But when we're rolling very frequently, it's fueled by hope.
-201.04s: We hope this next trade overwhelms the loss of the previous trade.
-207.16s: So that's why we choose to account it together.
-210.52s: But again, admin note, you can roll winning trade as well.
-214.32s: It's just not commonly done or at least commonly referred to.
-217.80s: So let's say trade three continues to chug along.
-220.80s: It goes well and we close that for 50 cents.
-223.44s: What's happened here?
-224.76s: Do you know what our realized PNL is at this point?
-228.52s: In this case, we take in 150 bucks.
-231.08s: We sold this option for two bucks, 200 bucks.
-234.52s: We buy to close it for 50 cents, 50 bucks.
-237.28s: That gives us positive $150.
-240.12s: So on this rolled position, you will have realized a profit of 50 dollars.
-246.28s: One of the dangers of rolling is that if you don't close this for the correct price,
-252.60s: then all of a sudden, you can become pounding your loss.
-256.56s: So for example, if you have this $100 realized loss, we sell to open this new option for
-261.96s: two dollars, then we buy to close it for $3.
-265.44s: What happened in that scenario?
-267.12s: We realized another $100 loss.
-270.32s: So your net PNL at that point is negative $200.
-275.72s: So if you keep going down that path and you don't ever get a price accommodation, you
-279.52s: have problems because you're going to continue compounding that losing position, which is
-284.88s: really, really dangerous.
-287.08s: So let's talk about some best practices.
-290.30s: The first thing I want to walk us through is analyzing surrogate options.
-294.82s: This is a little bit esoteric.
-297.16s: So follow along and you can come back to this part if you need to fully understand what
-302.20s: we're talking about.
-303.56s: But this is something I do all the time.
-305.76s: It's really useful.
-307.20s: Just come over here to XLF and I'm just picking a random stock.
-311.36s: And let's say you have a position on, let's say you have this 33 DTE and let's say when
-316.32s: you originally sold your puts or let's say short calls so that we're getting ran over.
-322.28s: Let's say you originally sold these 38 short calls and they were out of the money whenever
-327.40s: you chose to sell them, it doesn't matter.
-329.84s: But now they're in the money.
-331.28s: So we want to do a few things.
-332.88s: The first thing is we want to see if we're at risk of early assignment.
-336.28s: That's a little bit of a different scenario.
-337.72s: We need to see if there's a dividend.
-339.20s: We need to see how much extrinsic value is left in the options.
-341.92s: Kind of a different video concept, but that's an overview of that at least.
-345.92s: Then we want to figure out how much is intrinsic and extrinsic value.
-349.28s: And if you remember your options 101, you figure out your intrinsic value by how far in
-354.08s: the money we are.
-355.16s: Take that out of your premium and then whatever's left is your extrinsic value.
-359.20s: You can also look at the corresponding out of the money option for a approximation.
-365.08s: It's not perfect, but it's pretty close.
-367.36s: So in this case, if I'm looking at these 38 short calls and I'm trying to figure out what's
-373.16s: the extrinsic value.
-374.16s: We could look right over here.
-375.96s: It's about 30 cents, something like that.
-378.12s: Okay.
-379.12s: Good.
-380.12s: So now we're faced with deciding different things.
-383.64s: Like, what does this look like if time passes?
-388.36s: What will the value of my option be?
-390.00s: How much extrinsic value will be left?
-392.76s: Well, you can either do the math.
-394.68s: You can run it through your black sholes model.
-396.76s: That's no problem.
-397.76s: You can run it through a risk profile tool if your platform has it or you could do the
-401.92s: easy option, at least as far as I can tell.
-404.52s: And again, it's not perfect, but it's pretty close.
-406.80s: So let's say that we want to pretend that nothing has happened other than time has passed.
-412.24s: And we can look at this 12 DTE.
-415.24s: So even though our option is this 38 call 33 DTE, we can look at that same option that's
-422.60s: just 12 DTE.
-423.60s: And we can see what it looks like compared to where it is now.
-427.32s: So in this case, it's trading for kind of a really wide market here.
-431.32s: Let's just call it like 150, something like that.
-433.96s: And then if you look in here, it's like 110.
-436.72s: So over the course of this time frame, you can see how much your option would change
-442.20s: if nothing else changed.
-443.52s: And again, markets move.
-445.04s: So then you can also say, well, what happens if it actually falls further in the money?
-449.12s: What would that look like?
-450.24s: So let's say XLF goes another dollar up.
-454.24s: So instead of being at 39, now it's at 40.
-457.52s: Well, what you can do is you can look at the 37s because your option would behave close
-464.20s: to those 37s.
-466.04s: So all I'm doing is by the amount that I'm mentally moving XLF, I'm mentally adjusting
-472.44s: my strike the same amount to see what the option would look like if that move happened.
-478.92s: That really useful tool, again, that might sound a little complex.
-482.16s: Feel free to listen through this a time or two if you need, but that's what I do to analyze
-488.32s: a lot of potential options adjustments without doing the math for every single one of them.
-493.52s: So one of the best practices here is rolling spreads.
-496.44s: Is this something you can do?
-497.68s: It is something you can do.
-499.16s: Is it something that's reasonable to rely on?
-501.60s: No, it's not.
-502.60s: And it's because when we're rolling options a lot of the time, you'll find things sometimes
-507.36s: are really deep in the money or deep out of the money.
-509.76s: This is a great example that we were looking at with this 33 DTE and we were looking at
-515.68s: something that was slightly deeper and deeper in the money.
-518.48s: Notice how if you go to this 36 call, notice how wide that market is.
-523.28s: That's just for a single option.
-524.76s: So if you have a vertical, you have to find the midpoint between this, which there's
-529.04s: a lot of slop on something price like this.
-531.64s: And then you have to find the midpoint on whatever else, whatever other option you have
-535.52s: tied to your vertical or iron condor.
-537.72s: The generality here is the more legs you have, the harder this is.
-542.12s: And you're also probably going to have to move them piece by piece, which opens you
-546.24s: up to gap risk while you're in the process of adjusting your strikes.
-550.44s: Rolling spreads is doable.
-552.56s: Very difficult.
-553.56s: It's not something that I think is worthwhile in most cases.
-556.92s: Does rolling avoid losses?
-559.12s: The cool part about this one is you actually already know the answer to it because we
-563.80s: just looked at this.
-565.20s: In this example that we looked at over here, when you rolled this option, meaning you
-570.44s: closed this one and you open this new one, did you avoid a loss?
-574.76s: No, you realized a loss.
-577.96s: That means this is on your books.
-579.96s: This means you have a brand new open position that has the potential to cover the cost of
-585.04s: this loss, but it's not guaranteed.
-587.64s: You could also have an even bigger loss as a result of opening this new position.
-592.08s: So no, rolling does not avoid losses.
-595.32s: Now on that same topic, if you rolled this option, do you know how to calculate what
-601.00s: your break even prices on this option?
-603.92s: If not, it's pretty simple.
-605.32s: So if we closed this trade to box, $100 realized loss, you sell to open this new option at
-611.80s: $2.
-612.80s: How much money do you need to make in order to get back to zero on this realized loss?
-618.16s: $100.
-619.20s: So that means on this option, you would need this trading at $1 or less to be in profit.
-626.20s: As soon as this hits $1, not including fees, you would be at break even.
-632.12s: So you can easily do that math to calculate what you need this new option to be trading
-637.24s: at to hit break even and then also to then start seeing a profit, which is the whole point
-642.52s: of doing this.
-643.52s: A common error traders make is when they see this option trading for a profit.
-648.36s: So if this we sell to open for $2 and then now it's trading at $1.25, you're looking
-653.48s: at a $75 profit.
-654.48s: You're like, wow, that looks great.
-655.68s: I want to take that.
-656.68s: Well, unfortunately, in the net, you would have lost money because if you took this down
-660.68s: for a $75 profit and you have a $100 realized loss, you still lost $25.
-666.12s: So you can calculate your rolled options break even, which is something I definitely recommend
-671.52s: tracking.
-672.52s: I have an Excel sheet that does that, which I've thrown into the shop for all the
-677.06s: Patreon members if you're silver and above, you get free access to it.
-680.18s: It's just a simple tool to help you track things.
-682.36s: So now if we continue on our best practices, what's the best time to roll?
-686.74s: As you know, my answer to this already is it depends.
-689.70s: There's two things you really need to answer right up front.
-692.86s: The first thing is what is your objective for the position and the second thing is what
-698.74s: do you think about the underlying?
-700.62s: So let's say you have a position on the best time to roll in terms of getting the highest
-708.24s: variability in your strike price is when you are at the money or slightly in the money.
-714.48s: The reason being is even though there's a bunch of extrinsic value left in that option,
-719.52s: you'll notice you're not moving a bunch of intrinsic value, which decreases how effectively
-725.92s: you can roll.
-726.92s: What this looks like is let's say you were short, this 39 put that's now it's in the money
-731.72s: right now and it's trading for like 35, 36 cents, something like that.
-736.28s: If we try to roll this and we want to go out one week and we want to collect a credit,
-741.76s: meaning the rolled trade is bringing in more money than what we're closing.
-746.32s: If we take a look at that and we know that we need 35 cents, can you get it going further
-751.56s: out of the money going out just one week?
-753.20s: No.
-754.20s: We have to go out.
-755.20s: Let's just pick the next primary expiration.
-757.56s: You can find you can roll out in time for a credit at the same strike or you can roll out
-763.76s: in time and slightly out of the money taking it all the way down to a 28 delta while collecting
-769.92s: a very small credit.
-771.24s: So when the option price is the same as the strike is when you're going to have the most
-776.16s: choices available to you.
-777.76s: However, it's also when you're buying back the most extrinsic value.
-782.04s: So if this is something that you don't mind taking assignment on or don't mind managing
-787.24s: in the long run, then you can wait a little bit, wait for some more of this extrinsic value
-792.20s: to bleed out and then you can adjust.
-794.32s: If this is something that's like leveraged options or you really don't want to take
-798.28s: assignment in this case on the short put and you don't want to get stuck, what I mean
-803.80s: by getting stuck is if you wait until you're too far in the money, you get to a point
-807.88s: where you actually can't adjust down.
-810.44s: You can't roll down anymore or if you're on the short cause you can't roll up anymore
-814.24s: because you're too deep in the money.
-815.80s: And then you run into another problem, which is days to expiration liquidity.
-821.56s: So for example, let's say our option fell in the money, the 39s, we want to roll out
-826.24s: and down.
-827.24s: Cool.
-828.24s: So we go out and down.
-829.24s: We have to go to 40 days to be able to roll down.
-831.08s: Now we get our small credit.
-833.00s: You're a dollar better.
-834.12s: But let's say time passes and XLF falls more four days pass XLF falls more.
-839.88s: Now your 30-eighths are in the money.
-841.48s: Okay, you're like crap, I got to roll out again.
-843.56s: Well, I can't roll out just one week and get a credit.
-846.92s: It's not enough.
-847.92s: So maybe if I roll out two weeks, well, do you notice what just happened?
-852.52s: Right here, you had 40 days to expiration.
-856.12s: Then you were able to look out to 47.
-858.44s: Now all of a sudden it's 53.
-860.28s: Then after 53, it's 75.
-862.36s: What's happening here is options chains offer more explorations the closer to time you
-869.20s: are.
-870.20s: Some options chains will offer you a bunch of choices.
-874.08s: If you look at something like spy, anything within 53 days, you have a ton of choices.
-879.32s: But even then, after 53 days, it gets more and more sparse.
-884.64s: That's days to expiration liquidity.
-886.52s: And that's why it's a problem.
-887.92s: Because if you roll immediately, every time your strike is challenged, let's say you're
-891.76s: in this 33 days to expiration, you roll when your strike is challenged.
-894.80s: Then you go to the 40, then you go to the 47, then you go to the 53, then you go to the
-897.72s: 75.
-898.72s: Now your out pretty damn far in time.
-900.44s: Data is not taking away that fast because you're so far out in time.
-903.70s: And then if you get a continued down move, then where do you go?
-906.52s: You go to 103 days.
-908.24s: What if the down move continues then?
-910.08s: You've run out of runway.
-912.12s: And if the underlying continues to move against you, you build a really difficult position
-917.64s: to move around.
-918.84s: So when I think about the best time to roll, I balance.
-921.84s: How do I feel about taking the underlying in or out, whether I'm short puts or short
-926.06s: calls for longer short stock?
-928.18s: And then I think about what is my disposition towards the underlying because sometimes the
-932.64s: best time to roll is never and to take a loss.
-936.12s: If you're trading something like this, let's say you had cash secured, puts out on Carvana
-940.60s: and you were all the way out here.
-942.80s: You were trading it a while ago when it was 300 bucks and then you're trying to roll
-947.28s: your options, you're trying to roll your options.
-949.32s: If you got stuck, you're stuck.
-951.76s: There's no rolling your options from here to here.
-955.20s: Sometimes if you get enough price accommodation in the short term, you might be able to get
-958.60s: buy with some of it.
-960.16s: But big moves that happen quickly can leave you stranded.
-963.68s: So you have to strongly analyze the underlying that you're trading.
-968.20s: And again, the same thing can happen to the inverse.
-971.12s: If you're one of those real smart contrarian traders and you know better when the market's
-974.54s: pricing things and you see this big green candle, you're like, wow, I'm going to fade this
-979.36s: and SMCI hasn't come back.
-981.32s: It's gone from $400 to $579.
-984.12s: So in this case, you get stuck.
-986.96s: You need some sort of price accommodation in order to be able to roll and eventually
-991.54s: find your way out of the money because the problem is, can you roll forever?
-995.92s: No, because if you go back to this original example, you are realizing losses if we're
-1002.60s: rolling a losing trade.
-1004.20s: So when you're rolling a losing trade, each time you are eroding your account value.
-1010.00s: And then or later, the margin requirement for your trade is bigger than your account
-1015.40s: value.
-1016.40s: So even though you might have a bunch of cash sitting in your cash and sweep, if your
-1020.52s: net lick net liquidating value isn't high enough to cover your margin requirements for
-1025.40s: your trade, you cannot put it on.
-1027.68s: So you cannot roll forever because you eventually do need price accommodation.
-1034.12s: So the last thing, how do we think about rolling in or out up or down?
-1039.76s: I tend to try to roll out as little in time as possible.
-1044.88s: It allows me to maintain the most spot price sensitivity.
-1049.52s: It also gives me more runway on that days to expiration liquidity concept that I was
-1056.20s: explaining to you.
-1057.52s: So if I can roll from this 12 to the 19 while adjusting my strike, I typically would do
-1062.68s: that.
-1063.68s: If I can roll from the 12 to the 19 and not adjust my strike, meaning if I have cash
-1067.76s: secured puts, for example, and I can't roll them here, but I can roll them in the 26
-1072.56s: DTE.
-1073.56s: I need to analyze the underlying.
-1074.96s: So I want to add two weeks and depending on how much I'm improving my basis, does that
-1079.96s: make sense?
-1080.96s: So overall, the decision on whether or not you go further out in time comes down to how
-1086.56s: do you feel about the underlying and running out of DTE liquidity and then rolling down
-1091.40s: or up depends on how much money you want to make.
-1094.68s: Because if I try to roll, for example, from the 12 to the 19 DTE, if we look at this
-1101.28s: scenario and let's say I'm at the 575, so I keep the same strike.
-1106.60s: In this case, you have what 2675, and this is just called 35 in that scenario, you can
-1114.84s: still make an okay amount of money by staying at the same strike.
-1118.04s: If you chose to go from the 575s down to the 570s, notice what happens instead of getting
-1123.04s: $35, whatever this is, you're going to get 32 in change.
-1126.52s: So you have to decide what's more important to you.
-1130.02s: Is it improving your basis, adjusting your basis, or is it collecting more money up front?
-1133.96s: That is 100% dependent on the trader.
-1136.68s: So this is part one.
-1137.68s: As you can tell, it's a big video.
-1139.24s: There's a lot that goes into this.
-1140.92s: If you have any questions, let me know if we should do a part two and go even deeper with
-1145.16s: specific examples, let me know because we might be able to swing that.
-1148.52s: Until next time, like, subscribe, share, be an outlier.
-1150.88s: See you guys later.
+0.24s: nothing says Master Class like a
+1.96s: nothing says Master Class like a shirtless dude so today we're going to
+4.75s: shirtless dude so today we're going to
+4.76s: shirtless dude so today we're going to talk about rolling options and I'm going
+7.31s: talk about rolling options and I'm going
+7.32s: talk about rolling options and I'm going to walk you through a quick overview of
+9.35s: to walk you through a quick overview of
+9.36s: to walk you through a quick overview of what it is you probably already know I
+11.27s: what it is you probably already know I
+11.28s: what it is you probably already know I want to get into some of the mechanics
+12.71s: want to get into some of the mechanics
+12.72s: want to get into some of the mechanics that people mess up quite literally all
+14.71s: that people mess up quite literally all
+14.72s: that people mess up quite literally all the time and then at the end of the
+15.99s: the time and then at the end of the
+16.00s: the time and then at the end of the video I want to walk you through a bunch
+18.07s: video I want to walk you through a bunch
+18.08s: video I want to walk you through a bunch of best practices and kind of some
+20.19s: of best practices and kind of some
+20.20s: of best practices and kind of some commonly asked questions to make sure
+22.63s: commonly asked questions to make sure
+22.64s: commonly asked questions to make sure that we're fully thinking through this
+24.43s: that we're fully thinking through this
+24.44s: that we're fully thinking through this process because I can tell you from my
+26.59s: process because I can tell you from my
+26.60s: process because I can tell you from my own experience and what I regularly see
+30.03s: own experience and what I regularly see
+30.04s: own experience and what I regularly see in places like Reddit and on my YouTube
+32.91s: in places like Reddit and on my YouTube
+32.92s: in places like Reddit and on my YouTube comments are when people talk about
+34.99s: comments are when people talk about
+35.00s: comments are when people talk about rolling options it is very clear that we
+37.35s: rolling options it is very clear that we
+37.36s: rolling options it is very clear that we don't fully understand them the first
+39.19s: don't fully understand them the first
+39.20s: don't fully understand them the first time we see them we have an immediate
+41.07s: time we see them we have an immediate
+41.08s: time we see them we have an immediate perception that this is the greatest
+42.79s: perception that this is the greatest
+42.80s: perception that this is the greatest thing ever it's going to fix all of our
+44.27s: thing ever it's going to fix all of our
+44.28s: thing ever it's going to fix all of our problems we can just roll things and
+46.19s: problems we can just roll things and
+46.20s: problems we can just roll things and everything's great and that's not so
+48.43s: everything's great and that's not so
+48.44s: everything's great and that's not so much of the case so I want to walk you
+50.07s: much of the case so I want to walk you
+50.08s: much of the case so I want to walk you through exactly that we're going to talk
+51.95s: through exactly that we're going to talk
+51.96s: through exactly that we're going to talk about things like when's the best time
+53.47s: about things like when's the best time
+53.48s: about things like when's the best time to roll should you roll out or up or in
+57.19s: to roll should you roll out or up or in
+57.20s: to roll should you roll out or up or in or down all of those things are on the
+60.19s: or down all of those things are on the
+60.20s: or down all of those things are on the docket so what's up everybody welcome
+61.99s: docket so what's up everybody welcome
+62.00s: docket so what's up everybody welcome back to the outliers and a shout out to
+63.75s: back to the outliers and a shout out to
+63.76s: back to the outliers and a shout out to the patreon family the people in the
+65.55s: the patreon family the people in the
+65.56s: the patreon family the people in the patreon actually get free access to the
+69.11s: patreon actually get free access to the
+69.12s: patreon actually get free access to the shop weekly workshops so if what I do
+71.87s: shop weekly workshops so if what I do
+71.88s: shop weekly workshops so if what I do helps you out consider signing up link
+74.27s: helps you out consider signing up link
+74.28s: helps you out consider signing up link in the notes below let's get right to it
+76.27s: in the notes below let's get right to it
+76.28s: in the notes below let's get right to it so here is the beginning what is rolling
+79.43s: so here is the beginning what is rolling
+79.44s: so here is the beginning what is rolling really simple it's closing a trade
+81.31s: really simple it's closing a trade
+81.32s: really simple it's closing a trade entering a new one the what
+83.15s: entering a new one the what
+83.16s: entering a new one the what differentiates rolling from closing a
+85.47s: differentiates rolling from closing a
+85.48s: differentiates rolling from closing a trade and opening a new one simple we
+88.03s: trade and opening a new one simple we
+88.04s: trade and opening a new one simple we tie the accounting together so what does
+91.55s: tie the accounting together so what does
+91.56s: tie the accounting together so what does that look like in practice well we have
+94.15s: that look like in practice well we have
+94.16s: that look like in practice well we have the first trade where we enter then we
+96.23s: the first trade where we enter then we
+96.24s: the first trade where we enter then we exit and then we enter again so where's
+98.79s: exit and then we enter again so where's
+98.80s: exit and then we enter again so where's the role in this instance right there so
+100.95s: the role in this instance right there so
+100.96s: the role in this instance right there so as we enter this first trade it's on
+102.99s: as we enter this first trade it's on
+103.00s: as we enter this first trade it's on it's working then we choose to exit it
+105.11s: it's working then we choose to exit it
+105.12s: it's working then we choose to exit it and then enter a new one and tie the
+107.63s: and then enter a new one and tie the
+107.64s: and then enter a new one and tie the accounting between this position and
+110.35s: accounting between this position and
+110.36s: accounting between this position and this new opened position together so
+112.95s: this new opened position together so
+112.96s: this new opened position together so what does this look like in terms of
+114.19s: what does this look like in terms of
+114.20s: what does this look like in terms of money well in this first trade if we
+116.55s: money well in this first trade if we
+116.56s: money well in this first trade if we sell to open uh put I just picked a
+118.59s: sell to open uh put I just picked a
+118.60s: sell to open uh put I just picked a random one for a dollar
+120.39s: random one for a dollar
+120.40s: random one for a dollar then we close it for
+123.03s: then we close it for
+123.04s: then we close it for $2 what happened here Prett simple we
+126.79s: $2 what happened here Prett simple we
+126.80s: $2 what happened here Prett simple we realized a $100 loss we collected $1 we
+131.91s: realized a $100 loss we collected $1 we
+131.92s: realized a $100 loss we collected $1 we closed the trade for $2 that means we
+135.23s: closed the trade for $2 that means we
+135.24s: closed the trade for $2 that means we give up the dollar that we collected up
+137.15s: give up the dollar that we collected up
+137.16s: give up the dollar that we collected up front and then we give up another dollar
+139.55s: front and then we give up another dollar
+139.56s: front and then we give up another dollar on top of that that is $100 because
+142.51s: on top of that that is $100 because
+142.52s: on top of that that is $100 because obviously you multiply this out by 100
+144.95s: obviously you multiply this out by 100
+144.96s: obviously you multiply this out by 100 for options this is where the trade
+147.27s: for options this is where the trade
+147.28s: for options this is where the trade lands so where's the roll it's right
+149.95s: lands so where's the roll it's right
+149.96s: lands so where's the roll it's right here if we buy to close at two bucks and
+152.99s: here if we buy to close at two bucks and
+153.00s: here if we buy to close at two bucks and then we sell to open at whatever price
+155.47s: then we sell to open at whatever price
+155.48s: then we sell to open at whatever price you've now completed a role common
+157.47s: you've now completed a role common
+157.48s: you've now completed a role common misconception is that roles are only
+159.75s: misconception is that roles are only
+159.76s: misconception is that roles are only conducted on losing positions you can
+161.63s: conducted on losing positions you can
+161.64s: conducted on losing positions you can roll a winning trade it's just in
+164.19s: roll a winning trade it's just in
+164.20s: roll a winning trade it's just in generality and parl when we talk about
+166.19s: generality and parl when we talk about
+166.20s: generality and parl when we talk about it it's normally referred to in the
+168.87s: it it's normally referred to in the
+168.88s: it it's normally referred to in the context of a losing trade which is
+171.03s: context of a losing trade which is
+171.04s: context of a losing trade which is actually quite telling when it comes to
+172.83s: actually quite telling when it comes to
+172.84s: actually quite telling when it comes to the mindset of when we roll and this is
+175.55s: the mindset of when we roll and this is
+175.56s: the mindset of when we roll and this is something I do want to speak about for
+177.67s: something I do want to speak about for
+177.68s: something I do want to speak about for just a second because it's a common
+179.19s: just a second because it's a common
+179.20s: just a second because it's a common problem people have have is that if this
+181.19s: problem people have have is that if this
+181.20s: problem people have have is that if this was a winning trade that you closed and
+183.27s: was a winning trade that you closed and
+183.28s: was a winning trade that you closed and then opened you probably wouldn't
+185.23s: then opened you probably wouldn't
+185.24s: then opened you probably wouldn't consider it a role why is that well it's
+188.23s: consider it a role why is that well it's
+188.24s: consider it a role why is that well it's because you're happy with your win
+190.75s: because you're happy with your win
+190.76s: because you're happy with your win that's off the books now we're entering
+192.47s: that's off the books now we're entering
+192.48s: that's off the books now we're entering a new trade you don't want to tie the
+194.31s: a new trade you don't want to tie the
+194.32s: a new trade you don't want to tie the accounting to it because you have a win
+196.27s: accounting to it because you have a win
+196.28s: accounting to it because you have a win but when we're rolling very frequently
+198.59s: but when we're rolling very frequently
+198.60s: but when we're rolling very frequently it's fueled by hope we hope this next
+202.63s: it's fueled by hope we hope this next
+202.64s: it's fueled by hope we hope this next trade overwhelms the loss of the
+205.83s: trade overwhelms the loss of the
+205.84s: trade overwhelms the loss of the previous trade so that's why we choose
+208.91s: previous trade so that's why we choose
+208.92s: previous trade so that's why we choose to account it together but again admin
+211.63s: to account it together but again admin
+211.64s: to account it together but again admin note you can roll winning trades as well
+214.19s: note you can roll winning trades as well
+214.20s: note you can roll winning trades as well it's just not commonly done or at least
+216.27s: it's just not commonly done or at least
+216.28s: it's just not commonly done or at least commonly referred to so let's say trade
+219.23s: commonly referred to so let's say trade
+219.24s: commonly referred to so let's say trade three continues to chug along it goes
+221.07s: three continues to chug along it goes
+221.08s: three continues to chug along it goes well and we close that for 50s what's
+223.59s: well and we close that for 50s what's
+223.60s: well and we close that for 50s what's happened here do you know what our
+225.87s: happened here do you know what our
+225.88s: happened here do you know what our realized p&amp;l is at this point in this
+228.83s: realized p&amp;l is at this point in this
+228.84s: realized p&amp;l is at this point in this case we takeen 150 bucks we sold this
+232.15s: case we takeen 150 bucks we sold this
+232.16s: case we takeen 150 bucks we sold this option for two bucks 200 bucks we buy to
+234.75s: option for two bucks 200 bucks we buy to
+234.76s: option for two bucks 200 bucks we buy to close it for 50 cents 50 bucks that
+237.27s: close it for 50 cents 50 bucks that
+237.28s: close it for 50 cents 50 bucks that gives us positive $150
+239.95s: gives us positive $150
+239.96s: gives us positive $150 so on this rolled position you will have
+242.55s: so on this rolled position you will have
+242.56s: so on this rolled position you will have realized a profit of $50 one of the
+246.67s: realized a profit of $50 one of the
+246.68s: realized a profit of $50 one of the dangers of rolling is that if you don't
+250.23s: dangers of rolling is that if you don't
+250.24s: dangers of rolling is that if you don't close this for the correct price then
+252.75s: close this for the correct price then
+252.76s: close this for the correct price then all of a sudden you can be compounding
+255.31s: all of a sudden you can be compounding
+255.32s: all of a sudden you can be compounding your loss so for example if you have
+258.39s: your loss so for example if you have
+258.40s: your loss so for example if you have this $100 realized loss we sell to open
+261.11s: this $100 realized loss we sell to open
+261.12s: this $100 realized loss we sell to open this new option for $2 then we buy to
+263.51s: this new option for $2 then we buy to
+263.52s: this new option for $2 then we buy to close it for $3 what happened in that
+266.15s: close it for $3 what happened in that
+266.16s: close it for $3 what happened in that scenario we realized another $100 loss
+270.67s: scenario we realized another $100 loss
+270.68s: scenario we realized another $100 loss so your net p&amp;l at that point is
+273.27s: so your net p&amp;l at that point is
+273.28s: so your net p&amp;l at that point is negative
+274.55s: negative
+274.56s: negative $200 so if you keep going down that path
+277.07s: $200 so if you keep going down that path
+277.08s: $200 so if you keep going down that path and you don't ever get a price
+278.43s: and you don't ever get a price
+278.44s: and you don't ever get a price accommodation you have problems because
+281.31s: accommodation you have problems because
+281.32s: accommodation you have problems because you're going to continue compounding
+283.55s: you're going to continue compounding
+283.56s: you're going to continue compounding that losing position which is really
+285.51s: that losing position which is really
+285.52s: that losing position which is really really dangerous so let's talk about
+288.87s: really dangerous so let's talk about
+288.88s: really dangerous so let's talk about some best practices the first thing I
+290.99s: some best practices the first thing I
+291.00s: some best practices the first thing I want to walk us through is analyzing
+293.67s: want to walk us through is analyzing
+293.68s: want to walk us through is analyzing surrogate options this is a little bit
+296.03s: surrogate options this is a little bit
+296.04s: surrogate options this is a little bit esoteric so follow along and you can
+299.03s: esoteric so follow along and you can
+299.04s: esoteric so follow along and you can come back to this part if you need to
+301.27s: come back to this part if you need to
+301.28s: come back to this part if you need to fully understand what we're talking
+302.75s: fully understand what we're talking
+302.76s: fully understand what we're talking about but this is something I do all the
+305.31s: about but this is something I do all the
+305.32s: about but this is something I do all the time it's really useful let's come over
+307.55s: time it's really useful let's come over
+307.56s: time it's really useful let's come over here to XLF and I'm just picking a
+310.19s: here to XLF and I'm just picking a
+310.20s: here to XLF and I'm just picking a random stock and let's say you have a
+312.19s: random stock and let's say you have a
+312.20s: random stock and let's say you have a position on let's say you have this 33
+314.43s: position on let's say you have this 33
+314.44s: position on let's say you have this 33 DTE and let's say when you originally
+317.31s: DTE and let's say when you originally
+317.32s: DTE and let's say when you originally sold your puts or let's say short calls
+320.59s: sold your puts or let's say short calls
+320.60s: sold your puts or let's say short calls so that we're getting ran over let's say
+322.43s: so that we're getting ran over let's say
+322.44s: so that we're getting ran over let's say you originally sold these 38 short calls
+325.71s: you originally sold these 38 short calls
+325.72s: you originally sold these 38 short calls and they were out of the money whenever
+327.39s: and they were out of the money whenever
+327.40s: and they were out of the money whenever you chose to sell them it doesn't matter
+329.75s: you chose to sell them it doesn't matter
+329.76s: you chose to sell them it doesn't matter but now they're in the money so we want
+331.75s: but now they're in the money so we want
+331.76s: but now they're in the money so we want to do a few things the first thing is we
+333.55s: to do a few things the first thing is we
+333.56s: to do a few things the first thing is we want to see if if we're at risk of early
+335.59s: want to see if if we're at risk of early
+335.60s: want to see if if we're at risk of early assignment that's a little bit of a
+336.91s: assignment that's a little bit of a
+336.92s: assignment that's a little bit of a different scenario we need to see if
+338.27s: different scenario we need to see if
+338.28s: different scenario we need to see if there's a dividend we need to see how
+339.71s: there's a dividend we need to see how
+339.72s: there's a dividend we need to see how much extrinsic value is left in the
+341.31s: much extrinsic value is left in the
+341.32s: much extrinsic value is left in the options kind of a different video
+343.55s: options kind of a different video
+343.56s: options kind of a different video concept but that's an overview of that
+345.07s: concept but that's an overview of that
+345.08s: concept but that's an overview of that at least then we want to figure out how
+346.91s: at least then we want to figure out how
+346.92s: at least then we want to figure out how much is intrinsic in extrinsic value and
+349.27s: much is intrinsic in extrinsic value and
+349.28s: much is intrinsic in extrinsic value and if you remember your options 101 you
+351.71s: if you remember your options 101 you
+351.72s: if you remember your options 101 you figure out your intrinsic value by how
+353.75s: figure out your intrinsic value by how
+353.76s: figure out your intrinsic value by how far in the money we are take that out of
+355.63s: far in the money we are take that out of
+355.64s: far in the money we are take that out of your premium and then whatever's left is
+357.75s: your premium and then whatever's left is
+357.76s: your premium and then whatever's left is your extrinsic value you can also look
+360.55s: your extrinsic value you can also look
+360.56s: your extrinsic value you can also look at the corresponding outof the- money
+362.95s: at the corresponding outof the- money
+362.96s: at the corresponding outof the- money option for a approximation it's not
+365.83s: option for a approximation it's not
+365.84s: option for a approximation it's not perfect but it's pretty close so in this
+367.71s: perfect but it's pretty close so in this
+367.72s: perfect but it's pretty close so in this case if I'm looking at these 38 short
+370.87s: case if I'm looking at these 38 short
+370.88s: case if I'm looking at these 38 short calls and I'm trying to figure out
+372.99s: calls and I'm trying to figure out
+373.00s: calls and I'm trying to figure out what's the extr extrinsic value look
+375.51s: what's the extr extrinsic value look
+375.52s: what's the extr extrinsic value look right over here it's about 30 cents
+377.15s: right over here it's about 30 cents
+377.16s: right over here it's about 30 cents something like that okay good so now
+380.11s: something like that okay good so now
+380.12s: something like that okay good so now we're faced with deciding different
+383.07s: we're faced with deciding different
+383.08s: we're faced with deciding different things like what does this look like if
+386.75s: things like what does this look like if
+386.76s: things like what does this look like if time passes what will the value of my
+389.27s: time passes what will the value of my
+389.28s: time passes what will the value of my option be how much extrinsic value will
+391.87s: option be how much extrinsic value will
+391.88s: option be how much extrinsic value will be left well you can either do the math
+394.55s: be left well you can either do the math
+394.56s: be left well you can either do the math you can run it through your black schs
+396.35s: you can run it through your black schs
+396.36s: you can run it through your black schs model that's no problem you can run it
+397.67s: model that's no problem you can run it
+397.68s: model that's no problem you can run it through a risk profile tool if your
+399.39s: through a risk profile tool if your
+399.40s: through a risk profile tool if your platform has it or you could do the easy
+402.55s: platform has it or you could do the easy
+402.56s: platform has it or you could do the easy option at least as far as I can tell and
+404.87s: option at least as far as I can tell and
+404.88s: option at least as far as I can tell and again it's not perfect but it's pretty
+406.31s: again it's not perfect but it's pretty
+406.32s: again it's not perfect but it's pretty close so let's say that we want to
+408.55s: close so let's say that we want to
+408.56s: close so let's say that we want to pretend that nothing has happened other
+410.63s: pretend that nothing has happened other
+410.64s: pretend that nothing has happened other than time has passed and we can look at
+412.95s: than time has passed and we can look at
+412.96s: than time has passed and we can look at this 12 DTE so even though our option is
+417.11s: this 12 DTE so even though our option is
+417.12s: this 12 DTE so even though our option is this 38 call 33 DT
+420.11s: this 38 call 33 DT
+420.12s: this 38 call 33 DT we can look at that same option that's
+422.63s: we can look at that same option that's
+422.64s: we can look at that same option that's just 12 DTE and we can see what it looks
+425.51s: just 12 DTE and we can see what it looks
+425.52s: just 12 DTE and we can see what it looks like compared to where it is now so in
+427.67s: like compared to where it is now so in
+427.68s: like compared to where it is now so in this case it's trading for kind of a
+429.47s: this case it's trading for kind of a
+429.48s: this case it's trading for kind of a really wide Market here let's just call
+431.83s: really wide Market here let's just call
+431.84s: really wide Market here let's just call it like 150 something like that and then
+434.07s: it like 150 something like that and then
+434.08s: it like 150 something like that and then if you look in here it's like 110 so
+436.95s: if you look in here it's like 110 so
+436.96s: if you look in here it's like 110 so over the course of this time frame you
+439.43s: over the course of this time frame you
+439.44s: over the course of this time frame you can see how much your option would
+441.63s: can see how much your option would
+441.64s: can see how much your option would change if nothing else changed and again
+444.15s: change if nothing else changed and again
+444.16s: change if nothing else changed and again markets moves so then you can also say
+446.07s: markets moves so then you can also say
+446.08s: markets moves so then you can also say well what happens if it actually falls
+448.07s: well what happens if it actually falls
+448.08s: well what happens if it actually falls further in the money what would that
+449.59s: further in the money what would that
+449.60s: further in the money what would that look like so let's say XLF goes another
+452.91s: look like so let's say XLF goes another
+452.92s: look like so let's say XLF goes another dollar up so instead of being at 39 now
+456.27s: dollar up so instead of being at 39 now
+456.28s: dollar up so instead of being at 39 now it's at 40 well what you can do is you
+458.39s: it's at 40 well what you can do is you
+458.40s: it's at 40 well what you can do is you can look at the 37s because your option
+462.27s: can look at the 37s because your option
+462.28s: can look at the 37s because your option would behave close to those 37s so all
+466.39s: would behave close to those 37s so all
+466.40s: would behave close to those 37s so all I'm doing is by the amount that I'm
+468.71s: I'm doing is by the amount that I'm
+468.72s: I'm doing is by the amount that I'm mentally moving XLF I'm mentally
+471.87s: mentally moving XLF I'm mentally
+471.88s: mentally moving XLF I'm mentally adjusting my strike the same amount to
+474.75s: adjusting my strike the same amount to
+474.76s: adjusting my strike the same amount to see what the option would look like if
+477.55s: see what the option would look like if
+477.56s: see what the option would look like if that move happened so really use use ful
+479.79s: that move happened so really use use ful
+479.80s: that move happened so really use use ful tool again that might sound a little
+481.43s: tool again that might sound a little
+481.44s: tool again that might sound a little complex feel free to listen through this
+483.51s: complex feel free to listen through this
+483.52s: complex feel free to listen through this a time or two if you need but that's
+485.83s: a time or two if you need but that's
+485.84s: a time or two if you need but that's what I do to analyze a lot of potential
+489.51s: what I do to analyze a lot of potential
+489.52s: what I do to analyze a lot of potential options adjustments without doing the
+491.71s: options adjustments without doing the
+491.72s: options adjustments without doing the math for every single one of them so one
+494.11s: math for every single one of them so one
+494.12s: math for every single one of them so one of the best practices here is rolling
+495.95s: of the best practices here is rolling
+495.96s: of the best practices here is rolling spreads is it something you can do it is
+497.83s: spreads is it something you can do it is
+497.84s: spreads is it something you can do it is something you can do is it something
+499.71s: something you can do is it something
+499.72s: something you can do is it something that's reasonable to rely on no it's not
+502.27s: that's reasonable to rely on no it's not
+502.28s: that's reasonable to rely on no it's not and it's because when we're rolling
+504.39s: and it's because when we're rolling
+504.40s: and it's because when we're rolling options a lot of the time you'll find
+506.51s: options a lot of the time you'll find
+506.52s: options a lot of the time you'll find things sometimes are really deep in the
+508.23s: things sometimes are really deep in the
+508.24s: things sometimes are really deep in the money or deep out of the money this is a
+510.35s: money or deep out of the money this is a
+510.36s: money or deep out of the money this is a great example that we were looking at
+512.15s: great example that we were looking at
+512.16s: great example that we were looking at with this 33 DTE and we were looking at
+515.71s: with this 33 DTE and we were looking at
+515.72s: with this 33 DTE and we were looking at something that was slightly deeper and
+517.15s: something that was slightly deeper and
+517.16s: something that was slightly deeper and deeper in the money notice how if you go
+518.99s: deeper in the money notice how if you go
+519.00s: deeper in the money notice how if you go to this 36 call notice how wide that
+522.11s: to this 36 call notice how wide that
+522.12s: to this 36 call notice how wide that market is that's just for a single
+524.07s: market is that's just for a single
+524.08s: market is that's just for a single option so if you have a vertical you
+526.39s: option so if you have a vertical you
+526.40s: option so if you have a vertical you have to find the midpoint between this
+528.67s: have to find the midpoint between this
+528.68s: have to find the midpoint between this which there's a lot of slop on something
+530.63s: which there's a lot of slop on something
+530.64s: which there's a lot of slop on something pric like this and then you have to find
+532.19s: pric like this and then you have to find
+532.20s: pric like this and then you have to find the midpoint on whatever else whatever
+534.27s: the midpoint on whatever else whatever
+534.28s: the midpoint on whatever else whatever other option you have tied to your
+535.99s: other option you have tied to your
+536.00s: other option you have tied to your vertical or iron Condor the generality
+538.47s: vertical or iron Condor the generality
+538.48s: vertical or iron Condor the generality here is the more legs you have the
+540.75s: here is the more legs you have the
+540.76s: here is the more legs you have the harder this is and you're also probably
+543.15s: harder this is and you're also probably
+543.16s: harder this is and you're also probably going to have to move them piece by
+544.99s: going to have to move them piece by
+545.00s: going to have to move them piece by piece which opens you up to Gap risk
+547.39s: piece which opens you up to Gap risk
+547.40s: piece which opens you up to Gap risk while you're in the process of adjusting
+548.79s: while you're in the process of adjusting
+548.80s: while you're in the process of adjusting your your strikes rolling spreads is
+551.31s: your your strikes rolling spreads is
+551.32s: your your strikes rolling spreads is doable very difficult it's not something
+553.95s: doable very difficult it's not something
+553.96s: doable very difficult it's not something that I think is worthwhile in most cases
+556.67s: that I think is worthwhile in most cases
+556.68s: that I think is worthwhile in most cases does rolling avoid losses the cool part
+559.59s: does rolling avoid losses the cool part
+559.60s: does rolling avoid losses the cool part about this one is you actually already
+562.35s: about this one is you actually already
+562.36s: about this one is you actually already know the answer to it because we just
+564.11s: know the answer to it because we just
+564.12s: know the answer to it because we just looked at this in this example that we
+566.87s: looked at this in this example that we
+566.88s: looked at this in this example that we looked at over here when you rolled this
+569.63s: looked at over here when you rolled this
+569.64s: looked at over here when you rolled this option meaning you close this one and
+571.67s: option meaning you close this one and
+571.68s: option meaning you close this one and you open this new one did you avoid a
+573.95s: you open this new one did you avoid a
+573.96s: you open this new one did you avoid a loss no you realized a loss that means
+578.23s: loss no you realized a loss that means
+578.24s: loss no you realized a loss that means this is on your books this means you
+580.23s: this is on your books this means you
+580.24s: this is on your books this means you have a brand new open position that has
+582.79s: have a brand new open position that has
+582.80s: have a brand new open position that has the potential to cover the cost of this
+585.35s: the potential to cover the cost of this
+585.36s: the potential to cover the cost of this loss but it's not guaranteed you could
+587.79s: loss but it's not guaranteed you could
+587.80s: loss but it's not guaranteed you could also have an even bigger loss as a
+589.95s: also have an even bigger loss as a
+589.96s: also have an even bigger loss as a result of opening this new position so
+592.63s: result of opening this new position so
+592.64s: result of opening this new position so no rolling does not avoid losses now on
+596.07s: no rolling does not avoid losses now on
+596.08s: no rolling does not avoid losses now on that same topic if you rolled this
+598.63s: that same topic if you rolled this
+598.64s: that same topic if you rolled this option do you know how to calculate what
+600.95s: option do you know how to calculate what
+600.96s: option do you know how to calculate what your break even price is on this option
+603.83s: your break even price is on this option
+603.84s: your break even price is on this option if not it's pretty simple so if we
+605.71s: if not it's pretty simple so if we
+605.72s: if not it's pretty simple so if we closed this trade two bucks $100 realize
+608.91s: closed this trade two bucks $100 realize
+608.92s: closed this trade two bucks $100 realize loss you sell to open this new Option at
+611.67s: loss you sell to open this new Option at
+611.68s: loss you sell to open this new Option at $2 how much money do you need to make in
+614.31s: $2 how much money do you need to make in
+614.32s: $2 how much money do you need to make in order to get back to zero on this
+616.79s: order to get back to zero on this
+616.80s: order to get back to zero on this realized loss $100 so that means on this
+620.55s: realized loss $100 so that means on this
+620.56s: realized loss $100 so that means on this option you would need this trading at $1
+623.87s: option you would need this trading at $1
+623.88s: option you would need this trading at $1 or less to be in profit as soon as this
+627.23s: or less to be in profit as soon as this
+627.24s: or less to be in profit as soon as this hits $1 not including fees you would be
+630.51s: hits $1 not including fees you would be
+630.52s: hits $1 not including fees you would be at break even so you can easily do that
+633.51s: at break even so you can easily do that
+633.52s: at break even so you can easily do that math to calculate what you need this new
+636.27s: math to calculate what you need this new
+636.28s: math to calculate what you need this new option to be trading at to hit break
+638.15s: option to be trading at to hit break
+638.16s: option to be trading at to hit break even and then also to then start seeing
+641.27s: even and then also to then start seeing
+641.28s: even and then also to then start seeing a profit which is the whole point of
+642.63s: a profit which is the whole point of
+642.64s: a profit which is the whole point of doing this a common error Traders make
+645.11s: doing this a common error Traders make
+645.12s: doing this a common error Traders make is when they see this option trading for
+647.55s: is when they see this option trading for
+647.56s: is when they see this option trading for a profit so if this we sold to open for
+650.15s: a profit so if this we sold to open for
+650.16s: a profit so if this we sold to open for $2 and then now it's trading at $125
+653.07s: $2 and then now it's trading at $125
+653.08s: $2 and then now it's trading at $125 you're looking at a $75 profit you're
+654.87s: you're looking at a $75 profit you're
+654.88s: you're looking at a $75 profit you're like wow that looks great I want to take
+656.27s: like wow that looks great I want to take
+656.28s: like wow that looks great I want to take that well unfortunately in the net you
+658.63s: that well unfortunately in the net you
+658.64s: that well unfortunately in the net you would have lost money because if you
+660.15s: would have lost money because if you
+660.16s: would have lost money because if you took this down for a $75 profit and you
+662.75s: took this down for a $75 profit and you
+662.76s: took this down for a $75 profit and you have a $100 realized loss you still lost
+664.99s: have a $100 realized loss you still lost
+665.00s: have a $100 realized loss you still lost 25 bucks so you can calculate your
+667.91s: 25 bucks so you can calculate your
+667.92s: 25 bucks so you can calculate your rolled options Break Even which is
+670.07s: rolled options Break Even which is
+670.08s: rolled options Break Even which is something I definitely recommend
+671.59s: something I definitely recommend
+671.60s: something I definitely recommend tracking I have an Excel sheet that does
+673.91s: tracking I have an Excel sheet that does
+673.92s: tracking I have an Excel sheet that does that which I've thrown into the shop for
+676.67s: that which I've thrown into the shop for
+676.68s: that which I've thrown into the shop for all the patreon members if you're silver
+678.35s: all the patreon members if you're silver
+678.36s: all the patreon members if you're silver and above you get free access to it it's
+680.23s: and above you get free access to it it's
+680.24s: and above you get free access to it it's just a simple tool to help you track
+681.71s: just a simple tool to help you track
+681.72s: just a simple tool to help you track things so now if we continue on our best
+684.47s: things so now if we continue on our best
+684.48s: things so now if we continue on our best practices what's the best time to roll
+686.67s: practices what's the best time to roll
+686.68s: practices what's the best time to roll as you know my answer to this already is
+688.47s: as you know my answer to this already is
+688.48s: as you know my answer to this already is it depends there's two things you really
+691.03s: it depends there's two things you really
+691.04s: it depends there's two things you really need to answer right up front the first
+693.27s: need to answer right up front the first
+693.28s: need to answer right up front the first thing is what is your objective for the
+695.63s: thing is what is your objective for the
+695.64s: thing is what is your objective for the position and the second thing is what do
+698.91s: position and the second thing is what do
+698.92s: position and the second thing is what do you think about the underlying so let's
+701.19s: you think about the underlying so let's
+701.20s: you think about the underlying so let's say you have a position on the best time
+703.95s: say you have a position on the best time
+703.96s: say you have a position on the best time to roll in terms of getting the highest
+708.35s: to roll in terms of getting the highest
+708.36s: to roll in terms of getting the highest variability in your strike price is when
+711.79s: variability in your strike price is when
+711.80s: variability in your strike price is when you are at the money or slightly in the
+713.91s: you are at the money or slightly in the
+713.92s: you are at the money or slightly in the money the reason being is even though
+716.43s: money the reason being is even though
+716.44s: money the reason being is even though there's a bunch of extrinsic value left
+718.43s: there's a bunch of extrinsic value left
+718.44s: there's a bunch of extrinsic value left in that option you'll notice you're not
+721.27s: in that option you'll notice you're not
+721.28s: in that option you'll notice you're not moving a bunch of intrinsic value which
+724.11s: moving a bunch of intrinsic value which
+724.12s: moving a bunch of intrinsic value which decreases how effectively you can roll
+726.55s: decreases how effectively you can roll
+726.56s: decreases how effectively you can roll so what this looks like is let's say you
+728.47s: so what this looks like is let's say you
+728.48s: so what this looks like is let's say you were short this 39 put that's now it's
+731.31s: were short this 39 put that's now it's
+731.32s: were short this 39 put that's now it's in the money right now and it's trading
+733.07s: in the money right now and it's trading
+733.08s: in the money right now and it's trading for like 35 36 Cents something like that
+736.19s: for like 35 36 Cents something like that
+736.20s: for like 35 36 Cents something like that if we try to roll this and we want to go
+738.87s: if we try to roll this and we want to go
+738.88s: if we try to roll this and we want to go out one week and we want to collect a
+741.07s: out one week and we want to collect a
+741.08s: out one week and we want to collect a credit meaning the rolled trade is
+743.71s: credit meaning the rolled trade is
+743.72s: credit meaning the rolled trade is bringing in more money than what we're
+745.39s: bringing in more money than what we're
+745.40s: bringing in more money than what we're closing if we take a look at that and we
+747.79s: closing if we take a look at that and we
+747.80s: closing if we take a look at that and we know that we need 35 can you get it
+750.83s: know that we need 35 can you get it
+750.84s: know that we need 35 can you get it going further out of the money going out
+752.51s: going further out of the money going out
+752.52s: going further out of the money going out just one week no so we might have to go
+754.47s: just one week no so we might have to go
+754.48s: just one week no so we might have to go out let's just pick the next primary
+756.59s: out let's just pick the next primary
+756.60s: out let's just pick the next primary expiration you can find you can roll out
+759.31s: expiration you can find you can roll out
+759.32s: expiration you can find you can roll out in time for a credit at the same strike
+762.31s: in time for a credit at the same strike
+762.32s: in time for a credit at the same strike or you can roll out in time and slightly
+765.59s: or you can roll out in time and slightly
+765.60s: or you can roll out in time and slightly out of the money taking it all the way
+767.31s: out of the money taking it all the way
+767.32s: out of the money taking it all the way down to a 28 Delta while collecting a
+770.03s: down to a 28 Delta while collecting a
+770.04s: down to a 28 Delta while collecting a very small credit so when the option
+773.11s: very small credit so when the option
+773.12s: very small credit so when the option price is the same as the strike is when
+775.27s: price is the same as the strike is when
+775.28s: price is the same as the strike is when you're going to have the most choices
+776.71s: you're going to have the most choices
+776.72s: you're going to have the most choices available to you however it's also when
+778.75s: available to you however it's also when
+778.76s: available to you however it's also when you're Buy buying back the most
+780.83s: you're Buy buying back the most
+780.84s: you're Buy buying back the most extrinsic value so if this is something
+783.07s: extrinsic value so if this is something
+783.08s: extrinsic value so if this is something that you don't mind taking assignment on
+786.03s: that you don't mind taking assignment on
+786.04s: that you don't mind taking assignment on or don't mind managing in the long run
+788.43s: or don't mind managing in the long run
+788.44s: or don't mind managing in the long run then you can wait a little bit wait for
+790.71s: then you can wait a little bit wait for
+790.72s: then you can wait a little bit wait for some more of this extrinsic value to
+792.31s: some more of this extrinsic value to
+792.32s: some more of this extrinsic value to bleed out and then you can adjust if
+794.39s: bleed out and then you can adjust if
+794.40s: bleed out and then you can adjust if this is something that's like leveraged
+796.39s: this is something that's like leveraged
+796.40s: this is something that's like leveraged options or you really don't want to take
+798.31s: options or you really don't want to take
+798.32s: options or you really don't want to take assignment in this case on the short put
+800.55s: assignment in this case on the short put
+800.56s: assignment in this case on the short put and you don't want to get stuck what I
+803.59s: and you don't want to get stuck what I
+803.60s: and you don't want to get stuck what I mean by getting stuck is if you wait
+805.43s: mean by getting stuck is if you wait
+805.44s: mean by getting stuck is if you wait until you're too far in the money you
+807.11s: until you're too far in the money you
+807.12s: until you're too far in the money you get to a point where you actually can't
+809.15s: get to a point where you actually can't
+809.16s: get to a point where you actually can't adjust down you can't roll down anymore
+811.79s: adjust down you can't roll down anymore
+811.80s: adjust down you can't roll down anymore or if you're on the short calls you
+812.91s: or if you're on the short calls you
+812.92s: or if you're on the short calls you can't roll up anymore cuz you're too
+814.71s: can't roll up anymore cuz you're too
+814.72s: can't roll up anymore cuz you're too deep in the money and then you run into
+816.59s: deep in the money and then you run into
+816.60s: deep in the money and then you run into another problem which is days to
+819.63s: another problem which is days to
+819.64s: another problem which is days to expiration liquidity so for example
+822.63s: expiration liquidity so for example
+822.64s: expiration liquidity so for example let's say our option fell in the money
+824.51s: let's say our option fell in the money
+824.52s: let's say our option fell in the money the 39s we want to roll out and down
+826.79s: the 39s we want to roll out and down
+826.80s: the 39s we want to roll out and down cool so we go out and down we have to go
+828.67s: cool so we go out and down we have to go
+828.68s: cool so we go out and down we have to go to 40 days to be able to roll down now
+831.43s: to 40 days to be able to roll down now
+831.44s: to 40 days to be able to roll down now we get our small credit you're a dollar
+833.47s: we get our small credit you're a dollar
+833.48s: we get our small credit you're a dollar better but let's say time passes and XLF
+836.63s: better but let's say time passes and XLF
+836.64s: better but let's say time passes and XLF Falls more 4 days pass XL Falls more now
+839.91s: Falls more 4 days pass XL Falls more now
+839.92s: Falls more 4 days pass XL Falls more now your 38s are in the money okay you're
+841.95s: your 38s are in the money okay you're
+841.96s: your 38s are in the money okay you're like crap I got to roll out again well I
+843.95s: like crap I got to roll out again well I
+843.96s: like crap I got to roll out again well I can't roll out just one week and get a
+846.15s: can't roll out just one week and get a
+846.16s: can't roll out just one week and get a credit it's not enough so maybe if I
+848.55s: credit it's not enough so maybe if I
+848.56s: credit it's not enough so maybe if I roll out two weeks well do you notice
+850.91s: roll out two weeks well do you notice
+850.92s: roll out two weeks well do you notice what just happened right here you had 40
+854.63s: what just happened right here you had 40
+854.64s: what just happened right here you had 40 days to expiration then you were able to
+856.71s: days to expiration then you were able to
+856.72s: days to expiration then you were able to look out to 47 now all of a sudden it's
+859.19s: look out to 47 now all of a sudden it's
+859.20s: look out to 47 now all of a sudden it's 53 then after 53 it's 75 What's
+862.47s: 53 then after 53 it's 75 What's
+862.48s: 53 then after 53 it's 75 What's Happening Here is options chains offer
+865.87s: Happening Here is options chains offer
+865.88s: Happening Here is options chains offer more expirations the closer to time you
+869.31s: more expirations the closer to time you
+869.32s: more expirations the closer to time you are some options chains will offer you a
+872.39s: are some options chains will offer you a
+872.40s: are some options chains will offer you a bunch of choices if you look at
+874.59s: bunch of choices if you look at
+874.60s: bunch of choices if you look at something like spy anything within 53
+877.31s: something like spy anything within 53
+877.32s: something like spy anything within 53 days you have a ton of choices but even
+879.79s: days you have a ton of choices but even
+879.80s: days you have a ton of choices but even then after 53 days it gets more and more
+883.43s: then after 53 days it gets more and more
+883.44s: then after 53 days it gets more and more sparse that's days to expiration
+885.67s: sparse that's days to expiration
+885.68s: sparse that's days to expiration liquidity and that's why it's a problem
+887.71s: liquidity and that's why it's a problem
+887.72s: liquidity and that's why it's a problem because if you roll immediately every
+889.83s: because if you roll immediately every
+889.84s: because if you roll immediately every time your strike is challenged let's say
+891.59s: time your strike is challenged let's say
+891.60s: time your strike is challenged let's say you're in this 33 days expiration you
+893.35s: you're in this 33 days expiration you
+893.36s: you're in this 33 days expiration you roll when your strike is challenged then
+894.79s: roll when your strike is challenged then
+894.80s: roll when your strike is challenged then you go to the 40 then you go to the 47
+896.47s: you go to the 40 then you go to the 47
+896.48s: you go to the 40 then you go to the 47 then you go to the 53 then you go to the
+897.75s: then you go to the 53 then you go to the
+897.76s: then you go to the 53 then you go to the 75 now you're out out pretty damn far in
+899.95s: 75 now you're out out pretty damn far in
+899.96s: 75 now you're out out pretty damn far in time data is not ticking away that fast
+902.27s: time data is not ticking away that fast
+902.28s: time data is not ticking away that fast because you're so far out in time and
+903.71s: because you're so far out in time and
+903.72s: because you're so far out in time and then if you get a continued down move
+905.43s: then if you get a continued down move
+905.44s: then if you get a continued down move then where do you go you got to 103 days
+908.07s: then where do you go you got to 103 days
+908.08s: then where do you go you got to 103 days what if the down move continues then you
+910.19s: what if the down move continues then you
+910.20s: what if the down move continues then you run out of Runway and if the underly
+912.99s: run out of Runway and if the underly
+913.00s: run out of Runway and if the underly continues to move against you you build
+915.67s: continues to move against you you build
+915.68s: continues to move against you you build a really difficult position to move
+917.99s: a really difficult position to move
+918.00s: a really difficult position to move around so when I think about the best
+919.91s: around so when I think about the best
+919.92s: around so when I think about the best time to roll I balance how do I feel
+922.79s: time to roll I balance how do I feel
+922.80s: time to roll I balance how do I feel about taking the underlying in or out
+924.75s: about taking the underlying in or out
+924.76s: about taking the underlying in or out whether I'm short puts or short calls
+926.39s: whether I'm short puts or short calls
+926.40s: whether I'm short puts or short calls for long or short stock and then I think
+928.59s: for long or short stock and then I think
+928.60s: for long or short stock and then I think about what is my disposition towards the
+930.59s: about what is my disposition towards the
+930.60s: about what is my disposition towards the underlying because sometimes the best
+932.99s: underlying because sometimes the best
+933.00s: underlying because sometimes the best time to roll is never and to take the
+935.31s: time to roll is never and to take the
+935.32s: time to roll is never and to take the loss if you're trading something like
+937.47s: loss if you're trading something like
+937.48s: loss if you're trading something like this let's say you had cash secured puts
+939.59s: this let's say you had cash secured puts
+939.60s: this let's say you had cash secured puts out on carvana and you were all the way
+942.07s: out on carvana and you were all the way
+942.08s: out on carvana and you were all the way out here you were trading it a while ago
+944.23s: out here you were trading it a while ago
+944.24s: out here you were trading it a while ago when it was 300 bucks and then you're
+946.75s: when it was 300 bucks and then you're
+946.76s: when it was 300 bucks and then you're trying to roll your options you're
+947.91s: trying to roll your options you're
+947.92s: trying to roll your options you're trying to roll your options if you got
+949.67s: trying to roll your options if you got
+949.68s: trying to roll your options if you got stuck you're stuck you are there's no
+952.07s: stuck you're stuck you are there's no
+952.08s: stuck you're stuck you are there's no rolling your options from here to here
+954.95s: rolling your options from here to here
+954.96s: rolling your options from here to here sometimes if you get enough price
+956.27s: sometimes if you get enough price
+956.28s: sometimes if you get enough price accommodation in the short term you
+957.63s: accommodation in the short term you
+957.64s: accommodation in the short term you might be able to get Buy with some of it
+960.03s: might be able to get Buy with some of it
+960.04s: might be able to get Buy with some of it but big moves that happen quickly can
+962.47s: but big moves that happen quickly can
+962.48s: but big moves that happen quickly can leave you stranded so you have to
+964.83s: leave you stranded so you have to
+964.84s: leave you stranded so you have to strongly analyze the underline that
+967.35s: strongly analyze the underline that
+967.36s: strongly analyze the underline that you're trading and again the same thing
+969.39s: you're trading and again the same thing
+969.40s: you're trading and again the same thing can happen to the inverse if you're one
+971.39s: can happen to the inverse if you're one
+971.40s: can happen to the inverse if you're one of those real smart contrarian Traders
+973.27s: of those real smart contrarian Traders
+973.28s: of those real smart contrarian Traders and you know better when the Market's
+974.59s: and you know better when the Market's
+974.60s: and you know better when the Market's pricing things and you see this big
+976.15s: pricing things and you see this big
+976.16s: pricing things and you see this big green candle you're like wow I'm going
+977.47s: green candle you're like wow I'm going
+977.48s: green candle you're like wow I'm going to fade this and smci hasn't come back
+981.15s: to fade this and smci hasn't come back
+981.16s: to fade this and smci hasn't come back it's gone from $400 to$ 579 so in this
+984.55s: it's gone from $400 to$ 579 so in this
+984.56s: it's gone from $400 to$ 579 so in this case you get stuck you need some sort of
+987.83s: case you get stuck you need some sort of
+987.84s: case you get stuck you need some sort of price accommodation in order to be able
+990.31s: price accommodation in order to be able
+990.32s: price accommodation in order to be able to roll and eventually find your way out
+992.15s: to roll and eventually find your way out
+992.16s: to roll and eventually find your way out of the money because the problem is can
+994.55s: of the money because the problem is can
+994.56s: of the money because the problem is can you roll forever no because if you go
+997.43s: you roll forever no because if you go
+997.44s: you roll forever no because if you go back to this original example you are
+1000.19s: back to this original example you are
+1000.20s: back to this original example you are realizing losses if we're rolling a
+1003.23s: realizing losses if we're rolling a
+1003.24s: realizing losses if we're rolling a losing trade so when you're rolling a
+1004.87s: losing trade so when you're rolling a
+1004.88s: losing trade so when you're rolling a losing trade each time you are eroding
+1008.35s: losing trade each time you are eroding
+1008.36s: losing trade each time you are eroding your account value sooner or later the
+1011.31s: your account value sooner or later the
+1011.32s: your account value sooner or later the margin requirement for your trade is
+1013.91s: margin requirement for your trade is
+1013.92s: margin requirement for your trade is bigger than your account value so even
+1016.67s: bigger than your account value so even
+1016.68s: bigger than your account value so even though you might have a bunch of cash
+1018.51s: though you might have a bunch of cash
+1018.52s: though you might have a bunch of cash sitting in your cash and sweep if your
+1020.55s: sitting in your cash and sweep if your
+1020.56s: sitting in your cash and sweep if your net lick net liquidating value isn't
+1022.83s: net lick net liquidating value isn't
+1022.84s: net lick net liquidating value isn't high enough to cover your margined
+1024.71s: high enough to cover your margined
+1024.72s: high enough to cover your margined requirements for your trade you cannot
+1026.71s: requirements for your trade you cannot
+1026.72s: requirements for your trade you cannot put it on so you cannot roll forever
+1029.51s: put it on so you cannot roll forever
+1029.52s: put it on so you cannot roll forever because you eventually do need price
+1033.03s: because you eventually do need price
+1033.04s: because you eventually do need price accommodation so the last thing how do
+1035.75s: accommodation so the last thing how do
+1035.76s: accommodation so the last thing how do we think about rolling in or out up or
+1039.07s: we think about rolling in or out up or
+1039.08s: we think about rolling in or out up or down I tend to try to roll out is little
+1043.11s: down I tend to try to roll out is little
+1043.12s: down I tend to try to roll out is little in time as possible it allows me to
+1046.07s: in time as possible it allows me to
+1046.08s: in time as possible it allows me to maintain the most spot price sensitiv
+1049.51s: maintain the most spot price sensitiv
+1049.52s: maintain the most spot price sensitiv it also gives me more runway on that
+1053.59s: it also gives me more runway on that
+1053.60s: it also gives me more runway on that days to expiration liquidity concept
+1055.95s: days to expiration liquidity concept
+1055.96s: days to expiration liquidity concept that I was explaining to you so if I can
+1057.95s: that I was explaining to you so if I can
+1057.96s: that I was explaining to you so if I can roll from this 12 to the 19 while
+1060.71s: roll from this 12 to the 19 while
+1060.72s: roll from this 12 to the 19 while adjusting my strike I typically would do
+1062.71s: adjusting my strike I typically would do
+1062.72s: adjusting my strike I typically would do that if I can roll from the 12 to the 19
+1065.15s: that if I can roll from the 12 to the 19
+1065.16s: that if I can roll from the 12 to the 19 and not adjust my strike meaning if I
+1067.39s: and not adjust my strike meaning if I
+1067.40s: and not adjust my strike meaning if I have cash secured puts for example and I
+1070.07s: have cash secured puts for example and I
+1070.08s: have cash secured puts for example and I can't roll them here but I can roll them
+1071.55s: can't roll them here but I can roll them
+1071.56s: can't roll them here but I can roll them in the 26 DTE I need to analyze the
+1074.39s: in the 26 DTE I need to analyze the
+1074.40s: in the 26 DTE I need to analyze the underlying do I want to add two weeks
+1077.19s: underlying do I want to add two weeks
+1077.20s: underlying do I want to add two weeks and depending on how much I'm improving
+1079.03s: and depending on how much I'm improving
+1079.04s: and depending on how much I'm improving my basis does that make sense so overall
+1082.31s: my basis does that make sense so overall
+1082.32s: my basis does that make sense so overall the decision on whether or not you go
+1084.47s: the decision on whether or not you go
+1084.48s: the decision on whether or not you go further out in time comes down to how do
+1086.63s: further out in time comes down to how do
+1086.64s: further out in time comes down to how do you feel about the underlying and
+1087.91s: you feel about the underlying and
+1087.92s: you feel about the underlying and running out of DTE liquidity and then
+1090.47s: running out of DTE liquidity and then
+1090.48s: running out of DTE liquidity and then rolling down or up depends on how much
+1093.19s: rolling down or up depends on how much
+1093.20s: rolling down or up depends on how much money you want to make because if I try
+1095.55s: money you want to make because if I try
+1095.56s: money you want to make because if I try to roll for example from the 12 to the
+1098.67s: to roll for example from the 12 to the
+1098.68s: to roll for example from the 12 to the 19 DTE if we look at this scenario and
+1103.15s: 19 DTE if we look at this scenario and
+1103.16s: 19 DTE if we look at this scenario and let's say I'm at the 575 so I keep the
+1105.59s: let's say I'm at the 575 so I keep the
+1105.60s: let's say I'm at the 575 so I keep the same strike in this case you have what
+1109.75s: same strike in this case you have what
+1109.76s: same strike in this case you have what 2675 and this is just call it 35 in that
+1113.47s: 2675 and this is just call it 35 in that
+1113.48s: 2675 and this is just call it 35 in that scenario you can still make an okay
+1115.87s: scenario you can still make an okay
+1115.88s: scenario you can still make an okay amount of money by staying at the same
+1117.27s: amount of money by staying at the same
+1117.28s: amount of money by staying at the same strike if you chose to go from the 575s
+1120.07s: strike if you chose to go from the 575s
+1120.08s: strike if you chose to go from the 575s down to the 570s notice what happens
+1122.43s: down to the 570s notice what happens
+1122.44s: down to the 570s notice what happens instead of getting $35 whatever this is
+1124.63s: instead of getting $35 whatever this is
+1124.64s: instead of getting $35 whatever this is you're going to get 32 in change so you
+1127.11s: you're going to get 32 in change so you
+1127.12s: you're going to get 32 in change so you have to decide what's more important to
+1129.39s: have to decide what's more important to
+1129.40s: have to decide what's more important to you is it improving your basis adjusting
+1131.59s: you is it improving your basis adjusting
+1131.60s: you is it improving your basis adjusting your basis or is it collecting more
+1132.95s: your basis or is it collecting more
+1132.96s: your basis or is it collecting more money up front that is 100% dependent on
+1135.99s: money up front that is 100% dependent on
+1136.00s: money up front that is 100% dependent on the trader so this is part one as you
+1138.19s: the trader so this is part one as you
+1138.20s: the trader so this is part one as you can tell it's a big video there's a lot
+1140.03s: can tell it's a big video there's a lot
+1140.04s: can tell it's a big video there's a lot that goes into this if you have any
+1141.43s: that goes into this if you have any
+1141.44s: that goes into this if you have any questions let me know if we should do a
+1142.99s: questions let me know if we should do a
+1143.00s: questions let me know if we should do a part two and go even deeper with
+1145.31s: part two and go even deeper with
+1145.32s: part two and go even deeper with specific examples let me know cuz we
+1147.27s: specific examples let me know cuz we
+1147.28s: specific examples let me know cuz we might be able to swing that till next
+1149.03s: might be able to swing that till next
+1149.04s: might be able to swing that till next time like subscribe share be an outlier
+1151.35s: time like subscribe share be an outlier
+1151.36s: time like subscribe share be an outlier see you guys later

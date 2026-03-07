@@ -1,56 +1,124 @@
-0.00s: What's up, outliers?
-1.40s: Welcome to another outlier,
-3.40s: options trading, quick tips.
-4.84s: We learned something new in three minutes or less.
-6.52s: Today we are talking about what is an implied volatility surface.
-12.52s: Now, this sounds way crazier than it actually is.
-16.32s: It's very simple.
-17.60s: It's simply plots the implied volatility's for each strike
-23.24s: across different expiration.
-25.32s: And there's a couple different ways that you
-26.60s: can visualize this.
-28.40s: There are simple versions like the one you see over my head.
-31.92s: This is from Think or Swim.
-33.72s: And this simply shows in different lines,
-37.20s: they represent different expiration's.
-39.24s: And then your x-axis represents different strikes.
-43.72s: And then your y-axis represents different implied volatility.
-47.36s: So we can compare the strike volatility
-52.16s: between individual expressions.
-55.44s: We can do it across explorations.
-58.88s: We can look at the relationship between different
-62.36s: explorations and the overall gaps at different points.
-65.96s: And another version that people are probably more familiar with
-69.60s: is this here, which is actually you can create something
-72.80s: like this in Python.
-74.20s: But what it does is it essentially removes the three different lines
-77.96s: and it combines them into a 3D model.
-81.32s: So you can see that there's the same traits.
-85.28s: But this case, again, you can build this in Python.
-89.00s: And it will just consolidate these lines down into 3D surface.
-94.00s: So there's a couple different ways you can visualize it.
-96.16s: But the information is about the same.
-97.68s: We're looking for any anomalies.
-100.28s: We're looking for the relationship of volatility.
-102.48s: We're looking to see if the put side is much higher
-105.24s: than the call side.
-106.04s: That is very, very frequent.
-108.00s: And that's typically for a lot of things like large cap stocks.
-111.12s: For people have big stock holdings.
-113.08s: And they tend to hedge risk to the downside.
-115.16s: So it puts get priced up a bit more.
-117.28s: Then this typically means that there's a lower probability
-120.56s: of a massive downside move and a higher probability
-123.08s: of a smaller upside move.
-124.84s: And then sometimes you can find names like GameStop,
-127.32s: which is actually typically inverted, where the call side,
-132.88s: out of the money calls will have much higher implied volatility,
-135.64s: then the put side.
-137.12s: And this is also very common for names that are really
-140.00s: expected to have these big upside potential moves.
-143.16s: So you can learn a lot from implied volatility surface models.
-146.88s: I actually have a video that goes much deeper
-149.28s: into implied volatility.
-150.36s: You can check that out on the channel.
-152.24s: Be an outlier.
-152.96s: See you later.
+0.48s: what's up outliers welcome to another
+2.68s: what's up outliers welcome to another outlier options trading quick tips we
+4.95s: outlier options trading quick tips we
+4.96s: outlier options trading quick tips we learned something new in 3 minutes or
+6.23s: learned something new in 3 minutes or
+6.24s: learned something new in 3 minutes or less today we are talking about what is
+9.63s: less today we are talking about what is
+9.64s: less today we are talking about what is an implied volatility surface now this
+13.55s: an implied volatility surface now this
+13.56s: an implied volatility surface now this sounds way crazier than it actually is
+16.31s: sounds way crazier than it actually is
+16.32s: sounds way crazier than it actually is it's very simple it simply plots the
+19.71s: it's very simple it simply plots the
+19.72s: it's very simple it simply plots the implied volatilities for each strike
+23.27s: implied volatilities for each strike
+23.28s: implied volatilities for each strike across different expirations and there's
+25.51s: across different expirations and there's
+25.52s: across different expirations and there's a couple different ways that you can
+26.71s: a couple different ways that you can
+26.72s: a couple different ways that you can visualize this there are simple versions
+30.11s: visualize this there are simple versions
+30.12s: visualize this there are simple versions like the one you see over my head this
+31.99s: like the one you see over my head this
+32.00s: like the one you see over my head this is from thinker swim and this simply
+34.43s: is from thinker swim and this simply
+34.44s: is from thinker swim and this simply shows in different lines they represent
+37.95s: shows in different lines they represent
+37.96s: shows in different lines they represent different expirations and then your x
+41.43s: different expirations and then your x
+41.44s: different expirations and then your x axis represents different strikes and
+43.71s: axis represents different strikes and
+43.72s: axis represents different strikes and then your y AIS represents different
+46.27s: then your y AIS represents different
+46.28s: then your y AIS represents different implied volatility so we can compare the
+50.03s: implied volatility so we can compare the
+50.04s: implied volatility so we can compare the strike volatility between individual
+54.39s: strike volatility between individual
+54.40s: strike volatility between individual expirations we can do it across
+57.87s: expirations we can do it across
+57.88s: expirations we can do it across expirations we can look at the
+60.07s: expirations we can look at the
+60.08s: expirations we can look at the relationship between different
+62.27s: relationship between different
+62.28s: relationship between different expirations and the overall gaps at
+64.43s: expirations and the overall gaps at
+64.44s: expirations and the overall gaps at different points and another version
+67.27s: different points and another version
+67.28s: different points and another version that people are probably more familiar
+69.39s: that people are probably more familiar
+69.40s: that people are probably more familiar with is this here which is actually you
+71.91s: with is this here which is actually you
+71.92s: with is this here which is actually you can create something like this in Python
+74.15s: can create something like this in Python
+74.16s: can create something like this in Python but what it does is it essentially
+75.71s: but what it does is it essentially
+75.72s: but what it does is it essentially removes the three different lines and it
+78.19s: removes the three different lines and it
+78.20s: removes the three different lines and it combines them into a 3D model right so
+81.39s: combines them into a 3D model right so
+81.40s: combines them into a 3D model right so you can see that there's the same traits
+85.39s: you can see that there's the same traits
+85.40s: you can see that there's the same traits but this case again you can build this
+87.99s: but this case again you can build this
+88.00s: but this case again you can build this in Python and it'll just consolidate
+90.47s: in Python and it'll just consolidate
+90.48s: in Python and it'll just consolidate these lines down into uh 3D surface so
+94.27s: these lines down into uh 3D surface so
+94.28s: these lines down into uh 3D surface so there's a couple different ways you can
+95.47s: there's a couple different ways you can
+95.48s: there's a couple different ways you can visualize it but the information is
+97.03s: visualize it but the information is
+97.04s: visualize it but the information is about the same we're looking for any
+99.51s: about the same we're looking for any
+99.52s: about the same we're looking for any anomalies we're looking for the
+100.99s: anomalies we're looking for the
+101.00s: anomalies we're looking for the relationship of volatility we're looking
+102.79s: relationship of volatility we're looking
+102.80s: relationship of volatility we're looking to see if the put side is much higher
+105.15s: to see if the put side is much higher
+105.16s: to see if the put side is much higher than the call side that is very very
+106.99s: than the call side that is very very
+107.00s: than the call side that is very very frequent and that's typically for a lot
+109.55s: frequent and that's typically for a lot
+109.56s: frequent and that's typically for a lot of things like large cap stocks where
+111.19s: of things like large cap stocks where
+111.20s: of things like large cap stocks where people have big stock Holdings and they
+113.31s: people have big stock Holdings and they
+113.32s: people have big stock Holdings and they tend to hedge risk to the downside so
+115.27s: tend to hedge risk to the downside so
+115.28s: tend to hedge risk to the downside so puts get priced up a bit more then this
+118.39s: puts get priced up a bit more then this
+118.40s: puts get priced up a bit more then this typically means that there's a lower
+120.03s: typically means that there's a lower
+120.04s: typically means that there's a lower probability of a massive downside move
+121.91s: probability of a massive downside move
+121.92s: probability of a massive downside move and a higher probability of a smaller
+123.67s: and a higher probability of a smaller
+123.68s: and a higher probability of a smaller upside move and then sometimes you can
+125.79s: upside move and then sometimes you can
+125.80s: upside move and then sometimes you can find names like GameStop which is
+128.23s: find names like GameStop which is
+128.24s: find names like GameStop which is actually typically inverted where the
+131.55s: actually typically inverted where the
+131.56s: actually typically inverted where the call side out of the money calls will
+133.67s: call side out of the money calls will
+133.68s: call side out of the money calls will have much higher implied volatility than
+136.11s: have much higher implied volatility than
+136.12s: have much higher implied volatility than the put side and this is also very
+138.39s: the put side and this is also very
+138.40s: the put side and this is also very common for names that are really
+140.07s: common for names that are really
+140.08s: common for names that are really expected to have these big upside
+142.39s: expected to have these big upside
+142.40s: expected to have these big upside potential moves so you can learn a lot
+144.91s: potential moves so you can learn a lot
+144.92s: potential moves so you can learn a lot from implied volatility surface models I
+146.95s: from implied volatility surface models I
+146.96s: from implied volatility surface models I actually have a video that goes much
+148.83s: actually have a video that goes much
+148.84s: actually have a video that goes much deeper into implied volatility you can
+150.67s: deeper into implied volatility you can
+150.68s: deeper into implied volatility you can check that out on the channel be an
+152.39s: check that out on the channel be an
+152.40s: check that out on the channel be an outlier see you later

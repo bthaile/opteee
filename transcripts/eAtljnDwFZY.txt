@@ -1,0 +1,434 @@
+0.48s: What's up outliers? Today we're going to
+2.08s: talk about the covered call option
+4.16s: strategy. This is a staple. This is the
+6.32s: way a lot of people find their way into
+9.04s: the options market and it's really a
+11.04s: great way to get into options. So, I'm
+14.88s: going to talk really quick about what
+16.56s: this thing is. We're going to talk about
+18.08s: common mistakes and then most
+19.60s: importantly, I'm going to walk you
+20.80s: through a really, really simple
+22.56s: strategy, a simple way to apply
+24.80s: something like this at a high level and
+26.88s: give you something to work off of. Let's
+30.32s: dive straight in. First things first,
+32.40s: what's the purpose of a covered call?
+34.80s: Then we'll look at what the profit
+36.32s: mechanism is and then the structure
+38.08s: itself. Okay. So the purpose, the main
+40.80s: reason why people will sell covered
+43.28s: calls is you begin with a position in an
+46.72s: underlying that you already like. So
+48.56s: let's say that you like Q's, you want to
+50.32s: buy NASDAQ and you already have shares.
+52.88s: It's part of your buy and hold
+53.92s: portfolio. The shares are just sitting
+55.36s: there otherwise. Well, by selling calls
+59.04s: against the shares that you own, you can
+62.72s: decrease some of your portfolio P&L
+65.28s: volatility. And I'll show you why this
+67.28s: works. The other thing is you do capture
+71.04s: premium against the long shares that you
+73.92s: have. The concept of covered means that
+77.28s: you have the corresponding shares to
+80.24s: cover the short call. Here's what that
+82.32s: means. If I'm assigned on a short call,
+86.64s: it means that I have to sell shares of
+89.92s: the underlying. So, if I already have
+91.92s: the underlying, that just means I would
+94.16s: sell the shares that I have. A lot of
+97.04s: people will try to use this to generate
+98.96s: some kind of income from their long
+100.88s: shares, which isn't a bad idea because
+103.36s: if you think of, let's say, Q's and
+107.52s: let's say that you start with your
+110.16s: underlying down here and you want to
+112.56s: hold it for longer term, but let's say
+115.20s: that you're retired or you want to use
+117.04s: it as supplementary income. In order to
+120.48s: monetize the thing that's moving, the
+123.12s: underlying, you would need to sell some
+125.12s: of your shares. And you might not want
+127.12s: to do that. You might not want to create
+128.64s: the taxable event, which you're going to
+130.32s: do with the short options anyway, so it
+132.00s: doesn't really apply, but just
+133.44s: mentioning it. Or let's just say that
+135.68s: you don't want to decrease your
+137.04s: exposure. By doing that, by doing
+140.40s: something like covered calls, you can
+142.80s: generate something without unwinding
+146.48s: your underlying position. So what's the
+150.08s: main profit mechanism here? This is the
+151.92s: most important part that people miss.
+154.24s: The main profit mechanism from a covered
+156.80s: call is price direction up. Your max
+162.32s: profit for your structure is above your
+166.16s: short strike. This is the base structure
+169.84s: which is long shares and then short
+172.00s: calls against those shares. Notice how I
+174.00s: have something in the parenthesis here
+175.76s: though at a ratio. This is a really
+178.00s: really common mistake not doing this and
+180.08s: I'm going to talk about that in a
+181.12s: second. But your primary way that you're
+184.32s: going to make money from a
+185.37s: [clears throat] covered call is not from
+187.44s: the short calls you sell along against
+189.52s: your long shares. It's from your long
+192.40s: shares appreciating in value. The short
+196.48s: premium side of the equation is
+198.80s: supplementary. That's it. Nothing more.
+202.24s: Let's take a look at the structure
+204.08s: itself so that we gain an intuitive
+206.96s: understanding. If I start with long
+209.52s: stock, this is a P&L plot. This
+211.60s: literally just tells us as the
+213.36s: underlying changes price on the x-axis
+215.44s: what our P&L is. And right now I'm
+218.32s: starting with the model position of
+219.68s: being long 1,000 shares of QQQ at 62154.
+225.28s: And this is effectively what the base
+228.96s: condition would be for somebody that
+230.40s: wants to buy and hold a stock. Cool.
+234.40s: What we can do is sell options against
+238.32s: those shares. There's a couple
+240.64s: conditions that can happen that are very
+242.96s: simple. You'll notice that there's an
+245.60s: expiration date. All options come to
+247.84s: expiration. If you're unfamiliar with
+250.24s: the absolute basics of options, I have a
+252.64s: 101 playlist that you should definitely
+254.56s: check out. It goes into all this
+255.92s: nomenclature of some of this is a little
+257.60s: heavy, but what this comes down to is at
+261.28s: expiration, there's going to be one of
+262.72s: two conditions. Either your option will
+265.36s: be in the money or out of the money. If
+267.36s: it's in the money, you're going to sell
+270.40s: your shares at the strike price. If it's
+275.04s: out of the money, your option will
+276.88s: expire worthless and you keep the full
+278.96s: premium. That's effectively it. Now, in
+282.40s: terms of a trader lens, we can optimize
+285.12s: this a little bit. We can improve the
+287.12s: performance of it by applying some basic
+289.60s: management steps, which we're going to
+290.88s: go over in just a few moments. But this
+293.44s: is the base structure. I want you to
+295.76s: notice something when we look at those
+297.76s: two different P&L graphs, and I've
+300.48s: compared them here. Notice the first one
+302.64s: that I just showed you. That's the
+304.24s: standard covered call. The standard
+307.68s: covered call equals this formula. If I
+311.68s: have 100 shares, you need to have at
+313.68s: least 100 shares because options trade
+317.12s: in 100 share contracts called lots. So,
+322.00s: if I have 100 shares and I sell one
+325.92s: short call, that means that at some
+329.20s: point my deltas are going to equal my
+331.76s: long deltas and short deltas will
+333.36s: balance and cancel each other out. And
+336.16s: that's where you hit your max profit.
+339.12s: The way to think about that is it's just
+341.12s: going to be at your short strike plus
+343.52s: the premium you collect. So in this
+346.24s: scenario here, if I sell the 640s for
+349.52s: 426, my upside break even at expiration
+355.84s: gives me a little bit of a buffer off of
+360.08s: this specific point. It'll be again
+362.88s: 64426.
+365.76s: That's my upside, not break even. I
+367.84s: apologize. That's my upside max profit.
+370.16s: That's where my upside is now capped. My
+373.44s: downside break even is the inverse. It
+377.44s: just takes whatever your spot price is.
+379.44s: It gives you a little bit of a buffer if
+381.68s: the underlying goes down. Now, one of
+384.16s: the most common misunderstandings and we
+386.88s: have a bunch to get through, but one of
+389.12s: them is people will sell these calls as
+392.96s: a hedge.
+395.20s: There's a very very slight hedge effect.
+400.64s: That hedge effect does not compensate
+403.44s: for the upside profit being capped. And
+406.32s: here's what I mean. If we look at a
+408.48s: scenario here where we have
+412.48s: 10 calls against our shares and we look
+417.36s: at a couple different scenarios. Let's
+419.04s: say that the underlying drops 5%. You
+422.00s: lose 27 grand. Then if it drops 10, you
+425.68s: lose 58. And if it drops 15, you lose
+429.44s: 89. If I get rid of this, I lose 31
+435.44s: without any options. So we go from 27 to
+439.76s: 31.
+442.08s: 10% drop, we go to 62. From 58, so about
+446.56s: 4 grand. And then 15% we go 89 to 93. So
+453.52s: there is a little bit of a hedge, but I
+456.16s: want you to pay attention to the upside.
+458.48s: If the underlying goes up by 5% with no
+462.40s: calls, we make 31 grand. With them, we
+465.92s: make 15
+468.32s: half.
+470.16s: This is the issue. You're
+473.92s: very very slightly hedging the downside
+476.40s: by a few grand in this scenario, but
+478.88s: your upside you are absolutely crushing
+481.36s: it. If we rise 10%, we make 20 grand
+487.28s: against 62.
+490.24s: And if we go up 15%, we would have made
+493.20s: 93 grand against 21.
+497.92s: The way to think about these short calls
+500.16s: is they can help amplify a position, but
+502.88s: this is exactly why I highlight that
+505.20s: concept of a ratio. If instead of 1,000
+510.32s: shares with 10 short calls against it,
+512.56s: if instead I do five, I cover 50% of the
+517.76s: shares. I'm still giving up a bunch of
+520.80s: the upside, but I'm striking a balance.
+524.64s: The way to think about making this
+526.16s: decision is based on how much you think
+528.16s: the underlying is going to go up. If
+530.32s: you're really, really bullish in
+531.76s: something, you are going to want to have
+534.80s: fewer short calls against it. If it's
+537.12s: something that's oscillating sideways or
+539.52s: struggling, a great example is IBIT. I
+542.48s: have a covered strangle, which is a
+544.08s: strategy that uses part of this in IBIT
+546.96s: that's been going down and sideways.
+548.56s: I've been more aggressive with the short
+550.88s: calls because they do allow me to take
+552.96s: in some profit as the underlying
+556.00s: condition is not doing effectively what
+558.64s: I want, which is going up. So, you do
+561.76s: still need to come up with an assessment
+563.92s: on what you think is going to happen
+565.52s: because that's going to impact how many
+567.52s: short calls you want. The way to think
+569.12s: about it is how much upside do I want to
+572.00s: give away to make X number of dollars
+575.04s: upfront. So, in this scenario, I'm
+578.24s: cutting the premium down pretty
+580.48s: significantly.
+582.00s: In this case, we go from like 2200 bucks
+586.56s: in premium, which is the five lot.
+588.88s: Whereas if we were still at the 10 lot,
+591.36s: as you know, we're at like 4,200.
+595.04s: You're giving up some of the premium,
+597.20s: but it's to favor this broader upside
+600.00s: condition. Okay. A couple mistakes that
+602.72s: I want to rifle through. We already
+604.40s: talked about the ratio. One of the
+606.80s: things that I think people forget to do
+609.28s: is to rebalance their deltas. I have a
+611.68s: video that talks about managing short
+614.16s: options by balancing deltas, but it's
+616.32s: really simple.
+618.24s: If I choose to sell the 29day 640 calls,
+623.84s: those are about a 27 delta. If the
+626.08s: underlying starts to go down, I'm going
+627.68s: to lose a bunch of deltas, which means
+630.88s: right now if the underlying goes down by
+632.80s: a dollar, I'm going to make 27. But
+635.84s: let's say it goes down a bit and my
+637.60s: option is now at a 17 delta. That means
+640.88s: if the underlying goes down another
+642.40s: dollar, I'm only going to see 17 cents.
+644.88s: So, I don't want to just let my deltas
+647.60s: get super far out of the money because
+650.08s: otherwise, if it continues to go down,
+652.64s: I'm really losing the effect of having
+654.96s: the short call. The way that I think
+657.12s: about managing these more often than not
+659.28s: is just by creating a band around my
+662.24s: deltas. It could be whatever you want.
+664.00s: If you typically sell a 30 delta, 40
+666.16s: delta, and you see it start moving, you
+668.08s: know, 10 deltas, 15 deltas outside that
+670.16s: range, then you can rebalance it. And
+672.32s: that can work for either direction. if
+674.72s: the underlying is going against you. You
+676.40s: don't just have to sit and wait. And
+678.24s: we're actually going to talk a little
+679.60s: bit about rolling in a minute. But the
+683.20s: more important part is it shouldn't be
+684.72s: random. You should have an analysis of
+687.20s: what you think the underlying is going
+688.48s: to do. And then you should have a plan
+691.36s: hopefully that you've back tested and
+693.84s: live tested via whatever methodology you
+697.60s: use. But you should have some sort of
+700.00s: information so that you're not just
+701.60s: taking a a blanket guess. Early
+704.64s: assignment doesn't have to happen as
+706.56s: long as you're watching the short calls.
+708.48s: Short calls become at risk of early
+710.40s: assignment if there's really far in the
+713.04s: money. If there's very little exttrinsic
+715.36s: value left and particularly if there's a
+717.60s: dividend coming up, if the dividend
+720.24s: exceeds the existing exttrinsic value,
+722.96s: you're at massive risk of early
+724.64s: assignment because it makes sense for
+726.16s: the other side to exercise their option.
+728.64s: No reason to let that happen. The other
+730.88s: thing is you can do a lot of things if
+733.84s: you want to keep your inventory, which
+735.84s: means you don't just have to sit and
+737.28s: wait to expiration to see what happens.
+740.48s: You can absolutely start managing your
+742.72s: options via rolling if you want to keep
+744.80s: your inventory or you can even do stuff
+746.56s: like buy more shares when spot equals
+749.76s: your strike price and then have LIFO
+752.16s: accounting last and first out so that
+754.64s: you're just effectively flat on that
+756.72s: part of your trade but you keep your
+758.00s: shares in your original basis stuff like
+760.00s: that. Remember the primary profit
+762.80s: mechanism here is not the short call.
+766.08s: It's the long equity or long security
+769.84s: going up. You do not want to over
+772.64s: prioritize the short call. Now, this is
+775.20s: if you're looking for growth. If you're
+776.56s: looking for income, slightly different
+778.48s: story.
+780.56s: Just talked about that.
+782.96s: When spot price equals your strike is
+786.72s: the best time for you to start thinking
+788.72s: about rolling. And I have an entire
+790.64s: video that goes through rolling in
+792.40s: detail, but the cliff notes is the
+794.88s: further your short call falls in the
+796.56s: money, the less choices you have. You
+799.12s: don't want to wait too long, but you
+801.92s: don't want to be hyperactive either. If
+804.48s: you start rolling way too fast, then you
+807.12s: can run out of expiration liquidity,
+809.04s: which those other videos will go over.
+811.44s: Volatility is a really, really important
+813.52s: part of this equation, and I will show
+814.96s: you. A common mistake is people will say
+817.52s: like, "Oh, you should only sell options
+819.60s: when implied volatility percentile or
+821.52s: rank is high." And it's simply not true.
+823.36s: Some of the best possible times to sell
+825.20s: options even in a ratio covered call,
+827.28s: which is the strategy I'm referring to,
+829.20s: where we sell the short calls at a ratio
+831.12s: to the long. I have a video on that as
+832.88s: well. But some of the best times is
+835.92s: actually when volatility is a little bit
+837.36s: lower. You want to avoid extremes is
+839.36s: effectively what it boils down to. If
+840.80s: it's like 85 percentile or higher,
+843.04s: typically priced pretty fair. And if
+844.56s: it's too low, then you're not getting
+845.84s: compensated enough for when it does
+847.36s: eventually pop. You want to be somewhere
+849.04s: in the middle. But a lot of times if V
+851.20s: is like 15 percentile, 20 percentile,
+853.52s: that can be really lucrative. But you
+855.68s: still want to try to maximize what
+857.28s: you're doing. So if I look at the
+859.12s: implied volatility percentile for QQQ
+861.28s: across some different expirations. I can
+863.20s: see that the 30-day expiration and the
+864.88s: 60-day are about the same. They're both
+866.32s: like 48 49 percentile. But I can see
+868.48s: that the 14-day expiration is super
+870.24s: high, 65% relative. So, if I don't mind
+874.40s: the rest of the traits of options and
+877.52s: that specific option by being closer in
+879.52s: time, maybe I like being a little closer
+882.16s: in time to capture that higher implied
+884.08s: volatility percentile. There's
+886.48s: definitely a little bit of premium baked
+888.00s: into that. But remember, we have to pay
+890.40s: attention to the profile of the Greeks.
+892.08s: What does that mean? Well, there are
+893.92s: some basics that we know. The closer to
+896.32s: that you are to at the money, the more
+898.56s: exttrinsic value there is. However, the
+902.00s: higher your gamma is, the higher your
+904.88s: overall theta decay, which is good.
+907.84s: These factors should influence your
+910.32s: decision-m because, for example, if I
+912.80s: look at the gamma of my option, let's
+916.16s: take a look at the 640s. The gamma in
+918.56s: the 29-day expiration is like 012. And
+923.04s: if I go to that 14-day expiration that I
+925.20s: was just looking at and look at like a
+926.80s: similar delta, it's
+929.92s: 017.
+931.52s: So it's significantly higher. Why?
+933.92s: Because as we get closer in time, your
+935.92s: gamma is going to peak, especially for
+938.08s: being around at the money. It's because
+940.40s: all options are in the process of making
+941.92s: a big decision in the money or out of
+943.52s: the money. Point that I'm making here is
+945.68s: that you have to understand how options
+947.52s: behave so that you can make good
+948.88s: decisions. Another one is sometimes
+950.48s: people will go f really really far out.
+952.48s: They'll go out 147 days and they'll say
+955.04s: like, "Oh, damn. I could get $1,000 if I
+958.56s: sell these 675s." That's great. But take
+961.20s: a look at your daily theta. You're going
+963.28s: to make 9.
+965.52s: How does that compare to something
+966.88s: that's a bit closer in time, similar
+969.36s: delta-ish?
+971.04s: My theta here is 17 cents, almost
+974.40s: double.
+976.40s: You have to strike the balance for what
+978.80s: you're looking for. All right. What's a
+980.48s: simple way to go about this? Buy to open
+983.36s: shares in something that you like using
+985.12s: whatever analysis process you use. You
+987.12s: effectively want to start with an
+988.48s: underlying that you like anyways. Then
+991.20s: you want to conduct your analysis.
+993.28s: Figure out what kind of ratio is
+997.20s: relative to your hypothesis in the
+1000.96s: underlying and then sell options at a
+1003.52s: ratio against that. what days to
+1005.68s: expiration. It can be kind of whatever
+1007.20s: you want, but again, it's striking that
+1009.44s: balance of the Greek profile. The closer
+1011.84s: you are in time, the better your theta
+1013.60s: decay is overall, but the more active
+1016.16s: those options are going to be. So, you
+1017.92s: can choose to be a little bit further
+1019.28s: out and just continue to keep them
+1021.36s: further out. A good way to think of it
+1022.96s: is something like 15 days out to 50
+1026.48s: somewhere in there, depending on really
+1028.48s: what your preference is. And then
+1030.64s: there's two scenarios that will happen.
+1032.72s: either at some point spot price will go
+1036.72s: down and your short calls will be in
+1038.96s: profit. You can just roll them down to
+1041.28s: keep your exposure. If spot starts to
+1044.08s: rally, as soon as spot equals your
+1046.32s: strike, you should look at how you want
+1048.16s: to manage it. You can take it down for a
+1049.92s: loss. You could do nothing and see if
+1051.84s: your shares get called away or you can
+1055.04s: begin a rolling cadence and you can roll
+1057.92s: out, you can roll out and up, you can
+1060.16s: roll out, up, add size. There's a bunch
+1063.12s: of different ways you can manage that.
+1064.32s: And again, I have a bunch of videos on
+1066.16s: rolling that I will link to down below.
+1068.96s: This is a great starter strategy because
+1070.80s: it begins with something you were going
+1073.44s: to do anyways. Find a stock that you
+1075.60s: like, buy it, and hold it. It's a way to
+1077.44s: amplify around it. As always, if you
+1079.60s: have any questions, let me know. Be an
+1080.96s: outlier. See you guys later.

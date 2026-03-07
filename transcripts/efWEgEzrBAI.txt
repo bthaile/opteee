@@ -1,97 +1,478 @@
-0.00s: Option volatility, it's super straight forward.
-2.96s: There's really no need for a video on it because you already know the difference
-7.20s: between implied realized, future realized, forecast, historic
-12.48s: altilities. That all makes sense to you. Am I right?
-15.04s: You're anything like me when I first started out trading that all probably sounds like a bunch of
-18.88s: nothing. So the goal of this video is to walk through all of those to give you at least a surface
-25.12s: level understanding of these different kinds of volatility because they are different things
-28.72s: so that you understand how this all fits into options markets. What's up everybody?
-34.00s: Eric here. Welcome back to all the outliers and shout outs of the Patreon family.
-37.36s: You guys make content like this possible. If what I do helps you out, consider signing up.
-42.16s: Let's get started. So we have option volatility. What is volatility? Well, really it's just a
-48.88s: fancy term for deviation or dispersion. What does this mean? Simple. If you take a look at this
-54.96s: chart of Microsoft, you see these linear regression channels. I have a video on those actually
-60.72s: I'll throw in the notes below, but this middle line here is kind of like a line of best fit
-65.92s: for all of the data on this chart. So when we move up above or down below, that's dispersion from
-73.12s: whatever this mean is. So that's what we're talking about. The variance of something. And in this
-80.88s: case in trading, we're specifically referring to different securities. So let's talk about the
-86.64s: common types of volatility. There is implied historic realized future realized and forecast.
-94.00s: We're going to go through all of these quickly so that you have a working understanding of these.
-98.32s: And then at the end of the video, I'm going to walk you through some of the common scales for
-102.40s: implied volatility because if you're an obfuscist trader, that will be important to you to understand
-106.88s: the difference between implied volatility rank and implied volatility percentile because they're
-111.68s: not the same thing. So let's start with implied volatility. In short, this is expected volatility
-118.96s: for various time frames that we infer from an options price. So because I was looking at Microsoft
-125.92s: before, we're going to keep looking at Microsoft. And we can figure out what the implied volatility
-131.44s: is for every single one of these options. That's what this column is here for the put side and this
-136.32s: column here for the call side. The reason why this matters is because if you think about trading
-142.96s: options, they have two different pieces to their premium. They have intrinsic and extrinsic value.
-151.12s: Implied volatility lives in the extrinsic value, the time value of an option. So we can isolate
-159.92s: what the implied volatility is per strike. We can look at the implied volatility per expiration
-166.80s: cycle. So for example, again, looking at Microsoft, the 15 December expiration cycle, the implied
-172.48s: volatility there is a 21.25 percent that infers a 12.96 expected move within one standard deviation.
-181.36s: That's all this is. So it is the expected movement of something. So implied volatility has a lot of
-188.72s: uses to us. Now what is historic volatility? It measures the realize volatility for a specific
-196.56s: period. So if we go back here and we look at Microsoft and we look at something like this,
-204.00s: this little handy dandy volatility thingscript that I use and kind of modify it quite a bit over time.
-211.20s: But if you notice there is hv2 hv5 hv21, this is historic volatility for different time frames.
-220.16s: So you can isolate what the volatility was for specific time frames. Now realize volatility
-227.44s: in can be a couple things. When we're talking about realize volatility in general parlance in
-233.12s: general speak, it is the volatility that's realized in the underlying. It's also known as the
-238.32s: statistical volatility. A lot of times these two will be used interchangeably and that's okay
-244.24s: as long as we understand that realize volatility can also be future realized volatility. What the
-252.40s: hell is that? Well, this is the realized prediction of future vol and this is different than forecast
-262.32s: volatility, which is the prediction of future volatility. So think of it this way, we can forecast
-268.64s: volatility if you have an implied volatility surface and you're a sophisticated trader, you create
-273.68s: your own assessment of volatility of just forecast volatility. Most options traders, especially on
-280.16s: the retail side, we are dealing with implied volatility. This is volatility that is derived from
-285.92s: the options price. So the smart people in the market are looking at their forecasted volatility and
-293.44s: then us retail traders are looking at what's implied via the pricing of an option. Then you can
-300.32s: assess future realized volatility, which tells us how accurate the prediction was of fall.
-308.96s: Makes sense? Good. Great. Let's now talk about some implied volatility scales. The reason why
-316.88s: this matters is if we take a look at Microsoft here and we look at the current implied volatility,
-324.80s: which is 21%, 21.29%, is that higher low? You can't really tell because if there's nothing to
-333.68s: compare it against, you can have things that have 130% implied volatility that's actually not very high
-342.00s: relative to what that specific products implied volatility typically is. Again, if you think about
-348.40s: volatility as the dispersion of things, if we look at the implied volatility for Microsoft, it's
-353.60s: 21.29%. And then if you look at it for Tesla, it's 49%. So we expect Tesla to be a little bit more
-361.84s: volatile than Microsoft. But when we look at this 49% is this high relative for Tesla, well,
-367.68s: this is exactly why we need things like IV rank and IV percentile. Now there's a big difference
-373.60s: between these two. And in my opinion, IV percentile is a much better metric that is less prone to skew.
-382.48s: Why is that? Well, let's take a look at how implied volatility rank is calculated. We have the
-387.20s: current IV. We subtract the 52 week IV low. Then we divide that by the 52 week IV high less the 52
-396.24s: week IV low. So what you'll notice is we're using the extremes. We're using the high. We're using
-401.68s: the low. Now in typical markets, the difference between IV rank and IV percentile is not that crazy.
-410.40s: However, when we are in more extreme markets, this can be massively different, which I'll show you
-416.80s: in just a second. But before that, let's take a look at what IV percentile is. Instead of using
-422.16s: the extremes, we take account of trading days that are below the current IV. Then we divide that
-430.40s: by the number of trading days. So typically you use something like 252. So this is just looking at
-436.16s: a pure tally. It doesn't really care what the extremes were, what it cares is where we are
-442.72s: relative to its previous performance. Now, a fun fact. This is from think or swim. And the current
-449.68s: IV percentile here actually is IV rank. This is completely wrong. And you'll see that in just a
-455.92s: second because I want you to do the math for both of these. Why do we why do we have to go through
-461.60s: this every time? This one's a little more difficult. You kind of can do the math on your own. I have
-465.84s: a think script for it. But I do want you to do the math for the IV rank for this. And then throw
-472.40s: it in the comments below what you got before I click on to see if you are correct. Now, you'll see
-478.96s: that if we do the math on this, the IV rank for this scenario, the current IV is 19.38%. So that's
-486.48s: this here. Then we're going to take the 52 week IV low, which is from here 0.177. Then we're going to
-492.40s: divide that by the 52 week IV high, which is 0.442 less 52 week IV low again 0.177. And you're going to
-500.16s: get 6.3%. Notice that this happens to be the same in this scenario. So what am I referring to then
-508.08s: when we're talking about them being quite different? Simple. In this example, the IV percentile
-514.80s: currently for this product, which was Apple is 5%. So if this is actually IV percentile, this
-522.16s: should be 5%, not 6%. But this is actually IV rank. Now, this doesn't seem like that big of a
-530.16s: difference because it's not. The market has been relatively consolidated for periods of time now.
-535.36s: However, if you look at old performance, this is an OG video of Eric. Check that out. Some Eric
-542.56s: conception. This was during COVID. And I don't remember what product I was looking at here. But
-547.92s: the important part is if you look at the IV rank in this scenario, whatever it was, it was 30.26%.
-555.04s: However, IV percentile was 66%. So during COVID, when there's a lot of volatility, this is literally
-563.04s: two times. That's a massive difference. When we're looking at things now, it's not that big of a
-568.48s: difference because things are relatively low. So you're not going to see that big of a skew. But
-572.72s: it's important for you to know that IV rank is much more skew prone than IV percentile. You
-579.60s: are going to get a better assessment of IV's performance against itself in an individual product via
-586.24s: percentile versus IV rank. That is the long and short of it. So as always, if you have any questions,
-592.96s: hit me up. Let me know. Make sure you hit up think or swim. Let them know that they're wrong. I've
-596.96s: let them know this a million times. They don't change it. But who knows? Maybe Schwab will get it
-601.60s: together and fix it for us. But otherwise, you should know that that is not IV percentile. That's
-606.00s: rank and it is prone to skew. If there's anything I missed, throw it in the comments below. Don't
-610.24s: forget like, subscribe, share, be an outlier. It's the only way to be. Catch you all later.
+0.12s: option volatility it's super
+2.00s: option volatility it's super straightforward there's really no need
+3.99s: straightforward there's really no need
+4.00s: straightforward there's really no need for a video on it because you already
+5.95s: for a video on it because you already
+5.96s: for a video on it because you already know the difference between implied
+8.51s: know the difference between implied
+8.52s: know the difference between implied realized future realized forecast
+12.07s: realized future realized forecast
+12.08s: realized future realized forecast historic volatilities that all makes
+13.83s: historic volatilities that all makes
+13.84s: historic volatilities that all makes sense to you am I right you're anything
+15.59s: sense to you am I right you're anything
+15.60s: sense to you am I right you're anything like me when I first started out trading
+17.35s: like me when I first started out trading
+17.36s: like me when I first started out trading that all Probably sounds like a bunch of
+18.99s: that all Probably sounds like a bunch of
+19.00s: that all Probably sounds like a bunch of nothing so the goal of this video is to
+21.79s: nothing so the goal of this video is to
+21.80s: nothing so the goal of this video is to walk through all of those to give you at
+24.27s: walk through all of those to give you at
+24.28s: walk through all of those to give you at least a surface level understanding of
+26.03s: least a surface level understanding of
+26.04s: least a surface level understanding of these different kinds of volatility
+27.27s: these different kinds of volatility
+27.28s: these different kinds of volatility because they are different things so
+28.95s: because they are different things so
+28.96s: because they are different things so that you understand how this fits into
+31.27s: that you understand how this fits into
+31.28s: that you understand how this fits into options markets what's up everybody Eric
+34.31s: options markets what's up everybody Eric
+34.32s: options markets what's up everybody Eric here welcome back to all the outliers
+35.59s: here welcome back to all the outliers
+35.60s: here welcome back to all the outliers and a shout out to the patreon family
+37.39s: and a shout out to the patreon family
+37.40s: and a shout out to the patreon family you guys make content like this possible
+39.23s: you guys make content like this possible
+39.24s: you guys make content like this possible if what I do helps you out consider
+40.87s: if what I do helps you out consider
+40.88s: if what I do helps you out consider signing up let's get started so we have
+44.99s: signing up let's get started so we have
+45.00s: signing up let's get started so we have option volatility what is volatility
+47.47s: option volatility what is volatility
+47.48s: option volatility what is volatility well really it's just a fancy term for
+50.03s: well really it's just a fancy term for
+50.04s: well really it's just a fancy term for deviation or dispersion what does this
+52.91s: deviation or dispersion what does this
+52.92s: deviation or dispersion what does this mean simple if you take a look at this
+54.95s: mean simple if you take a look at this
+54.96s: mean simple if you take a look at this chart of Microsoft you see these linear
+57.63s: chart of Microsoft you see these linear
+57.64s: chart of Microsoft you see these linear regression channels I have a video on
+60.03s: regression channels I have a video on
+60.04s: regression channels I have a video on those actually I'll throw in the notes
+61.71s: those actually I'll throw in the notes
+61.72s: those actually I'll throw in the notes below but this middle line here is kind
+64.47s: below but this middle line here is kind
+64.48s: below but this middle line here is kind of like a line of best fit for all of
+66.59s: of like a line of best fit for all of
+66.60s: of like a line of best fit for all of the data on this chart so when we move
+69.43s: the data on this chart so when we move
+69.44s: the data on this chart so when we move up above or down below that's dispersion
+72.91s: up above or down below that's dispersion
+72.92s: up above or down below that's dispersion from whatever this mean is so that's
+76.47s: from whatever this mean is so that's
+76.48s: from whatever this mean is so that's what we're talking about the variance of
+79.79s: what we're talking about the variance of
+79.80s: what we're talking about the variance of something and in this case in trading
+81.95s: something and in this case in trading
+81.96s: something and in this case in trading we're specifically referring to
+84.19s: we're specifically referring to
+84.20s: we're specifically referring to different Securities so let's talk about
+86.55s: different Securities so let's talk about
+86.56s: different Securities so let's talk about the common types of volatility there is
+89.35s: the common types of volatility there is
+89.36s: the common types of volatility there is implied historic realized future
+91.99s: implied historic realized future
+92.00s: implied historic realized future realized and forecast we're going to go
+94.51s: realized and forecast we're going to go
+94.52s: realized and forecast we're going to go through all of these quickly so that you
+96.15s: through all of these quickly so that you
+96.16s: through all of these quickly so that you have a working understanding of these
+98.35s: have a working understanding of these
+98.36s: have a working understanding of these and then at the end of the video I'm
+99.67s: and then at the end of the video I'm
+99.68s: and then at the end of the video I'm going to walk you through some of the
+101.07s: going to walk you through some of the
+101.08s: going to walk you through some of the common scales for implied volatility
+103.47s: common scales for implied volatility
+103.48s: common scales for implied volatility because if you're an options Trader that
+104.87s: because if you're an options Trader that
+104.88s: because if you're an options Trader that will be important to you to understand
+106.79s: will be important to you to understand
+106.80s: will be important to you to understand the difference between implied
+108.27s: the difference between implied
+108.28s: the difference between implied volatility Rank and implied volatility
+110.47s: volatility Rank and implied volatility
+110.48s: volatility Rank and implied volatility percentile because they're not the same
+112.27s: percentile because they're not the same
+112.28s: percentile because they're not the same thing so let's start with implied
+114.43s: thing so let's start with implied
+114.44s: thing so let's start with implied volatility in short this is expected
+117.99s: volatility in short this is expected
+118.00s: volatility in short this is expected volatility for various time frames that
+120.91s: volatility for various time frames that
+120.92s: volatility for various time frames that we infer from an options price so
+124.51s: we infer from an options price so
+124.52s: we infer from an options price so because I was looking at Microsoft
+125.99s: because I was looking at Microsoft
+126.00s: because I was looking at Microsoft before we're going to keep looking at
+127.35s: before we're going to keep looking at
+127.36s: before we're going to keep looking at Microsoft and we can figure out what the
+130.43s: Microsoft and we can figure out what the
+130.44s: Microsoft and we can figure out what the implied volatility is for every single
+132.35s: implied volatility is for every single
+132.36s: implied volatility is for every single one of these options that's what this
+134.15s: one of these options that's what this
+134.16s: one of these options that's what this column is here for the put side and this
+136.39s: column is here for the put side and this
+136.40s: column is here for the put side and this column here for the call side the reason
+139.43s: column here for the call side the reason
+139.44s: column here for the call side the reason why this matters is because if you think
+141.71s: why this matters is because if you think
+141.72s: why this matters is because if you think about trading options they have two
+145.79s: about trading options they have two
+145.80s: about trading options they have two different pieces to their premium they
+148.51s: different pieces to their premium they
+148.52s: different pieces to their premium they have intrinsic and extrinsic value
+151.19s: have intrinsic and extrinsic value
+151.20s: have intrinsic and extrinsic value implied volatility lives in the
+153.95s: implied volatility lives in the
+153.96s: implied volatility lives in the extrinsic value the time value of an
+157.39s: extrinsic value the time value of an
+157.40s: extrinsic value the time value of an option so we can isolate what the
+160.63s: option so we can isolate what the
+160.64s: option so we can isolate what the implied volatility is per strike we can
+163.75s: implied volatility is per strike we can
+163.76s: implied volatility is per strike we can look at the implied volatility per
+165.95s: look at the implied volatility per
+165.96s: look at the implied volatility per expiration cycle so for example again
+168.95s: expiration cycle so for example again
+168.96s: expiration cycle so for example again looking at Microsoft the 15 December
+170.95s: looking at Microsoft the 15 December
+170.96s: looking at Microsoft the 15 December expiration cycle the implied volatility
+173.07s: expiration cycle the implied volatility
+173.08s: expiration cycle the implied volatility there is a
+174.35s: there is a
+174.36s: there is a 21.25% that infers a
+177.55s: 21.25% that infers a
+177.56s: 21.25% that infers a 12.96 expected move with within one
+180.19s: 12.96 expected move with within one
+180.20s: 12.96 expected move with within one standard deviation that's all this is so
+183.11s: standard deviation that's all this is so
+183.12s: standard deviation that's all this is so it is the expected movement of something
+186.59s: it is the expected movement of something
+186.60s: it is the expected movement of something so implied volatility has a lot of uses
+189.19s: so implied volatility has a lot of uses
+189.20s: so implied volatility has a lot of uses to us now what is historic volatility it
+192.71s: to us now what is historic volatility it
+192.72s: to us now what is historic volatility it measures the realized volatility for a
+195.87s: measures the realized volatility for a
+195.88s: measures the realized volatility for a specific period so if we go back here
+199.15s: specific period so if we go back here
+199.16s: specific period so if we go back here and we look at Microsoft and we look at
+202.27s: and we look at Microsoft and we look at
+202.28s: and we look at Microsoft and we look at something like this this little handy
+204.95s: something like this this little handy
+204.96s: something like this this little handy dandy volatility think script that I use
+208.95s: dandy volatility think script that I use
+208.96s: dandy volatility think script that I use and kind of modify it quite a bit over
+210.59s: and kind of modify it quite a bit over
+210.60s: and kind of modify it quite a bit over time but if you notice there's hv2 hv5
+214.31s: time but if you notice there's hv2 hv5
+214.32s: time but if you notice there's hv2 hv5 HV 21 this is historic volatility for
+218.91s: HV 21 this is historic volatility for
+218.92s: HV 21 this is historic volatility for different time frames so you can isolate
+221.79s: different time frames so you can isolate
+221.80s: different time frames so you can isolate what the volatility was for specific
+224.79s: what the volatility was for specific
+224.80s: what the volatility was for specific time frames now realized volatility in
+228.07s: time frames now realized volatility in
+228.08s: time frames now realized volatility in can be a couple things when we're
+229.95s: can be a couple things when we're
+229.96s: can be a couple things when we're talking about realized volatility in
+232.07s: talking about realized volatility in
+232.08s: talking about realized volatility in general parlament and general speak it
+234.15s: general parlament and general speak it
+234.16s: general parlament and general speak it is the volatility that's realized in the
+236.87s: is the volatility that's realized in the
+236.88s: is the volatility that's realized in the underlying it's also known as the
+238.39s: underlying it's also known as the
+238.40s: underlying it's also known as the statistical volatility a lot of times
+240.91s: statistical volatility a lot of times
+240.92s: statistical volatility a lot of times these two will be used interchangeably
+243.31s: these two will be used interchangeably
+243.32s: these two will be used interchangeably and that's okay as long as we understand
+246.35s: and that's okay as long as we understand
+246.36s: and that's okay as long as we understand that realized volatility can also be
+249.47s: that realized volatility can also be
+249.48s: that realized volatility can also be future realized volatility what the hell
+252.63s: future realized volatility what the hell
+252.64s: future realized volatility what the hell is that what well this is the realized
+257.27s: is that what well this is the realized
+257.28s: is that what well this is the realized prediction of future V and this is
+260.63s: prediction of future V and this is
+260.64s: prediction of future V and this is different than forecast volatility which
+263.43s: different than forecast volatility which
+263.44s: different than forecast volatility which is the prediction of future volatility
+266.51s: is the prediction of future volatility
+266.52s: is the prediction of future volatility so think of it this way we can forecast
+268.67s: so think of it this way we can forecast
+268.68s: so think of it this way we can forecast volatility if you have an implied
+270.35s: volatility if you have an implied
+270.36s: volatility if you have an implied volatility surface and you're a
+271.99s: volatility surface and you're a
+272.00s: volatility surface and you're a sophisticated Trader you create your own
+274.23s: sophisticated Trader you create your own
+274.24s: sophisticated Trader you create your own assessment of volatility you've just
+275.95s: assessment of volatility you've just
+275.96s: assessment of volatility you've just forecasted volatility most options
+278.83s: forecasted volatility most options
+278.84s: forecasted volatility most options Traders especially on the retail side we
+281.35s: Traders especially on the retail side we
+281.36s: Traders especially on the retail side we are dealing with implied volatility this
+283.47s: are dealing with implied volatility this
+283.48s: are dealing with implied volatility this is volatility that is derived from the
+285.99s: is volatility that is derived from the
+286.00s: is volatility that is derived from the options price so the smart people in the
+288.95s: options price so the smart people in the
+288.96s: options price so the smart people in the market are looking at their forecasted
+292.43s: market are looking at their forecasted
+292.44s: market are looking at their forecasted volatility and then us retail Traders
+295.15s: volatility and then us retail Traders
+295.16s: volatility and then us retail Traders are looking at what's implied via the
+297.51s: are looking at what's implied via the
+297.52s: are looking at what's implied via the pricing of an option then you can assess
+301.35s: pricing of an option then you can assess
+301.36s: pricing of an option then you can assess future realized volatility which tells
+303.95s: future realized volatility which tells
+303.96s: future realized volatility which tells us how accurate the prediction was of
+308.15s: us how accurate the prediction was of
+308.16s: us how accurate the prediction was of fall make sense good great let's now
+312.87s: fall make sense good great let's now
+312.88s: fall make sense good great let's now talk about some implied volatility
+315.51s: talk about some implied volatility
+315.52s: talk about some implied volatility scales the reason why this matters is if
+318.75s: scales the reason why this matters is if
+318.76s: scales the reason why this matters is if we take a look at Microsoft here and we
+322.27s: we take a look at Microsoft here and we
+322.28s: we take a look at Microsoft here and we look at the current implied volatility
+324.87s: look at the current implied volatility
+324.88s: look at the current implied volatility which is 21% 21.29% is that high or low
+330.71s: which is 21% 21.29% is that high or low
+330.72s: which is 21% 21.29% is that high or low you can't really tell because there's
+333.31s: you can't really tell because there's
+333.32s: you can't really tell because there's nothing to compare it against you can
+335.39s: nothing to compare it against you can
+335.40s: nothing to compare it against you can have things that have
+337.19s: have things that have
+337.20s: have things that have 130% implied volatility that that's
+340.31s: 130% implied volatility that that's
+340.32s: 130% implied volatility that that's actually not very high relative to what
+343.27s: actually not very high relative to what
+343.28s: actually not very high relative to what that specific products implied
+345.27s: that specific products implied
+345.28s: that specific products implied volatility typically is again if you
+347.99s: volatility typically is again if you
+348.00s: volatility typically is again if you think about volatility as the dispersion
+350.15s: think about volatility as the dispersion
+350.16s: think about volatility as the dispersion of things if we look at the implied
+351.99s: of things if we look at the implied
+352.00s: of things if we look at the implied volatility for Microsoft that's 21.29%
+355.03s: volatility for Microsoft that's 21.29%
+355.04s: volatility for Microsoft that's 21.29% and then if you look at it for Tesla
+357.15s: and then if you look at it for Tesla
+357.16s: and then if you look at it for Tesla it's 49% so we expect Tesla to be a
+361.31s: it's 49% so we expect Tesla to be a
+361.32s: it's 49% so we expect Tesla to be a little bit more volatile than Microsoft
+363.31s: little bit more volatile than Microsoft
+363.32s: little bit more volatile than Microsoft but when we look at this 49% is this
+365.59s: but when we look at this 49% is this
+365.60s: but when we look at this 49% is this High relative for Tesla well this is
+368.23s: High relative for Tesla well this is
+368.24s: High relative for Tesla well this is exactly why we need things like IV Rank
+370.51s: exactly why we need things like IV Rank
+370.52s: exactly why we need things like IV Rank and IV percentile now there's a big
+373.15s: and IV percentile now there's a big
+373.16s: and IV percentile now there's a big difference between these two and in my
+375.39s: difference between these two and in my
+375.40s: difference between these two and in my opinion IV percentile is a much better
+379.11s: opinion IV percentile is a much better
+379.12s: opinion IV percentile is a much better metric that is less prone to skew why is
+383.27s: metric that is less prone to skew why is
+383.28s: metric that is less prone to skew why is that well let's take a look at how
+384.95s: that well let's take a look at how
+384.96s: that well let's take a look at how implied volatility rank is calculated we
+386.91s: implied volatility rank is calculated we
+386.92s: implied volatility rank is calculated we have the current IV we subtract the 52
+390.19s: have the current IV we subtract the 52
+390.20s: have the current IV we subtract the 52 we IV low then we divide that by the 52e
+394.23s: we IV low then we divide that by the 52e
+394.24s: we IV low then we divide that by the 52e IV High less the 52e IV low so what
+397.95s: IV High less the 52e IV low so what
+397.96s: IV High less the 52e IV low so what you'll notice is we're using the
+399.47s: you'll notice is we're using the
+399.48s: you'll notice is we're using the extremes we're using the high we're
+401.43s: extremes we're using the high we're
+401.44s: extremes we're using the high we're using the low now in typical markets the
+405.83s: using the low now in typical markets the
+405.84s: using the low now in typical markets the difference between IV Rank and IV
+407.87s: difference between IV Rank and IV
+407.88s: difference between IV Rank and IV percentile is not that crazy however
+411.15s: percentile is not that crazy however
+411.16s: percentile is not that crazy however when we are in more extreme markets this
+414.39s: when we are in more extreme markets this
+414.40s: when we are in more extreme markets this can be massively different which I'll
+416.47s: can be massively different which I'll
+416.48s: can be massively different which I'll show you in just a second but before
+418.23s: show you in just a second but before
+418.24s: show you in just a second but before that let's take a look at what IV
+420.03s: that let's take a look at what IV
+420.04s: that let's take a look at what IV percentile is instead of using the
+422.39s: percentile is instead of using the
+422.40s: percentile is instead of using the extremes we take count of trading days
+425.99s: extremes we take count of trading days
+426.00s: extremes we take count of trading days that are below the current IV then we
+429.71s: that are below the current IV then we
+429.72s: that are below the current IV then we divide that by the number of trading
+431.51s: divide that by the number of trading
+431.52s: divide that by the number of trading days so typically you'd use something
+433.27s: days so typically you'd use something
+433.28s: days so typically you'd use something like 252 so this is just looking at a
+436.47s: like 252 so this is just looking at a
+436.48s: like 252 so this is just looking at a pure tally it doesn't really care what
+439.67s: pure tally it doesn't really care what
+439.68s: pure tally it doesn't really care what the extremes were what it cares is where
+442.15s: the extremes were what it cares is where
+442.16s: the extremes were what it cares is where we are relative to its previous
+444.87s: we are relative to its previous
+444.88s: we are relative to its previous performance now a fun fact this is from
+447.63s: performance now a fun fact this is from
+447.64s: performance now a fun fact this is from thinker swim and the the current IV
+450.15s: thinker swim and the the current IV
+450.16s: thinker swim and the the current IV percentile here actually is IV rank this
+453.39s: percentile here actually is IV rank this
+453.40s: percentile here actually is IV rank this is completely wrong and you'll see that
+455.59s: is completely wrong and you'll see that
+455.60s: is completely wrong and you'll see that in just a second because I want you to
+458.11s: in just a second because I want you to
+458.12s: in just a second because I want you to do the math for both of these why do we
+460.79s: do the math for both of these why do we
+460.80s: do the math for both of these why do we why do we have to go through this every
+462.03s: why do we have to go through this every
+462.04s: why do we have to go through this every time this one's a little more difficult
+463.59s: time this one's a little more difficult
+463.60s: time this one's a little more difficult you kind of can do the math on your own
+465.63s: you kind of can do the math on your own
+465.64s: you kind of can do the math on your own I have a think script for it but I do
+467.83s: I have a think script for it but I do
+467.84s: I have a think script for it but I do want you to do the math for the IV rank
+470.67s: want you to do the math for the IV rank
+470.68s: want you to do the math for the IV rank for this and then throw it in the
+472.83s: for this and then throw it in the
+472.84s: for this and then throw it in the comments below what you got before I
+475.19s: comments below what you got before I
+475.20s: comments below what you got before I click on to see if you are correct now
+477.95s: click on to see if you are correct now
+477.96s: click on to see if you are correct now you'll see that if if we do the math on
+480.47s: you'll see that if if we do the math on
+480.48s: you'll see that if if we do the math on this the IV rank for this scenario the
+483.39s: this the IV rank for this scenario the
+483.40s: this the IV rank for this scenario the current IV is
+485.15s: current IV is
+485.16s: current IV is 19.38% so that's this here then we're
+487.39s: 19.38% so that's this here then we're
+487.40s: 19.38% so that's this here then we're going to take the 52e IV low which is
+489.75s: going to take the 52e IV low which is
+489.76s: going to take the 52e IV low which is from here 177 then we're going to divide
+492.83s: from here 177 then we're going to divide
+492.84s: from here 177 then we're going to divide that by the 52e IV High which is 442
+496.11s: that by the 52e IV High which is 442
+496.12s: that by the 52e IV High which is 442 less 52 we IV low again .177 and you're
+500.03s: less 52 we IV low again .177 and you're
+500.04s: less 52 we IV low again .177 and you're going to get 6.3% notice that this
+503.47s: going to get 6.3% notice that this
+503.48s: going to get 6.3% notice that this happens to be the same in this scenario
+505.95s: happens to be the same in this scenario
+505.96s: happens to be the same in this scenario so what am I referring to then when
+508.35s: so what am I referring to then when
+508.36s: so what am I referring to then when we're talking about being quite
+510.31s: we're talking about being quite
+510.32s: we're talking about being quite different simple in this example the IV
+514.07s: different simple in this example the IV
+514.08s: different simple in this example the IV percentile currently for this product
+517.27s: percentile currently for this product
+517.28s: percentile currently for this product which was Apple is 5% so if this is
+520.27s: which was Apple is 5% so if this is
+520.28s: which was Apple is 5% so if this is actually IV percentile this should be 5%
+523.79s: actually IV percentile this should be 5%
+523.80s: actually IV percentile this should be 5% not 6% but the this is actually IV rank
+527.99s: not 6% but the this is actually IV rank
+528.00s: not 6% but the this is actually IV rank now this doesn't seem like that big of a
+530.19s: now this doesn't seem like that big of a
+530.20s: now this doesn't seem like that big of a difference because it's not the market
+531.99s: difference because it's not the market
+532.00s: difference because it's not the market has been relatively Consolidated for
+534.27s: has been relatively Consolidated for
+534.28s: has been relatively Consolidated for periods of time now however if you look
+536.83s: periods of time now however if you look
+536.84s: periods of time now however if you look at old performance the this is an OG
+540.31s: at old performance the this is an OG
+540.32s: at old performance the this is an OG video of Eric check that out some Eric
+542.63s: video of Eric check that out some Eric
+542.64s: video of Eric check that out some Eric Inception this was during Co and I don't
+545.39s: Inception this was during Co and I don't
+545.40s: Inception this was during Co and I don't remember what product I was looking at
+547.43s: remember what product I was looking at
+547.44s: remember what product I was looking at here but the important part is if you
+549.59s: here but the important part is if you
+549.60s: here but the important part is if you look at the IV rank in this scenario
+552.07s: look at the IV rank in this scenario
+552.08s: look at the IV rank in this scenario whatever it was it was
+554.27s: whatever it was it was
+554.28s: whatever it was it was 3.26% however IV percentile was 66% so
+559.19s: 3.26% however IV percentile was 66% so
+559.20s: 3.26% however IV percentile was 66% so during covid when there's a lot of
+561.23s: during covid when there's a lot of
+561.24s: during covid when there's a lot of volatility this is literally two times
+563.95s: volatility this is literally two times
+563.96s: volatility this is literally two times that's a massive difference when we're
+566.47s: that's a massive difference when we're
+566.48s: that's a massive difference when we're looking at things now it's not that big
+568.35s: looking at things now it's not that big
+568.36s: looking at things now it's not that big of a difference because things are
+569.75s: of a difference because things are
+569.76s: of a difference because things are relatively low so you're not going to
+571.75s: relatively low so you're not going to
+571.76s: relatively low so you're not going to see that big of a skew but it's
+572.95s: see that big of a skew but it's
+572.96s: see that big of a skew but it's important for you to know that IV rank
+575.39s: important for you to know that IV rank
+575.40s: important for you to know that IV rank is much more skew prone than IV
+578.75s: is much more skew prone than IV
+578.76s: is much more skew prone than IV percentile you are going to get a better
+581.03s: percentile you are going to get a better
+581.04s: percentile you are going to get a better assessment of IV's performance against
+584.23s: assessment of IV's performance against
+584.24s: assessment of IV's performance against itself in an individual product via
+586.39s: itself in an individual product via
+586.40s: itself in an individual product via percentile versus IV rank that is the
+589.55s: percentile versus IV rank that is the
+589.56s: percentile versus IV rank that is the long and short of it so as always if you
+591.99s: long and short of it so as always if you
+592.00s: long and short of it so as always if you have any questions hit me up let me know
+594.35s: have any questions hit me up let me know
+594.36s: have any questions hit me up let me know make sure you hit up think or Swim let
+595.83s: make sure you hit up think or Swim let
+595.84s: make sure you hit up think or Swim let them know that they're wrong I've let
+597.23s: them know that they're wrong I've let
+597.24s: them know that they're wrong I've let them know this a million times they
+598.43s: them know this a million times they
+598.44s: them know this a million times they don't change it but uh who knows maybe
+600.75s: don't change it but uh who knows maybe
+600.76s: don't change it but uh who knows maybe Schwab will get it together and fix it
+602.43s: Schwab will get it together and fix it
+602.44s: Schwab will get it together and fix it for us but otherwise you should know
+604.39s: for us but otherwise you should know
+604.40s: for us but otherwise you should know that that is not IV percentile that's
+606.03s: that that is not IV percentile that's
+606.04s: that that is not IV percentile that's ranked and it is prone to skew if
+607.87s: ranked and it is prone to skew if
+607.88s: ranked and it is prone to skew if there's anything I missed throw it in
+609.35s: there's anything I missed throw it in
+609.36s: there's anything I missed throw it in the comments below don't forget like
+610.99s: the comments below don't forget like
+611.00s: the comments below don't forget like subscribe share be an outlier it's the
+613.87s: subscribe share be an outlier it's the
+613.88s: subscribe share be an outlier it's the only way to be catch youall later

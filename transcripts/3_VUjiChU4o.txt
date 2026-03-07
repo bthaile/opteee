@@ -1,90 +1,444 @@
-0.00s: What's up gang? Today we're talking about zero DTE SPX options trading specifically in 2023 because
-9.44s: this year's been kind of interesting. I'll be honest with you. I take a look at data pretty much
-13.68s: every day with regards to trading and there are some anomalies this year that I picked up on and
-19.52s: I actually pivoted what I was doing mid-year because of that. So the goal of this video is to walk
-25.28s: through two things. The first thing is kind of what happened with the trading side of stuff and
-29.84s: then the second part is to walk you through a little bit of this concept of being able to pivot.
-34.88s: This is one of the reasons why a lot of traders in my opinion fail that become too systematic because
-41.68s: you try to execute the same exact way every single time without fail and sometimes markets change.
-48.48s: What we did before might not work now and that's the point. What's up everybody? Eric here. Welcome
-53.92s: back to the outliers. Shout out to the Patreon family. You guys make content like this possible
-58.40s: for everybody else. So if what I do helps you in any way consider signing up. All right so let's
-63.76s: start with what didn't work. What I'm showing you here is a back test from my friends over at
-70.88s: Options Omega. I am affiliated with them. This isn't a promoted video by them. This is just me
-75.52s: using the platform because I think it's usable for you folks. So the details to signing up for them
-81.76s: for 50% off are in the notes below for those interested but this is an easy way to summarize a lot
-86.96s: of information. This is going to be a mix of their information and then my own trade data that I track.
-92.00s: So here I was looking at 2015 and I was using two days of expiration because daily
-98.32s: expiration weren't launched then and I was looking at 50 delta short straddles worked which is
-104.96s: really to capture variance risk premiums for those that are unaware a short straddle simply looks
-110.48s: like this. It's a short option both call and put that share the same strike price typically trying
-117.44s: to get rid of 50 delta and the whole premise of this trade is to capture variance risk premiums
-123.20s: which I have a standalone video that walks through what those are in detail a link to them in the
-128.32s: notes below but in the meantime for a quick refresh variance risk premiums is simply the tendency
-134.16s: for implied volatility which is the yellow lines in this graph down here that I'm highlighting
-138.56s: pens to trend over realize volatility which are the white lines that you see here and you can see
-144.40s: in general the yellow line is above the white line that's variance risk premiums and it's a sort
-150.80s: of systematic alpha it's actually one of the best possible things retail traders can expose
-155.12s: themselves to because it is really persistent okay so that is the short straddle why the short straddle
-162.32s: because this is kind of a more pure play on variance risk premiums compared to something like this
-168.64s: now this is looking at the same time frame but looking at a 20 delta two-days expiration short
-174.88s: strangle and this is from the same exact time frame the idea here is if you look at the P&L for
-180.08s: these two different positions the short straddle performed much better it came out like 700 dollars
-185.68s: ahead I was just using essentially one lot for each of these trades but you can see that in general
-192.48s: the straddle performed better and this was back in 2015 so to give you some context let's take a
-198.16s: look at the chart over here this is one 2015 kicked off notice how relative to what we're seeing
-204.80s: now kind of flat there's really not a whole lot going on here until towards the end of the year
-210.08s: which we did start to see some volatility it's actually why these strategies didn't do super great
-214.48s: because of this period here but in general the daily movements were not that big and that's
-220.56s: an important detail especially if you look at that compared to what we see now the daily movements
-226.48s: are much larger in general just for reference this is using a weekly aggregation but still you can
-232.80s: see that they're much larger in scale so why does all of this matter what what didn't work is what
-239.12s: did work for a long time I'm sorry I'm confused which is just selling the short straddles so now I
-245.20s: want to walk you through what did actually work and then most importantly how I actually did
-251.52s: trading what I do because there is a slight difference between the data you're about to see
-256.80s: and what I did so this is looking at one lots looking at this year only 2023 and it's looking at
-263.68s: one January to 10 November and you'll see there's a bunch of different permutations up here the way
-268.80s: you can think about this is that the different columns are different combinations of the strategies
-274.80s: we have the delta's so this is looking at a 15 delta 20 delta 30 delta 50 delta for calls and
-281.52s: puts so this entire study is looking at straddles or strangles straddles are the 50 delta anything
-287.76s: other than that are strangles now these two rows here max profit max loss this is showing if there
-294.40s: is any max profit management applied or max loss management so kind of for these first four columns
-301.36s: notice how there's no max profit no max loss management and then at the next sets of columns I
-307.28s: start to introduce max loss management and that's because I talked about this a little bit earlier
-311.60s: in the year but I already started to catch wind that things were changing so I was testing different
-317.28s: things now this is essentially how it all played out what worked the best from a back testing
-324.00s: perspective was 20 delta short call short put so short strangle managed at a 300 percent max loss
-331.84s: there's a really really really interesting piece that comes with this notice how if we look at
-337.76s: something like the 20 delta strangle with no loss management there's 154 winning positions now
-346.00s: if we apply a 250 percent loss management there is now 149 if we look at a 300 percent loss management
-352.96s: 152 and then 153 winning trades the reason why this matters is because we do not want to get
-360.64s: stopped out prematurely which is what happened in this 250 percent scenario this means that there
-366.24s: were trades that went outside of our loss management band that actually came back in now fortunately
-373.20s: that's actually not that big of a difference and that's why this worked so well this year notice how
-379.44s: the max winners if no no management was applied was 154 so what this means is that there's only five
-385.36s: trades that you artificially cut out and in this case there's only two trades notice though the change
-393.28s: in the max loss this is why it all comes together because the max loss in this trade went from 5,623
-401.04s: bucks and it dropped down to 3360 big change in max loss this is the exact thing that I'm talking
-409.12s: about when I'm saying cut off the tails because if we take a look at a bell curve imagine that each
-416.24s: individual trade here is a dot and this represents the distribution of those dots what we're doing by
-422.40s: cutting off the tails is we are managing this loss we're taking away these really large losing trades
-430.88s: and it drastically increases our wind potential which is exactly the point here so what did I actually
-438.08s: do here it is from the middle of the year is about 22 May is when I made this pivot and I ran this
-445.36s: I typically run the strategy almost always so in this case I ran 20 delta short strangles managed
-453.68s: at a 300% max loss now instead of a one lot I typically trade five lots so that's why you'll see
-460.48s: these numbers look quite different however the things I want to hone in on is the total number of
-464.80s: trades I had was 121 with 89 winning trades so I did still have some pretty serious large losses
-473.68s: that occurred relatively infrequently but still enough that it hurts the profitability of the
-478.80s: position so I did take a look at this study to see okay well if I'm doing this 20 delta strangle
-485.12s: what if I either decrease or increase the max loss potential and this is actually still the sweet
-491.44s: spot it's just a function of trading this kind of thing so I actually walked out up about $6,000
-496.72s: so far in the year so as long as I don't throw it all away it's a pretty good year the main thing I
-500.96s: want you guys to take away from this is you might have your typical way of deploying which is great
-505.44s: however you have to stay sensitive to the current market conditions because what worked before
-510.48s: doesn't always continue to work in the future and it's a continual system of optimization
-514.96s: that's all based on what a good trading log
-519.04s: it's beautiful
-529.28s: if you are tracking all of this detail you can come across like I did earlier in the year when
-535.04s: something didn't look right compared to what it looked like when it was working and I knew it was
-539.52s: time to try something else if any questions comments concerns as always drop me a line
-544.16s: throw it in the comments below be an outlier see you guys later
+0.20s: what's up gang today we're talking about
+2.84s: what's up gang today we're talking about Zer DTE SPX options trading specifically
+7.43s: Zer DTE SPX options trading specifically
+7.44s: Zer DTE SPX options trading specifically in 2023 because this year's been kind of
+10.51s: in 2023 because this year's been kind of
+10.52s: in 2023 because this year's been kind of interesting I'll be honest with you I
+12.15s: interesting I'll be honest with you I
+12.16s: interesting I'll be honest with you I take a look at data pretty much every
+13.99s: take a look at data pretty much every
+14.00s: take a look at data pretty much every day with regards to trading and there
+15.71s: day with regards to trading and there
+15.72s: day with regards to trading and there are some anomalies this year that I
+18.63s: are some anomalies this year that I
+18.64s: are some anomalies this year that I picked up on and I actually pivoted what
+21.35s: picked up on and I actually pivoted what
+21.36s: picked up on and I actually pivoted what I was doing midy year because of that so
+24.11s: I was doing midy year because of that so
+24.12s: I was doing midy year because of that so the goal of this video is to walk
+25.31s: the goal of this video is to walk
+25.32s: the goal of this video is to walk through two things the first thing is
+26.83s: through two things the first thing is
+26.84s: through two things the first thing is kind of what happened with the trading
+28.83s: kind of what happened with the trading
+28.84s: kind of what happened with the trading side of stuff and the second part is to
+31.19s: side of stuff and the second part is to
+31.20s: side of stuff and the second part is to walk you through a little bit of this
+33.07s: walk you through a little bit of this
+33.08s: walk you through a little bit of this concept of being able to Pivot this is
+35.31s: concept of being able to Pivot this is
+35.32s: concept of being able to Pivot this is one of the reasons why a lot of traders
+37.35s: one of the reasons why a lot of traders
+37.36s: one of the reasons why a lot of traders in my opinion fail that become too
+40.47s: in my opinion fail that become too
+40.48s: in my opinion fail that become too systematic because you try to execute
+42.91s: systematic because you try to execute
+42.92s: systematic because you try to execute the same exact way every single time
+44.87s: the same exact way every single time
+44.88s: the same exact way every single time without fail and sometimes markets
+47.83s: without fail and sometimes markets
+47.84s: without fail and sometimes markets change what we did before might not work
+51.15s: change what we did before might not work
+51.16s: change what we did before might not work now and that's the point what's up
+52.91s: now and that's the point what's up
+52.92s: now and that's the point what's up everybody Eric here welcome back to the
+54.39s: everybody Eric here welcome back to the
+54.40s: everybody Eric here welcome back to the outliers shout out to the patreon family
+56.39s: outliers shout out to the patreon family
+56.40s: outliers shout out to the patreon family you guys make content like this possible
+58.43s: you guys make content like this possible
+58.44s: you guys make content like this possible for everybody else so if what I do helps
+60.23s: for everybody else so if what I do helps
+60.24s: for everybody else so if what I do helps you in any way consider signing up all
+62.99s: you in any way consider signing up all
+63.00s: you in any way consider signing up all right so let's start with what didn't
+65.83s: right so let's start with what didn't
+65.84s: right so let's start with what didn't work what I'm showing you here is a back
+69.27s: work what I'm showing you here is a back
+69.28s: work what I'm showing you here is a back test from my friends over at options
+71.31s: test from my friends over at options
+71.32s: test from my friends over at options Omega I am affiliated with them this
+73.35s: Omega I am affiliated with them this
+73.36s: Omega I am affiliated with them this isn't a promoted video by them this is
+75.07s: isn't a promoted video by them this is
+75.08s: isn't a promoted video by them this is just me using the platform because I
+77.03s: just me using the platform because I
+77.04s: just me using the platform because I think it's usable for you you folks so
+79.39s: think it's usable for you you folks so
+79.40s: think it's usable for you you folks so the details to signing up for them for
+81.99s: the details to signing up for them for
+82.00s: the details to signing up for them for 50% off are in the notes below for those
+84.47s: 50% off are in the notes below for those
+84.48s: 50% off are in the notes below for those interested but this is an easy way to
+86.35s: interested but this is an easy way to
+86.36s: interested but this is an easy way to summarize a lot of information this is
+87.87s: summarize a lot of information this is
+87.88s: summarize a lot of information this is going to be a mix of their information
+89.51s: going to be a mix of their information
+89.52s: going to be a mix of their information and then my own trade data that I track
+92.07s: and then my own trade data that I track
+92.08s: and then my own trade data that I track so here I was looking at 2015 and I was
+95.51s: so here I was looking at 2015 and I was
+95.52s: so here I was looking at 2015 and I was using two days to expiration because
+97.99s: using two days to expiration because
+98.00s: using two days to expiration because daily expirations weren't launched then
+100.15s: daily expirations weren't launched then
+100.16s: daily expirations weren't launched then and I was looking at 50 Delta short
+103.19s: and I was looking at 50 Delta short
+103.20s: and I was looking at 50 Delta short straddles worked which is really to
+105.43s: straddles worked which is really to
+105.44s: straddles worked which is really to capture variance risk premiums for those
+107.59s: capture variance risk premiums for those
+107.60s: capture variance risk premiums for those that are unaware a short straddle simply
+110.27s: that are unaware a short straddle simply
+110.28s: that are unaware a short straddle simply looks like this it's a short option both
+113.87s: looks like this it's a short option both
+113.88s: looks like this it's a short option both call and put that share the same strike
+116.51s: call and put that share the same strike
+116.52s: call and put that share the same strike price typically trying to get right out
+117.95s: price typically trying to get right out
+117.96s: price typically trying to get right out of 50 Delta and the whole premise of
+120.23s: of 50 Delta and the whole premise of
+120.24s: of 50 Delta and the whole premise of this trade is to capture variance risk
+122.63s: this trade is to capture variance risk
+122.64s: this trade is to capture variance risk premiums which I have a standalone video
+125.23s: premiums which I have a standalone video
+125.24s: premiums which I have a standalone video that walks through what those are in
+127.07s: that walks through what those are in
+127.08s: that walks through what those are in detail a link to them in the notes below
+128.95s: detail a link to them in the notes below
+128.96s: detail a link to them in the notes below but in the meantime for a quick refresh
+130.99s: but in the meantime for a quick refresh
+131.00s: but in the meantime for a quick refresh variance risk premiums is simply the
+133.47s: variance risk premiums is simply the
+133.48s: variance risk premiums is simply the tendency for implied volatility which is
+135.83s: tendency for implied volatility which is
+135.84s: tendency for implied volatility which is the yellow lines in this graph down here
+137.67s: the yellow lines in this graph down here
+137.68s: the yellow lines in this graph down here that I'm highlighting tends to Trend
+139.91s: that I'm highlighting tends to Trend
+139.92s: that I'm highlighting tends to Trend over realized volatility which are the
+142.27s: over realized volatility which are the
+142.28s: over realized volatility which are the white lines that you see here and you
+143.95s: white lines that you see here and you
+143.96s: white lines that you see here and you can see in general the yellow line is
+146.47s: can see in general the yellow line is
+146.48s: can see in general the yellow line is above the white line that's variance
+148.47s: above the white line that's variance
+148.48s: above the white line that's variance risk premiums and it's a sort of
+151.19s: risk premiums and it's a sort of
+151.20s: risk premiums and it's a sort of systematic Alpha it's actually one of
+153.03s: systematic Alpha it's actually one of
+153.04s: systematic Alpha it's actually one of the best possible things retail Traders
+154.67s: the best possible things retail Traders
+154.68s: the best possible things retail Traders can expose themselves to because it is
+157.55s: can expose themselves to because it is
+157.56s: can expose themselves to because it is really persistent okay so that is the
+160.47s: really persistent okay so that is the
+160.48s: really persistent okay so that is the short stradle why the short stradle
+162.47s: short stradle why the short stradle
+162.48s: short stradle why the short stradle because this is kind of a more pure play
+165.07s: because this is kind of a more pure play
+165.08s: because this is kind of a more pure play on variance risk premiums compared to
+167.47s: on variance risk premiums compared to
+167.48s: on variance risk premiums compared to something like this now this is looking
+169.47s: something like this now this is looking
+169.48s: something like this now this is looking at the same time frame but looking at a
+171.71s: at the same time frame but looking at a
+171.72s: at the same time frame but looking at a 20 Delta 2 days to expiration short
+174.83s: 20 Delta 2 days to expiration short
+174.84s: 20 Delta 2 days to expiration short strangle and this is from the same exact
+176.95s: strangle and this is from the same exact
+176.96s: strangle and this is from the same exact time frame the idea here is if you look
+179.27s: time frame the idea here is if you look
+179.28s: time frame the idea here is if you look at the p pnl for these two different
+180.87s: at the p pnl for these two different
+180.88s: at the p pnl for these two different positions the short straddle performed
+183.31s: positions the short straddle performed
+183.32s: positions the short straddle performed much better it came out like $700 ahead
+186.07s: much better it came out like $700 ahead
+186.08s: much better it came out like $700 ahead I was just using essentially one lot for
+188.83s: I was just using essentially one lot for
+188.84s: I was just using essentially one lot for each of these trades but you can see
+191.11s: each of these trades but you can see
+191.12s: each of these trades but you can see that in general the stradle performed
+193.55s: that in general the stradle performed
+193.56s: that in general the stradle performed better and this was back in 2015 so to
+196.51s: better and this was back in 2015 so to
+196.52s: better and this was back in 2015 so to give you some context let's take a look
+198.35s: give you some context let's take a look
+198.36s: give you some context let's take a look at the chart over here this is when 2015
+200.83s: at the chart over here this is when 2015
+200.84s: at the chart over here this is when 2015 kicked off notice how relative to what
+204.23s: kicked off notice how relative to what
+204.24s: kicked off notice how relative to what we're seeing now kind of flat there's
+206.55s: we're seeing now kind of flat there's
+206.56s: we're seeing now kind of flat there's really not a whole lot going on here
+208.47s: really not a whole lot going on here
+208.48s: really not a whole lot going on here until towards the end the year which we
+210.51s: until towards the end the year which we
+210.52s: until towards the end the year which we did start to see some volatility it's
+212.11s: did start to see some volatility it's
+212.12s: did start to see some volatility it's actually why these strategies didn't do
+213.91s: actually why these strategies didn't do
+213.92s: actually why these strategies didn't do super great because of this period here
+216.27s: super great because of this period here
+216.28s: super great because of this period here but in general the daily movements were
+219.39s: but in general the daily movements were
+219.40s: but in general the daily movements were not that big and that's an important
+221.27s: not that big and that's an important
+221.28s: not that big and that's an important detail especially if you look at that
+223.27s: detail especially if you look at that
+223.28s: detail especially if you look at that compared to what we see now the daily
+225.75s: compared to what we see now the daily
+225.76s: compared to what we see now the daily movements are much larger in general
+228.87s: movements are much larger in general
+228.88s: movements are much larger in general just for reference this is using a
+230.83s: just for reference this is using a
+230.84s: just for reference this is using a weekly aggregation but still you can see
+233.23s: weekly aggregation but still you can see
+233.24s: weekly aggregation but still you can see that they are much larger in scale so
+235.99s: that they are much larger in scale so
+236.00s: that they are much larger in scale so why does all of this matter well what
+237.75s: why does all of this matter well what
+237.76s: why does all of this matter well what didn't work is what did work for a long
+240.55s: didn't work is what did work for a long
+240.56s: didn't work is what did work for a long time I'm sorry I'm confused which is
+242.79s: time I'm sorry I'm confused which is
+242.80s: time I'm sorry I'm confused which is just selling the short straddles so now
+245.19s: just selling the short straddles so now
+245.20s: just selling the short straddles so now I want to walk you through what did
+247.63s: I want to walk you through what did
+247.64s: I want to walk you through what did actually work and then most importantly
+249.95s: actually work and then most importantly
+249.96s: actually work and then most importantly how I actually did trading what I do
+253.75s: how I actually did trading what I do
+253.76s: how I actually did trading what I do because there is a slight difference
+255.27s: because there is a slight difference
+255.28s: because there is a slight difference between the data you're about to see and
+257.03s: between the data you're about to see and
+257.04s: between the data you're about to see and what I did so this is looking at one
+259.51s: what I did so this is looking at one
+259.52s: what I did so this is looking at one Lots looking at this year only 2023 and
+263.15s: Lots looking at this year only 2023 and
+263.16s: Lots looking at this year only 2023 and it's looking at 1 January to 10 November
+265.91s: it's looking at 1 January to 10 November
+265.92s: it's looking at 1 January to 10 November and you'll see there's a bunch of
+267.03s: and you'll see there's a bunch of
+267.04s: and you'll see there's a bunch of different permutations up here the way
+268.83s: different permutations up here the way
+268.84s: different permutations up here the way you can think about this is that the
+270.59s: you can think about this is that the
+270.60s: you can think about this is that the different columns are different
+272.63s: different columns are different
+272.64s: different columns are different combinations of the strategies we have
+275.51s: combinations of the strategies we have
+275.52s: combinations of the strategies we have the Deltas so this is looking at a 15
+278.03s: the Deltas so this is looking at a 15
+278.04s: the Deltas so this is looking at a 15 Delta 20 Delta 30 Delta 50 Delta for
+280.83s: Delta 20 Delta 30 Delta 50 Delta for
+280.84s: Delta 20 Delta 30 Delta 50 Delta for calls and puts so this entire study is
+283.51s: calls and puts so this entire study is
+283.52s: calls and puts so this entire study is looking at straddles or strangles
+285.99s: looking at straddles or strangles
+286.00s: looking at straddles or strangles straddles are the 50 Delta anything
+287.79s: straddles are the 50 Delta anything
+287.80s: straddles are the 50 Delta anything other than that are strangles now these
+290.31s: other than that are strangles now these
+290.32s: other than that are strangles now these two rows here Max profit Max loss this
+292.99s: two rows here Max profit Max loss this
+293.00s: two rows here Max profit Max loss this is showing if there's any max profit
+296.27s: is showing if there's any max profit
+296.28s: is showing if there's any max profit management applied or Max Loss
+297.87s: management applied or Max Loss
+297.88s: management applied or Max Loss Management so kind of for these first
+300.11s: Management so kind of for these first
+300.12s: Management so kind of for these first four columns notice how there's no Max
+302.75s: four columns notice how there's no Max
+302.76s: four columns notice how there's no Max profit no Max loss management and then
+305.27s: profit no Max loss management and then
+305.28s: profit no Max loss management and then at the next sets of columns I start to
+307.63s: at the next sets of columns I start to
+307.64s: at the next sets of columns I start to introduce Max loss management and that's
+309.55s: introduce Max loss management and that's
+309.56s: introduce Max loss management and that's because I talked about this a little bit
+311.23s: because I talked about this a little bit
+311.24s: because I talked about this a little bit earlier in the year but I already
+312.83s: earlier in the year but I already
+312.84s: earlier in the year but I already started to catch wind that things were
+314.79s: started to catch wind that things were
+314.80s: started to catch wind that things were changing so I was testing different
+316.71s: changing so I was testing different
+316.72s: changing so I was testing different things now this is essentially how it
+320.03s: things now this is essentially how it
+320.04s: things now this is essentially how it all played out what worked the best from
+322.95s: all played out what worked the best from
+322.96s: all played out what worked the best from a back testing perspective was 20 Delta
+326.39s: a back testing perspective was 20 Delta
+326.40s: a back testing perspective was 20 Delta short call short put so a short strangle
+328.91s: short call short put so a short strangle
+328.92s: short call short put so a short strangle managed at a 300% Max loss there's a
+332.43s: managed at a 300% Max loss there's a
+332.44s: managed at a 300% Max loss there's a really really really interesting piece
+335.07s: really really really interesting piece
+335.08s: really really really interesting piece that comes with this notice how if we
+337.31s: that comes with this notice how if we
+337.32s: that comes with this notice how if we look at something like the 20 Delta
+340.03s: look at something like the 20 Delta
+340.04s: look at something like the 20 Delta strangle with no Loss Management there's
+343.51s: strangle with no Loss Management there's
+343.52s: strangle with no Loss Management there's 154 winning positions now if we apply a
+346.91s: 154 winning positions now if we apply a
+346.92s: 154 winning positions now if we apply a 250% loss management there's now 149 if
+350.87s: 250% loss management there's now 149 if
+350.88s: 250% loss management there's now 149 if we look at a 300% Loss Management 152
+353.95s: we look at a 300% Loss Management 152
+353.96s: we look at a 300% Loss Management 152 and then 153 winning trades the reason
+356.87s: and then 153 winning trades the reason
+356.88s: and then 153 winning trades the reason why this matters is because we do do not
+359.87s: why this matters is because we do do not
+359.88s: why this matters is because we do do not want to get stopped out prematurely
+362.35s: want to get stopped out prematurely
+362.36s: want to get stopped out prematurely which is what happened in this 250%
+364.87s: which is what happened in this 250%
+364.88s: which is what happened in this 250% scenario this means that there were
+366.63s: scenario this means that there were
+366.64s: scenario this means that there were trades that went outside of our loss
+368.83s: trades that went outside of our loss
+368.84s: trades that went outside of our loss management band that actually came back
+371.27s: management band that actually came back
+371.28s: management band that actually came back in now fortunately it's actually not
+374.11s: in now fortunately it's actually not
+374.12s: in now fortunately it's actually not that big of a difference and that's why
+375.79s: that big of a difference and that's why
+375.80s: that big of a difference and that's why this worked so well this year notice how
+379.51s: this worked so well this year notice how
+379.52s: this worked so well this year notice how the Max winners if no no management was
+381.83s: the Max winners if no no management was
+381.84s: the Max winners if no no management was applied was 154 so what this means is is
+384.27s: applied was 154 so what this means is is
+384.28s: applied was 154 so what this means is is that there's only five trades that you
+386.47s: that there's only five trades that you
+386.48s: that there's only five trades that you artificially cut out and in this case
+388.83s: artificially cut out and in this case
+388.84s: artificially cut out and in this case there's only only two trades notice
+391.59s: there's only only two trades notice
+391.60s: there's only only two trades notice though the change in the max loss this
+394.87s: though the change in the max loss this
+394.88s: though the change in the max loss this is why it all comes together because the
+396.95s: is why it all comes together because the
+396.96s: is why it all comes together because the max loss in this trade went from
+400.11s: max loss in this trade went from
+400.12s: max loss in this trade went from 5,623 bucks and it dropped down to 3360
+404.63s: 5,623 bucks and it dropped down to 3360
+404.64s: 5,623 bucks and it dropped down to 3360 big change in Max loss this is the exact
+408.23s: big change in Max loss this is the exact
+408.24s: big change in Max loss this is the exact thing that I'm talking about when I'm
+409.67s: thing that I'm talking about when I'm
+409.68s: thing that I'm talking about when I'm saying cut off the tails because if we
+413.59s: saying cut off the tails because if we
+413.60s: saying cut off the tails because if we take a look at a bell curve imagine that
+415.99s: take a look at a bell curve imagine that
+416.00s: take a look at a bell curve imagine that each individual trade here is a DOT and
+418.51s: each individual trade here is a DOT and
+418.52s: each individual trade here is a DOT and this represents the distribution of
+420.67s: this represents the distribution of
+420.68s: this represents the distribution of those dots what we're doing by cutting
+422.83s: those dots what we're doing by cutting
+422.84s: those dots what we're doing by cutting off the tails is we are managing this
+426.43s: off the tails is we are managing this
+426.44s: off the tails is we are managing this loss we're taking away these really
+429.31s: loss we're taking away these really
+429.32s: loss we're taking away these really large losing trades and it drastically
+432.63s: large losing trades and it drastically
+432.64s: large losing trades and it drastically increases our win potential which is
+435.63s: increases our win potential which is
+435.64s: increases our win potential which is exactly the point here so what did I
+437.75s: exactly the point here so what did I
+437.76s: exactly the point here so what did I actually do here it is from the middle
+440.59s: actually do here it is from the middle
+440.60s: actually do here it is from the middle of the year is about 22 May is when I
+442.83s: of the year is about 22 May is when I
+442.84s: of the year is about 22 May is when I made this pivot and I ran this I
+445.67s: made this pivot and I ran this I
+445.68s: made this pivot and I ran this I typically run this strategy almost
+447.63s: typically run this strategy almost
+447.64s: typically run this strategy almost always so in this case case I ran 20
+450.99s: always so in this case case I ran 20
+451.00s: always so in this case case I ran 20 Delta short strangles managed at a 300%
+455.19s: Delta short strangles managed at a 300%
+455.20s: Delta short strangles managed at a 300% Max loss now instead of a one lot I
+457.91s: Max loss now instead of a one lot I
+457.92s: Max loss now instead of a one lot I typically trade five Lots so that's why
+460.15s: typically trade five Lots so that's why
+460.16s: typically trade five Lots so that's why you'll see these numbers look quite
+461.63s: you'll see these numbers look quite
+461.64s: you'll see these numbers look quite different however the things I want to
+463.15s: different however the things I want to
+463.16s: different however the things I want to hone in on is the total number of Trades
+465.15s: hone in on is the total number of Trades
+465.16s: hone in on is the total number of Trades I had was 121 with 89 winning trades so
+469.23s: I had was 121 with 89 winning trades so
+469.24s: I had was 121 with 89 winning trades so I did still have some pretty serious
+472.47s: I did still have some pretty serious
+472.48s: I did still have some pretty serious large losses that occurred relatively
+475.39s: large losses that occurred relatively
+475.40s: large losses that occurred relatively infrequently but still enough that it
+477.47s: infrequently but still enough that it
+477.48s: infrequently but still enough that it hurts the profitability of the position
+479.47s: hurts the profitability of the position
+479.48s: hurts the profitability of the position so I did take a look at this study to
+482.47s: so I did take a look at this study to
+482.48s: so I did take a look at this study to see okay well if I'm doing this 20 Delta
+484.59s: see okay well if I'm doing this 20 Delta
+484.60s: see okay well if I'm doing this 20 Delta strangle what if I either decrease or
+487.83s: strangle what if I either decrease or
+487.84s: strangle what if I either decrease or increase the max loss potential and this
+490.23s: increase the max loss potential and this
+490.24s: increase the max loss potential and this is actually still The Sweet Spot it's
+492.15s: is actually still The Sweet Spot it's
+492.16s: is actually still The Sweet Spot it's just a function of trading this kind of
+493.87s: just a function of trading this kind of
+493.88s: just a function of trading this kind of thing so I actually walked out up about
+495.87s: thing so I actually walked out up about
+495.88s: thing so I actually walked out up about $6,000 so far on the year so as long as
+498.15s: $6,000 so far on the year so as long as
+498.16s: $6,000 so far on the year so as long as I don't throw it all away it's a pretty
+499.87s: I don't throw it all away it's a pretty
+499.88s: I don't throw it all away it's a pretty good year the main thing I want you guys
+501.39s: good year the main thing I want you guys
+501.40s: good year the main thing I want you guys to take away from this is you might have
+503.43s: to take away from this is you might have
+503.44s: to take away from this is you might have your typical way of deploying which is
+505.19s: your typical way of deploying which is
+505.20s: your typical way of deploying which is great however you have to stay sensitive
+507.87s: great however you have to stay sensitive
+507.88s: great however you have to stay sensitive to the current market conditions because
+509.55s: to the current market conditions because
+509.56s: to the current market conditions because what worked before doesn't always
+511.19s: what worked before doesn't always
+511.20s: what worked before doesn't always continue to work in the future and it's
+512.83s: continue to work in the future and it's
+512.84s: continue to work in the future and it's a continual system of optimization
+515.07s: a continual system of optimization
+515.08s: a continual system of optimization that's all based on what a good trading
+525.32s: log it's
+528.36s: log it's beautiful if you are tracking all of
+530.67s: beautiful if you are tracking all of
+530.68s: beautiful if you are tracking all of this detail you can come across like I
+533.27s: this detail you can come across like I
+533.28s: this detail you can come across like I did earlier in the year when something
+535.63s: did earlier in the year when something
+535.64s: did earlier in the year when something didn't look right compared to what it
+537.51s: didn't look right compared to what it
+537.52s: didn't look right compared to what it looked like when it was working and I
+538.99s: looked like when it was working and I
+539.00s: looked like when it was working and I knew it was time to try something else
+540.95s: knew it was time to try something else
+540.96s: knew it was time to try something else if you have any questions comments
+542.07s: if you have any questions comments
+542.08s: if you have any questions comments concerns as always drop me a line throw
+544.31s: concerns as always drop me a line throw
+544.32s: concerns as always drop me a line throw it in the comments below be an outlier
+546.59s: it in the comments below be an outlier
+546.60s: it in the comments below be an outlier I'll see you guys later

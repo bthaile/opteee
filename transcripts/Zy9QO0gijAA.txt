@@ -1,97 +1,478 @@
-0.00s: Can you use Delta as the probability for an option being in the money at expiration?
-6.08s: And if you know anything about me, you already know the answer. It depends.
-9.76s: Because it really does depend. It's not a blanket answer and a lot of people don't know that.
-13.84s: So the goal of this video is to walk through even why we can use Delta as an approximation of
-19.44s: an option being in the money. But then also some of the math behind it so that you can be smarter
-24.64s: on how these things work. And then at the end of the video, I want to walk you through the exact
-28.96s: scenarios where it does work and then it doesn't work because sometimes you have to apply
-34.48s: different approach to get an accurate answer. So with that, what's up everybody? Welcome back
-39.60s: to all the outliers and a shout out to the Patreon family. Let's get straight to business.
-44.80s: So Delta as a probability, we are going to start with a practical application for you guys.
-50.40s: Let's take a look here at Nvidia. And we're going to look at this 15 December to DTE options chain.
-57.76s: And then my editor will be kind enough to help you guys see and follow along with what I'm talking
-62.72s: about right here. We can see the Delta for this 480 put. The Delta here is 44. So traditional
-70.88s: approach then would say that we have a 44% chance of this option expiring in the money at expiration.
-77.52s: I guess expiring in the money and then addicts kind of duplicative whatever expiring the money
-81.76s: at expiration making sure you know that it's at expiration. And if we take a look at the
-85.76s: probability that's calculated by the thinkorswim platform, this is showing me 44.5.5. It's moving
-92.96s: around right now because markets are still moving a little bit. They're closed, but volatility still
-97.36s: changes. So anyways, that's what you're seeing. This is very close, right? This is saying now 43
-101.92s: and it's 44. It's within a point, very close tolerance. Okay, cool. So then it sounds like it
-107.68s: works, right? Why is this the case? And then what was I talking about at the beginning of the video
-112.32s: when I said, well, it doesn't always work. Well, let's take a step over to everybody's favorite.
-117.76s: I'm actually pretty sure this is universally accepted that everybody really loves my handwriting.
-122.00s: I love this shit. So where would I be without sharing? Look at that. I even got to the point where I had
-128.64s: a crunch some of this in. So my awful handwriting got even worse if you can even believe that.
-134.24s: Tough for me to believe, but I'll walk you through it. Don't worry. You don't have to know this
-137.76s: information in depth. I just want to show you why this works so that you have a better understanding.
-142.24s: And if you like this side of trading, I have a video called Introduction to Options where I dive deep
-148.56s: into things like the black shoals formula. Well, really, black shoals, Martin model, but the formula
-153.28s: that they use in black shoals model so that you can better understand these things. But it's just a
-157.60s: differential equation with some different inputs. That's the punch line. Okay, that means absolutely
-162.08s: nothing to you as it should because if it did, that means you probably have as little of a life as I do.
-166.96s: And you don't actually want to know what this means. But here's a key for you down here. Again,
-171.12s: we don't have to go through it. It doesn't really matter. I just want to highlight a few things to you.
-174.56s: First, I am going to explain to you what D1 is. So right here is where I break out D1 so that you can
-180.88s: see what goes into D1. This matters for a particular reason. Why would it matter? You might think
-186.64s: because fun fact. I don't know if you can use the term fun fact when you're talking about this kind
-191.52s: of stuff, but I'm going to do it anyways because I think it's fun. Boom. That's Delta. ND1 is Delta.
-196.72s: So this is how we are calculating the Delta of an option. Now it is important to note that N in
-203.20s: this context, N of X is a cumulative density function. If you don't know what that means,
-208.48s: that's okay. You don't really have to know what it means. But you can simply think of it as a
-213.04s: distribution of a real variable. So in this case for D1, I am going to walk you through the inputs
-219.68s: because the inputs here matter to us. Here we have the log normal distribution of the stock price
-225.28s: divided by the strike price plus the risk-free rate plus the annual standard deviation of
-231.12s: volatility squared divided by two multiplied by time. And in this case time is as a percentage of
-236.48s: a year. And then that's going to be divided by the annualized standard deviation of volatility
-241.28s: squared root of time. Okay. Why does this matter? Well, I'm going to show you, but before that because
-246.80s: I have OCD, there's D2 in case we're wondering. You're probably over there thinking like what the
-251.36s: hell is the cumulative density function of this one? Well, that's D2, fun fact. Okay. But why does
-255.52s: it actually matter? Well, let's take a look at how we calculate the probability of an option being
-260.08s: in the money. You take the normal distribution of the log normal function of strike divided by
-267.28s: stock price. All of that's divided by volatility times the square root of DTE over 365. So in this
-274.32s: case, T, right, is DTE as a percentage of a year. That's exactly what we're doing here. So if you
-279.60s: notice the denominator in this case, it's the exact same thing. So then if you look at the numerator,
-284.48s: you see that this is slightly different, slightly different. Here we're adding a couple additional
-290.56s: components like the risk-free rate, annual standard deviation of volatility. This is to get delta,
-295.12s: because remember, delta has a different purpose of probability of being in the money. This matters.
-300.64s: So because of this, let's now take a look at when this does and does not work. Because in this
-308.08s: example, it worked beautifully, right? We have the 43 delta and it's 44 percent probability.
-314.88s: Now, let's go out to something that's 37 DTE. This is 45 delta for the 40 put and that's 48.
-322.48s: 0.6 percent probability of being in the money. What do you notice? If it's not clear yet,
-326.80s: let me zoom out even more. Let's go to this 19 April 128 DTE. I'm going to look at this 42 delta
-332.88s: 480 put. I'm just taking essentially the first out of the money put. The 42 delta out of the money
-337.92s: put now has a 42 percent probability according to delta, but according to the option, it's 50.74%
-345.36s: is calculated by thinkorswim. So what do you notice? Ideally, you notice something that's
-350.88s: pretty clear at this point. What's happening is the further out in time you go, the less accurate
-358.16s: delta is. Very important for you to know that if you trade anything essentially that's over 90 DTE.
-365.28s: Because if we go back to this example, this is 42 DTE. This is 50. That's at eight point
-372.16s: variance, eight almost nine point variance. If you're trading something where your outcome can have
-379.36s: nine points of slack in potential outcome, one good on you. Because that means you have found an
-385.92s: insanely, insanely effective edge. But most of us don't have that. The difference of a 9 percent
-391.76s: probability here is pretty massive. And I keep growing it. I realized, but yeah, it's this is
-397.84s: essentially, and this is only 192 days out or 128 days out. There goes dyslexia. So what I'm highlighting
-404.72s: though is the further you go out in time, the less accurate delta is as your approximation. Now,
-411.36s: for those curious on how this all works, I bring you the gift of math. Oh hell no. Let me close this
-419.68s: up so it's easier for you to follow along. You can essentially do a side by side with me. And I'll
-423.92s: zoom this in for those that are visually impaired. I know that I have a decent amount of my audience.
-428.40s: That's above 60. So you guys might need your, your fancy two tone shades. Make sure you're not in
-433.20s: the sun. Otherwise, it'll be too dark. And let's take a look. I took the current figures. So 480, 88
-439.04s: for an Nvidia. And here are the parameters we need. We need the stock price, days expiration. You get
-444.88s: to pick whatever option you're looking at. So in this case, I'm looking at a put and a call. I'm
-449.44s: looking at the 480 put the 485 call. Then I'm going to grab the implied volatility for both of those
-454.96s: options. So the put IV in this instance is 33.3%. The call IV is 32.42%. You'll have to trust me because
-461.60s: it's covered right now. And let's take a look at the outputs for the put. This is calculating the
-467.60s: probability of in the money being 49.31%. Thinkorswim is calculating it at 48.63%. And the delta is
-475.12s: calculating it at 45%. All slight differences because thinkorswim is going to apply their proprietary
-481.60s: formulas for most of these things. So that's why it is a slight deviation from this. But you should
-487.04s: notice one thing. We are much closer to what thinkorswim is calculating in this instance than delta is.
-492.16s: Same thing for the call side. So how do you calculate these? I'll highlight these real quick so that
-496.96s: you can grab the formulas. But it's literally just grabbing the formulas that I just showed you guys.
-503.68s: But this for those that look at that and our eyes gloss over here is literally what you could
-508.32s: just grab from Google Sheets or Excel is the same thing. Now I will say before people start dropping
-513.60s: in saying like, Verma Gerr, the normal distribution function is not working. If you use something like
-518.96s: Google Sheets, there are a lot of them. Right. So there's normal distributions for sample, normal
-524.40s: distribution for populations. So in this case, you want to use the standard normal distribution function.
-531.92s: So norm.s dot dist. And then in Excel, it's slightly different. But you'll be able to figure it out.
-538.24s: Hopefully, if not, don't do this and probably don't trade. So be an outlier. See you guys later.
+0.12s: can you use Delta as the probability for
+2.96s: can you use Delta as the probability for an option being in the money at
+5.23s: an option being in the money at
+5.24s: an option being in the money at expiration and if you know anything
+7.19s: expiration and if you know anything
+7.20s: expiration and if you know anything about me you already know the answer it
+9.23s: about me you already know the answer it
+9.24s: about me you already know the answer it depends cuz it really does depend it's
+11.19s: depends cuz it really does depend it's
+11.20s: depends cuz it really does depend it's not a blanket answer and a lot of people
+13.19s: not a blanket answer and a lot of people
+13.20s: not a blanket answer and a lot of people don't know that so the goal of this
+14.55s: don't know that so the goal of this
+14.56s: don't know that so the goal of this video is to walk through even why we can
+17.47s: video is to walk through even why we can
+17.48s: video is to walk through even why we can use Delta as an approximation of an
+19.71s: use Delta as an approximation of an
+19.72s: use Delta as an approximation of an option being in the money but then also
+21.75s: option being in the money but then also
+21.76s: option being in the money but then also some of the math behind it so that you
+23.67s: some of the math behind it so that you
+23.68s: some of the math behind it so that you can be smarter on how these things work
+26.11s: can be smarter on how these things work
+26.12s: can be smarter on how these things work and then at the end of the video I want
+27.55s: and then at the end of the video I want
+27.56s: and then at the end of the video I want to walk you through the exact scenarios
+29.99s: to walk you through the exact scenarios
+30.00s: to walk you through the exact scenarios where it does work and then it doesn't
+32.15s: where it does work and then it doesn't
+32.16s: where it does work and then it doesn't work because sometimes you have to apply
+34.59s: work because sometimes you have to apply
+34.60s: work because sometimes you have to apply different approach to get an accurate
+36.43s: different approach to get an accurate
+36.44s: different approach to get an accurate answer so with that what's up everybody
+39.19s: answer so with that what's up everybody
+39.20s: answer so with that what's up everybody welcome back to all the outliers and a
+40.63s: welcome back to all the outliers and a
+40.64s: welcome back to all the outliers and a shout out to the patreon family let's
+42.91s: shout out to the patreon family let's
+42.92s: shout out to the patreon family let's get straight to business so Delta as a
+46.19s: get straight to business so Delta as a
+46.20s: get straight to business so Delta as a probability we are going to start with a
+48.35s: probability we are going to start with a
+48.36s: probability we are going to start with a practical application for you guys let's
+50.67s: practical application for you guys let's
+50.68s: practical application for you guys let's take a look here at Nvidia and we're
+53.43s: take a look here at Nvidia and we're
+53.44s: take a look here at Nvidia and we're going to look at this 15 December 2 DTE
+56.99s: going to look at this 15 December 2 DTE
+57.00s: going to look at this 15 December 2 DTE options chain and then my editor will be
+59.07s: options chain and then my editor will be
+59.08s: options chain and then my editor will be kind enough to help help you guys see
+61.15s: kind enough to help help you guys see
+61.16s: kind enough to help help you guys see and follow along with what I'm talking
+62.75s: and follow along with what I'm talking
+62.76s: and follow along with what I'm talking about right here we can see the Delta
+65.59s: about right here we can see the Delta
+65.60s: about right here we can see the Delta for this 480 put the Delta here is 44 so
+70.23s: for this 480 put the Delta here is 44 so
+70.24s: for this 480 put the Delta here is 44 so traditional approach then would say that
+71.91s: traditional approach then would say that
+71.92s: traditional approach then would say that we have a 44% chance of this option
+75.07s: we have a 44% chance of this option
+75.08s: we have a 44% chance of this option expiring in the money at expiration I
+77.75s: expiring in the money at expiration I
+77.76s: expiring in the money at expiration I guess expiring in the money and then at
+79.79s: guess expiring in the money and then at
+79.80s: guess expiring in the money and then at kind of duplicative whatever expiring in
+81.51s: kind of duplicative whatever expiring in
+81.52s: kind of duplicative whatever expiring in the money at expiration making sure you
+82.91s: the money at expiration making sure you
+82.92s: the money at expiration making sure you know that it's at expiration and if we
+85.11s: know that it's at expiration and if we
+85.12s: know that it's at expiration and if we take a look at the probability that's
+86.87s: take a look at the probability that's
+86.88s: take a look at the probability that's calculated by The Thinker swim platform
+88.83s: calculated by The Thinker swim platform
+88.84s: calculated by The Thinker swim platform this is showing me
+91.51s: this is showing me
+91.52s: this is showing me 4455 it's moving around right now cuz
+93.75s: 4455 it's moving around right now cuz
+93.76s: 4455 it's moving around right now cuz markets are still moving a little bit
+95.23s: markets are still moving a little bit
+95.24s: markets are still moving a little bit they're closed but volatility still
+97.35s: they're closed but volatility still
+97.36s: they're closed but volatility still changes so anyways that's what you're
+99.19s: changes so anyways that's what you're
+99.20s: changes so anyways that's what you're seeing this is very close right this is
+100.71s: seeing this is very close right this is
+100.72s: seeing this is very close right this is saying now 43 and it's 44 it's within a
+103.75s: saying now 43 and it's 44 it's within a
+103.76s: saying now 43 and it's 44 it's within a point very close tolerance Okay cool so
+106.23s: point very close tolerance Okay cool so
+106.24s: point very close tolerance Okay cool so then it sounds like it works right why
+109.03s: then it sounds like it works right why
+109.04s: then it sounds like it works right why is this the case and then what was I
+110.95s: is this the case and then what was I
+110.96s: is this the case and then what was I talking about at the beginning of the
+112.11s: talking about at the beginning of the
+112.12s: talking about at the beginning of the video when I said well it doesn't always
+113.67s: video when I said well it doesn't always
+113.68s: video when I said well it doesn't always work well let's take a step over to
+116.55s: work well let's take a step over to
+116.56s: work well let's take a step over to everybody's favorite I'm actually pretty
+118.51s: everybody's favorite I'm actually pretty
+118.52s: everybody's favorite I'm actually pretty sure this is universally except accepted
+120.15s: sure this is universally except accepted
+120.16s: sure this is universally except accepted that everybody really loves my
+121.39s: that everybody really loves my
+121.40s: that everybody really loves my handwriting a load of so where
+124.47s: handwriting a load of so where
+124.48s: handwriting a load of so where would I be without sharing look at that
+127.47s: would I be without sharing look at that
+127.48s: would I be without sharing look at that I even got to the point where I had to
+128.91s: I even got to the point where I had to
+128.92s: I even got to the point where I had to crunch some of this in so my awful
+131.23s: crunch some of this in so my awful
+131.24s: crunch some of this in so my awful handwriting got even worse if you can
+133.39s: handwriting got even worse if you can
+133.40s: handwriting got even worse if you can even believe that tough for me to
+134.83s: even believe that tough for me to
+134.84s: even believe that tough for me to believe but I'll walk you through it
+136.27s: believe but I'll walk you through it
+136.28s: believe but I'll walk you through it don't worry you don't have to know this
+137.83s: don't worry you don't have to know this
+137.84s: don't worry you don't have to know this information in depth I just want to show
+139.79s: information in depth I just want to show
+139.80s: information in depth I just want to show you why this works so that you have a
+141.59s: you why this works so that you have a
+141.60s: you why this works so that you have a better understanding and if you like
+143.31s: better understanding and if you like
+143.32s: better understanding and if you like this side of trading I have a video
+145.43s: this side of trading I have a video
+145.44s: this side of trading I have a video called introduction to options where I
+147.39s: called introduction to options where I
+147.40s: called introduction to options where I dive deep into things like the black
+149.43s: dive deep into things like the black
+149.44s: dive deep into things like the black short
+150.31s: short
+150.32s: short formula well really black shs Martin
+152.11s: formula well really black shs Martin
+152.12s: formula well really black shs Martin model but the formula that they use in
+153.79s: model but the formula that they use in
+153.80s: model but the formula that they use in Blacks model so that you can better
+156.39s: Blacks model so that you can better
+156.40s: Blacks model so that you can better understand these things but it's just a
+157.79s: understand these things but it's just a
+157.80s: understand these things but it's just a differential equation with some
+159.03s: differential equation with some
+159.04s: differential equation with some different inputs that's the punchline
+160.87s: different inputs that's the punchline
+160.88s: different inputs that's the punchline okay that means absolutely nothing to
+162.55s: okay that means absolutely nothing to
+162.56s: okay that means absolutely nothing to you as it should because if it did that
+164.31s: you as it should because if it did that
+164.32s: you as it should because if it did that means you probably have as little of a
+166.19s: means you probably have as little of a
+166.20s: means you probably have as little of a life as I do and you don't actually want
+168.15s: life as I do and you don't actually want
+168.16s: life as I do and you don't actually want to know what this means but here's a key
+170.11s: to know what this means but here's a key
+170.12s: to know what this means but here's a key for you down here again we don't have to
+171.63s: for you down here again we don't have to
+171.64s: for you down here again we don't have to go through it it doesn't really matter I
+173.11s: go through it it doesn't really matter I
+173.12s: go through it it doesn't really matter I just want to highlight a few things to
+174.27s: just want to highlight a few things to
+174.28s: just want to highlight a few things to you first I am going to explain to you
+176.19s: you first I am going to explain to you
+176.20s: you first I am going to explain to you what D1 is so right here is where I
+179.03s: what D1 is so right here is where I
+179.04s: what D1 is so right here is where I break out D1 so that you can see what
+181.63s: break out D1 so that you can see what
+181.64s: break out D1 so that you can see what goes into D1 this matters for a
+183.71s: goes into D1 this matters for a
+183.72s: goes into D1 this matters for a particular reason why would it matter
+185.99s: particular reason why would it matter
+186.00s: particular reason why would it matter you might think because fun fact I don't
+188.51s: you might think because fun fact I don't
+188.52s: you might think because fun fact I don't know if you can use the term fun fact
+190.27s: know if you can use the term fun fact
+190.28s: know if you can use the term fun fact when you're talking about this kind of
+191.67s: when you're talking about this kind of
+191.68s: when you're talking about this kind of stuff but I'm going to do it anyways cuz
+193.11s: stuff but I'm going to do it anyways cuz
+193.12s: stuff but I'm going to do it anyways cuz I think it's fun boom that's Delta nd1
+195.99s: I think it's fun boom that's Delta nd1
+196.00s: I think it's fun boom that's Delta nd1 is Delta so this is how we are
+198.15s: is Delta so this is how we are
+198.16s: is Delta so this is how we are calculating the Delta of an option now
+201.19s: calculating the Delta of an option now
+201.20s: calculating the Delta of an option now it is important to note that n in this
+203.51s: it is important to note that n in this
+203.52s: it is important to note that n in this context n of X is a cumulative density
+206.71s: context n of X is a cumulative density
+206.72s: context n of X is a cumulative density function if you don't know what that
+208.19s: function if you don't know what that
+208.20s: function if you don't know what that means that's okay you don't really have
+209.91s: means that's okay you don't really have
+209.92s: means that's okay you don't really have to know what it means but you can simply
+212.15s: to know what it means but you can simply
+212.16s: to know what it means but you can simply think of it as a distribution of a real
+214.67s: think of it as a distribution of a real
+214.68s: think of it as a distribution of a real variable so in this case for D1 I am
+218.03s: variable so in this case for D1 I am
+218.04s: variable so in this case for D1 I am going to walk you through the inputs
+219.79s: going to walk you through the inputs
+219.80s: going to walk you through the inputs because the inputs here matter to us
+221.67s: because the inputs here matter to us
+221.68s: because the inputs here matter to us here we have the log normal distribution
+223.99s: here we have the log normal distribution
+224.00s: here we have the log normal distribution of the stock price divided by the strike
+226.19s: of the stock price divided by the strike
+226.20s: of the stock price divided by the strike Price Plus the risk-free rate plus the
+229.47s: Price Plus the risk-free rate plus the
+229.48s: Price Plus the risk-free rate plus the annual standard deviation of volatility
+231.63s: annual standard deviation of volatility
+231.64s: annual standard deviation of volatility squar divided by 2 multiplied by time
+234.07s: squar divided by 2 multiplied by time
+234.08s: squar divided by 2 multiplied by time and in this case time is as a percentage
+236.39s: and in this case time is as a percentage
+236.40s: and in this case time is as a percentage of a year and then that's going to be
+237.75s: of a year and then that's going to be
+237.76s: of a year and then that's going to be divided by the annual standard deviation
+240.47s: divided by the annual standard deviation
+240.48s: divided by the annual standard deviation of volatility square root of time okay
+242.95s: of volatility square root of time okay
+242.96s: of volatility square root of time okay why does this matter well I'm going to
+244.71s: why does this matter well I'm going to
+244.72s: why does this matter well I'm going to show you but before that because I have
+247.15s: show you but before that because I have
+247.16s: show you but before that because I have OCD there's D2 in case we were wondering
+249.79s: OCD there's D2 in case we were wondering
+249.80s: OCD there's D2 in case we were wondering you probably over there thinking like
+251.15s: you probably over there thinking like
+251.16s: you probably over there thinking like what the hell is the cumulative density
+252.59s: what the hell is the cumulative density
+252.60s: what the hell is the cumulative density function of this one well that's D2 fun
+254.27s: function of this one well that's D2 fun
+254.28s: function of this one well that's D2 fun fact okay but why does it actually
+255.95s: fact okay but why does it actually
+255.96s: fact okay but why does it actually matter well let's take a look at how we
+257.95s: matter well let's take a look at how we
+257.96s: matter well let's take a look at how we calculate the probability of an option
+259.83s: calculate the probability of an option
+259.84s: calculate the probability of an option being in the money you take the normal
+262.39s: being in the money you take the normal
+262.40s: being in the money you take the normal distribution of the log normal function
+265.39s: distribution of the log normal function
+265.40s: distribution of the log normal function of strike divided by stock price all of
+268.51s: of strike divided by stock price all of
+268.52s: of strike divided by stock price all of that's divided by volatility time the
+270.83s: that's divided by volatility time the
+270.84s: that's divided by volatility time the square root of DTE over 365 so in this
+274.39s: square root of DTE over 365 so in this
+274.40s: square root of DTE over 365 so in this case T right is DTE is a percentage of a
+277.39s: case T right is DTE is a percentage of a
+277.40s: case T right is DTE is a percentage of a year that's exactly what we're doing
+278.71s: year that's exactly what we're doing
+278.72s: year that's exactly what we're doing here so if you notice the denominator in
+281.23s: here so if you notice the denominator in
+281.24s: here so if you notice the denominator in this case is the exact same thing so
+282.83s: this case is the exact same thing so
+282.84s: this case is the exact same thing so then if you look at the numerator you
+284.71s: then if you look at the numerator you
+284.72s: then if you look at the numerator you see that this is slightly different
+287.63s: see that this is slightly different
+287.64s: see that this is slightly different slightly different here we're adding a
+289.67s: slightly different here we're adding a
+289.68s: slightly different here we're adding a couple additional components like the
+291.47s: couple additional components like the
+291.48s: couple additional components like the risk-free rate annual standard deviation
+293.19s: risk-free rate annual standard deviation
+293.20s: risk-free rate annual standard deviation of volatility this is to get Delta
+295.27s: of volatility this is to get Delta
+295.28s: of volatility this is to get Delta because remember Delta has a different
+297.23s: because remember Delta has a different
+297.24s: because remember Delta has a different purpose of probability of being in the
+299.07s: purpose of probability of being in the
+299.08s: purpose of probability of being in the money this matters so because of this
+302.27s: money this matters so because of this
+302.28s: money this matters so because of this let's now take a look at when this does
+305.51s: let's now take a look at when this does
+305.52s: let's now take a look at when this does and does not work because in this
+308.19s: and does not work because in this
+308.20s: and does not work because in this example it worked beautifully right we
+310.67s: example it worked beautifully right we
+310.68s: example it worked beautifully right we have the 43 Delta and it's 44%
+314.19s: have the 43 Delta and it's 44%
+314.20s: have the 43 Delta and it's 44% probability now let's go out to
+316.11s: probability now let's go out to
+316.12s: probability now let's go out to something that's 37 DTE this is 45 Delta
+319.95s: something that's 37 DTE this is 45 Delta
+319.96s: something that's 37 DTE this is 45 Delta for the 480 put and that's
+322.59s: for the 480 put and that's
+322.60s: for the 480 put and that's 48.6% probability of being in the money
+324.59s: 48.6% probability of being in the money
+324.60s: 48.6% probability of being in the money what do you notice if it's not clear yet
+326.87s: what do you notice if it's not clear yet
+326.88s: what do you notice if it's not clear yet let me zoom out even more let's go to
+328.79s: let me zoom out even more let's go to
+328.80s: let me zoom out even more let's go to this 19 April 128 DTE I'm going to look
+331.43s: this 19 April 128 DTE I'm going to look
+331.44s: this 19 April 128 DTE I'm going to look at this 42 Delta 480 put I'm just taking
+334.19s: at this 42 Delta 480 put I'm just taking
+334.20s: at this 42 Delta 480 put I'm just taking essentially the first out of the money
+335.55s: essentially the first out of the money
+335.56s: essentially the first out of the money put the 42 Delta out of the money put
+338.39s: put the 42 Delta out of the money put
+338.40s: put the 42 Delta out of the money put now has a 42% probability according to
+341.55s: now has a 42% probability according to
+341.56s: now has a 42% probability according to Delta but according to the option it's
+343.79s: Delta but according to the option it's
+343.80s: Delta but according to the option it's 50.7 4% as calculated by thinker swim so
+347.03s: 50.7 4% as calculated by thinker swim so
+347.04s: 50.7 4% as calculated by thinker swim so what do you notice ideally you notice
+349.79s: what do you notice ideally you notice
+349.80s: what do you notice ideally you notice something that's pretty clear at this
+352.03s: something that's pretty clear at this
+352.04s: something that's pretty clear at this point what's happening is the further
+354.51s: point what's happening is the further
+354.52s: point what's happening is the further out in time you go the less accurate
+358.19s: out in time you go the less accurate
+358.20s: out in time you go the less accurate Delta is very important for you to know
+361.19s: Delta is very important for you to know
+361.20s: Delta is very important for you to know that if you trade anything essentially
+363.59s: that if you trade anything essentially
+363.60s: that if you trade anything essentially that's over 90 DTE because if we go back
+366.51s: that's over 90 DTE because if we go back
+366.52s: that's over 90 DTE because if we go back to this example this is 42 DTE This Is
+369.91s: to this example this is 42 DTE This Is
+369.92s: to this example this is 42 DTE This Is 50 that's a 8 point variance eight
+373.35s: 50 that's a 8 point variance eight
+373.36s: 50 that's a 8 point variance eight almost 9o variance if you're trading
+376.19s: almost 9o variance if you're trading
+376.20s: almost 9o variance if you're trading something where your outcome can have
+379.35s: something where your outcome can have
+379.36s: something where your outcome can have nine points of slack in potential
+382.39s: nine points of slack in potential
+382.40s: nine points of slack in potential outcome one good on you cuz that means
+384.75s: outcome one good on you cuz that means
+384.76s: outcome one good on you cuz that means you have found an insanely insanely
+387.91s: you have found an insanely insanely
+387.92s: you have found an insanely insanely effective Edge but most of us don't have
+389.83s: effective Edge but most of us don't have
+389.84s: effective Edge but most of us don't have that the difference of a 9% probability
+392.35s: that the difference of a 9% probability
+392.36s: that the difference of a 9% probability here is pretty massive and I keep
+394.39s: here is pretty massive and I keep
+394.40s: here is pretty massive and I keep growing it I realized but yeah it's this
+397.35s: growing it I realized but yeah it's this
+397.36s: growing it I realized but yeah it's this is essentially and this is only 192 days
+400.51s: is essentially and this is only 192 days
+400.52s: is essentially and this is only 192 days out or 128 days out there goes dyslexia
+403.47s: out or 128 days out there goes dyslexia
+403.48s: out or 128 days out there goes dyslexia so what I'm highlighting though is the
+405.71s: so what I'm highlighting though is the
+405.72s: so what I'm highlighting though is the further you go out in time the less
+408.15s: further you go out in time the less
+408.16s: further you go out in time the less accurate Delta is as your approximation
+411.11s: accurate Delta is as your approximation
+411.12s: accurate Delta is as your approximation now for those curious on how this all
+414.11s: now for those curious on how this all
+414.12s: now for those curious on how this all works I bring you the gift of math oh
+417.63s: works I bring you the gift of math oh
+417.64s: works I bring you the gift of math oh hell no let me close close this up so
+420.07s: hell no let me close close this up so
+420.08s: hell no let me close close this up so it's easier for you to follow along you
+421.63s: it's easier for you to follow along you
+421.64s: it's easier for you to follow along you can essentially do a side by side with
+423.43s: can essentially do a side by side with
+423.44s: can essentially do a side by side with me and I'll Zoom this in for those that
+425.03s: me and I'll Zoom this in for those that
+425.04s: me and I'll Zoom this in for those that are visually impaired I know that I have
+426.99s: are visually impaired I know that I have
+427.00s: are visually impaired I know that I have a decent amount of my audience that's
+428.67s: a decent amount of my audience that's
+428.68s: a decent amount of my audience that's above 60 so you guys might need your uh
+431.03s: above 60 so you guys might need your uh
+431.04s: above 60 so you guys might need your uh your fancy two-tone shades make sure
+432.91s: your fancy two-tone shades make sure
+432.92s: your fancy two-tone shades make sure you're not in the sun otherwise it'll be
+434.15s: you're not in the sun otherwise it'll be
+434.16s: you're not in the sun otherwise it'll be too dark and let's take a look I took
+436.47s: too dark and let's take a look I took
+436.48s: too dark and let's take a look I took the current figures so 48088 for NVIDIA
+440.47s: the current figures so 48088 for NVIDIA
+440.48s: the current figures so 48088 for NVIDIA and here are the parameters we need we
+442.35s: and here are the parameters we need we
+442.36s: and here are the parameters we need we need the stock price days expiration you
+444.75s: need the stock price days expiration you
+444.76s: need the stock price days expiration you get to pick whatever option you're
+446.47s: get to pick whatever option you're
+446.48s: get to pick whatever option you're looking at so in this case I'm looking
+447.87s: looking at so in this case I'm looking
+447.88s: looking at so in this case I'm looking at a put and a call I'm looking at the
+449.99s: at a put and a call I'm looking at the
+450.00s: at a put and a call I'm looking at the 480 put the 485 call then I'm going to
+452.99s: 480 put the 485 call then I'm going to
+453.00s: 480 put the 485 call then I'm going to grab the implied volatility for both of
+454.83s: grab the implied volatility for both of
+454.84s: grab the implied volatility for both of those options so the put IV in this
+456.63s: those options so the put IV in this
+456.64s: those options so the put IV in this instance is 33.3% the call IV is 32.4 2%
+460.83s: instance is 33.3% the call IV is 32.4 2%
+460.84s: instance is 33.3% the call IV is 32.4 2% you'll have to trust me cuz it's covered
+462.19s: you'll have to trust me cuz it's covered
+462.20s: you'll have to trust me cuz it's covered right now and let's take a look at the
+464.43s: right now and let's take a look at the
+464.44s: right now and let's take a look at the outputs for the put this is calculating
+467.63s: outputs for the put this is calculating
+467.64s: outputs for the put this is calculating the probability of in the money being
+468.95s: the probability of in the money being
+468.96s: the probability of in the money being 49.3 1% thinker swim is calculating it
+472.11s: 49.3 1% thinker swim is calculating it
+472.12s: 49.3 1% thinker swim is calculating it at 48.63 per and the Delta is
+475.23s: at 48.63 per and the Delta is
+475.24s: at 48.63 per and the Delta is calculating it at 45% all slight
+477.51s: calculating it at 45% all slight
+477.52s: calculating it at 45% all slight differences because thinker swim is
+479.35s: differences because thinker swim is
+479.36s: differences because thinker swim is going to apply their proprietary
+481.63s: going to apply their proprietary
+481.64s: going to apply their proprietary formulas for most of these things so
+483.99s: formulas for most of these things so
+484.00s: formulas for most of these things so that's why it is a slight deviation from
+486.11s: that's why it is a slight deviation from
+486.12s: that's why it is a slight deviation from this but you should notice one thing we
+488.03s: this but you should notice one thing we
+488.04s: this but you should notice one thing we are much closer to what thinker swim is
+489.99s: are much closer to what thinker swim is
+490.00s: are much closer to what thinker swim is calculating in this instance than Delta
+491.75s: calculating in this instance than Delta
+491.76s: calculating in this instance than Delta is same thing for the call side so how
+494.15s: is same thing for the call side so how
+494.16s: is same thing for the call side so how do you calculate these I'll highlight
+495.95s: do you calculate these I'll highlight
+495.96s: do you calculate these I'll highlight these real quick so that you can grab
+497.99s: these real quick so that you can grab
+498.00s: these real quick so that you can grab the formulas but it's literally just
+500.75s: the formulas but it's literally just
+500.76s: the formulas but it's literally just grabbing the formulas that I just showed
+503.07s: grabbing the formulas that I just showed
+503.08s: grabbing the formulas that I just showed you guys but this for those that look at
+505.75s: you guys but this for those that look at
+505.76s: you guys but this for those that look at that and their eyes gloss over here's
+507.59s: that and their eyes gloss over here's
+507.60s: that and their eyes gloss over here's literally what you could just grab from
+509.31s: literally what you could just grab from
+509.32s: literally what you could just grab from Google Sheets or Excel is the same thing
+511.31s: Google Sheets or Excel is the same thing
+511.32s: Google Sheets or Excel is the same thing now I will say before people start
+513.19s: now I will say before people start
+513.20s: now I will say before people start dropping in saying like her the normal
+516.15s: dropping in saying like her the normal
+516.16s: dropping in saying like her the normal distribution functions not working if
+518.03s: distribution functions not working if
+518.04s: distribution functions not working if you use something like Google Sheets
+520.15s: you use something like Google Sheets
+520.16s: you use something like Google Sheets there are a lot of them right so there's
+522.63s: there are a lot of them right so there's
+522.64s: there are a lot of them right so there's normal distributions for sample normal
+524.47s: normal distributions for sample normal
+524.48s: normal distributions for sample normal distribution for populations so in this
+527.27s: distribution for populations so in this
+527.28s: distribution for populations so in this case you want to use the standard normal
+530.79s: case you want to use the standard normal
+530.80s: case you want to use the standard normal distribution function so norm.
+533.59s: distribution function so norm.
+533.60s: distribution function so norm. s.d and then in Excel it's slightly
+536.11s: s.d and then in Excel it's slightly
+536.12s: s.d and then in Excel it's slightly different but you'll be able to figure
+537.95s: different but you'll be able to figure
+537.96s: different but you'll be able to figure it out hopefully if not don't do this
+539.91s: it out hopefully if not don't do this
+539.92s: it out hopefully if not don't do this and probably don't trade so be an
+541.71s: and probably don't trade so be an
+541.72s: and probably don't trade so be an outlier see you guys later

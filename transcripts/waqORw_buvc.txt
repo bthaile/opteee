@@ -1,119 +1,560 @@
-0.00s: What is the best time to enter a zero DTE trade in SPX?
-5.50s: Well, we're going to get to the bottom of that,
-7.20s: and we're going to answer a couple of questions along the way that people commonly get wrong.
-12.50s: So buckle up, we're going to look through over 25,000 trades from 2022,
-18.30s: and we are going to get to the bottom of this question.
-21.70s: Let's get straight in.
-23.70s: So first thing is first, contrary to popular belief,
-28.00s: like this person says down here, you never put on an iron condor or premium selling strategy with zero DTE one hour before the close.
-36.50s: They're referencing a previous video that I did where I was entering the last hour before the close.
-40.70s: And if you guys know anything about me, there's probably a reason why I was doing that, which will learn more about this person up here,
-47.90s: commented on that same video, and they were saying commonly people open a trade a bit after market open.
-53.80s: Did you discover something that made you decide otherwise?
-56.70s: And I want you to keep that in mind as we move through this.
-60.10s: Now, a couple notes on methodology.
-62.70s: This is nothing super complex.
-64.20s: I track zero DTE data because I trade it myself,
-68.70s: but for something like this where we're going to look through a bunch of different permutations of strategies,
-74.70s: I already have a data set that I've purchased from Cebo,
-78.90s: intraday with full Greeks, and I run it through Python,
-82.90s: and then I share those results with you all here.
-86.20s: So let's take a look at what this looks like.
-90.50s: So we'll give her to those two and what I want to start us with is kind of an overview.
-95.70s: And there's a reason why I want to start with this overview.
-98.00s: It's specifically because it will help you identify some trends that I want you to see from the beginning.
-104.70s: And then we're going to move into each individual year.
-108.40s: Now, why did I pick 2022?
-110.10s: Pretty simple.
-110.70s: That's when the zero DTE expiration is kind of expanded.
-115.90s: And it wasn't just a Friday expiration, but we started having midweek expirations.
-120.30s: And then after 2022 is when we actually fully launched daily expirations.
-126.20s: So this gives us kind of the purest sense that we can.
-130.10s: I have larger data sets that we've looked at previously,
-132.70s: but this is looking more closely at zero DTE specifically.
-135.80s: Now, the other thing to keep in mind is 2022 and 2023 were important years.
-141.60s: 2022 was a down year in SPX, just shy of 20% and then 2023 was a positive year in the S&P 500 just over 23%.
-153.00s: So you get to see how this works into very different market conditions.
-157.40s: Now run through column A very quickly.
-160.20s: So you know what we're looking at.
-161.70s: We have the short call long call short put long put delta's.
-167.90s: So as you can see right here, we're looking at strangles.
-171.80s: The lot size for all of these will be a one lot.
-174.00s: I'm starting the entry times at two different periods 0 935 Eastern time and then 1500 Eastern time.
-181.40s: You'll see when we go through the rest of the data that I actually have by every single hour.
-185.80s: I'm just giving you some brackets to start with.
-188.10s: There's no profit or loss management applied to any of these,
-192.70s: which is something we can look at in the future if you're interested.
-195.90s: And then we have the profit and loss for the strategy, the compound annual growth rate, the max drawdown, the average return per trade average win average loss max win max loss.
-208.40s: The number of trades, the number of winning trades and then win rate loss rate and expected return.
-214.50s: You'll see that the expected return is the same thing up here as the average per trade.
-218.30s: It just gives you a little more data behind it.
-221.20s: Okay, so a common complaint that I got from my last video is that I didn't include iron condors, which you might expect.
-228.50s: There's a reason why, but to satiate those people, let's take a look at those.
-233.90s: Okay, so first things first, we notice that 0 935 for the single option variations perform worse than the later entries.
-242.90s: Then we also notice that if you add five delta wings to all of these, they're all losing positions.
-250.70s: So it takes something that previously was profitable and it makes it not profitable.
-255.30s: Now if we look at the best performing iron condor, which was short, the 30 delta's long the five entered at 1500 Pacific time.
-267.20s: The best performer was a returned 18,626, not bad.
-272.90s: Now what I want to highlight about that though is if you look at the worst performing single option variant, the 10 delta entered at the same time, that returned 2522.
-284.60s: The other thing I want you to notice is take a look at the max loss.
-287.40s: The max loss in this 10 delta was 4600 bucks.
-289.90s: The max loss for this 30 delta with the five wings was 3880.
-293.80s: So it's less than a thousand difference between the max loss.
-297.80s: But if you look at the average loss, they're very similar.
-300.80s: The average loss on this 10 delta short, 791 and for the 30 delta long the fives, 799, not a big difference here.
-309.20s: Important to know and obviously it's because some people will say we should use really wide wings to define the risk or to manage margin.
-315.70s: And that's what you're seeing here.
-317.40s: So this is again from 2022 to 2024 March 25th.
-322.50s: That's just where I grabbed the data from now.
-325.10s: We can take a look at each hour across that same time frame.
-330.30s: So 22 to 24.
-332.20s: We have a 10 a.m. 11 1212 123 all Eastern time entries.
-337.90s: I want you to notice something notice how the entries closer to the close 10 to perform better.
-343.90s: Even those that are slightly negative, they tend to perform at least better on the further out of the money strikes.
-353.00s: So the 10 delta, they perform better later on the day.
-356.40s: Now there's a bit of an uptick here in this 12 Eastern time bracket where you can see this actually does well.
-363.10s: It doesn't quite perform as well as the 141500 entries on average, but it's still noteworthy.
-370.40s: And what we'll do next is look year by year, but a couple things to know again, this is with no management applied that actually changes things quite a bit.
-379.60s: However, when you look at stuff like this and let me get myself out of the way for you, when you look at stuff like this, it's really important to know to few things.
-388.30s: What we see in this back test is what we call in sample.
-392.20s: This is when we look at a specified sample and we know what happened so we can, you know, see what's optimal for that.
-399.60s: But you run the risk of overfitting overfitting is where our future results, we know will be different.
-407.00s: And if we make our approach fit historic data perfectly, it runs the risk of not adjusting well to what things look like in the future, which is unknown to us.
-418.70s: So to avoid overfitting what we want to do is look for trends that generally hold true across periods across delta's and make some informed decisions about what the future might look like based on that.
-433.10s: You can run forward projections as well to help with that.
-435.50s: I didn't do that in this video for the sake of time.
-437.80s: So a couple of things I notice and this is nothing revolutionary.
-442.00s: If you use lower deltas, you're going to have a lower max loss as compared to the higher delta's on average, but you're also going to have a lower average win per trade.
-454.60s: So that's the trade off. You're going to see a higher win rate.
-458.30s: Notice for these 10 delta's, you're winning 87% of the time as compared to 66 on the 30 delta's, but let's take a look then at how this looks year over year.
-468.30s: Because you'll notice across both a bear market, which is up here in 2022 and then a bowl market, which is here in 2023.
-477.60s: It actually doesn't change that much.
-479.70s: We see the same thing here where the early entries tend to not perform well.
-485.50s: Why is that a bunch of different reasons, but a lot of it comes down to the first hour of the market is very volatile.
-492.80s: There are a lot of orders resting from the night before that are getting pushed through from pension funds that need to clear out their trades and so on and so forth.
-501.30s: They're not really caring about getting optimal fill. So they're just blasting stuff through.
-505.40s: This is where everything is digested quickly.
-507.60s: So the first half hour to hour of a market tends to be pretty busy.
-515.20s: The other thing is because there are now daily explorations, you'll notice that the rate of decay is actually a little bit slower in the beginning of the day relative to the end of the day.
-526.30s: And it's the same thing that you'll see with options in general where it gets as parabolic as you can into expiration.
-532.40s: But that's just happening on a shortened zero DTE timeframe.
-535.90s: So when you're entering these things first thing right on the open, you're going to see more money. You're going to see a higher premium received, but a lot of that's not actually going to decay out for again relative to a zero DTE timeframe until later in the day.
-551.10s: So you're really holding things exposing yourself to a lot of directional risk unless you're delta hedging and gamma hedging these positions, which SPX is very difficult to do.
-562.30s: In any sort of pure sense. So that's why you see this.
-566.00s: This is also why in general entering as you get nearer to the close tends to work better.
-571.50s: Now I want you to notice something in particular though, look at the average PNL or 2022 compared to 2023 in 2022.
-580.50s: The average PNL is better for a 1400 Eastern time entry for 2023 that actually shifts across the board for all of them, whether it's a 10 15 20 or 30 delta strangled.
-592.30s: It all shifts out to the right to the 1500 2022 bear market 2023 bull market is there a direct conclusion to be led by this.
-602.80s: Not so much not just yet, but it's something to be aware of now the other thing that I noticed that was interesting to me is in a bear market.
-611.80s: The 1500 entry notice the loss of size of these losses, $4,600, $5,300 that's about you would expect fairly high.
-621.10s: If you look at that compared to a bowl market in 2023 notice how low these are really small losses for the max loss relative to here.
-631.10s: But if we look at that, you would think yeah, that makes sense bear market.
-633.90s: I would expect this to have bigger losses more volatility, but take a look at the 1400 entry.
-640.00s: The losses actually get bigger in 2023 during a bull market, not something I necessarily would expect, but notice that the win rates here for the 10 delta or slightly better and for the 30 delta slightly better.
-655.00s: So what I'm highlighting here, these are like little things you can hone in on, but if I were to think about this in it just a general broad context.
-664.30s: Here's what I'm thinking about later in the day works better using single options via a strangle works better this I used to include straddles in this, but I haven't for some time because they're under performing and they under perform here as well.
-678.30s: That is been a trying to notice as of general last couple years and that's something else to be aware of what the integration of this I'm still continuing to test those, but that's what I'm seeing so far.
-689.20s: Now what you'll see if we do a future video if you let me know in the comments that you'd like me to do that we can take a look at how to think about managing the profit and the lost side and then what subsequent impacts that has on the performance.
-704.40s: So if we should do that, let me know don't forget to like the video, be an outlier.
-709.00s: See you guys later.
+0.32s: what is the best time to enter a zero
+3.08s: what is the best time to enter a zero DTE trade in SPX well we're going to get
+6.31s: DTE trade in SPX well we're going to get
+6.32s: DTE trade in SPX well we're going to get to the bottom of that and we're going to
+8.39s: to the bottom of that and we're going to
+8.40s: to the bottom of that and we're going to answer a couple questions along the way
+10.03s: answer a couple questions along the way
+10.04s: answer a couple questions along the way that people commonly get wrong so buckle
+13.35s: that people commonly get wrong so buckle
+13.36s: that people commonly get wrong so buckle up we're going to look through over
+15.27s: up we're going to look through over
+15.28s: up we're going to look through over 25,000 trades from 2022 and we are going
+19.83s: 25,000 trades from 2022 and we are going
+19.84s: 25,000 trades from 2022 and we are going to get to the bottom of this question
+21.95s: to get to the bottom of this question
+21.96s: to get to the bottom of this question let's get straight in so first thing is
+25.91s: let's get straight in so first thing is
+25.92s: let's get straight in so first thing is first contrary to popular belief like
+28.39s: first contrary to popular belief like
+28.40s: first contrary to popular belief like this person says down here you never put
+30.79s: this person says down here you never put
+30.80s: this person says down here you never put on an iron Condor or premium selling
+33.31s: on an iron Condor or premium selling
+33.32s: on an iron Condor or premium selling strategy with zero DTE 1 hour before the
+36.19s: strategy with zero DTE 1 hour before the
+36.20s: strategy with zero DTE 1 hour before the close they're referencing a previous
+37.67s: close they're referencing a previous
+37.68s: close they're referencing a previous video that I did where I was entering
+39.27s: video that I did where I was entering
+39.28s: video that I did where I was entering the last hour before the close and if
+41.43s: the last hour before the close and if
+41.44s: the last hour before the close and if you guys know anything about me there's
+42.95s: you guys know anything about me there's
+42.96s: you guys know anything about me there's probably a reason why I was doing that
+44.75s: probably a reason why I was doing that
+44.76s: probably a reason why I was doing that which will learn more about this person
+47.31s: which will learn more about this person
+47.32s: which will learn more about this person up here commented on that same video and
+49.51s: up here commented on that same video and
+49.52s: up here commented on that same video and they were saying commonly people open a
+51.55s: they were saying commonly people open a
+51.56s: they were saying commonly people open a trade a bit after market open did you
+54.27s: trade a bit after market open did you
+54.28s: trade a bit after market open did you discover something that made you decide
+55.91s: discover something that made you decide
+55.92s: discover something that made you decide otherwise and I want you to keep that in
+57.95s: otherwise and I want you to keep that in
+57.96s: otherwise and I want you to keep that in mind as we move through this now couple
+60.83s: mind as we move through this now couple
+60.84s: mind as we move through this now couple notes on methodology this is nothing
+63.27s: notes on methodology this is nothing
+63.28s: notes on methodology this is nothing super complex I track zero DTE data
+67.11s: super complex I track zero DTE data
+67.12s: super complex I track zero DTE data because I trade it myself but for
+69.35s: because I trade it myself but for
+69.36s: because I trade it myself but for something like this where we're going to
+70.99s: something like this where we're going to
+71.00s: something like this where we're going to look through a bunch of different
+72.79s: look through a bunch of different
+72.80s: look through a bunch of different permutations of strategies I already
+75.95s: permutations of strategies I already
+75.96s: permutations of strategies I already have a data set that I've purchased from
+78.11s: have a data set that I've purchased from
+78.12s: have a data set that I've purchased from sibo intraday with full Greeks and I run
+81.99s: sibo intraday with full Greeks and I run
+82.00s: sibo intraday with full Greeks and I run it through Python and then I share those
+83.99s: it through Python and then I share those
+84.00s: it through Python and then I share those results with you all here so let's take
+87.19s: results with you all here so let's take
+87.20s: results with you all here so let's take a look at what this looks like so we'll
+90.59s: a look at what this looks like so we'll
+90.60s: a look at what this looks like so we'll get rid of those two and what I want to
+92.63s: get rid of those two and what I want to
+92.64s: get rid of those two and what I want to start us with is kind of an overview and
+95.71s: start us with is kind of an overview and
+95.72s: start us with is kind of an overview and there's a reason why I want to start
+96.83s: there's a reason why I want to start
+96.84s: there's a reason why I want to start with this overview it's specifically
+98.99s: with this overview it's specifically
+99.00s: with this overview it's specifically because it will help you identify some
+101.75s: because it will help you identify some
+101.76s: because it will help you identify some trends that I want you to see from the
+104.07s: trends that I want you to see from the
+104.08s: trends that I want you to see from the beginning and then we're going to move
+105.67s: beginning and then we're going to move
+105.68s: beginning and then we're going to move into each individual year now why did I
+108.95s: into each individual year now why did I
+108.96s: into each individual year now why did I pick 2022 pretty simple that's when the
+112.19s: pick 2022 pretty simple that's when the
+112.20s: pick 2022 pretty simple that's when the zero DTE expirations kind of expanded
+115.99s: zero DTE expirations kind of expanded
+116.00s: zero DTE expirations kind of expanded and it wasn't just a Friday expiration
+117.71s: and it wasn't just a Friday expiration
+117.72s: and it wasn't just a Friday expiration but we started having midweek expiration
+120.43s: but we started having midweek expiration
+120.44s: but we started having midweek expiration and then after 2022 is when we actually
+123.07s: and then after 2022 is when we actually
+123.08s: and then after 2022 is when we actually fully launched daily expirations so this
+126.83s: fully launched daily expirations so this
+126.84s: fully launched daily expirations so this gives us kind of a the purest sense that
+129.75s: gives us kind of a the purest sense that
+129.76s: gives us kind of a the purest sense that we can I have larger data sets that
+131.55s: we can I have larger data sets that
+131.56s: we can I have larger data sets that we've looked at previously but this is
+133.15s: we've looked at previously but this is
+133.16s: we've looked at previously but this is looking more closely at zero DTE
+135.23s: looking more closely at zero DTE
+135.24s: looking more closely at zero DTE specifically now the other thing to keep
+137.35s: specifically now the other thing to keep
+137.36s: specifically now the other thing to keep in mind is 2022 and 2023 were important
+141.15s: in mind is 2022 and 2023 were important
+141.16s: in mind is 2022 and 2023 were important years 2022 was a down year in SPX just
+145.31s: years 2022 was a down year in SPX just
+145.32s: years 2022 was a down year in SPX just shy of 20% and then 2023 was a positive
+149.11s: shy of 20% and then 2023 was a positive
+149.12s: shy of 20% and then 2023 was a positive year in S&amp;P 500 just over 23% so you get
+153.39s: year in S&amp;P 500 just over 23% so you get
+153.40s: year in S&amp;P 500 just over 23% so you get to see how this works in two very
+156.03s: to see how this works in two very
+156.04s: to see how this works in two very different market conditions now run
+158.27s: different market conditions now run
+158.28s: different market conditions now run through column a very quickly so you
+160.47s: through column a very quickly so you
+160.48s: through column a very quickly so you know what we're looking at we have the
+162.63s: know what we're looking at we have the
+162.64s: know what we're looking at we have the short call Long call short put long put
+166.83s: short call Long call short put long put
+166.84s: short call Long call short put long put Deltas so as you can see right here
+169.43s: Deltas so as you can see right here
+169.44s: Deltas so as you can see right here we're looking at strangles the lot size
+172.43s: we're looking at strangles the lot size
+172.44s: we're looking at strangles the lot size for all of these will be a one lot I'm
+174.19s: for all of these will be a one lot I'm
+174.20s: for all of these will be a one lot I'm starting the entry times at two
+176.15s: starting the entry times at two
+176.16s: starting the entry times at two different periods 0935 eastern time and
+179.19s: different periods 0935 eastern time and
+179.20s: different periods 0935 eastern time and then 15 100 eastern time you'll see when
+182.11s: then 15 100 eastern time you'll see when
+182.12s: then 15 100 eastern time you'll see when we go through the rest of the data that
+183.47s: we go through the rest of the data that
+183.48s: we go through the rest of the data that I actually have by every single hour I'm
+185.91s: I actually have by every single hour I'm
+185.92s: I actually have by every single hour I'm just giving you some brackets to start
+187.63s: just giving you some brackets to start
+187.64s: just giving you some brackets to start with there's no profit or Loss
+190.55s: with there's no profit or Loss
+190.56s: with there's no profit or Loss Management applied to any of these which
+192.83s: Management applied to any of these which
+192.84s: Management applied to any of these which is something we can look at in the
+194.15s: is something we can look at in the
+194.16s: is something we can look at in the future if you're interested and then we
+196.35s: future if you're interested and then we
+196.36s: future if you're interested and then we have the profit and loss for the
+198.35s: have the profit and loss for the
+198.36s: have the profit and loss for the strategy the compound annual growth rate
+200.59s: strategy the compound annual growth rate
+200.60s: strategy the compound annual growth rate the Max draw down the average return per
+204.23s: the Max draw down the average return per
+204.24s: the Max draw down the average return per trade average win average loss Max win
+207.39s: trade average win average loss Max win
+207.40s: trade average win average loss Max win Max loss the number of Trades the number
+210.07s: Max loss the number of Trades the number
+210.08s: Max loss the number of Trades the number of winning trades and then win rate loss
+212.55s: of winning trades and then win rate loss
+212.56s: of winning trades and then win rate loss rate and expected return you'll see that
+214.95s: rate and expected return you'll see that
+214.96s: rate and expected return you'll see that the expected return is the same thing up
+216.51s: the expected return is the same thing up
+216.52s: the expected return is the same thing up here as the average per trade it just
+218.59s: here as the average per trade it just
+218.60s: here as the average per trade it just gives you um a little more data behind
+220.55s: gives you um a little more data behind
+220.56s: gives you um a little more data behind it okay so a common complaint that I got
+223.51s: it okay so a common complaint that I got
+223.52s: it okay so a common complaint that I got from my last video is that I didn't
+225.87s: from my last video is that I didn't
+225.88s: from my last video is that I didn't include iron Condors which you might
+228.07s: include iron Condors which you might
+228.08s: include iron Condors which you might expect there's a reason why but to
+229.99s: expect there's a reason why but to
+230.00s: expect there's a reason why but to satiate those people let's take a look
+233.23s: satiate those people let's take a look
+233.24s: satiate those people let's take a look at those okay so first things first we
+235.67s: at those okay so first things first we
+235.68s: at those okay so first things first we noticed that 0935 for the single option
+238.91s: noticed that 0935 for the single option
+238.92s: noticed that 0935 for the single option variations perform worse than the later
+242.19s: variations perform worse than the later
+242.20s: variations perform worse than the later entries then we also notice that if you
+245.55s: entries then we also notice that if you
+245.56s: entries then we also notice that if you add five Delta Wings to all of these
+248.75s: add five Delta Wings to all of these
+248.76s: add five Delta Wings to all of these they're all losing positions so it takes
+251.43s: they're all losing positions so it takes
+251.44s: they're all losing positions so it takes something that previously was profitable
+253.47s: something that previously was profitable
+253.48s: something that previously was profitable and it makes it not profitable now if we
+256.19s: and it makes it not profitable now if we
+256.20s: and it makes it not profitable now if we look at the best performing iron Condor
+260.23s: look at the best performing iron Condor
+260.24s: look at the best performing iron Condor which was short the 30 Deltas long the
+263.39s: which was short the 30 Deltas long the
+263.40s: which was short the 30 Deltas long the five entered at 1500 Pacific time the
+267.31s: five entered at 1500 Pacific time the
+267.32s: five entered at 1500 Pacific time the best performer was it returned
+270.55s: best performer was it returned
+270.56s: best performer was it returned 18,6 26 not bad now what I want to
+273.79s: 18,6 26 not bad now what I want to
+273.80s: 18,6 26 not bad now what I want to highlight about that though is if you
+275.27s: highlight about that though is if you
+275.28s: highlight about that though is if you look at the worst performing single
+277.95s: look at the worst performing single
+277.96s: look at the worst performing single option variant the 10 Delta entered at
+280.39s: option variant the 10 Delta entered at
+280.40s: option variant the 10 Delta entered at the same time that returned
+282.35s: the same time that returned
+282.36s: the same time that returned 20,5 22 the other thing I want you to
+285.31s: 20,5 22 the other thing I want you to
+285.32s: 20,5 22 the other thing I want you to notice is take a look at the max loss
+287.27s: notice is take a look at the max loss
+287.28s: notice is take a look at the max loss the max loss in this 10 Delta was 4600
+289.51s: the max loss in this 10 Delta was 4600
+289.52s: the max loss in this 10 Delta was 4600 bucks the max loss for this 30 Delta
+291.43s: bucks the max loss for this 30 Delta
+291.44s: bucks the max loss for this 30 Delta with the five Wings was 3880 so it's
+294.03s: with the five Wings was 3880 so it's
+294.04s: with the five Wings was 3880 so it's less than a thousand difference between
+296.67s: less than a thousand difference between
+296.68s: less than a thousand difference between the max loss but if you look at the
+298.43s: the max loss but if you look at the
+298.44s: the max loss but if you look at the average loss there very similar the
+300.91s: average loss there very similar the
+300.92s: average loss there very similar the average loss on this 10 Delta short 791
+303.95s: average loss on this 10 Delta short 791
+303.96s: average loss on this 10 Delta short 791 and for the 30 Delta long the fives $799
+307.75s: and for the 30 Delta long the fives $799
+307.76s: and for the 30 Delta long the fives $799 not a big difference here it's important
+309.63s: not a big difference here it's important
+309.64s: not a big difference here it's important to know and obviously it's because some
+311.43s: to know and obviously it's because some
+311.44s: to know and obviously it's because some people will say we should use really
+312.91s: people will say we should use really
+312.92s: people will say we should use really wide wings to define the risk or to
+314.87s: wide wings to define the risk or to
+314.88s: wide wings to define the risk or to manage margin and that's what you're
+316.51s: manage margin and that's what you're
+316.52s: manage margin and that's what you're seeing here so this is again from 2022
+320.31s: seeing here so this is again from 2022
+320.32s: seeing here so this is again from 2022 to 2024 March 25th that's just where I
+323.19s: to 2024 March 25th that's just where I
+323.20s: to 2024 March 25th that's just where I grabbed the data from now we can take a
+325.87s: grabbed the data from now we can take a
+325.88s: grabbed the data from now we can take a look at each hour across that same time
+329.79s: look at each hour across that same time
+329.80s: look at each hour across that same time frame so 22 to 24 we have a 10:00 a.m.
+333.39s: frame so 22 to 24 we have a 10:00 a.m.
+333.40s: frame so 22 to 24 we have a 10:00 a.m. 11 12 1 2 3 all Eastern Time entries I
+338.03s: 11 12 1 2 3 all Eastern Time entries I
+338.04s: 11 12 1 2 3 all Eastern Time entries I want you to notice something notice how
+340.19s: want you to notice something notice how
+340.20s: want you to notice something notice how the entries closer to the close tend to
+342.83s: the entries closer to the close tend to
+342.84s: the entries closer to the close tend to perform better even those that are
+344.99s: perform better even those that are
+345.00s: perform better even those that are slightly Negative they tend to perform
+348.23s: slightly Negative they tend to perform
+348.24s: slightly Negative they tend to perform at least better on the further outof the
+351.83s: at least better on the further outof the
+351.84s: at least better on the further outof the money strikes so the 10 Delta they
+354.75s: money strikes so the 10 Delta they
+354.76s: money strikes so the 10 Delta they perform better later in the day now
+356.75s: perform better later in the day now
+356.76s: perform better later in the day now there's a bit of a an uptick here in
+359.11s: there's a bit of a an uptick here in
+359.12s: there's a bit of a an uptick here in this 12 Eastern Time bracket where you
+361.55s: this 12 Eastern Time bracket where you
+361.56s: this 12 Eastern Time bracket where you can see this actually does well it
+363.31s: can see this actually does well it
+363.32s: can see this actually does well it doesn't quite perform as well as the
+365.99s: doesn't quite perform as well as the
+366.00s: doesn't quite perform as well as the 1400 and 1500 entries on average but
+369.11s: 1400 and 1500 entries on average but
+369.12s: 1400 and 1500 entries on average but it's still noteworthy and what we'll do
+371.39s: it's still noteworthy and what we'll do
+371.40s: it's still noteworthy and what we'll do next is look Year bye but a couple
+374.63s: next is look Year bye but a couple
+374.64s: next is look Year bye but a couple things to note again this is with no
+376.67s: things to note again this is with no
+376.68s: things to note again this is with no management applied that actually changes
+378.63s: management applied that actually changes
+378.64s: management applied that actually changes things quite a bit however when you look
+380.75s: things quite a bit however when you look
+380.76s: things quite a bit however when you look at stuff like this and let me get myself
+383.07s: at stuff like this and let me get myself
+383.08s: at stuff like this and let me get myself out of the way for you when you look at
+384.87s: out of the way for you when you look at
+384.88s: out of the way for you when you look at stuff like this it's really important to
+387.03s: stuff like this it's really important to
+387.04s: stuff like this it's really important to note a few things what we see in this
+389.23s: note a few things what we see in this
+389.24s: note a few things what we see in this back test is what we call in Sample this
+392.39s: back test is what we call in Sample this
+392.40s: back test is what we call in Sample this is when we look at a specified sample
+394.71s: is when we look at a specified sample
+394.72s: is when we look at a specified sample and we know what happens so we can you
+397.27s: and we know what happens so we can you
+397.28s: and we know what happens so we can you know see what's optimal for that but you
+399.87s: know see what's optimal for that but you
+399.88s: know see what's optimal for that but you run the risk of overfitting overfitting
+402.79s: run the risk of overfitting overfitting
+402.80s: run the risk of overfitting overfitting is where our future results we know will
+405.87s: is where our future results we know will
+405.88s: is where our future results we know will be different and if we make our approach
+409.91s: be different and if we make our approach
+409.92s: be different and if we make our approach fit historic data perfectly it runs the
+413.43s: fit historic data perfectly it runs the
+413.44s: fit historic data perfectly it runs the risk of not adjusting well to what
+416.23s: risk of not adjusting well to what
+416.24s: risk of not adjusting well to what things look like in the future which is
+417.59s: things look like in the future which is
+417.60s: things look like in the future which is unknown to us so to avoid overfitting
+421.03s: unknown to us so to avoid overfitting
+421.04s: unknown to us so to avoid overfitting what we want to do is look for trends
+423.23s: what we want to do is look for trends
+423.24s: what we want to do is look for trends that generally hold true across periods
+427.71s: that generally hold true across periods
+427.72s: that generally hold true across periods across deltas and make some informed
+430.59s: across deltas and make some informed
+430.60s: across deltas and make some informed decisions about what the future might
+432.11s: decisions about what the future might
+432.12s: decisions about what the future might look like based on that you can run
+433.51s: look like based on that you can run
+433.52s: look like based on that you can run forward projections as well to help with
+435.31s: forward projections as well to help with
+435.32s: forward projections as well to help with that I didn't do that in this video for
+436.83s: that I didn't do that in this video for
+436.84s: that I didn't do that in this video for the sake of time so a couple things I
+439.07s: the sake of time so a couple things I
+439.08s: the sake of time so a couple things I notied and this is nothing revolutionary
+442.11s: notied and this is nothing revolutionary
+442.12s: notied and this is nothing revolutionary if you use lower Deltas you're going to
+444.79s: if you use lower Deltas you're going to
+444.80s: if you use lower Deltas you're going to have a lower Max loss as compared to the
+448.63s: have a lower Max loss as compared to the
+448.64s: have a lower Max loss as compared to the higher deltas on average but you're also
+450.91s: higher deltas on average but you're also
+450.92s: higher deltas on average but you're also going to have a lower average win per
+453.95s: going to have a lower average win per
+453.96s: going to have a lower average win per trade slightly so that's the trade-off
+456.31s: trade slightly so that's the trade-off
+456.32s: trade slightly so that's the trade-off you're going to see a higher win rate
+458.43s: you're going to see a higher win rate
+458.44s: you're going to see a higher win rate notice for these 10 Deltas you're
+459.79s: notice for these 10 Deltas you're
+459.80s: notice for these 10 Deltas you're winning 87% of the time as compared to
+462.51s: winning 87% of the time as compared to
+462.52s: winning 87% of the time as compared to 66 on the 30 Deltas but let's take a
+465.07s: 66 on the 30 Deltas but let's take a
+465.08s: 66 on the 30 Deltas but let's take a look then at how this looks year
+467.39s: look then at how this looks year
+467.40s: look then at how this looks year over-year cuz you'll notice across both
+471.55s: over-year cuz you'll notice across both
+471.56s: over-year cuz you'll notice across both a bare Market which is up here in 2022
+474.83s: a bare Market which is up here in 2022
+474.84s: a bare Market which is up here in 2022 and then a bull market which is here in
+476.75s: and then a bull market which is here in
+476.76s: and then a bull market which is here in 2023 it actually doesn't change that
+479.11s: 2023 it actually doesn't change that
+479.12s: 2023 it actually doesn't change that much we see the same thing here where
+482.43s: much we see the same thing here where
+482.44s: much we see the same thing here where the early entries tend to not perform
+485.23s: the early entries tend to not perform
+485.24s: the early entries tend to not perform well why is that a bunch of different
+487.55s: well why is that a bunch of different
+487.56s: well why is that a bunch of different reasons but a lot of it comes down to
+489.91s: reasons but a lot of it comes down to
+489.92s: reasons but a lot of it comes down to the first hour of the market is very
+492.11s: the first hour of the market is very
+492.12s: the first hour of the market is very volatile there are a lot of orders
+494.31s: volatile there are a lot of orders
+494.32s: volatile there are a lot of orders resting from the night before that are
+495.99s: resting from the night before that are
+496.00s: resting from the night before that are getting pushed through from Pension
+497.99s: getting pushed through from Pension
+498.00s: getting pushed through from Pension funds that need to clear out their
+499.47s: funds that need to clear out their
+499.48s: funds that need to clear out their trades and so on and so forth they're
+501.51s: trades and so on and so forth they're
+501.52s: trades and so on and so forth they're not really caring about getting optimal
+503.47s: not really caring about getting optimal
+503.48s: not really caring about getting optimal fills so they're just blasting stuff
+504.99s: fills so they're just blasting stuff
+505.00s: fills so they're just blasting stuff through this is where everything is
+506.59s: through this is where everything is
+506.60s: through this is where everything is digested quickly so the first half hour
+509.11s: digested quickly so the first half hour
+509.12s: digested quickly so the first half hour to of a market tends to be pretty
+512.56s: to of a market tends to be pretty
+512.57s: to of a market tends to be pretty [Applause]
+514.27s: [Applause]
+514.28s: [Applause] busy the other thing is because there
+517.15s: busy the other thing is because there
+517.16s: busy the other thing is because there are now daily expirations you'll notice
+519.79s: are now daily expirations you'll notice
+519.80s: are now daily expirations you'll notice that the rate of Decay is actually a
+523.07s: that the rate of Decay is actually a
+523.08s: that the rate of Decay is actually a little bit slower in the beginning of
+524.91s: little bit slower in the beginning of
+524.92s: little bit slower in the beginning of the day relative to the end of the day
+526.35s: the day relative to the end of the day
+526.36s: the day relative to the end of the day and it's the same thing that you'll see
+527.59s: and it's the same thing that you'll see
+527.60s: and it's the same thing that you'll see with options in general where it gets as
+529.83s: with options in general where it gets as
+529.84s: with options in general where it gets as parabolic as you can into expiration but
+532.71s: parabolic as you can into expiration but
+532.72s: parabolic as you can into expiration but that's just happening on a shortened
+534.39s: that's just happening on a shortened
+534.40s: that's just happening on a shortened zero DTE time frame so when you're
+536.35s: zero DTE time frame so when you're
+536.36s: zero DTE time frame so when you're entering these things first thing right
+538.35s: entering these things first thing right
+538.36s: entering these things first thing right on the open you're going to see more
+540.39s: on the open you're going to see more
+540.40s: on the open you're going to see more money you're going to see a higher
+542.11s: money you're going to see a higher
+542.12s: money you're going to see a higher premium received but a lot of that's not
+545.03s: premium received but a lot of that's not
+545.04s: premium received but a lot of that's not actually going to Decay out for again
+548.11s: actually going to Decay out for again
+548.12s: actually going to Decay out for again relative to a zero DTE time frame until
+550.19s: relative to a zero DTE time frame until
+550.20s: relative to a zero DTE time frame until later in the day so you're really
+551.95s: later in the day so you're really
+551.96s: later in the day so you're really holding things exposing yourself to a
+553.95s: holding things exposing yourself to a
+553.96s: holding things exposing yourself to a lot of directional risk unless you're
+556.55s: lot of directional risk unless you're
+556.56s: lot of directional risk unless you're Delta hedging and Gamma hedging these
+558.47s: Delta hedging and Gamma hedging these
+558.48s: Delta hedging and Gamma hedging these positions which SPX is very difficult to
+561.71s: positions which SPX is very difficult to
+561.72s: positions which SPX is very difficult to do in any sort of peer sense so that's
+564.83s: do in any sort of peer sense so that's
+564.84s: do in any sort of peer sense so that's why you see this this is also why in
+567.39s: why you see this this is also why in
+567.40s: why you see this this is also why in general entering as you get nearer to
+569.83s: general entering as you get nearer to
+569.84s: general entering as you get nearer to the close tends to work better now I
+571.75s: the close tends to work better now I
+571.76s: the close tends to work better now I want you to notice something in
+572.87s: want you to notice something in
+572.88s: want you to notice something in particular though look at the average
+575.95s: particular though look at the average
+575.96s: particular though look at the average p&amp;l for 20122 compared to 2023 in 2022
+580.51s: p&amp;l for 20122 compared to 2023 in 2022
+580.52s: p&amp;l for 20122 compared to 2023 in 2022 the average p&amp;l is better for a 1,400
+583.75s: the average p&amp;l is better for a 1,400
+583.76s: the average p&amp;l is better for a 1,400 eastern time entry for 2023 that
+586.59s: eastern time entry for 2023 that
+586.60s: eastern time entry for 2023 that actually shifts across the board for all
+589.03s: actually shifts across the board for all
+589.04s: actually shifts across the board for all of them whether it's a 10 15 20 or 30
+591.43s: of them whether it's a 10 15 20 or 30
+591.44s: of them whether it's a 10 15 20 or 30 Delta strangle it all shifts out to the
+593.67s: Delta strangle it all shifts out to the
+593.68s: Delta strangle it all shifts out to the right to the 1500 2022 bare Market 2023
+598.27s: right to the 1500 2022 bare Market 2023
+598.28s: right to the 1500 2022 bare Market 2023 bull market is there a direct conclusion
+601.35s: bull market is there a direct conclusion
+601.36s: bull market is there a direct conclusion to be led by this not so much not just
+603.99s: to be led by this not so much not just
+604.00s: to be led by this not so much not just yet but it's something to be aware of
+606.31s: yet but it's something to be aware of
+606.32s: yet but it's something to be aware of now the other thing that I noticed that
+608.79s: now the other thing that I noticed that
+608.80s: now the other thing that I noticed that was interesting to me is in a bare
+611.11s: was interesting to me is in a bare
+611.12s: was interesting to me is in a bare Market the, 1500 entry noticed the loss
+615.11s: Market the, 1500 entry noticed the loss
+615.12s: Market the, 1500 entry noticed the loss of size of these losses 4600 bucks 53
+618.63s: of size of these losses 4600 bucks 53
+618.64s: of size of these losses 4600 bucks 53 that's about you would expect fairly
+620.51s: that's about you would expect fairly
+620.52s: that's about you would expect fairly high if you look at that compared to a
+622.75s: high if you look at that compared to a
+622.76s: high if you look at that compared to a bull market in 2023 notice how low these
+626.35s: bull market in 2023 notice how low these
+626.36s: bull market in 2023 notice how low these are really small losses for the max loss
+629.67s: are really small losses for the max loss
+629.68s: are really small losses for the max loss relative to here but if we look at that
+631.99s: relative to here but if we look at that
+632.00s: relative to here but if we look at that you would think yeah that makes sense
+633.23s: you would think yeah that makes sense
+633.24s: you would think yeah that makes sense bare Market I would expect this to have
+635.43s: bare Market I would expect this to have
+635.44s: bare Market I would expect this to have bigger losses more volatility but take a
+637.79s: bigger losses more volatility but take a
+637.80s: bigger losses more volatility but take a look at the 1400 entry the losses
+640.83s: look at the 1400 entry the losses
+640.84s: look at the 1400 entry the losses actually get bigger in 2023 during a
+644.95s: actually get bigger in 2023 during a
+644.96s: actually get bigger in 2023 during a bull market not something I necessarily
+647.67s: bull market not something I necessarily
+647.68s: bull market not something I necessarily would expect but notice that the win
+649.63s: would expect but notice that the win
+649.64s: would expect but notice that the win rates here for the 10 Delta are slightly
+652.07s: rates here for the 10 Delta are slightly
+652.08s: rates here for the 10 Delta are slightly better and for the 30 Delta slightly
+654.63s: better and for the 30 Delta slightly
+654.64s: better and for the 30 Delta slightly better so what I'm highlighting here
+656.39s: better so what I'm highlighting here
+656.40s: better so what I'm highlighting here these are like little things you can
+657.67s: these are like little things you can
+657.68s: these are like little things you can hone in on but if I were to think about
+660.63s: hone in on but if I were to think about
+660.64s: hone in on but if I were to think about this in it just a general broad context
+664.31s: this in it just a general broad context
+664.32s: this in it just a general broad context here's what I'm thinking about later in
+666.03s: here's what I'm thinking about later in
+666.04s: here's what I'm thinking about later in the day works better using single
+668.51s: the day works better using single
+668.52s: the day works better using single options via a strangle works better this
+671.43s: options via a strangle works better this
+671.44s: options via a strangle works better this I used to include straddles in this but
+674.31s: I used to include straddles in this but
+674.32s: I used to include straddles in this but I haven't for some time because they're
+675.83s: I haven't for some time because they're
+675.84s: I haven't for some time because they're underperforming and they underperform
+677.59s: underperforming and they underperform
+677.60s: underperforming and they underperform here as well that has been a trend I
+679.63s: here as well that has been a trend I
+679.64s: here as well that has been a trend I noticed as of General last couple years
+683.03s: noticed as of General last couple years
+683.04s: noticed as of General last couple years and that's something else to be aware of
+684.87s: and that's something else to be aware of
+684.88s: and that's something else to be aware of with the integration of this I'm still
+686.35s: with the integration of this I'm still
+686.36s: with the integration of this I'm still continuing to test those but that's what
+687.99s: continuing to test those but that's what
+688.00s: continuing to test those but that's what I'm seeing so far now what you'll see if
+691.11s: I'm seeing so far now what you'll see if
+691.12s: I'm seeing so far now what you'll see if we do a future video if you let me know
+693.15s: we do a future video if you let me know
+693.16s: we do a future video if you let me know in the comments that you'd like me to do
+694.63s: in the comments that you'd like me to do
+694.64s: in the comments that you'd like me to do that we can take a look at how to think
+696.95s: that we can take a look at how to think
+696.96s: that we can take a look at how to think about managing the profit and the loss
+699.55s: about managing the profit and the loss
+699.56s: about managing the profit and the loss side and then what subsequent impacts
+702.39s: side and then what subsequent impacts
+702.40s: side and then what subsequent impacts that has on the performance so if we
+705.27s: that has on the performance so if we
+705.28s: that has on the performance so if we should do that let me know don't forget
+707.19s: should do that let me know don't forget
+707.20s: should do that let me know don't forget to like the video be an outlier see you
+709.23s: to like the video be an outlier see you
+709.24s: to like the video be an outlier see you guys later

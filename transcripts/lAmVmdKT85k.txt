@@ -1,8 +1,575 @@
-⚠️ DOWNLOAD FAILED: Could not access the original audio for this video
-
-This transcript is a placeholder because YouTube blocked all download attempts.
-You may need to manually transcribe this video by watching it on YouTube.
-
-Failed to download audio for: https://www.youtube.com/watch?v=lAmVmdKT85k
-Created dummy audio file on 2025-08-10 20:08:47.828966
-This video has been flagged for manual processing.
+0.56s: What's up outliers? Today we're going to
+2.24s: talk about hedging with options. This is
+4.16s: hands down one of the most misunderstood
+6.72s: topics with respect to retail options
+9.44s: trading. And it's because retail traders
+12.72s: have a really really messed up way of
+16.64s: approaching hedging that leads to the
+19.68s: worst possible outcome, which is where
+21.84s: we're increasing our friction, our total
+24.08s: cost, but also reducing our
+26.56s: profitability. So, we're going to walk
+28.72s: through some of the core concepts as to
+30.96s: why that's the case. We're going to talk
+32.80s: about some ways to hedge smarter, and
+36.24s: then I'll give you a couple examples to
+37.84s: help tie everything together. So, the
+40.16s: base here, as you know, options are
+42.32s: strategic investments. They're designed
+43.84s: to create very specific riskreward
+45.84s: profiles. They also allow you to
+48.96s: speculate, so trade an idea that you
+51.36s: have or hedge to reduce risk. So what is
+55.12s: the concept of hedging in a nutshell?
+57.60s: Well, that's it. It's literally just to
+59.84s: reduce risk. I view it in two different
+63.28s: concepts. The first way is a direct
+65.76s: hedge. The second is indirect. These are
+67.76s: not industry terms. These are my own.
+70.16s: But it helps me organize the way I think
+72.24s: about hedging. So when we think about a
+74.72s: direct hedge, the entire purpose of the
+76.64s: position in effect is to lose. Why would
+80.24s: we put on a position that we want to
+82.48s: lose? Because the purpose of a direct
+86.96s: hedge is to offset the risk of a primary
+91.84s: position. And the preferred outcome
+95.20s: would be for the primary position to
+97.20s: win, which would mean that our hedge
+99.04s: would lose. And if your mind immediately
+101.28s: goes to, well, what about if I put on
+103.76s: the hedge and then I make money on the
+106.16s: hedge, but then I make money on the main
+108.08s: position? Well, if you can solve that,
+110.08s: you've solved the market. But more
+112.40s: importantly, this is one of the big
+113.68s: issues that retail traders have with the
+115.84s: concept of hedgings because that's what
+117.52s: they want to happen. But that's not how
+120.00s: this works. And I'll explain why.
+122.88s: There's different kinds of direct
+125.20s: hedges. Stuff like static dynamic. One
+128.24s: you put on, you leave, the other one you
+130.40s: adjust. Stuff that attacks the tails of
+133.84s: the distribution. So, if you think of a
+135.68s: distribution curve, it's really not
+137.92s: worrying about one standard deviation
+139.60s: moves, but we're getting out to like
+141.28s: three plus standard deviation moves that
+143.68s: we're trying to remove the risk of.
+145.60s: We'll get into all those in another
+147.76s: video, but know that there's different
+149.76s: kinds that exist. And then this idea of
+151.92s: an indirect hedge is simply a
+155.20s: speculative position that you put on
+157.76s: that happens to also decrease the total
+162.40s: portfolio risk. So the way that I look
+165.60s: at something like a direct hedge is I'm
+167.92s: putting it on its entire goal is to
+170.00s: reduce risk and that's the standard I'm
+172.56s: holding it against. An indirect hedge
+175.20s: I'm putting it on to make money, but it
+178.00s: happens to fit in with the broader
+179.52s: portfolio and serve a risk reduction
+182.64s: purpose as well. And I'll show you what
+183.84s: that looks like. If we take a look at
+186.64s: S&P, you can see S&P is cracking new
+189.12s: all-time highs. So let's say that we
+191.04s: have a portfolio that's long S&P. Great.
+193.84s: Then if we take a look at healthcare,
+196.56s: healthcare is going down. However,
+198.88s: sometimes this will have a positive
+200.80s: correlation. So what we can do is have a
+203.76s: base position that's long spy, but then
+206.56s: we can have a position that's short
+208.24s: healthcare because even though
+210.24s: healthcare right now is going down as
+211.92s: spy is going down, if spy broadly goes
+214.72s: down because of some sort of market
+216.08s: crash or something like that, it's very
+217.76s: likely that healthcare is going to
+219.12s: follow. So that's just a very base idea
+222.48s: on how to take a directional speculative
+225.84s: trade. The idea that we think healthcare
+227.52s: is going to continue to go down, but it
+229.52s: also reduces some of the broader
+231.36s: portfolio risk by taking off some of our
+234.00s: deltas, which you'll learn more about
+235.84s: that in a few minutes. So within this
+239.04s: process of hedging, I think of it in a
+242.00s: few different levels. I have direct
+245.68s: portfolio hedging, direct trade level
+250.08s: hedging and then that concept of
+252.48s: indirect hedging which can apply
+254.64s: primarily at the portfolio level less so
+257.44s: at the trade level. So what do these
+259.36s: mean? Well, if I'm thinking about direct
+262.00s: portfolio hedging, this is where I'm
+264.24s: looking at a broad portfolio and then
+267.52s: I'm putting on individual positions to
+270.48s: attack the broad portfolio level
+272.80s: metrics, which you'll get an example of
+274.48s: in a moment. The way that I do this is I
+277.36s: look across the portfolio and I break it
+279.12s: out into its base Greeks. So, I look at
+281.44s: things like its net, the total, delta,
+285.28s: theta, gamma, vega. Then I can beta
+288.64s: weight those to give me some context,
+290.80s: align them, come up with notional
+292.40s: values, and then I could put on
+294.96s: positions that help address any excess
+297.84s: risk that I see. Then direct trade level
+302.00s: hedging is when we're looking at an
+304.72s: individual position and we're putting on
+306.64s: a hedge specific to that individual
+309.36s: position. So again, simple example here.
+312.48s: Let's say that I'm going to trade
+313.84s: earnings and I typically sell strangles.
+316.40s: Well, if I see something that maybe has
+317.92s: really big moves, maybe I buy a wing,
+320.16s: which you'll get an example of in a few
+322.40s: moments. In direct hedging, we already
+324.88s: looked at an example of this, but the
+327.60s: way to think I approach and the way to
+330.72s: think about something like hedging is I
+333.68s: have a lot of indirect hedging activity,
+337.20s: but the way that I implement direct
+340.48s: level hedging is very sparingly. And
+343.12s: it's because there is a high cost
+346.24s: associated with hedging which you'll get
+348.00s: a sense of in a few moments. So here's a
+351.52s: very basic process that you can follow
+355.52s: and I will get myself out of the way so
+358.40s: that you can see.
+362.32s: There we go. So we start by defining the
+366.16s: goal. This is super important because
+368.64s: you'll see that this idea of carrying a
+370.72s: perpetual hedge really does not work
+373.04s: well. This is another common mistake
+375.44s: retail traders make because they think
+377.60s: they see retail I'm sorry they think
+379.76s: they see institutions
+381.92s: doing this and in a lot of instances
+384.16s: institutions will but it's because they
+385.84s: have a completely different world they
+387.20s: operate in. They have to maintain
+389.52s: certain exposures. They have big
+391.44s: positions. it's not as easy for them to
+393.52s: scale into and out of things which can
+395.68s: be way more efficient. So, we got to
+398.40s: define the goal of the hedge. So, what's
+400.48s: a good goal? Let's say I'm holding
+401.92s: shares of a stock and it's coming up on
+403.60s: earnings. I want to hedge it through
+405.04s: earnings. That's an okay goal. Now, we
+408.64s: have to measure the risk that we're
+410.64s: trying to hedge for next. The way that
+413.20s: that works is I need to take a look at
+416.72s: the position I have on and determine how
+419.44s: much risk am I comfortable taking
+421.60s: through this earnings release. Am I
+424.08s: comfortable if the stock goes down 20%,
+426.24s: am I comfortable if it goes down 40%.
+428.72s: Where's the line in the sand? Because I
+431.12s: have to figure out where I need the
+433.76s: hedge to come in because the next step
+435.84s: is to actually build the hedge. So this
+439.60s: is when we determine what the size of
+441.92s: the position needs to be, what the risk
+444.80s: offset is. This is another really common
+447.84s: mistake by retail traders where let's
+450.48s: say that we have 100 shares of a stock.
+453.92s: Their instinct will be well I need to
+456.64s: have 100 shares of a hedge essentially a
+459.12s: complete hedge. That may or may not be
+462.32s: the case. The way I think about the
+464.64s: offset is I typically want to take off a
+467.52s: percentage of the risk. But if you
+469.68s: overhedge, you're now eating more and
+472.16s: more into your return profile. The
+475.04s: duration has to be carefully selected to
+477.76s: fit the broader idea. And then this is
+480.48s: another massive mistake come from retail
+483.84s: traders which is there's no management
+485.68s: plan. So then as the as the hedge is
+488.56s: working unfortunately because it means
+490.40s: the base position's not working then the
+493.04s: questions come of well when do I take
+495.04s: this hedge off and it's a great question
+497.36s: because there is a very difficult
+499.60s: decision you have to make because when
+501.84s: that hedge is making the most money is
+504.00s: typically when you need the hedge the
+506.16s: most and I'll give you a way to think
+508.32s: about striking that balance in a little
+511.20s: bit. All right. So, let's now double
+515.76s: click into this idea of direct portfolio
+517.76s: level hedging. Here I have a portfolio.
+520.72s: These represent all different kinds of
+523.36s: individual positions. And as discussed,
+526.64s: the first thing I want to do is take
+528.80s: stock of these individual positions and
+532.00s: normalize them. So, I'm going to do
+533.84s: something like beta weight the deltas
+536.32s: against something common like spx or
+538.96s: spy. And then I'm going to figure out
+541.36s: the rest of these details. So if we take
+543.76s: for example this portfolio here and
+546.40s: we're going to say that it has 1,025
+549.76s: beta weighted spy deltas. This means
+552.24s: that the notional value of the portfolio
+554.48s: is $640,000.
+556.32s: This does not mean you have $640,000
+559.44s: at risk. It means that your portfolio as
+563.44s: SPY moves it's going to behave similar
+567.04s: to $640,000.
+569.44s: So, if you look at that and let's say
+572.08s: you have a $500,000 portfolio, you might
+574.24s: say like, "Oh I'm levered. I don't
+576.24s: want to be levered." Or you might say,
+577.92s: "I have a $2 million portfolio and say,
+580.48s: oh I have to put more risk out. I
+582.48s: don't have enough Allen right now." Now,
+584.56s: this is not the definitive tool to
+587.92s: determine your sizing. It's just a tool.
+591.92s: Next, we have our theta calculation. And
+595.20s: I don't go through all of them, but in
+597.44s: this context, I see that I'm long 640
+600.64s: theta. And let's just say that that
+602.32s: number is good. I don't need to make any
+603.76s: adjustments. But as I'm looking at this,
+605.20s: I say, ah, you know, I actually don't
+607.52s: want to be long 1,025
+610.40s: spy deltas. So then I can now decide on
+614.80s: a portfolio hedge. I can either pursue
+618.48s: an indirect hedge and just simply say
+621.44s: I'm going to look for speculative trades
+624.24s: that have short beta weighted deltas. So
+627.76s: again, a great example of that is what I
+630.16s: gave you in healthcare before. If I sell
+632.48s: calls in healthcare, that's going to
+634.08s: have short beta weighted deltas. It's
+636.00s: going to take off some of my long risk.
+638.32s: That's an indirect hedge. A direct hedge
+641.12s: would be something like, I'm either
+643.28s: going to sell some calls in SPY or
+646.64s: whatever the bigger position is here.
+649.68s: There's a really common mistake traders
+652.56s: make where they think that they should
+654.96s: use VIX. VIX is a whole other ballgame.
+660.64s: When I think about hedging, I would not
+663.44s: use in general VIX as a direct hedge. If
+666.96s: there's a speculative idea in VIX and it
+670.48s: serves an indirect hedge purpose, that
+672.96s: often can make sense. It's a little
+675.68s: outside the scope of this video, but
+677.44s: there's a lot of nuance when it comes to
+679.20s: VIX. You have to remember VIX is the
+681.68s: 30-day implied volatility of S&P. So,
+686.08s: not only do you have to worry about the
+687.68s: relationship between whatever the
+690.32s: individual positions you have and the
+692.96s: correlation to VIX, but also the
+695.52s: severity of VIX, how much VIX happens to
+697.60s: move because it doesn't always
+699.52s: definitely not completely inversely
+701.84s: correlated. There's different magnitudes
+704.08s: to spy and so on and so forth. So, using
+708.72s: volatility can be done, but it's a
+711.60s: little more complicated than people
+713.04s: think. And normally if you just buy
+714.80s: calls, you're just lighting your money
+716.08s: on fire. Like that's generally what's
+717.84s: going to happen. Now let's take a look
+720.08s: at direct trade level hedging. This
+722.32s: one's super simple. So as I mentioned
+724.40s: before, let's say that I'm looking at a
+726.00s: short strangle and something that is
+727.44s: really high volatility earnings. And
+729.20s: normally I would sell strangles. And I'm
+733.28s: looking at this stock. The expected move
+735.44s: is 20%. Let's say that this is the
+738.00s: historic expected move. The implied move
+740.48s: that I'm seeing is 21%. So, we're
+743.12s: getting about a percent edge in terms of
+746.16s: the move expectations here, but that's
+748.16s: pretty tight and it has a really
+749.92s: volatile history. Maybe I'll just buy a
+752.32s: wing so that this way I can change my
+756.16s: risk profile because when we think about
+759.52s: a standard short strangle, if I have a
+763.92s: P&L graph here, this is going to be my
+766.72s: short strangle. But let's say that I
+769.28s: deem the risk is only to the upside. I
+772.32s: don't want to get ran over on the call
+774.08s: side. So maybe I'll buy an outofthe-oney
+777.36s: call so that I don't have this unlimited
+781.60s: upside risk. I still have the unlimited
+783.36s: downside risk. Let's just say I'm okay
+784.80s: with that. This is the process of
+786.80s: defining. It's being very specific about
+788.64s: the risk. I could say, well, I think it
+790.64s: might go either way. So then I choose to
+792.56s: take it into an iron condor. But again,
+794.96s: this serves as drag on the total returns
+798.40s: that I have to pay attention to.
+800.64s: Otherwise, you can start losing way more
+804.48s: than you're trying to lose.
+807.44s: And you'll see why in a moment, this
+809.60s: concept of drag. Now, this is the
+813.28s: example of indirect trade hedging. And
+816.24s: again, this is where we have different
+818.08s: kinds of plays that make up a well-built
+820.80s: portfolio. And the idea is you're going
+823.20s: to have some stuff that's making money
+824.56s: as the S&P goes up. Some will make money
+826.48s: as it goes down. I tend to like to be
+829.44s: positive theta. So then if I'm noticing
+831.60s: I don't have enough positive theta,
+833.12s: maybe I'm going to go sell some premium.
+835.12s: But this is the process of just building
+837.12s: a balanced portfolio. Indirect hedging
+840.08s: should be continuous in my opinion. So
+842.80s: let's talk about these good and bad
+846.96s: habits. And you'll notice that there are
+850.16s: a handful here. So, one of the worst
+852.96s: possible habits is just blank fear of
+855.12s: risk. This is probably the most common
+856.88s: one where traders just don't like risk.
+859.12s: And if you ask them like, "Hey, what are
+860.32s: you hedging for?" And they'll say
+861.36s: something like, "Oh, well, if the stock
+862.64s: drops 15%, I you know, I I don't want to
+865.92s: deal with that." And then you'll ask
+867.04s: them, "Oh, so like would you sell?"
+869.04s: They're like, "Oh, no. This is a
+870.32s: long-term hold." Well, now we just have
+872.96s: a completely mixed up world where if
+876.16s: this is some sort of long-term hold, but
+878.56s: you're concerned about a 15% draw down,
+881.44s: you're probably in the wrong stock or
+883.44s: you're probably oversized. Now, for
+886.48s: shorter term traders, people that run
+889.12s: momentum or breakouts or can slim or
+892.48s: trading options, that's different
+894.32s: because you cannot allow risk to get out
+897.28s: of control. So, for the trading side of
+898.96s: the world, it's a little bit different.
+900.96s: So the next bad habit is you're not
+906.48s: attaching a very specific duration to
+909.92s: whatever your perceived risk is that
+912.88s: you're looking to hedge away and then
+914.96s: you don't have a plan which we already
+916.96s: talked about. The most common version of
+918.40s: this is there's no exit approach. It's
+921.20s: just put on something to control. you're
+923.36s: not measuring how many deltas you're
+925.12s: taking off and then you end up with this
+927.04s: position that is actually taking too
+929.20s: many deltas off. You're decreasing your
+931.28s: profitability and then as it's the hedge
+934.32s: is making money, you take it off and
+936.40s: then the thing goes down further when
+937.92s: you really need the hedge. You have to
+939.76s: have a very specific definition of what
+942.08s: you're trying to hedge, why so that you
+944.08s: can create a management plan around it.
+946.40s: The poor Greek profile is really
+948.96s: important to keep in mind. So, if we
+951.12s: take a look at an example for that.
+954.32s: Let's say that we're in SPY and I'm
+957.60s: going to go out. This is part of the
+958.96s: example you're going to get in a minute,
+960.64s: but I'm going to look at some different
+962.16s: expirations. If I come closer in time, I
+966.40s: already know that I'm going to get more
+968.40s: gamma. So, then if I'm buying near-term
+971.68s: options though, I also know the theta
+973.36s: decay is very high. So again, this goes
+976.00s: back off of defining what the hedge is
+979.36s: supposed to do. If it's just a perpetual
+981.28s: hedge and you're like, well, I just want
+982.96s: to take off some of the risk in this
+984.24s: thing long term. And you choose to go
+986.48s: out here to 15 GN27, but then for your
+990.32s: hedge, because you don't want to pay
+992.96s: $3,000 for your hedge, you're like,
+994.88s: well, I'll just go super far out of the
+996.88s: money. Well, if you go super far out of
+998.88s: the money and you have a really low
+1000.24s: delta, guess what? You also have really
+1002.24s: really low, super far out in time,
+1004.56s: gamma. So that means that the quote
+1006.72s: unquote deductible, which you're going
+1008.72s: to get a sense of in a moment, is going
+1010.32s: to be astronomically high. Your hedge
+1012.96s: effectively isn't going to be hedging
+1014.80s: very much. It's more of just a feelgood
+1017.92s: position, which is bad form.
+1020.88s: We already talked about volatility a
+1022.96s: little bit. The next key thing to pay
+1024.96s: attention to with respect to volatility
+1026.72s: is that it does not impact all
+1029.44s: expirations the same. You have to keep
+1031.36s: that in the back of your mind. And then
+1033.20s: the last thing that we just touched on
+1034.64s: is this idea of a deductible which we'll
+1036.40s: talk about in a moment. The main thing I
+1038.80s: want to highlight from the good habits
+1040.80s: which we talked about all of these
+1042.16s: already but the specific one is simpler
+1045.12s: hedging. As a retail trader, you have
+1048.40s: much better ways to hedge than the
+1051.76s: really expensive direct hedging. You can
+1054.72s: size your positions. You can scale in
+1056.96s: and out. You can implement indirect
+1059.28s: hedging that naturally has a risk
+1062.24s: smoothing impact on the portfolio. Those
+1065.84s: are so much more efficient. This does
+1067.76s: not mean that there's never a case for a
+1070.48s: direct hedge. But again, as I mentioned
+1072.40s: earlier, it should be specific. So if
+1076.56s: I'm holding a stock and I want to
+1078.56s: protect it against a 30% drop, I want to
+1081.36s: offset 45% of that risk. It has earnings
+1084.80s: in 6 days. So I want to hedge it
+1086.96s: throughout that earnings event. I'm
+1089.28s: going to use something that gets me the
+1091.60s: correct exposure in terms of gamma and
+1094.16s: delta. And then I'm going to have a very
+1096.96s: clear management plan for that position.
+1099.20s: So, let's say that I'm holding the
+1100.80s: stock. I'm going to buy a 40 delta put.
+1104.32s: That's, let's say, a month out to try to
+1107.36s: decrease some of the really short-term
+1109.92s: option effects. That'll give me enough
+1112.16s: gamma that if there is that 30% drop, it
+1115.36s: will offset the risk that I'm looking to
+1117.76s: offset. That kind of thing. Now, let's
+1120.88s: take a look at a quick example with SPY
+1123.28s: at 625.
+1125.76s: And let's say you have 100 shares and
+1128.00s: then you're going to buy to open the 46
+1130.72s: data expiration 610 put for $642. This
+1134.08s: is a 30 delta. So this is about 46 days
+1137.52s: out. It will have moderate gamma, not a
+1139.52s: ton because these are also a little
+1140.80s: further out of the money. But let's take
+1143.44s: a look at this idea of a deductible. The
+1145.36s: deductible in this context is the
+1147.76s: difference between whatever your basis
+1150.16s: is and whatever you in this context of
+1153.12s: the long put are going to be defining
+1156.32s: your exit. And this is really part and
+1159.04s: parcel to long puts and it's because
+1162.32s: long puts they move and you'll see what
+1166.96s: I mean. So the deductible in this case
+1169.76s: is 15 points essentially. It's the
+1172.24s: difference between spot, whatever your
+1174.56s: basis is, and then the long put strike.
+1177.52s: So then you have to tack on your cost,
+1179.68s: which is $642.
+1181.84s: So your max loss on this trade is now
+1184.24s: 21.42. It's not bad. But there's a
+1187.52s: little bit of nuance that we have to pay
+1189.68s: attention to. One of them is that if we
+1192.96s: look at this 1.03%.
+1196.56s: That's the drag that this takes for 46
+1200.16s: days. So that's a problem
+1203.76s: because if you maintain constant
+1205.92s: exposure with this, this is like a 8%
+1210.08s: annualized drag. So that means in order
+1213.04s: to have a positive return, you're going
+1214.88s: to have to return over 9% on the year at
+1217.68s: a base minimum to overwhelm the drag
+1221.20s: that you are incurring from this
+1222.88s: position and keeping that 46 days to
+1225.20s: expiration across the board. So, what's
+1229.44s: the impact to your P&L? If SPY goes up
+1233.36s: by 5%. With the long put, your P&L is
+1237.76s: 2,600 bucks. If you do not have the long
+1240.96s: put, your P&L is 3125. So, it's about a
+1244.56s: $525 difference. The reason why I show
+1246.88s: you this is it shows you at what point,
+1249.84s: at least to the upside, is the effect
+1252.32s: really felt of this position. Now to the
+1255.12s: downside, it will have a profound effect
+1257.44s: because we already know what our max
+1258.96s: loss is as compared to 100 shares here.
+1261.68s: So the last thing that I want to show
+1263.68s: you is that if we get this 5% up move,
+1268.40s: that means SPY is now at 656.
+1272.96s: Our risk grows. Your deductible grows
+1276.40s: because your put is still down here at
+1278.32s: the 610. So your original risk was 2142,
+1282.00s: but now your risk is 3742
+1285.68s: because that's how long it takes for the
+1287.92s: deductible to kick in. So this typically
+1291.84s: leads to having to close out this
+1293.92s: option, the 610s, and then move it up
+1296.32s: and then each time you do it, it's at a
+1298.56s: loss. The last thing I want to mention
+1301.20s: is the idea of using short calls. Short
+1305.04s: calls offset a very small amount of
+1307.68s: risk. So, if you're putting on a short
+1310.16s: call to hedge your position, not only
+1312.72s: are you hedging very, very little, but
+1315.44s: more often than not, people will do it
+1317.20s: at a 1:1 ratio and cap your upside
+1319.44s: potential, which is a terrible
+1321.44s: trade-off. So, if you want to sell calls
+1323.68s: against stock, there's no problem. But I
+1325.44s: would just view it as I'm trying to
+1326.72s: collect some premium. Yes, it does
+1328.88s: offset a little bit of the risk, but
+1330.48s: that's not the primary reason for the
+1331.92s: trades going on. I'm just trying to get
+1333.12s: some premium, and then I would always do
+1334.72s: it at a ratio. That last part's really
+1337.60s: important. So if we think about just
+1340.00s: some broad hedging strategies, if you
+1343.92s: have, let's say, a long delta position,
+1347.36s: in this case, your long stock, the base
+1350.24s: ideas, you could buy a put, you could
+1352.40s: sell a call. Now, there's a strategy
+1354.48s: called a collar where you can combine
+1356.72s: both of those. The idea of a collar is
+1359.60s: you're going to offset a little bit of
+1362.32s: the downside risk through the put, but
+1365.44s: you're going to offset some of the cost
+1368.08s: associated with that. And let's take a
+1370.40s: look at what a collar looks like. This
+1371.92s: is long shares. This is if we sell that
+1374.88s: call. Notice how you get just a little
+1377.04s: bit of downside risk reduction. Not
+1379.20s: much. And then if we buy the put on top
+1381.44s: of it, then what do you notice? You now
+1385.52s: have a synthetic vertical. You're
+1387.20s: capping your upside and you're capping
+1389.68s: the downside. So unless there's a very
+1391.76s: specific reason to put this on, you love
+1393.84s: the stock but you don't want to see it
+1395.36s: move, like that's kind of the world in
+1397.52s: which this would go on, the best thing I
+1400.08s: could
+1401.68s: offer for you to keep in mind is risk is
+1405.12s: part of trading. You have to clearly
+1407.04s: define the risk that you are comfortable
+1409.44s: with. And then if you're trying to scrub
+1412.08s: away all your risk, you are also
+1415.36s: scrubbing away all your returns. We go
+1418.32s: we went over a scenario in this in the
+1420.16s: Outlier Pro community where somebody was
+1422.64s: asking about using something like VIX.
+1424.88s: VIX is another way to light your money
+1427.76s: on fire cuz it's very very expensive.
+1431.60s: Same here because if you take a look at
+1433.44s: the puts, the cost of the puts for a 30
+1436.16s: delta is $643.
+1438.80s: The cost for the similar 30 delta short
+1443.04s: call is 454.
+1446.08s: It's a $2 difference. That's put skew.
+1448.80s: VIX essentially has that to the upside
+1451.12s: where the calls are very expensive.
+1453.92s: Any questions? Let me know. Be an
+1455.52s: outlier. See y'all later.

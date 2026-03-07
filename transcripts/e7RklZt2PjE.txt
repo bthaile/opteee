@@ -1,195 +1,972 @@
-0.00s: You're going to trade them. I'm going to trade them. So let's talk about how we trade them.
-3.52s: What exactly? Zero DTE options. I'm going to walk you through a guide on some of the things that
-8.40s: I think she'd keep in mind. Pros and cons. First, second, I want to walk you through the downfall
-13.44s: of retail traders, integration of them into their strategies via data from a handful of studies
-19.04s: that I really like that I also juxtapose against my own data set. But nobody should trust my data set.
-25.44s: I think it's better to use the stuff that you can find that's peer reviewed. So we're going to go
-28.88s: through that. But I'll integrate some of the things that I found personally along the way.
-32.48s: And then at the end of the video, I'll walk you through exactly how I integrate zero DTE
-37.12s: expressions into my trading style and how I like to trade them. So without further ado,
-40.72s: what's up everybody? Eric here. Welcome back to all the outliers. A huge shout out to the Patreon
-45.12s: family and the YouTube members. You guys make this all possible. This takes a lot of time to put
-49.76s: together to give you good information. So let's get straight into this video. The very first thing
-54.72s: that I want to talk about some pros and cons. And what you're going to notice from this list is it's
-58.40s: not labeled as a pro or a con. And it's because it really depends on the side of the trade that you're
-62.32s: on. So for example, gamma, this really helps long options. So if we're on expiration day, gamma is
-70.24s: super high because every single option needs to approximate to one or two spots, either a zero
-77.60s: or a one delta, meaning it's out of the money or in the money. That's what's happening on expiration
-83.12s: day. So gamma is very high because all options need to do that. That benefits buyers. It hurts
-88.96s: sellers. What's the trade off here? Well, theta is also fast moving like gamma that benefits
-95.60s: sellers, not buyers, because all of the options that are out of the money need to approximate to zero.
-102.16s: So that means theta is going to decay very, very fast. So for a great example of this,
-106.72s: let's hop over to the platform. If we take a look at SPX here and we go to four main, which is
-111.04s: today's expiration, notice how everything that's out of the money is now essentially bid zero
-116.48s: offered at five, which means that's the minimum bid I spread. These are all worthless. And then
-120.88s: if we go to one day to expiration, notice how much premium is still in these options. But what I
-125.60s: really want to hone you in on is this gamma. That's this column here. It's a little difficult to see,
-130.00s: but gamma for at the money options relative to the cost here is going to be pretty high. And it's
-135.84s: because they need to make that decision. If they're out of the money, they're going to zero. If
-139.92s: they're in the money, they're going to whatever their intrinsic value is. So again, that kind of
-143.92s: depending on what side of the coin here, whether you're buying or selling and it's really the same
-147.44s: for calls or puts this fast moving theta and gamma benefits both or hurts both. The volatility
-153.84s: edge really is going to benefit the sellers out there. And this is an important concept too, though.
-158.40s: And this is actually going to be one of the things we talk about later. But this really just falls
-162.72s: into theta decay. In some case, if you're a seller and that's it, the fast moving component is
-169.44s: what draws people to these products. But depending on what side of the trade you're on, it's going to
-174.00s: have a different impact. This, however, is universal. No overnight risk. If you put on these trades,
-179.60s: you can go to sleep and just chill out because there's no overnight risk. Now a super important note
-184.80s: here, though, is I think traders perpetually look for a boogie man. They're looking for something to
-190.16s: justify a behavior. And overnight risk is not as scary as it is. What I mean by that is if you look
-196.32s: at portfoliovisualizer.com, you throw in a $10,000 portfolio and you look back 30 years, whatever
-202.56s: the case is. That has a lot of overnight risk. There's a lot of nights over the course of holding
-206.64s: that product. But somehow it turns out, okay, it makes money. The point being is overnight risk is
-210.64s: not the boogie man here. And there's ways to overcome that by the way we structure the trades,
-215.04s: what's I'm going to get into in a minute. So while this is a benefit to be very clear, not having
-219.68s: overnight risk is a benefit, I would not permit your mind to say, oh, I should only trade zero
-226.08s: DTE options because they have no overnight risk. And that's where all the risk is. It is not the case.
-230.48s: The risk is actually in your shitty strategy. That's it. So with that little disclaimer aside,
-236.24s: let's take a look now at what the con is. What's the con? This is the largest drawback of zero DTE
-243.28s: options. And I cannot emphasize this point enough. We're going to talk about this at length.
-248.08s: Now you might be saying to yourself, Eric, the cost is only the 40 cents per contract that I'm
-253.76s: putting on. That's not so bad. Not the case. So coming back over here again to the platform,
-260.08s: if we go here to one data expiration and you take a look at the bid-esque spread, there's slippage
-266.32s: involved in where you actually get your fill. So this is the 4060 at the money put is bid at 19 offered
-275.12s: at 1950. That's 50 cents right there right out of the gate in addition to your fees that you pay
-280.80s: on top. And we're relative comparison. If we go out here to 16 June and we go to this at the money,
-286.56s: these are worth the same 4060s. Their bid 91 80 offered 93 50. So as a percentage, these are massively
-294.80s: more expensive. That's like a 2% plus bid-esque spread based on the relative value of this compared
-300.48s: to out here. This is like 1.85%. So the point being is the spreads you're paying on these again
-307.12s: on a relative basis is massive. And that's important because we're going to talk more about cost in a
-311.52s: minute. But this is this is really what we're fighting against here. And we're going to talk about
-315.92s: how we can do that. Okay, so this is going to be the paper I'm referencing, whichever way should
-319.76s: point in this scenario. This is the paper we're going to be talking about. And there's a bunch of
-324.08s: other details that I'm baking into this from both my own data set and then a couple of other
-329.20s: ancillary information sources. But I wanted to use a peer reviewed data source because there's
-334.56s: no reason for anybody to really put a whole bunch of weight on my data, although I certainly do.
-339.04s: It is still worthwhile, I think to draw some parallels between these two. But this is a pretty
-343.52s: well done paper. There's to be very clear. There's holes in any paper that's done. So I do not want
-348.88s: you to look at this as if this is the end all be authority on everything. It's not they make
-352.80s: assumptions. They have to. But we can still learn a lot from this paper. So with that aside, let's get
-358.96s: straight into it. What do traders do? Well, we can tell that traders in general have really started
-366.24s: taking on to this idea of zero DTE expiration. So you can see a zero DTE here orange and notice
-373.60s: how wide of a space this is taking up in monthly trading volume. I guess you can't do that.
-378.96s: My stupid face is in the way. Maybe you can now. But as you can see, this is a massive space
-385.52s: that they're consuming. This means that the demand is huge. The same thing is if we take a look at
-391.12s: zero DTE one DTE two, so on and so forth, notice how prevalent this is compared to everything out
-398.08s: there. And if you take a look at just short term duration, so essentially zero and one DTE,
-403.84s: that is also massive. So overall, there has been a huge spike in monthly trading volume
-410.40s: centralized in zero DTE stuff. Now, we're going to look at slim trading volume and the
-417.28s: blift notes version of what the hell slim is. It's a way for us to look at trade level data from
-422.96s: CBO and identify the highest probability of retail trades. This does not mean that every trade listed
-429.28s: in here is retail, but we know with relative confidence that most of it is going to be. And this
-435.60s: is something that I also track personally. So I'm familiar with this concept, but the again,
-440.48s: Clifft notes version is there was a price improvement protocol put in a place for small orders and
-445.52s: indices and whatnot. And most of retail orders fall into that bucket of essentially 10 lots or
-450.96s: less. So this is how we're drawing on that. It's not perfect, but it's pretty good. So what I want
-455.76s: to highlight here, though, is the monthly you can essentially insert retail trader volume in
-461.60s: general here, the monthly retail trader volume. Take a look at the total volume, which is blue
-466.88s: and how much of that total volume is zero DTE. It kind of explains itself. Ever since we had COVID,
-472.56s: we started launching more explorations. There's a demand for it. And it's just been maintained
-477.68s: to a pretty significant order. And you can see the slim share compared to total volume. So we have
-483.76s: it breaks down zero DTE, non, and then total, so on and so forth. The point being is it's
-488.08s: extremely popular and it's not slowing down. That's not a good thing or a bad thing. It just
-491.44s: means that it's very common. Now, this is where we start getting into kind of more of the specific
-496.24s: details that I think is pertinent to most people. And this is breaking down zero DTE trading volume
-502.56s: from again, non retail versus retail. And there's a few notes here that I think are important to you.
-509.60s: And I've highlighted them here. When we talk about the breakdown between calls and puts,
-513.36s: it's essentially same same for retail versus non retail light ever so slight variants between
-518.64s: the two. Nothing noteworthy. If we look at the size again, you can see that the gross centralization
-524.64s: for retail is in single contracts. And that's not the case for non retail. It's still overwhelming
-531.60s: single contracts, but there's a bigger breakout between two to five and so on and so forth. So
-536.24s: when we look at these though, this is where it starts to get important. When we look at the
-539.84s: direction, whether we're buying or selling, you can see that there is a kind of centralization
-545.92s: in buying for retail, but selling for institutions. Now, I want to be super clear before all of the
-551.76s: theta gang people out there start saying like, oh, shit, yep, I got it right. This is all I should
-556.08s: be doing. Let me put my stupid face right in the middle of the screen to hopefully intercede that
-560.32s: thought process. That is not the case. Selling is not some sort of magic potion that fixes everything.
-565.84s: It's really important not to understand why selling works and when selling works. I'm not going
-570.08s: to go super far into detail on this video. I will throw a link to a really great video that I made
-575.20s: in the notes below on this exact concept, but it is important to note that in general,
-580.24s: Belling does have a benefit if it's properly deployed, which is why you will see this breakdown
-587.04s: where non retail tends to favor selling a bit. Now, whether it's call or puts, you can see that this
-593.84s: is slightly inverted and there's going to be more selling of both on this side, but if you'll
-599.76s: notice, when we look at the buy versus sell calls versus puts, it's nothing too crazy to walk
-606.24s: away from here other than you could tell that we prefer selling and from a non retail perspective
-612.72s: and on a retail perspective, they're looking to buy. So, that aside, I want to start getting into
-617.28s: some other specifics. And this is one of the funny things, right? We get to joke about this because
-622.80s: it is funny, but it's also sad to me at the same time, which is the people on Wall Street bats
-627.68s: love them. I am a fellow ate myself and a degenerate in a lot of instances, but in this case,
-633.12s: it's killing them. And the part that makes me sad is a lot of these people don't have a bunch of
-636.72s: money to lose. What this means is this is just looking how popular zero DTE mentions on Reddit has
-642.48s: become and you can see essentially from COVID. Somewhere in here on, it's exploded. And what does
-648.32s: this mean? It's lottery. People really want to use these as lottery. They want to be able to make
-654.24s: a lot of money very fast. And that's not that's not what's happening here. You can see this is
-658.80s: actually looking at net and gross profits. Remember before when I was really harping on this concept
-664.16s: of cost, well, this is where it's coming to bear. Take a look at the orange gross profits. Even in
-671.04s: the periods where retail was doing okay with gross profits, it's about cut almost in half after fees.
-677.92s: Even in this peak where they did really well, fees took out a giant chunk, something to the tune
-684.56s: of 40, 50, 60 percent depending on which exact way you're looking at. And it gets worse because
-689.52s: when retail traders are gross losing money, meaning they're just wrong, the net after fees is
-696.56s: massive. These are killing these people and it's a bummer to see. So what's going on here? Well,
-702.64s: again, the fees are not relegated to just the commissions you pay. There are also fees that you get
-709.12s: from slippage, transaction costs, payment for order flow, non, not super competitive pricing. All
-714.32s: of these sorts of things start to hurt you. Now, the SIBO did institute that price improvement
-718.64s: program back in 2020 and that did help, but it doesn't fix the problem because payment for order
-723.12s: flow still exists. So all of this summarized up just means fees are hurting. So if we take a look at
-728.48s: net profits of $100,000, this is looking at month by month. There's a 25 sample size. There are four
-735.20s: profitable months net profits. There are nine profitable months, gross. So we literally are cut in half
-743.68s: in terms of our aggregate profitable trades month over month after we include fees. You cannot
-749.04s: underestimate the cost of doing business as a retail trader. This is also why when retail traders
-754.48s: talk about, oh, I like to scalp one. You don't because retail traders really were not equipped to
-759.68s: scalp. Scalping is like seconds. It is when you are in and out super fast. That is what high
-763.84s: frequency trading algorithms are doing to essentially capture bit-ass differences, mispriceings,
-768.56s: arbitrage, stuff like that. In general, retail is not going to be fast enough, but the bastardized
-773.44s: version of scalping we do, which really is just intraday trading. We think it sounds cool. We heard,
-779.12s: you know, Tom Sausanoff say it, who I like, but everybody wanted to start doing it so it's cool.
-783.52s: The problem is it doesn't work well, especially once you add in fees, not just to mention how
-789.60s: difficult it is to get small time frames correct, directionally. That is one of the hardest time
-795.60s: frames to get direct, directionally correct. What do you mean? It's such a short-term time frame.
-799.20s: Why is it so difficult? Because that's when randomness is at the highest probability. If you think
-803.76s: about where the stock market is going to be 10 years from now, what do you think? Higher or lower?
-808.16s: I would bet higher. And if somebody wants to make that bet, hit me up. I do think it could be an
-812.48s: interesting thing to follow along. And the point being though, most people probably would be confident
-818.72s: that it's going to be higher in 10 years relative than it is today. But if you talk about whether
-823.12s: or not the S&P 500 is going to go up within a five-second increment or a 10-second increment,
-827.52s: very difficult. And then you add fees on top of that because scalping typically includes a lot
-832.56s: of very small profits and then not just, again, commissions, but the cost associated with doing it
-836.88s: very difficult to make money. Okay, now that that horse is beat thoroughly to death, let's just talk
-841.12s: about this concept of expensiveness. This is actually pretty cool to me. So from this paper,
-845.84s: they actually found that retail orders do better in high-vict's environments. And this is typically
-851.20s: when people are attempting to sell, but over the duration, traders actually became more sensitive
-857.36s: to the expensiveness of options, which I actually think is super cool. So let's talk now very quickly
-864.08s: about kind of the somewhat of all of this. Well, it's pretty simple. That retail traders really
-869.52s: like lottery-like assets, which is a bummer, but it's to no surprise, there's a reason why the
-874.08s: lottery makes so much money. And zero DTE options enable that. And right now retail traders, again,
-880.00s: in aggregate essentially lose $358,000 a day on zero DTE S&P 500 options. That's awful. This is
-889.20s: the most disturbing part. Our findings indicate that more than 60% of the lost each day comes in the
-895.36s: form of transaction costs. Easier enemy. I think that we have that point down. So let's talk about
-900.32s: what I do. The very first thing is now that we understand the fight that we're fighting, we now
-905.92s: understand that we need to be very careful of costs, and we need to construct strategies that
-910.96s: enable us to do that. So what does that mean? Well, if you like to trade spreads, which I don't,
-915.60s: especially in this context, if you're trading iron condors and verticals and zero DTE stuff,
-921.04s: you are literally getting chute alive. So I typically prefer simple single options, whether it's
-926.24s: short calls, short puts, short straddles, short strangles, it's typically going to be short straddles.
-930.80s: And notice how I emphasize short on all of those, I tend to sell. And the reason why I tend to sell
-935.76s: is because there is a delta range that is really beneficial to sell, especially in short term
-943.04s: time frames, because of this, the IV HV variance is very large and it needs to approximate. So
-950.64s: if you are trading in a period where the variance between implied and short volatility is very high,
-956.16s: you start to stack the deck in your favor. And again, that video I linked to before will go
-960.08s: through this in more detail. But this is really important because notice how I didn't say when
-964.16s: implied volatility percentile is high or when implied volatility is high or when implied
-968.88s: volatility rank is high. It's because that's not the period that actually matters. What we're trying to
-974.56s: capture is the variance risk premium in this scenario. And that is when IV is overstated compared to
-979.76s: HV that can happen when implied volatility percentile is high, when it's low, what we want to avoid
-985.20s: is when it's in a transition period. That's bad. So this is when we really try to benefit from the
-989.28s: clustering properties of volatility. So the other thing here is limit frequency. This isn't my go to,
-994.64s: I trade and I actually traded it this week on the Fed rate announcement. I traded zero DTE options.
-1000.72s: That's because there's a clear catalyst things like Fed announcements, things like earning statements,
-1006.48s: earnings releases. Those are all great catalysts that really give us a bigger kind of piece of the
-1012.72s: pie that we potentially can chew off. And then the other scenarios when there's a large IV HV
-1018.00s: variance because again, I'm going to tend to sell and that's what I want to see. Notice how there's
-1021.92s: only really two conditions here. This isn't because I think I can make money faster. I don't.
-1026.24s: This isn't because I'm scared of overnight risk. I'm not. This is really the two scenarios where
-1031.04s: this makes sense for me to integrate into my overall approach. So if this video is helpful, don't
-1036.40s: forget to comment below what you found useful. Like, subscribe, be an outlier, share with some friends,
-1041.44s: and I'll catch you guys later.
+0.00s: you're gonna trade them I'm gonna trade
+1.62s: you're gonna trade them I'm gonna trade them so let's talk about how we trade
+3.47s: them so let's talk about how we trade
+3.48s: them so let's talk about how we trade them what exactly zero DTE options I'm
+6.29s: them what exactly zero DTE options I'm
+6.30s: them what exactly zero DTE options I'm gonna walk you through a guide on some
+8.03s: gonna walk you through a guide on some
+8.04s: gonna walk you through a guide on some of the things that I think should keep
+9.17s: of the things that I think should keep
+9.18s: of the things that I think should keep in mind pros and cons first second I
+11.39s: in mind pros and cons first second I
+11.40s: in mind pros and cons first second I want to walk you through the downfall of
+13.85s: want to walk you through the downfall of
+13.86s: want to walk you through the downfall of retail Traders integration of them into
+16.19s: retail Traders integration of them into
+16.20s: retail Traders integration of them into their strategies via data from a handful
+18.77s: their strategies via data from a handful
+18.78s: their strategies via data from a handful of studies that I really like that I
+20.93s: of studies that I really like that I
+20.94s: of studies that I really like that I also juxtapose against my own data set
+23.33s: also juxtapose against my own data set
+23.34s: also juxtapose against my own data set but nobody should trust my data set I
+25.73s: but nobody should trust my data set I
+25.74s: but nobody should trust my data set I think it's better to use the stuff that
+27.05s: think it's better to use the stuff that
+27.06s: think it's better to use the stuff that you can find that's peer reviewed so
+28.61s: you can find that's peer reviewed so
+28.62s: you can find that's peer reviewed so we're going to go through that but I'll
+30.11s: we're going to go through that but I'll
+30.12s: we're going to go through that but I'll integrate some of the things that I
+31.31s: integrate some of the things that I
+31.32s: integrate some of the things that I found personally along the way and then
+32.87s: found personally along the way and then
+32.88s: found personally along the way and then at the end of the video I want to walk
+33.89s: at the end of the video I want to walk
+33.90s: at the end of the video I want to walk you through exactly how I integrate zero
+36.65s: you through exactly how I integrate zero
+36.66s: you through exactly how I integrate zero DTE expirations into my trading style
+38.87s: DTE expirations into my trading style
+38.88s: DTE expirations into my trading style and how I like to trade them so without
+40.25s: and how I like to trade them so without
+40.26s: and how I like to trade them so without further Ado what's up everybody Eric
+41.81s: further Ado what's up everybody Eric
+41.82s: further Ado what's up everybody Eric here welcome back to all the outliers a
+43.91s: here welcome back to all the outliers a
+43.92s: here welcome back to all the outliers a huge shout out to the patreon family and
+46.07s: huge shout out to the patreon family and
+46.08s: huge shout out to the patreon family and the YouTube members you guys make this
+47.99s: the YouTube members you guys make this
+48.00s: the YouTube members you guys make this all possible this takes a lot of time to
+49.85s: all possible this takes a lot of time to
+49.86s: all possible this takes a lot of time to put together to give you good
+51.05s: put together to give you good
+51.06s: put together to give you good information so let's get straight into
+52.91s: information so let's get straight into
+52.92s: information so let's get straight into this video the very first thing that I
+55.19s: this video the very first thing that I
+55.20s: this video the very first thing that I want to talk about some pros and cons
+56.33s: want to talk about some pros and cons
+56.34s: want to talk about some pros and cons and what you're going to notice from
+57.77s: and what you're going to notice from
+57.78s: and what you're going to notice from this list is it's not labeled as a pro
+59.51s: this list is it's not labeled as a pro
+59.52s: this list is it's not labeled as a pro or on and it's because it really depends
+61.43s: or on and it's because it really depends
+61.44s: or on and it's because it really depends on the side of the trade that you're on
+62.69s: on the side of the trade that you're on
+62.70s: on the side of the trade that you're on so for example gamma this really helps
+65.27s: so for example gamma this really helps
+65.28s: so for example gamma this really helps long options so if we're on expiration
+68.69s: long options so if we're on expiration
+68.70s: long options so if we're on expiration day gamma is super high because every
+72.11s: day gamma is super high because every
+72.12s: day gamma is super high because every single option needs to approximate to
+74.69s: single option needs to approximate to
+74.70s: single option needs to approximate to one or two spots either a zero or a one
+78.59s: one or two spots either a zero or a one
+78.60s: one or two spots either a zero or a one Delta meaning it's out of the money or
+80.75s: Delta meaning it's out of the money or
+80.76s: Delta meaning it's out of the money or in the money that's what's happening on
+82.37s: in the money that's what's happening on
+82.38s: in the money that's what's happening on expiration day so gamma is very high
+84.65s: expiration day so gamma is very high
+84.66s: expiration day so gamma is very high because all options need to do that that
+87.05s: because all options need to do that that
+87.06s: because all options need to do that that benefits buyers it hurts sellers what's
+89.93s: benefits buyers it hurts sellers what's
+89.94s: benefits buyers it hurts sellers what's the trade-off here well beta is also
+92.81s: the trade-off here well beta is also
+92.82s: the trade-off here well beta is also fast moving like gamma that benefits
+95.75s: fast moving like gamma that benefits
+95.76s: fast moving like gamma that benefits sellers not buyers because all of the
+98.09s: sellers not buyers because all of the
+98.10s: sellers not buyers because all of the options that are out of the money need
+100.37s: options that are out of the money need
+100.38s: options that are out of the money need to approximate to zero so that means
+102.83s: to approximate to zero so that means
+102.84s: to approximate to zero so that means Theta is going to Decay very very fast
+105.11s: Theta is going to Decay very very fast
+105.12s: Theta is going to Decay very very fast so for a great example of this let's hop
+107.15s: so for a great example of this let's hop
+107.16s: so for a great example of this let's hop over to the platform if we take a look
+108.83s: over to the platform if we take a look
+108.84s: over to the platform if we take a look at SPX here and we go to form a which is
+111.17s: at SPX here and we go to form a which is
+111.18s: at SPX here and we go to form a which is today's expiration
+112.85s: today's expiration
+112.86s: today's expiration um notice how everything that's out of
+114.47s: um notice how everything that's out of
+114.48s: um notice how everything that's out of the money is now essentially bid zero
+116.63s: the money is now essentially bid zero
+116.64s: the money is now essentially bid zero offered at five which means that's the
+118.55s: offered at five which means that's the
+118.56s: offered at five which means that's the minimum bid I spread these are all
+119.87s: minimum bid I spread these are all
+119.88s: minimum bid I spread these are all worthless and then if we go to one data
+122.45s: worthless and then if we go to one data
+122.46s: worthless and then if we go to one data expiration notice how much premium is
+124.43s: expiration notice how much premium is
+124.44s: expiration notice how much premium is still in these options but what I really
+125.99s: still in these options but what I really
+126.00s: still in these options but what I really want to hone you in on is this gamma
+127.97s: want to hone you in on is this gamma
+127.98s: want to hone you in on is this gamma that's this column here it's a little
+129.35s: that's this column here it's a little
+129.36s: that's this column here it's a little difficult to see but gamma for at the
+131.57s: difficult to see but gamma for at the
+131.58s: difficult to see but gamma for at the money options relative to the cost here
+133.91s: money options relative to the cost here
+133.92s: money options relative to the cost here is gonna be pretty high and it's because
+136.31s: is gonna be pretty high and it's because
+136.32s: is gonna be pretty high and it's because they need to make that decision if
+138.11s: they need to make that decision if
+138.12s: they need to make that decision if they're out of the money they're going
+139.19s: they're out of the money they're going
+139.20s: they're out of the money they're going to zero if they're in the money they're
+140.81s: to zero if they're in the money they're
+140.82s: to zero if they're in the money they're going to whatever their intrinsic value
+142.25s: going to whatever their intrinsic value
+142.26s: going to whatever their intrinsic value is so again that kind of depending on
+144.41s: is so again that kind of depending on
+144.42s: is so again that kind of depending on what side of the coin here whether
+145.43s: what side of the coin here whether
+145.44s: what side of the coin here whether you're buying or selling and it's you
+146.87s: you're buying or selling and it's you
+146.88s: you're buying or selling and it's you know really the same for calls or puts
+148.31s: know really the same for calls or puts
+148.32s: know really the same for calls or puts this fast moving Theta and Gamma
+150.89s: this fast moving Theta and Gamma
+150.90s: this fast moving Theta and Gamma benefits both or hurts both the
+153.41s: benefits both or hurts both the
+153.42s: benefits both or hurts both the volatility Edge really is going to
+155.15s: volatility Edge really is going to
+155.16s: volatility Edge really is going to benefit the sellers out there and this
+157.13s: benefit the sellers out there and this
+157.14s: benefit the sellers out there and this is an important concept too though and
+158.75s: is an important concept too though and
+158.76s: is an important concept too though and this is actually going to be one of the
+159.83s: this is actually going to be one of the
+159.84s: this is actually going to be one of the things we talk about later but this
+161.81s: things we talk about later but this
+161.82s: things we talk about later but this really just falls into Theta um decay in
+165.11s: really just falls into Theta um decay in
+165.12s: really just falls into Theta um decay in some case if you're a seller and that's
+167.15s: some case if you're a seller and that's
+167.16s: some case if you're a seller and that's it the fast moving component is what
+169.97s: it the fast moving component is what
+169.98s: it the fast moving component is what draws people to these products but
+172.43s: draws people to these products but
+172.44s: draws people to these products but depending on what side of the trade
+173.69s: depending on what side of the trade
+173.70s: depending on what side of the trade you're on it's gonna have a different
+174.47s: you're on it's gonna have a different
+174.48s: you're on it's gonna have a different impact this however is universal no
+176.69s: impact this however is universal no
+176.70s: impact this however is universal no overnight risk if you put on these
+179.27s: overnight risk if you put on these
+179.28s: overnight risk if you put on these trades you can go to sleep and just
+181.49s: trades you can go to sleep and just
+181.50s: trades you can go to sleep and just chill out because there's no overnight
+183.11s: chill out because there's no overnight
+183.12s: chill out because there's no overnight risk now a super important note here
+185.27s: risk now a super important note here
+185.28s: risk now a super important note here though is I think Traders perpetually
+187.79s: though is I think Traders perpetually
+187.80s: though is I think Traders perpetually look for a boogeyman they're looking for
+189.71s: look for a boogeyman they're looking for
+189.72s: look for a boogeyman they're looking for something to justify a behavior and
+192.05s: something to justify a behavior and
+192.06s: something to justify a behavior and overnight risk is not as scary as it is
+194.45s: overnight risk is not as scary as it is
+194.46s: overnight risk is not as scary as it is what I mean by that is if you look at
+196.73s: what I mean by that is if you look at
+196.74s: what I mean by that is if you look at portfolio visualizer.com you throw in a
+199.19s: portfolio visualizer.com you throw in a
+199.20s: portfolio visualizer.com you throw in a ten thousand dollar portfolio and you
+201.17s: ten thousand dollar portfolio and you
+201.18s: ten thousand dollar portfolio and you look back 30 years whatever the case is
+203.21s: look back 30 years whatever the case is
+203.22s: look back 30 years whatever the case is that has a lot of overnight risk there's
+204.95s: that has a lot of overnight risk there's
+204.96s: that has a lot of overnight risk there's a lot of nights over the course of
+206.51s: a lot of nights over the course of
+206.52s: a lot of nights over the course of holding that product but somehow it
+207.95s: holding that product but somehow it
+207.96s: holding that product but somehow it turns out okay it makes money the point
+209.63s: turns out okay it makes money the point
+209.64s: turns out okay it makes money the point being is overnight risk is not the
+211.07s: being is overnight risk is not the
+211.08s: being is overnight risk is not the boogeyman here and there's ways to
+212.87s: boogeyman here and there's ways to
+212.88s: boogeyman here and there's ways to overcome that by the way we structure
+214.91s: overcome that by the way we structure
+214.92s: overcome that by the way we structure the trades which I'm going to get into
+215.93s: the trades which I'm going to get into
+215.94s: the trades which I'm going to get into in a minute so while this is a benefit
+218.33s: in a minute so while this is a benefit
+218.34s: in a minute so while this is a benefit to be very clear not having overnight
+220.19s: to be very clear not having overnight
+220.20s: to be very clear not having overnight risk is a benefit I would not permit
+222.77s: risk is a benefit I would not permit
+222.78s: risk is a benefit I would not permit your mind to say oh I should only trade
+225.95s: your mind to say oh I should only trade
+225.96s: your mind to say oh I should only trade zero DTE options because they have no
+227.75s: zero DTE options because they have no
+227.76s: zero DTE options because they have no overnight risk and that's where all the
+229.25s: overnight risk and that's where all the
+229.26s: overnight risk and that's where all the risk is it is not the case the risk is
+231.35s: risk is it is not the case the risk is
+231.36s: risk is it is not the case the risk is actually in your shitty strategy that's
+233.33s: actually in your shitty strategy that's
+233.34s: actually in your shitty strategy that's it so with that little disclaimer aside
+236.09s: it so with that little disclaimer aside
+236.10s: it so with that little disclaimer aside let's take a look now at what the con is
+238.67s: let's take a look now at what the con is
+238.68s: let's take a look now at what the con is what's the con this is the largest
+241.43s: what's the con this is the largest
+241.44s: what's the con this is the largest drawback of zero DTE options and I
+244.43s: drawback of zero DTE options and I
+244.44s: drawback of zero DTE options and I cannot emphasize this point enough we're
+246.29s: cannot emphasize this point enough we're
+246.30s: cannot emphasize this point enough we're going to talk about this at length now
+248.45s: going to talk about this at length now
+248.46s: going to talk about this at length now you might be saying to yourself Eric the
+250.61s: you might be saying to yourself Eric the
+250.62s: you might be saying to yourself Eric the cost is only the 40 cents per contract
+253.37s: cost is only the 40 cents per contract
+253.38s: cost is only the 40 cents per contract that I'm putting on that's not so bad
+255.59s: that I'm putting on that's not so bad
+255.60s: that I'm putting on that's not so bad not the case so coming back over here
+258.83s: not the case so coming back over here
+258.84s: not the case so coming back over here again to the platform if we go here to
+261.47s: again to the platform if we go here to
+261.48s: again to the platform if we go here to one data expiration and you take a look
+263.69s: one data expiration and you take a look
+263.70s: one data expiration and you take a look at the bid ask spread there's slippage
+266.33s: at the bid ask spread there's slippage
+266.34s: at the bid ask spread there's slippage involved in where you actually get your
+268.91s: involved in where you actually get your
+268.92s: involved in where you actually get your fill so this is the 4060 at the money
+272.15s: fill so this is the 4060 at the money
+272.16s: fill so this is the 4060 at the money put is bid at 19 offered at 19.50 that's
+276.83s: put is bid at 19 offered at 19.50 that's
+276.84s: put is bid at 19 offered at 19.50 that's 50 cents right there right out of the
+278.87s: 50 cents right there right out of the
+278.88s: 50 cents right there right out of the gate in addition to your fees that you
+280.79s: gate in addition to your fees that you
+280.80s: gate in addition to your fees that you pay on top and for relative comparison
+283.25s: pay on top and for relative comparison
+283.26s: pay on top and for relative comparison if we go here to 16 June and we go to
+285.59s: if we go here to 16 June and we go to
+285.60s: if we go here to 16 June and we go to this at the money these are worth the
+287.99s: this at the money these are worth the
+288.00s: this at the money these are worth the same 40 60s their bid 9180 offered 93.50
+292.37s: same 40 60s their bid 9180 offered 93.50
+292.38s: same 40 60s their bid 9180 offered 93.50 so as a percentage these are massively
+294.95s: so as a percentage these are massively
+294.96s: so as a percentage these are massively more expensive it's like a two percent
+296.69s: more expensive it's like a two percent
+296.70s: more expensive it's like a two percent plus bid ask spread based on the
+299.03s: plus bid ask spread based on the
+299.04s: plus bid ask spread based on the relative value of this compared to out
+301.07s: relative value of this compared to out
+301.08s: relative value of this compared to out here this is like 1.85 so the point
+303.77s: here this is like 1.85 so the point
+303.78s: here this is like 1.85 so the point being is the the spreads you're paying
+306.29s: being is the the spreads you're paying
+306.30s: being is the the spreads you're paying on these again on a relative basis is
+308.87s: on these again on a relative basis is
+308.88s: on these again on a relative basis is massive and that's important because
+310.31s: massive and that's important because
+310.32s: massive and that's important because we're going to talk more about costs in
+311.63s: we're going to talk more about costs in
+311.64s: we're going to talk more about costs in a minute but this is this is really what
+313.85s: a minute but this is this is really what
+313.86s: a minute but this is this is really what we're fighting against here and we're
+315.41s: we're fighting against here and we're
+315.42s: we're fighting against here and we're going to talk about how we can do that
+316.79s: going to talk about how we can do that
+316.80s: going to talk about how we can do that okay so this is going to be the paper
+317.99s: okay so this is going to be the paper
+318.00s: okay so this is going to be the paper I'm referencing But whichever way I
+319.97s: I'm referencing But whichever way I
+319.98s: I'm referencing But whichever way I should Point um in this scenario this is
+321.59s: should Point um in this scenario this is
+321.60s: should Point um in this scenario this is the paper we're going to be talking
+322.37s: the paper we're going to be talking
+322.38s: the paper we're going to be talking about and there's a bunch of other
+324.53s: about and there's a bunch of other
+324.54s: about and there's a bunch of other details that I'm baking into this from
+326.87s: details that I'm baking into this from
+326.88s: details that I'm baking into this from both my own data set and then a couple
+329.03s: both my own data set and then a couple
+329.04s: both my own data set and then a couple other ancillary information sources but
+331.31s: other ancillary information sources but
+331.32s: other ancillary information sources but I wanted to use a peer-reviewed data
+333.89s: I wanted to use a peer-reviewed data
+333.90s: I wanted to use a peer-reviewed data source because there's no reason for
+335.39s: source because there's no reason for
+335.40s: source because there's no reason for anybody to really put a whole bunch of
+336.83s: anybody to really put a whole bunch of
+336.84s: anybody to really put a whole bunch of weight on my data although I certainly
+338.81s: weight on my data although I certainly
+338.82s: weight on my data although I certainly do it is still worthwhile I think to
+341.33s: do it is still worthwhile I think to
+341.34s: do it is still worthwhile I think to draw some parallels between these two
+342.71s: draw some parallels between these two
+342.72s: draw some parallels between these two but this is a pretty well done paper
+344.27s: but this is a pretty well done paper
+344.28s: but this is a pretty well done paper there's to be very clear there's holes
+346.37s: there's to be very clear there's holes
+346.38s: there's to be very clear there's holes in any paper that's done so I do not
+348.83s: in any paper that's done so I do not
+348.84s: in any paper that's done so I do not want you to look at this as if this is
+350.45s: want you to look at this as if this is
+350.46s: want you to look at this as if this is the end-all be all authority on
+351.89s: the end-all be all authority on
+351.90s: the end-all be all authority on everything it's not they make
+352.97s: everything it's not they make
+352.98s: everything it's not they make assumptions they have to but we can
+355.37s: assumptions they have to but we can
+355.38s: assumptions they have to but we can still learn a lot from this paper so
+356.81s: still learn a lot from this paper so
+356.82s: still learn a lot from this paper so with that aside let's get straight in to
+360.11s: with that aside let's get straight in to
+360.12s: with that aside let's get straight in to it what do Traders do well we can tell
+362.87s: it what do Traders do well we can tell
+362.88s: it what do Traders do well we can tell that traders in general have really
+365.93s: that traders in general have really
+365.94s: that traders in general have really started taking on to this idea of zero
+369.11s: started taking on to this idea of zero
+369.12s: started taking on to this idea of zero DTE expiration so you can see the zero
+371.45s: DTE expiration so you can see the zero
+371.46s: DTE expiration so you can see the zero DTE here orange and notice how wide of a
+375.29s: DTE here orange and notice how wide of a
+375.30s: DTE here orange and notice how wide of a space this is taking up in monthly
+376.97s: space this is taking up in monthly
+376.98s: space this is taking up in monthly trading volume I guess you can't do that
+379.01s: trading volume I guess you can't do that
+379.02s: trading volume I guess you can't do that because my stupid face is in the way
+380.51s: because my stupid face is in the way
+380.52s: because my stupid face is in the way maybe you can now but as you can see
+382.97s: maybe you can now but as you can see
+382.98s: maybe you can now but as you can see this is a massive space that they're
+386.09s: this is a massive space that they're
+386.10s: this is a massive space that they're consuming this means that the demand is
+388.37s: consuming this means that the demand is
+388.38s: consuming this means that the demand is huge the same thing is if we take a look
+391.07s: huge the same thing is if we take a look
+391.08s: huge the same thing is if we take a look at zero dte1 dte2 so on and so forth
+393.65s: at zero dte1 dte2 so on and so forth
+393.66s: at zero dte1 dte2 so on and so forth notice how prevalent this is compared to
+396.95s: notice how prevalent this is compared to
+396.96s: notice how prevalent this is compared to everything out there and if you take a
+399.41s: everything out there and if you take a
+399.42s: everything out there and if you take a look at just short-term duration so
+401.87s: look at just short-term duration so
+401.88s: look at just short-term duration so essentially zero and one DTE that is
+404.51s: essentially zero and one DTE that is
+404.52s: essentially zero and one DTE that is also massive so overall there has been a
+408.05s: also massive so overall there has been a
+408.06s: also massive so overall there has been a huge spike in monthly trading volume
+410.35s: huge spike in monthly trading volume
+410.36s: huge spike in monthly trading volume centralized in zero DTE stuff now we're
+413.69s: centralized in zero DTE stuff now we're
+413.70s: centralized in zero DTE stuff now we're going to look at slim trading volume and
+416.93s: going to look at slim trading volume and
+416.94s: going to look at slim trading volume and the bliffnotes version of what the hell
+418.97s: the bliffnotes version of what the hell
+418.98s: the bliffnotes version of what the hell slim is it's a way for us to look at
+421.49s: slim is it's a way for us to look at
+421.50s: slim is it's a way for us to look at trade level data from sibo and identify
+424.73s: trade level data from sibo and identify
+424.74s: trade level data from sibo and identify the highest probability of retail trades
+427.31s: the highest probability of retail trades
+427.32s: the highest probability of retail trades this does not mean that every trade
+429.11s: this does not mean that every trade
+429.12s: this does not mean that every trade listed in here is retail but we know
+431.51s: listed in here is retail but we know
+431.52s: listed in here is retail but we know with relative confidence that most of it
+434.15s: with relative confidence that most of it
+434.16s: with relative confidence that most of it is going to be and this is something
+436.07s: is going to be and this is something
+436.08s: is going to be and this is something that I also track personally so I'm
+438.17s: that I also track personally so I'm
+438.18s: that I also track personally so I'm familiar with this concept but the again
+440.45s: familiar with this concept but the again
+440.46s: familiar with this concept but the again Cliff Notes version is there is a price
+442.67s: Cliff Notes version is there is a price
+442.68s: Cliff Notes version is there is a price Improvement protocol put in a place for
+444.71s: Improvement protocol put in a place for
+444.72s: Improvement protocol put in a place for small orders and indices and whatnot and
+447.23s: small orders and indices and whatnot and
+447.24s: small orders and indices and whatnot and most of retail orders fall into that
+449.33s: most of retail orders fall into that
+449.34s: most of retail orders fall into that bucket of essentially 10 Lots or less so
+451.85s: bucket of essentially 10 Lots or less so
+451.86s: bucket of essentially 10 Lots or less so this is how we're drawing on that it's
+453.47s: this is how we're drawing on that it's
+453.48s: this is how we're drawing on that it's not perfect but it's pretty good so what
+455.69s: not perfect but it's pretty good so what
+455.70s: not perfect but it's pretty good so what I want to highlight here though is the
+457.85s: I want to highlight here though is the
+457.86s: I want to highlight here though is the monthly you can essentially insert
+460.07s: monthly you can essentially insert
+460.08s: monthly you can essentially insert retail Trader volume in general here the
+462.71s: retail Trader volume in general here the
+462.72s: retail Trader volume in general here the monthly retail Trader volume take a look
+464.87s: monthly retail Trader volume take a look
+464.88s: monthly retail Trader volume take a look at the total volume which is blue and
+467.27s: at the total volume which is blue and
+467.28s: at the total volume which is blue and how much of that total volume is zero
+469.13s: how much of that total volume is zero
+469.14s: how much of that total volume is zero DTE it kind of explains itself ever
+471.77s: DTE it kind of explains itself ever
+471.78s: DTE it kind of explains itself ever since we had covid we started launching
+473.75s: since we had covid we started launching
+473.76s: since we had covid we started launching more expirations there's a demand for it
+475.97s: more expirations there's a demand for it
+475.98s: more expirations there's a demand for it and it's just been maintained to a
+478.25s: and it's just been maintained to a
+478.26s: and it's just been maintained to a pretty significant order and you can see
+480.83s: pretty significant order and you can see
+480.84s: pretty significant order and you can see the slim shirt compared to total volume
+483.11s: the slim shirt compared to total volume
+483.12s: the slim shirt compared to total volume so we have it breaks down zero DTE non
+485.99s: so we have it breaks down zero DTE non
+486.00s: so we have it breaks down zero DTE non and then total so on and so forth the
+487.49s: and then total so on and so forth the
+487.50s: and then total so on and so forth the point being is it's extremely popular
+488.93s: point being is it's extremely popular
+488.94s: point being is it's extremely popular and it's not slowing down that's not a
+490.67s: and it's not slowing down that's not a
+490.68s: and it's not slowing down that's not a good thing or a bad thing it just means
+491.99s: good thing or a bad thing it just means
+492.00s: good thing or a bad thing it just means that it's very common now this is where
+494.21s: that it's very common now this is where
+494.22s: that it's very common now this is where we start getting into kind of more of
+495.89s: we start getting into kind of more of
+495.90s: we start getting into kind of more of the specific details that I think is
+498.05s: the specific details that I think is
+498.06s: the specific details that I think is pertinent to most people and this is
+499.85s: pertinent to most people and this is
+499.86s: pertinent to most people and this is breaking down zero DTE trading volume
+502.49s: breaking down zero DTE trading volume
+502.50s: breaking down zero DTE trading volume from again non-retail versus retail and
+506.15s: from again non-retail versus retail and
+506.16s: from again non-retail versus retail and there's a few notes here that I think
+508.31s: there's a few notes here that I think
+508.32s: there's a few notes here that I think are important to you and I've
+510.23s: are important to you and I've
+510.24s: are important to you and I've highlighted them here when we talk about
+511.73s: highlighted them here when we talk about
+511.74s: highlighted them here when we talk about the breakdown between calls and puts
+513.47s: the breakdown between calls and puts
+513.48s: the breakdown between calls and puts it's essentially same same for retail
+515.57s: it's essentially same same for retail
+515.58s: it's essentially same same for retail versus non-retail light ever so slight
+518.09s: versus non-retail light ever so slight
+518.10s: versus non-retail light ever so slight variance between the two nothing
+519.41s: variance between the two nothing
+519.42s: variance between the two nothing noteworthy if we look at the size again
+521.87s: noteworthy if we look at the size again
+521.88s: noteworthy if we look at the size again you can see that the gross
+523.97s: you can see that the gross
+523.98s: you can see that the gross centralization for retail is in single
+526.97s: centralization for retail is in single
+526.98s: centralization for retail is in single contracts and that's not the case for
+529.19s: contracts and that's not the case for
+529.20s: contracts and that's not the case for non-retail it's still overwhelming
+531.65s: non-retail it's still overwhelming
+531.66s: non-retail it's still overwhelming single contracts but there's a bigger
+533.33s: single contracts but there's a bigger
+533.34s: single contracts but there's a bigger breakout between two to five and so on
+535.31s: breakout between two to five and so on
+535.32s: breakout between two to five and so on and so forth so when we look at these
+537.29s: and so forth so when we look at these
+537.30s: and so forth so when we look at these though this is where it starts to get
+538.85s: though this is where it starts to get
+538.86s: though this is where it starts to get important when we look at the direction
+540.35s: important when we look at the direction
+540.36s: important when we look at the direction whether we're buying or selling you can
+543.35s: whether we're buying or selling you can
+543.36s: whether we're buying or selling you can see that there is a kind of
+545.21s: see that there is a kind of
+545.22s: see that there is a kind of centralization in buying for retail but
+548.45s: centralization in buying for retail but
+548.46s: centralization in buying for retail but selling for institutions now I want to
+550.61s: selling for institutions now I want to
+550.62s: selling for institutions now I want to be super clear before all of the Theta
+552.35s: be super clear before all of the Theta
+552.36s: be super clear before all of the Theta gang people out there start saying like
+554.15s: gang people out there start saying like
+554.16s: gang people out there start saying like oh yep I got it right this is all I
+556.13s: oh yep I got it right this is all I
+556.14s: oh yep I got it right this is all I should be doing let me put my stupid
+557.75s: should be doing let me put my stupid
+557.76s: should be doing let me put my stupid face right in the middle of the screen
+558.95s: face right in the middle of the screen
+558.96s: face right in the middle of the screen to hopefully intercede that thought
+560.69s: to hopefully intercede that thought
+560.70s: to hopefully intercede that thought process that is not the case selling is
+563.57s: process that is not the case selling is
+563.58s: process that is not the case selling is not some sort of magic potion that fixes
+565.49s: not some sort of magic potion that fixes
+565.50s: not some sort of magic potion that fixes everything it's really important to
+567.05s: everything it's really important to
+567.06s: everything it's really important to understand why selling works and when
+569.21s: understand why selling works and when
+569.22s: understand why selling works and when selling works I'm not going to go super
+570.77s: selling works I'm not going to go super
+570.78s: selling works I'm not going to go super far into detail on this video I will
+572.69s: far into detail on this video I will
+572.70s: far into detail on this video I will throw a link to a really great video
+574.61s: throw a link to a really great video
+574.62s: throw a link to a really great video that I made in the notes Below on this
+576.83s: that I made in the notes Below on this
+576.84s: that I made in the notes Below on this exact concept but it is important to
+578.87s: exact concept but it is important to
+578.88s: exact concept but it is important to note that in general yelling does have a
+582.11s: note that in general yelling does have a
+582.12s: note that in general yelling does have a benefit if it's properly deployed which
+584.39s: benefit if it's properly deployed which
+584.40s: benefit if it's properly deployed which is why you will see this breakdown where
+587.71s: is why you will see this breakdown where
+587.72s: is why you will see this breakdown where non-retail tends to favor selling a bit
+590.39s: non-retail tends to favor selling a bit
+590.40s: non-retail tends to favor selling a bit now whether it's call or puts you can
+593.33s: now whether it's call or puts you can
+593.34s: now whether it's call or puts you can see that this is you know slightly
+595.61s: see that this is you know slightly
+595.62s: see that this is you know slightly inverted and there's going to be more
+597.71s: inverted and there's going to be more
+597.72s: inverted and there's going to be more selling of both on this side but but if
+599.93s: selling of both on this side but but if
+599.94s: selling of both on this side but but if you'll notice you know when we look at
+601.61s: you'll notice you know when we look at
+601.62s: you'll notice you know when we look at the the buy versus sell calls versus
+603.59s: the the buy versus sell calls versus
+603.60s: the the buy versus sell calls versus puts it's nothing too crazy to walk away
+606.65s: puts it's nothing too crazy to walk away
+606.66s: puts it's nothing too crazy to walk away from here other than you could tell that
+608.57s: from here other than you could tell that
+608.58s: from here other than you could tell that we prefer selling and from a non-retail
+612.29s: we prefer selling and from a non-retail
+612.30s: we prefer selling and from a non-retail perspective and on a retail perspective
+613.91s: perspective and on a retail perspective
+613.92s: perspective and on a retail perspective they're looking to buy so that aside I
+616.43s: they're looking to buy so that aside I
+616.44s: they're looking to buy so that aside I want to start getting into some other
+618.05s: want to start getting into some other
+618.06s: want to start getting into some other specifics and this is one of the the
+620.69s: specifics and this is one of the the
+620.70s: specifics and this is one of the the funny things right we get to joke about
+622.55s: funny things right we get to joke about
+622.56s: funny things right we get to joke about this because it is funny but it's also
+624.41s: this because it is funny but it's also
+624.42s: this because it is funny but it's also sad to me at the same time which is the
+626.51s: sad to me at the same time which is the
+626.52s: sad to me at the same time which is the people on Wall Street bets love them I
+628.67s: people on Wall Street bets love them I
+628.68s: people on Wall Street bets love them I am a fellow eight myself and a
+630.41s: am a fellow eight myself and a
+630.42s: am a fellow eight myself and a degenerate in a lot of instances but in
+632.69s: degenerate in a lot of instances but in
+632.70s: degenerate in a lot of instances but in this case it's killing them and the part
+634.85s: this case it's killing them and the part
+634.86s: this case it's killing them and the part that makes me sad is a lot of these
+636.17s: that makes me sad is a lot of these
+636.18s: that makes me sad is a lot of these people don't have a bunch of money to
+637.37s: people don't have a bunch of money to
+637.38s: people don't have a bunch of money to lose what this means is this is just
+639.23s: lose what this means is this is just
+639.24s: lose what this means is this is just looking how popular zero DTE mentions on
+642.05s: looking how popular zero DTE mentions on
+642.06s: looking how popular zero DTE mentions on Reddit has become and you can see
+643.79s: Reddit has become and you can see
+643.80s: Reddit has become and you can see essentially from covid somewhere in here
+645.71s: essentially from covid somewhere in here
+645.72s: essentially from covid somewhere in here on it's exploded and what does this mean
+649.01s: on it's exploded and what does this mean
+649.02s: on it's exploded and what does this mean it's lotteries people really want to use
+652.01s: it's lotteries people really want to use
+652.02s: it's lotteries people really want to use these as lotteries they want to be able
+654.17s: these as lotteries they want to be able
+654.18s: these as lotteries they want to be able to make a lot of money very fast and
+655.79s: to make a lot of money very fast and
+655.80s: to make a lot of money very fast and that's not that's not what's happening
+657.59s: that's not that's not what's happening
+657.60s: that's not that's not what's happening here you can see this is actually
+659.09s: here you can see this is actually
+659.10s: here you can see this is actually looking looking at net and gross profits
+661.43s: looking looking at net and gross profits
+661.44s: looking looking at net and gross profits remember before when I was really
+662.93s: remember before when I was really
+662.94s: remember before when I was really harping on this concept of cost well
+665.57s: harping on this concept of cost well
+665.58s: harping on this concept of cost well this is where it's coming to Bear take a
+668.33s: this is where it's coming to Bear take a
+668.34s: this is where it's coming to Bear take a look at the orange gross profits even in
+671.27s: look at the orange gross profits even in
+671.28s: look at the orange gross profits even in the periods where retail was doing okay
+673.49s: the periods where retail was doing okay
+673.50s: the periods where retail was doing okay with gross profits it's about cut almost
+676.01s: with gross profits it's about cut almost
+676.02s: with gross profits it's about cut almost in half after fees even in this peak
+679.07s: in half after fees even in this peak
+679.08s: in half after fees even in this peak where they did really well fees took out
+681.83s: where they did really well fees took out
+681.84s: where they did really well fees took out a giant chunk something to the tune of
+685.07s: a giant chunk something to the tune of
+685.08s: a giant chunk something to the tune of 40 50 60 depending on which exact point
+687.71s: 40 50 60 depending on which exact point
+687.72s: 40 50 60 depending on which exact point you're looking at and it gets worse
+689.21s: you're looking at and it gets worse
+689.22s: you're looking at and it gets worse because when retail Traders are gross
+692.15s: because when retail Traders are gross
+692.16s: because when retail Traders are gross losing money meaning they're just wrong
+693.95s: losing money meaning they're just wrong
+693.96s: losing money meaning they're just wrong the net after fees is massive these are
+698.51s: the net after fees is massive these are
+698.52s: the net after fees is massive these are killing these people and it's a bummer
+700.31s: killing these people and it's a bummer
+700.32s: killing these people and it's a bummer to see so what's going on here well
+702.71s: to see so what's going on here well
+702.72s: to see so what's going on here well again the fees are not relegated to just
+705.77s: again the fees are not relegated to just
+705.78s: again the fees are not relegated to just the commissions you pay there are also
+708.05s: the commissions you pay there are also
+708.06s: the commissions you pay there are also fees that you get from slippage
+709.91s: fees that you get from slippage
+709.92s: fees that you get from slippage transaction cost payment for order flow
+712.19s: transaction cost payment for order flow
+712.20s: transaction cost payment for order flow non not not super competitive pricing
+714.17s: non not not super competitive pricing
+714.18s: non not not super competitive pricing all of these sorts of things start to
+715.85s: all of these sorts of things start to
+715.86s: all of these sorts of things start to hurt you now the sibo did Institute that
+718.13s: hurt you now the sibo did Institute that
+718.14s: hurt you now the sibo did Institute that price Improvement program back in in
+719.69s: price Improvement program back in in
+719.70s: price Improvement program back in in 2020 and that did help but it doesn't
+721.61s: 2020 and that did help but it doesn't
+721.62s: 2020 and that did help but it doesn't fix the problem because payment forward
+723.17s: fix the problem because payment forward
+723.18s: fix the problem because payment forward or flow still exists so all of this
+725.15s: or flow still exists so all of this
+725.16s: or flow still exists so all of this summarized up just means fees are
+727.07s: summarized up just means fees are
+727.08s: summarized up just means fees are hurting so if we take a look at net
+728.99s: hurting so if we take a look at net
+729.00s: hurting so if we take a look at net profits of a hundred thousand dollars
+730.79s: profits of a hundred thousand dollars
+730.80s: profits of a hundred thousand dollars this is looking at month by month
+732.71s: this is looking at month by month
+732.72s: this is looking at month by month there's a 25 sample size there are four
+735.17s: there's a 25 sample size there are four
+735.18s: there's a 25 sample size there are four profitable months net profits there are
+738.35s: profitable months net profits there are
+738.36s: profitable months net profits there are nine profitable months gross so we
+741.83s: nine profitable months gross so we
+741.84s: nine profitable months gross so we literally are cut in half in terms of
+744.35s: literally are cut in half in terms of
+744.36s: literally are cut in half in terms of our aggregate profitable trades month
+746.51s: our aggregate profitable trades month
+746.52s: our aggregate profitable trades month over month after we include fees you
+748.79s: over month after we include fees you
+748.80s: over month after we include fees you cannot underestimate the cost of doing
+751.13s: cannot underestimate the cost of doing
+751.14s: cannot underestimate the cost of doing business as a retail Trader this is also
+753.29s: business as a retail Trader this is also
+753.30s: business as a retail Trader this is also why when retail Traders talk about oh I
+755.33s: why when retail Traders talk about oh I
+755.34s: why when retail Traders talk about oh I like to scalp one you don't because
+757.55s: like to scalp one you don't because
+757.56s: like to scalp one you don't because retail Traders really were not equipped
+759.65s: retail Traders really were not equipped
+759.66s: retail Traders really were not equipped to scalp scalping is like seconds it is
+761.69s: to scalp scalping is like seconds it is
+761.70s: to scalp scalping is like seconds it is when you are in and out super fast that
+763.49s: when you are in and out super fast that
+763.50s: when you are in and out super fast that is what high frequency trading
+764.87s: is what high frequency trading
+764.88s: is what high frequency trading algorithms are doing to essentially
+766.55s: algorithms are doing to essentially
+766.56s: algorithms are doing to essentially capture bid ass differences mispricings
+768.65s: capture bid ass differences mispricings
+768.66s: capture bid ass differences mispricings Arbitrage stuff like that in general
+770.51s: Arbitrage stuff like that in general
+770.52s: Arbitrage stuff like that in general retail is not going to be fast enough
+772.01s: retail is not going to be fast enough
+772.02s: retail is not going to be fast enough but the bastardized version of scalping
+774.65s: but the bastardized version of scalping
+774.66s: but the bastardized version of scalping we do which really is just intraday
+776.93s: we do which really is just intraday
+776.94s: we do which really is just intraday trading we think it sounds cool we heard
+779.03s: trading we think it sounds cool we heard
+779.04s: trading we think it sounds cool we heard you you know Tom sosnov say who I like
+781.37s: you you know Tom sosnov say who I like
+781.38s: you you know Tom sosnov say who I like but everybody wanted to start doing it
+783.11s: but everybody wanted to start doing it
+783.12s: but everybody wanted to start doing it so it's cool the problem is it doesn't
+784.49s: so it's cool the problem is it doesn't
+784.50s: so it's cool the problem is it doesn't work well especially once you add in
+787.49s: work well especially once you add in
+787.50s: work well especially once you add in fees not just to mention how difficult
+790.19s: fees not just to mention how difficult
+790.20s: fees not just to mention how difficult it is to get small time frames correct
+793.55s: it is to get small time frames correct
+793.56s: it is to get small time frames correct directionally that is one of the hardest
+795.47s: directionally that is one of the hardest
+795.48s: directionally that is one of the hardest time frames to get direct directionally
+797.33s: time frames to get direct directionally
+797.34s: time frames to get direct directionally correct what do you mean it's such a
+798.59s: correct what do you mean it's such a
+798.60s: correct what do you mean it's such a short-term time frame why is it so
+799.91s: short-term time frame why is it so
+799.92s: short-term time frame why is it so difficult because that's when Randomness
+801.65s: difficult because that's when Randomness
+801.66s: difficult because that's when Randomness is at the highest probability if you
+803.75s: is at the highest probability if you
+803.76s: is at the highest probability if you think about where the stock market is
+805.25s: think about where the stock market is
+805.26s: think about where the stock market is going to be 10 years from now what do
+807.05s: going to be 10 years from now what do
+807.06s: going to be 10 years from now what do you think higher or lower I would bet
+808.97s: you think higher or lower I would bet
+808.98s: you think higher or lower I would bet higher and if somebody wants to make
+810.59s: higher and if somebody wants to make
+810.60s: higher and if somebody wants to make that bet hit me up I do think it could
+812.45s: that bet hit me up I do think it could
+812.46s: that bet hit me up I do think it could be an interesting
+813.65s: be an interesting
+813.66s: be an interesting um you know thing to follow along and
+815.69s: um you know thing to follow along and
+815.70s: um you know thing to follow along and the point being though most people
+817.73s: the point being though most people
+817.74s: the point being though most people probably would be confident that it's
+819.23s: probably would be confident that it's
+819.24s: probably would be confident that it's going to be higher in 10 years relative
+821.03s: going to be higher in 10 years relative
+821.04s: going to be higher in 10 years relative than it is today but if you talk about
+822.83s: than it is today but if you talk about
+822.84s: than it is today but if you talk about whether or not the S P 500 is going to
+824.87s: whether or not the S P 500 is going to
+824.88s: whether or not the S P 500 is going to go up within a five second increment or
+826.79s: go up within a five second increment or
+826.80s: go up within a five second increment or 10 second increment very difficult and
+828.65s: 10 second increment very difficult and
+828.66s: 10 second increment very difficult and then you add fees on top of that because
+831.23s: then you add fees on top of that because
+831.24s: then you add fees on top of that because scalping typically includes a lot of
+832.91s: scalping typically includes a lot of
+832.92s: scalping typically includes a lot of very small profits and then not just
+834.71s: very small profits and then not just
+834.72s: very small profits and then not just again commissions but the costs
+836.15s: again commissions but the costs
+836.16s: again commissions but the costs associated with doing it very difficult
+837.59s: associated with doing it very difficult
+837.60s: associated with doing it very difficult to make money okay now that that horse
+839.15s: to make money okay now that that horse
+839.16s: to make money okay now that that horse is beat thoroughly to death let's just
+841.19s: is beat thoroughly to death let's just
+841.20s: is beat thoroughly to death let's just talk about this concept of expensiveness
+843.23s: talk about this concept of expensiveness
+843.24s: talk about this concept of expensiveness this is actually pretty cool to me so
+845.09s: this is actually pretty cool to me so
+845.10s: this is actually pretty cool to me so from this paper they actually found that
+847.67s: from this paper they actually found that
+847.68s: from this paper they actually found that retail orders do better in ivix
+850.13s: retail orders do better in ivix
+850.14s: retail orders do better in ivix environments and this is typically when
+851.57s: environments and this is typically when
+851.58s: environments and this is typically when people are attempting to sell but over
+853.37s: people are attempting to sell but over
+853.38s: people are attempting to sell but over the duration Traders actually became
+856.01s: the duration Traders actually became
+856.02s: the duration Traders actually became more sensitive to the expensiveness of
+859.07s: more sensitive to the expensiveness of
+859.08s: more sensitive to the expensiveness of options which I actually think is super
+861.17s: options which I actually think is super
+861.18s: options which I actually think is super cool so let's talk now very quickly
+863.93s: cool so let's talk now very quickly
+863.94s: cool so let's talk now very quickly about kind of the so what of all of this
+866.69s: about kind of the so what of all of this
+866.70s: about kind of the so what of all of this well it's pretty simple that retail
+868.73s: well it's pretty simple that retail
+868.74s: well it's pretty simple that retail Traders really like Lottery like assets
+871.19s: Traders really like Lottery like assets
+871.20s: Traders really like Lottery like assets which is a bummer but it's to No
+872.99s: which is a bummer but it's to No
+873.00s: which is a bummer but it's to No Surprise there's a reason why the
+874.25s: Surprise there's a reason why the
+874.26s: Surprise there's a reason why the lottery makes so much money and zero DTE
+876.17s: lottery makes so much money and zero DTE
+876.18s: lottery makes so much money and zero DTE options enable that and right now retail
+879.05s: options enable that and right now retail
+879.06s: options enable that and right now retail Traders again in aggregate essentially
+881.69s: Traders again in aggregate essentially
+881.70s: Traders again in aggregate essentially lose 358 thousand dollars a day on zero
+885.65s: lose 358 thousand dollars a day on zero
+885.66s: lose 358 thousand dollars a day on zero DTE S P 500 options that's awful this is
+889.25s: DTE S P 500 options that's awful this is
+889.26s: DTE S P 500 options that's awful this is the most disturbing part our findings
+891.29s: the most disturbing part our findings
+891.30s: the most disturbing part our findings indicate that more than 60 percent of
+893.87s: indicate that more than 60 percent of
+893.88s: indicate that more than 60 percent of the Lost each day comes in the form of
+896.03s: the Lost each day comes in the form of
+896.04s: the Lost each day comes in the form of transaction costs easier enemy I think
+898.31s: transaction costs easier enemy I think
+898.32s: transaction costs easier enemy I think that we have that Point down so let's
+900.23s: that we have that Point down so let's
+900.24s: that we have that Point down so let's talk about what I do the very first
+902.09s: talk about what I do the very first
+902.10s: talk about what I do the very first thing is now that we understand the
+904.37s: thing is now that we understand the
+904.38s: thing is now that we understand the fight that we're fighting We Now
+906.05s: fight that we're fighting We Now
+906.06s: fight that we're fighting We Now understand that we need to be very
+908.27s: understand that we need to be very
+908.28s: understand that we need to be very careful of costs and we need to
+909.95s: careful of costs and we need to
+909.96s: careful of costs and we need to construct strategies that enable us to
+911.99s: construct strategies that enable us to
+912.00s: construct strategies that enable us to do that so what does that mean well if
+913.67s: do that so what does that mean well if
+913.68s: do that so what does that mean well if you like to trade spreads which I don't
+915.59s: you like to trade spreads which I don't
+915.60s: you like to trade spreads which I don't especially in this context if you're
+917.57s: especially in this context if you're
+917.58s: especially in this context if you're trading iron condors and verticals in
+920.09s: trading iron condors and verticals in
+920.10s: trading iron condors and verticals in zero DTE stuff you are literally getting
+922.19s: zero DTE stuff you are literally getting
+922.20s: zero DTE stuff you are literally getting chewed alive so I typically prefer
+924.65s: chewed alive so I typically prefer
+924.66s: chewed alive so I typically prefer simple single options whether it's short
+926.57s: simple single options whether it's short
+926.58s: simple single options whether it's short calls short puts short straddles short
+928.73s: calls short puts short straddles short
+928.74s: calls short puts short straddles short strangles it's typically going to be
+930.11s: strangles it's typically going to be
+930.12s: strangles it's typically going to be short straddles and notice how I
+931.79s: short straddles and notice how I
+931.80s: short straddles and notice how I emphasized short on all of those I tend
+934.07s: emphasized short on all of those I tend
+934.08s: emphasized short on all of those I tend to sell and the reason why I tend to
+935.57s: to sell and the reason why I tend to
+935.58s: to sell and the reason why I tend to sell is because
+937.13s: sell is because
+937.14s: sell is because um there is a Delta range that is really
+940.79s: um there is a Delta range that is really
+940.80s: um there is a Delta range that is really beneficial to sell especially in
+942.77s: beneficial to sell especially in
+942.78s: beneficial to sell especially in short-term time frames because of this
+944.81s: short-term time frames because of this
+944.82s: short-term time frames because of this the IV HV variance is very large and it
+949.31s: the IV HV variance is very large and it
+949.32s: the IV HV variance is very large and it needs to approximate so if you are
+951.65s: needs to approximate so if you are
+951.66s: needs to approximate so if you are trading in a period where the variance
+954.05s: trading in a period where the variance
+954.06s: trading in a period where the variance between implied and historic volatility
+955.55s: between implied and historic volatility
+955.56s: between implied and historic volatility is very high you start to stack the deck
+957.53s: is very high you start to stack the deck
+957.54s: is very high you start to stack the deck in your favor and again that video I
+958.79s: in your favor and again that video I
+958.80s: in your favor and again that video I linked to to before we'll go through
+960.53s: linked to to before we'll go through
+960.54s: linked to to before we'll go through this in more detail but this is really
+962.39s: this in more detail but this is really
+962.40s: this in more detail but this is really important because notice how I didn't
+963.77s: important because notice how I didn't
+963.78s: important because notice how I didn't say when implied volatility percentile
+965.75s: say when implied volatility percentile
+965.76s: say when implied volatility percentile is high or when implied volatility is
+967.91s: is high or when implied volatility is
+967.92s: is high or when implied volatility is high or when implied volatility rank is
+969.83s: high or when implied volatility rank is
+969.84s: high or when implied volatility rank is high it's because that's not the period
+972.05s: high it's because that's not the period
+972.06s: high it's because that's not the period that actually matters what we're trying
+974.39s: that actually matters what we're trying
+974.40s: that actually matters what we're trying to capture is the variance risk premium
+976.25s: to capture is the variance risk premium
+976.26s: to capture is the variance risk premium in this scenario and that is when IV is
+978.59s: in this scenario and that is when IV is
+978.60s: in this scenario and that is when IV is overstated compared to HV that can
+980.99s: overstated compared to HV that can
+981.00s: overstated compared to HV that can happen when implied volatility
+982.37s: happen when implied volatility
+982.38s: happen when implied volatility percentile is high when it's low what we
+984.71s: percentile is high when it's low what we
+984.72s: percentile is high when it's low what we want to avoid is when it's in a
+986.09s: want to avoid is when it's in a
+986.10s: want to avoid is when it's in a transition period that's bad so this is
+988.07s: transition period that's bad so this is
+988.08s: transition period that's bad so this is when we really try to benefit from the
+989.45s: when we really try to benefit from the
+989.46s: when we really try to benefit from the clustering properties of volatility so
+991.37s: clustering properties of volatility so
+991.38s: clustering properties of volatility so the other thing here is limit frequency
+993.23s: the other thing here is limit frequency
+993.24s: the other thing here is limit frequency this isn't my go-to I trade and I
+995.81s: this isn't my go-to I trade and I
+995.82s: this isn't my go-to I trade and I actually traded it this week on the Fed
+998.03s: actually traded it this week on the Fed
+998.04s: actually traded it this week on the Fed rate announcement I traded zero DTE
+1000.37s: rate announcement I traded zero DTE
+1000.38s: rate announcement I traded zero DTE options that's because there's a clear
+1001.99s: options that's because there's a clear
+1002.00s: options that's because there's a clear Catalyst things like that announcements
+1004.57s: Catalyst things like that announcements
+1004.58s: Catalyst things like that announcements things like earning statements earnings
+1007.03s: things like earning statements earnings
+1007.04s: things like earning statements earnings releases those are all great catalysts
+1009.91s: releases those are all great catalysts
+1009.92s: releases those are all great catalysts that really give us a bigger kind of
+1012.31s: that really give us a bigger kind of
+1012.32s: that really give us a bigger kind of piece of the pie that we potentially can
+1014.17s: piece of the pie that we potentially can
+1014.18s: piece of the pie that we potentially can chew off and then the other scenarios
+1016.51s: chew off and then the other scenarios
+1016.52s: chew off and then the other scenarios when there's a large ivhv variance
+1018.49s: when there's a large ivhv variance
+1018.50s: when there's a large ivhv variance because again I'm I'm gonna tend to sell
+1020.29s: because again I'm I'm gonna tend to sell
+1020.30s: because again I'm I'm gonna tend to sell and that's what I want to see notice how
+1021.97s: and that's what I want to see notice how
+1021.98s: and that's what I want to see notice how there's only really two conditions here
+1023.53s: there's only really two conditions here
+1023.54s: there's only really two conditions here this isn't because I think I can make
+1025.21s: this isn't because I think I can make
+1025.22s: this isn't because I think I can make money faster I don't this isn't because
+1027.07s: money faster I don't this isn't because
+1027.08s: money faster I don't this isn't because I'm scared of overnight risk I'm not
+1028.81s: I'm scared of overnight risk I'm not
+1028.82s: I'm scared of overnight risk I'm not this is really the two scenarios where
+1031.27s: this is really the two scenarios where
+1031.28s: this is really the two scenarios where this makes sense for me to integrate
+1032.83s: this makes sense for me to integrate
+1032.84s: this makes sense for me to integrate into my overall approach so if this
+1035.71s: into my overall approach so if this
+1035.72s: into my overall approach so if this video was helpful don't forget to
+1037.15s: video was helpful don't forget to
+1037.16s: video was helpful don't forget to comment below what you found useful like
+1039.43s: comment below what you found useful like
+1039.44s: comment below what you found useful like subscribe be an outlier share with some
+1041.35s: subscribe be an outlier share with some
+1041.36s: subscribe be an outlier share with some friends and I'll catch you guys later

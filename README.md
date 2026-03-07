@@ -42,9 +42,35 @@ OPTEEE draws from two primary sources:
 
 ### Prerequisites
 
-- Python 3.9 or higher
+- Python 3.13 (recommended; 3.14+ not yet supported by scipy/numba)
 - Docker (optional, for containerized deployment)
 - Git
+
+### Python Environment (venv)
+
+Use a virtual environment for all local Python work (serving, transcript pipeline, vector store rebuild):
+
+```bash
+cd opteee
+
+# Create venv (once)
+python3 -m venv venv
+source venv/bin/activate   # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements-serve.txt   # Serving only
+# OR
+pip install -r requirements.txt         # Full (includes Whisper, pipeline)
+```
+
+**Always activate venv before running Python scripts:**
+```bash
+source venv/bin/activate
+python3 main.py
+python3 run_pipeline.py --step scrape
+```
+
+The `venv/` directory is in `.gitignore` and should not be committed.
 
 ### Docker (Recommended)
 
@@ -72,6 +98,7 @@ The Docker setup uses `Dockerfile.serve` — a slim image with CPU-only PyTorch,
 ### Local Development (Without Docker)
 
 ```bash
+source venv/bin/activate
 pip install -r requirements-serve.txt
 python main.py
 ```
@@ -121,6 +148,7 @@ opteee/
 ├── vector_search.py             # Vector similarity search
 ├── create_vector_store.py       # Vector store creation (transcripts + PDFs)
 ├── rebuild_vector_store.py      # Vector store rebuilding
+├── run_transcripts.sh           # Transcript pipeline (venv + scrape→whisper→vectors)
 ├── process_pdfs.py              # PDF semantic chunking utility
 ├── app/
 │   ├── db/                      # SQLAlchemy engine, models, and DB init
@@ -165,8 +193,8 @@ opteee/
 
 1. **Backend Changes**: Modify FastAPI endpoints in `main.py` or services in `app/services/`
 2. **Frontend Changes**: Update React components in `frontend/src/` (requires separate build)
-3. **Testing**: Run locally with `python main.py`
-4. **Vector Store Updates**: Rebuild with `python rebuild_vector_store.py`
+3. **Testing**: Run locally with `source venv/bin/activate && python main.py`
+4. **Vector Store Updates**: Rebuild with `source venv/bin/activate && python rebuild_vector_store.py`
 5. **Deploy**: `docker compose up --build`
 
 ## Configuration
@@ -196,6 +224,7 @@ The knowledge base is automatically updated every Sunday at 8:00 PM UTC (3:00 PM
 After the weekly pipeline commits new transcripts, rebuild the vector store locally to make new content searchable:
 
 ```bash
+source venv/bin/activate
 python rebuild_vector_store.py
 docker compose up --build
 ```
@@ -216,12 +245,171 @@ You can manually trigger the knowledge base update at any time:
 gh workflow run "Process Video Transcripts Weekly"
 ```
 
+### Local Transcript Pipeline (with Whisper)
+
+To run the full transcript pipeline locally—including Whisper for videos without YouTube captions:
+
+**Prerequisites:**
+- Python 3.13 (`brew install python@3.13` on macOS — Python 3.14 is not yet supported by scipy/numba)
+- `ffmpeg` installed (`brew install ffmpeg` on macOS)
+- venv created with Python 3.13: `python3.13 -m venv venv && source venv/bin/activate && pip install -r requirements.txt`
+- `YOUTUBE_API_KEY` in `.env` (for video discovery)
+
+**Activate venv before running any pipeline step:**
+```bash
+source venv/bin/activate
+```
+
+**One-liner** (runs all steps in sequence):
+```bash
+./run_transcripts.sh
+```
+
+---
+
+#### Step 1 — Discover new videos
+
+Scans the configured YouTube channels (see `pipeline_config.py` → `CHANNEL_URLS`) and writes a list of all video IDs, titles, and metadata to `outlier_trading_videos.json`. Already-known videos are skipped on subsequent runs.
+
+```bash
+source venv/bin/activate
+python3 run_pipeline.py --step scrape --non-interactive
+```
+
+What it does:
+- Uses `yt-dlp` to enumerate every video across all channel URLs (videos, shorts, streams, podcasts, live)
+- De-duplicates by video ID
+- Saves results to `outlier_trading_videos.json`
+
+---
+
+#### Step 2 — Fetch transcripts via YouTube API
+
+Attempts to pull captions directly from YouTube for every video in `outlier_trading_videos.json`. Videos where captions are unavailable are marked for Whisper processing.
+
+```bash
+source venv/bin/activate
+python3 run_pipeline.py --step transcripts --non-interactive
+```
+
+What it does:
+- Reads `outlier_trading_videos.json`
+- Calls the `youtube-transcript-api` for each video
+- Saves successful transcripts to `transcripts/<video_id>.txt` (one line per segment: `123.45s: text`)
+- Records successes/failures in `transcript_progress.json`
+- Skips videos already in `transcripts/` — only processes new ones
+
+To force re-fetching everything:
+
+```bash
+python3 run_pipeline.py --step transcripts --non-interactive --force-reprocess
+```
+
+---
+
+#### Step 3 — Whisper (second pass for failed videos)
+
+For any video that YouTube couldn't provide captions for, this step downloads the audio track and runs OpenAI Whisper to generate a transcript locally. The pipeline captures failures in Step 2 and processes them here.
+
+```bash
+source venv/bin/activate
+# Run as pipeline step (recommended — runs automatically after transcripts)
+python3 run_pipeline.py --step whisper --non-interactive
+
+# Or run retry_and_whisper directly for more control:
+python3 retry_and_whisper.py --whisper-only   # Skip YouTube retry, go straight to Whisper
+python3 retry_and_whisper.py                  # Retry YouTube first, then Whisper for rest
+python3 retry_and_whisper.py --retry-only     # Only retry YouTube (no Whisper)
+python3 retry_and_whisper.py --max-whisper 10 # Limit to N videos (for testing)
+```
+
+What it does under the hood:
+1. **Audio download** — Uses `yt-dlp` + `ffmpeg` to pull the best available audio stream and convert it to a 128 kbps MP3, saved to `audio_files/<video_id>.mp3`
+2. **Whisper transcription** — Loads the Whisper model (`WHISPER_MODEL` in `pipeline_config.py`, default `tiny`) and transcribes the audio, producing timestamped segments
+3. Writes the result to `transcripts/<video_id>.txt` in the same `123.45s: text` format as YouTube transcripts
+4. Updates `transcript_progress.json` (`whisper_processed` list)
+
+**Whisper model options** (set `WHISPER_MODEL` in `pipeline_config.py`):
+
+| Model | Speed | Accuracy | Notes |
+|-------|-------|----------|-------|
+| `tiny` | ~32× faster than base | ~90% | Default — good for large batches |
+| `base` | baseline | ~95% | Good balance |
+| `small` | ~2× slower than base | ~97% | Better for tricky audio |
+| `medium` | ~5× slower | ~99% | High accuracy, slower |
+| `large` | ~10× slower | Best | Use only when quality matters most |
+
+**Note:** Audio files in `audio_files/` are not committed to the repository and can be deleted after transcription to save disk space.
+
+---
+
+#### Step 4 — Chunk transcripts for search
+
+Converts raw transcript files into overlapping word-window chunks with full metadata (video URL, timestamp, title). This is what gets indexed into the vector store.
+
+```bash
+source venv/bin/activate
+python3 run_pipeline.py --step preprocess --non-interactive
+
+# Or run the preprocessor directly for more control:
+python3 preprocess_transcripts.py                    # Process all new transcripts
+python3 preprocess_transcripts.py --force            # Force reprocess everything
+python3 preprocess_transcripts.py --video-id ABC123  # Process one specific video
+```
+
+What it does:
+- Reads all `.txt` files from `transcripts/`
+- Splits each into overlapping chunks (default: **250 words** per chunk, **50-word overlap** — configured in `pipeline_config.py`)
+- Attaches metadata: `video_id`, `title`, `url`, `timestamp`, `upload_date`
+- Outputs one JSON file per video to `processed_transcripts/<video_id>.json`
+- Skips already-processed videos unless `--force` is passed
+
+---
+
+#### Step 5 — Build the vector store
+
+Embeds all processed chunks using the sentence-transformer model and writes the FAISS index to `vector_store/`.
+
+```bash
+source venv/bin/activate
+python3 run_pipeline.py --step vectors --non-interactive
+
+# Or rebuild directly (also picks up processed PDFs):
+python3 rebuild_vector_store.py
+```
+
+---
+
+#### Step 6 — Restart the app
+
+```bash
+docker compose up --build -d
+```
+
+The vector store is mounted as a volume, so the container picks up the updated index without a full image rebuild. The `--build` flag ensures any code changes are included.
+
+---
+
+#### Full pipeline in one command
+
+Run all five steps sequentially (scrape → transcripts → whisper → preprocess → vectors):
+
+```bash
+python3 run_pipeline.py --non-interactive
+```
+
+The Whisper step runs automatically after transcripts and processes any videos that couldn't get captions from YouTube.
+
+---
+
+**Note:** The GitHub Actions workflow uses YouTube transcripts only (no Whisper). Whisper is for local processing of videos without captions.
+
 ### Local Knowledge Base Rebuild
 
 To rebuild the vector store locally (for development or testing):
 
 ```bash
-# Rebuild the entire vector store from processed transcripts
+source venv/bin/activate
 python rebuild_vector_store.py
 
 # Or use the create script directly
@@ -286,7 +474,7 @@ To add academic papers or PDF documents to the knowledge base:
    git push
    ```
 
-4. **Rebuild vector store**: `python rebuild_vector_store.py && docker compose up --build`
+4. **Rebuild vector store**: `source venv/bin/activate && python rebuild_vector_store.py && docker compose up --build`
 
 **PDF Processing Features:**
 - **Semantic chunking**: Preserves paragraph boundaries and section context

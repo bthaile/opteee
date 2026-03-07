@@ -1,8 +1,724 @@
-⚠️ DOWNLOAD FAILED: Could not access the original audio for this video
-
-This transcript is a placeholder because YouTube blocked all download attempts.
-You may need to manually transcribe this video by watching it on YouTube.
-
-Failed to download audio for: https://www.youtube.com/watch?v=HM1wtbKEDzw
-Created dummy audio file on 2025-07-27 20:09:01.335753
-This video has been flagged for manual processing.
+0.96s: mastering options implied volatility. By
+4.40s: the end of this video, you are going to
+6.24s: have a really strong foundational
+9.68s: understanding of this thing that drives
+12.24s: all option trading, implied volatility.
+14.56s: It's part of every single trade, no
+16.56s: matter what. So, the goal of the video
+19.04s: today is to walk you through and set a
+21.60s: solid foundation, give you a lot of
+23.60s: different examples of key concepts. So
+26.40s: different types of volatility implied,
+29.12s: realized, future realized, historic, all
+32.16s: of those will be covered. We're going to
+34.00s: talk about types of volatility within in
+37.68s: individual options. So when we're
+39.60s: looking at termv, tickerv, strike v, all
+44.56s: of that stuff. We're going to talk about
+46.16s: stuff like skew, we're going to talk
+48.88s: about the volatility surface, we're
+51.04s: going to talk about volatility smiles,
+52.64s: we're going to talk about expected
+53.92s: moves. We are going to talk about a lot
+56.72s: of stuff and at the end of the video I'm
+58.08s: going to walk you through nine really
+60.64s: common mistakes that options traders
+63.44s: continually make with respect to implied
+66.32s: volatility and I'm also going to show
+67.84s: you how you can build some of your own
+69.76s: little calculators to explore volatility
+72.08s: and become more familiar with it. So
+74.80s: let's get right in. Quick recap. What is
+77.04s: implied volatility? It is simply the
+80.00s: future expectation of volatility. we
+84.56s: report it or quote it as annualized
+88.16s: expected one standard deviation range.
+90.88s: So you can calculate this for different
+92.88s: standard deviations which we'll talk
+94.48s: about. Now a key component of implied
+97.60s: volatility specifically is that this is
+100.56s: derived from the price of an option. So
+103.60s: if we go to an options chain here we
+106.32s: have spy pulled up and I look at this
+110.00s: specific expiration the 15 AUG just
+112.48s: picking something. Now we can look at
+115.52s: any one of these premiums and we can
+117.76s: deconstruct it because we already know
+120.08s: one important factor that
+123.36s: every single option the premium is built
+126.00s: of two components intrinsic and
+128.48s: exttrinsic value. Intrinsic is simply
+131.04s: how far in the money it is and then
+133.36s: exttrinsic is built of two components.
+136.32s: We have the duration so the actual days
+139.60s: to the contract and then a implied
+143.44s: volatility input. So if we think about
+146.32s: all of these different components from
+147.76s: the black shores merin model in terms of
+149.52s: an option price there's only one that is
+151.92s: unknown which is volatility. So that
+153.92s: means because it's a differential
+155.44s: equation we can just deconstruct
+157.20s: everything. We could pull out how much
+159.44s: value is assigned based on the number of
+162.32s: days, but then we can also isolate what
+165.52s: the volatility input is for those. Now,
+168.40s: for retail options traders, implied
+170.80s: volatility is plenty good. You're not
+173.12s: going to get a lot of value of trying to
+175.76s: forecast your own volatility other than
+178.96s: it being a great exercise. Forecast
+181.60s: volatility is when we use different
+183.68s: kinds of models. Garsh is a really
+186.88s: common one. EJ Garsh with jump to fusion
+190.16s: stuff to take into account gaps. There's
+192.72s: all different ways to calculate and try
+196.32s: and forecast volatility. But again, most
+200.32s: of the time IV is plenty fine for most
+203.68s: traders. The thing to note is that it is
+206.72s: different than forecast. Forecast fall
+209.20s: is when you actually are trying to
+210.72s: figure out what the volatility input is
+213.68s: versus just deriving it from option
+216.88s: pricing which we do for IV. There's a
+219.44s: couple key traits of IV that we have to
+221.44s: touch on quickly. Mean reversion and
+223.68s: term sensitive. Term sensitive simply
+225.84s: means that across these different
+227.60s: expirations, implied volatility behaves
+229.92s: differently, which I'll give you an
+232.16s: example of in a little bit. The other
+234.72s: component is mean reversion which is
+236.40s: less understood by most people I think.
+239.04s: So if we take a look at S&P
+242.16s: and we zoom this out over maximum time
+246.16s: frame. Uh we'll go a little lighter just
+248.80s: because it's not going to be a lift that
+249.92s: much. 5 years is good. And you'll notice
+252.88s: that price moves around. It oscillates.
+254.96s: It gets overextended to the upside
+256.72s: downside and it kind of moves around the
+258.96s: center of this standard deviation
+260.72s: channel. However, you'll notice that the
+263.04s: standard deviation channel itself is
+264.64s: positive sloping. It has drift. So,
+267.28s: we're starting at 3445 for this example
+270.24s: and then the midpoint here is 5680.
+274.80s: So, that's very very clear positive
+277.12s: drift. Now, comparatively, if we look at
+279.60s: VIX, VIX is a great visualization
+282.56s: because it is the implied volatility for
+286.48s: S&P. So, we literally can chart what
+289.76s: this looks like by itself in a way
+291.36s: that's familiar to people. What do you
+293.20s: notice that's real different about this?
+295.36s: Well, the first thing I notice is that
+297.52s: it has these really giant peaks, but
+300.72s: then they get smashed down. I also
+304.00s: noticed that if I were to plot the total
+306.08s: drift over this time frame, so it's 23
+308.64s: and a half here down to 16.
+313.12s: It that is a tiny relative move as a
+316.32s: percentage compared to what you just saw
+318.40s: in SPX. So what is mean reversion in a
+322.08s: nutshell? Mean reversion is a magnetic
+325.84s: pull that move things towards whatever
+329.28s: the baseline is. And for something like
+332.16s: VIX, for those that are wondering, it's
+334.32s: somewhere 15 to 17 depending on the time
+337.84s: frame that you're looking at. 16 is very
+339.68s: common. That'll be about what the
+342.96s: average is. So mean reverting is an
+346.32s: important concept with respect to
+347.92s: volatility because it's a highly highly
+349.84s: tradable effect. Cool. Let's take a look
+352.88s: at a couple other types of vault,
+355.12s: realized vault. This one's super easy.
+357.12s: It's literally just what happened.
+359.12s: Implied volatility is the forward
+361.36s: expectation. Realized volatility is what
+363.60s: occurred. Now, realized volatility has
+366.64s: some different flavors. In the context
+369.36s: I'm using right now, I'm using it
+371.44s: synonymously with historical volatility.
+374.72s: Historical volatility also means what
+377.44s: happened. Now, realized volatility can
+380.88s: have some nuanced components. Something
+382.96s: called future realized volatility, which
+386.80s: is not in the scope of this video, but
+389.84s: just know that when we use realized
+391.68s: volatility, there are some other
+394.32s: framings that go with it, but it's very
+398.00s: colloquially used as a synonym for
+400.80s: historical volatility. Now you'll notice
+403.76s: that for both of these we're essentially
+405.60s: taking some sort of standard deviation
+408.08s: range of a move. Now again both of these
+412.80s: can be set to different periods.
+415.12s: However, for realiz you have to take the
+417.76s: log returns and this essentially
+420.32s: normalizes upside moves, downside moves
+423.36s: so that you can come up with a range
+425.28s: because both of these they're giving you
+427.60s: a range not a direction. So, when we're
+430.40s: looking at the implied volatility for
+433.20s: let's just grab a stock Meta, the
+435.68s: implied volatility is 37%. That doesn't
+437.92s: mean it's going to go up or down this
+440.56s: amount. It just means that that is the
+442.48s: one standard deviation expected range
+444.96s: for the underlying itself, which that's
+448.24s: an important note that I emphasize there
+450.32s: for the underlying itself. We'll talk
+452.16s: about that in a moment. Here is a simple
+455.92s: plot of implied and realized volatility
+459.52s: as well as variance risk premiums which
+461.84s: is another core concept of implied
+463.68s: volatility. I have a video on that
+466.88s: here. Realized volatility are the white
+470.32s: for two different durations. A
+471.84s: shorterterm duration which is more
+473.44s: schizophrenic than the longer term
+474.96s: duration. This is 30-day. And then the
+477.52s: same thing shorter term and then 30-day
+480.40s: for implied. So you can see a common
+484.16s: relationship between these expressed
+486.24s: through this dotted line. The dotted
+489.04s: line takes the difference between these
+491.12s: two. So that I can see if implied is
+494.96s: trending over realized. You can see most
+497.68s: of the time this line is purple which is
+499.60s: representing that being the case. But
+501.12s: every once in a while it turns red. When
+503.28s: it turns red you can kind of see exactly
+505.20s: what's going on. Realized is spiking
+508.56s: over implied. That's less common. So, a
+512.00s: really core component of options and
+513.68s: options trading is that very frequently
+516.56s: implied volatility is overstated
+518.88s: relative to realized volatility. But
+521.12s: you'll notice here that it is not always
+524.40s: and you have to pay attention to that.
+526.16s: There's one other thing I want to show
+527.44s: you here. You notice how when it does
+530.32s: have periods where it starts realize
+533.84s: volatility starts to exceed implied, you
+536.24s: notice how it kind of like persists for
+538.56s: a little bit. This is called clustering.
+542.00s: Volatility has clustering tendencies. So
+544.96s: what this means is again when we're
+547.68s: looking at implied volatility, it tends
+549.76s: to hang around where it is until it goes
+552.40s: through what we call a transitory phase
+554.24s: which it has some sort of big move. Then
+556.56s: it'll cluster a little bit and then
+558.08s: it'll transition back in that mean
+560.24s: reverting sense. So those are two really
+563.20s: important traits of volatility. mean
+566.00s: reversion, clustering, transitory
+569.04s: phases, movement between and let's now
+572.56s: take a look at the types of implied
+575.52s: volatility.
+577.12s: So we already talked about spot
+579.76s: volatility. So if we take a look at spy,
+583.04s: the spot volatility is 17.1%.
+586.32s: What does this mean? This is 30-day
+589.68s: volatility. Now you can see that there's
+591.60s: not a 30-day to expiration out there
+593.68s: right now. So, it's taking an
+595.36s: interpolated 30-day vault. That's the
+598.48s: point of spot implied volatility. Now,
+603.20s: notice how I'm emphasizing this idea of
+605.44s: spot so much. Why? Well, it's because
+607.52s: there's also a bunch of individual term
+611.04s: volatilities. So, you notice how implied
+613.68s: volatility for spot is 17, but notice
+615.84s: how for the seven July term, it's 10.64,
+620.00s: seven points less. So, not only can
+624.40s: there be really large deviations between
+626.56s: spot and termvall, but termvall can
+628.48s: actually tell you a lot. This is where
+630.48s: we can see if things have earnings
+632.00s: coming up because you'll look at the
+633.84s: term and then all of a sudden you'll see
+635.12s: one that has really high vault compared
+636.88s: to everything else. Or sometimes there's
+639.04s: not earnings there and that means the
+641.20s: market knows something is happening
+643.44s: around then. Maybe there's some sort of
+645.28s: big news related to the stock expected
+647.20s: to come out. That is really really
+649.92s: telling. Then there is strike IV. So we
+655.36s: have implied volatility for spot. We
+658.72s: have implied volatility for all the
+660.80s: different expirations. And then we have
+662.64s: implied volatility for every single
+664.96s: option within an expiration. And the
+668.88s: relationships between all of these can
+670.72s: tell us a lot. Let's talk about this
+673.12s: idea of expected move. We already talked
+674.96s: about the concept of a distribution
+677.84s: curve specifically one standard
+679.92s: deviation moves. So this is just giving
+682.88s: you a visual so you can have a sense of
+685.28s: what this means. So if we say the one
+687.92s: standard deviation move is whatever it
+690.16s: means that 68.2% of the time we're
+693.52s: expecting price to remain within that
+695.92s: range. But notice there's not a trivial
+699.12s: amount outside of that range. You have
+702.24s: to keep that in the back of your mind.
+704.96s: Now we can calculate the expected move
+708.40s: for an underlying based on its IV. Now
+712.48s: you can use either the spot implied
+715.68s: volatility or the term specific
+717.84s: volatility which is a little more
+719.20s: accurate and you can say what is the
+722.24s: expected range? What is the total amount
+724.56s: I expect this thing to move over a set
+728.56s: duration. So all we do is we take spot
+731.84s: times the implied vault times the square
+734.56s: root of whatever the days to expiration,
+737.92s: the duration that you want to analyze
+739.68s: divided by 365. And you'll notice that
+742.08s: these are calendar days. You can tinker
+744.32s: with calendar days versus trading days.
+746.80s: There's definitely a difference. But one
+749.20s: important note is when we're talking
+750.96s: about IV, we often are referring to it
+753.92s: in calendar days because it's forward
+756.32s: and forward includes weekends. When
+758.56s: we're talking about realized or historic
+760.88s: volatility, we're talking about trading
+762.64s: days. And it's because the stock doesn't
+764.40s: move over the weekend. So with this, we
+767.84s: can literally calculate a ton of
+770.80s: different views of what the expected
+773.28s: moves might be. So here's an example
+775.76s: where we have a spot price of 159. The
+778.72s: ticker V, which you know what that is
+780.16s: now, is 6251. The term V is 9635. Days
+784.16s: expiration is 4. So, I can take this
+786.88s: using this formula and I can figure out
+788.96s: what the expected move is for the
+791.44s: ticker. $6.58
+793.84s: or 6.54% up or down. Again, it doesn't
+797.60s: tell me which way, just up or down. But
+800.48s: then, you notice how I can do this for
+802.56s: all different kinds of views. I can see
+806.00s: what the daily move is. I can see what
+808.40s: the monthly annual move is. And all of
+810.56s: this is done just by changing the terms
+812.64s: input here. I actually have a workshop
+815.20s: and a video scheduled for the Outlier
+817.68s: Pro members where we're going to build
+819.04s: this exact thing together. So to get
+821.28s: some experience and if you're not in
+823.20s: there, that's cool. You can just take a
+824.88s: screenshot of this, throw it into chat
+826.40s: GPT, and have it walk you through
+828.80s: building your own. Now, another couple
+831.12s: things to keep in mind. We can take a
+833.04s: look at the spot V, give us an idea of
+835.68s: how much this thing might move based on
+837.12s: this V over different durations. We can
+839.60s: take a look at the term V for the
+841.44s: expiration. We can take a look at the
+844.56s: event v which is isolating an individual
+849.12s: day in this period which is again really
+853.20s: really cool. Side note I realized that
+856.24s: the term vault was messed up in the copy
+857.92s: and paste. This is the correct version
+859.60s: to use. Okay so let's continue. Next I
+863.76s: want to talk about IV rank and IV
+865.92s: percentile. When we're talking about
+867.68s: volatility, it's not all that dissimilar
+869.84s: from fundamentally analyzing a company
+872.72s: where you don't want to compare the
+874.64s: sales and revenue of a tech stock
+876.64s: compared to a utility stock. They're
+878.48s: relative to the individual sectors and
+880.40s: industries. It's kind of similar with
+882.40s: implied volatility. The implied
+884.16s: volatility for something like Meta will
+886.80s: be very different than the implied
+888.00s: volatility for something like SPY. Now
+891.04s: within those we can figure out how
+894.64s: volatile something is relative to itself
+897.76s: to give us a scale of for example in spy
+901.12s: is this 17% implied volatility is at
+904.48s: high or low for spy for meta is the 37%
+908.80s: high or low and that's what we use
+910.40s: implied volatility percentile and rank
+912.56s: for. Now the formulas for both are input
+916.08s: here you can read those on your own.
+918.16s: implied volatility percentile is way
+920.56s: better. The reason why it's so much
+922.40s: better is because it is very resistant
+924.88s: to skew. With something like IV rank,
+927.60s: you're anchoring off of 52 week one year
+931.44s: highs and lows that can really skew your
+935.28s: results if you have some sort of outsiz
+937.92s: move sometime in the last year that
+940.32s: doesn't really track well. And this is
+942.16s: actually a good example right now. Meta
+944.56s: has an implied volatility percentile of
+946.56s: 50% right now, but it's telling you the
+949.28s: IV rank is 23.52%.
+952.56s: That would lead you to believe that the
+954.64s: current V of 37 is low, but implied
+957.68s: volatility percentile is telling you
+959.44s: this is not low. It's telling you 50% of
+961.68s: the time it's lower than it is right
+963.12s: now. So this is quite high. So this is
+966.64s: why I prefer implied volatility
+968.64s: percentile. It's way less skeprone. Now,
+972.96s: one admin note for those that use
+974.96s: Thinker Swim. This still reports IV
+978.72s: rank. This is not implied volatility
+981.04s: percentile. This is IV rank right here.
+983.60s: And again, you can see based on the
+985.44s: calculation for those that are in the
+987.20s: pro community, you guys have access to
+989.20s: this think script for those that are in
+991.84s: um Thinkorswim. And as always, you can
+994.40s: just use chatpt to make your own as
+996.16s: well. Okay, so we have IVP IVR. Let's
+999.84s: talk a little bit about the surface. Now
+1002.08s: we already talked about the different
+1003.44s: types of V. When we talk about the
+1005.52s: implied volatility surface, this is it.
+1007.92s: It's literally just taking the
+1010.88s: volatility for the individual options,
+1013.92s: the strikes. It's taking the volatility
+1017.12s: across
+1018.64s: different time frames and it's comparing
+1021.12s: them all. Now, sometimes an implied
+1023.04s: volatility surface can be 3D. I'll grab
+1025.84s: a photo of that for you now. Something
+1028.48s: like this. And it's effectively the same
+1031.36s: thing that I'm showing you here. It's
+1033.76s: just 3D instead of 2D. So what we can do
+1037.20s: is we can analyze things like term skew
+1040.48s: or vertical skew. And I'll show you
+1043.68s: exactly what this means. If we go into
+1046.56s: meta and I take a look at implied
+1051.12s: volatility. I'm going to get rid of some
+1052.40s: of the series just so it's not quite as
+1054.08s: noisy. We'll do like three of them.
+1057.12s: So term skew is really simple. It's just
+1060.88s: which term has volatility compared to
+1064.32s: the other. So in this case we can see
+1066.24s: that the 18th July term is 29% and if we
+1069.76s: compare that to the 15 AUG, we can see
+1072.00s: that it's a little bit low. So we can
+1075.20s: see that more simply here. So term is
+1079.20s: simply comparing volatility of
+1082.00s: expirations across one another and we
+1083.92s: can do it at individual strikes. Now
+1087.36s: when we talk about stuff like smile that
+1091.92s: has to do with the relationship it's
+1094.40s: displaying a relationship. So in this
+1097.52s: case you can see that the implied
+1099.20s: volatility for meta kind of has more
+1101.04s: like a smirk, not really a smile. when
+1104.08s: we're talking about something like a
+1105.44s: smile. Let's see if this is Yeah, this
+1108.24s: looks a little bit more like a smile to
+1110.16s: me. So, you'll see that there's some
+1112.56s: expirations that are very flat and then
+1115.28s: there are other expirations that have
+1116.88s: really high volatility out at the tails.
+1120.64s: So when we say a smile essentially we're
+1123.28s: referring to volatility across
+1126.72s: the individual term and we're saying how
+1131.28s: do the out of the money and at the money
+1134.32s: option VSS compare to one another. So
+1136.88s: most of the time for V we're going to
+1138.56s: use out of the money options. So it'll
+1140.16s: be the out- of the money puts and then
+1141.68s: out of the money calls. So out of the
+1143.60s: money puts are the lower strikes, out of
+1145.60s: the money calls are the higher strikes.
+1148.00s: So we can see if it slopes up, if it's
+1150.80s: flat, if it let's say using this down
+1154.00s: here,
+1155.52s: if we see this kind of configuration, if
+1159.60s: you know what this is, throw it in the
+1161.68s: comments. If you don't, that's fine.
+1164.72s: What this means is the out of the money
+1166.48s: puts have more V than the out of the
+1168.64s: money calls. We can see that because
+1170.72s: again, we know that the at the money is
+1173.44s: right around where the lowest point
+1174.96s: typically is. And you can also just
+1177.20s: check the price. And we can see that the
+1179.68s: puts have way more volume in them than
+1182.24s: the calls. This is common. This is
+1183.68s: called put skew. So we can analyze skew
+1187.36s: across expirations, across individual
+1190.48s: strikes, across type of option, calls
+1193.84s: versus puts. And it's really informative
+1196.48s: in that this kind of configuration tells
+1198.80s: us that the market is pricing in a
+1202.96s: potential for a larger magnitude
+1205.20s: downside move but typically slightly
+1207.60s: lower probability. And then if we see
+1209.92s: this really low V that's a lower
+1212.56s: expected magnitude but a slightly higher
+1215.20s: probability.
+1217.04s: That is surface in a nutshell along with
+1220.80s: taking a look at different terms and
+1223.36s: their corresponding SKs. Now I want to
+1225.52s: talk about Vega and vama. So we can
+1230.16s: visualize Vega and Vega is pretty
+1233.68s: simple. Vega is going to be higher for
+1237.36s: further dated options. There's more
+1239.52s: extrinsic value in those. And it's going
+1241.44s: to be highest for at the money options
+1244.08s: because there's more extrinsic value in
+1246.00s: those. So you'll notice that as we go
+1248.48s: deeper in the money or deeper out of the
+1251.04s: money, no matter where you are, your
+1253.28s: Vega is going to contract. And Vega
+1256.08s: simply tells us what is the expected
+1260.24s: rate of change of an options premium per
+1263.84s: 1% change in implied volatility. And I
+1266.24s: have a video that goes through all the
+1267.60s: Greeks in detail. You can check that out
+1269.52s: at your leisure. So, when we're talking
+1272.40s: about Vega, it's really important to
+1274.00s: understand this specific relationship
+1276.40s: because I had a comment in a live stream
+1278.96s: a while ago and they were saying,
+1280.24s: "Gametop implied volatility is really
+1282.88s: low. Should I buy leaps?" And it's a
+1285.12s: great question, but this goes back to an
+1287.76s: important point we were talking about
+1289.20s: before, which is the terms do not behave
+1292.32s: the same. So what this means is if we
+1296.00s: get a change in we have Palunteer up
+1298.72s: now. If we get a change in Palunteer
+1302.00s: price and let's say the implied
+1304.08s: volatility goes up a lot. Let's say it
+1306.08s: goes from 71 to 91. That does not mean
+1310.24s: that that's going to impact all the
+1312.56s: terms the same. Actually quite the
+1314.40s: opposite. Even though terms that are
+1316.96s: further out in time have higher
+1318.80s: sensitivity to Vega, they tend to
+1321.12s: experience lower shifts in implied
+1324.40s: volatility because they're so far out in
+1326.08s: time. And here's a way to visualize this
+1328.08s: simply. This is also in Palunteer. I
+1330.56s: want you to take a look. Uh let's grab
+1332.88s: meta cuz I think it doesn't have this
+1334.80s: crazy skew thing in here. Or we could
+1336.32s: just get rid of that.
+1338.72s: Yeah, meta is great. So, first let's get
+1342.24s: rid of the 7-day options and let's just
+1345.52s: take a look at 30 and 60. Notice the
+1348.48s: difference between these. 30-day vault,
+1351.36s: for example, has been expanding from the
+1355.12s: 27th of June. It's literally increasing,
+1358.32s: whereas 60-day vault is literally
+1361.28s: decreasing.
+1363.04s: This is showing you that you have to
+1365.52s: align your expectation of volatility
+1368.16s: with the term or at least take it to an
+1370.56s: account because in the context of
+1372.80s: somebody that thought implied volatility
+1375.04s: percentile that was the question was
+1377.28s: really low in GameStop. Well, if you're
+1379.60s: buying really longdated options, leaps
+1382.24s: because implied volatility percentile is
+1384.32s: low, you might not get the result you
+1386.48s: want because implied volatility
+1388.00s: percentile is relative again unless you
+1391.04s: manually change it to 30-day vault. So,
+1395.12s: this is an important takeaway when
+1397.76s: you're looking at things like Vega and
+1400.64s: then also impact of V across the term.
+1404.16s: Now, vama is a higher order Greek that
+1408.80s: tells us how much Vega changes. Think of
+1411.12s: it as the gamma of Vega. The reason why
+1414.80s: this is important is because if you're
+1416.64s: selling a lot of really far out of the
+1418.24s: money options, you can think you're
+1419.52s: pretty safe, but then all of a sudden,
+1421.44s: if implied volatility changes and
+1423.28s: something has a lot of vom because it
+1426.00s: the Vega can expand very quickly, your
+1428.64s: position can move pretty meaningfully
+1430.72s: against you. And I want to give you an
+1432.88s: example of something like this. This is
+1435.84s: again just a simple example that I
+1437.84s: built. And this is looking at a stock. I
+1440.08s: think it's Palunteer in 25 April versus
+1442.32s: 5 May. And this is looking across
+1444.96s: different expirations. In 25 April, you
+1447.60s: can see the implied volatility. I
+1449.36s: normalized for 49 delta. You can see the
+1452.56s: implied volatility for these different
+1454.40s: expirations. Cool. You can see the Vega
+1456.72s: for these different expirations. Cool.
+1459.36s: Now, if we go to 5M, I want you to take
+1462.56s: a look at the change in implied
+1464.80s: volatility. The 7-day V ballooned. It
+1468.24s: went from 66 1.5% to 136%. A massive
+1472.88s: change, a 144%
+1475.44s: change in overall. Oh, I'm sorry, 82.
+1480.56s: There was a 144% change in premium, but
+1483.44s: an 82 point change. This is not a
+1487.36s: percentage, right? So 82 percentage
+1489.84s: points between these two. So it's over
+1492.16s: 100% change as a percentage. Big big
+1494.48s: move. And take a look at what the
+1496.72s: premium was before. It was $3.15.
+1499.68s: After this big change, the 7-day options
+1503.04s: when implied volatility went to 136. The
+1505.60s: premium went all the way up to 7.7.
+1509.12s: This is where people can get caught
+1511.28s: because implied volatility can massively
+1514.72s: accelerate things. The other thing you
+1517.36s: should note is that as implied
+1520.16s: volatility for the 7 days went from 66
+1522.64s: 12 to 136, take a look at what happened
+1525.20s: to 30-day. 30-day literally went down.
+1528.24s: Went from 87 1/2 to 84 and 1/2. 90-day
+1531.60s: went up a percent in
+1535.44s: change 1.4%age
+1538.64s: points. So the point I'm making is that
+1540.96s: you have to pay really close attention
+1542.48s: to the different terms with respect to
+1545.12s: volatility because they're not all the
+1546.48s: same and they behave differently. If
+1549.60s: you're trying to base a trade off of one
+1551.60s: of these and you're not taking this
+1553.04s: relationship into account, you typically
+1554.72s: get a result that you are not expecting.
+1559.12s: All right, let's talk about mistakes.
+1560.48s: Rapid fire. First one, premium chasing.
+1563.28s: This is where people that are selling
+1564.64s: options will try to find the options
+1566.40s: that give them the most premium. That's
+1568.24s: fine. But if you're doing that, you're
+1569.84s: typically in really high volatility
+1572.80s: names. That can be part of your plan.
+1575.68s: But you have to remember high implied
+1577.92s: volatility means high expectation of
+1580.56s: price movement. So people that do this
+1582.64s: are typically fighting a lot and it's
+1584.64s: because the stuff is moving. This idea
+1587.52s: of buying when IV is low or selling when
+1590.40s: IV is high. It's not inherently wrong,
+1593.52s: but it's nuanced. So we already talked
+1595.44s: about one element of that through the
+1597.20s: concept of terms. The next concept of
+1600.00s: that is if you're actually trying to
+1602.32s: isolate volatility, you're not so
+1604.80s: concerned if IV is high or IV is low,
+1608.16s: but you're actually concerned about the
+1610.40s: relationship between implied and
+1612.72s: realized volatility. So here's what this
+1615.28s: means. You can have periods where IV is
+1618.32s: really high like this. This is a high IV
+1621.04s: stock, Palunteer. implied volatility is
+1623.76s: really high here as a percentage, but
+1625.92s: notice how you're still losing. And it's
+1628.16s: because the realized move is even higher
+1630.56s: still. So, when you're trading implied
+1633.60s: volatility and you're trying to isolate
+1635.92s: it, you really care way more about this
+1639.52s: relationship between implied and
+1641.68s: realized volatility than raw or even IV
+1645.20s: percentile. Again, a great example is
+1647.44s: you can have something that has a really
+1648.80s: high implied volatility percentile,
+1650.56s: really high IV, but then the realized
+1652.80s: moves are bigger. So, if you're trying
+1655.60s: to isolate the directional move and the
+1658.24s: mean reversion of volatility, you can do
+1660.80s: that, but you still have to be careful
+1662.88s: when you choose to do it because we know
+1665.28s: that volatility clusters. Next, high
+1669.12s: implied volatility equals high IV risk.
+1672.00s: It's not so much the case. Just means
+1673.52s: higher movement. One of the benefits
+1675.52s: here is that if you're selling options,
+1677.20s: you tend to collect more. Now, high IV
+1679.76s: can be high risk for sure, but it's not
+1682.16s: because it's high IV inherently. It's
+1684.24s: just because this it's what it means
+1686.16s: that the stock moves a lot, but it's not
+1689.20s: inherently super risky. We already
+1692.24s: talked about the importance of paying
+1693.76s: attention not only to volatility, but
+1695.84s: also volatility and the corresponding
+1697.76s: terms when you're entering your trade.
+1699.92s: Again, great example was that leaps
+1701.84s: scenario I gave in GameStop. They
+1704.24s: weren't ignoring V because they were
+1706.48s: thinking about implied volatility
+1707.68s: percentile, but they were not aligning
+1710.48s: off of the durations. We talked about
+1713.44s: calibrating against the assets. So, a
+1716.40s: common mistake is to compare the implied
+1718.48s: volatility of things against things that
+1720.48s: shouldn't be compared. Again, this is
+1722.00s: comparing Palunteer against a utility
+1724.80s: stock. Comparing the raw IV against
+1727.28s: those doesn't make sense. IVPN
+1730.48s: expectations is tricky because it's
+1733.12s: really based on aligning off of all of
+1735.28s: this. Sometimes people think Vega has
+1738.00s: more of an impact or less of an impact.
+1740.72s: The way that you can calibrate this is
+1743.68s: by seeing what the Vega is so that you
+1746.32s: can actually determine what you might
+1748.64s: expect to see versus just guessing. Skew
+1752.40s: is really important because it gives us
+1754.56s: a lot a lot of really useful information
+1757.44s: like we were talking about in terms of
+1758.88s: market expectations or maybe informing
+1761.44s: if I want to get short something, if I
+1763.36s: want to buy or sell options, I can use
+1765.76s: that to figure out how I want to play
+1768.16s: it. IV collapse and expansion is really
+1772.56s: widely misunderstood because sometimes
+1775.36s: we overemphasize how much it can be or
+1778.64s: underemphasize.
+1780.16s: The thing to pay attention here is that
+1781.92s: it can have a lot of velocity depending
+1783.76s: on what the event is like earnings, but
+1786.08s: you can measure this. You can see how
+1788.96s: much implied volatility tends to move
+1791.36s: around other earnings events for the
+1793.28s: thing that you're looking at. So you can
+1794.72s: calibrate even this.
+1797.52s: Another common mistake is the assumption
+1800.80s: that implied volatility is linear or
+1804.32s: that it doesn't change. But again, after
+1807.52s: this video, you know, objectively that's
+1809.52s: not the case. Implied volatility is very
+1811.84s: dynamic. So, taking that into account
+1815.60s: really helps
+1817.44s: select better positions. The last one,
+1820.72s: volatility regime. We talked about how
+1823.04s: volatility tends to cluster and the
+1825.84s: broader regime is actually highly
+1827.68s: informative. So if we're in a period of
+1829.52s: high clustering, that tells us that
+1832.00s: stuff is really moving a lot. That can
+1834.24s: again inform the trade decisions that we
+1837.20s: look to make. So this is a pretty
+1840.72s: holistic overview of implied volatility
+1843.76s: in options trading. You now know
+1846.72s: hopefully a lot. And if you learned
+1848.88s: something, post what you learned in the
+1851.12s: comments below because I genuinely am
+1852.80s: interested. And I also want to see if I
+1854.32s: delivered on my promise, which is that
+1856.32s: you should learn something. If you have
+1858.24s: any questions, let me know. Be an
+1859.52s: outlier. See you guys later.

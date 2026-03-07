@@ -1,171 +1,433 @@
-0.00s: What's up outliers? Today we're going to talk about how to read an options chain. Believe it or not,
-4.24s: there is a ton of really useful information baked into an options chain that most traders kind of
-12.40s: gloss over because they don't know what to look for. So we're going to do a quick recap of what
-17.76s: the chain is, how to read it from a basic perspective. And then I'm going to give you a look inside
-23.04s: a more advanced way to pull information to make better informed trades. So what is an options
-30.08s: chain? And that's this thing right here. It's essentially where all of the listed options for
-34.56s: a security exist. And it shows you all of your different choices with respect to options.
-41.20s: Now we're going to be looking at a live options chain. Well, the on the platform itself versus
-45.76s: this screenshot. I just wanted to give you something. If you want to grab a screenshot or something
-49.20s: as we go through this so that you kind of have an idea of like the key metrics that we're going
-52.96s: to work through. So let's get into the weeds. So first I have Palantir up here just as an example.
-58.32s: And the first thing I want you to notice are all of these different aspirations. These are also
-62.96s: known as series as terms, but every option's chain is going to have different expiration cycles.
-69.04s: And you'll notice that there are some that are broken out into these yellow text labeled weekly.
-73.84s: And then the rest are kind of like this gray text. These are normal explorations, the gray text.
-79.04s: And they represent the third Friday of the month, standard options expiration. And then there's
-83.44s: weeklies. And if you look at something like SPX, there's even daily options. The main note is that
-89.60s: in general, most of the liquidity is going to be in the standard options expiration. And that's
-96.80s: simply because that's where larger institutions and entities gather together because they know that
-104.00s: the other one's going to be there. It's kind of like going to play basketball and knowing which
-107.76s: court to go to because that's where the people are out of the version of that. Then you'll notice
-111.84s: that for every single one of these explorations, there's a different implied volatility.
-116.24s: Every expiration has its own implied volatility. Now if we click open one of these expiration cycles,
-122.96s: you'll notice that there's kind of two broad sections. There's the call side over here labeled
-128.08s: by this. And then there's the put side over here labeled by this. Then you will notice that there
-133.28s: are a bunch of columns. I actually have a lot, which is why you can't even really see the names.
-137.04s: Don't worry. We're going to go through them. But one thing to note is that the same columns that
-140.80s: are on the call side, they're mirrored over here on the put side. So you'll notice, for example,
-145.36s: the bid in the ask and then you'll notice the bid in the ask. So the point of that is you will
-151.20s: essentially review this together on one side, but it applies to the other side. So another thing
-157.52s: that might jump out at you is the different coloration. There's kind of like this gray color and then
-161.36s: there is this not gray color. This color represents in the money options. That's why they're
-166.32s: caddy corner to one another like this. So quick refresh for calls. If your strike is below the current
-173.28s: stock price, which is 84 92 in pounds here, then it means you're in the money. Then everything
-179.04s: that's above that is out of the money and then vice versa for puts. So now let's talk about these
-184.88s: individual columns. The first thing you'll see here is bid as spread. And the bid ask shows us first
-192.32s: the bid. That is the most somebody is willing to buy something for it. That's their bid.
-199.28s: And then the ask is the cheapest somebody is willing to sell something for it. So essentially if
-204.32s: you were going and you were like, I want to buy an option, you have to go towards the ask. And if
-208.40s: I want to sell an option, you go towards the bid. Now one of the cool things is you'll notice that
-212.88s: there's a gap in between these and we can try to transact towards the middle of this gap. So if we
-219.84s: click into this and hit buy, you'll notice how there's this little bar down here that shows the
-224.72s: mid price and then the natural, which is whatever you would get hit at the bid or the offer
-230.08s: respectively. So you can actually try to play it from the mid. So let's say if I wanted to buy this
-235.04s: option, well, if I wanted to buy it right now, I would have to do it at 385 is that's where there's
-240.96s: currently a offer resting from somebody willing to sell it at that point. But if I'm not necessarily
-247.28s: trying to get filled right the second, I can try and play the bid at spread. And maybe I put in
-251.44s: a bid and I'm willing to pay $3.70. Maybe I get filled there. So you can get filled towards the
-257.84s: mid point, but the bid and the offer, those are the resting orders that are sitting there. Now this
-263.36s: can be a market maker or it can be a retail trader that just as an order sitting there waiting to
-267.36s: get filled. Next up, I'm going to jump over to this column, which is the last price. That's just
-273.68s: the last price that that option transacted at. And you'll notice that there's a bunch of these
-278.32s: different rows, all of these different rows represent different strike prices, right? So you can see
-283.36s: 38, 39, 40 and so on and so forth. So the strike prices obviously are shared between calls and puts.
-289.20s: So if we're hovering in on this row that's now highlighted in blue for you, you'll see the last
-294.40s: price is 360. That's the last price this option traded at. Then you'll notice this next is Delta,
-299.68s: which measures the rate of change of premium per one point move in the underlying. That means if
-304.72s: Palantir goes up by $1, the premium of your option, Seteris, Parabis, everything else remaining
-309.36s: the same would move up 41 cents. Then you have your gamma, which is your rate of change of Delta
-316.16s: per one point move in the underlying. So that means that if Palantir did go up by a dollar,
-320.80s: you would make your 41 cents from your Delta, but then your Delta would also grow by three pennies
-326.48s: from 41 to 43. Next up, you have Theta. You'll notice that Theta is negative. This is the rate of
-331.76s: change of premium per one day passing. And as we know, options decay. So that means from today to
-338.64s: tomorrow, this option here will lose 13 cents. Next up, we have Vega. This represents the premium
-345.84s: rate of change per one percent change in implied volatility. So if the implied volatility
-351.36s: in Palantir goes up by 1%, this option here would go up by 8 cents. So there's a lot we can use
-360.32s: the Greeks for. And specifically, it's to help us fine tune our positions. I have an entire video
-366.32s: that walks through that in depth. We'll throw a link to that in the notes below. But the main
-370.40s: thing to note is you can throw them on your options, Shane, so that you can be aware of these things
-374.00s: as you're building your positions. Now, let's talk about a couple other things. Volume, which is this
-378.80s: one represents the number of this specific option that traded today. So for this 90 call,
-385.76s: there is 56, 77 contracts traded today. We don't know if those are opening contracts for closing
-392.32s: contracts. We just know that they traded today. Then over here, this 88, 82, that represents
-398.88s: open interest. These are contracts that are currently open. This metric can go up or down. New
-407.52s: contracts can be open so it can go up from 88, 82 or it can go down because people can close
-413.44s: contracts. This updates overnight and it's not updated throughout the day. So this means this 88, 82
-420.56s: will stay like that all day. And then at the end of the day, the volume that occurred today will
-426.16s: be integrated into the open interest, whether that volume is opening trades, then this number would go
-432.08s: up open interest. If some of these are closing trades, then some of this would go down by those
-437.92s: closing trades. So this column right here with the colored numbers actually represents the day
-443.60s: over day change of open interest. These are custom coded by me. You can use Chat you PT to help you
-449.36s: with it if you're interested, but it just helps me visualize the changes of open interest. And you'll
-454.56s: see why that matters to me later. So what this means is from yesterday into today, 415 contracts were
-461.44s: added were open for the 90s. And you can see 2524 were added for the 92s. And you can see three were
-469.44s: closed net net over the entire transactions for the day. So we can observe the changes in open
-475.60s: interest, which is really useful. Next up, we have the implied volatility. So just as the stock
-481.20s: itself has implied volatility, just as the term itself, the expiration as volatility, every single
-486.64s: option also has implied volatility. Then we have probabilities. So one of the really cool things
-492.56s: about options is they inherently provide us probabilities. A lot of people will use delta as an
-498.32s: approximation for a probability, which is generally okay. I have an entire video dissecting acts.
-503.60s: It's not fully accurate. You can actually see it's not accurate right here, because this column
-507.84s: here shows us the probability of being in the money at expiration. And then this column here
-512.00s: shows us the probability of a touch sometime before expiration. And you can see that the probability
-517.04s: of being in the money at expiration is 34.54%. But this shows you 41%. So you see that's actually
-522.24s: pretty big gap. So delta is somewhat useful for that, but it's not perfect. Now the last two
-526.96s: columns I'm going to show you are currently the size. This is an assessment of liquidity. Notice how
-532.00s: there's only two at the bid at 350. And then there's 183 at the offer at 385. What does this tell us?
-540.80s: Well, it tells us that there is a really small offering to essentially take these at the 350.
-547.76s: There's only two contracts that are offered at that price. So for some reason, people really aren't
-553.04s: wanting to trade at the bid. So they are sizing it down a lot. But you can see for the
-559.92s: ask side of the equation, it's kind of different. There's 183 offered at this 385. So we're more
-567.68s: open to trade at this. So then what this tells us from an inherent perspective is if I wanted to
-572.00s: put on a five lot and let's say that I wanted to sell a five lot at the bid for 350. Well, it means
-577.84s: I would only get two of them off unless more step in to allow me to complete that transaction.
-583.20s: So you can use the size, which is the number resting at the bid in the offer respectively,
-589.60s: to get a sense of the liquidity that's being offered at those levels. And then the last one here
-594.64s: is theoretical price. The theoretical price essentially is the platform's method to calculate
-600.08s: what the option should be trading at using all of the standard inputs into an options pricing model.
-606.32s: So stock price dividends, implied volatility, so on and so forth. So ideally, this gives you at
-611.44s: least a like a sense of what the fair price of so this is how you read an options chain. Now,
-618.16s: I want to show you how you can use an options chain to glean a lot of really usable information.
-623.92s: I'm going to focus on just two of these for this video. If you would like me to run through more,
-629.12s: let me know we could do a follow up. So the first thing I want to talk to you about is volume over
-633.44s: open interest. And then I want to talk to you about implied volatility. So if we take a look at
-639.04s: the broad options chain itself, we can see a bunch of different metrics with respect to volume,
-645.28s: open interest, and so on and so forth. So here's the total volume for today. And we can see that
-649.76s: there's 746,000 calls traded against 535,000 puts. So way more calls than puts now somebody might
-656.88s: immediately assume that that means that that's bullish. Lots of people are buying those calls,
-660.24s: but we don't know inherently. But what we can do is we can see what percentages of those
-665.44s: traded at the bid at the offer or between the market. So if it traded at the bid or the offer,
-671.84s: we make an assumption. Now, people regularly wrongfully assume that this means with certainty that
-678.00s: something is bought or sold because remember the bid is essentially where you need to go to sell
-682.72s: things and then the offer is where you go to buy things. Now, we can make an inference based on if
-689.04s: the option was traded at the bid or the offer, but we don't know with certainty. And that's for a
-693.92s: bunch of different reasons that are not in the scope for this video. But you should know that it's not
-697.76s: with certainty. So we can just glean general market data at that level. So today, most of the calls
-703.92s: that transacted clean at the bid or the offer occurred at the ask. So those are people that are
-709.52s: buying calls. Interesting. Not a huge skew. Sometimes it's way more dominant than others, but it's
-714.80s: a starting point. Then we can take a look at open interest data. We can see, well, how many total
-720.08s: calls are there relative to puts now for index options? You'll typically see more puts than calls.
-726.32s: In single security options, it typically reflects the general bias that people have. And the reason is
-732.64s: for hedging activities versus directional speculation. So in this case, you can see people are clearly
-738.00s: taking directional bets on balance. You're likely to the upside. But then we can get more specific.
-742.88s: We can say of this two million, where's most of the open interest sitting? And we can see in 21
-749.36s: March, there's 322 K against 267. The point of doing this is to see if one of these cycles is
-756.72s: profoundly higher than the others that might mean people think something might be going on around
-763.44s: that time frame that they're trying to capture. Now, the last thing I told you that I wanted to talk
-767.92s: about with respect to volume and open interest is volume over open interest. So we can use open
-773.92s: interest to see where people are building out positions and why? How much money is at them? This
-778.72s: can go into even trying to hypothesize Max Payne, which I have a video on. It can come into trying
-785.28s: to assume where we think the market might be expecting things to go. But what we can also do
-792.24s: is track the relationship between volume and open interest, like this strike here. Notice how
-797.20s: there's 513 options traded and there's only 188 options open. What that tells us is with certainty,
-804.88s: some really the majority of these options are being bought to build a position to open up contracts.
-812.56s: These aren't contracts coming down. So whether or not they were bought to open or sold to open,
-818.00s: that's we don't know yet. We'd have to look at the data below. But we do know that 513 of these traded
-824.08s: today only 188 of them exist. So when we see volume exceeding open interest, it tells us that there's
-830.08s: a build out occurring at that level. That's actually what this column tells me. Notice how
-835.04s: where you see 1.1 that tells us that if that's over one, there's now more volume than there is open
-842.40s: interest. So it allows us to hypothesize and to look at activity for people that might be building
-848.48s: out directional positions that might know something. Now let's talk about volatility really quick.
-852.16s: We can see that there's term volatility across all of the different exploration cycles. And really
-857.12s: what we look for is just big deviations like this here. So you can see it goes from 79, 74 down to 69
-863.60s: then kind of starts rallying up. So that leads us to believe that the market is pricing slightly higher
-868.64s: volatility in this section compared to this for one reason or another. We don't know. But we can
-873.20s: start doing some homework and we can come up with ideas as to why that might be the case. There
-877.76s: could be a contract renewal. There could be earnings coming up. But it tells us it's a question
-882.16s: mark we should look for. The other thing we can do is actually look at the volatility surface.
-887.20s: So if I crush this down and just look at a couple cycles to make it easier to see, you'll notice
-891.76s: that I can see a lot of different things by looking at the surface. I can see the relative
-896.72s: volatility between expiration cycles at the same strike. I can see if certain strikes have really
-902.16s: high implied volatility like these do right here, the 22s compared to something like the 23s.
-909.52s: And that could be for a bunch of different reason. I can also look and see if the general out of
-914.80s: the money puts are more expensive in terms of vol than the out of the money calls. If I see this
-920.56s: kind of smile that has higher put IV that tells us that the market is pricing in more severity to
-926.56s: the downside, but a higher probability move to the upside. And to show you an example of what this
-930.96s: can look like reversed. If we look at something like GameStop and we take a look at the 21 March
-935.92s: in 17 April, what do you notice difference? The calls are way higher than the puts. So a lot we
-940.96s: can pull from these. These are two of the very, very basic but really useful starter ways to use
-947.52s: the options chain for information. As always, if you have any questions, let me know, be an
-951.60s: outlier. See you later.
+0.08s: What's up outliers? Today we're going to
+1.68s: talk about how to read an options chain.
+3.60s: Believe it or not, there is a ton of
+6.80s: really useful information baked into an
+9.76s: options chain that most traders kind of
+12.56s: gloss over because they don't know what
+14.48s: to look for. So, we're going to do a
+16.40s: quick recap of what the chain is, how to
+19.20s: read it from a basic perspective, and
+20.96s: then I'm going to give you a look inside
+23.12s: a more advanced way to pull information
+26.48s: to make better informed trades. So, what
+29.44s: is an options chain? It's this thing
+31.12s: right here. It's essentially where all
+33.36s: of the listed options for a security
+35.84s: exist, and it shows you all of your
+38.72s: different choices with respect to
+40.64s: options. Now, we're going to be looking
+42.32s: at a live options chain. Well, the on
+44.80s: the platform itself versus the
+46.24s: screenshot. I just wanted to give you
+47.52s: something if you want to grab a
+48.48s: screenshot or something as we go through
+49.92s: this so that you kind of have an idea of
+51.36s: like the key metrics that we're going to
+53.20s: work through. So, let's get into the
+54.96s: weeds. So, first I have Palunteer up
+57.20s: here just as an example. And the first
+58.88s: thing I want you to notice are all of
+61.04s: these different expirations. These are
+62.88s: also known as series as terms. But every
+66.00s: options chain is going to have different
+68.24s: expiration cycles. And you'll notice
+69.76s: that there are some that are broken out
+71.28s: into these yellow text labeled weeklies.
+74.00s: And then the rest are kind of like this
+75.36s: gray text. These are normal expirations,
+78.32s: the gray text, and they represent the
+80.08s: third Friday of the month, standard
+82.08s: options expiration. And then there's
+83.68s: weeklies. And if you look at something
+85.04s: like S&P, there's even daily options.
+87.68s: The main note is that in general, most
+91.28s: of liquidity is going to be in the
+94.48s: standard options expiration. And that's
+97.04s: simply because that's where larger
+100.08s: institutions and entities gather
+102.72s: together because they know that the
+104.32s: other one's going to be there. It's kind
+105.60s: of like going to play basketball and
+107.36s: knowing which court to go to cuz that's
+108.88s: where the people are. Kind of the
+110.08s: version of that. Then you'll notice that
+112.16s: for every single one of these
+113.68s: expirations, there is a different
+115.20s: implied volatility. Every expiration has
+117.60s: its own implied volatility. Now, if we
+120.08s: click open one of these expiration
+122.48s: cycles, you'll notice that there's kind
+124.24s: of two broad sections. There's the call
+126.80s: side over here labeled by this. And then
+129.04s: there's the put side over here labeled
+131.12s: by this. Then you will notice that there
+133.44s: are a bunch of columns. I actually have
+135.04s: a lot which is why you can't even really
+136.64s: see the names. Don't worry, we're going
+137.84s: to go through them. But one thing to
+139.36s: note is that the same columns that are
+140.96s: on the call side, they're mirrored over
+143.04s: here on the put side. You'll notice, for
+145.04s: example, the bid and the ask and then
+146.72s: you'll notice the bid and the ask. So
+148.48s: the point of that is you will
+151.64s: essentially review this together on one
+154.08s: side, but it applies to the other side.
+156.72s: So another thing that might jump out at
+158.56s: you is the different coloration. There's
+160.16s: kind of like this gray color and then
+161.60s: there's this not great color. This color
+164.00s: represents in the money options. That's
+166.16s: why they're caddyy cornered to one
+167.52s: another like this. So, quick refresh for
+170.32s: calls. If your strike is below the
+173.12s: current stock price, which is
+175.08s: 84.92 in pounds, then it means you're in
+177.76s: the money. Then everything that's above
+179.76s: that is out of the money. And then vice
+182.08s: versa for puts. So now let's talk about
+184.72s: these individual columns. The first
+186.80s: thing you'll see here is bid ask spread.
+189.04s: And the bid ask shows us first the bid
+193.28s: that is the most somebody is willing to
+197.36s: buy something for. That's their bid. And
+199.60s: then the ask is the cheapest somebody is
+202.48s: willing to sell something for. So
+204.00s: essentially if you were going and you
+205.28s: were like I want to buy an option, you
+206.80s: have to go towards the ask. And if I
+208.72s: want to sell an option, you go towards
+210.32s: the bid. Now, one of the cool things is
+212.40s: you'll notice that there's a gap in
+214.00s: between these and we can try to transact
+216.96s: towards the middle of this gap. So, if
+219.76s: we click into this and hit buy, you'll
+222.32s: notice how there's this little bar down
+224.00s: here that shows the mid price and then
+226.00s: the natural, which is whatever you would
+228.24s: get hit at the bid or the offer,
+230.32s: respectively. So, you can actually try
+232.24s: to play it from the mid. So, let's say
+234.24s: if I wanted to buy this option, well, if
+235.84s: I wanted to buy it right now, I would
+237.76s: have to do it at 3.85 cuz that's where
+240.64s: there's currently a offer resting from
+244.08s: somebody willing to sell it at that
+245.60s: point. But if I'm not necessarily trying
+247.52s: to get filled right this second, I can
+249.20s: try and play the bid at spread and maybe
+250.88s: I put in a bid and I'm willing to pay
+254.52s: $3.70. Maybe I get filled there. So, you
+256.88s: can get filled towards the midpoint, but
+259.44s: the bid and the offer, those are the
+261.60s: resting orders that are sitting there.
+263.28s: Now, this can be a market maker, or it
+264.88s: can be a retail trader that just has an
+266.48s: order sitting there waiting to get
+267.68s: filled. Next up, I'm going to jump over
+270.64s: to this column, which is the last price.
+273.52s: That's just the last price that that
+275.68s: option transacted at. And you'll notice
+277.52s: that there's a bunch of these different
+279.04s: rows. All of these different rows
+280.96s: represent different strike prices,
+282.72s: right? So, you can see 38, 39, 40, and
+285.12s: so on and so forth. So, the strike
+286.96s: prices obviously are shared between
+288.40s: calls and puts. So, if we're hovering in
+290.56s: on this row that's now highlighted in
+292.88s: blue for you, you'll see the last price
+294.80s: is 360. That's the last price this
+296.64s: option traded at. Then you'll notice
+298.24s: this next is delta, which measures the
+301.20s: rate of change of premium per one point
+303.52s: move in the underlying. That means if
+304.88s: Palanteer goes up by $1, the premium of
+307.12s: your option set parabus, everything else
+309.20s: remaining the same would move up 41.
+311.52s: Then you have your gamma, which is your
+313.68s: rate of change of delta per one point
+316.96s: move in the underlying. So that means
+318.48s: that if Palunteer did go up by a dollar,
+320.96s: you would make your 41 cents from your
+322.72s: delta, but then your delta would also
+325.04s: grow by three pennies from 41 to 43.
+328.00s: Next up, you have theta. You'll notice
+329.68s: that theta is negative. This is the rate
+331.84s: of change of premium per 1 day passing.
+334.64s: And as we know, options decay. So that
+337.44s: means from today to tomorrow, this
+340.08s: option here will lose 13. Next up, we
+343.20s: have Vega. This represents the premium
+346.00s: rate of change per 1% change in implied
+349.28s: volatility. So if the implied volatility
+351.44s: imbalance here goes up by 1% this option
+354.96s: here would go up by 8. So there's a lot
+359.76s: we can use the Greeks for and
+361.68s: specifically it's to help us finetune
+364.32s: our positions. I have an entire video
+366.40s: that walks through that in depth. We'll
+368.16s: throw a link to that in the notes below.
+369.92s: But the main thing to note is you can
+371.44s: throw them on your options chain so that
+372.88s: you can be aware of these things as
+374.32s: you're building your positions. Now
+376.00s: let's talk about a couple other things.
+377.68s: Volume, which is this one, represents
+380.08s: the number of this specific option that
+383.28s: traded today. So for this 90 call, there
+386.16s: was
+387.32s: 5677 contracts traded today. We don't
+390.24s: know if those are opening contracts or
+392.08s: closing contracts. We just know that
+393.52s: they traded today. Then over here this
+397.08s: 8882 that represents open interest.
+400.48s: These are contracts that are currently
+402.80s: open. This metric can go up or down. New
+407.68s: contracts can be open. So it can go up
+410.08s: from 8882 or it can go down because
+412.80s: people can close contracts. This updates
+415.92s: overnight and it's not updated
+418.24s: throughout the day. So this means this
+419.92s: 8882 will stay like that all day and
+422.40s: then at the end of the day the volume
+425.04s: that occurred today will be integrated
+427.68s: into the open interest. Whether that
+429.68s: volume is opening trades then this
+431.68s: number would go up open interest. If
+433.52s: these are some of these are closing
+435.20s: trades then some of this would go down
+437.68s: by those closing trades. So this column
+440.00s: right here with the colored numbers
+442.32s: actually represents the day over day
+444.72s: change of open interest. These are
+446.56s: customcoded by me. there. You can use
+448.56s: chatupt to help you with it if you're
+450.16s: interested. But it just helps me
+451.52s: visualize the changes of open interest
+454.32s: and you'll see why that matters to me
+455.84s: later. So what this means is from
+457.76s: yesterday into today 415 contracts were
+461.52s: added were open for the '9s and you can
+464.32s: see 25 24 were added for the 92s and you
+468.08s: can see three were closed net net over
+471.68s: the entire transactions for the day. So
+473.92s: we can observe the changes in open
+475.68s: interest which is really useful. Next up
+477.60s: we have the implied volatility. So just
+480.48s: as the stock itself has implied
+482.40s: volatility, just as the term itself, the
+484.64s: expiration has volatility, every single
+486.80s: option also has implied volatility. Then
+489.52s: we have probabilities. So one of the
+491.68s: really cool things about options is they
+494.24s: inherently provide us probabilities. A
+496.64s: lot of people will use delta as an
+498.56s: approximation for a probability, which
+500.48s: is generally okay. I have an entire
+502.16s: video dissecting that because it's not
+504.08s: fully accurate. You can actually see
+505.28s: it's not accurate right here because
+507.20s: this column here shows us the
+508.88s: probability of being in the money at
+510.40s: expiration. And then this column here
+512.24s: shows us the probability of a touch
+514.56s: sometime before expiration. And you can
+516.24s: see that the probability of being in the
+517.76s: money at expiration is
+519.24s: 34.54%. But this shows you 41%. So you
+522.00s: see that's actually a pretty big gap. So
+523.52s: delta is somewhat useful for that, but
+525.44s: it's not perfect. Now the last two
+527.04s: columns I'm going to show you are
+528.32s: currently the size. This is an
+530.40s: assessment of liquidity. Notice how
+532.24s: there's only two at the bid at 350 and
+535.92s: then there's 183 at the offer at 385.
+539.92s: What does this tell us? Well, it tells
+541.36s: us there that there is a really small
+544.00s: offering to essentially take these at
+547.04s: the 350. There's only two contracts that
+549.44s: are offered at that price. So, for some
+551.60s: reason, people really aren't wanting to
+553.84s: trade at the bid. So, they are sizing it
+556.88s: down a lot. But you can see for the ask
+560.64s: side of the equation, it's kind of
+562.16s: different. There's 183 offered at this
+565.60s: 385. So, we're more open to trade at
+568.88s: this. So, then what this tells us from
+570.56s: an inherent perspective is if I wanted
+572.08s: to put on a five lot and let's say that
+574.40s: I wanted to sell a five lot at the bid
+576.72s: for 350, well, it means I would only get
+578.56s: two of them off unless more step in to
+581.76s: allow me to complete that transaction.
+583.36s: So you can use the size which is the
+586.64s: number resting at the bid and the offer
+589.12s: respectively to get a sense of the
+591.20s: liquidity that's being offered at those
+592.80s: levels. And then the last one here is
+595.20s: theoretical price. The theoretical price
+597.68s: essentially is the platform's method to
+599.52s: calculate what the option should be
+602.16s: trading at using all of the standard
+604.48s: inputs into an options pricing model. So
+606.96s: stock price, dividends, implied
+608.72s: volatility, so on and so forth. So
+610.48s: ideally this gives you at least an like
+612.48s: a sense of what the fair price of. So
+615.36s: this is how you read an options chain.
+617.84s: Now I want to show you how you can use
+620.80s: an options chain to glean a lot of
+622.96s: really usable information. I'm going to
+624.48s: focus on just two of these for this
+626.80s: video. If you would like me to run
+628.96s: through more, let me know. We could do a
+630.24s: follow-up. So the first thing I want to
+631.92s: talk to you about is volume over open
+633.92s: interest. And then I want to talk to you
+635.60s: about implied volatility. So if we take
+638.08s: a look at the broad options chain
+640.72s: itself, we can see a bunch of different
+643.68s: metrics with respect to volume, open
+645.76s: interest, and so on and so forth. So
+647.52s: here's the total volume for today. And
+649.44s: we can see that there's
+651.48s: 746,000 calls traded against 535,000
+654.48s: puts. So way more calls than puts. Now,
+656.56s: somebody might immediately assume that
+657.92s: that means that that's bullish. Lots of
+659.36s: people are buying those calls, but we
+660.80s: don't know inherently. But what we can
+662.56s: do is we can see what percentages of
+664.96s: those traded at the bid, at the offer or
+668.40s: between the market. So if it traded at
+671.12s: the bid or the offer, we make an
+672.64s: assumption. Now people regularly
+674.72s: wrongfully assume that this means with
+677.12s: certainty that something is bought or
+679.12s: sold because remember the bid is
+681.52s: essentially where you need to go to sell
+682.88s: things and then the offer is where you
+684.32s: go to buy things. Now, we can make an
+686.96s: inference based on if the option was
+689.84s: traded at the bid or the offer, but we
+691.76s: don't know with certainty, and it's for
+694.08s: a bunch of different reasons that are
+695.28s: not in the scope for this video, but you
+697.04s: should know that it's not with
+698.16s: certainty. So, we can just glean general
+700.72s: market data at that level. So, today,
+703.20s: most of the calls that transacted clean
+705.76s: at the bid or the offer occurred at the
+708.00s: ask. So, those are people that are
+709.76s: buying calls. Interesting. Not a huge
+712.32s: skew. Sometimes it's way more dominant
+714.16s: than others, but it's a starting point.
+715.76s: Then we can take a look at open interest
+718.16s: data. We can see, well, how many total
+720.24s: calls are there relative to puts? Now,
+722.48s: for index options, you'll typically see
+725.20s: more puts than calls. In single security
+728.00s: options, it typically reflects the
+730.00s: general bias that people have, and the
+732.48s: reason is for hedging activities versus
+734.32s: directional speculation. So, in this
+736.08s: case, you can see people are clearly
+738.16s: taking directional bets on balance here
+740.40s: likely to the upside. But then we can
+742.08s: get more specific. We can say of this 2
+744.72s: million, where's most of the open
+747.60s: interest sitting? And we can see in 21
+749.52s: March, there's 322K against 267. The
+752.48s: point of doing this is to see if one of
+754.96s: these cycles is profoundly higher than
+758.64s: the others. That might mean people think
+761.36s: something might be going on around that
+763.76s: time frame that they're trying to
+764.96s: capture. Now the last thing I told you
+767.12s: that I wanted to talk about with respect
+768.96s: to volume and open interest is volume
+771.52s: over open interest. So we can use open
+774.08s: interest to see where people are
+776.08s: building out positions and why. How much
+778.00s: money is at them? This can go into even
+780.08s: trying to hypothesize max pain which I
+783.04s: have a video on. It can come into trying
+785.44s: to assume where we think the market
+788.48s: might be expecting things to go. But
+791.04s: what we can also do is track the
+793.36s: relationship between volume and open
+795.20s: interest. Like this strike here, notice
+797.12s: how there's 513 options traded and
+800.00s: there's only 188 options open. What that
+803.20s: tells us is with certainty, some really
+806.08s: the majority of these options are being
+808.88s: bought to build a position to open up
+811.92s: contracts. These aren't contracts coming
+814.16s: down. So whether or not they were bought
+816.56s: to open or sold to open, that's we don't
+819.20s: know yet. we'd have to look at the data
+820.80s: below. But we do know that 513 of these
+823.92s: traded today, only 188 of them exist. So
+826.64s: when we see volume exceeding open
+828.64s: interest, it tells us that there's a
+830.56s: buildout occurring at that level. That's
+833.04s: actually what this column tells me.
+834.72s: Notice how where you see 1.1, that tells
+836.88s: us that if if that's over one, there's
+839.44s: now more volume than there is open
+842.56s: interest. So, it allows us to
+844.68s: hypothesize and to look at activity for
+847.44s: people that might be building out
+848.80s: directional positions that might know
+850.24s: something. Now, let's talk about
+851.20s: volatility really quick. We can see that
+852.96s: there's term volatility across all of
+855.20s: the different expiration cycles. And
+857.12s: really, what we look for is just big
+858.64s: deviations like this here. So, you can
+860.64s: see it goes from 7974 down to 69, then
+864.08s: kind of starts rallying up. So, that
+865.92s: leads us to believe that the market is
+867.68s: pricing slightly higher volatility in
+869.52s: this section compared to this for one
+871.44s: reason or another. We don't know, but we
+873.20s: can start doing some homework and we can
+875.28s: come up with ideas as to why that might
+877.20s: be the case. There could be a contract
+878.80s: renewal. There could be earnings coming
+880.56s: up, but it tells us it's a question mark
+882.64s: we should look for. The other thing we
+884.32s: can do is actually look at the the
+885.84s: volatility surface. So, if I crush this
+888.56s: down and just look at a couple cycles to
+890.32s: make it easier to see, you'll notice
+891.84s: that I can see a lot of different things
+894.32s: by looking at the surface. I can see the
+896.40s: relative volatility between expiration
+898.48s: cycles at the same strike. I can see if
+900.96s: certain strikes have really high implied
+903.36s: volatility like these do right here, the
+906.20s: 22s, compared to something like the 23s.
+909.84s: And that could be for a bunch of
+911.44s: different reasons. I can also look and
+913.20s: see if the general out of the money puts
+916.00s: are more expensive in terms of V than
+918.24s: the out- of-the- money calls. If I see
+920.40s: this kind of smile that has higher put
+923.60s: IV, that tells us that the market is
+925.36s: pricing in more severity to the
+926.88s: downside, but a higher probability move
+928.80s: to the upside. And to show you an
+930.40s: example of what this can look like
+931.92s: reversed, if we look at something like
+933.52s: GameStop and we take a look at the 21
+935.84s: March and 17 April, what do you notice
+937.44s: difference? The calls are way higher
+939.44s: than the puts. So, a lot we can pull
+941.44s: from these. These are two of the very,
+944.48s: very basic but really useful starter
+946.64s: ways to use the options chain for
+948.56s: information. As always, if you have any
+950.40s: questions, let me know. Be an outlier.

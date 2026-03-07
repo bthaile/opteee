@@ -4,14 +4,16 @@ Video Processing Pipeline Runner
 
 This script orchestrates the complete video processing pipeline:
 1. Scrape - Discover videos from the YouTube channel
-2. Transcripts - Download/generate transcripts for videos
-3. Preprocess - Chunk transcripts for vector search
-4. Vectors - Build the vector store for semantic search
+2. Transcripts - Fetch transcripts via YouTube API (marks failures for Whisper)
+3. Whisper - Second pass: download audio and transcribe failed videos with Whisper
+4. Preprocess - Chunk transcripts for vector search
+5. Vectors - Build the vector store for semantic search
 
 Usage:
     python3 run_pipeline.py                          # Run complete pipeline
     python3 run_pipeline.py --step scrape            # Run only video discovery
     python3 run_pipeline.py --step transcripts       # Run only transcript generation
+    python3 run_pipeline.py --step whisper           # Run Whisper on failed videos only
     python3 run_pipeline.py --step preprocess        # Run only preprocessing
     python3 run_pipeline.py --step vectors           # Run only vector store creation
     python3 run_pipeline.py --non-interactive        # Run without prompts (for CI/CD)
@@ -28,7 +30,8 @@ from datetime import datetime
 # Import configuration
 from pipeline_config import (
     VIDEOS_JSON, TRANSCRIPT_DIR, PROCESSED_DIR, VECTOR_STORE_DIR,
-    CHANNEL_URLS, YOUTUBE_API_KEY, ensure_directories, validate_config
+    CHANNEL_URLS, YOUTUBE_API_KEY, TRANSCRIPT_REQUEST_DELAY,
+    ensure_directories, validate_config
 )
 
 
@@ -121,100 +124,200 @@ def run_scrape(args):
 
 
 def run_transcripts(args):
-    """Step 2: Generate transcripts for videos"""
+    """Step 2: Generate transcripts for videos using yt-dlp (primary) with youtube-transcript-api fallback"""
     print_banner("STEP 2: TRANSCRIPT GENERATION")
-    
+
+    try:
+        import yt_dlp
+    except ImportError:
+        print("❌ yt_dlp not installed. Run: pip install yt-dlp")
+        return False
+
     try:
         from youtube_transcript_api import YouTubeTranscriptApi
-        from youtube_transcript_api._errors import TranscriptsDisabled, NoTranscriptFound
+        from youtube_transcript_api._errors import CouldNotRetrieveTranscript
+        ytt_api = YouTubeTranscriptApi()
+        has_ytt = True
     except ImportError:
-        print("❌ youtube_transcript_api not installed. Run: pip install youtube-transcript-api")
-        return False
-    
+        has_ytt = False
+
     # Load video list
     if not os.path.exists(VIDEOS_JSON):
         print(f"❌ {VIDEOS_JSON} not found. Run with --step scrape first.")
         return False
-    
+
     with open(VIDEOS_JSON, 'r', encoding='utf-8') as f:
         videos = json.load(f)
-    
+
     print(f"📚 Found {len(videos)} videos to process")
-    
-    # Create transcript directory
+
     os.makedirs(TRANSCRIPT_DIR, exist_ok=True)
-    
+
     # Track progress
     progress_file = "transcript_progress.json"
     if os.path.exists(progress_file) and not args.force_reprocess:
         with open(progress_file, 'r') as f:
             progress = json.load(f)
+        # Deduplicate on load
+        progress['processed'] = list(set(progress.get('processed', [])))
+        progress['failed'] = list(set(progress.get('failed', [])))
+        progress['whisper_processed'] = list(set(progress.get('whisper_processed', [])))
     else:
         progress = {'processed': [], 'failed': [], 'whisper_processed': []}
-    
-    # Filter already processed videos
+
     if not args.force_reprocess:
         all_processed = set(progress.get('processed', []) + progress.get('whisper_processed', []))
+        progress['failed'] = [u for u in progress['failed'] if u not in all_processed]
         videos_to_process = [v for v in videos if v.get('url') not in all_processed]
         print(f"  ⏭️  Skipping {len(videos) - len(videos_to_process)} already processed videos")
     else:
         videos_to_process = videos
-    
+
     successful = 0
     failed = 0
-    
+
+    def fetch_via_ytdlp(video_id):
+        """Download subtitles via yt-dlp, return list of {start, text} dicts or None."""
+        import tempfile, glob, re
+        with tempfile.TemporaryDirectory() as tmpdir:
+            ydl_opts = {
+                'writesubtitles': True,
+                'writeautomaticsub': True,
+                'subtitleslangs': ['en', 'en-orig'],
+                'skip_download': True,
+                'outtmpl': os.path.join(tmpdir, '%(id)s'),
+                'quiet': True,
+                'no_warnings': True,
+            }
+            try:
+                with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+                    ydl.download([f"https://www.youtube.com/watch?v={video_id}"])
+            except Exception:
+                return None
+
+            vtt_files = glob.glob(os.path.join(tmpdir, '*.vtt'))
+            if not vtt_files:
+                return None
+
+            # Parse VTT — pick the cleanest file (en-orig preferred)
+            vtt_files.sort(key=lambda f: (0 if 'en-orig' in f else 1))
+            vtt_path = vtt_files[0]
+
+            segments = []
+            seen_texts = set()
+            with open(vtt_path, encoding='utf-8') as f:
+                content = f.read()
+
+            # Extract timestamp + text blocks
+            blocks = re.split(r'\n\n+', content)
+            for block in blocks:
+                lines = block.strip().splitlines()
+                # Find timestamp line
+                ts_line = next((l for l in lines if '-->' in l), None)
+                if not ts_line:
+                    continue
+                start_str = ts_line.split('-->')[0].strip()
+                # Convert HH:MM:SS.mmm to seconds
+                parts = start_str.replace(',', '.').split(':')
+                try:
+                    if len(parts) == 3:
+                        start = float(parts[0])*3600 + float(parts[1])*60 + float(parts[2])
+                    else:
+                        start = float(parts[0])*60 + float(parts[1])
+                except ValueError:
+                    continue
+                # Get text lines (skip timestamp, strip inline tags)
+                text_lines = [l for l in lines if '-->' not in l and l.strip()]
+                text = ' '.join(re.sub(r'<[^>]+>', '', l).strip() for l in text_lines).strip()
+                if text and text not in seen_texts:
+                    seen_texts.add(text)
+                    segments.append({'start': start, 'text': text})
+
+            return segments if segments else None
+
     for video in videos_to_process:
         video_id = video.get('video_id')
         title = video.get('title', 'Untitled')
         url = video.get('url')
-        
+
         if not video_id:
             continue
-        
-        # Clean title for filename
-        safe_title = "".join(c if c.isalnum() or c in ' -_' else '_' for c in title)[:100]
+
         filename = os.path.join(TRANSCRIPT_DIR, f"{video_id}.txt")
-        
-        try:
-            # Try to get YouTube transcript
-            transcript = YouTubeTranscriptApi.get_transcript(video_id)
-            
+        transcript = None
+        method = None
+
+        # --- Primary: yt-dlp subtitle extraction (handles IP blocks better) ---
+        transcript = fetch_via_ytdlp(video_id)
+        if transcript:
+            method = 'yt-dlp'
+
+        # --- Fallback: youtube-transcript-api ---
+        if transcript is None and has_ytt:
+            try:
+                raw = ytt_api.fetch(video_id).to_raw_data()
+                transcript = [{'start': e['start'], 'text': e['text']} for e in raw]
+                method = 'youtube-transcript-api'
+            except Exception:
+                transcript = None
+
+        if transcript:
             with open(filename, 'w', encoding='utf-8') as f:
                 for entry in transcript:
                     text = entry['text'].strip()
                     if text:
                         f.write(f"{entry['start']:.2f}s: {text}\n")
-            
-            print(f"  ✅ {title[:50]}...")
-            progress['processed'].append(url)
+            print(f"  ✅ [{method}] {title[:50]}...")
+            if url not in progress.get('processed', []):
+                progress['processed'].append(url)
             successful += 1
-            
-        except (TranscriptsDisabled, NoTranscriptFound) as e:
-            # Try Whisper if YouTube transcript not available
-            print(f"  ⚠️  No YouTube transcript for {title[:50]}... (will need Whisper)")
-            progress['failed'].append(url)
+        else:
+            print(f"  ⚠️  No captions found for {title[:50]}... (will use Whisper)")
+            if url not in progress.get('failed', []):
+                progress['failed'].append(url)
             failed += 1
-            
-        except Exception as e:
-            print(f"  ❌ Error: {title[:50]}... - {str(e)[:50]}")
-            progress['failed'].append(url)
-            failed += 1
-        
-        # Save progress periodically
+
+        # Save progress after each video
         with open(progress_file, 'w') as f:
             json.dump(progress, f, indent=2)
-    
+
+        time.sleep(TRANSCRIPT_REQUEST_DELAY)
+
     print(f"\n📊 Transcript Results:")
     print(f"  ✅ Successfully processed: {successful}")
     print(f"  ❌ Failed/Need Whisper: {failed}")
     print(f"  📁 Transcripts saved to: {TRANSCRIPT_DIR}/")
-    
+
     return True
 
 
+def run_whisper(args):
+    """Step 3: Second pass — download audio and transcribe failed videos with Whisper"""
+    print_banner("STEP 3: WHISPER (failed videos)")
+    
+    import subprocess
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    retry_script = os.path.join(script_dir, 'retry_and_whisper.py')
+    
+    if not os.path.exists(retry_script):
+        print(f"❌ {retry_script} not found")
+        return False
+    
+    cmd = [sys.executable, retry_script, '--whisper-only']
+    if getattr(args, 'max_whisper', None):
+        cmd.extend(['--max-whisper', str(args.max_whisper)])
+    
+    try:
+        result = subprocess.run(cmd, cwd=script_dir)
+        return result.returncode == 0
+    except Exception as e:
+        print(f"❌ Whisper step failed: {e}")
+        return False
+
+
 def run_preprocess(args):
-    """Step 3: Preprocess transcripts into chunks"""
-    print_banner("STEP 3: TRANSCRIPT PREPROCESSING")
+    """Step 4: Preprocess transcripts into chunks"""
+    print_banner("STEP 4: TRANSCRIPT PREPROCESSING")
     
     # Import the preprocessing module
     try:
@@ -229,8 +332,8 @@ def run_preprocess(args):
 
 
 def run_vectors(args):
-    """Step 4: Create vector store"""
-    print_banner("STEP 4: VECTOR STORE CREATION")
+    """Step 5: Create vector store"""
+    print_banner("STEP 5: VECTOR STORE CREATION")
     
     try:
         import create_vector_store
@@ -263,6 +366,7 @@ Examples:
   python3 run_pipeline.py                          # Run complete pipeline
   python3 run_pipeline.py --step scrape            # Run only video discovery
   python3 run_pipeline.py --step transcripts       # Run only transcript generation
+  python3 run_pipeline.py --step whisper           # Run Whisper on failed videos
   python3 run_pipeline.py --step preprocess        # Run only preprocessing
   python3 run_pipeline.py --step vectors           # Run only vector store creation
   python3 run_pipeline.py --non-interactive        # Run without prompts (for CI/CD)
@@ -272,8 +376,14 @@ Examples:
     
     parser.add_argument(
         '--step', 
-        choices=['scrape', 'transcripts', 'preprocess', 'vectors'],
+        choices=['scrape', 'transcripts', 'whisper', 'preprocess', 'vectors'],
         help='Run a specific step only'
+    )
+    parser.add_argument(
+        '--max-whisper',
+        type=int,
+        default=None,
+        help='Limit Whisper to N videos (for testing)'
     )
     parser.add_argument(
         '--non-interactive', 
@@ -319,6 +429,7 @@ Examples:
     steps = {
         'scrape': ('Video Discovery', run_scrape),
         'transcripts': ('Transcript Generation', run_transcripts),
+        'whisper': ('Whisper (failed videos)', run_whisper),
         'preprocess': ('Transcript Preprocessing', run_preprocess),
         'vectors': ('Vector Store Creation', run_vectors),
     }

@@ -1,182 +1,570 @@
-0.00s: All right, everybody, Eric here with part two of my favorite strategy, which is the cash
-7.66s: secure strangle.
-8.66s: I already introduced it in a previous video, talked about kind of how I like to set it up,
-13.18s: what I look for, those kinds of things.
-15.30s: Now what I want to jump into next is how do we manage the trade?
-20.02s: So let's jump over to the main screen here and work through it.
-24.10s: Question foremost, if you recall, we kind of did a little bit of a management tree on
-30.86s: how the trade works out.
-31.86s: So let's do that again real quick just to recap.
-33.98s: First, I'm going to sell to open a put of some sort.
-37.74s: And then one of two things is going to happen.
-39.62s: The put is either going to remain out of the money, in which case I'll close for a profit
-45.58s: and then sell another put and continue to do this circle here.
-49.30s: Now, the other scenario is we can end up in the money.
-53.62s: If we end up in the money, there again is a branch of two possibilities.
-58.26s: The first one is we can roll the trade and based on how we choose to roll the trade,
-65.62s: it'll either end up out of the money or it'll end up in the money, which we will continue
-70.62s: this process here.
-71.78s: We can roll for some time.
-73.82s: I've rolled for over a year before, so you can roll for some time.
-77.82s: Or you can choose to allow assignment.
-82.94s: Now if we allow assignment, this essentially equals, we now have a long position.
-88.90s: We own shares of whatever we sold to put on.
-93.38s: So now there's another kind of two lane approach here.
-98.18s: What will happen is we're going to create a covered call for the long shares.
-104.62s: So this is where we're long shares and then we sell a call against the end.
-112.86s: That's the shares.
-115.18s: And then in this scenario, one of two things will happen.
-118.54s: This will fall in, let's keep this side out of the money.
-122.46s: Sorry, just to keep it the same.
-124.14s: So this will fall out of the money.
-126.14s: And if the calls remain out of the money, we just sell another one and then continue that
-130.94s: loop here.
-132.58s: Or the calls will fall in the money in which case will be assigned.
-139.02s: And then we will lose the longs.
-142.98s: So then what will happen is the call will fall off.
-145.86s: We'll keep that profit.
-147.50s: And then the long stock is sold.
-149.02s: So we're going to sell the stock or sell the underlying at your strike price.
-157.02s: Now let's go all the way back up here.
-159.10s: We're also going to sell another put.
-164.74s: And then this put here follows this put structure.
-171.46s: These two is the same thing.
-172.94s: So I'm just moving this one down here now in which case one of two things will happen
-176.94s: out the money in the money and it just follows down this tree.
-180.26s: So this is kind of our assignment tree or our management tree in an individual.
-185.58s: So let's talk about the easy one.
-187.94s: Let's first talk about this.
-191.26s: I'm going to underline them so that they're kind of easier to see the different stages
-194.58s: because I know the arrows might be a little confusing.
-198.58s: So let's just break these out with those underlines.
-203.78s: Great.
-204.78s: Okay.
-205.78s: So first, let's talk about this out of the money position here.
-208.94s: This guy.
-210.42s: If we are out of the money, the very first thing is if at any point in the trade, I have
-217.30s: a 60% profit, I'm going to look to take it down.
-219.82s: It doesn't mean I always will, but I'm going to look at it.
-221.58s: I'm going to consider it very strongly.
-224.18s: Now if I ever have a scenario where I've 80% of my max profit with greater than 50%
-232.66s: days expiration on the original trade left, I will take that down.
-237.82s: So let's say if I sell something with 40 days to expiration and then at 21 days to expiration,
-245.42s: we have 80% or higher max profit, I'm going to take that trade down.
-250.10s: The other scenario that can happen here is if I make 30 to 40% of the trade in less than
-257.74s: two days, I potentially will take that trade off.
-262.58s: Now the way that I approach the out of the money management depends a lot on the current
-266.78s: market conditions, how I feel about the market at that point in time.
-270.86s: If I feel that the market is stable, kind of continuing to climb, that sort of thing,
-275.22s: like we've seen the last few years, very likely would just leave a position on longer.
-279.94s: But if we're more in a market that we see now, I'm less inclined to do that.
-284.14s: I manage positions a little more regularly so I can continue to realize profits in lower
-289.66s: my outstanding risk.
-292.14s: So that's kind of the out of the money that handles this leg right here.
-297.50s: Now let's talk about in the money.
-300.94s: So this is this leg right here.
-305.50s: And then what I want to specifically talk about is this rolling portion, which is this
-310.78s: side right here.
-313.38s: So we already did this out of the money.
-315.02s: Now we're assuming we're in the money and I'm not going to take assignment.
-318.42s: I want to roll.
-320.94s: I always know that the best role opportunity is going to take place when the strike price
-327.62s: equals my short strike.
-330.54s: So if I sell a put at a 10 strike, when the stock or when the underlying is trading around
-337.58s: $10 is my best time to roll.
-340.66s: The reason being is because you can still typically roll out of the money at that point.
-346.98s: But I have some rules on how I approach this person foremost, I always, always, always
-353.74s: make sure I get a credit for the rule always.
-356.50s: If you don't get a credit, you're going to make this a very difficult trade to manage
-361.34s: for the long term.
-363.50s: The second thing is I monitor the size of my trade because when we roll, we know we're
-370.66s: closing the front position and we're establishing a further out and time position that should
-379.06s: cover the cost of closing this front position.
-382.90s: So based on my assessment of the market, my current thoughts, I will look and adjust
-390.04s: my size accordingly.
-392.42s: For example, if I have a position that I put on with 40 days to expiration and with 35
-400.26s: days left to go, it falls in the money, I'm not going to do anything.
-404.74s: The reason being is I like to wait until about 20 days to expiration so that market is closed.
-412.50s: So that I'm able to maximize my use of weekly contracts and not have to roll out an entire
-420.94s: month.
-421.94s: I try to roll out as little in distance as possible, typically.
-426.94s: So if my strike is slightly in the money and there's 20 days left to go, something like
-435.06s: that, I likely will roll that out to reestablish a new position, you know, 40, 45 days to expiration.
-442.06s: However, instead of selling a five lot, I might only sell a four lot, but keep it at the
-449.24s: same strike.
-450.24s: I might take some of my position off, removing some risk from the trade.
-456.06s: Let's say same scenario, I sold a 48 expiration option, we're at 22 days left to go and all
-464.14s: of a sudden my option is far in the money.
-468.50s: If I roll out in time, I'm collecting a very small credit.
-473.10s: In that scenario, I might add some of the allocation I set aside for the trade so that I can add
-480.90s: additional short puts and allow myself to roll closer to the money.
-488.06s: So in that example, let's say if I sold five puts at a 10 strike and I might have, I'm
-496.74s: the new position I established might have six puts at a nine strike or an eight strike.
-504.10s: The goal is to move closer or out of the money.
-507.86s: So size can be adjusted to add risk or reduce risk depending on what the objectives are at
-514.02s: that point in time.
-515.90s: Now the duration for the rules, I hit on a little bit to start.
-520.86s: If I am wary of the market and concerned that it might come down or if I feel there's
-526.30s: it's bottom heavy like I do right now, I try to let it get as close to expiration as I
-531.74s: can so that I'm leaching all of the theta out.
-535.50s: So I'm not buying back a whole bunch of theta when I roll the position.
-539.78s: And once I get, you know, 14, 15 days to expiration in a market like this, I am going to
-546.74s: try to roll out in time as little as I need to in order to roll down as well.
-553.46s: So if I want to roll out and down, I might have to go two weeks or three weeks instead
-559.24s: of just one.
-561.74s: If I am thinking that the, you know, position is on the dance floor, I'm close, I might
-567.80s: just roll out to the same strike a week later.
-571.82s: And then the last kind of broad scenario is if I want to roll and I want to make sure
-578.10s: I get out of the money, I might have to go further out in time.
-581.26s: I might have to reestablish a new position in order to collect a new credit, you know,
-586.02s: all the way up 40 to 45 days to expiration, something like that.
-590.46s: And again, I'm going to do a scenario for most of these because I know I'm talking about
-594.34s: a lot of hypotheticals and it might be confusing.
-597.14s: So don't worry if what I'm talking about sounds a little abstract.
-600.38s: We'll do an example, not on this video, but the next one.
-603.10s: Okay, so let's jump over to kind of if we're going to allow assignment.
-607.42s: This one's pretty quick.
-608.94s: So once we get to the 20 day window, let's say again, we sold open five puts at the 10
-614.78s: strike and we're at the 20 day to expiration window, we choose we want to allow assignment.
-620.02s: Great.
-621.02s: We're going to let the underlying continued to move towards its expiration.
-626.18s: Now the week of expiration or whenever I see the extrinsic value of the option hit a
-633.30s: nickel, I'm always going to reevaluate one more time.
-637.14s: I'm going to say, okay, do I really want to let this go to expiration and be assigned
-641.10s: or do I want to potentially roll this now?
-644.18s: So that's kind of my last evaluation.
-647.14s: Let's say if it hits that point, let me say, nope, I want to own the underlying pool.
-652.02s: Once we own the stock, I like to sell a covered call.
-655.58s: So what that means is I will take assignment.
-658.34s: I'm now a long shares and I will sell a call above my basis always.
-664.34s: So if I'm assigned at 10, I'm always going to sell at 10 or above.
-669.22s: There may be times where I can't sell and collect a premium above my basis.
-673.94s: That's fine.
-674.94s: I will wait because if you go back all the way to the beginning, I already know I pick
-679.06s: something I like to own, so I will wait.
-682.30s: And then at the same time, I will always outlay an additional put below my strike.
-689.06s: So if I'm at a short strike of 10, I might sell in 8 put or a 6 put or 5 or 7, whatever,
-698.42s: something below my basis.
-700.46s: So what this does is it allows me to scale into the trade, still collect a premium, and
-706.56s: then if I'm assigned again, if I choose to allow assignment again, then in only then,
-712.66s: my cost basis will reduce as my size increases.
-717.58s: So if we sold that 5 lot and then now we're long 500 shares, and then if we sell a 3 lot
-723.46s: cheaper, well, now we're going to be long 800 shares, but at a lower price.
-728.66s: So that's why I like to sell the additional put.
-731.78s: And then that's it.
-733.38s: We're just going to repeat the put management until it's assigned again or more rolling
-740.02s: or out of the money, just like the original diagram I shared, or we're going to keep
-745.06s: going until that covered call is called away.
-748.90s: Whenever the covered call expires worthless or is very close to expiring worthless, I might
-753.50s: take it down and sell another one and just keep doing that over and over again.
-758.30s: So this is my favorite strategy, the cash secure strangle.
-760.30s: It's nothing to manage.
-762.98s: There's a lot of management that goes into it, but it's not frequent.
-766.94s: You know, I might put a trade on that has 40 days to expiration and adjust it once
-771.50s: every two weeks.
-773.02s: So there's a lot of thought that goes into the management, but it makes the execution
-777.54s: very easy and systematic.
-780.30s: So the next video I'm going to do are a few different examples of either historical
-786.14s: trades I've done or I'll share some of the trades I have on now so that we can see
-790.14s: what this looks like in practical application.
-792.58s: So I hope this is helpful and I'm looking forward to exploring the strategy more with
-796.22s: everybody.
-797.22s: Talk to you guys later.
+0.27s: all right everybody Eric here with part
+3.84s: all right everybody Eric here with part two of my favorite strategy which is the
+7.34s: two of my favorite strategy which is the
+7.35s: two of my favorite strategy which is the cash secured strangle I already
+9.23s: cash secured strangle I already
+9.24s: cash secured strangle I already introduced it in a previous video talked
+11.36s: introduced it in a previous video talked
+11.37s: introduced it in a previous video talked about kind of how I like to set it up
+12.77s: about kind of how I like to set it up
+12.78s: about kind of how I like to set it up when I look for those kinds of things
+14.32s: when I look for those kinds of things
+14.33s: when I look for those kinds of things now what I want to jump into next is how
+17.69s: now what I want to jump into next is how
+17.70s: now what I want to jump into next is how do we manage the trade so let's jump
+20.66s: do we manage the trade so let's jump
+20.67s: do we manage the trade so let's jump over to the main screen here and work
+22.25s: over to the main screen here and work
+22.26s: over to the main screen here and work through it first and foremost if you
+25.66s: through it first and foremost if you
+25.67s: through it first and foremost if you recall we kind of did a little bit of a
+29.09s: recall we kind of did a little bit of a
+29.10s: recall we kind of did a little bit of a management tree on how the trade works
+31.49s: management tree on how the trade works
+31.50s: management tree on how the trade works out so let's do that again real quick
+32.90s: out so let's do that again real quick
+32.91s: out so let's do that again real quick just to recap first I'm gonna sell to
+35.45s: just to recap first I'm gonna sell to
+35.46s: just to recap first I'm gonna sell to open a put of some sort and then one of
+38.30s: open a put of some sort and then one of
+38.31s: open a put of some sort and then one of two things is going to happen the put is
+40.13s: two things is going to happen the put is
+40.14s: two things is going to happen the put is either going to remain out of the money
+42.47s: either going to remain out of the money
+42.48s: either going to remain out of the money in which case I'll close for a profit
+45.47s: in which case I'll close for a profit
+45.48s: in which case I'll close for a profit and then sell another put and continue
+47.42s: and then sell another put and continue
+47.43s: and then sell another put and continue to do this circle here now the other
+50.27s: to do this circle here now the other
+50.28s: to do this circle here now the other scenario is we can end up in the money
+52.76s: scenario is we can end up in the money
+52.77s: scenario is we can end up in the money if we end up in the money there again is
+55.73s: if we end up in the money there again is
+55.74s: if we end up in the money there again is a branch of two possibilities the first
+58.55s: a branch of two possibilities the first
+58.56s: a branch of two possibilities the first one is we can roll the trade and based
+62.12s: one is we can roll the trade and based
+62.13s: one is we can roll the trade and based on how we choose to roll the trade it'll
+65.75s: on how we choose to roll the trade it'll
+65.76s: on how we choose to roll the trade it'll either end up out of the money or it'll
+67.97s: either end up out of the money or it'll
+67.98s: either end up out of the money or it'll end up in the money which we will
+70.07s: end up in the money which we will
+70.08s: end up in the money which we will continue this process here we can roll
+72.41s: continue this process here we can roll
+72.42s: continue this process here we can roll for some time I've rolled for over a
+74.87s: for some time I've rolled for over a
+74.88s: for some time I've rolled for over a year before so you can roll for some
+76.67s: year before so you can roll for some
+76.68s: year before so you can roll for some time or you can choose to allow
+80.02s: time or you can choose to allow
+80.03s: time or you can choose to allow assignment
+82.15s: assignment
+82.16s: assignment now if we allow assignment this
+85.36s: now if we allow assignment this
+85.37s: now if we allow assignment this essentially equals we now have a long
+88.21s: essentially equals we now have a long
+88.22s: essentially equals we now have a long position we own shares of whatever we
+91.57s: position we own shares of whatever we
+91.58s: position we own shares of whatever we sold the put on so now there's another
+95.17s: sold the put on so now there's another
+95.18s: sold the put on so now there's another kind of two lane approach here what'll
+98.32s: kind of two lane approach here what'll
+98.33s: kind of two lane approach here what'll happen is we're gonna create a covered
+101.02s: happen is we're gonna create a covered
+101.03s: happen is we're gonna create a covered call
+102.89s: call
+102.90s: call for the long shares so this is where
+105.17s: for the long shares so this is where
+105.18s: for the long shares so this is where were long shares and then we sell a call
+112.13s: against these shares and then in this
+115.88s: against these shares and then in this scenario one of two things will happen
+117.64s: scenario one of two things will happen
+117.65s: scenario one of two things will happen this will fall in let's keep the side
+121.66s: this will fall in let's keep the side
+121.67s: this will fall in let's keep the side out of the money started just to keep it
+123.16s: out of the money started just to keep it
+123.17s: out of the money started just to keep it the same so this will fall out of the
+125.23s: the same so this will fall out of the
+125.24s: the same so this will fall out of the money and if the calls remain out of the
+127.81s: money and if the calls remain out of the
+127.82s: money and if the calls remain out of the money we just sell another one and then
+130.12s: money we just sell another one and then
+130.13s: money we just sell another one and then continue that loop here or the calls
+133.12s: continue that loop here or the calls
+133.13s: continue that loop here or the calls will fall in the money
+135.71s: will fall in the money
+135.72s: will fall in the money in which case we'll be assigned and then
+139.16s: in which case we'll be assigned and then
+139.17s: in which case we'll be assigned and then we we will lose the lungs so then what
+143.72s: we we will lose the lungs so then what
+143.73s: we we will lose the lungs so then what will happen is the call will fall off
+145.52s: will happen is the call will fall off
+145.53s: will happen is the call will fall off we'll keep that profit and then the long
+147.95s: we'll keep that profit and then the long
+147.96s: we'll keep that profit and then the long stock is sold so we're going to sell the
+149.96s: stock is sold so we're going to sell the
+149.97s: stock is sold so we're going to sell the stock or sell the underlying
+154.37s: at your strike price now let's go all
+157.58s: at your strike price now let's go all the way back up here we're also going to
+161.08s: the way back up here we're also going to
+161.09s: the way back up here we're also going to sell another put
+164.43s: sell another put
+164.44s: sell another put and then this put here follows this put
+169.79s: and then this put here follows this put
+169.80s: and then this put here follows this put structure these two it's the same thing
+172.62s: structure these two it's the same thing
+172.63s: structure these two it's the same thing so I'm just moving this one down here
+174.45s: so I'm just moving this one down here
+174.46s: so I'm just moving this one down here now in which case one of two things will
+176.55s: now in which case one of two things will
+176.56s: now in which case one of two things will happen out the money in the money and it
+178.29s: happen out the money in the money and it
+178.30s: happen out the money in the money and it just follows down this tree so this is
+180.66s: just follows down this tree so this is
+180.67s: just follows down this tree so this is kind of our assignment tree or our our
+182.22s: kind of our assignment tree or our our
+182.23s: kind of our assignment tree or our our management tree in an individual so
+185.61s: management tree in an individual so
+185.62s: management tree in an individual so let's talk about the easy one let's
+188.39s: let's talk about the easy one let's
+188.40s: let's talk about the easy one let's first talk about this I'm gonna
+191.70s: first talk about this I'm gonna
+191.71s: first talk about this I'm gonna underline them so that they're kind of
+192.99s: underline them so that they're kind of
+193.00s: underline them so that they're kind of easier to see the different stages
+194.34s: easier to see the different stages
+194.35s: easier to see the different stages because I know the arrows might be a
+196.50s: because I know the arrows might be a
+196.51s: because I know the arrows might be a little confusing well let's just
+202.19s: with those on our lines great okay so
+205.01s: with those on our lines great okay so first let's talk about this out of the
+207.07s: first let's talk about this out of the
+207.08s: first let's talk about this out of the money position here this guy if we are
+211.57s: money position here this guy if we are
+211.58s: money position here this guy if we are out of the money the very first thing is
+214.27s: out of the money the very first thing is
+214.28s: out of the money the very first thing is if at any point in the trade I have a
+217.39s: if at any point in the trade I have a
+217.40s: if at any point in the trade I have a 60% profit I'm gonna look to take it
+219.43s: 60% profit I'm gonna look to take it
+219.44s: 60% profit I'm gonna look to take it down doesn't mean I always well but I'm
+220.96s: down doesn't mean I always well but I'm
+220.97s: down doesn't mean I always well but I'm gonna look at it I want to consider it
+222.25s: gonna look at it I want to consider it
+222.26s: gonna look at it I want to consider it very strongly now if I ever have a
+225.49s: very strongly now if I ever have a
+225.50s: very strongly now if I ever have a scenario where I have 80% of my max
+228.07s: scenario where I have 80% of my max
+228.08s: scenario where I have 80% of my max profit with greater than 50/50 percent
+231.78s: profit with greater than 50/50 percent
+231.79s: profit with greater than 50/50 percent based expiration on the original trade
+234.40s: based expiration on the original trade
+234.41s: based expiration on the original trade left I will take that down so let's say
+238.18s: left I will take that down so let's say
+238.19s: left I will take that down so let's say if I saw something with 40 days to
+240.13s: if I saw something with 40 days to
+240.14s: if I saw something with 40 days to expiration and then at 21 days to
+243.91s: expiration and then at 21 days to
+243.92s: expiration and then at 21 days to expiration we have 80% or higher max
+247.30s: expiration we have 80% or higher max
+247.31s: expiration we have 80% or higher max profit I'm gonna take that trade down
+249.19s: profit I'm gonna take that trade down
+249.20s: profit I'm gonna take that trade down the other scenario that can happen here
+252.55s: the other scenario that can happen here
+252.56s: the other scenario that can happen here is if I make 30 to 40% of the trade in
+256.87s: is if I make 30 to 40% of the trade in
+256.88s: is if I make 30 to 40% of the trade in less than 2 days I potentially will take
+261.25s: less than 2 days I potentially will take
+261.26s: less than 2 days I potentially will take that trade off now the way that I
+263.26s: that trade off now the way that I
+263.27s: that trade off now the way that I approach the out of the money management
+265.18s: approach the out of the money management
+265.19s: approach the out of the money management depends a lot on the current market
+266.83s: depends a lot on the current market
+266.84s: depends a lot on the current market conditions how I feel about the market
+269.02s: conditions how I feel about the market
+269.03s: conditions how I feel about the market at that point in time if I feel that the
+271.66s: at that point in time if I feel that the
+271.67s: at that point in time if I feel that the market is stable kind of continuing to
+273.76s: market is stable kind of continuing to
+273.77s: market is stable kind of continuing to climb that sort of thing like we've seen
+275.65s: climb that sort of thing like we've seen
+275.66s: climb that sort of thing like we've seen the last few years very likely would
+277.78s: the last few years very likely would
+277.79s: the last few years very likely would just leave a position on longer but if
+280.09s: just leave a position on longer but if
+280.10s: just leave a position on longer but if we're more in a market that we see now
+282.16s: we're more in a market that we see now
+282.17s: we're more in a market that we see now I'm less inclined to do that I manage
+284.68s: I'm less inclined to do that I manage
+284.69s: I'm less inclined to do that I manage positions a little more regularly so I
+287.20s: positions a little more regularly so I
+287.21s: positions a little more regularly so I can continue to realize profits and
+289.24s: can continue to realize profits and
+289.25s: can continue to realize profits and lower my outstanding risk so that's kind
+292.63s: lower my outstanding risk so that's kind
+292.64s: lower my outstanding risk so that's kind of that out of the money that handles
+294.64s: of that out of the money that handles
+294.65s: of that out of the money that handles this leg right here now let's talk about
+299.08s: this leg right here now let's talk about
+299.09s: this leg right here now let's talk about in the money so this is this leg right
+302.71s: in the money so this is this leg right
+302.72s: in the money so this is this leg right here
+305.70s: and what I want to specifically talk
+307.62s: and what I want to specifically talk about is this rolling portion which is
+310.46s: about is this rolling portion which is
+310.47s: about is this rolling portion which is this side right here
+312.65s: this side right here
+312.66s: this side right here so we already did this out of the money
+314.63s: so we already did this out of the money
+314.64s: so we already did this out of the money now we're assuming we're in the money
+316.28s: now we're assuming we're in the money
+316.29s: now we're assuming we're in the money and I'm not going to take assignment I
+318.47s: and I'm not going to take assignment I
+318.48s: and I'm not going to take assignment I want to roll
+320.70s: want to roll
+320.71s: want to roll I always know that the best role
+324.24s: I always know that the best role
+324.25s: I always know that the best role opportunity is going to take place when
+326.04s: opportunity is going to take place when
+326.05s: opportunity is going to take place when the strike price equals my short strike
+329.76s: the strike price equals my short strike
+329.77s: the strike price equals my short strike so if I sell a put at a 10 strike when
+334.23s: so if I sell a put at a 10 strike when
+334.24s: so if I sell a put at a 10 strike when the stock or when the underlying is
+336.69s: the stock or when the underlying is
+336.70s: the stock or when the underlying is trading around $10 is my best time to
+339.30s: trading around $10 is my best time to
+339.31s: trading around $10 is my best time to roll the reason being is because you can
+342.81s: roll the reason being is because you can
+342.82s: roll the reason being is because you can still typically roll out of the money at
+345.33s: still typically roll out of the money at
+345.34s: still typically roll out of the money at that point but I have some rules on how
+349.71s: that point but I have some rules on how
+349.72s: that point but I have some rules on how I approach this first and foremost I
+352.17s: I approach this first and foremost I
+352.18s: I approach this first and foremost I always always always make sure I get a
+354.90s: always always always make sure I get a
+354.91s: always always always make sure I get a credit for the roll always if you don't
+356.85s: credit for the roll always if you don't
+356.86s: credit for the roll always if you don't get a credit you're gonna make this a
+358.92s: get a credit you're gonna make this a
+358.93s: get a credit you're gonna make this a very difficult trade to manage for the
+361.71s: very difficult trade to manage for the
+361.72s: very difficult trade to manage for the long term the second thing is I monitor
+366.18s: long term the second thing is I monitor
+366.19s: long term the second thing is I monitor the size of my trade because when we
+368.88s: the size of my trade because when we
+368.89s: the size of my trade because when we roll we know we're closing the front
+371.97s: roll we know we're closing the front
+371.98s: roll we know we're closing the front position and we're establishing a
+374.61s: position and we're establishing a
+374.62s: position and we're establishing a further out in time position that should
+378.66s: further out in time position that should
+378.67s: further out in time position that should cover the cost of closing this front
+381.12s: cover the cost of closing this front
+381.13s: cover the cost of closing this front position so based on my assessment of
+385.38s: position so based on my assessment of
+385.39s: position so based on my assessment of the market my current thoughts I will
+388.68s: the market my current thoughts I will
+388.69s: the market my current thoughts I will look and adjust my size accordingly for
+392.46s: look and adjust my size accordingly for
+392.47s: look and adjust my size accordingly for example if I have a position that I put
+396.48s: example if I have a position that I put
+396.49s: example if I have a position that I put on with 40 days to expiration and with
+399.21s: on with 40 days to expiration and with
+399.22s: on with 40 days to expiration and with 35 days left to go it falls in the money
+402.06s: 35 days left to go it falls in the money
+402.07s: 35 days left to go it falls in the money I'm not gonna do anything the reason
+404.97s: I'm not gonna do anything the reason
+404.98s: I'm not gonna do anything the reason being is I like to wait until about 20
+407.88s: being is I like to wait until about 20
+407.89s: being is I like to wait until about 20 days to expiration so that market just
+410.70s: days to expiration so that market just
+410.71s: days to expiration so that market just closed so that I
+414.37s: closed so that I
+414.38s: closed so that I able to maximize my use of weekly
+417.55s: able to maximize my use of weekly
+417.56s: able to maximize my use of weekly contracts and not have to roll out an
+420.52s: contracts and not have to roll out an
+420.53s: contracts and not have to roll out an entire month I try to roll out is little
+423.37s: entire month I try to roll out is little
+423.38s: entire month I try to roll out is little in distance as possible typically so if
+427.33s: in distance as possible typically so if
+427.34s: in distance as possible typically so if my strike is slightly in the money and
+432.24s: my strike is slightly in the money and
+432.25s: my strike is slightly in the money and there's 20 days left to go something
+434.92s: there's 20 days left to go something
+434.93s: there's 20 days left to go something like that I likely will roll that out to
+437.86s: like that I likely will roll that out to
+437.87s: like that I likely will roll that out to reestablish a new position you know 40
+440.17s: reestablish a new position you know 40
+440.18s: reestablish a new position you know 40 45 days to expiration however instead of
+443.86s: 45 days to expiration however instead of
+443.87s: 45 days to expiration however instead of selling a 5 lot I might only sell a 4
+447.22s: selling a 5 lot I might only sell a 4
+447.23s: selling a 5 lot I might only sell a 4 lot but keep it at the same strike I
+450.04s: lot but keep it at the same strike I
+450.05s: lot but keep it at the same strike I might take some of my position off
+452.08s: might take some of my position off
+452.09s: might take some of my position off removing some risk from the trade let's
+456.07s: removing some risk from the trade let's
+456.08s: removing some risk from the trade let's say same scenario I sold a 40 day to
+459.79s: say same scenario I sold a 40 day to
+459.80s: say same scenario I sold a 40 day to expiration option we're at 22 days left
+461.98s: expiration option we're at 22 days left
+461.99s: expiration option we're at 22 days left to go and all of a sudden my option is
+465.67s: to go and all of a sudden my option is
+465.68s: to go and all of a sudden my option is far in the money so I if I roll out in
+469.36s: far in the money so I if I roll out in
+469.37s: far in the money so I if I roll out in time I'm collecting a very small credit
+472.24s: time I'm collecting a very small credit
+472.25s: time I'm collecting a very small credit in that scenario I might add some of the
+476.77s: in that scenario I might add some of the
+476.78s: in that scenario I might add some of the allocation I set aside for the trade so
+479.77s: allocation I set aside for the trade so
+479.78s: allocation I set aside for the trade so that I can add additional short puts and
+483.42s: that I can add additional short puts and
+483.43s: that I can add additional short puts and allow myself to roll closer to the money
+487.08s: allow myself to roll closer to the money
+487.09s: allow myself to roll closer to the money so in that example let's say if I sold 5
+491.38s: so in that example let's say if I sold 5
+491.39s: so in that example let's say if I sold 5 puts at a 10 strike and I might have i'm
+496.60s: puts at a 10 strike and I might have i'm
+496.61s: puts at a 10 strike and I might have i'm the new position I establish might have
+499.30s: the new position I establish might have
+499.31s: the new position I establish might have six puts at a nine strike or an eight
+503.11s: six puts at a nine strike or an eight
+503.12s: six puts at a nine strike or an eight strike the goal is to move closer or out
+506.11s: strike the goal is to move closer or out
+506.12s: strike the goal is to move closer or out of the money so size can be adjusted to
+510.19s: of the money so size can be adjusted to
+510.20s: of the money so size can be adjusted to add risk or reduce risk depending on
+512.80s: add risk or reduce risk depending on
+512.81s: add risk or reduce risk depending on what the objectives are at that point in
+514.57s: what the objectives are at that point in
+514.58s: what the objectives are at that point in time
+514.92s: time
+514.93s: time now the duration for the rolls I hit on
+518.23s: now the duration for the rolls I hit on
+518.24s: now the duration for the rolls I hit on a little bit to start if I am wary of
+522.64s: a little bit to start if I am wary of
+522.65s: a little bit to start if I am wary of the market and concern that it might
+524.62s: the market and concern that it might
+524.63s: the market and concern that it might come down or if I feel there's it's
+526.39s: come down or if I feel there's it's
+526.40s: come down or if I feel there's it's bottom heavy like I do right now I try
+529.03s: bottom heavy like I do right now I try
+529.04s: bottom heavy like I do right now I try to let it get as close to expiration as
+531.67s: to let it get as close to expiration as
+531.68s: to let it get as close to expiration as I can so that I'm leeching all of the
+534.79s: I can so that I'm leeching all of the
+534.80s: I can so that I'm leeching all of the theta out so I'm not buying back a whole
+536.74s: theta out so I'm not buying back a whole
+536.75s: theta out so I'm not buying back a whole bunch of theta when I roll the position
+538.45s: bunch of theta when I roll the position
+538.46s: bunch of theta when I roll the position and once I get you know 1415 days to
+543.19s: and once I get you know 1415 days to
+543.20s: and once I get you know 1415 days to expiration in in a market like this I am
+546.49s: expiration in in a market like this I am
+546.50s: expiration in in a market like this I am gonna try to roll out
+547.90s: gonna try to roll out
+547.91s: gonna try to roll out time as little as I need to in order to
+550.84s: time as little as I need to in order to
+550.85s: time as little as I need to in order to roll down as well so if I want to roll
+555.16s: roll down as well so if I want to roll
+555.17s: roll down as well so if I want to roll out and down I might have to go two
+557.62s: out and down I might have to go two
+557.63s: out and down I might have to go two weeks or three weeks instead of just one
+560.46s: weeks or three weeks instead of just one
+560.47s: weeks or three weeks instead of just one if I am thinking that the you know
+564.40s: if I am thinking that the you know
+564.41s: if I am thinking that the you know position is on the dance floor I'm close
+566.53s: position is on the dance floor I'm close
+566.54s: position is on the dance floor I'm close I might just roll out to the same strike
+569.47s: I might just roll out to the same strike
+569.48s: I might just roll out to the same strike a week later and then the last kind of
+572.65s: a week later and then the last kind of
+572.66s: a week later and then the last kind of broad scenario is if I want to roll and
+576.49s: broad scenario is if I want to roll and
+576.50s: broad scenario is if I want to roll and I want to make sure I get out of the
+579.07s: I want to make sure I get out of the
+579.08s: I want to make sure I get out of the money I might have to go further out in
+580.96s: money I might have to go further out in
+580.97s: money I might have to go further out in time I might have to reestablish a new
+582.91s: time I might have to reestablish a new
+582.92s: time I might have to reestablish a new position in order to collect a new
+585.16s: position in order to collect a new
+585.17s: position in order to collect a new credit you know all the way at forty to
+586.87s: credit you know all the way at forty to
+586.88s: credit you know all the way at forty to forty-five days it's expiration
+588.76s: forty-five days it's expiration
+588.77s: forty-five days it's expiration something like that and again I'm gonna
+591.43s: something like that and again I'm gonna
+591.44s: something like that and again I'm gonna do a scenario for most of these because
+593.41s: do a scenario for most of these because
+593.42s: do a scenario for most of these because I know I'm talking about a lot of
+594.58s: I know I'm talking about a lot of
+594.59s: I know I'm talking about a lot of hypotheticals and it might be confusing
+596.20s: hypotheticals and it might be confusing
+596.21s: hypotheticals and it might be confusing so don't worry if what I'm talking about
+599.14s: so don't worry if what I'm talking about
+599.15s: so don't worry if what I'm talking about sounds a little abstract we'll do an
+600.64s: sounds a little abstract we'll do an
+600.65s: sounds a little abstract we'll do an example not on this video but the next
+602.44s: example not on this video but the next
+602.45s: example not on this video but the next one okay so let's jump over to kind of
+605.74s: one okay so let's jump over to kind of
+605.75s: one okay so let's jump over to kind of if we're gonna allow assignment this
+607.42s: if we're gonna allow assignment this
+607.43s: if we're gonna allow assignment this one's pretty quick so once we get to the
+610.33s: one's pretty quick so once we get to the
+610.34s: one's pretty quick so once we get to the 20 day window let's say again we sell to
+613.30s: 20 day window let's say again we sell to
+613.31s: 20 day window let's say again we sell to open five puts at the ten strike and
+615.34s: open five puts at the ten strike and
+615.35s: open five puts at the ten strike and we're at the twenty data expiration
+617.35s: we're at the twenty data expiration
+617.36s: we're at the twenty data expiration window we choose we want to allow
+619.24s: window we choose we want to allow
+619.25s: window we choose we want to allow assignment great we're gonna let the
+621.46s: assignment great we're gonna let the
+621.47s: assignment great we're gonna let the underlying continue to move towards its
+624.88s: underlying continue to move towards its
+624.89s: underlying continue to move towards its expiration now the week of expiration or
+629.49s: expiration now the week of expiration or
+629.50s: expiration now the week of expiration or whenever I see the extrinsic value of
+632.47s: whenever I see the extrinsic value of
+632.48s: whenever I see the extrinsic value of the option hit and nickel I'm always
+634.51s: the option hit and nickel I'm always
+634.52s: the option hit and nickel I'm always going to reevaluate one more time I'm
+636.94s: going to reevaluate one more time I'm
+636.95s: going to reevaluate one more time I'm gonna say okay do I really want to let
+638.89s: gonna say okay do I really want to let
+638.90s: gonna say okay do I really want to let this go to expiration and be assigned or
+641.02s: this go to expiration and be assigned or
+641.03s: this go to expiration and be assigned or do I want to potentially roll this now
+643.20s: do I want to potentially roll this now
+643.21s: do I want to potentially roll this now so that's kind of my last evaluation
+646.24s: so that's kind of my last evaluation
+646.25s: so that's kind of my last evaluation let's say if it hits that point we say
+648.55s: let's say if it hits that point we say
+648.56s: let's say if it hits that point we say nope I want to own the underlying pool
+651.03s: nope I want to own the underlying pool
+651.04s: nope I want to own the underlying pool once we own the stock I like to sell a
+654.40s: once we own the stock I like to sell a
+654.41s: once we own the stock I like to sell a covered call so what that means is I
+656.74s: covered call so what that means is I
+656.75s: covered call so what that means is I will take assignment I'm now along
+658.90s: will take assignment I'm now along
+658.91s: will take assignment I'm now along shares and I will sell a call above my
+662.50s: shares and I will sell a call above my
+662.51s: shares and I will sell a call above my basis always so if I'm assigned at ten
+665.53s: basis always so if I'm assigned at ten
+665.54s: basis always so if I'm assigned at ten I'm always gonna sell at ten or above
+668.56s: I'm always gonna sell at ten or above
+668.57s: I'm always gonna sell at ten or above there may be times where I can't sell
+670.87s: there may be times where I can't sell
+670.88s: there may be times where I can't sell and collect a premium above my basis
+673.33s: and collect a premium above my basis
+673.34s: and collect a premium above my basis that's fine
+674.35s: that's fine
+674.36s: that's fine I will wait because if you go back all
+676.45s: I will wait because if you go back all
+676.46s: I will wait because if you go back all the way to the beginning I already know
+678.70s: the way to the beginning I already know
+678.71s: the way to the beginning I already know I pick something I like to own so I will
+680.92s: I pick something I like to own so I will
+680.93s: I pick something I like to own so I will wait
+681.44s: wait
+681.45s: wait and then at the same time I will always
+684.47s: and then at the same time I will always
+684.48s: and then at the same time I will always outlay an additional put below my strike
+688.19s: outlay an additional put below my strike
+688.20s: outlay an additional put below my strike so if I'm at a short strike of ten I
+691.39s: so if I'm at a short strike of ten I
+691.40s: so if I'm at a short strike of ten I might sell an 8 foot or a 6 foot or 5 or
+696.89s: might sell an 8 foot or a 6 foot or 5 or
+696.90s: might sell an 8 foot or a 6 foot or 5 or 7 whatever something below my basis so
+700.46s: 7 whatever something below my basis so
+700.47s: 7 whatever something below my basis so what this does is it allows me to scale
+702.50s: what this does is it allows me to scale
+702.51s: what this does is it allows me to scale into the trade still collect a premium
+705.83s: into the trade still collect a premium
+705.84s: into the trade still collect a premium and then if I'm assigned again if I
+708.38s: and then if I'm assigned again if I
+708.39s: and then if I'm assigned again if I choose to allow assignment again then in
+711.17s: choose to allow assignment again then in
+711.18s: choose to allow assignment again then in only then my cost basis will reduce as
+715.07s: only then my cost basis will reduce as
+715.08s: only then my cost basis will reduce as my size increases so if we sold that 5
+718.49s: my size increases so if we sold that 5
+718.50s: my size increases so if we sold that 5 lot and then now we're long 500 shares
+720.68s: lot and then now we're long 500 shares
+720.69s: lot and then now we're long 500 shares and then if we sell a 3 lot cheaper well
+724.73s: and then if we sell a 3 lot cheaper well
+724.74s: and then if we sell a 3 lot cheaper well now we're going to be long 800 shares
+726.74s: now we're going to be long 800 shares
+726.75s: now we're going to be long 800 shares but at a lower price so that's why I
+729.11s: but at a lower price so that's why I
+729.12s: but at a lower price so that's why I like to sell the additional put and then
+731.90s: like to sell the additional put and then
+731.91s: like to sell the additional put and then that's it we're just gonna repeat the
+734.36s: that's it we're just gonna repeat the
+734.37s: that's it we're just gonna repeat the put management until it's it's assigned
+738.41s: put management until it's it's assigned
+738.42s: put management until it's it's assigned again or we're rolling or out of the
+740.90s: again or we're rolling or out of the
+740.91s: again or we're rolling or out of the money just like the original diagram I
+742.76s: money just like the original diagram I
+742.77s: money just like the original diagram I shared or we're gonna keep going until
+745.40s: shared or we're gonna keep going until
+745.41s: shared or we're gonna keep going until that covered call is called away
+747.91s: that covered call is called away
+747.92s: that covered call is called away whenever the covered call expires
+750.02s: whenever the covered call expires
+750.03s: whenever the covered call expires worthless or is very close to expiring
+752.75s: worthless or is very close to expiring
+752.76s: worthless or is very close to expiring worthless I might take it down and sell
+754.82s: worthless I might take it down and sell
+754.83s: worthless I might take it down and sell another one and just keep doing that
+756.68s: another one and just keep doing that
+756.69s: another one and just keep doing that over and over again so this is my
+758.66s: over and over again so this is my
+758.67s: over and over again so this is my favorite strategy the cash secured
+759.89s: favorite strategy the cash secured
+759.90s: favorite strategy the cash secured strangle it's nothing to to manage it
+762.62s: strangle it's nothing to to manage it
+762.63s: strangle it's nothing to to manage it there's a lot of management that goes
+764.27s: there's a lot of management that goes
+764.28s: there's a lot of management that goes into it but it's not frequent you know I
+767.09s: into it but it's not frequent you know I
+767.10s: into it but it's not frequent you know I might put a trade on that has 40 days to
+768.89s: might put a trade on that has 40 days to
+768.90s: might put a trade on that has 40 days to expiration and adjust it once every 2
+771.92s: expiration and adjust it once every 2
+771.93s: expiration and adjust it once every 2 weeks so it's there's a lot of thought
+774.74s: weeks so it's there's a lot of thought
+774.75s: weeks so it's there's a lot of thought that goes into the management but it
+776.51s: that goes into the management but it
+776.52s: that goes into the management but it makes the execution very easy and
+778.61s: makes the execution very easy and
+778.62s: makes the execution very easy and systematic so the next video I'm gonna
+781.94s: systematic so the next video I'm gonna
+781.95s: systematic so the next video I'm gonna do are a few different examples of
+784.46s: do are a few different examples of
+784.47s: do are a few different examples of either historical trades I've done or
+787.16s: either historical trades I've done or
+787.17s: either historical trades I've done or I'll share some of the trades I have on
+788.75s: I'll share some of the trades I have on
+788.76s: I'll share some of the trades I have on now so that we can see what this looks
+790.61s: now so that we can see what this looks
+790.62s: now so that we can see what this looks like in practical application so I hope
+792.86s: like in practical application so I hope
+792.87s: like in practical application so I hope this is helpful and I'm looking forward
+795.02s: this is helpful and I'm looking forward
+795.03s: this is helpful and I'm looking forward to exploring the strategy more with
+796.28s: to exploring the strategy more with
+796.29s: to exploring the strategy more with everybody talk to you guys later
