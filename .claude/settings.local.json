@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:lightrag.github.io)",
+      "WebFetch(domain:arxiv.org)",
+      "Bash(grep -E \"^d|^-.*\\\\.\\(yml|yaml|py|json|txt|sh|md\\)$\")",
+      "Bash(ls -la /Users/bradfordhaile/clawd/opteee/Dockerfile* /Users/bradfordhaile/clawd/opteee/.env*)",
+      "Bash(grep -r \"youtube\\\\|YouTube\" /Users/bradfordhaile/clawd/opteee/*.py)",
+      "Bash(curl:*)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); [print\\(m['name']\\) for m in d.get\\('models',[]\\)]\")",
+      "Bash(docker compose restart:*)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('OK - got answer length:', len\\(d.get\\('answer',''\\)\\)\\)\")",
+      "Bash(python3:*)",
+      "Bash(ls /Users/bradfordhaile/clawd/opteee/*.cfg /Users/bradfordhaile/clawd/opteee/pyproject.toml)",
+      "Read(//opt/homebrew/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/bin/**)",
+      "Bash(/Users/bradfordhaile/clawd/opteee/.venv/bin/python3 -m pytest --version)",
+      "Bash(docker exec opteee-opteee-1:*)",
+      "Bash(.venv/bin/pip install:*)",
+      "Bash(.venv/bin/python:*)",
+      "Bash(.venv/bin/pip show:*)",
+      "Bash(docker cp:*)",
+      "Bash(2>&1)",
+      "mcp__plugin_superpowers-chrome_chrome__use_browser",
+      "Bash(open -a Docker)",
+      "Bash(docker info *)",
+      "Bash(docker compose *)"
+    ]
+  }
+}

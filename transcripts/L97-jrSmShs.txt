@@ -1,0 +1,2143 @@
+119.76s: Mhm.
+234.76s: &gt;&gt; Mhm.
+296.80s: &gt;&gt; What's up Outliers? Happy Friday. We
+298.68s: &gt;&gt; What's up Outliers? Happy Friday. We have a little bit of a later session
+300.11s: have a little bit of a later session
+300.12s: have a little bit of a later session today. Ran over on some other work. But,
+303.67s: today. Ran over on some other work. But,
+303.68s: today. Ran over on some other work. But, we are back at it. So,
+307.35s: we are back at it. So,
+307.36s: we are back at it. So, what we're doing today is having a quick
+311.71s: what we're doing today is having a quick
+311.72s: what we're doing today is having a quick discussion
+313.55s: discussion
+313.56s: discussion about testing things. And specifically
+317.39s: about testing things. And specifically
+317.40s: about testing things. And specifically testing strategies.
+319.47s: testing strategies.
+319.48s: testing strategies. So, if you're familiar with my content
+323.95s: So, if you're familiar with my content
+323.96s: So, if you're familiar with my content in general and how I think about things,
+326.07s: in general and how I think about things,
+326.08s: in general and how I think about things, I have this general process
+328.99s: I have this general process
+329.00s: I have this general process that I share with you all to give you
+331.15s: that I share with you all to give you
+331.16s: that I share with you all to give you some context called the Outlier Strategy
+334.91s: some context called the Outlier Strategy
+334.92s: some context called the Outlier Strategy Process.
+336.51s: Process.
+336.52s: Process. And the entire purpose of this really,
+339.15s: And the entire purpose of this really,
+339.16s: And the entire purpose of this really, like I said, is just to give you guys
+341.03s: like I said, is just to give you guys
+341.04s: like I said, is just to give you guys some structure cuz it can be a little
+343.07s: some structure cuz it can be a little
+343.08s: some structure cuz it can be a little difficult to generate structure in
+345.23s: difficult to generate structure in
+345.24s: difficult to generate structure in something as unstructured as trading
+347.47s: something as unstructured as trading
+347.48s: something as unstructured as trading your own book and stuff like that.
+350.51s: your own book and stuff like that.
+350.52s: your own book and stuff like that. So,
+351.51s: So,
+351.52s: So, I want to talk about this quickly,
+354.35s: I want to talk about this quickly,
+354.36s: I want to talk about this quickly, but then I want to talk and work through
+357.67s: but then I want to talk and work through
+357.68s: but then I want to talk and work through a practical example in one one format
+362.23s: a practical example in one one format
+362.24s: a practical example in one one format and to open us up really as a entry
+366.55s: and to open us up really as a entry
+366.56s: and to open us up really as a entry point for another couple series of
+369.31s: point for another couple series of
+369.32s: point for another couple series of videos
+370.75s: videos
+370.76s: videos that I'm doing that are going to talk
+372.83s: that I'm doing that are going to talk
+372.84s: that I'm doing that are going to talk through like the basics of
+376.99s: through like the basics of
+377.00s: through like the basics of testing in Python or R or whatever, you
+382.43s: testing in Python or R or whatever, you
+382.44s: testing in Python or R or whatever, you know, tool that you choose to use. Those
+384.31s: know, tool that you choose to use. Those
+384.32s: know, tool that you choose to use. Those are the tool that I spend the most time
+385.95s: are the tool that I spend the most time
+385.96s: are the tool that I spend the most time in.
+387.31s: in.
+387.32s: in. But,
+388.47s: But,
+388.48s: But, we have to develop a little bit of
+389.83s: we have to develop a little bit of
+389.84s: we have to develop a little bit of context first. I will also have
+392.95s: context first. I will also have
+392.96s: context first. I will also have standalone videos in those like I said
+395.31s: standalone videos in those like I said
+395.32s: standalone videos in those like I said that will help a little bit, but I
+397.47s: that will help a little bit, but I
+397.48s: that will help a little bit, but I figure for the beginner series is a good
+399.87s: figure for the beginner series is a good
+399.88s: figure for the beginner series is a good place to begin.
+401.47s: place to begin.
+401.48s: place to begin. So, when we think about testing a
+405.03s: So, when we think about testing a
+405.04s: So, when we think about testing a trading strategy,
+407.75s: trading strategy,
+407.76s: trading strategy, there's a couple like
+410.15s: there's a couple like
+410.16s: there's a couple like broad muscle movements
+413.27s: broad muscle movements
+413.28s: broad muscle movements that have to happen. And this is like
+415.63s: that have to happen. And this is like
+415.64s: that have to happen. And this is like zoomed out as far as we can get. And
+417.79s: zoomed out as far as we can get. And
+417.80s: zoomed out as far as we can get. And then I'll do one slide after this. I'll
+420.19s: then I'll do one slide after this. I'll
+420.20s: then I'll do one slide after this. I'll I'll build it with you guys
+422.15s: I'll build it with you guys
+422.16s: I'll build it with you guys that zooms this into something that's a
+423.99s: that zooms this into something that's a
+424.00s: that zooms this into something that's a little bit more relevant
+426.03s: little bit more relevant
+426.04s: little bit more relevant to the practitioner. But, these are the
+427.99s: to the practitioner. But, these are the
+428.00s: to the practitioner. But, these are the broad muscle movements that have to
+430.07s: broad muscle movements that have to
+430.08s: broad muscle movements that have to happen no matter what you choose to do.
+432.59s: happen no matter what you choose to do.
+432.60s: happen no matter what you choose to do. You have to do these things
+434.79s: You have to do these things
+434.80s: You have to do these things in order to land on something that's
+437.91s: in order to land on something that's
+437.92s: in order to land on something that's actually robust, actually meaningful.
+440.63s: actually robust, actually meaningful.
+440.64s: actually robust, actually meaningful. So, you need to understand the profit
+443.35s: So, you need to understand the profit
+443.36s: So, you need to understand the profit mechanism that you're attempting to
+444.91s: mechanism that you're attempting to
+444.92s: mechanism that you're attempting to trade. And I talk about this literally
+447.35s: trade. And I talk about this literally
+447.36s: trade. And I talk about this literally ad nauseam all the time. And it's
+449.31s: ad nauseam all the time. And it's
+449.32s: ad nauseam all the time. And it's because it's funny enough what most
+451.83s: because it's funny enough what most
+451.84s: because it's funny enough what most people skip directly over. The majority
+454.67s: people skip directly over. The majority
+454.68s: people skip directly over. The majority of new options traders, they immediately
+457.07s: of new options traders, they immediately
+457.08s: of new options traders, they immediately jump into what kind of option structure
+461.07s: jump into what kind of option structure
+461.08s: jump into what kind of option structure are they going to try to trade so a
+463.39s: are they going to try to trade so a
+463.40s: are they going to try to trade so a vertical spread, a
+465.71s: vertical spread, a
+465.72s: vertical spread, a calendar, whatever, some sort of
+467.79s: calendar, whatever, some sort of
+467.80s: calendar, whatever, some sort of structure and then they focus on that
+470.15s: structure and then they focus on that
+470.16s: structure and then they focus on that and it's backwards.
+471.59s: and it's backwards.
+471.60s: and it's backwards. The trick here is to learn how to
+475.43s: The trick here is to learn how to
+475.44s: The trick here is to learn how to identify and isolate the profit
+477.79s: identify and isolate the profit
+477.80s: identify and isolate the profit mechanism first and then do the other
+480.95s: mechanism first and then do the other
+480.96s: mechanism first and then do the other stuff.
+482.15s: stuff.
+482.16s: stuff. So we'll start with that bit of a a
+485.23s: So we'll start with that bit of a a
+485.24s: So we'll start with that bit of a a general prac app as we go through this
+488.11s: general prac app as we go through this
+488.12s: general prac app as we go through this example live.
+490.51s: example live.
+490.52s: example live. So I will add a slide here so that we
+493.71s: So I will add a slide here so that we
+493.72s: So I will add a slide here so that we have a place to scratch some thoughts as
+497.11s: have a place to scratch some thoughts as
+497.12s: have a place to scratch some thoughts as we go.
+498.55s: we go.
+498.56s: we go. So we already know
+500.03s: So we already know
+500.04s: So we already know that we need to start with a profit
+502.31s: that we need to start with a profit
+502.32s: that we need to start with a profit mechanism.
+503.83s: mechanism.
+503.84s: mechanism. After that, we know we need to figure
+506.31s: After that, we know we need to figure
+506.32s: After that, we know we need to figure out what kind of signals
+509.27s: out what kind of signals
+509.28s: out what kind of signals make sense and help us measure, predict,
+511.91s: make sense and help us measure, predict,
+511.92s: make sense and help us measure, predict, and capture this profit mechanism.
+514.63s: and capture this profit mechanism.
+514.64s: and capture this profit mechanism. After that
+516.43s: After that
+516.44s: After that is when we can explore different
+518.23s: is when we can explore different
+518.24s: is when we can explore different structures.
+521.44s: And then after that is when we build a
+523.04s: And then after that is when we build a strategy.
+526.44s: So let's
+528.48s: So let's work through this in a logical
+531.87s: work through this in a logical
+531.88s: work through this in a logical continuum.
+533.95s: continuum.
+533.96s: continuum. The first thing when it comes to a
+536.03s: The first thing when it comes to a
+536.04s: The first thing when it comes to a profit mechanism in this context,
+538.15s: profit mechanism in this context,
+538.16s: profit mechanism in this context, there's a few ways that you can arrive
+539.87s: there's a few ways that you can arrive
+539.88s: there's a few ways that you can arrive at this. One, you can have an idea of
+541.59s: at this. One, you can have an idea of
+541.60s: at this. One, you can have an idea of what you think exists and what you're
+543.19s: what you think exists and what you're
+543.20s: what you think exists and what you're trying to trade and just begin there.
+545.79s: trying to trade and just begin there.
+545.80s: trying to trade and just begin there. You can arrive at a profit mechanism by
+548.43s: You can arrive at a profit mechanism by
+548.44s: You can arrive at a profit mechanism by doing some research on SSRN and trying
+552.39s: doing some research on SSRN and trying
+552.40s: doing some research on SSRN and trying to see if there's anything valid or that
+554.91s: to see if there's anything valid or that
+554.92s: to see if there's anything valid or that you can reproduce around that research.
+558.39s: you can reproduce around that research.
+558.40s: you can reproduce around that research. The other thing you can do is observe
+562.47s: The other thing you can do is observe
+562.48s: The other thing you can do is observe markets, see if there's anything
+564.63s: markets, see if there's anything
+564.64s: markets, see if there's anything interesting that sticks out to you. This
+566.39s: interesting that sticks out to you. This
+566.40s: interesting that sticks out to you. This can be order book effects, this can be
+569.35s: can be order book effects, this can be
+569.36s: can be order book effects, this can be central tendencies around patterns. So
+573.15s: central tendencies around patterns. So
+573.16s: central tendencies around patterns. So what typically happens if a stock gaps
+575.55s: what typically happens if a stock gaps
+575.56s: what typically happens if a stock gaps up, what happens if there's excessive
+579.47s: up, what happens if there's excessive
+579.48s: up, what happens if there's excessive volume compared to a longer period
+582.03s: volume compared to a longer period
+582.04s: volume compared to a longer period volume?
+583.19s: volume?
+583.20s: volume? All I'm emphasizing with that point is
+584.83s: All I'm emphasizing with that point is
+584.84s: All I'm emphasizing with that point is that it it
+586.91s: that it it
+586.92s: that it it the entry to a profit mechanism can come
+589.87s: the entry to a profit mechanism can come
+589.88s: the entry to a profit mechanism can come from any conceivable angle. But if
+592.71s: from any conceivable angle. But if
+592.72s: from any conceivable angle. But if you're new to trading, the safest place
+595.35s: you're new to trading, the safest place
+595.36s: you're new to trading, the safest place for this thing to stem from, in my
+596.79s: for this thing to stem from, in my
+596.80s: for this thing to stem from, in my opinion,
+597.91s: opinion,
+597.92s: opinion, is a place like SSRN or something that's
+600.15s: is a place like SSRN or something that's
+600.16s: is a place like SSRN or something that's based on existing research so that you
+602.59s: based on existing research so that you
+602.60s: based on existing research so that you know what you're looking at and spending
+604.55s: know what you're looking at and spending
+604.56s: know what you're looking at and spending your time on is something that's real
+606.91s: your time on is something that's real
+606.92s: your time on is something that's real versus, you know, doing a lot of
+610.03s: versus, you know, doing a lot of
+610.04s: versus, you know, doing a lot of studying and testing around something
+611.79s: studying and testing around something
+611.80s: studying and testing around something that might not be real
+613.59s: that might not be real
+613.60s: that might not be real and then maybe blaming your testing
+616.31s: and then maybe blaming your testing
+616.32s: and then maybe blaming your testing process as the issue for it not working
+618.83s: process as the issue for it not working
+618.84s: process as the issue for it not working versus the profit mechanism not being
+620.63s: versus the profit mechanism not being
+620.64s: versus the profit mechanism not being real, and then you develop a broken
+622.75s: real, and then you develop a broken
+622.76s: real, and then you develop a broken testing process.
+624.83s: testing process.
+624.84s: testing process. So, that's how
+626.31s: So, that's how
+626.32s: So, that's how we can conceivably arrive at a profit
+628.39s: we can conceivably arrive at a profit
+628.40s: we can conceivably arrive at a profit mechanism. So, let's say that we go on
+634.07s: mechanism. So, let's say that we go on
+634.08s: mechanism. So, let's say that we go on SSRN
+635.59s: SSRN
+635.60s: SSRN and we come across uh a profit
+637.75s: and we come across uh a profit
+637.76s: and we come across uh a profit mechanism. It literally can be anything.
+639.15s: mechanism. It literally can be anything.
+639.16s: mechanism. It literally can be anything. It can be Right now we're in an earnings
+641.27s: It can be Right now we're in an earnings
+641.28s: It can be Right now we're in an earnings season. So, we're going to do a short
+642.83s: season. So, we're going to do a short
+642.84s: season. So, we're going to do a short vol
+645.15s: vol
+645.16s: vol through earnings.
+647.87s: through earnings.
+647.88s: through earnings. This is going to be the general profit
+650.07s: This is going to be the general profit
+650.08s: This is going to be the general profit mechanism approach, and if we identify
+654.23s: mechanism approach, and if we identify
+654.24s: mechanism approach, and if we identify what the profit mechanism itself is,
+657.27s: what the profit mechanism itself is,
+657.28s: what the profit mechanism itself is, it's VRP.
+659.07s: it's VRP.
+659.08s: it's VRP. And it's also skew. It's kind of both
+662.71s: And it's also skew. It's kind of both
+662.72s: And it's also skew. It's kind of both bundled into one.
+664.71s: bundled into one.
+664.72s: bundled into one. And what we're postulating
+667.87s: And what we're postulating
+667.88s: And what we're postulating is that implied vol trends over realized
+670.99s: is that implied vol trends over realized
+671.00s: is that implied vol trends over realized vol through an earnings release. That's
+672.95s: vol through an earnings release. That's
+672.96s: vol through an earnings release. That's the the general concept that we're
+674.63s: the the general concept that we're
+674.64s: the the general concept that we're looking to apply with the short vol
+676.51s: looking to apply with the short vol
+676.52s: looking to apply with the short vol through earnings release.
+679.27s: through earnings release.
+679.28s: through earnings release. So, we have our our starting points to
+681.83s: So, we have our our starting points to
+681.84s: So, we have our our starting points to this. So, in order to turn this into
+683.95s: this. So, in order to turn this into
+683.96s: this. So, in order to turn this into something we can test, realistically,
+686.35s: something we can test, realistically,
+686.36s: something we can test, realistically, there's probably like 20 steps, and I I
+689.11s: there's probably like 20 steps, and I I
+689.12s: there's probably like 20 steps, and I I don't even think that's exaggerating. I
+690.51s: don't even think that's exaggerating. I
+690.52s: don't even think that's exaggerating. I think it's probably a fair shake that
+692.55s: think it's probably a fair shake that
+692.56s: think it's probably a fair shake that we'd need to go through and I'm not
+693.79s: we'd need to go through and I'm not
+693.80s: we'd need to go through and I'm not going to go through them all. I'm going
+694.83s: going to go through them all. I'm going
+694.84s: going to go through them all. I'm going to kind of bounce through a few of them
+696.55s: to kind of bounce through a few of them
+696.56s: to kind of bounce through a few of them to give you some context because what I
+698.63s: to give you some context because what I
+698.64s: to give you some context because what I want to do for the last 15 minutes of
+700.47s: want to do for the last 15 minutes of
+700.48s: want to do for the last 15 minutes of the session is literally go back into on
+702.31s: the session is literally go back into on
+702.32s: the session is literally go back into on demand and literally just paper trade
+705.91s: demand and literally just paper trade
+705.92s: demand and literally just paper trade some earnings with you guys, track them
+707.99s: some earnings with you guys, track them
+708.00s: some earnings with you guys, track them live so that then we can explore
+713.15s: live so that then we can explore
+713.16s: live so that then we can explore if we think there's any features we
+715.59s: if we think there's any features we
+715.60s: if we think there's any features we might be able to overlay in order to
+718.07s: might be able to overlay in order to
+718.08s: might be able to overlay in order to improve it. And the reason why I'm doing
+719.79s: improve it. And the reason why I'm doing
+719.80s: improve it. And the reason why I'm doing this in thinkorswim
+721.59s: this in thinkorswim
+721.60s: this in thinkorswim well, specifically on demand for this
+723.95s: well, specifically on demand for this
+723.96s: well, specifically on demand for this video is because that's accessible to
+725.59s: video is because that's accessible to
+725.60s: video is because that's accessible to everybody. This is something you can
+726.99s: everybody. This is something you can
+727.00s: everybody. This is something you can literally do over this weekend
+729.63s: literally do over this weekend
+729.64s: literally do over this weekend by yourself with no problem.
+731.63s: by yourself with no problem.
+731.64s: by yourself with no problem. And then again, after I put out some of
+733.63s: And then again, after I put out some of
+733.64s: And then again, after I put out some of those future videos talking through like
+736.63s: those future videos talking through like
+736.64s: those future videos talking through like the basics of Python and whatnot, then
+739.23s: the basics of Python and whatnot, then
+739.24s: the basics of Python and whatnot, then we'll do a revisit on this probably the
+742.43s: we'll do a revisit on this probably the
+742.44s: we'll do a revisit on this probably the same topic and talk about how to do this
+745.23s: same topic and talk about how to do this
+745.24s: same topic and talk about how to do this in a in a bigger in a bigger context
+748.63s: in a in a bigger in a bigger context
+748.64s: in a in a bigger in a bigger context and way more efficient
+751.43s: and way more efficient
+751.44s: and way more efficient to be completely honest. And I've said
+753.95s: to be completely honest. And I've said
+753.96s: to be completely honest. And I've said this before
+755.19s: this before
+755.20s: this before Python and R have become so unbelievably
+759.47s: Python and R have become so unbelievably
+759.48s: Python and R have become so unbelievably accessible to everybody at this point.
+761.95s: accessible to everybody at this point.
+761.96s: accessible to everybody at this point. There is absolutely no reason to to not
+764.51s: There is absolutely no reason to to not
+764.52s: There is absolutely no reason to to not use them.
+765.75s: use them.
+765.76s: use them. And oh yeah, I forgot. I literally have
+768.55s: And oh yeah, I forgot. I literally have
+768.56s: And oh yeah, I forgot. I literally have Claude running.
+770.19s: Claude running.
+770.20s: Claude running. What I'll do right now is before we
+772.51s: What I'll do right now is before we
+772.52s: What I'll do right now is before we start, I'll connect one of my APIs
+775.07s: start, I'll connect one of my APIs
+775.08s: start, I'll connect one of my APIs really quick and I'll literally have
+777.99s: really quick and I'll literally have
+778.00s: really quick and I'll literally have Claude run this in the background for
+779.95s: Claude run this in the background for
+779.96s: Claude run this in the background for us. I I literally forgot about that
+782.67s: us. I I literally forgot about that
+782.68s: us. I I literally forgot about that because
+784.91s: because
+784.92s: because and I'm so used to doing this [&nbsp;__&nbsp;]
+786.75s: and I'm so used to doing this [&nbsp;__&nbsp;]
+786.76s: and I'm so used to doing this [&nbsp;__&nbsp;] myself.
+788.39s: myself.
+788.40s: myself. So, let me start Claude. I'm going to do
+792.83s: So, let me start Claude. I'm going to do
+792.84s: So, let me start Claude. I'm going to do I want to test a short ball trading
+797.55s: I want to test a short ball trading
+797.56s: I want to test a short ball trading strategy
+800.64s: through earnings
+804.92s: outline below.
+809.96s: And so the first thing and funny enough
+812.32s: And so the first thing and funny enough after we get through the hypothesis,
+814.95s: after we get through the hypothesis,
+814.96s: after we get through the hypothesis, this is literally what we what we have
+816.95s: this is literally what we what we have
+816.96s: this is literally what we what we have to do anyway. So let me do the
+818.47s: to do anyway. So let me do the
+818.48s: to do anyway. So let me do the hypothesis first over here and then
+820.07s: hypothesis first over here and then
+820.08s: hypothesis first over here and then we'll start cloud because for the rule
+822.03s: we'll start cloud because for the rule
+822.04s: we'll start cloud because for the rule set that's that's like step two that we
+824.07s: set that's that's like step two that we
+824.08s: set that's that's like step two that we need to do.
+825.15s: need to do.
+825.16s: need to do. So the first step of this testing
+827.79s: So the first step of this testing
+827.80s: So the first step of this testing process is we need to come up with a
+829.55s: process is we need to come up with a
+829.56s: process is we need to come up with a hypothesis.
+831.47s: hypothesis.
+831.48s: hypothesis. And the hypothesis again, this is
+834.59s: And the hypothesis again, this is
+834.60s: And the hypothesis again, this is different in a trading sense versus a
+837.07s: different in a trading sense versus a
+837.08s: different in a trading sense versus a scholastic sense. A scholastic sense a
+839.87s: scholastic sense. A scholastic sense a
+839.88s: scholastic sense. A scholastic sense a hypothesis is really designed to be
+841.67s: hypothesis is really designed to be
+841.68s: hypothesis is really designed to be posed as like a definitive statement
+843.39s: posed as like a definitive statement
+843.40s: posed as like a definitive statement that then you seek to prove or disprove.
+846.19s: that then you seek to prove or disprove.
+846.20s: that then you seek to prove or disprove. In the context of trading I view it a
+848.15s: In the context of trading I view it a
+848.16s: In the context of trading I view it a little differently just because you can
+850.35s: little differently just because you can
+850.36s: little differently just because you can pose it that way, right? Like you could
+851.83s: pose it that way, right? Like you could
+851.84s: pose it that way, right? Like you could say the hypothesis in this scenario
+854.55s: say the hypothesis in this scenario
+854.56s: say the hypothesis in this scenario is that implied volatility trends over
+857.15s: is that implied volatility trends over
+857.16s: is that implied volatility trends over realized volatility offering an
+859.55s: realized volatility offering an
+859.56s: realized volatility offering an opportunity to profit on that gap in the
+862.71s: opportunity to profit on that gap in the
+862.72s: opportunity to profit on that gap in the aggregate, something like that. But
+865.95s: aggregate, something like that. But
+865.96s: aggregate, something like that. But I I actually prefer things to be a
+868.23s: I I actually prefer things to be a
+868.24s: I I actually prefer things to be a little more open-ended in the trading
+869.91s: little more open-ended in the trading
+869.92s: little more open-ended in the trading sphere because sometimes when you're
+871.23s: sphere because sometimes when you're
+871.24s: sphere because sometimes when you're testing an idea,
+872.99s: testing an idea,
+873.00s: testing an idea, you'll actually completely discard the
+875.75s: you'll actually completely discard the
+875.76s: you'll actually completely discard the original idea and then find like a
+877.51s: original idea and then find like a
+877.52s: original idea and then find like a secondary idea that you like and might
+881.67s: secondary idea that you like and might
+881.68s: secondary idea that you like and might have been born out of that first idea.
+884.23s: have been born out of that first idea.
+884.24s: have been born out of that first idea. So in this case that version of the
+886.47s: So in this case that version of the
+886.48s: So in this case that version of the hypothesis would be something like
+889.23s: hypothesis would be something like
+889.24s: hypothesis would be something like I want to see if there's any tradeable
+891.31s: I want to see if there's any tradeable
+891.32s: I want to see if there's any tradeable effect of short ball through an earnings
+895.43s: effect of short ball through an earnings
+895.44s: effect of short ball through an earnings release and that can take a lot of
+897.23s: release and that can take a lot of
+897.24s: release and that can take a lot of different shapes. So we have our
+899.11s: different shapes. So we have our
+899.12s: different shapes. So we have our hypothesis,
+900.59s: hypothesis,
+900.60s: hypothesis, whichever variation of those you like.
+903.11s: whichever variation of those you like.
+903.12s: whichever variation of those you like. The next thing that we need to do is
+906.03s: The next thing that we need to do is
+906.04s: The next thing that we need to do is kind of um outline
+911.76s: the universe.
+914.64s: the universe. This is just like what are we going to
+916.07s: This is just like what are we going to
+916.08s: This is just like what are we going to trade? How are like what for this
+919.39s: trade? How are like what for this
+919.40s: trade? How are like what for this specific profit mechanism, what's
+920.83s: specific profit mechanism, what's
+920.84s: specific profit mechanism, what's relevant to us?
+922.23s: relevant to us?
+922.24s: relevant to us? So in this case, we need stuff that has
+924.43s: So in this case, we need stuff that has
+924.44s: So in this case, we need stuff that has earnings releases. That might sound
+926.11s: earnings releases. That might sound
+926.12s: earnings releases. That might sound self-explanatory, but there's actually a
+927.79s: self-explanatory, but there's actually a
+927.80s: self-explanatory, but there's actually a lot of stocks that don't literally have
+930.55s: lot of stocks that don't literally have
+930.56s: lot of stocks that don't literally have um documented earnings releases. It
+932.43s: um documented earnings releases. It
+932.44s: um documented earnings releases. It depends on how big they are.
+934.31s: depends on how big they are.
+934.32s: depends on how big they are. So, we have earnings releases.
+936.51s: So, we have earnings releases.
+936.52s: So, we have earnings releases. They need to have that.
+938.31s: They need to have that.
+938.32s: They need to have that. They need to have options.
+941.91s: They need to have options.
+941.92s: They need to have options. If they don't have options, it's not
+944.11s: If they don't have options, it's not
+944.12s: If they don't have options, it's not really relevant to us to trade vol on
+945.79s: really relevant to us to trade vol on
+945.80s: really relevant to us to trade vol on them.
+947.43s: them.
+947.44s: them. We could add some sort of liquidity
+949.35s: We could add some sort of liquidity
+949.36s: We could add some sort of liquidity function. So, we could say that there's
+951.43s: function. So, we could say that there's
+951.44s: function. So, we could say that there's at least 5,000 or 10,000 OI or something
+956.27s: at least 5,000 or 10,000 OI or something
+956.28s: at least 5,000 or 10,000 OI or something like that.
+958.07s: like that.
+958.08s: like that. And this should get us at least pretty
+960.75s: And this should get us at least pretty
+960.76s: And this should get us at least pretty close to a starting point.
+962.99s: close to a starting point.
+963.00s: close to a starting point. And then from here, we need to do our
+965.19s: And then from here, we need to do our
+965.20s: And then from here, we need to do our rules. So, I'm going to do the rules in
+967.71s: rules. So, I'm going to do the rules in
+967.72s: rules. So, I'm going to do the rules in Claude because that's kind of what has
+969.31s: Claude because that's kind of what has
+969.32s: Claude because that's kind of what has to happen next.
+970.67s: to happen next.
+970.68s: to happen next. So, I already told you the starting
+972.91s: So, I already told you the starting
+972.92s: So, I already told you the starting point for the prompt that I'm doing over
+974.63s: point for the prompt that I'm doing over
+974.64s: point for the prompt that I'm doing over here, and then I'll walk through
+977.07s: here, and then I'll walk through
+977.08s: here, and then I'll walk through literally the rules as we go.
+979.31s: literally the rules as we go.
+979.32s: literally the rules as we go. So, I'm saying I want to test a short
+980.75s: So, I'm saying I want to test a short
+980.76s: So, I'm saying I want to test a short vol trading strategy strategy through
+983.03s: vol trading strategy strategy through
+983.04s: vol trading strategy strategy through earnings outlined below.
+985.03s: earnings outlined below.
+985.04s: earnings outlined below. And
+986.91s: And
+986.92s: And we need to first identify
+990.79s: we need to first identify
+990.80s: we need to first identify stocks that have upcoming earnings
+994.07s: stocks that have upcoming earnings
+994.08s: stocks that have upcoming earnings release.
+995.91s: release.
+995.92s: release. Classify them by
+1000.28s: um
+1001.64s: um after market close,
+1006.84s: which is AMC, or before market open.
+1015.76s: So, we need to get stuff that has
+1017.24s: So, we need to get stuff that has earnings. We need to filter those
+1020.87s: earnings. We need to filter those
+1020.88s: earnings. We need to filter those by
+1024.20s: equities that have options.
+1028.40s: equities that have options. Preferably
+1029.91s: Preferably
+1029.92s: Preferably at least 5,000 OI. Actually, I'll get
+1032.99s: at least 5,000 OI. Actually, I'll get
+1033.00s: at least 5,000 OI. Actually, I'll get rid of the OI piece in case you have a
+1034.47s: rid of the OI piece in case you have a
+1034.48s: rid of the OI piece in case you have a small account. If you have a really
+1035.59s: small account. If you have a really
+1035.60s: small account. If you have a really small account, then you can kind of get
+1037.23s: small account, then you can kind of get
+1037.24s: small account, then you can kind of get away with less liquid stuff. You still
+1039.55s: away with less liquid stuff. You still
+1039.56s: away with less liquid stuff. You still want general liquidity if you can get
+1041.83s: want general liquidity if you can get
+1041.84s: want general liquidity if you can get it, but it's not
+1043.27s: it, but it's not
+1043.28s: it, but it's not not like the end of the world if you
+1044.31s: not like the end of the world if you
+1044.32s: not like the end of the world if you can't.
+1045.79s: can't.
+1045.80s: can't. Um filter by equities that have options
+1048.91s: Um filter by equities that have options
+1048.92s: Um filter by equities that have options and the underlying stock
+1053.55s: and the underlying stock
+1053.56s: and the underlying stock has at least we'll call it 250,000
+1058.47s: has at least we'll call it 250,000
+1058.48s: has at least we'll call it 250,000 daily volume.
+1063.76s: Uh so now we need our rules. So the next
+1065.92s: Uh so now we need our rules. So the next set will be
+1071.20s: 10 to 15 minutes
+1074.24s: 10 to 15 minutes before the close
+1077.15s: before the close
+1077.16s: before the close sell the nearest DTE available
+1082.07s: sell the nearest DTE available
+1082.08s: sell the nearest DTE available short straddle
+1084.59s: short straddle
+1084.60s: short straddle at the money.
+1088.08s: We will hold through the earnings
+1091.00s: We will hold through the earnings release
+1092.55s: release
+1092.56s: release and close the following trading day
+1100.88s: within the last
+1105.36s: 30 minutes
+1107.68s: 30 minutes or the last hour or whatever.
+1109.75s: or the last hour or whatever.
+1109.76s: or the last hour or whatever. Doesn't really matter.
+1112.35s: Doesn't really matter.
+1112.36s: Doesn't really matter. Okay, so we're going to filter equities
+1114.35s: Okay, so we're going to filter equities
+1114.36s: Okay, so we're going to filter equities to get stuff that have upcoming
+1116.39s: to get stuff that have upcoming
+1116.40s: to get stuff that have upcoming earnings.
+1117.59s: earnings.
+1117.60s: earnings. We're going to bucket them by if their
+1120.43s: We're going to bucket them by if their
+1120.44s: We're going to bucket them by if their earnings are before the market, after
+1122.59s: earnings are before the market, after
+1122.60s: earnings are before the market, after the market so that we know when to
+1123.87s: the market so that we know when to
+1123.88s: the market so that we know when to enter.
+1125.07s: enter.
+1125.08s: enter. Then we're also going to look for stuff
+1127.63s: Then we're also going to look for stuff
+1127.64s: Then we're also going to look for stuff that has at least 250,000 uh
+1129.79s: that has at least 250,000 uh
+1129.80s: that has at least 250,000 uh daily volume in the underlying just a a
+1132.15s: daily volume in the underlying just a a
+1132.16s: daily volume in the underlying just a a a really rudimentary liquidity function.
+1134.99s: a really rudimentary liquidity function.
+1135.00s: a really rudimentary liquidity function. We're going to
+1136.71s: We're going to
+1136.72s: We're going to about 10 to 15 minutes before the close,
+1139.39s: about 10 to 15 minutes before the close,
+1139.40s: about 10 to 15 minutes before the close, we're going to sell the nearest day's to
+1140.91s: we're going to sell the nearest day's to
+1140.92s: we're going to sell the nearest day's to expiration available short straddle
+1143.47s: expiration available short straddle
+1143.48s: expiration available short straddle that's at the money.
+1145.35s: that's at the money.
+1145.36s: that's at the money. Then we're going to hold that through
+1146.43s: Then we're going to hold that through
+1146.44s: Then we're going to hold that through the earnings release and we're going to
+1147.75s: the earnings release and we're going to
+1147.76s: the earnings release and we're going to close the following trading day
+1152.16s: towards the end of day.
+1159.68s: And then after that, we need to come up
+1161.88s: And then after that, we need to come up with a bunch of different ways that we
+1163.91s: with a bunch of different ways that we
+1163.92s: with a bunch of different ways that we want to
+1165.03s: want to
+1165.04s: want to bisect that.
+1166.63s: bisect that.
+1166.64s: bisect that. So, I'm going to that's going to take
+1168.67s: So, I'm going to that's going to take
+1168.68s: So, I'm going to that's going to take Claude a minute to run. I'm actually
+1170.91s: Claude a minute to run. I'm actually
+1170.92s: Claude a minute to run. I'm actually going to make sure that it's able to
+1172.19s: going to make sure that it's able to
+1172.20s: going to make sure that it's able to call the API really quick first and then
+1174.03s: call the API really quick first and then
+1174.04s: call the API really quick first and then we'll pivot on to doing a little bit of
+1176.03s: we'll pivot on to doing a little bit of
+1176.04s: we'll pivot on to doing a little bit of our own test inside
+1179.31s: our own test inside
+1179.32s: our own test inside um
+1180.76s: um inside on demand.
+1185.32s: So, we'll let Claude run.
+1187.88s: So, we'll let Claude run. And let's close down
+1191.91s: And let's close down
+1191.92s: And let's close down this little writing tool. In case you
+1194.31s: this little writing tool. In case you
+1194.32s: this little writing tool. In case you didn't know, the little writing tool it
+1195.95s: didn't know, the little writing tool it
+1195.96s: didn't know, the little writing tool it is good and all, but it's actually a
+1197.23s: is good and all, but it's actually a
+1197.24s: is good and all, but it's actually a little bit annoying because it messes up
+1200.83s: little bit annoying because it messes up
+1200.84s: little bit annoying because it messes up like some hot key commands that I use
+1202.63s: like some hot key commands that I use
+1202.64s: like some hot key commands that I use elsewhere.
+1203.99s: elsewhere.
+1204.00s: elsewhere. And what we need to do now
+1206.31s: And what we need to do now
+1206.32s: And what we need to do now is find stuff that has earnings.
+1211.03s: is find stuff that has earnings.
+1211.04s: is find stuff that has earnings. And we need to build a little bit of an
+1215.59s: And we need to build a little bit of an
+1215.60s: And we need to build a little bit of an earnings watchlist that we intend to
+1218.19s: earnings watchlist that we intend to
+1218.20s: earnings watchlist that we intend to trade.
+1219.43s: trade.
+1219.44s: trade. So, what I'm going to do
+1226.28s: is
+1229.36s: let me build a little bit of a modified
+1233.48s: let me build a little bit of a modified watchlist.
+1235.59s: watchlist.
+1235.60s: watchlist. Give me one sec. And then I'll I'll show
+1237.75s: Give me one sec. And then I'll I'll show
+1237.76s: Give me one sec. And then I'll I'll show you what it is.
+1239.03s: you what it is.
+1239.04s: you what it is. Um
+1241.23s: Um
+1241.24s: Um I just need I want to build a tool so
+1244.19s: I just need I want to build a tool so
+1244.20s: I just need I want to build a tool so that the screening and the trades are
+1247.15s: that the screening and the trades are
+1247.16s: that the screening and the trades are done in one spot.
+1250.52s: Yeah, okay. So, this will do it.
+1252.76s: Yeah, okay. So, this will do it. So, this is good.
+1257.24s: So, this is what we'll use
+1259.60s: So, this is what we'll use for our tracking.
+1262.99s: for our tracking.
+1263.00s: for our tracking. The only The only difference here is I
+1267.87s: The only The only difference here is I
+1267.88s: The only The only difference here is I need to find a place. We'll just do it
+1270.11s: need to find a place. We'll just do it
+1270.12s: need to find a place. We'll just do it like here.
+1273.04s: The add a few columns and then this will
+1275.52s: The add a few columns and then this will be like entry and exit data.
+1281.64s: So we will have
+1283.68s: So we will have spot price. So we'll do spot price at
+1287.19s: spot price. So we'll do spot price at
+1287.20s: spot price. So we'll do spot price at entry.
+1289.31s: entry.
+1289.32s: entry. We will have
+1295.64s: Well, let's move these.
+1302.52s: So we're going to have spot price on
+1305.88s: So we're going to have spot price on entry.
+1308.84s: We will have the
+1311.72s: We will have the um since this is going to be like
+1315.07s: um since this is going to be like
+1315.08s: um since this is going to be like short vault only
+1317.47s: short vault only
+1317.48s: short vault only I'm just going to do like short call
+1319.67s: I'm just going to do like short call
+1319.68s: I'm just going to do like short call delta
+1321.67s: delta
+1321.68s: delta short call premium
+1324.99s: short call premium
+1325.00s: short call premium short put delta
+1327.07s: short put delta
+1327.08s: short put delta short put premium.
+1337.60s: And then we'll get a couple more in
+1338.96s: And then we'll get a couple more in here.
+1340.23s: here.
+1340.24s: here. We just kind of need to do this same
+1342.55s: We just kind of need to do this same
+1342.56s: We just kind of need to do this same grouping.
+1343.95s: grouping.
+1343.96s: grouping. Which is what? Five? We need one more.
+1352.96s: So this one will be for exiting.
+1359.40s: This one will be for entering.
+1366.04s: And then I will add some stuff over
+1369.56s: And then I will add some stuff over here.
+1379.08s: For aggregate like P&amp;L.
+1385.88s: So, over here this will be uh let me
+1388.60s: So, over here this will be uh let me just add a divider.
+1393.96s: So, over here this will be like um
+1396.60s: So, over here this will be like um we'll do like three things.
+1400.12s: Four things.
+1403.20s: We'll have a spot change.
+1413.16s: Spot percent change.
+1416.68s: Spot percent change. Then we will have
+1419.51s: Then we will have
+1419.52s: Then we will have open premium,
+1422.27s: open premium,
+1422.28s: open premium, close premium,
+1428.12s: PNL. And then over here I realized we
+1431.00s: PNL. And then over here I realized we need a size.
+1434.55s: need a size.
+1434.56s: need a size. So, this will be lots.
+1441.32s: Okay.
+1444.44s: We have our little handy dandy log that
+1447.84s: We have our little handy dandy log that we're going to use.
+1449.71s: we're going to use.
+1449.72s: we're going to use. Looks
+1450.67s: Looks
+1450.68s: Looks generally fine.
+1452.83s: generally fine.
+1452.84s: generally fine. And we will go through
+1455.87s: And we will go through
+1455.88s: And we will go through and do like
+1457.35s: and do like
+1457.36s: and do like like a week really quick as a as a
+1459.75s: like a week really quick as a as a
+1459.76s: like a week really quick as a as a group.
+1460.83s: group.
+1460.84s: group. So, let me move this out of the way.
+1463.87s: So, let me move this out of the way.
+1463.88s: So, let me move this out of the way. Actually no, we still need this. What I
+1465.75s: Actually no, we still need this. What I
+1465.76s: Actually no, we still need this. What I need to do now is grab
+1468.99s: need to do now is grab
+1469.00s: need to do now is grab earnings.
+1472.88s: Uh we need like upcoming earnings.
+1478.08s: And let's see what had earnings
+1482.28s: And let's see what had earnings last week.
+1488.64s: Oops, this is wrong.
+1492.68s: So, this should be
+1495.40s: So, this should be 27 April.
+1498.87s: 27 April.
+1498.88s: 27 April. to 1 May.
+1511.56s: This
+1516.84s: Hold on.
+1519.64s: Well, that's not right.
+1528.60s: I don't understand what the issue with
+1530.20s: I don't understand what the issue with this
+1531.07s: this
+1531.08s: this 27 April to 1 May.
+1535.96s: What's the
+1537.36s: What's the What's the beef?
+1548.96s: Is it just cuz it has the upcoming?
+1554.64s: Oh, maybe it says next.
+1558.00s: Oh, maybe it says next. That's actually a little annoying.
+1561.27s: That's actually a little annoying.
+1561.28s: That's actually a little annoying. I think it's like really
+1563.67s: I think it's like really
+1563.68s: I think it's like really only forward-looking. So,
+1568.03s: only forward-looking. So,
+1568.04s: only forward-looking. So, we have another route we could do,
+1574.04s: which is
+1577.52s: which is but through here.
+1580.60s: All right.
+1582.92s: All right. So,
+1585.72s: So, let's go before market after market.
+1590.31s: let's go before market after market.
+1590.32s: let's go before market after market. Perfect. And we'll start with after
+1593.55s: Perfect. And we'll start with after
+1593.56s: Perfect. And we'll start with after market
+1594.83s: market
+1594.84s: market on Monday.
+1596.23s: on Monday.
+1596.24s: on Monday. And I'm just going to grab a group of
+1597.95s: And I'm just going to grab a group of
+1597.96s: And I'm just going to grab a group of them really quick.
+1599.47s: them really quick.
+1599.48s: them really quick. So, we'll have VRTX, DOl. Oh, and by the
+1602.47s: So, we'll have VRTX, DOl. Oh, and by the
+1602.48s: So, we'll have VRTX, DOl. Oh, and by the way, the reason I'm doing this is so
+1603.59s: way, the reason I'm doing this is so
+1603.60s: way, the reason I'm doing this is so that when I go back in time,
+1605.31s: that when I go back in time,
+1605.32s: that when I go back in time, I know where I'm at.
+1607.47s: I know where I'm at.
+1607.48s: I know where I'm at. And
+1609.80s: And should be pretty easy. One second, I got
+1613.95s: should be pretty easy. One second, I got
+1613.96s: should be pretty easy. One second, I got a
+1615.15s: a
+1615.16s: a handle a homie.
+1621.16s: There you go.
+1623.64s: There you go. There you go.
+1632.00s: All right. This dude will just will just place him
+1635.43s: This dude will just will just place him
+1635.44s: This dude will just will just place him in timeout. Give him a couple minutes.
+1641.08s: All right. So, O N P L T R
+1645.88s: All right. So, O N P L T R W G S F L Y W M B C R S P R I G
+1653.48s: Okay, that's enough for the Monday p.m.
+1656.84s: Okay, that's enough for the Monday p.m. Then we'll get a Tuesday a.m. We'll
+1659.11s: Then we'll get a Tuesday a.m. We'll
+1659.12s: Then we'll get a Tuesday a.m. We'll probably just do like two days of
+1660.55s: probably just do like two days of
+1660.56s: probably just do like two days of earnings cuz I'm going to go make
+1662.27s: earnings cuz I'm going to go make
+1662.28s: earnings cuz I'm going to go make dinner.
+1663.39s: dinner.
+1663.40s: dinner. But,
+1664.52s: But, we should be able to get a decent
+1666.15s: we should be able to get a decent
+1666.16s: we should be able to get a decent sample.
+1667.63s: sample.
+1667.64s: sample. And H O G
+1669.75s: And H O G
+1669.76s: And H O G So, what I'm doing right now is adding
+1671.07s: So, what I'm doing right now is adding
+1671.08s: So, what I'm doing right now is adding these to that list really quick.
+1673.67s: these to that list really quick.
+1673.68s: these to that list really quick. C H O P
+1677.72s: That's fine. And then we'll do like a
+1679.56s: That's fine. And then we'll do like a Tuesday p.m. Wednesday a.m. cycle.
+1684.11s: Tuesday p.m. Wednesday a.m. cycle.
+1684.12s: Tuesday p.m. Wednesday a.m. cycle. So,
+1685.20s: So, E V N
+1690.76s: L U M N
+1695.24s: M S T R T E M
+1698.48s: M S T R T E M L I T
+1700.83s: L I T
+1700.84s: L I T A L A B A N A C P N G
+1705.71s: A L A B A N A C P N G
+1705.72s: A L A B A N A C P N G E A
+1707.63s: E A
+1707.64s: E A L C I D
+1710.23s: L C I D
+1710.24s: L C I D S M C I U P S T A E S
+1716.40s: And we'll do a couple more. B B A I
+1720.88s: O X Y
+1722.84s: O X Y And that's enough.
+1727.44s: Okay. So, now for our manual test,
+1731.55s: So, now for our manual test,
+1731.56s: So, now for our manual test, what we would need to do
+1733.99s: what we would need to do
+1734.00s: what we would need to do is define what our filtering criteria
+1738.35s: is define what our filtering criteria
+1738.36s: is define what our filtering criteria is, all that kind of stuff
+1740.87s: is, all that kind of stuff
+1740.88s: is, all that kind of stuff ahead of time, which some of that, you
+1744.07s: ahead of time, which some of that, you
+1744.08s: ahead of time, which some of that, you know, would be captured here. I'm not
+1745.95s: know, would be captured here. I'm not
+1745.96s: know, would be captured here. I'm not going to go through all of that
+1748.95s: going to go through all of that
+1748.96s: going to go through all of that on
+1750.35s: on
+1750.36s: on this stream,
+1751.83s: this stream,
+1751.84s: this stream, but that rule set is actually like
+1755.79s: but that rule set is actually like
+1755.80s: but that rule set is actually like pretty important to consider.
+1758.47s: pretty important to consider.
+1758.48s: pretty important to consider. The reason why I'm not going through
+1759.71s: The reason why I'm not going through
+1759.72s: The reason why I'm not going through that yet on this stream is this is me
+1763.15s: that yet on this stream is this is me
+1763.16s: that yet on this stream is this is me effectively simulating getting that
+1766.07s: effectively simulating getting that
+1766.08s: effectively simulating getting that first pass.
+1767.67s: first pass.
+1767.68s: first pass. Just that general understanding
+1772.07s: Just that general understanding
+1772.08s: Just that general understanding of what this effect looks like. So,
+1775.79s: of what this effect looks like. So,
+1775.80s: of what this effect looks like. So, let's let's do exactly that. I'll pull
+1778.39s: let's let's do exactly that. I'll pull
+1778.40s: let's let's do exactly that. I'll pull this over here,
+1780.67s: this over here,
+1780.68s: this over here, and then we'll go back into on demand.
+1784.55s: and then we'll go back into on demand.
+1784.56s: and then we'll go back into on demand. So, now this has us back in time,
+1788.63s: So, now this has us back in time,
+1788.64s: So, now this has us back in time, and we'll go through that expiration
+1790.99s: and we'll go through that expiration
+1791.00s: and we'll go through that expiration cycle.
+1795.28s: We know most of our entries are going to
+1796.80s: We know most of our entries are going to be towards the close, so I'm going to
+1798.47s: be towards the close, so I'm going to
+1798.48s: be towards the close, so I'm going to fast forward us to 12:30 Pacific time,
+1801.99s: fast forward us to 12:30 Pacific time,
+1802.00s: fast forward us to 12:30 Pacific time, and we're back on 4th May. We have all
+1804.47s: and we're back on 4th May. We have all
+1804.48s: and we're back on 4th May. We have all the stuff already noted down that's
+1807.87s: the stuff already noted down that's
+1807.88s: the stuff already noted down that's generally
+1810.51s: generally
+1810.52s: generally coming up on earnings.
+1812.63s: coming up on earnings.
+1812.64s: coming up on earnings. And let me check in on Claude really
+1814.31s: And let me check in on Claude really
+1814.32s: And let me check in on Claude really quick. Let me see.
+1820.84s: Yep, yep, yep.
+1834.84s: So, I already have
+1836.68s: So, I already have ORATS linked up, so it should
+1841.31s: ORATS linked up, so it should
+1841.32s: ORATS linked up, so it should I think Claude can literally just
+1844.27s: I think Claude can literally just
+1844.28s: I think Claude can literally just operate that by itself which is kind of
+1845.91s: operate that by itself which is kind of
+1845.92s: operate that by itself which is kind of cool. So I'm essentially just telling it
+1847.99s: cool. So I'm essentially just telling it
+1848.00s: cool. So I'm essentially just telling it I want it to do the test using that API.
+1851.35s: I want it to do the test using that API.
+1851.36s: I want it to do the test using that API. And in the meantime, all we're going to
+1852.75s: And in the meantime, all we're going to
+1852.76s: And in the meantime, all we're going to do is come in here and we're just going
+1854.59s: do is come in here and we're just going
+1854.60s: do is come in here and we're just going to track some stuff.
+1856.95s: to track some stuff.
+1856.96s: to track some stuff. Now, as I mentioned kind of regularly,
+1859.95s: Now, as I mentioned kind of regularly,
+1859.96s: Now, as I mentioned kind of regularly, if you're coming here to track these
+1861.59s: if you're coming here to track these
+1861.60s: if you're coming here to track these things,
+1862.75s: things,
+1862.76s: things, generally speaking,
+1864.91s: generally speaking,
+1864.92s: generally speaking, you would want to track as much as you
+1867.59s: you would want to track as much as you
+1867.60s: you would want to track as much as you can.
+1868.75s: can.
+1868.76s: can. So for example, it would actually be
+1871.43s: So for example, it would actually be
+1871.44s: So for example, it would actually be kind of smart
+1875.76s: to include stuff
+1878.80s: to include stuff like
+1880.55s: like
+1880.56s: like the volatility
+1882.51s: the volatility
+1882.52s: the volatility for your options.
+1884.23s: for your options.
+1884.24s: for your options. So we have delta, premium. We'll add
+1887.83s: So we have delta, premium. We'll add
+1887.84s: So we have delta, premium. We'll add another column
+1889.79s: another column
+1889.80s: another column for vol for both of these.
+1893.23s: for vol for both of these.
+1893.24s: for vol for both of these. And the reason why
+1896.15s: And the reason why
+1896.16s: And the reason why the vol matters is because this
+1899.95s: the vol matters is because this
+1899.96s: the vol matters is because this ultimately is going to give you a pretty
+1901.47s: ultimately is going to give you a pretty
+1901.48s: ultimately is going to give you a pretty good sense
+1903.11s: good sense
+1903.12s: good sense of how effective is the idea
+1907.39s: of how effective is the idea
+1907.40s: of how effective is the idea that you're attempting to to capture,
+1909.55s: that you're attempting to to capture,
+1909.56s: that you're attempting to to capture, right? So we have short call premium,
+1912.75s: right? So we have short call premium,
+1912.76s: right? So we have short call premium, or short call delta, premium, and short
+1915.03s: or short call delta, premium, and short
+1915.04s: or short call delta, premium, and short call
+1916.23s: call
+1916.24s: call implied vol,
+1917.79s: implied vol,
+1917.80s: implied vol, short puts delta premium, short put
+1921.39s: short puts delta premium, short put
+1921.40s: short puts delta premium, short put implied vol.
+1923.15s: implied vol.
+1923.16s: implied vol. And then we'll have those over here as
+1925.03s: And then we'll have those over here as
+1925.04s: And then we'll have those over here as well.
+1928.40s: What the [&nbsp;__&nbsp;] Oh, there must be a
+1930.32s: What the [&nbsp;__&nbsp;] Oh, there must be a hidden
+1932.03s: hidden
+1932.04s: hidden No.
+1933.43s: No.
+1933.44s: No. I don't know what it's doing that's
+1934.27s: I don't know what it's doing that's
+1934.28s: I don't know what it's doing that's annoying me.
+1939.64s: A
+1941.52s: A I'll get rid of that then.
+1946.36s: What happens if I add left?
+1948.92s: What happens if I add left? It works fine.
+1951.35s: It works fine.
+1951.36s: It works fine. These bastards.
+1954.88s: Whatever. [&nbsp;__&nbsp;] you.
+1960.84s: So, these are all the closing trades.
+1962.40s: So, these are all the closing trades. So, this will be short call IV.
+1969.84s: This is short put premium, and this will
+1972.16s: This is short put premium, and this will be short put IV.
+1976.68s: Tick.
+1978.32s: Tick. And
+1982.88s: this ultimately is going to tell us
+1987.12s: if the thing that we're attempting to
+1988.76s: if the thing that we're attempting to trade is real or not. And we'll put this
+1992.23s: trade is real or not. And we'll put this
+1992.24s: trade is real or not. And we'll put this over here. So, we have spot change.
+1998.76s: Let's add
+2004.24s: the change in vol.
+2011.32s: And the way that we'll
+2012.92s: And the way that we'll run a formula on something like for
+2015.03s: run a formula on something like for
+2015.04s: run a formula on something like for change in vol is we'll just take the the
+2016.87s: change in vol is we'll just take the the
+2016.88s: change in vol is we'll just take the the high, whatever the high is.
+2032.12s: Perfect.
+2035.92s: All right. So, it looks like Claude is
+2038.76s: All right. So, it looks like Claude is ready to go. I just have to grab
+2042.83s: ready to go. I just have to grab
+2042.84s: ready to go. I just have to grab one more piece for it.
+2048.88s: Okay. So, here's
+2052.76s: needs that. And then I need
+2056.00s: needs that. And then I need uh
+2057.11s: uh
+2057.12s: uh date range.
+2059.19s: date range.
+2059.20s: date range. We'll do the last 10 years.
+2063.56s: Universe
+2065.12s: Universe will be all optionable.
+2070.76s: With at least
+2072.96s: With at least 5,000 OI.
+2083.04s: And instead of doing 10 years old, do
+2085.48s: And instead of doing 10 years old, do like the last 2 years just so it'll run
+2087.31s: like the last 2 years just so it'll run
+2087.32s: like the last 2 years just so it'll run a little faster.
+2091.72s: Okay. So, that's running.
+2096.24s: And let's go through a quick cycle here. I'm
+2098.87s: let's go through a quick cycle here. I'm
+2098.88s: let's go through a quick cycle here. I'm going to hide all of these for now since
+2100.99s: going to hide all of these for now since
+2101.00s: going to hide all of these for now since we're not using any of them.
+2114.08s: And this I'll give you like um like a spin
+2117.63s: this I'll give you like um like a spin
+2117.64s: this I'll give you like um like a spin through of this, but this is the
+2120.63s: through of this, but this is the
+2120.64s: through of this, but this is the real This is the first step of your
+2122.47s: real This is the first step of your
+2122.48s: real This is the first step of your homework.
+2123.83s: homework.
+2123.84s: homework. Or this general project on testing. This
+2127.15s: Or this general project on testing. This
+2127.16s: Or this general project on testing. This is the manual element to this.
+2131.19s: is the manual element to this.
+2131.20s: is the manual element to this. We're doing manual because I think
+2134.71s: We're doing manual because I think
+2134.72s: We're doing manual because I think it's super inefficient, but it's good to
+2137.63s: it's super inefficient, but it's good to
+2137.64s: it's super inefficient, but it's good to go through at least once
+2140.07s: go through at least once
+2140.08s: go through at least once so that you have an idea of like what
+2142.11s: so that you have an idea of like what
+2142.12s: so that you have an idea of like what this broader thing looks like, what
+2143.71s: this broader thing looks like, what
+2143.72s: this broader thing looks like, what looks normal, like all that kind of
+2145.19s: looks normal, like all that kind of
+2145.20s: looks normal, like all that kind of [&nbsp;__&nbsp;]
+2146.31s: [&nbsp;__&nbsp;]
+2146.32s: [&nbsp;__&nbsp;] And I'll move this off to the side so I
+2148.03s: And I'll move this off to the side so I
+2148.04s: And I'll move this off to the side so I can click through a little bit faster.
+2150.59s: can click through a little bit faster.
+2150.60s: can click through a little bit faster. Well, we already know that we're just
+2152.71s: Well, we already know that we're just
+2152.72s: Well, we already know that we're just going to do
+2154.19s: going to do
+2154.20s: going to do straddles in this scenario to begin
+2156.59s: straddles in this scenario to begin
+2156.60s: straddles in this scenario to begin with. And the reason why we're doing
+2157.55s: with. And the reason why we're doing
+2157.56s: with. And the reason why we're doing straddles because we're actually just
+2159.19s: straddles because we're actually just
+2159.20s: straddles because we're actually just truly trying to isolate the effect.
+2162.87s: truly trying to isolate the effect.
+2162.88s: truly trying to isolate the effect. So, that'll put us in this.
+2166.75s: So, that'll put us in this.
+2166.76s: So, that'll put us in this. So, this is a
+2168.51s: So, this is a
+2168.52s: So, this is a 51 delta.
+2174.04s: The premium for this, if we were to
+2176.84s: The premium for this, if we were to sell, I'm going to assume close to the
+2179.27s: sell, I'm going to assume close to the
+2179.28s: sell, I'm going to assume close to the mid, but not quite. So, we'll do like
+2181.15s: mid, but not quite. So, we'll do like
+2181.16s: mid, but not quite. So, we'll do like 13.
+2183.47s: 13.
+2183.48s: 13. And then the vol on those is 67.83%.
+2189.84s: Okay. Now on the put side
+2197.60s: So a 49 delta
+2205.52s: Premium on these will be like 1270.
+2210.48s: IV on these is 64.95%.
+2215.84s: And that's us logging our first trade.
+2219.44s: And that's us logging our first trade. That's it.
+2220.83s: That's it.
+2220.84s: That's it. And what we'll do now is we'll flip
+2222.79s: And what we'll do now is we'll flip
+2222.80s: And what we'll do now is we'll flip through a handful of these. I'm not
+2224.11s: through a handful of these. I'm not
+2224.12s: through a handful of these. I'm not going to go through all of them.
+2226.03s: going to go through all of them.
+2226.04s: going to go through all of them. We'll probably split this into two
+2227.99s: We'll probably split this into two
+2228.00s: We'll probably split this into two parts. We'll do a part two for this
+2229.95s: parts. We'll do a part two for this
+2229.96s: parts. We'll do a part two for this tomorrow.
+2234.40s: And let's get Duolingo. That's our next.
+2237.64s: And let's get Duolingo. That's our next. And we're literally going to do the same
+2239.03s: And we're literally going to do the same
+2239.04s: And we're literally going to do the same exact thing. This is all just
+2241.67s: exact thing. This is all just
+2241.68s: exact thing. This is all just manual logging.
+2243.47s: manual logging.
+2243.48s: manual logging. And right now I'm doing a a one lot in
+2246.63s: And right now I'm doing a a one lot in
+2246.64s: And right now I'm doing a a one lot in each of those. I'm not actually going to
+2249.27s: each of those. I'm not actually going to
+2249.28s: each of those. I'm not actually going to execute them as a one lot.
+2251.51s: execute them as a one lot.
+2251.52s: execute them as a one lot. What I'm going to do is normalize
+2255.03s: What I'm going to do is normalize
+2255.04s: What I'm going to do is normalize the price based on the underlying price
+2260.19s: the price based on the underlying price
+2260.20s: the price based on the underlying price just so that things are sized logically.
+2263.15s: just so that things are sized logically.
+2263.16s: just so that things are sized logically. Meaning we're just sizing them so that
+2265.31s: Meaning we're just sizing them so that
+2265.32s: Meaning we're just sizing them so that they're about the same.
+2267.79s: they're about the same.
+2267.80s: they're about the same. Otherwise, if I just default to a one
+2269.83s: Otherwise, if I just default to a one
+2269.84s: Otherwise, if I just default to a one lot for everything, it kind of kind of
+2272.43s: lot for everything, it kind of kind of
+2272.44s: lot for everything, it kind of kind of doesn't make sense.
+2274.55s: doesn't make sense.
+2274.56s: doesn't make sense. And yeah, so anyways
+2278.55s: And yeah, so anyways
+2278.56s: And yeah, so anyways Uh this one So this is another good
+2281.11s: Uh this one So this is another good
+2281.12s: Uh this one So this is another good example by the way in terms of how you
+2284.27s: example by the way in terms of how you
+2284.28s: example by the way in terms of how you think of the straddle and how you price
+2286.31s: think of the straddle and how you price
+2286.32s: think of the straddle and how you price stuff.
+2287.40s: stuff. You can either do it at the money, which
+2290.03s: You can either do it at the money, which
+2290.04s: You can either do it at the money, which is really the 112, but notice that's a
+2292.19s: is really the 112, but notice that's a
+2292.20s: is really the 112, but notice that's a 53 delta.
+2294.07s: 53 delta.
+2294.08s: 53 delta. Or you could do it closer to like the at
+2296.63s: Or you could do it closer to like the at
+2296.64s: Or you could do it closer to like the at the forward which is the actual 50 delta
+2300.35s: the forward which is the actual 50 delta
+2300.36s: the forward which is the actual 50 delta here. So I already normalized
+2304.15s: here. So I already normalized
+2304.16s: here. So I already normalized to be doing
+2307.07s: to be doing
+2307.08s: to be doing at the money.
+2312.72s: So, let's continue.
+2316.60s: So, let's continue. So, this will be a 53 delta call.
+2332.00s: premium
+2335.04s: if we were to sell
+2336.84s: if we were to sell like 990.
+2338.87s: like 990.
+2338.88s: like 990. Now, the other thing to note
+2341.87s: Now, the other thing to note
+2341.88s: Now, the other thing to note is that I am
+2344.95s: is that I am
+2344.96s: is that I am not just doing the straddle itself. I
+2348.35s: not just doing the straddle itself. I
+2348.36s: not just doing the straddle itself. I could easily just do the straddle
+2350.11s: could easily just do the straddle
+2350.12s: could easily just do the straddle itself.
+2351.35s: itself.
+2351.36s: itself. And if the intent was to be a little bit
+2353.27s: And if the intent was to be a little bit
+2353.28s: And if the intent was to be a little bit more efficient, definitely could do
+2354.87s: more efficient, definitely could do
+2354.88s: more efficient, definitely could do that. But again, on kind of like this
+2356.75s: that. But again, on kind of like this
+2356.76s: that. But again, on kind of like this first iteration, I actually prefer
+2359.75s: first iteration, I actually prefer
+2359.76s: first iteration, I actually prefer to like go through, break the components
+2362.23s: to like go through, break the components
+2362.24s: to like go through, break the components down because then it's also going to
+2363.59s: down because then it's also going to
+2363.60s: down because then it's also going to give you a better idea
+2365.51s: give you a better idea
+2365.52s: give you a better idea on how the individual components
+2367.79s: on how the individual components
+2367.80s: on how the individual components actually feed into this thing.
+2372.96s: Okay, next.
+2375.08s: Okay, next. And then I'll do 10 of these.
+2377.91s: And then I'll do 10 of these.
+2377.92s: And then I'll do 10 of these. How many do I have? 16. So, we'll knock
+2380.91s: How many do I have? 16. So, we'll knock
+2380.92s: How many do I have? 16. So, we'll knock six of them off.
+2390.72s: So, that we can try to get through at
+2392.52s: So, that we can try to get through at least one
+2394.19s: least one
+2394.20s: least one one cycle of this.
+2396.51s: one cycle of this.
+2396.52s: one cycle of this. So, 01 is next. 103
+2400.23s: So, 01 is next. 103
+2400.24s: So, 01 is next. 103 3 cents. Again, just defaulting
+2402.39s: 3 cents. Again, just defaulting
+2402.40s: 3 cents. Again, just defaulting everything to a one lot right now. So,
+2403.75s: everything to a one lot right now. So,
+2403.76s: everything to a one lot right now. So, it's a 51 delta.
+2406.35s: it's a 51 delta.
+2406.36s: it's a 51 delta. Now, for the short put, you could either
+2409.71s: Now, for the short put, you could either
+2409.72s: Now, for the short put, you could either just infer what the delta is. Funny
+2412.55s: just infer what the delta is. Funny
+2412.56s: just infer what the delta is. Funny enough, places like Orats and whatnot,
+2415.23s: enough, places like Orats and whatnot,
+2415.24s: enough, places like Orats and whatnot, that's what they do. They'll just
+2416.79s: that's what they do. They'll just
+2416.80s: that's what they do. They'll just calculate a call delta and then they'll
+2418.67s: calculate a call delta and then they'll
+2418.68s: calculate a call delta and then they'll infer the put delta by just doing one
+2421.43s: infer the put delta by just doing one
+2421.44s: infer the put delta by just doing one minus that. It's completely fine to do
+2423.75s: minus that. It's completely fine to do
+2423.76s: minus that. It's completely fine to do that. But, you should know at least that
+2427.19s: that. But, you should know at least that
+2427.20s: that. But, you should know at least that that is an assumption and a limitation.
+2431.11s: that is an assumption and a limitation.
+2431.12s: that is an assumption and a limitation. It's not actually perfect, but again,
+2434.79s: It's not actually perfect, but again,
+2434.80s: It's not actually perfect, but again, for something like this, that'll be fine
+2436.63s: for something like this, that'll be fine
+2436.64s: for something like this, that'll be fine enough.
+2437.71s: enough.
+2437.72s: enough. So, I'm going to do exactly that.
+2441.19s: So, I'm going to do exactly that.
+2441.20s: So, I'm going to do exactly that. All right, so now let's take a look at
+2442.99s: All right, so now let's take a look at
+2443.00s: All right, so now let's take a look at our premiums.
+2446.76s: This will be like 5555.
+2451.00s: This will be like 5555. Our vol is 128
+2453.59s: Our vol is 128
+2453.60s: Our vol is 128 04.
+2455.83s: 04.
+2455.84s: 04. And then on the put side, we're at like
+2458.19s: And then on the put side, we're at like
+2458.20s: And then on the put side, we're at like 630.
+2461.80s: And we're at like 12499
+2465.08s: And we're at like 12499 vol.
+2465.95s: vol.
+2465.96s: vol. Cool.
+2467.03s: Cool.
+2467.04s: Cool. Palantir.
+2468.75s: Palantir.
+2468.76s: Palantir. Next.
+2475.08s: Let us see. All right.
+2478.84s: Let us see. All right. So, Palantir, we're at 14746.
+2485.52s: That gives us a 51 delta there. Premium
+2489.04s: That gives us a 51 delta there. Premium on these is 680.
+2491.83s: on these is 680.
+2491.84s: on these is 680. Vol on these is 10509.
+2495.80s: On the 148s,
+2498.44s: On the 148s, those will give us like 720.
+2501.79s: those will give us like 720.
+2501.80s: those will give us like 720. Vol on those 10406.
+2505.27s: Vol on those 10406.
+2505.28s: Vol on those 10406. Cool. Next.
+2507.47s: Cool. Next.
+2507.48s: Cool. Next. And you can see like even for something
+2509.71s: And you can see like even for something
+2509.72s: And you can see like even for something that I just kind of like randomly built
+2511.67s: that I just kind of like randomly built
+2511.68s: that I just kind of like randomly built super quick here,
+2513.67s: super quick here,
+2513.68s: super quick here, you can get pretty efficient at it.
+2517.39s: you can get pretty efficient at it.
+2517.40s: you can get pretty efficient at it. Realistically, so WGS, I'm going to skip
+2520.87s: Realistically, so WGS, I'm going to skip
+2520.88s: Realistically, so WGS, I'm going to skip just because of how liquid illiquid it
+2523.43s: just because of how liquid illiquid it
+2523.44s: just because of how liquid illiquid it is.
+2524.47s: is.
+2524.48s: is. And I will add in a different name for
+2526.99s: And I will add in a different name for
+2527.00s: And I will add in a different name for us to pick from.
+2528.51s: us to pick from.
+2528.52s: us to pick from. We'll do like CCJ.
+2531.87s: We'll do like CCJ.
+2531.88s: We'll do like CCJ. This should be
+2533.71s: This should be
+2533.72s: This should be pretty liquid for us to to look at.
+2535.83s: pretty liquid for us to to look at.
+2535.84s: pretty liquid for us to to look at. Yeah, this is fine.
+2539.20s: So, CCJ is 118.61.
+2544.56s: We're looking at a 51 delta there.
+2547.56s: We're looking at a 51 delta there. That'll be for like 412 [snorts]
+2549.95s: That'll be for like 412 [snorts]
+2549.96s: That'll be for like 412 [snorts] or so
+2551.27s: or so
+2551.28s: or so at 79.91%
+2553.67s: at 79.91%
+2553.68s: at 79.91% vol.
+2555.60s: vol. And then
+2558.60s: put side.
+2561.44s: That's going to be like
+2564.72s: That's going to be like 455
+2566.23s: 455
+2566.24s: 455 or like 457 or so taking 20s off.
+2569.95s: or like 457 or so taking 20s off.
+2569.96s: or like 457 or so taking 20s off. And then 81.99%
+2573.11s: And then 81.99%
+2573.12s: And then 81.99% vol.
+2574.12s: vol. We'll do fly. I will skip fly. What else
+2577.47s: We'll do fly. I will skip fly. What else
+2577.48s: We'll do fly. I will skip fly. What else on here is going to be reasonable? We'll
+2579.07s: on here is going to be reasonable? We'll
+2579.08s: on here is going to be reasonable? We'll do RIG next.
+2582.36s: I'm just skipping the stuff that I
+2584.32s: I'm just skipping the stuff that I generally know is a liquid.
+2588.48s: Then we'll do
+2590.44s: Then we'll do after the
+2592.95s: after the
+2592.96s: after the OG
+2594.59s: OG
+2594.60s: OG and shop.
+2596.47s: and shop.
+2596.48s: and shop. So, we have four more that we'll go
+2597.95s: So, we have four more that we'll go
+2597.96s: So, we have four more that we'll go through.
+2599.03s: through.
+2599.04s: through. RIG is 6.86.
+2607.00s: We're looking at a 44 delta.
+2611.84s: And we're looking at 22 cents or so.
+2614.76s: And we're looking at 22 cents or so. These are pretty liquid.
+2616.99s: These are pretty liquid.
+2617.00s: These are pretty liquid. 90.58 on our vol.
+2620.91s: 90.58 on our vol.
+2620.92s: 90.58 on our vol. Then on these, these are terribly
+2623.19s: Then on these, these are terribly
+2623.20s: Then on these, these are terribly liquid. They're showing they transacted
+2625.47s: liquid. They're showing they transacted
+2625.48s: liquid. They're showing they transacted at 30 cents.
+2627.03s: at 30 cents.
+2627.04s: at 30 cents. So, we'll call it 25 cents. Probably a
+2629.79s: So, we'll call it 25 cents. Probably a
+2629.80s: So, we'll call it 25 cents. Probably a reasonable guess. 53.90.
+2633.75s: reasonable guess. 53.90.
+2633.76s: reasonable guess. 53.90. Okay, three more. PFE.
+2644.00s: These will be very liquid.
+2650.40s: These were at 2630.
+2657.64s: These will be a 56 delta.
+2661.80s: Be for like 58 cents.
+2663.96s: Be for like 58 cents. Those are at 44.79 ball.
+2667.91s: Those are at 44.79 ball.
+2667.92s: Those are at 44.79 ball. And then on the put side
+2670.19s: And then on the put side
+2670.20s: And then on the put side we're at like 49 cents.
+2674.36s: And then those are at a 43.67 ball.
+2679.72s: And then we'll do one more. Let's take a
+2682.00s: And then we'll do one more. Let's take a quick peek between these. See which
+2683.83s: quick peek between these. See which
+2683.84s: quick peek between these. See which one's more liquid.
+2690.08s: Uh probably not. Let's check Shopify and
+2692.76s: Uh probably not. Let's check Shopify and see if it's better.
+2698.68s: Yeah, we'll do Shopify. That'll be our
+2700.36s: Yeah, we'll do Shopify. That'll be our last one.
+2702.15s: last one.
+2702.16s: last one. For this term at least.
+2704.47s: For this term at least.
+2704.48s: For this term at least. This should be on 2746.
+2707.75s: This should be on 2746.
+2707.76s: This should be on 2746. And
+2710.96s: be right here.
+2713.88s: So it's a 52 delta.
+2717.12s: So it's a 52 delta. We're at like 755.
+2721.52s: 134.6 [snorts]
+2723.56s: 134.6 [snorts] is our ball.
+2726.43s: is our ball.
+2726.44s: is our ball. And then
+2729.43s: And then
+2729.44s: And then over here
+2731.19s: over here
+2731.20s: over here we're at like eight.
+2734.39s: we're at like eight.
+2734.40s: we're at like eight. And then our ball is 134.50.
+2737.51s: And then our ball is 134.50.
+2737.52s: And then our ball is 134.50. Cool.
+2738.76s: Cool. All right.
+2740.28s: All right. So now
+2744.44s: what we'll do
+2746.32s: what we'll do is just button up the math side of the
+2750.71s: is just button up the math side of the
+2750.72s: is just button up the math side of the equation.
+2752.11s: equation.
+2752.12s: equation. So the opening premium is simple. It's
+2755.23s: So the opening premium is simple. It's
+2755.24s: So the opening premium is simple. It's just these two combined.
+2758.47s: just these two combined.
+2758.48s: just these two combined. That's easy enough.
+2763.48s: Spot dollar change
+2766.88s: Spot dollar change is whatever it is afterwards
+2772.48s: less whatever we were at the beginning.
+2775.60s: less whatever we were at the beginning. And again, for stuff like this, you can
+2777.67s: And again, for stuff like this, you can
+2777.68s: And again, for stuff like this, you can kind of clean them up a little bit and
+2779.71s: kind of clean them up a little bit and
+2779.72s: kind of clean them up a little bit and you could do like uh
+2782.39s: you could do like uh
+2782.40s: you could do like uh if
+2785.20s: is blank
+2788.08s: is blank we'll do like if
+2790.15s: we'll do like if
+2790.16s: we'll do like if this is blank
+2793.03s: this is blank
+2793.04s: this is blank then stay blank. If it's not blank, then
+2795.87s: then stay blank. If it's not blank, then
+2795.88s: then stay blank. If it's not blank, then do this.
+2804.64s: So, you can kind of like clean up the
+2806.64s: So, you can kind of like clean up the the formulas a little bit. Again, you
+2808.55s: the formulas a little bit. Again, you
+2808.56s: the formulas a little bit. Again, you don't you don't have to. It doesn't
+2809.79s: don't you don't have to. It doesn't
+2809.80s: don't you don't have to. It doesn't really matter.
+2811.11s: really matter.
+2811.12s: really matter. So, then the percent change
+2816.56s: divided by this.
+2818.48s: divided by this. This will be as a percent.
+2824.28s: And then the change in IV, this is an
+2826.04s: And then the change in IV, this is an interesting one like I said before.
+2828.31s: interesting one like I said before.
+2828.32s: interesting one like I said before. This one, the way that I would determine
+2831.71s: This one, the way that I would determine
+2831.72s: This one, the way that I would determine the changes in IV, I guess I'll just do
+2835.27s: the changes in IV, I guess I'll just do
+2835.28s: the changes in IV, I guess I'll just do both, but the the other way you could do
+2837.47s: both, but the the other way you could do
+2837.48s: both, but the the other way you could do it is just by whatever the max is. So,
+2840.07s: it is just by whatever the max is. So,
+2840.08s: it is just by whatever the max is. So, this will be call IV change and then
+2843.79s: this will be call IV change and then
+2843.80s: this will be call IV change and then this will be put IV
+2846.87s: this will be put IV
+2846.88s: this will be put IV change.
+2848.15s: change.
+2848.16s: change. So, for the call IV change, now the
+2850.91s: So, for the call IV change, now the
+2850.92s: So, for the call IV change, now the other thing that's kind of annoying with
+2853.19s: other thing that's kind of annoying with
+2853.20s: other thing that's kind of annoying with percentages, when you do percentages in
+2856.07s: percentages, when you do percentages in
+2856.08s: percentages, when you do percentages in Google Sheets or Excel, it can be a
+2858.31s: Google Sheets or Excel, it can be a
+2858.32s: Google Sheets or Excel, it can be a little bit annoying because it'll show
+2861.71s: little bit annoying because it'll show
+2861.72s: little bit annoying because it'll show like a percent, but it's actually kind
+2863.43s: like a percent, but it's actually kind
+2863.44s: like a percent, but it's actually kind of like a point change and I'll show you
+2864.91s: of like a point change and I'll show you
+2864.92s: of like a point change and I'll show you what I mean when we get there.
+2866.75s: what I mean when we get there.
+2866.76s: what I mean when we get there. But, the call IV change is just this
+2870.59s: But, the call IV change is just this
+2870.60s: But, the call IV change is just this minus this.
+2875.84s: And then the put IV change
+2880.20s: this minus this.
+2888.64s: Closing premium
+2892.28s: is this
+2893.88s: is this plus this.
+2900.52s: And then our PNL
+2904.00s: is this.
+2906.76s: is this. This is all per contract.
+2910.15s: This is all per contract.
+2910.16s: This is all per contract. So it'll be this
+2912.31s: So it'll be this
+2912.32s: So it'll be this plus this
+2916.08s: times
+2919.04s: this times 100.
+2924.68s: So now what we need to do is very
+2928.04s: So now what we need to do is very quickly normalize these.
+2930.71s: quickly normalize these.
+2930.72s: quickly normalize these. And all I'm doing for that is kind of
+2933.75s: And all I'm doing for that is kind of
+2933.76s: And all I'm doing for that is kind of seeing the the size. This isn't a
+2935.91s: seeing the the size. This isn't a
+2935.92s: seeing the the size. This isn't a perfect way to do it, but I'm literally
+2938.03s: perfect way to do it, but I'm literally
+2938.04s: perfect way to do it, but I'm literally just looking at the the spot price. So
+2940.87s: just looking at the the spot price. So
+2940.88s: just looking at the the spot price. So the spot price the high that we have is
+2942.67s: the spot price the high that we have is
+2942.68s: the spot price the high that we have is 427.
+2944.83s: 427.
+2944.84s: 427. And all I'm going to do is take these
+2949.23s: And all I'm going to do is take these
+2949.24s: And all I'm going to do is take these different
+2951.07s: different
+2951.08s: different numbers
+2953.51s: numbers
+2953.52s: numbers as it relates to 427.
+2956.47s: as it relates to 427.
+2956.48s: as it relates to 427. And I'm just going to normalize that
+2958.27s: And I'm just going to normalize that
+2958.28s: And I'm just going to normalize that way. So here's what I mean by that. I'm
+2960.79s: way. So here's what I mean by that. I'm
+2960.80s: way. So here's what I mean by that. I'm going to take how many Well, we need to
+2963.07s: going to take how many Well, we need to
+2963.08s: going to take how many Well, we need to round down
+2965.67s: round down
+2965.68s: round down because you can't do partial contracts.
+2968.27s: because you can't do partial contracts.
+2968.28s: because you can't do partial contracts. And it'll be that divided by this.
+2971.87s: And it'll be that divided by this.
+2971.88s: And it'll be that divided by this. And this is how we will size everything
+2977.63s: And this is how we will size everything
+2977.64s: And this is how we will size everything so that it's at least marginally the
+2979.87s: so that it's at least marginally the
+2979.88s: so that it's at least marginally the same. Again, this is imperfect. It's
+2982.35s: same. Again, this is imperfect. It's
+2982.36s: same. Again, this is imperfect. It's just to have something
+2985.71s: just to have something
+2985.72s: just to have something relatively similar sized across.
+2989.11s: relatively similar sized across.
+2989.12s: relatively similar sized across. Cool.
+2990.72s: Cool. So now all I'm literally going to do
+2993.31s: So now all I'm literally going to do
+2993.32s: So now all I'm literally going to do is
+2995.00s: is fast forward to the next trading day.
+2999.56s: And because I'm an idiot and I didn't
+3001.16s: And because I'm an idiot and I didn't track the strikes on any of these, that
+3004.31s: track the strikes on any of these, that
+3004.32s: track the strikes on any of these, that was a really dumb choice.
+3011.28s: Shop is 128. The reason why it's a dumb
+3014.76s: Shop is 128. The reason why it's a dumb choice is cuz now it's annoying to try
+3016.95s: choice is cuz now it's annoying to try
+3016.96s: choice is cuz now it's annoying to try to figure out what the what the hell
+3018.71s: to figure out what the what the hell
+3018.72s: to figure out what the what the hell everything is.
+3020.11s: everything is.
+3020.12s: everything is. So this is 108 42.
+3022.87s: So this is 108 42.
+3022.88s: So this is 108 42. The delta
+3025.07s: The delta
+3025.08s: The delta on the calls is a 0.02.
+3034.60s: Premium on these is like 7 cents.
+3038.36s: Premium on these is like 7 cents. So that's what we would pay.
+3040.51s: So that's what we would pay.
+3040.52s: So that's what we would pay. Our vol on these is 80.5.
+3048.36s: Our short put delta is now an 88.
+3056.00s: Short put premium in order to get these
+3058.88s: Short put premium in order to get these back,
+3060.39s: back,
+3060.40s: back, we're at like 2020.
+3065.68s: And then our vols on those are like
+3069.16s: And then our vols on those are like 126.04%.
+3074.84s: So there's the first
+3079.08s: There's the first earnings play that we
+3082.64s: There's the first earnings play that we have for our system with a realized P&amp;L
+3087.63s: have for our system with a realized P&amp;L
+3087.64s: have for our system with a realized P&amp;L of we lose
+3090.63s: of we lose
+3090.64s: of we lose 14 hundie.
+3093.03s: 14 hundie.
+3093.04s: 14 hundie. So now what I need to do
+3095.83s: So now what I need to do
+3095.84s: So now what I need to do is actually go go back a day and flip
+3099.75s: is actually go go back a day and flip
+3099.76s: is actually go go back a day and flip through all these other ones super fast
+3103.71s: through all these other ones super fast
+3103.72s: through all these other ones super fast so that
+3106.63s: so that
+3106.64s: so that I can see what the [&nbsp;__&nbsp;] strike is cuz
+3109.99s: I can see what the [&nbsp;__&nbsp;] strike is cuz
+3110.00s: I can see what the [&nbsp;__&nbsp;] strike is cuz I for some reason opted to not track
+3112.67s: I for some reason opted to not track
+3112.68s: I for some reason opted to not track that.
+3113.83s: that.
+3113.84s: that. So these we did the 26s.
+3118.08s: Next will load quickly thankfully. Rig,
+3121.16s: Next will load quickly thankfully. Rig, that was like the
+3122.75s: that was like the
+3122.76s: that was like the sevens? Yep. [snorts]
+3125.63s: sevens? Yep. [snorts]
+3125.64s: sevens? Yep. [snorts] So Rig is sevens.
+3128.83s: So Rig is sevens.
+3128.84s: So Rig is sevens. CCJ
+3131.79s: CCJ
+3131.80s: CCJ Those are the one
+3135.07s: Those are the one
+3135.08s: Those are the one 19s
+3141.36s: volunteer
+3146.28s: 147s
+3151.88s: on 103s
+3154.75s: 103s
+3154.76s: 103s Duolingo
+3156.83s: Duolingo
+3156.84s: Duolingo 111s
+3160.00s: and then VRTX
+3165.72s: We got 427 and a half.
+3170.72s: We got 427 and a half. 27.5
+3173.11s: 27.5
+3173.12s: 27.5 So now we can
+3174.63s: So now we can
+3174.64s: So now we can go back through and kind of see what the
+3176.55s: go back through and kind of see what the
+3176.56s: go back through and kind of see what the [&nbsp;__&nbsp;] happened.
+3181.36s: Let's continue.
+3183.12s: Let's continue. So now we'll go to the fifth and then
+3185.15s: So now we'll go to the fifth and then
+3185.16s: So now we'll go to the fifth and then we'll finish this round.
+3188.56s: So what you'll have
+3191.12s: So what you'll have at the end of this is like the literally
+3193.91s: at the end of this is like the literally
+3193.92s: at the end of this is like the literally the start of a sample of one earning
+3196.83s: the start of a sample of one earning
+3196.84s: the start of a sample of one earning cycle.
+3198.03s: cycle.
+3198.04s: cycle. This is one trading day and you can see
+3200.27s: This is one trading day and you can see
+3200.28s: This is one trading day and you can see it it takes some time. This is the sweat
+3202.43s: it it takes some time. This is the sweat
+3202.44s: it it takes some time. This is the sweat equity
+3203.59s: equity
+3203.60s: equity of learning this [&nbsp;__&nbsp;] and I have to be
+3206.63s: of learning this [&nbsp;__&nbsp;] and I have to be
+3206.64s: of learning this [&nbsp;__&nbsp;] and I have to be honest like if you don't learn to find
+3208.55s: honest like if you don't learn to find
+3208.56s: honest like if you don't learn to find some type of joy in this then this
+3212.15s: some type of joy in this then this
+3212.16s: some type of joy in this then this trading in general will be really hard
+3214.11s: trading in general will be really hard
+3214.12s: trading in general will be really hard work. It doesn't mean that you have to
+3215.19s: work. It doesn't mean that you have to
+3215.20s: work. It doesn't mean that you have to like love doing this by the way. But it
+3217.43s: like love doing this by the way. But it
+3217.44s: like love doing this by the way. But it does mean that you have to have at least
+3220.91s: does mean that you have to have at least
+3220.92s: does mean that you have to have at least some some ability to you know tolerate
+3223.67s: some some ability to you know tolerate
+3223.68s: some some ability to you know tolerate and put up with it
+3226.03s: and put up with it
+3226.04s: and put up with it cuz this is this really is a a decent
+3228.55s: cuz this is this really is a a decent
+3228.56s: cuz this is this really is a a decent part of like what the [&nbsp;__&nbsp;] we do. So
+3232.07s: part of like what the [&nbsp;__&nbsp;] we do. So
+3232.08s: part of like what the [&nbsp;__&nbsp;] we do. So this is now a 42 delta.
+3236.08s: And I'm going to simulate the same delta
+3238.52s: And I'm going to simulate the same delta math. Again, it's not perfect.
+3244.68s: But it's viable.
+3249.56s: So that's literally just going to be
+3251.32s: So that's literally just going to be doing the one minus the call delta. And
+3254.87s: doing the one minus the call delta. And
+3254.88s: doing the one minus the call delta. And by doing that then I only have to put it
+3257.03s: by doing that then I only have to put it
+3257.04s: by doing that then I only have to put it in
+3258.95s: in
+3258.96s: in So the the premium that we're going to
+3261.51s: So the the premium that we're going to
+3261.52s: So the the premium that we're going to get these back at is like
+3265.15s: get these back at is like
+3265.16s: get these back at is like 430.
+3268.44s: The vol on these is 33.56.
+3272.48s: The vol on these is 33.56. The short put side we'll get those back
+3275.71s: The short put side we'll get those back
+3275.72s: The short put side we'll get those back for like 735.
+3281.52s: And then our vol on those is 31.71.
+3285.80s: And then our vol on those is 31.71. Okay, so we have our next trade down.
+3288.03s: Okay, so we have our next trade down.
+3288.04s: Okay, so we have our next trade down. We'll continue with the rest.
+3292.60s: Uh Joseph says when we say vol in the is
+3297.28s: Uh Joseph says when we say vol in the is it context dependent versus pretty much
+3299.51s: it context dependent versus pretty much
+3299.52s: it context dependent versus pretty much volatility as opposed to volume. It's
+3301.87s: volatility as opposed to volume. It's
+3301.88s: volatility as opposed to volume. It's almost always volatility.
+3304.47s: almost always volatility.
+3304.48s: almost always volatility. Volume like we might use vol for volume
+3308.03s: Volume like we might use vol for volume
+3308.04s: Volume like we might use vol for volume but it it would be like that that's just
+3311.27s: but it it would be like that that's just
+3311.28s: but it it would be like that that's just very infrequent that that would be the
+3314.43s: very infrequent that that would be the
+3314.44s: very infrequent that that would be the reference there.
+3316.23s: reference there.
+3316.24s: reference there. Almost always volatility. Almost.
+3320.83s: Almost always volatility. Almost.
+3320.84s: Almost always volatility. Almost. The we're at the 111s in here.
+3325.63s: The we're at the 111s in here.
+3325.64s: The we're at the 111s in here. So
+3327.07s: So
+3327.08s: So our 111s are at a 16 delta on the call
+3329.87s: our 111s are at a 16 delta on the call
+3329.88s: our 111s are at a 16 delta on the call side.
+3331.03s: side.
+3331.04s: side. The premium to get out of these is like
+3332.83s: The premium to get out of these is like
+3332.84s: The premium to get out of these is like 75 cents.
+3335.19s: 75 cents.
+3335.20s: 75 cents. The vol on these is 84.13.
+3339.03s: The vol on these is 84.13.
+3339.04s: The vol on these is 84.13. The premium on the put side, get out of
+3342.27s: The premium on the put side, get out of
+3342.28s: The premium on the put side, get out of here,
+3343.63s: here,
+3343.64s: here, is like 890.
+3350.84s: And then our vol on these is
+3355.08s: And then our vol on these is broken.
+3356.25s: broken.
+3356.26s: broken. &gt;&gt; [clears throat]
+3358.23s: &gt;&gt; [clears throat]
+3358.24s: &gt;&gt; [clears throat] &gt;&gt; Yeah, it's completely broken. Well, I
+3359.51s: &gt;&gt; Yeah, it's completely broken. Well, I
+3359.52s: &gt;&gt; Yeah, it's completely broken. Well, I guess because they're so far in the
+3361.55s: guess because they're so far in the
+3361.56s: guess because they're so far in the money, they they have a they have a
+3363.95s: money, they they have a they have a
+3363.96s: money, they they have a they have a really small vol, whatever.
+3367.59s: really small vol, whatever.
+3367.60s: really small vol, whatever. Whatever that is, so we won't I'm not
+3369.63s: Whatever that is, so we won't I'm not
+3369.64s: Whatever that is, so we won't I'm not going to bother trying to guess at that.
+3371.31s: going to bother trying to guess at that.
+3371.32s: going to bother trying to guess at that. I'm going to leave it.
+3374.28s: Next, we have five more to go, and then
+3378.92s: Next, we have five more to go, and then we'll have our results for the first
+3381.07s: we'll have our results for the first
+3381.08s: we'll have our results for the first run.
+3383.96s: So, we're at 137.
+3387.84s: And we were at the 103s.
+3393.36s: 103.
+3395.28s: 103. So, delta here is a 36.
+3398.31s: So, delta here is a 36.
+3398.32s: So, delta here is a 36. To get out of these, we're going to be
+3400.27s: To get out of these, we're going to be
+3400.28s: To get out of these, we're going to be out at like 162 or so.
+3403.95s: out at like 162 or so.
+3403.96s: out at like 162 or so. Vol is 65.33.
+3407.07s: Vol is 65.33.
+3407.08s: Vol is 65.33. Premium
+3408.51s: Premium
+3408.52s: Premium on the put side,
+3412.52s: we're going to be like seven or 425.
+3417.96s: And then vol over here is 65.94.
+3421.44s: And then vol over here is 65.94. Okay, got our next.
+3423.67s: Okay, got our next.
+3423.68s: Okay, got our next. After this, Palantir.
+3427.92s: For Palantir, we're at the 147s.
+3435.88s: 135
+3439.52s: 87 is
+3441.16s: 87 is price. We're at 12 delta here.
+3444.51s: price. We're at 12 delta here.
+3444.52s: price. We're at 12 delta here. Premium like 53 cents. I'll do 53.
+3449.55s: Premium like 53 cents. I'll do 53.
+3449.56s: Premium like 53 cents. I'll do 53. Really narrow.
+3451.35s: Really narrow.
+3451.36s: Really narrow. 64.88
+3453.67s: 64.88
+3453.68s: 64.88 for our vol.
+3455.59s: for our vol.
+3455.60s: for our vol. Put side a little deeper in the money,
+3457.83s: Put side a little deeper in the money,
+3457.84s: Put side a little deeper in the money, so a little less liquid.
+3464.48s: Those are at like
+3466.80s: Those are at like call it 1170.
+3469.27s: call it 1170.
+3469.28s: call it 1170. And then our vol on these is 66
+3472.67s: And then our vol on these is 66
+3472.68s: And then our vol on these is 66 70.
+3475.16s: Okay, three more.
+3478.72s: We have CCJ.
+3483.52s: And before we get there, if you guys
+3487.04s: And before we get there, if you guys have any guesses on whether or not we
+3488.91s: have any guesses on whether or not we
+3488.92s: have any guesses on whether or not we made money, I would be really curious
+3491.23s: made money, I would be really curious
+3491.24s: made money, I would be really curious what you're guessing based on like just
+3493.27s: what you're guessing based on like just
+3493.28s: what you're guessing based on like just what you're hearing and seeing so far.
+3498.28s: So spot here is 11438.
+3502.12s: So spot here is 11438. Delta is 27.
+3505.27s: Delta is 27.
+3505.28s: Delta is 27. Short
+3507.27s: Short
+3507.28s: Short premium to get out of here is like
+3508.31s: premium to get out of here is like
+3508.32s: premium to get out of here is like $1.15.
+3510.31s: $1.15.
+3510.32s: $1.15. At 5973.
+3514.20s: And then our premium on the put side to
+3517.36s: And then our premium on the put side to get out
+3518.91s: get out
+3518.92s: get out like 610.
+3523.28s: And these are at a 6925.
+3529.04s: Okay, last two. We have RIG.
+3535.64s: And at RIG we were at the sevens.
+3543.16s: The RIG is at 626.
+3547.68s: The RIG is at 626. It's a 10 delta.
+3549.75s: It's a 10 delta.
+3549.76s: It's a 10 delta. These will cost us three pennies to get
+3551.99s: These will cost us three pennies to get
+3552.00s: These will cost us three pennies to get out at 8432 vol.
+3555.83s: out at 8432 vol.
+3555.84s: out at 8432 vol. Short put premium
+3559.56s: it's like
+3561.00s: it's like 80
+3565.24s: 83 cents.
+3567.72s: 83 cents. and at 120.46.
+3571.15s: and at 120.46.
+3571.16s: and at 120.46. And then our last one
+3573.51s: And then our last one
+3573.52s: And then our last one PFE
+3578.92s: We were at the 26s.
+3587.48s: So spot 2655
+3590.96s: So spot 2655 We're at a 78 delta here.
+3594.19s: We're at a 78 delta here.
+3594.20s: We're at a 78 delta here. We're going to pay like 60 cents to get
+3596.31s: We're going to pay like 60 cents to get
+3596.32s: We're going to pay like 60 cents to get out.
+3598.11s: out.
+3598.12s: out. Ball 3338
+3601.15s: Ball 3338
+3601.16s: Ball 3338 Put side to get out will be like 22
+3603.19s: Put side to get out will be like 22
+3603.20s: Put side to get out will be like 22 cents.
+3605.39s: cents.
+3605.40s: cents. And put side balls 32. Okay.
+3609.31s: And put side balls 32. Okay.
+3609.32s: And put side balls 32. Okay. So we have the performance
+3612.43s: So we have the performance
+3612.44s: So we have the performance of our basic earnings
+3617.87s: of our basic earnings
+3617.88s: of our basic earnings strategy which to be abundantly clear
+3621.51s: strategy which to be abundantly clear
+3621.52s: strategy which to be abundantly clear you can't actually infer a whole lot
+3625.71s: you can't actually infer a whole lot
+3625.72s: you can't actually infer a whole lot from this, right? It's a single trading
+3627.47s: from this, right? It's a single trading
+3627.48s: from this, right? It's a single trading day. But what I can tell you is like
+3630.23s: day. But what I can tell you is like
+3630.24s: day. But what I can tell you is like what you see here
+3632.19s: what you see here
+3632.20s: what you see here is generally
+3635.31s: is generally
+3635.32s: is generally a pretty fair place, like a pretty fair
+3638.47s: a pretty fair place, like a pretty fair
+3638.48s: a pretty fair place, like a pretty fair place to
+3641.19s: place to
+3641.20s: place to um
+3642.96s: um to expect. Right? So out of our how many
+3647.35s: to expect. Right? So out of our how many
+3647.36s: to expect. Right? So out of our how many trades did we make? We made eight trades
+3651.11s: trades did we make? We made eight trades
+3651.12s: trades did we make? We made eight trades and of those eight trades we won on six,
+3655.39s: and of those eight trades we won on six,
+3655.40s: and of those eight trades we won on six, lost on two. The two that we lost we
+3659.39s: lost on two. The two that we lost we
+3659.40s: lost on two. The two that we lost we lost 2400 bucks, 1400 bucks.
+3663.07s: lost 2400 bucks, 1400 bucks.
+3663.08s: lost 2400 bucks, 1400 bucks. And then on
+3665.51s: And then on
+3665.52s: And then on the stuff that we were profitable, we
+3667.67s: the stuff that we were profitable, we
+3667.68s: the stuff that we were profitable, we made eight grand. So net P&amp;L here is
+3671.99s: made eight grand. So net P&amp;L here is
+3672.00s: made eight grand. So net P&amp;L here is 4224.
+3674.59s: 4224.
+3674.60s: 4224. And this is not based on any specific
+3677.51s: And this is not based on any specific
+3677.52s: And this is not based on any specific portfolio size. This is based
+3679.47s: portfolio size. This is based
+3679.48s: portfolio size. This is based specifically on sizing just off of the
+3682.63s: specifically on sizing just off of the
+3682.64s: specifically on sizing just off of the largest trade and that one gets a one
+3684.43s: largest trade and that one gets a one
+3684.44s: largest trade and that one gets a one lot.
+3685.95s: lot.
+3685.96s: lot. So, this is like the first pass. Now,
+3688.95s: So, this is like the first pass. Now,
+3688.96s: So, this is like the first pass. Now, what you should do is do this next
+3693.35s: what you should do is do this next
+3693.36s: what you should do is do this next iteration here.
+3695.75s: iteration here.
+3695.76s: iteration here. And then you should also see if you can
+3700.43s: And then you should also see if you can
+3700.44s: And then you should also see if you can start doing this kind of process in
+3703.91s: start doing this kind of process in
+3703.92s: start doing this kind of process in Python or some other coding platform,
+3706.71s: Python or some other coding platform,
+3706.72s: Python or some other coding platform, but you will need an API. You're not
+3708.63s: but you will need an API. You're not
+3708.64s: but you will need an API. You're not going to get options data for free.
+3710.31s: going to get options data for free.
+3710.32s: going to get options data for free. Stock data you can get
+3712.59s: Stock data you can get
+3712.60s: Stock data you can get for for free most places, but in order
+3715.79s: for for free most places, but in order
+3715.80s: for for free most places, but in order to get like actual options data, I use
+3718.79s: to get like actual options data, I use
+3718.80s: to get like actual options data, I use Orats. And I used to buy it directly
+3721.87s: Orats. And I used to buy it directly
+3721.88s: Orats. And I used to buy it directly from Cboe. I I didn't use an API for a
+3724.51s: from Cboe. I I didn't use an API for a
+3724.52s: from Cboe. I I didn't use an API for a long time.
+3725.87s: long time.
+3725.88s: long time. And that's really expensive. And option
+3728.83s: And that's really expensive. And option
+3728.84s: And that's really expensive. And option data used to be way more expensive, but
+3731.55s: data used to be way more expensive, but
+3731.56s: data used to be way more expensive, but now you can get it a little cheaper. And
+3733.63s: now you can get it a little cheaper. And
+3733.64s: now you can get it a little cheaper. And full disclosure, I I am an affiliate for
+3735.99s: full disclosure, I I am an affiliate for
+3736.00s: full disclosure, I I am an affiliate for Orats, but it it's legitimately cuz I I
+3738.15s: Orats, but it it's legitimately cuz I I
+3738.16s: Orats, but it it's legitimately cuz I I would use them. That's the only people
+3739.51s: would use them. That's the only people
+3739.52s: would use them. That's the only people that I'm an affiliate for is like [&nbsp;__&nbsp;]
+3741.23s: that I'm an affiliate for is like [&nbsp;__&nbsp;]
+3741.24s: that I'm an affiliate for is like [&nbsp;__&nbsp;] that I actually would use.
+3743.19s: that I actually would use.
+3743.20s: that I actually would use. So, but that that's how you get options
+3745.27s: So, but that that's how you get options
+3745.28s: So, but that that's how you get options data. There might be some online sources
+3747.51s: data. There might be some online sources
+3747.52s: data. There might be some online sources that you can scrounge to get some for
+3749.19s: that you can scrounge to get some for
+3749.20s: that you can scrounge to get some for free. It's just not much.
+3751.59s: free. It's just not much.
+3751.60s: free. It's just not much. But, if you don't have that and you
+3754.87s: But, if you don't have that and you
+3754.88s: But, if you don't have that and you don't have access to options data, this
+3757.51s: don't have access to options data, this
+3757.52s: don't have access to options data, this is what you do. You go through and you
+3759.71s: is what you do. You go through and you
+3759.72s: is what you do. You go through and you manually hand jam this [&nbsp;__&nbsp;]
+3762.47s: manually hand jam this [&nbsp;__&nbsp;]
+3762.48s: manually hand jam this [&nbsp;__&nbsp;] The The cool part is again, you don't
+3765.51s: The The cool part is again, you don't
+3765.52s: The The cool part is again, you don't actually have to do this. There's a
+3768.55s: actually have to do this. There's a
+3768.56s: actually have to do this. There's a slightly more efficient way which I
+3770.47s: slightly more efficient way which I
+3770.48s: slightly more efficient way which I entirely urge you to take a look at.
+3773.95s: entirely urge you to take a look at.
+3773.96s: entirely urge you to take a look at. But, the The main thing is even based on
+3776.83s: But, the The main thing is even based on
+3776.84s: But, the The main thing is even based on this very first pass,
+3780.39s: this very first pass,
+3780.40s: this very first pass, what you should take away is that based
+3783.67s: what you should take away is that based
+3783.68s: what you should take away is that based on your research that we that we started
+3787.51s: on your research that we that we started
+3787.52s: on your research that we that we started that led us to this profit mechanism,
+3789.43s: that led us to this profit mechanism,
+3789.44s: that led us to this profit mechanism, right? The research is effectively what
+3791.39s: right? The research is effectively what
+3791.40s: right? The research is effectively what I'm telling you, but you
+3794.47s: I'm telling you, but you
+3794.48s: I'm telling you, but you surrogate came across this in
+3798.99s: surrogate came across this in
+3799.00s: surrogate came across this in SSRN doing basic research on options
+3802.07s: SSRN doing basic research on options
+3802.08s: SSRN doing basic research on options markets. You came across this this
+3803.87s: markets. You came across this this
+3803.88s: markets. You came across this this effect in general. You see it as a
+3806.03s: effect in general. You see it as a
+3806.04s: effect in general. You see it as a profit mechanism. You run this random
+3808.15s: profit mechanism. You run this random
+3808.16s: profit mechanism. You run this random test on one day.
+3810.07s: test on one day.
+3810.08s: test on one day. And so far, it at least looks like
+3814.19s: And so far, it at least looks like
+3814.20s: And so far, it at least looks like something we should continue taking a
+3815.71s: something we should continue taking a
+3815.72s: something we should continue taking a look at.
+3816.95s: look at.
+3816.96s: look at. Now, one thing I will note is that even
+3819.51s: Now, one thing I will note is that even
+3819.52s: Now, one thing I will note is that even if all of these were losing positions,
+3822.71s: if all of these were losing positions,
+3822.72s: if all of these were losing positions, you should still take a look at it. And
+3824.83s: you should still take a look at it. And
+3824.84s: you should still take a look at it. And it's just because of what I'm
+3826.83s: it's just because of what I'm
+3826.84s: it's just because of what I'm emphasizing, the fact that this is just
+3829.43s: emphasizing, the fact that this is just
+3829.44s: emphasizing, the fact that this is just one
+3830.43s: one
+3830.44s: one earnings day. That's it. But the cool
+3832.79s: earnings day. That's it. But the cool
+3832.80s: earnings day. That's it. But the cool part is is like you don't have to go
+3834.15s: part is is like you don't have to go
+3834.16s: part is is like you don't have to go through hundreds of earnings seasons to
+3836.59s: through hundreds of earnings seasons to
+3836.60s: through hundreds of earnings seasons to see if there's anything here. So, even
+3838.99s: see if there's anything here. So, even
+3839.00s: see if there's anything here. So, even if you needed to hand jam this yourself,
+3841.99s: if you needed to hand jam this yourself,
+3842.00s: if you needed to hand jam this yourself, it'll take a while, but you can
+3844.15s: it'll take a while, but you can
+3844.16s: it'll take a while, but you can definitely get as many samples as you
+3846.47s: definitely get as many samples as you
+3846.48s: definitely get as many samples as you need in order to have a pretty good idea
+3848.87s: need in order to have a pretty good idea
+3848.88s: need in order to have a pretty good idea of like is there a reasonable effect
+3851.03s: of like is there a reasonable effect
+3851.04s: of like is there a reasonable effect here? And I would be looking to go back
+3853.71s: here? And I would be looking to go back
+3853.72s: here? And I would be looking to go back at least at least eight quarters. I
+3856.79s: at least at least eight quarters. I
+3856.80s: at least at least eight quarters. I think that's a reasonable length if
+3859.03s: think that's a reasonable length if
+3859.04s: think that's a reasonable length if somebody were to hand jam it. Ideally,
+3861.31s: somebody were to hand jam it. Ideally,
+3861.32s: somebody were to hand jam it. Ideally, 12 to 16.
+3863.35s: 12 to 16.
+3863.36s: 12 to 16. But
+3864.47s: But
+3864.48s: But again, there's no real reason to hand
+3866.55s: again, there's no real reason to hand
+3866.56s: again, there's no real reason to hand jam it other than, you know, maybe just
+3869.55s: jam it other than, you know, maybe just
+3869.56s: jam it other than, you know, maybe just getting that that experience. But you
+3871.55s: getting that that experience. But you
+3871.56s: getting that that experience. But you should absolutely leverage, again, data
+3875.07s: should absolutely leverage, again, data
+3875.08s: should absolutely leverage, again, data analysis tools so that you don't have to
+3877.11s: analysis tools so that you don't have to
+3877.12s: analysis tools so that you don't have to limit yourself to eight look backs. You
+3879.11s: limit yourself to eight look backs. You
+3879.12s: limit yourself to eight look backs. You can look back at the last 20 or 24
+3882.22s: can look back at the last 20 or 24
+3882.23s: can look back at the last 20 or 24 &gt;&gt; [snorts]
+3882.39s: &gt;&gt; [snorts]
+3882.40s: &gt;&gt; [snorts] &gt;&gt; and then see if there's anything that's
+3883.99s: &gt;&gt; and then see if there's anything that's
+3884.00s: &gt;&gt; and then see if there's anything that's any interesting trends across those.
+3886.95s: any interesting trends across those.
+3886.96s: any interesting trends across those. And the last thing I would note is as
+3890.23s: And the last thing I would note is as
+3890.24s: And the last thing I would note is as you're doing this, you want to be posing
+3892.75s: you're doing this, you want to be posing
+3892.76s: you're doing this, you want to be posing different kind of thoughts in your brain
+3894.39s: different kind of thoughts in your brain
+3894.40s: different kind of thoughts in your brain like, "Huh, like is there any filtering
+3896.83s: like, "Huh, like is there any filtering
+3896.84s: like, "Huh, like is there any filtering I might be able to do that could
+3898.43s: I might be able to do that could
+3898.44s: I might be able to do that could increase my profitability?" And that's
+3902.07s: increase my profitability?" And that's
+3902.08s: increase my profitability?" And that's something that you want to track as you
+3904.07s: something that you want to track as you
+3904.08s: something that you want to track as you go.
+3905.19s: go.
+3905.20s: go. So, I'm going to go make dinner.
+3907.23s: So, I'm going to go make dinner.
+3907.24s: So, I'm going to go make dinner. Hopefully, there's some value in here
+3909.03s: Hopefully, there's some value in here
+3909.04s: Hopefully, there's some value in here for you guys. We'll literally continue
+3910.59s: for you guys. We'll literally continue
+3910.60s: for you guys. We'll literally continue this tomorrow. We'll literally just do
+3913.03s: this tomorrow. We'll literally just do
+3913.04s: this tomorrow. We'll literally just do like a full earnings week so that you
+3915.39s: like a full earnings week so that you
+3915.40s: like a full earnings week so that you could get a sense of what that looks
+3917.19s: could get a sense of what that looks
+3917.20s: could get a sense of what that looks like. If you guys need anything, hit me
+3919.11s: like. If you guys need anything, hit me
+3919.12s: like. If you guys need anything, hit me up in the Discord. Be an outlier. See
+3920.55s: up in the Discord. Be an outlier. See
+3920.56s: up in the Discord. Be an outlier. See you later.

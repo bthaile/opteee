@@ -1,0 +1,541 @@
+0.56s: Let's talk about a smarter way to size
+2.80s: Let's talk about a smarter way to size your positions. And we're going to use
+4.87s: your positions. And we're going to use
+4.88s: your positions. And we're going to use an example here. I have SPY and Tesla. A
+8.31s: an example here. I have SPY and Tesla. A
+8.32s: an example here. I have SPY and Tesla. A lot of people will mistakenly say, if I
+10.39s: lot of people will mistakenly say, if I
+10.40s: lot of people will mistakenly say, if I have a $20,000 portfolio and I'm going
+13.03s: have a $20,000 portfolio and I'm going
+13.04s: have a $20,000 portfolio and I'm going to put $10,000 into SPY, $10,000 into
+16.15s: to put $10,000 into SPY, $10,000 into
+16.16s: to put $10,000 into SPY, $10,000 into Tesla. You can do that, but there's a
+18.55s: Tesla. You can do that, but there's a
+18.56s: Tesla. You can do that, but there's a lot of issues with it. And those issues
+20.63s: lot of issues with it. And those issues
+20.64s: lot of issues with it. And those issues compound over time. I want to show you
+24.15s: compound over time. I want to show you
+24.16s: compound over time. I want to show you with an example a different way to think
+26.15s: with an example a different way to think
+26.16s: with an example a different way to think about position sizing. And this applies
+27.99s: about position sizing. And this applies
+28.00s: about position sizing. And this applies to whether you trade equities, options,
+30.63s: to whether you trade equities, options,
+30.64s: to whether you trade equities, options, futures, none of it matters. The context
+33.43s: futures, none of it matters. The context
+33.44s: futures, none of it matters. The context here is we need to take into account how
+36.47s: here is we need to take into account how
+36.48s: here is we need to take into account how much something moves. So let's take a
+38.31s: much something moves. So let's take a
+38.32s: much something moves. So let's take a look at SPY to begin. If we look at SPY,
+41.75s: look at SPY to begin. If we look at SPY,
+41.76s: look at SPY to begin. If we look at SPY, it currently is showing 30% implied
+44.63s: it currently is showing 30% implied
+44.64s: it currently is showing 30% implied volatility. Remember this is annualized.
+46.87s: volatility. Remember this is annualized.
+46.88s: volatility. Remember this is annualized. This is an annualized metric. And this
+48.79s: This is an annualized metric. And this
+48.80s: This is an annualized metric. And this is using right now 30-day vault. And if
+52.87s: is using right now 30-day vault. And if
+52.88s: is using right now 30-day vault. And if I eyeball this, it seems pretty high
+55.43s: I eyeball this, it seems pretty high
+55.44s: I eyeball this, it seems pretty high relative to SPY. It's at 95 percentile.
+58.15s: relative to SPY. It's at 95 percentile.
+58.16s: relative to SPY. It's at 95 percentile. So, the V's pretty high. And I can just
+60.47s: So, the V's pretty high. And I can just
+60.48s: So, the V's pretty high. And I can just see what the total movements look like.
+62.71s: see what the total movements look like.
+62.72s: see what the total movements look like. And I have some different metrics here
+64.55s: And I have some different metrics here
+64.56s: And I have some different metrics here to show total ranges and whatnot. So,
+66.87s: to show total ranges and whatnot. So,
+66.88s: to show total ranges and whatnot. So, for example, over the last 12 months,
+68.47s: for example, over the last 12 months,
+68.48s: for example, over the last 12 months, it's like 44.8% range, high to low. If I
+72.15s: it's like 44.8% range, high to low. If I
+72.16s: it's like 44.8% range, high to low. If I look at Tesla, Tesla is a 50% V. And
+74.71s: look at Tesla, Tesla is a 50% V. And
+74.72s: look at Tesla, Tesla is a 50% V. And notice that the implied volatility
+76.07s: notice that the implied volatility
+76.08s: notice that the implied volatility percentile is at 27%.
+78.39s: percentile is at 27%.
+78.40s: percentile is at 27%. Even though this number is higher than
+80.31s: Even though this number is higher than
+80.32s: Even though this number is higher than SPY, relative to itself, it's actually
+82.79s: SPY, relative to itself, it's actually
+82.80s: SPY, relative to itself, it's actually really mellow right now comparatively.
+85.91s: really mellow right now comparatively.
+85.92s: really mellow right now comparatively. very noteworthy. If I take a look at the
+88.63s: very noteworthy. If I take a look at the
+88.64s: very noteworthy. If I take a look at the 12-month range, it's 132.8%.
+92.07s: 12-month range, it's 132.8%.
+92.08s: 12-month range, it's 132.8%. Massive compared to what we saw in SPY.
+95.59s: Massive compared to what we saw in SPY.
+95.60s: Massive compared to what we saw in SPY. So, if I were to take $10,000 and put
+98.47s: So, if I were to take $10,000 and put
+98.48s: So, if I were to take $10,000 and put that into each of these positions, I do
+100.87s: that into each of these positions, I do
+100.88s: that into each of these positions, I do have the same total value at risk, 10
+103.35s: have the same total value at risk, 10
+103.36s: have the same total value at risk, 10 grand. But the way that that looks in
+105.67s: grand. But the way that that looks in
+105.68s: grand. But the way that that looks in these different positions is massively
+107.27s: these different positions is massively
+107.28s: these different positions is massively different.
+108.07s: different.
+108.08s: &gt;&gt; [snorts]
+108.08s: &gt;&gt; [snorts] &gt;&gt; And we can use some basic options tools
+111.75s: &gt;&gt; And we can use some basic options tools
+111.76s: &gt;&gt; And we can use some basic options tools and then a little bit of math to help us
+114.39s: and then a little bit of math to help us
+114.40s: and then a little bit of math to help us figure out exactly how much. So first
+116.79s: figure out exactly how much. So first
+116.80s: figure out exactly how much. So first thing we can do is literally create
+118.63s: thing we can do is literally create
+118.64s: thing we can do is literally create probability cones based on the
+120.39s: probability cones based on the
+120.40s: probability cones based on the volatility and then we can speculate
+122.71s: volatility and then we can speculate
+122.72s: volatility and then we can speculate within one standard deviation which is
+124.87s: within one standard deviation which is
+124.88s: within one standard deviation which is 68% of occurrences.
+127.59s: 68% of occurrences.
+127.60s: 68% of occurrences. How frequently do we expect to hit each
+130.31s: How frequently do we expect to hit each
+130.32s: How frequently do we expect to hit each part of this band over a time frame. So
+133.75s: part of this band over a time frame. So
+133.76s: part of this band over a time frame. So in this case the axis here the x- axis
+138.71s: in this case the axis here the x- axis
+138.72s: in this case the axis here the x- axis is showing us different durations. So
+141.99s: is showing us different durations. So
+142.00s: is showing us different durations. So for example this is like 10 days or
+143.83s: for example this is like 10 days or
+143.84s: for example this is like 10 days or whatever. And notice how the points in
+145.99s: whatever. And notice how the points in
+146.00s: whatever. And notice how the points in that band get wider the further out you
+148.23s: that band get wider the further out you
+148.24s: that band get wider the further out you go. Longer time something has the more
+151.35s: go. Longer time something has the more
+151.36s: go. Longer time something has the more something can scale. Volatility scales
+154.07s: something can scale. Volatility scales
+154.08s: something can scale. Volatility scales with the square root of time. So we can
+157.59s: with the square root of time. So we can
+157.60s: with the square root of time. So we can then scale this volatility to give us
+160.79s: then scale this volatility to give us
+160.80s: then scale this volatility to give us different ideas over different durations
+162.55s: different ideas over different durations
+162.56s: different ideas over different durations what the moves might be. And this is the
+164.15s: what the moves might be. And this is the
+164.16s: what the moves might be. And this is the formula to do that. We're literally just
+166.15s: formula to do that. We're literally just
+166.16s: formula to do that. We're literally just going to take the spot price. We're
+167.43s: going to take the spot price. We're
+167.44s: going to take the spot price. We're going to multiply it by the IV and then
+169.11s: going to multiply it by the IV and then
+169.12s: going to multiply it by the IV and then we're going to multiply that by the
+170.47s: we're going to multiply that by the
+170.48s: we're going to multiply that by the square root of the duration, the time
+172.47s: square root of the duration, the time
+172.48s: square root of the duration, the time frame you're interested in, divide it by
+174.55s: frame you're interested in, divide it by
+174.56s: frame you're interested in, divide it by 365. The reason why we divide by 365
+177.11s: 365. The reason why we divide by 365
+177.12s: 365. The reason why we divide by 365 versus 250, 251, 252 is because implied
+180.79s: versus 250, 251, 252 is because implied
+180.80s: versus 250, 251, 252 is because implied volatility uses all days. Realized
+183.11s: volatility uses all days. Realized
+183.12s: volatility uses all days. Realized volatility uses trading days. So, if we
+185.03s: volatility uses trading days. So, if we
+185.04s: volatility uses trading days. So, if we were doing a realized version of this,
+186.71s: were doing a realized version of this,
+186.72s: were doing a realized version of this, we would use instead 251 or whatever.
+190.15s: we would use instead 251 or whatever.
+190.16s: we would use instead 251 or whatever. Sick. Next up, what does this mean?
+193.51s: Sick. Next up, what does this mean?
+193.52s: Sick. Next up, what does this mean? Well, it means over the next 30 days, if
+198.31s: Well, it means over the next 30 days, if
+198.32s: Well, it means over the next 30 days, if I had a position in SPY, one standard
+202.55s: I had a position in SPY, one standard
+202.56s: I had a position in SPY, one standard deviation up and down, I would expect it
+204.71s: deviation up and down, I would expect it
+204.72s: deviation up and down, I would expect it to move 57.8,
+207.83s: to move 57.8,
+207.84s: to move 57.8, which represents 8.6% of the movement.
+211.51s: which represents 8.6% of the movement.
+211.52s: which represents 8.6% of the movement. Tesla it would be [snorts] $56.8.
+215.91s: Tesla it would be [snorts] $56.8.
+215.92s: Tesla it would be [snorts] $56.8. So very close in terms of total dollars
+217.99s: So very close in terms of total dollars
+218.00s: So very close in terms of total dollars but notice the difference in prices. SPY
+220.79s: but notice the difference in prices. SPY
+220.80s: but notice the difference in prices. SPY is 672, Tesla's 396. So this is why the
+224.39s: is 672, Tesla's 396. So this is why the
+224.40s: is 672, Tesla's 396. So this is why the percent movement that you see in Tesla
+227.03s: percent movement that you see in Tesla
+227.04s: percent movement that you see in Tesla is actually much higher 14.3%.
+232.16s: What this immediately tells us is that
+235.52s: What this immediately tells us is that if I input $10,000 even between these,
+240.95s: if I input $10,000 even between these,
+240.96s: if I input $10,000 even between these, I am going to experience more P&amp;L
+244.47s: I am going to experience more P&amp;L
+244.48s: I am going to experience more P&amp;L volatility in Tesla than SPY.
+248.39s: volatility in Tesla than SPY.
+248.40s: volatility in Tesla than SPY. Not anything earthshattering actually
+250.79s: Not anything earthshattering actually
+250.80s: Not anything earthshattering actually quite intuitive, but with a little bit
+253.75s: quite intuitive, but with a little bit
+253.76s: quite intuitive, but with a little bit of deeper digging, we can get specific
+256.63s: of deeper digging, we can get specific
+256.64s: of deeper digging, we can get specific and we can figure out exactly how much.
+259.03s: and we can figure out exactly how much.
+259.04s: and we can figure out exactly how much. So, let's do that. All I'm doing here is
+263.19s: So, let's do that. All I'm doing here is
+263.20s: So, let's do that. All I'm doing here is now plotting that $10,000 against these
+266.15s: now plotting that $10,000 against these
+266.16s: now plotting that $10,000 against these moves and I'm seeing how much the P&amp;L of
+268.47s: moves and I'm seeing how much the P&amp;L of
+268.48s: moves and I'm seeing how much the P&amp;L of that $10,000 will be. So in the case of
+272.07s: that $10,000 will be. So in the case of
+272.08s: that $10,000 will be. So in the case of SPY, it would be plus or minus 860
+274.79s: SPY, it would be plus or minus 860
+274.80s: SPY, it would be plus or minus 860 bucks. In the case of Tesla, 1433. It's
+277.75s: bucks. In the case of Tesla, 1433. It's
+277.76s: bucks. In the case of Tesla, 1433. It's like a 40% variance between these.
+281.11s: like a 40% variance between these.
+281.12s: like a 40% variance between these. This matters tremendously if you're
+284.63s: This matters tremendously if you're
+284.64s: This matters tremendously if you're applying any to any type of strategy
+287.91s: applying any to any type of strategy
+287.92s: applying any to any type of strategy that uses management plans. So let's say
+291.51s: that uses management plans. So let's say
+291.52s: that uses management plans. So let's say for example we go to the platform and
+294.47s: for example we go to the platform and
+294.48s: for example we go to the platform and let's say for whatever reason we thought
+295.99s: let's say for whatever reason we thought
+296.00s: let's say for whatever reason we thought Tesla was going to go down. We're going
+297.59s: Tesla was going to go down. We're going
+297.60s: Tesla was going to go down. We're going to trade it for a breakdown and let's
+300.31s: to trade it for a breakdown and let's
+300.32s: to trade it for a breakdown and let's say that I was going to put my stop
+302.23s: say that I was going to put my stop
+302.24s: say that I was going to put my stop where I consider myself wrong in the
+304.63s: where I consider myself wrong in the
+304.64s: where I consider myself wrong in the trade. So in this example, let's say
+307.27s: trade. So in this example, let's say
+307.28s: trade. So in this example, let's say that the stop goes here, which would be
+310.23s: that the stop goes here, which would be
+310.24s: that the stop goes here, which would be like 409. If price goes above 409, that
+315.11s: like 409. If price goes above 409, that
+315.12s: like 409. If price goes above 409, that means that my idea of Tesla going down
+318.23s: means that my idea of Tesla going down
+318.24s: means that my idea of Tesla going down is wrong. I need that piece of
+320.23s: is wrong. I need that piece of
+320.24s: is wrong. I need that piece of information to figure out how I'm going
+321.51s: information to figure out how I'm going
+321.52s: information to figure out how I'm going to size this thing. So now, let's go
+323.67s: to size this thing. So now, let's go
+323.68s: to size this thing. So now, let's go back into the trade tab and let's do
+326.07s: back into the trade tab and let's do
+326.08s: back into the trade tab and let's do some options stuff. Let's figure out
+327.83s: some options stuff. Let's figure out
+327.84s: some options stuff. Let's figure out what kind of put we might want to get.
+330.31s: what kind of put we might want to get.
+330.32s: what kind of put we might want to get. Let's pay attention to volatility and
+331.83s: Let's pay attention to volatility and
+331.84s: Let's pay attention to volatility and all those other good things. And let's
+334.47s: all those other good things. And let's
+334.48s: all those other good things. And let's say that we decide that we want to be
+336.55s: say that we decide that we want to be
+336.56s: say that we decide that we want to be somewhere out here. We're going to do
+337.99s: somewhere out here. We're going to do
+338.00s: somewhere out here. We're going to do the 420s because it's a funny number.
+340.87s: the 420s because it's a funny number.
+340.88s: the 420s because it's a funny number. So, I'm going to buy this 420 put. I'm
+343.35s: So, I'm going to buy this 420 put. I'm
+343.36s: So, I'm going to buy this 420 put. I'm going to analyze it first and then I'm
+345.35s: going to analyze it first and then I'm
+345.36s: going to analyze it first and then I'm going to figure out what my P&amp;L would be
+347.91s: going to figure out what my P&amp;L would be
+347.92s: going to figure out what my P&amp;L would be at different points. And as we already
+350.63s: at different points. And as we already
+350.64s: at different points. And as we already decided, if this thing goes above 409, I
+353.75s: decided, if this thing goes above 409, I
+353.76s: decided, if this thing goes above 409, I know I'm wrong. So, on this one lot, if
+357.19s: know I'm wrong. So, on this one lot, if
+357.20s: know I'm wrong. So, on this one lot, if it goes above 409, that means I'm going
+359.75s: it goes above 409, that means I'm going
+359.76s: it goes above 409, that means I'm going to lose $763.
+362.47s: to lose $763.
+362.48s: to lose $763. My next step here is to size this so
+365.19s: My next step here is to size this so
+365.20s: My next step here is to size this so that it makes sense relative to the
+367.03s: that it makes sense relative to the
+367.04s: that it makes sense relative to the whole portfolio. So let's say that I had
+369.59s: whole portfolio. So let's say that I had
+369.60s: whole portfolio. So let's say that I had a $100,000 portfolio and I wanted to
+372.95s: a $100,000 portfolio and I wanted to
+372.96s: a $100,000 portfolio and I wanted to size this at 1% risk. I'm kind of there.
+377.19s: size this at 1% risk. I'm kind of there.
+377.20s: size this at 1% risk. I'm kind of there. If instead
+379.51s: If instead
+379.52s: If instead I now want to take this idea and
+382.95s: I now want to take this idea and
+382.96s: I now want to take this idea and integrate this component,
+386.07s: integrate this component,
+386.08s: integrate this component, I now have a much better management plan
+389.75s: I now have a much better management plan
+389.76s: I now have a much better management plan for that same idea. The reason being is
+393.59s: for that same idea. The reason being is
+393.60s: for that same idea. The reason being is instead of let's say just looking at
+395.19s: instead of let's say just looking at
+395.20s: instead of let's say just looking at Tesla and I was looking at Tesla and SPY
+397.75s: Tesla and I was looking at Tesla and SPY
+397.76s: Tesla and I was looking at Tesla and SPY and I wanted to size things so that the
+400.55s: and I wanted to size things so that the
+400.56s: and I wanted to size things so that the risk between these two names was more
+402.71s: risk between these two names was more
+402.72s: risk between these two names was more similar. It might mean that I actually
+405.19s: similar. It might mean that I actually
+405.20s: similar. It might mean that I actually have to size down the Tesla position a
+407.91s: have to size down the Tesla position a
+407.92s: have to size down the Tesla position a little bit more compared to SPY because
+409.51s: little bit more compared to SPY because
+409.52s: little bit more compared to SPY because of this volatility difference. So let's
+411.91s: of this volatility difference. So let's
+411.92s: of this volatility difference. So let's figure out how to do that. There's two
+413.51s: figure out how to do that. There's two
+413.52s: figure out how to do that. There's two methods I'm going to show you. The first
+414.95s: methods I'm going to show you. The first
+414.96s: methods I'm going to show you. The first way is to establish a volatility cap.
+418.23s: way is to establish a volatility cap.
+418.24s: way is to establish a volatility cap. Full disclosure, this is less used by
+420.47s: Full disclosure, this is less used by
+420.48s: Full disclosure, this is less used by retail traders. This is much more common
+422.15s: retail traders. This is much more common
+422.16s: retail traders. This is much more common in an institutional setting, but it's
+423.67s: in an institutional setting, but it's
+423.68s: in an institutional setting, but it's good to know. Essentially, what we do is
+426.39s: good to know. Essentially, what we do is
+426.40s: good to know. Essentially, what we do is we set what our target volatility is.
+430.15s: we set what our target volatility is.
+430.16s: we set what our target volatility is. How do you pick the target volatility?
+431.83s: How do you pick the target volatility?
+431.84s: How do you pick the target volatility? It's based on you, your plan, your
+433.91s: It's based on you, your plan, your
+433.92s: It's based on you, your plan, your approach, your risk tolerance. You pick
+436.31s: approach, your risk tolerance. You pick
+436.32s: approach, your risk tolerance. You pick it. So, we have this $20,000 portfolio.
+439.51s: it. So, we have this $20,000 portfolio.
+439.52s: it. So, we have this $20,000 portfolio. And I'm going to say that I have a
+441.75s: And I'm going to say that I have a
+441.76s: And I'm going to say that I have a target V of 40%. That means that across
+444.63s: target V of 40%. That means that across
+444.64s: target V of 40%. That means that across the portfolio I want to set each
+447.75s: the portfolio I want to set each
+447.76s: the portfolio I want to set each individual trade so that of the capital
+450.71s: individual trade so that of the capital
+450.72s: individual trade so that of the capital it gets I expect no more than a 40% V
+454.63s: it gets I expect no more than a 40% V
+454.64s: it gets I expect no more than a 40% V move over the P&amp;L life of that. Notice I
+457.75s: move over the P&amp;L life of that. Notice I
+457.76s: move over the P&amp;L life of that. Notice I emphasize individual trades. There's
+459.83s: emphasize individual trades. There's
+459.84s: emphasize individual trades. There's another way to do this at the portfolio
+461.99s: another way to do this at the portfolio
+462.00s: another way to do this at the portfolio level slightly outside the scope of this
+464.07s: level slightly outside the scope of this
+464.08s: level slightly outside the scope of this video but that essentially takes this
+466.31s: video but that essentially takes this
+466.32s: video but that essentially takes this idea and then you just have to do it
+467.59s: idea and then you just have to do it
+467.60s: idea and then you just have to do it across everything simultaneously. So as
+469.83s: across everything simultaneously. So as
+469.84s: across everything simultaneously. So as you put on new trades, other things have
+471.43s: you put on new trades, other things have
+471.44s: you put on new trades, other things have to get sized down and so on. This is
+473.75s: to get sized down and so on. This is
+473.76s: to get sized down and so on. This is using individual samples.
+476.79s: using individual samples.
+476.80s: using individual samples. The formula is simple. I'm going to take
+478.71s: The formula is simple. I'm going to take
+478.72s: The formula is simple. I'm going to take the original capital that I think I was
+481.19s: the original capital that I think I was
+481.20s: the original capital that I think I was going to use. So in this case, remember,
+482.95s: going to use. So in this case, remember,
+482.96s: going to use. So in this case, remember, is a $20,000 portfolio. The original
+485.11s: is a $20,000 portfolio. The original
+485.12s: is a $20,000 portfolio. The original idea is 50/50 split. So 10 grand each.
+487.91s: idea is 50/50 split. So 10 grand each.
+487.92s: idea is 50/50 split. So 10 grand each. So I'm going to take that $10,000 and
+490.15s: So I'm going to take that $10,000 and
+490.16s: So I'm going to take that $10,000 and I'm going to multiply it by whatever my
+492.07s: I'm going to multiply it by whatever my
+492.08s: I'm going to multiply it by whatever my target volatility is, in this case 40%.
+495.83s: target volatility is, in this case 40%.
+495.84s: target volatility is, in this case 40%. And then I'm going to divide it by the
+497.91s: And then I'm going to divide it by the
+497.92s: And then I'm going to divide it by the asset volatility. In this case, 30% for
+500.31s: asset volatility. In this case, 30% for
+500.32s: asset volatility. In this case, 30% for SPY. And that's going to tell me the
+502.23s: SPY. And that's going to tell me the
+502.24s: SPY. And that's going to tell me the dollars that need to go into this. So
+504.87s: dollars that need to go into this. So
+504.88s: dollars that need to go into this. So you'll notice that this doesn't cleanly
+506.87s: you'll notice that this doesn't cleanly
+506.88s: you'll notice that this doesn't cleanly add up to 20K because it's not precisely
+509.91s: add up to 20K because it's not precisely
+509.92s: add up to 20K because it's not precisely trying to do that. It's just trying to
+511.83s: trying to do that. It's just trying to
+511.84s: trying to do that. It's just trying to say if I were to size these the same,
+514.63s: say if I were to size these the same,
+514.64s: say if I were to size these the same, this is what they would need to be based
+516.07s: this is what they would need to be based
+516.08s: this is what they would need to be based on this base position size. So you can
+518.47s: on this base position size. So you can
+518.48s: on this base position size. So you can tinker with that. Again, this is a
+519.91s: tinker with that. Again, this is a
+519.92s: tinker with that. Again, this is a little bit less used, but the summary
+521.83s: little bit less used, but the summary
+521.84s: little bit less used, but the summary here is you would need to put in 13,333
+524.63s: here is you would need to put in 13,333
+524.64s: here is you would need to put in 13,333 bucks in order to get your target vault
+527.27s: bucks in order to get your target vault
+527.28s: bucks in order to get your target vault in SPY and then 8 grand to get your
+529.35s: in SPY and then 8 grand to get your
+529.36s: in SPY and then 8 grand to get your target vault in Tesla. Here's another
+532.39s: target vault in Tesla. Here's another
+532.40s: target vault in Tesla. Here's another slightly more common way, which is to
+535.35s: slightly more common way, which is to
+535.36s: slightly more common way, which is to now actually make these the same in this
+538.47s: now actually make these the same in this
+538.48s: now actually make these the same in this context. I'm not trying to make spy risk
+541.51s: context. I'm not trying to make spy risk
+541.52s: context. I'm not trying to make spy risk equal to Tesla risk. I'm trying to make
+543.51s: equal to Tesla risk. I'm trying to make
+543.52s: equal to Tesla risk. I'm trying to make both SPY and Tesla risk equal to the 40%
+546.55s: both SPY and Tesla risk equal to the 40%
+546.56s: both SPY and Tesla risk equal to the 40% V risk that target V that I'm setting in
+550.07s: V risk that target V that I'm setting in
+550.08s: V risk that target V that I'm setting in this case. Instead, I'm saying I want to
+552.47s: this case. Instead, I'm saying I want to
+552.48s: this case. Instead, I'm saying I want to size these the same. So, of that
+555.11s: size these the same. So, of that
+555.12s: size these the same. So, of that $10,000, how much does each one of these
+558.15s: $10,000, how much does each one of these
+558.16s: $10,000, how much does each one of these get in order for them to behave as if
+560.63s: get in order for them to behave as if
+560.64s: get in order for them to behave as if they're the same size position? What
+563.19s: they're the same size position? What
+563.20s: they're the same size position? What we're going to do is figure out one side
+566.23s: we're going to do is figure out one side
+566.24s: we're going to do is figure out one side of the equation first and then infer the
+568.55s: of the equation first and then infer the
+568.56s: of the equation first and then infer the other. So in this case, I'm going to
+570.07s: other. So in this case, I'm going to
+570.08s: other. So in this case, I'm going to figure out the allocation for underlying
+572.47s: figure out the allocation for underlying
+572.48s: figure out the allocation for underlying A. In this case, I'm going to use SPY.
+575.19s: A. In this case, I'm going to use SPY.
+575.20s: A. In this case, I'm going to use SPY. So I'm going to take the total capital
+577.59s: So I'm going to take the total capital
+577.60s: So I'm going to take the total capital that I have. So in this case, between
+579.91s: that I have. So in this case, between
+579.92s: that I have. So in this case, between these two trades, I'm earmarking 20
+581.59s: these two trades, I'm earmarking 20
+581.60s: these two trades, I'm earmarking 20 grand. And then I'm going to multiply
+584.71s: grand. And then I'm going to multiply
+584.72s: grand. And then I'm going to multiply the volatility of the other thing that
+587.43s: the volatility of the other thing that
+587.44s: the volatility of the other thing that I'm looking at. In this case, Tesla,
+589.51s: I'm looking at. In this case, Tesla,
+589.52s: I'm looking at. In this case, Tesla, which is 50%. And then I'm going to
+591.75s: which is 50%. And then I'm going to
+591.76s: which is 50%. And then I'm going to divide that by the two VS added to one
+594.63s: divide that by the two VS added to one
+594.64s: divide that by the two VS added to one another. And again, you can see that
+595.91s: another. And again, you can see that
+595.92s: another. And again, you can see that formula here for your reference. So this
+599.51s: formula here for your reference. So this
+599.52s: formula here for your reference. So this means SPY is actually going to get
+601.51s: means SPY is actually going to get
+601.52s: means SPY is actually going to get $12,500.
+603.03s: $12,500.
+603.04s: $12,500. Tesla is going to get $7,500.
+606.15s: Tesla is going to get $7,500.
+606.16s: Tesla is going to get $7,500. So now what this means over the course
+608.07s: So now what this means over the course
+608.08s: So now what this means over the course of the next month, the P&amp;L volatility of
+611.91s: of the next month, the P&amp;L volatility of
+611.92s: of the next month, the P&amp;L volatility of these two positions should be about the
+614.15s: these two positions should be about the
+614.16s: these two positions should be about the same. So let's say that the SPY position
+618.79s: same. So let's say that the SPY position
+618.80s: same. So let's say that the SPY position is up 500 bucks. The Tesla position
+622.71s: is up 500 bucks. The Tesla position
+622.72s: is up 500 bucks. The Tesla position commensurately would be about that same
+625.11s: commensurately would be about that same
+625.12s: commensurately would be about that same range, 500 bucks. And the point of doing
+628.15s: range, 500 bucks. And the point of doing
+628.16s: range, 500 bucks. And the point of doing this is to make sure that what you're
+630.95s: this is to make sure that what you're
+630.96s: this is to make sure that what you're sizing
+632.47s: sizing
+632.48s: sizing is logical across the curve because if
+635.83s: is logical across the curve because if
+635.84s: is logical across the curve because if you're putting equal dollar amounts,
+638.47s: you're putting equal dollar amounts,
+638.48s: you're putting equal dollar amounts, your actual risk is quite different. And
+641.19s: your actual risk is quite different. And
+641.20s: your actual risk is quite different. And there's one other really simple tool
+642.63s: there's one other really simple tool
+642.64s: there's one other really simple tool that I want to show you guys which is
+643.91s: that I want to show you guys which is
+643.92s: that I want to show you guys which is just like a risk unit. And to figure out
+646.39s: just like a risk unit. And to figure out
+646.40s: just like a risk unit. And to figure out your risk unit, you just take whichever
+648.79s: your risk unit, you just take whichever
+648.80s: your risk unit, you just take whichever one you want to look at. So in this
+650.47s: one you want to look at. So in this
+650.48s: one you want to look at. So in this case, we'll use SPY. And you're just
+652.87s: case, we'll use SPY. And you're just
+652.88s: case, we'll use SPY. And you're just doing this calculation here.
+654.87s: doing this calculation here.
+654.88s: doing this calculation here. Essentially, you're just going to take
+656.31s: Essentially, you're just going to take
+656.32s: Essentially, you're just going to take the volatility of the other underlying
+658.39s: the volatility of the other underlying
+658.40s: the volatility of the other underlying that you're looking at divided by the
+660.79s: that you're looking at divided by the
+660.80s: that you're looking at divided by the volatility of the base asset. So, in
+662.79s: volatility of the base asset. So, in
+662.80s: volatility of the base asset. So, in this case, SPY. So, we get 50 V / 30 V
+666.95s: this case, SPY. So, we get 50 V / 30 V
+666.96s: this case, SPY. So, we get 50 V / 30 V and that equals 1.67. So, that means
+669.83s: and that equals 1.67. So, that means
+669.84s: and that equals 1.67. So, that means that intuitively your S&amp;P 500 position
+673.19s: that intuitively your S&amp;P 500 position
+673.20s: that intuitively your S&amp;P 500 position needs to be 1.67 the size of your Tesla
+676.47s: needs to be 1.67 the size of your Tesla
+676.48s: needs to be 1.67 the size of your Tesla position in order for them to be the
+678.55s: position in order for them to be the
+678.56s: position in order for them to be the same thing. This is a absolute
+681.67s: same thing. This is a absolute
+681.68s: same thing. This is a absolute high-level overview to give you the
+684.15s: high-level overview to give you the
+684.16s: high-level overview to give you the intuitive understanding of how
+686.79s: intuitive understanding of how
+686.80s: intuitive understanding of how volatility can impact position waiting.
+689.43s: volatility can impact position waiting.
+689.44s: volatility can impact position waiting. If you guys want to see this blown out
+690.95s: If you guys want to see this blown out
+690.96s: If you guys want to see this blown out to the portfolio level, let me know.
+692.63s: to the portfolio level, let me know.
+692.64s: to the portfolio level, let me know. It's a little bit more in depth, a
+693.91s: It's a little bit more in depth, a
+693.92s: It's a little bit more in depth, a little more detailed, but it's a
+695.91s: little more detailed, but it's a
+695.92s: little more detailed, but it's a worthwhile exercise so that you can
+698.55s: worthwhile exercise so that you can
+698.56s: worthwhile exercise so that you can actually size things logically. Be an
+701.19s: actually size things logically. Be an
+701.20s: actually size things logically. Be an outlier. See you later.

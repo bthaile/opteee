@@ -1,0 +1,2644 @@
+2.08s: What's up everyone? Welcome to the
+3.68s: What's up everyone? Welcome to the options trends. Chris and I are here to
+6.71s: options trends. Chris and I are here to
+6.72s: options trends. Chris and I are here to talk about volatility. Everybody's
+9.19s: talk about volatility. Everybody's
+9.20s: talk about volatility. Everybody's favorite thing. Everybody gets to put
+10.71s: favorite thing. Everybody gets to put
+10.72s: favorite thing. Everybody gets to put their quant hat on at least a little
+12.87s: their quant hat on at least a little
+12.88s: their quant hat on at least a little bit. And the purpose for the session
+15.35s: bit. And the purpose for the session
+15.36s: bit. And the purpose for the session today is to explain a little more in
+17.59s: today is to explain a little more in
+17.60s: today is to explain a little more in deeply the way that volatility can
+19.99s: deeply the way that volatility can
+20.00s: deeply the way that volatility can behave. It's one of those things that
+22.07s: behave. It's one of those things that
+22.08s: behave. It's one of those things that especially in the derivatives markets,
+23.51s: especially in the derivatives markets,
+23.52s: especially in the derivatives markets, it's always going on underneath the
+24.79s: it's always going on underneath the
+24.80s: it's always going on underneath the surface. And sometimes it does things
+28.15s: surface. And sometimes it does things
+28.16s: surface. And sometimes it does things that you might not expect that can lead
+30.31s: that you might not expect that can lead
+30.32s: that you might not expect that can lead to outcomes that you didn't quite
+33.03s: to outcomes that you didn't quite
+33.04s: to outcomes that you didn't quite anticipate or paths that look different
+36.07s: anticipate or paths that look different
+36.08s: anticipate or paths that look different than you might have expected. So Chris
+39.11s: than you might have expected. So Chris
+39.12s: than you might have expected. So Chris had kind of a a forray into that led to
+45.27s: had kind of a a forray into that led to
+45.28s: had kind of a a forray into that led to a framing that he wanted to use for
+47.11s: a framing that he wanted to use for
+47.12s: a framing that he wanted to use for today. So I figured that's a perfect
+48.79s: today. So I figured that's a perfect
+48.80s: today. So I figured that's a perfect place to start. Chris,
+52.31s: place to start. Chris,
+52.32s: place to start. Chris, &gt;&gt; yo, what's up, man? Uh so uh yeah, we'll
+55.19s: &gt;&gt; yo, what's up, man? Uh so uh yeah, we'll
+55.20s: &gt;&gt; yo, what's up, man? Uh so uh yeah, we'll get right into it here. So on uh today
+58.15s: get right into it here. So on uh today
+58.16s: get right into it here. So on uh today is we're recording this on uh Easter
+60.31s: is we're recording this on uh Easter
+60.32s: is we're recording this on uh Easter Sunday. Happy Easter to the uh it's
+63.83s: Sunday. Happy Easter to the uh it's
+63.84s: Sunday. Happy Easter to the uh it's &gt;&gt; um it's April 5th. Um earlier this week
+67.43s: &gt;&gt; um it's April 5th. Um earlier this week
+67.44s: &gt;&gt; um it's April 5th. Um earlier this week um on March 31st, that was the uh USDA
+71.83s: um on March 31st, that was the uh USDA
+71.84s: um on March 31st, that was the uh USDA had their annual prospective plantings
+74.15s: had their annual prospective plantings
+74.16s: had their annual prospective plantings report. It's always on the last day of
+76.15s: report. It's always on the last day of
+76.16s: report. It's always on the last day of March. And it's this big report where
+80.15s: March. And it's this big report where
+80.16s: March. And it's this big report where uh the for it's basically farmers are
+81.99s: uh the for it's basically farmers are
+82.00s: uh the for it's basically farmers are saying how much acreage they're going to
+83.75s: saying how much acreage they're going to
+83.76s: saying how much acreage they're going to devote to corn, soybeans, wheat, cotton,
+87.91s: devote to corn, soybeans, wheat, cotton,
+87.92s: devote to corn, soybeans, wheat, cotton, like these uh big crops that we grow in
+90.87s: like these uh big crops that we grow in
+90.88s: like these uh big crops that we grow in the United States. And uh it's an
+93.83s: the United States. And uh it's an
+93.84s: the United States. And uh it's an important day in the AS markets, but
+96.15s: important day in the AS markets, but
+96.16s: important day in the AS markets, but it's an an important day in a vault
+99.51s: it's an an important day in a vault
+99.52s: it's an an important day in a vault options markets because um the market is
+103.43s: options markets because um the market is
+103.44s: options markets because um the market is historically made large moves on that
+105.59s: historically made large moves on that
+105.60s: historically made large moves on that day because it is a bunch of information
+107.35s: day because it is a bunch of information
+107.36s: day because it is a bunch of information that's coming into the market. It's an
+109.03s: that's coming into the market. It's an
+109.04s: that's coming into the market. It's an annual report. Um this this year um the
+113.91s: annual report. Um this this year um the
+113.92s: annual report. Um this this year um the markets the a markets actually did corn,
+115.83s: markets the a markets actually did corn,
+115.84s: markets the a markets actually did corn, soybeans, um wheat, actually didn't
+118.47s: soybeans, um wheat, actually didn't
+118.48s: soybeans, um wheat, actually didn't check the cotton market, but those other
+119.91s: check the cotton market, but those other
+119.92s: check the cotton market, but those other three markets, they didn't move very
+121.27s: three markets, they didn't move very
+121.28s: three markets, they didn't move very much um on the report that typically is
+124.71s: much um on the report that typically is
+124.72s: much um on the report that typically is a high volatility um event. You can
+127.19s: a high volatility um event. You can
+127.20s: a high volatility um event. You can think of it as like the way earnings are
+129.11s: think of it as like the way earnings are
+129.12s: think of it as like the way earnings are for a stock. Um so the uh in in general
+136.31s: for a stock. Um so the uh in in general
+136.32s: for a stock. Um so the uh in in general just for anybody that's curious uh corn
+139.67s: just for anybody that's curious uh corn
+139.68s: just for anybody that's curious uh corn acorage is expected to be a little bit
+141.91s: acorage is expected to be a little bit
+141.92s: acorage is expected to be a little bit lower. Uh wheat acreage is also expected
+144.71s: lower. Uh wheat acreage is also expected
+144.72s: lower. Uh wheat acreage is also expected to be lower. Interestingly wheat acreage
+147.27s: to be lower. Interestingly wheat acreage
+147.28s: to be lower. Interestingly wheat acreage is going to be the lowest
+149.99s: is going to be the lowest
+150.00s: is going to be the lowest that's ever been ever since they started
+151.99s: that's ever been ever since they started
+152.00s: that's ever been ever since they started recording in 1919. This is going to be
+154.55s: recording in 1919. This is going to be
+154.56s: recording in 1919. This is going to be the lowest amount of acreage that's
+156.31s: the lowest amount of acreage that's
+156.32s: the lowest amount of acreage that's being devoted to corn. I mean to wheat
+158.47s: being devoted to corn. I mean to wheat
+158.48s: being devoted to corn. I mean to wheat and uh soybean acorage is going to be up
+160.55s: and uh soybean acorage is going to be up
+160.56s: and uh soybean acorage is going to be up a little bit. There was a there was a
+162.07s: a little bit. There was a there was a
+162.08s: a little bit. There was a there was a bunch of there was some concern going
+163.67s: bunch of there was some concern going
+163.68s: bunch of there was some concern going into this meeting because you know with
+166.31s: into this meeting because you know with
+166.32s: into this meeting because you know with with what's what's happening with oil
+168.95s: with what's what's happening with oil
+168.96s: with what's what's happening with oil the concern is that uh fertilizer
+172.15s: the concern is that uh fertilizer
+172.16s: the concern is that uh fertilizer is becoming um basically fertilizer is
+175.03s: is becoming um basically fertilizer is
+175.04s: is becoming um basically fertilizer is going to be more scarce and so
+178.55s: going to be more scarce and so
+178.56s: going to be more scarce and so it was expected that corn might take a
+181.19s: it was expected that corn might take a
+181.20s: it was expected that corn might take a larger hit on its acreage um people
+184.15s: larger hit on its acreage um people
+184.16s: larger hit on its acreage um people plant expecting to plant much less
+186.15s: plant expecting to plant much less
+186.16s: plant expecting to plant much less because their access to fertilizer is
+188.47s: because their access to fertilizer is
+188.48s: because their access to fertilizer is not what it was. Uh but
+191.67s: not what it was. Uh but
+191.68s: not what it was. Uh but uh corn like I said the acreage was only
+193.59s: uh corn like I said the acreage was only
+193.60s: uh corn like I said the acreage was only down like 3 or 4% which was not that
+196.55s: down like 3 or 4% which was not that
+196.56s: down like 3 or 4% which was not that crazy. The market didn't really have
+198.31s: crazy. The market didn't really have
+198.32s: crazy. The market didn't really have much of a reaction to it. So um yeah at
+201.43s: much of a reaction to it. So um yeah at
+201.44s: much of a reaction to it. So um yeah at least reading the commentary sounds like
+203.75s: least reading the commentary sounds like
+203.76s: least reading the commentary sounds like people are thinking well this maybe this
+205.91s: people are thinking well this maybe this
+205.92s: people are thinking well this maybe this is more like the the amount that they
+207.99s: is more like the the amount that they
+208.00s: is more like the the amount that they were going to plant for this year was
+209.19s: were going to plant for this year was
+209.20s: were going to plant for this year was like largely set in stone once all this
+212.23s: like largely set in stone once all this
+212.24s: like largely set in stone once all this stuff started happening in Iran. So,
+214.39s: stuff started happening in Iran. So,
+214.40s: stuff started happening in Iran. So, this might be more of a 2027 issue if if
+217.11s: this might be more of a 2027 issue if if
+217.12s: this might be more of a 2027 issue if if it doesn't get resolved than a 2026
+219.11s: it doesn't get resolved than a 2026
+219.12s: it doesn't get resolved than a 2026 issue. So, it didn't really affect what
+220.71s: issue. So, it didn't really affect what
+220.72s: issue. So, it didn't really affect what farmers are going to do this summer. Um,
+223.51s: farmers are going to do this summer. Um,
+223.52s: farmers are going to do this summer. Um, &gt;&gt; in any case, uh, but the interesting
+227.35s: &gt;&gt; in any case, uh, but the interesting
+227.36s: &gt;&gt; in any case, uh, but the interesting thing about this is, you know, this is,
+230.23s: thing about this is, you know, this is,
+230.24s: thing about this is, you know, this is, you know, I just kind of looked at it
+231.43s: you know, I just kind of looked at it
+231.44s: you know, I just kind of looked at it because it's kind of old muscle memory
+233.11s: because it's kind of old muscle memory
+233.12s: because it's kind of old muscle memory to kind of look back at these things. I
+235.19s: to kind of look back at these things. I
+235.20s: to kind of look back at these things. I used to trade a options, so this was
+236.87s: used to trade a options, so this was
+236.88s: used to trade a options, so this was always kind of interesting to me. But
+238.39s: always kind of interesting to me. But
+238.40s: always kind of interesting to me. But the the uh generally the way that we
+241.43s: the the uh generally the way that we
+241.44s: the the uh generally the way that we would think about um like an earnings
+245.03s: would think about um like an earnings
+245.04s: would think about um like an earnings day, you would often think about the
+247.51s: day, you would often think about the
+247.52s: day, you would often think about the volatility as being it feels like
+251.67s: volatility as being it feels like
+251.68s: volatility as being it feels like it's several days worth of volatility
+256.47s: it's several days worth of volatility
+256.48s: it's several days worth of volatility smooshed into one day. That's like one
+259.67s: smooshed into one day. That's like one
+259.68s: smooshed into one day. That's like one way that you could actually uh
+261.75s: way that you could actually uh
+261.76s: way that you could actually uh mathematically look at it. So uh and
+265.75s: mathematically look at it. So uh and
+265.76s: mathematically look at it. So uh and this brings up a larger point. Um it's a
+269.83s: this brings up a larger point. Um it's a
+269.84s: this brings up a larger point. Um it's a it's a very very exaggerated example of
+272.95s: it's a very very exaggerated example of
+272.96s: it's a very very exaggerated example of the way volatility actually looks which
+275.27s: the way volatility actually looks which
+275.28s: the way volatility actually looks which I think is not obvious to many people
+278.39s: I think is not obvious to many people
+278.40s: I think is not obvious to many people but um volatility itself is really
+282.15s: but um volatility itself is really
+282.16s: but um volatility itself is really lumpy. Um, and so that's the topic I
+285.27s: lumpy. Um, and so that's the topic I
+285.28s: lumpy. Um, and so that's the topic I kind of wanted to talk about today. And
+288.07s: kind of wanted to talk about today. And
+288.08s: kind of wanted to talk about today. And uh, we can we can kind of get into that,
+289.83s: uh, we can we can kind of get into that,
+289.84s: uh, we can we can kind of get into that, but uh, and and also what it means for
+292.47s: but uh, and and also what it means for
+292.48s: but uh, and and also what it means for for trading, but um, yeah, we're going
+294.87s: for trading, but um, yeah, we're going
+294.88s: for trading, but um, yeah, we're going to talk about the lumpiness of
+296.07s: to talk about the lumpiness of
+296.08s: to talk about the lumpiness of volatility. And you know, people tend to
+297.91s: volatility. And you know, people tend to
+297.92s: volatility. And you know, people tend to think in terms of averages, but you
+300.63s: think in terms of averages, but you
+300.64s: think in terms of averages, but you know, your P&amp;L
+302.47s: know, your P&amp;L
+302.48s: know, your P&amp;L depends on things that uh, are lumpy and
+306.15s: depends on things that uh, are lumpy and
+306.16s: depends on things that uh, are lumpy and you can't just average things. It's like
+308.31s: you can't just average things. It's like
+308.32s: you can't just average things. It's like the whole, you know, it doesn't if you
+310.23s: the whole, you know, it doesn't if you
+310.24s: the whole, you know, it doesn't if you have to cross a river that has a lot of
+312.63s: have to cross a river that has a lot of
+312.64s: have to cross a river that has a lot of variation in it, it doesn't matter that
+314.23s: variation in it, it doesn't matter that
+314.24s: variation in it, it doesn't matter that the river is 4 feet on average. If it's
+317.03s: the river is 4 feet on average. If it's
+317.04s: the river is 4 feet on average. If it's 15 ft in one part, you have a problem.
+320.31s: 15 ft in one part, you have a problem.
+320.32s: 15 ft in one part, you have a problem. And could you give even like a quick
+323.35s: And could you give even like a quick
+323.36s: And could you give even like a quick example of the practical ampl practical
+327.75s: example of the practical ampl practical
+327.76s: example of the practical ampl practical implications of that lumpiness of VS? So
+331.43s: implications of that lumpiness of VS? So
+331.44s: implications of that lumpiness of VS? So if I'm a, you know, private operator,
+333.67s: if I'm a, you know, private operator,
+333.68s: if I'm a, you know, private operator, private operator selling straddles or
+335.99s: private operator selling straddles or
+336.00s: private operator selling straddles or whatever trying to trade index VRP, what
+339.11s: whatever trying to trade index VRP, what
+339.12s: whatever trying to trade index VRP, what what might that actually infer for me?
+342.63s: what might that actually infer for me?
+342.64s: what might that actually infer for me? &gt;&gt; Yeah, because volatility
+346.15s: &gt;&gt; Yeah, because volatility
+346.16s: &gt;&gt; Yeah, because volatility um can be very jumpy or lumpy. Um what
+350.39s: um can be very jumpy or lumpy. Um what
+350.40s: um can be very jumpy or lumpy. Um what that means is that uh
+354.95s: that means is that uh
+354.96s: that means is that uh your effectively your gamma
+358.71s: your effectively your gamma
+358.72s: your effectively your gamma and consequentially your your theta as
+361.11s: and consequentially your your theta as
+361.12s: and consequentially your your theta as well because they're related. Uh if your
+364.23s: well because they're related. Uh if your
+364.24s: well because they're related. Uh if your gamma is very very large at any one
+366.63s: gamma is very very large at any one
+366.64s: gamma is very very large at any one point in time and that lumpiness hits
+368.71s: point in time and that lumpiness hits
+368.72s: point in time and that lumpiness hits you have a very large move one way or
+370.63s: you have a very large move one way or
+370.64s: you have a very large move one way or the other when you have a lot of gamma
+373.75s: the other when you have a lot of gamma
+373.76s: the other when you have a lot of gamma it is um you're going to have a large
+376.39s: it is um you're going to have a large
+376.40s: it is um you're going to have a large P&amp;L due to that. whether you're long or
+379.35s: P&amp;L due to that. whether you're long or
+379.36s: P&amp;L due to that. whether you're long or short like you you know you're either
+380.87s: short like you you know you're either
+380.88s: short like you you know you're either going to make a lot or lose a lot. Um if
+382.95s: going to make a lot or lose a lot. Um if
+382.96s: going to make a lot or lose a lot. Um if that lumpiness arrives
+385.35s: that lumpiness arrives
+385.36s: that lumpiness arrives um on the day when you have a lot of
+386.87s: um on the day when you have a lot of
+386.88s: um on the day when you have a lot of gamma. So what that will mean is that
+390.31s: gamma. So what that will mean is that
+390.32s: gamma. So what that will mean is that let's say you are short a one let's just
+392.47s: let's say you are short a one let's just
+392.48s: let's say you are short a one let's just use take the example of the short side.
+394.23s: use take the example of the short side.
+394.24s: use take the example of the short side. you're short a one month straddle and
+396.79s: you're short a one month straddle and
+396.80s: you're short a one month straddle and let's say over the course of the month
+399.83s: let's say over the course of the month
+399.84s: let's say over the course of the month uh we tend to have a bunch of 1% moves
+402.95s: uh we tend to have a bunch of 1% moves
+402.96s: uh we tend to have a bunch of 1% moves and there's a 4% move and your P&amp;L even
+407.11s: and there's a 4% move and your P&amp;L even
+407.12s: and there's a 4% move and your P&amp;L even though you have two different return
+408.71s: though you have two different return
+408.72s: though you have two different return streams let's say you have you know 19
+411.51s: streams let's say you have you know 19
+411.52s: streams let's say you have you know 19 days of 1% moves and then on the 20th
+414.87s: days of 1% moves and then on the 20th
+414.88s: days of 1% moves and then on the 20th day this is business days about 20 or 21
+417.35s: day this is business days about 20 or 21
+417.36s: day this is business days about 20 or 21 days in a trading month you have 19 days
+419.91s: days in a trading month you have 19 days
+419.92s: days in a trading month you have 19 days of 1% moves and then you have a 4% move
+422.31s: of 1% moves and then you have a 4% move
+422.32s: of 1% moves and then you have a 4% move right before expiration
+423.83s: right before expiration
+423.84s: right before expiration that's going to be a very different
+425.03s: that's going to be a very different
+425.04s: that's going to be a very different outcome than if you had a 4% move on the
+428.39s: outcome than if you had a 4% move on the
+428.40s: outcome than if you had a 4% move on the first day of the month and then a bunch
+429.75s: first day of the month and then a bunch
+429.76s: first day of the month and then a bunch of 1% moves for the remainder of the
+431.59s: of 1% moves for the remainder of the
+431.60s: of 1% moves for the remainder of the month. So, uh, your P&amp;L will largely be
+435.51s: month. So, uh, your P&amp;L will largely be
+435.52s: month. So, uh, your P&amp;L will largely be dictated by what happens on the last
+438.07s: dictated by what happens on the last
+438.08s: dictated by what happens on the last day.
+439.67s: day.
+439.68s: day. Um,
+441.51s: Um,
+441.52s: Um, which means that
+443.91s: which means that
+443.92s: which means that all of your P&amp;L up until the last day
+447.83s: all of your P&amp;L up until the last day
+447.84s: all of your P&amp;L up until the last day has been um, you know, you're kind of
+451.27s: has been um, you know, you're kind of
+451.28s: has been um, you know, you're kind of been you're short, you're making money,
+452.87s: been you're short, you're making money,
+452.88s: been you're short, you're making money, you're making money, you're making
+453.83s: you're making money, you're making
+453.84s: you're making money, you're making money, but then like the last day is
+455.35s: money, but then like the last day is
+455.36s: money, but then like the last day is going to determine so much of what your
+457.11s: going to determine so much of what your
+457.12s: going to determine so much of what your P&amp;L ends up being that if you get stuck
+460.79s: P&amp;L ends up being that if you get stuck
+460.80s: P&amp;L ends up being that if you get stuck in thinking in terms of like averages,
+462.71s: in thinking in terms of like averages,
+462.72s: in thinking in terms of like averages, like the point is like you're not really
+464.23s: like the point is like you're not really
+464.24s: like the point is like you're not really learning that much from one day to the
+465.91s: learning that much from one day to the
+465.92s: learning that much from one day to the next because it only takes one day at
+468.23s: next because it only takes one day at
+468.24s: next because it only takes one day at the end to change your P&amp;L dramatically
+471.67s: the end to change your P&amp;L dramatically
+471.68s: the end to change your P&amp;L dramatically whether you're and that's true whether
+473.03s: whether you're and that's true whether
+473.04s: whether you're and that's true whether you're long or short. So, what ends up
+474.87s: you're long or short. So, what ends up
+474.88s: you're long or short. So, what ends up happening is the closer you get to
+477.83s: happening is the closer you get to
+477.84s: happening is the closer you get to expiration, the the closer you take
+480.15s: expiration, the the closer you take
+480.16s: expiration, the the closer you take options into expiration, the more you're
+482.39s: options into expiration, the more you're
+482.40s: options into expiration, the more you're basically playing roulette on that last
+484.95s: basically playing roulette on that last
+484.96s: basically playing roulette on that last day. Because um unless you have some
+487.43s: day. Because um unless you have some
+487.44s: day. Because um unless you have some magical signal that you know knows what
+489.99s: magical signal that you know knows what
+490.00s: magical signal that you know knows what the return is going to be on some
+491.99s: the return is going to be on some
+492.00s: the return is going to be on some specific day, um what you're really
+495.35s: specific day, um what you're really
+495.36s: specific day, um what you're really doing is like you're just taking a bunch
+496.87s: doing is like you're just taking a bunch
+496.88s: doing is like you're just taking a bunch of risk on a random number generator
+499.59s: of risk on a random number generator
+499.60s: of risk on a random number generator going into the last day. Whereas like
+501.19s: going into the last day. Whereas like
+501.20s: going into the last day. Whereas like you're if you're short a straddle
+503.59s: you're if you're short a straddle
+503.60s: you're if you're short a straddle and it has a month to go, your P&amp;L will
+506.95s: and it has a month to go, your P&amp;L will
+506.96s: and it has a month to go, your P&amp;L will be smoother in a sense during it. And
+509.67s: be smoother in a sense during it. And
+509.68s: be smoother in a sense during it. And that's just because you have less gamma.
+511.67s: that's just because you have less gamma.
+511.68s: that's just because you have less gamma. So it's just under it's really just
+513.51s: So it's just under it's really just
+513.52s: So it's just under it's really just about understanding the risk and that
+515.19s: about understanding the risk and that
+515.20s: about understanding the risk and that the way that volatility bombards your
+518.07s: the way that volatility bombards your
+518.08s: the way that volatility bombards your P&amp;L really matters if it if if
+521.51s: P&amp;L really matters if it if if
+521.52s: P&amp;L really matters if it if if volatility occurs when you're close to
+524.47s: volatility occurs when you're close to
+524.48s: volatility occurs when you're close to Xirie versus further away from Xirie.
+527.99s: Xirie versus further away from Xirie.
+528.00s: Xirie versus further away from Xirie. The first order response to that then
+530.39s: The first order response to that then
+530.40s: The first order response to that then for people that are actively listening
+532.39s: for people that are actively listening
+532.40s: for people that are actively listening would probably think, okay, I just won't
+535.99s: would probably think, okay, I just won't
+536.00s: would probably think, okay, I just won't take it to expiration.
+538.55s: take it to expiration.
+538.56s: take it to expiration. What do you think of that?
+541.99s: What do you think of that?
+542.00s: What do you think of that? Um, that's it. That's perfectly fine if
+545.67s: Um, that's it. That's perfectly fine if
+545.68s: Um, that's it. That's perfectly fine if if you again it's like it kind of comes
+547.51s: if you again it's like it kind of comes
+547.52s: if you again it's like it kind of comes down to like what why do you have these
+549.91s: down to like what why do you have these
+549.92s: down to like what why do you have these options on in the first place? And the
+551.75s: options on in the first place? And the
+551.76s: options on in the first place? And the whole idea is if you're trying to
+553.83s: whole idea is if you're trying to
+553.84s: whole idea is if you're trying to capture
+555.59s: capture
+555.60s: capture VRP,
+558.07s: VRP,
+558.08s: VRP, um you're going you're what you're
+560.07s: um you're going you're what you're
+560.08s: um you're going you're what you're trying to do is profit as much as
+561.83s: trying to do is profit as much as
+561.84s: trying to do is profit as much as possible from um the realized vault
+565.67s: possible from um the realized vault
+565.68s: possible from um the realized vault being less than the implied vault. And
+569.35s: being less than the implied vault. And
+569.36s: being less than the implied vault. And your largest exposure to that happens as
+571.83s: your largest exposure to that happens as
+571.84s: your largest exposure to that happens as you're close to expiration.
+573.91s: you're close to expiration.
+573.92s: you're close to expiration. So I this is why it's kind of a tricky
+576.87s: So I this is why it's kind of a tricky
+576.88s: So I this is why it's kind of a tricky thing. It's like you want you may want
+579.83s: thing. It's like you want you may want
+579.84s: thing. It's like you want you may want maximum exposure to that but that's also
+581.75s: maximum exposure to that but that's also
+581.76s: maximum exposure to that but that's also what the biggest risk is. So if you sell
+585.91s: what the biggest risk is. So if you sell
+585.92s: what the biggest risk is. So if you sell for example let's say I told you that
+588.23s: for example let's say I told you that
+588.24s: for example let's say I told you that volatility is going to realize 20 over
+591.19s: volatility is going to realize 20 over
+591.20s: volatility is going to realize 20 over the course of the year and you can sell
+592.55s: the course of the year and you can sell
+592.56s: the course of the year and you can sell the an option at like 24 V. you sell a
+595.19s: the an option at like 24 V. you sell a
+595.20s: the an option at like 24 V. you sell a one-year option at 24 V and it's going
+598.39s: one-year option at 24 V and it's going
+598.40s: one-year option at 24 V and it's going to realize and it's realizing 20 like
+601.59s: to realize and it's realizing 20 like
+601.60s: to realize and it's realizing 20 like months are going to pass and and let's
+603.43s: months are going to pass and and let's
+603.44s: months are going to pass and and let's say the implied V doesn't change like
+605.19s: say the implied V doesn't change like
+605.20s: say the implied V doesn't change like months are going to pass and you're just
+606.55s: months are going to pass and you're just
+606.56s: months are going to pass and you're just going to make a little bit of money
+608.07s: going to make a little bit of money
+608.08s: going to make a little bit of money because you're not hyperexposed
+611.11s: because you're not hyperexposed
+611.12s: because you're not hyperexposed to that differential between the IV and
+613.19s: to that differential between the IV and
+613.20s: to that differential between the IV and the RV when you're one year when you're
+615.43s: the RV when you're one year when you're
+615.44s: the RV when you're one year when you're a year out like almost all the P&amp;L is
+618.79s: a year out like almost all the P&amp;L is
+618.80s: a year out like almost all the P&amp;L is going to happen at the end in the last
+622.15s: going to happen at the end in the last
+622.16s: going to happen at the end in the last month of that straddle that you've sold
+626.15s: month of that straddle that you've sold
+626.16s: month of that straddle that you've sold and uh but then you're just relying on a
+629.51s: and uh but then you're just relying on a
+629.52s: and uh but then you're just relying on a random number generator in that last
+631.35s: random number generator in that last
+631.36s: random number generator in that last month. So that's it's it's really just
+635.11s: month. So that's it's it's really just
+635.12s: month. So that's it's it's really just this trade-off. And I'm just trying to
+636.87s: this trade-off. And I'm just trying to
+636.88s: this trade-off. And I'm just trying to have people understand the difference is
+638.71s: have people understand the difference is
+638.72s: have people understand the difference is like if you trade a shortdated option,
+640.39s: like if you trade a shortdated option,
+640.40s: like if you trade a shortdated option, you're maximally exposed to the VRP,
+643.91s: you're maximally exposed to the VRP,
+643.92s: you're maximally exposed to the VRP, but you're also dealing with something
+646.79s: but you're also dealing with something
+646.80s: but you're also dealing with something that um is very very lumpy and can and
+650.63s: that um is very very lumpy and can and
+650.64s: that um is very very lumpy and can and you you know there's no you it's very
+652.55s: you you know there's no you it's very
+652.56s: you you know there's no you it's very difficult to predict what the realized
+654.31s: difficult to predict what the realized
+654.32s: difficult to predict what the realized is going to be on any given day. It's
+656.15s: is going to be on any given day. It's
+656.16s: is going to be on any given day. It's pretty it's much easier for anybody to
+658.79s: pretty it's much easier for anybody to
+658.80s: pretty it's much easier for anybody to be able to say that hey I'm you know
+661.91s: be able to say that hey I'm you know
+661.92s: be able to say that hey I'm you know twothirds confident that the S&amp;P
+664.15s: twothirds confident that the S&amp;P
+664.16s: twothirds confident that the S&amp;P volatility is going to be 16% give or
+666.87s: volatility is going to be 16% give or
+666.88s: volatility is going to be 16% give or take four VSS for the next year than to
+670.07s: take four VSS for the next year than to
+670.08s: take four VSS for the next year than to be able to make a statement like that
+671.43s: be able to make a statement like that
+671.44s: be able to make a statement like that about a single day.
+673.27s: about a single day.
+673.28s: about a single day. &gt;&gt; Mhm.
+674.71s: &gt;&gt; Mhm.
+674.72s: &gt;&gt; Mhm. And what about the other scenario then
+678.79s: And what about the other scenario then
+678.80s: And what about the other scenario then where somebody says well rather than
+681.59s: where somebody says well rather than
+681.60s: where somebody says well rather than selling options that are a month and I
+684.63s: selling options that are a month and I
+684.64s: selling options that are a month and I know you know three and a half weeks of
+687.35s: know you know three and a half weeks of
+687.36s: know you know three and a half weeks of that I'm just kind of holding
+688.55s: that I'm just kind of holding
+688.56s: that I'm just kind of holding accumulating a little bit and then I'm
+690.31s: accumulating a little bit and then I'm
+690.32s: accumulating a little bit and then I'm really exposed at the end. What if they
+692.87s: really exposed at the end. What if they
+692.88s: really exposed at the end. What if they say I'm just going to rip the band-aid
+694.15s: say I'm just going to rip the band-aid
+694.16s: say I'm just going to rip the band-aid off and I'm not going to sell until
+696.87s: off and I'm not going to sell until
+696.88s: off and I'm not going to sell until right at the end and then I'll sell zero
+698.95s: right at the end and then I'll sell zero
+698.96s: right at the end and then I'll sell zero day, one day, two day, whatever, right?
+700.55s: day, one day, two day, whatever, right?
+700.56s: day, one day, two day, whatever, right? Like something right at the end of that
+701.83s: Like something right at the end of that
+701.84s: Like something right at the end of that curve.
+703.35s: curve.
+703.36s: curve. There's two things that you've
+705.27s: There's two things that you've
+705.28s: There's two things that you've highlighted here that's really worth
+707.43s: highlighted here that's really worth
+707.44s: highlighted here that's really worth emphasizing which is that of balance,
+711.11s: emphasizing which is that of balance,
+711.12s: emphasizing which is that of balance, right? Like there isn't a magic answer
+713.99s: right? Like there isn't a magic answer
+714.00s: right? Like there isn't a magic answer to any of this. It's structural
+716.39s: to any of this. It's structural
+716.40s: to any of this. It's structural questions and a scale that you have to
+718.87s: questions and a scale that you have to
+718.88s: questions and a scale that you have to balance. So if you were explaining or at
+722.31s: balance. So if you were explaining or at
+722.32s: balance. So if you were explaining or at least giving some ideas to somebody on
+725.11s: least giving some ideas to somebody on
+725.12s: least giving some ideas to somebody on how to balance that scale, how do they
+728.55s: how to balance that scale, how do they
+728.56s: how to balance that scale, how do they balance it?
+730.23s: balance it?
+730.24s: balance it? Yeah, I think the I think the great
+732.39s: Yeah, I think the I think the great
+732.40s: Yeah, I think the I think the great thing is that we have this thing called
+733.91s: thing is that we have this thing called
+733.92s: thing is that we have this thing called Greeks. And the beautiful thing about
+736.39s: Greeks. And the beautiful thing about
+736.40s: Greeks. And the beautiful thing about Greeks is that they um they vary with
+739.59s: Greeks is that they um they vary with
+739.60s: Greeks is that they um they vary with how much time there is to expiration. So
+741.35s: how much time there is to expiration. So
+741.36s: how much time there is to expiration. So you can compare positions just by
+743.91s: you can compare positions just by
+743.92s: you can compare positions just by comparing their Greeks. And the name of
+746.55s: comparing their Greeks. And the name of
+746.56s: comparing their Greeks. And the name of the game is to just dial in what is the
+748.79s: the game is to just dial in what is the
+748.80s: the game is to just dial in what is the appropriate amount of risk that you want
+751.11s: appropriate amount of risk that you want
+751.12s: appropriate amount of risk that you want to take. So, for example, um what you
+753.91s: to take. So, for example, um what you
+753.92s: to take. So, for example, um what you could say is if I shock my position, if
+757.51s: could say is if I shock my position, if
+757.52s: could say is if I shock my position, if I have a if I have a fiveday option and
+761.83s: I have a if I have a fiveday option and
+761.84s: I have a if I have a fiveday option and I shock my position, um I say, okay,
+765.75s: I shock my position, um I say, okay,
+765.76s: I shock my position, um I say, okay, when I say shock my position, that means
+767.43s: when I say shock my position, that means
+767.44s: when I say shock my position, that means to make an assumption, a scenario, and
+769.43s: to make an assumption, a scenario, and
+769.44s: to make an assumption, a scenario, and say, hey, let's just say the stock moves
+771.59s: say, hey, let's just say the stock moves
+771.60s: say, hey, let's just say the stock moves up 5% in the next week or in the next
+775.27s: up 5% in the next week or in the next
+775.28s: up 5% in the next week or in the next day. What would my P&amp;L be? And the nice
+778.71s: day. What would my P&amp;L be? And the nice
+778.72s: day. What would my P&amp;L be? And the nice thing about that is that when you have 5
+781.19s: thing about that is that when you have 5
+781.20s: thing about that is that when you have 5 days to expiration, you don't have to
+784.95s: days to expiration, you don't have to
+784.96s: days to expiration, you don't have to uh worry too much about like what is the
+787.03s: uh worry too much about like what is the
+787.04s: uh worry too much about like what is the implied V going to do because you don't
+789.67s: implied V going to do because you don't
+789.68s: implied V going to do because you don't have a lot of Vega in a 5day option.
+791.43s: have a lot of Vega in a 5day option.
+791.44s: have a lot of Vega in a 5day option. It's almost all going to be um realized
+794.55s: It's almost all going to be um realized
+794.56s: It's almost all going to be um realized V. So you can just look at the P&amp;L and
+796.55s: V. So you can just look at the P&amp;L and
+796.56s: V. So you can just look at the P&amp;L and say, okay, let's just assume the
+798.71s: say, okay, let's just assume the
+798.72s: say, okay, let's just assume the volatility is the same. I shock I shock
+801.35s: volatility is the same. I shock I shock
+801.36s: volatility is the same. I shock I shock the I shock the stock 5% one way or the
+803.83s: the I shock the stock 5% one way or the
+803.84s: the I shock the stock 5% one way or the other. What's my P&amp;L on this position?
+805.43s: other. What's my P&amp;L on this position?
+805.44s: other. What's my P&amp;L on this position? like literally just go and like rerice
+807.19s: like literally just go and like rerice
+807.20s: like literally just go and like rerice the option. Just say like just imagine
+809.75s: the option. Just say like just imagine
+809.76s: the option. Just say like just imagine it's 1 day later than it is right now
+812.55s: it's 1 day later than it is right now
+812.56s: it's 1 day later than it is right now and just move the spot price by 5% and
+815.35s: and just move the spot price by 5% and
+815.36s: and just move the spot price by 5% and that's your option PL.
+817.83s: that's your option PL.
+817.84s: that's your option PL. So uh you can you can do that and then
+821.35s: So uh you can you can do that and then
+821.36s: So uh you can you can do that and then you can say okay is this amount of uh
+823.59s: you can say okay is this amount of uh
+823.60s: you can say okay is this amount of uh loss
+825.11s: loss
+825.12s: loss uh tolerable and you can and gamma is
+829.27s: uh tolerable and you can and gamma is
+829.28s: uh tolerable and you can and gamma is and if you look there you can see how
+830.71s: and if you look there you can see how
+830.72s: and if you look there you can see how much gamma is associated with that
+832.23s: much gamma is associated with that
+832.24s: much gamma is associated with that position like in any software like any
+834.71s: position like in any software like any
+834.72s: position like in any software like any your your brokerage software is going to
+836.15s: your your brokerage software is going to
+836.16s: your your brokerage software is going to tell you how much gamma per option you
+838.15s: tell you how much gamma per option you
+838.16s: tell you how much gamma per option you have on that. You can just say like
+840.15s: have on that. You can just say like
+840.16s: have on that. You can just say like that's okay for this much gamma this is
+842.79s: that's okay for this much gamma this is
+842.80s: that's okay for this much gamma this is how much a a move of that size um hurts
+846.71s: how much a a move of that size um hurts
+846.72s: how much a a move of that size um hurts for example and then I can just say okay
+848.55s: for example and then I can just say okay
+848.56s: for example and then I can just say okay well if I had a position with this much
+850.23s: well if I had a position with this much
+850.24s: well if I had a position with this much gamma then um it kind of scales pretty
+854.07s: gamma then um it kind of scales pretty
+854.08s: gamma then um it kind of scales pretty similarly like I have half the amount
+856.15s: similarly like I have half the amount
+856.16s: similarly like I have half the amount amount of gamma and a move of that size
+858.87s: amount of gamma and a move of that size
+858.88s: amount of gamma and a move of that size is going to cost me um half as much as
+863.59s: is going to cost me um half as much as
+863.60s: is going to cost me um half as much as uh the first move. So, and gamma does
+867.03s: uh the first move. So, and gamma does
+867.04s: uh the first move. So, and gamma does all the um so the Greeks there are like
+870.71s: all the um so the Greeks there are like
+870.72s: all the um so the Greeks there are like helping you kind of normalize your P&amp;L
+873.19s: helping you kind of normalize your P&amp;L
+873.20s: helping you kind of normalize your P&amp;L over time and then you can just dial in
+874.55s: over time and then you can just dial in
+874.56s: over time and then you can just dial in just say like okay well that was um this
+878.55s: just say like okay well that was um this
+878.56s: just say like okay well that was um this option with five days to go being short
+880.55s: option with five days to go being short
+880.56s: option with five days to go being short a 100 options with five days to go um is
+883.67s: a 100 options with five days to go um is
+883.68s: a 100 options with five days to go um is too much risk you might say but being
+886.71s: too much risk you might say but being
+886.72s: too much risk you might say but being short a 100 options with a month to go
+889.27s: short a 100 options with a month to go
+889.28s: short a 100 options with a month to go might be an acceptable amount of risk
+891.67s: might be an acceptable amount of risk
+891.68s: might be an acceptable amount of risk and then
+893.03s: and then
+893.04s: and then &gt;&gt; what happens is if you figure out Like
+895.11s: &gt;&gt; what happens is if you figure out Like
+895.12s: &gt;&gt; what happens is if you figure out Like if you kind of like dial in your risk
+896.87s: if you kind of like dial in your risk
+896.88s: if you kind of like dial in your risk preferences, you can say, "Okay, with a
+899.51s: preferences, you can say, "Okay, with a
+899.52s: preferences, you can say, "Okay, with a month to go, I'm comfortable being short
+901.59s: month to go, I'm comfortable being short
+901.60s: month to go, I'm comfortable being short um 100 options. Um but as we approach
+904.63s: um 100 options. Um but as we approach
+904.64s: um 100 options. Um but as we approach expiration, I need to keep cutting risk
+908.23s: expiration, I need to keep cutting risk
+908.24s: expiration, I need to keep cutting risk until I have um an an amount of uh risk
+912.47s: until I have um an an amount of uh risk
+912.48s: until I have um an an amount of uh risk that I can tolerate." And so what might
+914.87s: that I can tolerate." And so what might
+914.88s: that I can tolerate." And so what might what might happen there is like it might
+916.79s: what might happen there is like it might
+916.80s: what might happen there is like it might be kind of smooth, but you're like, "You
+918.23s: be kind of smooth, but you're like, "You
+918.24s: be kind of smooth, but you're like, "You know what? Let's say it's a 100 options
+920.63s: know what? Let's say it's a 100 options
+920.64s: know what? Let's say it's a 100 options and I'm going to end up taking off uh
+923.03s: and I'm going to end up taking off uh
+923.04s: and I'm going to end up taking off uh half the position every week. So that by
+927.11s: half the position every week. So that by
+927.12s: half the position every week. So that by the time we are if I have it every week
+929.91s: the time we are if I have it every week
+929.92s: the time we are if I have it every week 50 25. So so like going into expiration
+932.87s: 50 25. So so like going into expiration
+932.88s: 50 25. So so like going into expiration I'm short 12 op you know I'm short 12
+935.19s: I'm short 12 op you know I'm short 12
+935.20s: I'm short 12 op you know I'm short 12 options. So what I'm saying there is
+937.99s: options. So what I'm saying there is
+938.00s: options. So what I'm saying there is that being short 12 options with a week
+940.71s: that being short 12 options with a week
+940.72s: that being short 12 options with a week to go
+942.47s: to go
+942.48s: to go um is about the same amount of risk as
+944.47s: um is about the same amount of risk as
+944.48s: um is about the same amount of risk as being short with a month to go. And that
+947.35s: being short with a month to go. And that
+947.36s: being short with a month to go. And that might that might feel like the
+949.59s: might that might feel like the
+949.60s: might that might feel like the appropriate balance. But
+952.95s: appropriate balance. But
+952.96s: appropriate balance. But that's that that's kind of like you're
+955.11s: that's that that's kind of like you're
+955.12s: that's that that's kind of like you're just thinking through those trade-offs.
+957.51s: just thinking through those trade-offs.
+957.52s: just thinking through those trade-offs. &gt;&gt; And uh in aside, and then I want to go
+960.23s: &gt;&gt; And uh in aside, and then I want to go
+960.24s: &gt;&gt; And uh in aside, and then I want to go through the example that you built cuz I
+961.91s: through the example that you built cuz I
+961.92s: through the example that you built cuz I think it's useful. But this is always a
+964.63s: think it's useful. But this is always a
+964.64s: think it's useful. But this is always a fun one, which is when we're talking
+967.11s: fun one, which is when we're talking
+967.12s: fun one, which is when we're talking about shocks, by the way, when he's
+968.87s: about shocks, by the way, when he's
+968.88s: about shocks, by the way, when he's saying shocking something 5% that that's
+971.43s: saying shocking something 5% that that's
+971.44s: saying shocking something 5% that that's that typically would be something that
+973.19s: that typically would be something that
+973.20s: that typically would be something that doesn't like regularly move that much.
+975.83s: doesn't like regularly move that much.
+975.84s: doesn't like regularly move that much. So the the point of using a shock it's
+979.43s: So the the point of using a shock it's
+979.44s: So the the point of using a shock it's going to be made like that that move is
+981.19s: going to be made like that that move is
+981.20s: going to be made like that that move is going to be made relative to the thing
+982.79s: going to be made relative to the thing
+982.80s: going to be made relative to the thing that you're trading. So if you're
+983.99s: that you're trading. So if you're
+984.00s: that you're trading. So if you're trading you know Palunteer or AXTI or
+987.43s: trading you know Palunteer or AXTI or
+987.44s: trading you know Palunteer or AXTI or something like this 5% might actually be
+989.35s: something like this 5% might actually be
+989.36s: something like this 5% might actually be less than an average daily move. So just
+991.51s: less than an average daily move. So just
+991.52s: less than an average daily move. So just to make sure that that context is clear.
+993.35s: to make sure that that context is clear.
+993.36s: to make sure that that context is clear. But the the broader question is
+997.91s: But the the broader question is
+997.92s: But the the broader question is the way that I think about this
+999.91s: the way that I think about this
+999.92s: the way that I think about this generally isn't like the simplest to
+1004.39s: generally isn't like the simplest to
+1004.40s: generally isn't like the simplest to visualize and I'm curious if you have a
+1005.91s: visualize and I'm curious if you have a
+1005.92s: visualize and I'm curious if you have a better way. If I'm trying to figure out
+1009.67s: better way. If I'm trying to figure out
+1009.68s: better way. If I'm trying to figure out how much is an appropriate shock to size
+1013.67s: how much is an appropriate shock to size
+1013.68s: how much is an appropriate shock to size something off of, there's a really
+1016.15s: something off of, there's a really
+1016.16s: something off of, there's a really delicate balance because I could size
+1018.87s: delicate balance because I could size
+1018.88s: delicate balance because I could size something off of a four standard
+1020.55s: something off of a four standard
+1020.56s: something off of a four standard deviation shock. But then that means I'm
+1023.59s: deviation shock. But then that means I'm
+1023.60s: deviation shock. But then that means I'm going to have to size it super small and
+1025.03s: going to have to size it super small and
+1025.04s: going to have to size it super small and it's probably not going to do anything
+1025.99s: it's probably not going to do anything
+1026.00s: it's probably not going to do anything for the portfolio if I size everything
+1027.83s: for the portfolio if I size everything
+1027.84s: for the portfolio if I size everything like that. But then conversely, every
+1030.63s: like that. But then conversely, every
+1030.64s: like that. But then conversely, every once in a while, if I size everything at
+1032.95s: once in a while, if I size everything at
+1032.96s: once in a while, if I size everything at a one standard deviation, especially,
+1035.35s: a one standard deviation, especially,
+1035.36s: a one standard deviation, especially, let's talk about like short fall through
+1037.11s: let's talk about like short fall through
+1037.12s: let's talk about like short fall through earnings or something like that. If I'm
+1038.95s: earnings or something like that. If I'm
+1038.96s: earnings or something like that. If I'm sizing everything at one standard
+1040.07s: sizing everything at one standard
+1040.08s: sizing everything at one standard deviation, every once in a while, I'm
+1041.99s: deviation, every once in a while, I'm
+1042.00s: deviation, every once in a while, I'm going to get kicked in the nuts and see
+1043.35s: going to get kicked in the nuts and see
+1043.36s: going to get kicked in the nuts and see a five standard deviation move. So, if I
+1046.55s: a five standard deviation move. So, if I
+1046.56s: a five standard deviation move. So, if I don't strike this balance somehow, I'm
+1049.19s: don't strike this balance somehow, I'm
+1049.20s: don't strike this balance somehow, I'm either going to be perpetually
+1050.39s: either going to be perpetually
+1050.40s: either going to be perpetually undersized or oversized. The way that I
+1053.43s: undersized or oversized. The way that I
+1053.44s: undersized or oversized. The way that I address that is just by back testing and
+1055.83s: address that is just by back testing and
+1055.84s: address that is just by back testing and live testing. So before people trade
+1058.47s: live testing. So before people trade
+1058.48s: live testing. So before people trade like an earning cycle, even if you're,
+1060.63s: like an earning cycle, even if you're,
+1060.64s: like an earning cycle, even if you're, you know, not super savvy with back
+1061.99s: you know, not super savvy with back
+1062.00s: you know, not super savvy with back testing, you could literally just paper
+1063.67s: testing, you could literally just paper
+1063.68s: testing, you could literally just paper trade three earning cycles, two earning
+1065.91s: trade three earning cycles, two earning
+1065.92s: trade three earning cycles, two earning cycles, and get a sense of like what
+1067.83s: cycles, and get a sense of like what
+1067.84s: cycles, and get a sense of like what that distribution looks like. And it
+1069.27s: that distribution looks like. And it
+1069.28s: that distribution looks like. And it kind of helps find a middle ground. But
+1071.35s: kind of helps find a middle ground. But
+1071.36s: kind of helps find a middle ground. But I'm curious what other ways that you
+1073.83s: I'm curious what other ways that you
+1073.84s: I'm curious what other ways that you would think of to find that balance
+1076.39s: would think of to find that balance
+1076.40s: would think of to find that balance between, you know, sizing big enough to
+1078.23s: between, you know, sizing big enough to
+1078.24s: between, you know, sizing big enough to make something but not so big that you
+1080.87s: make something but not so big that you
+1080.88s: make something but not so big that you get wiped out. [clears throat]
+1082.95s: get wiped out. [clears throat]
+1082.96s: get wiped out. [clears throat] &gt;&gt; Yeah. So what I would what I would do is
+1085.19s: &gt;&gt; Yeah. So what I would what I would do is
+1085.20s: &gt;&gt; Yeah. So what I would what I would do is well first of all like I would think I
+1087.59s: well first of all like I would think I
+1087.60s: well first of all like I would think I would think about
+1089.51s: would think about
+1089.52s: would think about the situations where you're talking you
+1092.23s: the situations where you're talking you
+1092.24s: the situations where you're talking you know the the biggest crisis is always in
+1093.91s: know the the biggest crisis is always in
+1093.92s: know the the biggest crisis is always in the future right it's like you haven't
+1095.43s: the future right it's like you haven't
+1095.44s: the future right it's like you haven't we have never seen the biggest crisis
+1096.87s: we have never seen the biggest crisis
+1096.88s: we have never seen the biggest crisis that there is so um you can
+1101.43s: that there is so um you can
+1101.44s: that there is so um you can effectively
+1103.83s: effectively
+1103.84s: effectively put a limit on how much you can lose
+1108.71s: put a limit on how much you can lose
+1108.72s: put a limit on how much you can lose that is and that limit should be Uh now,
+1113.51s: that is and that limit should be Uh now,
+1113.52s: that is and that limit should be Uh now, first of all, that limit is going to
+1116.07s: first of all, that limit is going to
+1116.08s: first of all, that limit is going to have to be you're going to have to
+1118.71s: have to be you're going to have to
+1118.72s: have to be you're going to have to accept
+1120.47s: accept
+1120.48s: accept the willingness to lose like a decent
+1122.71s: the willingness to lose like a decent
+1122.72s: the willingness to lose like a decent chunk of money if you're going to
+1125.99s: chunk of money if you're going to
+1126.00s: chunk of money if you're going to if you if your game is to be selling
+1128.15s: if you if your game is to be selling
+1128.16s: if you if your game is to be selling options. Like at the end of the day,
+1129.67s: options. Like at the end of the day,
+1129.68s: options. Like at the end of the day, there's just no getting around the fact
+1132.07s: there's just no getting around the fact
+1132.08s: there's just no getting around the fact that you're going to have to accept the
+1133.99s: that you're going to have to accept the
+1134.00s: that you're going to have to accept the possibility that you may lose a lot. So
+1136.15s: possibility that you may lose a lot. So
+1136.16s: possibility that you may lose a lot. So the question is is
+1138.71s: the question is is
+1138.72s: the question is is &gt;&gt; yeah, I mean it's going to I mean it's
+1140.31s: &gt;&gt; yeah, I mean it's going to I mean it's
+1140.32s: &gt;&gt; yeah, I mean it's going to I mean it's going to happen eventually. like it's
+1142.15s: going to happen eventually. like it's
+1142.16s: going to happen eventually. like it's just gonna happen. So
+1145.35s: just gonna happen. So
+1145.36s: just gonna happen. So the question is are you gonna are you
+1146.87s: the question is are you gonna are you
+1146.88s: the question is are you gonna are you gonna you know it is to to set those
+1149.43s: gonna you know it is to to set those
+1149.44s: gonna you know it is to to set those limits so that you can survive it right?
+1152.23s: limits so that you can survive it right?
+1152.24s: limits so that you can survive it right? So, hey, one day you're going to, you
+1154.55s: So, hey, one day you're going to, you
+1154.56s: So, hey, one day you're going to, you know, you're positioned uh you're going
+1157.03s: know, you're positioned uh you're going
+1157.04s: know, you're positioned uh you're going to lose,
+1159.67s: to lose,
+1159.68s: to lose, you know, is it acceptable to lose 10%
+1162.23s: you know, is it acceptable to lose 10%
+1162.24s: you know, is it acceptable to lose 10% of your portfolio in uh on a single
+1166.79s: of your portfolio in uh on a single
+1166.80s: of your portfolio in uh on a single trade is a decision that you have to
+1169.19s: trade is a decision that you have to
+1169.20s: trade is a decision that you have to make if something were to make a really
+1171.11s: make if something were to make a really
+1171.12s: make if something were to make a really large move. Like, you know, if the S&amp;P
+1174.23s: large move. Like, you know, if the S&amp;P
+1174.24s: large move. Like, you know, if the S&amp;P uh let's say the something crazy like
+1176.79s: uh let's say the something crazy like
+1176.80s: uh let's say the something crazy like the crash of 87, right? It's like 20% in
+1179.11s: the crash of 87, right? It's like 20% in
+1179.12s: the crash of 87, right? It's like 20% in a day. If the S&amp;P drops 20% in a day,
+1182.47s: a day. If the S&amp;P drops 20% in a day,
+1182.48s: a day. If the S&amp;P drops 20% in a day, um, you know, how much is acceptable for
+1187.19s: um, you know, how much is acceptable for
+1187.20s: um, you know, how much is acceptable for you to lose in your portfolio is a is is
+1189.43s: you to lose in your portfolio is a is is
+1189.44s: you to lose in your portfolio is a is is a question that's, you know, you you
+1191.35s: a question that's, you know, you you
+1191.36s: a question that's, you know, you you sort of need to ask. So, it's like,
+1193.03s: sort of need to ask. So, it's like,
+1193.04s: sort of need to ask. So, it's like, well, I'm okay with losing 30% of my
+1196.79s: well, I'm okay with losing 30% of my
+1196.80s: well, I'm okay with losing 30% of my trading portfolio in that event that
+1198.63s: trading portfolio in that event that
+1198.64s: trading portfolio in that event that that happens like that. Maybe maybe
+1200.79s: that happens like that. Maybe maybe
+1200.80s: that happens like that. Maybe maybe that's kind of um you have a rule like
+1203.75s: that's kind of um you have a rule like
+1203.76s: that's kind of um you have a rule like that. But where how do you set those
+1205.75s: that. But where how do you set those
+1205.76s: that. But where how do you set those limits? I think part of it is setting
+1207.67s: limits? I think part of it is setting
+1207.68s: limits? I think part of it is setting those limits with respect to like what
+1210.55s: those limits with respect to like what
+1210.56s: those limits with respect to like what does your business actually look like?
+1212.07s: does your business actually look like?
+1212.08s: does your business actually look like? If you're treating trading as a
+1213.35s: If you're treating trading as a
+1213.36s: If you're treating trading as a business, you have some idea. You it
+1215.59s: business, you have some idea. You it
+1215.60s: business, you have some idea. You it could have large error bars around it.
+1217.43s: could have large error bars around it.
+1217.44s: could have large error bars around it. You have some idea of like in a given
+1218.87s: You have some idea of like in a given
+1218.88s: You have some idea of like in a given year how much um
+1223.19s: year how much um
+1223.20s: year how much um your target P&amp;L is and you can let's say
+1225.67s: your target P&amp;L is and you can let's say
+1225.68s: your target P&amp;L is and you can let's say you have an option selling strategy that
+1227.75s: you have an option selling strategy that
+1227.76s: you have an option selling strategy that like you think that on average you're
+1229.43s: like you think that on average you're
+1229.44s: like you think that on average you're harvesting like a 20% VRP. Well, you can
+1233.83s: harvesting like a 20% VRP. Well, you can
+1233.84s: harvesting like a 20% VRP. Well, you can then say, okay, that that means when I
+1236.55s: then say, okay, that that means when I
+1236.56s: then say, okay, that that means when I sell an option um before costs, I think
+1239.99s: sell an option um before costs, I think
+1240.00s: sell an option um before costs, I think that I'm making 20% on all the option
+1243.11s: that I'm making 20% on all the option
+1243.12s: that I'm making 20% on all the option premium that I sell subject to like a
+1246.39s: premium that I sell subject to like a
+1246.40s: premium that I sell subject to like a bunch of variation in my P&amp;L.
+1248.87s: bunch of variation in my P&amp;L.
+1248.88s: bunch of variation in my P&amp;L. So that will give you some idea of like
+1251.83s: So that will give you some idea of like
+1251.84s: So that will give you some idea of like okay this is what I my expectancy is in
+1254.87s: okay this is what I my expectancy is in
+1254.88s: okay this is what I my expectancy is in in a year and this is with this much
+1257.75s: in a year and this is with this much
+1257.76s: in a year and this is with this much variation or standard deviation of P&amp;L
+1260.39s: variation or standard deviation of P&amp;L
+1260.40s: variation or standard deviation of P&amp;L and just say okay if my if in a in in a
+1264.39s: and just say okay if my if in a in in a
+1264.40s: and just say okay if my if in a in in a given year I expect to make you know
+1266.55s: given year I expect to make you know
+1266.56s: given year I expect to make you know 100K trading options and then on
+1270.39s: 100K trading options and then on
+1270.40s: 100K trading options and then on a once in a year move I lose 100k
+1275.43s: a once in a year move I lose 100k
+1275.44s: a once in a year move I lose 100k that might not feel like that might feel
+1277.99s: that might not feel like that might feel
+1278.00s: that might not feel like that might feel not the right amount of risk like
+1280.15s: not the right amount of risk like
+1280.16s: not the right amount of risk like because if it's going to happen every
+1281.35s: because if it's going to happen every
+1281.36s: because if it's going to happen every year in a one and again like a one in 12
+1284.87s: year in a one and again like a one in 12
+1284.88s: year in a one and again like a one in 12 kind of situation um
+1288.31s: kind of situation um
+1288.32s: kind of situation um I'm going to lose 100k but all I can do
+1290.31s: I'm going to lose 100k but all I can do
+1290.32s: I'm going to lose 100k but all I can do is make 100 all I typically make in a
+1292.23s: is make 100 all I typically make in a
+1292.24s: is make 100 all I typically make in a year is 100k that feels like it's too
+1294.15s: year is 100k that feels like it's too
+1294.16s: year is 100k that feels like it's too much risk so I think you just have to go
+1297.67s: much risk so I think you just have to go
+1297.68s: much risk so I think you just have to go through these exercises of how much do I
+1300.55s: through these exercises of how much do I
+1300.56s: through these exercises of how much do I expect to make how much can I lose and
+1302.95s: expect to make how much can I lose and
+1302.96s: expect to make how much can I lose and with what frequency there is no solution
+1306.39s: with what frequency there is no solution
+1306.40s: with what frequency there is no solution to um where where I should set my
+1310.39s: to um where where I should set my
+1310.40s: to um where where I should set my shocks. It's all sort of tolerance and
+1313.03s: shocks. It's all sort of tolerance and
+1313.04s: shocks. It's all sort of tolerance and in the context of knowing um how much
+1316.47s: in the context of knowing um how much
+1316.48s: in the context of knowing um how much you can make from trading, you know,
+1318.39s: you can make from trading, you know,
+1318.40s: you can make from trading, you know, presuming that you have an edge.
+1320.87s: presuming that you have an edge.
+1320.88s: presuming that you have an edge. &gt;&gt; I think yeah, it's a great way to
+1322.71s: &gt;&gt; I think yeah, it's a great way to
+1322.72s: &gt;&gt; I think yeah, it's a great way to describe it. And the the topic of risk
+1325.35s: describe it. And the the topic of risk
+1325.36s: describe it. And the the topic of risk leads me to one more quick followup
+1327.11s: leads me to one more quick followup
+1327.12s: leads me to one more quick followup because I actually didn't realize how
+1329.67s: because I actually didn't realize how
+1329.68s: because I actually didn't realize how risk open you are. You're kind of a a
+1333.43s: risk open you are. You're kind of a a
+1333.44s: risk open you are. You're kind of a a bit of a madman because I see you
+1336.71s: bit of a madman because I see you
+1336.72s: bit of a madman because I see you wearing a white shirt and I can get by
+1340.23s: wearing a white shirt and I can get by
+1340.24s: wearing a white shirt and I can get by with a white shirt for exactly like 42
+1342.79s: with a white shirt for exactly like 42
+1342.80s: with a white shirt for exactly like 42 seconds before something is on it. How
+1346.07s: seconds before something is on it. How
+1346.08s: seconds before something is on it. How do you get by wearing a white shirt?
+1349.03s: do you get by wearing a white shirt?
+1349.04s: do you get by wearing a white shirt? &gt;&gt; I'm not having any spaghetti.
+1351.67s: &gt;&gt; I'm not having any spaghetti.
+1351.68s: &gt;&gt; I'm not having any spaghetti. &gt;&gt; It's not even spaghetti. It's It's like
+1353.27s: &gt;&gt; It's not even spaghetti. It's It's like
+1353.28s: &gt;&gt; It's not even spaghetti. It's It's like anything like you touch something and
+1354.63s: anything like you touch something and
+1354.64s: anything like you touch something and then there's dirt on it. So, how how
+1359.27s: then there's dirt on it. So, how how
+1359.28s: then there's dirt on it. So, how how &gt;&gt; um I just keep I just have a lot of
+1360.95s: &gt;&gt; um I just keep I just have a lot of
+1360.96s: &gt;&gt; um I just keep I just have a lot of them.
+1362.07s: them.
+1362.08s: them. &gt;&gt; Ah, rotation.
+1364.23s: &gt;&gt; Ah, rotation.
+1364.24s: &gt;&gt; Ah, rotation. &gt;&gt; Yeah,
+1364.71s: &gt;&gt; Yeah,
+1364.72s: &gt;&gt; Yeah, &gt;&gt; rotation. That's a good move. Okay. I
+1366.55s: &gt;&gt; rotation. That's a good move. Okay. I
+1366.56s: &gt;&gt; rotation. That's a good move. Okay. I was curious. I was curious.
+1368.15s: was curious. I was curious.
+1368.16s: was curious. I was curious. &gt;&gt; I can't give I think white shirts are
+1369.67s: &gt;&gt; I can't give I think white shirts are
+1369.68s: &gt;&gt; I can't give I think white shirts are nice, but I I apparently am too much of
+1371.35s: nice, but I I apparently am too much of
+1371.36s: nice, but I I apparently am too much of a child. I I can't make it happen. I I
+1373.51s: a child. I I can't make it happen. I I
+1373.52s: a child. I I can't make it happen. I I literally will have something on it with
+1375.27s: literally will have something on it with
+1375.28s: literally will have something on it with with literally within moments. It's
+1377.35s: with literally within moments. It's
+1377.36s: with literally within moments. It's without fail. When I was in college,
+1379.59s: without fail. When I was in college,
+1379.60s: without fail. When I was in college, when you're in ROC,
+1382.07s: when you're in ROC,
+1382.08s: when you're in ROC, even for the Marine Corps, you're in
+1384.07s: even for the Marine Corps, you're in
+1384.08s: even for the Marine Corps, you're in Navy ROC as a Marine option. So, what
+1388.07s: Navy ROC as a Marine option. So, what
+1388.08s: Navy ROC as a Marine option. So, what that means is you have to wear the Navy
+1390.15s: that means is you have to wear the Navy
+1390.16s: that means is you have to wear the Navy uniforms, like their dress uniforms and
+1392.15s: uniforms, like their dress uniforms and
+1392.16s: uniforms, like their dress uniforms and stuff until a little bit later. And the
+1394.71s: stuff until a little bit later. And the
+1394.72s: stuff until a little bit later. And the the irony there is they literally have a
+1397.43s: the irony there is they literally have a
+1397.44s: the irony there is they literally have a uniform called dress whites.
+1400.87s: uniform called dress whites.
+1400.88s: uniform called dress whites. White shoes with white soles with white
+1403.43s: White shoes with white soles with white
+1403.44s: White shoes with white soles with white socks with white pants with white belt
+1406.15s: socks with white pants with white belt
+1406.16s: socks with white pants with white belt with white shirt with white cover. And
+1409.19s: with white shirt with white cover. And
+1409.20s: with white shirt with white cover. And I'm just like this is a [&nbsp;__&nbsp;]
+1411.27s: I'm just like this is a [&nbsp;__&nbsp;]
+1411.28s: I'm just like this is a [&nbsp;__&nbsp;] punishment. This is literally just so
+1413.67s: punishment. This is literally just so
+1413.68s: punishment. This is literally just so that nobody can enjoy their day. I used
+1415.83s: that nobody can enjoy their day. I used
+1415.84s: that nobody can enjoy their day. I used to just stand in class. I wouldn't even
+1417.43s: to just stand in class. I wouldn't even
+1417.44s: to just stand in class. I wouldn't even sit in the chair. So I was like I'm
+1419.11s: sit in the chair. So I was like I'm
+1419.12s: sit in the chair. So I was like I'm going to get something. So maybe I've
+1421.27s: going to get something. So maybe I've
+1421.28s: going to get something. So maybe I've been scarred by that. A good It's a good
+1423.27s: been scarred by that. A good It's a good
+1423.28s: been scarred by that. A good It's a good fasting day.
+1424.55s: fasting day.
+1424.56s: fasting day. &gt;&gt; Yeah. Yeah. I Nothing. I I literally
+1427.67s: &gt;&gt; Yeah. Yeah. I Nothing. I I literally
+1427.68s: &gt;&gt; Yeah. Yeah. I Nothing. I I literally used to have a like 3XL towel that I cut
+1432.15s: used to have a like 3XL towel that I cut
+1432.16s: used to have a like 3XL towel that I cut a hole in the top that I would put over
+1434.63s: a hole in the top that I would put over
+1434.64s: a hole in the top that I would put over like a apron smok thing in order to eat.
+1439.03s: like a apron smok thing in order to eat.
+1439.04s: like a apron smok thing in order to eat. Literally exactly what I would do. So,
+1443.67s: Literally exactly what I would do. So,
+1443.68s: Literally exactly what I would do. So, you built us something to take a look at
+1447.59s: you built us something to take a look at
+1447.60s: you built us something to take a look at to help contextualize
+1450.47s: to help contextualize
+1450.48s: to help contextualize what this path of volatility can look
+1453.35s: what this path of volatility can look
+1453.36s: what this path of volatility can look like so that traders can then think
+1456.87s: like so that traders can then think
+1456.88s: like so that traders can then think about like what your position might
+1458.95s: about like what your position might
+1458.96s: about like what your position might actually look like. So, it's really easy
+1460.55s: actually look like. So, it's really easy
+1460.56s: actually look like. So, it's really easy to sell an option and be like, "Yeah,
+1462.71s: to sell an option and be like, "Yeah,
+1462.72s: to sell an option and be like, "Yeah, okay. This will, you know, on average do
+1464.87s: okay. This will, you know, on average do
+1464.88s: okay. This will, you know, on average do this thing over this time frame." That's
+1466.95s: this thing over this time frame." That's
+1466.96s: this thing over this time frame." That's not actually like a real realistic
+1469.19s: not actually like a real realistic
+1469.20s: not actually like a real realistic assumption on what this thing can look
+1470.79s: assumption on what this thing can look
+1470.80s: assumption on what this thing can look like. And I thought now would be a
+1473.67s: like. And I thought now would be a
+1473.68s: like. And I thought now would be a perfect time to take a peek at that.
+1476.55s: perfect time to take a peek at that.
+1476.56s: perfect time to take a peek at that. &gt;&gt; Yeah.
+1477.91s: &gt;&gt; Yeah.
+1477.92s: &gt;&gt; Yeah. &gt;&gt; So, let me just share my screen real
+1480.71s: &gt;&gt; So, let me just share my screen real
+1480.72s: &gt;&gt; So, let me just share my screen real quick.
+1482.79s: quick.
+1482.80s: quick. &gt;&gt; And Chris made this earlier while I was
+1486.47s: &gt;&gt; And Chris made this earlier while I was
+1486.48s: &gt;&gt; And Chris made this earlier while I was trading the market. So, you guys should
+1488.55s: trading the market. So, you guys should
+1488.56s: trading the market. So, you guys should make sure you say an extra thank you to
+1490.31s: make sure you say an extra thank you to
+1490.32s: make sure you say an extra thank you to him because he Well, okay, that's kind
+1493.91s: him because he Well, okay, that's kind
+1493.92s: him because he Well, okay, that's kind of a lie cuz I actually think Claude did
+1495.83s: of a lie cuz I actually think Claude did
+1495.84s: of a lie cuz I actually think Claude did a lot of the heavy lifting, didn't it?
+1497.43s: a lot of the heavy lifting, didn't it?
+1497.44s: a lot of the heavy lifting, didn't it? Yeah, I think I'm I
+1498.39s: Yeah, I think I'm I
+1498.40s: Yeah, I think I'm I &gt;&gt; No. So, I I tried with Claude at first
+1500.47s: &gt;&gt; No. So, I I tried with Claude at first
+1500.48s: &gt;&gt; No. So, I I tried with Claude at first and then it made something that was more
+1502.15s: and then it made something that was more
+1502.16s: and then it made something that was more elaborate than I wanted to bother with.
+1503.91s: elaborate than I wanted to bother with.
+1503.92s: elaborate than I wanted to bother with. So, I just made this in sheets.
+1506.39s: So, I just made this in sheets.
+1506.40s: So, I just made this in sheets. &gt;&gt; Okay. So, then Yeah, you guys you guys
+1508.95s: &gt;&gt; Okay. So, then Yeah, you guys you guys
+1508.96s: &gt;&gt; Okay. So, then Yeah, you guys you guys should buy Chris a beer then. Or a saki.
+1511.99s: should buy Chris a beer then. Or a saki.
+1512.00s: should buy Chris a beer then. Or a saki. All right. Here we go. here or or or
+1514.87s: All right. Here we go. here or or or
+1514.88s: All right. Here we go. here or or or tokens token credits. Uh so [laughter]
+1519.75s: tokens token credits. Uh so [laughter]
+1519.76s: tokens token credits. Uh so [laughter] that's that's that's the new tip.
+1521.67s: that's that's that's the new tip.
+1521.68s: that's that's that's the new tip. &gt;&gt; Yeah, that's really that's the new
+1523.75s: &gt;&gt; Yeah, that's really that's the new
+1523.76s: &gt;&gt; Yeah, that's really that's the new drink.
+1524.23s: drink.
+1524.24s: drink. &gt;&gt; Yeah, my I'm going to start a Patreon
+1527.51s: &gt;&gt; Yeah, my I'm going to start a Patreon
+1527.52s: &gt;&gt; Yeah, my I'm going to start a Patreon that only accepts [laughter] uh Anthony
+1529.35s: that only accepts [laughter] uh Anthony
+1529.36s: that only accepts [laughter] uh Anthony &gt;&gt; just to get Claude. I love that. That's
+1531.91s: &gt;&gt; just to get Claude. I love that. That's
+1531.92s: &gt;&gt; just to get Claude. I love that. That's awesome. Yeah.
+1534.47s: awesome. Yeah.
+1534.48s: awesome. Yeah. &gt;&gt; Uh so the this is um so here's this is
+1537.51s: &gt;&gt; Uh so the this is um so here's this is
+1537.52s: &gt;&gt; Uh so the this is um so here's this is the uh the idea here is
+1540.47s: the uh the idea here is
+1540.48s: the uh the idea here is uh we let's say that we um you got some
+1543.83s: uh we let's say that we um you got some
+1543.84s: uh we let's say that we um you got some you're trading on an asset that moves
+1546.15s: you're trading on an asset that moves
+1546.16s: you're trading on an asset that moves 2%. Uh it's typical day it moves 2%.
+1550.31s: 2%. Uh it's typical day it moves 2%.
+1550.32s: 2%. Uh it's typical day it moves 2%. We'll just keep things kind of simple.
+1551.75s: We'll just keep things kind of simple.
+1551.76s: We'll just keep things kind of simple. So I'm just going to call volatility 2%.
+1554.31s: So I'm just going to call volatility 2%.
+1554.32s: So I'm just going to call volatility 2%. &gt;&gt; Sorry just one super quick interjection
+1557.27s: &gt;&gt; Sorry just one super quick interjection
+1557.28s: &gt;&gt; Sorry just one super quick interjection for those that are on Spotify right now.
+1560.07s: for those that are on Spotify right now.
+1560.08s: for those that are on Spotify right now. we have a a Google sheet pulled up and
+1563.91s: we have a a Google sheet pulled up and
+1563.92s: we have a a Google sheet pulled up and in column B in B2 it says daily move
+1568.31s: in column B in B2 it says daily move
+1568.32s: in column B in B2 it says daily move it's a title and then in B3 it's 5day
+1570.71s: it's a title and then in B3 it's 5day
+1570.72s: it's a title and then in B3 it's 5day move and then in C1 it's volatility as a
+1574.15s: move and then in C1 it's volatility as a
+1574.16s: move and then in C1 it's volatility as a percent and then in D it's variance
+1577.19s: percent and then in D it's variance
+1577.20s: percent and then in D it's variance units so you can kind of build that grid
+1579.11s: units so you can kind of build that grid
+1579.12s: units so you can kind of build that grid in your mind and then there's values in
+1581.83s: in your mind and then there's values in
+1581.84s: in your mind and then there's values in here that Chris is going to go through
+1583.43s: here that Chris is going to go through
+1583.44s: here that Chris is going to go through sorry just for those listening so you
+1584.71s: sorry just for those listening so you
+1584.72s: sorry just for those listening so you have an idea of what he's describing
+1587.03s: have an idea of what he's describing
+1587.04s: have an idea of what he's describing &gt;&gt; yeah so your let's say your daily move
+1589.27s: &gt;&gt; yeah so your let's say your daily move
+1589.28s: &gt;&gt; yeah so your let's say your daily move is 2%. Um, and then so what that means
+1593.27s: is 2%. Um, and then so what that means
+1593.28s: is 2%. Um, and then so what that means is uh because volatility uh scales by
+1596.07s: is uh because volatility uh scales by
+1596.08s: is uh because volatility uh scales by the square root of time. So that means
+1598.63s: the square root of time. So that means
+1598.64s: the square root of time. So that means your five day so let's say if your one
+1600.31s: your five day so let's say if your one
+1600.32s: your five day so let's say if your one day straddle was 2% your fiveday
+1602.39s: day straddle was 2% your fiveday
+1602.40s: day straddle was 2% your fiveday straddle would be uh 2 times the square
+1606.71s: straddle would be uh 2 times the square
+1606.72s: straddle would be uh 2 times the square root of five which is 4.47. So that
+1609.59s: root of five which is 4.47. So that
+1609.60s: root of five which is 4.47. So that would be a oneweek straddle or five
+1611.59s: would be a oneweek straddle or five
+1611.60s: would be a oneweek straddle or five fiveday straddle um of 4.47%.
+1616.39s: fiveday straddle um of 4.47%.
+1616.40s: fiveday straddle um of 4.47%. Uh now vol variance is uh the square of
+1622.95s: Uh now vol variance is uh the square of
+1622.96s: Uh now vol variance is uh the square of volatility. The reason we care about
+1625.11s: volatility. The reason we care about
+1625.12s: volatility. The reason we care about variance is because you're g um this is
+1627.75s: variance is because you're g um this is
+1627.76s: variance is because you're g um this is kind of a topic for another time maybe
+1629.35s: kind of a topic for another time maybe
+1629.36s: kind of a topic for another time maybe but because gamma P&amp;L is proportional to
+1633.91s: but because gamma P&amp;L is proportional to
+1633.92s: but because gamma P&amp;L is proportional to um to variance. It's basically
+1635.67s: um to variance. It's basically
+1635.68s: um to variance. It's basically proportional to the move size squared.
+1639.03s: proportional to the move size squared.
+1639.04s: proportional to the move size squared. Um so this is why uh we care about
+1643.35s: Um so this is why uh we care about
+1643.36s: Um so this is why uh we care about variance in the first place. So your
+1645.75s: variance in the first place. So your
+1645.76s: variance in the first place. So your daily move uh is again 2% a day. Your
+1649.35s: daily move uh is again 2% a day. Your
+1649.36s: daily move uh is again 2% a day. Your oneweek straddle is going to be 4.47%.
+1652.79s: oneweek straddle is going to be 4.47%.
+1652.80s: oneweek straddle is going to be 4.47%. And if we just take the square uh of
+1655.03s: And if we just take the square uh of
+1655.04s: And if we just take the square uh of those numbers
+1657.03s: those numbers
+1657.04s: those numbers uh the square of two is uh four of
+1659.75s: uh the square of two is uh four of
+1659.76s: uh the square of two is uh four of course and then the square of 4.47 is
+1662.39s: course and then the square of 4.47 is
+1662.40s: course and then the square of 4.47 is 20. So your straddle for the week
+1665.19s: 20. So your straddle for the week
+1665.20s: 20. So your straddle for the week represents 20. We're just going to call
+1667.19s: represents 20. We're just going to call
+1667.20s: represents 20. We're just going to call them variance units and your daily
+1669.35s: them variance units and your daily
+1669.36s: them variance units and your daily straddle is four variance units. So
+1674.07s: straddle is four variance units. So
+1674.08s: straddle is four variance units. So if every single day was uh equally had
+1678.23s: if every single day was uh equally had
+1678.24s: if every single day was uh equally had an equal size move, you know, you would
+1680.71s: an equal size move, you know, you would
+1680.72s: an equal size move, you know, you would have each day would be four variance
+1682.95s: have each day would be four variance
+1682.96s: have each day would be four variance units and that would sum up to 20 um
+1685.91s: units and that would sum up to 20 um
+1685.92s: units and that would sum up to 20 um varian variance variance units for the
+1689.27s: varian variance variance units for the
+1689.28s: varian variance variance units for the week. Okay, that would be if if the
+1691.19s: week. Okay, that would be if if the
+1691.20s: week. Okay, that would be if if the volatility was the same every single
+1692.87s: volatility was the same every single
+1692.88s: volatility was the same every single day.
+1694.48s: day. So now let's say that but here's
+1697.59s: So now let's say that but here's
+1697.60s: So now let's say that but here's something kind of interesting. Let's say
+1698.79s: something kind of interesting. Let's say
+1698.80s: something kind of interesting. Let's say that you sell this straddle at 4.47% 47%
+1702.47s: that you sell this straddle at 4.47% 47%
+1702.48s: that you sell this straddle at 4.47% 47% and uh which implies 2% a day of daily
+1706.07s: and uh which implies 2% a day of daily
+1706.08s: and uh which implies 2% a day of daily variation. Say
+1709.83s: variation. Say
+1709.84s: variation. Say let's take a look here. We have a table
+1712.39s: let's take a look here. We have a table
+1712.40s: let's take a look here. We have a table of showing you day 1 2 3 4 5. And what
+1715.03s: of showing you day 1 2 3 4 5. And what
+1715.04s: of showing you day 1 2 3 4 5. And what we're doing here is I'm just saying
+1716.87s: we're doing here is I'm just saying
+1716.88s: we're doing here is I'm just saying let's say uh on day one we move 1%, day
+1722.07s: let's say uh on day one we move 1%, day
+1722.08s: let's say uh on day one we move 1%, day two we move 1% and so on and then all
+1724.87s: two we move 1% and so on and then all
+1724.88s: two we move 1% and so on and then all the way until day five but on day five
+1727.35s: the way until day five but on day five
+1727.36s: the way until day five but on day five we move 4%.
+1729.83s: we move 4%.
+1729.84s: we move 4%. So, what we'll find is that first of
+1731.91s: So, what we'll find is that first of
+1731.92s: So, what we'll find is that first of all, remember we sold this straddle
+1733.83s: all, remember we sold this straddle
+1733.84s: all, remember we sold this straddle thinking that, hey, this thing is going
+1735.51s: thinking that, hey, this thing is going
+1735.52s: thinking that, hey, this thing is going to move less than 2% per day. Okay?
+1739.75s: to move less than 2% per day. Okay?
+1739.76s: to move less than 2% per day. Okay? Well, on days 1 through four, we only
+1742.23s: Well, on days 1 through four, we only
+1742.24s: Well, on days 1 through four, we only moved 1%
+1744.47s: moved 1%
+1744.48s: moved 1% every single day. And then on the last
+1747.11s: every single day. And then on the last
+1747.12s: every single day. And then on the last day, we moved 4%. Okay? Now when you
+1752.31s: day, we moved 4%. Okay? Now when you
+1752.32s: day, we moved 4%. Okay? Now when you look at when you look when when you
+1754.87s: look at when you look when when you
+1754.88s: look at when you look when when you think about that how was the volatility
+1757.75s: think about that how was the volatility
+1757.76s: think about that how was the volatility uh
+1759.27s: uh
+1759.28s: uh uh dispersed throughout the week. Well
+1761.83s: uh dispersed throughout the week. Well
+1761.84s: uh dispersed throughout the week. Well days the first four days you had it was
+1764.87s: days the first four days you had it was
+1764.88s: days the first four days you had it was like four four units or four four% moves
+1768.87s: like four four units or four four% moves
+1768.88s: like four four units or four four% moves like four 1% moves and you had a total
+1771.51s: like four 1% moves and you had a total
+1771.52s: like four 1% moves and you had a total move over the course of the week of 8%.
+1775.03s: move over the course of the week of 8%.
+1775.04s: move over the course of the week of 8%. So the first four days comprised half
+1777.99s: So the first four days comprised half
+1778.00s: So the first four days comprised half the volatility of the week or 12 a.5% a
+1780.95s: the volatility of the week or 12 a.5% a
+1780.96s: the volatility of the week or 12 a.5% a day and the last day comprised 50% of
+1783.99s: day and the last day comprised 50% of
+1784.00s: day and the last day comprised 50% of the volatility for the week. You moved
+1785.43s: the volatility for the week. You moved
+1785.44s: the volatility for the week. You moved 4% out of 8% for the week. Right?
+1789.35s: 4% out of 8% for the week. Right?
+1789.36s: 4% out of 8% for the week. Right? However, if you look at this in variance
+1792.39s: However, if you look at this in variance
+1792.40s: However, if you look at this in variance space
+1794.31s: space
+1794.32s: space where we take uh where we just take all
+1796.87s: where we take uh where we just take all
+1796.88s: where we take uh where we just take all the moves and square them and then look
+1798.71s: the moves and square them and then look
+1798.72s: the moves and square them and then look at that we see that day day five which
+1801.11s: at that we see that day day five which
+1801.12s: at that we see that day day five which is the 4% move day. Well, when we square
+1804.23s: is the 4% move day. Well, when we square
+1804.24s: is the 4% move day. Well, when we square four, we get 16. So, the total variance
+1806.55s: four, we get 16. So, the total variance
+1806.56s: four, we get 16. So, the total variance that hope that happened over the course
+1808.23s: that hope that happened over the course
+1808.24s: that hope that happened over the course of the week is still that same 20
+1811.51s: of the week is still that same 20
+1811.52s: of the week is still that same 20 variance units. The problem was that day
+1815.59s: variance units. The problem was that day
+1815.60s: variance units. The problem was that day five had 16 of the 20 variance units
+1818.71s: five had 16 of the 20 variance units
+1818.72s: five had 16 of the 20 variance units because that single day of 4% move
+1822.23s: because that single day of 4% move
+1822.24s: because that single day of 4% move represented 80% of the move for the
+1824.95s: represented 80% of the move for the
+1824.96s: represented 80% of the move for the entire week. So even though it
+1827.11s: entire week. So even though it
+1827.12s: entire week. So even though it represented half the move of the week in
+1830.15s: represented half the move of the week in
+1830.16s: represented half the move of the week in volatility space, it represents 80% of
+1834.23s: volatility space, it represents 80% of
+1834.24s: volatility space, it represents 80% of the move in variance space and in
+1836.79s: the move in variance space and in
+1836.80s: the move in variance space and in variance that's what determines your P&amp;L
+1839.51s: variance that's what determines your P&amp;L
+1839.52s: variance that's what determines your P&amp;L actually. So what happened here is like
+1842.87s: actually. So what happened here is like
+1842.88s: actually. So what happened here is like you have a very very uh this is a very
+1845.67s: you have a very very uh this is a very
+1845.68s: you have a very very uh this is a very tricky situation because the total
+1848.87s: tricky situation because the total
+1848.88s: tricky situation because the total variance that was experienced over the
+1851.11s: variance that was experienced over the
+1851.12s: variance that was experienced over the week was 20 units of variance, right?
+1853.75s: week was 20 units of variance, right?
+1853.76s: week was 20 units of variance, right? one one squared for four days. So that's
+1856.23s: one one squared for four days. So that's
+1856.24s: one one squared for four days. So that's that's four units of variance. And then
+1858.47s: that's four units of variance. And then
+1858.48s: that's four units of variance. And then 4% on the last day squared, that's 16
+1860.79s: 4% on the last day squared, that's 16
+1860.80s: 4% on the last day squared, that's 16 units of variance. So that's 20 units of
+1863.03s: units of variance. So that's 20 units of
+1863.04s: units of variance. So that's 20 units of variance that happened, which is what
+1865.67s: variance that happened, which is what
+1865.68s: variance that happened, which is what was implied in the straddle when you
+1867.67s: was implied in the straddle when you
+1867.68s: was implied in the straddle when you sold it. But if it all happens on the
+1869.67s: sold it. But if it all happens on the
+1869.68s: sold it. But if it all happens on the last day, I can assure you you got
+1871.27s: last day, I can assure you you got
+1871.28s: last day, I can assure you you got hammered on this um being short this
+1874.07s: hammered on this um being short this
+1874.08s: hammered on this um being short this thing. So, the volatility ended up being
+1878.15s: thing. So, the volatility ended up being
+1878.16s: thing. So, the volatility ended up being um what you thought it would be, but the
+1880.39s: um what you thought it would be, but the
+1880.40s: um what you thought it would be, but the way that it was distributed was in a way
+1883.03s: way that it was distributed was in a way
+1883.04s: way that it was distributed was in a way that you were short a bunch of gamma on
+1885.75s: that you were short a bunch of gamma on
+1885.76s: that you were short a bunch of gamma on the last day and 80% of the week's
+1888.07s: the last day and 80% of the week's
+1888.08s: the last day and 80% of the week's volatility happened on that last day or
+1890.87s: volatility happened on that last day or
+1890.88s: volatility happened on that last day or 80% of the week's variance, which is
+1892.79s: 80% of the week's variance, which is
+1892.80s: 80% of the week's variance, which is what you actually care about, happened
+1894.63s: what you actually care about, happened
+1894.64s: what you actually care about, happened on the last day. So,
+1898.15s: on the last day. So,
+1898.16s: on the last day. So, so I'll stop there for a second to see
+1900.87s: so I'll stop there for a second to see
+1900.88s: so I'll stop there for a second to see if there's any uh Eric if you have if
+1903.03s: if there's any uh Eric if you have if
+1903.04s: if there's any uh Eric if you have if there's any clarifications that are
+1904.39s: there's any clarifications that are
+1904.40s: there's any clarifications that are worth making here.
+1906.39s: worth making here.
+1906.40s: worth making here. No, I think in general this is good. But
+1909.35s: No, I think in general this is good. But
+1909.36s: No, I think in general this is good. But there is one lingering question then
+1911.51s: there is one lingering question then
+1911.52s: there is one lingering question then which is like the person that sold that
+1913.99s: which is like the person that sold that
+1914.00s: which is like the person that sold that V at you know 447 they're saying to
+1918.23s: V at you know 447 they're saying to
+1918.24s: V at you know 447 they're saying to themselves well I'm selling V being
+1921.67s: themselves well I'm selling V being
+1921.68s: themselves well I'm selling V being elevated overrealized
+1924.07s: elevated overrealized
+1924.08s: elevated overrealized which let's say in effect that still
+1926.39s: which let's say in effect that still
+1926.40s: which let's say in effect that still happened. So then they're looking at
+1928.07s: happened. So then they're looking at
+1928.08s: happened. So then they're looking at this and they're saying well even though
+1929.67s: this and they're saying well even though
+1929.68s: this and they're saying well even though the last day was bumpy
+1932.39s: the last day was bumpy
+1932.40s: the last day was bumpy I still should have made money because V
+1935.51s: I still should have made money because V
+1935.52s: I still should have made money because V still came in lower than what I sold. So
+1939.11s: still came in lower than what I sold. So
+1939.12s: still came in lower than what I sold. So walk through that paradigm.
+1941.99s: walk through that paradigm.
+1942.00s: walk through that paradigm. &gt;&gt; Well, here the amount of var So what
+1944.07s: &gt;&gt; Well, here the amount of var So what
+1944.08s: &gt;&gt; Well, here the amount of var So what happened is they were right for four out
+1946.55s: happened is they were right for four out
+1946.56s: happened is they were right for four out of the five days of the week because we
+1948.79s: of the five days of the week because we
+1948.80s: of the five days of the week because we only moved 1% a day and that straddle
+1952.23s: only moved 1% a day and that straddle
+1952.24s: only moved 1% a day and that straddle corresponded to 2% moves every day and
+1955.67s: corresponded to 2% moves every day and
+1955.68s: corresponded to 2% moves every day and we only moved one. So it felt like they
+1958.47s: we only moved one. So it felt like they
+1958.48s: we only moved one. So it felt like they were sitting on this winning position
+1961.27s: were sitting on this winning position
+1961.28s: were sitting on this winning position when they were sitting on a on a
+1963.11s: when they were sitting on a on a
+1963.12s: when they were sitting on a on a landmine because on the last day you had
+1966.95s: landmine because on the last day you had
+1966.96s: landmine because on the last day you had a move that made the volatility for the
+1970.15s: a move that made the volatility for the
+1970.16s: a move that made the volatility for the week be exactly what the volatility was
+1972.79s: week be exactly what the volatility was
+1972.80s: week be exactly what the volatility was embedded in the straddle. So you you
+1975.51s: embedded in the straddle. So you you
+1975.52s: embedded in the straddle. So you you would think that that should be a push.
+1977.59s: would think that that should be a push.
+1977.60s: would think that that should be a push. But because
+1979.51s: But because
+1979.52s: But because all of that volatility, almost the whole
+1981.83s: all of that volatility, almost the whole
+1981.84s: all of that volatility, almost the whole week's variance happened on one day,
+1984.87s: week's variance happened on one day,
+1984.88s: week's variance happened on one day, even though the amount of variance that
+1987.19s: even though the amount of variance that
+1987.20s: even though the amount of variance that was realized over the week was what was
+1990.63s: was realized over the week was what was
+1990.64s: was realized over the week was what was baked into the straddle, the fact that
+1993.19s: baked into the straddle, the fact that
+1993.20s: baked into the straddle, the fact that it all happened all at once is what hurt
+1995.99s: it all happened all at once is what hurt
+1996.00s: it all happened all at once is what hurt you, right? So again, it's because your
+1999.83s: you, right? So again, it's because your
+1999.84s: you, right? So again, it's because your P&amp;L cares about the move size squared.
+2002.63s: P&amp;L cares about the move size squared.
+2002.64s: P&amp;L cares about the move size squared. So even though the variance um you
+2005.83s: So even though the variance um you
+2005.84s: So even though the variance um you basically that last day of variance
+2009.03s: basically that last day of variance
+2009.04s: basically that last day of variance caught the entire straddle back up to um
+2012.63s: caught the entire straddle back up to um
+2012.64s: caught the entire straddle back up to um the same amount of variance that you
+2014.07s: the same amount of variance that you
+2014.08s: the same amount of variance that you thought you sold. Um but because it
+2016.07s: thought you sold. Um but because it
+2016.08s: thought you sold. Um but because it happens on the last day, it works out
+2018.23s: happens on the last day, it works out
+2018.24s: happens on the last day, it works out poorly for you. And I think so which
+2021.83s: poorly for you. And I think so which
+2021.84s: poorly for you. And I think so which leads to the next point that I wanted to
+2023.43s: leads to the next point that I wanted to
+2023.44s: leads to the next point that I wanted to make is that this is not unusual at all.
+2026.71s: make is that this is not unusual at all.
+2026.72s: make is that this is not unusual at all. And so that ne this is kind of um the so
+2031.19s: And so that ne this is kind of um the so
+2031.20s: And so that ne this is kind of um the so I went okay I'm going to show you the
+2032.55s: I went okay I'm going to show you the
+2032.56s: I went okay I'm going to show you the next part here. So I went back and did
+2035.27s: next part here. So I went back and did
+2035.28s: next part here. So I went back and did uh I looked at over
+2037.83s: uh I looked at over
+2037.84s: uh I looked at over um
+2039.35s: um
+2039.36s: um 10 years of daily return data for 35
+2042.87s: 10 years of daily return data for 35
+2042.88s: 10 years of daily return data for 35 ETFs. So this was these were like very
+2045.91s: ETFs. So this was these were like very
+2045.92s: ETFs. So this was these were like very liquid ETFs spanning equities,
+2047.75s: liquid ETFs spanning equities,
+2047.76s: liquid ETFs spanning equities, commodities, FX, fixed income, you know,
+2050.71s: commodities, FX, fixed income, you know,
+2050.72s: commodities, FX, fixed income, you know, like for example like a TLT would be an
+2052.55s: like for example like a TLT would be an
+2052.56s: like for example like a TLT would be an example of fixed income or USO would be
+2054.39s: example of fixed income or USO would be
+2054.40s: example of fixed income or USO would be an example of uh a commodity. So
+2058.55s: an example of uh a commodity. So
+2058.56s: an example of uh a commodity. So and then so I created this ratio. I call
+2061.19s: and then so I created this ratio. I call
+2061.20s: and then so I created this ratio. I call it a VCR uh a variance contribution
+2064.39s: it a VCR uh a variance contribution
+2064.40s: it a VCR uh a variance contribution ratio. And all it does is say,
+2069.11s: ratio. And all it does is say,
+2069.12s: ratio. And all it does is say, "Show me the uh the single largest move
+2072.07s: "Show me the uh the single largest move
+2072.08s: "Show me the uh the single largest move that happened in any any sample." And
+2074.07s: that happened in any any sample." And
+2074.08s: that happened in any any sample." And the samples I was looking at was like 20
+2075.91s: the samples I was looking at was like 20
+2075.92s: the samples I was looking at was like 20 day 20-day look backs. So, think about
+2077.91s: day 20-day look backs. So, think about
+2077.92s: day 20-day look backs. So, think about it as like a month, like a a month's
+2079.99s: it as like a month, like a a month's
+2080.00s: it as like a month, like a a month's worth of trading days.
+2081.51s: worth of trading days.
+2081.52s: worth of trading days. &gt;&gt; And I just said, "Show me the biggest
+2083.43s: &gt;&gt; And I just said, "Show me the biggest
+2083.44s: &gt;&gt; And I just said, "Show me the biggest move in the month, but do it in, you
+2085.59s: move in the month, but do it in, you
+2085.60s: move in the month, but do it in, you know, square the move, put it in
+2086.87s: know, square the move, put it in
+2086.88s: know, square the move, put it in variance space, and divide that over all
+2089.91s: variance space, and divide that over all
+2089.92s: variance space, and divide that over all the variance that accumulated over the
+2092.39s: the variance that accumulated over the
+2092.40s: the variance that accumulated over the course of that month." So summing up all
+2094.39s: course of that month." So summing up all
+2094.40s: course of that month." So summing up all the squared returns for the entire month
+2097.67s: the squared returns for the entire month
+2097.68s: the squared returns for the entire month and just show me the single the day with
+2100.23s: and just show me the single the day with
+2100.24s: and just show me the single the day with the single biggest move divided by that.
+2103.03s: the single biggest move divided by that.
+2103.04s: the single biggest move divided by that. Um and what you find is that
+2106.47s: Um and what you find is that
+2106.48s: Um and what you find is that the variant and I call that ratio a
+2108.15s: the variant and I call that ratio a
+2108.16s: the variant and I call that ratio a variance contribution ratio. And what
+2109.75s: variance contribution ratio. And what
+2109.76s: variance contribution ratio. And what you find is that pretty much across the
+2112.23s: you find is that pretty much across the
+2112.24s: you find is that pretty much across the board
+2114.23s: board
+2114.24s: board you can expect that 25%
+2117.75s: you can expect that 25%
+2117.76s: you can expect that 25% of the variance that occurs in a given
+2120.07s: of the variance that occurs in a given
+2120.08s: of the variance that occurs in a given month to happen in one day.
+2123.35s: month to happen in one day.
+2123.36s: month to happen in one day. That's typical.
+2125.67s: That's typical.
+2125.68s: That's typical. So
+2127.51s: So
+2127.52s: So if 25% of the variance that happens in a
+2130.39s: if 25% of the variance that happens in a
+2130.40s: if 25% of the variance that happens in a month happens in one day, another way
+2132.39s: month happens in one day, another way
+2132.40s: month happens in one day, another way you could state that is one day
+2134.71s: you could state that is one day
+2134.72s: you could state that is one day represents a week's worth of variance.
+2137.91s: represents a week's worth of variance.
+2137.92s: represents a week's worth of variance. So there's one day on average. There's
+2141.11s: So there's one day on average. There's
+2141.12s: So there's one day on average. There's one day in in every month that
+2144.07s: one day in in every month that
+2144.08s: one day in in every month that represents a week out of the whole
+2146.95s: represents a week out of the whole
+2146.96s: represents a week out of the whole month's volatility. So that's why I'm
+2149.67s: month's volatility. So that's why I'm
+2149.68s: month's volatility. So that's why I'm saying it feels like roulette because if
+2151.67s: saying it feels like roulette because if
+2151.68s: saying it feels like roulette because if you're short options, you don't know if
+2153.51s: you're short options, you don't know if
+2153.52s: you're short options, you don't know if you're going to be short options
+2155.83s: you're going to be short options
+2155.84s: you're going to be short options over the during the period of that one
+2158.47s: over the during the period of that one
+2158.48s: over the during the period of that one day. Um that ends up being uh
+2164.39s: day. Um that ends up being uh
+2164.40s: day. Um that ends up being uh not the majority but like a plural
+2166.47s: not the majority but like a plural
+2166.48s: not the majority but like a plural plurality of the volatility for the
+2168.95s: plurality of the volatility for the
+2168.96s: plurality of the volatility for the week. Yeah. Of the month rather. So, you
+2171.67s: week. Yeah. Of the month rather. So, you
+2171.68s: week. Yeah. Of the month rather. So, you know, it's not that if you thought if if
+2174.23s: know, it's not that if you thought if if
+2174.24s: know, it's not that if you thought if if volatility was equally distributed over
+2176.07s: volatility was equally distributed over
+2176.08s: volatility was equally distributed over the month, over the 20 days in a trading
+2178.07s: the month, over the 20 days in a trading
+2178.08s: the month, over the 20 days in a trading month, you would expect that 5% of the
+2180.79s: month, you would expect that 5% of the
+2180.80s: month, you would expect that 5% of the variance would occur in each of the 20
+2183.27s: variance would occur in each of the 20
+2183.28s: variance would occur in each of the 20 days, but one day usually gets 25% of
+2187.27s: days, but one day usually gets 25% of
+2187.28s: days, but one day usually gets 25% of the variance or like the equivalent of 5
+2189.27s: the variance or like the equivalent of 5
+2189.28s: the variance or like the equivalent of 5 days worth. So this is kind of why think
+2192.47s: days worth. So this is kind of why think
+2192.48s: days worth. So this is kind of why think it's like the whole this whole idea of
+2193.91s: it's like the whole this whole idea of
+2193.92s: it's like the whole this whole idea of like thinking in averages is tricky
+2197.11s: like thinking in averages is tricky
+2197.12s: like thinking in averages is tricky because volatility does not generally uh
+2202.47s: because volatility does not generally uh
+2202.48s: because volatility does not generally uh distribute itself so uniformly across
+2204.87s: distribute itself so uniformly across
+2204.88s: distribute itself so uniformly across the days. It it tends to um uh have
+2209.51s: the days. It it tends to um uh have
+2209.52s: the days. It it tends to um uh have these very lumpy spikes. So what you get
+2212.23s: these very lumpy spikes. So what you get
+2212.24s: these very lumpy spikes. So what you get is
+2213.75s: is
+2213.76s: is uh and and the point here is that
+2216.87s: uh and and the point here is that
+2216.88s: uh and and the point here is that if you are short the options and you get
+2220.23s: if you are short the options and you get
+2220.24s: if you are short the options and you get that one big day and it happens when
+2223.03s: that one big day and it happens when
+2223.04s: that one big day and it happens when you're close to expiration the impact
+2225.83s: you're close to expiration the impact
+2225.84s: you're close to expiration the impact will be way higher than if it happened
+2229.27s: will be way higher than if it happened
+2229.28s: will be way higher than if it happened uh if that one day happened at the
+2231.35s: uh if that one day happened at the
+2231.36s: uh if that one day happened at the beginning of say the beginning of the
+2232.63s: beginning of say the beginning of the
+2232.64s: beginning of say the beginning of the month you're short of one month
+2233.75s: month you're short of one month
+2233.76s: month you're short of one month straddle.
+2236.23s: straddle.
+2236.24s: straddle. If you if that big move happens the
+2237.99s: If you if that big move happens the
+2238.00s: If you if that big move happens the beginning of the month, it will have it
+2240.15s: beginning of the month, it will have it
+2240.16s: beginning of the month, it will have it actually works out that it it'll have
+2242.07s: actually works out that it it'll have
+2242.08s: actually works out that it it'll have only about 20% of the impact that it
+2245.11s: only about 20% of the impact that it
+2245.12s: only about 20% of the impact that it would have had had it happened on the
+2247.11s: would have had had it happened on the
+2247.12s: would have had had it happened on the last day of the month. So the same size
+2250.15s: last day of the month. So the same size
+2250.16s: last day of the month. So the same size move that let's you know call it a 4% in
+2253.35s: move that let's you know call it a 4% in
+2253.36s: move that let's you know call it a 4% in one day move for this you know otherwise
+2255.99s: one day move for this you know otherwise
+2256.00s: one day move for this you know otherwise this asset that moves 1% a day that
+2259.35s: this asset that moves 1% a day that
+2259.36s: this asset that moves 1% a day that asset that one 4% move whether you put
+2263.51s: asset that one 4% move whether you put
+2263.52s: asset that one 4% move whether you put it at the front of the month or the back
+2266.07s: it at the front of the month or the back
+2266.08s: it at the front of the month or the back of the month towards expiration has a
+2268.63s: of the month towards expiration has a
+2268.64s: of the month towards expiration has a massive impact on your P&amp;L. If it
+2270.55s: massive impact on your P&amp;L. If it
+2270.56s: massive impact on your P&amp;L. If it happens to be at the front of the month,
+2272.23s: happens to be at the front of the month,
+2272.24s: happens to be at the front of the month, its impact on your P&amp;L will be 20% of
+2274.87s: its impact on your P&amp;L will be 20% of
+2274.88s: its impact on your P&amp;L will be 20% of what the impact would have been on your
+2276.31s: what the impact would have been on your
+2276.32s: what the impact would have been on your P&amp;L had it happened at the end of the
+2278.07s: P&amp;L had it happened at the end of the
+2278.08s: P&amp;L had it happened at the end of the month. Um, and the re uh you can come up
+2282.87s: month. Um, and the re uh you can come up
+2282.88s: month. Um, and the re uh you can come up with that by just recognizing that gamma
+2286.15s: with that by just recognizing that gamma
+2286.16s: with that by just recognizing that gamma um gamma is proportional again to the
+2288.39s: um gamma is proportional again to the
+2288.40s: um gamma is proportional again to the square root of time. So um if the option
+2291.03s: square root of time. So um if the option
+2291.04s: square root of time. So um if the option has four times as much time to
+2292.95s: has four times as much time to
+2292.96s: has four times as much time to expiration um the the uh um the impact
+2297.11s: expiration um the the uh um the impact
+2297.12s: expiration um the the uh um the impact will be
+2299.11s: will be
+2299.12s: will be uh sorry half as half as much. Um, so
+2304.87s: uh sorry half as half as much. Um, so
+2304.88s: uh sorry half as half as much. Um, so anyway, the point is that it the
+2307.83s: anyway, the point is that it the
+2307.84s: anyway, the point is that it the volatility is very lumpy and when the
+2310.31s: volatility is very lumpy and when the
+2310.32s: volatility is very lumpy and when the lumpiness happens
+2312.47s: lumpiness happens
+2312.48s: lumpiness happens is like a tyrannical sort of effect on
+2314.79s: is like a tyrannical sort of effect on
+2314.80s: is like a tyrannical sort of effect on your P&amp;L and it's and those kinds of
+2317.59s: your P&amp;L and it's and those kinds of
+2317.60s: your P&amp;L and it's and those kinds of things are
+2319.51s: things are
+2319.52s: things are trying to account for those things. It's
+2321.19s: trying to account for those things. It's
+2321.20s: trying to account for those things. It's like is that is that are you just trying
+2323.75s: like is that is that are you just trying
+2323.76s: like is that is that are you just trying to trade a the averages? Uh in which
+2326.79s: to trade a the averages? Uh in which
+2326.80s: to trade a the averages? Uh in which case, you know, the averages kind of lie
+2329.59s: case, you know, the averages kind of lie
+2329.60s: case, you know, the averages kind of lie when you realize that man, one day could
+2331.91s: when you realize that man, one day could
+2331.92s: when you realize that man, one day could be is like really like a week. And
+2333.99s: be is like really like a week. And
+2334.00s: be is like really like a week. And that's very typical that that has been
+2336.07s: that's very typical that that has been
+2336.08s: that's very typical that that has been the case for a long time that that
+2337.91s: the case for a long time that that
+2337.92s: the case for a long time that that there's that kind of behavior. And by
+2339.59s: there's that kind of behavior. And by
+2339.60s: there's that kind of behavior. And by the way, like this is not the study that
+2341.67s: the way, like this is not the study that
+2341.68s: the way, like this is not the study that I did. There were no single name
+2343.51s: I did. There were no single name
+2343.52s: I did. There were no single name equities in this. Obviously, for a
+2345.19s: equities in this. Obviously, for a
+2345.20s: equities in this. Obviously, for a single name equity, if you're in an
+2346.47s: single name equity, if you're in an
+2346.48s: single name equity, if you're in an earnings month, um it is not would not
+2349.27s: earnings month, um it is not would not
+2349.28s: earnings month, um it is not would not be unusual for um an earnings move to
+2352.63s: be unusual for um an earnings move to
+2352.64s: be unusual for um an earnings move to represent like 70 80% of the of the
+2355.91s: represent like 70 80% of the of the
+2355.92s: represent like 70 80% of the of the variance that occurs in that month would
+2358.47s: variance that occurs in that month would
+2358.48s: variance that occurs in that month would happen in a single day.
+2362.56s: First, did you happen to split up like
+2366.48s: First, did you happen to split up like into quartiles or quintiles when that
+2369.67s: into quartiles or quintiles when that
+2369.68s: into quartiles or quintiles when that one day tends to occur in that
+2372.07s: one day tends to occur in that
+2372.08s: one day tends to occur in that expiration cycle?
+2374.47s: expiration cycle?
+2374.48s: expiration cycle? I loop back cycle I should say
+2377.43s: I loop back cycle I should say
+2377.44s: I loop back cycle I should say &gt;&gt; I didn't because well so the way that I
+2379.51s: &gt;&gt; I didn't because well so the way that I
+2379.52s: &gt;&gt; I didn't because well so the way that I did it um was I had it be a rolling
+2383.67s: did it um was I had it be a rolling
+2383.68s: did it um was I had it be a rolling &gt;&gt; 20 days so I rather than I didn't I
+2385.75s: &gt;&gt; 20 days so I rather than I didn't I
+2385.76s: &gt;&gt; 20 days so I rather than I didn't I didn't bin it by months so it was just
+2388.23s: didn't bin it by months so it was just
+2388.24s: didn't bin it by months so it was just sort of a a rolling 20 days um I will
+2391.99s: sort of a a rolling 20 days um I will
+2392.00s: sort of a a rolling 20 days um I will add this because this is sort of
+2393.27s: add this because this is sort of
+2393.28s: add this because this is sort of interesting I I was actually I actually
+2395.67s: interesting I I was actually I actually
+2395.68s: interesting I I was actually I actually did the
+2397.83s: did the
+2397.84s: did the um I was I had done that study because I
+2400.63s: um I was I had done that study because I
+2400.64s: um I was I had done that study because I was I was curious about like questions
+2403.35s: was I was curious about like questions
+2403.36s: was I was curious about like questions around like when that uh when that
+2406.31s: around like when that uh when that
+2406.32s: around like when that uh when that variance ratio
+2408.39s: variance ratio
+2408.40s: variance ratio um if it's lower or higher if it kind of
+2410.47s: um if it's lower or higher if it kind of
+2410.48s: um if it's lower or higher if it kind of like leads to any interesting signals
+2413.03s: like leads to any interesting signals
+2413.04s: like leads to any interesting signals and I was also looking at things like um
+2416.23s: and I was also looking at things like um
+2416.24s: and I was also looking at things like um if the if an asset price has been
+2418.31s: if the if an asset price has been
+2418.32s: if the if an asset price has been trending does
+2421.19s: trending does
+2421.20s: trending does uh when an asset price trends um it
+2425.11s: uh when an asset price trends um it
+2425.12s: uh when an asset price trends um it tends to be more
+2427.67s: tends to be more
+2427.68s: tends to be more another way of expressing that is it's
+2430.07s: another way of expressing that is it's
+2430.08s: another way of expressing that is it's more volatile than its daily returns are
+2432.07s: more volatile than its daily returns are
+2432.08s: more volatile than its daily returns are sort of indicating. ing and uh the
+2436.07s: sort of indicating. ing and uh the
+2436.08s: sort of indicating. ing and uh the question I was kind of wondering about
+2437.59s: question I was kind of wondering about
+2437.60s: question I was kind of wondering about is is the volatility of the asset going
+2440.63s: is is the volatility of the asset going
+2440.64s: is is the volatility of the asset going forward
+2442.55s: forward
+2442.56s: forward tend to be higher than the realized v
+2445.59s: tend to be higher than the realized v
+2445.60s: tend to be higher than the realized v would predict
+2447.35s: would predict
+2447.36s: would predict um if we've been trending and
+2449.72s: um if we've been trending and
+2449.73s: um if we've been trending and [clears throat] it actually turns out
+2450.95s: [clears throat] it actually turns out
+2450.96s: [clears throat] it actually turns out that that that that
+2452.87s: that that that that
+2452.88s: that that that that does seem to hold some water like um
+2457.27s: does seem to hold some water like um
+2457.28s: does seem to hold some water like um the the example I was looking at was EWI
+2459.75s: the the example I was looking at was EWI
+2459.76s: the the example I was looking at was EWI which is the Korea ETF and I was looking
+2462.55s: which is the Korea ETF and I was looking
+2462.56s: which is the Korea ETF and I was looking at it over the course of um like in
+2464.39s: at it over the course of um like in
+2464.40s: at it over the course of um like in February. So EWY had like well before
+2466.79s: February. So EWY had like well before
+2466.80s: February. So EWY had like well before all this um uh Iran stuff started um EWI
+2471.19s: all this um uh Iran stuff started um EWI
+2471.20s: all this um uh Iran stuff started um EWI had been on a tear and so it had been
+2473.67s: had been on a tear and so it had been
+2473.68s: had been on a tear and so it had been going up every single week and if you
+2476.15s: going up every single week and if you
+2476.16s: going up every single week and if you looked at its realized volatility
+2478.87s: looked at its realized volatility
+2478.88s: looked at its realized volatility like on a daily basis it was like I
+2480.87s: like on a daily basis it was like I
+2480.88s: like on a daily basis it was like I don't know like high30s but if you
+2483.27s: don't know like high30s but if you
+2483.28s: don't know like high30s but if you looked at it if you just sampled every
+2485.35s: looked at it if you just sampled every
+2485.36s: looked at it if you just sampled every week
+2487.11s: week
+2487.12s: week um the realized volatility was closer to
+2489.43s: um the realized volatility was closer to
+2489.44s: um the realized volatility was closer to like 70.
+2491.99s: like 70.
+2492.00s: like 70. So, I was looking at it because I saw
+2495.51s: So, I was looking at it because I saw
+2495.52s: So, I was looking at it because I saw somebody saying like, "Hey, EWY's
+2497.59s: somebody saying like, "Hey, EWY's
+2497.60s: somebody saying like, "Hey, EWY's volatility looks really expensive at
+2500.47s: volatility looks really expensive at
+2500.48s: volatility looks really expensive at like it was like like 50 and we like I
+2503.19s: like it was like like 50 and we like I
+2503.20s: like it was like like 50 and we like I said, we had been realizing like
+2504.47s: said, we had been realizing like
+2504.48s: said, we had been realizing like high30s." And I was like, "I don't think
+2506.63s: high30s." And I was like, "I don't think
+2506.64s: high30s." And I was like, "I don't think it's I don't actually think it's that
+2507.99s: it's I don't actually think it's that
+2508.00s: it's I don't actually think it's that expensive because
+2510.39s: expensive because
+2510.40s: expensive because we've just it's been realizing 70 if you
+2513.27s: we've just it's been realizing 70 if you
+2513.28s: we've just it's been realizing 70 if you look at it from, you know, week to week.
+2517.03s: look at it from, you know, week to week.
+2517.04s: look at it from, you know, week to week. So, it only looks expensive if you look
+2518.71s: So, it only looks expensive if you look
+2518.72s: So, it only looks expensive if you look at this on a daily basis." And then I
+2520.47s: at this on a daily basis." And then I
+2520.48s: at this on a daily basis." And then I was like, okay, well, if you look at
+2521.91s: was like, okay, well, if you look at
+2521.92s: was like, okay, well, if you look at things on a daily basis versus a weekly
+2523.91s: things on a daily basis versus a weekly
+2523.92s: things on a daily basis versus a weekly basis, then there's a big disparity
+2525.75s: basis, then there's a big disparity
+2525.76s: basis, then there's a big disparity between the two, what tends to happen to
+2528.23s: between the two, what tends to happen to
+2528.24s: between the two, what tends to happen to the volatility going forward? And that
+2530.23s: the volatility going forward? And that
+2530.24s: the volatility going forward? And that was um it does tend to be the case that
+2533.83s: was um it does tend to be the case that
+2533.84s: was um it does tend to be the case that you you you basically would want to
+2535.83s: you you you basically would want to
+2535.84s: you you you basically would want to probably blend the volatilities, like
+2537.91s: probably blend the volatilities, like
+2537.92s: probably blend the volatilities, like sample them both ways and blend them.
+2539.43s: sample them both ways and blend them.
+2539.44s: sample them both ways and blend them. That would give you a better picture of
+2540.87s: That would give you a better picture of
+2540.88s: That would give you a better picture of what the volatility going forward would
+2542.79s: what the volatility going forward would
+2542.80s: what the volatility going forward would probably be. Um, and if you just sample
+2545.27s: probably be. Um, and if you just sample
+2545.28s: probably be. Um, and if you just sample it daily, um, after you just had this
+2547.83s: it daily, um, after you just had this
+2547.84s: it daily, um, after you just had this really big trend, um, you you might be
+2550.47s: really big trend, um, you you might be
+2550.48s: really big trend, um, you you might be underestimating the volatility. Don't
+2552.87s: underestimating the volatility. Don't
+2552.88s: underestimating the volatility. Don't you find it also to be kind of catalyst
+2556.39s: you find it also to be kind of catalyst
+2556.40s: you find it also to be kind of catalyst specific? cuz I've actually done a a
+2558.55s: specific? cuz I've actually done a a
+2558.56s: specific? cuz I've actually done a a similar look myself and I try to bin
+2563.59s: similar look myself and I try to bin
+2563.60s: similar look myself and I try to bin like catalysts that have what at least
+2566.71s: like catalysts that have what at least
+2566.72s: like catalysts that have what at least as best as I could find a catalyst that
+2568.95s: as best as I could find a catalyst that
+2568.96s: as best as I could find a catalyst that would kick off the move involve and at
+2573.19s: would kick off the move involve and at
+2573.20s: would kick off the move involve and at least even in a very imperfect binning I
+2577.19s: least even in a very imperfect binning I
+2577.20s: least even in a very imperfect binning I tend to find some correlation there.
+2581.83s: tend to find some correlation there.
+2581.84s: tend to find some correlation there. I didn't look at any catalyst like this
+2583.59s: I didn't look at any catalyst like this
+2583.60s: I didn't look at any catalyst like this was very um zoomed out like I said it
+2586.71s: was very um zoomed out like I said it
+2586.72s: was very um zoomed out like I said it was like 10 years 35 assets.
+2590.15s: was like 10 years 35 assets.
+2590.16s: was like 10 years 35 assets. &gt;&gt; Um so I was not I was not looking for
+2593.51s: &gt;&gt; Um so I was not I was not looking for
+2593.52s: &gt;&gt; Um so I was not I was not looking for catalyst. I mean that that's all yeah
+2596.23s: catalyst. I mean that that's all yeah
+2596.24s: catalyst. I mean that that's all yeah that's that's where things get can get
+2597.83s: that's that's where things get can get
+2597.84s: that's that's where things get can get kind of interesting right is like you
+2599.11s: kind of interesting right is like you
+2599.12s: kind of interesting right is like you can really start drilling down into
+2600.63s: can really start drilling down into
+2600.64s: can really start drilling down into things and and and you know sort of like
+2603.03s: things and and and you know sort of like
+2603.04s: things and and and you know sort of like the labor of trying to find like these
+2605.83s: the labor of trying to find like these
+2605.84s: the labor of trying to find like these sort of uh you know
+2608.79s: sort of uh you know
+2608.80s: sort of uh you know like uh minute more minute sing signals.
+2612.95s: like uh minute more minute sing signals.
+2612.96s: like uh minute more minute sing signals. &gt;&gt; Yeah. Yeah. It's kind of funny cuz
+2615.11s: &gt;&gt; Yeah. Yeah. It's kind of funny cuz
+2615.12s: &gt;&gt; Yeah. Yeah. It's kind of funny cuz that's where I find the autistic part of
+2617.19s: that's where I find the autistic part of
+2617.20s: that's where I find the autistic part of my brain takes over because I I
+2619.03s: my brain takes over because I I
+2619.04s: my brain takes over because I I literally just I don't know why but it's
+2621.03s: literally just I don't know why but it's
+2621.04s: literally just I don't know why but it's extremely satisfying to like iterate on
+2623.11s: extremely satisfying to like iterate on
+2623.12s: extremely satisfying to like iterate on all of them. The weird personality work
+2628.15s: all of them. The weird personality work
+2628.16s: all of them. The weird personality work at least it applies to markets I
+2629.83s: at least it applies to markets I
+2629.84s: at least it applies to markets I suppose.
+2631.11s: suppose.
+2631.12s: suppose. &gt;&gt; Yeah. here. I'm trying I was just trying
+2632.95s: &gt;&gt; Yeah. here. I'm trying I was just trying
+2632.96s: &gt;&gt; Yeah. here. I'm trying I was just trying trying to give like my goal with this
+2635.35s: trying to give like my goal with this
+2635.36s: trying to give like my goal with this was actually just you know I I kind of
+2637.59s: was actually just you know I I kind of
+2637.60s: was actually just you know I I kind of call this the shape of volatility and
+2639.35s: call this the shape of volatility and
+2639.36s: call this the shape of volatility and it's just understanding that uh you know
+2643.03s: it's just understanding that uh you know
+2643.04s: it's just understanding that uh you know the way volatility looks is not this
+2645.11s: the way volatility looks is not this
+2645.12s: the way volatility looks is not this thing where you want to have like your
+2646.71s: thing where you want to have like your
+2646.72s: thing where you want to have like your your uh averaging brain on but you want
+2649.99s: your uh averaging brain on but you want
+2650.00s: your uh averaging brain on but you want to have your sort of like you know
+2652.63s: to have your sort of like you know
+2652.64s: to have your sort of like you know &gt;&gt; distribution skewed part of your brain
+2655.11s: &gt;&gt; distribution skewed part of your brain
+2655.12s: &gt;&gt; distribution skewed part of your brain where you're like hey there's this
+2656.47s: where you're like hey there's this
+2656.48s: where you're like hey there's this there's these things and what happens is
+2658.47s: there's these things and what happens is
+2658.48s: there's these things and what happens is they tend to like have this very typical
+2662.15s: they tend to like have this very typical
+2662.16s: they tend to like have this very typical behavior most of the time, but every now
+2664.95s: behavior most of the time, but every now
+2664.96s: behavior most of the time, but every now and then they had this like really weird
+2666.31s: and then they had this like really weird
+2666.32s: and then they had this like really weird behavior and if you average that you
+2667.67s: behavior and if you average that you
+2667.68s: behavior and if you average that you kind of get into a weird place like it
+2669.27s: kind of get into a weird place like it
+2669.28s: kind of get into a weird place like it which kind of reminds me of um
+2673.11s: which kind of reminds me of um
+2673.12s: which kind of reminds me of um so I I remember on the when I was on the
+2675.43s: so I I remember on the when I was on the
+2675.44s: so I I remember on the when I was on the floor like oil options traders would you
+2677.67s: floor like oil options traders would you
+2677.68s: floor like oil options traders would you know they the way they would like look
+2679.11s: know they the way they would like look
+2679.12s: know they the way they would like look at their the way that they would look at
+2680.95s: at their the way that they would look at
+2680.96s: at their the way that they would look at their book sometimes is they would say
+2682.47s: their book sometimes is they would say
+2682.48s: their book sometimes is they would say I'm going to uh
+2685.83s: I'm going to uh
+2685.84s: I'm going to uh um once we've moved option the traders
+2689.35s: um once we've moved option the traders
+2689.36s: um once we've moved option the traders tended to be long options. Overall,
+2691.99s: tended to be long options. Overall,
+2692.00s: tended to be long options. Overall, market makers that are locals in the
+2694.15s: market makers that are locals in the
+2694.16s: market makers that are locals in the pit, like usually self-backed and that
+2696.15s: pit, like usually self-backed and that
+2696.16s: pit, like usually self-backed and that kind of thing, they tend to oftentimes
+2698.15s: kind of thing, they tend to oftentimes
+2698.16s: kind of thing, they tend to oftentimes be long options. Um, mostly because if
+2700.95s: be long options. Um, mostly because if
+2700.96s: be long options. Um, mostly because if they mostly because they kind of need to
+2702.71s: they mostly because they kind of need to
+2702.72s: they mostly because they kind of need to be in the sense of like if there's a
+2704.55s: be in the sense of like if there's a
+2704.56s: be in the sense of like if there's a really big shock in the market, they
+2706.31s: really big shock in the market, they
+2706.32s: really big shock in the market, they don't want to be blown out. So, what
+2709.91s: don't want to be blown out. So, what
+2709.92s: don't want to be blown out. So, what what ends up happening is they they all
+2711.75s: what ends up happening is they they all
+2711.76s: what ends up happening is they they all have like their various strategies for
+2713.43s: have like their various strategies for
+2713.44s: have like their various strategies for how to hedge their gamma. So one way
+2715.27s: how to hedge their gamma. So one way
+2715.28s: how to hedge their gamma. So one way they think about it is if we move one
+2718.71s: they think about it is if we move one
+2718.72s: they think about it is if we move one standard deviation in a day, they will
+2721.03s: standard deviation in a day, they will
+2721.04s: standard deviation in a day, they will hedge their gamma. So the way they think
+2723.19s: hedge their gamma. So the way they think
+2723.20s: hedge their gamma. So the way they think about that is like, okay, I'm I'm kind
+2725.67s: about that is like, okay, I'm I'm kind
+2725.68s: about that is like, okay, I'm I'm kind of like locking in my gamma P&amp;L to pay
+2728.07s: of like locking in my gamma P&amp;L to pay
+2728.08s: of like locking in my gamma P&amp;L to pay for my theta, right? It's like so some
+2731.83s: for my theta, right? It's like so some
+2731.84s: for my theta, right? It's like so some form of like accounting that they have
+2734.63s: form of like accounting that they have
+2734.64s: form of like accounting that they have in their head. It's like let me let me
+2736.15s: in their head. It's like let me let me
+2736.16s: in their head. It's like let me let me do that. Um, but I never really thought
+2740.71s: do that. Um, but I never really thought
+2740.72s: do that. Um, but I never really thought about it that way because it always felt
+2743.67s: about it that way because it always felt
+2743.68s: about it that way because it always felt something about that felt like it did
+2746.39s: something about that felt like it did
+2746.40s: something about that felt like it did not appreciate that volatility is lumpy
+2749.59s: not appreciate that volatility is lumpy
+2749.60s: not appreciate that volatility is lumpy in these weird ways. Like for example,
+2752.07s: in these weird ways. Like for example,
+2752.08s: in these weird ways. Like for example, given that the asset has moved a
+2754.15s: given that the asset has moved a
+2754.16s: given that the asset has moved a standard deviation, like most days the
+2756.87s: standard deviation, like most days the
+2756.88s: standard deviation, like most days the asset does not move one standard
+2758.31s: asset does not move one standard
+2758.32s: asset does not move one standard deviation, but the the straddle is
+2760.31s: deviation, but the the straddle is
+2760.32s: deviation, but the the straddle is priced the way that it is because some
+2761.91s: priced the way that it is because some
+2761.92s: priced the way that it is because some days when it does move a lot, it moves a
+2764.55s: days when it does move a lot, it moves a
+2764.56s: days when it does move a lot, it moves a lot more than one standard deviation. So
+2766.63s: lot more than one standard deviation. So
+2766.64s: lot more than one standard deviation. So if your strategy is I'm going to wait to
+2769.51s: if your strategy is I'm going to wait to
+2769.52s: if your strategy is I'm going to wait to hedge until the thing is moved to one
+2771.67s: hedge until the thing is moved to one
+2771.68s: hedge until the thing is moved to one standard deviation. What that feels like
+2773.35s: standard deviation. What that feels like
+2773.36s: standard deviation. What that feels like to me is like well then you don't hed
+2776.07s: to me is like well then you don't hed
+2776.08s: to me is like well then you don't hed you end up like not hedging very often
+2778.31s: you end up like not hedging very often
+2778.32s: you end up like not hedging very often because we usually don't even make it to
+2779.83s: because we usually don't even make it to
+2779.84s: because we usually don't even make it to one standard deviation and then when we
+2781.43s: one standard deviation and then when we
+2781.44s: one standard deviation and then when we do get to one standard deviation and
+2783.27s: do get to one standard deviation and
+2783.28s: do get to one standard deviation and then you hedge you sort of like
+2787.19s: then you hedge you sort of like
+2787.20s: then you hedge you sort of like hedged right when we're going to like
+2788.71s: hedged right when we're going to like
+2788.72s: hedged right when we're going to like when we're finally going to move.
+2791.35s: when we're finally going to move.
+2791.36s: when we're finally going to move. Mhm.
+2792.23s: Mhm.
+2792.24s: Mhm. &gt;&gt; So, it felt like there was a bias to
+2794.07s: &gt;&gt; So, it felt like there was a bias to
+2794.08s: &gt;&gt; So, it felt like there was a bias to that that that that uh I and I wouldn't
+2796.31s: that that that that uh I and I wouldn't
+2796.32s: that that that that uh I and I wouldn't say that I've ever really studied it. I
+2798.39s: say that I've ever really studied it. I
+2798.40s: say that I've ever really studied it. I just never kind of took to that way of
+2800.71s: just never kind of took to that way of
+2800.72s: just never kind of took to that way of looking at it.
+2802.95s: looking at it.
+2802.96s: looking at it. &gt;&gt; Which it leads to a natural follow-on
+2806.15s: &gt;&gt; Which it leads to a natural follow-on
+2806.16s: &gt;&gt; Which it leads to a natural follow-on question. What then do you think
+2810.39s: question. What then do you think
+2810.40s: question. What then do you think the implication is for let's say risk
+2813.43s: the implication is for let's say risk
+2813.44s: the implication is for let's say risk premia? Let's say that you're, you know,
+2815.59s: premia? Let's say that you're, you know,
+2815.60s: premia? Let's say that you're, you know, attempting to capture risk premia on
+2817.83s: attempting to capture risk premia on
+2817.84s: attempting to capture risk premia on different time frames. Is there a
+2820.31s: different time frames. Is there a
+2820.32s: different time frames. Is there a specific nuance to that? And then what
+2823.43s: specific nuance to that? And then what
+2823.44s: specific nuance to that? And then what is the like tactical implication in
+2826.15s: is the like tactical implication in
+2826.16s: is the like tactical implication in terms of a trader's attempt to capture
+2829.83s: terms of a trader's attempt to capture
+2829.84s: terms of a trader's attempt to capture risk premium?
+2832.47s: risk premium?
+2832.48s: risk premium? Yeah, I think it's comes down to it
+2835.43s: Yeah, I think it's comes down to it
+2835.44s: Yeah, I think it's comes down to it comes down to a generality in some way
+2837.19s: comes down to a generality in some way
+2837.20s: comes down to a generality in some way where it's like if there's this broad uh
+2842.55s: where it's like if there's this broad uh
+2842.56s: where it's like if there's this broad uh risk premia that exists then the way and
+2846.79s: risk premia that exists then the way and
+2846.80s: risk premia that exists then the way and by the way this is like where I really
+2848.39s: by the way this is like where I really
+2848.40s: by the way this is like where I really love I mean Euan's been on the pod um
+2851.59s: love I mean Euan's been on the pod um
+2851.60s: love I mean Euan's been on the pod um with you a lot like I really love his
+2853.99s: with you a lot like I really love his
+2854.00s: with you a lot like I really love his framing of it which is that you know you
+2855.91s: framing of it which is that you know you
+2855.92s: framing of it which is that you know you have anomalies which are tradable and
+2857.83s: have anomalies which are tradable and
+2857.84s: have anomalies which are tradable and fleeting and low capacity and then you
+2859.59s: fleeting and low capacity and then you
+2859.60s: fleeting and low capacity and then you have risk premia that are there on
+2863.11s: have risk premia that are there on
+2863.12s: have risk premia that are there on average most of the time and they're
+2865.35s: average most of the time and they're
+2865.36s: average most of the time and they're infinite capacity. Like the equity risk
+2867.27s: infinite capacity. Like the equity risk
+2867.28s: infinite capacity. Like the equity risk premier is like effectively infinite
+2869.11s: premier is like effectively infinite
+2869.12s: premier is like effectively infinite capacity. Um
+2871.75s: capacity. Um
+2871.76s: capacity. Um and the risk premia has like these nasty
+2874.79s: and the risk premia has like these nasty
+2874.80s: and the risk premia has like these nasty qualities which is like they're
+2876.47s: qualities which is like they're
+2876.48s: qualities which is like they're generally like fairly low sharp and they
+2878.95s: generally like fairly low sharp and they
+2878.96s: generally like fairly low sharp and they have they often times have like a
+2880.63s: have they often times have like a
+2880.64s: have they often times have like a negative skewess to them.
+2882.71s: negative skewess to them.
+2882.72s: negative skewess to them. &gt;&gt; Um meaning that you know when you lose
+2886.23s: &gt;&gt; Um meaning that you know when you lose
+2886.24s: &gt;&gt; Um meaning that you know when you lose you lose more than when you win kind of
+2887.83s: you lose more than when you win kind of
+2887.84s: you lose more than when you win kind of thing. Um but you tend to win a lot. So,
+2890.63s: thing. Um but you tend to win a lot. So,
+2890.64s: thing. Um but you tend to win a lot. So, the
+2892.47s: the
+2892.48s: the uh I would say that when you're
+2895.19s: uh I would say that when you're
+2895.20s: uh I would say that when you're harvesting a risk premia, it's it's it's
+2897.67s: harvesting a risk premia, it's it's it's
+2897.68s: harvesting a risk premia, it's it's it's like you probably the trade-off is
+2900.47s: like you probably the trade-off is
+2900.48s: like you probably the trade-off is between do I do it small and over lots
+2902.95s: between do I do it small and over lots
+2902.96s: between do I do it small and over lots of different things? Do I diversify a
+2905.51s: of different things? Do I diversify a
+2905.52s: of different things? Do I diversify a small advantage over lots of different
+2908.63s: small advantage over lots of different
+2908.64s: small advantage over lots of different things and effectively try to capture
+2911.67s: things and effectively try to capture
+2911.68s: things and effectively try to capture like largely capture this risk premia in
+2915.03s: like largely capture this risk premia in
+2915.04s: like largely capture this risk premia in the same way that an an equity investor
+2917.19s: the same way that an an equity investor
+2917.20s: the same way that an an equity investor would say there's an equity risk premia
+2919.59s: would say there's an equity risk premia
+2919.60s: would say there's an equity risk premia by and large I'm going to retire off of
+2922.39s: by and large I'm going to retire off of
+2922.40s: by and large I'm going to retire off of it one day and I'm just going to
+2924.55s: it one day and I'm just going to
+2924.56s: it one day and I'm just going to diversify my stock holdings and like
+2926.63s: diversify my stock holdings and like
+2926.64s: diversify my stock holdings and like over time I will get paid this ris risk
+2928.87s: over time I will get paid this ris risk
+2928.88s: over time I will get paid this ris risk premia if I'm willing to withstand it
+2930.79s: premia if I'm willing to withstand it
+2930.80s: premia if I'm willing to withstand it like um your ability to sort of like
+2934.15s: like um your ability to sort of like
+2934.16s: like um your ability to sort of like absorb the losses is what you're getting
+2936.23s: absorb the losses is what you're getting
+2936.24s: absorb the losses is what you're getting paid for, not for the labor of having
+2939.11s: paid for, not for the labor of having
+2939.12s: paid for, not for the labor of having been smart. Anybody can get the equity
+2942.07s: been smart. Anybody can get the equity
+2942.08s: been smart. Anybody can get the equity risk premium if they put their money in
+2943.67s: risk premium if they put their money in
+2943.68s: risk premium if they put their money in Vanguard. Um but it's not compensation
+2946.87s: Vanguard. Um but it's not compensation
+2946.88s: Vanguard. Um but it's not compensation for labor, it's just compensation for
+2948.47s: for labor, it's just compensation for
+2948.48s: for labor, it's just compensation for patience. the in this case if you're
+2952.71s: patience. the in this case if you're
+2952.72s: patience. the in this case if you're sort of selling options with the
+2955.11s: sort of selling options with the
+2955.12s: sort of selling options with the attitude of I'm selling options because
+2956.95s: attitude of I'm selling options because
+2956.96s: attitude of I'm selling options because I think this is broadly this variance
+2958.71s: I think this is broadly this variance
+2958.72s: I think this is broadly this variance risk premium and I'm not becoming
+2961.03s: risk premium and I'm not becoming
+2961.04s: risk premium and I'm not becoming especially
+2963.19s: especially
+2963.20s: especially uh I don't have an especially specific
+2965.03s: uh I don't have an especially specific
+2965.04s: uh I don't have an especially specific lens on the thing that I'm trading
+2968.79s: lens on the thing that I'm trading
+2968.80s: lens on the thing that I'm trading um then your best bet is to probably
+2971.19s: um then your best bet is to probably
+2971.20s: um then your best bet is to probably just trade small and across lots of
+2973.03s: just trade small and across lots of
+2973.04s: just trade small and across lots of different things um meaning like also
+2976.55s: different things um meaning like also
+2976.56s: different things um meaning like also different different asset classes too
+2978.47s: different different asset classes too
+2978.48s: different different asset classes too right like if you trade small on all
+2980.79s: right like if you trade small on all
+2980.80s: right like if you trade small on all equities. Well, you're diversified
+2983.19s: equities. Well, you're diversified
+2983.20s: equities. Well, you're diversified somewhat, but they are at the end of the
+2985.27s: somewhat, but they are at the end of the
+2985.28s: somewhat, but they are at the end of the day still all equities. Um, so, and if
+2988.95s: day still all equities. Um, so, and if
+2988.96s: day still all equities. Um, so, and if you're going to trade
+2991.27s: you're going to trade
+2991.28s: you're going to trade um, and if you want to put extra work in
+2993.43s: um, and if you want to put extra work in
+2993.44s: um, and if you want to put extra work in and like really study the behavior of
+2996.63s: and like really study the behavior of
+2996.64s: and like really study the behavior of uh, a certain, you know, maybe you're a
+2999.27s: uh, a certain, you know, maybe you're a
+2999.28s: uh, a certain, you know, maybe you're a specialist in the oil markets and you're
+3001.43s: specialist in the oil markets and you're
+3001.44s: specialist in the oil markets and you're going to study that specifically and
+3002.79s: going to study that specifically and
+3002.80s: going to study that specifically and there's all these interreationships
+3004.47s: there's all these interreationships
+3004.48s: there's all these interreationships within the oil market. So you have
+3005.91s: within the oil market. So you have
+3005.92s: within the oil market. So you have gasoline, you have diesel, you have you
+3007.75s: gasoline, you have diesel, you have you
+3007.76s: gasoline, you have diesel, you have you have uh WTI, you have the you have
+3010.39s: have uh WTI, you have the you have
+3010.40s: have uh WTI, you have the you have options on the stocks that are in the
+3013.19s: options on the stocks that are in the
+3013.20s: options on the stocks that are in the oil business, you have um you know
+3015.75s: oil business, you have um you know
+3015.76s: oil business, you have um you know vertically integrated companies, you
+3017.35s: vertically integrated companies, you
+3017.36s: vertically integrated companies, you have drillers, um you have futures
+3019.99s: have drillers, um you have futures
+3020.00s: have drillers, um you have futures curves like there's this whole ecosystem
+3021.67s: curves like there's this whole ecosystem
+3021.68s: curves like there's this whole ecosystem where you can spend your entire
+3022.87s: where you can spend your entire
+3022.88s: where you can spend your entire livelihood just trading this sector.
+3024.95s: livelihood just trading this sector.
+3024.96s: livelihood just trading this sector. Then if you become more specialized
+3026.39s: Then if you become more specialized
+3026.40s: Then if you become more specialized there, what happens is you're losing
+3027.83s: there, what happens is you're losing
+3027.84s: there, what happens is you're losing diversification,
+3029.75s: diversification,
+3029.76s: diversification, but hopefully your ability to research
+3032.95s: but hopefully your ability to research
+3032.96s: but hopefully your ability to research and do real work leads to better than
+3036.47s: and do real work leads to better than
+3036.48s: and do real work leads to better than risk premium like returns because you're
+3038.39s: risk premium like returns because you're
+3038.40s: risk premium like returns because you're sort of specialized in this area. So
+3040.63s: sort of specialized in this area. So
+3040.64s: sort of specialized in this area. So that's like mostly how I would answer
+3043.43s: that's like mostly how I would answer
+3043.44s: that's like mostly how I would answer the question is like how specifically
+3048.39s: the question is like how specifically
+3048.40s: the question is like how specifically um like where do you think you live on
+3051.91s: um like where do you think you live on
+3051.92s: um like where do you think you live on the spectrum of how well you understand
+3053.75s: the spectrum of how well you understand
+3053.76s: the spectrum of how well you understand this particular market and is there like
+3055.75s: this particular market and is there like
+3055.76s: this particular market and is there like any idiosyncratic edge you can have due
+3057.91s: any idiosyncratic edge you can have due
+3057.92s: any idiosyncratic edge you can have due to like the research that you do where
+3059.75s: to like the research that you do where
+3059.76s: to like the research that you do where you have some like basically you have a
+3061.91s: you have some like basically you have a
+3061.92s: you have some like basically you have a variant point of view from which you can
+3064.39s: variant point of view from which you can
+3064.40s: variant point of view from which you can make money from um some you know you
+3066.71s: make money from um some you know you
+3066.72s: make money from um some you know you could call that a signal you can call
+3067.83s: could call that a signal you can call
+3067.84s: could call that a signal you can call that whatever it is um if you do not
+3070.15s: that whatever it is um if you do not
+3070.16s: that whatever it is um if you do not feel like you are that person or you
+3071.99s: feel like you are that person or you
+3072.00s: feel like you are that person or you have done that work. Well, then you're
+3074.31s: have done that work. Well, then you're
+3074.32s: have done that work. Well, then you're just in the realm of harvesting a risk
+3076.07s: just in the realm of harvesting a risk
+3076.08s: just in the realm of harvesting a risk premium
+3077.27s: premium
+3077.28s: premium &gt;&gt; and diversify.
+3079.19s: &gt;&gt; and diversify.
+3079.20s: &gt;&gt; and diversify. &gt;&gt; Yeah, I love that. It's a it's a really
+3081.35s: &gt;&gt; Yeah, I love that. It's a it's a really
+3081.36s: &gt;&gt; Yeah, I love that. It's a it's a really solid and practical way to kind of like
+3083.35s: solid and practical way to kind of like
+3083.36s: solid and practical way to kind of like frame it and summarize it and it's a
+3085.91s: frame it and summarize it and it's a
+3085.92s: frame it and summarize it and it's a interesting exercise especially for
+3087.43s: interesting exercise especially for
+3087.44s: interesting exercise especially for people because a lot of retail options
+3089.83s: people because a lot of retail options
+3089.84s: people because a lot of retail options traders will come across selling
+3091.59s: traders will come across selling
+3091.60s: traders will come across selling options. Then they kind of think that
+3093.59s: options. Then they kind of think that
+3093.60s: options. Then they kind of think that selling options is inherently an edge.
+3096.47s: selling options is inherently an edge.
+3096.48s: selling options is inherently an edge. Then over time they kind of learn that
+3097.75s: Then over time they kind of learn that
+3097.76s: Then over time they kind of learn that that's not so much the case. So like
+3099.35s: that's not so much the case. So like
+3099.36s: that's not so much the case. So like this is a a really good natural
+3101.27s: this is a a really good natural
+3101.28s: this is a a really good natural progression especially for for that
+3104.15s: progression especially for for that
+3104.16s: progression especially for for that cohort.
+3105.91s: cohort.
+3105.92s: cohort. I think in general
+3109.83s: I think in general
+3109.84s: I think in general if you think about something like risk
+3111.99s: if you think about something like risk
+3112.00s: if you think about something like risk premia which is like really really
+3114.47s: premia which is like really really
+3114.48s: premia which is like really really really wellstudied and well documented.
+3118.63s: really wellstudied and well documented.
+3118.64s: really wellstudied and well documented. If you were to surmise then
+3121.10s: If you were to surmise then
+3121.11s: If you were to surmise then [clears throat] like why is V priced the
+3125.83s: [clears throat] like why is V priced the
+3125.84s: [clears throat] like why is V priced the way it is if it's known that that effect
+3130.95s: way it is if it's known that that effect
+3130.96s: way it is if it's known that that effect that you outlined specifically in the
+3132.87s: that you outlined specifically in the
+3132.88s: that you outlined specifically in the index ETFs but then likely otherwise why
+3135.91s: index ETFs but then likely otherwise why
+3135.92s: index ETFs but then likely otherwise why is the pricing convention built the way
+3137.91s: is the pricing convention built the way
+3137.92s: is the pricing convention built the way it is because then it would almost seem
+3139.75s: it is because then it would almost seem
+3139.76s: it is because then it would almost seem like there are periods that are
+3141.11s: like there are periods that are
+3141.12s: like there are periods that are inherently going to be like pretty
+3143.27s: inherently going to be like pretty
+3143.28s: inherently going to be like pretty mispriced
+3147.28s: &gt;&gt; meaning Well, what do you um what do you
+3150.24s: &gt;&gt; meaning Well, what do you um what do you mean by like the way the pricing con
+3152.31s: mean by like the way the pricing con
+3152.32s: mean by like the way the pricing con meaning like why is there a premium
+3155.11s: meaning like why is there a premium
+3155.12s: meaning like why is there a premium &gt;&gt; more or less like if we know that the
+3157.67s: &gt;&gt; more or less like if we know that the
+3157.68s: &gt;&gt; more or less like if we know that the pricing of V is that lumpy? It seems
+3161.27s: pricing of V is that lumpy? It seems
+3161.28s: pricing of V is that lumpy? It seems like the Yeah. Yeah. Yeah. So it seems
+3163.67s: like the Yeah. Yeah. Yeah. So it seems
+3163.68s: like the Yeah. Yeah. Yeah. So it seems like that would be better integrated
+3166.23s: like that would be better integrated
+3166.24s: like that would be better integrated than into things like you know ball
+3169.27s: than into things like you know ball
+3169.28s: than into things like you know ball surface ultimately than the price
+3171.51s: surface ultimately than the price
+3171.52s: surface ultimately than the price itself.
+3172.87s: itself.
+3172.88s: itself. &gt;&gt; Sorry. Go ahead.
+3174.31s: &gt;&gt; Sorry. Go ahead.
+3174.32s: &gt;&gt; Sorry. Go ahead. Yeah, this is no this is this is this is
+3176.15s: Yeah, this is no this is this is this is
+3176.16s: Yeah, this is no this is this is this is good because what what's happening is
+3177.83s: good because what what's happening is
+3177.84s: good because what what's happening is like we are getting we are actually
+3180.71s: like we are getting we are actually
+3180.72s: like we are getting we are actually getting a finer look at what the uh um
+3185.51s: getting a finer look at what the uh um
+3185.52s: getting a finer look at what the uh um we we're moving from like a coarser
+3187.43s: we we're moving from like a coarser
+3187.44s: we we're moving from like a coarser grained look at the options market to a
+3189.43s: grained look at the options market to a
+3189.44s: grained look at the options market to a finer and finer grained one where we get
+3191.67s: finer and finer grained one where we get
+3191.68s: finer and finer grained one where we get because you have dailies and you have
+3193.75s: because you have dailies and you have
+3193.76s: because you have dailies and you have weeklies and you have so it's like okay
+3196.95s: weeklies and you have so it's like okay
+3196.96s: weeklies and you have so it's like okay the average volatility like if you look
+3199.11s: the average volatility like if you look
+3199.12s: the average volatility like if you look at the any option on anything that has
+3201.91s: at the any option on anything that has
+3201.92s: at the any option on anything that has lots of different experies
+3203.99s: lots of different experies
+3204.00s: lots of different experies Well, you know, you look at the 3month
+3206.47s: Well, you know, you look at the 3month
+3206.48s: Well, you know, you look at the 3month option and it's like it's it might look
+3209.43s: option and it's like it's it might look
+3209.44s: option and it's like it's it might look totally normal, but under the hood,
+3211.43s: totally normal, but under the hood,
+3211.44s: totally normal, but under the hood, there's all kinds of like expirations
+3213.35s: there's all kinds of like expirations
+3213.36s: there's all kinds of like expirations that are zigging and zagging and all of
+3216.55s: that are zigging and zagging and all of
+3216.56s: that are zigging and zagging and all of them what they're doing is this is this
+3219.35s: them what they're doing is this is this
+3219.36s: them what they're doing is this is this is V trader attempt to price the
+3222.55s: is V trader attempt to price the
+3222.56s: is V trader attempt to price the calendar. That's what we're doing is
+3224.31s: calendar. That's what we're doing is
+3224.32s: calendar. That's what we're doing is like um you know one of the things
+3227.43s: like um you know one of the things
+3227.44s: like um you know one of the things that's inside like any any uh firm that
+3230.15s: that's inside like any any uh firm that
+3230.16s: that's inside like any any uh firm that trades options as their bread and butter
+3232.71s: trades options as their bread and butter
+3232.72s: trades options as their bread and butter is obsessed with like what is the
+3235.27s: is obsessed with like what is the
+3235.28s: is obsessed with like what is the upcoming calendar for uh for these
+3238.87s: upcoming calendar for uh for these
+3238.88s: upcoming calendar for uh for these assets? Like for example if uh when
+3242.79s: assets? Like for example if uh when
+3242.80s: assets? Like for example if uh when Salesforce does their Dreamforce
+3244.55s: Salesforce does their Dreamforce
+3244.56s: Salesforce does their Dreamforce conference in uh in San Francisco every
+3247.75s: conference in uh in San Francisco every
+3247.76s: conference in uh in San Francisco every year is that a V event?
+3250.87s: year is that a V event?
+3250.88s: year is that a V event? does meaning does Salesforce tend to
+3253.67s: does meaning does Salesforce tend to
+3253.68s: does meaning does Salesforce tend to does does Salesforce or does any um
+3256.79s: does does Salesforce or does any um
+3256.80s: does does Salesforce or does any um company that's in it that's deeply
+3258.71s: company that's in it that's deeply
+3258.72s: company that's in it that's deeply related to it in any way does that
+3261.51s: related to it in any way does that
+3261.52s: related to it in any way does that create volatility for that asset during
+3264.79s: create volatility for that asset during
+3264.80s: create volatility for that asset during that week? So the market will put in a
+3268.07s: that week? So the market will put in a
+3268.08s: that week? So the market will put in a premium for that volatility. So, if you
+3270.87s: premium for that volatility. So, if you
+3270.88s: premium for that volatility. So, if you look at a three-month option,
+3273.27s: look at a three-month option,
+3273.28s: look at a three-month option, you know, everything look might look
+3274.87s: you know, everything look might look
+3274.88s: you know, everything look might look normal, but like you might notice like,
+3276.47s: normal, but like you might notice like,
+3276.48s: normal, but like you might notice like, hey, there's like this little lump in
+3278.47s: hey, there's like this little lump in
+3278.48s: hey, there's like this little lump in the term structure um between this week
+3280.95s: the term structure um between this week
+3280.96s: the term structure um between this week and that week. And it's like, what what
+3282.55s: and that week. And it's like, what what
+3282.56s: and that week. And it's like, what what is that? And it's like, well, there's um
+3285.11s: is that? And it's like, well, there's um
+3285.12s: is that? And it's like, well, there's um if you're if you assume if you're the
+3287.27s: if you're if you assume if you're the
+3287.28s: if you're if you assume if you're the kind of person that assumes everybody
+3288.55s: kind of person that assumes everybody
+3288.56s: kind of person that assumes everybody else is stupid, you're like, "Oh, that's
+3290.07s: else is stupid, you're like, "Oh, that's
+3290.08s: else is stupid, you're like, "Oh, that's obviously an edge. I should just iron
+3291.75s: obviously an edge. I should just iron
+3291.76s: obviously an edge. I should just iron that kink out." But the kink is probably
+3293.43s: that kink out." But the kink is probably
+3293.44s: that kink out." But the kink is probably there for a reason. So the question is
+3296.55s: there for a reason. So the question is
+3296.56s: there for a reason. So the question is is like when I see a kink the right
+3298.23s: is like when I see a kink the right
+3298.24s: is like when I see a kink the right instinct is like to go back and say why
+3300.63s: instinct is like to go back and say why
+3300.64s: instinct is like to go back and say why is that there like what what is the
+3302.47s: is that there like what what is the
+3302.48s: is that there like what what is the market looking at? It's very it's not
+3304.15s: market looking at? It's very it's not
+3304.16s: market looking at? It's very it's not likely that it's just a mistake.
+3306.87s: likely that it's just a mistake.
+3306.88s: likely that it's just a mistake. So um you now you can go and investigate
+3310.71s: So um you now you can go and investigate
+3310.72s: So um you now you can go and investigate what it is. So, so this idea that
+3313.59s: what it is. So, so this idea that
+3313.60s: what it is. So, so this idea that options return or uh stock returns are
+3317.19s: options return or uh stock returns are
+3317.20s: options return or uh stock returns are lumpy that on average we move 2% let's
+3321.59s: lumpy that on average we move 2% let's
+3321.60s: lumpy that on average we move 2% let's say the asset moves 2% um a day on
+3324.15s: say the asset moves 2% um a day on
+3324.16s: say the asset moves 2% um a day on average the term structure day to day
+3326.95s: average the term structure day to day
+3326.96s: average the term structure day to day week to week will actually parse that
+3329.51s: week to week will actually parse that
+3329.52s: week to week will actually parse that way more finely. So, the the one-mon
+3331.83s: way more finely. So, the the one-mon
+3331.84s: way more finely. So, the the one-mon option might come back and say this is a
+3334.47s: option might come back and say this is a
+3334.48s: option might come back and say this is a 2% uh daily mover, but you might notice
+3338.95s: 2% uh daily mover, but you might notice
+3338.96s: 2% uh daily mover, but you might notice that, you know, the upcoming week looks
+3341.99s: that, you know, the upcoming week looks
+3342.00s: that, you know, the upcoming week looks like it's more than 2%.
+3343.83s: like it's more than 2%.
+3343.84s: like it's more than 2%. &gt;&gt; Mhm.
+3344.16s: &gt;&gt; Mhm. &gt;&gt; And then the weeks behind that are less
+3346.15s: &gt;&gt; And then the weeks behind that are less
+3346.16s: &gt;&gt; And then the weeks behind that are less than 2%.
+3348.07s: than 2%.
+3348.08s: than 2%. And so, you can you can kind of see what
+3350.47s: And so, you can you can kind of see what
+3350.48s: And so, you can you can kind of see what the depths of that river are by looking
+3352.71s: the depths of that river are by looking
+3352.72s: the depths of that river are by looking at the term structure.
+3354.87s: at the term structure.
+3354.88s: at the term structure. &gt;&gt; Awesome. really really good way to to
+3357.51s: &gt;&gt; Awesome. really really good way to to
+3357.52s: &gt;&gt; Awesome. really really good way to to kind of think about, you know, using the
+3360.87s: kind of think about, you know, using the
+3360.88s: kind of think about, you know, using the additional expirations we have now
+3362.23s: additional expirations we have now
+3362.24s: additional expirations we have now because especially if you look at
+3363.35s: because especially if you look at
+3363.36s: because especially if you look at equities, we literally have daily. So,
+3365.75s: equities, we literally have daily. So,
+3365.76s: equities, we literally have daily. So, you can get pretty pretty freaking
+3367.75s: you can get pretty pretty freaking
+3367.76s: you can get pretty pretty freaking granular. So, awesome conversation, an
+3371.43s: granular. So, awesome conversation, an
+3371.44s: granular. So, awesome conversation, an awesome topic for everybody. You will
+3373.99s: awesome topic for everybody. You will
+3374.00s: awesome topic for everybody. You will catch us every single week. If there's
+3376.47s: catch us every single week. If there's
+3376.48s: catch us every single week. If there's anything that you want to see us cover,
+3378.15s: anything that you want to see us cover,
+3378.16s: anything that you want to see us cover, hit us up, leave a comment, shoot an
+3379.91s: hit us up, leave a comment, shoot an
+3379.92s: hit us up, leave a comment, shoot an email. Whatever makes you happy makes us
+3383.03s: email. Whatever makes you happy makes us
+3383.04s: email. Whatever makes you happy makes us happy. We'll see you on the next one.

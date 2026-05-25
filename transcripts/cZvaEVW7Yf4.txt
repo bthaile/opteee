@@ -1,0 +1,2444 @@
+2.00s: What's up, everyone? Welcome back to the
+3.84s: What's up, everyone? Welcome back to the Options Trench. Chris and I are here to
+6.95s: Options Trench. Chris and I are here to
+6.96s: Options Trench. Chris and I are here to explore a fascinating phenomenon,
+9.63s: explore a fascinating phenomenon,
+9.64s: explore a fascinating phenomenon, something that pretty much everybody
+11.71s: something that pretty much everybody
+11.72s: something that pretty much everybody that has traded an option at some point
+13.99s: that has traded an option at some point
+14.00s: that has traded an option at some point will experience. And we thought the best
+17.67s: will experience. And we thought the best
+17.68s: will experience. And we thought the best way to introduce the topic is actually
+20.43s: way to introduce the topic is actually
+20.44s: way to introduce the topic is actually to kind of give you a really quick
+22.39s: to kind of give you a really quick
+22.40s: to kind of give you a really quick example on two things that don't have
+27.03s: example on two things that don't have
+27.04s: example on two things that don't have the relationship most people think they
+28.59s: the relationship most people think they
+28.60s: the relationship most people think they do. And we want to talk quickly about
+31.35s: do. And we want to talk quickly about
+31.36s: do. And we want to talk quickly about the relationship between uh thing called
+33.95s: the relationship between uh thing called
+33.96s: the relationship between uh thing called leverage and convexity. And then we're
+36.19s: leverage and convexity. And then we're
+36.20s: leverage and convexity. And then we're going to double click into convexity
+38.07s: going to double click into convexity
+38.08s: going to double click into convexity because it behaves a lot different than
+40.99s: because it behaves a lot different than
+41.00s: because it behaves a lot different than most people think. And it has actually
+43.75s: most people think. And it has actually
+43.76s: most people think. And it has actually kind of a complicated impact on the path
+46.31s: kind of a complicated impact on the path
+46.32s: kind of a complicated impact on the path of your P&amp;L. And that's one of the
+49.35s: of your P&amp;L. And that's one of the
+49.36s: of your P&amp;L. And that's one of the factors why sometimes you might open up
+51.27s: factors why sometimes you might open up
+51.28s: factors why sometimes you might open up your account and be like,
+52.91s: your account and be like,
+52.92s: your account and be like, "Why does that look like that?" Well,
+54.87s: "Why does that look like that?" Well,
+54.88s: "Why does that look like that?" Well, this will be part of that reason. So,
+57.67s: this will be part of that reason. So,
+57.68s: this will be part of that reason. So, Chris, you thought of a great example
+60.31s: Chris, you thought of a great example
+60.32s: Chris, you thought of a great example that we want to start with to kind of
+62.07s: that we want to start with to kind of
+62.08s: that we want to start with to kind of help level set these things. So, I
+64.63s: help level set these things. So, I
+64.64s: help level set these things. So, I figured we start there.
+66.87s: figured we start there.
+66.88s: figured we start there. Yeah. So,
+68.51s: Yeah. So,
+68.52s: Yeah. So, uh we'll just start with the most basic
+69.83s: uh we'll just start with the most basic
+69.84s: uh we'll just start with the most basic thing,
+70.71s: thing,
+70.72s: thing, which is that if you buy let's say you
+72.19s: which is that if you buy let's say you
+72.20s: which is that if you buy let's say you buy a stock for $100, goes up 10%,
+75.51s: buy a stock for $100, goes up 10%,
+75.52s: buy a stock for $100, goes up 10%, um you will make you'll make 10% on your
+78.03s: um you will make you'll make 10% on your
+78.04s: um you will make you'll make 10% on your money.
+79.43s: money.
+79.44s: money. Uh if it goes up 20%, you'll you'll make
+82.23s: Uh if it goes up 20%, you'll you'll make
+82.24s: Uh if it goes up 20%, you'll you'll make 20% on your money. So, that's what we're
+83.95s: 20% on your money. So, that's what we're
+83.96s: 20% on your money. So, that's what we're all used to. That's just That we'll say
+86.39s: all used to. That's just That we'll say
+86.40s: all used to. That's just That we'll say that's linear. That's a linear P&amp;L. So,
+89.67s: that's linear. That's a linear P&amp;L. So,
+89.68s: that's linear. That's a linear P&amp;L. So, um however much the stock goes up,
+91.19s: um however much the stock goes up,
+91.20s: um however much the stock goes up, that's how much money we make.
+93.27s: that's how much money we make.
+93.28s: that's how much money we make. Um then there's this idea of leverage.
+96.27s: Um then there's this idea of leverage.
+96.28s: Um then there's this idea of leverage. So, leverage is just an amplification
+99.83s: So, leverage is just an amplification
+99.84s: So, leverage is just an amplification of the fact that it's linear. That's all
+101.75s: of the fact that it's linear. That's all
+101.76s: of the fact that it's linear. That's all it is. It's still linear. So, if if
+103.95s: it is. It's still linear. So, if if
+103.96s: it is. It's still linear. So, if if let's say the same stock, instead of you
+105.75s: let's say the same stock, instead of you
+105.76s: let's say the same stock, instead of you buying that stock, you buy the double uh
+108.15s: buying that stock, you buy the double uh
+108.16s: buying that stock, you buy the double uh leveraged version of that stock. So, if
+110.31s: leveraged version of that stock. So, if
+110.32s: leveraged version of that stock. So, if the stock goes up 10%, you'll make 20%.
+113.95s: the stock goes up 10%, you'll make 20%.
+113.96s: the stock goes up 10%, you'll make 20%. Um but if the stock went up 20%, you
+116.07s: Um but if the stock went up 20%, you
+116.08s: Um but if the stock went up 20%, you would make 40%. So, all you did was make
+119.27s: would make 40%. So, all you did was make
+119.28s: would make 40%. So, all you did was make 2x what the stock's return was. It's
+122.07s: 2x what the stock's return was. It's
+122.08s: 2x what the stock's return was. It's still linear. So, all leverage does is
+125.31s: still linear. So, all leverage does is
+125.32s: still linear. So, all leverage does is amplify the return
+128.19s: amplify the return
+128.20s: amplify the return um
+128.83s: um
+128.84s: um by the uh you know, by the by the
+130.95s: by the uh you know, by the by the
+130.96s: by the uh you know, by the by the leverage factor of the of the
+132.39s: leverage factor of the of the
+132.40s: leverage factor of the of the instrument. A quick A really quick admin
+135.07s: instrument. A quick A really quick admin
+135.08s: instrument. A quick A really quick admin note there from like a practical sense
+137.71s: note there from like a practical sense
+137.72s: note there from like a practical sense for people,
+138.91s: for people,
+138.92s: for people, we're we're saying like in a vacuum,
+141.11s: we're we're saying like in a vacuum,
+141.12s: we're we're saying like in a vacuum, right? Because if you buy a two times
+143.43s: right? Because if you buy a two times
+143.44s: right? Because if you buy a two times leveraged index ETF, there's a ton of
+145.55s: leveraged index ETF, there's a ton of
+145.56s: leveraged index ETF, there's a ton of other stuff that leads to some type of
+147.47s: other stuff that leads to some type of
+147.48s: other stuff that leads to some type of tracking error. So, I we just want to
+149.39s: tracking error. So, I we just want to
+149.40s: tracking error. So, I we just want to confuse people with that offshoot. We're
+150.99s: confuse people with that offshoot. We're
+151.00s: confuse people with that offshoot. We're talking and we're isolating that
+154.11s: talking and we're isolating that
+154.12s: talking and we're isolating that leverage effect by itself. We're getting
+155.83s: leverage effect by itself. We're getting
+155.84s: leverage effect by itself. We're getting rid of all the other stuff that can be
+158.39s: rid of all the other stuff that can be
+158.40s: rid of all the other stuff that can be part of that.
+159.87s: part of that.
+159.88s: part of that. And I think that that's I think that
+161.35s: And I think that that's I think that
+161.36s: And I think that that's I think that that's And it
+163.11s: that's And it
+163.12s: that's And it you don't even have to make a whole ton
+164.35s: you don't even have to make a whole ton
+164.36s: you don't even have to make a whole ton of assumptions about that on a one-day
+166.27s: of assumptions about that on a one-day
+166.28s: of assumptions about that on a one-day move. That really is how it works. It's
+168.03s: move. That really is how it works. It's
+168.04s: move. That really is how it works. It's like, you know, we get into issues if
+169.43s: like, you know, we get into issues if
+169.44s: like, you know, we get into issues if it's a multi-day, but on a one-day move,
+172.59s: it's a multi-day, but on a one-day move,
+172.60s: it's a multi-day, but on a one-day move, that double leveraged thing should act
+175.91s: that double leveraged thing should act
+175.92s: that double leveraged thing should act as advertised. So,
+178.59s: as advertised. So,
+178.60s: as advertised. So, uh so anyway, that's leverage.
+180.95s: uh so anyway, that's leverage.
+180.96s: uh so anyway, that's leverage. But there's a another concept um so then
+184.11s: But there's a another concept um so then
+184.12s: But there's a another concept um so then if we take an option, that everybody uh
+186.87s: if we take an option, that everybody uh
+186.88s: if we take an option, that everybody uh has probably heard that options want to
+189.59s: has probably heard that options want to
+189.60s: has probably heard that options want to have leverage. That's one of the allures
+191.35s: have leverage. That's one of the allures
+191.36s: have leverage. That's one of the allures of options is that they are will provide
+193.83s: of options is that they are will provide
+193.84s: of options is that they are will provide a lever a leveraged return. And that's
+196.03s: a lever a leveraged return. And that's
+196.04s: a lever a leveraged return. And that's true. There is leverage embedded in an
+198.11s: true. There is leverage embedded in an
+198.12s: true. There is leverage embedded in an option. Um
+199.75s: option. Um
+199.76s: option. Um however, there's another part of options
+202.79s: however, there's another part of options
+202.80s: however, there's another part of options that amplifies the return
+206.07s: that amplifies the return
+206.08s: that amplifies the return called It is kind of a this nasty word,
+208.59s: called It is kind of a this nasty word,
+208.60s: called It is kind of a this nasty word, but it's it's word convexity for what
+211.63s: but it's it's word convexity for what
+211.64s: but it's it's word convexity for what that is. And what that All that is
+214.03s: that is. And what that All that is
+214.04s: that is. And what that All that is convexity is uh conveying is that the
+218.15s: convexity is uh conveying is that the
+218.16s: convexity is uh conveying is that the return is no uh is not linear. So,
+222.55s: return is no uh is not linear. So,
+222.56s: return is no uh is not linear. So, if you bought an option
+225.15s: if you bought an option
+225.16s: if you bought an option on that asset and it went up 10%,
+227.99s: on that asset and it went up 10%,
+228.00s: on that asset and it went up 10%, there'd be some part of it has leverage.
+231.35s: there'd be some part of it has leverage.
+231.36s: there'd be some part of it has leverage. So, you're going to have a bigger return
+232.99s: So, you're going to have a bigger return
+233.00s: So, you're going to have a bigger return than 10% due to the leverage. But,
+236.03s: than 10% due to the leverage. But,
+236.04s: than 10% due to the leverage. But, you're going to get even There's going
+237.55s: you're going to get even There's going
+237.56s: you're going to get even There's going to There's an extra kicker in there. And
+239.11s: to There's an extra kicker in there. And
+239.12s: to There's an extra kicker in there. And what's happening in there is that you
+240.55s: what's happening in there is that you
+240.56s: what's happening in there is that you are getting a There is a non-linear
+242.43s: are getting a There is a non-linear
+242.44s: are getting a There is a non-linear portion of your P&amp;L that is occurring.
+245.91s: portion of your P&amp;L that is occurring.
+245.92s: portion of your P&amp;L that is occurring. And that um convexity that options
+249.55s: And that um convexity that options
+249.56s: And that um convexity that options offer, which double leverageds do not
+251.83s: offer, which double leverageds do not
+251.84s: offer, which double leverageds do not offer,
+253.19s: offer,
+253.20s: offer, is
+254.51s: is
+254.52s: is uh
+255.39s: uh
+255.40s: uh is the thing that we were going to zoom
+256.67s: is the thing that we were going to zoom
+256.68s: is the thing that we were going to zoom in on today and like really try to
+258.23s: in on today and like really try to
+258.24s: in on today and like really try to understand what the heck is convexity
+260.95s: understand what the heck is convexity
+260.96s: understand what the heck is convexity and and where does it come from? What is
+263.23s: and and where does it come from? What is
+263.24s: and and where does it come from? What is creating that?
+264.79s: creating that?
+264.80s: creating that? Um so, and then there's a very important
+267.07s: Um so, and then there's a very important
+267.08s: Um so, and then there's a very important upshot will about Well, what does that
+269.71s: upshot will about Well, what does that
+269.72s: upshot will about Well, what does that mean for how your P&amp;L responds
+273.95s: mean for how your P&amp;L responds
+273.96s: mean for how your P&amp;L responds to
+275.31s: to
+275.32s: to uh a 5% move versus a 10% move? Um it
+278.91s: uh a 5% move versus a 10% move? Um it
+278.92s: uh a 5% move versus a 10% move? Um it does not act twice as big. It acts more
+281.55s: does not act twice as big. It acts more
+281.56s: does not act twice as big. It acts more than twice as big. But, what is the
+283.91s: than twice as big. But, what is the
+283.92s: than twice as big. But, what is the actual factor that
+286.47s: actual factor that
+286.48s: actual factor that um links the two? And we're going to get
+288.15s: um links the two? And we're going to get
+288.16s: um links the two? And we're going to get We'll be able to get to that.
+290.35s: We'll be able to get to that.
+290.36s: We'll be able to get to that. That sounds absolutely perfect. For a
+294.95s: That sounds absolutely perfect. For a
+294.96s: That sounds absolutely perfect. For a really quick preamble, I'm going to
+297.23s: really quick preamble, I'm going to
+297.24s: really quick preamble, I'm going to share an options chain. Um we're looking
+299.67s: share an options chain. Um we're looking
+299.68s: share an options chain. Um we're looking in
+300.63s: in
+300.64s: in Palantir, you know, because it was
+302.19s: Palantir, you know, because it was
+302.20s: Palantir, you know, because it was recently endorsed by by POTUS on his X
+306.31s: recently endorsed by by POTUS on his X
+306.32s: recently endorsed by by POTUS on his X or his his truth or whatever the thing
+308.23s: or his his truth or whatever the thing
+308.24s: or his his truth or whatever the thing is called. So, ticker symbol included,
+310.39s: is called. So, ticker symbol included,
+310.40s: is called. So, ticker symbol included, in case you didn't know. You can look up
+312.03s: in case you didn't know. You can look up
+312.04s: in case you didn't know. You can look up the ticker directly from that X. It's
+313.91s: the ticker directly from that X. It's
+313.92s: the ticker directly from that X. It's great.
+315.03s: great.
+315.04s: great. And if we zoom in on these two columns
+317.55s: And if we zoom in on these two columns
+317.56s: And if we zoom in on these two columns over here, we have delta and gamma.
+320.83s: over here, we have delta and gamma.
+320.84s: over here, we have delta and gamma. And before Chris goes into kind of like
+323.19s: And before Chris goes into kind of like
+323.20s: And before Chris goes into kind of like the specifics
+324.95s: the specifics
+324.96s: the specifics and giving you an under the hood look as
+327.47s: and giving you an under the hood look as
+327.48s: and giving you an under the hood look as to how these things behave and move,
+331.15s: to how these things behave and move,
+331.16s: to how these things behave and move, a simple thing you can do is like
+332.59s: a simple thing you can do is like
+332.60s: a simple thing you can do is like literally just run your eyes down delta.
+337.67s: literally just run your eyes down delta.
+337.68s: literally just run your eyes down delta. And you could start further out of the
+339.15s: And you could start further out of the
+339.16s: And you could start further out of the money and then just kind of observe the
+341.87s: money and then just kind of observe the
+341.88s: money and then just kind of observe the rate of change as you move through this
+344.43s: rate of change as you move through this
+344.44s: rate of change as you move through this curve. And obviously, if you have other
+346.87s: curve. And obviously, if you have other
+346.88s: curve. And obviously, if you have other Greeks included like gamma, you can see
+348.55s: Greeks included like gamma, you can see
+348.56s: Greeks included like gamma, you can see this represented in real time. So, for
+350.87s: this represented in real time. So, for
+350.88s: this represented in real time. So, for example, if I'm looking at this teeny
+353.07s: example, if I'm looking at this teeny
+353.08s: example, if I'm looking at this teeny option with a delta of one, it has a
+354.83s: option with a delta of one, it has a
+354.84s: option with a delta of one, it has a gamma of 0.001. It's super far out of
+358.07s: gamma of 0.001. It's super far out of
+358.08s: gamma of 0.001. It's super far out of the money, super low. But then as I
+359.91s: the money, super low. But then as I
+359.92s: the money, super low. But then as I start getting closer and closer, I can
+361.59s: start getting closer and closer, I can
+361.60s: start getting closer and closer, I can see that gamma actually doubles here.
+364.67s: see that gamma actually doubles here.
+364.68s: see that gamma actually doubles here. Then it goes up by another third and so
+366.71s: Then it goes up by another third and so
+366.72s: Then it goes up by another third and so on. Your gamma is ramping up super fast
+369.79s: on. Your gamma is ramping up super fast
+369.80s: on. Your gamma is ramping up super fast as you get closer to at the money. And
+372.83s: as you get closer to at the money. And
+372.84s: as you get closer to at the money. And your delta is moving along with it,
+375.35s: your delta is moving along with it,
+375.36s: your delta is moving along with it, obviously. The relationship between
+377.95s: obviously. The relationship between
+377.96s: obviously. The relationship between those also changes as you go out in time
+379.59s: those also changes as you go out in time
+379.60s: those also changes as you go out in time and stuff. So,
+381.75s: and stuff. So,
+381.76s: and stuff. So, Chris is going to show you like why this
+384.71s: Chris is going to show you like why this
+384.72s: Chris is going to show you like why this is so that you'll have a much better
+387.11s: is so that you'll have a much better
+387.12s: is so that you'll have a much better understanding on then how your position
+389.27s: understanding on then how your position
+389.28s: understanding on then how your position might behave based on different moves in
+391.67s: might behave based on different moves in
+391.68s: might behave based on different moves in the underlying. But this is just a good
+393.55s: the underlying. But this is just a good
+393.56s: the underlying. But this is just a good exercise to kind of train your eyes a
+395.11s: exercise to kind of train your eyes a
+395.12s: exercise to kind of train your eyes a little bit on what these things look
+397.07s: little bit on what these things look
+397.08s: little bit on what these things look like in an options chain, especially if
+399.63s: like in an options chain, especially if
+399.64s: like in an options chain, especially if you're looking for, you know, balancing
+402.43s: you're looking for, you know, balancing
+402.44s: you're looking for, you know, balancing different factors when you're putting on
+403.91s: different factors when you're putting on
+403.92s: different factors when you're putting on a position, trying to gain some level of
+405.79s: a position, trying to gain some level of
+405.80s: a position, trying to gain some level of convexity, but trying to save cost and
+408.27s: convexity, but trying to save cost and
+408.28s: convexity, but trying to save cost and limit your theta decay, all that kind of
+409.71s: limit your theta decay, all that kind of
+409.72s: limit your theta decay, all that kind of stuff.
+410.95s: stuff.
+410.96s: stuff. But we're going to isolate specifically
+412.91s: But we're going to isolate specifically
+412.92s: But we're going to isolate specifically on convexity now. So, I will stop
+415.99s: on convexity now. So, I will stop
+416.00s: on convexity now. So, I will stop sharing and turn it over to you, Chris.
+420.91s: sharing and turn it over to you, Chris.
+420.92s: sharing and turn it over to you, Chris. Yeah, so
+422.47s: Yeah, so
+422.48s: Yeah, so I think the uh
+424.55s: I think the uh
+424.56s: I think the uh Let me Let me give the punchline because
+427.99s: Let me Let me give the punchline because
+428.00s: Let me Let me give the punchline because And then we're going to figure out why
+429.47s: And then we're going to figure out why
+429.48s: And then we're going to figure out why it's true.
+430.75s: it's true.
+430.76s: it's true. Uh so, the punchline is that
+433.47s: Uh so, the punchline is that
+433.48s: Uh so, the punchline is that um what whereas with any linear
+435.99s: um what whereas with any linear
+436.00s: um what whereas with any linear instrument, all you care about um or or
+438.67s: instrument, all you care about um or or
+438.68s: instrument, all you care about um or or the way to understand what your P&amp;L is
+440.59s: the way to understand what your P&amp;L is
+440.60s: the way to understand what your P&amp;L is going to be is just to say if we move
+442.35s: going to be is just to say if we move
+442.36s: going to be is just to say if we move 5%, I'm going to make 5% or if it's
+444.63s: 5%, I'm going to make 5% or if it's
+444.64s: 5%, I'm going to make 5% or if it's leveraged, I'm going to make 5% times
+446.67s: leveraged, I'm going to make 5% times
+446.68s: leveraged, I'm going to make 5% times the leverage factor. So, if I'm two
+447.87s: the leverage factor. So, if I'm two
+447.88s: the leverage factor. So, if I'm two times leveraged, then I'll make 10%.
+450.47s: times leveraged, then I'll make 10%.
+450.48s: times leveraged, then I'll make 10%. But how do we figure out what our P&amp;L
+453.87s: But how do we figure out what our P&amp;L
+453.88s: But how do we figure out what our P&amp;L would be if
+456.11s: would be if
+456.12s: would be if we have a convex instrument?
+458.75s: we have a convex instrument?
+458.76s: we have a convex instrument? A convex uh
+460.39s: A convex uh
+460.40s: A convex uh uh trade. So, like for example, long or
+462.87s: uh trade. So, like for example, long or
+462.88s: uh trade. So, like for example, long or short an option is a convex trade. So,
+464.91s: short an option is a convex trade. So,
+464.92s: short an option is a convex trade. So, if I said,
+466.27s: if I said,
+466.28s: if I said, uh "What's your P&amp;L if the market went
+468.47s: uh "What's your P&amp;L if the market went
+468.48s: uh "What's your P&amp;L if the market went up 5% versus 10%? What would my P&amp;L
+471.79s: up 5% versus 10%? What would my P&amp;L
+471.80s: up 5% versus 10%? What would my P&amp;L difference be?"
+473.27s: difference be?"
+473.28s: difference be?" Um it's not going to be twice as big on
+475.63s: Um it's not going to be twice as big on
+475.64s: Um it's not going to be twice as big on a 10% move. It's going to be more than
+477.35s: a 10% move. It's going to be more than
+477.36s: a 10% move. It's going to be more than twice as big. And it's actually
+480.31s: twice as big. And it's actually
+480.32s: twice as big. And it's actually going to be the square
+482.43s: going to be the square
+482.44s: going to be the square of the difference. So,
+484.55s: of the difference. So,
+484.56s: of the difference. So, it's the
+485.83s: it's the
+485.84s: it's the option P&amp;L. Your option results don't
+489.27s: option P&amp;L. Your option results don't
+489.28s: option P&amp;L. Your option results don't depend on how much the stock moves. They
+491.55s: depend on how much the stock moves. They
+491.56s: depend on how much the stock moves. They care about how much the stock moves
+493.47s: care about how much the stock moves
+493.48s: care about how much the stock moves squared. Which sounds really strange,
+497.35s: squared. Which sounds really strange,
+497.36s: squared. Which sounds really strange, but in practice, what does it mean? It
+499.91s: but in practice, what does it mean? It
+499.92s: but in practice, what does it mean? It means that normally, a 2% move um
+504.39s: means that normally, a 2% move um
+504.40s: means that normally, a 2% move um normally a 4% move is twice as impactful
+507.83s: normally a 4% move is twice as impactful
+507.84s: normally a 4% move is twice as impactful as a 2% move.
+509.67s: as a 2% move.
+509.68s: as a 2% move. But in option world,
+511.99s: But in option world,
+512.00s: But in option world, a 4% move is four times the impact of a
+515.55s: a 4% move is four times the impact of a
+515.56s: a 4% move is four times the impact of a 2% move because
+517.79s: 2% move because
+517.80s: 2% move because um
+518.52s: um 4% divided by 2% is two, and then we
+521.15s: 4% divided by 2% is two, and then we
+521.16s: 4% divided by 2% is two, and then we square that, and that's four. So, if you
+523.59s: square that, and that's four. So, if you
+523.60s: square that, and that's four. So, if you were comparing a 2% move versus a 6%
+526.47s: were comparing a 2% move versus a 6%
+526.48s: were comparing a 2% move versus a 6% move,
+527.55s: move,
+527.56s: move, if you were just trading the stock,
+528.95s: if you were just trading the stock,
+528.96s: if you were just trading the stock, well, your P&amp;L would be three times as
+530.63s: well, your P&amp;L would be three times as
+530.64s: well, your P&amp;L would be three times as big. Six is three times as big as two.
+533.71s: big. Six is three times as big as two.
+533.72s: big. Six is three times as big as two. But in option world, your P&amp;L is going
+535.63s: But in option world, your P&amp;L is going
+535.64s: But in option world, your P&amp;L is going to be nine times as big if you have a 6%
+538.59s: to be nine times as big if you have a 6%
+538.60s: to be nine times as big if you have a 6% move versus a uh a 2% move because it's
+541.63s: move versus a uh a 2% move because it's
+541.64s: move versus a uh a 2% move because it's going to be the square of the of of the
+544.15s: going to be the square of the of of the
+544.16s: going to be the square of the of of the ratio of three. So,
+546.87s: ratio of three. So,
+546.88s: ratio of three. So, uh In other words,
+549.11s: uh In other words,
+549.12s: uh In other words, large moves are hyper amplified with
+552.15s: large moves are hyper amplified with
+552.16s: large moves are hyper amplified with options. And uh they're sensitive to the
+554.43s: options. And uh they're sensitive to the
+554.44s: options. And uh they're sensitive to the square of the move size. And so, we're
+556.31s: square of the move size. And so, we're
+556.32s: square of the move size. And so, we're going to understand like where Where the
+558.35s: going to understand like where Where the
+558.36s: going to understand like where Where the heck did this squared come from? Like
+560.75s: heck did this squared come from? Like
+560.76s: heck did this squared come from? Like why why is it squared? And that's what
+563.75s: why why is it squared? And that's what
+563.76s: why why is it squared? And that's what I'm going to um that's what I'm going to
+566.15s: I'm going to um that's what I'm going to
+566.16s: I'm going to um that's what I'm going to show today. And I have a I have a little
+568.27s: show today. And I have a I have a little
+568.28s: show today. And I have a I have a little presentation that um I kind of did. You
+571.31s: presentation that um I kind of did. You
+571.32s: presentation that um I kind of did. You can
+572.39s: can
+572.40s: can uh
+573.56s: uh I joke that it's uh
+575.67s: I joke that it's uh
+575.68s: I joke that it's uh Well, it's not a joke. It's true. Uh I
+577.35s: Well, it's not a joke. It's true. Uh I
+577.36s: Well, it's not a joke. It's true. Uh I have a middle schooler. It's middle
+578.79s: have a middle schooler. It's middle
+578.80s: have a middle schooler. It's middle school physics. All right? It's like
+580.55s: school physics. All right? It's like
+580.56s: school physics. All right? It's like like the you what you would have learned
+582.03s: like the you what you would have learned
+582.04s: like the you what you would have learned in math class um when you were in middle
+584.11s: in math class um when you were in middle
+584.12s: in math class um when you were in middle school. It actually bridges right to the
+586.99s: school. It actually bridges right to the
+587.00s: school. It actually bridges right to the investing math. It's actually kind of
+588.35s: investing math. It's actually kind of
+588.36s: investing math. It's actually kind of cool.
+589.43s: cool.
+589.44s: cool. So, um let me share my screen.
+592.59s: So, um let me share my screen.
+592.60s: So, um let me share my screen. And
+594.51s: And
+594.52s: And By the way, brother, I I think middle We
+597.47s: By the way, brother, I I think middle We
+597.48s: By the way, brother, I I think middle We might have gone to different middle
+598.51s: might have gone to different middle
+598.52s: might have gone to different middle schools. I got I I got stabbed in my
+600.83s: schools. I got I I got stabbed in my
+600.84s: schools. I got I I got stabbed in my hand in middle school. I wasn't learning
+602.75s: hand in middle school. I wasn't learning
+602.76s: hand in middle school. I wasn't learning about physics at that point in my life.
+606.23s: about physics at that point in my life.
+606.24s: about physics at that point in my life. The well, I might
+609.15s: The well, I might
+609.16s: The well, I might &gt;&gt; [laughter]
+609.87s: &gt;&gt; [laughter]
+609.88s: &gt;&gt; [laughter] &gt;&gt; Well, I don't I don't know if I was
+611.03s: &gt;&gt; Well, I don't I don't know if I was
+611.04s: &gt;&gt; Well, I don't I don't know if I was learning about this either, but my kid
+613.31s: learning about this either, but my kid
+613.32s: learning about this either, but my kid can certainly learn about this now. So,
+615.27s: can certainly learn about this now. So,
+615.28s: can certainly learn about this now. So, you know,
+616.27s: you know,
+616.28s: you know, &gt;&gt; The goal The goal is to get better from
+617.91s: &gt;&gt; The goal The goal is to get better from
+617.92s: &gt;&gt; The goal The goal is to get better from generation to generation, you know.
+619.43s: generation to generation, you know.
+619.44s: generation to generation, you know. &gt;&gt; Yeah. Yeah, your kid's a representation
+621.47s: &gt;&gt; Yeah. Yeah, your kid's a representation
+621.48s: &gt;&gt; Yeah. Yeah, your kid's a representation of that. Your kid's a freaking genius.
+624.99s: of that. Your kid's a freaking genius.
+625.00s: of that. Your kid's a freaking genius. So, this is
+626.95s: So, this is
+626.96s: So, this is This is a So, this is a This is a very
+629.19s: This is a So, this is a This is a very
+629.20s: This is a So, this is a This is a very simple um
+630.75s: simple um
+630.76s: simple um uh
+631.96s: uh uh it sign of um where the x-axis here
+635.83s: uh it sign of um where the x-axis here
+635.84s: uh it sign of um where the x-axis here is your time, and then uh you have uh a
+639.31s: is your time, and then uh you have uh a
+639.32s: is your time, and then uh you have uh a vehicle, and it's basically how much
+640.91s: vehicle, and it's basically how much
+640.92s: vehicle, and it's basically how much distance you cover in a certain amount
+643.23s: distance you cover in a certain amount
+643.24s: distance you cover in a certain amount of time. And we have two different ve-
+645.15s: of time. And we have two different ve-
+645.16s: of time. And we have two different ve- vehicles. We have racer A, who is
+647.07s: vehicles. We have racer A, who is
+647.08s: vehicles. We have racer A, who is traveling at 25 mph,
+649.51s: traveling at 25 mph,
+649.52s: traveling at 25 mph, and you have uh racer B, who um we're
+652.31s: and you have uh racer B, who um we're
+652.32s: and you have uh racer B, who um we're just going to say that um he he is it
+655.23s: just going to say that um he he is it
+655.24s: just going to say that um he he is it going to accelerate um his acceleration
+657.87s: going to accelerate um his acceleration
+657.88s: going to accelerate um his acceleration is going to be 50 mph of acceleration,
+661.31s: is going to be 50 mph of acceleration,
+661.32s: is going to be 50 mph of acceleration, but his velocity is zero at the start.
+663.47s: but his velocity is zero at the start.
+663.48s: but his velocity is zero at the start. Dead stop. So, you know, he's he's going
+665.43s: Dead stop. So, you know, he's he's going
+665.44s: Dead stop. So, you know, he's he's going to peel off the line,
+667.87s: to peel off the line,
+667.88s: to peel off the line, uh and the other the other uh driver,
+670.27s: uh and the other the other uh driver,
+670.28s: uh and the other the other uh driver, driver A, is already traveling at 25 mph
+673.27s: driver A, is already traveling at 25 mph
+673.28s: driver A, is already traveling at 25 mph when they cross the starting line. It's
+675.07s: when they cross the starting line. It's
+675.08s: when they cross the starting line. It's like uh wide receivers in Canadian
+677.51s: like uh wide receivers in Canadian
+677.52s: like uh wide receivers in Canadian football. They're already running behind
+679.19s: football. They're already running behind
+679.20s: football. They're already running behind the line of scrimmage.
+680.87s: the line of scrimmage.
+680.88s: the line of scrimmage. So,
+682.59s: So,
+682.60s: So, uh the question is after an hour, how
+684.67s: uh the question is after an hour, how
+684.68s: uh the question is after an hour, how far does each one of these racers get?
+688.03s: far does each one of these racers get?
+688.04s: far does each one of these racers get? So, racer A, who's traveling 25 mph, is
+690.63s: So, racer A, who's traveling 25 mph, is
+690.64s: So, racer A, who's traveling 25 mph, is going to be after 1 hour, they will have
+692.43s: going to be after 1 hour, they will have
+692.44s: going to be after 1 hour, they will have traveled 25 uh 25 miles, of course.
+695.95s: traveled 25 uh 25 miles, of course.
+695.96s: traveled 25 uh 25 miles, of course. Um racer B
+698.15s: Um racer B
+698.16s: Um racer B will have traveled uh how far? The
+700.95s: will have traveled uh how far? The
+700.96s: will have traveled uh how far? The question is is how far did racer B get
+703.35s: question is is how far did racer B get
+703.36s: question is is how far did racer B get after 1 hour? They started at uh 0 mph.
+708.99s: after 1 hour? They started at uh 0 mph.
+709.00s: after 1 hour? They started at uh 0 mph. They end at 50 mph.
+711.75s: They end at 50 mph.
+711.76s: They end at 50 mph. Um so, how much distance did they cover
+714.63s: Um so, how much distance did they cover
+714.64s: Um so, how much distance did they cover in that 1 hour, right? So, before I go
+717.87s: in that 1 hour, right? So, before I go
+717.88s: in that 1 hour, right? So, before I go to the next slide, I think it's it's
+719.39s: to the next slide, I think it's it's
+719.40s: to the next slide, I think it's it's fairly intuitive. Like, on average, if
+721.51s: fairly intuitive. Like, on average, if
+721.52s: fairly intuitive. Like, on average, if their acceleration is smooth, on average
+724.55s: their acceleration is smooth, on average
+724.56s: their acceleration is smooth, on average um they've been traveling at 25 mph
+727.03s: um they've been traveling at 25 mph
+727.04s: um they've been traveling at 25 mph themselves. It's 50 mph speed at the
+729.99s: themselves. It's 50 mph speed at the
+730.00s: themselves. It's 50 mph speed at the very end and zero at the beginning. 25
+732.31s: very end and zero at the beginning. 25
+732.32s: very end and zero at the beginning. 25 mph is the average speed that they've
+734.91s: mph is the average speed that they've
+734.92s: mph is the average speed that they've traveled at. So, if you've traveled 25
+737.23s: traveled at. So, if you've traveled 25
+737.24s: traveled at. So, if you've traveled 25 mph
+738.91s: mph
+738.92s: mph on average for an hour, you will have
+741.39s: on average for an hour, you will have
+741.40s: on average for an hour, you will have also went 25 miles. So, they're going to
+743.15s: also went 25 miles. So, they're going to
+743.16s: also went 25 miles. So, they're going to end up in the same place.
+745.91s: end up in the same place.
+745.92s: end up in the same place. So, and that's kind of what this graph
+747.35s: So, and that's kind of what this graph
+747.36s: So, and that's kind of what this graph shows.
+748.43s: shows.
+748.44s: shows. But, what this is um
+752.43s: But, what this is um
+752.44s: But, what this is um But, what's neat about this is we can
+753.99s: But, what's neat about this is we can
+754.00s: But, what's neat about this is we can kind of see this visually. It's just All
+757.23s: kind of see this visually. It's just All
+757.24s: kind of see this visually. It's just All we did is notice that it's the midpoint
+759.91s: we did is notice that it's the midpoint
+759.92s: we did is notice that it's the midpoint of this line, which is the average, and
+762.15s: of this line, which is the average, and
+762.16s: of this line, which is the average, and saying, "Hey, right at the midpoint,
+764.59s: saying, "Hey, right at the midpoint,
+764.60s: saying, "Hey, right at the midpoint, that's 25 mph."
+767.15s: that's 25 mph."
+767.16s: that's 25 mph." And, you know, before uh 50 uh 30
+770.63s: And, you know, before uh 50 uh 30
+770.64s: And, you know, before uh 50 uh 30 minutes have passed, half the hour, um
+773.15s: minutes have passed, half the hour, um
+773.16s: minutes have passed, half the hour, um they've went uh they've been going
+775.55s: they've went uh they've been going
+775.56s: they've went uh they've been going slower than the uh
+778.11s: slower than the uh
+778.12s: slower than the uh than racer A, who's traveling at
+779.55s: than racer A, who's traveling at
+779.56s: than racer A, who's traveling at constant speed, and the second half of
+781.19s: constant speed, and the second half of
+781.20s: constant speed, and the second half of the hour, they're traveling faster. They
+783.27s: the hour, they're traveling faster. They
+783.28s: the hour, they're traveling faster. They end up in the same place. They both go
+785.47s: end up in the same place. They both go
+785.48s: end up in the same place. They both go 25 miles.
+787.11s: 25 miles.
+787.12s: 25 miles. Okay? Um
+788.55s: Okay? Um
+788.56s: Okay? Um but, if we look at how we computed this,
+790.55s: but, if we look at how we computed this,
+790.56s: but, if we look at how we computed this, we just said it's
+792.71s: we just said it's
+792.72s: we just said it's uh half It's the average. It's basically
+796.23s: uh half It's the average. It's basically
+796.24s: uh half It's the average. It's basically half of the height,
+797.91s: half of the height,
+797.92s: half of the height, which is the 50 mph, where we ended up
+800.19s: which is the 50 mph, where we ended up
+800.20s: which is the 50 mph, where we ended up as far as a speed, and uh
+802.99s: as far as a speed, and uh
+803.00s: as far as a speed, and uh half of the width, which is uh
+805.27s: half of the width, which is uh
+805.28s: half of the width, which is uh um 30 30 minutes, right?
+808.39s: um 30 30 minutes, right?
+808.40s: um 30 30 minutes, right? Now,
+810.71s: Now,
+810.72s: Now, that is for the first hour. They end up
+812.87s: that is for the first hour. They end up
+812.88s: that is for the first hour. They end up in the same place.
+814.47s: in the same place.
+814.48s: in the same place. Now,
+815.52s: Now, for the second hour, we kind of know
+816.95s: for the second hour, we kind of know
+816.96s: for the second hour, we kind of know that racer B is going to go further,
+819.15s: that racer B is going to go further,
+819.16s: that racer B is going to go further, right? Cuz they're traveling faster.
+821.03s: right? Cuz they're traveling faster.
+821.04s: right? Cuz they're traveling faster. But, let's actually look at this for a
+822.43s: But, let's actually look at this for a
+822.44s: But, let's actually look at this for a second here.
+826.12s: Let's actually look at how we computed
+828.12s: Let's actually look at how we computed that distance again for racer B.
+830.87s: that distance again for racer B.
+830.88s: that distance again for racer B. Racer B, the statement is on average,
+833.99s: Racer B, the statement is on average,
+834.00s: Racer B, the statement is on average, racer B is traveling 25 miles for 1
+837.59s: racer B is traveling 25 miles for 1
+837.60s: racer B is traveling 25 miles for 1 hour.
+838.63s: hour.
+838.64s: hour. So, their distance
+841.63s: So, their distance
+841.64s: So, their distance is represented by this formula, right?
+843.67s: is represented by this formula, right?
+843.68s: is represented by this formula, right? It's the average speed due to the
+845.47s: It's the average speed due to the
+845.48s: It's the average speed due to the acceleration. That's the 25 mph. And the
+848.63s: acceleration. That's the 25 mph. And the
+848.64s: acceleration. That's the 25 mph. And the way we figured that out is we just said,
+850.35s: way we figured that out is we just said,
+850.36s: way we figured that out is we just said, "What's their acceleration rate?" Which
+851.83s: "What's their acceleration rate?" Which
+851.84s: "What's their acceleration rate?" Which was 50.
+853.15s: was 50.
+853.16s: was 50. We multiplied that um
+855.11s: We multiplied that um
+855.12s: We multiplied that um by a half, so 25,
+857.55s: by a half, so 25,
+857.56s: by a half, so 25, times the change in time, which is 1
+860.07s: times the change in time, which is 1
+860.08s: times the change in time, which is 1 hour.
+861.28s: hour. And then we took that, and we multiplied
+863.35s: And then we took that, and we multiplied
+863.36s: And then we took that, and we multiplied it by the That's applied over the whole
+865.59s: it by the That's applied over the whole
+865.60s: it by the That's applied over the whole time, right? It's the average speed
+867.39s: time, right? It's the average speed
+867.40s: time, right? It's the average speed times the change in time.
+869.63s: times the change in time.
+869.64s: times the change in time. And that's how we ended up with them
+872.03s: And that's how we ended up with them
+872.04s: And that's how we ended up with them traveling 25 mph. Now, if you go back to
+875.19s: traveling 25 mph. Now, if you go back to
+875.20s: traveling 25 mph. Now, if you go back to physics,
+876.59s: physics,
+876.60s: physics, um
+877.20s: um distance is equal It's exactly physics
+880.07s: distance is equal It's exactly physics
+880.08s: distance is equal It's exactly physics equation, right? That's just where it
+881.59s: equation, right? That's just where it
+881.60s: equation, right? That's just where it comes from. It's like, "What's your
+882.83s: comes from. It's like, "What's your
+882.84s: comes from. It's like, "What's your average speed, and for how long were you
+884.47s: average speed, and for how long were you
+884.48s: average speed, and for how long were you traveling at that average speed?"
+886.39s: traveling at that average speed?"
+886.40s: traveling at that average speed?" Distance is 1/2 of acceleration times
+889.27s: Distance is 1/2 of acceleration times
+889.28s: Distance is 1/2 of acceleration times the change in time squared.
+891.47s: the change in time squared.
+891.48s: the change in time squared. Noted Notice the squared term. That's
+893.15s: Noted Notice the squared term. That's
+893.16s: Noted Notice the squared term. That's the thing we really care about. There
+894.59s: the thing we really care about. There
+894.60s: the thing we really care about. There was a squared term here.
+896.75s: was a squared term here.
+896.76s: was a squared term here. Now,
+898.76s: Now, if we look at the second hour,
+901.39s: if we look at the second hour,
+901.40s: if we look at the second hour, we have the situation where now
+904.71s: we have the situation where now
+904.72s: we have the situation where now racer B zooms way ahead of racer A after
+908.39s: racer B zooms way ahead of racer A after
+908.40s: racer B zooms way ahead of racer A after 2 hours, right? They were traveling 25
+911.07s: 2 hours, right? They were traveling 25
+911.08s: 2 hours, right? They were traveling 25 mph on average for the first hour,
+914.95s: mph on average for the first hour,
+914.96s: mph on average for the first hour, but they're traveling 75 uh miles an
+917.79s: but they're traveling 75 uh miles an
+917.80s: but they're traveling 75 uh miles an hour
+918.79s: hour
+918.80s: hour on average for the second hour, because
+921.23s: on average for the second hour, because
+921.24s: on average for the second hour, because they start They were at 50, and by the
+922.99s: they start They were at 50, and by the
+923.00s: they start They were at 50, and by the time at the end
+924.47s: time at the end
+924.48s: time at the end the second hour is over, they're now
+925.79s: the second hour is over, they're now
+925.80s: the second hour is over, they're now traveling at 100 mph. Okay? So, they are
+929.91s: traveling at 100 mph. Okay? So, they are
+929.92s: traveling at 100 mph. Okay? So, they are going to cover Their total distance that
+932.07s: going to cover Their total distance that
+932.08s: going to cover Their total distance that they've covered is now 100 miles, while
+935.35s: they've covered is now 100 miles, while
+935.36s: they've covered is now 100 miles, while racer B has only covered another 25
+938.67s: racer B has only covered another 25
+938.68s: racer B has only covered another 25 miles. So, they've covered 50 miles to
+940.79s: miles. So, they've covered 50 miles to
+940.80s: miles. So, they've covered 50 miles to total. So,
+943.27s: total. So,
+943.28s: total. So, the key here is that this distance, you
+947.15s: the key here is that this distance, you
+947.16s: the key here is that this distance, you can see it widening. And if we were to
+948.91s: can see it widening. And if we were to
+948.92s: can see it widening. And if we were to go to 3 hours and 4 hours, it would
+950.75s: go to 3 hours and 4 hours, it would
+950.76s: go to 3 hours and 4 hours, it would widen more and more and more.
+952.99s: widen more and more and more.
+953.00s: widen more and more and more. That's why we call it curvature, because
+955.83s: That's why we call it curvature, because
+955.84s: That's why we call it curvature, because it is this the way that this line is
+958.55s: it is this the way that this line is
+958.56s: it is this the way that this line is kind of sloping up. It says, "If we're
+960.95s: kind of sloping up. It says, "If we're
+960.96s: kind of sloping up. It says, "If we're not moving linearly,
+963.31s: not moving linearly,
+963.32s: not moving linearly, there is a delta between uh the
+966.31s: there is a delta between uh the
+966.32s: there is a delta between uh the distances that we're going to cover that
+967.75s: distances that we're going to cover that
+967.76s: distances that we're going to cover that is a function of that acceleration. So,
+970.31s: is a function of that acceleration. So,
+970.32s: is a function of that acceleration. So, the distance traveled is a function of
+972.31s: the distance traveled is a function of
+972.32s: the distance traveled is a function of the change in time squared."
+975.63s: the change in time squared."
+975.64s: the change in time squared." Now, you're like, "What the heck does
+976.87s: Now, you're like, "What the heck does
+976.88s: Now, you're like, "What the heck does this have to do with options and P&amp;L?"
+980.35s: this have to do with options and P&amp;L?"
+980.36s: this have to do with options and P&amp;L?" Turns out,
+982.15s: Turns out,
+982.16s: Turns out, every one of these concepts is perfectly
+984.83s: every one of these concepts is perfectly
+984.84s: every one of these concepts is perfectly mapped to options. All acceleration is
+988.67s: mapped to options. All acceleration is
+988.68s: mapped to options. All acceleration is is your gamma.
+990.47s: is your gamma.
+990.48s: is your gamma. Because remember, all gamma says is what
+992.67s: Because remember, all gamma says is what
+992.68s: Because remember, all gamma says is what is my change in delta for a $1 change in
+996.35s: is my change in delta for a $1 change in
+996.36s: is my change in delta for a $1 change in the stock. What's delta? It's just your
+998.71s: the stock. What's delta? It's just your
+998.72s: the stock. What's delta? It's just your velocity. It's how much does my P&amp;L uh
+1002.15s: velocity. It's how much does my P&amp;L uh
+1002.16s: velocity. It's how much does my P&amp;L uh how much does my delta and also my P&amp;L
+1005.11s: how much does my delta and also my P&amp;L
+1005.12s: how much does my delta and also my P&amp;L Uh sorry, how much does my P&amp;L change if
+1007.27s: Uh sorry, how much does my P&amp;L change if
+1007.28s: Uh sorry, how much does my P&amp;L change if the stock moves $1? If I have a 50 delta
+1009.87s: the stock moves $1? If I have a 50 delta
+1009.88s: the stock moves $1? If I have a 50 delta option, and the stock goes up a dollar,
+1012.51s: option, and the stock goes up a dollar,
+1012.52s: option, and the stock goes up a dollar, I make 50 cents. That's my velocity.
+1016.15s: I make 50 cents. That's my velocity.
+1016.16s: I make 50 cents. That's my velocity. My gamma is my acceleration, because
+1018.31s: My gamma is my acceleration, because
+1018.32s: My gamma is my acceleration, because when we after we go up a dollar, from up
+1020.75s: when we after we go up a dollar, from up
+1020.76s: when we after we go up a dollar, from up a dollar to up two dollars, your delta
+1023.15s: a dollar to up two dollars, your delta
+1023.16s: a dollar to up two dollars, your delta is going to be a little bit higher. Your
+1024.99s: is going to be a little bit higher. Your
+1025.00s: is going to be a little bit higher. Your delta has accelerated. You are no longer
+1027.23s: delta has accelerated. You are no longer
+1027.24s: delta has accelerated. You are no longer the same velocity of 0.5. You You may
+1030.51s: the same velocity of 0.5. You You may
+1030.52s: the same velocity of 0.5. You You may now be a velocity of 0.6
+1033.71s: now be a velocity of 0.6
+1033.72s: now be a velocity of 0.6 for the next dollar.
+1035.71s: for the next dollar.
+1035.72s: for the next dollar. Right? So, the change in time
+1038.23s: Right? So, the change in time
+1038.24s: Right? So, the change in time maps to the change in the stock price.
+1040.79s: maps to the change in the stock price.
+1040.80s: maps to the change in the stock price. So, before we were talking about 1
+1043.11s: So, before we were talking about 1
+1043.12s: So, before we were talking about 1 hour's time, here we're talking about a
+1045.15s: hour's time, here we're talking about a
+1045.16s: hour's time, here we're talking about a $1 move. A 2-hour distance in the in the
+1048.55s: $1 move. A 2-hour distance in the in the
+1048.56s: $1 move. A 2-hour distance in the in the in the race is equivalent to a $2 move
+1051.19s: in the race is equivalent to a $2 move
+1051.20s: in the race is equivalent to a $2 move in this example.
+1052.75s: in this example.
+1052.76s: in this example. And then our distance traveled is our
+1055.87s: And then our distance traveled is our
+1055.88s: And then our distance traveled is our gamma P&amp;L.
+1058.03s: gamma P&amp;L.
+1058.04s: gamma P&amp;L. Right? So, the distance maps exactly to
+1060.59s: Right? So, the distance maps exactly to
+1060.60s: Right? So, the distance maps exactly to your P&amp;L. And if you look at the terms,
+1062.51s: your P&amp;L. And if you look at the terms,
+1062.52s: your P&amp;L. And if you look at the terms, every one of the terms maps exactly to
+1064.95s: every one of the terms maps exactly to
+1064.96s: every one of the terms maps exactly to the acceleration formula. So, your gamma
+1067.71s: the acceleration formula. So, your gamma
+1067.72s: the acceleration formula. So, your gamma P&amp;L is 1/2 your gamma times the change
+1071.11s: P&amp;L is 1/2 your gamma times the change
+1071.12s: P&amp;L is 1/2 your gamma times the change in stock squared.
+1072.87s: in stock squared.
+1072.88s: in stock squared. Right?
+1073.91s: Right?
+1073.92s: Right? Now,
+1074.96s: Now, I just wanted to give a quick example
+1076.27s: I just wanted to give a quick example
+1076.28s: I just wanted to give a quick example with an actual option. If let's say your
+1078.23s: with an actual option. If let's say your
+1078.24s: with an actual option. If let's say your gamma is a You have 100 uh gamma in your
+1082.39s: gamma is a You have 100 uh gamma in your
+1082.40s: gamma is a You have 100 uh gamma in your position. So, let's say you have 20
+1084.55s: position. So, let's say you have 20
+1084.56s: position. So, let's say you have 20 option contracts, and each one of them
+1086.39s: option contracts, and each one of them
+1086.40s: option contracts, and each one of them has a nickel of gamma.
+1088.99s: has a nickel of gamma.
+1089.00s: has a nickel of gamma. Okay? And the stock moves $3.
+1092.51s: Okay? And the stock moves $3.
+1092.52s: Okay? And the stock moves $3. Your gamma P&amp;L is going to be 1/2
+1095.75s: Your gamma P&amp;L is going to be 1/2
+1095.76s: Your gamma P&amp;L is going to be 1/2 times your gamma
+1097.51s: times your gamma
+1097.52s: times your gamma times the change in the stock squared.
+1100.83s: times the change in the stock squared.
+1100.84s: times the change in the stock squared. And so, that's going to be 1/2 * 100 * 3
+1103.43s: And so, that's going to be 1/2 * 100 * 3
+1103.44s: And so, that's going to be 1/2 * 100 * 3 squared. Your gamma P&amp;L is going to be
+1106.55s: squared. Your gamma P&amp;L is going to be
+1106.56s: squared. Your gamma P&amp;L is going to be $450.
+1108.71s: $450.
+1108.72s: $450. I want you to
+1109.71s: I want you to
+1109.72s: I want you to to note something here. This assumes
+1112.27s: to note something here. This assumes
+1112.28s: to note something here. This assumes that I'm just All I did is like assume
+1114.31s: that I'm just All I did is like assume
+1114.32s: that I'm just All I did is like assume that my delta is zero at the start. We
+1116.95s: that my delta is zero at the start. We
+1116.96s: that my delta is zero at the start. We can pretend our delta is zero at the
+1118.95s: can pretend our delta is zero at the
+1118.96s: can pretend our delta is zero at the start. This is the All P&amp;L due to the
+1122.55s: start. This is the All P&amp;L due to the
+1122.56s: start. This is the All P&amp;L due to the fact of acceleration. It is the exact
+1124.51s: fact of acceleration. It is the exact
+1124.52s: fact of acceleration. It is the exact example where the the car starts
+1128.03s: example where the the car starts
+1128.04s: example where the the car starts at zero velocity. It's at a dead stop.
+1131.27s: at zero velocity. It's at a dead stop.
+1131.28s: at zero velocity. It's at a dead stop. And then this and then and then uh it
+1133.27s: And then this and then and then uh it
+1133.28s: And then this and then and then uh it moves, and then time passes, or in this
+1135.39s: moves, and then time passes, or in this
+1135.40s: moves, and then time passes, or in this case, the stock price moves,
+1137.83s: case, the stock price moves,
+1137.84s: case, the stock price moves, and we have pure P&amp;L just due uh
+1141.91s: and we have pure P&amp;L just due uh
+1141.92s: and we have pure P&amp;L just due uh to that change in the stock squared. And
+1144.79s: to that change in the stock squared. And
+1144.80s: to that change in the stock squared. And so, here, you've started delta neutral,
+1147.71s: so, here, you've started delta neutral,
+1147.72s: so, here, you've started delta neutral, and you've made $450 if you were long
+1150.35s: and you've made $450 if you were long
+1150.36s: and you've made $450 if you were long gamma. Um now, of course, in reality, we
+1152.99s: gamma. Um now, of course, in reality, we
+1153.00s: gamma. Um now, of course, in reality, we would have to subtract our theta from
+1154.39s: would have to subtract our theta from
+1154.40s: would have to subtract our theta from this. But, that's kind of the point is
+1156.19s: this. But, that's kind of the point is
+1156.20s: this. But, that's kind of the point is that
+1157.31s: that
+1157.32s: that you know, I I kind of written as it's
+1158.99s: you know, I I kind of written as it's
+1159.00s: you know, I I kind of written as it's written here, it says theta is not an
+1160.35s: written here, it says theta is not an
+1160.36s: written here, it says theta is not an edge. It's just the cost of the gamma.
+1162.15s: edge. It's just the cost of the gamma.
+1162.16s: edge. It's just the cost of the gamma. All theta is is the cost of that gamma.
+1164.39s: All theta is is the cost of that gamma.
+1164.40s: All theta is is the cost of that gamma. So, every single day when you have an
+1166.75s: So, every single day when you have an
+1166.76s: So, every single day when you have an option position, whether you're long or
+1168.31s: option position, whether you're long or
+1168.32s: option position, whether you're long or short, whether you choose to uh measure
+1173.47s: short, whether you choose to uh measure
+1173.48s: short, whether you choose to uh measure it or not, you have a P&amp;L due to your
+1175.87s: it or not, you have a P&amp;L due to your
+1175.88s: it or not, you have a P&amp;L due to your gamma, and you have a P&amp;L due to your
+1178.27s: gamma, and you have a P&amp;L due to your
+1178.28s: gamma, and you have a P&amp;L due to your theta.
+1179.55s: theta.
+1179.56s: theta. It's always this question is is the
+1180.91s: It's always this question is is the
+1180.92s: It's always this question is is the gamma P&amp;L going to be bigger than the
+1182.87s: gamma P&amp;L going to be bigger than the
+1182.88s: gamma P&amp;L going to be bigger than the theta P&amp;L or vice versa. But, all theta
+1186.59s: theta P&amp;L or vice versa. But, all theta
+1186.60s: theta P&amp;L or vice versa. But, all theta is is the cost of the gamma. Um because
+1188.99s: is is the cost of the gamma. Um because
+1189.00s: is is the cost of the gamma. Um because if you notice, gamma, you win no matter
+1190.91s: if you notice, gamma, you win no matter
+1190.92s: if you notice, gamma, you win no matter what direction the stock moves in, but
+1193.19s: what direction the stock moves in, but
+1193.20s: what direction the stock moves in, but that's a really cool feature.
+1196.03s: that's a really cool feature.
+1196.04s: that's a really cool feature. It must have a cost, right? So,
+1198.43s: It must have a cost, right? So,
+1198.44s: It must have a cost, right? So, you have to pay for that amazing ability
+1200.99s: you have to pay for that amazing ability
+1201.00s: you have to pay for that amazing ability to make money in any direction, and that
+1202.67s: to make money in any direction, and that
+1202.68s: to make money in any direction, and that that's all that theta is.
+1204.55s: that's all that theta is.
+1204.56s: that's all that theta is. So,
+1205.72s: So, the point is like the the change in the
+1208.19s: the point is like the the change in the
+1208.20s: the point is like the the change in the stock price squared is actually what
+1210.91s: stock price squared is actually what
+1210.92s: stock price squared is actually what drives your option P&amp;L. That's the key
+1214.03s: drives your option P&amp;L. That's the key
+1214.04s: drives your option P&amp;L. That's the key thing I I want people to take away from
+1215.87s: thing I I want people to take away from
+1215.88s: thing I I want people to take away from this
+1217.11s: this
+1217.12s: this is it's not um
+1220.15s: is it's not um
+1220.16s: is it's not um options are not like other instruments
+1222.27s: options are not like other instruments
+1222.28s: options are not like other instruments where the stock goes up 5%, you make 5%.
+1224.87s: where the stock goes up 5%, you make 5%.
+1224.88s: where the stock goes up 5%, you make 5%. It's like the stock goes up 5%, and
+1227.55s: It's like the stock goes up 5%, and
+1227.56s: It's like the stock goes up 5%, and you're sensitive to the square of the
+1229.95s: you're sensitive to the square of the
+1229.96s: you're sensitive to the square of the 5%.
+1231.75s: 5%.
+1231.76s: 5%. Um and that's that's the And of course
+1234.27s: Um and that's that's the And of course
+1234.28s: Um and that's that's the And of course your your your theta will deduct from
+1236.35s: your your your theta will deduct from
+1236.36s: your your your theta will deduct from that, but that is a
+1238.15s: that, but that is a
+1238.16s: that, but that is a that is the main key. Options care about
+1240.71s: that is the main key. Options care about
+1240.72s: that is the main key. Options care about the square of the change, not just the
+1243.19s: the square of the change, not just the
+1243.20s: the square of the change, not just the change.
+1245.23s: change.
+1245.24s: change. And if we think of this from a a
+1247.91s: And if we think of this from a a
+1247.92s: And if we think of this from a a practical sense,
+1250.59s: practical sense,
+1250.60s: practical sense, talk a little bit about this effect
+1253.39s: talk a little bit about this effect
+1253.40s: talk a little bit about this effect here.
+1254.79s: here.
+1254.80s: here. The fact that if we in that terrible
+1256.99s: The fact that if we in that terrible
+1257.00s: The fact that if we in that terrible circle, the fact that if I, you know,
+1259.35s: circle, the fact that if I, you know,
+1259.36s: circle, the fact that if I, you know, plot gamma on a curve here,
+1263.79s: plot gamma on a curve here,
+1263.80s: plot gamma on a curve here, gamma let's say that this is, you know,
+1267.79s: gamma let's say that this is, you know,
+1267.80s: gamma let's say that this is, you know, far out of the money, this is at the
+1270.03s: far out of the money, this is at the
+1270.04s: far out of the money, this is at the money, and then this is in the money.
+1273.47s: money, and then this is in the money.
+1273.48s: money, and then this is in the money. Yep.
+1273.71s: Yep.
+1273.72s: Yep. &gt;&gt; And gamma will start low,
+1276.35s: &gt;&gt; And gamma will start low,
+1276.36s: &gt;&gt; And gamma will start low, it'll come up and peak, and then it'll
+1278.67s: it'll come up and peak, and then it'll
+1278.68s: it'll come up and peak, and then it'll go low again.
+1280.59s: go low again.
+1280.60s: go low again. Yep. How does that factor then into the
+1284.91s: Yep. How does that factor then into the
+1284.92s: Yep. How does that factor then into the velocity part of the conversation?
+1287.11s: velocity part of the conversation?
+1287.12s: velocity part of the conversation? Because the implicit part here that you
+1289.51s: Because the implicit part here that you
+1289.52s: Because the implicit part here that you and I are talking about is specific
+1292.51s: and I are talking about is specific
+1292.52s: and I are talking about is specific spots on this that we're living.
+1294.94s: spots on this that we're living.
+1294.95s: spots on this that we're living. &gt;&gt; [clears throat]
+1295.27s: &gt;&gt; [clears throat]
+1295.28s: &gt;&gt; [clears throat] &gt;&gt; And it won't be uniform, and I think
+1297.63s: &gt;&gt; And it won't be uniform, and I think
+1297.64s: &gt;&gt; And it won't be uniform, and I think that's useful to
+1300.15s: that's useful to
+1300.16s: that's useful to elucidate for folks.
+1302.47s: elucidate for folks.
+1302.48s: elucidate for folks. Cool. Yeah, keep this up. This is great.
+1303.95s: Cool. Yeah, keep this up. This is great.
+1303.96s: Cool. Yeah, keep this up. This is great. So, so
+1305.71s: So, so
+1305.72s: So, so Palantir in this example is $128.
+1309.75s: Palantir in this example is $128.
+1309.76s: Palantir in this example is $128. So, the 130 strike is is approximately
+1313.07s: So, the 130 strike is is approximately
+1313.08s: So, the 130 strike is is approximately at the money.
+1314.59s: at the money.
+1314.60s: at the money. Now, let's let's pretend that we sold
+1318.91s: Now, let's let's pretend that we sold
+1318.92s: Now, let's let's pretend that we sold Sorry, my eyes are I got I'm just going
+1320.91s: Sorry, my eyes are I got I'm just going
+1320.92s: Sorry, my eyes are I got I'm just going to
+1321.88s: to see this a little better. Oh, yeah.
+1323.51s: see this a little better. Oh, yeah.
+1323.52s: see this a little better. Oh, yeah. Okay, so let's say that we that you're
+1325.07s: Okay, so let's say that we that you're
+1325.08s: Okay, so let's say that we that you're short the 150 strike. So, $20
+1328.91s: short the 150 strike. So, $20
+1328.92s: short the 150 strike. So, $20 out of the money, about 15% out of the
+1332.43s: out of the money, about 15% out of the
+1332.44s: out of the money, about 15% out of the money.
+1333.60s: money. If we look at the 150 strike, I'm sorry,
+1335.79s: If we look at the 150 strike, I'm sorry,
+1335.80s: If we look at the 150 strike, I'm sorry, I'm just going to expand this a little
+1336.95s: I'm just going to expand this a little
+1336.96s: I'm just going to expand this a little bit on my screen so I can see it better.
+1339.03s: bit on my screen so I can see it better.
+1339.04s: bit on my screen so I can see it better. So, the 150 strike, it looks like it has
+1342.03s: So, the 150 strike, it looks like it has
+1342.04s: So, the 150 strike, it looks like it has a gamma of about um Can you make it
+1344.43s: a gamma of about um Can you make it
+1344.44s: a gamma of about um Can you make it larger?
+1344.59s: larger?
+1344.60s: larger? &gt;&gt; 30 30
+1345.95s: &gt;&gt; 30 30
+1345.96s: &gt;&gt; 30 30 uh 0.013.
+1347.67s: uh 0.013.
+1347.68s: uh 0.013. Yep. Uh of gamma, right? And it has
+1349.75s: Yep. Uh of gamma, right? And it has
+1349.76s: Yep. Uh of gamma, right? And it has about Oh, and it it conveniently it's
+1351.95s: about Oh, and it it conveniently it's
+1351.96s: about Oh, and it it conveniently it's around a 20 It's 25 delta, okay?
+1354.91s: around a 20 It's 25 delta, okay?
+1354.92s: around a 20 It's 25 delta, okay? So,
+1356.08s: So, let's say that you have a position
+1358.91s: let's say that you have a position
+1358.92s: let's say that you have a position where you're short
+1360.71s: where you're short
+1360.72s: where you're short uh you're short these calls, okay?
+1363.67s: uh you're short these calls, okay?
+1363.68s: uh you're short these calls, okay? Uh if you are short these 150 calls,
+1368.99s: Uh if you are short these 150 calls,
+1369.00s: Uh if you are short these 150 calls, and you're short you're you're short
+1370.71s: and you're short you're you're short
+1370.72s: and you're short you're you're short gamma,
+1371.91s: gamma,
+1371.92s: gamma, um
+1373.32s: um and your the delta's 25. Now, imagine
+1376.27s: and your the delta's 25. Now, imagine
+1376.28s: and your the delta's 25. Now, imagine the stock
+1378.35s: the stock
+1378.36s: the stock goes up to $20. You are going from Look
+1382.59s: goes up to $20. You are going from Look
+1382.60s: goes up to $20. You are going from Look at the that chart you drew that one.
+1384.23s: at the that chart you drew that one.
+1384.24s: at the that chart you drew that one. &gt;&gt; Sorry, you mean goes up to $20?
+1387.19s: &gt;&gt; Sorry, you mean goes up to $20?
+1387.20s: &gt;&gt; Sorry, you mean goes up to $20? You went You were from on You were in
+1388.71s: You went You were from on You were in
+1388.72s: You went You were from on You were in the out of the money part of this
+1390.79s: the out of the money part of this
+1390.80s: the out of the money part of this picture you drew,
+1392.51s: picture you drew,
+1392.52s: picture you drew, and you're going to the at the money
+1393.91s: and you're going to the at the money
+1393.92s: and you're going to the at the money part. So, your gamma is increasing.
+1398.72s: Your gamma increasing means that you are
+1401.00s: Your gamma increasing means that you are becoming and your gamma increasing says
+1404.31s: becoming and your gamma increasing says
+1404.32s: becoming and your gamma increasing says uh
+1405.60s: uh I am becoming more sensitive
+1409.27s: I am becoming more sensitive
+1409.28s: I am becoming more sensitive to those change in the square of the
+1411.87s: to those change in the square of the
+1411.88s: to those change in the square of the prices. And we know that the And we can
+1414.31s: prices. And we know that the And we can
+1414.32s: prices. And we know that the And we can see the effect of the gamma here, right?
+1416.23s: see the effect of the gamma here, right?
+1416.24s: see the effect of the gamma here, right? Because
+1417.75s: Because
+1417.76s: Because the the 150 call had a 25 delta, but if
+1421.23s: the the 150 call had a 25 delta, but if
+1421.24s: the the 150 call had a 25 delta, but if the stock went to 150, well, the delta
+1424.55s: the stock went to 150, well, the delta
+1424.56s: the stock went to 150, well, the delta of that call would now be about 50.
+1428.51s: of that call would now be about 50.
+1428.52s: of that call would now be about 50. So,
+1429.68s: So, that delta is now much higher. And
+1432.43s: that delta is now much higher. And
+1432.44s: that delta is now much higher. And remember, delta and gamma are all
+1434.71s: remember, delta and gamma are all
+1434.72s: remember, delta and gamma are all sensitivities of that option. So, now
+1436.75s: sensitivities of that option. So, now
+1436.76s: sensitivities of that option. So, now your option is twice as sensitive. This
+1439.55s: your option is twice as sensitive. This
+1439.56s: your option is twice as sensitive. This call that you were short is now twice as
+1441.27s: call that you were short is now twice as
+1441.28s: call that you were short is now twice as sensitive to the stock price changing
+1444.51s: sensitive to the stock price changing
+1444.52s: sensitive to the stock price changing as it was when it was $20 out of the
+1447.35s: as it was when it was $20 out of the
+1447.36s: as it was when it was $20 out of the money.
+1448.72s: money. So,
+1449.84s: So, and your gamma your gamma has
+1451.71s: and your gamma your gamma has
+1451.72s: and your gamma your gamma has has Well, your gamma on that option is
+1453.83s: has Well, your gamma on that option is
+1453.84s: has Well, your gamma on that option is actually only increased slightly, right?
+1455.67s: actually only increased slightly, right?
+1455.68s: actually only increased slightly, right? Because we can if we assume that the
+1457.91s: Because we can if we assume that the
+1457.92s: Because we can if we assume that the gamma
+1459.19s: gamma
+1459.20s: gamma stays constant for the at the money,
+1461.63s: stays constant for the at the money,
+1461.64s: stays constant for the at the money, um
+1462.40s: um it will have 0.015 gamma it once it's at
+1465.91s: it will have 0.015 gamma it once it's at
+1465.92s: it will have 0.015 gamma it once it's at the money, and it's 0.013 now. That's
+1468.15s: the money, and it's 0.013 now. That's
+1468.16s: the money, and it's 0.013 now. That's not a big change. So, your gamma is kind
+1470.83s: not a big change. So, your gamma is kind
+1470.84s: not a big change. So, your gamma is kind of constant over the move. It's not Your
+1473.07s: of constant over the move. It's not Your
+1473.08s: of constant over the move. It's not Your gamma's not really changing over the
+1474.75s: gamma's not really changing over the
+1474.76s: gamma's not really changing over the move itself.
+1476.15s: move itself.
+1476.16s: move itself. But, your delta is changing
+1477.99s: But, your delta is changing
+1478.00s: But, your delta is changing dramatically. I mean, it's doubled uh
+1480.79s: dramatically. I mean, it's doubled uh
+1480.80s: dramatically. I mean, it's doubled uh on that option. So,
+1483.27s: on that option. So,
+1483.28s: on that option. So, uh what's happening here is
+1486.27s: uh what's happening here is
+1486.28s: uh what's happening here is this is convexity in action, because on
+1489.31s: this is convexity in action, because on
+1489.32s: this is convexity in action, because on the first dollar move of this stock,
+1492.79s: the first dollar move of this stock,
+1492.80s: the first dollar move of this stock, let's say the stock went up a dollar, uh
+1495.19s: let's say the stock went up a dollar, uh
+1495.20s: let's say the stock went up a dollar, uh when it was a 25 delta call,
+1497.83s: when it was a 25 delta call,
+1497.84s: when it was a 25 delta call, if you were short that call,
+1500.03s: if you were short that call,
+1500.04s: if you were short that call, you lost 25 cents
+1502.75s: you lost 25 cents
+1502.76s: you lost 25 cents on that first dollar move.
+1504.75s: on that first dollar move.
+1504.76s: on that first dollar move. But, as that delta of that call goes up
+1507.99s: But, as that delta of that call goes up
+1508.00s: But, as that delta of that call goes up to 50, what's happening is you are
+1509.87s: to 50, what's happening is you are
+1509.88s: to 50, what's happening is you are losing more money
+1511.87s: losing more money
+1511.88s: losing more money on every dollar increase in the stock
+1514.35s: on every dollar increase in the stock
+1514.36s: on every dollar increase in the stock from 100 and
+1516.55s: from 100 and
+1516.56s: from 100 and 28 bucks to 150. Every incremental
+1519.99s: 28 bucks to 150. Every incremental
+1520.00s: 28 bucks to 150. Every incremental dollar move is costing you more money
+1521.95s: dollar move is costing you more money
+1521.96s: dollar move is costing you more money than the prior
+1523.67s: than the prior
+1523.68s: than the prior move. In other words,
+1526.87s: move. In other words,
+1526.88s: move. In other words, you are going you are in the realm of
+1528.67s: you are going you are in the realm of
+1528.68s: you are going you are in the realm of your P&amp;L having that curved look,
+1531.79s: your P&amp;L having that curved look,
+1531.80s: your P&amp;L having that curved look, because what's happening is even though
+1533.75s: because what's happening is even though
+1533.76s: because what's happening is even though you're not trading anything,
+1535.79s: you're not trading anything,
+1535.80s: you're not trading anything, your position size is increasing.
+1540.55s: your position size is increasing.
+1540.56s: your position size is increasing. This is very very different than buying
+1543.35s: This is very very different than buying
+1543.36s: This is very very different than buying a stock or selling a stock. If I buy a
+1545.23s: a stock or selling a stock. If I buy a
+1545.24s: a stock or selling a stock. If I buy a stock for $100, and the stock goes to
+1547.35s: stock for $100, and the stock goes to
+1547.36s: stock for $100, and the stock goes to 110,
+1549.91s: 110,
+1549.92s: 110, I make 10%. If it goes from you know, if
+1552.19s: I make 10%. If it goes from you know, if
+1552.20s: I make 10%. If it goes from you know, if it goes up another 10%, I make another
+1554.03s: it goes up another 10%, I make another
+1554.04s: it goes up another 10%, I make another 10%, but here what's happening is I am
+1556.51s: 10%, but here what's happening is I am
+1556.52s: 10%, but here what's happening is I am losing more money on every incremental
+1559.23s: losing more money on every incremental
+1559.24s: losing more money on every incremental 10%
+1560.63s: 10%
+1560.64s: 10% than I did on the prior 10%. That's
+1563.15s: than I did on the prior 10%. That's
+1563.16s: than I did on the prior 10%. That's causing the curvature. That's causing
+1565.83s: causing the curvature. That's causing
+1565.84s: causing the curvature. That's causing your And it's all because your position
+1568.27s: your And it's all because your position
+1568.28s: your And it's all because your position is mechanically getting larger as the
+1570.95s: is mechanically getting larger as the
+1570.96s: is mechanically getting larger as the stock moves towards your strike. The
+1573.27s: stock moves towards your strike. The
+1573.28s: stock moves towards your strike. The opposite would also be true. If the
+1574.91s: opposite would also be true. If the
+1574.92s: opposite would also be true. If the stock was falling,
+1577.19s: stock was falling,
+1577.20s: stock was falling, you would be making money on these
+1579.07s: you would be making money on these
+1579.08s: you would be making money on these calls, but you would be making less
+1581.27s: calls, but you would be making less
+1581.28s: calls, but you would be making less money on the calls for every incremental
+1583.79s: money on the calls for every incremental
+1583.80s: money on the calls for every incremental dollar down. I mean, eventually you
+1585.63s: dollar down. I mean, eventually you
+1585.64s: dollar down. I mean, eventually you don't make any more money on a dollar
+1587.31s: don't make any more money on a dollar
+1587.32s: don't make any more money on a dollar down, because the calls would be
+1588.59s: down, because the calls would be
+1588.60s: down, because the calls would be worthless. So, you know, if Palantir
+1591.03s: worthless. So, you know, if Palantir
+1591.04s: worthless. So, you know, if Palantir went from dropped to 100 bucks, and then
+1593.55s: went from dropped to 100 bucks, and then
+1593.56s: went from dropped to 100 bucks, and then dropped from 100 to $99,
+1596.47s: dropped from 100 to $99,
+1596.48s: dropped from 100 to $99, um you would no longer be making money
+1598.35s: um you would no longer be making money
+1598.36s: um you would no longer be making money on your calls. They're already worth
+1599.63s: on your calls. They're already worth
+1599.64s: on your calls. They're already worth zero.
+1600.87s: zero.
+1600.88s: zero. So, that's that is like how
+1604.27s: So, that's that is like how
+1604.28s: So, that's that is like how um
+1605.28s: um convexity is is is driving your P&amp;L or
+1609.79s: convexity is is is driving your P&amp;L or
+1609.80s: convexity is is is driving your P&amp;L or affecting It's like the amount that your
+1612.07s: affecting It's like the amount that your
+1612.08s: affecting It's like the amount that your P&amp;L is being amplified by is, "Hey, my
+1615.19s: P&amp;L is being amplified by is, "Hey, my
+1615.20s: P&amp;L is being amplified by is, "Hey, my position size is getting bigger as we
+1617.99s: position size is getting bigger as we
+1618.00s: position size is getting bigger as we move towards the option that I'm long or
+1620.19s: move towards the option that I'm long or
+1620.20s: move towards the option that I'm long or short, or my position size is getting
+1622.23s: short, or my position size is getting
+1622.24s: short, or my position size is getting smaller as we move away from the strike
+1624.63s: smaller as we move away from the strike
+1624.64s: smaller as we move away from the strike that I'm long or short." Other
+1626.51s: that I'm long or short." Other
+1626.52s: that I'm long or short." Other instruments, linear instruments, do not
+1628.19s: instruments, linear instruments, do not
+1628.20s: instruments, linear instruments, do not have this property at all. Your position
+1630.39s: have this property at all. Your position
+1630.40s: have this property at all. Your position size does not get bigger or smaller.
+1633.19s: size does not get bigger or smaller.
+1633.20s: size does not get bigger or smaller. Um
+1634.07s: Um
+1634.08s: Um your your sensitivity to the next move
+1636.07s: your your sensitivity to the next move
+1636.08s: your your sensitivity to the next move does not
+1637.59s: does not
+1637.60s: does not get bigger or smaller
+1639.59s: get bigger or smaller
+1639.60s: get bigger or smaller um
+1640.32s: um based upon
+1641.91s: based upon
+1641.92s: based upon the position, because it's not changing.
+1643.63s: the position, because it's not changing.
+1643.64s: the position, because it's not changing. With options, it's always changing.
+1647.23s: With options, it's always changing.
+1647.24s: With options, it's always changing. It's huge, and it's something that I
+1649.51s: It's huge, and it's something that I
+1649.52s: It's huge, and it's something that I think, again, when you take some time
+1651.43s: think, again, when you take some time
+1651.44s: think, again, when you take some time poking through an options chain,
+1653.63s: poking through an options chain,
+1653.64s: poking through an options chain, you'll develop an intuitive
+1654.83s: you'll develop an intuitive
+1654.84s: you'll develop an intuitive understanding like we're showing you
+1656.11s: understanding like we're showing you
+1656.12s: understanding like we're showing you here. Like, right now we're at 35 days
+1657.99s: here. Like, right now we're at 35 days
+1658.00s: here. Like, right now we're at 35 days out, right? So, the propensity for gamma
+1660.87s: out, right? So, the propensity for gamma
+1660.88s: out, right? So, the propensity for gamma to be lower for out of the money,
+1662.23s: to be lower for out of the money,
+1662.24s: to be lower for out of the money, highest at the money, and then low again
+1664.35s: highest at the money, and then low again
+1664.36s: highest at the money, and then low again in the money, that holds true across
+1666.43s: in the money, that holds true across
+1666.44s: in the money, that holds true across terms. But, something that changes
+1669.47s: terms. But, something that changes
+1669.48s: terms. But, something that changes across terms is actually the level of
+1671.95s: across terms is actually the level of
+1671.96s: across terms is actually the level of gamma. So, if I go from the 35-day
+1674.63s: gamma. So, if I go from the 35-day
+1674.64s: gamma. So, if I go from the 35-day options into the 7-day options, and we
+1676.55s: options into the 7-day options, and we
+1676.56s: options into the 7-day options, and we just eyeball what the at the money gamma
+1678.51s: just eyeball what the at the money gamma
+1678.52s: just eyeball what the at the money gamma is here, we're at that 0.015,
+1683.03s: is here, we're at that 0.015,
+1683.04s: is here, we're at that 0.015, and the at the money gamma here is
+1685.11s: and the at the money gamma here is
+1685.12s: and the at the money gamma here is 0.043.
+1687.31s: 0.043.
+1687.32s: 0.043. It absolutely explodes. And this is for
+1691.51s: It absolutely explodes. And this is for
+1691.52s: It absolutely explodes. And this is for a really logical reason if we think of
+1693.59s: a really logical reason if we think of
+1693.60s: a really logical reason if we think of it.
+1694.47s: it.
+1694.48s: it. As Chris denoted before, gamma is the
+1696.91s: As Chris denoted before, gamma is the
+1696.92s: As Chris denoted before, gamma is the rate of change of delta. Every single
+1698.99s: rate of change of delta. Every single
+1699.00s: rate of change of delta. Every single option, as it comes into expiration, has
+1701.95s: option, as it comes into expiration, has
+1701.96s: option, as it comes into expiration, has to make a choice. It's either going to
+1703.75s: to make a choice. It's either going to
+1703.76s: to make a choice. It's either going to be in the money with a delta of one, or
+1705.71s: be in the money with a delta of one, or
+1705.72s: be in the money with a delta of one, or it's going to be out of the money with a
+1706.83s: it's going to be out of the money with a
+1706.84s: it's going to be out of the money with a delta of zero. And every single option
+1708.83s: delta of zero. And every single option
+1708.84s: delta of zero. And every single option has to make that choice, and as we get
+1710.51s: has to make that choice, and as we get
+1710.52s: has to make that choice, and as we get closer and closer and closer to
+1712.15s: closer and closer and closer to
+1712.16s: closer and closer and closer to expiration, that choice becomes more
+1714.43s: expiration, that choice becomes more
+1714.44s: expiration, that choice becomes more prominent, especially about the money,
+1717.15s: prominent, especially about the money,
+1717.16s: prominent, especially about the money, being somewhere around the money.
+1718.79s: being somewhere around the money.
+1718.80s: being somewhere around the money. Because if you're super far out of the
+1720.03s: Because if you're super far out of the
+1720.04s: Because if you're super far out of the money, then it's super unlikely you're
+1721.75s: money, then it's super unlikely you're
+1721.76s: money, then it's super unlikely you're going to end up in the money.
+1723.59s: going to end up in the money.
+1723.60s: going to end up in the money. Understanding these like general
+1725.55s: Understanding these like general
+1725.56s: Understanding these like general relationships helps a lot with building
+1728.63s: relationships helps a lot with building
+1728.64s: relationships helps a lot with building trades that represents your idea.
+1731.91s: trades that represents your idea.
+1731.92s: trades that represents your idea. And another admin note on that is it
+1734.83s: And another admin note on that is it
+1734.84s: And another admin note on that is it also is really important for you not to
+1737.43s: also is really important for you not to
+1737.44s: also is really important for you not to analyze a trade from the onset, but also
+1740.71s: analyze a trade from the onset, but also
+1740.72s: analyze a trade from the onset, but also considering the holding duration. Let's
+1742.43s: considering the holding duration. Let's
+1742.44s: considering the holding duration. Let's say that I bought these calls here, or
+1744.23s: say that I bought these calls here, or
+1744.24s: say that I bought these calls here, or let's say I sold these calls.
+1746.03s: let's say I sold these calls.
+1746.04s: let's say I sold these calls. And I was like, "Okay, I'm comfortable
+1748.83s: And I was like, "Okay, I'm comfortable
+1748.84s: And I was like, "Okay, I'm comfortable with this gamma of, you know, 0.015,
+1751.79s: with this gamma of, you know, 0.015,
+1751.80s: with this gamma of, you know, 0.015, whatever."
+1752.75s: whatever."
+1752.76s: whatever." The thing is is like as soon as time
+1754.95s: The thing is is like as soon as time
+1754.96s: The thing is is like as soon as time begins to pass, I'm already gaining
+1757.67s: begins to pass, I'm already gaining
+1757.68s: begins to pass, I'm already gaining gamma on these. So, sometimes traders
+1760.95s: gamma on these. So, sometimes traders
+1760.96s: gamma on these. So, sometimes traders they'll make their analysis based on
+1762.71s: they'll make their analysis based on
+1762.72s: they'll make their analysis based on what it looks like at the onset, and you
+1764.95s: what it looks like at the onset, and you
+1764.96s: what it looks like at the onset, and you don't spend enough time thinking of what
+1766.51s: don't spend enough time thinking of what
+1766.52s: don't spend enough time thinking of what it will look like over the life cycle of
+1767.99s: it will look like over the life cycle of
+1768.00s: it will look like over the life cycle of the trade, and you might realize like,
+1770.03s: the trade, and you might realize like,
+1770.04s: the trade, and you might realize like, "Oh, Like, if I hold these for 2
+1771.67s: "Oh, Like, if I hold these for 2
+1771.68s: "Oh, Like, if I hold these for 2 weeks, my gamma's now like way more. I I
+1773.59s: weeks, my gamma's now like way more. I I
+1773.60s: weeks, my gamma's now like way more. I I don't want that much gamma risk. I need
+1775.43s: don't want that much gamma risk. I need
+1775.44s: don't want that much gamma risk. I need to reconfigure the way that I'm thinking
+1776.95s: to reconfigure the way that I'm thinking
+1776.96s: to reconfigure the way that I'm thinking about this."
+1779.27s: about this."
+1779.28s: about this." That's That's exactly right. I mean, one
+1781.91s: That's That's exactly right. I mean, one
+1781.92s: That's That's exactly right. I mean, one one interesting thing is like an option
+1784.67s: one interesting thing is like an option
+1784.68s: one interesting thing is like an option that has four times as much time to
+1786.55s: that has four times as much time to
+1786.56s: that has four times as much time to expiration. So, for example, if you have
+1788.51s: expiration. So, for example, if you have
+1788.52s: expiration. So, for example, if you have a one-week option
+1790.07s: a one-week option
+1790.08s: a one-week option and you have a four-week option,
+1792.11s: and you have a four-week option,
+1792.12s: and you have a four-week option, uh there is four times as much DTE in in
+1796.07s: uh there is four times as much DTE in in
+1796.08s: uh there is four times as much DTE in in obviously in the four in the four week.
+1798.27s: obviously in the four in the four week.
+1798.28s: obviously in the four in the four week. It's gamma as as again, it's like a
+1801.03s: It's gamma as as again, it's like a
+1801.04s: It's gamma as as again, it's like a beating a beating a
+1803.11s: beating a beating a
+1803.12s: beating a beating a a drum over and over here like the
+1805.15s: a drum over and over here like the
+1805.16s: a drum over and over here like the relationship with options and time is is
+1807.67s: relationship with options and time is is
+1807.68s: relationship with options and time is is almost always
+1809.43s: almost always
+1809.44s: almost always um
+1810.16s: um the square root of the difference. So,
+1812.39s: the square root of the difference. So,
+1812.40s: the square root of the difference. So, here
+1813.59s: here
+1813.60s: here the four-week option, instead of having
+1815.99s: the four-week option, instead of having
+1816.00s: the four-week option, instead of having uh four times less gamma or like 1/4 of
+1819.15s: uh four times less gamma or like 1/4 of
+1819.16s: uh four times less gamma or like 1/4 of the gamma,
+1820.31s: the gamma,
+1820.32s: the gamma, it's the square root of four. So, it'll
+1821.79s: it's the square root of four. So, it'll
+1821.80s: it's the square root of four. So, it'll have half the gamma.
+1823.71s: have half the gamma.
+1823.72s: have half the gamma. So,
+1824.64s: So, if
+1825.75s: if
+1825.76s: if what's the practical upshot of that? If
+1827.95s: what's the practical upshot of that? If
+1827.96s: what's the practical upshot of that? If you wanted to be gamma neutral,
+1831.51s: you wanted to be gamma neutral,
+1831.52s: you wanted to be gamma neutral, then you would need to own two option
+1834.07s: then you would need to own two option
+1834.08s: then you would need to own two option Let's say you were short the one-week
+1835.87s: Let's say you were short the one-week
+1835.88s: Let's say you were short the one-week option and you wanted to be gamma
+1837.59s: option and you wanted to be gamma
+1837.60s: option and you wanted to be gamma neutral by owning options behind it.
+1840.23s: neutral by owning options behind it.
+1840.24s: neutral by owning options behind it. Well, if you pick the four-month option,
+1842.31s: Well, if you pick the four-month option,
+1842.32s: Well, if you pick the four-month option, I mean the four-week option, I'm sorry.
+1843.87s: I mean the four-week option, I'm sorry.
+1843.88s: I mean the four-week option, I'm sorry. Four-week option, you'd have to own
+1845.43s: Four-week option, you'd have to own
+1845.44s: Four-week option, you'd have to own twice as many options to be gamma
+1847.79s: twice as many options to be gamma
+1847.80s: twice as many options to be gamma neutral.
+1849.31s: neutral.
+1849.32s: neutral. Um and if you chose say uh 16 weeks
+1853.99s: Um and if you chose say uh 16 weeks
+1854.00s: Um and if you chose say uh 16 weeks out, so uh
+1856.51s: out, so uh
+1856.52s: out, so uh call that, you know, four months, I
+1858.07s: call that, you know, four months, I
+1858.08s: call that, you know, four months, I guess, like a one week versus four
+1859.51s: guess, like a one week versus four
+1859.52s: guess, like a one week versus four months, you would need to own four times
+1861.71s: months, you would need to own four times
+1861.72s: months, you would need to own four times as many options to be gamma neutral.
+1865.15s: as many options to be gamma neutral.
+1865.16s: as many options to be gamma neutral. And but but again, your gamma is going
+1866.95s: And but but again, your gamma is going
+1866.96s: And but but again, your gamma is going to be changing cuz like as you said, if
+1868.95s: to be changing cuz like as you said, if
+1868.96s: to be changing cuz like as you said, if you have one week until expiration,
+1872.07s: you have one week until expiration,
+1872.08s: you have one week until expiration, uh your gamma will go up every day that
+1876.19s: uh your gamma will go up every day that
+1876.20s: uh your gamma will go up every day that you approach expiration.
+1878.35s: you approach expiration.
+1878.36s: you approach expiration. So, if you have half as much time to
+1879.87s: So, if you have half as much time to
+1879.88s: So, if you have half as much time to expiration, you're going to have
+1882.43s: expiration, you're going to have
+1882.44s: expiration, you're going to have 40% more gamma cuz it's the square root
+1885.51s: 40% more gamma cuz it's the square root
+1885.52s: 40% more gamma cuz it's the square root of a half, you know, it's like a because
+1887.27s: of a half, you know, it's like a because
+1887.28s: of a half, you know, it's like a because because it's half as much or two times
+1889.63s: because it's half as much or two times
+1889.64s: because it's half as much or two times the the factor is two. So,
+1892.19s: the the factor is two. So,
+1892.20s: the the factor is two. So, the it's a it's it's very useful to sort
+1894.87s: the it's a it's it's very useful to sort
+1894.88s: the it's a it's it's very useful to sort of like have those scaling laws
+1897.31s: of like have those scaling laws
+1897.32s: of like have those scaling laws um
+1898.16s: um handy to you because it tells you how
+1900.87s: handy to you because it tells you how
+1900.88s: handy to you because it tells you how much do I have to ratio my trades if I'm
+1903.31s: much do I have to ratio my trades if I'm
+1903.32s: much do I have to ratio my trades if I'm targeting
+1904.91s: targeting
+1904.92s: targeting uh you know, I want to be flat if I if I
+1907.31s: uh you know, I want to be flat if I if I
+1907.32s: uh you know, I want to be flat if I if I wanted to be flat gamma. Uh you could do
+1909.31s: wanted to be flat gamma. Uh you could do
+1909.32s: wanted to be flat gamma. Uh you could do that. The other way to do that honestly
+1911.31s: that. The other way to do that honestly
+1911.32s: that. The other way to do that honestly is to just
+1912.59s: is to just
+1912.60s: is to just balance by look at the numbers and just
+1914.27s: balance by look at the numbers and just
+1914.28s: balance by look at the numbers and just say, how many options do I need to trade
+1916.19s: say, how many options do I need to trade
+1916.20s: say, how many options do I need to trade to have like the same amount of theta?
+1918.15s: to have like the same amount of theta?
+1918.16s: to have like the same amount of theta? Mhm.
+1919.43s: Mhm.
+1919.44s: Mhm. That's sort of like that's sort of the
+1920.95s: That's sort of like that's sort of the
+1920.96s: That's sort of like that's sort of the easy way, but but just I'm just pointing
+1923.31s: easy way, but but just I'm just pointing
+1923.32s: easy way, but but just I'm just pointing out the square root thing. So, for
+1924.63s: out the square root thing. So, for
+1924.64s: out the square root thing. So, for people that are interested in sort of
+1926.23s: people that are interested in sort of
+1926.24s: people that are interested in sort of like understanding how the scaling
+1927.67s: like understanding how the scaling
+1927.68s: like understanding how the scaling works.
+1929.27s: works.
+1929.28s: works. Yeah, it's it's massively massively
+1931.35s: Yeah, it's it's massively massively
+1931.36s: Yeah, it's it's massively massively useful and
+1932.63s: useful and
+1932.64s: useful and a simple piece of homework for like
+1934.95s: a simple piece of homework for like
+1934.96s: a simple piece of homework for like newer traders that are getting a better
+1936.63s: newer traders that are getting a better
+1936.64s: newer traders that are getting a better sense of this kind of stuff is just open
+1938.51s: sense of this kind of stuff is just open
+1938.52s: sense of this kind of stuff is just open up a spreadsheet and go into, you know,
+1940.83s: up a spreadsheet and go into, you know,
+1940.84s: up a spreadsheet and go into, you know, maybe two three different underlying
+1942.55s: maybe two three different underlying
+1942.56s: maybe two three different underlying options chains.
+1944.39s: options chains.
+1944.40s: options chains. Specifically pick stuff with different
+1945.95s: Specifically pick stuff with different
+1945.96s: Specifically pick stuff with different vols. Pick stuff that has like 20%
+1948.79s: vols. Pick stuff that has like 20%
+1948.80s: vols. Pick stuff that has like 20% annualized vol, something that has 50%
+1951.43s: annualized vol, something that has 50%
+1951.44s: annualized vol, something that has 50% and 80%, something, right? Just get some
+1953.51s: and 80%, something, right? Just get some
+1953.52s: and 80%, something, right? Just get some different looks in there
+1955.39s: different looks in there
+1955.40s: different looks in there and just pick three different terms. You
+1958.51s: and just pick three different terms. You
+1958.52s: and just pick three different terms. You could do like 7-day, 30-day, 180-day or
+1961.75s: could do like 7-day, 30-day, 180-day or
+1961.76s: could do like 7-day, 30-day, 180-day or 90-day, whatever. It doesn't have to be
+1963.43s: 90-day, whatever. It doesn't have to be
+1963.44s: 90-day, whatever. It doesn't have to be directly linear. If you make it more
+1965.39s: directly linear. If you make it more
+1965.40s: directly linear. If you make it more linear, the relationships the better off
+1967.27s: linear, the relationships the better off
+1967.28s: linear, the relationships the better off you'll be, but it doesn't matter that
+1969.15s: you'll be, but it doesn't matter that
+1969.16s: you'll be, but it doesn't matter that much. The main thing is you'll get a
+1971.51s: much. The main thing is you'll get a
+1971.52s: much. The main thing is you'll get a really good representation of how
+1973.83s: really good representation of how
+1973.84s: really good representation of how something like gamma and by the way, if
+1976.19s: something like gamma and by the way, if
+1976.20s: something like gamma and by the way, if you're doing that exercise, just do it
+1977.67s: you're doing that exercise, just do it
+1977.68s: you're doing that exercise, just do it for all the Greeks. Don't just do it for
+1978.95s: for all the Greeks. Don't just do it for
+1978.96s: for all the Greeks. Don't just do it for gamma. You're already there doing it.
+1980.23s: gamma. You're already there doing it.
+1980.24s: gamma. You're already there doing it. So, just do it for the rest.
+1982.11s: So, just do it for the rest.
+1982.12s: So, just do it for the rest. It's worth your time.
+1983.71s: It's worth your time.
+1983.72s: It's worth your time. And
+1984.60s: And the
+1985.71s: the
+1985.72s: the irony is is like sometimes people that
+1989.23s: irony is is like sometimes people that
+1989.24s: irony is is like sometimes people that pay the least amount of attention to
+1991.03s: pay the least amount of attention to
+1991.04s: pay the least amount of attention to something like gamma, a lot of times
+1993.19s: something like gamma, a lot of times
+1993.20s: something like gamma, a lot of times they also find themselves in some of the
+1995.03s: they also find themselves in some of the
+1995.04s: they also find themselves in some of the more volatile underlyings not really
+1998.31s: more volatile underlyings not really
+1998.32s: more volatile underlyings not really thinking much about the relationship
+1999.83s: thinking much about the relationship
+1999.84s: thinking much about the relationship that vol will have on gamma and what
+2002.35s: that vol will have on gamma and what
+2002.36s: that vol will have on gamma and what gamma looks like. When you think of the
+2006.43s: gamma looks like. When you think of the
+2006.44s: gamma looks like. When you think of the rate of change example,
+2008.63s: rate of change example,
+2008.64s: rate of change example, if you were to opine slightly on
+2013.31s: if you were to opine slightly on
+2013.32s: if you were to opine slightly on layering changes in vol into that
+2017.03s: layering changes in vol into that
+2017.04s: layering changes in vol into that equation, so let's say that you have
+2019.83s: equation, so let's say that you have
+2019.84s: equation, so let's say that you have something that's, you know, 35 days out.
+2021.99s: something that's, you know, 35 days out.
+2022.00s: something that's, you know, 35 days out. You're looking at that $20 option. The
+2024.11s: You're looking at that $20 option. The
+2024.12s: You're looking at that $20 option. The gamma was whatever, you know, 0.015.
+2027.07s: gamma was whatever, you know, 0.015.
+2027.08s: gamma was whatever, you know, 0.015. And [snorts]
+2027.87s: And [snorts]
+2027.88s: And [snorts] let's say vol starts to go up. What
+2031.23s: let's say vol starts to go up. What
+2031.24s: let's say vol starts to go up. What impact would you expect
+2033.87s: impact would you expect
+2033.88s: impact would you expect a, you know, five-point, 10-point move
+2035.87s: a, you know, five-point, 10-point move
+2035.88s: a, you know, five-point, 10-point move in vol to have on gamma then subsequent
+2037.75s: in vol to have on gamma then subsequent
+2037.76s: in vol to have on gamma then subsequent the position?
+2039.47s: the position?
+2039.48s: the position? That's it's uh so this is this is fun
+2041.75s: That's it's uh so this is this is fun
+2041.76s: That's it's uh so this is this is fun for this is this is fun because this is
+2044.35s: for this is this is fun because this is
+2044.36s: for this is this is fun because this is this is the way this is kind of like the
+2045.79s: this is the way this is kind of like the
+2045.80s: this is the way this is kind of like the kind of interview questions you give to
+2047.07s: kind of interview questions you give to
+2047.08s: kind of interview questions you give to people. It's like uh
+2048.67s: people. It's like uh
+2048.68s: people. It's like uh you know, if if if I have this much
+2051.15s: you know, if if if I have this much
+2051.16s: you know, if if if I have this much gamma and the vol were to, you know, go
+2052.99s: gamma and the vol were to, you know, go
+2053.00s: gamma and the vol were to, you know, go up 10 points, what happens to my gamma?
+2055.23s: up 10 points, what happens to my gamma?
+2055.24s: up 10 points, what happens to my gamma? Yeah. And
+2056.59s: Yeah. And
+2056.60s: Yeah. And uh so, it turns out this one is this one
+2059.15s: uh so, it turns out this one is this one
+2059.16s: uh so, it turns out this one is this one is nice. Um there's a linear
+2061.39s: is nice. Um there's a linear
+2061.40s: is nice. Um there's a linear relationship between uh vol vol and
+2064.71s: relationship between uh vol vol and
+2064.72s: relationship between uh vol vol and gamma between vol and gamma. So, another
+2067.11s: gamma between vol and gamma. So, another
+2067.12s: gamma between vol and gamma. So, another way of saying that uh is if you double
+2069.71s: way of saying that uh is if you double
+2069.72s: way of saying that uh is if you double the vol, you have the gamma.
+2072.07s: the vol, you have the gamma.
+2072.08s: the vol, you have the gamma. So, if a if a name is 25 vol and has,
+2075.19s: So, if a if a name is 25 vol and has,
+2075.20s: So, if a if a name is 25 vol and has, you know, 10 cents of gamma in the
+2076.43s: you know, 10 cents of gamma in the
+2076.44s: you know, 10 cents of gamma in the option, um at 50 vol,
+2079.39s: option, um at 50 vol,
+2079.40s: option, um at 50 vol, it will only have 5 cents of gamma per
+2080.95s: it will only have 5 cents of gamma per
+2080.96s: it will only have 5 cents of gamma per option.
+2081.95s: option.
+2081.96s: option. That might and and that one is actually
+2084.39s: That might and and that one is actually
+2084.40s: That might and and that one is actually super intuitive.
+2086.07s: super intuitive.
+2086.08s: super intuitive. Uh
+2086.95s: Uh
+2086.96s: Uh somebody might say, well, that's like
+2089.27s: somebody might say, well, that's like
+2089.28s: somebody might say, well, that's like why why is that? But
+2091.99s: why why is that? But
+2092.00s: why why is that? But if you think about it,
+2093.75s: if you think about it,
+2093.76s: if you think about it, when you're a 25 vol name,
+2096.67s: when you're a 25 vol name,
+2096.68s: when you're a 25 vol name, a $1 move means something.
+2100.03s: a $1 move means something.
+2100.04s: a $1 move means something. At 50 vol, a $1 move means half as much
+2102.75s: At 50 vol, a $1 move means half as much
+2102.76s: At 50 vol, a $1 move means half as much as it did.
+2105.11s: as it did.
+2105.12s: as it did. At twice the vol. So, therefore,
+2107.59s: At twice the vol. So, therefore,
+2107.60s: At twice the vol. So, therefore, the option won't change. It's delta will
+2110.95s: the option won't change. It's delta will
+2110.96s: the option won't change. It's delta will not change, I should say, as much
+2113.67s: not change, I should say, as much
+2113.68s: not change, I should say, as much at 50 vol that it would as it would be
+2115.63s: at 50 vol that it would as it would be
+2115.64s: at 50 vol that it would as it would be at 25 vol. And one thing I do like to do
+2119.19s: at 25 vol. And one thing I do like to do
+2119.20s: at 25 vol. And one thing I do like to do also is
+2121.19s: also is
+2121.20s: also is always take things to like some extreme
+2123.83s: always take things to like some extreme
+2123.84s: always take things to like some extreme value
+2125.43s: value
+2125.44s: value and when you're trying to figure out how
+2127.15s: and when you're trying to figure out how
+2127.16s: and when you're trying to figure out how things change. Does like, hey, if I
+2128.79s: things change. Does like, hey, if I
+2128.80s: things change. Does like, hey, if I raise this variable, does this other
+2130.51s: raise this variable, does this other
+2130.52s: raise this variable, does this other variable go up or down? And usually the
+2132.67s: variable go up or down? And usually the
+2132.68s: variable go up or down? And usually the easiest way to do that is just to think
+2133.87s: easiest way to do that is just to think
+2133.88s: easiest way to do that is just to think about a very extreme example. So, if I'm
+2136.43s: about a very extreme example. So, if I'm
+2136.44s: about a very extreme example. So, if I'm 25 vol
+2138.31s: 25 vol
+2138.32s: 25 vol and I raise vol a little bit, what
+2140.27s: and I raise vol a little bit, what
+2140.28s: and I raise vol a little bit, what happens to gamma? Well, just do it just
+2142.71s: happens to gamma? Well, just do it just
+2142.72s: happens to gamma? Well, just do it just think of it this way. If I'm 25 vol and
+2145.15s: think of it this way. If I'm 25 vol and
+2145.16s: think of it this way. If I'm 25 vol and I raise the vol to like a thousand, just
+2147.39s: I raise the vol to like a thousand, just
+2147.40s: I raise the vol to like a thousand, just some ridiculous number,
+2149.95s: some ridiculous number,
+2149.96s: some ridiculous number, the gamma must collapse almost to zero
+2153.47s: the gamma must collapse almost to zero
+2153.48s: the gamma must collapse almost to zero because
+2154.75s: because
+2154.76s: because a $1 move at 25 vol means something. A
+2157.23s: a $1 move at 25 vol means something. A
+2157.24s: a $1 move at 25 vol means something. A $1 move on a thousand vol means nothing.
+2159.99s: $1 move on a thousand vol means nothing.
+2160.00s: $1 move on a thousand vol means nothing. Like nothing's changed. There's no
+2161.47s: Like nothing's changed. There's no
+2161.48s: Like nothing's changed. There's no difference. Like if Palantir is a
+2164.55s: difference. Like if Palantir is a
+2164.56s: difference. Like if Palantir is a hundred and $30 and vol is 20 25, that
+2169.23s: hundred and $30 and vol is 20 25, that
+2169.24s: hundred and $30 and vol is 20 25, that means something. If if if vol is a
+2171.03s: means something. If if if vol is a
+2171.04s: means something. If if if vol is a thousand in Palantir,
+2173.55s: thousand in Palantir,
+2173.56s: thousand in Palantir, there is like no difference between the
+2175.11s: there is like no difference between the
+2175.12s: there is like no difference between the 140 strike and the 145 strike or the 150
+2178.47s: 140 strike and the 145 strike or the 150
+2178.48s: 140 strike and the 145 strike or the 150 strike. They're all the same strike cuz
+2180.07s: strike. They're all the same strike cuz
+2180.08s: strike. They're all the same strike cuz they're all right next to each other
+2182.47s: they're all right next to each other
+2182.48s: they're all right next to each other relative to how much vol how volatile
+2184.87s: relative to how much vol how volatile
+2184.88s: relative to how much vol how volatile Palantir is. So, what happens is raising
+2187.51s: Palantir is. So, what happens is raising
+2187.52s: Palantir is. So, what happens is raising the vol
+2189.07s: the vol
+2189.08s: the vol pushes all the strikes together
+2192.95s: pushes all the strikes together
+2192.96s: pushes all the strikes together because they all kind of look the same.
+2194.47s: because they all kind of look the same.
+2194.48s: because they all kind of look the same. And what's the difference between
+2195.51s: And what's the difference between
+2195.52s: And what's the difference between Palantir being a hundred and 30 or a
+2197.23s: Palantir being a hundred and 30 or a
+2197.24s: Palantir being a hundred and 30 or a hundred and 80 when you're a thousand
+2199.19s: hundred and 80 when you're a thousand
+2199.20s: hundred and 80 when you're a thousand vol? I mean, that's a couple that that's
+2201.31s: vol? I mean, that's a couple that that's
+2201.32s: vol? I mean, that's a couple that that's a an hour's work in a stock that's a
+2204.15s: a an hour's work in a stock that's a
+2204.16s: a an hour's work in a stock that's a thousand vol.
+2205.99s: thousand vol.
+2206.00s: thousand vol. So, uh that's that's a that's kind of
+2208.79s: So, uh that's that's a that's kind of
+2208.80s: So, uh that's that's a that's kind of like my trick for like trying to
+2210.23s: like my trick for like trying to
+2210.24s: like my trick for like trying to understand how these things move. But
+2211.87s: understand how these things move. But
+2211.88s: understand how these things move. But anyway, more volatility, the gamma per
+2214.27s: anyway, more volatility, the gamma per
+2214.28s: anyway, more volatility, the gamma per option falls.
+2216.87s: option falls.
+2216.88s: option falls. Love it. You passed the question. You
+2218.71s: Love it. You passed the question. You
+2218.72s: Love it. You passed the question. You passed the test. Thor, he gave the nod
+2220.35s: passed the test. Thor, he gave the nod
+2220.36s: passed the test. Thor, he gave the nod of approval. He says you're hired. He
+2221.83s: of approval. He says you're hired. He
+2221.84s: of approval. He says you're hired. He says perfect perfect interview response.
+2225.15s: says perfect perfect interview response.
+2225.16s: says perfect perfect interview response. I think um
+2226.31s: I think um
+2226.32s: I think um I think Chris, the the the topic broadly
+2228.95s: I think Chris, the the the topic broadly
+2228.96s: I think Chris, the the the topic broadly is likely one of those things that maybe
+2231.19s: is likely one of those things that maybe
+2231.20s: is likely one of those things that maybe for some people flies under the radar,
+2233.99s: for some people flies under the radar,
+2234.00s: for some people flies under the radar, but [snorts] as you pay attention to it,
+2235.87s: but [snorts] as you pay attention to it,
+2235.88s: but [snorts] as you pay attention to it, it's something that you can kind of
+2236.87s: it's something that you can kind of
+2236.88s: it's something that you can kind of integrate a little bit more into your
+2239.03s: integrate a little bit more into your
+2239.04s: integrate a little bit more into your your day-to-day. Is there any other
+2241.31s: your day-to-day. Is there any other
+2241.32s: your day-to-day. Is there any other specific [snorts]
+2242.27s: specific [snorts]
+2242.28s: specific [snorts] ticks like tricks or tips
+2246.07s: ticks like tricks or tips
+2246.08s: ticks like tricks or tips that you like to use when you're just
+2249.27s: that you like to use when you're just
+2249.28s: that you like to use when you're just analyzing the way that a position might
+2252.07s: analyzing the way that a position might
+2252.08s: analyzing the way that a position might move with respect to changes in gamma or
+2256.27s: move with respect to changes in gamma or
+2256.28s: move with respect to changes in gamma or anything like that?
+2258.79s: anything like that?
+2258.80s: anything like that? Pretty much, I mean, for me it's I
+2260.71s: Pretty much, I mean, for me it's I
+2260.72s: Pretty much, I mean, for me it's I pretty it's pretty much that knowledge
+2262.75s: pretty it's pretty much that knowledge
+2262.76s: pretty it's pretty much that knowledge of like if if I raise this, what happens
+2265.67s: of like if if I raise this, what happens
+2265.68s: of like if if I raise this, what happens to the other things? And I think you
+2267.27s: to the other things? And I think you
+2267.28s: to the other things? And I think you nailed it with you know, it's like
+2270.31s: nailed it with you know, it's like
+2270.32s: nailed it with you know, it's like um
+2271.24s: um you know, one can do this
+2273.47s: you know, one can do this
+2273.48s: you know, one can do this uh
+2274.08s: uh you can do this by knowing knowing uh
+2277.47s: you can do this by knowing knowing uh
+2277.48s: you can do this by knowing knowing uh you know, basically what the equations
+2278.99s: you know, basically what the equations
+2279.00s: you know, basically what the equations are in even a rough form, but I think
+2282.55s: are in even a rough form, but I think
+2282.56s: are in even a rough form, but I think the way you explained it is the best way
+2284.31s: the way you explained it is the best way
+2284.32s: the way you explained it is the best way to do it, which is to open up an option
+2286.31s: to do it, which is to open up an option
+2286.32s: to do it, which is to open up an option chain
+2287.95s: chain
+2287.96s: chain and just be an observer. Say, okay,
+2291.63s: and just be an observer. Say, okay,
+2291.64s: and just be an observer. Say, okay, wow, okay, wow, the turn Look at this.
+2293.59s: wow, okay, wow, the turn Look at this.
+2293.60s: wow, okay, wow, the turn Look at this. Like an option that's six months longer
+2296.27s: Like an option that's six months longer
+2296.28s: Like an option that's six months longer than uh than this option
+2299.95s: than uh than this option
+2299.96s: than uh than this option has this much more vega
+2302.79s: has this much more vega
+2302.80s: has this much more vega or it has this much less theta. And the
+2306.23s: or it has this much less theta. And the
+2306.24s: or it has this much less theta. And the question that and it's always this thing
+2308.03s: question that and it's always this thing
+2308.04s: question that and it's always this thing of you should ask you you should try to
+2309.71s: of you should ask you you should try to
+2309.72s: of you should ask you you should try to think about what are the
+2312.11s: think about what are the
+2312.12s: think about what are the what are the scaling laws between these
+2314.23s: what are the scaling laws between these
+2314.24s: what are the scaling laws between these things? Like what Okay, I I doubled the
+2316.83s: things? Like what Okay, I I doubled the
+2316.84s: things? Like what Okay, I I doubled the I doubled the DTE.
+2319.43s: I doubled the DTE.
+2319.44s: I doubled the DTE. How much did the vega change by? Did it
+2321.15s: How much did the vega change by? Did it
+2321.16s: How much did the vega change by? Did it have
+2322.39s: have
+2322.40s: have or did it go down by like
+2324.35s: or did it go down by like
+2324.36s: or did it go down by like every single one of these things, by the
+2325.75s: every single one of these things, by the
+2325.76s: every single one of these things, by the way, it's either going to be linear or
+2328.11s: way, it's either going to be linear or
+2328.12s: way, it's either going to be linear or it's going to be the square root.
+2330.23s: it's going to be the square root.
+2330.24s: it's going to be the square root. So, that's the that's a really nice
+2332.59s: So, that's the that's a really nice
+2332.60s: So, that's the that's a really nice thing about it is like you can figure
+2334.31s: thing about it is like you can figure
+2334.32s: thing about it is like you can figure out all these things by just knowing
+2335.83s: out all these things by just knowing
+2335.84s: out all these things by just knowing that it's going to be one of those two.
+2337.55s: that it's going to be one of those two.
+2337.56s: that it's going to be one of those two. So, if I double the length of time,
+2341.03s: So, if I double the length of time,
+2341.04s: So, if I double the length of time, uh
+2341.84s: uh the vega will double.
+2343.47s: the vega will double.
+2343.48s: the vega will double. Um but if I double the length of time,
+2345.87s: Um but if I double the length of time,
+2345.88s: Um but if I double the length of time, um the gamma will move by the square
+2348.07s: um the gamma will move by the square
+2348.08s: um the gamma will move by the square root of two.
+2349.51s: root of two.
+2349.52s: root of two. So, every one of these Greeks has like a
+2351.71s: So, every one of these Greeks has like a
+2351.72s: So, every one of these Greeks has like a different might have a different scaling
+2353.51s: different might have a different scaling
+2353.52s: different might have a different scaling law with respect to um volatility or
+2356.39s: law with respect to um volatility or
+2356.40s: law with respect to um volatility or respect to DTE, um
+2358.67s: respect to DTE, um
+2358.68s: respect to DTE, um but the laws are only going to be linear
+2361.31s: but the laws are only going to be linear
+2361.32s: but the laws are only going to be linear or square root, but you can basically
+2364.51s: or square root, but you can basically
+2364.52s: or square root, but you can basically learn them all yourself purely by
+2367.15s: learn them all yourself purely by
+2367.16s: learn them all yourself purely by observation just being a student of the
+2369.55s: observation just being a student of the
+2369.56s: observation just being a student of the option chains.
+2371.07s: option chains.
+2371.08s: option chains. Um
+2371.76s: Um you know, I listen
+2373.87s: you know, I listen
+2373.88s: you know, I listen uh I think I mentioned this before, but
+2375.03s: uh I think I mentioned this before, but
+2375.04s: uh I think I mentioned this before, but like I listened to your interview
+2377.31s: like I listened to your interview
+2377.32s: like I listened to your interview with um Andrew Mack
+2379.71s: with um Andrew Mack
+2379.72s: with um Andrew Mack uh just a couple days ago.
+2382.63s: uh just a couple days ago.
+2382.64s: uh just a couple days ago. And Andrew I think says probably the
+2384.75s: And Andrew I think says probably the
+2384.76s: And Andrew I think says probably the most practical thing about I I think one
+2388.59s: most practical thing about I I think one
+2388.60s: most practical thing about I I think one of the things that happens is like one
+2390.07s: of the things that happens is like one
+2390.08s: of the things that happens is like one can sit here
+2391.79s: can sit here
+2391.80s: can sit here and listen to these things and it feels
+2394.67s: and listen to these things and it feels
+2394.68s: and listen to these things and it feels a bit it can feel a bit overwhelming. Um
+2397.83s: a bit it can feel a bit overwhelming. Um
+2397.84s: a bit it can feel a bit overwhelming. Um part of it is like there's another
+2399.11s: part of it is like there's another
+2399.12s: part of it is like there's another language going on like it kind of it's
+2401.03s: language going on like it kind of it's
+2401.04s: language going on like it kind of it's like I'm I'm trying to learn if I'm
+2402.19s: like I'm I'm trying to learn if I'm
+2402.20s: like I'm I'm trying to learn if I'm learning Spanish like yeah it's
+2404.59s: learning Spanish like yeah it's
+2404.60s: learning Spanish like yeah it's you know you feel lost for like a long
+2406.03s: you know you feel lost for like a long
+2406.04s: you know you feel lost for like a long time.
+2407.27s: time.
+2407.28s: time. So part of it is just like I'm learning
+2408.55s: So part of it is just like I'm learning
+2408.56s: So part of it is just like I'm learning this language so that when I let's say
+2411.27s: this language so that when I let's say
+2411.28s: this language so that when I let's say if I say the words gamma
+2413.43s: if I say the words gamma
+2413.44s: if I say the words gamma or I remember when I started learning
+2414.83s: or I remember when I started learning
+2414.84s: or I remember when I started learning options
+2415.95s: options
+2415.96s: options somebody would say okay so um if the
+2418.51s: somebody would say okay so um if the
+2418.52s: somebody would say okay so um if the stock goes up the call goes and I would
+2420.55s: stock goes up the call goes and I would
+2420.56s: stock goes up the call goes and I would just stop them. I'd be like wait wait
+2421.79s: just stop them. I'd be like wait wait
+2421.80s: just stop them. I'd be like wait wait wait no stop stop stop. Call.
+2425.11s: wait no stop stop stop. Call.
+2425.12s: wait no stop stop stop. Call. Calls go up in value when the stock goes
+2427.59s: Calls go up in value when the stock goes
+2427.60s: Calls go up in value when the stock goes up in value. Uh
+2429.87s: up in value. Uh
+2429.88s: up in value. Uh uh or or if they said the word put I'd
+2431.59s: uh or or if they said the word put I'd
+2431.60s: uh or or if they said the word put I'd immediately no no no stop. I have to
+2433.11s: immediately no no no stop. I have to
+2433.12s: immediately no no no stop. I have to like remember how puts work. Okay put
+2435.91s: like remember how puts work. Okay put
+2435.92s: like remember how puts work. Okay put goes up in value when the stock goes
+2438.03s: goes up in value when the stock goes
+2438.04s: goes up in value when the stock goes down. Oh okay they're like an opposite
+2439.99s: down. Oh okay they're like an opposite
+2440.00s: down. Oh okay they're like an opposite thing.
+2440.95s: thing.
+2440.96s: thing. And like
+2442.87s: And like
+2442.88s: And like there's this like months that hap that
+2446.39s: there's this like months that hap that
+2446.40s: there's this like months that hap that can exist where you're doing this like
+2448.59s: can exist where you're doing this like
+2448.60s: can exist where you're doing this like ridiculous translation every time. But
+2451.23s: ridiculous translation every time. But
+2451.24s: ridiculous translation every time. But what I want to tell you is that is
+2453.23s: what I want to tell you is that is
+2453.24s: what I want to tell you is that is natural for everybody who's ever every
+2455.27s: natural for everybody who's ever every
+2455.28s: natural for everybody who's ever every single person who's ever learned this
+2458.47s: single person who's ever learned this
+2458.48s: single person who's ever learned this has went through that moment where
+2460.07s: has went through that moment where
+2460.08s: has went through that moment where they're like no no no no stop. I no more
+2462.59s: they're like no no no no stop. I no more
+2462.60s: they're like no no no no stop. I no more words. Let me just think about okay I
+2464.87s: words. Let me just think about okay I
+2464.88s: words. Let me just think about okay I think I got it.
+2466.39s: think I got it.
+2466.40s: think I got it. Okay continue.
+2468.15s: Okay continue.
+2468.16s: Okay continue. You keep doing that over and over and
+2469.91s: You keep doing that over and over and
+2469.92s: You keep doing that over and over and over and over again and eventually
+2473.23s: over and over again and eventually
+2473.24s: over and over again and eventually all of these words start to be like as
+2475.67s: all of these words start to be like as
+2475.68s: all of these words start to be like as soon as you hear them you would you know
+2477.87s: soon as you hear them you would you know
+2477.88s: soon as you hear them you would you know it's like it's like you you can think in
+2479.51s: it's like it's like you you can think in
+2479.52s: it's like it's like you you can think in that language. Okay it's no longer
+2481.51s: that language. Okay it's no longer
+2481.52s: that language. Okay it's no longer foreign I no longer have to pause I get
+2483.47s: foreign I no longer have to pause I get
+2483.48s: foreign I no longer have to pause I get it right away. I think even the language
+2485.55s: it right away. I think even the language
+2485.56s: it right away. I think even the language of bid offer can kind of be like that
+2487.35s: of bid offer can kind of be like that
+2487.36s: of bid offer can kind of be like that like if I say you know somebody is like
+2489.31s: like if I say you know somebody is like
+2489.32s: like if I say you know somebody is like seven bid at nine an eight bid comes in
+2492.15s: seven bid at nine an eight bid comes in
+2492.16s: seven bid at nine an eight bid comes in it's offered at eight and a half take
+2493.35s: it's offered at eight and a half take
+2493.36s: it's offered at eight and a half take them at eight and a half. The first time
+2495.19s: them at eight and a half. The first time
+2495.20s: them at eight and a half. The first time you hear somebody like say that sequence
+2496.95s: you hear somebody like say that sequence
+2496.96s: you hear somebody like say that sequence of words you're like dude no to slow
+2498.43s: of words you're like dude no to slow
+2498.44s: of words you're like dude no to slow down.
+2500.31s: down.
+2500.32s: down. Eventually it's like literally the way
+2501.63s: Eventually it's like literally the way
+2501.64s: Eventually it's like literally the way you think. So
+2503.83s: you think. So
+2503.84s: you think. So it's just like a a matter of
+2504.95s: it's just like a a matter of
+2504.96s: it's just like a a matter of encouragement like there's nobody that's
+2506.83s: encouragement like there's nobody that's
+2506.84s: encouragement like there's nobody that's a trader that ever just woke up
+2509.71s: a trader that ever just woke up
+2509.72s: a trader that ever just woke up understanding this. Impossible okay. Um
+2513.15s: understanding this. Impossible okay. Um
+2513.16s: understanding this. Impossible okay. Um so
+2514.63s: so
+2514.64s: so uh but Andrew said something
+2516.83s: uh but Andrew said something
+2516.84s: uh but Andrew said something um he said knowing these things
+2520.07s: um he said knowing these things
+2520.08s: um he said knowing these things is not going to give you any alpha.
+2523.87s: is not going to give you any alpha.
+2523.88s: is not going to give you any alpha. Not knowing these things is going to get
+2525.75s: Not knowing these things is going to get
+2525.76s: Not knowing these things is going to get you impaled.
+2528.15s: you impaled.
+2528.16s: you impaled. So
+2529.71s: So
+2529.72s: So in other words it's just table stakes.
+2531.75s: in other words it's just table stakes.
+2531.76s: in other words it's just table stakes. It's like you can't show up to play a
+2533.23s: It's like you can't show up to play a
+2533.24s: It's like you can't show up to play a sport not know what the rules are.
+2535.79s: sport not know what the rules are.
+2535.80s: sport not know what the rules are. Um you can't not know how things work.
+2538.79s: Um you can't not know how things work.
+2538.80s: Um you can't not know how things work. But knowing the rules is not enough to
+2541.47s: But knowing the rules is not enough to
+2541.48s: But knowing the rules is not enough to win the game. So that's um I think that
+2544.35s: win the game. So that's um I think that
+2544.36s: win the game. So that's um I think that that that's all stuff that that that
+2545.67s: that that's all stuff that that that
+2545.68s: that that's all stuff that that that that little part is like what Andrew
+2547.07s: that little part is like what Andrew
+2547.08s: that little part is like what Andrew said and I just wanted to repeat it
+2549.07s: said and I just wanted to repeat it
+2549.08s: said and I just wanted to repeat it because I think it's amazing.
+2550.95s: because I think it's amazing.
+2550.96s: because I think it's amazing. Yeah it's awesome and I'm glad you did
+2552.27s: Yeah it's awesome and I'm glad you did
+2552.28s: Yeah it's awesome and I'm glad you did because I think a lot of times when like
+2555.35s: because I think a lot of times when like
+2555.36s: because I think a lot of times when like you said when people are learning
+2556.35s: you said when people are learning
+2556.36s: you said when people are learning something new it can be a little bit
+2557.47s: something new it can be a little bit
+2557.48s: something new it can be a little bit heavy but I the the way that I found
+2560.95s: heavy but I the the way that I found
+2560.96s: heavy but I the the way that I found that works really well for myself is
+2563.15s: that works really well for myself is
+2563.16s: that works really well for myself is kind of like pairing some of the
+2566.07s: kind of like pairing some of the
+2566.08s: kind of like pairing some of the theoretical stuff with like the the
+2567.75s: theoretical stuff with like the the
+2567.76s: theoretical stuff with like the the practical observation components and
+2569.59s: practical observation components and
+2569.60s: practical observation components and that's exactly why building you know
+2571.47s: that's exactly why building you know
+2571.48s: that's exactly why building you know like that little plot and going through
+2573.87s: like that little plot and going through
+2573.88s: like that little plot and going through and just seeing how stuff moves it
+2576.07s: and just seeing how stuff moves it
+2576.08s: and just seeing how stuff moves it really is like tremendously helpful and
+2578.11s: really is like tremendously helpful and
+2578.12s: really is like tremendously helpful and there's
+2578.99s: there's
+2579.00s: there's I say it all the time especially when it
+2580.47s: I say it all the time especially when it
+2580.48s: I say it all the time especially when it comes to like foundational knowledge of
+2582.67s: comes to like foundational knowledge of
+2582.68s: comes to like foundational knowledge of trading there's nothing that's like that
+2584.95s: trading there's nothing that's like that
+2584.96s: trading there's nothing that's like that crazy about any of this stuff. It just
+2586.91s: crazy about any of this stuff. It just
+2586.92s: crazy about any of this stuff. It just definitely takes a little while. And
+2590.47s: definitely takes a little while. And
+2590.48s: definitely takes a little while. And from the you know I I think one of the
+2592.59s: from the you know I I think one of the
+2592.60s: from the you know I I think one of the bigger risks especially self-directed
+2595.47s: bigger risks especially self-directed
+2595.48s: bigger risks especially self-directed traders
+2596.79s: traders
+2596.80s: traders find themselves at least exposed to is
+2599.87s: find themselves at least exposed to is
+2599.88s: find themselves at least exposed to is going down the wrong path and not really
+2601.67s: going down the wrong path and not really
+2601.68s: going down the wrong path and not really knowing it. Sometimes you can you know
+2604.15s: knowing it. Sometimes you can you know
+2604.16s: knowing it. Sometimes you can you know hear something not know what you don't
+2605.71s: hear something not know what you don't
+2605.72s: hear something not know what you don't know and then kind of meander down that
+2608.39s: know and then kind of meander down that
+2608.40s: know and then kind of meander down that which is exactly why I'm such a
+2609.91s: which is exactly why I'm such a
+2609.92s: which is exactly why I'm such a proponent of just grabbing a handful of
+2612.55s: proponent of just grabbing a handful of
+2612.56s: proponent of just grabbing a handful of like really good books you know I always
+2614.99s: like really good books you know I always
+2615.00s: like really good books you know I always recommend anything from Euan Sinclair
+2616.91s: recommend anything from Euan Sinclair
+2616.92s: recommend anything from Euan Sinclair will get you there or um I like options
+2620.63s: will get you there or um I like options
+2620.64s: will get you there or um I like options as a strategic investment by Larry
+2622.75s: as a strategic investment by Larry
+2622.76s: as a strategic investment by Larry McMillan that's another good book. And
+2624.91s: McMillan that's another good book. And
+2624.92s: McMillan that's another good book. And they're just like good guideposts so
+2626.79s: they're just like good guideposts so
+2626.80s: they're just like good guideposts so like as you're going through learning
+2627.87s: like as you're going through learning
+2627.88s: like as you're going through learning stuff learning new vernacular kind of
+2629.87s: stuff learning new vernacular kind of
+2629.88s: stuff learning new vernacular kind of practically thinking about it you can
+2631.35s: practically thinking about it you can
+2631.36s: practically thinking about it you can always go back to those cuz some people
+2633.47s: always go back to those cuz some people
+2633.48s: always go back to those cuz some people might default to like AI and I literally
+2636.67s: might default to like AI and I literally
+2636.68s: might default to like AI and I literally just did this on a live stream yesterday
+2638.19s: just did this on a live stream yesterday
+2638.20s: just did this on a live stream yesterday with my community where
+2640.15s: with my community where
+2640.16s: with my community where you know we were talking about a trade
+2642.71s: you know we were talking about a trade
+2642.72s: you know we were talking about a trade and somebody was saying like oh yeah you
+2644.43s: and somebody was saying like oh yeah you
+2644.44s: and somebody was saying like oh yeah you know I've been using AI to kind of help
+2646.11s: know I've been using AI to kind of help
+2646.12s: know I've been using AI to kind of help me with this and I was my immediate
+2648.11s: me with this and I was my immediate
+2648.12s: me with this and I was my immediate reaction is like that's good but super
+2651.11s: reaction is like that's good but super
+2651.12s: reaction is like that's good but super dangerous because AI if you don't know
+2654.11s: dangerous because AI if you don't know
+2654.12s: dangerous because AI if you don't know what you don't know AI is very
+2655.83s: what you don't know AI is very
+2655.84s: what you don't know AI is very convincing. And there were pieces in the
+2659.19s: convincing. And there were pieces in the
+2659.20s: convincing. And there were pieces in the prompt that we we made with and it was
+2663.43s: prompt that we we made with and it was
+2663.44s: prompt that we we made with and it was with ChatGPT and it was it was like dead
+2665.91s: with ChatGPT and it was it was like dead
+2665.92s: with ChatGPT and it was it was like dead wrong not even like a little wrong like
+2668.27s: wrong not even like a little wrong like
+2668.28s: wrong not even like a little wrong like completely wrong.
+2669.99s: completely wrong.
+2670.00s: completely wrong. Completely wrong.
+2671.39s: Completely wrong.
+2671.40s: Completely wrong. Yeah I've I've had the same experience
+2673.67s: Yeah I've I've had the same experience
+2673.68s: Yeah I've I've had the same experience where I I find that with options
+2678.47s: where I I find that with options
+2678.48s: where I I find that with options it gets a lot of um
+2681.43s: it gets a lot of um
+2681.44s: it gets a lot of um like calls versus puts stuff like lots
+2684.67s: like calls versus puts stuff like lots
+2684.68s: like calls versus puts stuff like lots of stuff wrong. I've also live coded a
+2686.87s: of stuff wrong. I've also live coded a
+2686.88s: of stuff wrong. I've also live coded a bunch of different tools out of it and
+2691.11s: bunch of different tools out of it and
+2691.12s: bunch of different tools out of it and there is a lot of back and forth I've
+2693.15s: there is a lot of back and forth I've
+2693.16s: there is a lot of back and forth I've had to do with it like we're debugging
+2694.95s: had to do with it like we're debugging
+2694.96s: had to do with it like we're debugging what it's doing and like being very very
+2697.35s: what it's doing and like being very very
+2697.36s: what it's doing and like being very very careful about everything that I make in
+2698.95s: careful about everything that I make in
+2698.96s: careful about everything that I make in it to tell it like I want you to show me
+2702.19s: it to tell it like I want you to show me
+2702.20s: it to tell it like I want you to show me like the audit like the row by row
+2704.19s: like the audit like the row by row
+2704.20s: like the audit like the row by row output and then I have to manually make
+2707.03s: output and then I have to manually make
+2707.04s: output and then I have to manually make sure like I'll go through a couple rows
+2708.99s: sure like I'll go through a couple rows
+2709.00s: sure like I'll go through a couple rows and be like is it doing everything
+2711.19s: and be like is it doing everything
+2711.20s: and be like is it doing everything correctly? It is so easy in options
+2713.99s: correctly? It is so easy in options
+2714.00s: correctly? It is so easy in options anything to get signed the sign wrong.
+2716.87s: anything to get signed the sign wrong.
+2716.88s: anything to get signed the sign wrong. Right. Um so if you're if you if you
+2719.91s: Right. Um so if you're if you if you
+2719.92s: Right. Um so if you're if you if you build a little thing that says like hey
+2722.07s: build a little thing that says like hey
+2722.08s: build a little thing that says like hey build a little delta hedge simulator and
+2723.91s: build a little delta hedge simulator and
+2723.92s: build a little delta hedge simulator and I want to buy the call and it's like you
+2726.39s: I want to buy the call and it's like you
+2726.40s: I want to buy the call and it's like you know the LLM like okay it understands
+2728.47s: know the LLM like okay it understands
+2728.48s: know the LLM like okay it understands like okay I need to be short the stock
+2730.83s: like okay I need to be short the stock
+2730.84s: like okay I need to be short the stock then it'll be like okay what's my P&amp;L
+2732.35s: then it'll be like okay what's my P&amp;L
+2732.36s: then it'll be like okay what's my P&amp;L the next day and it'll like literally
+2734.27s: the next day and it'll like literally
+2734.28s: the next day and it'll like literally get the stock P&amp;L wrong cuz that part
+2736.95s: get the stock P&amp;L wrong cuz that part
+2736.96s: get the stock P&amp;L wrong cuz that part will be backwards but the option part
+2738.51s: will be backwards but the option part
+2738.52s: will be backwards but the option part will be right. Unless you have the
+2740.75s: will be right. Unless you have the
+2740.76s: will be right. Unless you have the ability to like
+2742.51s: ability to like
+2742.52s: ability to like understand every every single part of
+2744.59s: understand every every single part of
+2744.60s: understand every every single part of the car
+2745.95s: the car
+2745.96s: the car like you don't know if the thing that
+2747.71s: like you don't know if the thing that
+2747.72s: like you don't know if the thing that it's giving you at the end of the day is
+2749.31s: it's giving you at the end of the day is
+2749.32s: it's giving you at the end of the day is right or wrong. So I I would say it's
+2750.63s: right or wrong. So I I would say it's
+2750.64s: right or wrong. So I I would say it's very very dangerous um options are super
+2753.11s: very very dangerous um options are super
+2753.12s: very very dangerous um options are super dangerous to be like relying on the LLM
+2755.75s: dangerous to be like relying on the LLM
+2755.76s: dangerous to be like relying on the LLM if you don't know what you don't know as
+2758.23s: if you don't know what you don't know as
+2758.24s: if you don't know what you don't know as you're as you're saying so yeah just I
+2760.11s: you're as you're saying so yeah just I
+2760.12s: you're as you're saying so yeah just I totally echo that precaution.
+2762.19s: totally echo that precaution.
+2762.20s: totally echo that precaution. Yeah good tool needs to be used in
+2764.63s: Yeah good tool needs to be used in
+2764.64s: Yeah good tool needs to be used in context. Another quick thing that you
+2766.75s: context. Another quick thing that you
+2766.76s: context. Another quick thing that you could do with that is literally copy
+2768.59s: could do with that is literally copy
+2768.60s: could do with that is literally copy something out of ChatGPT and then throw
+2771.19s: something out of ChatGPT and then throw
+2771.20s: something out of ChatGPT and then throw it in Grok and be like I asked ChatGPT
+2772.87s: it in Grok and be like I asked ChatGPT
+2772.88s: it in Grok and be like I asked ChatGPT about this look at this and tell me if
+2775.03s: about this look at this and tell me if
+2775.04s: about this look at this and tell me if this is correct. And they're they're
+2777.07s: this is correct. And they're they're
+2777.08s: this is correct. And they're they're actually a little bit better at auditing
+2778.91s: actually a little bit better at auditing
+2778.92s: actually a little bit better at auditing one another than I would have expected
+2781.43s: one another than I would have expected
+2781.44s: one another than I would have expected but that's just another thing to keep in
+2782.95s: but that's just another thing to keep in
+2782.96s: but that's just another thing to keep in mind.
+2784.11s: mind.
+2784.12s: mind. Um
+2785.16s: Um it's like fantastic Yeah it's like
+2787.71s: it's like fantastic Yeah it's like
+2787.72s: it's like fantastic Yeah it's like fantastic technology but easy to easy to
+2790.11s: fantastic technology but easy to easy to
+2790.12s: fantastic technology but easy to easy to dork it up and use it the wrong way.
+2792.43s: dork it up and use it the wrong way.
+2792.44s: dork it up and use it the wrong way. So
+2793.40s: So if there's any other like options
+2795.51s: if there's any other like options
+2795.52s: if there's any other like options relationships
+2797.11s: relationships
+2797.12s: relationships or Greeks or anything like that that
+2799.15s: or Greeks or anything like that that
+2799.16s: or Greeks or anything like that that you'd like to see a slightly deeper
+2801.39s: you'd like to see a slightly deeper
+2801.40s: you'd like to see a slightly deeper click into let us know you can either
+2803.27s: click into let us know you can either
+2803.28s: click into let us know you can either throw it in the comments shoot us an
+2804.75s: throw it in the comments shoot us an
+2804.76s: throw it in the comments shoot us an email and we'll see you on the next
+2807.63s: email and we'll see you on the next
+2807.64s: email and we'll see you on the next episode. Enjoy the rest of your week
+2810.07s: episode. Enjoy the rest of your week
+2810.08s: episode. Enjoy the rest of your week everybody. See you guys.

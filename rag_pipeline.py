@@ -42,11 +42,11 @@ METADATA_PATH = os.path.join(VECTOR_STORE_DIR, "transcript_metadata.pkl")
 INDEX_PATH = os.path.join(VECTOR_STORE_DIR, "transcript_index.faiss")
 
 DEFAULT_TOP_K = 5
-DEFAULT_LLM_MODEL = "gpt-5-mini"  # Current OpenAI model that supports temperature
+DEFAULT_LLM_MODEL = "gpt-4.1-mini"  # Current OpenAI model that supports temperature
 DEFAULT_CLAUDE_MODEL = "claude-haiku-4-5"  # Latest Claude Sonnet 4 model
-DEFAULT_OLLAMA_MODEL = "gemma2:2b"  # Ollama model (e.g. gemma2:2b, gemma3:270m)
+DEFAULT_OLLAMA_MODEL = "gemma4:e4b"  # Ollama model (e.g. gemma4:e4b, gemma3:270m)
 # Fallback models when primary Ollama model returns 404 (not installed)
-OLLAMA_FALLBACK_MODELS = ["gemma2:2b", "llama3.2", "llama3.2:3b", "mistral", "phi3", "llama2"]
+OLLAMA_FALLBACK_MODELS = ["gemma4:e4b", "gemma2:2b", "llama3.2", "llama3.2:3b", "mistral", "phi3", "llama2"]
 DEFAULT_TEMPERATURE = 0.2
 
 # Models that do NOT support temperature - omit temperature param to avoid API errors.
@@ -57,7 +57,7 @@ MODELS_NO_TEMPERATURE = {
         "o2", "o2-mini",
         "o3-mini", "o3-medium", "o3", "o3-pro",
         "o4-mini", "o4", "o4-pro",
-        "gpt-4o-mini", "gpt-5-mini",
+        "gpt-4o-mini",
     ],
     "claude": [
         # Claude generally supports temperature; add exceptions if discovered
