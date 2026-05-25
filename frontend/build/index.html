@@ -130,8 +130,8 @@
         }
         
         .prompt-delete-btn:hover {
-            background: #f3f4f6;
-            color: #6b7280;
+            background: #ef4444;
+            color: white;
             transform: scale(1.1);
         }
         
@@ -852,7 +852,7 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="sidebar-title">
-                <button class="new-chat-btn" onclick="startNewChat()">+ New Chat</button>
+                <button type="button" class="new-chat-btn" onclick="startNewChat(event)">+ New Chat</button>
             </div>
             
             <div class="prompts-title">Recent Conversations</div>
@@ -1499,14 +1499,39 @@
                     html += `
                         <div class="prompt-item" data-index="${index}">
                             <div class="prompt-text" title="${this.escapeHtml(title)}">${this.escapeHtml(truncated)}</div>
+                            <button type="button" class="prompt-delete-btn" title="Delete conversation" data-index="${index}">&times;</button>
                         </div>
                     `;
                 });
 
                 container.innerHTML = html;
                 container.querySelectorAll('.prompt-item').forEach((item, index) => {
-                    item.addEventListener('click', () => this.selectPrompt(index));
+                    item.addEventListener('click', (e) => {
+                        if (e.target.closest('.prompt-delete-btn')) return;
+                        this.selectPrompt(index);
+                    });
+                    const delBtn = item.querySelector('.prompt-delete-btn');
+                    if (delBtn) delBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const idx = parseInt(delBtn.dataset.index, 10);
+                        if (!isNaN(idx) && this.conversations[idx]) this.deleteConversation(this.conversations[idx].id);
+                    });
                 });
+            }
+
+            async deleteConversation(id) {
+                if (!id) return;
+                if (!confirm('Delete this conversation?')) return;
+                try {
+                    const response = await fetch(`/api/conversations/${id}`, { method: 'DELETE' });
+                    if (!response.ok) throw new Error('Failed to delete');
+                    await this.refreshConversations();
+                    if (conversationManager && conversationManager.currentConversation.id === id) {
+                        conversationManager.startNewConversation();
+                    }
+                } catch (error) {
+                    console.error('Could not delete conversation:', error);
+                }
             }
 
             async selectPrompt(index) {
@@ -1713,13 +1738,14 @@
         }
         
         // Updated New Chat function
-        function startNewChat() {
+        function startNewChat(e) {
+            if (e) e.preventDefault();
+            if (e) e.stopPropagation();
             console.log(' Starting new chat...');
             
-            // Reset conversation state
-            if (conversationManager) {
-                conversationManager.startNewConversation();
-            }
+            if (!conversationManager) return;
+            
+            conversationManager.startNewConversation();
             
             // Clear and focus input
             const input = document.getElementById('user-input');
@@ -1731,14 +1757,13 @@
             
             // Re-enable button if disabled
             const button = document.getElementById('submit-btn');
-            if (button) {
-                button.disabled = false;
-            }
+            if (button) button.disabled = false;
             
-            // Hide typing indicator
-            if (conversationManager) {
-                conversationManager.hideTypingIndicator();
-            }
+            conversationManager.hideTypingIndicator();
+            
+            // Scroll chat container to top
+            const chatContainer = document.getElementById('chat-container');
+            if (chatContainer) chatContainer.scrollTop = 0;
         }
         
         // Copy to clipboard functionality

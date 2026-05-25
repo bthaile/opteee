@@ -20,7 +20,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 2g
+          memory: 1g
           cpus: "2"
     restart: unless-stopped
     healthcheck:

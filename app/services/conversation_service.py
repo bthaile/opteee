@@ -33,6 +33,16 @@ class ConversationService:
         return db.execute(stmt).scalar_one_or_none()
 
     @staticmethod
+    def delete_conversation(db: Session, conversation_id: str) -> bool:
+        """Delete a conversation and its messages. Returns True if deleted."""
+        conversation = ConversationService.get_conversation(db, conversation_id)
+        if not conversation:
+            return False
+        db.delete(conversation)
+        db.commit()
+        return True
+
+    @staticmethod
     def list_conversations(db: Session, limit: int = 20) -> List[Conversation]:
         stmt = (
             select(Conversation)

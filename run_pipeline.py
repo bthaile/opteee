@@ -3,7 +3,7 @@
 Video Processing Pipeline Runner
 
 This script orchestrates the complete video processing pipeline:
-1. Scrape - Discover videos from the YouTube channel
+1. Scrape - Discover videos from the YouTube channel (includes upload_date via API)
 2. Transcripts - Fetch transcripts via YouTube API (marks failures for Whisper)
 3. Whisper - Second pass: download audio and transcribe failed videos with Whisper
 4. Preprocess - Chunk transcripts for vector search
@@ -29,7 +29,7 @@ from datetime import datetime
 
 # Import configuration
 from pipeline_config import (
-    VIDEOS_JSON, TRANSCRIPT_DIR, PROCESSED_DIR, VECTOR_STORE_DIR,
+    VIDEOS_JSON, METADATA_JSON, TRANSCRIPT_DIR, PROCESSED_DIR, VECTOR_STORE_DIR,
     CHANNEL_URLS, YOUTUBE_API_KEY, TRANSCRIPT_REQUEST_DELAY,
     ensure_directories, validate_config
 )
@@ -40,6 +40,38 @@ def print_banner(step_name):
     print("\n" + "=" * 60)
     print(f"🚀 {step_name}")
     print("=" * 60 + "\n")
+
+
+def _fetch_upload_dates(video_ids, api_key):
+    """Fetch upload_date and published_at from YouTube API (batches of 50)."""
+    try:
+        from googleapiclient.discovery import build
+        from googleapiclient.errors import HttpError
+    except ImportError:
+        return {}
+    result = {}
+    youtube = build("youtube", "v3", developerKey=api_key)
+    for i in range(0, len(video_ids), 50):
+        batch = video_ids[i : i + 50]
+        try:
+            resp = youtube.videos().list(
+                part="snippet",
+                id=",".join(batch),
+            ).execute()
+            for item in resp.get("items", []):
+                vid = item["id"]
+                published_at = item.get("snippet", {}).get("publishedAt")
+                upload_date = None
+                if published_at:
+                    try:
+                        dt = datetime.strptime(published_at, "%Y-%m-%dT%H:%M:%SZ")
+                        upload_date = dt.strftime("%Y%m%d")
+                    except ValueError:
+                        upload_date = published_at[:10].replace("-", "")
+                result[vid] = {"upload_date": upload_date, "published_at": published_at}
+        except HttpError:
+            pass
+    return result
 
 
 def run_scrape(args):
@@ -112,8 +144,25 @@ def run_scrape(args):
         else:
             duplicate_count += 1
     
-    # Save results
+    # Enrich with upload_date/published_at via YouTube API (yt-dlp flat extraction doesn't return dates)
+    if YOUTUBE_API_KEY:
+        video_ids = [v['video_id'] for v in unique_videos if v.get('video_id')]
+        print(f"\n📡 Fetching upload dates for {len(video_ids)} videos via YouTube API...")
+        dates = _fetch_upload_dates(video_ids, YOUTUBE_API_KEY)
+        for v in unique_videos:
+            vid = v.get('video_id')
+            if vid and vid in dates:
+                v['upload_date'] = dates[vid].get('upload_date') or v.get('upload_date')
+                v['published_at'] = dates[vid].get('published_at') or v.get('published_at')
+        with_dates = sum(1 for v in unique_videos if v.get('upload_date') or v.get('published_at'))
+        print(f"  ✅ {with_dates}/{len(unique_videos)} videos with dates")
+    else:
+        print("  ⚠️ YOUTUBE_API_KEY not set — upload_date will be empty")
+    
+    # Save results (both files so preprocess uses fresh metadata via get_metadata_file)
     with open(VIDEOS_JSON, 'w', encoding='utf-8') as jsonfile:
+        json.dump(unique_videos, jsonfile, indent=4, ensure_ascii=False)
+    with open(METADATA_JSON, 'w', encoding='utf-8') as jsonfile:
         json.dump(unique_videos, jsonfile, indent=4, ensure_ascii=False)
     
     print(f"\n📊 Discovery Results:")

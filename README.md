@@ -278,6 +278,7 @@ python3 run_pipeline.py --step scrape --non-interactive
 
 What it does:
 - Uses `yt-dlp` to enumerate every video across all channel URLs (videos, shorts, streams, podcasts, live)
+- Fetches `upload_date` and `published_at` via YouTube Data API (when `YOUTUBE_API_KEY` is set)
 - De-duplicates by video ID
 - Saves results to `outlier_trading_videos.json`
 

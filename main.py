@@ -204,6 +204,15 @@ async def list_conversations(limit: int = 20, db: Session = Depends(get_db)):
     ]
 
 
+@app.delete("/api/conversations/{conversation_id}")
+async def delete_conversation(conversation_id: str, db: Session = Depends(get_db)):
+    """Delete a conversation and its messages."""
+    deleted = ConversationService.delete_conversation(db, conversation_id)
+    if not deleted:
+        raise HTTPException(status_code=404, detail="Conversation not found")
+    return {"ok": True}
+
+
 @app.get("/api/conversations/{conversation_id}", response_model=ConversationDetail)
 async def get_conversation(conversation_id: str, db: Session = Depends(get_db)):
     conversation = ConversationService.get_conversation(db, conversation_id)
