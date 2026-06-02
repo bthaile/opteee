@@ -1,14 +1,23 @@
 #!/bin/zsh
 set -euo pipefail
 
-# launchd runs with a minimal environment; set PATH explicitly.
+# OPTEEE weekly refresh — NATIVE deployment (no Docker, as of 2026-06-02).
+# Old flow used `docker compose up -d --build`. opteee now runs as the LaunchDaemon
+# com.opteee.native (start_native.sh -> .venv-native python main.py), so "redeploy"
+# = pull code, refresh deps, restart the daemon's process.
+#
+# Restart mechanism (no sudo): the daemon has KeepAlive=true and runs python as
+# bradfordhaile. We kill that python; launchd respawns it with the fresh code/deps.
+# (sudo launchctl kickstart would need root; kill + KeepAlive does not.)
+
 export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 REPO_DIR="/Users/bradfordhaile/clawd/opteee"
+VENV="${REPO_DIR}/.venv-native"
 HEALTH_URL="http://127.0.0.1:7860/api/health"
 LOCK_DIR="/tmp/opteee-weekly-refresh.lock"
 
-echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting OPTEEE weekly refresh"
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] Starting OPTEEE weekly refresh (native)"
 
 if ! mkdir "${LOCK_DIR}" 2>/dev/null; then
   echo "Another refresh is already running. Exiting."
@@ -18,27 +27,29 @@ trap 'rmdir "${LOCK_DIR}" 2>/dev/null || true' EXIT
 
 cd "${REPO_DIR}"
 
-if ! command -v git >/dev/null 2>&1; then
-  echo "git not found in PATH"
-  exit 1
-fi
+command -v git >/dev/null 2>&1 || { echo "git not found in PATH"; exit 1; }
+[[ -x "${VENV}/bin/python" ]] || { echo "native venv missing at ${VENV}"; exit 1; }
 
-if ! command -v docker >/dev/null 2>&1; then
-  echo "docker not found in PATH"
-  exit 1
-fi
-
-# Keep automation safe: only pull if worktree is clean.
+# NOTE: this guard skips the pull whenever ANY tracked file is modified. The repo
+# tracks generated data (transcripts/, processed_transcripts/, *.json) that the
+# pipeline rewrites, so the worktree is often dirty and the pull gets skipped.
+# To make weekly CODE updates land reliably, untrack that generated data
+# (git rm --cached + .gitignore) or relax this check. See DEPLOYMENT.md.
 if [[ -n "$(git status --porcelain)" ]]; then
   echo "Git worktree is dirty; skipping git pull to avoid clobbering local edits."
 else
   current_branch="$(git rev-parse --abbrev-ref HEAD)"
-  echo "Pulling latest changes from origin/${current_branch}"
+  echo "Pulling latest from origin/${current_branch}"
   git pull --ff-only origin "${current_branch}"
 fi
 
-echo "Rebuilding and restarting OPTEEE container"
-docker compose up -d --build --remove-orphans
+# Refresh Python deps in case requirements-serve.txt changed (idempotent; fast when satisfied)
+echo "Refreshing native venv dependencies"
+"${VENV}/bin/pip" install -q -r requirements-serve.txt || echo "pip refresh reported an issue (continuing)"
+
+# Restart the native service: kill the running python; launchd KeepAlive respawns it.
+echo "Restarting com.opteee.native (kill -> KeepAlive respawn)"
+pkill -f "${VENV}/bin/python" || echo "no running opteee python matched (launchd will start it fresh)"
 
 echo "Waiting for health endpoint"
 for _ in {1..60}; do
@@ -50,5 +61,5 @@ for _ in {1..60}; do
   sleep 2
 done
 
-echo "Health check failed after waiting 120 seconds"
+echo "Health check FAILED after 120s — check logs/native.err.log"
 exit 1
