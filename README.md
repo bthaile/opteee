@@ -118,12 +118,31 @@ Use `requirements-serve.txt` for serving only. The full `requirements.txt` inclu
     {
       "query": "What is a covered call?",
       "provider": "claude",
+      "model": "claude-haiku-4-5",
+      "effort": "low",
       "num_results": 5,
-      "format": "html",
-      "conversation_history": [],
+      "format": "json",
       "conversation_id": "optional-existing-conversation-id"
     }
     ```
+  - Request fields:
+    - `query` - required user prompt
+    - `provider` - optional provider override (`claude`, `openai`, `ollama`)
+    - `model` - optional exact model override; if supplied, it wins over effort/default routing
+    - `effort` - optional routing tier (`low` or `medium`, defaults to `low`)
+    - `num_results` - number of retrieved source chunks (1-20)
+    - `format` - `html`, `json`, or `bot`
+    - `conversation_id` - optional existing conversation to continue
+  - Routing precedence:
+    1. explicit `model`
+    2. provider+effort env mapping
+    3. provider defaults from `.env`
+  - Env knobs for effort routing:
+    - `DEFAULT_EFFORT`
+    - `DEFAULT_MODEL_LOW`, `DEFAULT_MODEL_MEDIUM`
+    - `OPENAI_MODEL_LOW`, `OPENAI_MODEL_MEDIUM`
+    - `CLAUDE_MODEL_LOW`, `CLAUDE_MODEL_MEDIUM`
+    - `OLLAMA_MODEL_LOW`, `OLLAMA_MODEL_MEDIUM`
   - `format` supports `html`, `json`, and `bot` (prefer `json` for chat bots)
   - Returns answer with sources, timestamps, and `conversation_id`
 
@@ -195,7 +214,9 @@ opteee/
 2. **Frontend Changes**: Update React components in `frontend/src/` (requires separate build)
 3. **Testing**: Run locally with `source venv/bin/activate && python main.py`
 4. **Vector Store Updates**: Rebuild with `source venv/bin/activate && python rebuild_vector_store.py`
-5. **Deploy**: `docker compose up --build`
+5. **Deploy**: use the environment-specific path
+   - Docker: `docker compose up --build`
+   - Native macOS launchd service: restart `com.opteee.native` via the maintained local refresh path
 
 ## Configuration
 
@@ -226,8 +247,11 @@ After the weekly pipeline commits new transcripts, rebuild the vector store loca
 ```bash
 source venv/bin/activate
 python rebuild_vector_store.py
-docker compose up --build
 ```
+
+Then refresh the running app using your deployment path:
+- Docker: `docker compose up --build`
+- Native launchd service: run `/Users/bradfordhaile/clawd/opteee/weekly-refresh.sh` or wait for `com.opteee.weekly-refresh`
 
 ### Manual Workflow Triggering
 
@@ -565,10 +589,18 @@ The `--build` flag ensures the image is rebuilt with any code changes; the vecto
 
 ## Local Auto-Refresh (macOS launchd)
 
-Use this when running OPTEEE locally with Docker and you want an automatic weekly refresh that:
-1. Pulls latest changes from GitHub
-2. Rebuilds/restarts the Docker service
-3. Verifies `/api/health` on port `7860`
+Use this when running OPTEEE locally as the native macOS service. The launchd-owned refresh path is:
+
+- job: `com.opteee.weekly-refresh`
+- plist: `/Library/LaunchDaemons/com.opteee.weekly-refresh.plist`
+- script: `/Users/bradfordhaile/clawd/opteee/weekly-refresh.sh`
+
+What it does:
+1. Pulls latest changes from GitHub when the worktree is clean
+2. Refreshes `requirements-serve.txt` into `.venv-native`
+3. Restarts the native app by killing the current OPTEEE Python process
+4. Relies on `com.opteee.native` `KeepAlive` to respawn the service
+5. Verifies `/api/health` on port `7860`
 
 ### Files to keep in this repo
 
@@ -581,9 +613,9 @@ Use this when running OPTEEE locally with Docker and you want an automatic weekl
 cd /Users/bradfordhaile/clawd/opteee
 mkdir -p logs
 chmod +x weekly-refresh.sh
-cp com.opteee.weekly-refresh.plist ~/Library/LaunchAgents/com.opteee.weekly-refresh.plist
-launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.opteee.weekly-refresh.plist
-launchctl enable gui/$(id -u)/com.opteee.weekly-refresh
+sudo cp com.opteee.weekly-refresh.plist /Library/LaunchDaemons/com.opteee.weekly-refresh.plist
+sudo launchctl bootstrap system /Library/LaunchDaemons/com.opteee.weekly-refresh.plist
+sudo launchctl enable system/com.opteee.weekly-refresh
 ```
 
 ### Schedule
@@ -597,18 +629,18 @@ The tracked plist is configured to run every Sunday at 11:00 PM local time:
 
 ```bash
 # Run immediately (manual test)
-launchctl kickstart -k gui/$(id -u)/com.opteee.weekly-refresh
+sudo launchctl kickstart -k system/com.opteee.weekly-refresh
 
 # Check status
-launchctl print gui/$(id -u)/com.opteee.weekly-refresh
+launchctl print system/com.opteee.weekly-refresh
 
 # Disable/enable
-launchctl disable gui/$(id -u)/com.opteee.weekly-refresh
-launchctl enable gui/$(id -u)/com.opteee.weekly-refresh
+sudo launchctl disable system/com.opteee.weekly-refresh
+sudo launchctl enable system/com.opteee.weekly-refresh
 
 # Reload after plist edits
-launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.opteee.weekly-refresh.plist
-launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.opteee.weekly-refresh.plist
+sudo launchctl bootout system /Library/LaunchDaemons/com.opteee.weekly-refresh.plist
+sudo launchctl bootstrap system /Library/LaunchDaemons/com.opteee.weekly-refresh.plist
 ```
 
 ### Logs
@@ -620,7 +652,9 @@ Launchd output logs are written to:
 ### Notes
 
 - The script skips `git pull` if your repo has uncommitted changes to avoid clobbering local edits.
-- Keep Docker Desktop running so scheduled refresh jobs can rebuild/restart successfully.
+- Native restart depends on `com.opteee.native` being installed with `KeepAlive` enabled.
+- If port `7860` is already bound by a leftover Docker container, the native service will fail to restart until that container is stopped.
+- This README documents the existing launchd ownership path; keep `com.opteee.weekly-refresh -> /Users/bradfordhaile/clawd/opteee/weekly-refresh.sh` unless you intentionally migrate the deployment structure.
 - **macOS compatibility**: These `launchctl` commands use the modern `bootstrap`/`bootout` syntax (not legacy `load`/`unload`) and work on macOS Tahoe 26 and earlier.
 
 ## Bots

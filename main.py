@@ -103,6 +103,8 @@ async def chat(request: ChatRequest, db: Session = Depends(get_db)):
 Thank you for your question: "{request.query}"
 
 Provider: {request.provider}
+Model: {request.model or '[default]'}
+Effort: {request.effort}
 Number of results requested: {request.num_results}
 Format: {request.format}{conversation_summary}
 
@@ -116,6 +118,14 @@ This is a test response to validate the conversation history functionality. In p
             raw_sources=[],
             timestamp=datetime.now().isoformat(),
             conversation_id=conversation.id,
+            token_usage={
+                "provider": request.provider,
+                "model": request.model or "[default]",
+                "effort": request.effort,
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0,
+            },
         )
     
     if not rag_service:
@@ -152,6 +162,8 @@ This is a test response to validate the conversation history functionality. In p
         result = await rag_service.process_query(
             query=request.query,
             provider=request.provider,
+            model=request.model,
+            effort=request.effort,
             num_results=request.num_results,
             format=request.format,
             conversation_history=conversation_history
@@ -168,7 +180,8 @@ This is a test response to validate the conversation history functionality. In p
             sources=result["sources"],
             raw_sources=result["raw_sources"],
             timestamp=datetime.now().isoformat(),
-            conversation_id=conversation.id
+            conversation_id=conversation.id,
+            token_usage=result.get("token_usage"),
         )
     
     except HTTPException:

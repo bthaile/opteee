@@ -12,6 +12,11 @@ def _default_provider() -> str:
     return os.getenv("LLM_PROVIDER", "claude")
 
 
+def _default_effort() -> str:
+    effort = os.getenv("DEFAULT_EFFORT", "low").strip().lower()
+    return effort if effort in {"low", "medium"} else "low"
+
+
 class ConversationMessage(BaseModel):
     """Model for individual conversation messages"""
     role: str = Field(..., description="Message role: 'user' or 'assistant'", pattern="^(user|assistant)$")
@@ -22,6 +27,8 @@ class ChatRequest(BaseModel):
     """Request model for chat endpoint"""
     query: str = Field(..., description="User's question", min_length=1)
     provider: str = Field(default_factory=_default_provider, description="LLM provider (openai, claude, ollama)")
+    model: Optional[str] = Field(default=None, description="Optional exact model override")
+    effort: str = Field(default_factory=_default_effort, description="Model effort tier: 'low' or 'medium'", pattern="^(low|medium)$")
     num_results: int = Field(default=10, description="Number of search results to retrieve", ge=1, le=20)
     format: str = Field(
         default="html",
@@ -70,6 +77,16 @@ class Source(BaseModel):
 # Backwards compatibility alias
 VideoSource = Source
 
+class TokenUsage(BaseModel):
+    """Model/provider usage metrics for a chat response"""
+    provider: Optional[str] = Field(default=None, description="LLM provider used for the final answer")
+    model: Optional[str] = Field(default=None, description="Resolved model used for the final answer")
+    effort: Optional[str] = Field(default=None, description="Resolved effort tier used for the final answer")
+    prompt_tokens: int = Field(default=0, description="Input/prompt tokens consumed")
+    completion_tokens: int = Field(default=0, description="Output/completion tokens consumed")
+    total_tokens: int = Field(default=0, description="Total tokens consumed")
+
+
 class ChatResponse(BaseModel):
     """Response model for chat endpoint"""
     answer: str = Field(..., description="RAG-generated answer")
@@ -77,6 +94,7 @@ class ChatResponse(BaseModel):
     raw_sources: List[Dict[str, Any]] = Field(default=[], description="Raw source data (video and PDF)")
     timestamp: str = Field(..., description="Response timestamp")
     conversation_id: Optional[str] = Field(default=None, description="Conversation ID for this chat")
+    token_usage: Optional[TokenUsage] = Field(default=None, description="Provider/model token usage for this answer")
 
 class HealthResponse(BaseModel):
     """Response model for health check endpoint"""

@@ -20,7 +20,7 @@ class ResponseFormatter:
             "bot": JsonFormatter(),
         }
     
-    def format_response(self, answer: str, sources: List[Dict], format_type: str = "html") -> Dict[str, Any]:
+    def format_response(self, answer: str, sources: List[Dict], format_type: str = "html", token_usage: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         """
         Format the response based on the requested format type
         
@@ -28,18 +28,19 @@ class ResponseFormatter:
             answer: The RAG-generated answer
             sources: List of source documents
             format_type: Format type ("html", "json", or "bot")
+            token_usage: Optional provider/model token usage metadata
             
         Returns:
             Dictionary with formatted_content and format
         """
         formatter = self.formatters.get(format_type.lower(), self.formatters["html"])
-        return formatter.format(answer, sources)
+        return formatter.format(answer, sources, token_usage=token_usage)
 
 
 class HtmlFormatter:
     """HTML formatter - maintains existing web UI formatting"""
     
-    def format(self, answer: str, sources: List[Dict]) -> Dict[str, Any]:
+    def format(self, answer: str, sources: List[Dict], token_usage: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         """Format response for web UI (HTML)"""
         # Process markdown but keep structure simple for frontend compatibility
         formatted_answer = self._process_markdown_simple(answer)
@@ -56,7 +57,8 @@ class HtmlFormatter:
                 "formatted_content": {
                     "answer": formatted_answer,
                     "sources": "",
-                    "raw_sources": []
+                    "raw_sources": [],
+                    "token_usage": token_usage,
                 },
                 "format": "html"
             }
@@ -258,10 +260,12 @@ class HtmlFormatter:
             "formatted_content": {
                 "answer": formatted_answer,
                 "sources": sources_content,
-                "raw_sources": highlighted_sources
+                "raw_sources": highlighted_sources,
+                "token_usage": token_usage,
             },
             "format": "html"
         }
+
     
     def _process_markdown_simple(self, text: str) -> str:
         """
@@ -479,7 +483,7 @@ class HtmlFormatter:
 class JsonFormatter:
     """JSON formatter - plain text answer plus structured source objects"""
 
-    def format(self, answer: str, sources: List[Dict]) -> Dict[str, Any]:
+    def format(self, answer: str, sources: List[Dict], token_usage: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         plain_answer = self._to_plain_text(answer)
         normalized_sources = [self._normalize_source(source) for source in sources]
 
@@ -489,6 +493,7 @@ class JsonFormatter:
                 # Keep string field machine-friendly while preserving schema compatibility.
                 "sources": json.dumps(normalized_sources, ensure_ascii=True),
                 "raw_sources": normalized_sources,
+                "token_usage": token_usage,
             },
             "format": "json",
         }
@@ -533,7 +538,7 @@ class JsonFormatter:
 class BotFormatter:
     """Bot formatter - converts mixed HTML/text into bot-friendly markdown"""
     
-    def format(self, answer: str, sources: List[Dict]) -> Dict[str, Any]:
+    def format(self, answer: str, sources: List[Dict], token_usage: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         """Format response for bots (plain text with markdown)"""
         # Convert HTML answer to bot-friendly markdown
         formatted_answer = self._format_answer_for_bot(answer)
@@ -545,7 +550,8 @@ class BotFormatter:
             "formatted_content": {
                 "answer": formatted_answer,
                 "sources": "",  # Bots generally don't use HTML sources
-                "raw_sources": sources
+                "raw_sources": sources,
+                "token_usage": token_usage,
             },
             "format": "bot"
         }

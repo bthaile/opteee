@@ -13,12 +13,15 @@ from rag_pipeline import (
     create_rag_chain,
     run_rag_query,
     invoke_chain_with_timeout,
+    extract_answer_text,
+    extract_token_usage,
     get_available_providers,
     _get_provider,
     _get_fallback_providers,
     _get_timeout_seconds,
     _get_model_for_provider,
     _is_model_not_found_error,
+    resolve_llm_selection,
     OLLAMA_FALLBACK_MODELS,
     DEFAULT_TOP_K
 )
@@ -63,18 +66,29 @@ class RAGService:
         available_providers = get_available_providers()
         for provider in available_providers:
             try:
-                _, chain = create_rag_chain(self.retriever, provider=provider)
-                self.provider_chains[provider] = chain
-                print(f" Initialized chain for {provider}")
+                model = _get_model_for_provider(provider)
+                _, chain = create_rag_chain(self.retriever, provider=provider, llm_model=model)
+                self.provider_chains[(provider, model)] = chain
+                print(f" Initialized chain for {provider} ({model})")
             except Exception as e:
                 print(f"❌ Failed to initialize {provider} chain: {e}")
+
+    def _get_or_create_chain(self, provider: str, model: str):
+        cache_key = (provider, model)
+        if cache_key not in self.provider_chains:
+            _, chain = create_rag_chain(self.retriever, provider=provider, llm_model=model)
+            self.provider_chains[cache_key] = chain
+        return self.provider_chains[cache_key]
     
-    async def process_query(self, query: str, provider: str = None, num_results: int = 10, format: str = "html", conversation_history: Optional[List[ConversationMessage]] = None) -> Dict[str, Any]:
+    async def process_query(self, query: str, provider: Optional[str] = None, model: Optional[str] = None, effort: Optional[str] = None, num_results: int = 10, format: str = "html", conversation_history: Optional[List[ConversationMessage]] = None) -> Dict[str, Any]:
         """
         Process a user query and return formatted response
         Now supports conversation history for context
         """
-        provider = provider or _get_provider()
+        selection = resolve_llm_selection(provider=provider, model=model, effort=effort)
+        primary_provider = selection["provider"]
+        primary_model = selection["model"]
+        resolved_effort = selection["effort"]
         if not self.initialized:
             raise RuntimeError("RAG service not initialized")
         
@@ -83,7 +97,15 @@ class RAGService:
             return {
                 "answer": "",
                 "sources": "",
-                "raw_sources": []
+                "raw_sources": [],
+                "token_usage": {
+                    "provider": primary_provider,
+                    "model": primary_model,
+                    "effort": resolved_effort,
+                    "prompt_tokens": 0,
+                    "completion_tokens": 0,
+                    "total_tokens": 0,
+                },
             }
         
         try:
@@ -91,51 +113,74 @@ class RAGService:
             self.retriever.top_k = num_results
 
             timeout = _get_timeout_seconds()
-            providers_to_try = [provider] + _get_fallback_providers(provider)
+            providers_to_try = [primary_provider] + _get_fallback_providers(primary_provider)
             last_error = None
 
             for p in providers_to_try:
-                if p not in self.provider_chains:
-                    continue
-                chain = self.provider_chains[p]
+                provider_model = primary_model if p == primary_provider else _get_model_for_provider(p, effort=resolved_effort)
                 try:
+                    chain = self._get_or_create_chain(p, provider_model)
                     if conversation_history and len(conversation_history) > 0:
                         result = self._run_rag_query_with_context(
-                            self.retriever, chain, query, conversation_history, timeout=timeout
+                            self.retriever,
+                            chain,
+                            query,
+                            conversation_history,
+                            timeout=timeout,
+                            provider=p,
+                            model=provider_model,
+                            effort=resolved_effort,
                         )
                     else:
-                        result = run_rag_query(self.retriever, chain, query, timeout=timeout)
-                    if p != provider:
-                        print(f" Fallback: used {p} after primary timed out")
+                        result = run_rag_query(
+                            self.retriever,
+                            chain,
+                            query,
+                            timeout=timeout,
+                            provider=p,
+                            model=provider_model,
+                            effort=resolved_effort,
+                        )
+                    if p != primary_provider:
+                        print(f" Fallback: used {p} ({provider_model}) after primary {primary_provider} ({primary_model}) timed out")
                     break
                 except TimeoutError as e:
                     last_error = e
-                    print(f" Provider {p} timed out ({timeout}s), trying fallback...")
+                    print(f" Provider {p} ({provider_model}) timed out ({timeout}s), trying fallback...")
                     continue
                 except Exception as e:
                     last_error = e
                     # Model not found (404) for Ollama: try fallback models before next provider
                     if p == "ollama" and _is_model_not_found_error(e):
                         result = self._try_ollama_model_fallbacks(
-                            query, conversation_history, timeout, provider
+                            query, conversation_history, timeout, primary_provider, resolved_effort
                         )
                         if result is not None:
                             break
-                    print(f" Provider {p} failed: {e}, trying fallback...")
+                    print(f" Provider {p} ({provider_model}) failed: {e}, trying fallback...")
                     continue
             else:
                 error_msg = f"❌ All providers failed. Last error: {last_error}"
                 return {
                     "answer": error_msg,
                     "sources": "",
-                    "raw_sources": []
+                    "raw_sources": [],
+                    "token_usage": {
+                        "provider": primary_provider,
+                        "model": primary_model,
+                        "effort": resolved_effort,
+                        "prompt_tokens": 0,
+                        "completion_tokens": 0,
+                        "total_tokens": 0,
+                    },
                 }
             
             # Format the response using the new formatter
             formatted_result = self.formatter.format_response(
                 result.get('answer', ''),
                 result.get('sources', []),
-                format_type=format
+                format_type=format,
+                token_usage=result.get('token_usage'),
             )
             
             formatted_response = formatted_result["formatted_content"]
@@ -143,7 +188,8 @@ class RAGService:
             return {
                 "answer": formatted_response["answer"],
                 "sources": formatted_response["sources"],
-                "raw_sources": formatted_response["raw_sources"]
+                "raw_sources": formatted_response["raw_sources"],
+                "token_usage": formatted_response.get("token_usage"),
             }
             
         except Exception as e:
@@ -151,16 +197,23 @@ class RAGService:
             return {
                 "answer": error_msg,  # Return raw error message - frontend will wrap it
                 "sources": "",
-                "raw_sources": []
+                "raw_sources": [],
+                "token_usage": {
+                    "provider": primary_provider,
+                    "model": primary_model,
+                    "effort": resolved_effort,
+                    "prompt_tokens": 0,
+                    "completion_tokens": 0,
+                    "total_tokens": 0,
+                },
             }
     
-    def _run_rag_query_with_context(self, retriever, chain, query: str, conversation_history: List[ConversationMessage], timeout: int = 60) -> Dict[str, Any]:
+    def _run_rag_query_with_context(self, retriever, chain, query: str, conversation_history: List[ConversationMessage], timeout: int = 60, provider: Optional[str] = None, model: Optional[str] = None, effort: Optional[str] = None) -> Dict[str, Any]:
         """
         Run a RAG query with conversation history context
         This creates a modified prompt that includes conversation history
         """
         from langchain.prompts import ChatPromptTemplate
-        from langchain.schema.output_parser import StrOutputParser
         from langchain.schema.runnable import RunnablePassthrough
         from rag_pipeline import format_documents
         from config import SYSTEM_PROMPT
@@ -171,7 +224,15 @@ class RAGService:
         if not docs:
             return {
                 "answer": "",  # Return empty - let frontend handle no results messaging
-                "sources": []
+                "sources": [],
+                "token_usage": {
+                    "provider": provider,
+                    "model": model,
+                    "effort": effort,
+                    "prompt_tokens": 0,
+                    "completion_tokens": 0,
+                    "total_tokens": 0,
+                },
             }
         
         # Format conversation history for the prompt
@@ -199,7 +260,9 @@ Please answer the current question considering the conversation history above. R
 Current question: {query}"""
 
         # Use the existing chain but with enhanced query that includes context (with timeout)
-        answer = invoke_chain_with_timeout(chain, enhanced_query, timeout=timeout)
+        response = invoke_chain_with_timeout(chain, enhanced_query, timeout=timeout)
+        answer = extract_answer_text(response)
+        token_usage = extract_token_usage(response, provider=provider, model=model, effort=effort)
         
         # Extract sources (maintaining order) - same as run_rag_query
         sources = []
@@ -255,7 +318,8 @@ Current question: {query}"""
         
         return {
             "answer": answer,
-            "sources": sources
+            "sources": sources,
+            "token_usage": token_usage,
         }
     
     def _try_ollama_model_fallbacks(
@@ -263,13 +327,14 @@ Current question: {query}"""
         query: str,
         conversation_history: Optional[List[ConversationMessage]],
         timeout: int,
-        primary_provider: str
+        primary_provider: str,
+        effort: Optional[str]
     ) -> Optional[Dict[str, Any]]:
         """
         When primary Ollama model returns 404, try fallback models before giving up.
         Returns result dict if successful, None otherwise.
         """
-        primary_model = _get_model_for_provider("ollama")
+        primary_model = _get_model_for_provider("ollama", effort=effort)
         fallbacks = [
             m.strip() for m in
             (os.getenv("OLLAMA_FALLBACK_MODELS") or "").split(",")
@@ -287,10 +352,25 @@ Current question: {query}"""
                 )
                 if conversation_history and len(conversation_history) > 0:
                     result = self._run_rag_query_with_context(
-                        self.retriever, chain, query, conversation_history, timeout=timeout
+                        self.retriever,
+                        chain,
+                        query,
+                        conversation_history,
+                        timeout=timeout,
+                        provider="ollama",
+                        model=fallback_model,
+                        effort=effort,
                     )
                 else:
-                    result = run_rag_query(self.retriever, chain, query, timeout=timeout)
+                    result = run_rag_query(
+                        self.retriever,
+                        chain,
+                        query,
+                        timeout=timeout,
+                        provider="ollama",
+                        model=fallback_model,
+                        effort=effort,
+                    )
                 print(f" Fallback: used Ollama model {fallback_model} (primary {primary_model} not found)")
                 return result
             except (TimeoutError, Exception) as err:

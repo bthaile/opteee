@@ -1,0 +1,1877 @@
+2.12s: What's up everyone? Welcome back to the
+3.60s: What's up everyone? Welcome back to the options trench with Chris and I where we
+5.79s: options trench with Chris and I where we
+5.80s: options trench with Chris and I where we are picking up exactly 1 hour and 30
+9.07s: are picking up exactly 1 hour and 30
+9.08s: are picking up exactly 1 hour and 30 minutes after we initially started this
+11.19s: minutes after we initially started this
+11.20s: minutes after we initially started this call and have been talking
+13.39s: call and have been talking
+13.40s: call and have been talking about a really interesting topic. You
+15.51s: about a really interesting topic. You
+15.52s: about a really interesting topic. You likely will have seen it floating around
+17.43s: likely will have seen it floating around
+17.44s: likely will have seen it floating around on X on social media and we want to talk
+19.35s: on X on social media and we want to talk
+19.36s: on X on social media and we want to talk a little bit about GEX Delta
+21.91s: a little bit about GEX Delta
+21.92s: a little bit about GEX Delta GEX Delta exposure is what I was
+24.11s: GEX Delta exposure is what I was
+24.12s: GEX Delta exposure is what I was apparently combining both of them. Gamma
+26.55s: apparently combining both of them. Gamma
+26.56s: apparently combining both of them. Gamma exposure and DEX Delta exposure.
+31.79s: exposure and DEX Delta exposure.
+31.80s: exposure and DEX Delta exposure. In trading and in markets, there's a
+35.83s: In trading and in markets, there's a
+35.84s: In trading and in markets, there's a really interesting process that happens
+38.83s: really interesting process that happens
+38.84s: really interesting process that happens with different kinds of signals.
+41.71s: with different kinds of signals.
+41.72s: with different kinds of signals. You'll see people will try to build and
+44.59s: You'll see people will try to build and
+44.60s: You'll see people will try to build and develop all different kinds of signals.
+46.99s: develop all different kinds of signals.
+47.00s: develop all different kinds of signals. Some of them will stick, some of them
+48.99s: Some of them will stick, some of them
+49.00s: Some of them will stick, some of them won't. And this is an interesting one
+51.95s: won't. And this is an interesting one
+51.96s: won't. And this is an interesting one because it's one that I went really
+54.15s: because it's one that I went really
+54.16s: because it's one that I went really really deep on probably like I don't
+56.47s: really deep on probably like I don't
+56.48s: really deep on probably like I don't know 5 10 [clears throat] years ago
+58.51s: know 5 10 [clears throat] years ago
+58.52s: know 5 10 [clears throat] years ago and I haven't thought too much about it
+61.31s: and I haven't thought too much about it
+61.32s: and I haven't thought too much about it since besides a few very specific
+64.31s: since besides a few very specific
+64.32s: since besides a few very specific strategies that I use
+66.35s: strategies that I use
+66.36s: strategies that I use that they might be an input to
+68.99s: that they might be an input to
+69.00s: that they might be an input to and other than that though, not a whole
+72.07s: and other than that though, not a whole
+72.08s: and other than that though, not a whole lot and there's like this massive
+73.91s: lot and there's like this massive
+73.92s: lot and there's like this massive resurgence on how people can use GEX and
+78.67s: resurgence on how people can use GEX and
+78.68s: resurgence on how people can use GEX and DEX to effectively predict the future.
+81.83s: DEX to effectively predict the future.
+81.84s: DEX to effectively predict the future. Like that's that's the general promise
+85.71s: Like that's that's the general promise
+85.72s: Like that's that's the general promise that is floating around to varying
+87.55s: that is floating around to varying
+87.56s: that is floating around to varying degrees of strength. So Chris and I we
+90.15s: degrees of strength. So Chris and I we
+90.16s: degrees of strength. So Chris and I we thought it would be a fun conversation
+92.27s: thought it would be a fun conversation
+92.28s: thought it would be a fun conversation to talk about first
+94.47s: to talk about first
+94.48s: to talk about first just what they are, how they behave,
+96.87s: just what they are, how they behave,
+96.88s: just what they are, how they behave, some of the assumptions that are baked
+98.55s: some of the assumptions that are baked
+98.56s: some of the assumptions that are baked into them
+99.71s: into them
+99.72s: into them the strengths and limitations of each
+102.95s: the strengths and limitations of each
+102.96s: the strengths and limitations of each and we want to wrap all that up to give
+106.31s: and we want to wrap all that up to give
+106.32s: and we want to wrap all that up to give you some ideas on how you could even
+108.67s: you some ideas on how you could even
+108.68s: you some ideas on how you could even attempt to explore the tools and see if
+111.47s: attempt to explore the tools and see if
+111.48s: attempt to explore the tools and see if there's any potential use case in your
+113.75s: there's any potential use case in your
+113.76s: there's any potential use case in your world whether it's a direct signal,
+115.87s: world whether it's a direct signal,
+115.88s: world whether it's a direct signal, indirect signal. So,
+118.83s: indirect signal. So,
+118.84s: indirect signal. So, Chris, do you want to start with just
+121.59s: Chris, do you want to start with just
+121.60s: Chris, do you want to start with just like a quick overview of GEX and DEX,
+125.87s: like a quick overview of GEX and DEX,
+125.88s: like a quick overview of GEX and DEX, and then we can dive in from there?
+129.07s: and then we can dive in from there?
+129.08s: and then we can dive in from there? Yeah, I think let's let's just start
+130.55s: Yeah, I think let's let's just start
+130.56s: Yeah, I think let's let's just start with what the um what the whole
+133.35s: with what the um what the whole
+133.36s: with what the um what the whole uh overarching principle behind this is.
+136.31s: uh overarching principle behind this is.
+136.32s: uh overarching principle behind this is. The idea is that uh
+138.71s: The idea is that uh
+138.72s: The idea is that uh in the market
+140.43s: in the market
+140.44s: in the market there's a oh in general
+142.79s: there's a oh in general
+142.80s: there's a oh in general um customers, clients, money managers,
+146.27s: um customers, clients, money managers,
+146.28s: um customers, clients, money managers, retail, just in general
+148.71s: retail, just in general
+148.72s: retail, just in general um
+149.91s: um
+149.92s: um there is uh people that use options tend
+152.71s: there is uh people that use options tend
+152.72s: there is uh people that use options tend to be net sellers of out of the money
+155.11s: to be net sellers of out of the money
+155.12s: to be net sellers of out of the money calls. Um usually like a like um cuz
+158.55s: calls. Um usually like a like um cuz
+158.56s: calls. Um usually like a like um cuz covered covered call overwriting is very
+160.43s: covered covered call overwriting is very
+160.44s: covered covered call overwriting is very popular. Um and then they tend to buy
+163.79s: popular. Um and then they tend to buy
+163.80s: popular. Um and then they tend to buy puts to protect themselves, to protect
+165.99s: puts to protect themselves, to protect
+166.00s: puts to protect themselves, to protect their portfolios. So, on balance
+169.43s: their portfolios. So, on balance
+169.44s: their portfolios. So, on balance um it's like the world is a seller of
+171.79s: um it's like the world is a seller of
+171.80s: um it's like the world is a seller of calls and a buyer of puts.
+174.27s: calls and a buyer of puts.
+174.28s: calls and a buyer of puts. So, market makers um
+177.67s: So, market makers um
+177.68s: So, market makers um on net are taking the they have to be
+180.31s: on net are taking the they have to be
+180.32s: on net are taking the they have to be taking the opposite side of that cuz
+182.35s: taking the opposite side of that cuz
+182.36s: taking the opposite side of that cuz that their job is liquidity provision,
+184.19s: that their job is liquidity provision,
+184.20s: that their job is liquidity provision, so that's the where the imbalance is.
+185.79s: so that's the where the imbalance is.
+185.80s: so that's the where the imbalance is. So, market makers the the idea is that
+188.19s: So, market makers the the idea is that
+188.20s: So, market makers the the idea is that market makers are net long calls and
+189.75s: market makers are net long calls and
+189.76s: market makers are net long calls and they're net short puts.
+191.39s: they're net short puts.
+191.40s: they're net short puts. And the other So, that's a major
+193.63s: And the other So, that's a major
+193.64s: And the other So, that's a major assumption is that the market is that
+195.47s: assumption is that the market is that
+195.48s: assumption is that the market is that market makers have these positions. Um
+198.31s: market makers have these positions. Um
+198.32s: market makers have these positions. Um and the second major assumption is that
+200.59s: and the second major assumption is that
+200.60s: and the second major assumption is that uh market makers or dealers as they're
+203.63s: uh market makers or dealers as they're
+203.64s: uh market makers or dealers as they're often called are uh delta neutral. They
+206.63s: often called are uh delta neutral. They
+206.64s: often called are uh delta neutral. They are hedged. So, um if they are buying
+209.99s: are hedged. So, um if they are buying
+210.00s: are hedged. So, um if they are buying calls, their job is not to speculate on
+213.67s: calls, their job is not to speculate on
+213.68s: calls, their job is not to speculate on the index rising in price. Um they're
+216.67s: the index rising in price. Um they're
+216.68s: the index rising in price. Um they're just trying to buy the options for a
+218.19s: just trying to buy the options for a
+218.20s: just trying to buy the options for a price that they like the volatility of.
+220.91s: price that they like the volatility of.
+220.92s: price that they like the volatility of. So, what they're doing is they're buying
+222.39s: So, what they're doing is they're buying
+222.40s: So, what they're doing is they're buying the calls and then they're shorting the
+223.71s: the calls and then they're shorting the
+223.72s: the calls and then they're shorting the stock. Likewise, on the put side, if
+226.55s: stock. Likewise, on the put side, if
+226.56s: stock. Likewise, on the put side, if they're selling the puts um they need to
+229.27s: they're selling the puts um they need to
+229.28s: they're selling the puts um they need to sell the stock in order to hedge their
+231.67s: sell the stock in order to hedge their
+231.68s: sell the stock in order to hedge their short puts. So, overall, the market
+233.87s: short puts. So, overall, the market
+233.88s: short puts. So, overall, the market makers are long call, short put,
+237.03s: makers are long call, short put,
+237.04s: makers are long call, short put, and short the underlying. And that is
+239.51s: and short the underlying. And that is
+239.52s: and short the underlying. And that is that is the basic presumption of this is
+241.71s: that is the basic presumption of this is
+241.72s: that is the basic presumption of this is that they are running
+243.75s: that they are running
+243.76s: that they are running uh market neutral positions, but they
+246.43s: uh market neutral positions, but they
+246.44s: uh market neutral positions, but they are long upside options and they're
+248.03s: are long upside options and they're
+248.04s: are long upside options and they're short downside options.
+251.27s: short downside options.
+251.28s: short downside options. And if we think about at a really high
+255.11s: And if we think about at a really high
+255.12s: And if we think about at a really high level, what the implication of a tool
+258.91s: level, what the implication of a tool
+258.92s: level, what the implication of a tool that or just a signal, I should say,
+262.31s: that or just a signal, I should say,
+262.32s: that or just a signal, I should say, that shows that to us.
+265.03s: that shows that to us.
+265.04s: that shows that to us. Just at a intuitive level,
+268.27s: Just at a intuitive level,
+268.28s: Just at a intuitive level, how do we use it? What's the so what?
+270.91s: how do we use it? What's the so what?
+270.92s: how do we use it? What's the so what? Yep. So, the idea here is that uh
+274.11s: Yep. So, the idea here is that uh
+274.12s: Yep. So, the idea here is that uh because we know that market makers want
+276.99s: because we know that market makers want
+277.00s: because we know that market makers want to be market neutral, that they are
+279.71s: to be market neutral, that they are
+279.72s: to be market neutral, that they are going to continue to hedge as the market
+282.07s: going to continue to hedge as the market
+282.08s: going to continue to hedge as the market moves around. An option
+283.95s: moves around. An option
+283.96s: moves around. An option uh prices
+285.63s: uh prices
+285.64s: uh prices um and their deltas,
+287.43s: um and their deltas,
+287.44s: um and their deltas, most importantly from a risk management
+289.27s: most importantly from a risk management
+289.28s: most importantly from a risk management point of view,
+290.43s: point of view,
+290.44s: point of view, um an option's delta changes
+293.39s: um an option's delta changes
+293.40s: um an option's delta changes as the stock goes higher,
+296.11s: as the stock goes higher,
+296.12s: as the stock goes higher, um lower, or as time passes. So,
+300.43s: um lower, or as time passes. So,
+300.44s: um lower, or as time passes. So, if the market goes up or down, and the
+302.59s: if the market goes up or down, and the
+302.60s: if the market goes up or down, and the option delta changes, and we can just
+304.75s: option delta changes, and we can just
+304.76s: option delta changes, and we can just just simple example is if you have a 50
+306.75s: just simple example is if you have a 50
+306.76s: just simple example is if you have a 50 delta call, meaning like something
+308.43s: delta call, meaning like something
+308.44s: delta call, meaning like something that's roughly at the money, if you own
+310.55s: that's roughly at the money, if you own
+310.56s: that's roughly at the money, if you own an at the money call,
+312.19s: an at the money call,
+312.20s: an at the money call, and the stock goes up, you know, 10%,
+314.99s: and the stock goes up, you know, 10%,
+315.00s: and the stock goes up, you know, 10%, that call is now going to be 10% in the
+317.11s: that call is now going to be 10% in the
+317.12s: that call is now going to be 10% in the money, and it's going to have a much
+318.15s: money, and it's going to have a much
+318.16s: money, and it's going to have a much higher delta.
+319.47s: higher delta.
+319.48s: higher delta. So, in order to stay delta neutral, or
+322.47s: So, in order to stay delta neutral, or
+322.48s: So, in order to stay delta neutral, or market neutral, as the stock goes up, uh
+325.47s: market neutral, as the stock goes up, uh
+325.48s: market neutral, as the stock goes up, uh the market maker needs to mechanically
+327.47s: the market maker needs to mechanically
+327.48s: the market maker needs to mechanically sell shares
+328.95s: sell shares
+328.96s: sell shares to maintain delta neutrality.
+331.51s: to maintain delta neutrality.
+331.52s: to maintain delta neutrality. The other So, that's
+333.23s: The other So, that's
+333.24s: The other So, that's one important fact is that as the market
+335.67s: one important fact is that as the market
+335.68s: one important fact is that as the market moves around, the option deltas change.
+337.83s: moves around, the option deltas change.
+337.84s: moves around, the option deltas change. That's we've talked about this before.
+339.75s: That's we've talked about this before.
+339.76s: That's we've talked about this before. That's known as gamma.
+341.87s: That's known as gamma.
+341.88s: That's known as gamma. The other uh reason why the delta of the
+344.35s: The other uh reason why the delta of the
+344.36s: The other uh reason why the delta of the options change is simply the passage of
+346.27s: options change is simply the passage of
+346.28s: options change is simply the passage of time.
+347.23s: time.
+347.24s: time. So, um
+348.83s: So, um
+348.84s: So, um for example,
+350.71s: for example,
+350.72s: for example, let's say that uh
+352.59s: let's say that uh
+352.60s: let's say that uh I own a 10% out-of-the-money call
+355.51s: I own a 10% out-of-the-money call
+355.52s: I own a 10% out-of-the-money call that expires in a month,
+357.63s: that expires in a month,
+357.64s: that expires in a month, and I'm hedged with short shares.
+360.31s: and I'm hedged with short shares.
+360.32s: and I'm hedged with short shares. Well, let's fast forward until the day
+362.55s: Well, let's fast forward until the day
+362.56s: Well, let's fast forward until the day before expiration.
+364.59s: before expiration.
+364.60s: before expiration. If the stock has not moved at all,
+368.55s: If the stock has not moved at all,
+368.56s: If the stock has not moved at all, then there's no delta coming from those
+370.67s: then there's no delta coming from those
+370.68s: then there's no delta coming from those calls anymore. So, those long deltas
+372.55s: calls anymore. So, those long deltas
+372.56s: calls anymore. So, those long deltas that I have from those calls, they've
+374.63s: that I have from those calls, they've
+374.64s: that I have from those calls, they've they've basically went away over time as
+377.03s: they've basically went away over time as
+377.04s: they've basically went away over time as time has passed. However, I'm still
+379.15s: time has passed. However, I'm still
+379.16s: time has passed. However, I'm still short stock because I've been short
+381.43s: short stock because I've been short
+381.44s: short stock because I've been short stock against them to be delta neutral.
+383.31s: stock against them to be delta neutral.
+383.32s: stock against them to be delta neutral. So,
+384.27s: So,
+384.28s: So, I need to buy my stock back. Actually,
+386.43s: I need to buy my stock back. Actually,
+386.44s: I need to buy my stock back. Actually, I've needed to really been buying it
+388.15s: I've needed to really been buying it
+388.16s: I've needed to really been buying it back in small increments all month long
+391.71s: back in small increments all month long
+391.72s: back in small increments all month long to maintain my delta neutrality cuz the
+393.83s: to maintain my delta neutrality cuz the
+393.84s: to maintain my delta neutrality cuz the delta of that option has been decaying
+395.95s: delta of that option has been decaying
+395.96s: delta of that option has been decaying over the month.
+397.15s: over the month.
+397.16s: over the month. So, we can say that uh
+400.63s: So, we can say that uh
+400.64s: So, we can say that uh the fact that the delta is that I
+402.71s: the fact that the delta is that I
+402.72s: the fact that the delta is that I mechanically need to be buying stock
+406.15s: mechanically need to be buying stock
+406.16s: mechanically need to be buying stock to hedge my delta that is going away.
+410.51s: to hedge my delta that is going away.
+410.52s: to hedge my delta that is going away. That effect is known as The amount of
+412.75s: That effect is known as The amount of
+412.76s: That effect is known as The amount of stock that I need to buy is known as
+414.59s: stock that I need to buy is known as
+414.60s: stock that I need to buy is known as charm because that is the amount that my
+416.75s: charm because that is the amount that my
+416.76s: charm because that is the amount that my delta is changing simply due to the
+419.23s: delta is changing simply due to the
+419.24s: delta is changing simply due to the passage of time. So, you have gamma
+422.35s: passage of time. So, you have gamma
+422.36s: passage of time. So, you have gamma isolates how much the delta changes as
+424.35s: isolates how much the delta changes as
+424.36s: isolates how much the delta changes as the stock moves.
+425.91s: the stock moves.
+425.92s: the stock moves. Um charm isolates how much the delta
+428.59s: Um charm isolates how much the delta
+428.60s: Um charm isolates how much the delta moves uh as time passes. And then, of
+431.47s: moves uh as time passes. And then, of
+431.48s: moves uh as time passes. And then, of course,
+432.87s: course,
+432.88s: course, in a typical day, uh the stock moves
+435.27s: in a typical day, uh the stock moves
+435.28s: in a typical day, uh the stock moves Stocks move and uh time passes, and so
+439.39s: Stocks move and uh time passes, and so
+439.40s: Stocks move and uh time passes, and so uh
+440.27s: uh
+440.28s: uh you know, both of these effects are like
+441.71s: you know, both of these effects are like
+441.72s: you know, both of these effects are like crosscurrents in the sea, right? They're
+443.59s: crosscurrents in the sea, right? They're
+443.60s: crosscurrents in the sea, right? They're they're they're um they're both
+445.47s: they're they're um they're both
+445.48s: they're they're um they're both happening at the same time, but um we
+447.75s: happening at the same time, but um we
+447.76s: happening at the same time, but um we can kind of pull them out separately and
+449.67s: can kind of pull them out separately and
+449.68s: can kind of pull them out separately and look at them individually, but they're
+451.11s: look at them individually, but they're
+451.12s: look at them individually, but they're sort of like the sum of both effects is
+453.43s: sort of like the sum of both effects is
+453.44s: sort of like the sum of both effects is kind of always in play.
+456.23s: kind of always in play.
+456.24s: kind of always in play. And this is something that you and I
+457.55s: And this is something that you and I
+457.56s: And this is something that you and I have talked about before actually on on
+460.19s: have talked about before actually on on
+460.20s: have talked about before actually on on my my own podcast, I had you on and we
+462.79s: my my own podcast, I had you on and we
+462.80s: my my own podcast, I had you on and we were talking a bit about these cuz
+464.35s: were talking a bit about these cuz
+464.36s: were talking a bit about these cuz they're they're really interesting and
+467.27s: they're they're really interesting and
+467.28s: they're they're really interesting and I think what would be useful is to talk
+470.67s: I think what would be useful is to talk
+470.68s: I think what would be useful is to talk a bit about some of the assumptions that
+475.71s: a bit about some of the assumptions that
+475.72s: a bit about some of the assumptions that are being made and then we can kind of
+478.95s: are being made and then we can kind of
+478.96s: are being made and then we can kind of dive in a little bit from there. So,
+481.31s: dive in a little bit from there. So,
+481.32s: dive in a little bit from there. So, what I'm going to do really quick is
+483.91s: what I'm going to do really quick is
+483.92s: what I'm going to do really quick is pull up a platform. They didn't sponsor
+487.11s: pull up a platform. They didn't sponsor
+487.12s: pull up a platform. They didn't sponsor this or anything. I'm I'm an affiliate
+488.51s: this or anything. I'm I'm an affiliate
+488.52s: this or anything. I'm I'm an affiliate for them, full disclosure, but I
+490.15s: for them, full disclosure, but I
+490.16s: for them, full disclosure, but I literally just use their stuff cuz it's
+492.15s: literally just use their stuff cuz it's
+492.16s: literally just use their stuff cuz it's it's good, which is Unusual Whales. And
+494.99s: it's good, which is Unusual Whales. And
+495.00s: it's good, which is Unusual Whales. And they have a a
+497.43s: they have a a
+497.44s: they have a a tool that walks through like GEX and DEX
+500.71s: tool that walks through like GEX and DEX
+500.72s: tool that walks through like GEX and DEX and all this stuff.
+502.07s: and all this stuff.
+502.08s: and all this stuff. And what I want to do is just give you
+504.11s: And what I want to do is just give you
+504.12s: And what I want to do is just give you like their their own description of what
+507.59s: like their their own description of what
+507.60s: like their their own description of what this thing is and I want to talk about
+510.67s: this thing is and I want to talk about
+510.68s: this thing is and I want to talk about some of the really key things that we
+513.31s: some of the really key things that we
+513.32s: some of the really key things that we have to pay attention to. Okay, so, spot
+515.79s: have to pay attention to. Okay, so, spot
+515.80s: have to pay attention to. Okay, so, spot gamma, the assumed dollar value of gamma
+519.71s: gamma, the assumed dollar value of gamma
+519.72s: gamma, the assumed dollar value of gamma that market makers need to hedge per 1%
+522.43s: that market makers need to hedge per 1%
+522.44s: that market makers need to hedge per 1% change in underlying price movement.
+525.15s: change in underlying price movement.
+525.16s: change in underlying price movement. Positive values long gamma, negative is
+527.91s: Positive values long gamma, negative is
+527.92s: Positive values long gamma, negative is short gamma, and this is where it gets
+531.39s: short gamma, and this is where it gets
+531.40s: short gamma, and this is where it gets a little detailed.
+532.87s: a little detailed.
+532.88s: a little detailed. Investors
+534.59s: Investors
+534.60s: Investors and large funds lower risk and protect
+537.35s: and large funds lower risk and protect
+537.36s: and large funds lower risk and protect their money by selling calls and buying
+540.67s: their money by selling calls and buying
+540.68s: their money by selling calls and buying puts.
+541.83s: puts.
+541.84s: puts. Market makers provide liquidity
+543.55s: Market makers provide liquidity
+543.56s: Market makers provide liquidity facilitate facilitate these trades.
+546.51s: facilitate facilitate these trades.
+546.52s: facilitate facilitate these trades. So, let's let's talk about that in and
+549.15s: So, let's let's talk about that in and
+549.16s: So, let's let's talk about that in and of itself.
+550.47s: of itself.
+550.48s: of itself. One of the things that we're saying with
+552.55s: One of the things that we're saying with
+552.56s: One of the things that we're saying with gamma or with GEX and DEX, the first
+555.47s: gamma or with GEX and DEX, the first
+555.48s: gamma or with GEX and DEX, the first thing we're saying as a base assumption
+558.55s: thing we're saying as a base assumption
+558.56s: thing we're saying as a base assumption is that dealers are the counterparty for
+562.19s: is that dealers are the counterparty for
+562.20s: is that dealers are the counterparty for all of these transactions. And as an
+565.03s: all of these transactions. And as an
+565.04s: all of these transactions. And as an assumption, I mean, it's probably not
+566.83s: assumption, I mean, it's probably not
+566.84s: assumption, I mean, it's probably not that far off. I the the the majority of
+569.59s: that far off. I the the the majority of
+569.60s: that far off. I the the the majority of these will fall into that kind of
+571.15s: these will fall into that kind of
+571.16s: these will fall into that kind of bucket. So, sure. I I think that that's
+573.39s: bucket. So, sure. I I think that that's
+573.40s: bucket. So, sure. I I think that that's probably pretty reasonable. I don't know
+574.79s: probably pretty reasonable. I don't know
+574.80s: probably pretty reasonable. I don't know your thoughts on that one specifically?
+578.80s: Uh so that that that assumption I think
+581.24s: Uh so that that that assumption I think the assumption by and large is um
+584.23s: the assumption by and large is um
+584.24s: the assumption by and large is um it's fairly low resolution, but I think
+585.95s: it's fairly low resolution, but I think
+585.96s: it's fairly low resolution, but I think it's okay as a general assumption. Um I
+588.83s: it's okay as a general assumption. Um I
+588.84s: it's okay as a general assumption. Um I think
+590.03s: think
+590.04s: think one thing that could be interesting is
+592.71s: one thing that could be interesting is
+592.72s: one thing that could be interesting is uh
+593.84s: uh there are times when
+596.11s: there are times when
+596.12s: there are times when calls are a little bit more expensive
+599.11s: calls are a little bit more expensive
+599.12s: calls are a little bit more expensive than they are historically relative to
+601.03s: than they are historically relative to
+601.04s: than they are historically relative to the at the money balls. Generally
+602.55s: the at the money balls. Generally
+602.56s: the at the money balls. Generally speaking, the way we kind of um
+605.55s: speaking, the way we kind of um
+605.56s: speaking, the way we kind of um one of the ways that we can think about
+607.87s: one of the ways that we can think about
+607.88s: one of the ways that we can think about the relative cheapness and expensiveness
+609.79s: the relative cheapness and expensiveness
+609.80s: the relative cheapness and expensiveness is of options is to look at
+612.55s: is of options is to look at
+612.56s: is of options is to look at uh how
+613.99s: uh how
+614.00s: uh how like a 25 delta call, for example.
+616.67s: like a 25 delta call, for example.
+616.68s: like a 25 delta call, for example. Which I have pulled up for anybody
+618.63s: Which I have pulled up for anybody
+618.64s: Which I have pulled up for anybody looking.
+619.83s: looking.
+619.84s: looking. Yeah, so this is a 25 delta call and
+621.99s: Yeah, so this is a 25 delta call and
+622.00s: Yeah, so this is a 25 delta call and that it's what percent of the at the
+624.67s: that it's what percent of the at the
+624.68s: that it's what percent of the at the money ball it trades at. So
+628.11s: money ball it trades at. So
+628.12s: money ball it trades at. So uh in the chart, as you can see like
+629.47s: uh in the chart, as you can see like
+629.48s: uh in the chart, as you can see like about a month ago, uh the 25 delta call,
+632.31s: about a month ago, uh the 25 delta call,
+632.32s: about a month ago, uh the 25 delta call, this is uh using 30-day constant
+634.47s: this is uh using 30-day constant
+634.48s: this is uh using 30-day constant maturity S&amp;P. Um the at the money call,
+637.71s: maturity S&amp;P. Um the at the money call,
+637.72s: maturity S&amp;P. Um the at the money call, sorry, the 25 delta call was trading
+639.71s: sorry, the 25 delta call was trading
+639.72s: sorry, the 25 delta call was trading about 20% below the at the money ball,
+642.59s: about 20% below the at the money ball,
+642.60s: about 20% below the at the money ball, okay? So what that what does that mean?
+644.71s: okay? So what that what does that mean?
+644.72s: okay? So what that what does that mean? It says uh well, 20% discount to the at
+647.99s: It says uh well, 20% discount to the at
+648.00s: It says uh well, 20% discount to the at the money ball says if the at the money
+650.35s: the money ball says if the at the money
+650.36s: the money ball says if the at the money ball were uh say 20%, a 20% discount to
+654.27s: ball were uh say 20%, a 20% discount to
+654.28s: ball were uh say 20%, a 20% discount to that would mean that this option is
+656.43s: that would mean that this option is
+656.44s: that would mean that this option is trading at a 16 ball. So at a four ball
+659.11s: trading at a 16 ball. So at a four ball
+659.12s: trading at a 16 ball. So at a four ball point discount to the at the money ball.
+662.19s: point discount to the at the money ball.
+662.20s: point discount to the at the money ball. Now what's happened is over the last
+664.35s: Now what's happened is over the last
+664.36s: Now what's happened is over the last month,
+665.87s: month,
+665.88s: month, the cost skew has increased
+667.87s: the cost skew has increased
+667.88s: the cost skew has increased substantially. So it's it's almost
+670.15s: substantially. So it's it's almost
+670.16s: substantially. So it's it's almost halved, it's about uh let's call it -10%
+672.83s: halved, it's about uh let's call it -10%
+672.84s: halved, it's about uh let's call it -10% instead of -20%.
+674.99s: instead of -20%.
+675.00s: instead of -20%. So that means that relative to the at
+677.11s: So that means that relative to the at
+677.12s: So that means that relative to the at the money ball, assuming at the money
+678.67s: the money ball, assuming at the money
+678.68s: the money ball, assuming at the money ball is the same, 20,
+681.07s: ball is the same, 20,
+681.08s: ball is the same, 20, um this option is now being priced at a
+683.15s: um this option is now being priced at a
+683.16s: um this option is now being priced at a two ball discount only, a 10% discount.
+685.67s: two ball discount only, a 10% discount.
+685.68s: two ball discount only, a 10% discount. So it's a two uh 18 ball. So now it's an
+688.39s: So it's a two uh 18 ball. So now it's an
+688.40s: So it's a two uh 18 ball. So now it's an 18 ball um
+691.07s: 18 ball um
+691.08s: 18 ball um call and
+693.59s: call and
+693.60s: call and I think one way one way you could
+696.95s: I think one way one way you could
+696.96s: I think one way one way you could find some use here is to say, "Well, if
+699.99s: find some use here is to say, "Well, if
+700.00s: find some use here is to say, "Well, if we're assuming that dealers are long all
+703.63s: we're assuming that dealers are long all
+703.64s: we're assuming that dealers are long all the out-of-the-money calls,
+705.59s: the out-of-the-money calls,
+705.60s: the out-of-the-money calls, um
+706.64s: um I would expect that to be
+708.83s: I would expect that to be
+708.84s: I would expect that to be a more sturdy assumption in cases where
+712.19s: a more sturdy assumption in cases where
+712.20s: a more sturdy assumption in cases where the call skew was sort of like average
+715.23s: the call skew was sort of like average
+715.24s: the call skew was sort of like average level to very low.
+717.91s: level to very low.
+717.92s: level to very low. Because what pushes around the skew?
+721.15s: Because what pushes around the skew?
+721.16s: Because what pushes around the skew? What pushes around any price of an
+723.75s: What pushes around any price of an
+723.76s: What pushes around any price of an option relative relatively? Supply and
+726.43s: option relative relatively? Supply and
+726.44s: option relative relatively? Supply and demand.
+727.55s: demand.
+727.56s: demand. So, right now, we are actually in this
+730.23s: So, right now, we are actually in this
+730.24s: So, right now, we are actually in this very interesting situation where
+732.55s: very interesting situation where
+732.56s: very interesting situation where um
+733.60s: um call skews are historically expensive
+736.79s: call skews are historically expensive
+736.80s: call skews are historically expensive compared to how they tend to trade.
+739.31s: compared to how they tend to trade.
+739.32s: compared to how they tend to trade. So, and that's what's that what's
+741.55s: So, and that's what's that what's
+741.56s: So, and that's what's that what's happening there is that is a reflection
+743.59s: happening there is that is a reflection
+743.60s: happening there is that is a reflection of uh flows. It is
+746.99s: of uh flows. It is
+747.00s: of uh flows. It is it is
+747.91s: it is
+747.92s: it is uh investor demand to buy
+750.19s: uh investor demand to buy
+750.20s: uh investor demand to buy out-of-the-money calls.
+752.47s: out-of-the-money calls.
+752.48s: out-of-the-money calls. So, if the call skew gets expensive,
+755.47s: So, if the call skew gets expensive,
+755.48s: So, if the call skew gets expensive, we can say, "Well, it's probably getting
+757.51s: we can say, "Well, it's probably getting
+757.52s: we can say, "Well, it's probably getting expensive not just the market makers
+760.19s: expensive not just the market makers
+760.20s: expensive not just the market makers aren't making it expensive, it's because
+761.91s: aren't making it expensive, it's because
+761.92s: aren't making it expensive, it's because there's flows buying them from the
+763.43s: there's flows buying them from the
+763.44s: there's flows buying them from the market and the market makers have to
+764.63s: market and the market makers have to
+764.64s: market and the market makers have to raise their prices on them to satisfy
+766.99s: raise their prices on them to satisfy
+767.00s: raise their prices on them to satisfy the demand to buy the calls." So, what's
+769.91s: the demand to buy the calls." So, what's
+769.92s: the demand to buy the calls." So, what's happening is I would expect that that
+772.91s: happening is I would expect that that
+772.92s: happening is I would expect that that the market makers are less long than
+776.35s: the market makers are less long than
+776.36s: the market makers are less long than they typically are and probably less
+779.63s: they typically are and probably less
+779.64s: they typically are and probably less long those calls from the assumptions.
+782.35s: long those calls from the assumptions.
+782.36s: long those calls from the assumptions. They might even be short the calls.
+784.67s: They might even be short the calls.
+784.68s: They might even be short the calls. Right? So,
+786.03s: Right? So,
+786.04s: Right? So, the
+787.11s: the
+787.12s: the I think that the you can combine the
+789.15s: I think that the you can combine the
+789.16s: I think that the you can combine the assumption
+790.67s: assumption
+790.68s: assumption with the relative pricing of the calls
+793.67s: with the relative pricing of the calls
+793.68s: with the relative pricing of the calls of the skew to see if
+797.03s: of the skew to see if
+797.04s: of the skew to see if am I more or less confident about that
+799.35s: am I more or less confident about that
+799.36s: am I more or less confident about that assumption based upon what the supply
+802.07s: assumption based upon what the supply
+802.08s: assumption based upon what the supply and demand for the skew looks like. So,
+803.95s: and demand for the skew looks like. So,
+803.96s: and demand for the skew looks like. So, that's
+804.99s: that's
+805.00s: that's I I throw that in there because
+807.67s: I I throw that in there because
+807.68s: I I throw that in there because uh you know, I like I said, overall I
+809.99s: uh you know, I like I said, overall I
+810.00s: uh you know, I like I said, overall I think the assumption is probably okay,
+812.23s: think the assumption is probably okay,
+812.24s: think the assumption is probably okay, but there are times when it's probably
+814.19s: but there are times when it's probably
+814.20s: but there are times when it's probably not true at all. And it's hard to see
+817.59s: not true at all. And it's hard to see
+817.60s: not true at all. And it's hard to see that without actually looking about
+820.27s: that without actually looking about
+820.28s: that without actually looking about looking at the relative pricing of the
+822.03s: looking at the relative pricing of the
+822.04s: looking at the relative pricing of the options.
+824.19s: options.
+824.20s: options. It's It's a really important point, and
+827.03s: It's It's a really important point, and
+827.04s: It's It's a really important point, and the other thing to keep in mind is like
+828.99s: the other thing to keep in mind is like
+829.00s: the other thing to keep in mind is like the underlying that you're trading and
+831.83s: the underlying that you're trading and
+831.84s: the underlying that you're trading and what's going on in there. Because for,
+834.07s: what's going on in there. Because for,
+834.08s: what's going on in there. Because for, you know, something like spy, there
+835.63s: you know, something like spy, there
+835.64s: you know, something like spy, there might be a bunch of systematic
+837.19s: might be a bunch of systematic
+837.20s: might be a bunch of systematic strategies executing against it. You
+839.07s: strategies executing against it. You
+839.08s: strategies executing against it. You could think of things, you know, not
+840.91s: could think of things, you know, not
+840.92s: could think of things, you know, not exactly this, but similar in other big
+843.03s: exactly this, but similar in other big
+843.04s: exactly this, but similar in other big stocks, you know, that are targets of
+845.03s: stocks, you know, that are targets of
+845.04s: stocks, you know, that are targets of like JEPI or JEPQ or right? Like these
+847.63s: like JEPI or JEPQ or right? Like these
+847.64s: like JEPI or JEPQ or right? Like these big covered call funds. Like you could
+850.07s: big covered call funds. Like you could
+850.08s: big covered call funds. Like you could make some decent assumptions about those
+851.71s: make some decent assumptions about those
+851.72s: make some decent assumptions about those kind of underlying, but then there's a
+853.19s: kind of underlying, but then there's a
+853.20s: kind of underlying, but then there's a lot of other types of underlying where a
+856.43s: lot of other types of underlying where a
+856.44s: lot of other types of underlying where a lot of the the action that you see might
+859.63s: lot of the the action that you see might
+859.64s: lot of the the action that you see might not actually be customers that are
+862.63s: not actually be customers that are
+862.64s: not actually be customers that are selling to open, but actually buying to
+865.43s: selling to open, but actually buying to
+865.44s: selling to open, but actually buying to open, which just completely flips the
+868.51s: open, which just completely flips the
+868.52s: open, which just completely flips the dynamic that you see here. This is not
+870.95s: dynamic that you see here. This is not
+870.96s: dynamic that you see here. This is not to, you know, trash the tool or anything
+872.75s: to, you know, trash the tool or anything
+872.76s: to, you know, trash the tool or anything like that. This is literally to identify
+876.15s: like that. This is literally to identify
+876.16s: like that. This is literally to identify the assumptions and the impact of those
+878.03s: the assumptions and the impact of those
+878.04s: the assumptions and the impact of those assumptions cuz it's a massive
+879.55s: assumptions cuz it's a massive
+879.56s: assumptions cuz it's a massive assumption with a really big impact on
+882.39s: assumption with a really big impact on
+882.40s: assumption with a really big impact on how you might read and interpret this.
+885.23s: how you might read and interpret this.
+885.24s: how you might read and interpret this. The other thing that we should touch on
+887.51s: The other thing that we should touch on
+887.52s: The other thing that we should touch on quickly, Chris, is the the broader
+890.75s: quickly, Chris, is the the broader
+890.76s: quickly, Chris, is the the broader assumption
+892.24s: assumption of the exposure
+895.79s: of the exposure
+895.80s: of the exposure not that a dealer or combination of
+898.67s: not that a dealer or combination of
+898.68s: not that a dealer or combination of dealers have in this case in S&amp;P,
+902.75s: dealers have in this case in S&amp;P,
+902.76s: dealers have in this case in S&amp;P, but what is the exposure in their their
+905.79s: but what is the exposure in their their
+905.80s: but what is the exposure in their their book look like? So, to double click into
+909.67s: book look like? So, to double click into
+909.68s: book look like? So, to double click into that and to prime you, Chris,
+912.59s: that and to prime you, Chris,
+912.60s: that and to prime you, Chris, if we look at this, we might say
+915.47s: if we look at this, we might say
+915.48s: if we look at this, we might say that if we go into GAX and we go to, you
+918.27s: that if we go into GAX and we go to, you
+918.28s: that if we go into GAX and we go to, you know, a specific term, we go out to the
+921.31s: know, a specific term, we go out to the
+921.32s: know, a specific term, we go out to the next primary 18 June, 19 June, whatever
+923.39s: next primary 18 June, 19 June, whatever
+923.40s: next primary 18 June, 19 June, whatever it is.
+924.67s: it is.
+924.68s: it is. And we see the the 740s
+928.11s: And we see the the 740s
+928.12s: And we see the the 740s in S&amp;P. And we say like, "Okay, they're
+931.23s: in S&amp;P. And we say like, "Okay, they're
+931.24s: in S&amp;P. And we say like, "Okay, they're net long 24.26
+935.07s: net long 24.26
+935.08s: net long 24.26 thousand units of gamma at the 740 in
+938.79s: thousand units of gamma at the 740 in
+938.80s: thousand units of gamma at the 740 in this term."
+939.99s: this term."
+940.00s: this term." But
+941.03s: But
+941.04s: But we're saying
+942.59s: we're saying
+942.60s: we're saying this strike in this underlying in this
+947.07s: this strike in this underlying in this
+947.08s: this strike in this underlying in this term.
+948.31s: term.
+948.32s: term. How might that play, Chris, against the
+951.27s: How might that play, Chris, against the
+951.28s: How might that play, Chris, against the rest of their book? And why is that an
+953.99s: rest of their book? And why is that an
+954.00s: rest of their book? And why is that an important factor to consider?
+957.43s: important factor to consider?
+957.44s: important factor to consider? Yeah, [snorts] so dealers are not just
+959.35s: Yeah, [snorts] so dealers are not just
+959.36s: Yeah, [snorts] so dealers are not just trading um
+961.39s: trading um
+961.40s: trading um S&amp;P against S&amp;P, right? They're trading
+964.43s: S&amp;P against S&amp;P, right? They're trading
+964.44s: S&amp;P against S&amp;P, right? They're trading S&amp;P against a basket of underlying
+967.03s: S&amp;P against a basket of underlying
+967.04s: S&amp;P against a basket of underlying options for a
+968.75s: options for a
+968.76s: options for a a bunch of underlying in the options on
+970.47s: a bunch of underlying in the options on
+970.48s: a bunch of underlying in the options on the underlying.
+971.95s: the underlying.
+971.96s: the underlying. Um this is we can do an episode on this
+974.31s: Um this is we can do an episode on this
+974.32s: Um this is we can do an episode on this one day, but
+975.83s: one day, but
+975.84s: one day, but this is under the general um category of
+978.27s: this is under the general um category of
+978.28s: this is under the general um category of what's called dispersion trading.
+980.31s: what's called dispersion trading.
+980.32s: what's called dispersion trading. Generally speaking, dealers are probably
+983.59s: Generally speaking, dealers are probably
+983.60s: Generally speaking, dealers are probably going to be short S&amp;P volatility
+986.03s: going to be short S&amp;P volatility
+986.04s: going to be short S&amp;P volatility overall.
+987.35s: overall.
+987.36s: overall. And they're going to be long um
+989.55s: And they're going to be long um
+989.56s: And they're going to be long um options on single stocks.
+992.27s: options on single stocks.
+992.28s: options on single stocks. And
+993.35s: And
+993.36s: And um that is part of a giant relative
+995.07s: um that is part of a giant relative
+995.08s: um that is part of a giant relative value strategy. So here when you get
+998.19s: value strategy. So here when you get
+998.20s: value strategy. So here when you get whenever you see
+1000.19s: whenever you see
+1000.20s: whenever you see uh an exposure, this is just the SPX
+1002.51s: uh an exposure, this is just the SPX
+1002.52s: uh an exposure, this is just the SPX leg.
+1003.87s: leg.
+1003.88s: leg. So if the dealer could be short 25 delta
+1006.99s: So if the dealer could be short 25 delta
+1007.00s: So if the dealer could be short 25 delta puts,
+1008.47s: puts,
+1008.48s: puts, um but their job is not so just nakedly
+1012.55s: um but their job is not so just nakedly
+1012.56s: um but their job is not so just nakedly take on the market and have one giant
+1014.63s: take on the market and have one giant
+1014.64s: take on the market and have one giant risk reversal on effectively. Like
+1016.71s: risk reversal on effectively. Like
+1016.72s: risk reversal on effectively. Like they're not just hey, I'm just going to
+1018.19s: they're not just hey, I'm just going to
+1018.20s: they're not just hey, I'm just going to own S&amp;P calls and short S&amp;P puts and
+1020.47s: own S&amp;P calls and short S&amp;P puts and
+1020.48s: own S&amp;P calls and short S&amp;P puts and then have and then have it delta hedged.
+1023.35s: then have and then have it delta hedged.
+1023.36s: then have and then have it delta hedged. What they're doing is they're probably
+1026.03s: What they're doing is they're probably
+1026.04s: What they're doing is they're probably selling S&amp;P puts and then they're buying
+1029.15s: selling S&amp;P puts and then they're buying
+1029.16s: selling S&amp;P puts and then they're buying options
+1030.32s: options
+1030.33s: options &gt;&gt; [snorts]
+1030.59s: &gt;&gt; [snorts]
+1030.60s: &gt;&gt; [snorts] &gt;&gt; uh somewhere else. Like it could be in
+1032.51s: &gt;&gt; uh somewhere else. Like it could be in
+1032.52s: &gt;&gt; uh somewhere else. Like it could be in single stocks.
+1033.95s: single stocks.
+1033.96s: single stocks. And what's happening is they're short So
+1035.63s: And what's happening is they're short So
+1035.64s: And what's happening is they're short So what's happening? They're short gamma on
+1037.27s: what's happening? They're short gamma on
+1037.28s: what's happening? They're short gamma on the S&amp;P side on on the index side, but
+1040.19s: the S&amp;P side on on the index side, but
+1040.20s: the S&amp;P side on on the index side, but they're long single stock gamma against
+1042.67s: they're long single stock gamma against
+1042.68s: they're long single stock gamma against it.
+1043.51s: it.
+1043.52s: it. And this is really only showing you half
+1046.27s: And this is really only showing you half
+1046.28s: And this is really only showing you half the ledger. So, if you're going to make
+1048.75s: the ledger. So, if you're going to make
+1048.76s: the ledger. So, if you're going to make an assumption about
+1051.23s: an assumption about
+1051.24s: an assumption about hey, dealers are short gamma as we go
+1053.75s: hey, dealers are short gamma as we go
+1053.76s: hey, dealers are short gamma as we go lower and we need to they need to sell
+1056.67s: lower and we need to they need to sell
+1056.68s: lower and we need to they need to sell stock.
+1057.87s: stock.
+1057.88s: stock. Well, the ques- as we go lower, the
+1059.35s: Well, the ques- as we go lower, the
+1059.36s: Well, the ques- as we go lower, the question is like, well, are they long
+1060.87s: question is like, well, are they long
+1060.88s: question is like, well, are they long gamma as we go lower because of the
+1063.79s: gamma as we go lower because of the
+1063.80s: gamma as we go lower because of the stock balls that they own. So, it may
+1066.51s: stock balls that they own. So, it may
+1066.52s: stock balls that they own. So, it may not be true at all that they have to
+1068.27s: not be true at all that they have to
+1068.28s: not be true at all that they have to sell deltas on the way down. Um
+1070.83s: sell deltas on the way down. Um
+1070.84s: sell deltas on the way down. Um for all you know, they might be net
+1072.75s: for all you know, they might be net
+1072.76s: for all you know, they might be net buyers of delta on the way down because
+1074.87s: buyers of delta on the way down because
+1074.88s: buyers of delta on the way down because if they're net long gamma overall,
+1077.87s: if they're net long gamma overall,
+1077.88s: if they're net long gamma overall, they're going to be buyers. And so,
+1079.47s: they're going to be buyers. And so,
+1079.48s: they're going to be buyers. And so, their behavior instead of
+1081.39s: their behavior instead of
+1081.40s: their behavior instead of exacerbating the market move is going to
+1083.27s: exacerbating the market move is going to
+1083.28s: exacerbating the market move is going to be stabilizing the market move. Um but
+1086.55s: be stabilizing the market move. Um but
+1086.56s: be stabilizing the market move. Um but if you only look at this tool, you're
+1089.27s: if you only look at this tool, you're
+1089.28s: if you only look at this tool, you're only seeing part of the ledger. You're
+1090.91s: only seeing part of the ledger. You're
+1090.92s: only seeing part of the ledger. You're not seeing their single stock options
+1094.23s: not seeing their single stock options
+1094.24s: not seeing their single stock options positioning. Um
+1096.39s: positioning. Um
+1096.40s: positioning. Um So, this is this is a
+1098.47s: So, this is this is a
+1098.48s: So, this is this is a um again, in single stock option
+1100.27s: um again, in single stock option
+1100.28s: um again, in single stock option positioning, that's pretty hard to
+1102.47s: positioning, that's pretty hard to
+1102.48s: positioning, that's pretty hard to figure out what it might be all the time
+1104.75s: figure out what it might be all the time
+1104.76s: figure out what it might be all the time because the flows are not the same as
+1108.07s: because the flows are not the same as
+1108.08s: because the flows are not the same as they necessarily are in um in in in the
+1111.35s: they necessarily are in um in in in the
+1111.36s: they necessarily are in um in in in the index. Like me Eric and I were talking
+1113.07s: index. Like me Eric and I were talking
+1113.08s: index. Like me Eric and I were talking about this before.
+1114.55s: about this before.
+1114.56s: about this before. If you are talking about say GameStop or
+1117.91s: If you are talking about say GameStop or
+1117.92s: If you are talking about say GameStop or some bi- or even a biotech stock,
+1120.67s: some bi- or even a biotech stock,
+1120.68s: some bi- or even a biotech stock, well, the call side of the equation is
+1123.23s: well, the call side of the equation is
+1123.24s: well, the call side of the equation is probably uh market makers are probably
+1126.15s: probably uh market makers are probably
+1126.16s: probably uh market makers are probably short that stuff
+1128.11s: short that stuff
+1128.12s: short that stuff um because speculators and investors are
+1131.23s: um because speculators and investors are
+1131.24s: um because speculators and investors are buying the upside calls. So, the
+1133.63s: buying the upside calls. So, the
+1133.64s: buying the upside calls. So, the assumption is uh flipped in the other
+1135.55s: assumption is uh flipped in the other
+1135.56s: assumption is uh flipped in the other direction entirely.
+1138.23s: direction entirely.
+1138.24s: direction entirely. So, the the takeaway from that one is
+1141.39s: So, the the takeaway from that one is
+1141.40s: So, the the takeaway from that one is make sure that you if you use any tools
+1143.83s: make sure that you if you use any tools
+1143.84s: make sure that you if you use any tools like this understanding the convention
+1145.35s: like this understanding the convention
+1145.36s: like this understanding the convention that Your Trades uses cuz a lot of times
+1146.91s: that Your Trades uses cuz a lot of times
+1146.92s: that Your Trades uses cuz a lot of times if I'm not mistaken, I don't really use
+1149.43s: if I'm not mistaken, I don't really use
+1149.44s: if I'm not mistaken, I don't really use spot gamma. I've tinkered with it
+1151.15s: spot gamma. I've tinkered with it
+1151.16s: spot gamma. I've tinkered with it before, but I think they use an inverse
+1153.51s: before, but I think they use an inverse
+1153.52s: before, but I think they use an inverse assumption compared to this where most
+1155.63s: assumption compared to this where most
+1155.64s: assumption compared to this where most of the time people are buying calls.
+1158.19s: of the time people are buying calls.
+1158.20s: of the time people are buying calls. So,
+1159.44s: So, you know, it's just understand the
+1160.91s: you know, it's just understand the
+1160.92s: you know, it's just understand the convention of the tool that you're
+1161.99s: convention of the tool that you're
+1162.00s: convention of the tool that you're using.
+1163.27s: using.
+1163.28s: using. The The next thing is again is always
+1167.67s: The The next thing is again is always
+1167.68s: The The next thing is again is always This is to provide a little context on
+1170.47s: This is to provide a little context on
+1170.48s: This is to provide a little context on the complexity of the system, what these
+1172.67s: the complexity of the system, what these
+1172.68s: the complexity of the system, what these things are attempting to help with, but
+1175.31s: things are attempting to help with, but
+1175.32s: things are attempting to help with, but then how that might impact the way you
+1179.07s: then how that might impact the way you
+1179.08s: then how that might impact the way you consider using them. So, let's talk
+1180.95s: consider using them. So, let's talk
+1180.96s: consider using them. So, let's talk about one other thing,
+1182.59s: about one other thing,
+1182.60s: about one other thing, which is this idea of like gex versus
+1186.75s: which is this idea of like gex versus
+1186.76s: which is this idea of like gex versus dex.
+1188.15s: dex.
+1188.16s: dex. And Chris and I were going through this
+1189.83s: And Chris and I were going through this
+1189.84s: And Chris and I were going through this before a little bit cuz it's it's
+1191.15s: before a little bit cuz it's it's
+1191.16s: before a little bit cuz it's it's actually a really interesting
+1192.19s: actually a really interesting
+1192.20s: actually a really interesting conversation.
+1193.83s: conversation.
+1193.84s: conversation. And when we were discussing it,
+1196.71s: And when we were discussing it,
+1196.72s: And when we were discussing it, we were going back and forth on, you
+1199.27s: we were going back and forth on, you
+1199.28s: we were going back and forth on, you know, different ways that you might be
+1201.67s: know, different ways that you might be
+1201.68s: know, different ways that you might be able to use dex and came with a a a
+1204.71s: able to use dex and came with a a a
+1204.72s: able to use dex and came with a a a pretty simple outline for it. So, Chris,
+1209.11s: pretty simple outline for it. So, Chris,
+1209.12s: pretty simple outline for it. So, Chris, do you want to talk a little bit about
+1211.03s: do you want to talk a little bit about
+1211.04s: do you want to talk a little bit about the dynamic between these and their
+1213.27s: the dynamic between these and their
+1213.28s: the dynamic between these and their their overall utility of signals or, you
+1215.67s: their overall utility of signals or, you
+1215.68s: their overall utility of signals or, you know, use case?
+1217.39s: know, use case?
+1217.40s: know, use case? Yeah. So,
+1219.03s: Yeah. So,
+1219.04s: Yeah. So, so dex is uh
+1221.07s: so dex is uh
+1221.08s: so dex is uh the dex is
+1222.31s: the dex is
+1222.32s: the dex is sort of just measuring what is the um
+1225.59s: sort of just measuring what is the um
+1225.60s: sort of just measuring what is the um assume again assuming the market makers
+1227.59s: assume again assuming the market makers
+1227.60s: assume again assuming the market makers have um
+1229.15s: have um
+1229.16s: have um been buying the calls and selling the
+1230.63s: been buying the calls and selling the
+1230.64s: been buying the calls and selling the puts. It's just trying to say how much
+1233.23s: puts. It's just trying to say how much
+1233.24s: puts. It's just trying to say how much delta
+1234.63s: delta
+1234.64s: delta is coming from those positions.
+1237.83s: is coming from those positions.
+1237.84s: is coming from those positions. And it's a it's it's really
+1240.51s: And it's a it's it's really
+1240.52s: And it's a it's it's really an indication of overall position size
+1243.23s: an indication of overall position size
+1243.24s: an indication of overall position size at the strike.
+1244.67s: at the strike.
+1244.68s: at the strike. Um because you remember, you don't want
+1246.35s: Um because you remember, you don't want
+1246.36s: Um because you remember, you don't want to read into the You don't really want
+1248.47s: to read into the You don't really want
+1248.48s: to read into the You don't really want to read into like what those deltas
+1250.03s: to read into like what those deltas
+1250.04s: to read into like what those deltas actually are
+1251.67s: actually are
+1251.68s: actually are because remember, the market makers are
+1254.11s: because remember, the market makers are
+1254.12s: because remember, the market makers are hedged. The idea is that they're delta
+1255.79s: hedged. The idea is that they're delta
+1255.80s: hedged. The idea is that they're delta neutral. And so,
+1257.75s: neutral. And so,
+1257.76s: neutral. And so, the fact that a market maker is long
+1259.75s: the fact that a market maker is long
+1259.76s: the fact that a market maker is long delta because they're short um because
+1262.83s: delta because they're short um because
+1262.84s: delta because they're short um because they're long in the money calls, for
+1264.39s: they're long in the money calls, for
+1264.40s: they're long in the money calls, for example, it doesn't really mean anything
+1266.55s: example, it doesn't really mean anything
+1266.56s: example, it doesn't really mean anything because they are hedged against that.
+1268.55s: because they are hedged against that.
+1268.56s: because they are hedged against that. So, what's more important is that it's
+1270.83s: So, what's more important is that it's
+1270.84s: So, what's more important is that it's just a magnitude of the size is an
+1272.95s: just a magnitude of the size is an
+1272.96s: just a magnitude of the size is an indication of how much interest there is
+1275.23s: indication of how much interest there is
+1275.24s: indication of how much interest there is on the strike. As a matter of fact, I
+1276.75s: on the strike. As a matter of fact, I
+1276.76s: on the strike. As a matter of fact, I think of DEX as being
+1278.99s: think of DEX as being
+1279.00s: think of DEX as being largely overlapping information with
+1281.51s: largely overlapping information with
+1281.52s: largely overlapping information with open interest.
+1282.99s: open interest.
+1283.00s: open interest. Um you know, it has the assumption in
+1284.79s: Um you know, it has the assumption in
+1284.80s: Um you know, it has the assumption in there that the market makers are long
+1286.23s: there that the market makers are long
+1286.24s: there that the market makers are long the calls and short the puts, but the
+1288.19s: the calls and short the puts, but the
+1288.20s: the calls and short the puts, but the point is like the main the most
+1290.27s: point is like the main the most
+1290.28s: point is like the main the most important aspect of it is that um it's
+1293.63s: important aspect of it is that um it's
+1293.64s: important aspect of it is that um it's an indication of the magnitude of uh um
+1298.11s: an indication of the magnitude of uh um
+1298.12s: an indication of the magnitude of uh um interest on the strike. Now,
+1301.27s: interest on the strike. Now,
+1301.28s: interest on the strike. Now, this is
+1302.71s: this is
+1302.72s: this is I'll tell you why this is important in a
+1304.23s: I'll tell you why this is important in a
+1304.24s: I'll tell you why this is important in a second, but I want to flip the GEX real
+1306.19s: second, but I want to flip the GEX real
+1306.20s: second, but I want to flip the GEX real quick. So, in GEX,
+1308.79s: quick. So, in GEX,
+1308.80s: quick. So, in GEX, that's telling you how much gamma is
+1310.99s: that's telling you how much gamma is
+1311.00s: that's telling you how much gamma is coming from the strike based upon the
+1312.99s: coming from the strike based upon the
+1313.00s: coming from the strike based upon the market maker's position. So,
+1315.63s: market maker's position. So,
+1315.64s: market maker's position. So, gamma is the same on a strike whether
+1318.55s: gamma is the same on a strike whether
+1318.56s: gamma is the same on a strike whether it's a call or a put. So, it does not
+1320.39s: it's a call or a put. So, it does not
+1320.40s: it's a call or a put. So, it does not matter if the market makers are long
+1323.23s: matter if the market makers are long
+1323.24s: matter if the market makers are long call, short put. All that matters is the
+1325.43s: call, short put. All that matters is the
+1325.44s: call, short put. All that matters is the net the net option position they have on
+1328.07s: net the net option position they have on
+1328.08s: net the net option position they have on the strike. That tells you how much
+1329.99s: the strike. That tells you how much
+1330.00s: the strike. That tells you how much gamma the market maker has.
+1332.75s: gamma the market maker has.
+1332.76s: gamma the market maker has. And so, if the market goes up and market
+1335.55s: And so, if the market goes up and market
+1335.56s: And so, if the market goes up and market makers are long gamma,
+1338.31s: makers are long gamma,
+1338.32s: makers are long gamma, then the presumption is that they are
+1339.83s: then the presumption is that they are
+1339.84s: then the presumption is that they are mechanically have um deltas to sell.
+1343.19s: mechanically have um deltas to sell.
+1343.20s: mechanically have um deltas to sell. Um which would sort of be stabilizing
+1345.63s: Um which would sort of be stabilizing
+1345.64s: Um which would sort of be stabilizing against the stock move. That that's the
+1348.03s: against the stock move. That that's the
+1348.04s: against the stock move. That that's the the concept. Uh because they're long
+1350.59s: the concept. Uh because they're long
+1350.60s: the concept. Uh because they're long GEX. Now, or they're long gamma.
+1353.83s: GEX. Now, or they're long gamma.
+1353.84s: GEX. Now, or they're long gamma. And GEX is going to tell you what the
+1355.67s: And GEX is going to tell you what the
+1355.68s: And GEX is going to tell you what the gamma is on every strike. Now, the
+1359.15s: gamma is on every strike. Now, the
+1359.16s: gamma is on every strike. Now, the and a very important property of gamma
+1361.55s: and a very important property of gamma
+1361.56s: and a very important property of gamma is that
+1363.19s: is that
+1363.20s: is that as an option is very very deep uh in the
+1366.51s: as an option is very very deep uh in the
+1366.52s: as an option is very very deep uh in the money or far out of the money, the
+1369.07s: money or far out of the money, the
+1369.08s: money or far out of the money, the option has very little gamma, possibly
+1371.19s: option has very little gamma, possibly
+1371.20s: option has very little gamma, possibly zero gamma.
+1372.75s: zero gamma.
+1372.76s: zero gamma. So, what GEX will do is it will not show
+1376.91s: So, what GEX will do is it will not show
+1376.92s: So, what GEX will do is it will not show you
+1377.99s: you
+1378.00s: you any uh substantial values that are very
+1380.39s: any uh substantial values that are very
+1380.40s: any uh substantial values that are very far away from the high gamma strikes
+1383.95s: far away from the high gamma strikes
+1383.96s: far away from the high gamma strikes that are near the money.
+1385.55s: that are near the money.
+1385.56s: that are near the money. But open interest index will show you
+1388.15s: But open interest index will show you
+1388.16s: But open interest index will show you that there is interest there. Because
+1389.75s: that there is interest there. Because
+1389.76s: that there is interest there. Because you got to remember gamma is a snapshot
+1391.31s: you got to remember gamma is a snapshot
+1391.32s: you got to remember gamma is a snapshot in time. If the index is at 740 today,
+1394.99s: in time. If the index is at 740 today,
+1395.00s: in time. If the index is at 740 today, then the 700 strike with a week to
+1397.31s: then the 700 strike with a week to
+1397.32s: then the 700 strike with a week to expiration is not going to be spitting
+1399.15s: expiration is not going to be spitting
+1399.16s: expiration is not going to be spitting off any gamma. So, you might look at
+1401.75s: off any gamma. So, you might look at
+1401.76s: off any gamma. So, you might look at that and say, "Hey, there's no there's
+1403.39s: that and say, "Hey, there's no there's
+1403.40s: that and say, "Hey, there's no there's no interest down at set in the 700 area.
+1405.99s: no interest down at set in the 700 area.
+1406.00s: no interest down at set in the 700 area. There's no risk down in the 700 area."
+1408.51s: There's no risk down in the 700 area."
+1408.52s: There's no risk down in the 700 area." But if you were to gap down over the
+1410.23s: But if you were to gap down over the
+1410.24s: But if you were to gap down over the weekend 40 handles, those strikes would
+1413.79s: weekend 40 handles, those strikes would
+1413.80s: weekend 40 handles, those strikes would pick up a lot of gamma.
+1416.63s: pick up a lot of gamma.
+1416.64s: pick up a lot of gamma. And not none of that risk is visible to
+1419.51s: And not none of that risk is visible to
+1419.52s: And not none of that risk is visible to you by just looking at GEX. And that's
+1421.51s: you by just looking at GEX. And that's
+1421.52s: you by just looking at GEX. And that's where DEX comes in handy because you
+1423.51s: where DEX comes in handy because you
+1423.52s: where DEX comes in handy because you could have looked at DEX and seen that
+1425.99s: could have looked at DEX and seen that
+1426.00s: could have looked at DEX and seen that there's a lot of
+1427.75s: there's a lot of
+1427.76s: there's a lot of positioning on that strike. It just
+1429.79s: positioning on that strike. It just
+1429.80s: positioning on that strike. It just happens to not be spitting off gamma
+1431.59s: happens to not be spitting off gamma
+1431.60s: happens to not be spitting off gamma because it's too far away, but it's
+1433.67s: because it's too far away, but it's
+1433.68s: because it's too far away, but it's still but the gamma is going to be
+1435.51s: still but the gamma is going to be
+1435.52s: still but the gamma is going to be there.
+1436.59s: there.
+1436.60s: there. If you get down there, open interest
+1438.83s: If you get down there, open interest
+1438.84s: If you get down there, open interest would have told you the same exact
+1440.23s: would have told you the same exact
+1440.24s: would have told you the same exact thing.
+1441.99s: thing.
+1442.00s: thing. DEX is might
+1443.95s: DEX is might
+1443.96s: DEX is might DEX is sort of embedding this assumption
+1445.75s: DEX is sort of embedding this assumption
+1445.76s: DEX is sort of embedding this assumption that the market makers are
+1447.87s: that the market makers are
+1447.88s: that the market makers are longs and shorts. So, maybe DEX is like
+1450.43s: longs and shorts. So, maybe DEX is like
+1450.44s: longs and shorts. So, maybe DEX is like on the margin a more useful thing for
+1453.11s: on the margin a more useful thing for
+1453.12s: on the margin a more useful thing for you to look at, but
+1456.43s: you to look at, but
+1456.44s: you to look at, but for the most part GEX is a snapshot of
+1459.03s: for the most part GEX is a snapshot of
+1459.04s: for the most part GEX is a snapshot of right now. It's showing you the thing
+1460.67s: right now. It's showing you the thing
+1460.68s: right now. It's showing you the thing that you probably care more about, which
+1462.95s: that you probably care more about, which
+1462.96s: that you probably care more about, which is what are the flows that I would
+1465.07s: is what are the flows that I would
+1465.08s: is what are the flows that I would anticipate as the market goes to various
+1468.35s: anticipate as the market goes to various
+1468.36s: anticipate as the market goes to various areas.
+1470.03s: areas.
+1470.04s: areas. DEX is
+1471.79s: DEX is
+1471.80s: DEX is telling you what the overall position,
+1474.79s: telling you what the overall position,
+1474.80s: telling you what the overall position, the gross positioning is
+1478.59s: the gross positioning is
+1478.60s: the gross positioning is far away from the strike that gamma is
+1480.43s: far away from the strike that gamma is
+1480.44s: far away from the strike that gamma is not picking up.
+1482.23s: not picking up.
+1482.24s: not picking up. Yeah, it's a great way to think of it.
+1484.43s: Yeah, it's a great way to think of it.
+1484.44s: Yeah, it's a great way to think of it. And
+1485.56s: And the the fun thing with stuff like this
+1488.35s: the the fun thing with stuff like this
+1488.36s: the the fun thing with stuff like this is depending on where you're at in your
+1490.63s: is depending on where you're at in your
+1490.64s: is depending on where you're at in your trading and like what you like to do,
+1492.55s: trading and like what you like to do,
+1492.56s: trading and like what you like to do, this is very unlikely to be the thing
+1494.91s: this is very unlikely to be the thing
+1494.92s: this is very unlikely to be the thing that's going to completely change
+1497.19s: that's going to completely change
+1497.20s: that's going to completely change everything you do and you know that this
+1499.83s: everything you do and you know that this
+1499.84s: everything you do and you know that this is quote unquote it going forward and
+1502.03s: is quote unquote it going forward and
+1502.04s: is quote unquote it going forward and actually I would argue the opposite
+1504.07s: actually I would argue the opposite
+1504.08s: actually I would argue the opposite where
+1505.03s: where
+1505.04s: where there's probably no small cohort of
+1507.27s: there's probably no small cohort of
+1507.28s: there's probably no small cohort of people that way too excessively
+1510.55s: people that way too excessively
+1510.56s: people that way too excessively overvalue
+1512.15s: overvalue
+1512.16s: overvalue this kind of information and it's really
+1514.27s: this kind of information and it's really
+1514.28s: this kind of information and it's really based on what Chris was outlining
+1517.31s: based on what Chris was outlining
+1517.32s: based on what Chris was outlining earlier
+1518.55s: earlier
+1518.56s: earlier on the assumptions that are being made
+1521.07s: on the assumptions that are being made
+1521.08s: on the assumptions that are being made and the implications of those
+1522.67s: and the implications of those
+1522.68s: and the implications of those assumptions. But
+1524.75s: assumptions. But
+1524.76s: assumptions. But if someone was interested in exploring
+1529.63s: if someone was interested in exploring
+1529.64s: if someone was interested in exploring these and seeing like is there anything
+1532.87s: these and seeing like is there anything
+1532.88s: these and seeing like is there anything behind them? Is there anything even
+1535.27s: behind them? Is there anything even
+1535.28s: behind them? Is there anything even marginally useful in a system?
+1537.79s: marginally useful in a system?
+1537.80s: marginally useful in a system? There's a few ways you can broadly think
+1540.59s: There's a few ways you can broadly think
+1540.60s: There's a few ways you can broadly think about doing a project like that. One of
+1542.39s: about doing a project like that. One of
+1542.40s: about doing a project like that. One of them Chris was just kind of outlining
+1544.39s: them Chris was just kind of outlining
+1544.40s: them Chris was just kind of outlining the way that price behaves
+1546.79s: the way that price behaves
+1546.80s: the way that price behaves when you come across strikes that seem
+1549.55s: when you come across strikes that seem
+1549.56s: when you come across strikes that seem to have larger net positions, right?
+1552.95s: to have larger net positions, right?
+1552.96s: to have larger net positions, right? That's kind of like the the primary
+1555.47s: That's kind of like the the primary
+1555.48s: That's kind of like the the primary primary input that you might be looking
+1557.23s: primary input that you might be looking
+1557.24s: primary input that you might be looking for.
+1558.43s: for.
+1558.44s: for. But then there's other things that could
+1560.35s: But then there's other things that could
+1560.36s: But then there's other things that could be of interest to you to take a peek at.
+1563.67s: be of interest to you to take a peek at.
+1563.68s: be of interest to you to take a peek at. Things like what's the difference for
+1567.07s: Things like what's the difference for
+1567.08s: Things like what's the difference for the mid strikes? And when I say mid and
+1570.15s: the mid strikes? And when I say mid and
+1570.16s: the mid strikes? And when I say mid and main strikes in this context, I'm just
+1572.39s: main strikes in this context, I'm just
+1572.40s: main strikes in this context, I'm just talking about like standard convention
+1574.39s: talking about like standard convention
+1574.40s: talking about like standard convention where if something ends in like a zero
+1576.39s: where if something ends in like a zero
+1576.40s: where if something ends in like a zero or a five, there's almost always going
+1578.51s: or a five, there's almost always going
+1578.52s: or a five, there's almost always going to be more density there. And then the
+1580.63s: to be more density there. And then the
+1580.64s: to be more density there. And then the mids is just kind of everything in
+1581.87s: mids is just kind of everything in
+1581.88s: mids is just kind of everything in between those.
+1583.31s: between those.
+1583.32s: between those. And you might explore like how spot
+1586.71s: And you might explore like how spot
+1586.72s: And you might explore like how spot behaves in the mids before it gets to a
+1589.91s: behaves in the mids before it gets to a
+1589.92s: behaves in the mids before it gets to a main strike and see if there's anything
+1592.99s: main strike and see if there's anything
+1593.00s: main strike and see if there's anything even remotely of interest there or if
+1595.71s: even remotely of interest there or if
+1595.72s: even remotely of interest there or if you're in a vol settling lens, there's a
+1599.51s: you're in a vol settling lens, there's a
+1599.52s: you're in a vol settling lens, there's a couple other ways you can use something
+1601.83s: couple other ways you can use something
+1601.84s: couple other ways you can use something like this to maybe think about where you
+1604.27s: like this to maybe think about where you
+1604.28s: like this to maybe think about where you might want to position
+1606.03s: might want to position
+1606.04s: might want to position where you're building you know your your
+1607.99s: where you're building you know your your
+1608.00s: where you're building you know your your strikes out for your short strangle if
+1610.51s: strikes out for your short strangle if
+1610.52s: strikes out for your short strangle if you're going that route or something
+1612.03s: you're going that route or something
+1612.04s: you're going that route or something like that.
+1613.35s: like that.
+1613.36s: like that. So, actually in a future episode, Chris
+1616.11s: So, actually in a future episode, Chris
+1616.12s: So, actually in a future episode, Chris and I we're going to do a couple small
+1618.23s: and I we're going to do a couple small
+1618.24s: and I we're going to do a couple small tests really for two things. We want to
+1620.79s: tests really for two things. We want to
+1620.80s: tests really for two things. We want to prime you guys on a a future
+1623.31s: prime you guys on a a future
+1623.32s: prime you guys on a a future conversation we're going to have further
+1624.71s: conversation we're going to have further
+1624.72s: conversation we're going to have further down the line on like just doing like
+1627.63s: down the line on like just doing like
+1627.64s: down the line on like just doing like reasonable research to get to something
+1630.31s: reasonable research to get to something
+1630.32s: reasonable research to get to something that you can look at confidently. Then
+1632.75s: that you can look at confidently. Then
+1632.76s: that you can look at confidently. Then also just to take a closer look at the
+1634.55s: also just to take a closer look at the
+1634.56s: also just to take a closer look at the tools themselves and see if there's
+1636.51s: tools themselves and see if there's
+1636.52s: tools themselves and see if there's anything that he or I, you know, might
+1638.67s: anything that he or I, you know, might
+1638.68s: anything that he or I, you know, might generally be missing. But Chris, to to
+1641.19s: generally be missing. But Chris, to to
+1641.20s: generally be missing. But Chris, to to summarize to summarize out like if you
+1644.07s: summarize to summarize out like if you
+1644.08s: summarize to summarize out like if you think of something like Gex and Dex,
+1647.39s: think of something like Gex and Dex,
+1647.40s: think of something like Gex and Dex, it's obviously something that isn't
+1649.11s: it's obviously something that isn't
+1649.12s: it's obviously something that isn't necessarily important to you. It's not
+1651.43s: necessarily important to you. It's not
+1651.44s: necessarily important to you. It's not something that you focused on a lot
+1653.31s: something that you focused on a lot
+1653.32s: something that you focused on a lot before.
+1654.79s: before.
+1654.80s: before. But
+1655.88s: But what is your your intuition on Well,
+1659.11s: what is your your intuition on Well,
+1659.12s: what is your your intuition on Well, we'll just get rid of Dex effectively.
+1660.99s: we'll just get rid of Dex effectively.
+1661.00s: we'll just get rid of Dex effectively. We'll just talk about Gex cuz that's
+1662.15s: We'll just talk about Gex cuz that's
+1662.16s: We'll just talk about Gex cuz that's kind of like the the main actor here.
+1664.23s: kind of like the the main actor here.
+1664.24s: kind of like the the main actor here. So, in the the little bit of homework
+1666.55s: So, in the the little bit of homework
+1666.56s: So, in the the little bit of homework that we'll do
+1669.59s: that we'll do
+1669.60s: that we'll do what's your intuition on what we might
+1671.39s: what's your intuition on what we might
+1671.40s: what's your intuition on what we might see?
+1672.71s: see?
+1672.72s: see? Yeah, so
+1674.23s: Yeah, so
+1674.24s: Yeah, so Well, I can just tell you like my my
+1676.31s: Well, I can just tell you like my my
+1676.32s: Well, I can just tell you like my my general sense of um
+1678.63s: general sense of um
+1678.64s: general sense of um sort of this whole uh this whole concept
+1681.39s: sort of this whole uh this whole concept
+1681.40s: sort of this whole uh this whole concept of a dealer dealer gamma.
+1684.03s: of a dealer dealer gamma.
+1684.04s: of a dealer dealer gamma. So,
+1685.60s: So, um first of all, like this isn't
+1688.35s: um first of all, like this isn't
+1688.36s: um first of all, like this isn't uh this isn't new. The idea that there
+1692.67s: uh this isn't new. The idea that there
+1692.68s: uh this isn't new. The idea that there are option Greeks
+1694.47s: are option Greeks
+1694.48s: are option Greeks which
+1695.55s: which
+1695.56s: which lead to
+1697.83s: lead to
+1697.84s: lead to um a a market reaction function over
+1700.59s: um a a market reaction function over
+1700.60s: um a a market reaction function over time and and in the form of
+1703.39s: time and and in the form of
+1703.40s: time and and in the form of um delta hedging is an old idea. And
+1705.87s: um delta hedging is an old idea. And
+1705.88s: um delta hedging is an old idea. And this is like
+1707.27s: this is like
+1707.28s: this is like you know, existed since I started in
+1709.87s: you know, existed since I started in
+1709.88s: you know, existed since I started in options, you know, back in 2000. So,
+1713.07s: options, you know, back in 2000. So,
+1713.08s: options, you know, back in 2000. So, the
+1714.16s: the there is a uh open interest
+1717.47s: there is a uh open interest
+1717.48s: there is a uh open interest is important because it can drive um you
+1720.07s: is important because it can drive um you
+1720.08s: is important because it can drive um you can there can absolutely be um effects
+1724.23s: can there can absolutely be um effects
+1724.24s: can there can absolutely be um effects based upon the concentration
+1727.19s: based upon the concentration
+1727.20s: based upon the concentration on the strike.
+1728.91s: on the strike.
+1728.92s: on the strike. So, you know, when you're trading a
+1731.11s: So, you know, when you're trading a
+1731.12s: So, you know, when you're trading a name, especially if you to remove the
+1733.11s: name, especially if you to remove the
+1733.12s: name, especially if you to remove the S&amp;P for a second cuz it's so large and
+1735.39s: S&amp;P for a second cuz it's so large and
+1735.40s: S&amp;P for a second cuz it's so large and has such a diverse
+1737.59s: has such a diverse
+1737.60s: has such a diverse um customer base.
+1739.75s: um customer base.
+1739.76s: um customer base. If you're trading sort of like a regular
+1741.75s: If you're trading sort of like a regular
+1741.76s: If you're trading sort of like a regular some regular stock
+1743.55s: some regular stock
+1743.56s: some regular stock and you know, something that's like
+1745.67s: and you know, something that's like
+1745.68s: and you know, something that's like middle middle liquidity like uh like
+1748.43s: middle middle liquidity like uh like
+1748.44s: middle middle liquidity like uh like eBay, something like that just has been
+1750.23s: eBay, something like that just has been
+1750.24s: eBay, something like that just has been in news.
+1751.31s: in news.
+1751.32s: in news. Um
+1754.04s: there's going to be open interest and if
+1756.28s: there's going to be open interest and if you are in the business of trading eBay
+1758.99s: you are in the business of trading eBay
+1759.00s: you are in the business of trading eBay options, you're probably going to
+1761.19s: options, you're probably going to
+1761.20s: options, you're probably going to develop some idea of like where the
+1763.35s: develop some idea of like where the
+1763.36s: develop some idea of like where the bodies are. Like for example, if there's
+1766.39s: bodies are. Like for example, if there's
+1766.40s: bodies are. Like for example, if there's a bunch of open interest in
+1769.15s: a bunch of open interest in
+1769.16s: a bunch of open interest in uh the 25 delta call, you probably will
+1772.95s: uh the 25 delta call, you probably will
+1772.96s: uh the 25 delta call, you probably will know if this was an initiated buyer or
+1776.35s: know if this was an initiated buyer or
+1776.36s: know if this was an initiated buyer or seller that came into those. Like you
+1778.19s: seller that came into those. Like you
+1778.20s: seller that came into those. Like you know, if they if all of a sudden those
+1779.79s: know, if they if all of a sudden those
+1779.80s: know, if they if all of a sudden those calls start trading on the bid or they
+1781.59s: calls start trading on the bid or they
+1781.60s: calls start trading on the bid or they get knocked down or as those calls are
+1784.11s: get knocked down or as those calls are
+1784.12s: get knocked down or as those calls are trading, the stock uh starts going down,
+1789.27s: trading, the stock uh starts going down,
+1789.28s: trading, the stock uh starts going down, in all likelihood there was a seller of
+1791.43s: in all likelihood there was a seller of
+1791.44s: in all likelihood there was a seller of those eBay calls.
+1793.19s: those eBay calls.
+1793.20s: those eBay calls. And so now we can assume that the market
+1794.99s: And so now we can assume that the market
+1795.00s: And so now we can assume that the market makers own the eBay calls. And so we
+1797.35s: makers own the eBay calls. And so we
+1797.36s: makers own the eBay calls. And so we would Now, if the market makers own the
+1799.71s: would Now, if the market makers own the
+1799.72s: would Now, if the market makers own the eBay calls, the idea would be like as
+1801.43s: eBay calls, the idea would be like as
+1801.44s: eBay calls, the idea would be like as the stock went up, we know the market
+1803.11s: the stock went up, we know the market
+1803.12s: the stock went up, we know the market makers are getting longer delta because
+1805.47s: makers are getting longer delta because
+1805.48s: makers are getting longer delta because of the gamma effect of those calls. And
+1807.67s: of the gamma effect of those calls. And
+1807.68s: of the gamma effect of those calls. And so the market makers will be uh sort of
+1810.71s: so the market makers will be uh sort of
+1810.72s: so the market makers will be uh sort of selling the stock on the way up. Now,
+1813.91s: selling the stock on the way up. Now,
+1813.92s: selling the stock on the way up. Now, what do we do with that information is a
+1816.03s: what do we do with that information is a
+1816.04s: what do we do with that information is a really difficult question and
+1818.87s: really difficult question and
+1818.88s: really difficult question and why a lot of the uh there's a number of
+1822.07s: why a lot of the uh there's a number of
+1822.08s: why a lot of the uh there's a number of things going on. So, first of all,
+1825.19s: things going on. So, first of all,
+1825.20s: things going on. So, first of all, the we're assuming that the market
+1826.75s: the we're assuming that the market
+1826.76s: the we're assuming that the market makers are in a hedge, but we're making
+1829.15s: makers are in a hedge, but we're making
+1829.16s: makers are in a hedge, but we're making all kinds of assumptions about like what
+1830.75s: all kinds of assumptions about like what
+1830.76s: all kinds of assumptions about like what delta are they going to hedge on? For
+1832.31s: delta are they going to hedge on? For
+1832.32s: delta are they going to hedge on? For example, if I'm a market maker and I own
+1834.43s: example, if I'm a market maker and I own
+1834.44s: example, if I'm a market maker and I own those calls,
+1837.07s: those calls,
+1837.08s: those calls, and I know that there's a five other
+1839.11s: and I know that there's a five other
+1839.12s: and I know that there's a five other market makers long those calls,
+1841.71s: market makers long those calls,
+1841.72s: market makers long those calls, and I know that they're pre- they're
+1843.27s: and I know that they're pre- they're
+1843.28s: and I know that they're pre- they're inclined to hedge,
+1845.75s: inclined to hedge,
+1845.76s: inclined to hedge, then
+1846.87s: then
+1846.88s: then in my view, the stock might be
+1851.15s: in my view, the stock might be
+1851.16s: in my view, the stock might be uh
+1852.52s: uh the the stock is net of their hedging.
+1854.87s: the the stock is net of their hedging.
+1854.88s: the the stock is net of their hedging. So, I might say to myself, "You know
+1856.47s: So, I might say to myself, "You know
+1856.48s: So, I might say to myself, "You know what? I'm okay with leaning longer delta
+1860.35s: what? I'm okay with leaning longer delta
+1860.36s: what? I'm okay with leaning longer delta because I think that the stock is
+1861.99s: because I think that the stock is
+1862.00s: because I think that the stock is artificially a little bit lower than it
+1864.11s: artificially a little bit lower than it
+1864.12s: artificially a little bit lower than it would be if the market makers were not
+1866.23s: would be if the market makers were not
+1866.24s: would be if the market makers were not hedging."
+1868.47s: hedging."
+1868.48s: hedging." So, I got these four other market makers
+1870.95s: So, I got these four other market makers
+1870.96s: So, I got these four other market makers that are hedging and they are causing
+1872.59s: that are hedging and they are causing
+1872.60s: that are hedging and they are causing sell pressure in the stock, but that
+1876.15s: sell pressure in the stock, but that
+1876.16s: sell pressure in the stock, but that flow is not informed flow in any way.
+1879.19s: flow is not informed flow in any way.
+1879.20s: flow is not informed flow in any way. It's not flow that knows something about
+1881.59s: It's not flow that knows something about
+1881.60s: It's not flow that knows something about the reality of eBay's business.
+1884.31s: the reality of eBay's business.
+1884.32s: the reality of eBay's business. That's just mechanical flow. It's
+1885.87s: That's just mechanical flow. It's
+1885.88s: That's just mechanical flow. It's exactly the kind of thing that one would
+1888.31s: exactly the kind of thing that one would
+1888.32s: exactly the kind of thing that one would want to trade against. So, my form of
+1891.07s: want to trade against. So, my form of
+1891.08s: want to trade against. So, my form of trading against this mechanical flow
+1893.67s: trading against this mechanical flow
+1893.68s: trading against this mechanical flow would be to just not sell my own deltas,
+1896.27s: would be to just not sell my own deltas,
+1896.28s: would be to just not sell my own deltas, right? And I would just lean long
+1899.27s: right? And I would just lean long
+1899.28s: right? And I would just lean long as those market maker if I think those
+1901.39s: as those market maker if I think those
+1901.40s: as those market maker if I think those market makers are selling, I'm like,
+1902.75s: market makers are selling, I'm like,
+1902.76s: market makers are selling, I'm like, "You know what? I'm not going to sell
+1903.99s: "You know what? I'm not going to sell
+1904.00s: "You know what? I'm not going to sell and I'm going to lean longer."
+1905.71s: and I'm going to lean longer."
+1905.72s: and I'm going to lean longer." So, there's a this assumption that like
+1907.67s: So, there's a this assumption that like
+1907.68s: So, there's a this assumption that like market makers and dealers are just going
+1909.67s: market makers and dealers are just going
+1909.68s: market makers and dealers are just going to be running these market neutral books
+1911.35s: to be running these market neutral books
+1911.36s: to be running these market neutral books all the time is simply not true in the
+1913.99s: all the time is simply not true in the
+1914.00s: all the time is simply not true in the sense of like if you ever anybody that's
+1915.39s: sense of like if you ever anybody that's
+1915.40s: sense of like if you ever anybody that's been in a market maker seat
+1917.55s: been in a market maker seat
+1917.56s: been in a market maker seat knows that they lean their deltas. They
+1919.87s: knows that they lean their deltas. They
+1919.88s: knows that they lean their deltas. They don't actually run necessarily totally
+1922.23s: don't actually run necessarily totally
+1922.24s: don't actually run necessarily totally market neutral books.
+1924.19s: market neutral books.
+1924.20s: market neutral books. And it's because they are all modeling
+1927.43s: And it's because they are all modeling
+1927.44s: And it's because they are all modeling everybody else's behavior at the same
+1929.31s: everybody else's behavior at the same
+1929.32s: everybody else's behavior at the same time. And that's why deltas are much
+1932.03s: time. And that's why deltas are much
+1932.04s: time. And that's why deltas are much more tricky concept than anybody
+1936.27s: more tricky concept than anybody
+1936.28s: more tricky concept than anybody uh from the outside might sort of look
+1938.87s: uh from the outside might sort of look
+1938.88s: uh from the outside might sort of look at uh
+1940.03s: at uh
+1940.04s: at uh appreciate it as. And I think this
+1942.39s: appreciate it as. And I think this
+1942.40s: appreciate it as. And I think this becomes more and more of an issue
+1944.71s: becomes more and more of an issue
+1944.72s: becomes more and more of an issue probably uh as you look at a more and
+1947.27s: probably uh as you look at a more and
+1947.28s: probably uh as you look at a more and more narrow name. A name that tends to
+1950.31s: more narrow name. A name that tends to
+1950.32s: more narrow name. A name that tends to trade like more by appointment, more by,
+1953.07s: trade like more by appointment, more by,
+1953.08s: trade like more by appointment, more by, you know,
+1954.11s: you know,
+1954.12s: you know, you think of the S&amp;P is like checkers.
+1956.43s: you think of the S&amp;P is like checkers.
+1956.44s: you think of the S&amp;P is like checkers. It's like it it's a it's it's like
+1958.95s: It's like it it's a it's it's like
+1958.96s: It's like it it's a it's it's like but like these other games are more like
+1960.75s: but like these other games are more like
+1960.76s: but like these other games are more like these like poker games.
+1962.99s: these like poker games.
+1963.00s: these like poker games. And who owns the how the like the open
+1965.63s: And who owns the how the like the open
+1965.64s: And who owns the how the like the open interest the concentration of the open
+1967.87s: interest the concentration of the open
+1967.88s: interest the concentration of the open interest matters a lot. Like
+1970.27s: interest matters a lot. Like
+1970.28s: interest matters a lot. Like it's a big difference between hey,
+1972.23s: it's a big difference between hey,
+1972.24s: it's a big difference between hey, there's 10 customers that are all short
+1974.79s: there's 10 customers that are all short
+1974.80s: there's 10 customers that are all short the strike versus just one big customer
+1977.15s: the strike versus just one big customer
+1977.16s: the strike versus just one big customer that's short the strike. Well, then if
+1978.71s: that's short the strike. Well, then if
+1978.72s: that's short the strike. Well, then if it's only one customer that's short the
+1980.43s: it's only one customer that's short the
+1980.44s: it's only one customer that's short the strike, then I would want to know
+1982.83s: strike, then I would want to know
+1982.84s: strike, then I would want to know what is the behavior of that customer?
+1984.91s: what is the behavior of that customer?
+1984.92s: what is the behavior of that customer? Is that a customer that when they start
+1986.63s: Is that a customer that when they start
+1986.64s: Is that a customer that when they start to make a profit um takes the profit? Is
+1989.71s: to make a profit um takes the profit? Is
+1989.72s: to make a profit um takes the profit? Is that market maker? Is it or is that
+1991.55s: that market maker? Is it or is that
+1991.56s: that market maker? Is it or is that customer as they start to make a profit,
+1993.71s: customer as they start to make a profit,
+1993.72s: customer as they start to make a profit, do they roll their position and try um
+1997.15s: do they roll their position and try um
+1997.16s: do they roll their position and try um you know, like let's say they own puts
+1998.55s: you know, like let's say they own puts
+1998.56s: you know, like let's say they own puts and the stock goes down. Are they the
+2000.35s: and the stock goes down. Are they the
+2000.36s: and the stock goes down. Are they the kind that would sell those puts and buy
+2002.07s: kind that would sell those puts and buy
+2002.08s: kind that would sell those puts and buy a lower strike put and double down on
+2004.31s: a lower strike put and double down on
+2004.32s: a lower strike put and double down on the trade? Like all of these things are
+2006.75s: the trade? Like all of these things are
+2006.76s: the trade? Like all of these things are the kinds of like poker-esque things
+2009.71s: the kinds of like poker-esque things
+2009.72s: the kinds of like poker-esque things that a market maker is going to think
+2010.95s: that a market maker is going to think
+2010.96s: that a market maker is going to think about. And there's a the surface area to
+2012.79s: about. And there's a the surface area to
+2012.80s: about. And there's a the surface area to play poker is a much wider in names that
+2016.51s: play poker is a much wider in names that
+2016.52s: play poker is a much wider in names that trade that are less liquid. Like there
+2019.23s: trade that are less liquid. Like there
+2019.24s: trade that are less liquid. Like there really is a poker game going on in
+2020.95s: really is a poker game going on in
+2020.96s: really is a poker game going on in those. And that's interesting because a
+2023.47s: those. And that's interesting because a
+2023.48s: those. And that's interesting because a name that's less liquid is also where a
+2026.15s: name that's less liquid is also where a
+2026.16s: name that's less liquid is also where a lot of people will be looking for edge
+2027.91s: lot of people will be looking for edge
+2027.92s: lot of people will be looking for edge because
+2029.11s: because
+2029.12s: because it's a lot harder to get edge in
+2031.75s: it's a lot harder to get edge in
+2031.76s: it's a lot harder to get edge in things that are insanely liquid and
+2034.27s: things that are insanely liquid and
+2034.28s: things that are insanely liquid and there's more opportunity to find edge
+2036.43s: there's more opportunity to find edge
+2036.44s: there's more opportunity to find edge where there's less liquidity and the but
+2038.03s: where there's less liquidity and the but
+2038.04s: where there's less liquidity and the but there's more of a poker game going on in
+2039.59s: there's more of a poker game going on in
+2039.60s: there's more of a poker game going on in them. So, I think that
+2041.27s: them. So, I think that
+2041.28s: them. So, I think that um
+2042.72s: um as you start to think through all the
+2044.39s: as you start to think through all the
+2044.40s: as you start to think through all the angles
+2045.83s: angles
+2045.84s: angles what happens is you start to realize
+2047.67s: what happens is you start to realize
+2047.68s: what happens is you start to realize like these assumptions are like I I said
+2050.31s: like these assumptions are like I I said
+2050.32s: like these assumptions are like I I said earlier, they're very low resolution and
+2054.15s: earlier, they're very low resolution and
+2054.16s: earlier, they're very low resolution and uh
+2055.32s: uh when you start to try to make tests,
+2057.43s: when you start to try to make tests,
+2057.44s: when you start to try to make tests, it's
+2058.47s: it's
+2058.48s: it's um we're trying to find market effects,
+2061.15s: um we're trying to find market effects,
+2061.16s: um we're trying to find market effects, but
+2062.23s: but
+2062.24s: but you know, whether or not we find one or
+2063.95s: you know, whether or not we find one or
+2063.96s: you know, whether or not we find one or not
+2065.03s: not
+2065.04s: not we still have these open questions about
+2067.07s: we still have these open questions about
+2067.08s: we still have these open questions about like well
+2069.71s: like well
+2069.72s: like well I saw this thing, but does that mean
+2071.39s: I saw this thing, but does that mean
+2071.40s: I saw this thing, but does that mean that the assumption was right, or is the
+2073.31s: that the assumption was right, or is the
+2073.32s: that the assumption was right, or is the assumption wrong and the thing kind of
+2074.95s: assumption wrong and the thing kind of
+2074.96s: assumption wrong and the thing kind of still worked out? Like, it's all quite
+2076.83s: still worked out? Like, it's all quite
+2076.84s: still worked out? Like, it's all quite complicated, and my point is
+2078.83s: complicated, and my point is
+2078.84s: complicated, and my point is this has all been
+2081.15s: this has all been
+2081.16s: this has all been This is a real effect. There is a real
+2084.11s: This is a real effect. There is a real
+2084.12s: This is a real effect. There is a real impact of gamma and open interest in
+2088.83s: impact of gamma and open interest in
+2088.84s: impact of gamma and open interest in uh
+2089.40s: uh um in the marketplace.
+2091.31s: um in the marketplace.
+2091.32s: um in the marketplace. What to do with that knowledge is a give
+2093.51s: What to do with that knowledge is a give
+2093.52s: What to do with that knowledge is a give very difficult problem, and
+2097.31s: very difficult problem, and
+2097.32s: very difficult problem, and that would be that's just my my uh you
+2099.79s: that would be that's just my my uh you
+2099.80s: that would be that's just my my uh you know, sober view on it.
+2103.84s: Okay, I'll interpret Yolo out of the
+2106.00s: Okay, I'll interpret Yolo out of the money options. I hear you.
+2108.83s: money options. I hear you.
+2108.84s: money options. I hear you. That's the I mean, I couldn't agree
+2110.11s: That's the I mean, I couldn't agree
+2110.12s: That's the I mean, I couldn't agree more. Just just sling them. So, it's a
+2113.59s: more. Just just sling them. So, it's a
+2113.60s: more. Just just sling them. So, it's a great takeaway, Chris. Stay No, I'm just
+2115.23s: great takeaway, Chris. Stay No, I'm just
+2115.24s: great takeaway, Chris. Stay No, I'm just kidding. So, I couldn't agree more
+2117.63s: kidding. So, I couldn't agree more
+2117.64s: kidding. So, I couldn't agree more though. It's it's
+2119.47s: though. It's it's
+2119.48s: though. It's it's And there's a really delicate dance
+2121.47s: And there's a really delicate dance
+2121.48s: And there's a really delicate dance that's happening with stuff like this
+2123.03s: that's happening with stuff like this
+2123.04s: that's happening with stuff like this from a practitioner's lens,
+2125.59s: from a practitioner's lens,
+2125.60s: from a practitioner's lens, which is it's always good to be able to
+2127.23s: which is it's always good to be able to
+2127.24s: which is it's always good to be able to like really cleanly isolate, detect,
+2130.39s: like really cleanly isolate, detect,
+2130.40s: like really cleanly isolate, detect, measure the thing that you think you're
+2132.11s: measure the thing that you think you're
+2132.12s: measure the thing that you think you're trading, and you know, how it behaves.
+2133.87s: trading, and you know, how it behaves.
+2133.88s: trading, and you know, how it behaves. But, then there's also the reality that
+2135.27s: But, then there's also the reality that
+2135.28s: But, then there's also the reality that sometimes you just kind of can't do
+2137.23s: sometimes you just kind of can't do
+2137.24s: sometimes you just kind of can't do that. And you might come across a signal
+2140.79s: that. And you might come across a signal
+2140.80s: that. And you might come across a signal that puts you in front of a pattern that
+2143.55s: that puts you in front of a pattern that
+2143.56s: that puts you in front of a pattern that can lead to making money even though you
+2145.87s: can lead to making money even though you
+2145.88s: can lead to making money even though you might be making money for the entirely
+2147.71s: might be making money for the entirely
+2147.72s: might be making money for the entirely wrong reasons. If you actually get used
+2150.91s: wrong reasons. If you actually get used
+2150.92s: wrong reasons. If you actually get used to almost trend following systems like
+2153.23s: to almost trend following systems like
+2153.24s: to almost trend following systems like that, you can come across interesting
+2154.87s: that, you can come across interesting
+2154.88s: that, you can come across interesting stuff. So, the thing that I want to
+2156.87s: stuff. So, the thing that I want to
+2156.88s: stuff. So, the thing that I want to emphasize there is
+2158.87s: emphasize there is
+2158.88s: emphasize there is there's lots of stuff that's really
+2160.39s: there's lots of stuff that's really
+2160.40s: there's lots of stuff that's really convoluted and in a like pure scholastic
+2163.67s: convoluted and in a like pure scholastic
+2163.68s: convoluted and in a like pure scholastic sense, you can't actually, you know,
+2166.59s: sense, you can't actually, you know,
+2166.60s: sense, you can't actually, you know, isolate and attribute things. But, from
+2168.95s: isolate and attribute things. But, from
+2168.96s: isolate and attribute things. But, from a practitioner sense, if you can use
+2171.51s: a practitioner sense, if you can use
+2171.52s: a practitioner sense, if you can use that well enough to make money,
+2173.79s: that well enough to make money,
+2173.80s: that well enough to make money, and it's, you know, consistently enough
+2176.59s: and it's, you know, consistently enough
+2176.60s: and it's, you know, consistently enough for you, then I mean, there's something
+2178.07s: for you, then I mean, there's something
+2178.08s: for you, then I mean, there's something to be said for that. So,
+2180.63s: to be said for that. So,
+2180.64s: to be said for that. So, in the future, Chris and I we will do
+2182.75s: in the future, Chris and I we will do
+2182.76s: in the future, Chris and I we will do a little bit of homework on the whole
+2184.95s: a little bit of homework on the whole
+2184.96s: a little bit of homework on the whole the whole Gex thing and just see at a
+2187.43s: the whole Gex thing and just see at a
+2187.44s: the whole Gex thing and just see at a high level if there's anything that
+2189.87s: high level if there's anything that
+2189.88s: high level if there's anything that even, you know, rudimentarily sticks out
+2192.27s: even, you know, rudimentarily sticks out
+2192.28s: even, you know, rudimentarily sticks out at us and we can share with you guys.
+2193.83s: at us and we can share with you guys.
+2193.84s: at us and we can share with you guys. And it's also a good It's a It's a good
+2196.19s: And it's also a good It's a It's a good
+2196.20s: And it's also a good It's a It's a good exercise for somebody else to try. And
+2198.71s: exercise for somebody else to try. And
+2198.72s: exercise for somebody else to try. And if you come across anything interesting,
+2201.19s: if you come across anything interesting,
+2201.20s: if you come across anything interesting, and you shoot it to us via email, I'll
+2203.63s: and you shoot it to us via email, I'll
+2203.64s: and you shoot it to us via email, I'll take a look at it. And then you could
+2205.55s: take a look at it. And then you could
+2205.56s: take a look at it. And then you could always come hop on an episode sometime
+2207.67s: always come hop on an episode sometime
+2207.68s: always come hop on an episode sometime potentially and walk through a little
+2208.87s: potentially and walk through a little
+2208.88s: potentially and walk through a little bit of your findings.
+2210.51s: bit of your findings.
+2210.52s: bit of your findings. But,
+2211.91s: But,
+2211.92s: But, until next time, you will see us every
+2215.91s: until next time, you will see us every
+2215.92s: until next time, you will see us every single week. Stay tuned for the next
+2218.35s: single week. Stay tuned for the next
+2218.36s: single week. Stay tuned for the next episode. We'll see you guys later.
+2220.67s: episode. We'll see you guys later.
+2220.68s: episode. We'll see you guys later. Cool.

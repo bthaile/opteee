@@ -4,7 +4,7 @@ import json
 import pickle
 import argparse
 from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeoutError
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional
 import numpy as np
 import faiss
 from dotenv import load_dotenv
@@ -21,8 +21,7 @@ from config import VECTOR_DIR, SYSTEM_PROMPT
 
 # LangChain imports
 from langchain.prompts import ChatPromptTemplate
-from langchain.schema.output_parser import StrOutputParser
-from langchain.schema.runnable import RunnablePassthrough, RunnableLambda
+from langchain.schema.runnable import RunnablePassthrough
 from langchain_core.documents import Document
 
 # OpenAI imports
@@ -43,8 +42,10 @@ INDEX_PATH = os.path.join(VECTOR_STORE_DIR, "transcript_index.faiss")
 
 DEFAULT_TOP_K = 5
 DEFAULT_LLM_MODEL = "gpt-4.1-mini"  # Current OpenAI model that supports temperature
-DEFAULT_CLAUDE_MODEL = "claude-haiku-4-5"  # Latest Claude Sonnet 4 model
+DEFAULT_CLAUDE_MODEL = "claude-haiku-4-5"  # Default Claude model fallback
 DEFAULT_OLLAMA_MODEL = "gemma4:e4b"  # Ollama model (e.g. gemma4:e4b, gemma3:270m)
+DEFAULT_EFFORT = "low"
+SUPPORTED_EFFORTS = {"low", "medium"}
 # Fallback models when primary Ollama model returns 404 (not installed)
 OLLAMA_FALLBACK_MODELS = ["gemma4:e4b", "gemma2:2b", "llama3.2", "llama3.2:3b", "mistral", "phi3", "llama2"]
 DEFAULT_TEMPERATURE = 0.2
@@ -91,7 +92,7 @@ def _get_fallback_providers(primary_provider: str) -> List[str]:
     return [p for p in available if p != primary_provider]
 
 
-def invoke_chain_with_timeout(chain, query: str, timeout: int = None) -> str:
+def invoke_chain_with_timeout(chain, query: str, timeout: int = None):
     """
     Invoke the RAG chain with a timeout. Raises TimeoutError if the LLM
     does not respond within the given seconds.
@@ -105,14 +106,99 @@ def invoke_chain_with_timeout(chain, query: str, timeout: int = None) -> str:
             raise TimeoutError(f"LLM did not respond within {timeout} seconds")
 
 
+def extract_answer_text(response: Any) -> str:
+    """Extract plain answer text from a LangChain response object or string."""
+    if response is None:
+        return ""
+    if isinstance(response, str):
+        return response
+    content = getattr(response, "content", "")
+    if isinstance(content, list):
+        parts = []
+        for item in content:
+            if isinstance(item, dict):
+                text = item.get("text")
+                if text:
+                    parts.append(str(text))
+            elif isinstance(item, str):
+                parts.append(item)
+        return "\n".join(part for part in parts if part).strip()
+    return str(content or "")
+
+
+def extract_token_usage(response: Any, provider: Optional[str] = None, model: Optional[str] = None, effort: Optional[str] = None) -> Dict[str, Any]:
+    """Extract normalized token usage from a LangChain response object."""
+    usage = {}
+    for attr in ("usage_metadata", "response_metadata"):
+        value = getattr(response, attr, None)
+        if isinstance(value, dict):
+            usage.update(value)
+
+    token_usage = usage.get("token_usage") if isinstance(usage.get("token_usage"), dict) else {}
+
+    input_tokens = (
+        usage.get("input_tokens")
+        or usage.get("prompt_tokens")
+        or token_usage.get("prompt_tokens")
+        or token_usage.get("input_tokens")
+        or 0
+    )
+    output_tokens = (
+        usage.get("output_tokens")
+        or usage.get("completion_tokens")
+        or token_usage.get("completion_tokens")
+        or token_usage.get("output_tokens")
+        or 0
+    )
+    total_tokens = (
+        usage.get("total_tokens")
+        or token_usage.get("total_tokens")
+        or (input_tokens + output_tokens)
+    )
+
+    return {
+        "provider": provider,
+        "model": model,
+        "effort": effort,
+        "prompt_tokens": int(input_tokens or 0),
+        "completion_tokens": int(output_tokens or 0),
+        "total_tokens": int(total_tokens or 0),
+    }
+
+
 def _get_provider() -> str:
     """Provider from env, else default."""
     return os.getenv("LLM_PROVIDER", DEFAULT_LLM_PROVIDER)
 
 
-def _get_model_for_provider(provider: str) -> str:
+def _normalize_effort(effort: Optional[str] = None) -> str:
+    """Normalize effort to a supported tier."""
+    candidate = (effort or os.getenv("DEFAULT_EFFORT", DEFAULT_EFFORT)).strip().lower()
+    return candidate if candidate in SUPPORTED_EFFORTS else DEFAULT_EFFORT
+
+
+def _get_effort_model_var(provider: str, effort: str) -> str:
+    return f"{provider.upper()}_MODEL_{effort.upper()}"
+
+
+def _get_default_model_var(effort: str) -> str:
+    return f"DEFAULT_MODEL_{effort.upper()}"
+
+
+def _get_model_for_provider(provider: str, effort: Optional[str] = None) -> str:
     """Model from env or provider default. LLM_MODEL only applies to primary provider."""
     primary = _get_provider()
+    normalized_effort = _normalize_effort(effort) if effort else None
+
+    if normalized_effort:
+        provider_effort_model = os.getenv(_get_effort_model_var(provider, normalized_effort))
+        if provider_effort_model:
+            return provider_effort_model
+
+        default_effort_model = os.getenv(_get_default_model_var(normalized_effort))
+        if default_effort_model:
+            return default_effort_model
+
     env_model = os.getenv("LLM_MODEL")
     if env_model and provider == primary:
         return env_model
@@ -123,6 +209,18 @@ def _get_model_for_provider(provider: str) -> str:
     if provider == "ollama":
         return os.getenv("OLLAMA_MODEL") or DEFAULT_OLLAMA_MODEL
     return DEFAULT_LLM_MODEL
+
+
+def resolve_llm_selection(provider: Optional[str] = None, model: Optional[str] = None, effort: Optional[str] = None) -> Dict[str, str]:
+    """Resolve provider/model/effort using request overrides first, then env defaults."""
+    resolved_provider = provider or _get_provider()
+    resolved_effort = _normalize_effort(effort)
+    resolved_model = model or _get_model_for_provider(resolved_provider, effort=resolved_effort)
+    return {
+        "provider": resolved_provider,
+        "model": resolved_model,
+        "effort": resolved_effort,
+    }
 
 
 def _is_model_not_found_error(exc: Exception) -> bool:
@@ -722,12 +820,11 @@ User Question: {question}""")
          "question": RunnablePassthrough()}
         | template
         | llm
-        | StrOutputParser()
     )
     
     return retriever, chain
 
-def run_rag_query(retriever, chain, query: str, timeout: int = None) -> Dict[str, Any]:
+def run_rag_query(retriever, chain, query: str, timeout: int = None, provider: Optional[str] = None, model: Optional[str] = None, effort: Optional[str] = None) -> Dict[str, Any]:
     """Run a RAG query and return the result with sources. Raises TimeoutError if LLM does not respond in time."""
     # Get relevant documents (already sorted by score)
     docs = retriever.get_relevant_documents(query)
@@ -735,11 +832,21 @@ def run_rag_query(retriever, chain, query: str, timeout: int = None) -> Dict[str
     if not docs:
         return {
             "answer": "",  # Return empty - let frontend handle no results messaging
-            "sources": []
+            "sources": [],
+            "token_usage": {
+                "provider": provider,
+                "model": model,
+                "effort": effort,
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0,
+            },
         }
 
     # Generate answer (with timeout)
-    answer = invoke_chain_with_timeout(chain, query, timeout=timeout)
+    response = invoke_chain_with_timeout(chain, query, timeout=timeout)
+    answer = extract_answer_text(response)
+    token_usage = extract_token_usage(response, provider=provider, model=model, effort=effort)
     
     # Extract sources (maintaining order)
     sources = []
@@ -796,7 +903,8 @@ def run_rag_query(retriever, chain, query: str, timeout: int = None) -> Dict[str
     
     return {
         "answer": answer,
-        "sources": sources
+        "sources": sources,
+        "token_usage": token_usage,
     }
 
 def format_result(result: Dict[str, Any]) -> None:

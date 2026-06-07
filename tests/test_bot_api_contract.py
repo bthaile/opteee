@@ -16,8 +16,10 @@ class BotApiContractTests(unittest.TestCase):
         os.environ["TEST_MODE"] = "true"
         os.environ["DATABASE_URL"] = "sqlite:///./test_bot_api.db"
         import main
+        from app.db.init_db import init_db
 
         cls.main_module = importlib.reload(main)
+        init_db()
         cls.client = TestClient(cls.main_module.app)
 
     def test_chat_request_rejects_legacy_discord_format(self):
@@ -39,6 +41,13 @@ class BotApiContractTests(unittest.TestCase):
                 }
             ],
             format_type="json",
+            token_usage={
+                "provider": "claude",
+                "model": "claude-haiku-4-5",
+                "prompt_tokens": 120,
+                "completion_tokens": 45,
+                "total_tokens": 165,
+            },
         )
 
         payload = result["formatted_content"]
@@ -46,10 +55,29 @@ class BotApiContractTests(unittest.TestCase):
         self.assertNotIn("<", payload["answer"])
         self.assertNotIn("**", payload["answer"])
         self.assertIsInstance(payload["raw_sources"], list)
+        self.assertEqual(payload["token_usage"]["total_tokens"], 165)
+        self.assertEqual(payload["token_usage"]["provider"], "claude")
 
         sources_json = json.loads(payload["sources"])
         self.assertIsInstance(sources_json, list)
         self.assertEqual(sources_json[0]["title"], "Sample Video")
+
+    def test_chat_endpoint_json_returns_token_usage(self):
+        response = self.client.post(
+            "/api/chat",
+            json={
+                "query": "What is gamma?",
+                "provider": "claude",
+                "num_results": 3,
+                "format": "json",
+            },
+        )
+        self.assertEqual(response.status_code, 200)
+        body = response.json()
+        self.assertIn("token_usage", body)
+        self.assertIsInstance(body["token_usage"], dict)
+        self.assertEqual(body["token_usage"]["provider"], "claude")
+        self.assertIn("total_tokens", body["token_usage"])
 
     def test_chat_endpoint_json_returns_conversation_id(self):
         response = self.client.post(
@@ -66,4 +94,21 @@ class BotApiContractTests(unittest.TestCase):
         self.assertIn("conversation_id", body)
         self.assertTrue(body["conversation_id"])
         self.assertIsInstance(body.get("raw_sources"), list)
+
+    def test_chat_endpoint_accepts_effort_and_model_query_params(self):
+        response = self.client.post(
+            "/api/chat",
+            json={
+                "query": "Compare rolling approaches",
+                "provider": "claude",
+                "model": "claude-sonnet-4-5",
+                "effort": "medium",
+                "num_results": 4,
+                "format": "json",
+            },
+        )
+        self.assertEqual(response.status_code, 200)
+        body = response.json()
+        self.assertIn("Effort: medium", body["answer"])
+        self.assertIn("Model: claude-sonnet-4-5", body["answer"])
 
