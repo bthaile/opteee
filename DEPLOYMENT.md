@@ -1,62 +1,95 @@
-# OPTEEE Deployment (Native — no Docker)
+# OPTEEE Deployment (Native macOS)
 
-**As of 2026-06-02, opteee runs natively on macOS, NOT in Docker.**
-It was migrated off Docker Desktop because Docker Desktop is a GUI app that requires
-a logged-in desktop session — incompatible with running this Mac headless (no login).
+This file is the **canonical source of truth** for how OPTEEE runs in production.
 
-## How it runs
+## Production ownership
 
-- **Service:** LaunchDaemon `com.opteee.native` → `/Library/LaunchDaemons/com.opteee.native.plist`
-  - Runs as user `bradfordhaile`, starts at boot, `KeepAlive=true` (auto-restarts on crash).
-  - Survives headless (no GUI login required).
-- **Launcher:** `start_native.sh` (in this repo) sets env and execs the venv python.
-  - `PORT=7860`, binds `0.0.0.0` → reachable on LAN at **192.168.1.219:7860**.
-  - `DATABASE_URL` → `postgresql+psycopg://postgres:postgres@127.0.0.1:5432/opteee`
-    (native uses `127.0.0.1`, NOT the old Docker `host.docker.internal`).
-  - Caches embedding model under `.cache-native/` (gitignored).
-- **Runtime:** Python 3.11 venv `.venv-native/` (gitignored), deps from `requirements-serve.txt`
-  + CPU-only torch (`pip install torch --index-url https://download.pytorch.org/whl/cpu`).
-- **Data:** `vector_store/`, `processed_transcripts/`, `processed_pdfs/`, metadata JSON are read
-  directly from this repo dir (in Docker they were read-only volume mounts).
-- **LLM:** `LLM_PROVIDER=claude` (key in `.env`); fallback `openai`; `ollama` fallback points at
-  a DIFFERENT host (`m1pro.home:11434`), NOT this machine. Local Ollama was removed — no impact.
+OPTEEE runs natively on macOS through **system launchd**.
 
-## Weekly rebuild / redeploy
+### Live services
+- App service: `com.opteee.native`
+- Weekly refresh scheduler: `com.opteee.weekly-refresh`
+- App port: `7860`
+- App root: `/Users/bradfordhaile/clawd/opteee`
 
-Scheduled by LaunchDaemon `com.opteee.weekly-refresh` (Sunday 23:00) → runs `weekly-refresh.sh`,
-which: pulls code (if worktree clean) → `pip install -r requirements-serve.txt` → restarts the
-service → health-checks `http://127.0.0.1:7860/api/health`.
+## Runtime model
 
-**Restart works without sudo:** the script `pkill`s the running python; launchd's `KeepAlive`
-respawns it with fresh code/deps.
+### App service
+- launchd label: `com.opteee.native`
+- plist path: `/Library/LaunchDaemons/com.opteee.native.plist`
+- launcher: `start_native.sh`
+- runtime env: `.venv-native/`
+- logs:
+  - `logs/native.out.log`
+  - `logs/native.err.log`
 
-### Manual redeploy
+### Weekly refresh job
+- launchd label: `com.opteee.weekly-refresh`
+- plist path: `/Library/LaunchDaemons/com.opteee.weekly-refresh.plist`
+- tracked repo template: `./com.opteee.weekly-refresh.plist`
+- script: `./weekly-refresh.sh`
+- logs:
+  - `logs/weekly-refresh.out.log`
+  - `logs/weekly-refresh.err.log`
+
+## What the weekly refresh does
+
+`weekly-refresh.sh` is the only supported weekly refresh path. It:
+1. checks out the repo,
+2. pulls latest Git changes when the worktree is clean,
+3. refreshes `.venv-native` dependencies from `requirements-serve.txt`,
+4. restarts the app by killing the live Python process,
+5. relies on `com.opteee.native` `KeepAlive=true` to respawn,
+6. waits for `http://127.0.0.1:7860/api/health` to pass.
+
+## Schedule
+
+The tracked plist runs:
+- Sunday
+- 11:00 PM local time
+
+In plist terms:
+- `Weekday=0`
+- `Hour=23`
+- `Minute=0`
+
+## Manual operations
+
+### Verify app health
 ```bash
-cd ~/clawd/opteee
-git pull --ff-only           # if you have committed local changes
-./.venv-native/bin/pip install -q -r requirements-serve.txt   # if deps changed
-pkill -f "$HOME/clawd/opteee/.venv-native/bin/python"          # KeepAlive restarts it
-curl -fsS http://127.0.0.1:7860/api/health                    # verify
+curl -fsS http://127.0.0.1:7860/api/health
 ```
-Or force a clean restart via launchd (needs sudo): `sudo launchctl kickstart -k system/com.opteee.native`
 
-### ⚠️ Weekly `git pull` gotcha
-`weekly-refresh.sh` only pulls when `git status` is clean. This repo intentionally **tracks
-generated transcript/data files** (see `.gitignore` lines ~49-53), so after the pipeline runs
-the worktree is dirty and the pull is **skipped**. For weekly CODE updates to land, either:
-- commit/push your data before the refresh runs (this machine is the repo's source of truth), or
-- untrack the generated data (`git rm --cached` + add to `.gitignore`) so the worktree stays clean.
-
-## If you ever rebuild the venv from scratch
+### Run the weekly refresh immediately
 ```bash
-cd ~/clawd/opteee
-python3.11 -m venv .venv-native
-./.venv-native/bin/pip install --upgrade pip setuptools wheel
-./.venv-native/bin/pip install torch --index-url https://download.pytorch.org/whl/cpu
-./.venv-native/bin/pip install -r requirements-serve.txt
+sudo launchctl kickstart -k system/com.opteee.weekly-refresh
 ```
 
-## Rollback to Docker (if ever needed)
-The `Dockerfile`, `Dockerfile.serve`, and `docker-compose.yml` are unchanged. To revert:
-`sudo launchctl bootout system/com.opteee.native` then `docker compose up -d --build`.
-(Docker Desktop must be running, which requires a GUI login.)
+### Restart the native app directly
+```bash
+sudo launchctl kickstart -k system/com.opteee.native
+```
+
+### Check launchd state
+```bash
+launchctl print system/com.opteee.native
+launchctl print system/com.opteee.weekly-refresh
+```
+
+## One-time install / reload
+
+```bash
+cd /Users/bradfordhaile/clawd/opteee
+chmod +x weekly-refresh.sh start_native.sh
+sudo cp com.opteee.weekly-refresh.plist /Library/LaunchDaemons/com.opteee.weekly-refresh.plist
+sudo launchctl bootout system /Library/LaunchDaemons/com.opteee.weekly-refresh.plist 2>/dev/null || true
+sudo launchctl bootstrap system /Library/LaunchDaemons/com.opteee.weekly-refresh.plist
+sudo launchctl enable system/com.opteee.weekly-refresh
+```
+
+## Important constraints
+
+- The native app uses `DATABASE_URL` pointed at `127.0.0.1`.
+- `weekly-refresh.sh` intentionally skips `git pull` if the repo worktree is dirty.
+- The content pipeline (`run_pipeline.py`, `run_transcripts.sh`, `rebuild_vector_store.py`) is separate from launchd ownership.
+- If launchd ownership changes in the future, update **this file first**, then `README.md`, then the tracked plist/script comments.

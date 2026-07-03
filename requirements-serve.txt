@@ -1,6 +1,6 @@
-# Minimal dependencies for serving OPTEEE locally
+# Minimal dependencies for serving OPTEEE natively
 # Excludes: Whisper, YouTube downloaders, Selenium, PDF processors
-# Install torch CPU-only separately first (see Dockerfile.serve)
+# Install a CPU-compatible torch wheel in .venv-native before first launch if needed.
 
 # Web framework
 fastapi==0.115.6

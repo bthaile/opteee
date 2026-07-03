@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Diagnostic script to test Ollama connectivity and model availability.
-Run from your environment (or inside Docker if that's how you deploy).
+Run from the same environment that will execute OPTEEE.
 """
 import os
 import sys
@@ -98,9 +98,9 @@ def main():
     if "m1pro" in OLLAMA_BASE_URL or ".home" in OLLAMA_BASE_URL:
         version_txt, err = fetch(f"{OLLAMA_BASE_URL}/api/version")
         if err:
-            print("NOTE: Configured remote host unreachable. If running in Docker,")
-            print("      try: OLLAMA_BASE_URL=http://host.docker.internal:11434")
-            print("      On m1pro.home, ensure: OLLAMA_HOST=0.0.0.0")
+            print("NOTE: Configured remote host unreachable.")
+            print("      If Ollama is on another machine, verify the host, port, and firewall.")
+            print("      On the Ollama host, ensure: OLLAMA_HOST=0.0.0.0")
             print()
 
     print("All checks passed.")

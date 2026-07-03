@@ -1,16 +1,16 @@
 import os
 from pathlib import Path
 
-# Detect if we're running in Docker or locally
-IS_DOCKER = os.path.exists('/app') and os.path.ismount('/app')
-IS_LOCAL = not IS_DOCKER
+# Detect whether we're running from the packaged /app layout or the local repo
+IS_APP_LAYOUT = os.path.exists('/app') and os.path.ismount('/app')
+IS_LOCAL = not IS_APP_LAYOUT
 
-if IS_DOCKER:
-    # Use /app paths since vector store is built during image creation
+if IS_APP_LAYOUT:
+    # Use /app paths when the project is mounted or packaged there
     PROCESSED_DIR = "/app/processed_transcripts"
     VECTOR_DIR = "/app/vector_store"
 else:
-    # Use local paths for development
+    # Use local repo paths for native development/runtime
     PROJECT_ROOT = Path(__file__).parent.absolute()
     PROCESSED_DIR = str(PROJECT_ROOT / "processed_transcripts")
     VECTOR_DIR = str(PROJECT_ROOT / "vector_store")
@@ -35,7 +35,7 @@ CHUNK_OVERLAP = 50
 # Vector store configuration
 BATCH_SIZE = 32
 
-# Create necessary directories (only if not in Docker or if paths are writable)
+# Create necessary directories when the target paths are writable
 try:
     Path(PROCESSED_DIR).mkdir(exist_ok=True, parents=True)
     Path(VECTOR_DIR).mkdir(exist_ok=True, parents=True)

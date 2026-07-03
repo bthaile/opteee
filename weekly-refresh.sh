@@ -1,10 +1,9 @@
 #!/bin/zsh
 set -euo pipefail
 
-# OPTEEE weekly refresh — NATIVE deployment (no Docker, as of 2026-06-02).
-# Old flow used `docker compose up -d --build`. opteee now runs as the LaunchDaemon
-# com.opteee.native (start_native.sh -> .venv-native python main.py), so "redeploy"
-# = pull code, refresh deps, restart the daemon's process.
+# OPTEEE weekly refresh for the native macOS deployment.
+# Launchd owns the app lifecycle through com.opteee.native, so "redeploy" here
+# means: pull code, refresh deps, and restart the daemon's Python process.
 #
 # Restart mechanism (no sudo): the daemon has KeepAlive=true and runs python as
 # bradfordhaile. We kill that python; launchd respawns it with the fresh code/deps.
@@ -14,6 +13,7 @@ export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 REPO_DIR="/Users/bradfordhaile/clawd/opteee"
 VENV="${REPO_DIR}/.venv-native"
+PIPELINE_SCRIPT="${REPO_DIR}/run_transcripts.sh"
 HEALTH_URL="http://127.0.0.1:7860/api/health"
 LOCK_DIR="/tmp/opteee-weekly-refresh.lock"
 
@@ -42,6 +42,11 @@ else
   echo "Pulling latest from origin/${current_branch}"
   git pull --ff-only origin "${current_branch}"
 fi
+
+# Refresh transcript-backed content before restarting the native service.
+[[ -x "${PIPELINE_SCRIPT}" ]] || chmod +x "${PIPELINE_SCRIPT}"
+echo "Running transcript/content refresh pipeline"
+"${PIPELINE_SCRIPT}"
 
 # Refresh Python deps in case requirements-serve.txt changed (idempotent; fast when satisfied)
 echo "Refreshing native venv dependencies"

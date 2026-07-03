@@ -1,0 +1,486 @@
+0.44s: What's up, Al Liars? Today, we're going
+1.76s: What's up, Al Liars? Today, we're going to talk about zero DTE SPX options,
+4.55s: to talk about zero DTE SPX options,
+4.56s: to talk about zero DTE SPX options, specifically iron condors. And this was
+8.07s: specifically iron condors. And this was
+8.08s: specifically iron condors. And this was actually a question that was asked on
+10.83s: actually a question that was asked on
+10.84s: actually a question that was asked on Reddit. I offered to do some research,
+12.71s: Reddit. I offered to do some research,
+12.72s: Reddit. I offered to do some research, which by the way, if there's anything
+13.91s: which by the way, if there's anything
+13.92s: which by the way, if there's anything that you want me to take a look at, let
+15.39s: that you want me to take a look at, let
+15.40s: that you want me to take a look at, let me know, throw it in the comments. I'm
+16.51s: me know, throw it in the comments. I'm
+16.52s: me know, throw it in the comments. I'm happy to take a peek at a couple of them
+18.07s: happy to take a peek at a couple of them
+18.08s: happy to take a peek at a couple of them and share you guys the
+20.19s: and share you guys the
+20.20s: and share you guys the results. And they essentially were
+22.99s: results. And they essentially were
+23.00s: results. And they essentially were asking, how does the spread impact the
+27.83s: asking, how does the spread impact the
+27.84s: asking, how does the spread impact the performance of a zero DTE strategy? Now,
+31.23s: performance of a zero DTE strategy? Now,
+31.24s: performance of a zero DTE strategy? Now, normally for me, I'm using straddles or
+35.47s: normally for me, I'm using straddles or
+35.48s: normally for me, I'm using straddles or strangles to try to limit the number of
+37.43s: strangles to try to limit the number of
+37.44s: strangles to try to limit the number of legs, but I understand that's not really
+39.63s: legs, but I understand that's not really
+39.64s: legs, but I understand that's not really feasible for a lot of other traders, so
+41.23s: feasible for a lot of other traders, so
+41.24s: feasible for a lot of other traders, so this is using short iron condors. And
+45.19s: this is using short iron condors. And
+45.20s: this is using short iron condors. And the premise behind this trade in general
+47.63s: the premise behind this trade in general
+47.64s: the premise behind this trade in general is to try to capture variance risk
+49.71s: is to try to capture variance risk
+49.72s: is to try to capture variance risk premium, which is just the propensity
+51.79s: premium, which is just the propensity
+51.80s: premium, which is just the propensity for implied volatility to be elevated
+54.43s: for implied volatility to be elevated
+54.44s: for implied volatility to be elevated compared to realized vol. So, at the end
+56.27s: compared to realized vol. So, at the end
+56.28s: compared to realized vol. So, at the end of the video, you'll have a definitive
+57.87s: of the video, you'll have a definitive
+57.88s: of the video, you'll have a definitive answer to this and a couple of key
+60.35s: answer to this and a couple of key
+60.36s: answer to this and a couple of key details to keep in mind going forward to
+62.71s: details to keep in mind going forward to
+62.72s: details to keep in mind going forward to improve your fills.
+64.39s: improve your fills.
+64.40s: improve your fills. So, what I did is I looked at SPX zero
+66.99s: So, what I did is I looked at SPX zero
+67.00s: So, what I did is I looked at SPX zero DTE options from 2022 to 2026. The
+70.23s: DTE options from 2022 to 2026. The
+70.24s: DTE options from 2022 to 2026. The reason for 2022 is just because that's
+73.39s: reason for 2022 is just because that's
+73.40s: reason for 2022 is just because that's when daily options were launched. So,
+75.15s: when daily options were launched. So,
+75.16s: when daily options were launched. So, it's about 970 iron condors. They were
+78.03s: it's about 970 iron condors. They were
+78.04s: it's about 970 iron condors. They were held to the close. That's typically my
+79.79s: held to the close. That's typically my
+79.80s: held to the close. That's typically my convention, but especially with iron
+82.71s: convention, but especially with iron
+82.72s: convention, but especially with iron condors, since there's already four
+84.43s: condors, since there's already four
+84.44s: condors, since there's already four legs, you're kind of fighting to get in
+87.87s: legs, you're kind of fighting to get in
+87.88s: legs, you're kind of fighting to get in and it's difficult to do that twice in a
+90.59s: and it's difficult to do that twice in a
+90.60s: and it's difficult to do that twice in a single day. It's very expensive, so
+92.63s: single day. It's very expensive, so
+92.64s: single day. It's very expensive, so generally want to avoid that.
+94.75s: generally want to avoid that.
+94.76s: generally want to avoid that. So, quick refresh on what the iron
+97.91s: So, quick refresh on what the iron
+97.92s: So, quick refresh on what the iron condor actually is, and I looked at a
+101.67s: condor actually is, and I looked at a
+101.68s: condor actually is, and I looked at a ton of different variations for this.
+103.71s: ton of different variations for this.
+103.72s: ton of different variations for this. I'm just anchoring it off of the 16
+105.71s: I'm just anchoring it off of the 16
+105.72s: I'm just anchoring it off of the 16 delta short. So, what this means is
+107.35s: delta short. So, what this means is
+107.36s: delta short. So, what this means is you're going to sell a put and a call 16
+110.51s: you're going to sell a put and a call 16
+110.52s: you're going to sell a put and a call 16 deltas each. And then, in this case, the
+113.23s: deltas each. And then, in this case, the
+113.24s: deltas each. And then, in this case, the wings can be really any width. What I
+115.91s: wings can be really any width. What I
+115.92s: wings can be really any width. What I ended up going for, again, is a ton of
+118.35s: ended up going for, again, is a ton of
+118.36s: ended up going for, again, is a ton of different variations, but for this
+120.07s: different variations, but for this
+120.08s: different variations, but for this example, just landing at 50 deltas or 50
+123.51s: example, just landing at 50 deltas or 50
+123.52s: example, just landing at 50 deltas or 50 points wide. It's fairly wide, not
+125.95s: points wide. It's fairly wide, not
+125.96s: points wide. It's fairly wide, not supremely wide.
+127.63s: supremely wide.
+127.64s: supremely wide. And the bet here, essentially, is that
+132.19s: And the bet here, essentially, is that
+132.20s: And the bet here, essentially, is that implied volatility is overpriced. And
+135.39s: implied volatility is overpriced. And
+135.40s: implied volatility is overpriced. And that the probability of this falling
+138.31s: that the probability of this falling
+138.32s: that the probability of this falling outside of this range is lower than
+140.59s: outside of this range is lower than
+140.60s: outside of this range is lower than expected. At 16 delta, that would be
+143.27s: expected. At 16 delta, that would be
+143.28s: expected. At 16 delta, that would be about one standard deviation move, 68%
+145.91s: about one standard deviation move, 68%
+145.92s: about one standard deviation move, 68% probability, but the idea, otherwise
+148.07s: probability, but the idea, otherwise
+148.08s: probability, but the idea, otherwise that would be fairly priced if it landed
+149.71s: that would be fairly priced if it landed
+149.72s: that would be fairly priced if it landed right at that. So, the idea is that it
+151.55s: right at that. So, the idea is that it
+151.56s: right at that. So, the idea is that it actually stays in there a little bit
+153.35s: actually stays in there a little bit
+153.36s: actually stays in there a little bit more frequently than 68%.
+157.99s: more frequently than 68%.
+158.00s: more frequently than 68%. So, let's talk about fills really quick.
+160.55s: So, let's talk about fills really quick.
+160.56s: So, let's talk about fills really quick. Whenever you go to enter a trade, you'll
+163.43s: Whenever you go to enter a trade, you'll
+163.44s: Whenever you go to enter a trade, you'll normally see a bid and an ask, and then
+165.83s: normally see a bid and an ask, and then
+165.84s: normally see a bid and an ask, and then a mid price. The mid price is generally
+168.15s: a mid price. The mid price is generally
+168.16s: a mid price. The mid price is generally the middle point between those two. The
+170.31s: the middle point between those two. The
+170.32s: the middle point between those two. The bid and the ask is essentially where you
+172.07s: bid and the ask is essentially where you
+172.08s: bid and the ask is essentially where you would need to transact to get filled
+173.99s: would need to transact to get filled
+174.00s: would need to transact to get filled right now. So, if I wanted to sell
+176.51s: right now. So, if I wanted to sell
+176.52s: right now. So, if I wanted to sell something, I have to go to the bid, and
+178.87s: something, I have to go to the bid, and
+178.88s: something, I have to go to the bid, and I would be at the $2 handle. If I wanted
+181.03s: I would be at the $2 handle. If I wanted
+181.04s: I would be at the $2 handle. If I wanted to buy something, I would have to go to
+182.39s: to buy something, I would have to go to
+182.40s: to buy something, I would have to go to 240. If you're not really in a rush,
+185.79s: 240. If you're not really in a rush,
+185.80s: 240. If you're not really in a rush, then you can go for the mid. And or you
+188.43s: then you can go for the mid. And or you
+188.44s: then you can go for the mid. And or you can go even slightly better than the
+190.03s: can go even slightly better than the
+190.04s: can go even slightly better than the mid, by the way. So, let's say that you
+191.95s: mid, by the way. So, let's say that you
+191.96s: mid, by the way. So, let's say that you wanted to
+193.71s: wanted to
+193.72s: wanted to buy something, you don't have to go
+195.59s: buy something, you don't have to go
+195.60s: buy something, you don't have to go directly to 220, you could maybe go a
+197.75s: directly to 220, you could maybe go a
+197.76s: directly to 220, you could maybe go a little cheaper. You could say, "Well,
+198.95s: little cheaper. You could say, "Well,
+198.96s: little cheaper. You could say, "Well, maybe I'll try to get it at 215 or so."
+202.03s: maybe I'll try to get it at 215 or so."
+202.04s: maybe I'll try to get it at 215 or so." And using the mid, however, is a
+205.11s: And using the mid, however, is a
+205.12s: And using the mid, however, is a slightly higher probability of getting
+206.87s: slightly higher probability of getting
+206.88s: slightly higher probability of getting your fill.
+208.07s: your fill.
+208.08s: your fill. And this is generally more passive,
+212.23s: And this is generally more passive,
+212.24s: And this is generally more passive, because when you put in your price, it
+214.35s: because when you put in your price, it
+214.36s: because when you put in your price, it doesn't necessarily get hit right away.
+217.19s: doesn't necessarily get hit right away.
+217.20s: doesn't necessarily get hit right away. The trick here is with an iron condor,
+219.47s: The trick here is with an iron condor,
+219.48s: The trick here is with an iron condor, there are four legs. So, you have to
+221.71s: there are four legs. So, you have to
+221.72s: there are four legs. So, you have to cross this gap four times. Even though
+225.67s: cross this gap four times. Even though
+225.68s: cross this gap four times. Even though you just see once if you submit it as
+227.99s: you just see once if you submit it as
+228.00s: you just see once if you submit it as one order on your platform, on the back
+230.75s: one order on your platform, on the back
+230.76s: one order on your platform, on the back end, it's happening four times. So, that
+234.35s: end, it's happening four times. So, that
+234.36s: end, it's happening four times. So, that generally is why it's harder to get
+237.91s: generally is why it's harder to get
+237.92s: generally is why it's harder to get better fills with more legs on your
+240.47s: better fills with more legs on your
+240.48s: better fills with more legs on your strategy.
+241.87s: strategy.
+241.88s: strategy. The cool part here for this study is
+245.03s: The cool part here for this study is
+245.04s: The cool part here for this study is there's literally no simulating
+247.19s: there's literally no simulating
+247.20s: there's literally no simulating anything. It's literally just tracking
+250.27s: anything. It's literally just tracking
+250.28s: anything. It's literally just tracking fills at different price points. So, the
+254.71s: fills at different price points. So, the
+254.72s: fills at different price points. So, the good part is there's literally no
+257.07s: good part is there's literally no
+257.08s: good part is there's literally no inferred data from this. This is
+259.67s: inferred data from this. This is
+259.68s: inferred data from this. This is literally just observational based on
+261.95s: literally just observational based on
+261.96s: literally just observational based on how wide the spreads are.
+263.91s: how wide the spreads are.
+263.92s: how wide the spreads are. So, this is what I looked at in general.
+267.63s: So, this is what I looked at in general.
+267.64s: So, this is what I looked at in general. And I did 10:00 a.m. to 4:00 p.m. So,
+272.47s: And I did 10:00 a.m. to 4:00 p.m. So,
+272.48s: And I did 10:00 a.m. to 4:00 p.m. So, two term. However, again, I looked at
+275.51s: two term. However, again, I looked at
+275.52s: two term. However, again, I looked at tons of combinations for this to see,
+277.51s: tons of combinations for this to see,
+277.52s: tons of combinations for this to see, again, not cherry-picking anything. And
+279.79s: again, not cherry-picking anything. And
+279.80s: again, not cherry-picking anything. And this is all just using intraday options
+282.67s: this is all just using intraday options
+282.68s: this is all just using intraday options data from the OTAC.
+285.31s: data from the OTAC.
+285.32s: data from the OTAC. And in general, there is a bit of an
+289.59s: And in general, there is a bit of an
+289.60s: And in general, there is a bit of an edge or benefit to you, I should say,
+292.83s: edge or benefit to you, I should say,
+292.84s: edge or benefit to you, I should say, from resting at the mid instead of
+294.87s: from resting at the mid instead of
+294.88s: from resting at the mid instead of crossing the bid-ask spread. And this
+297.95s: crossing the bid-ask spread. And this
+297.96s: crossing the bid-ask spread. And this should logically make sense. You're
+299.31s: should logically make sense. You're
+299.32s: should logically make sense. You're getting a better fill. Now, to what
+301.95s: getting a better fill. Now, to what
+301.96s: getting a better fill. Now, to what degree? It's $18.45.
+306.63s: degree? It's $18.45.
+306.64s: degree? It's $18.45. So, it's like 3% of the credit collected
+310.11s: So, it's like 3% of the credit collected
+310.12s: So, it's like 3% of the credit collected in total.
+311.43s: in total.
+311.44s: in total. All four legs is 37. So, the average
+315.31s: All four legs is 37. So, the average
+315.32s: All four legs is 37. So, the average credit per contract can be like pretty
+317.47s: credit per contract can be like pretty
+317.48s: credit per contract can be like pretty significant depending on where vol is.
+320.79s: significant depending on where vol is.
+320.80s: significant depending on where vol is. So, this shows you the performance
+325.11s: So, this shows you the performance
+325.12s: So, this shows you the performance for a few different versions. There's
+327.71s: for a few different versions. There's
+327.72s: for a few different versions. There's the true theoretical fair value
+330.03s: the true theoretical fair value
+330.04s: the true theoretical fair value calculation. There's the mid price fill.
+333.11s: calculation. There's the mid price fill.
+333.12s: calculation. There's the mid price fill. And then there's crossing, which is the
+334.71s: And then there's crossing, which is the
+334.72s: And then there's crossing, which is the blue line. So, you can see across the
+337.27s: blue line. So, you can see across the
+337.28s: blue line. So, you can see across the lifespan of the trade here,
+340.55s: lifespan of the trade here,
+340.56s: lifespan of the trade here, the midpoint execution is significantly
+344.43s: the midpoint execution is significantly
+344.44s: the midpoint execution is significantly better.
+345.51s: better.
+345.52s: better. Generally speaking, how you would
+347.27s: Generally speaking, how you would
+347.28s: Generally speaking, how you would expect, but remember
+349.43s: expect, but remember
+349.44s: expect, but remember this is just the entry.
+353.07s: this is just the entry.
+353.08s: this is just the entry. This doesn't include where you end up
+355.27s: This doesn't include where you end up
+355.28s: This doesn't include where you end up landing, especially if you have any sort
+357.07s: landing, especially if you have any sort
+357.08s: landing, especially if you have any sort of exit part of the trade.
+359.63s: of exit part of the trade.
+359.64s: of exit part of the trade. And here's the real rub.
+362.19s: And here's the real rub.
+362.20s: And here's the real rub. The general friction here is not for the
+366.47s: The general friction here is not for the
+366.48s: The general friction here is not for the short strikes that are closer to the
+368.51s: short strikes that are closer to the
+368.52s: short strikes that are closer to the money.
+369.63s: money.
+369.64s: money. The general friction here is from the
+371.79s: The general friction here is from the
+371.80s: The general friction here is from the wings that are further and further out.
+374.39s: wings that are further and further out.
+374.40s: wings that are further and further out. The further out your wings are,
+376.91s: The further out your wings are,
+376.92s: The further out your wings are, the fewer contracts you have to transact
+380.07s: the fewer contracts you have to transact
+380.08s: the fewer contracts you have to transact at. However,
+382.03s: at. However,
+382.04s: at. However, the issue with that is they become
+385.91s: the issue with that is they become
+385.92s: the issue with that is they become less and less active. So, for example,
+390.55s: less and less active. So, for example,
+390.56s: less and less active. So, for example, there are clear samples from the study
+393.51s: there are clear samples from the study
+393.52s: there are clear samples from the study that I ran where the wings were priced
+395.87s: that I ran where the wings were priced
+395.88s: that I ran where the wings were priced like this, where there there literally
+397.71s: like this, where there there literally
+397.72s: like this, where there there literally is no bid. You you straight up can't
+400.83s: is no bid. You you straight up can't
+400.84s: is no bid. You you straight up can't sell because there is no market there.
+403.75s: sell because there is no market there.
+403.76s: sell because there is no market there. That creates a little bit of a problem.
+407.59s: That creates a little bit of a problem.
+407.60s: That creates a little bit of a problem. So, in general, you have to pay pretty
+411.07s: So, in general, you have to pay pretty
+411.08s: So, in general, you have to pay pretty close attention to these.
+413.11s: close attention to these.
+413.12s: close attention to these. The good thing is downside skew, meaning
+416.43s: The good thing is downside skew, meaning
+416.44s: The good thing is downside skew, meaning put skew. Normally, you'll see a market
+421.11s: put skew. Normally, you'll see a market
+421.12s: put skew. Normally, you'll see a market further out. Because puts trade a little
+423.71s: further out. Because puts trade a little
+423.72s: further out. Because puts trade a little bit more expensive relative to calls,
+425.47s: bit more expensive relative to calls,
+425.48s: bit more expensive relative to calls, people are willing to look for crash
+426.99s: people are willing to look for crash
+427.00s: people are willing to look for crash protection, that kind of stuff. The
+428.83s: protection, that kind of stuff. The
+428.84s: protection, that kind of stuff. The calls end up pre-
+431.23s: calls end up pre-
+431.24s: calls end up pre- creating a liquidity issue and an
+433.03s: creating a liquidity issue and an
+433.04s: creating a liquidity issue and an overall pricing issue much faster.
+436.35s: overall pricing issue much faster.
+436.36s: overall pricing issue much faster. So, if we looked [snorts] at two
+439.07s: So, if we looked [snorts] at two
+439.08s: So, if we looked [snorts] at two scenarios where you cross the spread
+441.07s: scenarios where you cross the spread
+441.08s: scenarios where you cross the spread versus getting a fill at the mid, how do
+443.63s: versus getting a fill at the mid, how do
+443.64s: versus getting a fill at the mid, how do these perform? And both of them are
+447.23s: these perform? And both of them are
+447.24s: these perform? And both of them are profitable. 76% of the trades won, which
+450.63s: profitable. 76% of the trades won, which
+450.64s: profitable. 76% of the trades won, which again, going back to the original
+452.35s: again, going back to the original
+452.36s: again, going back to the original premise that I discussed earlier in
+455.87s: premise that I discussed earlier in
+455.88s: premise that I discussed earlier in terms of where you would actually get
+458.67s: terms of where you would actually get
+458.68s: terms of where you would actually get filled, I forgot where it was.
+461.31s: filled, I forgot where it was.
+461.32s: filled, I forgot where it was. Anyways, where you actually would get
+464.03s: Anyways, where you actually would get
+464.04s: Anyways, where you actually would get your fill,
+465.59s: your fill,
+465.60s: your fill, the good part is you
+468.47s: the good part is you
+468.48s: the good part is you legitimately have an opportunity here
+471.03s: legitimately have an opportunity here
+471.04s: legitimately have an opportunity here because of that distribution.
+473.19s: because of that distribution.
+473.20s: because of that distribution. You're seeing 76% of the probability
+475.91s: You're seeing 76% of the probability
+475.92s: You're seeing 76% of the probability versus the 68%, which is what the one
+479.07s: versus the 68%, which is what the one
+479.08s: versus the 68%, which is what the one um one standard deviation short options
+482.31s: um one standard deviation short options
+482.32s: um one standard deviation short options would infer.
+484.31s: would infer.
+484.32s: would infer. Now, from a pricing perspective,
+487.07s: Now, from a pricing perspective,
+487.08s: Now, from a pricing perspective, you on average pay back about 86 cents
+491.71s: you on average pay back about 86 cents
+491.72s: you on average pay back about 86 cents of every dollar of mid credit. So, what
+494.47s: of every dollar of mid credit. So, what
+494.48s: of every dollar of mid credit. So, what that means is on the selling side, there
+498.55s: that means is on the selling side, there
+498.56s: that means is on the selling side, there is a slight favor,
+501.23s: is a slight favor,
+501.24s: is a slight favor, but it's not significant, which just
+504.51s: but it's not significant, which just
+504.52s: but it's not significant, which just means that market makers are really
+506.35s: means that market makers are really
+506.36s: means that market makers are really pricing these things quite
+508.27s: pricing these things quite
+508.28s: pricing these things quite competitively. It's just about fair
+510.67s: competitively. It's just about fair
+510.68s: competitively. It's just about fair value. It's again what I overall would
+513.79s: value. It's again what I overall would
+513.80s: value. It's again what I overall would anticipate seeing.
+515.59s: anticipate seeing.
+515.60s: anticipate seeing. Here's a really interesting part of the
+518.03s: Here's a really interesting part of the
+518.04s: Here's a really interesting part of the Redditor's question, which is how is the
+521.23s: Redditor's question, which is how is the
+521.24s: Redditor's question, which is how is the spread cost trend?
+523.87s: spread cost trend?
+523.88s: spread cost trend? And it's about flat. It's actually
+527.03s: And it's about flat. It's actually
+527.04s: And it's about flat. It's actually decreasing slightly if you added a
+529.71s: decreasing slightly if you added a
+529.72s: decreasing slightly if you added a regression line to this, and a lot of
+532.47s: regression line to this, and a lot of
+532.48s: regression line to this, and a lot of that has to do with two different
+534.03s: that has to do with two different
+534.04s: that has to do with two different factors, though. It's not as simple as
+536.35s: factors, though. It's not as simple as
+536.36s: factors, though. It's not as simple as just saying, "Oh, markets are getting
+539.39s: just saying, "Oh, markets are getting
+539.40s: just saying, "Oh, markets are getting more liquid." A lot of this also has to
+541.83s: more liquid." A lot of this also has to
+541.84s: more liquid." A lot of this also has to do with the volatility of the market and
+544.63s: do with the volatility of the market and
+544.64s: do with the volatility of the market and the prevailing volatility at that time.
+547.59s: the prevailing volatility at that time.
+547.60s: the prevailing volatility at that time. This will be heavily
+549.95s: This will be heavily
+549.96s: This will be heavily based on how volatile the markets are.
+553.11s: based on how volatile the markets are.
+553.12s: based on how volatile the markets are. So, as I mentioned before, I looked at
+555.59s: So, as I mentioned before, I looked at
+555.60s: So, as I mentioned before, I looked at all different kinds of entry times,
+558.31s: all different kinds of entry times,
+558.32s: all different kinds of entry times, different kinds of short deltas, and
+560.51s: different kinds of short deltas, and
+560.52s: different kinds of short deltas, and treat like different kinds of wings,
+563.15s: treat like different kinds of wings,
+563.16s: treat like different kinds of wings, and in general, it's pretty steady
+567.71s: and in general, it's pretty steady
+567.72s: and in general, it's pretty steady across all of the different
+570.43s: across all of the different
+570.44s: across all of the different combinations.
+572.35s: combinations.
+572.36s: combinations. Again, this is for entry.
+575.03s: Again, this is for entry.
+575.04s: Again, this is for entry. If you have any sort of management, this
+578.63s: If you have any sort of management, this
+578.64s: If you have any sort of management, this can be a massive problem. And I want to
+581.39s: can be a massive problem. And I want to
+581.40s: can be a massive problem. And I want to go back to what I was just showing you,
+584.19s: go back to what I was just showing you,
+584.20s: go back to what I was just showing you, where is crossing the spread, if you
+586.91s: where is crossing the spread, if you
+586.92s: where is crossing the spread, if you have to cross the spread, if you have to
+588.75s: have to cross the spread, if you have to
+588.76s: have to cross the spread, if you have to do this twice, you now have a problem.
+592.15s: do this twice, you now have a problem.
+592.16s: do this twice, you now have a problem. You now would be on this side of the
+593.59s: You now would be on this side of the
+593.60s: You now would be on this side of the curve, which is really important for you
+596.43s: curve, which is really important for you
+596.44s: curve, which is really important for you to be aware of. And again,
+598.55s: to be aware of. And again,
+598.56s: to be aware of. And again, if you take this to a logical
+600.71s: if you take this to a logical
+600.72s: if you take this to a logical conclusion,
+602.31s: conclusion,
+602.32s: conclusion, you do not want to transact as much as
+606.67s: you do not want to transact as much as
+606.68s: you do not want to transact as much as possible. Realistically, you want to
+608.15s: possible. Realistically, you want to
+608.16s: possible. Realistically, you want to decrease it as much as you can. So,
+610.31s: decrease it as much as you can. So,
+610.32s: decrease it as much as you can. So, there definitely is a pricing
+612.99s: there definitely is a pricing
+613.00s: there definitely is a pricing favorability to being at the mid and
+616.87s: favorability to being at the mid and
+616.88s: favorability to being at the mid and transacting at the mid as much as
+618.31s: transacting at the mid as much as
+618.32s: transacting at the mid as much as possible, but it doesn't inherently fix
+622.79s: possible, but it doesn't inherently fix
+622.80s: possible, but it doesn't inherently fix everything, right? You still need that
+625.03s: everything, right? You still need that
+625.04s: everything, right? You still need that broader probability backing. In general,
+627.27s: broader probability backing. In general,
+627.28s: broader probability backing. In general, this is generally speaking being priced
+630.23s: this is generally speaking being priced
+630.24s: this is generally speaking being priced at fair value. If you have any other
+632.07s: at fair value. If you have any other
+632.08s: at fair value. If you have any other questions or any other studies we should
+633.55s: questions or any other studies we should
+633.56s: questions or any other studies we should look at, let me know. Be well, or be
+635.07s: look at, let me know. Be well, or be
+635.08s: look at, let me know. Be well, or be well, or see you guys later.
