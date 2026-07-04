@@ -1,0 +1,78 @@
+---
+type: security
+title: "Crude Oil"
+related_videos: ["--aVVZQ5Pxw", "-8XV5_gBP6I", "0La1c59B5Zw", "2yu8jSYKuH4", "4Ksbe6bpV8o", "4NTh_FrF-0Y", "4ountK1Wflc", "5-n_K32MGYo", "6Sp4eF9ahW8", "6UzoviSHtbk", "7XyTZoId-Aw", "80QGX7wPlJk", "8MTeMe1qln8", "8Sk1oMYRq-Q", "AXGmgcD15_E", "BZhZpyZzocY", "Co4TngkoAyg", "F5ziPM7PxPo", "G7_0D06aeEk", "GVrANU08cAU", "ID-Kl0y1bxs", "IosIPXnYxq0", "JEvI6g2-h94", "KKOqF8h1n1s", "Nfuui1cwi1w", "O1ZjVHom2ms", "O79HiUNmYUw", "OWQs77SA_m4", "OwPmSCUS-bs", "PtGpKtyJfrs", "PwoEFKVQvSQ", "QZUk0K75gu8", "QmF0V4wKdw4", "RWkSHmI9QqI", "UZOcepy6VxY", "UdK6dDmKF3k", "Z5S_SU1Lfo4", "ZWGDFQTvBb8", "asz1odhQh7w", "bS81-wgP3-E", "dtpj5VcLnjg", "f-0qnXEI7eA", "fNW7e0SdtG0", "g_AN2fWZiVI", "gnABTnW-KX8", "jRS3aYlZPyI", "jcfgHCLBLzI", "kvzQJ3wFaZs", "l7dnXXgna6c", "m566Ysll78w", "mG1VfOVZp4E", "mvxthWIMMTU", "oKKtoZ-v7as", "pXR7cHrPOV4", "pxNgK4vNV1g", "qN1fw2Ckkd8", "r_im_g8YbUA", "riofzmWfQm8", "vT5zl_KGnVo", "wiOEzumNBcE", "xAjJoCprnn8", "xFkLh7gIGVo", "xOMa0r5zaMg"]
+last_updated: 2026-07-04
+confidence: auto
+auto_generated: true
+---
+
+# Crude Oil
+
+**Auto-generated security topic** — discussed across 63 video(s). Pending curated synthesis; the backing source pages are linked below.
+
+## Discussed in
+
+- [[sources/--aVVZQ5Pxw|Analyzing "Safe" Option Selling Strategies / Live Stock Market Analysis]]
+- [[sources/-8XV5_gBP6I|WHAT do the Markets Looking Like in 2022? Fed Policy, Market Regulation, & Blockchain w/ Dave Lauer]]
+- [[sources/0La1c59B5Zw|Trading the election outcome]]
+- [[sources/2yu8jSYKuH4|The Melt Up has Started w/ David Hunter / The Outlier Podcast Ep54]]
+- [[sources/4Ksbe6bpV8o|Election Goldmine: How to Make Money from the Election]]
+- [[sources/4NTh_FrF-0Y|Navigating Market Volatility and Finding Opportunities / Stock Market Update]]
+- [[sources/4ountK1Wflc|Top Energy and Geopolitical Trends Shaping 2024 - Doomberg / The Outlier Podcast Ep68]]
+- [[sources/5-n_K32MGYo|Trading Trump's Tariffs: Strategy Behind the Headlines]]
+- [[sources/6Sp4eF9ahW8|David Hunter on Navigating Tariffs & Global Economic Chaos / The Outlier Podcast]]
+- [[sources/6UzoviSHtbk|US Strikes Iran - Stock Market Update / Options Trading Live]]
+- [[sources/7XyTZoId-Aw|Economic Recession Avoided? w/ Doomberg / The Outlier Podcast Ep60]]
+- [[sources/80QGX7wPlJk|Building Market Awareness & How to Start Trading Options w/ Tom Sosnoff / The Outlier Podcast]]
+- [[sources/8MTeMe1qln8|Deep Dive Into My Trading Approach: Profit Mechanisms & Strategy Process]]
+- [[sources/8Sk1oMYRq-Q|Volatility in 5 Levels of Difficulty / The Options Trench]]
+- [[sources/AXGmgcD15_E|US and Iran Ceasefire - Stock Market Implications / Live Stock Market Analysis]]
+- [[sources/BZhZpyZzocY|David Hunter: Final Leg of Melt Up - What's Coming Next / The Outlier Podcast]]
+- [[sources/Co4TngkoAyg|An Inside Look at War, Tariffs, and Energy with Doomberg / The Outlier Podcast]]
+- [[sources/F5ziPM7PxPo|Market Update: Nike Earnings, Middle East Impact, Nvidia Trend Reversal]]
+- [[sources/G7_0D06aeEk|Trading Market News & Information Integration]]
+- [[sources/GVrANU08cAU|David Hunter Final Warning The Melt Up Before the Global Bust / The Outlier Podcast]]
+- [[sources/ID-Kl0y1bxs|Outlier Options Trading for Beginners Live]]
+- [[sources/IosIPXnYxq0|Market Melt Up into Global Bust / David Hunter]]
+- [[sources/JEvI6g2-h94|2025 Stock Market ALERT with David Hunter / The Outlier Podcast]]
+- [[sources/KKOqF8h1n1s|Outlier Options Trading Basics — Session 1: Wealth Building, Market Structure & Options Fundamentals]]
+- [[sources/Nfuui1cwi1w|Market Inflection Point with David Hunter / The Outlier Pod Ep48]]
+- [[sources/O1ZjVHom2ms|Trade EVERYTHING w/ Tom Sosnoff / The Outlier Podcast Ep59]]
+- [[sources/O79HiUNmYUw|Market Update: Tech Leadership, Sector Breakdown, and Fed Uncertainty]]
+- [[sources/OWQs77SA_m4|What's the REAL Election Impact on Our Future? w/ Doomberg / TOP]]
+- [[sources/OwPmSCUS-bs|Follow any Trend with Market Wizard Tom Basso / The Outlier Podcast Ep46]]
+- [[sources/PtGpKtyJfrs|David Hunter: 2022 Market Forecast & Potential Bust / Money Talks]]
+- [[sources/PwoEFKVQvSQ|GameStop Analysis with @Peruvian Bull]]
+- [[sources/QZUk0K75gu8|How a Market Wizard KEEPS His Returns with Tom Basso / The Outlier Podcast Ep57]]
+- [[sources/QmF0V4wKdw4|Debt Ceiling, Melt Up, and Gold with David Hunter / The Outlier Podcast]]
+- [[sources/RWkSHmI9QqI|Market Update & Exit Strategy for Options Trades]]
+- [[sources/UZOcepy6VxY|Effective Portfolio Management w/ Tom Basso / The Outlier Podcast Ep74]]
+- [[sources/UdK6dDmKF3k|Iran Ceasefire & Tesla Robtaxi - Stock Market Update / Options Trading Live]]
+- [[sources/Z5S_SU1Lfo4|War in Iran, Oil Volatility, and Defense Sector Opportunities / The Options Trench]]
+- [[sources/ZWGDFQTvBb8|Market Update: Google Unusual Options Activity, SoFi Setup, FOMC Expectations]]
+- [[sources/asz1odhQh7w|GME Stock Analysis / Meme Stock Watch Ep44]]
+- [[sources/bS81-wgP3-E|Rate Statement & GME Options Update]]
+- [[sources/dtpj5VcLnjg|End of Year Melt Up w/ David Hunter / The Outlier Podcast Ep70]]
+- [[sources/f-0qnXEI7eA|Reduce Technical Noise with Patrick Karim / The Outlier Podcast Ep 56]]
+- [[sources/fNW7e0SdtG0|Futures Trading Explained for Beginners!]]
+- [[sources/g_AN2fWZiVI|Doomberg - Is the Economy About to Change Big Time? / The Outlier Podcast]]
+- [[sources/gnABTnW-KX8|Election Impact on Markets and AI - Tom Basso / TOP]]
+- [[sources/jRS3aYlZPyI|David Hunter on Why Gold is Skyrocketing Right Now / The Outlier Podcast]]
+- [[sources/jcfgHCLBLzI|Inside Profit Mechanisms and AARs / The Outlier Trading Podcast Unfiltered Ep3]]
+- [[sources/kvzQJ3wFaZs|The Hidden Cost of Selling Covered Calls for Income]]
+- [[sources/l7dnXXgna6c|2026 Stock Market Overview / Live Stock Market Analysis]]
+- [[sources/m566Ysll78w|Precious Metals, Macro Imbalance, & Russian Invasion with Tavi from Crescat Capital / Money Talks]]
+- [[sources/mG1VfOVZp4E|2022 Market Crash with David Hunter]]
+- [[sources/mvxthWIMMTU|Melt Up 2024 to Global Market Crash and $500 Oil - David Hunter / TOP]]
+- [[sources/oKKtoZ-v7as|Money Manager and Futures Trader Tom Basso]]
+- [[sources/pXR7cHrPOV4|+346% Return Pro Trader Matt Caruso / Money Talks]]
+- [[sources/pxNgK4vNV1g|Doomberg Everything Is Fragile Energy, War, AI, and the Next Global Shock / The Outlier Podcast]]
+- [[sources/qN1fw2Ckkd8|Stock Market Outlook: Trends & Predictions]]
+- [[sources/r_im_g8YbUA|Doomberg: What's Next in the Iran War / The Outlier Podcast]]
+- [[sources/riofzmWfQm8|Analyzing the Iran Conflict and Finding Trade Opportunities / Live Stock Market Analysis]]
+- [[sources/vT5zl_KGnVo|Iran War Impact on Oil Volatility and Inflation]]
+- [[sources/wiOEzumNBcE|An Inside Look at Options Market Making / The Options Trench]]
+- [[sources/xAjJoCprnn8|Market Showing Warning Signs / Live Stock Market Analysis]]
+- [[sources/xFkLh7gIGVo|Doomberg: The Energy Revolution is Here / The Outlier Podcast]]
+- [[sources/xOMa0r5zaMg|Economic Disarray with Doomberg / The Outlier Podcast Ep53]]

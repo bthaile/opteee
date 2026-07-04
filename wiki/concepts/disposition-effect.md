@@ -1,0 +1,75 @@
+---
+type: concept
+title: "Disposition Effect"
+related_videos: ["-M_lC4RVmvM", "-qSV5WZNlP4", "1G-h4tqfQEM", "5bhuXvSptJc", "6Q76ymfUDpc", "9CqpFa4mYas", "B3SW20MSNbM", "Dc8Vjr4pZ84", "DrfoNKd41I0", "EjD6KPo3OZs", "FPLK8vS5ono", "FtZyB8apvC0", "G92IzbFzhN8", "IBI4jiNvxJA", "ID-Kl0y1bxs", "IfVsYszBPmA", "KKOqF8h1n1s", "NkE5eMnb7rE", "OenKyq1bdeM", "PutNkB_KwvI", "PwoEFKVQvSQ", "RWkSHmI9QqI", "S8MTHULEuBI", "SNVvZCtKt0Y", "SlisA7fCzRM", "TQW7YuUlqtU", "Tph4DYCoyqI", "TuxlzeD0RiQ", "UNsis2_Blb8", "V0YmZpEt1jY", "VToMimSy2mg", "WglROZAI_SI", "XLlTYEvy-XA", "ZTW-rWkkelk", "_LwonWbC7LE", "_V5TBIYHylk", "apJP5YqqIXg", "cszStlJ81lg", "cxarviP2eSE", "ekhTOxldeFQ", "epGFY9R7U8I", "f-PI_SmDAic", "f4ING1kOGxg", "h2D2trUqgDI", "hjiPb_i5UaA", "iN_Wx4ah5ek", "kaYgLPcybfA", "llpfG64TOCY", "mDPYNyp23y4", "nLC0tmrc_ao", "o3Z1aDmpQTk", "p46fZqTgT6E", "tmJpAECNhnE", "twrjSknq4OY", "uVw2BEE2sbo", "v3Eiz9bpRK4", "vDyL0Aff0gk", "vnPwS5jRTtM", "yZrRPBztMOA", "zxfedm_b4SM"]
+last_updated: 2026-07-04
+confidence: auto
+auto_generated: true
+---
+
+# Disposition Effect
+
+**Auto-generated concept topic** — discussed across 60 video(s). Pending curated synthesis; the backing source pages are linked below.
+
+## Discussed in
+
+- [[sources/-M_lC4RVmvM|2 BIG Problems - Wheel Options Strategy]]
+- [[sources/-qSV5WZNlP4|Market Update & Trading for a Living Framework]]
+- [[sources/1G-h4tqfQEM|High Win Rate Trading Strategies]]
+- [[sources/5bhuXvSptJc|Average Trader Performance]]
+- [[sources/6Q76ymfUDpc|GME Options Update 200k OTM Calls]]
+- [[sources/9CqpFa4mYas|GME Top Theories Analysis Pt3 / GameStop Analysis Live Ep20]]
+- [[sources/B3SW20MSNbM|B3SW20MSNbM]]
+- [[sources/Dc8Vjr4pZ84|Trading Psychology Secrets: How the Top 0.5% Traders Think Differently]]
+- [[sources/DrfoNKd41I0|Using Volatility to Create Trade Opportunities / Live Stock Market Analysis]]
+- [[sources/EjD6KPo3OZs|Euan Sinclair on Retail vs Institutional Trading / The Outlier Podcast]]
+- [[sources/FPLK8vS5ono|Options Quiz / Options Trading for Beginners Pt14]]
+- [[sources/FtZyB8apvC0|Options Trading Practical Application / Options Trading for Beginners Pt13]]
+- [[sources/G92IzbFzhN8|5 Questions Every Options Trader Must Answer Before Entering a Trade (Trade Management Basics)]]
+- [[sources/IBI4jiNvxJA|47 signs you MIGHT be gambling vs trading options / Options Trading 101]]
+- [[sources/ID-Kl0y1bxs|Outlier Options Trading for Beginners Live]]
+- [[sources/IfVsYszBPmA|Goldilocks analysis #optionstrading #trading #stockmarket]]
+- [[sources/KKOqF8h1n1s|Outlier Options Trading Basics — Session 1: Wealth Building, Market Structure & Options Fundamentals]]
+- [[sources/NkE5eMnb7rE|"Long" Options #optionstrading #trading #stockmarket]]
+- [[sources/OenKyq1bdeM|Options Trading Basics — Open Q&A]]
+- [[sources/PutNkB_KwvI|Analyzing Roaring Kitty's Trades Pt3 / GameStop Analysis Live Ep11]]
+- [[sources/PwoEFKVQvSQ|GameStop Analysis with @Peruvian Bull]]
+- [[sources/RWkSHmI9QqI|Market Update & Exit Strategy for Options Trades]]
+- [[sources/S8MTHULEuBI|Mastering Options Portfolio Management: Key Strategies for Success]]
+- [[sources/SNVvZCtKt0Y|Andrew Mack on Retail Options Trading / The Outlier Podcast]]
+- [[sources/SlisA7fCzRM|I Risked $40,000 on RGTI Long Puts - Here's Exactly What Happened]]
+- [[sources/TQW7YuUlqtU|Disposition effect in options trading]]
+- [[sources/Tph4DYCoyqI|Managing Options Positions & Expected Return]]
+- [[sources/TuxlzeD0RiQ|3 Ways to Stop LOSING Money Trading Options]]
+- [[sources/UNsis2_Blb8|Chris from ProjectOption Pt1 / Money Talks]]
+- [[sources/V0YmZpEt1jY|Outlier Trading Series Episode 3: Building a Sustainable Trading Approach]]
+- [[sources/VToMimSy2mg|14 Trading Mistakes You NEED to Avoid]]
+- [[sources/WglROZAI_SI|CANSLIM Trend Trading with Jim Roppel / The Outlier Podcast Ep50]]
+- [[sources/XLlTYEvy-XA|GME Earnings Analysis & Position Management Strategy]]
+- [[sources/ZTW-rWkkelk|How to Test a Trading Strategy & Build a Trade Log]]
+- [[sources/_LwonWbC7LE|Portfolio Management Fundamentals — Goal Setting & Risk Framework]]
+- [[sources/_V5TBIYHylk|Why Most Exit Plans are Bad / Options Trading for Beginners Ep2]]
+- [[sources/apJP5YqqIXg|UFC Fighter Turned Trader - Nik Lentz / The Outlier Podcast Ep69]]
+- [[sources/cszStlJ81lg|Trade Profit and Loss Management]]
+- [[sources/cxarviP2eSE|The Disposition Effect Trap #optionstrading]]
+- [[sources/ekhTOxldeFQ|DON'T Make These 3 Common Beginner Mistakes / Options Trading for Beginners Pt15]]
+- [[sources/epGFY9R7U8I|Maximize Gains - Risk Management for Options Trading]]
+- [[sources/f-PI_SmDAic|GME Call Options Expanding]]
+- [[sources/f4ING1kOGxg|Open Q&A, Defending Positions, & Trading / Options Trading for Beginners Pt4]]
+- [[sources/h2D2trUqgDI|Change Your Trading Psychology with Richard Friesen - The Outlier Podcast]]
+- [[sources/hjiPb_i5UaA|Avoid These 9 Beginner Options Trading Mistakes]]
+- [[sources/iN_Wx4ah5ek|Trading Psychology - Digging Deep w/ Richard Friesen / The Outlier Podcast Ep61]]
+- [[sources/kaYgLPcybfA|Diagnosing Common Options Trading Mistakes / Options Trading Basics]]
+- [[sources/llpfG64TOCY|GME Coverage Strangle Portfolio Allocation & MOASS Exit Strategy Deep Dive]]
+- [[sources/mDPYNyp23y4|Why Most Traders SUCK at Risk Management]]
+- [[sources/nLC0tmrc_ao|Green 16/17 Months Selling Options — The Win-Rate Trap]]
+- [[sources/o3Z1aDmpQTk|How I Overcame 3 TERRIBLE Trading Habits / Options Trading Basics]]
+- [[sources/p46fZqTgT6E|13 Options Trading Lies You've Been Told]]
+- [[sources/tmJpAECNhnE|Top 5 Trading Psychology Mistakes You NEED to Avoid]]
+- [[sources/twrjSknq4OY|Finding Your Trading Style / Outlier Options Trading Bootcamp]]
+- [[sources/uVw2BEE2sbo|Optimizing Your Losing Trades: Techniques for Better Outcomes]]
+- [[sources/v3Eiz9bpRK4|How to Size Options Trades & Build a Trade Checklist / Options Trading for Beginners Pt7]]
+- [[sources/vDyL0Aff0gk|Building an Options Portfolio / Options Trading for Beginners Pt10]]
+- [[sources/vnPwS5jRTtM|A Look Inside the Mind of a Trader with Jared Tendler / The Outlier Podcast]]
+- [[sources/yZrRPBztMOA|INSIDE a $10 Billion Fund - Wes Gray / The Outlier Podcast Ep66]]
+- [[sources/zxfedm_b4SM|The Assignment Trap in Options Trading]]
