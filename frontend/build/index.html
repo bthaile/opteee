@@ -12,12 +12,25 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+        :root {
+            --bg: #0f1420;
+            --bg-panel: #171d2b;
+            --bg-elev: #1f2738;
+            --border: #2b3550;
+            --fg: #e7ecf5;
+            --fg-dim: #97a3bd;
+            --accent: #5b9dff;
+            --accent-soft: rgba(91, 157, 255, 0.12);
+            --danger: #ff6b8a;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+        }
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
+            line-height: 1.5;
+            color: var(--fg);
+            background: var(--bg);
             min-height: 100vh;
         }
         
@@ -30,17 +43,17 @@
         /* Sidebar Styles */
         .sidebar {
             width: 280px;
-            background: white;
-            border-right: 1px solid #e1e5e9;
-            padding: 1rem;
+            background: #fbfcfd;
+            border-right: 1px solid #d9dee7;
+            padding: 1rem 0.875rem;
             overflow-y: auto;
         }
         
         .sidebar-title {
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: 600;
-            margin-bottom: 1rem;
-            color: #374151;
+            margin-bottom: 1.25rem;
+            color: #1f2937;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -49,12 +62,14 @@
         .new-chat-btn {
             background: #0f766e;
             color: white;
-            border: none;
-            padding: 0.5rem 1rem;
+            border: 1px solid #0d6259;
+            padding: 0.625rem 0.875rem;
             border-radius: 6px;
             font-size: 0.85rem;
             cursor: pointer;
-            font-weight: 500;
+            font-weight: 600;
+            width: 100%;
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
         }
         
         .new-chat-btn:hover {
@@ -62,10 +77,12 @@
         }
         
         .prompts-title {
-            font-size: 1rem;
+            font-size: 0.75rem;
             font-weight: 600;
-            margin: 2rem 0 1rem 0;
-            color: #374151;
+            letter-spacing: 0;
+            margin: 1.5rem 0 0.75rem 0.125rem;
+            color: #6b7280;
+            text-transform: uppercase;
         }
         
         .prompts-container {
@@ -84,11 +101,11 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0.75rem;
-            margin-bottom: 0.5rem;
-            background: #f9fafb;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
+            padding: 0.625rem 0.75rem;
+            margin-bottom: 0.375rem;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
             cursor: pointer;
             transition: all 0.2s;
         }
@@ -138,27 +155,31 @@
         /* Main Panel Styles */
         .main-panel {
             flex: 1;
-            background: white;
+            background: #f7f8fa;
             display: flex;
             flex-direction: column;
+            min-width: 0;
         }
         
         .main-header {
-            padding: 2rem 2rem 1rem 2rem;
-            border-bottom: 1px solid #e1e5e9;
+            padding: 1.25rem 2rem 1rem 2rem;
+            border-bottom: 1px solid #d9dee7;
             text-align: center;
+            background: #ffffff;
         }
         
         .main-subtitle {
-            font-size: 1.5rem;
+            font-size: 1.05rem;
             font-weight: 600;
-            color: #374151;
-            margin-bottom: 0.5rem;
+            color: #111827;
+            margin-bottom: 0;
         }
         
         .example-questions {
-            padding: 1rem;
-            margin-bottom: 1rem;
+            padding: 1rem 0 1.25rem;
+            margin: 0 auto;
+            max-width: 1000px;
+            width: 100%;
         }
         
         .example-grid {
@@ -168,25 +189,29 @@
         }
         
         .example-button {
-            background: #f3f4f6;
-            border: 1px solid #d1d5db;
-            padding: 0.75rem 1rem;
-            border-radius: 8px;
+            background: #ffffff;
+            border: 1px solid #d9dee7;
+            padding: 0.75rem 0.875rem;
+            border-radius: 6px;
             cursor: pointer;
             font-size: 0.9rem;
-            color: #374151;
-            transition: all 0.2s;
+            color: #243041;
+            line-height: 1.35;
+            text-align: left;
+            transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
         }
         
         .example-button:hover {
-            background: #e5e7eb;
-            border-color: #9ca3af;
+            background: #f8fafc;
+            border-color: #aab4c3;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
         }
         
         .user-input-section {
-            padding: 1rem 2rem;
-            border-top: 1px solid #e1e5e9;
-            background: white;
+            padding: 0.875rem 2rem 1rem;
+            border-top: 1px solid #d9dee7;
+            background: rgba(255, 255, 255, 0.96);
             flex-shrink: 0;
             position: sticky;
             bottom: 0;
@@ -195,39 +220,52 @@
         
         .input-container {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
             align-items: flex-end;
+            max-width: 1000px;
+            margin: 0 auto;
         }
         
         #user-input {
             flex: 1;
-            padding: 0.75rem 1rem;
-            border: 2px solid #e1e5e9;
+            padding: 0.75rem 0.875rem;
+            border: 1px solid #cfd6df;
             border-radius: 8px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             resize: none;
-            min-height: 50px;
+            min-height: 48px;
             max-height: 200px;
             overflow-y: auto;
             line-height: 1.5;
             font-family: inherit;
+            color: #111827;
+            background: #ffffff;
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+            min-width: 0;
         }
         
         #user-input:focus {
             outline: none;
             border-color: #0f766e;
+            box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+        }
+
+        #user-input::placeholder {
+            color: #8a95a5;
         }
         
         .submit-btn {
             background: #0f766e;
             color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
+            border: 1px solid #0d6259;
+            padding: 0.75rem 1.25rem;
             border-radius: 8px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             cursor: pointer;
-            font-weight: 500;
-            transition: background 0.2s;
+            font-weight: 600;
+            min-height: 48px;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
         }
         
         .submit-btn:hover {
@@ -236,7 +274,9 @@
         
         .submit-btn:disabled {
             background: #9ca3af;
+            border-color: #9ca3af;
             cursor: not-allowed;
+            box-shadow: none;
         }
         
         /* Chat Container Styles - NEW */
@@ -244,9 +284,9 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            background: #f8fafc;
+            background: #f7f8fa;
             overflow: hidden;
-            padding: 2rem;
+            padding: 1.5rem 2rem;
             padding-bottom: 0;
             min-height: 0;
         }
@@ -258,30 +298,40 @@
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1rem;
             overflow-y: auto;
-            padding-bottom: 2rem;
+            padding-bottom: 1.5rem;
             min-height: 0;
             scroll-behavior: smooth;
         }
         
         .chat-welcome {
             text-align: center;
-            color: #9ca3af;
-            font-style: italic;
-            background: white;
-            border-radius: 12px;
-            padding: 3rem 2rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border: 1px solid #e1e5e9;
+            color: #5b6675;
+            background: transparent;
+            border-radius: 0;
+            padding: 5rem 1rem 3rem;
             align-self: center;
-            max-width: 600px;
+            max-width: 560px;
+        }
+
+        .chat-welcome-title {
+            color: #111827;
+            font-size: 1.35rem;
+            font-weight: 650;
+            margin-bottom: 0.5rem;
+        }
+
+        .chat-welcome-copy {
+            color: #6b7280;
+            font-size: 0.98rem;
+            line-height: 1.55;
         }
         
         /* Message Bubble Styles - NEW */
         .message {
             display: flex;
-            margin-bottom: 1rem;
+            margin-bottom: 0.25rem;
         }
         
         .message.user {
@@ -293,17 +343,17 @@
         }
         
         .message-content {
-            max-width: 75%;
-            padding: 1rem 1.25rem;
-            border-radius: 18px;
+            max-width: 78%;
+            padding: 0.875rem 1rem;
+            border-radius: 8px;
             position: relative;
         }
         
         .message.user .message-content {
             background: #0f766e;
             color: white;
-            border-bottom-right-radius: 4px;
             transition: box-shadow 0.3s ease;
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
         }
         
         .message.user.highlight .message-content {
@@ -312,9 +362,8 @@
         
         .message.assistant .message-content {
             background: white;
-            border: 1px solid #e1e5e9;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-bottom-left-radius: 4px;
+            border: 1px solid #d9dee7;
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
         }
         
         .message-text {
@@ -771,7 +820,9 @@
         .typing-indicator {
             display: none;
             justify-content: flex-start;
-            margin-bottom: 1rem;
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto 1rem;
         }
         
         .typing-indicator.show {
@@ -780,12 +831,11 @@
         
         .typing-bubble {
             background: white;
-            border: 1px solid #e1e5e9;
-            border-radius: 18px;
-            border-bottom-left-radius: 4px;
-            padding: 1rem 1.25rem;
-            max-width: 75%;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 1px solid #d9dee7;
+            border-radius: 8px;
+            padding: 0.875rem 1rem;
+            max-width: 78%;
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
         }
         
         .typing-dots {
@@ -819,6 +869,203 @@
                 opacity: 1;
             }
         }
+
+        /* Wiki theme alignment */
+        .main-container {
+            background: var(--bg);
+        }
+
+        .sidebar,
+        .main-header,
+        .user-input-section {
+            background: var(--bg-panel);
+            border-color: var(--border);
+        }
+
+        .sidebar-title,
+        .main-subtitle,
+        .chat-welcome-title,
+        .message.assistant .message-content strong,
+        .book-card-compact .book-title {
+            color: var(--fg);
+        }
+
+        .prompts-title,
+        .prompts-empty,
+        .chat-welcome,
+        .chat-welcome-copy,
+        .message-timestamp,
+        .video-meta-line,
+        .video-timestamp,
+        .message .metadata-item,
+        .loading,
+        .source-ref-header,
+        .book-meta-line,
+        .video-expand-icon,
+        .expand-icon {
+            color: var(--fg-dim);
+        }
+
+        .main-panel,
+        .chat-container {
+            background:
+                radial-gradient(circle at 30% 20%, rgba(91, 157, 255, 0.06), transparent 60%),
+                var(--bg);
+        }
+
+        .new-chat-btn,
+        .submit-btn {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #08111f;
+            box-shadow: none;
+        }
+
+        .new-chat-btn:hover,
+        .submit-btn:hover {
+            background: #7ab0ff;
+            border-color: #7ab0ff;
+        }
+
+        .submit-btn:disabled {
+            background: var(--border);
+            border-color: var(--border);
+            color: var(--fg-dim);
+        }
+
+        .prompt-item,
+        .example-button,
+        #user-input,
+        .message.assistant .message-content,
+        .typing-bubble,
+        .video-card-compact,
+        .message .video-card,
+        .video-details,
+        .message .video-footer,
+        .message .video-action-btn {
+            background: var(--bg-elev);
+            border-color: var(--border);
+            color: var(--fg);
+            box-shadow: none;
+        }
+
+        .prompt-item:hover,
+        .example-button:hover,
+        .message .video-card:hover,
+        .video-header:hover,
+        .video-card .video-header:hover,
+        .expand-icon:hover,
+        .message .video-action-btn:hover {
+            background: #252f44;
+            border-color: var(--accent);
+            color: var(--fg);
+            box-shadow: none;
+        }
+
+        .prompt-text,
+        .message.assistant .message-text,
+        .message.assistant .message-content p,
+        .message .transcript-snippet p,
+        .video-details .transcript-snippet {
+            color: var(--fg);
+        }
+
+        #user-input {
+            caret-color: var(--fg);
+        }
+
+        #user-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-soft);
+        }
+
+        #user-input::placeholder {
+            color: var(--fg-dim);
+        }
+
+        .message.user .message-content {
+            background: var(--accent);
+            color: #08111f;
+            box-shadow: none;
+        }
+
+        .message.user .message-text {
+            color: #08111f;
+        }
+
+        .message.user.highlight .message-content {
+            box-shadow: 0 0 0 3px var(--accent-soft), 0 0 24px rgba(91, 157, 255, 0.2);
+        }
+
+        .message.assistant .message-content h1,
+        .message.assistant .message-content h2,
+        .message.assistant .message-content h3,
+        .message.assistant .message-content h4,
+        .sources-header,
+        .inline-video-ref,
+        .video-title-line a,
+        .message .video-title {
+            color: var(--accent);
+        }
+
+        .message.assistant .message-content code {
+            background: var(--bg-panel);
+            color: var(--accent);
+        }
+
+        .message .video-references,
+        .video-references-section,
+        .source-ref-header,
+        .video-details,
+        .message .video-footer {
+            border-color: var(--border);
+        }
+
+        .inline-video-ref,
+        .inline-book-ref {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .inline-video-ref:hover,
+        .inline-book-ref:hover,
+        .video-title-line a:hover {
+            color: #7ab0ff;
+            background: var(--accent-soft);
+        }
+
+        .message .transcript-snippet,
+        .book-card-compact .transcript-snippet,
+        mark.quote-highlight {
+            border-left-color: var(--accent);
+        }
+
+        .quote-highlight,
+        mark.quote-highlight {
+            background: rgba(91, 157, 255, 0.16);
+            color: var(--fg);
+            box-shadow: none;
+        }
+
+        .quote-highlight:hover {
+            background: rgba(91, 157, 255, 0.24);
+            box-shadow: none;
+        }
+
+        .message .video-action-btn.copied {
+            background: rgba(55, 201, 139, 0.15);
+            border-color: #37c98b;
+            color: #37c98b;
+        }
+
+        .prompt-delete-btn:hover {
+            background: rgba(255, 107, 138, 0.16);
+            color: var(--danger);
+        }
+
+        .typing-dots span {
+            background: var(--fg-dim);
+        }
         
         /* Hide old answer section - will be replaced by chat */
         .answer-section {
@@ -834,11 +1081,32 @@
             .sidebar {
                 width: 100%;
                 border-right: none;
-                border-bottom: 1px solid #e1e5e9;
+                border-bottom: 1px solid var(--border);
             }
             
             .example-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .main-header {
+                padding: 1rem;
+            }
+
+            .chat-container {
+                padding: 1rem;
+                padding-bottom: 0;
+            }
+
+            .user-input-section {
+                padding: 0.75rem 1rem 1rem;
+            }
+
+            .input-container {
+                gap: 0.5rem;
+            }
+
+            .submit-btn {
+                padding: 0.75rem 0.875rem;
             }
             
             .message-content {
@@ -882,7 +1150,8 @@
                 
                 <div class="chat-messages" id="chat-messages">
                     <div class="chat-welcome" id="chat-welcome">
-                        Ask a question to start a conversation about options trading
+                        <div class="chat-welcome-title">Start a trading research thread</div>
+                        <div class="chat-welcome-copy">Ask about strategies, volatility, risk, or a specific Outlier video.</div>
                     </div>
                 </div>
                 
@@ -909,7 +1178,7 @@
             <!-- Old Answer Display (hidden) -->
             <div class="answer-section" id="answer-section" style="display: none;">
                 <div class="loading" id="loading">Thinking...</div>
-                <div id="response" class="answer-placeholder">Ask a question to get started</div>
+                <div id="response" class="answer-placeholder">Ready for a question.</div>
             </div>
         </div>
     </div>
@@ -1153,6 +1422,23 @@
                 return this.replaceInlineReferences(content, sourceData);
             }
             
+            // Wiki References: synthesized knowledge pages related to the answer's sources.
+            // Rendered under "Source References"; links open the wiki page in a new tab.
+            generateWikiReferencesHTML(wikiRefs) {
+                if (!wikiRefs || !Array.isArray(wikiRefs) || wikiRefs.length === 0) return '';
+                var chip = 'display:inline-flex;align-items:center;gap:6px;margin:4px 6px 0 0;padding:5px 10px;border:1px solid rgba(91,157,255,0.45);border-radius:999px;color:var(--accent);background:rgba(91,157,255,0.08);text-decoration:none;font-size:13px;';
+                var catS = 'background:var(--bg-panel);border-radius:4px;padding:0 6px;font-size:11px;text-transform:capitalize;color:var(--fg-dim);';
+                var links = wikiRefs.map(function (r) {
+                    var label = (r.label || r.path || '').toString();
+                    var cat = (r.category || '').toString();
+                    var url = (r.url || '#').toString();
+                    return '<a class="wiki-ref-link" href="' + url + '" target="_blank" rel="noopener noreferrer" style="' + chip + '" title="Open the ' + label + ' wiki page in a new tab"><span style="' + catS + '">' + cat + '</span><span>' + label + '</span></a>';
+                }).join('');
+                return '<div class="wiki-references-section" style="margin-top:14px;">' +
+                       '<div class="sources-header">🔗 Wiki References</div>' +
+                       '<div class="wiki-references" style="display:flex;flex-wrap:wrap;">' + links + '</div></div>';
+            }
+
             // Generate source references HTML: video and book/PDF separated with headers
             generateVideoReferencesHTML(rawSources, msgId) {
                 if (!rawSources || !Array.isArray(rawSources) || rawSources.length === 0) {
@@ -1701,9 +1987,11 @@
                         
                         // Generate video references HTML from raw sources
                         const videoReferencesHTML = conversationManager.generateVideoReferencesHTML(data.raw_sources, msgId);
-                        responseContent = mainAnswer + videoReferencesHTML;
+                        // Wiki References section (under Source References) — links open in a new tab
+                        const wikiReferencesHTML = conversationManager.generateWikiReferencesHTML(data.wiki_references);
+                        responseContent = mainAnswer + videoReferencesHTML + wikiReferencesHTML;
                     } else {
-                        responseContent = mainAnswer;
+                        responseContent = mainAnswer + conversationManager.generateWikiReferencesHTML(data.wiki_references);
                     }
                 }
                 
@@ -1721,7 +2009,7 @@
                 
                 const errorContent = `<strong>Error:</strong> ${error.message}<br><br>Make sure the FastAPI backend is running and try again.`;
                 const assistantMessage = conversationManager.addMessage('assistant', errorContent);
-                conversationManager.displayMessage('assistant', `<div style="color: #dc2626;">${errorContent}</div>`, assistantMessage.timestamp);
+                conversationManager.displayMessage('assistant', `<div style="color: var(--danger);">${errorContent}</div>`, assistantMessage.timestamp);
             } finally {
                 // Re-enable button
                 button.disabled = false;
@@ -1795,7 +2083,7 @@
             
             // Brief highlight effect
             card.style.transition = 'box-shadow 0.3s ease';
-            card.style.boxShadow = '0 0 0 2px #6366f1, 0 0 12px rgba(99, 102, 241, 0.3)';
+            card.style.boxShadow = '0 0 0 2px var(--accent), 0 0 12px rgba(91, 157, 255, 0.3)';
             setTimeout(function() {
                 card.style.boxShadow = '';
             }, 2000);
@@ -1858,4 +2146,4 @@
 
     </script>
 </body>
-</html> 
+</html>

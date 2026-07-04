@@ -888,8 +888,11 @@ def run_rag_query(retriever, chain, query: str, timeout: int = None, provider: O
             "score": meta.get("score", 0.0),
             "content": doc.page_content,  # Include the actual transcript content
             "duration_seconds": duration_seconds,  # Pass raw seconds
+            # LLM Wiki bridge: pages that synthesize this source's video (stamped onto
+            # the chunk by scripts/annotate_chunks.py, rides through FAISS metadata).
+            "related_wiki_pages": meta.get("related_wiki_pages", []),
         }
-        
+
         # Add PDF-specific fields if this is a PDF source
         if source_type == "pdf":
             source["document_id"] = meta.get("document_id", "")

@@ -107,6 +107,69 @@ Example:
 }
 ```
 
+For agents/bots, use `format: "json"` or `format: "bot"`. Responses include `wiki_references` when retrieved sources map to synthesized wiki pages.
+
+### LLM Wiki endpoints
+
+The wiki API exposes the compiled education layer as REST data for other web apps and AI agents.
+
+- `GET /api/wiki/index/document` - generated wiki index as `{path, frontmatter, markdown, wikilinks}`. Agent entrypoint.
+- `GET /api/wiki/pages/{path}?format=json` - one wiki page as `{path, frontmatter, markdown, html, wikilinks}`.
+- `GET /api/wiki/graph.json` - graph data with `nodes[]` and labeled `edges[]`.
+- `GET /api/wiki/index` - lightweight page/source catalog for browse/search.
+
+Typical agent flow: call `/api/chat` with `format: "json"`, inspect `wiki_references`, fetch referenced pages via `/api/wiki/pages/{path}?format=json`, and use `/api/wiki/index/document` plus `/api/wiki/graph.json` for broader analysis.
+
+### Web App Integration
+
+Web apps use the same wiki REST endpoints, but usually consume the browser-oriented forms:
+
+- `GET /api/wiki/graph.json` to render an interactive graph or relationship map.
+- `GET /api/wiki/index` to build search, catalog drawers, filters, and page lists.
+- `GET /api/wiki/pages/{path}` to fetch one rendered page as JSON with `frontmatter`, `html`, and structured `wikilinks`.
+- `GET /api/wiki/pages/{path}?format=json` if the app also needs raw Markdown.
+- `GET /wiki/page/{path}` for direct links, new tabs, or iframe-style standalone page views.
+
+Typical web-app flow:
+
+1. Fetch `graph.json` and `index` on startup.
+2. Render graph nodes from `nodes[]`; render relationships from `edges[]`.
+3. When a user selects a node, call `/api/wiki/pages/{node.id}`.
+4. Insert the returned `html` into your page detail panel.
+5. Intercept links in that HTML with `a[data-page]` and fetch the next page through the same endpoint.
+
+Minimal browser example:
+
+```js
+const API = "http://127.0.0.1:7860";
+
+async function loadWikiShell() {
+  const [graph, catalog] = await Promise.all([
+    fetch(`${API}/api/wiki/graph.json`).then(r => r.json()),
+    fetch(`${API}/api/wiki/index`).then(r => r.json()),
+  ]);
+  return { graph, catalog };
+}
+
+async function loadWikiPage(path) {
+  const page = await fetch(`${API}/api/wiki/pages/${encodeURI(path)}`).then(r => r.json());
+  document.querySelector("#wiki-title").textContent =
+    page.frontmatter?.title || page.path;
+  document.querySelector("#wiki-body").innerHTML = page.html;
+}
+
+function wireWikiLinks() {
+  document.querySelector("#wiki-body").addEventListener("click", event => {
+    const link = event.target.closest("a[data-page]");
+    if (!link) return;
+    event.preventDefault();
+    loadWikiPage(link.dataset.page);
+  });
+}
+```
+
+The local API currently allows cross-origin browser requests for development. If this is exposed beyond your LAN, restrict CORS origins in `main.py`.
+
 ### `GET /api/conversations?limit=25`
 Lists recent conversations.
 
@@ -124,9 +187,11 @@ There is exactly **one** supported weekly refresh path:
 
 The weekly refresh script:
 1. pulls latest Git changes when the repo worktree is clean,
-2. refreshes `requirements-serve.txt` into `.venv-native`,
-3. restarts `com.opteee.native` indirectly by killing the running Python process,
-4. waits for `http://127.0.0.1:7860/api/health` to pass.
+2. runs the transcript/content pipeline via `run_transcripts.sh`,
+3. refreshes `requirements-serve.txt` into `.venv-native`,
+4. restarts `com.opteee.native` indirectly by killing the running Python process,
+5. waits for `http://127.0.0.1:7860/api/health` to pass,
+6. stages refresh artifacts (`outlier_trading_videos*.json`, `transcripts/`, `processed_transcripts/`, `vector_store/`), commits them when changed, and pushes the refresh commit to `origin/<current-branch>`.
 
 ## Transcript and vector-store workflow
 

@@ -92,6 +92,10 @@ class ChatResponse(BaseModel):
     answer: str = Field(..., description="RAG-generated answer")
     sources: str = Field(..., description="Formatted sources for the selected output format")
     raw_sources: List[Dict[str, Any]] = Field(default=[], description="Raw source data (video and PDF)")
+    wiki_references: List[Dict[str, Any]] = Field(
+        default=[],
+        description="Synthesized LLM-wiki pages related to the sources: {path, category, label, url}",
+    )
     timestamp: str = Field(..., description="Response timestamp")
     conversation_id: Optional[str] = Field(default=None, description="Conversation ID for this chat")
     token_usage: Optional[TokenUsage] = Field(default=None, description="Provider/model token usage for this answer")

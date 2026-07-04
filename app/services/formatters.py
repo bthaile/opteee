@@ -9,6 +9,67 @@ from datetime import datetime
 from typing import List, Dict, Any, Optional
 
 
+# --- LLM Wiki bridge: turn per-source related_wiki_pages into a clean references list ---
+_WIKI_CAT_LABEL = {
+    "concepts": "concept",
+    "strategies": "strategy",
+    "securities": "security",
+    "people": "person",
+    "macro": "macro",
+    "syntheses": "synthesis",
+    "sources": "source",
+}
+
+
+def _prettify_slug(slug: str) -> str:
+    return slug.replace("-", " ").replace("_", " ").strip().title()
+
+
+def collect_wiki_references(sources: List[Dict]) -> List[Dict[str, str]]:
+    """Union of related_wiki_pages across sources -> deduped, ordered reference objects.
+
+    Each ref: {path, category, label, url}. The url points at the app's rendered
+    wiki page view (GET /wiki/page/<path>), opened in a new tab by the UI.
+    """
+    refs: List[Dict[str, str]] = []
+    seen = set()
+    for s in sources or []:
+        for wp in (s.get("related_wiki_pages") or []):
+            if not wp or wp in seen:
+                continue
+            seen.add(wp)
+            cat, _, slug = wp.partition("/")
+            refs.append({
+                "path": wp,
+                "category": _WIKI_CAT_LABEL.get(cat, cat),
+                "label": _prettify_slug(slug or wp),
+                "url": f"/wiki/page/{wp}",
+            })
+    return refs
+
+
+def render_wiki_references_html(refs: List[Dict[str, str]]) -> str:
+    """Render the 'Wiki References' section (placed under Source References)."""
+    if not refs:
+        return ""
+    items = ""
+    for r in refs:
+        items += (
+            f'<a class="wiki-ref-link" href="{r["url"]}" target="_blank" rel="noopener noreferrer" '
+            f'title="Open the {r["label"]} wiki page in a new tab">'
+            f'<span class="wiki-ref-cat">{r["category"]}</span>'
+            f'<span class="wiki-ref-label">{r["label"]}</span>'
+            f'</a>'
+        )
+    return (
+        '<div class="source-section wiki-section">'
+        f'<h4 class="section-title">🔗 Wiki References ({len(refs)})</h4>'
+        '<p class="wiki-references-note">Synthesized knowledge pages related to these sources — open in a new tab.</p>'
+        f'<div class="wiki-references">{items}</div>'
+        '</div>'
+    )
+
+
 class ResponseFormatter:
     """Base class for response formatting"""
     
@@ -58,6 +119,7 @@ class HtmlFormatter:
                     "answer": formatted_answer,
                     "sources": "",
                     "raw_sources": [],
+                    "wiki_references": [],
                     "token_usage": token_usage,
                 },
                 "format": "html"
@@ -254,13 +316,18 @@ class HtmlFormatter:
             
             sources_content += '</div>'  # Close pdf-section
         
+        # Wiki References section — under the source cards, links open in a new tab.
+        wiki_refs = collect_wiki_references(sources)
+        sources_content += render_wiki_references_html(wiki_refs)
+
         sources_content += '</div>'  # Close video-references
-        
+
         return {
             "formatted_content": {
                 "answer": formatted_answer,
                 "sources": sources_content,
                 "raw_sources": highlighted_sources,
+                "wiki_references": wiki_refs,
                 "token_usage": token_usage,
             },
             "format": "html"
@@ -486,6 +553,7 @@ class JsonFormatter:
     def format(self, answer: str, sources: List[Dict], token_usage: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         plain_answer = self._to_plain_text(answer)
         normalized_sources = [self._normalize_source(source) for source in sources]
+        wiki_refs = collect_wiki_references(sources)
 
         return {
             "formatted_content": {
@@ -493,6 +561,7 @@ class JsonFormatter:
                 # Keep string field machine-friendly while preserving schema compatibility.
                 "sources": json.dumps(normalized_sources, ensure_ascii=True),
                 "raw_sources": normalized_sources,
+                "wiki_references": wiki_refs,
                 "token_usage": token_usage,
             },
             "format": "json",
@@ -519,6 +588,8 @@ class JsonFormatter:
             "page_range": source.get("page_range", ""),
             "section": source.get("section", ""),
             "author": source.get("author", ""),
+            # LLM Wiki bridge: preserve the per-source wiki page links for bot clients.
+            "related_wiki_pages": source.get("related_wiki_pages", []),
         }
         return normalized
 
@@ -551,6 +622,7 @@ class BotFormatter:
                 "answer": formatted_answer,
                 "sources": "",  # Bots generally don't use HTML sources
                 "raw_sources": sources,
+                "wiki_references": collect_wiki_references(sources),
                 "token_usage": token_usage,
             },
             "format": "bot"

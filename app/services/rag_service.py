@@ -189,6 +189,7 @@ class RAGService:
                 "answer": formatted_response["answer"],
                 "sources": formatted_response["sources"],
                 "raw_sources": formatted_response["raw_sources"],
+                "wiki_references": formatted_response.get("wiki_references", []),
                 "token_usage": formatted_response.get("token_usage"),
             }
             
@@ -303,8 +304,10 @@ Current question: {query}"""
                 "score": meta.get("score", 0.0),
                 "content": doc.page_content,
                 "duration_seconds": duration_seconds,
+                # LLM Wiki bridge: wiki pages synthesizing this video (see annotate_chunks.py)
+                "related_wiki_pages": meta.get("related_wiki_pages", []),
             }
-            
+
             # Add PDF-specific fields
             if source_type == "pdf":
                 source["document_id"] = meta.get("document_id", "")

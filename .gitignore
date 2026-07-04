@@ -65,3 +65,11 @@ whisper-env/
 test_env/
 audio_files_processed/
 cleanup_backups/
+
+# --- LLM Wiki: transient build artifacts ---
+# The wiki knowledge layer (wiki/concepts, strategies, sources, graph.json, related_videos.json)
+# IS committed. These are scratch/review/log outputs that must NOT be:
+wiki/_quarantine/
+logs/wiki-ingest-*.log
+logs/reindex.log
+logs/smoke-test.log

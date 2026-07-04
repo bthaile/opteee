@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OPTEEE Wiki — Knowledge Graph</title>
+
+  <!--
+    Interactive browse/graph layer for the OPTEEE LLM Wiki (WIKI_SCHEMA §8).
+
+    NO EXTERNAL CALLS: cytoscape.js is vendored locally at
+    static/vendor/cytoscape.min.js and served same-origin at /assets/… by the
+    OPTEEE FastAPI app. All CSS/JS is local; the wiki data endpoints
+    (/api/wiki/graph.json, /api/wiki/index, /api/wiki/pages/{id}) are same-origin too.
+  -->
+  <script src="/assets/vendor/cytoscape.min.js"></script>
+
+  <style>
+    :root {
+      --bg: #0f1420;
+      --bg-panel: #171d2b;
+      --bg-elev: #1f2738;
+      --border: #2b3550;
+      --fg: #e7ecf5;
+      --fg-dim: #97a3bd;
+      --accent: #5b9dff;
+      --shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    }
+    /* Light theme when the OS/browser prefers it. */
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f5f7fb;
+        --bg-panel: #ffffff;
+        --bg-elev: #eef1f7;
+        --border: #d5dbe7;
+        --fg: #182033;
+        --fg-dim: #5a678a;
+        --accent: #2f6fe0;
+        --shadow: 0 8px 30px rgba(20, 30, 60, 0.12);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
+      font-size: 15px;
+    }
+
+    #app {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-panel);
+      z-index: 3;
+    }
+    header h1 {
+      font-size: 16px;
+      margin: 0;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+    header .sub { color: var(--fg-dim); font-size: 12.5px; white-space: nowrap; }
+
+    #search {
+      flex: 1 1 220px;
+      min-width: 160px;
+      max-width: 360px;
+      padding: 7px 11px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg-elev);
+      color: var(--fg);
+      font-size: 14px;
+      outline: none;
+    }
+    #search:focus { border-color: var(--accent); }
+
+    .header-btn {
+      flex: none;
+      padding: 7px 11px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg-elev);
+      color: var(--fg);
+      font-size: 13px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .header-btn:hover { border-color: var(--accent); }
+    .header-btn[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+    #mode-toggle { display: inline-flex; gap: 4px; flex: none; }
+
+    #graph-controls {
+      position: absolute; left: 12px; top: 12px; z-index: 4;
+      display: flex; gap: 6px;
+    }
+    .graph-ctrl {
+      padding: 6px 11px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--bg-panel); color: var(--fg); font-size: 13px;
+      cursor: pointer; box-shadow: var(--shadow);
+    }
+    .graph-ctrl:hover { border-color: var(--accent); }
+    .graph-ctrl[hidden] { display: none; }
+
+    #filters {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--bg-elev);
+      color: var(--fg-dim);
+      font-size: 12.5px;
+      cursor: pointer;
+      user-select: none;
+      transition: opacity 0.12s ease;
+    }
+    .chip[aria-pressed="true"] { color: var(--fg); }
+    .chip[aria-pressed="false"] { opacity: 0.4; }
+    .chip .dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      display: inline-block; flex: none;
+    }
+
+    #main {
+      flex: 1 1 auto;
+      display: flex;
+      min-height: 0;
+      position: relative;
+    }
+
+    #cy {
+      flex: 1 1 auto;
+      min-width: 0;
+      height: 100%;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(91, 157, 255, 0.06), transparent 60%),
+        var(--bg);
+    }
+
+    /* Floating tooltip */
+    #tooltip {
+      position: fixed;
+      pointer-events: none;
+      z-index: 10;
+      max-width: 260px;
+      padding: 8px 11px;
+      border-radius: 8px;
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      font-size: 12.5px;
+      line-height: 1.35;
+      opacity: 0;
+      transition: opacity 0.1s ease;
+    }
+    #tooltip.show { opacity: 1; }
+    #tooltip .tt-title { font-weight: 650; margin-bottom: 2px; }
+    #tooltip .tt-meta { color: var(--fg-dim); }
+
+    /* Side panel */
+    #panel {
+      width: 40%;
+      min-width: 300px;
+      max-width: 560px;
+      height: 100%;
+      background: var(--bg-panel);
+      border-left: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.18s ease;
+    }
+    #panel.open { transform: translateX(0); }
+    #panel-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 14px 16px 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    #panel-title { font-size: 17px; font-weight: 680; margin: 0 0 4px; }
+    #panel-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+    .badge {
+      font-size: 11.5px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      color: var(--fg-dim);
+    }
+    #panel-close {
+      flex: none;
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      color: var(--fg);
+      border-radius: 8px;
+      width: 30px; height: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      line-height: 1;
+    }
+    #panel-back {
+      flex: none;
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      color: var(--fg);
+      border-radius: 8px;
+      height: 30px;
+      padding: 0 10px;
+      font-size: 13px;
+      cursor: pointer;
+      line-height: 1;
+    }
+    #panel-back[hidden] { display: none; }
+    #panel-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex: none;
+    }
+    #panel-body {
+      flex: 1 1 auto;
+      overflow-y: auto;
+      padding: 14px 18px 40px;
+      line-height: 1.55;
+    }
+    #panel-body h1 { font-size: 20px; margin: 0.2em 0 0.5em; }
+    #panel-body h2 {
+      font-size: 15.5px; margin: 1.4em 0 0.4em;
+      padding-bottom: 4px; border-bottom: 1px solid var(--border);
+    }
+    #panel-body h3 { font-size: 14px; margin: 1.1em 0 0.3em; color: var(--fg-dim); }
+    #panel-body p, #panel-body li { font-size: 14px; }
+    #panel-body a.wikilink {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--accent);
+      cursor: pointer;
+    }
+    #panel-body a.wikilink:hover { border-bottom-style: solid; }
+    #panel-body a { color: var(--accent); }
+    #panel-body blockquote {
+      margin: 0.8em 0;
+      padding: 4px 14px;
+      border-left: 3px solid var(--accent);
+      color: var(--fg-dim);
+      background: var(--bg-elev);
+      border-radius: 0 6px 6px 0;
+    }
+    #panel-body code {
+      background: var(--bg-elev);
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-size: 12.5px;
+    }
+    #panel-body pre {
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      overflow-x: auto;
+    }
+    #panel-body pre code { background: none; padding: 0; }
+    #panel-body table { border-collapse: collapse; width: 100%; display: block; overflow-x: auto; }
+    #panel-body th, #panel-body td {
+      border: 1px solid var(--border); padding: 6px 9px; font-size: 13px; text-align: left;
+    }
+    .catalog-search {
+      width: 100%;
+      margin: 0 0 12px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg-elev);
+      color: var(--fg);
+      font-size: 14px;
+      outline: none;
+    }
+    .catalog-section { margin: 0 0 18px; }
+    .catalog-section h3 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 0 0 8px;
+      font-size: 13px;
+      color: var(--fg-dim);
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+    .catalog-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+    .catalog-item {
+      display: block;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-elev);
+      color: var(--fg);
+      text-decoration: none;
+    }
+    .catalog-item:hover { border-color: var(--accent); }
+    .catalog-title {
+      display: block;
+      font-size: 13.5px;
+      line-height: 1.3;
+      overflow-wrap: anywhere;
+    }
+    .catalog-meta {
+      display: block;
+      margin-top: 3px;
+      color: var(--fg-dim);
+      font-size: 11.5px;
+      overflow-wrap: anywhere;
+    }
+    .catalog-empty {
+      color: var(--fg-dim);
+      font-size: 13px;
+    }
+    #panel-fm {
+      margin-top: 8px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    #panel-fm summary {
+      cursor: pointer;
+      padding: 7px 12px;
+      font-size: 12.5px;
+      color: var(--fg-dim);
+      background: var(--bg-elev);
+      user-select: none;
+    }
+    #panel-fm .fm-grid {
+      display: grid;
+      grid-template-columns: minmax(110px, 34%) 1fr;
+      gap: 1px;
+      background: var(--border);
+    }
+    #panel-fm .fm-k, #panel-fm .fm-v {
+      background: var(--bg-panel);
+      padding: 5px 12px;
+      font-size: 12.5px;
+    }
+    #panel-fm .fm-k { color: var(--fg-dim); font-weight: 600; }
+    #panel-fm .fm-v { word-break: break-word; }
+    #panel-fm .fm-v a { color: var(--accent); cursor: pointer; text-decoration: none; }
+
+    #status {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--fg-dim);
+      font-size: 14px;
+      text-align: center;
+      max-width: 70%;
+      z-index: 2;
+    }
+
+    /* Responsive: stack panel over graph on narrow screens. */
+    @media (max-width: 760px) {
+      #panel {
+        position: absolute;
+        right: 0; top: 0;
+        width: 100%;
+        max-width: none;
+        z-index: 6;
+        box-shadow: var(--shadow);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>OPTEEE Wiki</h1>
+      <div id="mode-toggle">
+        <button id="mode-explore" class="header-btn" type="button" aria-pressed="true"
+                title="Flat relationship graph — click a node to see everything it relates to">Explore</button>
+        <button id="mode-browse" class="header-btn" type="button" aria-pressed="false"
+                title="Drill down: themes → topics → videos">Browse</button>
+      </div>
+      <span class="sub" id="counts">loading…</span>
+      <input id="search" type="search" placeholder="Find a topic… (Enter to open)"
+             autocomplete="off" title="Type to filter/highlight nodes; press Enter to open the top match" />
+      <button id="catalog-toggle" class="header-btn" type="button">Catalog</button>
+      <div id="filters"></div>
+      <span class="sub" id="drill-hint">double-click a node to expand its videos</span>
+    </header>
+
+    <div id="main">
+      <div id="cy"></div>
+      <div id="status">Loading knowledge graph…</div>
+      <div id="graph-controls">
+        <button id="browse-back" class="graph-ctrl" type="button" hidden>← Themes</button>
+        <button id="fit-btn" class="graph-ctrl" type="button" title="Fit all nodes into view">Fit view</button>
+      </div>
+
+      <aside id="panel" aria-hidden="true">
+        <div id="panel-head">
+          <div style="min-width:0;">
+            <h2 id="panel-title">—</h2>
+            <div id="panel-badges"></div>
+          </div>
+          <div id="panel-actions">
+            <button id="panel-back" type="button" hidden>Back</button>
+            <button id="panel-close" title="Close" aria-label="Close panel">×</button>
+          </div>
+        </div>
+        <div id="panel-body"></div>
+      </aside>
+    </div>
+  </div>
+
+  <div id="tooltip"></div>
+
+  <script>
+  (function () {
+    "use strict";
+
+    // ---- Category colours (stable, theme-agnostic) ---------------------
+    var CATEGORY_COLORS = {
+      concept:    "#5b9dff",
+      strategy:   "#37c98b",
+      security:   "#f4a63b",
+      person:     "#c07bf0",
+      macro:      "#ff6b8a",
+      synthesis:  "#26c6da",
+      source:     "#8a94ad",
+      default:    "#8a94ad"
+    };
+    // graph.json bakes category as the singular type (concept, strategy…);
+    // the index uses folder names (concepts…). Normalise both.
+    function normCategory(cat) {
+      if (!cat) return "default";
+      var c = String(cat).toLowerCase();
+      var map = {
+        concepts: "concept", strategies: "strategy", securities: "security",
+        people: "person", macros: "macro", syntheses: "synthesis",
+        sources: "source"
+      };
+      return map[c] || c;
+    }
+    function colorFor(cat) {
+      return CATEGORY_COLORS[normCategory(cat)] || CATEGORY_COLORS.default;
+    }
+    function classSuffix(value) {
+      return String(value || "relationship").toLowerCase().replace(/[^a-z0-9_-]+/g, "-");
+    }
+    function edgeLabel(edge) {
+      if (edge.label) return String(edge.label);
+      if (edge.type === "cooccurrence") {
+        var shared = Number(edge.shared_source_count || edge.weight) || 0;
+        return "shared source videos: " + shared;
+      }
+      if (edge.type === "wikilink") return "wiki link";
+      if (edge.type === "source") return "backing source";
+      return "relationship";
+    }
+
+    var cy = null;
+    var activeCategories = {};   // category -> bool (shown)
+    var wikiIndex = { pages: [], sources: [], page_count: 0, source_count: 0 };
+    var panelHistory = [];
+    var currentPanelState = null;
+    var PRIMARY_LABEL_LIMIT = 55;
+    var INITIAL_FOCUS_LIMIT = 85;
+    var NODE_LABEL_ZOOM = 0.78;
+    var EDGE_LABEL_ZOOM = 1.15;
+    var STRONG_EDGE_SHARED_SOURCES = 25;
+
+    var els = {
+      cy: document.getElementById("cy"),
+      status: document.getElementById("status"),
+      counts: document.getElementById("counts"),
+      search: document.getElementById("search"),
+      catalogToggle: document.getElementById("catalog-toggle"),
+      filters: document.getElementById("filters"),
+      tooltip: document.getElementById("tooltip"),
+      panel: document.getElementById("panel"),
+      panelTitle: document.getElementById("panel-title"),
+      panelBadges: document.getElementById("panel-badges"),
+      panelBody: document.getElementById("panel-body"),
+      panelBack: document.getElementById("panel-back"),
+      panelClose: document.getElementById("panel-close"),
+      modeExplore: document.getElementById("mode-explore"),
+      modeBrowse: document.getElementById("mode-browse"),
+      drillHint: document.getElementById("drill-hint"),
+      fitBtn: document.getElementById("fit-btn"),
+      browseBack: document.getElementById("browse-back")
+    };
+
+    function setStatus(msg) {
+      if (!msg) { els.status.style.display = "none"; return; }
+      els.status.style.display = "block";
+      els.status.textContent = msg;
+    }
+
+    // ---- Load graph and boot cytoscape ---------------------------------
+    Promise.all([
+      fetch("/api/wiki/graph.json").then(function (r) { return r.json(); }),
+      fetch("/api/wiki/index").then(function (r) { return r.json(); })
+    ])
+      .then(function (results) { boot(results[0] || {}, results[1] || {}); })
+      .catch(function (err) {
+        setStatus("Could not load wiki data — " + err);
+      });
+
+    function boot(graph, index) {
+      wikiIndex = normaliseIndex(index);
+      var nodes = Array.isArray(graph.nodes) ? graph.nodes : [];
+      var edges = Array.isArray(graph.edges) ? graph.edges : [];
+      updateCatalogButton();
+
+      if (nodes.length === 0) {
+        setStatus("The knowledge graph is empty — run build_graph.py to " +
+          "populate wiki/graph.json. (The page and REST API still work.)");
+        setCounts(0, 0);
+        buildFilters([]);
+        return;
+      }
+      setStatus(null);
+
+      // Scale sizes from video_count (fallback: size field, then 1).
+      var counts = nodes.map(function (n) {
+        return Number(n.video_count != null ? n.video_count : n.size) || 0;
+      });
+      var maxCount = Math.max(1, Math.max.apply(null, counts));
+
+      // Baked x/y are normalised-ish; spread them onto the canvas.
+      var haveXY = nodes.every(function (n) {
+        return typeof n.x === "number" && typeof n.y === "number";
+      });
+
+      var cyNodes = nodes.map(function (n) {
+        var cat = normCategory(n.category);
+        var vc = Number(n.video_count != null ? n.video_count : n.size) || 0;
+        var data = {
+          id: n.id,
+          label: n.label || (n.id || "").split("/").pop(),
+          category: cat,
+          theme: n.theme || cat,
+          video_count: vc,
+          degree: Number(n.degree) || 0,
+          size: 22 + 34 * (vc / maxCount),
+          color: colorFor(cat)
+        };
+        var el = { data: data };
+        if (haveXY) {
+          el.position = { x: n.x * 900, y: n.y * 900 };
+        }
+        return el;
+      });
+
+      var nodeIds = {};
+      cyNodes.forEach(function (e) { nodeIds[e.data.id] = true; });
+
+      var cyEdges = edges.filter(function (e) {
+        return nodeIds[e.source] && nodeIds[e.target];
+      }).map(function (e, i) {
+        var type = e.type || "relationship";
+        var shared = Number(e.shared_source_count) || 0;
+        var classes = ["edge-type-" + classSuffix(type)];
+        if (type === "wikilink" || shared >= STRONG_EDGE_SHARED_SOURCES) {
+          classes.push("strong-edge");
+        }
+        return {
+          data: {
+            id: "e" + i,
+            source: e.source,
+            target: e.target,
+            type: type,
+            weight: Number(e.weight) || 1,
+            shared_source_count: shared,
+            label: edgeLabel(e)
+          },
+          classes: classes.join(" ")
+        };
+      });
+
+      cy = cytoscape({
+        container: els.cy,
+        elements: { nodes: cyNodes, edges: cyEdges },
+        wheelSensitivity: 0.25,
+        style: [
+          {
+            selector: "node",
+            style: {
+              "background-color": "data(color)",
+              "width": "data(size)",
+              "height": "data(size)",
+              "label": "data(label)",
+              "font-size": 11,
+              "color": "#cdd6ea",
+              "text-outline-width": 2,
+              "text-outline-color": "#0f1420",
+              "text-valign": "bottom",
+              "text-margin-y": 3,
+              "text-opacity": 0,
+              "min-zoomed-font-size": 8,
+              "border-width": 0
+            }
+          },
+          {
+            selector: "node.primary-label, node.zoom-label, node.highlight, node.selected",
+            style: { "text-opacity": 1 }
+          },
+          {
+            selector: "edge",
+            style: {
+              "width": "mapData(weight, 1, 5, 1, 4)",
+              "line-color": "#3a4666",
+              "curve-style": "bezier",
+              "opacity": 0.09,
+              "label": "data(label)",
+              "font-size": 8,
+              "color": "#b8c4dc",
+              "text-rotation": "autorotate",
+              "text-background-color": "#0f1420",
+              "text-background-opacity": 0,
+              "text-background-padding": 2,
+              "text-outline-width": 2,
+              "text-outline-color": "#0f1420",
+              "text-opacity": 0,
+              "min-zoomed-font-size": 7
+            }
+          },
+          {
+            selector: "edge.edge-type-wikilink",
+            style: { "line-color": "#5b9dff", "opacity": 0.58 }
+          },
+          {
+            selector: "edge.edge-type-source",
+            style: { "line-color": "#8a94ad", "line-style": "dashed", "opacity": 0.44 }
+          },
+          {
+            selector: "edge.label-visible, edge.zoom-label",
+            style: { "text-opacity": 1, "text-background-opacity": 0.86 }
+          },
+          {
+            selector: "edge.hover-edge",
+            style: { "opacity": 0.95, "width": "mapData(weight, 1, 5, 2, 6)" }
+          },
+          {
+            selector: "node.faded",
+            style: { "opacity": 0.12, "text-opacity": 0.12 }
+          },
+          {
+            selector: "edge.faded",
+            style: { "opacity": 0.04, "text-opacity": 0 }
+          },
+          {
+            selector: "node.highlight",
+            style: {
+              "border-width": 3,
+              "border-color": "#ffffff",
+              "text-opacity": 1
+            }
+          },
+          {
+            selector: "node.selected",
+            style: {
+              "border-width": 4,
+              "border-color": "#ffffff"
+            }
+          }
+        ],
+        layout: haveXY
+          ? { name: "preset", fit: true, padding: 40 }
+          : {
+              name: "cose", animate: false, padding: 40,
+              nodeRepulsion: 9000, idealEdgeLength: 90
+            }
+      });
+
+      setCounts(cyNodes.length, cyEdges.length);
+
+      var cats = {};
+      cyNodes.forEach(function (e) { cats[e.data.category] = true; });
+      buildFilters(Object.keys(cats).sort());
+
+      applyInitialDeclutter();
+      setInitialViewport();
+      updateZoomDeclutter();
+      wireInteractions();
+    }
+
+    function normaliseIndex(index) {
+      index = index || {};
+      return {
+        pages: Array.isArray(index.pages) ? index.pages : [],
+        sources: Array.isArray(index.sources) ? index.sources : [],
+        page_count: Number(index.page_count) || 0,
+        source_count: Number(index.source_count) || 0
+      };
+    }
+
+    function setCounts(nodeCount, edgeCount) {
+      var parts = [
+        nodeCount + " knowledge node" + (nodeCount === 1 ? "" : "s"),
+        edgeCount + " edge" + (edgeCount === 1 ? "" : "s")
+      ];
+      if (wikiIndex.source_count) {
+        parts.push(wikiIndex.source_count + " source page" +
+          (wikiIndex.source_count === 1 ? "" : "s"));
+      }
+      els.counts.textContent = parts.join(" · ");
+    }
+
+    function updateCatalogButton() {
+      if (!els.catalogToggle) return;
+      var total = wikiIndex.page_count + wikiIndex.source_count;
+      els.catalogToggle.textContent = total ? ("Catalog (" + total + ")") : "Catalog";
+    }
+
+    // ---- Category filter chips -----------------------------------------
+    function makeChip(cat) {
+      if (activeCategories[cat] === undefined) activeCategories[cat] = true;
+      var chip = document.createElement("button");
+      chip.className = "chip";
+      chip.setAttribute("aria-pressed", activeCategories[cat] ? "true" : "false");
+      chip.dataset.cat = cat;
+      chip.innerHTML =
+        '<span class="dot" style="background:' + colorFor(cat) + '"></span>' + cat;
+      chip.addEventListener("click", function () {
+        activeCategories[cat] = !activeCategories[cat];
+        chip.setAttribute("aria-pressed", activeCategories[cat] ? "true" : "false");
+        applyCategoryFilter();
+      });
+      return chip;
+    }
+    function buildFilters(categories) {
+      els.filters.innerHTML = "";
+      categories.forEach(function (cat) { els.filters.appendChild(makeChip(cat)); });
+    }
+    function ensureCategoryChip(cat) {
+      if (els.filters.querySelector('[data-cat="' + cat + '"]')) return;
+      els.filters.appendChild(makeChip(cat));
+    }
+
+    function nodeScore(n) {
+      var degree = Number(n.data("degree")) || 0;
+      var videos = Number(n.data("video_count")) || 0;
+      return degree * 6 + Math.min(videos, 250) / 10;
+    }
+
+    function rankedKnowledgeNodes() {
+      if (!cy) return [];
+      return cy.nodes().filter(function (n) {
+        return n.data("category") !== "source";
+      }).toArray().sort(function (a, b) {
+        var scoreDiff = nodeScore(b) - nodeScore(a);
+        if (scoreDiff !== 0) return scoreDiff;
+        return String(a.data("label")).localeCompare(String(b.data("label")));
+      });
+    }
+
+    function applyInitialDeclutter() {
+      var primary = rankedKnowledgeNodes().slice(0, PRIMARY_LABEL_LIMIT);
+      var primaryIds = {};
+      primary.forEach(function (n) { primaryIds[n.id()] = true; });
+      cy.batch(function () {
+        cy.nodes().removeClass("primary-label secondary-label zoom-label");
+        cy.nodes().forEach(function (n) {
+          n.addClass(primaryIds[n.id()] ? "primary-label" : "secondary-label");
+        });
+      });
+    }
+
+    function setInitialViewport() {
+      var ranked = rankedKnowledgeNodes();
+      var focus = cy.collection(ranked.slice(0, Math.min(INITIAL_FOCUS_LIMIT, ranked.length)));
+      if (focus.empty()) focus = cy.nodes();
+      cy.fit(focus, 64);
+      cy.zoom({
+        level: Math.min(cy.maxZoom(), cy.zoom() * 1.2),
+        renderedPosition: { x: cy.width() / 2, y: cy.height() / 2 }
+      });
+    }
+
+    function updateZoomDeclutter() {
+      if (!cy) return;
+      var zoom = cy.zoom();
+      cy.batch(function () {
+        cy.nodes().toggleClass("zoom-label", zoom >= NODE_LABEL_ZOOM);
+        cy.edges(".strong-edge").toggleClass("zoom-label", zoom >= EDGE_LABEL_ZOOM);
+      });
+    }
+
+    function applyCategoryFilter() {
+      if (!cy) return;
+      cy.batch(function () {
+        cy.nodes().forEach(function (n) {
+          var shown = activeCategories[n.data("category")] !== false;
+          n.style("display", shown ? "element" : "none");
+        });
+      });
+    }
+
+    // ---- Interactions: hover, click, search ----------------------------
+    function wireInteractions() {
+      cy.on("mouseover", "node", function (evt) {
+        showTooltip(evt.target);   // hover = tooltip only; connections are shown on click
+      });
+      cy.on("mouseout", "node", function () {
+        hideTooltip();
+      });
+      cy.on("mouseover", "edge", function (evt) {
+        var e = evt.target;
+        e.addClass("label-visible hover-edge");
+        showEdgeTooltip(e, evt.originalEvent);
+      });
+      cy.on("mouseout", "edge", function (evt) {
+        evt.target.removeClass("label-visible hover-edge");
+        hideTooltip();
+      });
+      cy.on("mousemove", function (evt) {
+        if (els.tooltip.classList.contains("show") && evt.originalEvent) {
+          positionTooltip(evt.originalEvent);
+        }
+      });
+      cy.on("tap", "node", function (evt) {
+        var n = evt.target;
+        if (n.hasClass("theme-node")) { toggleTheme(n); return; }
+        var wasSelected = n.hasClass("selected");
+        cy.nodes().removeClass("selected");
+        clearHighlight();
+        if (wasSelected) return;         // click a selected node again to deselect
+        n.addClass("selected");
+        highlightNeighborhood(n);        // persists while you zoom / pan — clears on deselect
+        openPage(n.data("id"));
+      });
+      cy.on("tap", function (evt) {
+        // Tap empty canvas to deselect (clear the highlighted node + its connections).
+        if (evt.target === cy) { cy.nodes().removeClass("selected"); clearHighlight(); }
+      });
+      // Double-click a knowledge node to drill down: pull in its source videos.
+      cy.on("dbltap", "node", function (evt) {
+        var n = evt.target;
+        if (n.data("category") !== "source") expandNode(n);
+      });
+      cy.on("zoom", updateZoomDeclutter);
+      cy.on("resize", function () {
+        updateZoomDeclutter();
+      });
+
+      els.search.addEventListener("input", onSearch);
+      els.search.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") { e.preventDefault(); openTopSearchMatch(); }
+      });
+      els.panelClose.addEventListener("click", closePanel);
+      els.catalogToggle.addEventListener("click", openCatalog);
+      els.panelBack.addEventListener("click", goBack);
+      if (els.modeExplore) els.modeExplore.addEventListener("click", enterExplore);
+      if (els.modeBrowse) els.modeBrowse.addEventListener("click", enterBrowse);
+      if (els.fitBtn) els.fitBtn.addEventListener("click", fitAll);
+      if (els.browseBack) els.browseBack.addEventListener("click", collapseToThemes);
+      // In Browse mode, tapping empty canvas collapses back to the theme overview.
+      cy.on("tap", function (evt) {
+        if (evt.target === cy && graphMode === "browse" && expandedTheme) collapseToThemes();
+      });
+    }
+
+    function showTooltip(n) {
+      els.tooltip.innerHTML =
+        '<div class="tt-title">' + esc(n.data("label")) + "</div>" +
+        '<div class="tt-meta">' + esc(n.data("category")) + " · " +
+        n.data("video_count") + " video" +
+        (n.data("video_count") === 1 ? "" : "s") + "</div>";
+      els.tooltip.classList.add("show");
+      var pos = n.renderedPosition();
+      var rect = els.cy.getBoundingClientRect();
+      positionTooltip({ clientX: rect.left + pos.x, clientY: rect.top + pos.y });
+    }
+    function showEdgeTooltip(e, originalEvent) {
+      var source = e.source().data("label") || e.data("source");
+      var target = e.target().data("label") || e.data("target");
+      var detail = e.data("label") || e.data("type") || "relationship";
+      els.tooltip.innerHTML =
+        '<div class="tt-title">' + esc(detail) + "</div>" +
+        '<div class="tt-meta">' + esc(source) + " -- " + esc(target) + "</div>";
+      els.tooltip.classList.add("show");
+      if (originalEvent) positionTooltip(originalEvent);
+    }
+    function positionTooltip(e) {
+      var x = e.clientX + 14, y = e.clientY + 14;
+      var w = els.tooltip.offsetWidth, h = els.tooltip.offsetHeight;
+      if (x + w > window.innerWidth) x = e.clientX - w - 14;
+      if (y + h > window.innerHeight) y = e.clientY - h - 14;
+      els.tooltip.style.left = x + "px";
+      els.tooltip.style.top = y + "px";
+    }
+    function hideTooltip() { els.tooltip.classList.remove("show"); }
+
+    function highlightNeighborhood(n) {
+      var keep = n.closedNeighborhood();
+      var connectedEdges = n.connectedEdges();
+      cy.batch(function () {
+        cy.elements().addClass("faded");
+        keep.removeClass("faded");
+        n.addClass("highlight");
+        connectedEdges.addClass("label-visible hover-edge");
+      });
+    }
+    function clearHighlight() {
+      if (!cy) return;
+      cy.batch(function () {
+        cy.elements().removeClass("faded");
+        cy.nodes().removeClass("highlight");
+        cy.edges().removeClass("label-visible hover-edge");
+      });
+    }
+
+    function onSearch() {
+      var q = els.search.value.trim().toLowerCase();
+      if (!cy) return;
+      cy.nodes().removeClass("highlight");
+      if (!q) return;
+      var matches = cy.nodes().filter(function (n) {
+        return (n.data("label") || "").toLowerCase().indexOf(q) !== -1 ||
+               (n.data("id") || "").toLowerCase().indexOf(q) !== -1;
+      });
+      matches.addClass("highlight");
+      if (matches.length > 0) {
+        cy.animate({ fit: { eles: matches, padding: 120 }, duration: 250 });
+      }
+    }
+
+    // Enter in the search box: open the top matching node's page.
+    function openTopSearchMatch() {
+      var q = els.search.value.trim().toLowerCase();
+      if (!cy || !q) return;
+      var matches = cy.nodes().filter(function (n) {
+        return (n.data("label") || "").toLowerCase().indexOf(q) !== -1 ||
+               (n.data("id") || "").toLowerCase().indexOf(q) !== -1;
+      });
+      if (matches.length > 0) {
+        var n = matches[0];
+        cy.nodes().removeClass("selected");
+        n.addClass("selected");
+        cy.animate({ center: { eles: n }, duration: 250 });
+        openPage(n.data("id"));
+      }
+    }
+
+    // ---- Drill-down: expand a knowledge node into its source videos -----
+    var expandedNodes = {};
+    function sourceTitleFor(pageId) {
+      for (var i = 0; i < wikiIndex.sources.length; i++) {
+        if (wikiIndex.sources[i].id === pageId) return wikiIndex.sources[i].title;
+      }
+      return pageId.split("/").pop();
+    }
+    function expandNode(n) {
+      var nid = n.data("id");
+      if (expandedNodes[nid]) return;
+      expandedNodes[nid] = true;
+      fetch("/api/wiki/pages/" + encodeURI(nid))
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (page) {
+          if (!page || !page.frontmatter) return;
+          var rv = page.frontmatter.related_videos || [];
+          if (!rv.length) return;
+          var base = n.position();
+          var newEls = [];
+          rv.forEach(function (vid, i) {
+            var sid = "sources/" + vid;
+            var ang = (2 * Math.PI * i) / rv.length;
+            if (cy.getElementById(sid).empty()) {
+              newEls.push({ group: "nodes", data: {
+                id: sid, label: sourceTitleFor(sid), category: "source",
+                video_count: 1, size: 16, color: colorFor("source")
+              }, position: { x: base.x + 150 * Math.cos(ang), y: base.y + 150 * Math.sin(ang) } });
+            }
+            var eid = "exp:" + nid + ":" + sid;
+            if (cy.getElementById(eid).empty()) {
+              newEls.push({
+                group: "edges",
+                data: {
+                  id: eid, source: nid, target: sid, type: "source",
+                  weight: 1, shared_source_count: 0, label: "backing source"
+                },
+                classes: "edge-type-source"
+              });
+            }
+          });
+          if (newEls.length) {
+            cy.add(newEls);
+            ensureCategoryChip("source");
+            applyCategoryFilter();
+          }
+        })
+        .catch(function () { expandedNodes[nid] = false; });
+    }
+
+    // ---- Browse (drill-down) mode: themes -> topics -> videos ----------
+    var THEME_TITLES = {
+      "options-strategies": "Options Strategies", "options-mechanics": "Options Mechanics",
+      "volatility-iv": "Volatility & IV", "greeks": "Greeks", "securities": "Securities",
+      "risk-psychology": "Risk & Psychology", "market-structure": "Market Structure",
+      "regimes-macro": "Regimes & Macro", "technical-analysis": "Technical Analysis",
+      "process-method": "Process & Method", "interviews": "Interviews"
+    };
+    var THEME_COLORS = {
+      "options-strategies": "#37c98b", "options-mechanics": "#5b9dff", "volatility-iv": "#f4a63b",
+      "greeks": "#c07bf0", "securities": "#ff6b8a", "risk-psychology": "#ef5350",
+      "market-structure": "#26c6da", "regimes-macro": "#ffa726", "technical-analysis": "#66bb6a",
+      "process-method": "#7e9cff", "interviews": "#ab47bc"
+    };
+    function themeTitle(t) { return THEME_TITLES[t] || String(t); }
+    function themeColorFor(t) { return THEME_COLORS[t] || CATEGORY_COLORS.default; }
+
+    var graphMode = "explore";   // "explore" | "browse"
+    var expandedTheme = null;
+
+    function knowledgeTopics() {
+      return cy.nodes().filter(function (n) {
+        return !n.hasClass("theme-node") && n.data("category") !== "source";
+      });
+    }
+    function themeOf(n) { return n.data("theme") || n.data("category"); }
+
+    function setModeButtons() {
+      if (els.modeExplore) els.modeExplore.setAttribute("aria-pressed", graphMode === "explore" ? "true" : "false");
+      if (els.modeBrowse) els.modeBrowse.setAttribute("aria-pressed", graphMode === "browse" ? "true" : "false");
+    }
+
+    function buildThemeNodes() {
+      cy.remove(cy.nodes(".theme-node"));
+      var groups = {};
+      knowledgeTopics().forEach(function (n) {
+        (groups[themeOf(n)] = groups[themeOf(n)] || []).push(n);
+      });
+      var themes = Object.keys(groups).sort();
+      var R = 340;
+      var add = themes.map(function (t, i) {
+        var members = groups[t];
+        var vids = members.reduce(function (a, m) { return a + (Number(m.data("video_count")) || 0); }, 0);
+        var ang = (2 * Math.PI * i) / Math.max(1, themes.length);
+        return {
+          group: "nodes",
+          classes: "theme-node primary-label zoom-label",
+          data: {
+            id: "theme::" + t, label: themeTitle(t) + " (" + members.length + ")",
+            theme: t, category: "theme", video_count: vids, degree: members.length,
+            color: themeColorFor(t), size: 44 + 40 * Math.min(1, members.length / 120)
+          },
+          position: { x: R * Math.cos(ang), y: R * Math.sin(ang) }
+        };
+      });
+      cy.add(add);
+      cy.nodes(".theme-node").style({
+        "border-width": 3, "border-color": "#ffffff", "border-opacity": 0.9,
+        "shape": "round-rectangle", "font-size": 13
+      });
+    }
+
+    function enterBrowse() {
+      if (!cy) return;
+      graphMode = "browse"; expandedTheme = null;
+      buildThemeNodes();
+      cy.batch(function () {
+        knowledgeTopics().style("display", "none");
+        cy.edges().style("display", "none");
+        cy.nodes(".theme-node").style("display", "element");
+      });
+      cy.animate({ fit: { eles: cy.nodes(".theme-node"), padding: 80 }, duration: 250 });
+      setModeButtons();
+      if (els.browseBack) els.browseBack.hidden = true;
+      if (els.drillHint) els.drillHint.textContent = "click a theme to reveal its topics";
+    }
+
+    function enterExplore() {
+      if (!cy) return;
+      graphMode = "explore"; expandedTheme = null;
+      cy.remove(cy.nodes(".theme-node"));
+      cy.batch(function () {
+        cy.nodes().style("display", "element");
+        cy.edges().style("display", "element");
+      });
+      applyCategoryFilter();
+      var focus = cy.nodes().filter(function (n) { return n.data("category") !== "source"; });
+      if (focus.nonempty()) cy.animate({ fit: { eles: focus, padding: 64 }, duration: 250 });
+      setModeButtons();
+      if (els.browseBack) els.browseBack.hidden = true;
+      if (els.drillHint) els.drillHint.textContent = "click a node to open · double-click to expand its videos";
+    }
+
+    function fitAll() {
+      if (!cy) return;
+      var vis = cy.nodes().filter(function (n) { return n.visible(); });
+      cy.animate({ fit: { eles: vis.nonempty() ? vis : cy.nodes(), padding: 50 }, duration: 250 });
+    }
+
+    // Browse "back": collapse any expanded theme and return to the theme overview.
+    function collapseToThemes() {
+      if (!cy) return;
+      expandedTheme = null;
+      cy.batch(function () {
+        knowledgeTopics().style("display", "none");
+        cy.edges().style("display", "none");
+        cy.nodes(".theme-node").style("display", "element");
+      });
+      cy.animate({ fit: { eles: cy.nodes(".theme-node"), padding: 80 }, duration: 250 });
+      if (els.browseBack) els.browseBack.hidden = true;
+    }
+
+    // Click a theme node: reveal / collapse its topic nodes (clustered around it),
+    // plus their intra-theme relationship edges.
+    function toggleTheme(themeNode) {
+      var t = themeNode.data("theme");
+      var collapse = (expandedTheme === t);
+      var members = knowledgeTopics().filter(function (n) { return themeOf(n) === t; });
+      var base = themeNode.position();
+      var count = members.length;
+      var radius = 90 + 7 * Math.sqrt(Math.max(1, count));
+      cy.batch(function () {
+        knowledgeTopics().forEach(function (n) {
+          n.style("display", (!collapse && themeOf(n) === t) ? "element" : "none");
+        });
+        if (!collapse) {
+          members.forEach(function (n, i) {
+            var ang = (2 * Math.PI * i) / Math.max(1, count);
+            n.position({ x: base.x + radius * Math.cos(ang), y: base.y + radius * Math.sin(ang) });
+          });
+        }
+        cy.edges().forEach(function (e) {
+          var s = e.source(), d = e.target();
+          var show = !collapse && !s.hasClass("theme-node") && !d.hasClass("theme-node")
+            && themeOf(s) === t && themeOf(d) === t;
+          e.style("display", show ? "element" : "none");
+        });
+      });
+      expandedTheme = collapse ? null : t;
+      if (els.browseBack) els.browseBack.hidden = (expandedTheme === null);
+      var focus = collapse ? cy.nodes(".theme-node") : members.union(themeNode);
+      if (focus.nonempty()) cy.animate({ fit: { eles: focus, padding: 70 }, duration: 250 });
+    }
+
+    // ---- Side panel: fetch + render a page -----------------------------
+    function pushPanelState(nextState, skipHistory) {
+      if (!skipHistory && currentPanelState) {
+        panelHistory.push(currentPanelState);
+      }
+      currentPanelState = nextState;
+      updateBackButton();
+    }
+
+    function updateBackButton() {
+      if (!els.panelBack) return;
+      els.panelBack.hidden = panelHistory.length === 0;
+    }
+
+    function goBack() {
+      var previous = panelHistory.pop();
+      if (!previous) {
+        updateBackButton();
+        return;
+      }
+      if (previous.type === "catalog") {
+        openCatalog(true, previous.query || "");
+      } else if (previous.type === "page") {
+        openPage(previous.id, true);
+      }
+    }
+
+    function openPage(pageId, skipHistory) {
+      pushPanelState({ type: "page", id: pageId }, skipHistory);
+      openPanel();
+      els.panelTitle.textContent = pageId;
+      els.panelBadges.innerHTML = "";
+      els.panelBody.innerHTML = '<p style="color:var(--fg-dim)">Loading…</p>';
+
+      fetch("/api/wiki/pages/" + encodeURI(pageId))
+        .then(function (r) {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r.json();
+        })
+        .then(function (page) { renderPage(page); })
+        .catch(function (err) {
+          els.panelBody.innerHTML =
+            '<p style="color:var(--fg-dim)">Could not load <code>' +
+            esc(pageId) + "</code> — " + esc(String(err)) +
+            ". This page may not exist yet.</p>";
+        });
+    }
+
+    function renderPage(page) {
+      var fm = page.frontmatter || {};
+      els.panelTitle.textContent = fm.title || page.path;
+
+      els.panelBadges.innerHTML = "";
+      var parts = String(page.path).split("/");
+      var cat = normCategory(parts[0]);
+      addBadge(cat, colorFor(cat));
+      if (fm.type && normCategory(fm.type) !== cat) addBadge(fm.type);
+      if (Array.isArray(fm.related_videos)) {
+        addBadge(fm.related_videos.length + " videos");
+      }
+      if (fm.confidence) addBadge("confidence: " + fm.confidence);
+      if (fm.regime_dependent === true) addBadge("regime-dependent");
+
+      els.panelBody.innerHTML = page.html || "";
+      appendFrontmatter(fm);
+      wirePanelLinks();
+      els.panelBody.scrollTop = 0;
+    }
+
+    function openCatalog(skipHistory, initialQuery) {
+      pushPanelState({ type: "catalog", query: initialQuery || "" }, skipHistory);
+      openPanel();
+      els.panelTitle.textContent = "Wiki Catalog";
+      els.panelBadges.innerHTML = "";
+      addBadge(wikiIndex.page_count + " knowledge pages");
+      addBadge(wikiIndex.source_count + " source pages");
+
+      els.panelBody.innerHTML = "";
+      var input = document.createElement("input");
+      input.className = "catalog-search";
+      input.type = "search";
+      input.placeholder = "Search all wiki pages…";
+      input.autocomplete = "off";
+      input.value = initialQuery || "";
+      els.panelBody.appendChild(input);
+
+      var results = document.createElement("div");
+      els.panelBody.appendChild(results);
+
+      function draw() {
+        if (currentPanelState && currentPanelState.type === "catalog") {
+          currentPanelState.query = input.value || "";
+        }
+        renderCatalogResults(results, input.value || "");
+      }
+      input.addEventListener("input", draw);
+      draw();
+      input.focus();
+    }
+
+    function renderCatalogResults(container, query) {
+      var q = String(query || "").trim().toLowerCase();
+      container.innerHTML = "";
+
+      var pages = filterCatalogItems(wikiIndex.pages, q);
+      var sources = filterCatalogItems(wikiIndex.sources, q);
+
+      appendCatalogSection(container, "Knowledge Pages", pages, "page");
+      appendCatalogSection(container, "Source Pages", sources, "source");
+
+      if (pages.length === 0 && sources.length === 0) {
+        var empty = document.createElement("p");
+        empty.className = "catalog-empty";
+        empty.textContent = "No matching wiki pages.";
+        container.appendChild(empty);
+      }
+      wirePanelLinks();
+    }
+
+    function filterCatalogItems(items, query) {
+      if (!query) return items.slice();
+      return items.filter(function (item) {
+        var hay = [
+          item.id, item.title, item.video_id, item.date,
+          item.series, item.category, item.type
+        ].join(" ").toLowerCase();
+        return hay.indexOf(query) !== -1;
+      });
+    }
+
+    function appendCatalogSection(container, title, items, kind) {
+      var section = document.createElement("section");
+      section.className = "catalog-section";
+      var h = document.createElement("h3");
+      h.innerHTML = "<span>" + esc(title) + "</span><span>" + items.length + "</span>";
+      section.appendChild(h);
+
+      var list = document.createElement("div");
+      list.className = "catalog-list";
+      items.forEach(function (item) {
+        list.appendChild(catalogItem(item, kind));
+      });
+      section.appendChild(list);
+      container.appendChild(section);
+    }
+
+    function catalogItem(item, kind) {
+      var a = document.createElement("a");
+      a.href = "#";
+      a.className = "catalog-item";
+      a.setAttribute("data-page", item.id);
+
+      var title = document.createElement("span");
+      title.className = "catalog-title";
+      title.textContent = item.title || item.id;
+      a.appendChild(title);
+
+      var meta = document.createElement("span");
+      meta.className = "catalog-meta";
+      if (kind === "source") {
+        meta.textContent = [item.id, item.date, item.series].filter(Boolean).join(" · ");
+      } else {
+        meta.textContent = [
+          item.id,
+          item.category || item.type,
+          item.video_count != null ? item.video_count + " videos" : ""
+        ].filter(Boolean).join(" · ");
+      }
+      a.appendChild(meta);
+      return a;
+    }
+
+    function addBadge(text, color) {
+      var b = document.createElement("span");
+      b.className = "badge";
+      b.textContent = text;
+      if (color) {
+        b.style.borderColor = color;
+        b.style.color = color;
+      }
+      els.panelBadges.appendChild(b);
+    }
+
+    function appendFrontmatter(fm) {
+      var keys = Object.keys(fm || {});
+      if (keys.length === 0) return;
+      var details = document.createElement("details");
+      details.id = "panel-fm";
+      var summary = document.createElement("summary");
+      summary.textContent = "Frontmatter (" + keys.length + " fields)";
+      details.appendChild(summary);
+      var grid = document.createElement("div");
+      grid.className = "fm-grid";
+      keys.forEach(function (k) {
+        var kEl = document.createElement("div");
+        kEl.className = "fm-k";
+        kEl.textContent = k;
+        var vEl = document.createElement("div");
+        vEl.className = "fm-v";
+        renderFmValue(vEl, k, fm[k]);
+        grid.appendChild(kEl);
+        grid.appendChild(vEl);
+      });
+      details.appendChild(grid);
+      els.panelBody.appendChild(details);
+    }
+
+    // Make related_videos clickable through to their source pages.
+    function renderFmValue(container, key, value) {
+      if (Array.isArray(value)) {
+        value.forEach(function (item, i) {
+          if (i > 0) container.appendChild(document.createTextNode(", "));
+          if (key === "related_videos") {
+            var a = document.createElement("a");
+            a.textContent = item;
+            a.setAttribute("data-page", "sources/" + item);
+            a.className = "wikilink";
+            a.href = "#";
+            container.appendChild(a);
+          } else {
+            container.appendChild(document.createTextNode(String(item)));
+          }
+        });
+      } else if (value === null || value === undefined) {
+        container.textContent = "—";
+      } else {
+        container.textContent = String(value);
+      }
+    }
+
+    // Intercept clicks on [[wikilink]] anchors + fm source links.
+    function wirePanelLinks() {
+      var links = els.panelBody.querySelectorAll("a[data-page]");
+      links.forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          e.preventDefault();
+          var target = a.getAttribute("data-page");
+          if (target) {
+            focusGraphNode(target);
+            openPage(target);
+          }
+        });
+      });
+    }
+
+    // If the clicked page is a graph node, select/centre it too.
+    function focusGraphNode(pageId) {
+      if (!cy) return;
+      var node = cy.getElementById(pageId);
+      if (node && node.nonempty()) {
+        cy.nodes().removeClass("selected");
+        node.addClass("selected");
+        cy.animate({ center: { eles: node }, duration: 250 });
+      }
+    }
+
+    function openPanel() {
+      els.panel.classList.add("open");
+      els.panel.setAttribute("aria-hidden", "false");
+    }
+    function closePanel() {
+      els.panel.classList.remove("open");
+      els.panel.setAttribute("aria-hidden", "true");
+      panelHistory = [];
+      currentPanelState = null;
+      updateBackButton();
+      if (cy) cy.nodes().removeClass("selected");
+    }
+
+    function esc(s) {
+      return String(s == null ? "" : s)
+        .replace(/&/g, "&amp;").replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    }
+  })();
+  </script>
+</body>
+</html>

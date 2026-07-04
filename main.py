@@ -3,9 +3,9 @@ OPTEEE - Options Trading Education Expert
 FastAPI Backend with React Frontend
 """
 
-from fastapi import FastAPI, HTTPException, Depends
+from fastapi import FastAPI, HTTPException, Depends, Query
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Dict, Any, Optional
@@ -27,6 +27,7 @@ from app.db.init_db import init_db
 from app.db.database import get_db
 from app.services.conversation_service import ConversationService
 from app.services.history_utils import sanitize_history_content
+from app.services import wiki_service
 
 # Check if we're in test mode (no RAG initialization)
 TEST_MODE = os.getenv("TEST_MODE", "false").lower() == "true"
@@ -116,6 +117,7 @@ This is a test response to validate the conversation history functionality. In p
             answer=test_answer,
             sources="[]",
             raw_sources=[],
+            wiki_references=[],
             timestamp=datetime.now().isoformat(),
             conversation_id=conversation.id,
             token_usage={
@@ -179,6 +181,7 @@ This is a test response to validate the conversation history functionality. In p
             answer=result["answer"],
             sources=result["sources"],
             raw_sources=result["raw_sources"],
+            wiki_references=result.get("wiki_references", []),
             timestamp=datetime.now().isoformat(),
             conversation_id=conversation.id,
             token_usage=result.get("token_usage"),
@@ -247,6 +250,69 @@ async def get_conversation(conversation_id: str, db: Session = Depends(get_db)):
         ],
     )
 
+# ---------------------------------------------------------------------------
+# Wiki browse/graph layer (Phase-2). Pure filesystem reads over wiki/ — these
+# routes do not touch the RAG service and work in TEST_MODE.
+# ---------------------------------------------------------------------------
+@app.get("/wiki")
+async def serve_wiki_graph():
+    """Serve the interactive wiki graph browser (WIKI_SCHEMA §8)."""
+    wiki_page = "templates/wiki_graph.html"
+    if os.path.exists(wiki_page):
+        return FileResponse(wiki_page, media_type="text/html")
+    raise HTTPException(status_code=404, detail="Wiki graph page not found")
+
+
+@app.get("/api/wiki/graph.json")
+async def wiki_graph_json():
+    """Baked knowledge graph (nodes+edges); empty graph if not built yet."""
+    return wiki_service.get_graph()
+
+
+@app.get("/api/wiki/index")
+async def wiki_index():
+    """Wiki catalog: knowledge pages + source-page list."""
+    return wiki_service.list_index()
+
+
+@app.get("/api/wiki/index/document")
+async def wiki_index_document(include_html: bool = False):
+    """Generated wiki/index.md as structured JSON for agent analysis."""
+    document = wiki_service.get_index_document(include_html=include_html)
+    if document is None:
+        raise HTTPException(status_code=404, detail="Wiki index document not found")
+    return document
+
+
+@app.get("/api/wiki/pages/{rel_path:path}")
+async def wiki_page(rel_path: str, output_format: str = Query("html", alias="format")):
+    """Wiki page as JSON.
+
+    format=html keeps the legacy shape for the browser.
+    format=markdown returns raw Markdown for agents.
+    format=json returns both Markdown and rendered HTML plus structured wikilinks.
+    """
+    if output_format not in {"html", "markdown", "json"}:
+        raise HTTPException(status_code=400, detail="format must be html, markdown, or json")
+    page = wiki_service.get_page(
+        rel_path,
+        include_markdown=output_format in {"markdown", "json"},
+        include_html=output_format in {"html", "json"},
+    )
+    if page is None:
+        raise HTTPException(status_code=404, detail="Wiki page not found")
+    return page
+
+
+@app.get("/wiki/page/{rel_path:path}", response_class=HTMLResponse)
+async def wiki_page_view(rel_path: str):
+    """Standalone rendered wiki page — the target of chat 'Wiki References' links."""
+    html_doc = wiki_service.render_page_html(rel_path)
+    if html_doc is None:
+        raise HTTPException(status_code=404, detail="Wiki page not found")
+    return HTMLResponse(content=html_doc)
+
+
 # Serve favicon.ico
 @app.get("/favicon.ico")
 async def serve_favicon():
@@ -274,6 +340,11 @@ if os.path.exists("frontend/build/static"):
     app.mount("/static", StaticFiles(directory="frontend/build/static"), name="static")
 else:
     print("⚠️  Frontend static files not found - serving API only")
+
+# Vendored local assets (e.g. static/vendor/cytoscape.min.js for the /wiki graph —
+# no external CDN, matching the no-external-calls design). Hardening §15 #9.
+if os.path.isdir("static"):
+    app.mount("/assets", StaticFiles(directory="static"), name="assets")
 
 @app.get("/")
 async def serve_index():

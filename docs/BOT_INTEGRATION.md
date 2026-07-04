@@ -16,6 +16,10 @@ Core endpoints:
 - `POST /api/conversations`
 - `GET /api/conversations?limit=20`
 - `GET /api/conversations/{conversation_id}`
+- `GET /api/wiki/index/document`
+- `GET /api/wiki/pages/{path}?format=json`
+- `GET /api/wiki/graph.json`
+- `GET /api/wiki/index`
 
 ## Minimal bot request
 
@@ -104,7 +108,24 @@ curl -s "http://localhost:7860/api/conversations/your-conversation-id"
 - `answer` - send this to users
 - `sources` - JSON string mirror of source objects (for compatibility)
 - `raw_sources` - structured citations if you want custom rendering
+- `wiki_references` - synthesized wiki pages related to the retrieved sources
 - `conversation_id` - persist this for future turns
+
+## LLM Wiki endpoints for agents
+
+Agents should use the wiki API when they need to inspect the education layer directly instead of only asking `/api/chat`.
+
+- `GET /api/wiki/index/document` - generated `wiki/index.md` as JSON: `{path, frontmatter, markdown, wikilinks}`. Start here for broad analysis.
+- `GET /api/wiki/pages/{path}?format=json` - one wiki page as JSON: `{path, frontmatter, markdown, html, wikilinks}`.
+- `GET /api/wiki/graph.json` - graph topology: `nodes[]` plus `edges[]` with `type`, `weight`, `label`, and optional `shared_source_count`.
+- `GET /api/wiki/index` - lightweight catalog of knowledge pages and source pages for browse/search.
+
+Recommended agent workflow:
+
+1. Call `POST /api/chat` with `format: "json"` for user-facing answers.
+2. Use response `wiki_references[]` to find relevant synthesized pages.
+3. Fetch pages through `/api/wiki/pages/{path}?format=json`.
+4. For open-ended analysis, start at `/api/wiki/index/document`, follow `wikilinks`, and use `/api/wiki/graph.json` for relationship analysis.
 
 ## Bot implementation notes
 
@@ -128,4 +149,3 @@ Only the `bots/` integration path is supported.
 - [ ] Conversation IDs are created and stored
 - [ ] Conversation IDs are reused per user/thread
 - [ ] Bot gracefully handles missing/invalid conversation IDs
-

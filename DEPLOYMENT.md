@@ -37,10 +37,12 @@ OPTEEE runs natively on macOS through **system launchd**.
 `weekly-refresh.sh` is the only supported weekly refresh path. It:
 1. checks out the repo,
 2. pulls latest Git changes when the worktree is clean,
-3. refreshes `.venv-native` dependencies from `requirements-serve.txt`,
-4. restarts the app by killing the live Python process,
-5. relies on `com.opteee.native` `KeepAlive=true` to respawn,
-6. waits for `http://127.0.0.1:7860/api/health` to pass.
+3. runs the transcript/content pipeline via `run_transcripts.sh`,
+4. refreshes `.venv-native` dependencies from `requirements-serve.txt`,
+5. restarts the app by killing the live Python process,
+6. relies on `com.opteee.native` `KeepAlive=true` to respawn,
+7. waits for `http://127.0.0.1:7860/api/health` to pass,
+8. stages refresh artifacts (`outlier_trading_videos*.json`, `transcripts/`, `processed_transcripts/`, `vector_store/`), commits them when changed, and pushes the refresh commit to `origin/<current-branch>`.
 
 ## Schedule
 
