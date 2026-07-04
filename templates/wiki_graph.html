@@ -116,6 +116,7 @@
     }
     .graph-ctrl:hover { border-color: var(--accent); }
     .graph-ctrl[hidden] { display: none; }
+    .graph-ctrl:disabled { opacity: 0.45; cursor: default; }
 
     #filters {
       display: flex;
@@ -668,6 +669,10 @@
             style: { "text-opacity": 1, "text-background-opacity": 0.86 }
           },
           {
+            selector: "edge.related-edge",
+            style: { "opacity": 0.72, "width": "mapData(weight, 1, 5, 2, 5)" }
+          },
+          {
             selector: "edge.hover-edge",
             style: { "opacity": 0.95, "width": "mapData(weight, 1, 5, 2, 6)" }
           },
@@ -818,7 +823,7 @@
       });
     }
 
-    function applyCategoryFilter() {
+    function applyCategoryFilter(skipLayout) {
       if (!cy) return;
       cy.batch(function () {
         cy.nodes().forEach(function (n) {
@@ -826,6 +831,10 @@
           n.style("display", shown ? "element" : "none");
         });
       });
+      if (!skipLayout && graphLayout === "grid") {
+        if (graphMode === "browse") layoutLayeredGrid(false);
+        else layoutExploreGrid(false);
+      }
     }
 
     // ---- Interactions: hover, click, search ----------------------------
@@ -842,7 +851,9 @@
         showEdgeTooltip(e, evt.originalEvent);
       });
       cy.on("mouseout", "edge", function (evt) {
-        evt.target.removeClass("label-visible hover-edge");
+        var e = evt.target;
+        e.removeClass("hover-edge");
+        if (!e.hasClass("related-edge")) e.removeClass("label-visible");
         hideTooltip();
       });
       cy.on("mousemove", function (evt) {
@@ -887,8 +898,9 @@
       if (els.fitBtn) els.fitBtn.addEventListener("click", fitAll);
       if (els.browseBack) els.browseBack.addEventListener("click", collapseToThemes);
       if (els.layoutBtn) els.layoutBtn.addEventListener("click", function () {
-        setExploreLayout(exploreLayout === "grid" ? "cluster" : "grid");
+        setGraphLayout(graphLayout === "grid" ? "cluster" : "grid");
       });
+      updateLayoutButton();
       // In Browse mode, tapping empty canvas collapses back to the theme overview.
       cy.on("tap", function (evt) {
         if (evt.target === cy && graphMode === "browse" && expandedTheme) collapseToThemes();
@@ -933,7 +945,7 @@
         cy.elements().addClass("faded");
         keep.removeClass("faded");
         n.addClass("highlight");
-        connectedEdges.addClass("label-visible hover-edge");
+        connectedEdges.addClass("label-visible related-edge");
       });
     }
     function clearHighlight() {
@@ -941,7 +953,7 @@
       cy.batch(function () {
         cy.elements().removeClass("faded");
         cy.nodes().removeClass("highlight");
-        cy.edges().removeClass("label-visible hover-edge");
+        cy.edges().removeClass("label-visible hover-edge related-edge");
       });
     }
 
@@ -1048,7 +1060,8 @@
     var expandedTheme = null;
     var fullElements = [];       // serialized full graph (to restore Explore / build Browse)
     var bakedPositions = {};     // id -> {x,y} theme-cluster positions
-    var exploreLayout = "cluster"; // "cluster" | "grid"
+    var graphLayout = "cluster";  // "cluster" | "grid"
+    var gridReturnPositions = {}; // id -> {x,y} positions before switching to grid
 
     function knowledgeTopics() {
       return cy.nodes().filter(function (n) {
@@ -1060,6 +1073,54 @@
     function setModeButtons() {
       if (els.modeExplore) els.modeExplore.setAttribute("aria-pressed", graphMode === "explore" ? "true" : "false");
       if (els.modeBrowse) els.modeBrowse.setAttribute("aria-pressed", graphMode === "browse" ? "true" : "false");
+    }
+
+    function updateLayoutButton() {
+      if (!els.layoutBtn) return;
+      els.layoutBtn.textContent = graphLayout === "grid" ? "Cluster layout" : "Grid layout";
+      els.layoutBtn.title = graphLayout === "grid"
+        ? "Return the current view to its clustered layout"
+        : "Arrange the current view in a grid";
+    }
+
+    function snapshotNodePositions() {
+      var positions = {};
+      cy.nodes().forEach(function (n) {
+        positions[n.id()] = { x: n.position("x"), y: n.position("y") };
+      });
+      return positions;
+    }
+
+    function visibleCurrentNodes() {
+      var nodes = cy.nodes().filter(function (n) { return n.visible(); });
+      return nodes.nonempty() ? nodes : cy.nodes();
+    }
+
+    function gridOptionsFor(nodes, padding) {
+      var count = Math.max(1, nodes.length);
+      var width = Math.max(720, cy.width() * 1.6);
+      var height = Math.max(520, cy.height() * 1.45);
+      var aspect = Math.max(0.65, Math.min(2.2, width / Math.max(1, height)));
+      var cols = Math.ceil(Math.sqrt(count * aspect));
+      var rows = Math.ceil(count / Math.max(1, cols));
+      return {
+        name: "grid",
+        fit: true,
+        padding: padding || 60,
+        boundingBox: { x1: -width / 2, y1: -height / 2, w: width, h: height },
+        rows: rows,
+        cols: cols,
+        avoidOverlap: true,
+        avoidOverlapPadding: 24,
+        condense: false,
+        animate: true,
+        animationDuration: 220
+      };
+    }
+
+    function layoutNodesGrid(nodes, padding) {
+      if (!nodes || nodes.empty()) return;
+      nodes.layout(gridOptionsFor(nodes, padding)).run();
     }
 
     // Snapshot the full graph so Explore can be restored and Browse can be built lightly.
@@ -1133,8 +1194,14 @@
       graphMode = "browse"; expandedTheme = null;
       cy.elements().remove();
       buildThemeNodes();
-      cy.animate({ fit: { eles: cy.nodes(".theme-node"), padding: 80 }, duration: 250 });
+      applyCategoryFilter(true);
+      if (graphLayout === "grid") {
+        layoutLayeredGrid(true);
+      } else {
+        cy.animate({ fit: { eles: cy.nodes(".theme-node"), padding: 80 }, duration: 250 });
+      }
       setModeButtons();
+      updateLayoutButton();
       if (els.browseBack) els.browseBack.hidden = true;
       if (els.drillHint) els.drillHint.textContent = "click a theme to reveal its topics";
     }
@@ -1146,13 +1213,15 @@
       cy.elements().remove();
       cy.add(fullElements);
       cy.nodes().forEach(function (n) { var p = bakedPositions[n.id()]; if (p) n.position(p); });
-      exploreLayout = "cluster";
-      if (els.layoutBtn) els.layoutBtn.textContent = "Grid layout";
-      applyCategoryFilter();
+      applyCategoryFilter(true);
       applyInitialDeclutter();
-      var focus = cy.nodes().filter(function (n) { return n.data("category") !== "source"; });
-      if (focus.nonempty()) cy.animate({ fit: { eles: focus, padding: 64 }, duration: 250 });
+      if (graphLayout === "grid") {
+        layoutExploreGrid(true);
+      } else {
+        fitExploreCluster(true);
+      }
       setModeButtons();
+      updateLayoutButton();
       if (els.browseBack) els.browseBack.hidden = true;
       if (els.drillHint) els.drillHint.textContent = "click a node to open · double-click to expand its videos";
     }
@@ -1163,19 +1232,89 @@
       cy.animate({ fit: { eles: vis.nonempty() ? vis : cy.nodes(), padding: 50 }, duration: 250 });
     }
 
-    // Explore layout toggle: baked theme-cluster positions <-> tidy rows/columns grid.
-    function setExploreLayout(name) {
-      if (!cy || graphMode !== "explore") return;
-      exploreLayout = name;
-      if (name === "grid") {
-        cy.layout({ name: "grid", avoidOverlap: true, avoidOverlapPadding: 14,
-                    condense: false, padding: 30, fit: true }).run();
-      } else {
-        cy.nodes().forEach(function (n) { var p = bakedPositions[n.id()]; if (p) n.position(p); });
-        var focus = cy.nodes().filter(function (n) { return n.data("category") !== "source"; });
-        if (focus.nonempty()) cy.fit(focus, 64);
+    function fitExploreCluster(animate) {
+      var focus = cy.nodes().filter(function (n) {
+        return n.visible() && n.data("category") !== "source";
+      });
+      if (focus.empty()) focus = visibleCurrentNodes();
+      if (focus.nonempty()) {
+        if (animate) cy.animate({ fit: { eles: focus, padding: 64 }, duration: 250 });
+        else cy.fit(focus, 64);
       }
-      if (els.layoutBtn) els.layoutBtn.textContent = (name === "grid") ? "Cluster layout" : "Grid layout";
+    }
+
+    function restoreExploreCluster() {
+      cy.nodes().forEach(function (n) {
+        var p = bakedPositions[n.id()] || gridReturnPositions[n.id()];
+        if (p) n.position(p);
+      });
+      fitExploreCluster(false);
+    }
+
+    function layoutExploreGrid(saveReturnPositions) {
+      if (saveReturnPositions) gridReturnPositions = snapshotNodePositions();
+      layoutNodesGrid(visibleCurrentNodes(), 60);
+    }
+
+    function positionThemeNodesCircle() {
+      var themes = cy.nodes(".theme-node").toArray().sort(function (a, b) {
+        return String(a.data("theme")).localeCompare(String(b.data("theme")));
+      });
+      var R = 340;
+      themes.forEach(function (n, i) {
+        var ang = (2 * Math.PI * i) / Math.max(1, themes.length);
+        n.position({ x: R * Math.cos(ang), y: R * Math.sin(ang) });
+      });
+    }
+
+    function positionExpandedThemeMembers(themeNode) {
+      if (!themeNode || themeNode.empty()) return cy.collection();
+      var base = themeNode.position();
+      var members = cy.nodes().filter(function (n) { return !n.hasClass("theme-node"); });
+      var count = members.length;
+      var radius = 90 + 7 * Math.sqrt(Math.max(1, count));
+      members.forEach(function (n, i) {
+        var ang = (2 * Math.PI * i) / Math.max(1, count);
+        n.position({ x: base.x + radius * Math.cos(ang), y: base.y + radius * Math.sin(ang) });
+      });
+      members.addClass("zoom-label");
+      return members;
+    }
+
+    function restoreLayeredCluster(animate) {
+      positionThemeNodesCircle();
+      if (expandedTheme) {
+        var themeNode = cy.getElementById("theme::" + expandedTheme);
+        var members = positionExpandedThemeMembers(themeNode);
+        var focus = members.nonempty() ? members.union(themeNode) : cy.nodes(".theme-node");
+        if (animate) cy.animate({ fit: { eles: focus, padding: 70 }, duration: 250 });
+        else cy.fit(focus, 70);
+      } else {
+        var themes = cy.nodes(".theme-node");
+        if (themes.nonempty()) {
+          if (animate) cy.animate({ fit: { eles: themes, padding: 80 }, duration: 250 });
+          else cy.fit(themes, 80);
+        }
+      }
+    }
+
+    function layoutLayeredGrid(saveReturnPositions) {
+      if (saveReturnPositions) gridReturnPositions = snapshotNodePositions();
+      layoutNodesGrid(visibleCurrentNodes(), 70);
+    }
+
+    // Toggle the current graph mode between its clustered layout and a tidy grid.
+    function setGraphLayout(name) {
+      if (!cy) return;
+      graphLayout = name;
+      if (name === "grid") {
+        if (graphMode === "browse") layoutLayeredGrid(true);
+        else layoutExploreGrid(true);
+      } else {
+        if (graphMode === "browse") restoreLayeredCluster(false);
+        else restoreExploreCluster();
+      }
+      updateLayoutButton();
     }
 
     // Browse "back": collapse the expanded theme, return to the theme overview.
@@ -1183,7 +1322,11 @@
       if (!cy) return;
       expandedTheme = null;
       cy.elements().filter(function (el) { return !el.hasClass("theme-node"); }).remove();
-      cy.animate({ fit: { eles: cy.nodes(".theme-node"), padding: 80 }, duration: 250 });
+      if (graphLayout === "grid") {
+        layoutLayeredGrid(false);
+      } else {
+        restoreLayeredCluster(true);
+      }
       if (els.browseBack) els.browseBack.hidden = true;
     }
 
@@ -1195,20 +1338,19 @@
       expandedTheme = collapse ? null : t;
       if (els.browseBack) els.browseBack.hidden = (expandedTheme === null);
       if (collapse) {
-        cy.animate({ fit: { eles: cy.nodes(".theme-node"), padding: 80 }, duration: 250 });
+        if (graphLayout === "grid") layoutLayeredGrid(false);
+        else restoreLayeredCluster(true);
         return;
       }
       cy.add(elementsForTheme(t));
-      var base = themeNode.position();
-      var members = cy.nodes().filter(function (n) { return !n.hasClass("theme-node"); });
-      var count = members.length;
-      var radius = 90 + 7 * Math.sqrt(Math.max(1, count));
-      members.forEach(function (n, i) {
-        var ang = (2 * Math.PI * i) / Math.max(1, count);
-        n.position({ x: base.x + radius * Math.cos(ang), y: base.y + radius * Math.sin(ang) });
-      });
-      members.addClass("zoom-label");
-      cy.animate({ fit: { eles: members.union(themeNode), padding: 70 }, duration: 250 });
+      var members = positionExpandedThemeMembers(themeNode);
+      applyCategoryFilter(true);
+      if (graphLayout === "grid") {
+        gridReturnPositions = snapshotNodePositions();
+        layoutLayeredGrid(false);
+      } else {
+        cy.animate({ fit: { eles: members.union(themeNode), padding: 70 }, duration: 250 });
+      }
     }
 
     // ---- Side panel: fetch + render a page -----------------------------
