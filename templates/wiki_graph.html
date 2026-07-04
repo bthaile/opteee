@@ -406,7 +406,7 @@
         <button id="mode-explore" class="header-btn" type="button" aria-pressed="true"
                 title="Flat relationship graph — click a node to see everything it relates to">Explore</button>
         <button id="mode-browse" class="header-btn" type="button" aria-pressed="false"
-                title="Drill down: themes → topics → videos">Browse</button>
+                title="Layered drill-down: themes → topics → videos">Layered</button>
       </div>
       <span class="sub" id="counts">loading…</span>
       <input id="search" type="search" placeholder="Find a topic… (Enter to open)"
@@ -422,6 +422,7 @@
       <div id="graph-controls">
         <button id="browse-back" class="graph-ctrl" type="button" hidden>← Themes</button>
         <button id="fit-btn" class="graph-ctrl" type="button" title="Fit all nodes into view">Fit view</button>
+        <button id="layout-btn" class="graph-ctrl" type="button" title="Toggle grid / cluster layout (Explore mode)">Grid layout</button>
       </div>
 
       <aside id="panel" aria-hidden="true">
@@ -515,7 +516,8 @@
       modeBrowse: document.getElementById("mode-browse"),
       drillHint: document.getElementById("drill-hint"),
       fitBtn: document.getElementById("fit-btn"),
-      browseBack: document.getElementById("browse-back")
+      browseBack: document.getElementById("browse-back"),
+      layoutBtn: document.getElementById("layout-btn")
     };
 
     function setStatus(msg) {
@@ -711,6 +713,7 @@
       setInitialViewport();
       updateZoomDeclutter();
       wireInteractions();
+      captureFullGraph();   // snapshot for Explore restore + light Browse drill-down
     }
 
     function normaliseIndex(index) {
@@ -883,6 +886,9 @@
       if (els.modeBrowse) els.modeBrowse.addEventListener("click", enterBrowse);
       if (els.fitBtn) els.fitBtn.addEventListener("click", fitAll);
       if (els.browseBack) els.browseBack.addEventListener("click", collapseToThemes);
+      if (els.layoutBtn) els.layoutBtn.addEventListener("click", function () {
+        setExploreLayout(exploreLayout === "grid" ? "cluster" : "grid");
+      });
       // In Browse mode, tapping empty canvas collapses back to the theme overview.
       cy.on("tap", function (evt) {
         if (evt.target === cy && graphMode === "browse" && expandedTheme) collapseToThemes();
@@ -1040,6 +1046,9 @@
 
     var graphMode = "explore";   // "explore" | "browse"
     var expandedTheme = null;
+    var fullElements = [];       // serialized full graph (to restore Explore / build Browse)
+    var bakedPositions = {};     // id -> {x,y} theme-cluster positions
+    var exploreLayout = "cluster"; // "cluster" | "grid"
 
     function knowledgeTopics() {
       return cy.nodes().filter(function (n) {
@@ -1053,17 +1062,36 @@
       if (els.modeBrowse) els.modeBrowse.setAttribute("aria-pressed", graphMode === "browse" ? "true" : "false");
     }
 
+    // Snapshot the full graph so Explore can be restored and Browse can be built lightly.
+    function captureFullGraph() {
+      if (!cy) return;
+      fullElements = cy.elements().jsons();
+      bakedPositions = {};
+      cy.nodes().forEach(function (n) {
+        bakedPositions[n.id()] = { x: n.position("x"), y: n.position("y") };
+      });
+    }
+
+    // Theme member counts come from the FULL element set (cy is cleared in Browse).
+    function themeGroupsFromFull() {
+      var groups = {};
+      fullElements.forEach(function (el) {
+        if (el.group === "nodes" && el.data.category !== "source" && el.data.category !== "theme") {
+          var t = el.data.theme || el.data.category;
+          (groups[t] = groups[t] || []).push(el);
+        }
+      });
+      return groups;
+    }
+
     function buildThemeNodes() {
       cy.remove(cy.nodes(".theme-node"));
-      var groups = {};
-      knowledgeTopics().forEach(function (n) {
-        (groups[themeOf(n)] = groups[themeOf(n)] || []).push(n);
-      });
+      var groups = themeGroupsFromFull();
       var themes = Object.keys(groups).sort();
       var R = 340;
       var add = themes.map(function (t, i) {
         var members = groups[t];
-        var vids = members.reduce(function (a, m) { return a + (Number(m.data("video_count")) || 0); }, 0);
+        var vids = members.reduce(function (a, m) { return a + (Number(m.data.video_count) || 0); }, 0);
         var ang = (2 * Math.PI * i) / Math.max(1, themes.length);
         return {
           group: "nodes",
@@ -1083,30 +1111,45 @@
       });
     }
 
+    // Node + intra-theme edge element JSONs for one theme (fresh copies, from the full graph).
+    function elementsForTheme(t) {
+      var ids = {};
+      var nodes = fullElements.filter(function (el) {
+        return el.group === "nodes" && (el.data.theme || el.data.category) === t
+          && el.data.category !== "source";
+      });
+      nodes.forEach(function (el) { ids[el.data.id] = true; });
+      var edges = fullElements.filter(function (el) {
+        return el.group === "edges" && ids[el.data.source] && ids[el.data.target];
+      });
+      return nodes.concat(edges).map(function (el) {
+        return { group: el.group, data: el.data, classes: el.classes };
+      });
+    }
+
+    // Browse mode: cy holds ONLY the theme nodes (light); drilling ADDS one theme's topics.
     function enterBrowse() {
       if (!cy) return;
       graphMode = "browse"; expandedTheme = null;
+      cy.elements().remove();
       buildThemeNodes();
-      cy.batch(function () {
-        knowledgeTopics().style("display", "none");
-        cy.edges().style("display", "none");
-        cy.nodes(".theme-node").style("display", "element");
-      });
       cy.animate({ fit: { eles: cy.nodes(".theme-node"), padding: 80 }, duration: 250 });
       setModeButtons();
       if (els.browseBack) els.browseBack.hidden = true;
       if (els.drillHint) els.drillHint.textContent = "click a theme to reveal its topics";
     }
 
+    // Explore mode: restore the full flat graph (all nodes + relationship edges).
     function enterExplore() {
       if (!cy) return;
       graphMode = "explore"; expandedTheme = null;
-      cy.remove(cy.nodes(".theme-node"));
-      cy.batch(function () {
-        cy.nodes().style("display", "element");
-        cy.edges().style("display", "element");
-      });
+      cy.elements().remove();
+      cy.add(fullElements);
+      cy.nodes().forEach(function (n) { var p = bakedPositions[n.id()]; if (p) n.position(p); });
+      exploreLayout = "cluster";
+      if (els.layoutBtn) els.layoutBtn.textContent = "Grid layout";
       applyCategoryFilter();
+      applyInitialDeclutter();
       var focus = cy.nodes().filter(function (n) { return n.data("category") !== "source"; });
       if (focus.nonempty()) cy.animate({ fit: { eles: focus, padding: 64 }, duration: 250 });
       setModeButtons();
@@ -1120,49 +1163,52 @@
       cy.animate({ fit: { eles: vis.nonempty() ? vis : cy.nodes(), padding: 50 }, duration: 250 });
     }
 
-    // Browse "back": collapse any expanded theme and return to the theme overview.
+    // Explore layout toggle: baked theme-cluster positions <-> tidy rows/columns grid.
+    function setExploreLayout(name) {
+      if (!cy || graphMode !== "explore") return;
+      exploreLayout = name;
+      if (name === "grid") {
+        cy.layout({ name: "grid", avoidOverlap: true, avoidOverlapPadding: 14,
+                    condense: false, padding: 30, fit: true }).run();
+      } else {
+        cy.nodes().forEach(function (n) { var p = bakedPositions[n.id()]; if (p) n.position(p); });
+        var focus = cy.nodes().filter(function (n) { return n.data("category") !== "source"; });
+        if (focus.nonempty()) cy.fit(focus, 64);
+      }
+      if (els.layoutBtn) els.layoutBtn.textContent = (name === "grid") ? "Cluster layout" : "Grid layout";
+    }
+
+    // Browse "back": collapse the expanded theme, return to the theme overview.
     function collapseToThemes() {
       if (!cy) return;
       expandedTheme = null;
-      cy.batch(function () {
-        knowledgeTopics().style("display", "none");
-        cy.edges().style("display", "none");
-        cy.nodes(".theme-node").style("display", "element");
-      });
+      cy.elements().filter(function (el) { return !el.hasClass("theme-node"); }).remove();
       cy.animate({ fit: { eles: cy.nodes(".theme-node"), padding: 80 }, duration: 250 });
       if (els.browseBack) els.browseBack.hidden = true;
     }
 
-    // Click a theme node: reveal / collapse its topic nodes (clustered around it),
-    // plus their intra-theme relationship edges.
+    // Click a theme node: load ONLY that theme's topics (light) around it; click again collapses.
     function toggleTheme(themeNode) {
       var t = themeNode.data("theme");
       var collapse = (expandedTheme === t);
-      var members = knowledgeTopics().filter(function (n) { return themeOf(n) === t; });
-      var base = themeNode.position();
-      var count = members.length;
-      var radius = 90 + 7 * Math.sqrt(Math.max(1, count));
-      cy.batch(function () {
-        knowledgeTopics().forEach(function (n) {
-          n.style("display", (!collapse && themeOf(n) === t) ? "element" : "none");
-        });
-        if (!collapse) {
-          members.forEach(function (n, i) {
-            var ang = (2 * Math.PI * i) / Math.max(1, count);
-            n.position({ x: base.x + radius * Math.cos(ang), y: base.y + radius * Math.sin(ang) });
-          });
-        }
-        cy.edges().forEach(function (e) {
-          var s = e.source(), d = e.target();
-          var show = !collapse && !s.hasClass("theme-node") && !d.hasClass("theme-node")
-            && themeOf(s) === t && themeOf(d) === t;
-          e.style("display", show ? "element" : "none");
-        });
-      });
+      cy.elements().filter(function (el) { return !el.hasClass("theme-node"); }).remove();
       expandedTheme = collapse ? null : t;
       if (els.browseBack) els.browseBack.hidden = (expandedTheme === null);
-      var focus = collapse ? cy.nodes(".theme-node") : members.union(themeNode);
-      if (focus.nonempty()) cy.animate({ fit: { eles: focus, padding: 70 }, duration: 250 });
+      if (collapse) {
+        cy.animate({ fit: { eles: cy.nodes(".theme-node"), padding: 80 }, duration: 250 });
+        return;
+      }
+      cy.add(elementsForTheme(t));
+      var base = themeNode.position();
+      var members = cy.nodes().filter(function (n) { return !n.hasClass("theme-node"); });
+      var count = members.length;
+      var radius = 90 + 7 * Math.sqrt(Math.max(1, count));
+      members.forEach(function (n, i) {
+        var ang = (2 * Math.PI * i) / Math.max(1, count);
+        n.position({ x: base.x + radius * Math.cos(ang), y: base.y + radius * Math.sin(ang) });
+      });
+      members.addClass("zoom-label");
+      cy.animate({ fit: { eles: members.union(themeNode), padding: 70 }, duration: 250 });
     }
 
     // ---- Side panel: fetch + render a page -----------------------------
