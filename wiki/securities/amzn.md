@@ -5,11 +5,14 @@ related_videos: ["-XQGZSyM8O0", "0BI8bymKOIE", "0iZJfIu3Nac", "1SkCf5UEWtc", "73
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Amazon (AMZN) is a liquid equity underlying used in the channel's options-trading examples and technical analysis. The stock underwent a 20:1 split that reduced its share price from over $1,000 to approximately $124, increasing accessibility and trading volume, though it remained in a downtrend on intermediate timeframes following the split. AMZN appears in discussions of covered strangle strategies and broader portfolio construction examples as a representative large-cap equity suitable for premium-selling approaches."
 ---
 
 # AMZN
 
-**Auto-generated security topic** — discussed across 24 video(s). Pending curated synthesis; the backing source pages are linked below.
+Amazon (AMZN) is a liquid equity underlying used in the channel's options-trading examples and technical analysis. The stock underwent a 20:1 split that reduced its share price from over $1,000 to approximately $124, increasing accessibility and trading volume, though it remained in a downtrend on intermediate timeframes following the split. AMZN appears in discussions of covered strangle strategies and broader portfolio construction examples as a representative large-cap equity suitable for premium-selling approaches.
+
+*Auto-generated summary from 24 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

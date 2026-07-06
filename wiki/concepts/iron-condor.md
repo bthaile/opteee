@@ -5,11 +5,14 @@ related_videos: ["0nXEzaMT7Nc", "NFmt1vpYpMw", "RAtIwFj62pw", "_L-xR6KNRkM", "a4
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "An iron condor is a defined-risk options strategy that sells an out-of-the-money call spread and an out-of-the-money put spread simultaneously, capping both maximum profit and maximum loss. The strategy profits from time decay and is marketed as high-probability income generation, but the tight spreads required to achieve attractive win rates create unfavorable risk-to-reward ratios and expose traders to significant tail-risk losses when market moves exceed historical expectations. Iron condors function as directional range-bound bets rather than pure volatility trades, and their effectiveness depends critically on proper position sizing, realistic probability assumptions, and awareness that extreme market moves occur far more frequently than standard statistical models predict."
 ---
 
 # Iron Condor
 
-**Auto-generated concept topic** — discussed across 8 video(s). Pending curated synthesis; the backing source pages are linked below.
+An iron condor is a defined-risk options strategy that sells an out-of-the-money call spread and an out-of-the-money put spread simultaneously, capping both maximum profit and maximum loss. The strategy profits from time decay and is marketed as high-probability income generation, but the tight spreads required to achieve attractive win rates create unfavorable risk-to-reward ratios and expose traders to significant tail-risk losses when market moves exceed historical expectations. Iron condors function as directional range-bound bets rather than pure volatility trades, and their effectiveness depends critically on proper position sizing, realistic probability assumptions, and awareness that extreme market moves occur far more frequently than standard statistical models predict.
+
+*Auto-generated summary from 8 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

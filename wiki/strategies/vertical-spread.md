@@ -5,11 +5,14 @@ related_videos: ["3OzLFRmYpOY", "8Kgx-5Ij4po", "93vPWsmgsQc", "AfFTysPxbns", "Ek
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A vertical spread is an options strategy that caps both maximum profit and maximum loss by simultaneously buying and selling options of the same type (calls or puts) at different strike prices. Traders use vertical spreads primarily for capital efficiency—they require significantly less upfront capital than naked short options while still allowing premium collection, making them a practical middle ground between the cost of outright long options and the capital demands of naked selling. The structure's management depends on the underlying's volatility characteristics and the trader's profit mechanism; adjustments are driven by P&L targets, duration drift, and Greek profile changes rather than emotional \"defense\" or \"repair\" impulses."
 ---
 
 # Vertical Spread
 
-**Auto-generated strategy topic** — discussed across 17 video(s). Pending curated synthesis; the backing source pages are linked below.
+A vertical spread is an options strategy that caps both maximum profit and maximum loss by simultaneously buying and selling options of the same type (calls or puts) at different strike prices. Traders use vertical spreads primarily for capital efficiency—they require significantly less upfront capital than naked short options while still allowing premium collection, making them a practical middle ground between the cost of outright long options and the capital demands of naked selling. The structure's management depends on the underlying's volatility characteristics and the trader's profit mechanism; adjustments are driven by P&L targets, duration drift, and Greek profile changes rather than emotional "defense" or "repair" impulses.
+
+*Auto-generated summary from 17 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

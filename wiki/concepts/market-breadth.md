@@ -5,11 +5,14 @@ related_videos: ["--aVVZQ5Pxw", "-NzEb1zc1bw", "-qSV5WZNlP4", "0YG5XSvH_GA", "0f
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Market breadth refers to the proportion of stocks participating in a market move, measured by metrics such as the percentage of an index trading above key moving averages or the ratio of advancing to declining volume. In options trading, weak breadth—such as when only a minority of S&P 500 constituents trade above their 50-period moving average despite broad index gains—signals that market strength is concentrated in a few names rather than broadly distributed, which can indicate fragility and create tactical opportunities in sector rotation or mean-reversion trades. Traders use breadth analysis alongside price action and volatility indicators to assess whether a market move is sustainable or vulnerable to reversal, informing decisions on directional positioning and risk management."
 ---
 
 # Market Breadth
 
-**Auto-generated concept topic** — discussed across 104 video(s). Pending curated synthesis; the backing source pages are linked below.
+Market breadth refers to the proportion of stocks participating in a market move, measured by metrics such as the percentage of an index trading above key moving averages or the ratio of advancing to declining volume. In options trading, weak breadth—such as when only a minority of S&P 500 constituents trade above their 50-period moving average despite broad index gains—signals that market strength is concentrated in a few names rather than broadly distributed, which can indicate fragility and create tactical opportunities in sector rotation or mean-reversion trades. Traders use breadth analysis alongside price action and volatility indicators to assess whether a market move is sustainable or vulnerable to reversal, informing decisions on directional positioning and risk management.
+
+*Auto-generated summary from 104 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

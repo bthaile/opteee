@@ -5,11 +5,14 @@ related_videos: ["Ov-eX7b7Ai0", "bdXfCa4LSh4", "gxFU8o-ELjc", "h01cM9oHZ5o", "h6
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Delayed gratification is the foundational principle of prioritizing long-term wealth accumulation over immediate consumption, particularly by maintaining discipline with savings and investment contributions early in one's financial life. In options trading and broader wealth-building, delayed gratification operates as a lever for compound growth—starting contributions early, maintaining a high savings rate even as income rises, and resisting the temptation to chase unrealistic short-term profits allows modest monthly contributions to compound dramatically over 20–30 years. The concept directly counters the trader's psychological bias toward heroic performance, instead emphasizing that statistical outliers build wealth through process discipline and time in the market rather than exceptional trading returns alone."
 ---
 
 # Delayed Gratification
 
-**Auto-generated concept topic** — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below.
+Delayed gratification is the foundational principle of prioritizing long-term wealth accumulation over immediate consumption, particularly by maintaining discipline with savings and investment contributions early in one's financial life. In options trading and broader wealth-building, delayed gratification operates as a lever for compound growth—starting contributions early, maintaining a high savings rate even as income rises, and resisting the temptation to chase unrealistic short-term profits allows modest monthly contributions to compound dramatically over 20–30 years. The concept directly counters the trader's psychological bias toward heroic performance, instead emphasizing that statistical outliers build wealth through process discipline and time in the market rather than exceptional trading returns alone.
+
+*Auto-generated summary from 6 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

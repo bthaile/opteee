@@ -5,11 +5,14 @@ related_videos: ["-CUgdXmtp5o", "-MQ7kNM0dtI", "0a1UROsFf_A", "0fty1k3IGgY", "0i
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Gamma measures the rate at which delta changes as the underlying price moves, making it a critical Greek for understanding how option positions respond to price action. Long options benefit from gamma because favorable price moves increase delta faster than theta decay erodes it, while gamma exposure must be weighed against theta decay—especially in far out-of-the-money options where low delta requires larger underlying moves to activate gamma gains. Traders use gamma as a key decision point when structuring positions, balancing the desire for gamma benefit (which compounds returns through favorable moves) against the cost of theta decay and the time horizon of the trade."
 ---
 
 # Gamma
 
-**Auto-generated concept topic** — discussed across 147 video(s). Pending curated synthesis; the backing source pages are linked below.
+Gamma measures the rate at which delta changes as the underlying price moves, making it a critical Greek for understanding how option positions respond to price action. Long options benefit from gamma because favorable price moves increase delta faster than theta decay erodes it, while gamma exposure must be weighed against theta decay—especially in far out-of-the-money options where low delta requires larger underlying moves to activate gamma gains. Traders use gamma as a key decision point when structuring positions, balancing the desire for gamma benefit (which compounds returns through favorable moves) against the cost of theta decay and the time horizon of the trade.
+
+*Auto-generated summary from 147 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

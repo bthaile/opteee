@@ -5,11 +5,14 @@ related_videos: ["2hOfMXRWPls", "AV3h8wrR3aM", "AoHUcyVh7NY", "CWz8RMgiPm8", "CZ
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Context window management is the practice of strategically organizing and maintaining information boundaries when using AI tools to accelerate options research and trading system development. Traders implement this through structured documentation systems—including Standard Operating Procedures (SOPs), roadmaps, and automated markdown files that the AI updates—to ensure consistency and scalability across extended AI interactions without losing critical context. The approach treats AI as a force multiplier for hypothesis testing and backtesting rather than an edge generator, requiring traders to maintain clarity about what market phenomena they're monetizing while offloading documentation maintenance to the AI itself."
 ---
 
 # Context Window Management
 
-**Auto-generated concept topic** — discussed across 17 video(s). Pending curated synthesis; the backing source pages are linked below.
+Context window management is the practice of strategically organizing and maintaining information boundaries when using AI tools to accelerate options research and trading system development. Traders implement this through structured documentation systems—including Standard Operating Procedures (SOPs), roadmaps, and automated markdown files that the AI updates—to ensure consistency and scalability across extended AI interactions without losing critical context. The approach treats AI as a force multiplier for hypothesis testing and backtesting rather than an edge generator, requiring traders to maintain clarity about what market phenomena they're monetizing while offloading documentation maintenance to the AI itself.
+
+*Auto-generated summary from 17 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

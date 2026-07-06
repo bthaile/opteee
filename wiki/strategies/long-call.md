@@ -5,11 +5,14 @@ related_videos: ["-MQ7kNM0dtI", "-jJkuhl2wyY", "05PKCIAe4_0", "0ZE8GpkICU4", "0f
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A long call is a directional options strategy where a trader buys a call option to profit from an expected price increase, offering unlimited upside potential with defined risk limited to the premium paid. The strategy is most effective when a trader has clarity on four dimensions—direction, timeline, severity, and implied volatility—before entry, and should be structured with attention to days to expiration, delta selection, and gamma exposure to survive theta decay and compound returns over time rather than function as a lottery ticket. Long calls are particularly suited to situations where a trader expects significant upside movement and wants to capture that move without the capital requirement of buying stock outright, though they must be managed according to their profit mechanism rather than arbitrary option value thresholds."
 ---
 
 # Long Call
 
-**Auto-generated strategy topic** — discussed across 180 video(s). Pending curated synthesis; the backing source pages are linked below.
+A long call is a directional options strategy where a trader buys a call option to profit from an expected price increase, offering unlimited upside potential with defined risk limited to the premium paid. The strategy is most effective when a trader has clarity on four dimensions—direction, timeline, severity, and implied volatility—before entry, and should be structured with attention to days to expiration, delta selection, and gamma exposure to survive theta decay and compound returns over time rather than function as a lottery ticket. Long calls are particularly suited to situations where a trader expects significant upside movement and wants to capture that move without the capital requirement of buying stock outright, though they must be managed according to their profit mechanism rather than arbitrary option value thresholds.
+
+*Auto-generated summary from 180 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["--aVVZQ5Pxw", "-NzEb1zc1bw", "-RsvTzf4OxA", "-qSV5WZNlP4", "0L
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Sector rotation is the tactical shift of capital allocation across different industry groups in response to changing macroeconomic conditions, policy expectations, or market sentiment. In options trading, sector rotation creates tradable opportunities by identifying which sectors are strengthening (such as financials on deregulation hopes or energy on favorable policy) and which are weakening (such as technology during defensive rotations into staples and utilities), allowing traders to construct directional or relative-value strategies across sector ETFs and individual stocks. The channel emphasizes analyzing sector rotation through price action, moving-average alignment, and macro catalysts like Fed policy or election outcomes to identify both bullish setups in rotating-into sectors and bearish setups in rotating-out-of sectors."
 ---
 
 # Sector Rotation
 
-**Auto-generated concept topic** — discussed across 103 video(s). Pending curated synthesis; the backing source pages are linked below.
+Sector rotation is the tactical shift of capital allocation across different industry groups in response to changing macroeconomic conditions, policy expectations, or market sentiment. In options trading, sector rotation creates tradable opportunities by identifying which sectors are strengthening (such as financials on deregulation hopes or energy on favorable policy) and which are weakening (such as technology during defensive rotations into staples and utilities), allowing traders to construct directional or relative-value strategies across sector ETFs and individual stocks. The channel emphasizes analyzing sector rotation through price action, moving-average alignment, and macro catalysts like Fed policy or election outcomes to identify both bullish setups in rotating-into sectors and bearish setups in rotating-out-of sectors.
+
+*Auto-generated summary from 103 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

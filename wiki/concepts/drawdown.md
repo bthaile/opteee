@@ -5,11 +5,14 @@ related_videos: ["1jDrPx6lOgM", "A1el6GdNjOA", "NFmt1vpYpMw", "PRaZC_rUXIM", "QZ
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Drawdown is the peak-to-trough decline in a trading account or portfolio value, representing the largest loss experienced from a previous high point. In options trading, managing drawdown is treated as a primary objective—often more important than maximizing returns—because catastrophic losses derail long-term compound growth and are frequently caused by inadequate position sizing, lack of predetermined exit rules, and risk desensitization. Traders employ systematic approaches to limit drawdown through portfolio-level circuit breakers, diversification across uncorrelated assets, hedging strategies, and strict adherence to trading plans with defined entry and exit rules before markets move against them. The emphasis across professional traders is that capital preservation and avoiding outsized drawdowns through disciplined risk management ultimately determines long-term success more than win rate or average return per trade."
 ---
 
 # Drawdown
 
-**Auto-generated concept topic** — discussed across 17 video(s). Pending curated synthesis; the backing source pages are linked below.
+Drawdown is the peak-to-trough decline in a trading account or portfolio value, representing the largest loss experienced from a previous high point. In options trading, managing drawdown is treated as a primary objective—often more important than maximizing returns—because catastrophic losses derail long-term compound growth and are frequently caused by inadequate position sizing, lack of predetermined exit rules, and risk desensitization. Traders employ systematic approaches to limit drawdown through portfolio-level circuit breakers, diversification across uncorrelated assets, hedging strategies, and strict adherence to trading plans with defined entry and exit rules before markets move against them. The emphasis across professional traders is that capital preservation and avoiding outsized drawdowns through disciplined risk management ultimately determines long-term success more than win rate or average return per trade.
+
+*Auto-generated summary from 17 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

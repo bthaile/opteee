@@ -5,11 +5,14 @@ related_videos: ["-M_lC4RVmvM", "-qSV5WZNlP4", "0-BUA66HVWg", "0qcfwt6wf2I", "2D
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Volatility clustering refers to the tendency for periods of high volatility to concentrate in specific securities, sectors, or timeframes rather than distributing uniformly across markets, and for volatility to persist once elevated before reverting to normal levels. In options trading, recognizing volatility clustering helps traders identify when broad-market conditions (such as a depressed VIX) mask pockets of extreme price action in individual stocks or event-driven catalysts, enabling them to locate tradable opportunities by actively scanning for outliers rather than passively accepting regime-wide conditions. Traders use volatility clustering patterns to calibrate their perception of what is \"normal\" versus \"abnormal\" across multiple timeframes, allowing them to match option strategies and position sizing to the actual volatility environment they face rather than relying on single-regime assumptions."
 ---
 
 # Volatility Clustering
 
-**Auto-generated concept topic** — discussed across 146 video(s). Pending curated synthesis; the backing source pages are linked below.
+Volatility clustering refers to the tendency for periods of high volatility to concentrate in specific securities, sectors, or timeframes rather than distributing uniformly across markets, and for volatility to persist once elevated before reverting to normal levels. In options trading, recognizing volatility clustering helps traders identify when broad-market conditions (such as a depressed VIX) mask pockets of extreme price action in individual stocks or event-driven catalysts, enabling them to locate tradable opportunities by actively scanning for outliers rather than passively accepting regime-wide conditions. Traders use volatility clustering patterns to calibrate their perception of what is "normal" versus "abnormal" across multiple timeframes, allowing them to match option strategies and position sizing to the actual volatility environment they face rather than relying on single-regime assumptions.
+
+*Auto-generated summary from 146 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

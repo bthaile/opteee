@@ -5,11 +5,14 @@ related_videos: ["-jJkuhl2wyY", "0fty1k3IGgY", "1kGksRBt2aA", "3XRv1HPb2L0", "4C
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "The Greeks are quantitative measures that describe how option prices respond to changes in underlying market conditions—primarily delta (price movement), theta (time decay), vega (volatility), and gamma (delta acceleration)—along with second-order Greeks like charm that track how these sensitivities themselves change. Understanding Greeks is essential for position management because they reveal the true risk exposures embedded in a trade independent of directional bias; for example, a position may appear to sell volatility but prove nearly vega-neutral, or an out-of-the-money option may lose delta rapidly as expiration approaches despite favorable price moves. Traders use Greeks to align their strategies with their actual market thesis, size positions appropriately, and anticipate how P&L will behave across different market scenarios rather than relying on intuition alone."
 ---
 
 # Greeks
 
-**Auto-generated concept topic** — discussed across 65 video(s). Pending curated synthesis; the backing source pages are linked below.
+The Greeks are quantitative measures that describe how option prices respond to changes in underlying market conditions—primarily delta (price movement), theta (time decay), vega (volatility), and gamma (delta acceleration)—along with second-order Greeks like charm that track how these sensitivities themselves change. Understanding Greeks is essential for position management because they reveal the true risk exposures embedded in a trade independent of directional bias; for example, a position may appear to sell volatility but prove nearly vega-neutral, or an out-of-the-money option may lose delta rapidly as expiration approaches despite favorable price moves. Traders use Greeks to align their strategies with their actual market thesis, size positions appropriately, and anticipate how P&L will behave across different market scenarios rather than relying on intuition alone.
+
+*Auto-generated summary from 65 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

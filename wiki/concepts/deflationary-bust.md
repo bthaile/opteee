@@ -5,11 +5,14 @@ related_videos: ["2yu8jSYKuH4", "6Sp4eF9ahW8", "FUNC-MTq9PQ", "GVrANU08cAU", "Io
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A deflationary bust is a severe, prolonged economic downturn characterized by falling prices, financial crisis, and extreme asset drawdowns (typically 80% or more) that follows an extended period of monetary expansion and leverage buildup. In the options-trading context, it represents the bearish tail-risk scenario that traders hedge against or position for after identifying a preceding parabolic rally phase, with the bust typically triggered by central bank policy errors, credit contraction, and the unwinding of systemic leverage across financial markets. The concept is used to frame longer-term macro risk management and directional positioning, where traders may use options to protect gains accumulated during the melt-up phase or establish bearish positions ahead of the anticipated downturn."
 ---
 
 # Deflationary Bust
 
-**Auto-generated concept topic** — discussed across 13 video(s). Pending curated synthesis; the backing source pages are linked below.
+A deflationary bust is a severe, prolonged economic downturn characterized by falling prices, financial crisis, and extreme asset drawdowns (typically 80% or more) that follows an extended period of monetary expansion and leverage buildup. In the options-trading context, it represents the bearish tail-risk scenario that traders hedge against or position for after identifying a preceding parabolic rally phase, with the bust typically triggered by central bank policy errors, credit contraction, and the unwinding of systemic leverage across financial markets. The concept is used to frame longer-term macro risk management and directional positioning, where traders may use options to protect gains accumulated during the melt-up phase or establish bearish positions ahead of the anticipated downturn.
+
+*Auto-generated summary from 13 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

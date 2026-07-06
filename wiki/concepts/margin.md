@@ -5,11 +5,14 @@ related_videos: ["3sYsqAWBo80", "C_YEdo1Qlk8", "ELLig97y0io", "K6RRH35k-1Y", "P7
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Margin is the borrowed capital a broker extends to a trader to control positions larger than the account's cash balance, with requirements calculated either through fixed regulatory formulas (Regulation T) or through broker-specific portfolio margin systems that stress-test overall portfolio risk. Portfolio margin, available to qualified traders meeting minimum account thresholds, allows significantly more efficient capital deployment by accounting for diversification and hedging relationships across positions, whereas standard margin applies uniform haircuts to individual positions regardless of their role in a broader strategy. Understanding margin mechanics is essential for options traders because premium received from short positions sits as a liability in the cash account rather than available income, and margin pressure can force liquidations if positions move unfavorably or if traders withdraw credits without maintaining adequate collateral coverage."
 ---
 
 # Margin
 
-**Auto-generated concept topic** — discussed across 12 video(s). Pending curated synthesis; the backing source pages are linked below.
+Margin is the borrowed capital a broker extends to a trader to control positions larger than the account's cash balance, with requirements calculated either through fixed regulatory formulas (Regulation T) or through broker-specific portfolio margin systems that stress-test overall portfolio risk. Portfolio margin, available to qualified traders meeting minimum account thresholds, allows significantly more efficient capital deployment by accounting for diversification and hedging relationships across positions, whereas standard margin applies uniform haircuts to individual positions regardless of their role in a broader strategy. Understanding margin mechanics is essential for options traders because premium received from short positions sits as a liability in the cash account rather than available income, and margin pressure can force liquidations if positions move unfavorably or if traders withdraw credits without maintaining adequate collateral coverage.
+
+*Auto-generated summary from 12 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["F7zoiv61ohM", "FPLK8vS5ono", "KlHlEa4t-fU", "LIItjS6pXQI", "PP
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "SSO is a leveraged ETF that tracks the S&P 500 with 3x daily leverage, used in options trading as an underlying for covered strangle strategies that capitalize on the volatility premium embedded in leveraged products. Traders deploy short puts and ratio short calls against SSO positions to generate income while managing downside risk through disciplined rolling mechanics during market corrections. The elevated implied volatility in leveraged ETFs like SSO makes them attractive for volatility risk premium strategies, though they require careful basis management and strike adjustments to navigate sharp drawdowns effectively."
 ---
 
 # SSO
 
-**Auto-generated security topic** — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below.
+SSO is a leveraged ETF that tracks the S&P 500 with 3x daily leverage, used in options trading as an underlying for covered strangle strategies that capitalize on the volatility premium embedded in leveraged products. Traders deploy short puts and ratio short calls against SSO positions to generate income while managing downside risk through disciplined rolling mechanics during market corrections. The elevated implied volatility in leveraged ETFs like SSO makes them attractive for volatility risk premium strategies, though they require careful basis management and strike adjustments to navigate sharp drawdowns effectively.
+
+*Auto-generated summary from 9 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

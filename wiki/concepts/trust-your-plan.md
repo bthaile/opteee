@@ -5,11 +5,14 @@ related_videos: ["-qSV5WZNlP4", "2t3Nv-63Jtc", "B3SW20MSNbM", "Dc8Vjr4pZ84", "Ej
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Trusting your plan is a foundational discipline in options trading that requires building a tested, process-driven framework before executing trades, rather than chasing individual outcomes or reacting emotionally to market moves. The concept emphasizes that a plan becomes trustworthy only through deliberate practice, paper trading, logging, and after-action reviews—ensuring alignment between thesis, profit mechanism, strategy, and time frame. Success depends on executing this plan consistently over years with proper risk sizing and self-awareness, recognizing that markets are probabilistic and that sustainable wealth comes from repeatable systems rather than outsized single-trade returns."
 ---
 
 # Trust Your Plan
 
-**Auto-generated concept topic** — discussed across 22 video(s). Pending curated synthesis; the backing source pages are linked below.
+Trusting your plan is a foundational discipline in options trading that requires building a tested, process-driven framework before executing trades, rather than chasing individual outcomes or reacting emotionally to market moves. The concept emphasizes that a plan becomes trustworthy only through deliberate practice, paper trading, logging, and after-action reviews—ensuring alignment between thesis, profit mechanism, strategy, and time frame. Success depends on executing this plan consistently over years with proper risk sizing and self-awareness, recognizing that markets are probabilistic and that sustainable wealth comes from repeatable systems rather than outsized single-trade returns.
+
+*Auto-generated summary from 22 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

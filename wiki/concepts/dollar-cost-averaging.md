@@ -5,11 +5,14 @@ related_videos: ["4D1XWrp3xec", "4Lz5jr3grOs", "AWB8d0uMeoA", "BTU71jbUgDo", "F4
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Dollar cost averaging in options trading refers to the practice of systematically adding to a position over time by rolling or adjusting trades at different price levels, rather than deploying capital in a single lump sum. The strategy is particularly relevant when managing short put positions in leveraged ETFs during market corrections, where disciplined rolling mechanics and strike adjustments allow traders to reduce basis and accumulate exposure at progressively lower prices. This approach aligns with the broader wealth-building principle that consistent capital contributions, compounded over time with disciplined execution, form the foundation of long-term trading success—prioritizing steady accumulation and risk management over attempting to time a single optimal entry point."
 ---
 
 # Dollar Cost Averaging
 
-**Auto-generated concept topic** — discussed across 22 video(s). Pending curated synthesis; the backing source pages are linked below.
+Dollar cost averaging in options trading refers to the practice of systematically adding to a position over time by rolling or adjusting trades at different price levels, rather than deploying capital in a single lump sum. The strategy is particularly relevant when managing short put positions in leveraged ETFs during market corrections, where disciplined rolling mechanics and strike adjustments allow traders to reduce basis and accumulate exposure at progressively lower prices. This approach aligns with the broader wealth-building principle that consistent capital contributions, compounded over time with disciplined execution, form the foundation of long-term trading success—prioritizing steady accumulation and risk management over attempting to time a single optimal entry point.
+
+*Auto-generated summary from 22 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

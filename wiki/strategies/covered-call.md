@@ -5,11 +5,14 @@ related_videos: ["-CUgdXmtp5o", "-M_lC4RVmvM", "-jJkuhl2wyY", "-qSV5WZNlP4", "0g
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A covered call is constructed by holding 100 shares of stock while selling one short call against that position, creating a capped-upside strategy that reaches maximum profit when long and short deltas balance into delta neutrality. The strategy is commonly marketed as an income-generation tool, but the premium received is a liability rather than true income, and systematic covered-call selling typically underperforms buy-and-hold benchmarks while capping upside on appreciating assets. Effective execution requires selective strike selection based on delta bands (typically 20–35 delta), active rebalancing as the underlying moves, and discretionary timing around elevated implied volatility rather than mechanical systematic selling. The strategy works best as a profit-taking or downside-hedging mechanism on concentrated positions, though the hedge effect is modest and assignment risk must be carefully managed relative to cost basis."
 ---
 
 # Covered Call
 
-**Auto-generated strategy topic** — discussed across 151 video(s). Pending curated synthesis; the backing source pages are linked below.
+A covered call is constructed by holding 100 shares of stock while selling one short call against that position, creating a capped-upside strategy that reaches maximum profit when long and short deltas balance into delta neutrality. The strategy is commonly marketed as an income-generation tool, but the premium received is a liability rather than true income, and systematic covered-call selling typically underperforms buy-and-hold benchmarks while capping upside on appreciating assets. Effective execution requires selective strike selection based on delta bands (typically 20–35 delta), active rebalancing as the underlying moves, and discretionary timing around elevated implied volatility rather than mechanical systematic selling. The strategy works best as a profit-taking or downside-hedging mechanism on concentrated positions, though the hedge effect is modest and assignment risk must be carefully managed relative to cost basis.
+
+*Auto-generated summary from 151 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["-NzEb1zc1bw", "-jJkuhl2wyY", "29BtSz0VpA4", "3J3S-ewvxn0", "5G
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Order flow refers to the patterns and timing of options orders across the market, revealing how traders cluster trades at specific times—such as market close through auction mechanics and around earnings catalysts—to manage transaction costs and isolate particular exposures. By analyzing volume distribution, open interest concentration, and net flows across strike prices and expirations, traders can decode market participant positioning and identify whether positioning is bullish, bearish, or volatility-focused. Understanding order flow mechanics helps traders recognize self-reinforcing liquidity cycles and distinguish between speculative retail activity and institutional hedging, informing decisions about whether to trade directionally or capture volatility premium."
 ---
 
 # Order Flow
 
-**Auto-generated concept topic** — discussed across 112 video(s). Pending curated synthesis; the backing source pages are linked below.
+Order flow refers to the patterns and timing of options orders across the market, revealing how traders cluster trades at specific times—such as market close through auction mechanics and around earnings catalysts—to manage transaction costs and isolate particular exposures. By analyzing volume distribution, open interest concentration, and net flows across strike prices and expirations, traders can decode market participant positioning and identify whether positioning is bullish, bearish, or volatility-focused. Understanding order flow mechanics helps traders recognize self-reinforcing liquidity cycles and distinguish between speculative retail activity and institutional hedging, informing decisions about whether to trade directionally or capture volatility premium.
+
+*Auto-generated summary from 112 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

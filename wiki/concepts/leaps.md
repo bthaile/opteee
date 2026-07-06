@@ -5,11 +5,14 @@ related_videos: ["9APL8MtZu7Y", "EMzsNLXZ1bc", "ToCr_B-i9mI", "_sYkIbkPItA", "a1
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "LEAPS (long-term equity anticipation securities) are options contracts with expiration dates greater than one year, functioning as leveraged stock replacements that allow traders to control large equity exposure with reduced capital outlay. They are used to establish directional conviction positions while managing Greeks—particularly gamma (which decreases with time to expiration) and vega (which increases with time to expiration)—across multiple expiration cycles. Traders often structure LEAPS as long calls paired with shorter-dated short premium legs (such as ratio call diagonals) to offset theta decay and improve capital efficiency, while carefully monitoring liquidity, bid-ask spreads, and the distinction between raw implied volatility and volatility term structure when evaluating entry prices."
 ---
 
 # Leaps
 
-**Auto-generated concept topic** — discussed across 8 video(s). Pending curated synthesis; the backing source pages are linked below.
+LEAPS (long-term equity anticipation securities) are options contracts with expiration dates greater than one year, functioning as leveraged stock replacements that allow traders to control large equity exposure with reduced capital outlay. They are used to establish directional conviction positions while managing Greeks—particularly gamma (which decreases with time to expiration) and vega (which increases with time to expiration)—across multiple expiration cycles. Traders often structure LEAPS as long calls paired with shorter-dated short premium legs (such as ratio call diagonals) to offset theta decay and improve capital efficiency, while carefully monitoring liquidity, bid-ask spreads, and the distinction between raw implied volatility and volatility term structure when evaluating entry prices.
+
+*Auto-generated summary from 8 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

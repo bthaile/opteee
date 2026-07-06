@@ -5,11 +5,14 @@ related_videos: ["2Dv_fRuuTcc", "ELLig97y0io", "FPLK8vS5ono", "IIcSjkSS80k", "NF
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Defined risk refers to an options position structure where the maximum possible loss is known and capped at the time of entry, typically achieved by pairing long and short options at different strikes (as in vertical spreads) or by adding protective wings to naked short premium strategies. This approach provides capital efficiency and clarity on downside exposure, making it suitable for traders with limited account size or those seeking to quantify their risk before committing capital. However, defined risk comes with trade-offs: it often reduces maximum profit potential, carries negative expected value due to transaction costs, and requires a strong directional thesis or volatility conviction to justify the cost of the protective leg. The choice between defined and undefined risk depends on position sizing discipline, risk tolerance, and whether the trader has researched and consciously accepted the specific risk profile."
 ---
 
 # Defined Risk
 
-**Auto-generated concept topic** — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below.
+Defined risk refers to an options position structure where the maximum possible loss is known and capped at the time of entry, typically achieved by pairing long and short options at different strikes (as in vertical spreads) or by adding protective wings to naked short premium strategies. This approach provides capital efficiency and clarity on downside exposure, making it suitable for traders with limited account size or those seeking to quantify their risk before committing capital. However, defined risk comes with trade-offs: it often reduces maximum profit potential, carries negative expected value due to transaction costs, and requires a strong directional thesis or volatility conviction to justify the cost of the protective leg. The choice between defined and undefined risk depends on position sizing discipline, risk tolerance, and whether the trader has researched and consciously accepted the specific risk profile.
+
+*Auto-generated summary from 7 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

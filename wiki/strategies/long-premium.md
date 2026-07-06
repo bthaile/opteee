@@ -5,11 +5,14 @@ related_videos: ["TvMC14yH7ck", "Uu3DwGTOYHY", "yVf9c0ZyyYw"]
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Long premium is not directly defined in the supplied material. The three video summaries discuss vertical spreads, implied volatility metrics for strategy selection, and sector-based opportunity identification, but do not explicitly address long premium as a distinct strategy or explain its mechanics and use cases in options trading."
 ---
 
 # Long Premium
 
-**Auto-generated strategy topic** — discussed across 3 video(s). Pending curated synthesis; the backing source pages are linked below.
+Long premium is not directly defined in the supplied material. The three video summaries discuss vertical spreads, implied volatility metrics for strategy selection, and sector-based opportunity identification, but do not explicitly address long premium as a distinct strategy or explain its mechanics and use cases in options trading.
+
+*Auto-generated summary from 3 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["-XQGZSyM8O0", "6epupAYLkYc", "80QGX7wPlJk", "9CqpFa4mYas", "Cc
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Scaling out is a position management technique where a trader exits portions of a profitable position incrementally as the underlying asset moves favorably, rather than closing the entire position at once. This approach allows traders to lock in gains progressively while maintaining exposure to continued upside movement, and is demonstrated across various strategies including gamma-scalping trades, unusual options activity plays, and longer-dated directional positions. By reducing position size as profits accumulate, traders can manage risk dynamically and redeploy capital into new opportunities while preserving some exposure to the original thesis."
 ---
 
 # Scaling Out
 
-**Auto-generated strategy topic** — discussed across 26 video(s). Pending curated synthesis; the backing source pages are linked below.
+Scaling out is a position management technique where a trader exits portions of a profitable position incrementally as the underlying asset moves favorably, rather than closing the entire position at once. This approach allows traders to lock in gains progressively while maintaining exposure to continued upside movement, and is demonstrated across various strategies including gamma-scalping trades, unusual options activity plays, and longer-dated directional positions. By reducing position size as profits accumulate, traders can manage risk dynamically and redeploy capital into new opportunities while preserving some exposure to the original thesis.
+
+*Auto-generated summary from 26 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

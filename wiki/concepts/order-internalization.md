@@ -5,11 +5,14 @@ related_videos: ["86KGdDWuPJ0", "DrfoNKd41I0", "FfMgFRoJjzc", "FuuVCSD5QVc", "GK
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Order internalization refers to the practice where market makers and wholesalers execute retail customer orders internally rather than routing them to public exchanges, a structural mechanism that generates revenue through payment for order flow but damages price discovery and widens bid-ask spreads economy-wide. In options trading, internalization affects execution quality and the ability to access fair pricing, particularly for retail traders whose orders are concentrated with a small number of wholesalers rather than exposed to competitive exchange pricing. The practice is discussed as a key market structure conflict of interest that reduces transparency and creates incentives misaligned with retail investor outcomes, with regulatory reform proposals aimed at eliminating intermediation and restoring direct market access."
 ---
 
 # Order Internalization
 
-**Auto-generated concept topic** — discussed across 14 video(s). Pending curated synthesis; the backing source pages are linked below.
+Order internalization refers to the practice where market makers and wholesalers execute retail customer orders internally rather than routing them to public exchanges, a structural mechanism that generates revenue through payment for order flow but damages price discovery and widens bid-ask spreads economy-wide. In options trading, internalization affects execution quality and the ability to access fair pricing, particularly for retail traders whose orders are concentrated with a small number of wholesalers rather than exposed to competitive exchange pricing. The practice is discussed as a key market structure conflict of interest that reduces transparency and creates incentives misaligned with retail investor outcomes, with regulatory reform proposals aimed at eliminating intermediation and restoring direct market access.
+
+*Auto-generated summary from 14 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

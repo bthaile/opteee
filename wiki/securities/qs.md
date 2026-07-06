@@ -5,11 +5,14 @@ related_videos: ["6aRyhwnDLfo", "73cEIHM3FLg", "KKOqF8h1n1s", "WWVsuoWX8mU", "ll
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "I cannot write a summary of \"QS\" based on the supplied material. The five video summaries provided discuss covered strangles, GameStop (GME), options fundamentals, market catalysts, and portfolio allocation strategies, but none of them mention or define \"QS\" as a security or trading topic. To provide an accurate summary grounded only in the supplied material, I would need video content that explicitly discusses QS."
 ---
 
 # QS
 
-**Auto-generated security topic** — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below.
+I cannot write a summary of "QS" based on the supplied material. The five video summaries provided discuss covered strangles, GameStop (GME), options fundamentals, market catalysts, and portfolio allocation strategies, but none of them mention or define "QS" as a security or trading topic. To provide an accurate summary grounded only in the supplied material, I would need video content that explicitly discusses QS.
+
+*Auto-generated summary from 5 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

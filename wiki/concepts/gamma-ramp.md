@@ -5,11 +5,14 @@ related_videos: ["IsiLvT-L3vk", "Sue4LFwVQvU", "V5O4XLgPLLc", "bS81-wgP3-E", "bZ
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A gamma ramp is a market structure in which layered, near-the-money options strikes accumulate open interest in a way that creates accelerating hedging demand from market makers as price approaches expiration, potentially amplifying price moves through forced delta hedging. The phenomenon arises when options positioning—particularly concentrated call buying—forces market makers to buy stock as the underlying rises, creating a feedback loop that can drive further upside momentum. Gamma ramps are most pronounced when multiple strikes are stacked closely together with significant open interest and short time to expiration, and they represent a key mechanism behind gamma squeezes in meme stocks and other heavily-traded underlyings. Traders monitor options chains for signs of gamma ramp conditions—such as converging call and put open interest, pronounced call skew, and layered near-OTM strikes—to assess the likelihood and magnitude of potential squeeze dynamics."
 ---
 
 # Gamma Ramp
 
-**Auto-generated concept topic** — discussed across 12 video(s). Pending curated synthesis; the backing source pages are linked below.
+A gamma ramp is a market structure in which layered, near-the-money options strikes accumulate open interest in a way that creates accelerating hedging demand from market makers as price approaches expiration, potentially amplifying price moves through forced delta hedging. The phenomenon arises when options positioning—particularly concentrated call buying—forces market makers to buy stock as the underlying rises, creating a feedback loop that can drive further upside momentum. Gamma ramps are most pronounced when multiple strikes are stacked closely together with significant open interest and short time to expiration, and they represent a key mechanism behind gamma squeezes in meme stocks and other heavily-traded underlyings. Traders monitor options chains for signs of gamma ramp conditions—such as converging call and put open interest, pronounced call skew, and layered near-OTM strikes—to assess the likelihood and magnitude of potential squeeze dynamics.
+
+*Auto-generated summary from 12 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

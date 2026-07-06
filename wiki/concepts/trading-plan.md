@@ -5,11 +5,14 @@ related_videos: ["--aVVZQ5Pxw", "-MQ7kNM0dtI", "-qSV5WZNlP4", "0ZE8GpkICU4", "0q
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A trading plan is a documented framework that defines the specific hypothesis, entry conditions, profit mechanism, and exit rules for a trade before execution, anchored to what you are actually trying to profit from rather than arbitrary thresholds. It serves as the operational bridge between market analysis and trade execution, forcing traders to clarify four key dimensions—direction, timeline, severity, and implied volatility—before selecting an option structure. Building and maintaining a trading plan, combined with a trade log to track outcomes, is foundational infrastructure that separates successful long-term traders from those who fail due to poor planning and lack of systematic feedback loops."
 ---
 
 # Trading Plan
 
-**Auto-generated concept topic** — discussed across 159 video(s). Pending curated synthesis; the backing source pages are linked below.
+A trading plan is a documented framework that defines the specific hypothesis, entry conditions, profit mechanism, and exit rules for a trade before execution, anchored to what you are actually trying to profit from rather than arbitrary thresholds. It serves as the operational bridge between market analysis and trade execution, forcing traders to clarify four key dimensions—direction, timeline, severity, and implied volatility—before selecting an option structure. Building and maintaining a trading plan, combined with a trade log to track outcomes, is foundational infrastructure that separates successful long-term traders from those who fail due to poor planning and lack of systematic feedback loops.
+
+*Auto-generated summary from 159 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

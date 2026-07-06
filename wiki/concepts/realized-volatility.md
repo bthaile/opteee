@@ -5,11 +5,14 @@ related_videos: ["-Zqys05mhkw", "-jJkuhl2wyY", "10mc7m0i_XM", "1G-h4tqfQEM", "3_
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Realized volatility is the actual price movement that occurs in a stock or index over a given period, distinct from implied volatility (the market's forecast of future movement embedded in option prices). Traders profit when realized volatility diverges from implied volatility—for instance, when realized volatility exceeds the implied volatility priced into options, short-premium strategies that sold those options at lower expected-move assumptions capture the variance risk premium. Understanding the gap between what the market expects to move (implied) and what actually moves (realized) is fundamental to identifying profit mechanisms in options trading, particularly for premium-selling strategies like short strangles and iron condors."
 ---
 
 # Realized Volatility
 
-**Auto-generated concept topic** — discussed across 106 video(s). Pending curated synthesis; the backing source pages are linked below.
+Realized volatility is the actual price movement that occurs in a stock or index over a given period, distinct from implied volatility (the market's forecast of future movement embedded in option prices). Traders profit when realized volatility diverges from implied volatility—for instance, when realized volatility exceeds the implied volatility priced into options, short-premium strategies that sold those options at lower expected-move assumptions capture the variance risk premium. Understanding the gap between what the market expects to move (implied) and what actually moves (realized) is fundamental to identifying profit mechanisms in options trading, particularly for premium-selling strategies like short strangles and iron condors.
+
+*Auto-generated summary from 106 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["-qSV5WZNlP4", "1G-h4tqfQEM", "26vVCJY9t00", "3J3S-ewvxn0", "3_
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "An earnings vol play is an options strategy that exploits the elevated implied volatility surrounding company earnings announcements by selling premium (such as short straddles or short puts) ahead of the event. The core edge lies in the difference between implied volatility priced into options and the realized volatility that actually occurs post-announcement, rather than in theta decay alone. Traders must distinguish between trading the volatility differential itself and simply collecting time decay, and they should account for post-earnings announcement drift—the tendency for prices to continue moving in the direction of an earnings surprise for days after the initial announcement—when structuring position exits and managing risk."
 ---
 
 # Earnings Vol Play
 
-**Auto-generated strategy topic** — discussed across 59 video(s). Pending curated synthesis; the backing source pages are linked below.
+An earnings vol play is an options strategy that exploits the elevated implied volatility surrounding company earnings announcements by selling premium (such as short straddles or short puts) ahead of the event. The core edge lies in the difference between implied volatility priced into options and the realized volatility that actually occurs post-announcement, rather than in theta decay alone. Traders must distinguish between trading the volatility differential itself and simply collecting time decay, and they should account for post-earnings announcement drift—the tendency for prices to continue moving in the direction of an earnings surprise for days after the initial announcement—when structuring position exits and managing risk.
+
+*Auto-generated summary from 59 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

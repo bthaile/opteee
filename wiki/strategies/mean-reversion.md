@@ -5,11 +5,14 @@ related_videos: ["C1UbvCjzUDE", "jlhuKAIenw0", "u-gINUduTxM"]
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Mean reversion is not explicitly discussed as a named strategy in the supplied material. The corpus focuses on foundational principles for building options strategies—identifying market effects before selecting instruments, understanding volatility and tenor, and validating edges through testing—rather than detailing specific mean-reversion tactics or how they function in options trading."
 ---
 
 # Mean Reversion
 
-**Auto-generated strategy topic** — discussed across 3 video(s). Pending curated synthesis; the backing source pages are linked below.
+Mean reversion is not explicitly discussed as a named strategy in the supplied material. The corpus focuses on foundational principles for building options strategies—identifying market effects before selecting instruments, understanding volatility and tenor, and validating edges through testing—rather than detailing specific mean-reversion tactics or how they function in options trading.
+
+*Auto-generated summary from 3 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

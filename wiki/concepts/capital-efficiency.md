@@ -5,11 +5,14 @@ related_videos: ["--aVVZQ5Pxw", "-M_lC4RVmvM", "-ulHoMHsPu4", "0I32lVyhZuU", "0n
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Capital efficiency in options trading refers to the strategic deployment of limited account capital to maximize returns while managing risk exposure and variance. The concept encompasses position-sizing discipline, choosing strategies that preserve capital flexibility for scaling or adjustment (such as covered strangles over naked short puts), and recognizing that per-contract profitability must be weighed against the ratio of wins to losses—a strategy with high win rates can still destroy capital if large losses outweigh numerous small gains. Traders often sacrifice capital efficiency by chasing premium in high-volatility securities, using tight spreads that reduce per-contract profit without reducing loss exposure, or deploying 100% of capital in single strategies without reserves to adapt to changing market conditions."
 ---
 
 # Capital Efficiency
 
-**Auto-generated concept topic** — discussed across 136 video(s). Pending curated synthesis; the backing source pages are linked below.
+Capital efficiency in options trading refers to the strategic deployment of limited account capital to maximize returns while managing risk exposure and variance. The concept encompasses position-sizing discipline, choosing strategies that preserve capital flexibility for scaling or adjustment (such as covered strangles over naked short puts), and recognizing that per-contract profitability must be weighed against the ratio of wins to losses—a strategy with high win rates can still destroy capital if large losses outweigh numerous small gains. Traders often sacrifice capital efficiency by chasing premium in high-volatility securities, using tight spreads that reduce per-contract profit without reducing loss exposure, or deploying 100% of capital in single strategies without reserves to adapt to changing market conditions.
+
+*Auto-generated summary from 136 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

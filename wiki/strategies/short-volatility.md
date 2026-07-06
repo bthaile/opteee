@@ -5,11 +5,14 @@ related_videos: ["-LgTPBfGngc", "0qXakHvgYiQ", "2xpqAj677Cc", "4i11aVZeGxQ", "4s
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Short volatility is a premium-selling strategy where traders profit from the decay of implied volatility or the passage of time, typically by selling calls, puts, or spreads when they expect minimal price movement or mean reversion. The strategy requires careful risk management because volatility can spike violently and unexpectedly (as with VIX), triggering forced liquidations and margin calls on naked positions, and because implied volatility already embeds mean-reversion expectations into option prices, making seemingly profitable trades underperform. Successful short-volatility trading depends on identifying the specific profit mechanism (e.g., time decay in a range-bound market versus volatility compression in a specific pocket), anchoring exits to thesis invalidation rather than arbitrary P&L targets, and maintaining discipline to avoid fighting sustained market trends based on conviction alone."
 ---
 
 # Short Volatility
 
-**Auto-generated strategy topic** — discussed across 85 video(s). Pending curated synthesis; the backing source pages are linked below.
+Short volatility is a premium-selling strategy where traders profit from the decay of implied volatility or the passage of time, typically by selling calls, puts, or spreads when they expect minimal price movement or mean reversion. The strategy requires careful risk management because volatility can spike violently and unexpectedly (as with VIX), triggering forced liquidations and margin calls on naked positions, and because implied volatility already embeds mean-reversion expectations into option prices, making seemingly profitable trades underperform. Successful short-volatility trading depends on identifying the specific profit mechanism (e.g., time decay in a range-bound market versus volatility compression in a specific pocket), anchoring exits to thesis invalidation rather than arbitrary P&L targets, and maintaining discipline to avoid fighting sustained market trends based on conviction alone.
+
+*Auto-generated summary from 85 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["3c6fsUwB1pw", "80QGX7wPlJk", "8D1JhjKiYww", "AWB8d0uMeoA", "Ao
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Sample size is the minimum number of trades or observations required to validate whether a trading strategy possesses genuine edge or is merely the result of luck. Traders must accumulate adequate sample size—tracked rigorously through trade logs and backtests—before modifying or abandoning a strategy, since small sample sizes can produce misleading results due to path dependency and random variation. Understanding expectancy across a large sample size, rather than relying on metrics like high probability of profit from individual trades, is essential for distinguishing durable edge from statistical noise and for making informed decisions about strategy scaling and portfolio construction."
 ---
 
 # Sample Size
 
-**Auto-generated concept topic** — discussed across 35 video(s). Pending curated synthesis; the backing source pages are linked below.
+Sample size is the minimum number of trades or observations required to validate whether a trading strategy possesses genuine edge or is merely the result of luck. Traders must accumulate adequate sample size—tracked rigorously through trade logs and backtests—before modifying or abandoning a strategy, since small sample sizes can produce misleading results due to path dependency and random variation. Understanding expectancy across a large sample size, rather than relying on metrics like high probability of profit from individual trades, is essential for distinguishing durable edge from statistical noise and for making informed decisions about strategy scaling and portfolio construction.
+
+*Auto-generated summary from 35 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

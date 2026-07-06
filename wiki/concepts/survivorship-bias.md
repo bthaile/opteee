@@ -5,11 +5,14 @@ related_videos: ["19oL0B8i2Fc", "3c6fsUwB1pw", "72LcrOF6BHk", "7lb6sXnN-ak", "AW
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Survivorship bias in options trading refers to the tendency of new traders to chase unrealistic returns and emulate successful traders without acknowledging the years of skill development, rigorous research processes, and organizational discipline required to achieve sustained profitability. The concept encompasses the false belief that high win rates or account size alone guarantee edge, and the mistake of attempting to replicate institutional techniques without understanding their structural context and constraints. Avoiding survivorship bias requires setting expectations aligned with actual skill level, building a robust trading process grounded in validated edge rather than shortcuts, and accepting that sustainable trading success depends on foundational work—typically spanning 24 months or more—rather than rapid account scaling."
 ---
 
 # Survivorship Bias
 
-**Auto-generated concept topic** — discussed across 29 video(s). Pending curated synthesis; the backing source pages are linked below.
+Survivorship bias in options trading refers to the tendency of new traders to chase unrealistic returns and emulate successful traders without acknowledging the years of skill development, rigorous research processes, and organizational discipline required to achieve sustained profitability. The concept encompasses the false belief that high win rates or account size alone guarantee edge, and the mistake of attempting to replicate institutional techniques without understanding their structural context and constraints. Avoiding survivorship bias requires setting expectations aligned with actual skill level, building a robust trading process grounded in validated edge rather than shortcuts, and accepting that sustainable trading success depends on foundational work—typically spanning 24 months or more—rather than rapid account scaling.
+
+*Auto-generated summary from 29 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

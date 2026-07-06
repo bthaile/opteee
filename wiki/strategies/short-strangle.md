@@ -5,11 +5,14 @@ related_videos: ["--aVVZQ5Pxw", "0phfdNnT3Q0", "2Dv_fRuuTcc", "2TdIx_Bn3BY", "3_
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A short strangle is a premium-selling strategy that involves simultaneously selling an out-of-the-money put and an out-of-the-money call, profiting from time decay and realized volatility staying below implied volatility. While the strategy can achieve high win rates (around 80%), it suffers from unfavorable expected value because small, frequent wins are offset by occasional large losses that can erase multiple winning trades. The strategy's profitability depends critically on proper loss management—such as capping maximum loss at 300% of credit received—and adapting to market regime changes, making it suitable for traders with disciplined risk controls and detailed position tracking rather than a passive, set-and-forget approach."
 ---
 
 # Short Strangle
 
-**Auto-generated strategy topic** — discussed across 105 video(s). Pending curated synthesis; the backing source pages are linked below.
+A short strangle is a premium-selling strategy that involves simultaneously selling an out-of-the-money put and an out-of-the-money call, profiting from time decay and realized volatility staying below implied volatility. While the strategy can achieve high win rates (around 80%), it suffers from unfavorable expected value because small, frequent wins are offset by occasional large losses that can erase multiple winning trades. The strategy's profitability depends critically on proper loss management—such as capping maximum loss at 300% of credit received—and adapting to market regime changes, making it suitable for traders with disciplined risk controls and detailed position tracking rather than a passive, set-and-forget approach.
+
+*Auto-generated summary from 105 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

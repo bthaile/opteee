@@ -5,11 +5,14 @@ related_videos: ["-mD-g1Io3II", "0YG5XSvH_GA", "0fty1k3IGgY", "0iZJfIu3Nac", "0q
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Moving averages serve as a technical tool for identifying price consolidation, trend alignment, and market breadth in options trading analysis. They are used to confirm confluence signals in breakout trades, assess sector strength relative to key levels like the 50-period moving average, and validate whether price action supports the underlying profit mechanism being traded. Rather than applied mechanically, moving averages are selected based on the specific timeframe and edge being pursued, and their signals must align with the core thesis driving the trade rather than serve as standalone indicators."
 ---
 
 # Moving Averages
 
-**Auto-generated concept topic** — discussed across 70 video(s). Pending curated synthesis; the backing source pages are linked below.
+Moving averages serve as a technical tool for identifying price consolidation, trend alignment, and market breadth in options trading analysis. They are used to confirm confluence signals in breakout trades, assess sector strength relative to key levels like the 50-period moving average, and validate whether price action supports the underlying profit mechanism being traded. Rather than applied mechanically, moving averages are selected based on the specific timeframe and edge being pursued, and their signals must align with the core thesis driving the trade rather than serve as standalone indicators.
+
+*Auto-generated summary from 70 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["2t3Nv-63Jtc", "7fC4wwgyEsI", "Dc8Vjr4pZ84", "F4QoJDjF4pA", "Oe
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "The Dunning-Kruger effect is a cognitive bias where traders with limited experience overestimate their competence and fail to recognize their knowledge gaps, creating a dangerous phase after initial study when they believe they understand the market but lack awareness of what they don't know. This misalignment between perceived and actual skill directly leads to catastrophic portfolio drawdowns, as traders take outsized risks without the self-awareness or institutional safeguards that protect more experienced practitioners. Recognizing and counteracting this bias requires honest self-assessment, rigorous documentation of trades and results, and deliberate practice over years rather than relying on initial study or early wins as proof of genuine competence."
 ---
 
 # Dunning Kruger Effect
 
-**Auto-generated concept topic** — discussed across 12 video(s). Pending curated synthesis; the backing source pages are linked below.
+The Dunning-Kruger effect is a cognitive bias where traders with limited experience overestimate their competence and fail to recognize their knowledge gaps, creating a dangerous phase after initial study when they believe they understand the market but lack awareness of what they don't know. This misalignment between perceived and actual skill directly leads to catastrophic portfolio drawdowns, as traders take outsized risks without the self-awareness or institutional safeguards that protect more experienced practitioners. Recognizing and counteracting this bias requires honest self-assessment, rigorous documentation of trades and results, and deliberate practice over years rather than relying on initial study or early wins as proof of genuine competence.
+
+*Auto-generated summary from 12 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

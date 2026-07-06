@@ -5,11 +5,14 @@ related_videos: ["26vVCJY9t00", "29BtSz0VpA4", "3_ZnBr22yqo", "4CEmVAhaNbk", "5-
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Event volatility refers to the elevated price and implied volatility that occurs around known market catalysts such as earnings announcements, geopolitical events, policy changes, or corporate news. Traders exploit event volatility by structuring options positions to capture either the directional move (via long calls or puts around the catalyst) or the volatility mean reversion that follows (via short straddles and strangles once implied volatility spikes). Understanding the mechanics of specific catalysts—such as forward guidance in earnings, policy surprises relative to market expectations, or post-event drift—allows traders to isolate edge and manage risk around the event window. Event-driven hedging and options volume clustering around these catalysts reflect how market participants use options to isolate exposure to specific known risks."
 ---
 
 # Event Volatility
 
-**Auto-generated concept topic** — discussed across 45 video(s). Pending curated synthesis; the backing source pages are linked below.
+Event volatility refers to the elevated price and implied volatility that occurs around known market catalysts such as earnings announcements, geopolitical events, policy changes, or corporate news. Traders exploit event volatility by structuring options positions to capture either the directional move (via long calls or puts around the catalyst) or the volatility mean reversion that follows (via short straddles and strangles once implied volatility spikes). Understanding the mechanics of specific catalysts—such as forward guidance in earnings, policy surprises relative to market expectations, or post-event drift—allows traders to isolate edge and manage risk around the event window. Event-driven hedging and options volume clustering around these catalysts reflect how market participants use options to isolate exposure to specific known risks.
+
+*Auto-generated summary from 45 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

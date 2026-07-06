@@ -5,11 +5,14 @@ related_videos: ["--aVVZQ5Pxw", "-CUgdXmtp5o", "-MQ7kNM0dtI", "-M_lC4RVmvM", "-N
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Position sizing in options trading refers to determining how much capital or risk to allocate to individual trades, typically expressed as a percentage of account equity per trade (such as 5% risk per trade). Proper position sizing is critical because it determines whether a strategy's win rate translates into positive expected value—a high win-rate strategy with unfavorable win-to-loss ratios can still destroy capital if position sizes are not calibrated to account for the magnitude of potential losses. Effective position sizing also requires anchoring decisions to the profit mechanism of the specific trade rather than arbitrary thresholds, and for traders building income from options, it demands diversification across multiple positions and realistic return targets rather than concentration in single-stock strategies or premium-chasing approaches that amplify variance."
 ---
 
 # Position Sizing
 
-**Auto-generated concept topic** — discussed across 473 video(s). Pending curated synthesis; the backing source pages are linked below.
+Position sizing in options trading refers to determining how much capital or risk to allocate to individual trades, typically expressed as a percentage of account equity per trade (such as 5% risk per trade). Proper position sizing is critical because it determines whether a strategy's win rate translates into positive expected value—a high win-rate strategy with unfavorable win-to-loss ratios can still destroy capital if position sizes are not calibrated to account for the magnitude of potential losses. Effective position sizing also requires anchoring decisions to the profit mechanism of the specific trade rather than arbitrary thresholds, and for traders building income from options, it demands diversification across multiple positions and realistic return targets rather than concentration in single-stock strategies or premium-chasing approaches that amplify variance.
+
+*Auto-generated summary from 473 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

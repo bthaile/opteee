@@ -5,11 +5,14 @@ related_videos: ["73cEIHM3FLg", "H04ZDCN_KRI", "K6RRH35k-1Y", "KKOqF8h1n1s", "Ne
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Based on the supplied material, there is no discussion of ZM (Zoom) as a distinct options-trading topic across the six videos provided. The corpus covers GameStop analysis, portfolio construction, options fundamentals, position management, and technical analysis frameworks, but does not include ZM as a security or trading subject."
 ---
 
 # ZM
 
-**Auto-generated security topic** — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below.
+Based on the supplied material, there is no discussion of ZM (Zoom) as a distinct options-trading topic across the six videos provided. The corpus covers GameStop analysis, portfolio construction, options fundamentals, position management, and technical analysis frameworks, but does not include ZM as a security or trading subject.
+
+*Auto-generated summary from 6 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

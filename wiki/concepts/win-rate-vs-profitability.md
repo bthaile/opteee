@@ -5,11 +5,14 @@ related_videos: ["--aVVZQ5Pxw", "0ZE8GpkICU4", "1G-h4tqfQEM", "1jDrPx6lOgM", "2d
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Win rate—the percentage of trades that end profitably—is a psychologically appealing but fundamentally misleading metric for evaluating options trading strategies, as a strategy can achieve a 95% win rate while still losing money if average losses far exceed average wins. True profitability depends on expected value (expectancy), which combines win rate, average win size, and average loss size into a single measure that determines long-term returns. High win-rate strategies like short premium tend to have capped upside and smaller per-trade profits, while lower win-rate strategies may offer larger payoffs, creating an inverse relationship between probability of success and expected return. Traders must focus on risk-adjusted expected return rather than win rate alone, and ensure that position sizing and stop placement align with the strategy's long-term expectancy."
 ---
 
 # Win Rate Vs Profitability
 
-**Auto-generated concept topic** — discussed across 57 video(s). Pending curated synthesis; the backing source pages are linked below.
+Win rate—the percentage of trades that end profitably—is a psychologically appealing but fundamentally misleading metric for evaluating options trading strategies, as a strategy can achieve a 95% win rate while still losing money if average losses far exceed average wins. True profitability depends on expected value (expectancy), which combines win rate, average win size, and average loss size into a single measure that determines long-term returns. High win-rate strategies like short premium tend to have capped upside and smaller per-trade profits, while lower win-rate strategies may offer larger payoffs, creating an inverse relationship between probability of success and expected return. Traders must focus on risk-adjusted expected return rather than win rate alone, and ensure that position sizing and stop placement align with the strategy's long-term expectancy.
+
+*Auto-generated summary from 57 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

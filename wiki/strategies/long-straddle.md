@@ -5,11 +5,14 @@ related_videos: ["2Dv_fRuuTcc", "5G0_P4igVWQ", "6SyrfdpEsy0", "Ao4evQT3dOU", "B4
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A long straddle is a volatility-based options position that profits from significant price movement in either direction by holding both a long call and long put at the same strike price. The strategy is commonly used as a base position for gamma scalping, where traders actively rehedge delta exposure at predetermined thresholds to harvest realized volatility and offset theta decay. Long straddles are particularly suited for traders expecting large moves but uncertain of direction, and they benefit from increases in implied volatility while being exposed to daily time decay that must be managed through tactical adjustments or realized-volatility capture."
 ---
 
 # Long Straddle
 
-**Auto-generated strategy topic** — discussed across 18 video(s). Pending curated synthesis; the backing source pages are linked below.
+A long straddle is a volatility-based options position that profits from significant price movement in either direction by holding both a long call and long put at the same strike price. The strategy is commonly used as a base position for gamma scalping, where traders actively rehedge delta exposure at predetermined thresholds to harvest realized volatility and offset theta decay. Long straddles are particularly suited for traders expecting large moves but uncertain of direction, and they benefit from increases in implied volatility while being exposed to daily time decay that must be managed through tactical adjustments or realized-volatility capture.
+
+*Auto-generated summary from 18 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

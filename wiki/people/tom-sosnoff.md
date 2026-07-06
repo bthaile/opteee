@@ -5,13 +5,16 @@ related_videos: ["6bEYNNxbjEg", "80QGX7wPlJk", "AOoaC3-Cpgs", "K73JGCGrw3k", "L2
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Tom Sosnoff is the founder of thinkorswim and tastytrade who built a career emphasizing retail trader education, risk management through position sizing, and contrarian market positioning across options, bonds, and currencies. Known for his prolific email discipline, accessibility as a public CEO, and serial-entrepreneur mindset, he departed tastytrade after its acquisition to launch Lost Dog, an AI-powered platform applying his 40+ years of business expertise to worker fairness and salary analytics. His trading philosophy centers on appreciating and managing asymmetric risk rather than avoiding it, with current positioning favoring long bonds and short premium in equities, particularly small caps, while he remains actively engaged in daily trading driven by intrinsic passion for markets."
 category: interviews
 role: interviewed guest
 ---
 
 # Tom Sosnoff
 
-**Interviewed guest** — appears in 23 video(s) in the corpus. Auto-generated stub pending curated synthesis of this person's distinctive views.
+Tom Sosnoff is the founder of thinkorswim and tastytrade who built a career emphasizing retail trader education, risk management through position sizing, and contrarian market positioning across options, bonds, and currencies. Known for his prolific email discipline, accessibility as a public CEO, and serial-entrepreneur mindset, he departed tastytrade after its acquisition to launch Lost Dog, an AI-powered platform applying his 40+ years of business expertise to worker fairness and salary analytics. His trading philosophy centers on appreciating and managing asymmetric risk rather than avoiding it, with current positioning favoring long bonds and short premium in equities, particularly small caps, while he remains actively engaged in daily trading driven by intrinsic passion for markets.
+
+*Auto-generated summary from 23 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

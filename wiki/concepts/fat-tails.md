@@ -5,11 +5,14 @@ related_videos: ["1G-h4tqfQEM", "Ao4evQT3dOU", "CZEXCE_HR60", "G7gf-oXptxE", "KK
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Fat tails refer to the empirical reality that extreme market moves occur far more frequently than standard normal distributions predict, creating asymmetric risk for options traders who sell high-probability, out-of-the-money strategies. Strategies like short iron condors and selling extremely far OTM options appear safe due to high win rates, but the tail-risk events that do occur can erase many winning trades and blow up accounts, making position sizing and risk management critical. This phenomenon is reflected in the volatility smile, where the market prices in fat tails through higher implied volatility at extreme strikes, and understanding tail risk is essential for honest portfolio management rather than relying on win-rate metrics alone."
 ---
 
 # Fat Tails
 
-**Auto-generated concept topic** — discussed across 16 video(s). Pending curated synthesis; the backing source pages are linked below.
+Fat tails refer to the empirical reality that extreme market moves occur far more frequently than standard normal distributions predict, creating asymmetric risk for options traders who sell high-probability, out-of-the-money strategies. Strategies like short iron condors and selling extremely far OTM options appear safe due to high win rates, but the tail-risk events that do occur can erase many winning trades and blow up accounts, making position sizing and risk management critical. This phenomenon is reflected in the volatility smile, where the market prices in fat tails through higher implied volatility at extreme strikes, and understanding tail risk is essential for honest portfolio management rather than relying on win-rate metrics alone.
+
+*Auto-generated summary from 16 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

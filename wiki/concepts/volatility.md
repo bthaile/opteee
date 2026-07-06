@@ -5,11 +5,14 @@ related_videos: ["0BI8bymKOIE", "3OzLFRmYpOY", "78f9Q_gcfh0", "8MTeMe1qln8", "8S
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Volatility measures the magnitude of price movement in an underlying asset and is the primary driver of option prices, encompassing multiple forms including historical volatility, realized volatility, implied volatility, and forward-looking forecasts. Understanding volatility characteristics—such as average true range—is essential for determining how to structure and manage a trade, as it directly connects to the profit mechanism that matches a trader's market view. Volatility is also used as a normalization tool for position sizing across different securities, allowing traders to equalize risk exposure across their portfolio by comparing an asset's volatility to a base reference like SPY."
 ---
 
 # Volatility
 
-**Auto-generated concept topic** — discussed across 37 video(s). Pending curated synthesis; the backing source pages are linked below.
+Volatility measures the magnitude of price movement in an underlying asset and is the primary driver of option prices, encompassing multiple forms including historical volatility, realized volatility, implied volatility, and forward-looking forecasts. Understanding volatility characteristics—such as average true range—is essential for determining how to structure and manage a trade, as it directly connects to the profit mechanism that matches a trader's market view. Volatility is also used as a normalization tool for position sizing across different securities, allowing traders to equalize risk exposure across their portfolio by comparing an asset's volatility to a base reference like SPY.
+
+*Auto-generated summary from 37 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

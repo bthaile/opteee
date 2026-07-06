@@ -5,11 +5,14 @@ related_videos: ["--aVVZQ5Pxw", "-Zqys05mhkw", "0ZE8GpkICU4", "1axDClx9vWQ", "2x
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A short call is a directional or premium-selling strategy in which a trader sells a call option to collect premium, obligating them to deliver shares at the strike price if assigned. Short calls are commonly deployed as part of broader structures—such as covered strangles on long stock positions, ratio diagonals, or vertical spreads—to generate income during sideways or consolidation periods or to hedge downside while capturing volatility risk premium. The strategy's profitability depends on matching the position to a clear hypothesis about price direction and implied volatility; selling short calls works best when expecting minimal upside movement or when holding shares long-term and willing to cap gains in exchange for premium income. Like all premium-selling strategies, short calls carry asymmetric risk where small, frequent wins can be erased by a single large loss if the underlying moves sharply against the position."
 ---
 
 # Short Call
 
-**Auto-generated strategy topic** — discussed across 48 video(s). Pending curated synthesis; the backing source pages are linked below.
+A short call is a directional or premium-selling strategy in which a trader sells a call option to collect premium, obligating them to deliver shares at the strike price if assigned. Short calls are commonly deployed as part of broader structures—such as covered strangles on long stock positions, ratio diagonals, or vertical spreads—to generate income during sideways or consolidation periods or to hedge downside while capturing volatility risk premium. The strategy's profitability depends on matching the position to a clear hypothesis about price direction and implied volatility; selling short calls works best when expecting minimal upside movement or when holding shares long-term and willing to cap gains in exchange for premium income. Like all premium-selling strategies, short calls carry asymmetric risk where small, frequent wins can be erased by a single large loss if the underlying moves sharply against the position.
+
+*Auto-generated summary from 48 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

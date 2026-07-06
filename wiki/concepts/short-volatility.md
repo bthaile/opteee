@@ -5,11 +5,14 @@ related_videos: ["-LgTPBfGngc", "-Zqys05mhkw", "3_VUjiChU4o", "6Q76ymfUDpc", "6j
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Short volatility is a trading strategy where options traders sell premium by establishing positions that profit when implied volatility declines or mean-reverts toward realized volatility, such as short strangles, short straddles, or covered strangles. The strategy exploits the variance risk premium—a structural market inefficiency where portfolio protection via options is systematically overpriced—and is particularly effective in low-volatility regimes or when implied volatility is elevated relative to expected realized moves. Success requires disciplined risk management, proper position sizing relative to time frame and strike selection, and resistance to over-hedging, as the fundamental edge lies in accepting volatility risk rather than laying it off entirely. Common pitfalls include naked short calls on indices like the VIX (which can spike violently and trigger forced liquidations) and naive far-OTM selling strategies that produce high win rates but poor risk-adjusted returns due to vega and tail-risk exposure."
 ---
 
 # Short Volatility
 
-**Auto-generated concept topic** — discussed across 56 video(s). Pending curated synthesis; the backing source pages are linked below.
+Short volatility is a trading strategy where options traders sell premium by establishing positions that profit when implied volatility declines or mean-reverts toward realized volatility, such as short strangles, short straddles, or covered strangles. The strategy exploits the variance risk premium—a structural market inefficiency where portfolio protection via options is systematically overpriced—and is particularly effective in low-volatility regimes or when implied volatility is elevated relative to expected realized moves. Success requires disciplined risk management, proper position sizing relative to time frame and strike selection, and resistance to over-hedging, as the fundamental edge lies in accepting volatility risk rather than laying it off entirely. Common pitfalls include naked short calls on indices like the VIX (which can spike violently and trigger forced liquidations) and naive far-OTM selling strategies that produce high win rates but poor risk-adjusted returns due to vega and tail-risk exposure.
+
+*Auto-generated summary from 56 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["-CUgdXmtp5o", "-NzEb1zc1bw", "0fty1k3IGgY", "0gle3um9MoE", "0i
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "IWM (the Russell 2000 small-cap index) is used in the channel's analysis as a barometer for market breadth and sector rotation dynamics. The index frequently appears in discussions of divergence between large-cap and small-cap performance, particularly during Fed policy shifts and rate-cut cycles, where small caps historically outperform after monetary easing. IWM is also referenced in correlation studies examining meme-stock behavior and as a benchmark for identifying tactical trading opportunities when small-cap weakness or strength signals broader market regime changes."
 ---
 
 # IWM
 
-**Auto-generated security topic** — discussed across 117 video(s). Pending curated synthesis; the backing source pages are linked below.
+IWM (the Russell 2000 small-cap index) is used in the channel's analysis as a barometer for market breadth and sector rotation dynamics. The index frequently appears in discussions of divergence between large-cap and small-cap performance, particularly during Fed policy shifts and rate-cut cycles, where small caps historically outperform after monetary easing. IWM is also referenced in correlation studies examining meme-stock behavior and as a benchmark for identifying tactical trading opportunities when small-cap weakness or strength signals broader market regime changes.
+
+*Auto-generated summary from 117 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

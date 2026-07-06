@@ -5,11 +5,14 @@ related_videos: ["72LcrOF6BHk", "86KGdDWuPJ0", "H04ZDCN_KRI", "H4FKDYxS5ts", "KK
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Short gamma refers to the position Greeks dynamic where a seller of options faces accelerating losses as the underlying price moves against the strike, because delta becomes increasingly negative (or less positive) as the option moves further out-of-the-money or deeper in-the-money. Traders who are short gamma must actively rebalance their positions to manage directional drift, as the negative gamma effect means their delta exposure compounds unfavorably during sharp market moves, turning what was intended as a volatility trade into an unintended directional bet. This is particularly dangerous for short-option sellers who fail to monitor and adjust positions, as gamma losses can materialize even when implied volatility declines favorably, making active risk management essential for short-volatility strategies."
 ---
 
 # Short Gamma
 
-**Auto-generated concept topic** — discussed across 12 video(s). Pending curated synthesis; the backing source pages are linked below.
+Short gamma refers to the position Greeks dynamic where a seller of options faces accelerating losses as the underlying price moves against the strike, because delta becomes increasingly negative (or less positive) as the option moves further out-of-the-money or deeper in-the-money. Traders who are short gamma must actively rebalance their positions to manage directional drift, as the negative gamma effect means their delta exposure compounds unfavorably during sharp market moves, turning what was intended as a volatility trade into an unintended directional bet. This is particularly dangerous for short-option sellers who fail to monitor and adjust positions, as gamma losses can materialize even when implied volatility declines favorably, making active risk management essential for short-volatility strategies.
+
+*Auto-generated summary from 12 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["-8XV5_gBP6I", "4q843j_0kcc", "5G0_P4igVWQ", "86KGdDWuPJ0", "Dr
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Payment for order flow is a market structure mechanism in which retail brokers route customer orders to market makers or other trading venues in exchange for compensation, rather than executing orders directly on exchanges. This practice creates hidden costs for retail traders through wider bid-ask spreads and reduced execution quality, while giving market makers information advantages about incoming retail order flow that they can exploit. The arrangement is presented as enabling \"free\" commission trading, but the actual cost to retail and institutional investors manifests in execution slippage and market microstructure degradation, making it a central concern in debates over market structure reform and regulatory modernization."
 ---
 
 # Payment For Order Flow
 
-**Auto-generated concept topic** — discussed across 27 video(s). Pending curated synthesis; the backing source pages are linked below.
+Payment for order flow is a market structure mechanism in which retail brokers route customer orders to market makers or other trading venues in exchange for compensation, rather than executing orders directly on exchanges. This practice creates hidden costs for retail traders through wider bid-ask spreads and reduced execution quality, while giving market makers information advantages about incoming retail order flow that they can exploit. The arrangement is presented as enabling "free" commission trading, but the actual cost to retail and institutional investors manifests in execution slippage and market microstructure degradation, making it a central concern in debates over market structure reform and regulatory modernization.
+
+*Auto-generated summary from 27 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

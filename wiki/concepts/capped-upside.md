@@ -5,11 +5,14 @@ related_videos: ["-CUgdXmtp5o", "05PKCIAe4_0", "0gdMTgMhN-s", "2jG5SD-3F0w", "2l
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Capped upside refers to the structural limitation in certain options strategies—most commonly covered calls and short premium positions—where maximum profit is fixed at a predetermined level regardless of how far the underlying asset rises. Strategies that cap upside, such as selling calls at a 1:1 ratio against long stock, systematically underperform buy-and-hold benchmarks and create a fundamental mismatch between profit structure and bullish directional theses. Traders can mitigate capped upside through alternatives like ratio writes, covered strangles, or ratio call diagonals that preserve unlimited profit potential while still collecting premium, or by consciously accepting the trade-off between high win rates and lower per-trade payoffs when capped-upside strategies align with their actual market outlook."
 ---
 
 # Capped Upside
 
-**Auto-generated concept topic** — discussed across 22 video(s). Pending curated synthesis; the backing source pages are linked below.
+Capped upside refers to the structural limitation in certain options strategies—most commonly covered calls and short premium positions—where maximum profit is fixed at a predetermined level regardless of how far the underlying asset rises. Strategies that cap upside, such as selling calls at a 1:1 ratio against long stock, systematically underperform buy-and-hold benchmarks and create a fundamental mismatch between profit structure and bullish directional theses. Traders can mitigate capped upside through alternatives like ratio writes, covered strangles, or ratio call diagonals that preserve unlimited profit potential while still collecting premium, or by consciously accepting the trade-off between high win rates and lower per-trade payoffs when capped-upside strategies align with their actual market outlook.
+
+*Auto-generated summary from 22 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

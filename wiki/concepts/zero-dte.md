@@ -5,11 +5,14 @@ related_videos: ["0a1UROsFf_A", "19oL0B8i2Fc", "3_VUjiChU4o", "5Tc9L4TvPR8", "6j
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Zero-DTE (same-day expiration) options are binary events with amplified price movements and embedded high volatility risk premium, where rapid delta decay—called charm—erodes position value faster than gamma can compensate, making long 0DTE options capital-inefficient despite their low nominal cost. The primary edge in 0DTE trading lies in selling premium via structures like short strangles and short straddles, which capture the persistent gap between implied and realized volatility through theta decay and variance risk premium. Success requires disciplined position sizing, tail-risk management (such as 300% max-loss stops), and continuous optimization via detailed trading logs, though transaction costs and market regime changes create substantial challenges that make 0DTE trading astonishingly difficult to execute profitably compared to longer-dated alternatives."
 ---
 
 # Zero Dte
 
-**Auto-generated concept topic** — discussed across 48 video(s). Pending curated synthesis; the backing source pages are linked below.
+Zero-DTE (same-day expiration) options are binary events with amplified price movements and embedded high volatility risk premium, where rapid delta decay—called charm—erodes position value faster than gamma can compensate, making long 0DTE options capital-inefficient despite their low nominal cost. The primary edge in 0DTE trading lies in selling premium via structures like short strangles and short straddles, which capture the persistent gap between implied and realized volatility through theta decay and variance risk premium. Success requires disciplined position sizing, tail-risk management (such as 300% max-loss stops), and continuous optimization via detailed trading logs, though transaction costs and market regime changes create substantial challenges that make 0DTE trading astonishingly difficult to execute profitably compared to longer-dated alternatives.
+
+*Auto-generated summary from 48 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

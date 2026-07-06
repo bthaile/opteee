@@ -5,11 +5,14 @@ related_videos: ["0phfdNnT3Q0", "1G-h4tqfQEM", "2Dv_fRuuTcc", "2TdIx_Bn3BY", "3_
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A short straddle is a short-premium strategy that sells both a call and a put at the same strike price, profiting from time decay and realized volatility staying below implied volatility. The strategy achieves high win rates (around 89% in backtested examples) but carries significant tail risk from large directional moves, requiring disciplined risk management and position sizing to survive clustering losses. Short straddles are particularly relevant around earnings events and in zero-DTE trading, where careful delta and gamma management—such as implementing maximum-loss thresholds of 300% of premium collected—becomes critical to converting frequent small wins into consistent profitability."
 ---
 
 # Short Straddle
 
-**Auto-generated strategy topic** — discussed across 99 video(s). Pending curated synthesis; the backing source pages are linked below.
+A short straddle is a short-premium strategy that sells both a call and a put at the same strike price, profiting from time decay and realized volatility staying below implied volatility. The strategy achieves high win rates (around 89% in backtested examples) but carries significant tail risk from large directional moves, requiring disciplined risk management and position sizing to survive clustering losses. Short straddles are particularly relevant around earnings events and in zero-DTE trading, where careful delta and gamma management—such as implementing maximum-loss thresholds of 300% of premium collected—becomes critical to converting frequent small wins into consistent profitability.
+
+*Auto-generated summary from 99 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

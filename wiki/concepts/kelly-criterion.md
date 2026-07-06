@@ -5,11 +5,14 @@ related_videos: ["2t3Nv-63Jtc", "3c6fsUwB1pw", "6vQeTS9cyk0", "72LcrOF6BHk", "80
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "The Kelly Criterion is a mathematical framework for determining optimal position sizing based on the probability and magnitude of wins versus losses in a trading strategy. In options trading, it is used to scale bet size proportionally to edge and account risk, ensuring that traders avoid both under-sizing (leaving money on the table) and over-sizing (risking ruin). The concept appears in discussions of professional sports betting and quantitative trading as a disciplined alternative to arbitrary position sizing, with the core principle that proper risk allocation depends on understanding true win rates and payoff ratios rather than trading on intuition or ego."
 ---
 
 # Kelly Criterion
 
-**Auto-generated concept topic** — discussed across 33 video(s). Pending curated synthesis; the backing source pages are linked below.
+The Kelly Criterion is a mathematical framework for determining optimal position sizing based on the probability and magnitude of wins versus losses in a trading strategy. In options trading, it is used to scale bet size proportionally to edge and account risk, ensuring that traders avoid both under-sizing (leaving money on the table) and over-sizing (risking ruin). The concept appears in discussions of professional sports betting and quantitative trading as a disciplined alternative to arbitrary position sizing, with the core principle that proper risk allocation depends on understanding true win rates and payoff ratios rather than trading on intuition or ego.
+
+*Auto-generated summary from 33 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

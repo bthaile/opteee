@@ -5,11 +5,14 @@ related_videos: ["-M_lC4RVmvM", "-XQGZSyM8O0", "-Zqys05mhkw", "0BI8bymKOIE", "0i
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Apple (AAPL) is a large-cap equity security used as a reference point for comparing implied volatility levels and option strategy applications across the channel's content. The channel references AAPL's relatively low implied volatility (26.6%) as a contrast to high-volatility securities like GameStop, and discusses how tariff policy announcements—such as Trump's 10% baseline import tariffs—create significant price dislocations and near-term trading opportunities in the stock. AAPL serves as an example of how macroeconomic policy shifts can generate options trading setups for traders monitoring sector-wide and country-specific exposure changes."
 ---
 
 # AAPL
 
-**Auto-generated security topic** — discussed across 80 video(s). Pending curated synthesis; the backing source pages are linked below.
+Apple (AAPL) is a large-cap equity security used as a reference point for comparing implied volatility levels and option strategy applications across the channel's content. The channel references AAPL's relatively low implied volatility (26.6%) as a contrast to high-volatility securities like GameStop, and discusses how tariff policy announcements—such as Trump's 10% baseline import tariffs—create significant price dislocations and near-term trading opportunities in the stock. AAPL serves as an example of how macroeconomic policy shifts can generate options trading setups for traders monitoring sector-wide and country-specific exposure changes.
+
+*Auto-generated summary from 80 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

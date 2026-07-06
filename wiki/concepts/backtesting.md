@@ -5,11 +5,14 @@ related_videos: ["--aVVZQ5Pxw", "0iZJfIu3Nac", "0quAC-m-NpM", "3UlOiqsEyXQ", "3X
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Backtesting is the process of testing trading strategies against historical market data to evaluate their edge and expected value before deploying real capital. Effective backtesting requires a rigorous research lifecycle that includes profiling the strategy, overlaying signals, testing across multiple phases (backtest, forward, live), and attempting to disprove rather than confirm the idea. Common backtesting pitfalls include API-dependent workflows that constrain research depth due to cost constraints, misidentifying the actual edge being traded, and abandoning tested approaches prematurely due to drawdowns—issues that can be mitigated through self-hosted databases, adequate sample sizes, and disciplined trade logs. Backtesting serves as a foundational component of systematic process development, enabling traders to build repeatable systems and maintain confidence in strategy execution across market cycles."
 ---
 
 # Backtesting
 
-**Auto-generated concept topic** — discussed across 81 video(s). Pending curated synthesis; the backing source pages are linked below.
+Backtesting is the process of testing trading strategies against historical market data to evaluate their edge and expected value before deploying real capital. Effective backtesting requires a rigorous research lifecycle that includes profiling the strategy, overlaying signals, testing across multiple phases (backtest, forward, live), and attempting to disprove rather than confirm the idea. Common backtesting pitfalls include API-dependent workflows that constrain research depth due to cost constraints, misidentifying the actual edge being traded, and abandoning tested approaches prematurely due to drawdowns—issues that can be mitigated through self-hosted databases, adequate sample sizes, and disciplined trade logs. Backtesting serves as a foundational component of systematic process development, enabling traders to build repeatable systems and maintain confidence in strategy execution across market cycles.
+
+*Auto-generated summary from 81 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

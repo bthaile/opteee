@@ -5,11 +5,14 @@ related_videos: ["--aVVZQ5Pxw", "0ZE8GpkICU4", "0iZJfIu3Nac", "1jDrPx6lOgM", "3S
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A trading log is a systematic record of individual trades and portfolio-level metrics that serves as the foundation for long-term options trading success. Beyond simple record-keeping, the process of building and maintaining a log forces analytical thinking about strategy mechanics, provides objective data to counter cognitive biases, and enables data-driven decision-making by tracking true profitability across time horizons and market regimes. Detailed logs are essential for identifying whether edge comes from strategy design or execution, validating sample size before modifying approaches, and conducting structured after-action reviews that compound learning over weeks, months, and years."
 ---
 
 # Trading Log
 
-**Auto-generated concept topic** — discussed across 92 video(s). Pending curated synthesis; the backing source pages are linked below.
+A trading log is a systematic record of individual trades and portfolio-level metrics that serves as the foundation for long-term options trading success. Beyond simple record-keeping, the process of building and maintaining a log forces analytical thinking about strategy mechanics, provides objective data to counter cognitive biases, and enables data-driven decision-making by tracking true profitability across time horizons and market regimes. Detailed logs are essential for identifying whether edge comes from strategy design or execution, validating sample size before modifying approaches, and conducting structured after-action reviews that compound learning over weeks, months, and years.
+
+*Auto-generated summary from 92 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["6WloCMY-aTw", "AJP8M8DQ_1U", "CiJKXOHWXQM", "DrfoNKd41I0", "Ez
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Implied Volatility Rank (IV Rank) is a metric that measures where current implied volatility stands relative to its historical range over a specified lookback period, expressed as a percentile to help traders assess whether volatility is elevated or suppressed compared to recent norms. While useful for relative volatility assessment, IV Percentile is often preferred because IV Rank can be distorted by outlier moves, and traders must carefully align the volatility term being measured with the actual expiration term of their trade to avoid misaligned position decisions. IV Rank is particularly valuable in premium-selling strategies like covered strangles and the wheel, where suppressed IV rank combined with elevated volatility risk premium (implied volatility priced richer than realized) creates favorable conditions for capturing volatility edge."
 ---
 
 # Implied Volatility Rank
 
-**Auto-generated concept topic** — discussed across 32 video(s). Pending curated synthesis; the backing source pages are linked below.
+Implied Volatility Rank (IV Rank) is a metric that measures where current implied volatility stands relative to its historical range over a specified lookback period, expressed as a percentile to help traders assess whether volatility is elevated or suppressed compared to recent norms. While useful for relative volatility assessment, IV Percentile is often preferred because IV Rank can be distorted by outlier moves, and traders must carefully align the volatility term being measured with the actual expiration term of their trade to avoid misaligned position decisions. IV Rank is particularly valuable in premium-selling strategies like covered strangles and the wheel, where suppressed IV rank combined with elevated volatility risk premium (implied volatility priced richer than realized) creates favorable conditions for capturing volatility edge.
+
+*Auto-generated summary from 32 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

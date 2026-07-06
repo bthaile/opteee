@@ -5,11 +5,14 @@ related_videos: ["-u_dHz31d38", "0I32lVyhZuU", "3c6fsUwB1pw", "3wwXgdxtIKA", "Cz
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Asset allocation in options trading refers to the strategic division of capital across different risk profiles and asset classes—core positions held long-term, speculative positions for active trading, and diversification into equities, real estate, and alternative investments. Rather than concentrating capital in a single strategy or market, effective asset allocation involves scaling allocations based on account size and market conditions while maintaining discipline around position sizing and avoiding premature exits driven by temporary losses. The framework emphasizes that sustainable wealth building depends on consistent capital contributions, compounded returns across multiple asset classes, and the flexibility to rotate capital toward opportunities as they arise."
 ---
 
 # Asset Allocation
 
-**Auto-generated concept topic** — discussed across 20 video(s). Pending curated synthesis; the backing source pages are linked below.
+Asset allocation in options trading refers to the strategic division of capital across different risk profiles and asset classes—core positions held long-term, speculative positions for active trading, and diversification into equities, real estate, and alternative investments. Rather than concentrating capital in a single strategy or market, effective asset allocation involves scaling allocations based on account size and market conditions while maintaining discipline around position sizing and avoiding premature exits driven by temporary losses. The framework emphasizes that sustainable wealth building depends on consistent capital contributions, compounded returns across multiple asset classes, and the flexibility to rotate capital toward opportunities as they arise.
+
+*Auto-generated summary from 20 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

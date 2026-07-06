@@ -5,11 +5,14 @@ related_videos: ["0fty1k3IGgY", "0kXY1hY--Ww", "1O0HX-C-4PU", "1kGksRBt2aA", "1r
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Days to expiration (DTE) is the time remaining until an options contract expires and represents a critical variable in structuring options trades alongside delta and gamma selection. Traders use DTE to balance competing objectives: longer-dated options survive theta decay and allow more time for thesis development, while shorter-dated options accelerate both theta bleed and delta decay (charm), making them riskier for directional bets. Understanding DTE's interaction with term structure—distinguishing between far-dated activity signaling general bias and near-term activity suggesting imminent moves—is essential for interpreting unusual options activity and avoiding false signals from routine rolls. Position longevity and compounding returns depend heavily on selecting appropriate expiration cycles that align with the expected duration of the underlying price move."
 ---
 
 # Days To Expiration
 
-**Auto-generated concept topic** — discussed across 77 video(s). Pending curated synthesis; the backing source pages are linked below.
+Days to expiration (DTE) is the time remaining until an options contract expires and represents a critical variable in structuring options trades alongside delta and gamma selection. Traders use DTE to balance competing objectives: longer-dated options survive theta decay and allow more time for thesis development, while shorter-dated options accelerate both theta bleed and delta decay (charm), making them riskier for directional bets. Understanding DTE's interaction with term structure—distinguishing between far-dated activity signaling general bias and near-term activity suggesting imminent moves—is essential for interpreting unusual options activity and avoiding false signals from routine rolls. Position longevity and compounding returns depend heavily on selecting appropriate expiration cycles that align with the expected duration of the underlying price move.
+
+*Auto-generated summary from 77 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["0iZJfIu3Nac", "1ILbgbgxl3A", "1N1GFFpS9I8", "1jDrPx6lOgM", "2t
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Momentum in options trading refers to the repeatable pattern of price movement following specific catalysts—such as earnings announcements (post-earnings drift), breakouts above key technical levels, or sector rotation shifts—that creates a quantifiable profit mechanism. Rather than a standalone strategy, momentum is identified through price action and moving-average alignment to confirm directional conviction, and traders structure options positions to capture these moves by matching position Greeks to their edge in the momentum pattern. The approach emphasizes that momentum exists in pockets across the market even during broad chop, particularly in small-cap stocks, sector rotations, and post-earnings plays, and requires disciplined entry and exit rules tied to the underlying profit mechanism rather than arbitrary technical signals."
 ---
 
 # Momentum
 
-**Auto-generated strategy topic** — discussed across 76 video(s). Pending curated synthesis; the backing source pages are linked below.
+Momentum in options trading refers to the repeatable pattern of price movement following specific catalysts—such as earnings announcements (post-earnings drift), breakouts above key technical levels, or sector rotation shifts—that creates a quantifiable profit mechanism. Rather than a standalone strategy, momentum is identified through price action and moving-average alignment to confirm directional conviction, and traders structure options positions to capture these moves by matching position Greeks to their edge in the momentum pattern. The approach emphasizes that momentum exists in pockets across the market even during broad chop, particularly in small-cap stocks, sector rotations, and post-earnings plays, and requires disciplined entry and exit rules tied to the underlying profit mechanism rather than arbitrary technical signals.
+
+*Auto-generated summary from 76 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

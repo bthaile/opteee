@@ -5,11 +5,14 @@ related_videos: ["4p0xi0hLOZM", "5YEY_IvBdPg", "6aRyhwnDLfo", "7gLvDWJK2gg", "Bb
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Rolling options is the practice of closing an existing options position and simultaneously opening a new one at a different strike or expiration date, typically to manage adverse price moves or extend exposure. Contrary to common misconception, rolling does not eliminate losses—it realizes the loss on the closed leg while creating a new unrealized position, and the decision to roll should be based on forward-looking opportunity analysis rather than loss aversion. Rolling is widely used in income strategies like covered calls and covered strangles to reduce cost basis, preserve inventory, and extract additional premium across expiration cycles, though traders must maintain discipline around time-roll distance and margin constraints to avoid locking capital into distant expirations."
 ---
 
 # Rolling Options
 
-**Auto-generated strategy topic** — discussed across 31 video(s). Pending curated synthesis; the backing source pages are linked below.
+Rolling options is the practice of closing an existing options position and simultaneously opening a new one at a different strike or expiration date, typically to manage adverse price moves or extend exposure. Contrary to common misconception, rolling does not eliminate losses—it realizes the loss on the closed leg while creating a new unrealized position, and the decision to roll should be based on forward-looking opportunity analysis rather than loss aversion. Rolling is widely used in income strategies like covered calls and covered strangles to reduce cost basis, preserve inventory, and extract additional premium across expiration cycles, though traders must maintain discipline around time-roll distance and margin constraints to avoid locking capital into distant expirations.
+
+*Auto-generated summary from 31 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

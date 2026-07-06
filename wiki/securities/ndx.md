@@ -5,11 +5,14 @@ related_videos: ["5K0UEOLDP5k", "Dlw9oTPZE9c", "Rlw_-sR5jm0", "dHvfZOw1ql0", "dW
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "NDX is a broad-based index option contract representing the Nasdaq-100 that offers traders a Section 1256 contract eligible for preferential 60/40 tax treatment, making it tax-efficient for shorter-term trading compared to ETF-based alternatives. It is used by options traders as an underlying for directional, premium-selling, and variance-premium strategies, particularly in low-volatility environments where traders seek pockets of volatility across indices and sectors. As a broad-market index option, NDX benefits from the structural growth in options volume and participation documented in industry reports, providing liquidity for both retail and institutional traders managing portfolio risk and identifying trading opportunities."
 ---
 
 # NDX
 
-**Auto-generated security topic** — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below.
+NDX is a broad-based index option contract representing the Nasdaq-100 that offers traders a Section 1256 contract eligible for preferential 60/40 tax treatment, making it tax-efficient for shorter-term trading compared to ETF-based alternatives. It is used by options traders as an underlying for directional, premium-selling, and variance-premium strategies, particularly in low-volatility environments where traders seek pockets of volatility across indices and sectors. As a broad-market index option, NDX benefits from the structural growth in options volume and participation documented in industry reports, providing liquidity for both retail and institutional traders managing portfolio risk and identifying trading opportunities.
+
+*Auto-generated summary from 5 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

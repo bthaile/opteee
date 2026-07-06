@@ -5,11 +5,14 @@ related_videos: ["Ao4evQT3dOU", "FPLK8vS5ono", "KKOqF8h1n1s", "O8mP2Ine9ZQ", "iw
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Volatility drag refers to the erosion of returns in leveraged or compounded positions due to the mathematical effect of volatility on rebalancing and price recovery. The concept appears in discussions of leveraged ETFs as buy-and-hold vehicles, where daily rebalancing compounds losses during volatile periods, making them unsuitable for long-term investing despite theoretical appeal. In options trading, understanding volatility drag is relevant to position management and rolling strategies, where traders must account for how volatility regimes affect the cost and mechanics of adjusting or closing positions across different market conditions."
 ---
 
 # Volatility Drag
 
-**Auto-generated concept topic** — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below.
+Volatility drag refers to the erosion of returns in leveraged or compounded positions due to the mathematical effect of volatility on rebalancing and price recovery. The concept appears in discussions of leveraged ETFs as buy-and-hold vehicles, where daily rebalancing compounds losses during volatile periods, making them unsuitable for long-term investing despite theoretical appeal. In options trading, understanding volatility drag is relevant to position management and rolling strategies, where traders must account for how volatility regimes affect the cost and mechanics of adjusting or closing positions across different market conditions.
+
+*Auto-generated summary from 6 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

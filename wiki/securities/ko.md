@@ -5,11 +5,14 @@ related_videos: ["5OQNi5AthOk", "A1el6GdNjOA", "AJP8M8DQ_1U", "FtZyB8apvC0", "KK
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "KO (Kroger) appears in the corpus as a recurring position in the Small Stacks portfolio experiment, where it was traded using diagonal spreads—a strategy combining longer-dated long calls with shorter-dated short calls to capture premium while maintaining upside exposure. The position was adjusted multiple times by adding additional short calls to manage capital efficiency in a small account, and ultimately contributed significantly to the portfolio's 26.65% three-month return. Kroger exemplifies how diagonal spreads can be applied to individual equities as part of a disciplined, capital-efficient trading approach in constrained accounts."
 ---
 
 # KO
 
-**Auto-generated security topic** — discussed across 17 video(s). Pending curated synthesis; the backing source pages are linked below.
+KO (Kroger) appears in the corpus as a recurring position in the Small Stacks portfolio experiment, where it was traded using diagonal spreads—a strategy combining longer-dated long calls with shorter-dated short calls to capture premium while maintaining upside exposure. The position was adjusted multiple times by adding additional short calls to manage capital efficiency in a small account, and ultimately contributed significantly to the portfolio's 26.65% three-month return. Kroger exemplifies how diagonal spreads can be applied to individual equities as part of a disciplined, capital-efficient trading approach in constrained accounts.
+
+*Auto-generated summary from 17 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

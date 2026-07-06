@@ -5,11 +5,14 @@ related_videos: ["1G-h4tqfQEM", "26vVCJY9t00", "6WloCMY-aTw", "6_FMAL6c_oM", "Ao
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Skew refers to the asymmetry in implied volatility across different strike prices for a given expiration, where puts and calls are priced with different volatility levels reflecting market expectations about directional moves and hedging demand. In options markets, elevated put-side skew (higher IV on puts than calls) signals bearish sentiment or hedging demand, while inverted or call-side skew suggests bullish positioning or tail-risk expectations; traders read skew patterns across the options chain to infer institutional bias and identify mispricings. Skew is a key component of the volatility surface and can shift dramatically around catalysts like earnings or market stress, creating tradable opportunities when the market reprices risk asymmetrically."
 ---
 
 # Skew
 
-**Auto-generated concept topic** — discussed across 24 video(s). Pending curated synthesis; the backing source pages are linked below.
+Skew refers to the asymmetry in implied volatility across different strike prices for a given expiration, where puts and calls are priced with different volatility levels reflecting market expectations about directional moves and hedging demand. In options markets, elevated put-side skew (higher IV on puts than calls) signals bearish sentiment or hedging demand, while inverted or call-side skew suggests bullish positioning or tail-risk expectations; traders read skew patterns across the options chain to infer institutional bias and identify mispricings. Skew is a key component of the volatility surface and can shift dramatically around catalysts like earnings or market stress, creating tradable opportunities when the market reprices risk asymmetrically.
+
+*Auto-generated summary from 24 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

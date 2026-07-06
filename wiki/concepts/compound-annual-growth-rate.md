@@ -5,11 +5,14 @@ related_videos: ["-ulHoMHsPu4", "1G-h4tqfQEM", "2t3Nv-63Jtc", "3wwXgdxtIKA", "4L
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Compound Annual Growth Rate (CAGR) is a measure of the annualized return on an investment or trading account over a multi-year period, reflecting the consistent growth rate needed to reach an ending value from a starting value. In options trading, CAGR serves as a benchmark for evaluating long-term strategy performance and trader skill, with the channel emphasizing that sustainable returns in the 15% annual range are achievable through disciplined process, proper risk management, and understanding profit mechanisms rather than chasing outsized gains. The concept underscores that consistent, moderate returns compounded over time—combined with aggressive saving and income growth in early career stages—represent the primary wealth-building levers for traders, particularly those with smaller accounts where savings rate initially dominates account growth."
 ---
 
 # Compound Annual Growth Rate
 
-**Auto-generated concept topic** — discussed across 35 video(s). Pending curated synthesis; the backing source pages are linked below.
+Compound Annual Growth Rate (CAGR) is a measure of the annualized return on an investment or trading account over a multi-year period, reflecting the consistent growth rate needed to reach an ending value from a starting value. In options trading, CAGR serves as a benchmark for evaluating long-term strategy performance and trader skill, with the channel emphasizing that sustainable returns in the 15% annual range are achievable through disciplined process, proper risk management, and understanding profit mechanisms rather than chasing outsized gains. The concept underscores that consistent, moderate returns compounded over time—combined with aggressive saving and income growth in early career stages—represent the primary wealth-building levers for traders, particularly those with smaller accounts where savings rate initially dominates account growth.
+
+*Auto-generated summary from 35 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

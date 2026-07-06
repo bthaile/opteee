@@ -5,11 +5,14 @@ related_videos: ["2Dv_fRuuTcc", "5K0UEOLDP5k", "8Sk1oMYRq-Q", "Bxh8Fo7CiEI", "Ej
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Volatility mean reversion is the principle that implied volatility tends to compress back toward historical norms after periods of elevation, making it a tradable edge for premium-selling strategies when IV is historically high. Traders exploit this concept by selling options when implied volatility percentile (IVP) is elevated, betting that volatility will contract and premiums will decay in their favor. However, the channel emphasizes caution: high IV does not guarantee further compression, as volatility can spike unexpectedly, invalidating the assumed mean-reversion edge and exposing sellers to significant losses. Proper application requires understanding the distinction between implied volatility metrics (IVP vs. IVR), assessing whether current volatility levels are truly elevated relative to historical context, and sizing positions appropriately for the risk that mean reversion may not occur."
 ---
 
 # Volatility Mean Reversion
 
-**Auto-generated concept topic** — discussed across 23 video(s). Pending curated synthesis; the backing source pages are linked below.
+Volatility mean reversion is the principle that implied volatility tends to compress back toward historical norms after periods of elevation, making it a tradable edge for premium-selling strategies when IV is historically high. Traders exploit this concept by selling options when implied volatility percentile (IVP) is elevated, betting that volatility will contract and premiums will decay in their favor. However, the channel emphasizes caution: high IV does not guarantee further compression, as volatility can spike unexpectedly, invalidating the assumed mean-reversion edge and exposing sellers to significant losses. Proper application requires understanding the distinction between implied volatility metrics (IVP vs. IVR), assessing whether current volatility levels are truly elevated relative to historical context, and sizing positions appropriately for the risk that mean reversion may not occur.
+
+*Auto-generated summary from 23 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

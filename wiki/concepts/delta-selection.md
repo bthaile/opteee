@@ -5,11 +5,14 @@ related_videos: ["6-wt8t1AguM", "6CGcvPIONZs", "6SyrfdpEsy0", "8U4dz8MZL70", "9J
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Delta selection is the process of choosing the delta value of an option contract to match a trader's directional conviction, risk tolerance, and profit objectives within a specific trade structure. Rather than defaulting to arbitrary choices, traders use delta as a quantifiable metric to calibrate position sizing—for example, selecting a delta band (such as 25–30) for short puts to balance premium collection with assignment risk, or choosing call deltas in covered-call ratios based on expected stock movement and upside capture goals. This approach transforms delta from a passive Greeks metric into an active portfolio-construction tool, enabling traders to align their option strikes with their thesis definition and market hypothesis before execution."
 ---
 
 # Delta Selection
 
-**Auto-generated concept topic** — discussed across 20 video(s). Pending curated synthesis; the backing source pages are linked below.
+Delta selection is the process of choosing the delta value of an option contract to match a trader's directional conviction, risk tolerance, and profit objectives within a specific trade structure. Rather than defaulting to arbitrary choices, traders use delta as a quantifiable metric to calibrate position sizing—for example, selecting a delta band (such as 25–30) for short puts to balance premium collection with assignment risk, or choosing call deltas in covered-call ratios based on expected stock movement and upside capture goals. This approach transforms delta from a passive Greeks metric into an active portfolio-construction tool, enabling traders to align their option strikes with their thesis definition and market hypothesis before execution.
+
+*Auto-generated summary from 20 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

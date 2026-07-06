@@ -5,11 +5,14 @@ related_videos: ["1axDClx9vWQ", "6CZMjMvG4y4", "6LpY37knkh4", "6lIx0wSsN7Y", "73
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A breakout is a technical price movement where a stock breaks above or below a defined level of prior resistance or support, often accompanied by elevated volume and representing a shift in momentum that traders use as a directional thesis for options trades. Traders identify breakouts by analyzing prior price action as a template for expected move magnitude and duration, then structure options positions to capture the anticipated directional move while managing risk through defined stops and position sizing. The breakout profit mechanism is repeatable and quantifiable across different stocks and timeframes, making it a core pattern that professional traders decompose into specific entry mechanics, risk parameters, and Greeks-based position structures rather than relying on a single strategy template."
 ---
 
 # Breakout
 
-**Auto-generated concept topic** — discussed across 27 video(s). Pending curated synthesis; the backing source pages are linked below.
+A breakout is a technical price movement where a stock breaks above or below a defined level of prior resistance or support, often accompanied by elevated volume and representing a shift in momentum that traders use as a directional thesis for options trades. Traders identify breakouts by analyzing prior price action as a template for expected move magnitude and duration, then structure options positions to capture the anticipated directional move while managing risk through defined stops and position sizing. The breakout profit mechanism is repeatable and quantifiable across different stocks and timeframes, making it a core pattern that professional traders decompose into specific entry mechanics, risk parameters, and Greeks-based position structures rather than relying on a single strategy template.
+
+*Auto-generated summary from 27 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

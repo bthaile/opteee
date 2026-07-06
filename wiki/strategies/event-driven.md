@@ -5,11 +5,14 @@ related_videos: ["5-n_K32MGYo", "AXGmgcD15_E", "BB_9Ivd8NLM", "CcLu6CfZhEw", "G7
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Event-driven trading is a strategy that exploits price dislocations and volatility spikes triggered by discrete catalysts—such as policy announcements, geopolitical developments, earnings, IPOs, or corporate actions—by positioning ahead of or immediately after the event based on the expected market repricing. Traders identify these catalysts through unusual options activity, news flow, and probability analysis, then construct directional plays (long calls/puts) or volatility trades (short straddles/strangles) sized to the event's magnitude and time frame. The edge comes from understanding how information gets priced in, the time horizon over which repricing occurs, and the mismatch between market expectations and actual outcomes, allowing traders to capture mean reversion or continuation moves before the dislocation normalizes."
 ---
 
 # Event Driven
 
-**Auto-generated strategy topic** — discussed across 12 video(s). Pending curated synthesis; the backing source pages are linked below.
+Event-driven trading is a strategy that exploits price dislocations and volatility spikes triggered by discrete catalysts—such as policy announcements, geopolitical developments, earnings, IPOs, or corporate actions—by positioning ahead of or immediately after the event based on the expected market repricing. Traders identify these catalysts through unusual options activity, news flow, and probability analysis, then construct directional plays (long calls/puts) or volatility trades (short straddles/strangles) sized to the event's magnitude and time frame. The edge comes from understanding how information gets priced in, the time horizon over which repricing occurs, and the mismatch between market expectations and actual outcomes, allowing traders to capture mean reversion or continuation moves before the dislocation normalizes.
+
+*Auto-generated summary from 12 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["SsbI2qzsLGY", "lbpGVAWR6d0", "nxxdC4PK2BI", "wiOEzumNBcE"]
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Delta hedging is a risk management technique used by options market makers and professional traders to neutralize directional exposure by continuously adjusting positions as underlying prices move, thereby isolating and managing gamma risk rather than directional risk. The practice is central to how market makers operate: they dynamically hedge their option portfolios to remain delta-neutral, which creates mechanical price effects that retail traders often misattribute to intentional market manipulation. For retail traders, understanding delta hedging reveals why beating market makers is difficult—the costs of frequent rehedging, bid-ask spreads, and commissions compound quickly, and the dynamic hedging behavior of professionals creates variance that makes simple strategies like buy-and-hold surprisingly competitive."
 ---
 
 # Delta Hedging
 
-**Auto-generated strategy topic** — discussed across 4 video(s). Pending curated synthesis; the backing source pages are linked below.
+Delta hedging is a risk management technique used by options market makers and professional traders to neutralize directional exposure by continuously adjusting positions as underlying prices move, thereby isolating and managing gamma risk rather than directional risk. The practice is central to how market makers operate: they dynamically hedge their option portfolios to remain delta-neutral, which creates mechanical price effects that retail traders often misattribute to intentional market manipulation. For retail traders, understanding delta hedging reveals why beating market makers is difficult—the costs of frequent rehedging, bid-ask spreads, and commissions compound quickly, and the dynamic hedging behavior of professionals creates variance that makes simple strategies like buy-and-hold surprisingly competitive.
+
+*Auto-generated summary from 4 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

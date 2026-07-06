@@ -5,11 +5,14 @@ related_videos: ["9CqpFa4mYas", "B3SW20MSNbM", "F5ziPM7PxPo", "GVoSqEj3k9I", "PV
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A pullback entry is a tactical approach to entering a trade by waiting for a price retracement within an established trend rather than chasing momentum at market extremes. The strategy involves identifying an uptrend on a higher timeframe, then entering when price pulls back and a shorter timeframe confirms the first higher high back into alignment with the primary trend, with a defined stop placed under the most recent relevant support level. This method improves risk-reward ratios by allowing traders to enter with better prices while maintaining discipline through technical confirmation and defined risk parameters, reducing the need for perfect timing on breakouts."
 ---
 
 # Pullback Entry
 
-**Auto-generated strategy topic** — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below.
+A pullback entry is a tactical approach to entering a trade by waiting for a price retracement within an established trend rather than chasing momentum at market extremes. The strategy involves identifying an uptrend on a higher timeframe, then entering when price pulls back and a shorter timeframe confirms the first higher high back into alignment with the primary trend, with a defined stop placed under the most recent relevant support level. This method improves risk-reward ratios by allowing traders to enter with better prices while maintaining discipline through technical confirmation and defined risk parameters, reducing the need for perfect timing on breakouts.
+
+*Auto-generated summary from 9 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

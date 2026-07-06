@@ -5,11 +5,14 @@ related_videos: ["9JdI1XeR1G0", "Wxndr3Ady24", "XOTD5YxkQ3w", "eBOLGO1w-XI", "ll
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Decision-making in options trading is the systematic process of moving from portfolio-level hypotheses and capital allocation through opportunity identification to specific trade construction, grounded in repeatable frameworks rather than ad-hoc choices. Effective decision-making requires separating distinct functions—strategy development, risk management, and execution—while layering contextual information around statistical patterns to avoid overfitting, and relies on psychological discipline to filter noise and maintain composure under pressure. Success hinges on edge identification, disciplined position sizing, expected-value thinking, and the ability to execute consistently despite identity-based self-sabotage, skills that institutional firms develop through structured training pipelines emphasizing mental discipline and after-action review."
 ---
 
 # Decision Making
 
-**Auto-generated concept topic** — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below.
+Decision-making in options trading is the systematic process of moving from portfolio-level hypotheses and capital allocation through opportunity identification to specific trade construction, grounded in repeatable frameworks rather than ad-hoc choices. Effective decision-making requires separating distinct functions—strategy development, risk management, and execution—while layering contextual information around statistical patterns to avoid overfitting, and relies on psychological discipline to filter noise and maintain composure under pressure. Success hinges on edge identification, disciplined position sizing, expected-value thinking, and the ability to execute consistently despite identity-based self-sabotage, skills that institutional firms develop through structured training pipelines emphasizing mental discipline and after-action review.
+
+*Auto-generated summary from 7 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

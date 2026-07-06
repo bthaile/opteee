@@ -5,11 +5,14 @@ related_videos: ["1O0HX-C-4PU", "6_FMAL6c_oM", "6epupAYLkYc", "7mlZTr3xeHA", "8d
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Gamma scalping is a dynamic hedging strategy where a trader holds long options and repeatedly rehedges the underlying stock position as price moves, profiting from the difference between realized volatility and implied volatility while paying theta decay. The strategy exploits gamma—the rate of change of delta—by buying low and selling high in the underlying as the option's delta changes, effectively capturing small incremental gains across multiple rehedges. It is commonly employed in short-term, catalyst-driven trades and works best when realized volatility exceeds the implied volatility priced into the option, making it a core mechanism through which long options can generate profits despite theta erosion."
 ---
 
 # Gamma Scalping
 
-**Auto-generated strategy topic** — discussed across 36 video(s). Pending curated synthesis; the backing source pages are linked below.
+Gamma scalping is a dynamic hedging strategy where a trader holds long options and repeatedly rehedges the underlying stock position as price moves, profiting from the difference between realized volatility and implied volatility while paying theta decay. The strategy exploits gamma—the rate of change of delta—by buying low and selling high in the underlying as the option's delta changes, effectively capturing small incremental gains across multiple rehedges. It is commonly employed in short-term, catalyst-driven trades and works best when realized volatility exceeds the implied volatility priced into the option, making it a core mechanism through which long options can generate profits despite theta erosion.
+
+*Auto-generated summary from 36 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

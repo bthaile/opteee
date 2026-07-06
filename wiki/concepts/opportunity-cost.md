@@ -5,11 +5,14 @@ related_videos: ["-qSV5WZNlP4", "-u_dHz31d38", "-ulHoMHsPu4", "0I32lVyhZuU", "0L
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Opportunity cost in options trading refers to the capital and time committed to one position that could alternatively be deployed elsewhere, a consideration central to portfolio construction and capital allocation decisions. The concept appears most directly in comparisons between strategies—such as choosing between long calls that bleed theta versus income-generating covered strategies, or deciding whether to hold an underwater position versus reallocating capital to a more attractive setup. Traders must weigh the return potential of a current trade against forgone returns from competing opportunities, particularly when capital is limited and diversification across asset classes (equities, real estate, derivatives) may offer superior risk-adjusted outcomes. This framework extends beyond individual trades to career-level decisions, such as evaluating whether full-time trading's time commitment and income volatility justify abandoning W2 employment with its stability and benefits."
 ---
 
 # Opportunity Cost
 
-**Auto-generated concept topic** — discussed across 46 video(s). Pending curated synthesis; the backing source pages are linked below.
+Opportunity cost in options trading refers to the capital and time committed to one position that could alternatively be deployed elsewhere, a consideration central to portfolio construction and capital allocation decisions. The concept appears most directly in comparisons between strategies—such as choosing between long calls that bleed theta versus income-generating covered strategies, or deciding whether to hold an underwater position versus reallocating capital to a more attractive setup. Traders must weigh the return potential of a current trade against forgone returns from competing opportunities, particularly when capital is limited and diversification across asset classes (equities, real estate, derivatives) may offer superior risk-adjusted outcomes. This framework extends beyond individual trades to career-level decisions, such as evaluating whether full-time trading's time commitment and income volatility justify abandoning W2 employment with its stability and benefits.
+
+*Auto-generated summary from 46 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["5OQNi5AthOk", "EMzsNLXZ1bc", "Gti8ecxsHz0", "O8mP2Ine9ZQ", "UN
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "VXX is an exchange-traded note that tracks volatility by holding a weighted blend of front and next-month VIX futures contracts, making it directly tradable like a stock with bid-ask spreads and volume. Unlike the VIX index itself (which is cash-settled and has no underlying asset), VXX experiences contango drag and roll yield decay as its underlying futures positions are continuously rolled, causing the product to decay over time even when volatility remains flat. Understanding VXX's structural differences from the VIX—particularly its vega exposure, mean-reversion pricing, and roll costs—is critical for traders selecting appropriate volatility strategies and managing decay risk."
 ---
 
 # VXX
 
-**Auto-generated security topic** — discussed across 10 video(s). Pending curated synthesis; the backing source pages are linked below.
+VXX is an exchange-traded note that tracks volatility by holding a weighted blend of front and next-month VIX futures contracts, making it directly tradable like a stock with bid-ask spreads and volume. Unlike the VIX index itself (which is cash-settled and has no underlying asset), VXX experiences contango drag and roll yield decay as its underlying futures positions are continuously rolled, causing the product to decay over time even when volatility remains flat. Understanding VXX's structural differences from the VIX—particularly its vega exposure, mean-reversion pricing, and roll costs—is critical for traders selecting appropriate volatility strategies and managing decay risk.
+
+*Auto-generated summary from 10 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

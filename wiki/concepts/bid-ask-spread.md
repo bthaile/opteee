@@ -5,11 +5,14 @@ related_videos: ["-jJkuhl2wyY", "0phfdNnT3Q0", "2TdIx_Bn3BY", "7tBAlmNokFI", "93
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "The bid-ask spread is the cost difference between buying and selling an options contract, representing friction that erodes trading edge and profitability. In practice, spreads consume a meaningful portion of expected gains—particularly in strategies like vertical spreads and protective wings where multiple contracts are traded—and can entirely eliminate an edge if average wins equal average losses plus spread costs. Understanding spread impact is critical for evaluating whether a strategy's win rate and payoff structure justify the friction costs, especially for retail traders who lack the low-cost execution environments of market makers and professional traders."
 ---
 
 # Bid Ask Spread
 
-**Auto-generated concept topic** — discussed across 64 video(s). Pending curated synthesis; the backing source pages are linked below.
+The bid-ask spread is the cost difference between buying and selling an options contract, representing friction that erodes trading edge and profitability. In practice, spreads consume a meaningful portion of expected gains—particularly in strategies like vertical spreads and protective wings where multiple contracts are traded—and can entirely eliminate an edge if average wins equal average losses plus spread costs. Understanding spread impact is critical for evaluating whether a strategy's win rate and payoff structure justify the friction costs, especially for retail traders who lack the low-cost execution environments of market makers and professional traders.
+
+*Auto-generated summary from 64 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

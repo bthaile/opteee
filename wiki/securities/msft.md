@@ -5,11 +5,14 @@ related_videos: ["-XQGZSyM8O0", "0iZJfIu3Nac", "73cEIHM3FLg", "AdLEV_-zDSM", "B3
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "MSFT does not appear as a primary topic of discussion across the supplied video corpus. While the channel covers broad market dynamics, sector rotation, and individual stock analysis through options strategies, MSFT is not explicitly featured or analyzed in the summarized content provided."
 ---
 
 # MSFT
 
-**Auto-generated security topic** — discussed across 29 video(s). Pending curated synthesis; the backing source pages are linked below.
+MSFT does not appear as a primary topic of discussion across the supplied video corpus. While the channel covers broad market dynamics, sector rotation, and individual stock analysis through options strategies, MSFT is not explicitly featured or analyzed in the summarized content provided.
+
+*Auto-generated summary from 29 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

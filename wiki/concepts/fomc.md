@@ -5,11 +5,14 @@ related_videos: ["1ILbgbgxl3A", "26vVCJY9t00", "2Dv_fRuuTcc", "80QGX7wPlJk", "H3
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "The Federal Open Market Committee (FOMC) is the policy-setting body of the Federal Reserve that announces interest-rate decisions at scheduled meetings, serving as a major market catalyst that triggers sharp intraday volatility and sector rotation. Options traders use FOMC announcement dates as known event windows to structure trades around expected market moves—reading implied volatility term structure to gauge what price action the market is pricing in, then selecting option strategies (such as short premium straddles and strangles on zero-DTE contracts) whose payoff aligns with the anticipated directional or volatility outcome. FOMC decisions on rate cuts or holds cascade through equities, bonds, and sector positioning, making the event a key input for both tactical short-term trades and broader portfolio hedging decisions."
 ---
 
 # Fomc
 
-**Auto-generated concept topic** — discussed across 19 video(s). Pending curated synthesis; the backing source pages are linked below.
+The Federal Open Market Committee (FOMC) is the policy-setting body of the Federal Reserve that announces interest-rate decisions at scheduled meetings, serving as a major market catalyst that triggers sharp intraday volatility and sector rotation. Options traders use FOMC announcement dates as known event windows to structure trades around expected market moves—reading implied volatility term structure to gauge what price action the market is pricing in, then selecting option strategies (such as short premium straddles and strangles on zero-DTE contracts) whose payoff aligns with the anticipated directional or volatility outcome. FOMC decisions on rate cuts or holds cascade through equities, bonds, and sector positioning, making the event a key input for both tactical short-term trades and broader portfolio hedging decisions.
+
+*Auto-generated summary from 19 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

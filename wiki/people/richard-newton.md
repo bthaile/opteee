@@ -5,13 +5,16 @@ related_videos: ["Cfs_0qgho_E", "IsiLvT-L3vk", "S1f1zIfXVh8", "Sue4LFwVQvU", "h2
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Richard Newton is a GameStop researcher and options-market analyst who collaborates with Eric on deep-dive livestreams examining settlement mechanics, ETF creation-redemption cycles, and regulatory exemptions as drivers of GME price action. His work focuses on forensic analysis of options expiration cycles, fails-to-deliver patterns, and the 34-trading-day cyclical rhythms created by settlement and reconstitution events, alongside examination of Roaring Kitty's position accumulation and the structural factors that appear to suppress price while generating periodic volatility spikes. Newton combines technical market-structure analysis with broader narrative assessment, weighing the bear thesis (legacy business fundamentals) against the bull thesis (balance-sheet recovery and insider involvement)."
 category: interviews
 role: interviewed guest
 ---
 
 # Richard Newton
 
-**Interviewed guest** — appears in 8 video(s) in the corpus. Auto-generated stub pending curated synthesis of this person's distinctive views.
+Richard Newton is a GameStop researcher and options-market analyst who collaborates with Eric on deep-dive livestreams examining settlement mechanics, ETF creation-redemption cycles, and regulatory exemptions as drivers of GME price action. His work focuses on forensic analysis of options expiration cycles, fails-to-deliver patterns, and the 34-trading-day cyclical rhythms created by settlement and reconstitution events, alongside examination of Roaring Kitty's position accumulation and the structural factors that appear to suppress price while generating periodic volatility spikes. Newton combines technical market-structure analysis with broader narrative assessment, weighing the bear thesis (legacy business fundamentals) against the bull thesis (balance-sheet recovery and insider involvement).
+
+*Auto-generated summary from 8 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

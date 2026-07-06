@@ -5,11 +5,14 @@ related_videos: ["2wlur2p61Mg", "B3SW20MSNbM", "BrLsg_ig6uk", "Dj0jI9ykCeU", "GV
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Relative strength in options trading refers to analyzing how a stock or sector performs compared to broader market indices or peer groups to identify leadership and confirm market trends. Traders use relative strength as a guard rail to distinguish genuine market leaders from laggards, particularly during regime shifts or corrections, and to guide position sizing and entry mechanics in breakout trades. The concept is applied across timeframes—from identifying which mega-cap or mid-cap names held up during volatility spikes to confirming longer-term portfolio positioning in growth areas like AI infrastructure. By combining relative strength analysis with technical screening and options flow metrics, traders can better match their strategy to market conditions and avoid drawdowns during periods of sector rotation."
 ---
 
 # Relative Strength
 
-**Auto-generated concept topic** — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below.
+Relative strength in options trading refers to analyzing how a stock or sector performs compared to broader market indices or peer groups to identify leadership and confirm market trends. Traders use relative strength as a guard rail to distinguish genuine market leaders from laggards, particularly during regime shifts or corrections, and to guide position sizing and entry mechanics in breakout trades. The concept is applied across timeframes—from identifying which mega-cap or mid-cap names held up during volatility spikes to confirming longer-term portfolio positioning in growth areas like AI infrastructure. By combining relative strength analysis with technical screening and options flow metrics, traders can better match their strategy to market conditions and avoid drawdowns during periods of sector rotation.
+
+*Auto-generated summary from 6 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

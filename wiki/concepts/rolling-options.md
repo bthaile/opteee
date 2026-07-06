@@ -5,11 +5,14 @@ related_videos: ["1rqLJW1nK40", "5YEY_IvBdPg", "7gLvDWJK2gg", "AWB8d0uMeoA", "Af
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Rolling options is the mechanical process of closing an existing options position and simultaneously opening a new one at a different strike and/or expiration date, commonly used to manage positions that have moved against the trader, extend duration, or adjust Greeks as market conditions evolve. Contrary to widespread misconception, rolling is not a mechanism to avoid losses but rather a deliberate adjustment decision driven by specific portfolio objectives such as reducing cost basis, preserving capital efficiency, or maintaining a desired risk profile. The tactical execution of a roll—particularly the decision of how far forward in time to extend the position—requires discipline to avoid loss-aversion bias and to preserve flexibility for future adjustments, as rolling too far forward locks capital into distant expirations and forecloses shorter-term opportunities."
 ---
 
 # Rolling Options
 
-**Auto-generated concept topic** — discussed across 47 video(s). Pending curated synthesis; the backing source pages are linked below.
+Rolling options is the mechanical process of closing an existing options position and simultaneously opening a new one at a different strike and/or expiration date, commonly used to manage positions that have moved against the trader, extend duration, or adjust Greeks as market conditions evolve. Contrary to widespread misconception, rolling is not a mechanism to avoid losses but rather a deliberate adjustment decision driven by specific portfolio objectives such as reducing cost basis, preserving capital efficiency, or maintaining a desired risk profile. The tactical execution of a roll—particularly the decision of how far forward in time to extend the position—requires discipline to avoid loss-aversion bias and to preserve flexibility for future adjustments, as rolling too far forward locks capital into distant expirations and forecloses shorter-term opportunities.
+
+*Auto-generated summary from 47 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

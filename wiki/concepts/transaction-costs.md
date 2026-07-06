@@ -5,11 +5,14 @@ related_videos: ["--aVVZQ5Pxw", "2TdIx_Bn3BY", "6vQeTS9cyk0", "7lb6sXnN-ak", "EL
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Transaction costs—including commissions, bid-ask spreads, and slippage—are a primary headwind that determines whether an options strategy is profitable in practice, even when the underlying edge appears sound in theory. Retail traders face particular friction from wide spreads and payment-for-order-flow dynamics that can erase small per-trade profits, making strategies like vertical spreads and 0DTE options astonishingly difficult to trade profitably relative to their volatility-based edge. The channel emphasizes that ignoring transaction costs when backtesting or comparing strategies leads to false conclusions about strategy viability, and that disciplined cost awareness—including proper position sizing and entry timing—separates professional traders from retail traders who mechanically copy techniques without understanding their structural economics."
 ---
 
 # Transaction Costs
 
-**Auto-generated concept topic** — discussed across 32 video(s). Pending curated synthesis; the backing source pages are linked below.
+Transaction costs—including commissions, bid-ask spreads, and slippage—are a primary headwind that determines whether an options strategy is profitable in practice, even when the underlying edge appears sound in theory. Retail traders face particular friction from wide spreads and payment-for-order-flow dynamics that can erase small per-trade profits, making strategies like vertical spreads and 0DTE options astonishingly difficult to trade profitably relative to their volatility-based edge. The channel emphasizes that ignoring transaction costs when backtesting or comparing strategies leads to false conclusions about strategy viability, and that disciplined cost awareness—including proper position sizing and entry timing—separates professional traders from retail traders who mechanically copy techniques without understanding their structural economics.
+
+*Auto-generated summary from 32 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["0a1UROsFf_A", "19oL0B8i2Fc", "5K0UEOLDP5k", "5Tc9L4TvPR8", "6j
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Zero-DTE (same-day expiration) options are binary events with amplified price movements and embedded high volatility risk premium, but they present distinct challenges depending on whether you are buying or selling. Buying 0DTE long options is capital-inefficient because rapid delta decay (charm) erodes position delta faster than gamma can compensate, forcing the underlying to move further in your favor just to break even. For small accounts, the rational approach is selling premium via structures like iron condors or credit spreads, which capture the persistent gap between implied and realized volatility while managing theta decay and gamma exposure through disciplined position sizing and loss-cutting discipline."
 ---
 
 # Zero Dte
 
-**Auto-generated strategy topic** — discussed across 74 video(s). Pending curated synthesis; the backing source pages are linked below.
+Zero-DTE (same-day expiration) options are binary events with amplified price movements and embedded high volatility risk premium, but they present distinct challenges depending on whether you are buying or selling. Buying 0DTE long options is capital-inefficient because rapid delta decay (charm) erodes position delta faster than gamma can compensate, forcing the underlying to move further in your favor just to break even. For small accounts, the rational approach is selling premium via structures like iron condors or credit spreads, which capture the persistent gap between implied and realized volatility while managing theta decay and gamma exposure through disciplined position sizing and loss-cutting discipline.
+
+*Auto-generated summary from 74 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

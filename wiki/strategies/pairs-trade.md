@@ -5,11 +5,14 @@ related_videos: ["26vVCJY9t00", "3J3S-ewvxn0", "5-n_K32MGYo", "5K0UEOLDP5k", "6U
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A pairs trade is a relative-value strategy that exploits price divergences between two correlated assets by going long the outperformer and short the underperformer, neutralizing broad market directional risk. The channel discusses pairs trading in the context of correlation analysis—examining how related stocks or indices move together and identifying when that relationship breaks down—as a way to isolate alpha from sector rotation and policy-driven dislocations. This approach is particularly relevant during elevated volatility environments where individual names or sectors decouple from broader indices, allowing traders to profit from mean reversion or structural shifts without taking directional bets on the overall market."
 ---
 
 # Pairs Trade
 
-**Auto-generated strategy topic** — discussed across 27 video(s). Pending curated synthesis; the backing source pages are linked below.
+A pairs trade is a relative-value strategy that exploits price divergences between two correlated assets by going long the outperformer and short the underperformer, neutralizing broad market directional risk. The channel discusses pairs trading in the context of correlation analysis—examining how related stocks or indices move together and identifying when that relationship breaks down—as a way to isolate alpha from sector rotation and policy-driven dislocations. This approach is particularly relevant during elevated volatility environments where individual names or sectors decouple from broader indices, allowing traders to profit from mean reversion or structural shifts without taking directional bets on the overall market.
+
+*Auto-generated summary from 27 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

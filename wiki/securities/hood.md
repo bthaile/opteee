@@ -5,11 +5,14 @@ related_videos: ["3J3S-ewvxn0", "73cEIHM3FLg", "GVoSqEj3k9I", "H04ZDCN_KRI", "KK
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "HOOD does not appear as a distinct topic in the supplied material. The corpus discusses GameStop (GME), options structures, risk management, and market volatility across multiple videos, but contains no substantive discussion of HOOD as a security or trading subject."
 ---
 
 # HOOD
 
-**Auto-generated security topic** — discussed across 12 video(s). Pending curated synthesis; the backing source pages are linked below.
+HOOD does not appear as a distinct topic in the supplied material. The corpus discusses GameStop (GME), options structures, risk management, and market volatility across multiple videos, but contains no substantive discussion of HOOD as a security or trading subject.
+
+*Auto-generated summary from 12 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

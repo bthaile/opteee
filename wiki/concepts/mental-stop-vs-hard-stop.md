@@ -5,11 +5,14 @@ related_videos: ["-M_lC4RVmvM", "6lIx0wSsN7Y", "BB_9Ivd8NLM", "ID-Kl0y1bxs", "If
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A mental stop is a self-imposed price or condition at which a trader plans to exit but does not execute automatically, while a hard stop is a pre-set order that executes mechanically when triggered. The distinction matters because mental stops require discipline and self-awareness—traders often fail to execute them when emotions run high or market conditions shift unexpectedly, whereas hard stops remove discretion and ensure exits happen as planned. Effective options traders use strategy-specific stop placement tied to where their thesis breaks down and their risk tolerance, rather than arbitrary percentage rules, and must stress-test their willingness to actually execute these stops before deploying capital."
 ---
 
 # Mental Stop Vs Hard Stop
 
-**Auto-generated concept topic** — discussed across 16 video(s). Pending curated synthesis; the backing source pages are linked below.
+A mental stop is a self-imposed price or condition at which a trader plans to exit but does not execute automatically, while a hard stop is a pre-set order that executes mechanically when triggered. The distinction matters because mental stops require discipline and self-awareness—traders often fail to execute them when emotions run high or market conditions shift unexpectedly, whereas hard stops remove discretion and ensure exits happen as planned. Effective options traders use strategy-specific stop placement tied to where their thesis breaks down and their risk tolerance, rather than arbitrary percentage rules, and must stress-test their willingness to actually execute these stops before deploying capital.
+
+*Auto-generated summary from 16 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

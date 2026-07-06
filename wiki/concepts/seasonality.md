@@ -5,11 +5,14 @@ related_videos: ["CZEXCE_HR60", "F8Mpls7PWfs", "SNVvZCtKt0Y", "apJP5YqqIXg", "fN
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Seasonality refers to recurring patterns in market behavior that occur at predictable times of year, which traders can identify and exploit for edge discovery in options trading. The concept is discussed as part of a broader toolkit for understanding market regimes and identifying trading opportunities, alongside other analytical approaches like technical analysis and macro fundamentals. Traders use seasonality analysis to inform position timing and structure selection, integrating it into systematic approaches that span multiple timeframes and market conditions."
 ---
 
 # Seasonality
 
-**Auto-generated concept topic** — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below.
+Seasonality refers to recurring patterns in market behavior that occur at predictable times of year, which traders can identify and exploit for edge discovery in options trading. The concept is discussed as part of a broader toolkit for understanding market regimes and identifying trading opportunities, alongside other analytical approaches like technical analysis and macro fundamentals. Traders use seasonality analysis to inform position timing and structure selection, integrating it into systematic approaches that span multiple timeframes and market conditions.
+
+*Auto-generated summary from 6 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

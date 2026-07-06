@@ -5,11 +5,14 @@ related_videos: ["1G-h4tqfQEM", "1kGksRBt2aA", "1rqLJW1nK40", "2TdIx_Bn3BY", "2l
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Probability of touch is the likelihood that an option's underlying price will reach the strike price at any point before expiration, distinct from the probability of finishing in the money. Traders often use delta as a quick shortcut to estimate probability of touch by applying a simple doubling rule, though this approximation becomes less accurate as time to expiration increases and implied volatility rises. Understanding probability of touch is relevant to position management because even favorable price moves may not materialize within the option's lifespan, and the metric should not be confused with probability of profit, which depends on the full P&L mechanics of a strategy rather than just whether a price level is touched."
 ---
 
 # Probability Of Touch
 
-**Auto-generated concept topic** — discussed across 53 video(s). Pending curated synthesis; the backing source pages are linked below.
+Probability of touch is the likelihood that an option's underlying price will reach the strike price at any point before expiration, distinct from the probability of finishing in the money. Traders often use delta as a quick shortcut to estimate probability of touch by applying a simple doubling rule, though this approximation becomes less accurate as time to expiration increases and implied volatility rises. Understanding probability of touch is relevant to position management because even favorable price moves may not materialize within the option's lifespan, and the metric should not be confused with probability of profit, which depends on the full P&L mechanics of a strategy rather than just whether a price level is touched.
+
+*Auto-generated summary from 53 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

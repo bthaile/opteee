@@ -5,11 +5,14 @@ related_videos: ["3J3S-ewvxn0", "7xLGynW-FdA", "HpuG8zJ193E", "Ix0ijJjqKwM", "Mr
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Put skew is the phenomenon where out-of-the-money put options are systematically overpriced relative to calls, creating an implied volatility premium on the downside side of the options chain. This asymmetry arises because market participants demand crash protection and because downside price moves tend to be faster and more violent than upside moves, making put sellers face unfavorable risk-reward dynamics. Traders exploit put skew by selling puts or using short-put strategies to capture the variance risk premium embedded in these overpriced downside options, effectively profiting from the structural demand for portfolio hedging."
 ---
 
 # Put Skew
 
-**Auto-generated concept topic** — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below.
+Put skew is the phenomenon where out-of-the-money put options are systematically overpriced relative to calls, creating an implied volatility premium on the downside side of the options chain. This asymmetry arises because market participants demand crash protection and because downside price moves tend to be faster and more violent than upside moves, making put sellers face unfavorable risk-reward dynamics. Traders exploit put skew by selling puts or using short-put strategies to capture the variance risk premium embedded in these overpriced downside options, effectively profiting from the structural demand for portfolio hedging.
+
+*Auto-generated summary from 9 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

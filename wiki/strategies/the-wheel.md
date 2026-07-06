@@ -5,11 +5,14 @@ related_videos: ["-MQ7kNM0dtI", "-M_lC4RVmvM", "5G0_P4igVWQ", "6-wt8t1AguM", "AJ
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "The wheel is a directional options strategy that sells cash-secured puts, takes assignment on the shares, and then sells covered calls against those shares to generate income. While mechanically sound, the strategy systematically caps upside and often misleads traders into underperformance because they fail to mentally model downside scenarios or chase premium in high-volatility securities without a management plan. Key refinements include managing short puts via delta-band rebalancing rather than arbitrary profit targets to capture directional moves, and selling calls at a ratio (such as 2-to-3 or 1-to-3) instead of 1-to-1 to preserve upside participation, with the covered strangle or covered triangle offered as superior alternatives that maintain greater capital flexibility and trend-following capability."
 ---
 
 # The Wheel
 
-**Auto-generated strategy topic** — discussed across 26 video(s). Pending curated synthesis; the backing source pages are linked below.
+The wheel is a directional options strategy that sells cash-secured puts, takes assignment on the shares, and then sells covered calls against those shares to generate income. While mechanically sound, the strategy systematically caps upside and often misleads traders into underperformance because they fail to mentally model downside scenarios or chase premium in high-volatility securities without a management plan. Key refinements include managing short puts via delta-band rebalancing rather than arbitrary profit targets to capture directional moves, and selling calls at a ratio (such as 2-to-3 or 1-to-3) instead of 1-to-1 to preserve upside participation, with the covered strangle or covered triangle offered as superior alternatives that maintain greater capital flexibility and trend-following capability.
+
+*Auto-generated summary from 26 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

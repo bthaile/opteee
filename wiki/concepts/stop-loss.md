@@ -5,11 +5,14 @@ related_videos: ["-MQ7kNM0dtI", "5bhuXvSptJc", "6lIx0wSsN7Y", "AJP8M8DQ_1U", "Cq
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A stop loss in options trading is a predetermined price level or loss threshold that triggers an exit, designed to define where a trade thesis is proven wrong and to quantify and contain risk. Rather than using arbitrary option value thresholds, effective stops must be anchored to the specific profit mechanism of the strategy and aligned with the system's long-term expected return, requiring traders to establish position sizing that matches the stop level to a fixed risk amount. Stop placement is strategy-specific—for example, premium-selling structures may use tail-risk management stops at a maximum loss percentage, while directional trades anchor stops to technical levels like gap lows—and discipline in executing stops is critical, as emotional exits often precede favorable market reversals."
 ---
 
 # Stop Loss
 
-**Auto-generated concept topic** — discussed across 25 video(s). Pending curated synthesis; the backing source pages are linked below.
+A stop loss in options trading is a predetermined price level or loss threshold that triggers an exit, designed to define where a trade thesis is proven wrong and to quantify and contain risk. Rather than using arbitrary option value thresholds, effective stops must be anchored to the specific profit mechanism of the strategy and aligned with the system's long-term expected return, requiring traders to establish position sizing that matches the stop level to a fixed risk amount. Stop placement is strategy-specific—for example, premium-selling structures may use tail-risk management stops at a maximum loss percentage, while directional trades anchor stops to technical levels like gap lows—and discipline in executing stops is critical, as emotional exits often precede favorable market reversals.
+
+*Auto-generated summary from 25 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

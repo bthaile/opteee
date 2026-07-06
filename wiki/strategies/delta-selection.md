@@ -5,11 +5,14 @@ related_videos: ["E9AzqZhakcw", "NFyBJ03Mq0E", "RzzDwFlwnqE", "U8-yz9jILu4", "eu
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Delta selection is a portfolio-management approach in which traders choose entry and exit points for options positions based on delta levels rather than fixed profit targets or time-based rules. In practice, traders establish a target delta band (such as 25–30 delta for short puts) and rebalance or close positions when delta drifts beyond that range, allowing them to capture additional upside during rallies while controlling assignment risk and directional creep. This method is particularly effective for strategies like the wheel and short straddles, where active delta management isolates volatility exposure and prevents positions from becoming inadvertently directional. Backtests show delta-band rebalancing can significantly outperform passive hold-to-expiration approaches by dampening downside participation while amplifying upside capture."
 ---
 
 # Delta Selection
 
-**Auto-generated strategy topic** — discussed across 11 video(s). Pending curated synthesis; the backing source pages are linked below.
+Delta selection is a portfolio-management approach in which traders choose entry and exit points for options positions based on delta levels rather than fixed profit targets or time-based rules. In practice, traders establish a target delta band (such as 25–30 delta for short puts) and rebalance or close positions when delta drifts beyond that range, allowing them to capture additional upside during rallies while controlling assignment risk and directional creep. This method is particularly effective for strategies like the wheel and short straddles, where active delta management isolates volatility exposure and prevents positions from becoming inadvertently directional. Backtests show delta-band rebalancing can significantly outperform passive hold-to-expiration approaches by dampening downside participation while amplifying upside capture.
+
+*Auto-generated summary from 11 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

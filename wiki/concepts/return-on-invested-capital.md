@@ -5,11 +5,14 @@ related_videos: ["-qSV5WZNlP4", "0quAC-m-NpM", "1rqLJW1nK40", "2TdIx_Bn3BY", "58
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Return on invested capital (ROIC) is a metric that measures the profit generated relative to the amount of capital actually deployed in an options position, enabling traders to compare opportunities across different underlyings and strategies on a normalized basis. In practice, ROIC is often calculated by dividing the return (or return on risk) by the option's implied volatility to produce a comparable unit of return per unit of volatility exposure, facilitating better position selection and sizing decisions. While high ROIC is desirable for capital efficiency, traders must avoid obsessive pursuit of efficiency metrics that lead to suboptimal decisions—a 1,000% return on $1 still yields only $1 profit, making absolute profit generation and realistic return targets (typically 6–15% annually) equally important considerations in portfolio construction."
 ---
 
 # Return On Invested Capital
 
-**Auto-generated concept topic** — discussed across 21 video(s). Pending curated synthesis; the backing source pages are linked below.
+Return on invested capital (ROIC) is a metric that measures the profit generated relative to the amount of capital actually deployed in an options position, enabling traders to compare opportunities across different underlyings and strategies on a normalized basis. In practice, ROIC is often calculated by dividing the return (or return on risk) by the option's implied volatility to produce a comparable unit of return per unit of volatility exposure, facilitating better position selection and sizing decisions. While high ROIC is desirable for capital efficiency, traders must avoid obsessive pursuit of efficiency metrics that lead to suboptimal decisions—a 1,000% return on $1 still yields only $1 profit, making absolute profit generation and realistic return targets (typically 6–15% annually) equally important considerations in portfolio construction.
+
+*Auto-generated summary from 21 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

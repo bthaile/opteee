@@ -5,11 +5,14 @@ related_videos: ["BM8veeOFQBk", "IM2LefSdT5g", "QN9WaA4ke60", "RAtIwFj62pw", "ck
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Tail risk refers to the probability of extreme market moves that occur far more frequently than standard statistical models predict, creating outsized losses for traders who sell out-of-the-money options without proper risk controls. Short-premium strategies that capture variance risk premium by selling options (strangles, straddles, iron condors) are particularly vulnerable to tail events, where a single catastrophic loss can erase months or years of small, consistent wins due to the asymmetric payoff structure of short options. Managing tail risk requires systematic position sizing, portfolio-level monitoring of Greeks, and strict loss-acceptance discipline rather than hedging complexity or martingale-style position doubling, which amplifies exposure during adverse moves. The fundamental challenge is that selling tail risk is a service that generates modest, high-probability profits until an extreme event occurs, making risk management and capital preservation the primary determinants of long-term profitability."
 ---
 
 # Tail Risk
 
-**Auto-generated concept topic** — discussed across 8 video(s). Pending curated synthesis; the backing source pages are linked below.
+Tail risk refers to the probability of extreme market moves that occur far more frequently than standard statistical models predict, creating outsized losses for traders who sell out-of-the-money options without proper risk controls. Short-premium strategies that capture variance risk premium by selling options (strangles, straddles, iron condors) are particularly vulnerable to tail events, where a single catastrophic loss can erase months or years of small, consistent wins due to the asymmetric payoff structure of short options. Managing tail risk requires systematic position sizing, portfolio-level monitoring of Greeks, and strict loss-acceptance discipline rather than hedging complexity or martingale-style position doubling, which amplifies exposure during adverse moves. The fundamental challenge is that selling tail risk is a service that generates modest, high-probability profits until an extreme event occurs, making risk management and capital preservation the primary determinants of long-term profitability.
+
+*Auto-generated summary from 8 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

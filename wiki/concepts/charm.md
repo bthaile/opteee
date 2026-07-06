@@ -5,11 +5,14 @@ related_videos: ["0a1UROsFf_A", "0fty1k3IGgY", "1kGksRBt2aA", "DFT8Gg9wThI", "F4
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Charm, also called delta decay, is a second-order Greek that measures how an option's delta changes with the passage of time independent of underlying price movement. As expiration approaches, out-of-the-money options lose delta rapidly and non-linearly, with decay accelerating sharply in the final weeks, meaning that even favorable price moves may fail to generate expected profits if delta has eroded significantly. Understanding charm is critical for position management because it reveals why zero-DTE and other short-dated long options are capital-inefficient: the underlying must move further just to compensate for time-driven delta decay, creating a mechanical disadvantage that gamma alone cannot offset."
 ---
 
 # Charm
 
-**Auto-generated concept topic** — discussed across 19 video(s). Pending curated synthesis; the backing source pages are linked below.
+Charm, also called delta decay, is a second-order Greek that measures how an option's delta changes with the passage of time independent of underlying price movement. As expiration approaches, out-of-the-money options lose delta rapidly and non-linearly, with decay accelerating sharply in the final weeks, meaning that even favorable price moves may fail to generate expected profits if delta has eroded significantly. Understanding charm is critical for position management because it reveals why zero-DTE and other short-dated long options are capital-inefficient: the underlying must move further just to compensate for time-driven delta decay, creating a mechanical disadvantage that gamma alone cannot offset.
+
+*Auto-generated summary from 19 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

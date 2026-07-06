@@ -5,11 +5,14 @@ related_videos: ["8qAZX9Lx0Z0", "9APL8MtZu7Y", "EMzsNLXZ1bc", "EvZE2RIwFE4", "H0
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "LEAPS are long-dated call options (typically far out-of-the-money in strike but deep in-the-money in time value) used as leveraged stock replacements to gain directional exposure with reduced capital outlay. Traders employ LEAPS by carefully managing liquidity, bid-ask spreads, and Greek behavior—particularly balancing gamma (high near-term, low far-out) and vega (low near-term, high far-out)—to align positions with conviction and expected move magnitude. LEAPS can be held as standalone positions or incorporated into multi-leg strategies such as ratio call diagonals and call spreads, where profitable long LEAPS are converted into risk-free spreads by shorting higher strikes, allowing traders to monetize gains while maintaining upside exposure."
 ---
 
 # Leaps
 
-**Auto-generated strategy topic** — discussed across 14 video(s). Pending curated synthesis; the backing source pages are linked below.
+LEAPS are long-dated call options (typically far out-of-the-money in strike but deep in-the-money in time value) used as leveraged stock replacements to gain directional exposure with reduced capital outlay. Traders employ LEAPS by carefully managing liquidity, bid-ask spreads, and Greek behavior—particularly balancing gamma (high near-term, low far-out) and vega (low near-term, high far-out)—to align positions with conviction and expected move magnitude. LEAPS can be held as standalone positions or incorporated into multi-leg strategies such as ratio call diagonals and call spreads, where profitable long LEAPS are converted into risk-free spreads by shorting higher strikes, allowing traders to monetize gains while maintaining upside exposure.
+
+*Auto-generated summary from 14 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["A1el6GdNjOA", "BM8veeOFQBk", "Bxh8Fo7CiEI", "FnVyDaukQZE", "Hd
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Risk-reward in options trading refers to the relationship between the potential loss on a trade and its potential profit, a ratio that is correlated but not linear and varies significantly by strategy. While attractive risk-reward ratios (such as risking $1 to make $4 in a debit spread) may appear favorable, the market prices in the probability of success, meaning profitability requires an edge—a system that predicts direction more accurately than implied probability—rather than simply a favorable ratio. Effective risk-reward management involves understanding personal risk tolerance, calculating expected value before entry, sizing positions based on realistic loss scenarios, and recognizing that win rate alone is a misleading metric compared to risk-adjusted returns and overall portfolio fit."
 ---
 
 # Risk Reward
 
-**Auto-generated concept topic** — discussed across 16 video(s). Pending curated synthesis; the backing source pages are linked below.
+Risk-reward in options trading refers to the relationship between the potential loss on a trade and its potential profit, a ratio that is correlated but not linear and varies significantly by strategy. While attractive risk-reward ratios (such as risking $1 to make $4 in a debit spread) may appear favorable, the market prices in the probability of success, meaning profitability requires an edge—a system that predicts direction more accurately than implied probability—rather than simply a favorable ratio. Effective risk-reward management involves understanding personal risk tolerance, calculating expected value before entry, sizing positions based on realistic loss scenarios, and recognizing that win rate alone is a misleading metric compared to risk-adjusted returns and overall portfolio fit.
+
+*Auto-generated summary from 16 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

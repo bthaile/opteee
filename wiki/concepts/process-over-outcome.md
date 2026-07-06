@@ -5,11 +5,14 @@ related_videos: ["-MQ7kNM0dtI", "-qSV5WZNlP4", "-u_dHz31d38", "0ZE8GpkICU4", "0i
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Process over outcome is the principle that long-term trading success depends on building repeatable, systematic approaches to strategy research, backtesting, risk management, and feedback loops rather than focusing on individual trade results or short-term profits. New traders often prioritize specific trades or unrealistic return targets, but this mindset leads to failure because poor feedback loops and false-positive outcomes prevent skill development; instead, traders must anchor decisions to well-defined hypotheses, pre-trade scenario planning, and management rules tied to the profit mechanism of each trade. The framework emphasizes that losing trades are a normal part of strategy execution, and premature exits driven by discomfort reflect inadequate process design and unrealistic expectations rather than trading failure. By treating options trading as a learnable skill requiring disciplined study and systematic execution—with realistic return targets, diversification, and robust capital buffers—traders develop the edge necessary to survive and succeed over multiple years."
 ---
 
 # Process Over Outcome
 
-**Auto-generated concept topic** — discussed across 322 video(s). Pending curated synthesis; the backing source pages are linked below.
+Process over outcome is the principle that long-term trading success depends on building repeatable, systematic approaches to strategy research, backtesting, risk management, and feedback loops rather than focusing on individual trade results or short-term profits. New traders often prioritize specific trades or unrealistic return targets, but this mindset leads to failure because poor feedback loops and false-positive outcomes prevent skill development; instead, traders must anchor decisions to well-defined hypotheses, pre-trade scenario planning, and management rules tied to the profit mechanism of each trade. The framework emphasizes that losing trades are a normal part of strategy execution, and premature exits driven by discomfort reflect inadequate process design and unrealistic expectations rather than trading failure. By treating options trading as a learnable skill requiring disciplined study and systematic execution—with realistic return targets, diversification, and robust capital buffers—traders develop the edge necessary to survive and succeed over multiple years.
+
+*Auto-generated summary from 322 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

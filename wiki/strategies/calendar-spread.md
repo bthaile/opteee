@@ -5,11 +5,14 @@ related_videos: ["-jJkuhl2wyY", "AdLEV_-zDSM", "EjD6KPo3OZs", "IFtkGhU5FjA", "Tx
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A calendar spread is an options strategy that exploits differences in volatility across different expiration dates by simultaneously selling near-term options and buying longer-dated options on the same underlying asset. The strategy profits when near-term implied volatility is elevated relative to longer-dated volatility, allowing the trader to capture the decay of the shorter-dated position while holding the longer-dated position as a hedge. Calendar spreads are identified by analyzing the volatility term structure to spot anomalies where near-term volatility inverts relative to longer-dated volatility, creating setups that benefit from the normalization of these relative pricing differences."
 ---
 
 # Calendar Spread
 
-**Auto-generated strategy topic** — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below.
+A calendar spread is an options strategy that exploits differences in volatility across different expiration dates by simultaneously selling near-term options and buying longer-dated options on the same underlying asset. The strategy profits when near-term implied volatility is elevated relative to longer-dated volatility, allowing the trader to capture the decay of the shorter-dated position while holding the longer-dated position as a hedge. Calendar spreads are identified by analyzing the volatility term structure to spot anomalies where near-term volatility inverts relative to longer-dated volatility, creating setups that benefit from the normalization of these relative pricing differences.
+
+*Auto-generated summary from 6 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

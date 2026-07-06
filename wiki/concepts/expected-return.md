@@ -5,11 +5,14 @@ related_videos: ["0ZE8GpkICU4", "19oL0B8i2Fc", "1G-h4tqfQEM", "2wYfOVlLOYg", "3c
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Expected return (or expectancy) is the mathematical product of win probability, average win size, loss probability, and average loss size—the single metric that determines whether a trading strategy is profitable over time. Unlike win rate alone, which can be misleading, expected return captures the full picture of strategy quality by accounting for both the frequency and magnitude of wins and losses. A strategy with a low win rate can be highly profitable if average winners substantially exceed average losses, while a high win rate strategy can lose money if losses are large relative to gains. Successful options traders prioritize understanding and optimizing expected return rather than chasing superficially attractive metrics like win rate or defined risk."
 ---
 
 # Expected Return
 
-**Auto-generated concept topic** — discussed across 77 video(s). Pending curated synthesis; the backing source pages are linked below.
+Expected return (or expectancy) is the mathematical product of win probability, average win size, loss probability, and average loss size—the single metric that determines whether a trading strategy is profitable over time. Unlike win rate alone, which can be misleading, expected return captures the full picture of strategy quality by accounting for both the frequency and magnitude of wins and losses. A strategy with a low win rate can be highly profitable if average winners substantially exceed average losses, while a high win rate strategy can lose money if losses are large relative to gains. Successful options traders prioritize understanding and optimizing expected return rather than chasing superficially attractive metrics like win rate or defined risk.
+
+*Auto-generated summary from 77 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

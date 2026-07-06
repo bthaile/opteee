@@ -5,11 +5,14 @@ related_videos: ["-M_lC4RVmvM", "-qSV5WZNlP4", "1G-h4tqfQEM", "5bhuXvSptJc", "6Q
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "The disposition effect is a behavioral bias in which traders exit winning positions too early to lock in gains while holding losing positions too long in hopes of recovery, driven by emotional discomfort rather than rational risk management. This psychological pattern manifests when traders take stops after small losses only to watch the market reverse favorably, or when they fail to mentally prepare for underwater positions they claimed to accept at assignment. The bias undermines trading discipline and contributes to poor overall performance by divorcing decision-making from expected value and process-based planning."
 ---
 
 # Disposition Effect
 
-**Auto-generated concept topic** — discussed across 60 video(s). Pending curated synthesis; the backing source pages are linked below.
+The disposition effect is a behavioral bias in which traders exit winning positions too early to lock in gains while holding losing positions too long in hopes of recovery, driven by emotional discomfort rather than rational risk management. This psychological pattern manifests when traders take stops after small losses only to watch the market reverse favorably, or when they fail to mentally prepare for underwater positions they claimed to accept at assignment. The bias undermines trading discipline and contributes to poor overall performance by divorcing decision-making from expected value and process-based planning.
+
+*Auto-generated summary from 60 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

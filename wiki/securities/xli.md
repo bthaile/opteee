@@ -5,11 +5,14 @@ related_videos: ["2I6SPZjnjew", "6CZMjMvG4y4", "Gsy_ncfFBpo", "JIliIgFYrmE", "MJ
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "XLI is an industrials sector exchange-traded fund that serves as a benchmark for tracking the performance of industrial companies within the broader market. In the context of sector rotation analysis, XLI is referenced alongside other defensive and cyclical sector ETFs (such as XLF, XLP, XLU, XLV, and XLRE) to identify shifts in capital allocation away from technology and toward economically sensitive or defensive areas during periods of market consolidation or correction. Options traders monitor XLI's relative strength compared to growth-heavy indices like QQQ to gauge the market's risk appetite and inform positioning decisions around volatility and sector-based strategies."
 ---
 
 # XLI
 
-**Auto-generated security topic** — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below.
+XLI is an industrials sector exchange-traded fund that serves as a benchmark for tracking the performance of industrial companies within the broader market. In the context of sector rotation analysis, XLI is referenced alongside other defensive and cyclical sector ETFs (such as XLF, XLP, XLU, XLV, and XLRE) to identify shifts in capital allocation away from technology and toward economically sensitive or defensive areas during periods of market consolidation or correction. Options traders monitor XLI's relative strength compared to growth-heavy indices like QQQ to gauge the market's risk appetite and inform positioning decisions around volatility and sector-based strategies.
+
+*Auto-generated summary from 7 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

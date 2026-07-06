@@ -5,11 +5,14 @@ related_videos: ["-qSV5WZNlP4", "0gle3um9MoE", "26vVCJY9t00", "2Dv_fRuuTcc", "2w
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "An earnings move is the price volatility and directional shift that occurs in a stock around its earnings announcement, often driven by the market's reaction to reported results relative to expectations and forward guidance. Traders use earnings moves as catalysts for options strategies, selecting approaches based on whether they expect large moves (directional plays or volatility strategies) or want to sell premium into elevated implied volatility before the announcement. The key consideration is matching the strategy to the stock's valuation, options positioning, and historical volatility behavior—for instance, richly-priced tech stocks that beat earnings estimates may still sell off sharply due to execution constraints, while stocks with bullish options flow and improving fundamentals may offer premium-selling opportunities ahead of earnings."
 ---
 
 # Earnings Move
 
-**Auto-generated concept topic** — discussed across 115 video(s). Pending curated synthesis; the backing source pages are linked below.
+An earnings move is the price volatility and directional shift that occurs in a stock around its earnings announcement, often driven by the market's reaction to reported results relative to expectations and forward guidance. Traders use earnings moves as catalysts for options strategies, selecting approaches based on whether they expect large moves (directional plays or volatility strategies) or want to sell premium into elevated implied volatility before the announcement. The key consideration is matching the strategy to the stock's valuation, options positioning, and historical volatility behavior—for instance, richly-priced tech stocks that beat earnings estimates may still sell off sharply due to execution constraints, while stocks with bullish options flow and improving fundamentals may offer premium-selling opportunities ahead of earnings.
+
+*Auto-generated summary from 115 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

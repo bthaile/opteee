@@ -5,11 +5,14 @@ related_videos: ["-NzEb1zc1bw", "2yu8jSYKuH4", "6-MMToTqJAE", "6CZMjMvG4y4", "6S
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "In the channel's discussions, recession refers to periods of economic contraction that traders anticipate and position for based on macroeconomic signals such as Fed policy, leverage levels, and demand destruction. The channel's primary macro strategist, David Hunter, forecasts a severe global recession and deflationary bust following a near-term market \"melt-up,\" driven by excessive leverage, delayed central bank response, and the Fed's failure to recognize the lag effects of aggressive rate hikes. Traders use recession expectations to inform sector rotation, hedging strategies, and timing of entries and exits, with the channel emphasizing that preparation through diversification and trend-following indicators is more reliable than prediction of recession timing."
 ---
 
 # Recession
 
-**Auto-generated concept topic** — discussed across 17 video(s). Pending curated synthesis; the backing source pages are linked below.
+In the channel's discussions, recession refers to periods of economic contraction that traders anticipate and position for based on macroeconomic signals such as Fed policy, leverage levels, and demand destruction. The channel's primary macro strategist, David Hunter, forecasts a severe global recession and deflationary bust following a near-term market "melt-up," driven by excessive leverage, delayed central bank response, and the Fed's failure to recognize the lag effects of aggressive rate hikes. Traders use recession expectations to inform sector rotation, hedging strategies, and timing of entries and exits, with the channel emphasizing that preparation through diversification and trend-following indicators is more reliable than prediction of recession timing.
+
+*Auto-generated summary from 17 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

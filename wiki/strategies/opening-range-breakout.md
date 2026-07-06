@@ -5,11 +5,14 @@ related_videos: ["4gWjyPVh9j4", "AoHUcyVh7NY", "BTU71jbUgDo", "J6i5PMmP4PA", "oO
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Opening Range Breakout is a strategy that captures price movement in the initial trading period following a market open, typically by identifying a breakout above or below the established opening range and trading in the direction of that breakout. The approach emphasizes disciplined trend-following on the initial move and systematic exit rules to avoid holding through reversals, and can be backtested across different timeframes and parameters to validate edge before live trading. It is commonly used in both equity and options contexts, where traders assess whether to carry positions forward based on price action confirmation or exit if the breakout fails."
 ---
 
 # Opening Range Breakout
 
-**Auto-generated strategy topic** — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below.
+Opening Range Breakout is a strategy that captures price movement in the initial trading period following a market open, typically by identifying a breakout above or below the established opening range and trading in the direction of that breakout. The approach emphasizes disciplined trend-following on the initial move and systematic exit rules to avoid holding through reversals, and can be backtested across different timeframes and parameters to validate edge before live trading. It is commonly used in both equity and options contexts, where traders assess whether to carry positions forward based on price action confirmation or exit if the breakout fails.
+
+*Auto-generated summary from 5 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

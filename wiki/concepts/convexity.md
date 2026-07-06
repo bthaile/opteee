@@ -5,11 +5,14 @@ related_videos: ["2dP1Cu9Pjt8", "6c3CUMAVF04", "6vQeTS9cyk0", "GK4RmROuNKA", "OG
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Convexity in options trading refers to the non-linear relationship between price moves and profit-and-loss changes, driven by gamma—the rate of change of delta itself. Unlike leverage, which amplifies returns linearly, convexity causes options P&L to respond to the square of price moves, meaning a 4% move produces four times the impact of a 2% move. Gamma is highest for at-the-money options and near expiration, and convexity also exists in the volatility dimension, where positions that appear neutral at one volatility level can become dramatically exposed when implied volatility shifts. Understanding convexity is essential for aligning exit plans with strategy mechanics and avoiding margin-draining surprises from non-linear Greeks."
 ---
 
 # Convexity
 
-**Auto-generated concept topic** — discussed across 16 video(s). Pending curated synthesis; the backing source pages are linked below.
+Convexity in options trading refers to the non-linear relationship between price moves and profit-and-loss changes, driven by gamma—the rate of change of delta itself. Unlike leverage, which amplifies returns linearly, convexity causes options P&L to respond to the square of price moves, meaning a 4% move produces four times the impact of a 2% move. Gamma is highest for at-the-money options and near expiration, and convexity also exists in the volatility dimension, where positions that appear neutral at one volatility level can become dramatically exposed when implied volatility shifts. Understanding convexity is essential for aligning exit plans with strategy mechanics and avoiding margin-draining surprises from non-linear Greeks.
+
+*Auto-generated summary from 16 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

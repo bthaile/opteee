@@ -5,11 +5,14 @@ related_videos: ["0iZJfIu3Nac", "3J3S-ewvxn0", "8MTeMe1qln8", "C_YEdo1Qlk8", "Oe
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Gamma scalping is an active delta-rehedging strategy typically deployed around a long-premium base position, such as a long straddle, to offset theta decay through tactical buying and selling of the underlying asset. The strategy exploits the fact that long gamma positions profit from price movement in either direction, allowing traders to harvest realized volatility by rebalancing deltas at predetermined thresholds and converting gamma exposure into realized P&L that partially compensates for daily theta bleed. This approach is commonly used around earnings events—such as the \"renting the straddle\" framework—where traders buy a straddle when implied volatility is cheap, gamma-scalp the position as the stock moves, and exit before the earnings release to capture volatility expansion without directional risk."
 ---
 
 # Gamma Scalping
 
-**Auto-generated concept topic** — discussed across 10 video(s). Pending curated synthesis; the backing source pages are linked below.
+Gamma scalping is an active delta-rehedging strategy typically deployed around a long-premium base position, such as a long straddle, to offset theta decay through tactical buying and selling of the underlying asset. The strategy exploits the fact that long gamma positions profit from price movement in either direction, allowing traders to harvest realized volatility by rebalancing deltas at predetermined thresholds and converting gamma exposure into realized P&L that partially compensates for daily theta bleed. This approach is commonly used around earnings events—such as the "renting the straddle" framework—where traders buy a straddle when implied volatility is cheap, gamma-scalp the position as the stock moves, and exit before the earnings release to capture volatility expansion without directional risk.
+
+*Auto-generated summary from 10 source video(s); pending curated synthesis.*
 
 ## Discussed in
 
