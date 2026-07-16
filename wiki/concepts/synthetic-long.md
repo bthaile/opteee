@@ -5,11 +5,14 @@ related_videos: ["05aJUfUKE5Q", "2jG5SD-3F0w", "BbKKEUZ9Gu4", "Bxh8Fo7CiEI", "Xe
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A synthetic long is an options position that replicates the economic exposure of owning stock by pairing deep in-the-money calls with short puts (or equivalently, using deep ITM calls alone) to achieve delta-one behavior that tracks the underlying dollar-for-dollar. This structure is used for capital efficiency, regulatory positioning, or leverage—allowing traders to control large notional share quantities with less upfront capital than outright equity purchase, with P&L driven primarily by intrinsic value rather than volatility or time decay. Institutional investors and funds commonly employ synthetic longs in covered-call strategies and income structures, while large market participants may use them to maintain exposure while deferring or obscuring regulatory obligations."
 ---
 
 # Synthetic Long
 
-**Auto-generated concept topic** — discussed across 8 video(s). Pending curated synthesis; the backing source pages are linked below.
+A synthetic long is an options position that replicates the economic exposure of owning stock by pairing deep in-the-money calls with short puts (or equivalently, using deep ITM calls alone) to achieve delta-one behavior that tracks the underlying dollar-for-dollar. This structure is used for capital efficiency, regulatory positioning, or leverage—allowing traders to control large notional share quantities with less upfront capital than outright equity purchase, with P&L driven primarily by intrinsic value rather than volatility or time decay. Institutional investors and funds commonly employ synthetic longs in covered-call strategies and income structures, while large market participants may use them to maintain exposure while deferring or obscuring regulatory obligations.
+
+*Auto-generated summary from 8 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["--aVVZQ5Pxw", "-CUgdXmtp5o", "-LgTPBfGngc", "-MQ7kNM0dtI", "-Z
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Delta measures the rate of change in an option's price relative to movement in the underlying asset, typically expressed as a value between 0 and 1 (or 0 to 100 in percentage terms), and serves as a primary tool for managing directional exposure and risk in options positions. Traders use delta to select appropriate strike prices for their hypothesis—for example, selling 10-delta or 20-35 delta options for income strategies, or using delta bands to dynamically rebalance short premium positions while maintaining a target risk range. Delta also interacts with other Greeks like gamma and charm (theta decay), which affect how quickly delta changes as expiration approaches or as the underlying price moves, making delta understanding essential for trade management decisions anchored to the position's profit mechanism rather than arbitrary option value thresholds."
 ---
 
 # Delta
 
-**Auto-generated concept topic** — discussed across 333 video(s). Pending curated synthesis; the backing source pages are linked below.
+Delta measures the rate of change in an option's price relative to movement in the underlying asset, typically expressed as a value between 0 and 1 (or 0 to 100 in percentage terms), and serves as a primary tool for managing directional exposure and risk in options positions. Traders use delta to select appropriate strike prices for their hypothesis—for example, selling 10-delta or 20-35 delta options for income strategies, or using delta bands to dynamically rebalance short premium positions while maintaining a target risk range. Delta also interacts with other Greeks like gamma and charm (theta decay), which affect how quickly delta changes as expiration approaches or as the underlying price moves, making delta understanding essential for trade management decisions anchored to the position's profit mechanism rather than arbitrary option value thresholds.
+
+*Auto-generated summary from 333 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

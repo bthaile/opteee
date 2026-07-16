@@ -26,6 +26,8 @@ VECTOR_STORE_DIR = 'vector_store'
 CHUNK_SIZE = 250  # Target words per chunk
 OVERLAP = 50      # Words of overlap between chunks
 MIN_CHUNK_WORDS = 10  # Minimum words required for a valid chunk
+CHUNKER_BACKEND = os.getenv('OPTEEE_CHUNKER_BACKEND', 'chonkie').strip().lower()
+CHUNKER_TOKENIZER = os.getenv('OPTEEE_CHUNKER_TOKENIZER', 'word').strip().lower()
 
 # YouTube Channel URLs
 CHANNEL_URLS = [

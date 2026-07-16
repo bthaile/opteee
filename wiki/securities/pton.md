@@ -5,11 +5,14 @@ related_videos: ["73cEIHM3FLg", "B3SW20MSNbM", "H04ZDCN_KRI", "KKOqF8h1n1s", "_b
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "I cannot write a summary of \"PTON\" based on the supplied material. The five video summaries provided discuss GameStop (GME), general options trading fundamentals, market structure, technical analysis frameworks, and 2024-2025 market themes, but none of them mention Peloton (PTON) or analyze it as a security. To write an accurate summary grounded only in the supplied material, PTON would need to be explicitly discussed in at least one of the videos."
 ---
 
 # PTON
 
-**Auto-generated security topic** — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below.
+I cannot write a summary of "PTON" based on the supplied material. The five video summaries provided discuss GameStop (GME), general options trading fundamentals, market structure, technical analysis frameworks, and 2024-2025 market themes, but none of them mention Peloton (PTON) or analyze it as a security. To write an accurate summary grounded only in the supplied material, PTON would need to be explicitly discussed in at least one of the videos.
+
+*Auto-generated summary from 5 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

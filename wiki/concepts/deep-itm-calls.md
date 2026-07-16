@@ -5,11 +5,14 @@ related_videos: ["4CEmVAhaNbk", "8qAZX9Lx0Z0", "Bxh8Fo7CiEI", "IsiLvT-L3vk", "OH
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Deep in-the-money calls are call options purchased at strikes well below the current stock price, typically with long time-to-expiration, to gain leveraged directional exposure with high delta sensitivity. They are used in multi-leg strategies such as ratio call diagonals—where long deep ITM calls are paired with shorter-dated short calls at a ratio less than 1:1—to capture upside while collecting premium and benefiting from theta decay. Deep ITM calls are also favored for maintaining recovery potential during bear markets, as their delta preservation allows faster profit recovery on rebounds compared to early liquidation. The high intrinsic value of deep ITM calls means their price movement tracks the underlying dollar-for-dollar, making them effective for directional plays and basis-reduction strategies in portfolio management."
 ---
 
 # Deep Itm Calls
 
-**Auto-generated concept topic** — discussed across 16 video(s). Pending curated synthesis; the backing source pages are linked below.
+Deep in-the-money calls are call options purchased at strikes well below the current stock price, typically with long time-to-expiration, to gain leveraged directional exposure with high delta sensitivity. They are used in multi-leg strategies such as ratio call diagonals—where long deep ITM calls are paired with shorter-dated short calls at a ratio less than 1:1—to capture upside while collecting premium and benefiting from theta decay. Deep ITM calls are also favored for maintaining recovery potential during bear markets, as their delta preservation allows faster profit recovery on rebounds compared to early liquidation. The high intrinsic value of deep ITM calls means their price movement tracks the underlying dollar-for-dollar, making them effective for directional plays and basis-reduction strategies in portfolio management.
+
+*Auto-generated summary from 16 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

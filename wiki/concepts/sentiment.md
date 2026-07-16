@@ -5,11 +5,14 @@ related_videos: ["-yvQLv-q9uk", "93vPWsmgsQc", "BZhZpyZzocY", "FUNC-MTq9PQ", "GV
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Sentiment in options trading refers to the collective positioning and emotional state of market participants—measured through indicators like short interest, implied volatility percentile, and momentum—that signal whether traders are broadly bullish or bearish. Traders use sentiment analysis to identify extremes and inflection points, such as when short covering or a wall of worry might fuel rallies, or when subdued sentiment despite price momentum suggests further upside potential. Sentiment serves as a contrarian tool and directional bias input, helping traders anticipate mean reversion and exploit mispricings across options strategies."
 ---
 
 # Sentiment
 
-**Auto-generated concept topic** — discussed across 11 video(s). Pending curated synthesis; the backing source pages are linked below.
+Sentiment in options trading refers to the collective positioning and emotional state of market participants—measured through indicators like short interest, implied volatility percentile, and momentum—that signal whether traders are broadly bullish or bearish. Traders use sentiment analysis to identify extremes and inflection points, such as when short covering or a wall of worry might fuel rallies, or when subdued sentiment despite price momentum suggests further upside potential. Sentiment serves as a contrarian tool and directional bias input, helping traders anticipate mean reversion and exploit mispricings across options strategies.
+
+*Auto-generated summary from 11 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

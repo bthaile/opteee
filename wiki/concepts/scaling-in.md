@@ -5,11 +5,14 @@ related_videos: ["-XQGZSyM8O0", "0ocJTw3Tz9U", "1axDClx9vWQ", "1rqLJW1nK40", "4k
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Scaling in is a position-management technique where traders add to an existing position in tranches rather than deploying capital all at once, allowing them to average entry prices and preserve dry powder for opportunistic entries during price dips. In covered strangles and other multi-leg strategies, scaling protocols are tailored to the underlying's price action and volatility regime, with traders maintaining partial capital allocation (often 60–70%) to fund additional buys when technical support levels are tested. The approach is particularly valuable in sideways or consolidating markets, where it enables traders to grind realized income while keeping reserves available to scale into weakness without overcommitting capital upfront."
 ---
 
 # Scaling In
 
-**Auto-generated concept topic** — discussed across 34 video(s). Pending curated synthesis; the backing source pages are linked below.
+Scaling in is a position-management technique where traders add to an existing position in tranches rather than deploying capital all at once, allowing them to average entry prices and preserve dry powder for opportunistic entries during price dips. In covered strangles and other multi-leg strategies, scaling protocols are tailored to the underlying's price action and volatility regime, with traders maintaining partial capital allocation (often 60–70%) to fund additional buys when technical support levels are tested. The approach is particularly valuable in sideways or consolidating markets, where it enables traders to grind realized income while keeping reserves available to scale into weakness without overcommitting capital upfront.
+
+*Auto-generated summary from 34 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

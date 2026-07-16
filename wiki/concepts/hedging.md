@@ -5,11 +5,14 @@ related_videos: ["6ya9JCd_ogQ", "AXGmgcD15_E", "EjD6KPo3OZs", "JuqhsVCGUCA", "QZ
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Hedging is a risk-management technique that uses options or other derivatives to offset or reduce losses in a primary portfolio position, functioning as \"fire insurance\" rather than a profit engine. The practice can be executed at the portfolio level through diversification and trend-following exits, or at the trade level through direct hedges (positions designed to lose money to protect against larger losses) and indirect hedges (speculative trades that incidentally reduce risk). When deployed strategically with proper position sizing and cost awareness, hedging can theoretically allow traders to reduce portfolio risk while maintaining or exceeding market returns, though perpetual hedges often create drag that outweighs their protective benefit if not carefully managed."
 ---
 
 # Hedging
 
-**Auto-generated concept topic** — discussed across 11 video(s). Pending curated synthesis; the backing source pages are linked below.
+Hedging is a risk-management technique that uses options or other derivatives to offset or reduce losses in a primary portfolio position, functioning as "fire insurance" rather than a profit engine. The practice can be executed at the portfolio level through diversification and trend-following exits, or at the trade level through direct hedges (positions designed to lose money to protect against larger losses) and indirect hedges (speculative trades that incidentally reduce risk). When deployed strategically with proper position sizing and cost awareness, hedging can theoretically allow traders to reduce portfolio risk while maintaining or exceeding market returns, though perpetual hedges often create drag that outweighs their protective benefit if not carefully managed.
+
+*Auto-generated summary from 11 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

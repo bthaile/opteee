@@ -5,11 +5,14 @@ related_videos: ["0quAC-m-NpM", "2jG5SD-3F0w", "3sYsqAWBo80", "5OQNi5AthOk", "8K
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A short put is a directionally bullish options strategy in which a trader sells a put contract, collecting premium upfront while obligating themselves to buy the underlying at the strike price if assigned. The strategy's profitability depends on understanding delta exposure and managing positions actively—closing, rolling, or taking assignment based on whether the original thesis (that the underlying will appreciate) remains valid rather than relying on arbitrary profit targets. Short puts are commonly used as standalone positions or as components of broader strategies like covered strangles and the wheel strategy, with capital efficiency improved through vertical spreads (buying a lower put to cap risk) when naked short puts require excessive margin."
 ---
 
 # Short Put
 
-**Auto-generated concept topic** — discussed across 38 video(s). Pending curated synthesis; the backing source pages are linked below.
+A short put is a directionally bullish options strategy in which a trader sells a put contract, collecting premium upfront while obligating themselves to buy the underlying at the strike price if assigned. The strategy's profitability depends on understanding delta exposure and managing positions actively—closing, rolling, or taking assignment based on whether the original thesis (that the underlying will appreciate) remains valid rather than relying on arbitrary profit targets. Short puts are commonly used as standalone positions or as components of broader strategies like covered strangles and the wheel strategy, with capital efficiency improved through vertical spreads (buying a lower put to cap risk) when naked short puts require excessive margin.
+
+*Auto-generated summary from 38 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

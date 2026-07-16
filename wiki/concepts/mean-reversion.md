@@ -5,11 +5,14 @@ related_videos: ["0iZJfIu3Nac", "1jDrPx6lOgM", "4Lz5jr3grOs", "6CZMjMvG4y4", "6a
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Mean reversion is not explicitly defined or discussed as a standalone topic across the supplied videos. While the corpus covers various trading strategies, market dynamics, and volatility concepts—including range-bound trading, sector rotation, and technical analysis—there is no material that directly addresses mean reversion as a distinct options-trading concept or strategy."
 ---
 
 # Mean Reversion
 
-**Auto-generated concept topic** — discussed across 70 video(s). Pending curated synthesis; the backing source pages are linked below.
+Mean reversion is not explicitly defined or discussed as a standalone topic across the supplied videos. While the corpus covers various trading strategies, market dynamics, and volatility concepts—including range-bound trading, sector rotation, and technical analysis—there is no material that directly addresses mean reversion as a distinct options-trading concept or strategy.
+
+*Auto-generated summary from 70 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

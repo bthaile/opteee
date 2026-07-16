@@ -5,11 +5,14 @@ related_videos: ["2I6SPZjnjew", "2yu8jSYKuH4", "4D1XWrp3xec", "4HHoWqBsc84", "5O
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "XLE is an energy sector exchange-traded fund that appears in the corpus as a tactical rotation target and options-trading vehicle within a small-account portfolio strategy. The host uses XLE short puts and covered strangles to capture premium in a sector rotation environment, closing positions at profit targets (such as a 72-cent credit on a covered strangle) as part of a capital-efficient, small-account approach that emphasizes disciplined profit management and position sizing."
 ---
 
 # XLE
 
-**Auto-generated security topic** — discussed across 15 video(s). Pending curated synthesis; the backing source pages are linked below.
+XLE is an energy sector exchange-traded fund that appears in the corpus as a tactical rotation target and options-trading vehicle within a small-account portfolio strategy. The host uses XLE short puts and covered strangles to capture premium in a sector rotation environment, closing positions at profit targets (such as a 72-cent credit on a covered strangle) as part of a capital-efficient, small-account approach that emphasizes disciplined profit management and position sizing.
+
+*Auto-generated summary from 15 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

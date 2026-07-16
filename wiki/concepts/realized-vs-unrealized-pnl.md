@@ -5,11 +5,14 @@ related_videos: ["-CUgdXmtp5o", "0ocJTw3Tz9U", "1rqLJW1nK40", "3STDqRx1o8w", "3c
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Realized P&L represents actual profits or losses from closed trades, while unrealized P&L reflects the current mark-to-market value of open positions. Many traders fixate on unrealized gains while ignoring the discipline required to close positions and lock in realized profits, or conversely, they avoid realizing losses through endless rolling—both behaviors undermine true profitability. Proper trade management requires tracking both metrics in a trading log to maintain objective performance data and counter cognitive biases that lead to poor position decisions. The distinction is critical because premium received from selling options is unrealized liability until the position closes, and only closed trades generate the actual income that matters for long-term trading success."
 ---
 
 # Realized Vs Unrealized Pnl
 
-**Auto-generated concept topic** — discussed across 67 video(s). Pending curated synthesis; the backing source pages are linked below.
+Realized P&L represents actual profits or losses from closed trades, while unrealized P&L reflects the current mark-to-market value of open positions. Many traders fixate on unrealized gains while ignoring the discipline required to close positions and lock in realized profits, or conversely, they avoid realizing losses through endless rolling—both behaviors undermine true profitability. Proper trade management requires tracking both metrics in a trading log to maintain objective performance data and counter cognitive biases that lead to poor position decisions. The distinction is critical because premium received from selling options is unrealized liability until the position closes, and only closed trades generate the actual income that matters for long-term trading success.
+
+*Auto-generated summary from 67 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

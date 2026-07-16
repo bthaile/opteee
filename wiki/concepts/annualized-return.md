@@ -5,11 +5,14 @@ related_videos: ["0quAC-m-NpM", "1rqLJW1nK40", "3c6fsUwB1pw", "Ig1z2u_lK4k", "K6
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Annualized return is a standardized metric that projects a trade's or portfolio's return over a full year, enabling meaningful comparison across positions with different holding periods and expirations. Traders use annualized return calculations to evaluate whether their expected returns justify the capital and risk deployed, contextualize unrealistic return targets (such as 1% daily, which compounds to roughly 1,127% annualized) against historical benchmarks, and assess risk-adjusted performance through frameworks like return on invested capital or return on risk. This metric is particularly useful for comparing income-generating strategies like short puts and box spreads against the risk-free rate and for setting realistic portfolio-level goals that drive position sizing and trade selection."
 ---
 
 # Annualized Return
 
-**Auto-generated concept topic** — discussed across 13 video(s). Pending curated synthesis; the backing source pages are linked below.
+Annualized return is a standardized metric that projects a trade's or portfolio's return over a full year, enabling meaningful comparison across positions with different holding periods and expirations. Traders use annualized return calculations to evaluate whether their expected returns justify the capital and risk deployed, contextualize unrealistic return targets (such as 1% daily, which compounds to roughly 1,127% annualized) against historical benchmarks, and assess risk-adjusted performance through frameworks like return on invested capital or return on risk. This metric is particularly useful for comparing income-generating strategies like short puts and box spreads against the risk-free rate and for setting realistic portfolio-level goals that drive position sizing and trade selection.
+
+*Auto-generated summary from 13 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

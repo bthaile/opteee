@@ -5,11 +5,14 @@ related_videos: ["AV3h8wrR3aM", "B48KOikbTs8", "NCZNV1K2Tcw", "QnEymZVCzbo", "ZT
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Max drawdown is a key performance metric that measures the largest peak-to-trough decline in a trading account or strategy's value, used to quantify downside risk and evaluate whether a strategy's losses align with a trader's risk tolerance. It appears in systematic strategy evaluation frameworks alongside other metrics like expected return and Sortino ratio, helping traders assess whether backtested or live results are acceptable before committing capital. Portfolio managers use max drawdown tolerance as a foundational constraint when setting goals and sizing positions, ensuring individual trades and multi-strategy portfolios stay within acceptable loss parameters. The metric is particularly relevant when comparing different management approaches—such as disciplined loss management at specific thresholds versus unmanaged positions—to determine which produces returns with drawdowns the trader can sustain."
 ---
 
 # Max Drawdown
 
-**Auto-generated concept topic** — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below.
+Max drawdown is a key performance metric that measures the largest peak-to-trough decline in a trading account or strategy's value, used to quantify downside risk and evaluate whether a strategy's losses align with a trader's risk tolerance. It appears in systematic strategy evaluation frameworks alongside other metrics like expected return and Sortino ratio, helping traders assess whether backtested or live results are acceptable before committing capital. Portfolio managers use max drawdown tolerance as a foundational constraint when setting goals and sizing positions, ensuring individual trades and multi-strategy portfolios stay within acceptable loss parameters. The metric is particularly relevant when comparing different management approaches—such as disciplined loss management at specific thresholds versus unmanaged positions—to determine which produces returns with drawdowns the trader can sustain.
+
+*Auto-generated summary from 7 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

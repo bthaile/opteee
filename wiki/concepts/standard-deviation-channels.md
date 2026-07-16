@@ -5,11 +5,14 @@ related_videos: ["0YG5XSvH_GA", "1axDClx9vWQ", "4NTh_FrF-0Y", "5YK9YbXMgMM", "6I
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Standard deviation channels are technical analysis tools that plot price bands around a moving average, with the bands positioned at set standard deviation distances to visualize volatility and identify overbought/oversold conditions. In options trading, they serve as part of a multi-timeframe decision framework—combined with moving averages, volume profile, and order-flow analysis—to assess price strength, locate support and resistance levels, and inform position sizing and trade selection. Traders use these channels to evaluate market regime (such as consolidation versus trending) and to contextualize broader market breadth and sector analysis when identifying trading opportunities."
 ---
 
 # Standard Deviation Channels
 
-**Auto-generated concept topic** — discussed across 25 video(s). Pending curated synthesis; the backing source pages are linked below.
+Standard deviation channels are technical analysis tools that plot price bands around a moving average, with the bands positioned at set standard deviation distances to visualize volatility and identify overbought/oversold conditions. In options trading, they serve as part of a multi-timeframe decision framework—combined with moving averages, volume profile, and order-flow analysis—to assess price strength, locate support and resistance levels, and inform position sizing and trade selection. Traders use these channels to evaluate market regime (such as consolidation versus trending) and to contextualize broader market breadth and sector analysis when identifying trading opportunities.
+
+*Auto-generated summary from 25 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

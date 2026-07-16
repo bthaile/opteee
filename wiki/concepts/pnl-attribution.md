@@ -5,11 +5,14 @@ related_videos: ["3JV19RH54eQ", "3STDqRx1o8w", "3XRv1HPb2L0", "3c6fsUwB1pw", "43
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "PnL attribution is the process of systematically analyzing and decomposing trading profits and losses to understand which strategies, positions, and decisions drove actual results versus expected outcomes. Traders use trade logs, after-action reviews, and comparative analysis across portfolio holdings to identify performance patterns, isolate the sources of gains or losses, and distinguish between skill-based edge and random variance. This practice requires tracking both realized and unrealized positions, accounting for volatility-adjusted risk exposure rather than notional dollars alone, and comparing actual execution outcomes against pre-trade plans to identify behavioral or mechanical errors that erode edge. By extracting actionable insights from historical PnL data through systematic review, traders can iteratively improve strategy selection, position management, and risk allocation over time."
 ---
 
 # Pnl Attribution
 
-**Auto-generated concept topic** — discussed across 39 video(s). Pending curated synthesis; the backing source pages are linked below.
+PnL attribution is the process of systematically analyzing and decomposing trading profits and losses to understand which strategies, positions, and decisions drove actual results versus expected outcomes. Traders use trade logs, after-action reviews, and comparative analysis across portfolio holdings to identify performance patterns, isolate the sources of gains or losses, and distinguish between skill-based edge and random variance. This practice requires tracking both realized and unrealized positions, accounting for volatility-adjusted risk exposure rather than notional dollars alone, and comparing actual execution outcomes against pre-trade plans to identify behavioral or mechanical errors that erode edge. By extracting actionable insights from historical PnL data through systematic review, traders can iteratively improve strategy selection, position management, and risk allocation over time.
+
+*Auto-generated summary from 39 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

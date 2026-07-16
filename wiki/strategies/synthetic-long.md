@@ -5,11 +5,14 @@ related_videos: ["05aJUfUKE5Q", "0fty1k3IGgY", "6c3CUMAVF04", "9JdI1XeR1G0", "Bb
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A synthetic long is an options structure that combines a long call and a short put at the same strike price and expiration to replicate long stock exposure with leveraged capital deployment. The strategy is used to establish large notional positions with reduced upfront capital by collecting premium from the short put while controlling upside through the long call, making it useful for strategic accumulation or hostile positioning in underlying securities. The profit mechanism depends on directional movement and realized volatility, with the structure's Greeks and risk profile differing from outright stock ownership despite equivalent delta exposure."
 ---
 
 # Synthetic Long
 
-**Auto-generated strategy topic** — discussed across 21 video(s). Pending curated synthesis; the backing source pages are linked below.
+A synthetic long is an options structure that combines a long call and a short put at the same strike price and expiration to replicate long stock exposure with leveraged capital deployment. The strategy is used to establish large notional positions with reduced upfront capital by collecting premium from the short put while controlling upside through the long call, making it useful for strategic accumulation or hostile positioning in underlying securities. The profit mechanism depends on directional movement and realized volatility, with the structure's Greeks and risk profile differing from outright stock ownership despite equivalent delta exposure.
+
+*Auto-generated summary from 21 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["2yu8jSYKuH4", "6Sp4eF9ahW8", "73cEIHM3FLg", "CjLt6G24QyA", "GV
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "SMH does not appear as a distinct topic in the supplied material. The corpus discusses macro market themes (melt-up and bust cycles), options fundamentals and trading mechanics, and individual stock analysis (GameStop), but does not contain substantive discussion of SMH as a security or trading vehicle."
 ---
 
 # SMH
 
-**Auto-generated security topic** — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below.
+SMH does not appear as a distinct topic in the supplied material. The corpus discusses macro market themes (melt-up and bust cycles), options fundamentals and trading mechanics, and individual stock analysis (GameStop), but does not contain substantive discussion of SMH as a security or trading vehicle.
+
+*Auto-generated summary from 9 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

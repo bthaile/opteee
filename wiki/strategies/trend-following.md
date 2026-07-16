@@ -5,11 +5,14 @@ related_videos: ["-RsvTzf4OxA", "0qXakHvgYiQ", "1ILbgbgxl3A", "1axDClx9vWQ", "4K
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Trend following is a trading approach that prioritizes price action and momentum over contrarian conviction or fundamental predictions, emphasizing the importance of following where the market is actually moving rather than betting against it based on what traders believe \"should\" happen. The strategy involves identifying directional moves—whether in equities, sectors, or commodities—and capturing them through disciplined entries aligned with technical breakouts and confluence signals, while maintaining strict exits tied to the invalidation of the underlying thesis rather than arbitrary profit targets. Practitioners stress the discipline required to avoid drawdowns during choppy, range-bound periods and to stay engaged when trending conditions emerge, using technical guardrails and market breadth analysis to navigate sector rotation and identify tradable opportunities across multiple timeframes."
 ---
 
 # Trend Following
 
-**Auto-generated strategy topic** — discussed across 73 video(s). Pending curated synthesis; the backing source pages are linked below.
+Trend following is a trading approach that prioritizes price action and momentum over contrarian conviction or fundamental predictions, emphasizing the importance of following where the market is actually moving rather than betting against it based on what traders believe "should" happen. The strategy involves identifying directional moves—whether in equities, sectors, or commodities—and capturing them through disciplined entries aligned with technical breakouts and confluence signals, while maintaining strict exits tied to the invalidation of the underlying thesis rather than arbitrary profit targets. Practitioners stress the discipline required to avoid drawdowns during choppy, range-bound periods and to stay engaged when trending conditions emerge, using technical guardrails and market breadth analysis to navigate sector rotation and identify tradable opportunities across multiple timeframes.
+
+*Auto-generated summary from 73 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

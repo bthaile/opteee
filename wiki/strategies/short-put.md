@@ -5,11 +5,14 @@ related_videos: ["--aVVZQ5Pxw", "-MQ7kNM0dtI", "-M_lC4RVmvM", "-XQGZSyM8O0", "-Z
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A short put is an options-selling strategy where a trader sells a put option to collect premium, profiting if the underlying stock stays above the strike price at expiration. The strategy is commonly used to generate income or to establish a long position at a desired price, but it carries significant tail risk—a single large loss from a sharp price decline can erase many small winning trades, making win rate an unreliable measure of strategy quality. Successful short put trading requires anchoring management rules to the profit mechanism (premium capture), modeling downside scenarios before entry, and using frameworks like delta bands to dynamically manage positions rather than relying on arbitrary profit targets or max-loss thresholds."
 ---
 
 # Short Put
 
-**Auto-generated strategy topic** — discussed across 196 video(s). Pending curated synthesis; the backing source pages are linked below.
+A short put is an options-selling strategy where a trader sells a put option to collect premium, profiting if the underlying stock stays above the strike price at expiration. The strategy is commonly used to generate income or to establish a long position at a desired price, but it carries significant tail risk—a single large loss from a sharp price decline can erase many small winning trades, making win rate an unreliable measure of strategy quality. Successful short put trading requires anchoring management rules to the profit mechanism (premium capture), modeling downside scenarios before entry, and using frameworks like delta bands to dynamically manage positions rather than relying on arbitrary profit targets or max-loss thresholds.
+
+*Auto-generated summary from 196 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

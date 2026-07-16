@@ -5,11 +5,14 @@ related_videos: ["--aVVZQ5Pxw", "-qSV5WZNlP4", "05aJUfUKE5Q", "0iZJfIu3Nac", "0p
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Short premium is an options strategy in which a trader sells options (puts, calls, or combinations like straddles) to collect upfront premium, betting that the underlying price will not move far enough to trigger a loss. While short-premium strategies often achieve high win rates (65–89%) due to the statistical advantage of time decay and mean reversion, they suffer from an unfavorable risk-reward structure where numerous small wins can be erased by a single large loss, making expected value rather than win rate the true measure of edge. Successful short-premium trading requires diversification across multiple positions and underlyings, careful position sizing (typically 5% risk per trade), multi-year capital buffers to absorb tail-risk losses, and realistic return targets of 6–15% annually rather than outsized single-trade returns. The strategy's profitability depends critically on managing bid-ask spread costs and avoiding concentration risk, as protective wings (spreads) and transaction friction can eliminate edge entirely if average wins equal average losses plus spread costs."
 ---
 
 # Short Premium
 
-**Auto-generated strategy topic** — discussed across 228 video(s). Pending curated synthesis; the backing source pages are linked below.
+Short premium is an options strategy in which a trader sells options (puts, calls, or combinations like straddles) to collect upfront premium, betting that the underlying price will not move far enough to trigger a loss. While short-premium strategies often achieve high win rates (65–89%) due to the statistical advantage of time decay and mean reversion, they suffer from an unfavorable risk-reward structure where numerous small wins can be erased by a single large loss, making expected value rather than win rate the true measure of edge. Successful short-premium trading requires diversification across multiple positions and underlyings, careful position sizing (typically 5% risk per trade), multi-year capital buffers to absorb tail-risk losses, and realistic return targets of 6–15% annually rather than outsized single-trade returns. The strategy's profitability depends critically on managing bid-ask spread costs and avoiding concentration risk, as protective wings (spreads) and transaction friction can eliminate edge entirely if average wins equal average losses plus spread costs.
+
+*Auto-generated summary from 228 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

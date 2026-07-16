@@ -5,11 +5,14 @@ related_videos: ["-jJkuhl2wyY", "5YK9YbXMgMM", "5bwYlR-1Tdk", "6_FMAL6c_oM", "BM
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A volatility surface plots implied volatilities across all strikes and expirations for a given underlying, revealing how the market prices risk at different points in time and moneyness rather than assuming a flat volatility level as classical models suggest. The surface exhibits structural patterns such as volatility smile (where out-of-the-money and in-the-money options trade at higher IV than at-the-money) and skew (where put-side IV differs from call-side IV), with anomalies signaling market expectations about directional moves, hedging demand, and tail-risk pricing. Traders use volatility surfaces alongside term structures to identify mispricings, exploit relative value opportunities, and avoid overpaying for volatility in high-IV names, particularly when analyzing individual stocks or newly-opened options chains."
 ---
 
 # Volatility Surface
 
-**Auto-generated concept topic** — discussed across 41 video(s). Pending curated synthesis; the backing source pages are linked below.
+A volatility surface plots implied volatilities across all strikes and expirations for a given underlying, revealing how the market prices risk at different points in time and moneyness rather than assuming a flat volatility level as classical models suggest. The surface exhibits structural patterns such as volatility smile (where out-of-the-money and in-the-money options trade at higher IV than at-the-money) and skew (where put-side IV differs from call-side IV), with anomalies signaling market expectations about directional moves, hedging demand, and tail-risk pricing. Traders use volatility surfaces alongside term structures to identify mispricings, exploit relative value opportunities, and avoid overpaying for volatility in high-IV names, particularly when analyzing individual stocks or newly-opened options chains.
+
+*Auto-generated summary from 41 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

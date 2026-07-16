@@ -5,11 +5,14 @@ related_videos: ["0-BUA66HVWg", "3hrdUyJ-KmE", "5G0_P4igVWQ", "5aId1F_kr24", "92
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Volume profile is a technical indicator that visualizes the amount of trading activity that has occurred at specific price levels, revealing supply and demand zones through volume nodes and the point of control. It is configured in charting platforms like thinkorswim using settings such as expansion mode, opacity, and color customization to make price-level activity legible on a chart. In options trading, volume profile serves as a foundational tool within a multi-timeframe technical framework—alongside price action, moving averages, and support/resistance levels—to identify where institutional and retail activity has concentrated and to inform probabilistic decision-making about entry, exit, and support/resistance placement."
 ---
 
 # Volume Profile
 
-**Auto-generated concept topic** — discussed across 36 video(s). Pending curated synthesis; the backing source pages are linked below.
+Volume profile is a technical indicator that visualizes the amount of trading activity that has occurred at specific price levels, revealing supply and demand zones through volume nodes and the point of control. It is configured in charting platforms like thinkorswim using settings such as expansion mode, opacity, and color customization to make price-level activity legible on a chart. In options trading, volume profile serves as a foundational tool within a multi-timeframe technical framework—alongside price action, moving averages, and support/resistance levels—to identify where institutional and retail activity has concentrated and to inform probabilistic decision-making about entry, exit, and support/resistance placement.
+
+*Auto-generated summary from 36 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["78EjRKsvDQA", "BrLsg_ig6uk", "F7zoiv61ohM", "LspC6Wx0QA8", "TT
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Net highs/lows is a breadth indicator that measures the number of stocks reaching new highs versus new lows within a market index, serving as a gauge of broad market participation and health. When net highs/lows is strong and positive, it signals healthy market regime and broad-based strength across many stocks, making it a critical environmental check before initiating directional trades; conversely, when it turns deeply negative or deteriorates, it warns of weakening breadth and potential downside pressure even if major indices remain relatively stable. Traders use net highs/lows alongside other breadth metrics to assess whether market rallies are supported by widespread participation or concentrated in a narrow set of names, informing position-building discipline and risk management decisions."
 ---
 
 # Net Highs Lows
 
-**Auto-generated concept topic** — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below.
+Net highs/lows is a breadth indicator that measures the number of stocks reaching new highs versus new lows within a market index, serving as a gauge of broad market participation and health. When net highs/lows is strong and positive, it signals healthy market regime and broad-based strength across many stocks, making it a critical environmental check before initiating directional trades; conversely, when it turns deeply negative or deteriorates, it warns of weakening breadth and potential downside pressure even if major indices remain relatively stable. Traders use net highs/lows alongside other breadth metrics to assess whether market rallies are supported by widespread participation or concentrated in a narrow set of names, informing position-building discipline and risk management decisions.
+
+*Auto-generated summary from 7 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

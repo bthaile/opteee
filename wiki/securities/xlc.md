@@ -5,11 +5,14 @@ related_videos: ["0iZJfIu3Nac", "1ILbgbgxl3A", "2I6SPZjnjew", "4D1XWrp3xec", "4K
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "XLC is a communications sector exchange-traded fund that serves as a barometer for sector rotation dynamics in the broader market. The channel discusses XLC primarily in the context of identifying tradable opportunities during periods of sector divergence, noting its strength during rotations away from technology and into defensive or cyclical sectors. XLC's performance relative to other sector ETFs like XLU, XLP, and XLV helps traders gauge shifts in market sentiment and construct directional or premium-selling strategies aligned with prevailing rotation themes."
 ---
 
 # XLC
 
-**Auto-generated security topic** — discussed across 29 video(s). Pending curated synthesis; the backing source pages are linked below.
+XLC is a communications sector exchange-traded fund that serves as a barometer for sector rotation dynamics in the broader market. The channel discusses XLC primarily in the context of identifying tradable opportunities during periods of sector divergence, noting its strength during rotations away from technology and into defensive or cyclical sectors. XLC's performance relative to other sector ETFs like XLU, XLP, and XLV helps traders gauge shifts in market sentiment and construct directional or premium-selling strategies aligned with prevailing rotation themes.
+
+*Auto-generated summary from 29 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

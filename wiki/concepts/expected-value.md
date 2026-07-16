@@ -5,11 +5,14 @@ related_videos: ["--aVVZQ5Pxw", "-vDpqqCvosk", "0nXEzaMT7Nc", "0phfdNnT3Q0", "0q
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Expected value in options trading is the mathematical relationship between win rate, average profit per winning trade, and average loss per losing trade—a metric that determines whether a strategy is truly profitable over time. A strategy can exhibit a high win rate (80%+ or 95%) yet produce negative expected value if the average loss on losing trades substantially exceeds the average win, making it unprofitable despite frequent small wins. Expected value is the ultimate measure of strategy quality because it accounts for the full distribution of outcomes, whereas win rate alone is a psychologically appealing but dangerously incomplete metric that drives flawed retail trading marketing. Traders must prioritize building systematic processes to identify and isolate profit mechanisms with genuinely positive expected value rather than chasing strategies with superficially attractive win rates or complex multi-leg structures."
 ---
 
 # Expected Value
 
-**Auto-generated concept topic** — discussed across 103 video(s). Pending curated synthesis; the backing source pages are linked below.
+Expected value in options trading is the mathematical relationship between win rate, average profit per winning trade, and average loss per losing trade—a metric that determines whether a strategy is truly profitable over time. A strategy can exhibit a high win rate (80%+ or 95%) yet produce negative expected value if the average loss on losing trades substantially exceeds the average win, making it unprofitable despite frequent small wins. Expected value is the ultimate measure of strategy quality because it accounts for the full distribution of outcomes, whereas win rate alone is a psychologically appealing but dangerously incomplete metric that drives flawed retail trading marketing. Traders must prioritize building systematic processes to identify and isolate profit mechanisms with genuinely positive expected value rather than chasing strategies with superficially attractive win rates or complex multi-leg structures.
+
+*Auto-generated summary from 103 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

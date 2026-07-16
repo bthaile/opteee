@@ -5,11 +5,14 @@ related_videos: ["2I6SPZjnjew", "4Lz5jr3grOs", "Gsy_ncfFBpo", "JIliIgFYrmE", "m1
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "XLRE is a real estate sector exchange-traded fund that represents defensive equity exposure within the broader market. It is discussed in the context of sector rotation dynamics, particularly as a beneficiary during periods when investors rotate away from growth-heavy sectors like technology into more defensive and cyclical positions, such as following Federal Reserve rate cuts or during market consolidation phases."
 ---
 
 # XLRE
 
-**Auto-generated security topic** — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below.
+XLRE is a real estate sector exchange-traded fund that represents defensive equity exposure within the broader market. It is discussed in the context of sector rotation dynamics, particularly as a beneficiary during periods when investors rotate away from growth-heavy sectors like technology into more defensive and cyclical positions, such as following Federal Reserve rate cuts or during market consolidation phases.
+
+*Auto-generated summary from 6 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

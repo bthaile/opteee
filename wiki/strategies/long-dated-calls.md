@@ -5,11 +5,14 @@ related_videos: ["EMzsNLXZ1bc", "H04ZDCN_KRI", "JIliIgFYrmE", "KKOqF8h1n1s", "Ls
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Long dated calls are far out-of-the-money call options purchased on conviction names with extended time horizons, allowing traders to capture significant upside moves while limiting risk to the premium paid. This strategy is often paired with a conversion mechanism—shorting higher strikes against profitable positions to create risk-free call spreads and lock in gains while maintaining upside exposure. Long dated calls provide structural advantages over near-term options by reducing theta decay pressure and allowing time for thesis development, though they require patience, proper position sizing, and careful management to avoid being directionally correct but unprofitable due to vega sensitivity and the need for sufficiently large moves to overcome time decay."
 ---
 
 # Long Dated Calls
 
-**Auto-generated strategy topic** — discussed across 25 video(s). Pending curated synthesis; the backing source pages are linked below.
+Long dated calls are far out-of-the-money call options purchased on conviction names with extended time horizons, allowing traders to capture significant upside moves while limiting risk to the premium paid. This strategy is often paired with a conversion mechanism—shorting higher strikes against profitable positions to create risk-free call spreads and lock in gains while maintaining upside exposure. Long dated calls provide structural advantages over near-term options by reducing theta decay pressure and allowing time for thesis development, though they require patience, proper position sizing, and careful management to avoid being directionally correct but unprofitable due to vega sensitivity and the need for sufficiently large moves to overcome time decay.
+
+*Auto-generated summary from 25 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

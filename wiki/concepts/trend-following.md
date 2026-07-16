@@ -5,11 +5,14 @@ related_videos: ["-RsvTzf4OxA", "-Zqys05mhkw", "0iZJfIu3Nac", "1axDClx9vWQ", "4g
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Trend following is an approach to trading that prioritizes following price action and momentum rather than fighting the market based on contrarian conviction or predictions about what \"should\" happen. The strategy involves identifying technical breakouts, elevated volume, and directional momentum as signals to enter positions, then disciplining exits when the trend breaks or price reverses. Applied to options trading, trend following can be combined with various structures—such as ratio diagonals or covered strangles—to capture gains from sustained moves while managing risk through technical guardrails and position management. The core principle is that consistent returns come from respecting market direction and avoiding drawdowns during choppy, range-bound periods rather than attempting to predict reversals."
 ---
 
 # Trend Following
 
-**Auto-generated concept topic** — discussed across 44 video(s). Pending curated synthesis; the backing source pages are linked below.
+Trend following is an approach to trading that prioritizes following price action and momentum rather than fighting the market based on contrarian conviction or predictions about what "should" happen. The strategy involves identifying technical breakouts, elevated volume, and directional momentum as signals to enter positions, then disciplining exits when the trend breaks or price reverses. Applied to options trading, trend following can be combined with various structures—such as ratio diagonals or covered strangles—to capture gains from sustained moves while managing risk through technical guardrails and position management. The core principle is that consistent returns come from respecting market direction and avoiding drawdowns during choppy, range-bound periods rather than attempting to predict reversals.
+
+*Auto-generated summary from 44 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

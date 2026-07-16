@@ -5,11 +5,14 @@ related_videos: ["BTU71jbUgDo", "GK9EHx-NZ_M", "SC9KjFkDXco", "WWVsuoWX8mU", "kV
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A box spread is a financing strategy that combines a call spread and a put spread on the same strike pair to borrow or lend capital at rates approximating the risk-free rate, making it particularly effective on European-style options like SPX where early assignment risk is eliminated. Traders use box spreads to access capital efficiently, compare yields against the risk-free rate, and integrate them into broader portfolio strategies such as covered strangles. The strategy's appeal lies in its ability to provide tax-efficient capital access through realized losses on 1256 contracts while enabling precise tracking of annualized returns and fee impact across multiple concurrent positions."
 ---
 
 # Box Spread
 
-**Auto-generated concept topic** — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below.
+A box spread is a financing strategy that combines a call spread and a put spread on the same strike pair to borrow or lend capital at rates approximating the risk-free rate, making it particularly effective on European-style options like SPX where early assignment risk is eliminated. Traders use box spreads to access capital efficiently, compare yields against the risk-free rate, and integrate them into broader portfolio strategies such as covered strangles. The strategy's appeal lies in its ability to provide tax-efficient capital access through realized losses on 1256 contracts while enabling precise tracking of annualized returns and fee impact across multiple concurrent positions.
+
+*Auto-generated summary from 6 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

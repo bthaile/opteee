@@ -5,11 +5,14 @@ related_videos: ["-XQGZSyM8O0", "I-RmKHjrD8g", "SlisA7fCzRM", "XLlTYEvy-XA", "YL
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Scaling out is a position management technique where traders systematically close portions of a profitable trade at predetermined price levels or profit targets rather than holding the entire position to an extreme price target. This approach allows traders to lock in realized gains while maintaining smaller \"runner\" positions that preserve upside exposure, effectively building larger positions through accumulated profits than would be possible with a single buy-and-hold entry. The strategy requires pre-trade planning that defines specific scaling rules, profit thresholds, and position-sizing decisions before capital is deployed, enabling disciplined execution during volatile moves rather than reactive decision-making under pressure."
 ---
 
 # Scaling Out
 
-**Auto-generated concept topic** — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below.
+Scaling out is a position management technique where traders systematically close portions of a profitable trade at predetermined price levels or profit targets rather than holding the entire position to an extreme price target. This approach allows traders to lock in realized gains while maintaining smaller "runner" positions that preserve upside exposure, effectively building larger positions through accumulated profits than would be possible with a single buy-and-hold entry. The strategy requires pre-trade planning that defines specific scaling rules, profit thresholds, and position-sizing decisions before capital is deployed, enabling disciplined execution during volatile moves rather than reactive decision-making under pressure.
+
+*Auto-generated summary from 7 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

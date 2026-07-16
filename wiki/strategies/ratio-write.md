@@ -5,11 +5,14 @@ related_videos: ["2TdIx_Bn3BY", "3JV19RH54eQ", "6-wt8t1AguM", "9H5G9H62lMQ", "Ad
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A ratio write is a strategy where a trader sells more call options than the number of shares held long, typically at a higher strike price, to collect additional premium while preserving upside participation beyond the first call's strike. Rather than selling calls at a 1:1 ratio (one call per 100 shares) as in a standard covered call, a ratio write—such as selling 2 or 3 calls against 100 shares—allows the trader to capture more premium upfront while still participating in stock appreciation if the price rises above the short calls' strike. This approach addresses the core limitation of covered calls, which cap upside profit while maintaining full downside exposure, by enabling data-driven position-sizing decisions based on breakeven calculations between premium collected and additional upside potential. The strategy is commonly used within the wheel strategy and covered-strangle frameworks to enhance returns and align risk/reward with directional conviction."
 ---
 
 # Ratio Write
 
-**Auto-generated strategy topic** — discussed across 39 video(s). Pending curated synthesis; the backing source pages are linked below.
+A ratio write is a strategy where a trader sells more call options than the number of shares held long, typically at a higher strike price, to collect additional premium while preserving upside participation beyond the first call's strike. Rather than selling calls at a 1:1 ratio (one call per 100 shares) as in a standard covered call, a ratio write—such as selling 2 or 3 calls against 100 shares—allows the trader to capture more premium upfront while still participating in stock appreciation if the price rises above the short calls' strike. This approach addresses the core limitation of covered calls, which cap upside profit while maintaining full downside exposure, by enabling data-driven position-sizing decisions based on breakeven calculations between premium collected and additional upside potential. The strategy is commonly used within the wheel strategy and covered-strangle frameworks to enhance returns and align risk/reward with directional conviction.
+
+*Auto-generated summary from 39 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

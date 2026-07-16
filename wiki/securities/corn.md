@@ -5,11 +5,14 @@ related_videos: ["O1ZjVHom2ms", "QZUk0K75gu8", "UZOcepy6VxY", "fNW7e0SdtG0", "gn
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "CORN is a commodity futures contract representing corn, a staple agricultural commodity traded on futures exchanges. It is used in options and futures trading as part of diversified, multi-market portfolios for hedging, direct commodity exposure, and trend-following strategies, particularly within systematic approaches that span 40–60 uncorrelated positions across asset classes. Traders employ corn futures alongside other commodities to build \"all-weather\" portfolios designed to profit across different market regimes while managing risk through position sizing and diversification rather than directional prediction."
 ---
 
 # CORN
 
-**Auto-generated security topic** — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below.
+CORN is a commodity futures contract representing corn, a staple agricultural commodity traded on futures exchanges. It is used in options and futures trading as part of diversified, multi-market portfolios for hedging, direct commodity exposure, and trend-following strategies, particularly within systematic approaches that span 40–60 uncorrelated positions across asset classes. Traders employ corn futures alongside other commodities to build "all-weather" portfolios designed to profit across different market regimes while managing risk through position sizing and diversification rather than directional prediction.
+
+*Auto-generated summary from 6 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

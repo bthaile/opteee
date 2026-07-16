@@ -5,11 +5,14 @@ related_videos: ["0phfdNnT3Q0", "5qqDL8_cYGA", "7xLGynW-FdA", "8FOQv9UHnsc", "Ao
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A credit spread is a short option strategy that sells premium while using a protective long option at a further strike to cap risk and reduce capital requirements. The strategy's profitability depends on identifying the correct profit mechanism—such as exploiting the variance risk premium or trading elevated implied volatility—rather than defaulting to spreads simply because they are more affordable; traders must ensure their Greeks actually align with their thesis, as a poorly constructed spread can leave them nearly neutral to the intended exposure. Credit spreads are mechanically affected by bid-ask spread costs, which can erode edge entirely if the average win equals the average loss plus transaction costs, and high probability of profit alone does not guarantee profitability without genuine edge measured through expectancy across a large sample size."
 ---
 
 # Credit Spread
 
-**Auto-generated strategy topic** — discussed across 29 video(s). Pending curated synthesis; the backing source pages are linked below.
+A credit spread is a short option strategy that sells premium while using a protective long option at a further strike to cap risk and reduce capital requirements. The strategy's profitability depends on identifying the correct profit mechanism—such as exploiting the variance risk premium or trading elevated implied volatility—rather than defaulting to spreads simply because they are more affordable; traders must ensure their Greeks actually align with their thesis, as a poorly constructed spread can leave them nearly neutral to the intended exposure. Credit spreads are mechanically affected by bid-ask spread costs, which can erode edge entirely if the average win equals the average loss plus transaction costs, and high probability of profit alone does not guarantee profitability without genuine edge measured through expectancy across a large sample size.
+
+*Auto-generated summary from 29 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

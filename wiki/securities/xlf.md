@@ -5,11 +5,14 @@ related_videos: ["0La1c59B5Zw", "2I6SPZjnjew", "4Ksbe6bpV8o", "4Lz5jr3grOs", "6C
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "XLF is a financial-sector exchange-traded fund that serves as a vehicle for sector-rotation trades in options strategies. It appears in the corpus primarily as a beneficiary of rate-cut cycles and deregulation expectations, rallying when interest-rate policy becomes more accommodative or when political regimes favor lighter financial regulation. Traders use XLF options—particularly short puts and other premium-selling strategies—to capture theta decay and volatility risk premium during periods of sector strength or consolidation."
 ---
 
 # XLF
 
-**Auto-generated security topic** — discussed across 30 video(s). Pending curated synthesis; the backing source pages are linked below.
+XLF is a financial-sector exchange-traded fund that serves as a vehicle for sector-rotation trades in options strategies. It appears in the corpus primarily as a beneficiary of rate-cut cycles and deregulation expectations, rallying when interest-rate policy becomes more accommodative or when political regimes favor lighter financial regulation. Traders use XLF options—particularly short puts and other premium-selling strategies—to capture theta decay and volatility risk premium during periods of sector strength or consolidation.
+
+*Auto-generated summary from 30 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

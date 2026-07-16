@@ -5,11 +5,14 @@ related_videos: ["3J3S-ewvxn0", "9H5G9H62lMQ", "Nfuui1cwi1w", "PwoEFKVQvSQ", "S2
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A counterparty is the other party to an options transaction—the entity on the opposite side of a contract willing to transact at a given price. In multi-leg strategies, each short option is treated independently by the market and counterparties, meaning assignment risk exists for individual legs even within hedged spreads. When closing complex multi-leg positions, submitting all legs as a single order requires finding one counterparty willing to transact the entire package, which is far more difficult than exiting legs sequentially to find separate counterparties for each leg, dramatically improving fill probability and execution speed."
 ---
 
 # Counterparty
 
-**Auto-generated concept topic** — discussed across 13 video(s). Pending curated synthesis; the backing source pages are linked below.
+A counterparty is the other party to an options transaction—the entity on the opposite side of a contract willing to transact at a given price. In multi-leg strategies, each short option is treated independently by the market and counterparties, meaning assignment risk exists for individual legs even within hedged spreads. When closing complex multi-leg positions, submitting all legs as a single order requires finding one counterparty willing to transact the entire package, which is far more difficult than exiting legs sequentially to find separate counterparties for each leg, dramatically improving fill probability and execution speed.
+
+*Auto-generated summary from 13 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

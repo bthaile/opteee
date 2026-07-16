@@ -5,11 +5,14 @@ related_videos: ["6Sp4eF9ahW8", "7XyTZoId-Aw", "JuqhsVCGUCA", "OWQs77SA_m4", "gn
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Reshoring refers to the policy-driven movement to bring manufacturing and supply-chain production back to the United States, primarily through tariff incentives and deregulation rather than direct mandates. In the options-trading context, reshoring is discussed as a structural economic shift with inflationary consequences and long-term implications for energy demand, manufacturing costs, and geopolitical realignment, creating both near-term market dislocations (volatility spikes, sector rotations) and longer-term trading opportunities tied to commodity cycles and industrial production. Traders monitor reshoring momentum as a macro catalyst that interacts with tariff negotiations, energy abundance, and supply-chain vulnerabilities to inform positioning across equities, commodities, and volatility strategies."
 ---
 
 # Reshoring
 
-**Auto-generated concept topic** — discussed across 8 video(s). Pending curated synthesis; the backing source pages are linked below.
+Reshoring refers to the policy-driven movement to bring manufacturing and supply-chain production back to the United States, primarily through tariff incentives and deregulation rather than direct mandates. In the options-trading context, reshoring is discussed as a structural economic shift with inflationary consequences and long-term implications for energy demand, manufacturing costs, and geopolitical realignment, creating both near-term market dislocations (volatility spikes, sector rotations) and longer-term trading opportunities tied to commodity cycles and industrial production. Traders monitor reshoring momentum as a macro catalyst that interacts with tariff negotiations, energy abundance, and supply-chain vulnerabilities to inform positioning across equities, commodities, and volatility strategies.
+
+*Auto-generated summary from 8 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["5K0UEOLDP5k", "Ig1z2u_lK4k", "v1rw2Y_mjVQ"]
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Volatility Risk Premium refers to the profit opportunity from selling options when implied volatility is elevated relative to realized volatility, capturing the difference as decay occurs. The strategy is employed as part of a diversified options portfolio, particularly in low-volatility market environments where broad-market volatility is suppressed but pockets of elevated volatility exist in individual stocks and sectors. Traders identify premium-selling opportunities through systematic scanning and position sizing aligned with portfolio risk tolerance, using tools like beta-weighted deltas and multi-timeframe analysis to manage exposure across different volatility regimes."
 ---
 
 # Volatility Risk Premium
 
-**Auto-generated strategy topic** — discussed across 3 video(s). Pending curated synthesis; the backing source pages are linked below.
+Volatility Risk Premium refers to the profit opportunity from selling options when implied volatility is elevated relative to realized volatility, capturing the difference as decay occurs. The strategy is employed as part of a diversified options portfolio, particularly in low-volatility market environments where broad-market volatility is suppressed but pockets of elevated volatility exist in individual stocks and sectors. Traders identify premium-selling opportunities through systematic scanning and position sizing aligned with portfolio risk tolerance, using tools like beta-weighted deltas and multi-timeframe analysis to manage exposure across different volatility regimes.
+
+*Auto-generated summary from 3 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

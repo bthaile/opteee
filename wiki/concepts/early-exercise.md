@@ -5,11 +5,14 @@ related_videos: ["5Tc9L4TvPR8", "5YEY_IvBdPg", "5lJbpzPF1RY", "6c3CUMAVF04", "Af
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Early exercise is the decision by an option holder to exercise their right before expiration, which is economically rational only when specific conditions are met—primarily when the interest earned on short proceeds (for puts) or dividend capture (for calls) exceeds the extrinsic value being surrendered. Evaluating early exercise requires a two-stage test: first comparing the financial benefit against forgone extrinsic value, and second determining whether the current moment is optimal using marginal analysis of theta and daily interest costs. This concept applies primarily to American-style options, which carry early assignment risk, and is especially relevant in covered-call management where deep in-the-money short calls face elevated assignment risk ahead of dividend dates."
 ---
 
 # Early Exercise
 
-**Auto-generated concept topic** — discussed across 38 video(s). Pending curated synthesis; the backing source pages are linked below.
+Early exercise is the decision by an option holder to exercise their right before expiration, which is economically rational only when specific conditions are met—primarily when the interest earned on short proceeds (for puts) or dividend capture (for calls) exceeds the extrinsic value being surrendered. Evaluating early exercise requires a two-stage test: first comparing the financial benefit against forgone extrinsic value, and second determining whether the current moment is optimal using marginal analysis of theta and daily interest costs. This concept applies primarily to American-style options, which carry early assignment risk, and is especially relevant in covered-call management where deep in-the-money short calls face elevated assignment risk ahead of dividend dates.
+
+*Auto-generated summary from 38 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

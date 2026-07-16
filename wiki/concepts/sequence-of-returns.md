@@ -5,11 +5,14 @@ related_videos: ["-qSV5WZNlP4", "AJP8M8DQ_1U", "B3SW20MSNbM", "EkAxyxtD0hc", "V0
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Sequence of returns refers to the order in which investment gains and losses occur over time, which significantly impacts the final portfolio value even when average returns remain constant. In options trading, sequence of returns is critical because early drawdowns can severely impair long-term wealth accumulation—a trader who loses capital early must generate outsized returns later to recover, making drawdown management and consistent position sizing essential to sustainable profitability. The concept underpins the emphasis across the channel on building multi-year capital buffers, realistic return targets (6–15% annually), and the law of large numbers, since a trader's ability to survive unfavorable sequences early in their career determines whether they can compound returns over decades."
 ---
 
 # Sequence Of Returns
 
-**Auto-generated concept topic** — discussed across 10 video(s). Pending curated synthesis; the backing source pages are linked below.
+Sequence of returns refers to the order in which investment gains and losses occur over time, which significantly impacts the final portfolio value even when average returns remain constant. In options trading, sequence of returns is critical because early drawdowns can severely impair long-term wealth accumulation—a trader who loses capital early must generate outsized returns later to recover, making drawdown management and consistent position sizing essential to sustainable profitability. The concept underpins the emphasis across the channel on building multi-year capital buffers, realistic return targets (6–15% annually), and the law of large numbers, since a trader's ability to survive unfavorable sequences early in their career determines whether they can compound returns over decades.
+
+*Auto-generated summary from 10 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

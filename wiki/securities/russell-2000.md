@@ -5,11 +5,14 @@ related_videos: ["-CUgdXmtp5o", "2yu8jSYKuH4", "4HHoWqBsc84", "4Lz5jr3grOs", "6C
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "The Russell 2000 is a small-cap equity index that serves as the underlying for the IWM ETF, used by options traders as an alternative to large-cap benchmarks like the S&P 500. Traders favor IWM over the cash-settled Russell 2000 Index (RUT) for covered-strangle strategies because it offers superior sector diversification across 2,000+ holdings, higher capital efficiency on cash-secured puts, and the ability to take assignment on shares. The Russell 2000 has historically lagged large caps during market rallies but tends to outperform during risk-on periods and following Fed rate cuts, making it a barometer for small-cap and cyclical market sentiment."
 ---
 
 # Russell 2000
 
-**Auto-generated security topic** — discussed across 50 video(s). Pending curated synthesis; the backing source pages are linked below.
+The Russell 2000 is a small-cap equity index that serves as the underlying for the IWM ETF, used by options traders as an alternative to large-cap benchmarks like the S&P 500. Traders favor IWM over the cash-settled Russell 2000 Index (RUT) for covered-strangle strategies because it offers superior sector diversification across 2,000+ holdings, higher capital efficiency on cash-secured puts, and the ability to take assignment on shares. The Russell 2000 has historically lagged large caps during market rallies but tends to outperform during risk-on periods and following Fed rate cuts, making it a barometer for small-cap and cyclical market sentiment.
+
+*Auto-generated summary from 50 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

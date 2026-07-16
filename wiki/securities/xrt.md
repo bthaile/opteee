@@ -5,11 +5,14 @@ related_videos: ["3J3S-ewvxn0", "7tBAlmNokFI", "A9Uq-DNAV2I", "FuuVCSD5QVc", "H0
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "XRT is a retail-sector exchange-traded fund used in correlation and volatility analysis alongside meme stocks like GameStop and AMC to understand broader market dynamics and price relationships. The channel examines XRT alongside individual names to study how sector-level movements and options positioning interact with idiosyncratic stock behavior, particularly in the context of understanding whether price moves are driven by retail-specific factors or broader market correlation. XRT serves as a reference point for analyzing whether meme-stock volatility spikes and options flow represent isolated retail phenomena or reflect wider sector stress."
 ---
 
 # XRT
 
-**Auto-generated security topic** — discussed across 11 video(s). Pending curated synthesis; the backing source pages are linked below.
+XRT is a retail-sector exchange-traded fund used in correlation and volatility analysis alongside meme stocks like GameStop and AMC to understand broader market dynamics and price relationships. The channel examines XRT alongside individual names to study how sector-level movements and options positioning interact with idiosyncratic stock behavior, particularly in the context of understanding whether price moves are driven by retail-specific factors or broader market correlation. XRT serves as a reference point for analyzing whether meme-stock volatility spikes and options flow represent isolated retail phenomena or reflect wider sector stress.
+
+*Auto-generated summary from 11 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

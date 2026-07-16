@@ -5,11 +5,14 @@ related_videos: ["783T-aRhwnI", "7_bIW3YqY78", "92W1K8z2DKU", "ID-Kl0y1bxs", "IT
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Linear regression channels are a price analysis tool that combines a line of best fit with statistical bands to identify prevailing trends and price extremes. Unlike standard deviation channels, they use actual price extremes within a given aggregation period to construct the bands, making them useful for identifying both long-term trend context and shorter-term reversal opportunities. In options trading, linear regression channels serve as part of a multi-timeframe technical framework—layered with moving averages, volume profile, and support/resistance levels—to build confluence of evidence for trade setup decisions rather than relying on any single indicator."
 ---
 
 # Linear Regression Channels
 
-**Auto-generated concept topic** — discussed across 14 video(s). Pending curated synthesis; the backing source pages are linked below.
+Linear regression channels are a price analysis tool that combines a line of best fit with statistical bands to identify prevailing trends and price extremes. Unlike standard deviation channels, they use actual price extremes within a given aggregation period to construct the bands, making them useful for identifying both long-term trend context and shorter-term reversal opportunities. In options trading, linear regression channels serve as part of a multi-timeframe technical framework—layered with moving averages, volume profile, and support/resistance levels—to build confluence of evidence for trade setup decisions rather than relying on any single indicator.
+
+*Auto-generated summary from 14 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

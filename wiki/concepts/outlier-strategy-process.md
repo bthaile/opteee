@@ -5,11 +5,14 @@ related_videos: ["-qSV5WZNlP4", "2dP1Cu9Pjt8", "4rWdA8oqJmQ", "66PQ2Ke5Ggo", "8M
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "The Outlier Strategy Process is a systematic framework for building options trades by first identifying the specific profit mechanism (the repeatable, quantifiable pattern that generates returns) and then constructing a strategy optimized for that edge, rather than selecting strategies in isolation or chasing generic \"best\" approaches. The process emphasizes that no single strategy excels across all market conditions, so traders must isolate their edge, understand why it works through the lens of options Greeks, and match position structure to that specific profit mechanism. Implementation involves portfolio-level decisions, opportunity identification, thesis definition, and disciplined management rules applied consistently over time. This approach prioritizes understanding the *why* before deciding the *how*, grounding trade construction in repeatable processes with positive expected value rather than ad-hoc decision-making or individual trade outcomes."
 ---
 
 # Outlier Strategy Process
 
-**Auto-generated concept topic** — discussed across 39 video(s). Pending curated synthesis; the backing source pages are linked below.
+The Outlier Strategy Process is a systematic framework for building options trades by first identifying the specific profit mechanism (the repeatable, quantifiable pattern that generates returns) and then constructing a strategy optimized for that edge, rather than selecting strategies in isolation or chasing generic "best" approaches. The process emphasizes that no single strategy excels across all market conditions, so traders must isolate their edge, understand why it works through the lens of options Greeks, and match position structure to that specific profit mechanism. Implementation involves portfolio-level decisions, opportunity identification, thesis definition, and disciplined management rules applied consistently over time. This approach prioritizes understanding the *why* before deciding the *how*, grounding trade construction in repeatable processes with positive expected value rather than ad-hoc decision-making or individual trade outcomes.
+
+*Auto-generated summary from 39 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

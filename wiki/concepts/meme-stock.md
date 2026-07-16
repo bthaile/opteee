@@ -5,11 +5,14 @@ related_videos: ["1rqLJW1nK40", "3hrdUyJ-KmE", "5YK9YbXMgMM", "7mlZTr3xeHA", "AJ
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A meme stock is an equity that experiences outsized retail interest and volatile price action driven by social coordination and structural market mechanics (short squeezes, gamma ramps) rather than fundamental business performance, making standard technical analysis unreliable for prediction. In options trading, meme stocks like GameStop are approached through premium-selling strategies such as covered strangles and the wheel, which capitalize on persistently elevated implied volatility and the divergence between implied and realized volatility, rather than through directional long calls that bleed from theta decay. Key to trading meme stocks is recognizing that they remain quiet during consolidation periods but move fast when catalysts or structural conditions align, requiring traders to monitor volatility surfaces, call-to-put ratios, and open-interest shifts to position ahead of moves."
 ---
 
 # Meme Stock
 
-**Auto-generated concept topic** — discussed across 17 video(s). Pending curated synthesis; the backing source pages are linked below.
+A meme stock is an equity that experiences outsized retail interest and volatile price action driven by social coordination and structural market mechanics (short squeezes, gamma ramps) rather than fundamental business performance, making standard technical analysis unreliable for prediction. In options trading, meme stocks like GameStop are approached through premium-selling strategies such as covered strangles and the wheel, which capitalize on persistently elevated implied volatility and the divergence between implied and realized volatility, rather than through directional long calls that bleed from theta decay. Key to trading meme stocks is recognizing that they remain quiet during consolidation periods but move fast when catalysts or structural conditions align, requiring traders to monitor volatility surfaces, call-to-put ratios, and open-interest shifts to position ahead of moves.
+
+*Auto-generated summary from 17 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

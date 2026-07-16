@@ -5,11 +5,14 @@ related_videos: ["-RsvTzf4OxA", "-mD-g1Io3II", "0gle3um9MoE", "0qXakHvgYiQ", "1N
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Momentum in options trading refers to the directional force and velocity of price movement in an underlying asset, which traders identify through technical analysis, volume patterns, and price-action signals to align with their core profit mechanism. Traders use momentum to time entries and exits—capturing sustained moves in either direction while invalidating their thesis when momentum breaks down or reverses—rather than relying on arbitrary percentage-based rules. Momentum is particularly relevant in options because elevated implied volatility and skewed call or put positioning often accompany strong momentum moves, creating opportunities for both directional and volatility-based strategies. The key principle is that momentum signals must be selected and interpreted based on the specific time frame and profit edge being traded, not applied universally across all market conditions."
 ---
 
 # Momentum
 
-**Auto-generated concept topic** — discussed across 110 video(s). Pending curated synthesis; the backing source pages are linked below.
+Momentum in options trading refers to the directional force and velocity of price movement in an underlying asset, which traders identify through technical analysis, volume patterns, and price-action signals to align with their core profit mechanism. Traders use momentum to time entries and exits—capturing sustained moves in either direction while invalidating their thesis when momentum breaks down or reverses—rather than relying on arbitrary percentage-based rules. Momentum is particularly relevant in options because elevated implied volatility and skewed call or put positioning often accompany strong momentum moves, creating opportunities for both directional and volatility-based strategies. The key principle is that momentum signals must be selected and interpreted based on the specific time frame and profit edge being traded, not applied universally across all market conditions.
+
+*Auto-generated summary from 110 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

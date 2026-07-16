@@ -5,11 +5,14 @@ related_videos: ["-LgTPBfGngc", "0-BUA66HVWg", "0a1UROsFf_A", "0fty1k3IGgY", "0k
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Moneyness describes an option's position relative to the underlying asset's current price, determining whether it is in-the-money (ITM), at-the-money (ATM), or out-of-the-money (OTM). This classification directly affects an option's delta, gamma, and theta characteristics—ITM options have higher delta and less theta decay, while OTM options have lower delta but cheaper premiums and slower theta erosion, creating a fundamental trade-off between capital efficiency and probability of profit. Traders use moneyness to structure positions strategically, such as selecting delta levels when buying calls to balance longevity against gamma exposure, or understanding why far OTM options require larger underlying moves to generate returns despite their low cost."
 ---
 
 # Moneyness
 
-**Auto-generated concept topic** — discussed across 198 video(s). Pending curated synthesis; the backing source pages are linked below.
+Moneyness describes an option's position relative to the underlying asset's current price, determining whether it is in-the-money (ITM), at-the-money (ATM), or out-of-the-money (OTM). This classification directly affects an option's delta, gamma, and theta characteristics—ITM options have higher delta and less theta decay, while OTM options have lower delta but cheaper premiums and slower theta erosion, creating a fundamental trade-off between capital efficiency and probability of profit. Traders use moneyness to structure positions strategically, such as selecting delta levels when buying calls to balance longevity against gamma exposure, or understanding why far OTM options require larger underlying moves to generate returns despite their low cost.
+
+*Auto-generated summary from 198 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

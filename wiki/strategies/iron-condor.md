@@ -5,11 +5,14 @@ related_videos: ["0nXEzaMT7Nc", "1rqLJW1nK40", "2t3Nv-63Jtc", "4sYY-sUtlGQ", "58
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "An iron condor is a premium-selling strategy that combines short call and put spreads at different strike prices to profit from a range-bound market while defining maximum risk and profit. The strategy is popular for its high probability of profit and capital efficiency, particularly on indices like SPX, though tighter spreads reduce per-contract profit while maintaining similar loss exposure. Iron condors require disciplined execution within a documented trading plan and should only be deployed when a trader has identified a genuine edge in the underlying market rather than simply as a capital-constrained alternative to naked options. The strategy's success depends on understanding volatility mechanics, position sizing to survive clustering losses, and strict loss-cutting discipline rather than relying on high win rates alone."
 ---
 
 # Iron Condor
 
-**Auto-generated strategy topic** — discussed across 44 video(s). Pending curated synthesis; the backing source pages are linked below.
+An iron condor is a premium-selling strategy that combines short call and put spreads at different strike prices to profit from a range-bound market while defining maximum risk and profit. The strategy is popular for its high probability of profit and capital efficiency, particularly on indices like SPX, though tighter spreads reduce per-contract profit while maintaining similar loss exposure. Iron condors require disciplined execution within a documented trading plan and should only be deployed when a trader has identified a genuine edge in the underlying market rather than simply as a capital-constrained alternative to naked options. The strategy's success depends on understanding volatility mechanics, position sizing to survive clustering losses, and strict loss-cutting discipline rather than relying on high win rates alone.
+
+*Auto-generated summary from 44 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

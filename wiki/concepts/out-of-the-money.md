@@ -5,11 +5,14 @@ related_videos: ["0kXY1hY--Ww", "1kGksRBt2aA", "2XS6kMnDUT4", "3MTc2MylrDQ", "4C
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Out-of-the-money (OTM) options are contracts where the strike price is unfavorable relative to the current underlying price—calls struck above spot or puts struck below spot—and therefore carry no intrinsic value, only extrinsic (time) value. OTM options are cheaper to purchase than in-the-money alternatives, allowing traders to buy more contracts for the same capital, but require larger underlying price moves to generate profit because their delta is low and they must move into the money to retain value at expiration. The primary trade-off in buying OTM options is reduced theta decay (favorable) against the need for substantial directional moves to activate gamma gains and offset the accelerating time bleed as expiration approaches. At expiration, every OTM option resolves to a delta of zero and expires worthless, making position management and understanding charm (delta decay) critical to avoid losses despite favorable price moves."
 ---
 
 # Out Of The Money
 
-**Auto-generated concept topic** — discussed across 34 video(s). Pending curated synthesis; the backing source pages are linked below.
+Out-of-the-money (OTM) options are contracts where the strike price is unfavorable relative to the current underlying price—calls struck above spot or puts struck below spot—and therefore carry no intrinsic value, only extrinsic (time) value. OTM options are cheaper to purchase than in-the-money alternatives, allowing traders to buy more contracts for the same capital, but require larger underlying price moves to generate profit because their delta is low and they must move into the money to retain value at expiration. The primary trade-off in buying OTM options is reduced theta decay (favorable) against the need for substantial directional moves to activate gamma gains and offset the accelerating time bleed as expiration approaches. At expiration, every OTM option resolves to a delta of zero and expires worthless, making position management and understanding charm (delta decay) critical to avoid losses despite favorable price moves.
+
+*Auto-generated summary from 34 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

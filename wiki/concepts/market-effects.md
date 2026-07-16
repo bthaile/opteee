@@ -5,11 +5,14 @@ related_videos: ["7fC4wwgyEsI", "CzBpxADkCk0", "QQoAD4Mu-l8", "VpPB0Bmpgpk", "Yz
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Market effects are reliable, measurable patterns in how markets behave—such as drift, index rebalancing, put skew, or earnings volatility—that create exploitable profit opportunities independent of any specific trading tool or strategy. Rather than starting with options structures or technical indicators, traders should first identify and research a market effect through peer-reviewed literature and backtesting, then design an options strategy specifically to capture that effect. All trade management decisions—including profit-taking, loss management, thesis validation, and duration—must be anchored to the observed market effect being traded, ensuring that edge comes from understanding markets rather than from the options instrument itself."
 ---
 
 # Market Effects
 
-**Auto-generated concept topic** — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below.
+Market effects are reliable, measurable patterns in how markets behave—such as drift, index rebalancing, put skew, or earnings volatility—that create exploitable profit opportunities independent of any specific trading tool or strategy. Rather than starting with options structures or technical indicators, traders should first identify and research a market effect through peer-reviewed literature and backtesting, then design an options strategy specifically to capture that effect. All trade management decisions—including profit-taking, loss management, thesis validation, and duration—must be anchored to the observed market effect being traded, ensuring that edge comes from understanding markets rather than from the options instrument itself.
+
+*Auto-generated summary from 7 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

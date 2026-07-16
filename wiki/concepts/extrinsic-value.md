@@ -5,11 +5,14 @@ related_videos: ["-jJkuhl2wyY", "0kXY1hY--Ww", "0ocJTw3Tz9U", "3MTc2MylrDQ", "4C
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Extrinsic value is the portion of an option's premium attributable to time remaining until expiration and implied volatility, distinct from intrinsic value (the in-the-money amount). It decays predictably over time through theta, accelerating as expiration approaches, and becomes a critical management consideration in positions like covered calls where deep in-the-money options with minimal extrinsic value face elevated early assignment risk. Traders use extrinsic value to evaluate whether early exercise is economically rational by comparing the forgone extrinsic value against interest earned on short proceeds, and to structure long option positions that survive theta bleed by balancing days-to-expiration, delta selection, and gamma exposure."
 ---
 
 # Extrinsic Value
 
-**Auto-generated concept topic** — discussed across 89 video(s). Pending curated synthesis; the backing source pages are linked below.
+Extrinsic value is the portion of an option's premium attributable to time remaining until expiration and implied volatility, distinct from intrinsic value (the in-the-money amount). It decays predictably over time through theta, accelerating as expiration approaches, and becomes a critical management consideration in positions like covered calls where deep in-the-money options with minimal extrinsic value face elevated early assignment risk. Traders use extrinsic value to evaluate whether early exercise is economically rational by comparing the forgone extrinsic value against interest earned on short proceeds, and to structure long option positions that survive theta bleed by balancing days-to-expiration, delta selection, and gamma exposure.
+
+*Auto-generated summary from 89 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

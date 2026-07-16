@@ -5,11 +5,14 @@ related_videos: ["4D1XWrp3xec", "6vQeTS9cyk0", "FtZyB8apvC0", "KKOqF8h1n1s", "XW
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Overnight risk premium refers to the additional volatility and risk exposure that accumulates between market close and open, which can be mispriced in options pricing models. Traders exploit this premium by selling short-dated options during declining-volatility periods when overnight moves are underpriced relative to realized volatility, though the strategy requires careful regime identification via VIX term structure and performs poorly during volatility-expansion environments. Zero-DTE options eliminate overnight risk entirely by expiring the same day, while one-DTE strategies capture overnight premium but introduce concentrated intraday volatility exposure that can erase weeks of accumulated profits on a single adverse move."
 ---
 
 # Overnight Risk Premium
 
-**Auto-generated concept topic** — discussed across 10 video(s). Pending curated synthesis; the backing source pages are linked below.
+Overnight risk premium refers to the additional volatility and risk exposure that accumulates between market close and open, which can be mispriced in options pricing models. Traders exploit this premium by selling short-dated options during declining-volatility periods when overnight moves are underpriced relative to realized volatility, though the strategy requires careful regime identification via VIX term structure and performs poorly during volatility-expansion environments. Zero-DTE options eliminate overnight risk entirely by expiring the same day, while one-DTE strategies capture overnight premium but introduce concentrated intraday volatility exposure that can erase weeks of accumulated profits on a single adverse move.
+
+*Auto-generated summary from 10 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

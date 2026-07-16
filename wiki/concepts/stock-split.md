@@ -5,11 +5,14 @@ related_videos: ["DYwzm8fAxM4", "IsiLvT-L3vk", "KKOqF8h1n1s", "f4x1NncCFX0", "j-
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A stock split is a corporate action in which a company increases the number of outstanding shares while proportionally reducing the share price, typically to improve accessibility for retail investors by lowering the nominal cost per share. Stock splits can be executed through traditional mechanisms or via stock dividends, where shareholders receive additional shares rather than cash. For options traders, stock splits require attention to liquidity during the transition period, as new option chains are issued and existing contracts are adjusted through the \"made whole\" process to ensure positions remain economically equivalent."
 ---
 
 # Stock Split
 
-**Auto-generated concept topic** — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below.
+A stock split is a corporate action in which a company increases the number of outstanding shares while proportionally reducing the share price, typically to improve accessibility for retail investors by lowering the nominal cost per share. Stock splits can be executed through traditional mechanisms or via stock dividends, where shareholders receive additional shares rather than cash. For options traders, stock splits require attention to liquidity during the transition period, as new option chains are issued and existing contracts are adjusted through the "made whole" process to ensure positions remain economically equivalent.
+
+*Auto-generated summary from 6 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

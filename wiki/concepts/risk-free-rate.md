@@ -5,11 +5,14 @@ related_videos: ["5lJbpzPF1RY", "CzBpxADkCk0", "EMzsNLXZ1bc", "KKOqF8h1n1s", "Qe
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "The risk-free rate is the theoretical return available from zero-risk investments and serves as a benchmark embedded in options pricing models and strategies. In options trading, the risk-free rate is most directly accessed through box spreads, which exploit the rate differential between options markets and actual borrowing costs by simultaneously selling a put spread and call spread at identical strikes, generating low but guaranteed returns that can be compared against prevailing risk-free rates. The rate also appears in Black-Scholes pricing models as an input that affects option premiums and is relevant when evaluating whether early exercise of American options makes economic sense by comparing interest earned on short proceeds against forgone extrinsic value."
 ---
 
 # Risk Free Rate
 
-**Auto-generated concept topic** — discussed across 13 video(s). Pending curated synthesis; the backing source pages are linked below.
+The risk-free rate is the theoretical return available from zero-risk investments and serves as a benchmark embedded in options pricing models and strategies. In options trading, the risk-free rate is most directly accessed through box spreads, which exploit the rate differential between options markets and actual borrowing costs by simultaneously selling a put spread and call spread at identical strikes, generating low but guaranteed returns that can be compared against prevailing risk-free rates. The rate also appears in Black-Scholes pricing models as an input that affects option premiums and is relevant when evaluating whether early exercise of American options makes economic sense by comparing interest earned on short proceeds against forgone extrinsic value.
+
+*Auto-generated summary from 13 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

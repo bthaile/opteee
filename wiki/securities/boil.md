@@ -5,11 +5,14 @@ related_videos: ["73cEIHM3FLg", "93vPWsmgsQc", "Ao4evQT3dOU", "DrfoNKd41I0", "GK
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "The supplied material does not contain any discussion of \"BOIL\" across the six videos summarized. The corpus covers GameStop analysis, market volatility and bond auctions, volatility prediction, sector-specific trading opportunities, account scaling principles, and options fundamentals, but makes no reference to BOIL as a security or trading topic."
 ---
 
 # BOIL
 
-**Auto-generated security topic** — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below.
+The supplied material does not contain any discussion of "BOIL" across the six videos summarized. The corpus covers GameStop analysis, market volatility and bond auctions, volatility prediction, sector-specific trading opportunities, account scaling principles, and options fundamentals, but makes no reference to BOIL as a security or trading topic.
+
+*Auto-generated summary from 6 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

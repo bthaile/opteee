@@ -5,11 +5,14 @@ related_videos: ["-CUgdXmtp5o", "0gdMTgMhN-s", "6-wt8t1AguM", "BbKKEUZ9Gu4", "Dl
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Premium is the price paid or received for an options contract, representing the total value of the option before expiration and comprising both intrinsic value (the in-the-money amount) and extraneous value (time decay and implied volatility). In options trading, premium collection is treated as capital allocation rather than income, and its adequacy must be evaluated against opportunity costs and the risk being assumed—for example, selling call premium against appreciating stock caps upside potential, while the premium received may provide only minimal downside protection. Premium decay accelerates as expiration approaches and is influenced by implied volatility levels, making premium-based strategies sensitive to volatility regime changes and requiring selective strike selection and position management rather than mechanical execution."
 ---
 
 # Premium
 
-**Auto-generated concept topic** — discussed across 13 video(s). Pending curated synthesis; the backing source pages are linked below.
+Premium is the price paid or received for an options contract, representing the total value of the option before expiration and comprising both intrinsic value (the in-the-money amount) and extraneous value (time decay and implied volatility). In options trading, premium collection is treated as capital allocation rather than income, and its adequacy must be evaluated against opportunity costs and the risk being assumed—for example, selling call premium against appreciating stock caps upside potential, while the premium received may provide only minimal downside protection. Premium decay accelerates as expiration approaches and is influenced by implied volatility levels, making premium-based strategies sensitive to volatility regime changes and requiring selective strike selection and position management rather than mechanical execution.
+
+*Auto-generated summary from 13 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

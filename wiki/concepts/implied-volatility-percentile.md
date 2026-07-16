@@ -5,11 +5,14 @@ related_videos: ["-Zqys05mhkw", "2jG5SD-3F0w", "3tpHwfH9glU", "4HHoWqBsc84", "58
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Implied volatility percentile measures where a security's current implied volatility ranks relative to its historical range, helping traders identify whether volatility is elevated or depressed on a relative basis. The metric is used to assess whether premium-selling strategies are attractive (when IV percentile is high) and to locate pockets of opportunity in otherwise low-volatility market environments by scanning for individual stocks with extreme IV readings. Traders apply IV percentile to avoid overpaying for volatility in high-IV names and to confirm that their stated thesis—such as selling premium into elevated vol—is actually supported by the Greeks and position structure."
 ---
 
 # Implied Volatility Percentile
 
-**Auto-generated concept topic** — discussed across 76 video(s). Pending curated synthesis; the backing source pages are linked below.
+Implied volatility percentile measures where a security's current implied volatility ranks relative to its historical range, helping traders identify whether volatility is elevated or depressed on a relative basis. The metric is used to assess whether premium-selling strategies are attractive (when IV percentile is high) and to locate pockets of opportunity in otherwise low-volatility market environments by scanning for individual stocks with extreme IV readings. Traders apply IV percentile to avoid overpaying for volatility in high-IV names and to confirm that their stated thesis—such as selling premium into elevated vol—is actually supported by the Greeks and position structure.
+
+*Auto-generated summary from 76 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

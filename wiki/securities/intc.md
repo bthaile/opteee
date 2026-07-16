@@ -5,11 +5,14 @@ related_videos: ["B3SW20MSNbM", "MrSY1py3kAE", "TwmxypaxWeU", "asz1odhQh7w", "g2
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "INTC (Intel) appears in the Small Stacks portfolio as a vehicle for diagonal call spread strategies, where the trader initiates positions by selling near-term call options against longer-dated call purchases to generate premium while maintaining upside exposure. The position is managed tactically through rolling short calls to earlier expirations to improve theta sensitivity and capture premium decay, with entries timed to technical pullbacks around specific price levels. This structure exemplifies the channel's approach to matching directional conviction with defined-risk premium-selling mechanics within a portfolio-first framework focused on Greeks management and position-sizing discipline."
 ---
 
 # INTC
 
-**Auto-generated security topic** — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below.
+INTC (Intel) appears in the Small Stacks portfolio as a vehicle for diagonal call spread strategies, where the trader initiates positions by selling near-term call options against longer-dated call purchases to generate premium while maintaining upside exposure. The position is managed tactically through rolling short calls to earlier expirations to improve theta sensitivity and capture premium decay, with entries timed to technical pullbacks around specific price levels. This structure exemplifies the channel's approach to matching directional conviction with defined-risk premium-selling mechanics within a portfolio-first framework focused on Greeks management and position-sizing discipline.
+
+*Auto-generated summary from 7 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

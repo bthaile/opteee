@@ -5,11 +5,14 @@ related_videos: ["2lvTJ6_Oc9E", "KnORuwpxylI", "LgQlkikHS4k", "SAAznQCMSco", "gI
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Break-even in options trading refers to the price level at which a trade neither profits nor loses, determined by the strike price adjusted for the premium paid or received. Understanding break-even is critical because it reveals the underlying move required for profitability—cheap out-of-the-money options, for instance, may appear safe but demand increasingly larger price moves to reach break-even as theta decay accelerates near expiration. Break-even analysis exposes why common beginner mistakes like buying lottery-ticket calls or selecting strikes based on price targets fail: traders often ignore the probability relationships and Greeks that determine whether the underlying will actually move far enough to overcome premium costs and decay. Proper break-even assessment helps traders evaluate whether their expected return justifies the risk and probability of success required by their chosen strategy."
 ---
 
 # Break Even
 
-**Auto-generated concept topic** — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below.
+Break-even in options trading refers to the price level at which a trade neither profits nor loses, determined by the strike price adjusted for the premium paid or received. Understanding break-even is critical because it reveals the underlying move required for profitability—cheap out-of-the-money options, for instance, may appear safe but demand increasingly larger price moves to reach break-even as theta decay accelerates near expiration. Break-even analysis exposes why common beginner mistakes like buying lottery-ticket calls or selecting strikes based on price targets fail: traders often ignore the probability relationships and Greeks that determine whether the underlying will actually move far enough to overcome premium costs and decay. Proper break-even assessment helps traders evaluate whether their expected return justifies the risk and probability of success required by their chosen strategy.
+
+*Auto-generated summary from 6 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

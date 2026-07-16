@@ -5,11 +5,14 @@ related_videos: ["-CUgdXmtp5o", "-MQ7kNM0dtI", "-vDpqqCvosk", "04CvwImyHTA", "05
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A profit mechanism is the specific market condition or price/volatility movement that generates profit in an options trade, and successful trading requires anchoring all decisions—from strategy selection to trade management and exits—directly to this mechanism rather than arbitrary rules or option-value thresholds. Traders must first define their hypothesis across four dimensions (direction, timeline, severity, and implied volatility), then select a strategy structure that aligns with that hypothesis and the profit mechanism it targets; misalignment between hypothesis and structure leads to self-sabotage, such as choosing a capped-upside strategy when unlimited profit potential is needed. Trade management, position sizing, rebalancing, and exit rules must all be calibrated to the specific profit mechanism being traded, not applied mechanically across all trades, ensuring that each decision reinforces rather than undermines the original thesis."
 ---
 
 # Profit Mechanism
 
-**Auto-generated concept topic** — discussed across 210 video(s). Pending curated synthesis; the backing source pages are linked below.
+A profit mechanism is the specific market condition or price/volatility movement that generates profit in an options trade, and successful trading requires anchoring all decisions—from strategy selection to trade management and exits—directly to this mechanism rather than arbitrary rules or option-value thresholds. Traders must first define their hypothesis across four dimensions (direction, timeline, severity, and implied volatility), then select a strategy structure that aligns with that hypothesis and the profit mechanism it targets; misalignment between hypothesis and structure leads to self-sabotage, such as choosing a capped-upside strategy when unlimited profit potential is needed. Trade management, position sizing, rebalancing, and exit rules must all be calibrated to the specific profit mechanism being traded, not applied mechanically across all trades, ensuring that each decision reinforces rather than undermines the original thesis.
+
+*Auto-generated summary from 210 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

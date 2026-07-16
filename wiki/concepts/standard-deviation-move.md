@@ -5,11 +5,14 @@ related_videos: ["6-xlQeiQWSg", "8qKoYYGSxik", "CZEXCE_HR60", "FPLK8vS5ono", "Fr
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A standard deviation move is the expected price range a security will trade within over a given time horizon, calculated by scaling implied volatility according to the square root of time to establish probability bands (typically one standard deviation representing a 68% probability range). Traders use standard deviation moves to size positions relative to their volatility profiles, construct probability cones for directional speculation, and align trade management plans with actual expected behavior rather than equal dollar allocations that ignore volatility differences. Understanding standard deviation moves is critical for recognizing that extreme market moves occur more frequently than standard normal distributions predict, making tail-risk management essential for long-term trading success."
 ---
 
 # Standard Deviation Move
 
-**Auto-generated concept topic** — discussed across 20 video(s). Pending curated synthesis; the backing source pages are linked below.
+A standard deviation move is the expected price range a security will trade within over a given time horizon, calculated by scaling implied volatility according to the square root of time to establish probability bands (typically one standard deviation representing a 68% probability range). Traders use standard deviation moves to size positions relative to their volatility profiles, construct probability cones for directional speculation, and align trade management plans with actual expected behavior rather than equal dollar allocations that ignore volatility differences. Understanding standard deviation moves is critical for recognizing that extreme market moves occur more frequently than standard normal distributions predict, making tail-risk management essential for long-term trading success.
+
+*Auto-generated summary from 20 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

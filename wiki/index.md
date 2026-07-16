@@ -1,12 +1,12 @@
 ---
 type: index
 title: "OPTEEE Wiki - Knowledge Graph Index"
-last_updated: 2026-07-04
+last_updated: 2026-07-12
 status: generated
 generated_by: scripts/build_wiki_index.py
-knowledge_page_count: 389
-source_count: 1139
-graph_edge_count: 1875
+knowledge_page_count: 408
+source_count: 1149
+graph_edge_count: 1928
 ---
 
 # OPTEEE Wiki - Knowledge Graph Index
@@ -17,17 +17,17 @@ Start here, choose relevant graph nodes or source-derived candidate nodes, then 
 
 ## Graph summary
 
-- Materialized knowledge nodes: 389
-- Knowledge edges: 1875
-- Source pages: 1139
+- Materialized knowledge nodes: 408
+- Knowledge edges: 1928
+- Source pages: 1149
 - Registry-recategorized source mentions: 0
 
 | top-level category | materialized graph nodes | registered candidate slugs | registered source mentions | unregistered raw slugs |
 |---|---:|---:|---:|---:|
-| Concepts | 240 | 1344 | 13509 | 0 |
-| Strategies | 60 | 147 | 2524 | 0 |
-| Securities | 83 | 480 | 3082 | 0 |
-| People | 6 | 128 | 1734 | 0 |
+| Concepts | 254 | 1377 | 13837 | 0 |
+| Strategies | 65 | 157 | 2588 | 0 |
+| Securities | 83 | 481 | 3106 | 0 |
+| People | 6 | 131 | 1748 | 0 |
 | Macro | 0 | 0 | 0 | 0 |
 | Syntheses | 0 | 0 | 0 | 0 |
 
@@ -37,1180 +37,1237 @@ These pages are currently in `wiki/graph.json` and therefore appear in the inter
 
 ### Concepts
 
-- [[concepts/risk-management|Risk Management]] - Auto-generated concept topic — discussed across 527 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 527, degree: 244)
-  - links: [[concepts/annualized-return|Annualized Return]], [[concepts/asset-allocation|Asset Allocation]], [[concepts/assignment|Assignment]], [[concepts/backtesting|Backtesting]], [[concepts/basis-adjustment|Basis Adjustment]], [[concepts/beta|Beta]], [[concepts/bid-ask-spread|Bid Ask Spread]], [[concepts/breakout|Breakout]], 236 more
+- [[concepts/risk-management|Risk Management]] - Risk management in options trading involves anchoring trade decisions to the underlying profit mechanism rather than arbitrary thresholds, and pre-modeling how positions behave... (sources: 527, degree: 252)
+  - links: [[concepts/allocation|Allocation]], [[concepts/annualized-return|Annualized Return]], [[concepts/asset-allocation|Asset Allocation]], [[concepts/assignment|Assignment]], [[concepts/backtesting|Backtesting]], [[concepts/basis-adjustment|Basis Adjustment]], [[concepts/beta|Beta]], [[concepts/bid-ask-spread|Bid Ask Spread]], 244 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-LgTPBfGngc]], [[sources/-MQ7kNM0dtI]], [[sources/-M_lC4RVmvM]], [[sources/-NzEb1zc1bw]], [[sources/-XQGZSyM8O0]], [[sources/-Zqys05mhkw]], [[sources/-jJkuhl2wyY]], [[sources/-qSV5WZNlP4]], [[sources/-u_dHz31d38]], 517 more
-- [[concepts/position-sizing|Position Sizing]] - Auto-generated concept topic — discussed across 473 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 473, degree: 266)
-  - links: [[concepts/ai-assisted-trading|Ai Assisted Trading]], [[concepts/annualized-return|Annualized Return]], [[concepts/asset-allocation|Asset Allocation]], [[concepts/assignment|Assignment]], [[concepts/backtesting|Backtesting]], [[concepts/basis-adjustment|Basis Adjustment]], [[concepts/beta|Beta]], [[concepts/bid-ask-spread|Bid Ask Spread]], 258 more
+- [[concepts/position-sizing|Position Sizing]] - Position sizing in options trading refers to determining how much capital or risk to allocate to individual trades, typically expressed as a percentage of account equity per tra... (sources: 473, degree: 275)
+  - links: [[concepts/ai-assisted-trading|Ai Assisted Trading]], [[concepts/allocation|Allocation]], [[concepts/annualized-return|Annualized Return]], [[concepts/asset-allocation|Asset Allocation]], [[concepts/assignment|Assignment]], [[concepts/backtesting|Backtesting]], [[concepts/basis-adjustment|Basis Adjustment]], [[concepts/beta|Beta]], 267 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-CUgdXmtp5o]], [[sources/-MQ7kNM0dtI]], [[sources/-M_lC4RVmvM]], [[sources/-NzEb1zc1bw]], [[sources/-XQGZSyM8O0]], [[sources/-Zqys05mhkw]], [[sources/-jJkuhl2wyY]], [[sources/-qSV5WZNlP4]], [[sources/-u_dHz31d38]], 463 more
-- [[concepts/delta|Delta]] - Auto-generated concept topic — discussed across 333 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 333, degree: 154)
-  - links: [[concepts/annualized-return|Annualized Return]], [[concepts/assignment|Assignment]], [[concepts/at-the-money|At The Money]], [[concepts/bid-ask-spread|Bid Ask Spread]], [[concepts/break-even|Break Even]], [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/capped-upside|Capped Upside]], [[concepts/catalyst|Catalyst]], 146 more
+- [[concepts/delta|Delta]] - Delta measures the rate of change in an option's price relative to movement in the underlying asset, typically expressed as a value between 0 and 1 (or 0 to 100 in percentage te... (sources: 333, degree: 157)
+  - links: [[concepts/allocation|Allocation]], [[concepts/annualized-return|Annualized Return]], [[concepts/assignment|Assignment]], [[concepts/at-the-money|At The Money]], [[concepts/bid-ask-spread|Bid Ask Spread]], [[concepts/break-even|Break Even]], [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/capped-upside|Capped Upside]], 149 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-CUgdXmtp5o]], [[sources/-LgTPBfGngc]], [[sources/-MQ7kNM0dtI]], [[sources/-Zqys05mhkw]], [[sources/-jJkuhl2wyY]], [[sources/-qSV5WZNlP4]], [[sources/04CvwImyHTA]], [[sources/0ZE8GpkICU4]], [[sources/0a1UROsFf_A]], 323 more
-- [[concepts/process-over-outcome|Process Over Outcome]] - Auto-generated concept topic — discussed across 322 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 322, degree: 65)
-  - links: [[concepts/asset-allocation|Asset Allocation]], [[concepts/backtesting|Backtesting]], [[concepts/buy-and-hold|Buy And Hold]], [[concepts/compound-annual-growth-rate|Compound Annual Growth Rate]], [[concepts/confidence|Confidence]], [[concepts/confirmation-bias|Confirmation Bias]], [[concepts/decision-making|Decision Making]], [[concepts/disposition-effect|Disposition Effect]], 57 more
+- [[concepts/process-over-outcome|Process Over Outcome]] - Process over outcome is the principle that long-term trading success depends on building repeatable, systematic approaches to strategy research, backtesting, risk management, an... (sources: 322, degree: 69)
+  - links: [[concepts/asset-allocation|Asset Allocation]], [[concepts/backtesting|Backtesting]], [[concepts/buy-and-hold|Buy And Hold]], [[concepts/compound-annual-growth-rate|Compound Annual Growth Rate]], [[concepts/confidence|Confidence]], [[concepts/confirmation-bias|Confirmation Bias]], [[concepts/consistency|Consistency]], [[concepts/decision-making|Decision Making]], 61 more
   - backing sources: [[sources/-MQ7kNM0dtI]], [[sources/-qSV5WZNlP4]], [[sources/-u_dHz31d38]], [[sources/0ZE8GpkICU4]], [[sources/0iZJfIu3Nac]], [[sources/0quAC-m-NpM]], [[sources/19oL0B8i2Fc]], [[sources/1O0HX-C-4PU]], [[sources/1axDClx9vWQ]], [[sources/1jDrPx6lOgM]], 312 more
-- [[concepts/trading-psychology|Trading Psychology]] - Auto-generated concept topic — discussed across 269 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 269, degree: 24)
-  - links: [[concepts/confidence|Confidence]], [[concepts/confirmation-bias|Confirmation Bias]], [[concepts/decision-making|Decision Making]], [[concepts/disposition-effect|Disposition Effect]], [[concepts/dunning-kruger-effect|Dunning Kruger Effect]], [[concepts/edge|Edge]], [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/expected-value|Expected Value]], 16 more
+- [[concepts/trading-psychology|Trading Psychology]] - Trading psychology in options trading encompasses the mental and emotional discipline required to execute systematic strategies consistently, particularly the ability to decoupl... (sources: 269, degree: 26)
+  - links: [[concepts/confidence|Confidence]], [[concepts/confirmation-bias|Confirmation Bias]], [[concepts/consistency|Consistency]], [[concepts/decision-making|Decision Making]], [[concepts/disposition-effect|Disposition Effect]], [[concepts/dunning-kruger-effect|Dunning Kruger Effect]], [[concepts/edge|Edge]], [[concepts/emotional-discipline|Emotional Discipline]], 18 more
   - backing sources: [[sources/-MQ7kNM0dtI]], [[sources/-M_lC4RVmvM]], [[sources/-qSV5WZNlP4]], [[sources/-u_dHz31d38]], [[sources/0iZJfIu3Nac]], [[sources/0quAC-m-NpM]], [[sources/19oL0B8i2Fc]], [[sources/1O0HX-C-4PU]], [[sources/1jDrPx6lOgM]], [[sources/2CafngDUAYk]], 259 more
-- [[concepts/profit-mechanism|Profit Mechanism]] - Auto-generated concept topic — discussed across 210 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 210, degree: 30)
-  - links: [[concepts/backtesting|Backtesting]], [[concepts/breakout|Breakout]], [[concepts/capped-upside|Capped Upside]], [[concepts/delta|Delta]], [[concepts/direction|Direction]], [[concepts/fundamental-analysis|Fundamental Analysis]], [[concepts/futures-vs-options|Futures Vs Options]], [[concepts/hypothesis-testing|Hypothesis Testing]], 22 more
+- [[concepts/profit-mechanism|Profit Mechanism]] - A profit mechanism is the specific market condition or price/volatility movement that generates profit in an options trade, and successful trading requires anchoring all decisio... (sources: 210, degree: 32)
+  - links: [[concepts/backtesting|Backtesting]], [[concepts/breakout|Breakout]], [[concepts/capped-upside|Capped Upside]], [[concepts/delta|Delta]], [[concepts/direction|Direction]], [[concepts/fundamental-analysis|Fundamental Analysis]], [[concepts/futures-vs-options|Futures Vs Options]], [[concepts/hypothesis-testing|Hypothesis Testing]], 24 more
   - backing sources: [[sources/-CUgdXmtp5o]], [[sources/-MQ7kNM0dtI]], [[sources/-vDpqqCvosk]], [[sources/04CvwImyHTA]], [[sources/05PKCIAe4_0]], [[sources/0ZE8GpkICU4]], [[sources/0iZJfIu3Nac]], [[sources/0nXEzaMT7Nc]], [[sources/0ocJTw3Tz9U]], [[sources/0qXakHvgYiQ]], 200 more
-- [[concepts/emotional-discipline|Emotional Discipline]] - Auto-generated concept topic — discussed across 209 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 209, degree: 28)
-  - links: [[concepts/confidence|Confidence]], [[concepts/decision-making|Decision Making]], [[concepts/disposition-effect|Disposition Effect]], [[concepts/diversification|Diversification]], [[concepts/drawdown|Drawdown]], [[concepts/dunning-kruger-effect|Dunning Kruger Effect]], [[concepts/edge|Edge]], [[concepts/kelly-criterion|Kelly Criterion]], 20 more
+- [[concepts/emotional-discipline|Emotional Discipline]] - Emotional discipline in options trading means decoupling trading outcomes from self-worth and maintaining equanimity whether a trade profits or loses, recognizing that individua... (sources: 209, degree: 30)
+  - links: [[concepts/confidence|Confidence]], [[concepts/consistency|Consistency]], [[concepts/decision-making|Decision Making]], [[concepts/disposition-effect|Disposition Effect]], [[concepts/diversification|Diversification]], [[concepts/drawdown|Drawdown]], [[concepts/dunning-kruger-effect|Dunning Kruger Effect]], [[concepts/edge|Edge]], 22 more
   - backing sources: [[sources/-qSV5WZNlP4]], [[sources/-u_dHz31d38]], [[sources/0YG5XSvH_GA]], [[sources/0iZJfIu3Nac]], [[sources/0quAC-m-NpM]], [[sources/1jDrPx6lOgM]], [[sources/2CafngDUAYk]], [[sources/2clrn3WbEzM]], [[sources/2hp1lXBRwis]], [[sources/2i7PaIjmYtU]], 199 more
-- [[concepts/edge|Edge]] - Auto-generated concept topic — discussed across 203 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 203, degree: 27)
-  - links: [[concepts/backtesting|Backtesting]], [[concepts/catalyst|Catalyst]], [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/forecasting|Forecasting]], [[concepts/futures-vs-options|Futures Vs Options]], [[concepts/hypothesis-testing|Hypothesis Testing]], [[concepts/market-effects|Market Effects]], [[concepts/market-efficiency|Market Efficiency]], 19 more
+- [[concepts/edge|Edge]] - Edge is a trader's sustainable competitive advantage—a clearly defined profit mechanism rooted in a specific market effect (such as directional movement or variance risk premium... (sources: 203, degree: 28)
+  - links: [[concepts/backtesting|Backtesting]], [[concepts/catalyst|Catalyst]], [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/forecasting|Forecasting]], [[concepts/futures-vs-options|Futures Vs Options]], [[concepts/hypothesis-testing|Hypothesis Testing]], [[concepts/market-effects|Market Effects]], [[concepts/market-efficiency|Market Efficiency]], 20 more
   - backing sources: [[sources/-vDpqqCvosk]], [[sources/0phfdNnT3Q0]], [[sources/0quAC-m-NpM]], [[sources/10mc7m0i_XM]], [[sources/1N1GFFpS9I8]], [[sources/1jDrPx6lOgM]], [[sources/2CafngDUAYk]], [[sources/2i7PaIjmYtU]], [[sources/2t3Nv-63Jtc]], [[sources/2uzcV42Gc7w]], 193 more
-- [[concepts/price-action|Price Action]] - Auto-generated concept topic — discussed across 202 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 202, degree: 48)
+- [[concepts/price-action|Price Action]] - Price action refers to the direct observation of how a stock's price moves through support and resistance levels, combined with volume patterns and moving-average alignment, rat... (sources: 202, degree: 48)
   - links: [[concepts/breakout|Breakout]], [[concepts/candlestick-reading|Candlestick Reading]], [[concepts/consolidation|Consolidation]], [[concepts/gamma-exposure|Gamma Exposure]], [[concepts/higher-highs-lower-lows|Higher Highs Lower Lows]], [[concepts/institutional-ownership|Institutional Ownership]], [[concepts/momentum|Momentum]], [[concepts/moving-averages|Moving Averages]], 40 more
   - backing sources: [[sources/-RsvTzf4OxA]], [[sources/-XQGZSyM8O0]], [[sources/-mD-g1Io3II]], [[sources/0-BUA66HVWg]], [[sources/0YG5XSvH_GA]], [[sources/0gle3um9MoE]], [[sources/0iZJfIu3Nac]], [[sources/0qXakHvgYiQ]], [[sources/10mc7m0i_XM]], [[sources/1ILbgbgxl3A]], 192 more
-- [[concepts/moneyness|Moneyness]] - Auto-generated concept topic — discussed across 198 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 198, degree: 28)
-  - links: [[concepts/at-the-money|At The Money]], [[concepts/call-skew|Call Skew]], [[concepts/charm|Charm]], [[concepts/days-to-expiration|Days To Expiration]], [[concepts/deep-itm-calls|Deep Itm Calls]], [[concepts/delta|Delta]], [[concepts/extrinsic-value|Extrinsic Value]], [[concepts/gamma|Gamma]], 20 more
+- [[concepts/moneyness|Moneyness]] - Moneyness describes an option's position relative to the underlying asset's current price, determining whether it is in-the-money (ITM), at-the-money (ATM), or out-of-the-money... (sources: 198, degree: 29)
+  - links: [[concepts/at-the-money|At The Money]], [[concepts/call-skew|Call Skew]], [[concepts/charm|Charm]], [[concepts/days-to-expiration|Days To Expiration]], [[concepts/deep-itm-calls|Deep Itm Calls]], [[concepts/delta|Delta]], [[concepts/delta-decay|Delta Decay]], [[concepts/extrinsic-value|Extrinsic Value]], 21 more
   - backing sources: [[sources/-LgTPBfGngc]], [[sources/0-BUA66HVWg]], [[sources/0a1UROsFf_A]], [[sources/0fty1k3IGgY]], [[sources/0kXY1hY--Ww]], [[sources/0qcfwt6wf2I]], [[sources/1O0HX-C-4PU]], [[sources/1exwniuHqP8]], [[sources/1kGksRBt2aA]], [[sources/2XS6kMnDUT4]], 188 more
-- [[concepts/technical-analysis|Technical Analysis]] - Auto-generated concept topic — discussed across 193 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 193, degree: 36)
+- [[concepts/technical-analysis|Technical Analysis]] - Technical analysis in options trading involves examining price patterns, support and resistance levels, volume trends, and indicator signals to identify trade opportunities and... (sources: 193, degree: 36)
   - links: [[concepts/candlestick-reading|Candlestick Reading]], [[concepts/confirmation-bias|Confirmation Bias]], [[concepts/consolidation|Consolidation]], [[concepts/fundamental-analysis|Fundamental Analysis]], [[concepts/institutional-ownership|Institutional Ownership]], [[concepts/linear-regression-channels|Linear Regression Channels]], [[concepts/market-breadth|Market Breadth]], [[concepts/market-structure|Market Structure]], 28 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-XQGZSyM8O0]], [[sources/-mD-g1Io3II]], [[sources/0YG5XSvH_GA]], [[sources/0fty1k3IGgY]], [[sources/0gle3um9MoE]], [[sources/0iZJfIu3Nac]], [[sources/1N1GFFpS9I8]], [[sources/1O0HX-C-4PU]], [[sources/1axDClx9vWQ]], 183 more
-- [[concepts/market-regimes|Market Regimes]] - Auto-generated concept topic — discussed across 165 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 165, degree: 47)
+- [[concepts/market-regimes|Market Regimes]] - Market regimes describe distinct conditions across multiple timeframes—such as elevated volatility, sector rotation, policy shifts, or divergence between asset classes—that requ... (sources: 165, degree: 47)
   - links: [[concepts/bond-vigilantes|Bond Vigilantes]], [[concepts/consumer-confidence|Consumer Confidence]], [[concepts/contrarian-sentiment|Contrarian Sentiment]], [[concepts/deflationary-bust|Deflationary Bust]], [[concepts/fat-tails|Fat Tails]], [[concepts/fed-put|Fed Put]], [[concepts/forecasting|Forecasting]], [[concepts/geopolitical-risk|Geopolitical Risk]], 39 more
   - backing sources: [[sources/-8XV5_gBP6I]], [[sources/-NzEb1zc1bw]], [[sources/-qSV5WZNlP4]], [[sources/0La1c59B5Zw]], [[sources/0fty1k3IGgY]], [[sources/0iZJfIu3Nac]], [[sources/26vVCJY9t00]], [[sources/2I6SPZjnjew]], [[sources/2dP1Cu9Pjt8]], [[sources/2hOfMXRWPls]], 155 more
-- [[concepts/trading-plan|Trading Plan]] - Auto-generated concept topic — discussed across 159 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 159, degree: 15)
-  - links: [[concepts/confidence|Confidence]], [[concepts/decision-making|Decision Making]], [[concepts/delta-one|Delta One]], [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/expected-return|Expected Return]], [[concepts/futures-vs-options|Futures Vs Options]], [[concepts/pnl-attribution|Pnl Attribution]], [[concepts/position-sizing|Position Sizing]], 7 more
+- [[concepts/trading-plan|Trading Plan]] - A trading plan is a documented framework that defines the specific hypothesis, entry conditions, profit mechanism, and exit rules for a trade before execution, anchored to what... (sources: 159, degree: 16)
+  - links: [[concepts/confidence|Confidence]], [[concepts/decision-making|Decision Making]], [[concepts/delta-one|Delta One]], [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/expected-return|Expected Return]], [[concepts/futures-vs-options|Futures Vs Options]], [[concepts/overconfidence|Overconfidence]], [[concepts/pnl-attribution|Pnl Attribution]], 8 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-MQ7kNM0dtI]], [[sources/-qSV5WZNlP4]], [[sources/0ZE8GpkICU4]], [[sources/0qXakHvgYiQ]], [[sources/0quAC-m-NpM]], [[sources/2t3Nv-63Jtc]], [[sources/3STDqRx1o8w]], [[sources/3XRv1HPb2L0]], [[sources/3c6fsUwB1pw]], 149 more
-- [[concepts/market-efficiency|Market Efficiency]] - Auto-generated concept topic — discussed across 156 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 156, degree: 26)
+- [[concepts/market-efficiency|Market Efficiency]] - Market efficiency in options trading refers to the degree to which prices reflect available information and the structural advantages or disadvantages that different trader type... (sources: 156, degree: 26)
   - links: [[concepts/ai-assisted-trading|Ai Assisted Trading]], [[concepts/counterparty|Counterparty]], [[concepts/edge|Edge]], [[concepts/forecasting|Forecasting]], [[concepts/high-implied-volatility|High Implied Volatility]], [[concepts/inflation|Inflation]], [[concepts/information-and-price|Information And Price]], [[concepts/position-sizing|Position Sizing]], 18 more
   - backing sources: [[sources/-RsvTzf4OxA]], [[sources/-XQGZSyM8O0]], [[sources/0quAC-m-NpM]], [[sources/1O0HX-C-4PU]], [[sources/1jDrPx6lOgM]], [[sources/26vVCJY9t00]], [[sources/2yu8jSYKuH4]], [[sources/30aBq8F5FB8]], [[sources/3hrdUyJ-KmE]], [[sources/3tpHwfH9glU]], 146 more
-- [[concepts/volatility-term-structure|Volatility Term Structure]] - Auto-generated concept topic — discussed across 156 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 156, degree: 19)
+- [[concepts/volatility-term-structure|Volatility Term Structure]] - Volatility term structure refers to the time horizon of options activity and how it varies across different expiration dates, serving as a critical filter for interpreting unusu... (sources: 156, degree: 19)
   - links: [[concepts/delta|Delta]], [[concepts/expected-move|Expected Move]], [[concepts/implied-volatility|Implied Volatility (IV)]], [[concepts/iv-crush|Iv Crush]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/skew|Skew]], [[concepts/volatility-surface|Volatility Surface]], 11 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-jJkuhl2wyY]], [[sources/0fty1k3IGgY]], [[sources/0qcfwt6wf2I]], [[sources/1ILbgbgxl3A]], [[sources/26vVCJY9t00]], [[sources/4D1XWrp3xec]], [[sources/4Lz5jr3grOs]], [[sources/4NTh_FrF-0Y]], [[sources/4p0xi0hLOZM]], 146 more
-- [[concepts/market-maker|Market Maker]] - Auto-generated concept topic — discussed across 153 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 153, degree: 43)
-  - links: [[concepts/bid-ask-spread|Bid Ask Spread]], [[concepts/counterparty|Counterparty]], [[concepts/dark-pools|Dark Pools]], [[concepts/dealer-gamma|Dealer Gamma]], [[concepts/dealer-positioning|Dealer Positioning]], [[concepts/delta|Delta]], [[concepts/derivatives|Derivatives]], [[concepts/ftd|Ftd]], 35 more
+- [[concepts/market-maker|Market Maker]] - Market makers are financial intermediaries who provide liquidity by continuously quoting buy and sell prices, optimizing their operations for profit rather than deliberately man... (sources: 153, degree: 44)
+  - links: [[concepts/bid-ask-spread|Bid Ask Spread]], [[concepts/counterparty|Counterparty]], [[concepts/dark-pools|Dark Pools]], [[concepts/dealer-gamma|Dealer Gamma]], [[concepts/dealer-positioning|Dealer Positioning]], [[concepts/delta|Delta]], [[concepts/derivatives|Derivatives]], [[concepts/ftd|Ftd]], 36 more
   - backing sources: [[sources/-8XV5_gBP6I]], [[sources/-XQGZSyM8O0]], [[sources/-jJkuhl2wyY]], [[sources/-yvQLv-q9uk]], [[sources/1O0HX-C-4PU]], [[sources/29BtSz0VpA4]], [[sources/2uzcV42Gc7w]], [[sources/30aBq8F5FB8]], [[sources/4q843j_0kcc]], [[sources/5G0_P4igVWQ]], 143 more
-- [[concepts/gamma|Gamma]] - Auto-generated concept topic — discussed across 147 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 147, degree: 26)
-  - links: [[concepts/at-the-money|At The Money]], [[concepts/charm|Charm]], [[concepts/convexity|Convexity]], [[concepts/days-to-expiration|Days To Expiration]], [[concepts/delta|Delta]], [[concepts/gamma-scalping|Gamma Scalping]], [[concepts/greeks|Greeks]], [[concepts/higher-order-greeks|Higher Order Greeks]], 18 more
+- [[concepts/gamma|Gamma]] - Gamma measures the rate at which delta changes as the underlying price moves, making it a critical Greek for understanding how option positions respond to price action. Long opt... (sources: 147, degree: 27)
+  - links: [[concepts/at-the-money|At The Money]], [[concepts/charm|Charm]], [[concepts/convexity|Convexity]], [[concepts/days-to-expiration|Days To Expiration]], [[concepts/delta|Delta]], [[concepts/delta-decay|Delta Decay]], [[concepts/gamma-scalping|Gamma Scalping]], [[concepts/greeks|Greeks]], 19 more
   - backing sources: [[sources/-CUgdXmtp5o]], [[sources/-MQ7kNM0dtI]], [[sources/0a1UROsFf_A]], [[sources/0fty1k3IGgY]], [[sources/0iZJfIu3Nac]], [[sources/0kXY1hY--Ww]], [[sources/1kGksRBt2aA]], [[sources/1rqLJW1nK40]], [[sources/2Dv_fRuuTcc]], [[sources/2dP1Cu9Pjt8]], 137 more
-- [[concepts/volatility-clustering|Volatility Clustering]] - Auto-generated concept topic — discussed across 146 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 146, degree: 13)
+- [[concepts/volatility-clustering|Volatility Clustering]] - Volatility clustering refers to the tendency for periods of high volatility to concentrate in specific securities, sectors, or timeframes rather than distributing uniformly acro... (sources: 146, degree: 13)
   - links: [[concepts/delta|Delta]], [[concepts/gap-risk|Gap Risk]], [[concepts/institutional-ownership|Institutional Ownership]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/robustness|Robustness]], [[concepts/short-gamma|Short Gamma]], [[concepts/standard-deviation-move|Standard Deviation Move]], 5 more
   - backing sources: [[sources/-M_lC4RVmvM]], [[sources/-qSV5WZNlP4]], [[sources/0-BUA66HVWg]], [[sources/0qcfwt6wf2I]], [[sources/2Dv_fRuuTcc]], [[sources/2hOfMXRWPls]], [[sources/2wlur2p61Mg]], [[sources/3c6fsUwB1pw]], [[sources/3hrdUyJ-KmE]], [[sources/3tpHwfH9glU]], 136 more
-- [[concepts/support-and-resistance|Support And Resistance]] - Auto-generated concept topic — discussed across 138 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 138, degree: 24)
+- [[concepts/support-and-resistance|Support And Resistance]] - Support and resistance are price levels where a stock or index tends to find buying interest (support) or selling pressure (resistance), serving as key technical reference point... (sources: 138, degree: 24)
   - links: [[concepts/candlestick-reading|Candlestick Reading]], [[concepts/consolidation|Consolidation]], [[concepts/higher-highs-lower-lows|Higher Highs Lower Lows]], [[concepts/linear-regression-channels|Linear Regression Channels]], [[concepts/moving-averages|Moving Averages]], [[concepts/multi-timeframe-analysis|Multi Timeframe Analysis]], [[concepts/options-chain-analysis|Options Chain Analysis]], [[concepts/position-sizing|Position Sizing]], 16 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-XQGZSyM8O0]], [[sources/-mD-g1Io3II]], [[sources/0-BUA66HVWg]], [[sources/0fty1k3IGgY]], [[sources/0gle3um9MoE]], [[sources/0iZJfIu3Nac]], [[sources/1ILbgbgxl3A]], [[sources/2I6SPZjnjew]], [[sources/2yu8jSYKuH4]], 128 more
-- [[concepts/delta-hedging|Delta Hedging]] - Auto-generated concept topic — discussed across 137 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 137, degree: 20)
+- [[concepts/delta-hedging|Delta Hedging]] - Delta hedging is the practice of rebalancing a position's directional exposure by adjusting short options as the underlying price moves, maintaining a target delta band rather t... (sources: 137, degree: 20)
   - links: [[concepts/counterparty|Counterparty]], [[concepts/dealer-gamma|Dealer Gamma]], [[concepts/deep-itm-calls|Deep Itm Calls]], [[concepts/delta|Delta]], [[concepts/diversification|Diversification]], [[concepts/gamma-exposure|Gamma Exposure]], [[concepts/gamma-hedging|Gamma Hedging]], [[concepts/gamma-scalping|Gamma Scalping]], 12 more
   - backing sources: [[sources/-NzEb1zc1bw]], [[sources/0-BUA66HVWg]], [[sources/0kXY1hY--Ww]], [[sources/0ocJTw3Tz9U]], [[sources/1O0HX-C-4PU]], [[sources/2T8T8EDhfpQ]], [[sources/3J1_0s0qHPU]], [[sources/3J3S-ewvxn0]], [[sources/4Lz5jr3grOs]], [[sources/4kj4Cp-qbsE]], 127 more
-- [[concepts/capital-efficiency|Capital Efficiency]] - Auto-generated concept topic — discussed across 136 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 136, degree: 21)
-  - links: [[concepts/box-spread|Box Spread]], [[concepts/defined-risk|Defined Risk]], [[concepts/delta|Delta]], [[concepts/dilution|Dilution]], [[concepts/fundamental-analysis|Fundamental Analysis]], [[concepts/leverage|Leverage]], [[concepts/margin|Margin]], [[concepts/position-sizing|Position Sizing]], 13 more
+- [[concepts/capital-efficiency|Capital Efficiency]] - Capital efficiency in options trading refers to the strategic deployment of limited account capital to maximize returns while managing risk exposure and variance. The concept en... (sources: 136, degree: 23)
+  - links: [[concepts/allocation|Allocation]], [[concepts/box-spread|Box Spread]], [[concepts/defined-risk|Defined Risk]], [[concepts/delta|Delta]], [[concepts/dilution|Dilution]], [[concepts/fundamental-analysis|Fundamental Analysis]], [[concepts/leverage|Leverage]], [[concepts/margin|Margin]], 15 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-M_lC4RVmvM]], [[sources/-ulHoMHsPu4]], [[sources/0I32lVyhZuU]], [[sources/0nXEzaMT7Nc]], [[sources/0ocJTw3Tz9U]], [[sources/1rqLJW1nK40]], [[sources/2TdIx_Bn3BY]], [[sources/2jG5SD-3F0w]], [[sources/3J3S-ewvxn0]], 126 more
-- [[concepts/theta-decay|Theta Decay]] - Auto-generated concept topic — discussed across 131 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 131, degree: 11)
+- [[concepts/theta-decay|Theta Decay]] - Theta decay is the daily erosion of an option's premium value as time passes, measured by the Greek theta and accelerating as expiration approaches. It represents a mechanical h... (sources: 131, degree: 11)
   - links: [[concepts/break-even|Break Even]], [[concepts/delta|Delta]], [[concepts/gamma-hedging|Gamma Hedging]], [[concepts/moneyness|Moneyness]], [[concepts/out-of-the-money|Out Of The Money]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/gme|GME]], 3 more
   - backing sources: [[sources/0ZE8GpkICU4]], [[sources/0a1UROsFf_A]], [[sources/0kXY1hY--Ww]], [[sources/0qcfwt6wf2I]], [[sources/1rqLJW1nK40]], [[sources/29BtSz0VpA4]], [[sources/2dP1Cu9Pjt8]], [[sources/3J1_0s0qHPU]], [[sources/3MTc2MylrDQ]], [[sources/4CEmVAhaNbk]], 121 more
-- [[concepts/leverage|Leverage]] - Auto-generated concept topic — discussed across 129 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 129, degree: 15)
+- [[concepts/leverage|Leverage]] - Leverage in options trading refers to the ability to control large notional exposure with relatively small capital outlay, enabling traders to amplify both gains and losses. The... (sources: 129, degree: 15)
   - links: [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/counterparty|Counterparty]], [[concepts/delta|Delta]], [[concepts/delta-one|Delta One]], [[concepts/derivatives|Derivatives]], [[concepts/drawdown|Drawdown]], [[concepts/leaps|Leaps]], [[concepts/margin|Margin]], 7 more
   - backing sources: [[sources/-LgTPBfGngc]], [[sources/-XQGZSyM8O0]], [[sources/05aJUfUKE5Q]], [[sources/0ocJTw3Tz9U]], [[sources/2jG5SD-3F0w]], [[sources/2yu8jSYKuH4]], [[sources/3J3S-ewvxn0]], [[sources/3STDqRx1o8w]], [[sources/3sYsqAWBo80]], [[sources/3wwXgdxtIKA]], 119 more
-- [[concepts/volume-analysis|Volume Analysis]] - Auto-generated concept topic — discussed across 121 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 121, degree: 13)
-  - links: [[concepts/meme-stock|Meme Stock]], [[concepts/open-interest|Open Interest]], [[concepts/order-flow|Order Flow]], [[concepts/point-of-control|Point Of Control]], [[concepts/price-action|Price Action]], [[concepts/standard-deviation-channels|Standard Deviation Channels]], [[concepts/support-and-resistance|Support And Resistance]], [[concepts/technical-analysis|Technical Analysis]], 5 more
+- [[concepts/volume-analysis|Volume Analysis]] - Volume analysis in options trading examines the flow and clustering of options orders to identify where new positions are being actively built across expiration cycles and strik... (sources: 121, degree: 14)
+  - links: [[concepts/meme-stock|Meme Stock]], [[concepts/open-interest|Open Interest]], [[concepts/options-flow|Options Flow]], [[concepts/order-flow|Order Flow]], [[concepts/point-of-control|Point Of Control]], [[concepts/price-action|Price Action]], [[concepts/standard-deviation-channels|Standard Deviation Channels]], [[concepts/support-and-resistance|Support And Resistance]], 6 more
   - backing sources: [[sources/-NzEb1zc1bw]], [[sources/-mD-g1Io3II]], [[sources/0gle3um9MoE]], [[sources/1SkCf5UEWtc]], [[sources/1axDClx9vWQ]], [[sources/29BtSz0VpA4]], [[sources/3J1_0s0qHPU]], [[sources/3maiJI5DRXc]], [[sources/5Tc9L4TvPR8]], [[sources/5YK9YbXMgMM]], 111 more
-- [[concepts/theta|Theta]] - Auto-generated concept topic — discussed across 120 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 120, degree: 10)
+- [[concepts/theta|Theta]] - Theta is the Greek that measures the rate of premium decay per day passing, with decay accelerating as expiration approaches and varying based on how far an option is in or out... (sources: 120, degree: 10)
   - links: [[concepts/charm|Charm]], [[concepts/delta|Delta]], [[concepts/gamma|Gamma]], [[concepts/greeks|Greeks]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/vega|Vega]], [[strategies/buying-the-panic|Buying The Panic]], 2 more
   - backing sources: [[sources/-CUgdXmtp5o]], [[sources/-MQ7kNM0dtI]], [[sources/-jJkuhl2wyY]], [[sources/0fty1k3IGgY]], [[sources/0iZJfIu3Nac]], [[sources/0kXY1hY--Ww]], [[sources/2Dv_fRuuTcc]], [[sources/3STDqRx1o8w]], [[sources/4CEmVAhaNbk]], [[sources/4sYY-sUtlGQ]], 110 more
-- [[concepts/earnings-move|Earnings Move]] - Auto-generated concept topic — discussed across 115 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 115, degree: 12)
+- [[concepts/earnings-move|Earnings Move]] - An earnings move is the price volatility and directional shift that occurs in a stock around its earnings announcement, often driven by the market's reaction to reported results... (sources: 115, degree: 12)
   - links: [[concepts/event-driven|Event Driven]], [[concepts/event-volatility|Event Volatility]], [[concepts/fomc|Fomc]], [[concepts/iv-crush|Iv Crush]], [[concepts/position-sizing|Position Sizing]], [[concepts/post-earnings-drift|Post Earnings Drift]], [[concepts/risk-management|Risk Management]], [[securities/avgo|AVGO]], 4 more
   - backing sources: [[sources/-qSV5WZNlP4]], [[sources/0gle3um9MoE]], [[sources/26vVCJY9t00]], [[sources/2Dv_fRuuTcc]], [[sources/2wlur2p61Mg]], [[sources/3J3S-ewvxn0]], [[sources/3_ZnBr22yqo]], [[sources/3hrdUyJ-KmE]], [[sources/4CEmVAhaNbk]], [[sources/4D1XWrp3xec]], 105 more
-- [[concepts/order-flow|Order Flow]] - Auto-generated concept topic — discussed across 112 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 112, degree: 17)
+- [[concepts/order-flow|Order Flow]] - Order flow refers to the patterns and timing of options orders across the market, revealing how traders cluster trades at specific times—such as market close through auction mec... (sources: 112, degree: 17)
   - links: [[concepts/dark-pools|Dark Pools]], [[concepts/dealer-positioning|Dealer Positioning]], [[concepts/ftd|Ftd]], [[concepts/liquidity|Liquidity]], [[concepts/market-maker|Market Maker]], [[concepts/payment-for-order-flow|Payment For Order Flow]], [[concepts/position-sizing|Position Sizing]], [[concepts/price-discovery|Price Discovery]], 9 more
   - backing sources: [[sources/-NzEb1zc1bw]], [[sources/-jJkuhl2wyY]], [[sources/29BtSz0VpA4]], [[sources/3J3S-ewvxn0]], [[sources/5G0_P4igVWQ]], [[sources/5Tc9L4TvPR8]], [[sources/5bwYlR-1Tdk]], [[sources/6Q76ymfUDpc]], [[sources/6UzoviSHtbk]], [[sources/6_FMAL6c_oM]], 102 more
-- [[concepts/momentum|Momentum]] - Auto-generated concept topic — discussed across 110 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 110, degree: 17)
+- [[concepts/momentum|Momentum]] - Momentum in options trading refers to the directional force and velocity of price movement in an underlying asset, which traders identify through technical analysis, volume patt... (sources: 110, degree: 17)
   - links: [[concepts/candlestick-reading|Candlestick Reading]], [[concepts/contrarian-sentiment|Contrarian Sentiment]], [[concepts/market-timing|Market Timing]], [[concepts/net-highs-lows|Net Highs Lows]], [[concepts/position-sizing|Position Sizing]], [[concepts/price-action|Price Action]], [[concepts/risk-management|Risk Management]], [[concepts/technical-analysis|Technical Analysis]], 9 more
   - backing sources: [[sources/-RsvTzf4OxA]], [[sources/-mD-g1Io3II]], [[sources/0gle3um9MoE]], [[sources/0qXakHvgYiQ]], [[sources/1N1GFFpS9I8]], [[sources/2I6SPZjnjew]], [[sources/2yu8jSYKuH4]], [[sources/3hrdUyJ-KmE]], [[sources/3iXfsTkanaE]], [[sources/4D1XWrp3xec]], 100 more
-- [[concepts/expected-move|Expected Move]] - Auto-generated concept topic — discussed across 107 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 107, degree: 12)
+- [[concepts/expected-move|Expected Move]] - Expected move is a quantitative measure derived from implied volatility that estimates the likely price range a security will trade within over a specified time horizon, typical... (sources: 107, degree: 12)
   - links: [[concepts/delta|Delta]], [[concepts/direction|Direction]], [[concepts/position-sizing|Position Sizing]], [[concepts/probability-cone|Probability Cone]], [[concepts/risk-management|Risk Management]], [[concepts/volatility-smile|Volatility Smile]], [[concepts/volatility-term-structure|Volatility Term Structure]], [[securities/ccj|CCJ]], 4 more
   - backing sources: [[sources/-qSV5WZNlP4]], [[sources/0ZE8GpkICU4]], [[sources/0iZJfIu3Nac]], [[sources/0kXY1hY--Ww]], [[sources/0qcfwt6wf2I]], [[sources/3hrdUyJ-KmE]], [[sources/4Lz5jr3grOs]], [[sources/4p0xi0hLOZM]], [[sources/58lYHJ_XDaY]], [[sources/6-xlQeiQWSg]], 97 more
-- [[concepts/realized-volatility|Realized Volatility]] - Auto-generated concept topic — discussed across 106 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 106, degree: 12)
+- [[concepts/realized-volatility|Realized Volatility]] - Realized volatility is the actual price movement that occurs in a stock or index over a given period, distinct from implied volatility (the market's forecast of future movement... (sources: 106, degree: 12)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/straddle-price|Straddle Price]], [[concepts/volatility-risk-premium|Volatility Risk Premium (VRP)]], [[securities/gld|GLD]], [[securities/lmt|LMT]], [[securities/slv|SLV]], 4 more
   - backing sources: [[sources/-Zqys05mhkw]], [[sources/-jJkuhl2wyY]], [[sources/10mc7m0i_XM]], [[sources/1G-h4tqfQEM]], [[sources/3_VUjiChU4o]], [[sources/3hrdUyJ-KmE]], [[sources/3iXfsTkanaE]], [[sources/4NTh_FrF-0Y]], [[sources/5Tc9L4TvPR8]], [[sources/5bwYlR-1Tdk]], 96 more
-- [[concepts/vega|Vega]] - Auto-generated concept topic — discussed across 106 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 106, degree: 8)
+- [[concepts/vega|Vega]] - Vega measures an option's sensitivity to changes in implied volatility and is a key Greek that traders must understand when selecting strategies and managing positions. When con... (sources: 106, degree: 8)
   - links: [[concepts/delta|Delta]], [[concepts/gamma|Gamma]], [[concepts/greeks|Greeks]], [[concepts/higher-order-greeks|Higher Order Greeks]], [[concepts/implied-volatility|Implied Volatility (IV)]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/theta|Theta]]
   - backing sources: [[sources/-MQ7kNM0dtI]], [[sources/0fty1k3IGgY]], [[sources/0iZJfIu3Nac]], [[sources/2Dv_fRuuTcc]], [[sources/3STDqRx1o8w]], [[sources/4sYY-sUtlGQ]], [[sources/58lYHJ_XDaY]], [[sources/5Tc9L4TvPR8]], [[sources/5bwYlR-1Tdk]], [[sources/5lJbpzPF1RY]], 96 more
-- [[concepts/market-breadth|Market Breadth]] - Auto-generated concept topic — discussed across 104 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 104, degree: 18)
+- [[concepts/market-breadth|Market Breadth]] - Market breadth refers to the proportion of stocks participating in a market move, measured by metrics such as the percentage of an index trading above key moving averages or the... (sources: 104, degree: 18)
   - links: [[concepts/event-driven|Event Driven]], [[concepts/market-regimes|Market Regimes]], [[concepts/net-highs-lows|Net Highs Lows]], [[concepts/point-of-control|Point Of Control]], [[concepts/relative-strength|Relative Strength]], [[concepts/sector-rotation|Sector Rotation]], [[concepts/technical-analysis|Technical Analysis]], [[securities/crwd|CRWD]], 10 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-NzEb1zc1bw]], [[sources/-qSV5WZNlP4]], [[sources/0YG5XSvH_GA]], [[sources/0fty1k3IGgY]], [[sources/0gle3um9MoE]], [[sources/0iZJfIu3Nac]], [[sources/3hrdUyJ-KmE]], [[sources/4D1XWrp3xec]], [[sources/4HHoWqBsc84]], 94 more
-- [[concepts/expected-value|Expected Value]] - Auto-generated concept topic — discussed across 103 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 103, degree: 9)
+- [[concepts/expected-value|Expected Value]] - Expected value in options trading is the mathematical relationship between win rate, average profit per winning trade, and average loss per losing trade—a metric that determines... (sources: 103, degree: 9)
   - links: [[concepts/expectancy|Expectancy]], [[concepts/high-implied-volatility|High Implied Volatility]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[concepts/trading-psychology|Trading Psychology]], [[concepts/win-rate-vs-profitability|Win Rate Vs Profitability]], [[strategies/buy-write|Buy Write]], 1 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-vDpqqCvosk]], [[sources/0nXEzaMT7Nc]], [[sources/0phfdNnT3Q0]], [[sources/0quAC-m-NpM]], [[sources/1G-h4tqfQEM]], [[sources/2TdIx_Bn3BY]], [[sources/2dP1Cu9Pjt8]], [[sources/2lvTJ6_Oc9E]], [[sources/2t3Nv-63Jtc]], 93 more
-- [[concepts/sector-rotation|Sector Rotation]] - Auto-generated concept topic — discussed across 103 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 103, degree: 23)
+- [[concepts/sector-rotation|Sector Rotation]] - Sector rotation is the tactical shift of capital allocation across different industry groups in response to changing macroeconomic conditions, policy expectations, or market sen... (sources: 103, degree: 23)
   - links: [[concepts/consumer-confidence|Consumer Confidence]], [[concepts/derivatives|Derivatives]], [[concepts/market-breadth|Market Breadth]], [[concepts/market-regimes|Market Regimes]], [[concepts/position-sizing|Position Sizing]], [[concepts/price-extremes|Price Extremes]], [[concepts/risk-management|Risk Management]], [[securities/asts|ASTS]], 15 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-NzEb1zc1bw]], [[sources/-RsvTzf4OxA]], [[sources/-qSV5WZNlP4]], [[sources/0La1c59B5Zw]], [[sources/0fty1k3IGgY]], [[sources/0iZJfIu3Nac]], [[sources/1ILbgbgxl3A]], [[sources/2I6SPZjnjew]], [[sources/3hrdUyJ-KmE]], 93 more
-- [[concepts/unusual-options-activity|Unusual Options Activity]] - Auto-generated concept topic — discussed across 98 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 98, degree: 7)
+- [[concepts/unusual-options-activity|Unusual Options Activity]] - Unusual options activity refers to anomalous spikes in options volume, open interest, or positioning that signal new trade initiation rather than routine closing or rolling acti... (sources: 98, degree: 7)
   - links: [[concepts/moneyness|Moneyness]], [[concepts/open-interest|Open Interest]], [[concepts/order-flow|Order Flow]], [[concepts/price-action|Price Action]], [[concepts/volume-analysis|Volume Analysis]], [[securities/chwy|CHWY]], [[securities/gme|GME]]
   - backing sources: [[sources/-mD-g1Io3II]], [[sources/3J3S-ewvxn0]], [[sources/3maiJI5DRXc]], [[sources/4p0xi0hLOZM]], [[sources/5YK9YbXMgMM]], [[sources/6CGcvPIONZs]], [[sources/6_FMAL6c_oM]], [[sources/7mlZTr3xeHA]], [[sources/8U4dz8MZL70]], [[sources/93vPWsmgsQc]], 88 more
-- [[concepts/delta-neutral|Delta Neutral]] - Auto-generated concept topic — discussed across 93 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 93, degree: 9)
+- [[concepts/delta-neutral|Delta Neutral]] - Delta neutral is a portfolio management approach where the combined delta exposure of multiple positions sums to zero or near-zero, allowing traders to isolate exposure to other... (sources: 93, degree: 9)
   - links: [[concepts/delta|Delta]], [[concepts/iron-condor|Iron Condor]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]], [[strategies/delta-selection|Delta Selection]], [[strategies/short-premium|Short Premium]], [[strategies/stock-replacement|Stock Replacement]], 1 more
   - backing sources: [[sources/04CvwImyHTA]], [[sources/05aJUfUKE5Q]], [[sources/0ocJTw3Tz9U]], [[sources/0quAC-m-NpM]], [[sources/2T8T8EDhfpQ]], [[sources/2jG5SD-3F0w]], [[sources/4HHoWqBsc84]], [[sources/4kj4Cp-qbsE]], [[sources/5qqDL8_cYGA]], [[sources/6Q76ymfUDpc]], 83 more
-- [[concepts/trading-log|Trading Log]] - Auto-generated concept topic — discussed across 92 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 92, degree: 7)
+- [[concepts/trading-log|Trading Log]] - A trading log is a systematic record of individual trades and portfolio-level metrics that serves as the foundation for long-term options trading success. Beyond simple record-k... (sources: 92, degree: 7)
   - links: [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/paper-trading|Paper Trading]], [[concepts/pnl-attribution|Pnl Attribution]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[concepts/trading-plan|Trading Plan]]
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/0ZE8GpkICU4]], [[sources/0iZJfIu3Nac]], [[sources/1jDrPx6lOgM]], [[sources/3STDqRx1o8w]], [[sources/3XRv1HPb2L0]], [[sources/3_VUjiChU4o]], [[sources/3c6fsUwB1pw]], [[sources/5G0_P4igVWQ]], [[sources/7_bIW3YqY78]], 82 more
-- [[concepts/volatility-skew|Volatility Skew]] - Auto-generated concept topic — discussed across 90 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 90, degree: 10)
+- [[concepts/volatility-skew|Volatility Skew]] - Volatility skew refers to the uneven distribution of implied volatility across different strike prices in an options chain, where calls and puts at various levels trade at diffe... (sources: 90, degree: 10)
   - links: [[concepts/call-skew|Call Skew]], [[concepts/delta|Delta]], [[concepts/dilution|Dilution]], [[concepts/moneyness|Moneyness]], [[concepts/position-sizing|Position Sizing]], [[concepts/put-skew|Put Skew]], [[concepts/skewness-premium|Skewness Premium]], [[concepts/volatility-smile|Volatility Smile]], 2 more
   - backing sources: [[sources/-Zqys05mhkw]], [[sources/-jJkuhl2wyY]], [[sources/-mD-g1Io3II]], [[sources/26vVCJY9t00]], [[sources/3J1_0s0qHPU]], [[sources/3J3S-ewvxn0]], [[sources/3hrdUyJ-KmE]], [[sources/4HHoWqBsc84]], [[sources/58lYHJ_XDaY]], [[sources/73cEIHM3FLg]], 80 more
-- [[concepts/extrinsic-value|Extrinsic Value]] - Auto-generated concept topic — discussed across 89 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 89, degree: 10)
+- [[concepts/extrinsic-value|Extrinsic Value]] - Extrinsic value is the portion of an option's premium attributable to time remaining until expiration and implied volatility, distinct from intrinsic value (the in-the-money amo... (sources: 89, degree: 10)
   - links: [[concepts/break-even|Break Even]], [[concepts/delta|Delta]], [[concepts/early-exercise|Early Exercise]], [[concepts/implied-volatility|Implied Volatility (IV)]], [[concepts/intrinsic-value|Intrinsic Value]], [[concepts/leaps|Leaps]], [[concepts/moneyness|Moneyness]], [[concepts/out-of-the-money|Out Of The Money]], 2 more
   - backing sources: [[sources/-jJkuhl2wyY]], [[sources/0kXY1hY--Ww]], [[sources/0ocJTw3Tz9U]], [[sources/3MTc2MylrDQ]], [[sources/4CEmVAhaNbk]], [[sources/5Tc9L4TvPR8]], [[sources/5YEY_IvBdPg]], [[sources/5lJbpzPF1RY]], [[sources/6c3CUMAVF04]], [[sources/73cEIHM3FLg]], 79 more
-- [[concepts/assignment|Assignment]] - Auto-generated concept topic — discussed across 85 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 85, degree: 10)
-  - links: [[concepts/delta|Delta]], [[concepts/early-exercise|Early Exercise]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/rolling-options|Rolling Options]], [[concepts/short-put|Short Put]], [[strategies/covered-call|Covered Call]], [[strategies/rolling-options|Rolling Options]], 2 more
+- [[concepts/assignment|Assignment]] - Assignment is the process by which a short option position is exercised against the trader, forcing them to either deliver shares (for short calls) or purchase shares (for short... (sources: 85, degree: 11)
+  - links: [[concepts/delta|Delta]], [[concepts/early-exercise|Early Exercise]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/rolling-options|Rolling Options]], [[concepts/short-put|Short Put]], [[concepts/vertical-spread|Vertical Spread]], [[strategies/covered-call|Covered Call]], 3 more
   - backing sources: [[sources/-MQ7kNM0dtI]], [[sources/-M_lC4RVmvM]], [[sources/-Zqys05mhkw]], [[sources/1exwniuHqP8]], [[sources/1rqLJW1nK40]], [[sources/4kj4Cp-qbsE]], [[sources/5Tc9L4TvPR8]], [[sources/5YEY_IvBdPg]], [[sources/5lJbpzPF1RY]], [[sources/6aRyhwnDLfo]], 75 more
-- [[concepts/trend-identification|Trend Identification]] - Auto-generated concept topic — discussed across 85 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 85, degree: 9)
+- [[concepts/trend-identification|Trend Identification]] - Trend identification in options trading involves analyzing price action across multiple timeframes and using technical tools like moving averages, support and resistance levels,... (sources: 85, degree: 9)
   - links: [[concepts/higher-highs-lower-lows|Higher Highs Lower Lows]], [[concepts/multi-timeframe-analysis|Multi Timeframe Analysis]], [[concepts/position-sizing|Position Sizing]], [[concepts/price-action|Price Action]], [[concepts/risk-management|Risk Management]], [[concepts/standard-deviation-channels|Standard Deviation Channels]], [[concepts/support-and-resistance|Support And Resistance]], [[concepts/volume-profile|Volume Profile]], 1 more
   - backing sources: [[sources/-XQGZSyM8O0]], [[sources/0gle3um9MoE]], [[sources/0ocJTw3Tz9U]], [[sources/1ILbgbgxl3A]], [[sources/1SkCf5UEWtc]], [[sources/2I6SPZjnjew]], [[sources/2yu8jSYKuH4]], [[sources/5bwYlR-1Tdk]], [[sources/5zUFVXiXFm0]], [[sources/6Ifus0KfJYQ]], 75 more
-- [[concepts/backtesting|Backtesting]] - Auto-generated concept topic — discussed across 81 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 81, degree: 19)
-  - links: [[concepts/ai-assisted-trading|Ai Assisted Trading]], [[concepts/context-window-management|Context Window Management]], [[concepts/edge|Edge]], [[concepts/hypothesis-testing|Hypothesis Testing]], [[concepts/large-language-model|Large Language Model]], [[concepts/market-effects|Market Effects]], [[concepts/monte-carlo-simulation|Monte Carlo Simulation]], [[concepts/no-code-tools|No Code Tools]], 11 more
+- [[concepts/backtesting|Backtesting]] - Backtesting is the process of testing trading strategies against historical market data to evaluate their edge and expected value before deploying real capital. Effective backte... (sources: 81, degree: 20)
+  - links: [[concepts/ai-assisted-trading|Ai Assisted Trading]], [[concepts/context-window-management|Context Window Management]], [[concepts/edge|Edge]], [[concepts/hypothesis-testing|Hypothesis Testing]], [[concepts/large-language-model|Large Language Model]], [[concepts/market-effects|Market Effects]], [[concepts/monte-carlo-simulation|Monte Carlo Simulation]], [[concepts/no-code-tools|No Code Tools]], 12 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/0iZJfIu3Nac]], [[sources/0quAC-m-NpM]], [[sources/3UlOiqsEyXQ]], [[sources/3XRv1HPb2L0]], [[sources/5j8nHk7s2ug]], [[sources/7fC4wwgyEsI]], [[sources/7lb6sXnN-ak]], [[sources/80QGX7wPlJk]], [[sources/8D1JhjKiYww]], 71 more
-- [[concepts/portfolio-first|Portfolio First]] - Auto-generated concept topic — discussed across 81 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 81, degree: 8)
+- [[concepts/portfolio-first|Portfolio First]] - Portfolio First is a foundational principle that prioritizes assessing portfolio-level needs, risk capacity, and capital allocation before selecting or adjusting individual opti... (sources: 81, degree: 8)
   - links: [[concepts/beta|Beta]], [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-first|Risk First]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]], [[strategies/put-credit-spread|Put Credit Spread]]
   - backing sources: [[sources/2Dv_fRuuTcc]], [[sources/3c6fsUwB1pw]], [[sources/4IZhG3hKW60]], [[sources/4kj4Cp-qbsE]], [[sources/6ecVwRkN4hw]], [[sources/78f9Q_gcfh0]], [[sources/9JdI1XeR1G0]], [[sources/AWB8d0uMeoA]], [[sources/AfFTysPxbns]], [[sources/BbKKEUZ9Gu4]], 71 more
-- [[concepts/days-to-expiration|Days To Expiration]] - Auto-generated concept topic — discussed across 77 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 77, degree: 7)
-  - links: [[concepts/at-the-money|At The Money]], [[concepts/delta|Delta]], [[concepts/gamma|Gamma]], [[concepts/gap-risk|Gap Risk]], [[concepts/moneyness|Moneyness]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]]
+- [[concepts/days-to-expiration|Days To Expiration]] - Days to expiration (DTE) is the time remaining until an options contract expires and represents a critical variable in structuring options trades alongside delta and gamma selec... (sources: 77, degree: 8)
+  - links: [[concepts/at-the-money|At The Money]], [[concepts/delta|Delta]], [[concepts/delta-decay|Delta Decay]], [[concepts/gamma|Gamma]], [[concepts/gap-risk|Gap Risk]], [[concepts/moneyness|Moneyness]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/0fty1k3IGgY]], [[sources/0kXY1hY--Ww]], [[sources/1O0HX-C-4PU]], [[sources/1kGksRBt2aA]], [[sources/1rqLJW1nK40]], [[sources/4CEmVAhaNbk]], [[sources/4kj4Cp-qbsE]], [[sources/4p0xi0hLOZM]], [[sources/6LpY37knkh4]], [[sources/7UFLVoQVRIY]], 67 more
-- [[concepts/expected-return|Expected Return]] - Auto-generated concept topic — discussed across 77 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 77, degree: 9)
+- [[concepts/expected-return|Expected Return]] - Expected return (or expectancy) is the mathematical product of win probability, average win size, loss probability, and average loss size—the single metric that determines wheth... (sources: 77, degree: 9)
   - links: [[concepts/annualized-return|Annualized Return]], [[concepts/buy-and-hold|Buy And Hold]], [[concepts/compound-annual-growth-rate|Compound Annual Growth Rate]], [[concepts/delayed-gratification|Delayed Gratification]], [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], 1 more
   - backing sources: [[sources/0ZE8GpkICU4]], [[sources/19oL0B8i2Fc]], [[sources/1G-h4tqfQEM]], [[sources/2wYfOVlLOYg]], [[sources/3c6fsUwB1pw]], [[sources/58lYHJ_XDaY]], [[sources/72LcrOF6BHk]], [[sources/7I6q5LgIVSg]], [[sources/8MTeMe1qln8]], [[sources/9gxePPicbYM]], 67 more
-- [[concepts/implied-volatility-percentile|Implied Volatility Percentile]] - Auto-generated concept topic — discussed across 76 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 76, degree: 7)
+- [[concepts/implied-volatility-percentile|Implied Volatility Percentile]] - Implied volatility percentile measures where a security's current implied volatility ranks relative to its historical range, helping traders identify whether volatility is eleva... (sources: 76, degree: 7)
   - links: [[concepts/delta|Delta]], [[concepts/implied-volatility|Implied Volatility (IV)]], [[concepts/implied-volatility-rank|Implied Volatility Rank]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/gme|GME]], [[strategies/short-premium|Short Premium]]
   - backing sources: [[sources/-Zqys05mhkw]], [[sources/2jG5SD-3F0w]], [[sources/3tpHwfH9glU]], [[sources/4HHoWqBsc84]], [[sources/58lYHJ_XDaY]], [[sources/5K0UEOLDP5k]], [[sources/5bwYlR-1Tdk]], [[sources/5qqDL8_cYGA]], [[sources/5zUFVXiXFm0]], [[sources/6-xlQeiQWSg]], 66 more
-- [[concepts/mean-reversion|Mean Reversion]] - Auto-generated concept topic — discussed across 70 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 70, degree: 7)
+- [[concepts/mean-reversion|Mean Reversion]] - Mean reversion is not explicitly defined or discussed as a standalone topic across the supplied videos. While the corpus covers various trading strategies, market dynamics, and... (sources: 70, degree: 7)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[concepts/trading-psychology|Trading Psychology]], [[securities/spy|SPY]], [[strategies/long-premium|Long Premium]], [[strategies/scalping|Scalping]]
   - backing sources: [[sources/0iZJfIu3Nac]], [[sources/1jDrPx6lOgM]], [[sources/4Lz5jr3grOs]], [[sources/6CZMjMvG4y4]], [[sources/6aRyhwnDLfo]], [[sources/6vQeTS9cyk0]], [[sources/73cEIHM3FLg]], [[sources/80QGX7wPlJk]], [[sources/8d2PprSIK2g]], [[sources/AdLEV_-zDSM]], 60 more
-- [[concepts/moving-averages|Moving Averages]] - Auto-generated concept topic — discussed across 70 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 70, degree: 11)
+- [[concepts/moving-averages|Moving Averages]] - Moving averages serve as a technical tool for identifying price consolidation, trend alignment, and market breadth in options trading analysis. They are used to confirm confluen... (sources: 70, degree: 11)
   - links: [[concepts/candlestick-reading|Candlestick Reading]], [[concepts/linear-regression-channels|Linear Regression Channels]], [[concepts/multi-timeframe-analysis|Multi Timeframe Analysis]], [[concepts/price-action|Price Action]], [[concepts/price-extremes|Price Extremes]], [[concepts/probabilistic-outcomes|Probabilistic Outcomes]], [[concepts/risk-management|Risk Management]], [[concepts/standard-deviation-channels|Standard Deviation Channels]], 3 more
   - backing sources: [[sources/-mD-g1Io3II]], [[sources/0YG5XSvH_GA]], [[sources/0fty1k3IGgY]], [[sources/0iZJfIu3Nac]], [[sources/0qXakHvgYiQ]], [[sources/1ILbgbgxl3A]], [[sources/1N1GFFpS9I8]], [[sources/1axDClx9vWQ]], [[sources/3J1_0s0qHPU]], [[sources/3iXfsTkanaE]], 60 more
-- [[concepts/open-interest|Open Interest]] - Auto-generated concept topic — discussed across 67 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 67, degree: 7)
+- [[concepts/open-interest|Open Interest]] - Open interest represents the total number of outstanding options contracts at a given strike and expiration, serving as a measure of position concentration and liquidity in the... (sources: 67, degree: 7)
   - links: [[concepts/delta|Delta]], [[concepts/moneyness|Moneyness]], [[concepts/options-chain|Options Chain]], [[concepts/unusual-options-activity|Unusual Options Activity]], [[concepts/volume-analysis|Volume Analysis]], [[securities/chwy|CHWY]], [[securities/gme|GME]]
   - backing sources: [[sources/-mD-g1Io3II]], [[sources/3J1_0s0qHPU]], [[sources/3maiJI5DRXc]], [[sources/4p0xi0hLOZM]], [[sources/5YK9YbXMgMM]], [[sources/6_FMAL6c_oM]], [[sources/7YJRaNJjh00]], [[sources/8U4dz8MZL70]], [[sources/BSRH0cjr3PE]], [[sources/BbKKEUZ9Gu4]], 57 more
-- [[concepts/realized-vs-unrealized-pnl|Realized Vs Unrealized Pnl]] - Auto-generated concept topic — discussed across 67 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 67, degree: 7)
+- [[concepts/realized-vs-unrealized-pnl|Realized Vs Unrealized Pnl]] - Realized P&L represents actual profits or losses from closed trades, while unrealized P&L reflects the current mark-to-market value of open positions. Many traders fixate on unr... (sources: 67, degree: 7)
   - links: [[concepts/basis-adjustment|Basis Adjustment]], [[concepts/delta|Delta]], [[concepts/mark-to-market|Mark To Market]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[strategies/short-premium|Short Premium]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/-CUgdXmtp5o]], [[sources/0ocJTw3Tz9U]], [[sources/1rqLJW1nK40]], [[sources/3STDqRx1o8w]], [[sources/3c6fsUwB1pw]], [[sources/433hxdMxfxA]], [[sources/5OQNi5AthOk]], [[sources/7gLvDWJK2gg]], [[sources/C_YEdo1Qlk8]], [[sources/DB6bc4LmKM4]], 57 more
-- [[concepts/greeks|Greeks]] - Auto-generated concept topic — discussed across 65 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 65, degree: 8)
+- [[concepts/greeks|Greeks]] - The Greeks are quantitative measures that describe how option prices respond to changes in underlying market conditions—primarily delta (price movement), theta (time decay), veg... (sources: 65, degree: 8)
   - links: [[concepts/charm|Charm]], [[concepts/delta|Delta]], [[concepts/gamma|Gamma]], [[concepts/higher-order-greeks|Higher Order Greeks]], [[concepts/moneyness|Moneyness]], [[concepts/theta|Theta]], [[concepts/vega|Vega]], [[strategies/stock-replacement|Stock Replacement]]
   - backing sources: [[sources/-jJkuhl2wyY]], [[sources/0fty1k3IGgY]], [[sources/1kGksRBt2aA]], [[sources/3XRv1HPb2L0]], [[sources/4CEmVAhaNbk]], [[sources/4sYY-sUtlGQ]], [[sources/5Tc9L4TvPR8]], [[sources/5qqDL8_cYGA]], [[sources/73cEIHM3FLg]], [[sources/8Sk1oMYRq-Q]], 55 more
-- [[concepts/intrinsic-value|Intrinsic Value]] - Auto-generated concept topic — discussed across 65 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 65, degree: 5)
+- [[concepts/intrinsic-value|Intrinsic Value]] - Intrinsic value is the portion of an option's price that reflects its in-the-money amount—the difference between the underlying asset's current price and the option's strike pri... (sources: 65, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/extrinsic-value|Extrinsic Value]], [[concepts/moneyness|Moneyness]], [[concepts/position-sizing|Position Sizing]], [[strategies/long-call|Long Call]]
   - backing sources: [[sources/-jJkuhl2wyY]], [[sources/0kXY1hY--Ww]], [[sources/1rqLJW1nK40]], [[sources/5Tc9L4TvPR8]], [[sources/5lJbpzPF1RY]], [[sources/6c3CUMAVF04]], [[sources/73cEIHM3FLg]], [[sources/7_bIW3YqY78]], [[sources/8qAZX9Lx0Z0]], [[sources/9z4e3ZKDceY]], 55 more
-- [[concepts/bid-ask-spread|Bid Ask Spread]] - Auto-generated concept topic — discussed across 64 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 64, degree: 5)
+- [[concepts/bid-ask-spread|Bid Ask Spread]] - The bid-ask spread is the cost difference between buying and selling an options contract, representing friction that erodes trading edge and profitability. In practice, spreads... (sources: 64, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/market-maker|Market Maker]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/-jJkuhl2wyY]], [[sources/0phfdNnT3Q0]], [[sources/2TdIx_Bn3BY]], [[sources/7tBAlmNokFI]], [[sources/93vPWsmgsQc]], [[sources/9APL8MtZu7Y]], [[sources/9H5G9H62lMQ]], [[sources/A9Uq-DNAV2I]], [[sources/AdLEV_-zDSM]], [[sources/CzBpxADkCk0]], 54 more
-- [[concepts/disposition-effect|Disposition Effect]] - Auto-generated concept topic — discussed across 60 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 60, degree: 6)
-  - links: [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/mental-stop-vs-hard-stop|Mental Stop Vs Hard Stop]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[concepts/trading-psychology|Trading Psychology]]
+- [[concepts/disposition-effect|Disposition Effect]] - The disposition effect is a behavioral bias in which traders exit winning positions too early to lock in gains while holding losing positions too long in hopes of recovery, driv... (sources: 60, degree: 7)
+  - links: [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/mental-stop-vs-hard-stop|Mental Stop Vs Hard Stop]], [[concepts/overconfidence|Overconfidence]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[concepts/trading-psychology|Trading Psychology]]
   - backing sources: [[sources/-M_lC4RVmvM]], [[sources/-qSV5WZNlP4]], [[sources/1G-h4tqfQEM]], [[sources/5bhuXvSptJc]], [[sources/6Q76ymfUDpc]], [[sources/9CqpFa4mYas]], [[sources/B3SW20MSNbM]], [[sources/Dc8Vjr4pZ84]], [[sources/DrfoNKd41I0]], [[sources/EjD6KPo3OZs]], 50 more
-- [[concepts/post-earnings-drift|Post Earnings Drift]] - Auto-generated concept topic — discussed across 59 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 59, degree: 6)
+- [[concepts/post-earnings-drift|Post Earnings Drift]] - Post-earnings announcement drift (PEAD) is the tendency for stock prices to continue moving in the direction of an earnings surprise for days or weeks after the initial announce... (sources: 59, degree: 6)
   - links: [[concepts/earnings-move|Earnings Move]], [[concepts/position-sizing|Position Sizing]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]], [[strategies/post-earnings-drift|Post Earnings Drift]]
   - backing sources: [[sources/0fty1k3IGgY]], [[sources/0iZJfIu3Nac]], [[sources/3hrdUyJ-KmE]], [[sources/4D1XWrp3xec]], [[sources/4HHoWqBsc84]], [[sources/4NTh_FrF-0Y]], [[sources/6WloCMY-aTw]], [[sources/6epupAYLkYc]], [[sources/7lb6sXnN-ak]], [[sources/7wMdBbbfWZg]], 49 more
-- [[concepts/covered-strangle|Covered Strangle]] - Auto-generated concept topic — discussed across 57 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 57, degree: 7)
-  - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/scaling-out|Scaling Out]], [[securities/gme|GME]], [[securities/qs|QS]], [[strategies/short-put|Short Put]]
+- [[concepts/covered-strangle|Covered Strangle]] - A covered strangle is a neutral-to-bullish options strategy that combines long stock ownership with short puts and short calls at different strike prices, designed to generate p... (sources: 57, degree: 8)
+  - links: [[concepts/allocation|Allocation]], [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/scaling-out|Scaling Out]], [[securities/gme|GME]], [[securities/qs|QS]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/-XQGZSyM8O0]], [[sources/-Zqys05mhkw]], [[sources/-qSV5WZNlP4]], [[sources/05aJUfUKE5Q]], [[sources/0ocJTw3Tz9U]], [[sources/0quAC-m-NpM]], [[sources/3J3S-ewvxn0]], [[sources/3sYsqAWBo80]], [[sources/4kj4Cp-qbsE]], [[sources/6aRyhwnDLfo]], 47 more
-- [[concepts/risk-tolerance|Risk Tolerance]] - Auto-generated concept topic — discussed across 57 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 57, degree: 6)
+- [[concepts/risk-tolerance|Risk Tolerance]] - Risk tolerance in options trading refers to an individual trader's capacity and psychological willingness to accept losses and volatility, which must be honestly assessed and ma... (sources: 57, degree: 6)
   - links: [[concepts/delayed-gratification|Delayed Gratification]], [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[concepts/trading-psychology|Trading Psychology]]
   - backing sources: [[sources/1jDrPx6lOgM]], [[sources/2i7PaIjmYtU]], [[sources/2wYfOVlLOYg]], [[sources/3c6fsUwB1pw]], [[sources/78f9Q_gcfh0]], [[sources/8qKoYYGSxik]], [[sources/AoiTtWoNKv0]], [[sources/B3SW20MSNbM]], [[sources/BKbkWTwx2zI]], [[sources/EjD6KPo3OZs]], 47 more
-- [[concepts/win-rate-vs-profitability|Win Rate Vs Profitability]] - Auto-generated concept topic — discussed across 57 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 57, degree: 7)
+- [[concepts/win-rate-vs-profitability|Win Rate Vs Profitability]] - Win rate—the percentage of trades that end profitably—is a psychologically appealing but fundamentally misleading metric for evaluating options trading strategies, as a strategy... (sources: 57, degree: 7)
   - links: [[concepts/expectancy|Expectancy]], [[concepts/expected-value|Expected Value]], [[concepts/high-implied-volatility|High Implied Volatility]], [[concepts/position-sizing|Position Sizing]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/risk-management|Risk Management]], [[strategies/short-premium|Short Premium]]
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/0ZE8GpkICU4]], [[sources/1G-h4tqfQEM]], [[sources/1jDrPx6lOgM]], [[sources/2dP1Cu9Pjt8]], [[sources/2lvTJ6_Oc9E]], [[sources/3JV19RH54eQ]], [[sources/6lIx0wSsN7Y]], [[sources/7I6q5LgIVSg]], [[sources/7wMdBbbfWZg]], 47 more
-- [[concepts/short-volatility|Short Volatility]] - Auto-generated concept topic — discussed across 56 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 56, degree: 5)
+- [[concepts/short-volatility|Short Volatility]] - Short volatility is a trading strategy where options traders sell premium by establishing positions that profit when implied volatility declines or mean-reverts toward realized... (sources: 56, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[strategies/short-premium|Short Premium]], [[strategies/short-strangle|Short Strangle]]
   - backing sources: [[sources/-LgTPBfGngc]], [[sources/-Zqys05mhkw]], [[sources/3_VUjiChU4o]], [[sources/6Q76ymfUDpc]], [[sources/6j6nMarpVDQ]], [[sources/72LcrOF6BHk]], [[sources/7xLGynW-FdA]], [[sources/80QGX7wPlJk]], [[sources/BB_9Ivd8NLM]], [[sources/BM8veeOFQBk]], 46 more
-- [[concepts/probability-of-touch|Probability Of Touch]] - Auto-generated concept topic — discussed across 53 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 53, degree: 5)
+- [[concepts/probability-of-touch|Probability Of Touch]] - Probability of touch is the likelihood that an option's underlying price will reach the strike price at any point before expiration, distinct from the probability of finishing i... (sources: 53, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/moneyness|Moneyness]], [[concepts/position-sizing|Position Sizing]], [[securities/spy|SPY]], [[strategies/long-call|Long Call]]
   - backing sources: [[sources/1G-h4tqfQEM]], [[sources/1kGksRBt2aA]], [[sources/1rqLJW1nK40]], [[sources/2TdIx_Bn3BY]], [[sources/2lvTJ6_Oc9E]], [[sources/5zUFVXiXFm0]], [[sources/6c3CUMAVF04]], [[sources/72LcrOF6BHk]], [[sources/BZsa6_XhKF0]], [[sources/C_YEdo1Qlk8]], 43 more
-- [[concepts/risk-premium|Risk Premium]] - Auto-generated concept topic — discussed across 52 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 52, degree: 6)
+- [[concepts/risk-premium|Risk Premium]] - Risk premium in options trading refers to the structural alpha captured by selling options and assuming the risk that buyers are willing to pay to transfer—a fundamental profit... (sources: 52, degree: 6)
   - links: [[concepts/market-efficiency|Market Efficiency]], [[concepts/market-regimes|Market Regimes]], [[concepts/position-sizing|Position Sizing]], [[concepts/put-skew|Put Skew]], [[securities/spy|SPY]], [[strategies/short-premium|Short Premium]]
   - backing sources: [[sources/-CUgdXmtp5o]], [[sources/0La1c59B5Zw]], [[sources/0fty1k3IGgY]], [[sources/0ocJTw3Tz9U]], [[sources/30aBq8F5FB8]], [[sources/5bwYlR-1Tdk]], [[sources/6-MMToTqJAE]], [[sources/6CZMjMvG4y4]], [[sources/6UzoviSHtbk]], [[sources/6WloCMY-aTw]], 42 more
-- [[concepts/dealer-positioning|Dealer Positioning]] - Auto-generated concept topic — discussed across 51 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 51, degree: 7)
+- [[concepts/dealer-positioning|Dealer Positioning]] - Dealer positioning refers to how market makers hedge their options exposure by taking offsetting positions in the underlying stock or related derivatives, which can influence pr... (sources: 51, degree: 7)
   - links: [[concepts/market-maker|Market Maker]], [[concepts/order-flow|Order Flow]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[people/richard-newton|Richard Newton]], [[securities/gme|GME]], [[securities/xrt|XRT]]
   - backing sources: [[sources/-XQGZSyM8O0]], [[sources/0-BUA66HVWg]], [[sources/0qcfwt6wf2I]], [[sources/2uzcV42Gc7w]], [[sources/4Lz5jr3grOs]], [[sources/5G0_P4igVWQ]], [[sources/6CZMjMvG4y4]], [[sources/6WloCMY-aTw]], [[sources/783T-aRhwnI]], [[sources/7YJRaNJjh00]], 41 more
-- [[concepts/confirmation-bias|Confirmation Bias]] - Auto-generated concept topic — discussed across 50 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 50, degree: 5)
+- [[concepts/confirmation-bias|Confirmation Bias]] - Confirmation bias in options trading is the tendency to selectively cherry-pick indicators, patterns, or data that support an existing thesis while ignoring contradictory signal... (sources: 50, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[concepts/technical-analysis|Technical Analysis]], [[concepts/trading-psychology|Trading Psychology]]
   - backing sources: [[sources/0YG5XSvH_GA]], [[sources/1O0HX-C-4PU]], [[sources/3STDqRx1o8w]], [[sources/5YK9YbXMgMM]], [[sources/7lb6sXnN-ak]], [[sources/7tBAlmNokFI]], [[sources/7ukh8YpfNu0]], [[sources/AJP8M8DQ_1U]], [[sources/AWB8d0uMeoA]], [[sources/Ax5GbNrLlG8]], 40 more
-- [[concepts/zero-dte|Zero Dte]] - Auto-generated concept topic — discussed across 48 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 48, degree: 5)
+- [[concepts/zero-dte|Zero Dte]] - Zero-DTE (same-day expiration) options are binary events with amplified price movements and embedded high volatility risk premium, where rapid delta decay—called charm—erodes po... (sources: 48, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spx|SPX]], [[strategies/zero-dte|Zero Dte]]
   - backing sources: [[sources/0a1UROsFf_A]], [[sources/19oL0B8i2Fc]], [[sources/3_VUjiChU4o]], [[sources/5Tc9L4TvPR8]], [[sources/6j6nMarpVDQ]], [[sources/6vQeTS9cyk0]], [[sources/FnVyDaukQZE]], [[sources/FnrSSbmhG2g]], [[sources/FrqSC7Fbf14]], [[sources/GK4RmROuNKA]], 38 more
-- [[concepts/rolling-options|Rolling Options]] - Auto-generated concept topic — discussed across 47 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 47, degree: 7)
+- [[concepts/rolling-options|Rolling Options]] - Rolling options is the mechanical process of closing an existing options position and simultaneously opening a new one at a different strike and/or expiration date, commonly use... (sources: 47, degree: 7)
   - links: [[concepts/assignment|Assignment]], [[concepts/basis-adjustment|Basis Adjustment]], [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[strategies/rolling-options|Rolling Options]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/1rqLJW1nK40]], [[sources/5YEY_IvBdPg]], [[sources/7gLvDWJK2gg]], [[sources/AWB8d0uMeoA]], [[sources/AfFTysPxbns]], [[sources/BTU71jbUgDo]], [[sources/DumdXtGkUPQ]], [[sources/Eh6K1tD9EJE]], [[sources/F8Mpls7PWfs]], [[sources/FtZyB8apvC0]], 37 more
-- [[concepts/opportunity-cost|Opportunity Cost]] - Auto-generated concept topic — discussed across 46 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 46, degree: 5)
+- [[concepts/opportunity-cost|Opportunity Cost]] - Opportunity cost in options trading refers to the capital and time committed to one position that could alternatively be deployed elsewhere, a consideration central to portfolio... (sources: 46, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[strategies/covered-call|Covered Call]]
   - backing sources: [[sources/-qSV5WZNlP4]], [[sources/-u_dHz31d38]], [[sources/-ulHoMHsPu4]], [[sources/0I32lVyhZuU]], [[sources/0La1c59B5Zw]], [[sources/1rqLJW1nK40]], [[sources/2I6SPZjnjew]], [[sources/39WODruLi7Q]], [[sources/3JV19RH54eQ]], [[sources/4CcvNglunZ0]], 36 more
-- [[concepts/profit-taking|Profit Taking]] - Auto-generated concept topic — discussed across 46 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 46, degree: 6)
+- [[concepts/profit-taking|Profit Taking]] - Profit taking is the disciplined practice of closing or reducing winning positions at predetermined levels rather than holding for maximum gain, ensuring capital is locked in an... (sources: 46, degree: 6)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[concepts/stop-loss|Stop Loss]], [[concepts/trading-plan|Trading Plan]]
   - backing sources: [[sources/-Zqys05mhkw]], [[sources/26vVCJY9t00]], [[sources/4kj4Cp-qbsE]], [[sources/6aRyhwnDLfo]], [[sources/6lIx0wSsN7Y]], [[sources/9CqpFa4mYas]], [[sources/B3SW20MSNbM]], [[sources/CqDMnUJgNeY]], [[sources/EMzsNLXZ1bc]], [[sources/F4W52_7aQTs]], 36 more
-- [[concepts/event-volatility|Event Volatility]] - Auto-generated concept topic — discussed across 45 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 45, degree: 7)
+- [[concepts/event-volatility|Event Volatility]] - Event volatility refers to the elevated price and implied volatility that occurs around known market catalysts such as earnings announcements, geopolitical events, policy change... (sources: 45, degree: 7)
   - links: [[concepts/delta|Delta]], [[concepts/earnings-move|Earnings Move]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/djt|DJT]], [[securities/spy|SPY]], [[strategies/event-driven|Event Driven]]
   - backing sources: [[sources/26vVCJY9t00]], [[sources/29BtSz0VpA4]], [[sources/3_ZnBr22yqo]], [[sources/4CEmVAhaNbk]], [[sources/5-n_K32MGYo]], [[sources/5K0UEOLDP5k]], [[sources/6UzoviSHtbk]], [[sources/6j6nMarpVDQ]], [[sources/80QGX7wPlJk]], [[sources/ALKBhrqUg6Q]], 35 more
-- [[concepts/paper-trading|Paper Trading]] - Auto-generated concept topic — discussed across 45 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 45, degree: 5)
+- [[concepts/paper-trading|Paper Trading]] - Paper trading is the practice of simulating trades with virtual capital before deploying real money, serving as a critical testing ground for developing repeatable processes and... (sources: 45, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/risk-management|Risk Management]], [[concepts/trading-log|Trading Log]]
   - backing sources: [[sources/0iZJfIu3Nac]], [[sources/7_bIW3YqY78]], [[sources/80QGX7wPlJk]], [[sources/AdLEV_-zDSM]], [[sources/B48KOikbTs8]], [[sources/CzBpxADkCk0]], [[sources/EkAxyxtD0hc]], [[sources/FnVyDaukQZE]], [[sources/FtZyB8apvC0]], [[sources/GK9EHx-NZ_M]], 35 more
-- [[concepts/short-squeeze|Short Squeeze]] - Auto-generated concept topic — discussed across 44 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 44, degree: 11)
+- [[concepts/short-squeeze|Short Squeeze]] - A short squeeze occurs when a stock with high short interest is forced to rise sharply, compelling short sellers to cover their positions at elevated prices and thereby accelera... (sources: 44, degree: 11)
   - links: [[concepts/gamma-squeeze|Gamma Squeeze]], [[concepts/market-maker|Market Maker]], [[concepts/meme-stock|Meme Stock]], [[concepts/naked-short-selling|Naked Short Selling]], [[concepts/position-sizing|Position Sizing]], [[concepts/price-action|Price Action]], [[concepts/risk-management|Risk Management]], [[concepts/short-interest|Short Interest]], 3 more
   - backing sources: [[sources/-XQGZSyM8O0]], [[sources/-yvQLv-q9uk]], [[sources/1rqLJW1nK40]], [[sources/5G0_P4igVWQ]], [[sources/5YK9YbXMgMM]], [[sources/7mlZTr3xeHA]], [[sources/86KGdDWuPJ0]], [[sources/9CqpFa4mYas]], [[sources/B3SW20MSNbM]], [[sources/BTU71jbUgDo]], 34 more
-- [[concepts/trend-following|Trend Following]] - Auto-generated concept topic — discussed across 44 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 44, degree: 5)
+- [[concepts/trend-following|Trend Following]] - Trend following is an approach to trading that prioritizes following price action and momentum rather than fighting the market based on contrarian conviction or predictions abou... (sources: 44, degree: 5)
   - links: [[concepts/momentum|Momentum]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[strategies/trend-following|Trend Following]]
   - backing sources: [[sources/-RsvTzf4OxA]], [[sources/-Zqys05mhkw]], [[sources/0iZJfIu3Nac]], [[sources/1axDClx9vWQ]], [[sources/4gWjyPVh9j4]], [[sources/4i11aVZeGxQ]], [[sources/73cEIHM3FLg]], [[sources/8MTeMe1qln8]], [[sources/8d2PprSIK2g]], [[sources/BtW6QHGCaas]], 34 more
-- [[concepts/gamma-exposure|Gamma Exposure]] - Auto-generated concept topic — discussed across 42 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 42, degree: 8)
+- [[concepts/gamma-exposure|Gamma Exposure]] - Gamma exposure (GEX) measures the aggregate gamma positioning of options dealers across strikes and expirations, reflecting their collective hedging obligations as prices move.... (sources: 42, degree: 8)
   - links: [[concepts/delta-hedging|Delta Hedging]], [[concepts/gamma-ramp|Gamma Ramp]], [[concepts/market-maker|Market Maker]], [[concepts/position-sizing|Position Sizing]], [[concepts/price-action|Price Action]], [[concepts/short-interest|Short Interest]], [[people/euan-sinclair|Euan Sinclair]], [[securities/gme|GME]]
   - backing sources: [[sources/0qcfwt6wf2I]], [[sources/1O0HX-C-4PU]], [[sources/4Lz5jr3grOs]], [[sources/7mlZTr3xeHA]], [[sources/80QGX7wPlJk]], [[sources/86KGdDWuPJ0]], [[sources/C1UbvCjzUDE]], [[sources/FfMgFRoJjzc]], [[sources/FrqSC7Fbf14]], [[sources/GOIa64zrMUA]], 32 more
-- [[concepts/liquidity-cycle|Liquidity Cycle]] - Auto-generated concept topic — discussed across 41 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 41, degree: 5)
+- [[concepts/liquidity-cycle|Liquidity Cycle]] - A liquidity cycle in options trading refers to the self-reinforcing pattern of volume clustering and order flow that emerges from structural market mechanics, such as auction-dr... (sources: 41, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/market-maker|Market Maker]], [[concepts/moneyness|Moneyness]], [[concepts/position-sizing|Position Sizing]], [[securities/spy|SPY]]
   - backing sources: [[sources/29BtSz0VpA4]], [[sources/4q843j_0kcc]], [[sources/6-MMToTqJAE]], [[sources/6Sp4eF9ahW8]], [[sources/8qAZX9Lx0Z0]], [[sources/AfFTysPxbns]], [[sources/ECFVH6IZG4E]], [[sources/F4W52_7aQTs]], [[sources/GVoSqEj3k9I]], [[sources/KKOqF8h1n1s]], 31 more
-- [[concepts/volatility-surface|Volatility Surface]] - Auto-generated concept topic — discussed across 41 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 41, degree: 5)
+- [[concepts/volatility-surface|Volatility Surface]] - A volatility surface plots implied volatilities across all strikes and expirations for a given underlying, revealing how the market prices risk at different points in time and m... (sources: 41, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/market-maker|Market Maker]], [[concepts/volatility-term-structure|Volatility Term Structure]], [[securities/gme|GME]], [[securities/spy|SPY]]
   - backing sources: [[sources/-jJkuhl2wyY]], [[sources/5YK9YbXMgMM]], [[sources/5bwYlR-1Tdk]], [[sources/6_FMAL6c_oM]], [[sources/BM8veeOFQBk]], [[sources/B_nTx0FAv3k]], [[sources/BbKKEUZ9Gu4]], [[sources/CO9TLXsZVLM]], [[sources/FPLK8vS5ono]], [[sources/FuuVCSD5QVc]], 31 more
-- [[concepts/consolidation|Consolidation]] - Auto-generated concept topic — discussed across 40 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 40, degree: 6)
+- [[concepts/consolidation|Consolidation]] - Consolidation is a price pattern in which a security trades within a narrow, bounded range over a period of time, reflecting a balance between supply and demand at that level. I... (sources: 40, degree: 6)
   - links: [[concepts/point-of-control|Point Of Control]], [[concepts/price-action|Price Action]], [[concepts/support-and-resistance|Support And Resistance]], [[concepts/technical-analysis|Technical Analysis]], [[securities/gme|GME]], [[securities/spy|SPY]]
   - backing sources: [[sources/-mD-g1Io3II]], [[sources/2yu8jSYKuH4]], [[sources/3J1_0s0qHPU]], [[sources/5aId1F_kr24]], [[sources/5zUFVXiXFm0]], [[sources/6CZMjMvG4y4]], [[sources/6lIx0wSsN7Y]], [[sources/78EjRKsvDQA]], [[sources/BKbkWTwx2zI]], [[sources/Bxh8Fo7CiEI]], 30 more
-- [[concepts/outlier-strategy-process|Outlier Strategy Process]] - Auto-generated concept topic — discussed across 39 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 39, degree: 5)
+- [[concepts/outlier-strategy-process|Outlier Strategy Process]] - The Outlier Strategy Process is a systematic framework for building options trades by first identifying the specific profit mechanism (the repeatable, quantifiable pattern that... (sources: 39, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/-qSV5WZNlP4]], [[sources/2dP1Cu9Pjt8]], [[sources/4rWdA8oqJmQ]], [[sources/66PQ2Ke5Ggo]], [[sources/8MTeMe1qln8]], [[sources/9JdI1XeR1G0]], [[sources/AWB8d0uMeoA]], [[sources/AoHUcyVh7NY]], [[sources/Ct6b_K10pBU]], [[sources/EmzMpa6nEN0]], 29 more
-- [[concepts/pnl-attribution|Pnl Attribution]] - Auto-generated concept topic — discussed across 39 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 39, degree: 5)
+- [[concepts/pnl-attribution|Pnl Attribution]] - PnL attribution is the process of systematically analyzing and decomposing trading profits and losses to understand which strategies, positions, and decisions drove actual resul... (sources: 39, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[concepts/trading-log|Trading Log]], [[concepts/trading-plan|Trading Plan]]
   - backing sources: [[sources/3JV19RH54eQ]], [[sources/3STDqRx1o8w]], [[sources/3XRv1HPb2L0]], [[sources/3c6fsUwB1pw]], [[sources/433hxdMxfxA]], [[sources/6-xlQeiQWSg]], [[sources/8qKoYYGSxik]], [[sources/AV3h8wrR3aM]], [[sources/Ao4evQT3dOU]], [[sources/C1UbvCjzUDE]], 29 more
-- [[concepts/early-exercise|Early Exercise]] - Auto-generated concept topic — discussed across 38 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 38, degree: 6)
+- [[concepts/early-exercise|Early Exercise]] - Early exercise is the decision by an option holder to exercise their right before expiration, which is economically rational only when specific conditions are met—primarily when... (sources: 38, degree: 6)
   - links: [[concepts/assignment|Assignment]], [[concepts/delta|Delta]], [[concepts/extrinsic-value|Extrinsic Value]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-free-rate|Risk Free Rate]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/5Tc9L4TvPR8]], [[sources/5YEY_IvBdPg]], [[sources/5lJbpzPF1RY]], [[sources/6c3CUMAVF04]], [[sources/AfFTysPxbns]], [[sources/BTU71jbUgDo]], [[sources/IsiLvT-L3vk]], [[sources/KKOqF8h1n1s]], [[sources/KnORuwpxylI]], [[sources/LuhAOKk3rjI]], 28 more
-- [[concepts/short-put|Short Put]] - Auto-generated concept topic — discussed across 38 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 38, degree: 5)
+- [[concepts/short-put|Short Put]] - A short put is a directionally bullish options strategy in which a trader sells a put contract, collecting premium upfront while obligating themselves to buy the underlying at t... (sources: 38, degree: 5)
   - links: [[concepts/assignment|Assignment]], [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/0quAC-m-NpM]], [[sources/2jG5SD-3F0w]], [[sources/3sYsqAWBo80]], [[sources/5OQNi5AthOk]], [[sources/8Kgx-5Ij4po]], [[sources/BTU71jbUgDo]], [[sources/CzBpxADkCk0]], [[sources/E9AzqZhakcw]], [[sources/JAX9RwIa3Ao]], [[sources/QbibSWOx6ZQ]], 28 more
-- [[concepts/volatility|Volatility]] - Auto-generated concept topic — discussed across 37 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 37, degree: 5)
+- [[concepts/volatility|Volatility]] - Volatility measures the magnitude of price movement in an underlying asset and is the primary driver of option prices, encompassing multiple forms including historical volatilit... (sources: 37, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/0BI8bymKOIE]], [[sources/3OzLFRmYpOY]], [[sources/78f9Q_gcfh0]], [[sources/8MTeMe1qln8]], [[sources/8Sk1oMYRq-Q]], [[sources/AV3h8wrR3aM]], [[sources/AWB8d0uMeoA]], [[sources/BZhZpyZzocY]], [[sources/C9n32Axz-ow]], [[sources/C_YEdo1Qlk8]], 27 more
-- [[concepts/volume-profile|Volume Profile]] - Auto-generated concept topic — discussed across 36 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 36, degree: 5)
+- [[concepts/volume-profile|Volume Profile]] - Volume profile is a technical indicator that visualizes the amount of trading activity that has occurred at specific price levels, revealing supply and demand zones through volu... (sources: 36, degree: 5)
   - links: [[concepts/price-action|Price Action]], [[concepts/support-and-resistance|Support And Resistance]], [[concepts/technical-analysis|Technical Analysis]], [[concepts/trend-identification|Trend Identification]], [[securities/gme|GME]]
   - backing sources: [[sources/0-BUA66HVWg]], [[sources/3hrdUyJ-KmE]], [[sources/5G0_P4igVWQ]], [[sources/5aId1F_kr24]], [[sources/92W1K8z2DKU]], [[sources/AJP8M8DQ_1U]], [[sources/BbKKEUZ9Gu4]], [[sources/CRhzBd0uqcg]], [[sources/DB6bc4LmKM4]], [[sources/DdWT8tq5LNM]], 26 more
-- [[concepts/compound-annual-growth-rate|Compound Annual Growth Rate]] - Auto-generated concept topic — discussed across 35 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 35, degree: 6)
+- [[concepts/compound-annual-growth-rate|Compound Annual Growth Rate]] - Compound Annual Growth Rate (CAGR) is a measure of the annualized return on an investment or trading account over a multi-year period, reflecting the consistent growth rate need... (sources: 35, degree: 6)
   - links: [[concepts/delayed-gratification|Delayed Gratification]], [[concepts/expected-return|Expected Return]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/-ulHoMHsPu4]], [[sources/1G-h4tqfQEM]], [[sources/2t3Nv-63Jtc]], [[sources/3wwXgdxtIKA]], [[sources/4Lz5jr3grOs]], [[sources/8MTeMe1qln8]], [[sources/AJP8M8DQ_1U]], [[sources/BKWkzrXGLHQ]], [[sources/FPLK8vS5ono]], [[sources/KKOqF8h1n1s]], 25 more
-- [[concepts/cost-basis|Cost Basis]] - Auto-generated concept topic — discussed across 35 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 35, degree: 6)
+- [[concepts/cost-basis|Cost Basis]] - Cost basis is the original purchase price of a stock or option position, and it serves as a critical reference point for managing short call positions in options strategies. Whe... (sources: 35, degree: 6)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/gme|GME]], [[strategies/dollar-cost-averaging|Dollar Cost Averaging]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/1rqLJW1nK40]], [[sources/2XS6kMnDUT4]], [[sources/2wlur2p61Mg]], [[sources/3c6fsUwB1pw]], [[sources/3wwXgdxtIKA]], [[sources/B3SW20MSNbM]], [[sources/EjD6KPo3OZs]], [[sources/IsiLvT-L3vk]], [[sources/JzxGOoYsAv0]], [[sources/K6RRH35k-1Y]], 25 more
-- [[concepts/information-and-price|Information And Price]] - Auto-generated concept topic — discussed across 35 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 35, degree: 5)
+- [[concepts/information-and-price|Information And Price]] - Information and Price refers to how market participants integrate available information into security prices over time, and the trading edge that comes from understanding both w... (sources: 35, degree: 5)
   - links: [[concepts/market-efficiency|Market Efficiency]], [[concepts/market-maker|Market Maker]], [[concepts/risk-management|Risk Management]], [[securities/crude-oil|Crude Oil]], [[securities/spy|SPY]]
   - backing sources: [[sources/4q843j_0kcc]], [[sources/5-n_K32MGYo]], [[sources/5zUFVXiXFm0]], [[sources/6bEYNNxbjEg]], [[sources/Ax5GbNrLlG8]], [[sources/C1PN93yM76E]], [[sources/G7_0D06aeEk]], [[sources/ID-Kl0y1bxs]], [[sources/L_zg0TfyKjg]], [[sources/MJofIJZRODo]], 25 more
-- [[concepts/sample-size|Sample Size]] - Auto-generated concept topic — discussed across 35 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 35, degree: 5)
+- [[concepts/sample-size|Sample Size]] - Sample size is the minimum number of trades or observations required to validate whether a trading strategy possesses genuine edge or is merely the result of luck. Traders must... (sources: 35, degree: 5)
   - links: [[concepts/backtesting|Backtesting]], [[concepts/edge|Edge]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/3c6fsUwB1pw]], [[sources/80QGX7wPlJk]], [[sources/8D1JhjKiYww]], [[sources/AWB8d0uMeoA]], [[sources/Ao4evQT3dOU]], [[sources/B48KOikbTs8]], [[sources/BtW6QHGCaas]], [[sources/De26JTmLyjU]], [[sources/EjD6KPo3OZs]], [[sources/EkAxyxtD0hc]], 25 more
-- [[concepts/out-of-the-money|Out Of The Money]] - Auto-generated concept topic — discussed across 34 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 34, degree: 6)
+- [[concepts/out-of-the-money|Out Of The Money]] - Out-of-the-money (OTM) options are contracts where the strike price is unfavorable relative to the current underlying price—calls struck above spot or puts struck below spot—and... (sources: 34, degree: 6)
   - links: [[concepts/at-the-money|At The Money]], [[concepts/delta|Delta]], [[concepts/extrinsic-value|Extrinsic Value]], [[concepts/moneyness|Moneyness]], [[concepts/theta-decay|Theta Decay]], [[securities/gme|GME]]
   - backing sources: [[sources/0kXY1hY--Ww]], [[sources/1kGksRBt2aA]], [[sources/2XS6kMnDUT4]], [[sources/3MTc2MylrDQ]], [[sources/4CEmVAhaNbk]], [[sources/9nxH1G2yGtg]], [[sources/9z4e3ZKDceY]], [[sources/BZsa6_XhKF0]], [[sources/CcLu6CfZhEw]], [[sources/Dlw9oTPZE9c]], 24 more
-- [[concepts/scaling-in|Scaling In]] - Auto-generated concept topic — discussed across 34 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 34, degree: 6)
+- [[concepts/scaling-in|Scaling In]] - Scaling in is a position-management technique where traders add to an existing position in tranches rather than deploying capital all at once, allowing them to average entry pri... (sources: 34, degree: 6)
   - links: [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[strategies/covered-strangle|Covered Strangle (a.k.a. the "Coverage Triangle")]], [[strategies/scaling-in|Scaling In]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/-XQGZSyM8O0]], [[sources/0ocJTw3Tz9U]], [[sources/1axDClx9vWQ]], [[sources/1rqLJW1nK40]], [[sources/4kj4Cp-qbsE]], [[sources/6aRyhwnDLfo]], [[sources/GU0G-GnKDzQ]], [[sources/GtpeFCueGAQ]], [[sources/ID-Kl0y1bxs]], [[sources/ITG5Za7EH4o]], 24 more
-- [[concepts/fed-put|Fed Put]] - Auto-generated concept topic — discussed across 33 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 33, degree: 10)
+- [[concepts/fed-put|Fed Put]] - The Fed Put is an implicit market expectation that the Federal Reserve will intervene with rate cuts or other supportive policy measures to prevent severe market downturns, crea... (sources: 33, degree: 10)
   - links: [[concepts/fomc|Fomc]], [[concepts/inflation|Inflation]], [[concepts/interest-rates|Interest Rates]], [[concepts/market-regimes|Market Regimes]], [[concepts/monetary-policy|Monetary Policy]], [[concepts/recession|Recession]], [[concepts/soft-landing|Soft Landing]], [[securities/crude-oil|Crude Oil]], 2 more
   - backing sources: [[sources/-8XV5_gBP6I]], [[sources/-NzEb1zc1bw]], [[sources/0BI8bymKOIE]], [[sources/1ILbgbgxl3A]], [[sources/26vVCJY9t00]], [[sources/2yu8jSYKuH4]], [[sources/4Lz5jr3grOs]], [[sources/6-MMToTqJAE]], [[sources/6CZMjMvG4y4]], [[sources/6Sp4eF9ahW8]], 23 more
-- [[concepts/inflation|Inflation]] - Auto-generated concept topic — discussed across 33 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 33, degree: 10)
+- [[concepts/inflation|Inflation]] - Inflation in options trading refers to the macroeconomic condition of rising prices that affects central bank policy decisions, interest rates, and sector rotation opportunities... (sources: 33, degree: 10)
   - links: [[concepts/fed-put|Fed Put]], [[concepts/interest-rates|Interest Rates]], [[concepts/market-efficiency|Market Efficiency]], [[concepts/market-regimes|Market Regimes]], [[concepts/monetary-policy|Monetary Policy]], [[concepts/recession|Recession]], [[concepts/soft-landing|Soft Landing]], [[securities/crude-oil|Crude Oil]], 2 more
   - backing sources: [[sources/-8XV5_gBP6I]], [[sources/0BI8bymKOIE]], [[sources/0La1c59B5Zw]], [[sources/2yu8jSYKuH4]], [[sources/4Ksbe6bpV8o]], [[sources/6-MMToTqJAE]], [[sources/6CZMjMvG4y4]], [[sources/8d2PprSIK2g]], [[sources/BZhZpyZzocY]], [[sources/BrLsg_ig6uk]], 23 more
-- [[concepts/kelly-criterion|Kelly Criterion]] - Auto-generated concept topic — discussed across 33 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 33, degree: 5)
+- [[concepts/kelly-criterion|Kelly Criterion]] - The Kelly Criterion is a mathematical framework for determining optimal position sizing based on the probability and magnitude of wins versus losses in a trading strategy. In op... (sources: 33, degree: 5)
   - links: [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[concepts/trading-psychology|Trading Psychology]]
   - backing sources: [[sources/2t3Nv-63Jtc]], [[sources/3c6fsUwB1pw]], [[sources/6vQeTS9cyk0]], [[sources/72LcrOF6BHk]], [[sources/80QGX7wPlJk]], [[sources/AoiTtWoNKv0]], [[sources/B3SW20MSNbM]], [[sources/De26JTmLyjU]], [[sources/EjD6KPo3OZs]], [[sources/FnrSSbmhG2g]], 23 more
-- [[concepts/market-timing|Market Timing]] - Auto-generated concept topic — discussed across 33 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 33, degree: 6)
+- [[concepts/market-timing|Market Timing]] - Market timing in options trading refers to the attempt to identify optimal entry and exit points by predicting market direction or inflection points, often informed by macroecon... (sources: 33, degree: 6)
   - links: [[concepts/market-regimes|Market Regimes]], [[concepts/momentum|Momentum]], [[concepts/risk-management|Risk Management]], [[concepts/yield-curve|Yield Curve]], [[securities/spy|SPY]], [[strategies/trend-following|Trend Following]]
   - backing sources: [[sources/1ILbgbgxl3A]], [[sources/1SkCf5UEWtc]], [[sources/4i11aVZeGxQ]], [[sources/6aRyhwnDLfo]], [[sources/6vQeTS9cyk0]], [[sources/7YJRaNJjh00]], [[sources/80QGX7wPlJk]], [[sources/8d2PprSIK2g]], [[sources/DLhIhRsAyLk]], [[sources/F4QoJDjF4pA]], 23 more
-- [[concepts/tariffs|Tariffs]] - Auto-generated concept topic — discussed across 33 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 33, degree: 7)
+- [[concepts/tariffs|Tariffs]] - Tariffs are trade policy tools implemented by the Trump administration to reshape global commerce, with announced rates including a 10% baseline on all imports, country-specific... (sources: 33, degree: 7)
   - links: [[concepts/energy-markets|Energy Markets]], [[concepts/market-regimes|Market Regimes]], [[concepts/position-sizing|Position Sizing]], [[concepts/reshoring|Reshoring]], [[concepts/risk-management|Risk Management]], [[securities/qqq|QQQ]], [[securities/spy|SPY]]
   - backing sources: [[sources/26vVCJY9t00]], [[sources/4Ksbe6bpV8o]], [[sources/5-n_K32MGYo]], [[sources/6Sp4eF9ahW8]], [[sources/6WloCMY-aTw]], [[sources/7XyTZoId-Aw]], [[sources/BZhZpyZzocY]], [[sources/C1UbvCjzUDE]], [[sources/Co4TngkoAyg]], [[sources/G7_0D06aeEk]], 23 more
-- [[concepts/implied-volatility-rank|Implied Volatility Rank]] - Auto-generated concept topic — discussed across 32 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 32, degree: 8)
+- [[concepts/implied-volatility-rank|Implied Volatility Rank]] - Implied Volatility Rank (IV Rank) is a metric that measures where current implied volatility stands relative to its historical range over a specified lookback period, expressed... (sources: 32, degree: 8)
   - links: [[concepts/delta|Delta]], [[concepts/implied-volatility|Implied Volatility (IV)]], [[concepts/implied-volatility-percentile|Implied Volatility Percentile]], [[concepts/position-sizing|Position Sizing]], [[concepts/volatility-risk-premium|Volatility Risk Premium (VRP)]], [[securities/gme|GME]], [[securities/spy|SPY]], [[strategies/covered-strangle|Covered Strangle (a.k.a. the "Coverage Triangle")]]
   - backing sources: [[sources/6WloCMY-aTw]], [[sources/AJP8M8DQ_1U]], [[sources/CiJKXOHWXQM]], [[sources/DrfoNKd41I0]], [[sources/EzfR61qH4DI]], [[sources/HM1wtbKEDzw]], [[sources/KKOqF8h1n1s]], [[sources/LnDi4DMTx-s]], [[sources/POw4SNUpWPc]], [[sources/PwoEFKVQvSQ]], 22 more
-- [[concepts/iv-crush|Iv Crush]] - Auto-generated concept topic — discussed across 32 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 32, degree: 5)
+- [[concepts/iv-crush|Iv Crush]] - IV crush refers to the rapid decline in implied volatility that typically occurs after an earnings announcement or other volatility-triggering event, which can erode the value o... (sources: 32, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/earnings-move|Earnings Move]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/volatility-term-structure|Volatility Term Structure]]
   - backing sources: [[sources/0fty1k3IGgY]], [[sources/4i11aVZeGxQ]], [[sources/6c3CUMAVF04]], [[sources/72LcrOF6BHk]], [[sources/BTU71jbUgDo]], [[sources/BhkjwgGvZGY]], [[sources/BtW6QHGCaas]], [[sources/DLhIhRsAyLk]], [[sources/Dlw9oTPZE9c]], [[sources/FtZyB8apvC0]], 22 more
-- [[concepts/overfitting|Overfitting]] - Auto-generated concept topic — discussed across 32 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 32, degree: 6)
+- [[concepts/overfitting|Overfitting]] - Overfitting in options trading refers to the practice of optimizing a strategy or backtest so heavily to historical data that it loses effectiveness in live or forward-testing c... (sources: 32, degree: 6)
   - links: [[concepts/backtesting|Backtesting]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/risk-management|Risk Management]], [[concepts/robustness|Robustness]]
   - backing sources: [[sources/2dP1Cu9Pjt8]], [[sources/3XRv1HPb2L0]], [[sources/7lb6sXnN-ak]], [[sources/7tBAlmNokFI]], [[sources/AWB8d0uMeoA]], [[sources/AoHUcyVh7NY]], [[sources/AoiTtWoNKv0]], [[sources/Cgjrux0qk9U]], [[sources/G92IzbFzhN8]], [[sources/I-RmKHjrD8g]], 22 more
-- [[concepts/transaction-costs|Transaction Costs]] - Auto-generated concept topic — discussed across 32 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 32, degree: 6)
+- [[concepts/transaction-costs|Transaction Costs]] - Transaction costs—including commissions, bid-ask spreads, and slippage—are a primary headwind that determines whether an options strategy is profitable in practice, even when th... (sources: 32, degree: 6)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[people/euan-sinclair|Euan Sinclair]], [[securities/spx|SPX]], [[securities/spy|SPY]]
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/2TdIx_Bn3BY]], [[sources/6vQeTS9cyk0]], [[sources/7lb6sXnN-ak]], [[sources/ELLig97y0io]], [[sources/EjD6KPo3OZs]], [[sources/GK4RmROuNKA]], [[sources/IE8hUnhYeP8]], [[sources/IM2LefSdT5g]], [[sources/KKOqF8h1n1s]], 22 more
-- [[concepts/naked-short-selling|Naked Short Selling]] - Auto-generated concept topic — discussed across 31 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 31, degree: 11)
+- [[concepts/naked-short-selling|Naked Short Selling]] - Naked short selling refers to the practice of selling shares short without first borrowing them, creating synthetic shares that can be used to manipulate stock prices and evade... (sources: 31, degree: 11)
   - links: [[concepts/dilution|Dilution]], [[concepts/ftd|Ftd]], [[concepts/gamma-squeeze|Gamma Squeeze]], [[concepts/market-maker|Market Maker]], [[concepts/order-internalization|Order Internalization]], [[concepts/position-sizing|Position Sizing]], [[concepts/price-action|Price Action]], [[concepts/short-squeeze|Short Squeeze]], 3 more
   - backing sources: [[sources/-LgTPBfGngc]], [[sources/-XQGZSyM8O0]], [[sources/3J3S-ewvxn0]], [[sources/5G0_P4igVWQ]], [[sources/6j6nMarpVDQ]], [[sources/783T-aRhwnI]], [[sources/7mlZTr3xeHA]], [[sources/7tBAlmNokFI]], [[sources/86KGdDWuPJ0]], [[sources/9CqpFa4mYas]], 21 more
-- [[concepts/ai-assisted-trading|Ai Assisted Trading]] - Auto-generated concept topic — discussed across 30 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 30, degree: 8)
+- [[concepts/ai-assisted-trading|Ai Assisted Trading]] - AI-assisted trading refers to using frontier AI models and coding agents to automate research, backtesting, and analysis workflows without requiring programming expertise, enabl... (sources: 30, degree: 8)
   - links: [[concepts/backtesting|Backtesting]], [[concepts/context-window-management|Context Window Management]], [[concepts/large-language-model|Large Language Model]], [[concepts/market-efficiency|Market Efficiency]], [[concepts/no-code-tools|No Code Tools]], [[concepts/position-sizing|Position Sizing]], [[concepts/prompt-engineering|Prompt Engineering]], [[securities/spy|SPY]]
   - backing sources: [[sources/3UlOiqsEyXQ]], [[sources/3hrdUyJ-KmE]], [[sources/5j8nHk7s2ug]], [[sources/A-swXl6Xf7M]], [[sources/AoHUcyVh7NY]], [[sources/Bv5Muojw4UY]], [[sources/CWz8RMgiPm8]], [[sources/CZEXCE_HR60]], [[sources/GOIa64zrMUA]], [[sources/I-RmKHjrD8g]], 20 more
-- [[concepts/contrarian-sentiment|Contrarian Sentiment]] - Auto-generated concept topic — discussed across 30 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 30, degree: 5)
+- [[concepts/contrarian-sentiment|Contrarian Sentiment]] - Contrarian sentiment in options trading refers to positioning or conviction that runs counter to prevailing market momentum and consensus, often used as a signal for potential r... (sources: 30, degree: 5)
   - links: [[concepts/market-regimes|Market Regimes]], [[concepts/momentum|Momentum]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/-yvQLv-q9uk]], [[sources/4i11aVZeGxQ]], [[sources/5-n_K32MGYo]], [[sources/6-MMToTqJAE]], [[sources/6Sp4eF9ahW8]], [[sources/6epupAYLkYc]], [[sources/80QGX7wPlJk]], [[sources/B3SW20MSNbM]], [[sources/DrfoNKd41I0]], [[sources/GVrANU08cAU]], 20 more
-- [[concepts/covered-call|Covered Call]] - Auto-generated concept topic — discussed across 30 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 30, degree: 6)
+- [[concepts/covered-call|Covered Call]] - A covered call is a strategy where a trader holds shares of stock and sells call options against that position to collect premium, with the primary profit driver being appreciat... (sources: 30, degree: 6)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/short-call|Short Call]], [[strategies/covered-call|Covered Call]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/-CUgdXmtp5o]], [[sources/2T8T8EDhfpQ]], [[sources/2jG5SD-3F0w]], [[sources/2uzcV42Gc7w]], [[sources/5YEY_IvBdPg]], [[sources/6-wt8t1AguM]], [[sources/BTU71jbUgDo]], [[sources/CzBpxADkCk0]], [[sources/FPLK8vS5ono]], [[sources/KBUgJhFK4c0]], 20 more
-- [[concepts/short-premium|Short Premium]] - Auto-generated concept topic — discussed across 29 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 29, degree: 5)
+- [[concepts/short-premium|Short Premium]] - Short premium is an options-selling strategy where traders collect income by selling calls or puts, betting that the underlying price will not move far enough to trigger a loss... (sources: 29, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]], [[strategies/short-premium|Short Premium]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/0phfdNnT3Q0]], [[sources/2lvTJ6_Oc9E]], [[sources/5qqDL8_cYGA]], [[sources/78f9Q_gcfh0]], [[sources/EjD6KPo3OZs]], [[sources/H87XHR8ErsE]], [[sources/ImTF6TN2PoQ]], [[sources/KG1XDKvhzaI]], [[sources/NFmt1vpYpMw]], 19 more
-- [[concepts/survivorship-bias|Survivorship Bias]] - Auto-generated concept topic — discussed across 29 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 29, degree: 5)
+- [[concepts/survivorship-bias|Survivorship Bias]] - Survivorship bias in options trading refers to the tendency of new traders to chase unrealistic returns and emulate successful traders without acknowledging the years of skill d... (sources: 29, degree: 5)
   - links: [[concepts/edge|Edge]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/19oL0B8i2Fc]], [[sources/3c6fsUwB1pw]], [[sources/72LcrOF6BHk]], [[sources/7lb6sXnN-ak]], [[sources/AWB8d0uMeoA]], [[sources/AoHUcyVh7NY]], [[sources/AoiTtWoNKv0]], [[sources/BM8veeOFQBk]], [[sources/EjD6KPo3OZs]], [[sources/F4QoJDjF4pA]], 19 more
-- [[concepts/probability-cone|Probability Cone]] - Auto-generated concept topic — discussed across 28 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 28, degree: 5)
+- [[concepts/probability-cone|Probability Cone]] - A probability cone is a visualization tool that maps the expected range of price movement over time based on implied volatility and statistical distributions, helping traders un... (sources: 28, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/expected-move|Expected Move]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/0nXEzaMT7Nc]], [[sources/6-xlQeiQWSg]], [[sources/BTU71jbUgDo]], [[sources/DRzKRGizkXw]], [[sources/EvZE2RIwFE4]], [[sources/FnrSSbmhG2g]], [[sources/G7_0D06aeEk]], [[sources/ID-Kl0y1bxs]], [[sources/JJv88Q2HbNM]], [[sources/LuhAOKk3rjI]], 18 more
-- [[concepts/breakout|Breakout]] - Auto-generated concept topic — discussed across 27 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 27, degree: 5)
+- [[concepts/breakout|Breakout]] - A breakout is a technical price movement where a stock breaks above or below a defined level of prior resistance or support, often accompanied by elevated volume and representin... (sources: 27, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/price-action|Price Action]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/risk-management|Risk Management]], [[strategies/breakout|Breakout]]
   - backing sources: [[sources/1axDClx9vWQ]], [[sources/6CZMjMvG4y4]], [[sources/6LpY37knkh4]], [[sources/6lIx0wSsN7Y]], [[sources/73cEIHM3FLg]], [[sources/8MTeMe1qln8]], [[sources/8U4dz8MZL70]], [[sources/B3SW20MSNbM]], [[sources/BKbkWTwx2zI]], [[sources/CqDMnUJgNeY]], 17 more
-- [[concepts/payment-for-order-flow|Payment For Order Flow]] - Auto-generated concept topic — discussed across 27 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 27, degree: 9)
+- [[concepts/payment-for-order-flow|Payment For Order Flow]] - Payment for order flow is a market structure mechanism in which retail brokers route customer orders to market makers or other trading venues in exchange for compensation, rathe... (sources: 27, degree: 9)
   - links: [[concepts/market-maker|Market Maker]], [[concepts/market-structure|Market Structure]], [[concepts/order-flow|Order Flow]], [[concepts/order-internalization|Order Internalization]], [[concepts/position-sizing|Position Sizing]], [[concepts/price-discovery|Price Discovery]], [[concepts/risk-management|Risk Management]], [[concepts/stock-split|Stock Split]], 1 more
   - backing sources: [[sources/-8XV5_gBP6I]], [[sources/4q843j_0kcc]], [[sources/5G0_P4igVWQ]], [[sources/86KGdDWuPJ0]], [[sources/DrfoNKd41I0]], [[sources/FbCrTP3rBjY]], [[sources/FfMgFRoJjzc]], [[sources/GK4RmROuNKA]], [[sources/H04ZDCN_KRI]], [[sources/IsiLvT-L3vk]], 17 more
-- [[concepts/correlation|Correlation]] - Auto-generated concept topic — discussed across 26 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 26, degree: 7)
+- [[concepts/correlation|Correlation]] - Correlation in options trading refers to the degree to which different positions or assets move together, and managing it is essential for building a diversified portfolio that... (sources: 26, degree: 7)
   - links: [[concepts/beta|Beta]], [[concepts/hedging|Hedging]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/iwm|IWM]], [[securities/spy|SPY]], [[strategies/short-premium|Short Premium]]
   - backing sources: [[sources/3J3S-ewvxn0]], [[sources/6ya9JCd_ogQ]], [[sources/73cEIHM3FLg]], [[sources/78f9Q_gcfh0]], [[sources/ECFVH6IZG4E]], [[sources/Ig1z2u_lK4k]], [[sources/MfkRQULoOBs]], [[sources/NxU5WXfFKC8]], [[sources/OwPmSCUS-bs]], [[sources/S1f1zIfXVh8]], 16 more
-- [[concepts/standard-deviation-channels|Standard Deviation Channels]] - Auto-generated concept topic — discussed across 25 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 25, degree: 5)
+- [[concepts/standard-deviation-channels|Standard Deviation Channels]] - Standard deviation channels are technical analysis tools that plot price bands around a moving average, with the bands positioned at set standard deviation distances to visualiz... (sources: 25, degree: 5)
   - links: [[concepts/moving-averages|Moving Averages]], [[concepts/price-action|Price Action]], [[concepts/technical-analysis|Technical Analysis]], [[concepts/trend-identification|Trend Identification]], [[concepts/volume-analysis|Volume Analysis]]
   - backing sources: [[sources/0YG5XSvH_GA]], [[sources/1axDClx9vWQ]], [[sources/4NTh_FrF-0Y]], [[sources/5YK9YbXMgMM]], [[sources/6Ifus0KfJYQ]], [[sources/783T-aRhwnI]], [[sources/B48KOikbTs8]], [[sources/BZhZpyZzocY]], [[sources/DdWT8tq5LNM]], [[sources/Gsy_ncfFBpo]], 15 more
-- [[concepts/stop-loss|Stop Loss]] - Auto-generated concept topic — discussed across 25 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 25, degree: 5)
+- [[concepts/stop-loss|Stop Loss]] - A stop loss in options trading is a predetermined price level or loss threshold that triggers an exit, designed to define where a trade thesis is proven wrong and to quantify an... (sources: 25, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/profit-taking|Profit Taking]], [[concepts/risk-management|Risk Management]], [[concepts/trading-plan|Trading Plan]]
   - backing sources: [[sources/-MQ7kNM0dtI]], [[sources/5bhuXvSptJc]], [[sources/6lIx0wSsN7Y]], [[sources/AJP8M8DQ_1U]], [[sources/CqDMnUJgNeY]], [[sources/F4W52_7aQTs]], [[sources/GfSaaru0CRA]], [[sources/IM2LefSdT5g]], [[sources/KKOqF8h1n1s]], [[sources/MfkRQULoOBs]], 15 more
-- [[concepts/liquidity|Liquidity]] - Auto-generated concept topic — discussed across 24 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 24, degree: 5)
+- [[concepts/liquidity|Liquidity]] - Liquidity in options trading refers to the ease with which an option contract can be bought or sold without significantly moving its price, determined by bid-ask spreads, tradin... (sources: 24, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/market-maker|Market Maker]], [[concepts/order-flow|Order Flow]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/9AKqzGkSWmg]], [[sources/9APL8MtZu7Y]], [[sources/A9Uq-DNAV2I]], [[sources/AoiTtWoNKv0]], [[sources/FPLK8vS5ono]], [[sources/FbCrTP3rBjY]], [[sources/GfSaaru0CRA]], [[sources/NV9OiepF6M0]], [[sources/PVTMNm5dH6g]], [[sources/PwoEFKVQvSQ]], 14 more
-- [[concepts/mark-to-market|Mark To Market]] - Auto-generated concept topic — discussed across 24 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 24, degree: 5)
+- [[concepts/mark-to-market|Mark To Market]] - Mark to market is the practice of valuing an open options position at current market prices rather than at entry price, reflecting unrealized profit or loss in real time. This d... (sources: 24, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/realized-vs-unrealized-pnl|Realized Vs Unrealized Pnl]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/0ocJTw3Tz9U]], [[sources/3STDqRx1o8w]], [[sources/3c6fsUwB1pw]], [[sources/7gLvDWJK2gg]], [[sources/EjD6KPo3OZs]], [[sources/HfZKRRhNgVs]], [[sources/K6RRH35k-1Y]], [[sources/KKOqF8h1n1s]], [[sources/OenKyq1bdeM]], [[sources/Rlw_-sR5jm0]], 14 more
-- [[concepts/skew|Skew]] - Auto-generated concept topic — discussed across 24 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 24, degree: 5)
+- [[concepts/skew|Skew]] - Skew refers to the asymmetry in implied volatility across different strike prices for a given expiration, where puts and calls are priced with different volatility levels reflec... (sources: 24, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/volatility-term-structure|Volatility Term Structure]], [[securities/gme|GME]]
   - backing sources: [[sources/1G-h4tqfQEM]], [[sources/26vVCJY9t00]], [[sources/6WloCMY-aTw]], [[sources/6_FMAL6c_oM]], [[sources/Ao4evQT3dOU]], [[sources/B_nTx0FAv3k]], [[sources/BbKKEUZ9Gu4]], [[sources/DrfoNKd41I0]], [[sources/FFMykjQWv30]], [[sources/KKOqF8h1n1s]], 14 more
-- [[concepts/supply-and-demand|Supply And Demand]] - Auto-generated concept topic — discussed across 24 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 24, degree: 5)
+- [[concepts/supply-and-demand|Supply And Demand]] - Supply and demand in options trading refers to the price levels and volume patterns where buying and selling interest concentrates, which can be visualized through tools like vo... (sources: 24, degree: 5)
   - links: [[concepts/market-efficiency|Market Efficiency]], [[concepts/price-action|Price Action]], [[concepts/risk-management|Risk Management]], [[concepts/technical-analysis|Technical Analysis]], [[securities/spy|SPY]]
   - backing sources: [[sources/26vVCJY9t00]], [[sources/29BtSz0VpA4]], [[sources/5aId1F_kr24]], [[sources/93vPWsmgsQc]], [[sources/AXGmgcD15_E]], [[sources/DrfoNKd41I0]], [[sources/GYDo30UopnI]], [[sources/JEvI6g2-h94]], [[sources/KKOqF8h1n1s]], [[sources/MJofIJZRODo]], 14 more
-- [[concepts/time-frames|Time Frames]] - Auto-generated concept topic — discussed across 23 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 23, degree: 5)
+- [[concepts/time-frames|Time Frames]] - Time frames in options trading refer to the duration or expiration window selected for a position, which fundamentally shapes the trade's risk profile, theta decay, and flexibil... (sources: 23, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/market-maker|Market Maker]], [[concepts/moneyness|Moneyness]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/5Tc9L4TvPR8]], [[sources/8Sk1oMYRq-Q]], [[sources/9JdI1XeR1G0]], [[sources/B3SW20MSNbM]], [[sources/GfSaaru0CRA]], [[sources/HpuG8zJ193E]], [[sources/I-UFDsmPZ0A]], [[sources/ID-Kl0y1bxs]], [[sources/JzxGOoYsAv0]], [[sources/KKOqF8h1n1s]], 13 more
-- [[concepts/volatility-mean-reversion|Volatility Mean Reversion]] - Auto-generated concept topic — discussed across 23 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 23, degree: 5)
+- [[concepts/volatility-mean-reversion|Volatility Mean Reversion]] - Volatility mean reversion is the principle that implied volatility tends to compress back toward historical norms after periods of elevation, making it a tradable edge for premi... (sources: 23, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/volatility-clustering|Volatility Clustering]], [[strategies/short-premium|Short Premium]]
   - backing sources: [[sources/2Dv_fRuuTcc]], [[sources/5K0UEOLDP5k]], [[sources/8Sk1oMYRq-Q]], [[sources/Bxh8Fo7CiEI]], [[sources/EjD6KPo3OZs]], [[sources/KKOqF8h1n1s]], [[sources/L2ERh_SHQZ0]], [[sources/LgQlkikHS4k]], [[sources/LuhAOKk3rjI]], [[sources/R6KHDiQlzqk]], 13 more
-- [[concepts/capped-upside|Capped Upside]] - Auto-generated concept topic — discussed across 22 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 22, degree: 7)
+- [[concepts/capped-upside|Capped Upside]] - Capped upside refers to the structural limitation in certain options strategies—most commonly covered calls and short premium positions—where maximum profit is fixed at a predet... (sources: 22, degree: 7)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/premium|Premium]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/risk-management|Risk Management]], [[concepts/short-call|Short Call]], [[strategies/covered-call|Covered Call]]
   - backing sources: [[sources/-CUgdXmtp5o]], [[sources/05PKCIAe4_0]], [[sources/0gdMTgMhN-s]], [[sources/2jG5SD-3F0w]], [[sources/2lvTJ6_Oc9E]], [[sources/3JV19RH54eQ]], [[sources/6-wt8t1AguM]], [[sources/6ya9JCd_ogQ]], [[sources/FRbKRktUDzA]], [[sources/KBUgJhFK4c0]], 12 more
-- [[concepts/dollar-cost-averaging|Dollar Cost Averaging]] - Auto-generated concept topic — discussed across 22 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 22, degree: 6)
+- [[concepts/dollar-cost-averaging|Dollar Cost Averaging]] - Dollar cost averaging in options trading refers to the practice of systematically adding to a position over time by rolling or adjusting trades at different price levels, rather... (sources: 22, degree: 6)
   - links: [[concepts/delayed-gratification|Delayed Gratification]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]], [[strategies/buy-and-hold|Buy And Hold]]
   - backing sources: [[sources/4D1XWrp3xec]], [[sources/4Lz5jr3grOs]], [[sources/AWB8d0uMeoA]], [[sources/BTU71jbUgDo]], [[sources/F4QoJDjF4pA]], [[sources/GBX2otzV6jE]], [[sources/IsiLvT-L3vk]], [[sources/KKOqF8h1n1s]], [[sources/Nz-gQlPR1KA]], [[sources/Ov-eX7b7Ai0]], 12 more
-- [[concepts/trust-your-plan|Trust Your Plan]] - Auto-generated concept topic — discussed across 22 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 22, degree: 5)
+- [[concepts/trust-your-plan|Trust Your Plan]] - Trusting your plan is a foundational discipline in options trading that requires building a tested, process-driven framework before executing trades, rather than chasing individ... (sources: 22, degree: 5)
   - links: [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[concepts/trading-plan|Trading Plan]]
   - backing sources: [[sources/-qSV5WZNlP4]], [[sources/2t3Nv-63Jtc]], [[sources/B3SW20MSNbM]], [[sources/Dc8Vjr4pZ84]], [[sources/EjD6KPo3OZs]], [[sources/ID-Kl0y1bxs]], [[sources/KKOqF8h1n1s]], [[sources/OVLK9aHAgHQ]], [[sources/OenKyq1bdeM]], [[sources/QTJd5em-rAw]], 12 more
-- [[concepts/dealer-gamma|Dealer Gamma]] - Auto-generated concept topic — discussed across 21 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 21, degree: 5)
+- [[concepts/dealer-gamma|Dealer Gamma]] - Dealer gamma refers to the hedging behavior of options market makers (dealers) who must dynamically adjust their stock positions as option prices move, creating potential feedba... (sources: 21, degree: 5)
   - links: [[concepts/delta-hedging|Delta Hedging]], [[concepts/market-maker|Market Maker]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/gme|GME]]
   - backing sources: [[sources/86KGdDWuPJ0]], [[sources/9CqpFa4mYas]], [[sources/Ao4evQT3dOU]], [[sources/B3SW20MSNbM]], [[sources/FfMgFRoJjzc]], [[sources/GK4RmROuNKA]], [[sources/GYDo30UopnI]], [[sources/IBI4jiNvxJA]], [[sources/PwoEFKVQvSQ]], [[sources/RzzDwFlwnqE]], 11 more
-- [[concepts/higher-highs-lower-lows|Higher Highs Lower Lows]] - Auto-generated concept topic — discussed across 21 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 21, degree: 5)
+- [[concepts/higher-highs-lower-lows|Higher Highs Lower Lows]] - Higher highs and lower lows is a technical price-action pattern used to identify trend reversals and market weakness. When a security fails to make higher highs while simultaneo... (sources: 21, degree: 5)
   - links: [[concepts/price-action|Price Action]], [[concepts/support-and-resistance|Support And Resistance]], [[concepts/trend-identification|Trend Identification]], [[securities/qqq|QQQ]], [[securities/spy|SPY]]
   - backing sources: [[sources/1ILbgbgxl3A]], [[sources/BbKKEUZ9Gu4]], [[sources/CRhzBd0uqcg]], [[sources/F5ziPM7PxPo]], [[sources/Gsy_ncfFBpo]], [[sources/HcWY9Rqcssk]], [[sources/ID-Kl0y1bxs]], [[sources/MpkbcFWS9pk]], [[sources/TjjfgZ7o68I]], [[sources/WYfQsFADTfo]], 11 more
-- [[concepts/multi-timeframe-analysis|Multi Timeframe Analysis]] - Auto-generated concept topic — discussed across 21 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 21, degree: 5)
+- [[concepts/multi-timeframe-analysis|Multi Timeframe Analysis]] - Multi-timeframe analysis is the practice of examining price action, indicators, and market structure across different time horizons—from macroeconomic context and broad market i... (sources: 21, degree: 5)
   - links: [[concepts/moving-averages|Moving Averages]], [[concepts/price-action|Price Action]], [[concepts/support-and-resistance|Support And Resistance]], [[concepts/technical-analysis|Technical Analysis]], [[concepts/trend-identification|Trend Identification]]
   - backing sources: [[sources/0YG5XSvH_GA]], [[sources/2hOfMXRWPls]], [[sources/6Ifus0KfJYQ]], [[sources/783T-aRhwnI]], [[sources/92W1K8z2DKU]], [[sources/BB_9Ivd8NLM]], [[sources/CRhzBd0uqcg]], [[sources/DumdXtGkUPQ]], [[sources/NGTdjlIrboo]], [[sources/OVLK9aHAgHQ]], 11 more
-- [[concepts/return-on-invested-capital|Return On Invested Capital]] - Auto-generated concept topic — discussed across 21 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 21, degree: 5)
+- [[concepts/return-on-invested-capital|Return On Invested Capital]] - Return on invested capital (ROIC) is a metric that measures the profit generated relative to the amount of capital actually deployed in an options position, enabling traders to... (sources: 21, degree: 5)
   - links: [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/-qSV5WZNlP4]], [[sources/0quAC-m-NpM]], [[sources/1rqLJW1nK40]], [[sources/2TdIx_Bn3BY]], [[sources/58lYHJ_XDaY]], [[sources/5OQNi5AthOk]], [[sources/F7zoiv61ohM]], [[sources/KlHlEa4t-fU]], [[sources/POrr7Jjt0k0]], [[sources/PPq6ISVm178]], 11 more
-- [[concepts/asset-allocation|Asset Allocation]] - Auto-generated concept topic — discussed across 20 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 20, degree: 5)
+- [[concepts/asset-allocation|Asset Allocation]] - Asset allocation in options trading refers to the strategic division of capital across different risk profiles and asset classes—core positions held long-term, speculative posit... (sources: 20, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]], [[strategies/buy-and-hold|Buy And Hold]]
   - backing sources: [[sources/-u_dHz31d38]], [[sources/0I32lVyhZuU]], [[sources/3c6fsUwB1pw]], [[sources/3wwXgdxtIKA]], [[sources/CzBpxADkCk0]], [[sources/EMzsNLXZ1bc]], [[sources/GtpeFCueGAQ]], [[sources/IsiLvT-L3vk]], [[sources/KKOqF8h1n1s]], [[sources/KjiJVPSFB4M]], 10 more
-- [[concepts/delta-selection|Delta Selection]] - Auto-generated concept topic — discussed across 20 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 20, degree: 5)
+- [[concepts/delta-selection|Delta Selection]] - Delta selection is the process of choosing the delta value of an option contract to match a trader's directional conviction, risk tolerance, and profit objectives within a speci... (sources: 20, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[strategies/covered-call|Covered Call]], [[strategies/ratio-call-diagonal|Ratio Call Diagonal]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/6-wt8t1AguM]], [[sources/6CGcvPIONZs]], [[sources/6SyrfdpEsy0]], [[sources/8U4dz8MZL70]], [[sources/9JdI1XeR1G0]], [[sources/E9AzqZhakcw]], [[sources/NUPGeYFeIBQ]], [[sources/SMZTy4X81UI]], [[sources/TvMC14yH7ck]], [[sources/TwmxypaxWeU]], 10 more
-- [[concepts/standard-deviation-move|Standard Deviation Move]] - Auto-generated concept topic — discussed across 20 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 20, degree: 6)
+- [[concepts/standard-deviation-move|Standard Deviation Move]] - A standard deviation move is the expected price range a security will trade within over a given time horizon, calculated by scaling implied volatility according to the square ro... (sources: 20, degree: 6)
   - links: [[concepts/delta|Delta]], [[concepts/fat-tails|Fat Tails]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/volatility-clustering|Volatility Clustering]], [[securities/spx|SPX]]
   - backing sources: [[sources/6-xlQeiQWSg]], [[sources/8qKoYYGSxik]], [[sources/CZEXCE_HR60]], [[sources/FPLK8vS5ono]], [[sources/FrqSC7Fbf14]], [[sources/I-RmKHjrD8g]], [[sources/KKOqF8h1n1s]], [[sources/Q-HvhhyQH_E]], [[sources/RAtIwFj62pw]], [[sources/RH4ctx9rHno]], 10 more
-- [[concepts/charm|Charm]] - Auto-generated concept topic — discussed across 19 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 19, degree: 5)
-  - links: [[concepts/delta|Delta]], [[concepts/gamma|Gamma]], [[concepts/greeks|Greeks]], [[concepts/moneyness|Moneyness]], [[concepts/theta|Theta]]
+- [[concepts/charm|Charm]] - Charm, also called delta decay, is a second-order Greek that measures how an option's delta changes with the passage of time independent of underlying price movement. As expirat... (sources: 19, degree: 6)
+  - links: [[concepts/delta|Delta]], [[concepts/delta-decay|Delta Decay]], [[concepts/gamma|Gamma]], [[concepts/greeks|Greeks]], [[concepts/moneyness|Moneyness]], [[concepts/theta|Theta]]
   - backing sources: [[sources/0a1UROsFf_A]], [[sources/0fty1k3IGgY]], [[sources/1kGksRBt2aA]], [[sources/DFT8Gg9wThI]], [[sources/F4W52_7aQTs]], [[sources/G92IzbFzhN8]], [[sources/JuqhsVCGUCA]], [[sources/MyDkYjuogQ0]], [[sources/Sol_YuCGQmc]], [[sources/XKAbGrfgK_c]], 9 more
-- [[concepts/fomc|Fomc]] - Auto-generated concept topic — discussed across 19 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 19, degree: 5)
+- [[concepts/fomc|Fomc]] - The Federal Open Market Committee (FOMC) is the policy-setting body of the Federal Reserve that announces interest-rate decisions at scheduled meetings, serving as a major marke... (sources: 19, degree: 5)
   - links: [[concepts/earnings-move|Earnings Move]], [[concepts/fed-put|Fed Put]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/1ILbgbgxl3A]], [[sources/26vVCJY9t00]], [[sources/2Dv_fRuuTcc]], [[sources/80QGX7wPlJk]], [[sources/H3xXeI3rJHk]], [[sources/Hkb0O9P5zf0]], [[sources/HuQJywyMaT0]], [[sources/P3HXJxM0S0M]], [[sources/WWVsuoWX8mU]], [[sources/ZWGDFQTvBb8]], 9 more
-- [[concepts/probabilistic-outcomes|Probabilistic Outcomes]] - Auto-generated concept topic — discussed across 19 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 19, degree: 5)
+- [[concepts/probabilistic-outcomes|Probabilistic Outcomes]] - Probabilistic outcomes in options trading refers to the practice of assessing and updating expectations about future price movements based on available market information rather... (sources: 19, degree: 5)
   - links: [[concepts/market-efficiency|Market Efficiency]], [[concepts/moving-averages|Moving Averages]], [[concepts/price-action|Price Action]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/technical-analysis|Technical Analysis]]
   - backing sources: [[sources/2Dv_fRuuTcc]], [[sources/6WloCMY-aTw]], [[sources/92W1K8z2DKU]], [[sources/Ax5GbNrLlG8]], [[sources/Cgjrux0qk9U]], [[sources/Hk5jFrvXzmg]], [[sources/IFv3BAx-Djg]], [[sources/KKOqF8h1n1s]], [[sources/NGTdjlIrboo]], [[sources/SjjhNzFg66s]], 9 more
-- [[concepts/geopolitical-risk|Geopolitical Risk]] - Auto-generated concept topic — discussed across 18 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 18, degree: 6)
+- [[concepts/geopolitical-risk|Geopolitical Risk]] - Geopolitical risk encompasses military conflicts, trade tensions, and political realignments that create tradable market dislocations across equities, commodities, and volatilit... (sources: 18, degree: 6)
   - links: [[concepts/energy-markets|Energy Markets]], [[concepts/market-regimes|Market Regimes]], [[securities/crude-oil|Crude Oil]], [[securities/gold|GOLD]], [[securities/qqq|QQQ]], [[securities/spy|SPY]]
   - backing sources: [[sources/-8XV5_gBP6I]], [[sources/4ountK1Wflc]], [[sources/6UzoviSHtbk]], [[sources/7XyTZoId-Aw]], [[sources/AXGmgcD15_E]], [[sources/BZhZpyZzocY]], [[sources/Co4TngkoAyg]], [[sources/OWQs77SA_m4]], [[sources/QZUk0K75gu8]], [[sources/Tb6sRWIsHR0]], 8 more
-- [[concepts/higher-order-greeks|Higher Order Greeks]] - Auto-generated concept topic — discussed across 18 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 18, degree: 5)
+- [[concepts/higher-order-greeks|Higher Order Greeks]] - Higher-order Greeks are second-order and higher derivatives that measure how primary Greeks (delta, vega) themselves change in response to market conditions like time decay and... (sources: 18, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/gamma|Gamma]], [[concepts/greeks|Greeks]], [[concepts/moneyness|Moneyness]], [[concepts/vega|Vega]]
   - backing sources: [[sources/1kGksRBt2aA]], [[sources/8d2PprSIK2g]], [[sources/Ao4evQT3dOU]], [[sources/JuqhsVCGUCA]], [[sources/OenKyq1bdeM]], [[sources/RWkSHmI9QqI]], [[sources/Sol_YuCGQmc]], [[sources/U0u1rT_3Q6U]], [[sources/XKAbGrfgK_c]], [[sources/_sYkIbkPItA]], 8 more
-- [[concepts/context-window-management|Context Window Management]] - Auto-generated concept topic — discussed across 17 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 17, degree: 6)
+- [[concepts/context-window-management|Context Window Management]] - Context window management is the practice of strategically organizing and maintaining information boundaries when using AI tools to accelerate options research and trading syste... (sources: 17, degree: 6)
   - links: [[concepts/ai-assisted-trading|Ai Assisted Trading]], [[concepts/backtesting|Backtesting]], [[concepts/large-language-model|Large Language Model]], [[concepts/no-code-tools|No Code Tools]], [[concepts/prompt-engineering|Prompt Engineering]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/2hOfMXRWPls]], [[sources/AV3h8wrR3aM]], [[sources/AoHUcyVh7NY]], [[sources/CWz8RMgiPm8]], [[sources/CZEXCE_HR60]], [[sources/CcLu6CfZhEw]], [[sources/K6RRH35k-1Y]], [[sources/O8mP2Ine9ZQ]], [[sources/TXEdY46Kf4k]], [[sources/V-_sMf9mM6k]], 7 more
-- [[concepts/drawdown|Drawdown]] - Auto-generated concept topic — discussed across 17 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 17, degree: 5)
+- [[concepts/drawdown|Drawdown]] - Drawdown is the peak-to-trough decline in a trading account or portfolio value, representing the largest loss experienced from a previous high point. In options trading, managin... (sources: 17, degree: 5)
   - links: [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/leverage|Leverage]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/1jDrPx6lOgM]], [[sources/A1el6GdNjOA]], [[sources/NFmt1vpYpMw]], [[sources/PRaZC_rUXIM]], [[sources/QZUk0K75gu8]], [[sources/UZOcepy6VxY]], [[sources/XmSH-Tn1KfU]], [[sources/apJP5YqqIXg]], [[sources/ayqbZirKPkM]], [[sources/cz-aR_GUcXw]], 7 more
-- [[concepts/meme-stock|Meme Stock]] - Auto-generated concept topic — discussed across 17 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 17, degree: 5)
+- [[concepts/meme-stock|Meme Stock]] - A meme stock is an equity that experiences outsized retail interest and volatile price action driven by social coordination and structural market mechanics (short squeezes, gamm... (sources: 17, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/short-squeeze|Short Squeeze]], [[concepts/volume-analysis|Volume Analysis]], [[securities/gme|GME]]
   - backing sources: [[sources/1rqLJW1nK40]], [[sources/3hrdUyJ-KmE]], [[sources/5YK9YbXMgMM]], [[sources/7mlZTr3xeHA]], [[sources/AJP8M8DQ_1U]], [[sources/DLhIhRsAyLk]], [[sources/DRzKRGizkXw]], [[sources/IsiLvT-L3vk]], [[sources/KKOqF8h1n1s]], [[sources/MJofIJZRODo]], 7 more
-- [[concepts/recession|Recession]] - Auto-generated concept topic — discussed across 17 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 17, degree: 7)
+- [[concepts/recession|Recession]] - In the channel's discussions, recession refers to periods of economic contraction that traders anticipate and position for based on macroeconomic signals such as Fed policy, lev... (sources: 17, degree: 7)
   - links: [[concepts/bond-vigilantes|Bond Vigilantes]], [[concepts/fed-put|Fed Put]], [[concepts/inflation|Inflation]], [[concepts/market-regimes|Market Regimes]], [[concepts/soft-landing|Soft Landing]], [[securities/gold|GOLD]], [[securities/spy|SPY]]
   - backing sources: [[sources/-NzEb1zc1bw]], [[sources/2yu8jSYKuH4]], [[sources/6-MMToTqJAE]], [[sources/6CZMjMvG4y4]], [[sources/6Sp4eF9ahW8]], [[sources/7XyTZoId-Aw]], [[sources/FUNC-MTq9PQ]], [[sources/HuQJywyMaT0]], [[sources/IosIPXnYxq0]], [[sources/Nfuui1cwi1w]], 7 more
-- [[concepts/strategy-time-frame-alignment|Strategy Time Frame Alignment]] - Auto-generated concept topic — discussed across 17 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 17, degree: 5)
+- [[concepts/strategy-time-frame-alignment|Strategy Time Frame Alignment]] - Strategy time frame alignment refers to matching the duration of an options position to both the trader's market thesis and the profit mechanism being deployed. Rather than sele... (sources: 17, degree: 5)
   - links: [[concepts/edge|Edge]], [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/2xpqAj677Cc]], [[sources/B3SW20MSNbM]], [[sources/CzPirDlJWgM]], [[sources/GK9EHx-NZ_M]], [[sources/IBI4jiNvxJA]], [[sources/ID-Kl0y1bxs]], [[sources/IFtkGhU5FjA]], [[sources/J8cvtMLOvss]], [[sources/KKOqF8h1n1s]], [[sources/OenKyq1bdeM]], 7 more
-- [[concepts/yield-curve|Yield Curve]] - Auto-generated concept topic — discussed across 17 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 17, degree: 5)
+- [[concepts/yield-curve|Yield Curve]] - The yield curve represents the relationship between bond yields across different maturities and serves as a key market signal for Fed policy expectations, economic conditions, a... (sources: 17, degree: 5)
   - links: [[concepts/market-regimes|Market Regimes]], [[concepts/market-timing|Market Timing]], [[securities/crude-oil|Crude Oil]], [[securities/spx|SPX]], [[securities/spy|SPY]]
   - backing sources: [[sources/6-MMToTqJAE]], [[sources/80QGX7wPlJk]], [[sources/93vPWsmgsQc]], [[sources/CjLt6G24QyA]], [[sources/FUNC-MTq9PQ]], [[sources/GVrANU08cAU]], [[sources/JEvI6g2-h94]], [[sources/KKOqF8h1n1s]], [[sources/Nfuui1cwi1w]], [[sources/O1ZjVHom2ms]], 7 more
-- [[concepts/buy-and-hold|Buy And Hold]] - Auto-generated concept topic — discussed across 16 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 16, degree: 5)
+- [[concepts/buy-and-hold|Buy And Hold]] - Buy and hold is a foundational portfolio strategy that combines long-term equity and bond holdings—typically through ETFs like SPY, QQQ, and TLT in various allocations—designed... (sources: 16, degree: 5)
   - links: [[concepts/expected-return|Expected Return]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[strategies/buy-and-hold|Buy And Hold]]
   - backing sources: [[sources/BKWkzrXGLHQ]], [[sources/CzBpxADkCk0]], [[sources/FR5iXdWAjYg]], [[sources/ID-Kl0y1bxs]], [[sources/IsiLvT-L3vk]], [[sources/KKOqF8h1n1s]], [[sources/PRaZC_rUXIM]], [[sources/QnEymZVCzbo]], [[sources/ZoKCzF3IS1s]], [[sources/eAtljnDwFZY]], 6 more
-- [[concepts/convexity|Convexity]] - Auto-generated concept topic — discussed across 16 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 16, degree: 5)
+- [[concepts/convexity|Convexity]] - Convexity in options trading refers to the non-linear relationship between price moves and profit-and-loss changes, driven by gamma—the rate of change of delta itself. Unlike le... (sources: 16, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/gamma|Gamma]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/2dP1Cu9Pjt8]], [[sources/6c3CUMAVF04]], [[sources/6vQeTS9cyk0]], [[sources/GK4RmROuNKA]], [[sources/OGVRNLQd9OU]], [[sources/Sol_YuCGQmc]], [[sources/TMqFFnQEWEg]], [[sources/U0u1rT_3Q6U]], [[sources/_V5TBIYHylk]], [[sources/cZvaEVW7Yf4]], 6 more
-- [[concepts/deep-itm-calls|Deep Itm Calls]] - Auto-generated concept topic — discussed across 16 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 16, degree: 5)
+- [[concepts/deep-itm-calls|Deep Itm Calls]] - Deep in-the-money calls are call options purchased at strikes well below the current stock price, typically with long time-to-expiration, to gain leveraged directional exposure... (sources: 16, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/delta-hedging|Delta Hedging]], [[concepts/moneyness|Moneyness]], [[concepts/position-sizing|Position Sizing]], [[securities/gme|GME]]
   - backing sources: [[sources/4CEmVAhaNbk]], [[sources/8qAZX9Lx0Z0]], [[sources/Bxh8Fo7CiEI]], [[sources/IsiLvT-L3vk]], [[sources/OHsa-XZ6o_M]], [[sources/V5O4XLgPLLc]], [[sources/WjnUaAR4zIs]], [[sources/XuBtNCZme8s]], [[sources/YtOObiXC6E8]], [[sources/asz1odhQh7w]], 6 more
-- [[concepts/fat-tails|Fat Tails]] - Auto-generated concept topic — discussed across 16 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 16, degree: 5)
+- [[concepts/fat-tails|Fat Tails]] - Fat tails refer to the empirical reality that extreme market moves occur far more frequently than standard normal distributions predict, creating asymmetric risk for options tra... (sources: 16, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/market-regimes|Market Regimes]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/standard-deviation-move|Standard Deviation Move]]
   - backing sources: [[sources/1G-h4tqfQEM]], [[sources/Ao4evQT3dOU]], [[sources/CZEXCE_HR60]], [[sources/G7gf-oXptxE]], [[sources/KKOqF8h1n1s]], [[sources/PwoEFKVQvSQ]], [[sources/RAtIwFj62pw]], [[sources/RRhFuGfvBjA]], [[sources/VkZMUE2sppo]], [[sources/W9Zk1YXytK0]], 6 more
-- [[concepts/large-language-model|Large Language Model]] - Auto-generated concept topic — discussed across 16 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 16, degree: 6)
+- [[concepts/large-language-model|Large Language Model]] - Large Language Models (LLMs) are AI tools that traders use to accelerate research and automate code generation without requiring technical expertise, functioning as force multip... (sources: 16, degree: 6)
   - links: [[concepts/ai-assisted-trading|Ai Assisted Trading]], [[concepts/backtesting|Backtesting]], [[concepts/context-window-management|Context Window Management]], [[concepts/no-code-tools|No Code Tools]], [[concepts/prompt-engineering|Prompt Engineering]], [[securities/spy|SPY]]
   - backing sources: [[sources/3UlOiqsEyXQ]], [[sources/3hrdUyJ-KmE]], [[sources/A-swXl6Xf7M]], [[sources/AoHUcyVh7NY]], [[sources/CWz8RMgiPm8]], [[sources/I-RmKHjrD8g]], [[sources/O8mP2Ine9ZQ]], [[sources/V-_sMf9mM6k]], [[sources/_C94WFbAOGY]], [[sources/_R71zK5XEew]], 6 more
-- [[concepts/market-structure|Market Structure]] - Auto-generated concept topic — discussed across 16 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 16, degree: 5)
+- [[concepts/market-structure|Market Structure]] - Market structure refers to the institutional and regulatory framework governing how financial markets operate, including mechanisms like payment for order flow, dark pools, mark... (sources: 16, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/market-maker|Market Maker]], [[concepts/payment-for-order-flow|Payment For Order Flow]], [[concepts/risk-management|Risk Management]], [[concepts/technical-analysis|Technical Analysis]]
   - backing sources: [[sources/-8XV5_gBP6I]], [[sources/5G0_P4igVWQ]], [[sources/5zUFVXiXFm0]], [[sources/7fC4wwgyEsI]], [[sources/Cfs_0qgho_E]], [[sources/CzBpxADkCk0]], [[sources/FfMgFRoJjzc]], [[sources/GK4RmROuNKA]], [[sources/H04ZDCN_KRI]], [[sources/MyDkYjuogQ0]], 6 more
-- [[concepts/mental-stop-vs-hard-stop|Mental Stop Vs Hard Stop]] - Auto-generated concept topic — discussed across 16 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 16, degree: 5)
+- [[concepts/mental-stop-vs-hard-stop|Mental Stop Vs Hard Stop]] - A mental stop is a self-imposed price or condition at which a trader plans to exit but does not execute automatically, while a hard stop is a pre-set order that executes mechani... (sources: 16, degree: 5)
   - links: [[concepts/disposition-effect|Disposition Effect]], [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/-M_lC4RVmvM]], [[sources/6lIx0wSsN7Y]], [[sources/BB_9Ivd8NLM]], [[sources/ID-Kl0y1bxs]], [[sources/IfVsYszBPmA]], [[sources/KKOqF8h1n1s]], [[sources/RWkSHmI9QqI]], [[sources/SlisA7fCzRM]], [[sources/TE0Vv2aflIE]], [[sources/YLxbPvt79ho]], 6 more
-- [[concepts/risk-reward|Risk Reward]] - Auto-generated concept topic — discussed across 16 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 16, degree: 5)
+- [[concepts/risk-reward|Risk Reward]] - Risk-reward in options trading refers to the relationship between the potential loss on a trade and its potential profit, a ratio that is correlated but not linear and varies si... (sources: 16, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spx|SPX]], [[securities/spy|SPY]]
   - backing sources: [[sources/A1el6GdNjOA]], [[sources/BM8veeOFQBk]], [[sources/Bxh8Fo7CiEI]], [[sources/FnVyDaukQZE]], [[sources/Hddo4eMYPl4]], [[sources/LgQlkikHS4k]], [[sources/QnEymZVCzbo]], [[sources/RAtIwFj62pw]], [[sources/Tph4DYCoyqI]], [[sources/ZWGDFQTvBb8]], 6 more
-- [[concepts/quantitative-research|Quantitative Research]] - Auto-generated concept topic — discussed across 15 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 15, degree: 5)
+- [[concepts/quantitative-research|Quantitative Research]] - Quantitative research in options trading is the systematic process of sourcing, profiling, testing, and validating trading edges through rigorous hypothesis testing and backtest... (sources: 15, degree: 5)
   - links: [[concepts/backtesting|Backtesting]], [[concepts/edge|Edge]], [[concepts/market-efficiency|Market Efficiency]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/7lb6sXnN-ak]], [[sources/AoHUcyVh7NY]], [[sources/B3SW20MSNbM]], [[sources/KKOqF8h1n1s]], [[sources/QOidK8qS3Ms]], [[sources/QTluk95Oid8]], [[sources/SNVvZCtKt0Y]], [[sources/_R71zK5XEew]], [[sources/apJP5YqqIXg]], [[sources/cy-eNQnNVA4]], 5 more
-- [[concepts/risk-taking|Risk Taking]] - Auto-generated concept topic — discussed across 15 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 15, degree: 5)
+- [[concepts/risk-taking|Risk Taking]] - Risk-taking in options trading refers to the deliberate acceptance and management of capital exposure to generate returns, grounded in the principle that avoiding risk entirely... (sources: 15, degree: 5)
   - links: [[concepts/edge|Edge]], [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/market-efficiency|Market Efficiency]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/trading-psychology|Trading Psychology]]
   - backing sources: [[sources/1jDrPx6lOgM]], [[sources/39WODruLi7Q]], [[sources/4CcvNglunZ0]], [[sources/6-uzDfS6Ajc]], [[sources/9v22lpKt7UA]], [[sources/BKWkzrXGLHQ]], [[sources/JnY9onzLO_k]], [[sources/KKOqF8h1n1s]], [[sources/L2ERh_SHQZ0]], [[sources/Nz-gQlPR1KA]], 5 more
-- [[concepts/linear-regression-channels|Linear Regression Channels]] - Auto-generated concept topic — discussed across 14 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 14, degree: 5)
+- [[concepts/linear-regression-channels|Linear Regression Channels]] - Linear regression channels are a price analysis tool that combines a line of best fit with statistical bands to identify prevailing trends and price extremes. Unlike standard de... (sources: 14, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/moving-averages|Moving Averages]], [[concepts/position-sizing|Position Sizing]], [[concepts/support-and-resistance|Support And Resistance]], [[concepts/technical-analysis|Technical Analysis]]
   - backing sources: [[sources/783T-aRhwnI]], [[sources/7_bIW3YqY78]], [[sources/92W1K8z2DKU]], [[sources/ID-Kl0y1bxs]], [[sources/ITG5Za7EH4o]], [[sources/NGTdjlIrboo]], [[sources/efWEgEzrBAI]], [[sources/fG_WirPbFrE]], [[sources/iVRYIr3ezYw]], [[sources/mdhbae8WXgI]], 4 more
-- [[concepts/order-internalization|Order Internalization]] - Auto-generated concept topic — discussed across 14 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 14, degree: 6)
+- [[concepts/order-internalization|Order Internalization]] - Order internalization refers to the practice where market makers and wholesalers execute retail customer orders internally rather than routing them to public exchanges, a struct... (sources: 14, degree: 6)
   - links: [[concepts/dark-pools|Dark Pools]], [[concepts/market-maker|Market Maker]], [[concepts/naked-short-selling|Naked Short Selling]], [[concepts/payment-for-order-flow|Payment For Order Flow]], [[concepts/position-sizing|Position Sizing]], [[securities/gme|GME]]
   - backing sources: [[sources/86KGdDWuPJ0]], [[sources/DrfoNKd41I0]], [[sources/FfMgFRoJjzc]], [[sources/FuuVCSD5QVc]], [[sources/GK4RmROuNKA]], [[sources/IsiLvT-L3vk]], [[sources/KKOqF8h1n1s]], [[sources/QeesqIsDnrA]], [[sources/RRBduDJPEt8]], [[sources/X1Hca7h6eBQ]], 4 more
-- [[concepts/annualized-return|Annualized Return]] - Auto-generated concept topic — discussed across 13 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 13, degree: 5)
+- [[concepts/annualized-return|Annualized Return]] - Annualized return is a standardized metric that projects a trade's or portfolio's return over a full year, enabling meaningful comparison across positions with different holding... (sources: 13, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/expected-return|Expected Return]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/0quAC-m-NpM]], [[sources/1rqLJW1nK40]], [[sources/3c6fsUwB1pw]], [[sources/Ig1z2u_lK4k]], [[sources/K6RRH35k-1Y]], [[sources/MMsqJa2wM-M]], [[sources/SC9KjFkDXco]], [[sources/YtOObiXC6E8]], [[sources/_LwonWbC7LE]], [[sources/bamkn-R9ntg]], 3 more
-- [[concepts/counterparty|Counterparty]] - Auto-generated concept topic — discussed across 13 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 13, degree: 5)
+- [[concepts/counterparty|Counterparty]] - A counterparty is the other party to an options transaction—the entity on the opposite side of a contract willing to transact at a given price. In multi-leg strategies, each sho... (sources: 13, degree: 5)
   - links: [[concepts/delta-hedging|Delta Hedging]], [[concepts/leverage|Leverage]], [[concepts/market-efficiency|Market Efficiency]], [[concepts/market-maker|Market Maker]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/3J3S-ewvxn0]], [[sources/9H5G9H62lMQ]], [[sources/Nfuui1cwi1w]], [[sources/PwoEFKVQvSQ]], [[sources/S2KoSr8_gRo]], [[sources/V0G4mYeZoSM]], [[sources/XuBtNCZme8s]], [[sources/cDIVSQmRYBQ]], [[sources/hT73QtkggMc]], [[sources/ioA0l8F6RzI]], 3 more
-- [[concepts/deflationary-bust|Deflationary Bust]] - Auto-generated concept topic — discussed across 13 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 13, degree: 5)
+- [[concepts/deflationary-bust|Deflationary Bust]] - A deflationary bust is a severe, prolonged economic downturn characterized by falling prices, financial crisis, and extreme asset drawdowns (typically 80% or more) that follows... (sources: 13, degree: 5)
   - links: [[concepts/market-regimes|Market Regimes]], [[people/david-hunter|David Hunter]], [[securities/gold|GOLD]], [[securities/silver|Silver]], [[securities/spy|SPY]]
   - backing sources: [[sources/2yu8jSYKuH4]], [[sources/6Sp4eF9ahW8]], [[sources/FUNC-MTq9PQ]], [[sources/GVrANU08cAU]], [[sources/IosIPXnYxq0]], [[sources/JEvI6g2-h94]], [[sources/Nfuui1cwi1w]], [[sources/QmF0V4wKdw4]], [[sources/Tb6sRWIsHR0]], [[sources/dtpj5VcLnjg]], 3 more
-- [[concepts/melt-up|Melt Up]] - Auto-generated concept topic — discussed across 13 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 13, degree: 6)
+- [[concepts/melt-up|Melt Up]] - A melt-up is a parabolic, final-stage rally in equities driven by excess liquidity, falling rates, and weakening economic data, typically characterized by rapid percentage gains... (sources: 13, degree: 6)
   - links: [[concepts/market-regimes|Market Regimes]], [[people/david-hunter|David Hunter]], [[securities/gold|GOLD]], [[securities/silver|Silver]], [[securities/smh|SMH]], [[securities/spy|SPY]]
   - backing sources: [[sources/2yu8jSYKuH4]], [[sources/6Sp4eF9ahW8]], [[sources/BZhZpyZzocY]], [[sources/GVrANU08cAU]], [[sources/JEvI6g2-h94]], [[sources/KKOqF8h1n1s]], [[sources/Nfuui1cwi1w]], [[sources/QmF0V4wKdw4]], [[sources/Tb6sRWIsHR0]], [[sources/YuRM8JxNQzQ]], 3 more
-- [[concepts/monte-carlo-simulation|Monte Carlo Simulation]] - Auto-generated concept topic — discussed across 13 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 13, degree: 5)
+- [[concepts/monte-carlo-simulation|Monte Carlo Simulation]] - Monte Carlo Simulation is a computational technique used in options trading to test strategy robustness by running thousands of randomized iterations of historical price paths o... (sources: 13, degree: 5)
   - links: [[concepts/backtesting|Backtesting]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/7fC4wwgyEsI]], [[sources/7lb6sXnN-ak]], [[sources/AoHUcyVh7NY]], [[sources/AoiTtWoNKv0]], [[sources/EjD6KPo3OZs]], [[sources/I-RmKHjrD8g]], [[sources/ZTW-rWkkelk]], [[sources/apJP5YqqIXg]], [[sources/dBD1IkHNlGY]], [[sources/jcfgHCLBLzI]], 3 more
-- [[concepts/premium|Premium]] - Auto-generated concept topic — discussed across 13 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 13, degree: 5)
+- [[concepts/premium|Premium]] - Premium is the price paid or received for an options contract, representing the total value of the option before expiration and comprising both intrinsic value (the in-the-money... (sources: 13, degree: 5)
   - links: [[concepts/capped-upside|Capped Upside]], [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[strategies/covered-call|Covered Call]]
   - backing sources: [[sources/-CUgdXmtp5o]], [[sources/0gdMTgMhN-s]], [[sources/6-wt8t1AguM]], [[sources/BbKKEUZ9Gu4]], [[sources/Dlw9oTPZE9c]], [[sources/I6H9Ifx8Sds]], [[sources/KBUgJhFK4c0]], [[sources/QksHJGZX-jA]], [[sources/Uu3DwGTOYHY]], [[sources/g2xg3_vDRaw]], 3 more
-- [[concepts/prompt-engineering|Prompt Engineering]] - Auto-generated concept topic — discussed across 13 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 13, degree: 6)
+- [[concepts/prompt-engineering|Prompt Engineering]] - Prompt engineering in options trading refers to the disciplined practice of structuring questions and instructions for AI language models to accelerate research, backtesting, an... (sources: 13, degree: 6)
   - links: [[concepts/ai-assisted-trading|Ai Assisted Trading]], [[concepts/backtesting|Backtesting]], [[concepts/context-window-management|Context Window Management]], [[concepts/large-language-model|Large Language Model]], [[concepts/no-code-tools|No Code Tools]], [[securities/spy|SPY]]
   - backing sources: [[sources/3hrdUyJ-KmE]], [[sources/AoHUcyVh7NY]], [[sources/CWz8RMgiPm8]], [[sources/I-RmKHjrD8g]], [[sources/K6RRH35k-1Y]], [[sources/O8mP2Ine9ZQ]], [[sources/TXEdY46Kf4k]], [[sources/V-_sMf9mM6k]], [[sources/_R71zK5XEew]], [[sources/cy-eNQnNVA4]], 3 more
-- [[concepts/research-depth|Research Depth]] - Auto-generated concept topic — discussed across 13 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 13, degree: 5)
+- [[concepts/research-depth|Research Depth]] - Research depth in options trading refers to the rigorous, systematic process of identifying and validating profit mechanisms through hypothesis testing, academic study, and hist... (sources: 13, degree: 5)
   - links: [[concepts/backtesting|Backtesting]], [[concepts/edge|Edge]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/profit-mechanism|Profit Mechanism]]
   - backing sources: [[sources/7lb6sXnN-ak]], [[sources/CWz8RMgiPm8]], [[sources/EmzMpa6nEN0]], [[sources/FO4Fh_H2AB0]], [[sources/I-RmKHjrD8g]], [[sources/ID-Kl0y1bxs]], [[sources/eZny4G7_4yY]], [[sources/fnobZLWPnWU]], [[sources/kpLQE0BpY7Y]], [[sources/lVLyj2yDCJc]], 3 more
-- [[concepts/risk-first|Risk First]] - Auto-generated concept topic — discussed across 13 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 13, degree: 5)
+- [[concepts/risk-first|Risk First]] - Risk-first is a foundational trading philosophy that prioritizes capital preservation and systematic position sizing before pursuing profit targets, treating risk management as... (sources: 13, degree: 5)
   - links: [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/portfolio-first|Portfolio First]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/2Dv_fRuuTcc]], [[sources/EvZE2RIwFE4]], [[sources/ID-Kl0y1bxs]], [[sources/KKOqF8h1n1s]], [[sources/QTJd5em-rAw]], [[sources/V02I6eAjSvU]], [[sources/Wxndr3Ady24]], [[sources/eZny4G7_4yY]], [[sources/l1ODyxEFKYY]], [[sources/mDPYNyp23y4]], 3 more
-- [[concepts/risk-free-rate|Risk Free Rate]] - Auto-generated concept topic — discussed across 13 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 13, degree: 5)
+- [[concepts/risk-free-rate|Risk Free Rate]] - The risk-free rate is the theoretical return available from zero-risk investments and serves as a benchmark embedded in options pricing models and strategies. In options trading... (sources: 13, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/early-exercise|Early Exercise]], [[concepts/gamma|Gamma]], [[concepts/position-sizing|Position Sizing]], [[securities/spx|SPX]]
   - backing sources: [[sources/5lJbpzPF1RY]], [[sources/CzBpxADkCk0]], [[sources/EMzsNLXZ1bc]], [[sources/KKOqF8h1n1s]], [[sources/QeesqIsDnrA]], [[sources/SC9KjFkDXco]], [[sources/TQe-HW7-x5I]], [[sources/WWVsuoWX8mU]], [[sources/felr_mdjCKI]], [[sources/kx1yCEzrJ_M]], 3 more
-- [[concepts/call-skew|Call Skew]] - Auto-generated concept topic — discussed across 12 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 12, degree: 5)
+- [[concepts/call-skew|Call Skew]] - Call skew refers to an asymmetry in implied volatility across the options chain where out-of-the-money calls trade at elevated premiums relative to puts, indicating market parti... (sources: 12, degree: 5)
   - links: [[concepts/moneyness|Moneyness]], [[concepts/position-sizing|Position Sizing]], [[concepts/volatility-skew|Volatility Skew]], [[securities/gme|GME]], [[strategies/short-premium|Short Premium]]
   - backing sources: [[sources/-mD-g1Io3II]], [[sources/0-BUA66HVWg]], [[sources/05aJUfUKE5Q]], [[sources/Hkb0O9P5zf0]], [[sources/Ix0ijJjqKwM]], [[sources/Trvn5shhS8c]], [[sources/UJFQ2WJVM88]], [[sources/eEmORQO6WJI]], [[sources/iVRYIr3ezYw]], [[sources/oU0273VG4oE]], 2 more
-- [[concepts/catalyst|Catalyst]] - Auto-generated concept topic — discussed across 12 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 12, degree: 5)
+- [[concepts/catalyst|Catalyst]] - A catalyst is a company-specific or external event—such as earnings announcements, regulatory decisions, or significant news—that can drive material price moves in an underlying... (sources: 12, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/edge|Edge]], [[concepts/position-sizing|Position Sizing]], [[securities/spx|SPX]], [[strategies/long-call|Long Call]]
   - backing sources: [[sources/3tpHwfH9glU]], [[sources/CO9TLXsZVLM]], [[sources/DeQ8wc28Bic]], [[sources/F4W52_7aQTs]], [[sources/G92IzbFzhN8]], [[sources/NGTdjlIrboo]], [[sources/PzWLuzDBN6k]], [[sources/Xe32uys9v5s]], [[sources/Yz5p1a0ArL0]], [[sources/gonrT_M7wCo]], 2 more
-- [[concepts/dunning-kruger-effect|Dunning Kruger Effect]] - Auto-generated concept topic — discussed across 12 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 12, degree: 5)
+- [[concepts/dunning-kruger-effect|Dunning Kruger Effect]] - The Dunning-Kruger effect is a cognitive bias where traders with limited experience overestimate their competence and fail to recognize their knowledge gaps, creating a dangerou... (sources: 12, degree: 5)
   - links: [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[concepts/trading-psychology|Trading Psychology]]
   - backing sources: [[sources/2t3Nv-63Jtc]], [[sources/7fC4wwgyEsI]], [[sources/Dc8Vjr4pZ84]], [[sources/F4QoJDjF4pA]], [[sources/OenKyq1bdeM]], [[sources/VpPB0Bmpgpk]], [[sources/h2D2trUqgDI]], [[sources/hjiPb_i5UaA]], [[sources/hny9FtaPG9o]], [[sources/mtvjRNVG3Nw]], 2 more
-- [[concepts/gamma-ramp|Gamma Ramp]] - Auto-generated concept topic — discussed across 12 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 12, degree: 5)
+- [[concepts/gamma-ramp|Gamma Ramp]] - A gamma ramp is a market structure in which layered, near-the-money options strikes accumulate open interest in a way that creates accelerating hedging demand from market makers... (sources: 12, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/gamma-exposure|Gamma Exposure]], [[concepts/moneyness|Moneyness]], [[securities/gme|GME]], [[strategies/long-call|Long Call]]
   - backing sources: [[sources/IsiLvT-L3vk]], [[sources/Sue4LFwVQvU]], [[sources/V5O4XLgPLLc]], [[sources/bS81-wgP3-E]], [[sources/bZkISrMJLCs]], [[sources/cZvaEVW7Yf4]], [[sources/duTLDsVZng4]], [[sources/hXt_C7GUmlQ]], [[sources/vpcmDvmrwYI]], [[sources/zGjOGsRcxzo]], 2 more
-- [[concepts/margin|Margin]] - Auto-generated concept topic — discussed across 12 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 12, degree: 5)
+- [[concepts/margin|Margin]] - Margin is the borrowed capital a broker extends to a trader to control positions larger than the account's cash balance, with requirements calculated either through fixed regula... (sources: 12, degree: 5)
   - links: [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/delta|Delta]], [[concepts/leverage|Leverage]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/3sYsqAWBo80]], [[sources/C_YEdo1Qlk8]], [[sources/ELLig97y0io]], [[sources/K6RRH35k-1Y]], [[sources/P7vZRYmsOq8]], [[sources/QQ5DeQdx0yo]], [[sources/TO2MJkfJnbY]], [[sources/TQe-HW7-x5I]], [[sources/fNW7e0SdtG0]], [[sources/hPcJPFpJ_lM]], 2 more
-- [[concepts/short-gamma|Short Gamma]] - Auto-generated concept topic — discussed across 12 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 12, degree: 6)
+- [[concepts/short-gamma|Short Gamma]] - Short gamma refers to the position Greeks dynamic where a seller of options faces accelerating losses as the underlying price moves against the strike, because delta becomes inc... (sources: 12, degree: 6)
   - links: [[concepts/delta|Delta]], [[concepts/gamma|Gamma]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/volatility-clustering|Volatility Clustering]], [[strategies/buy-write|Buy Write]]
   - backing sources: [[sources/72LcrOF6BHk]], [[sources/86KGdDWuPJ0]], [[sources/H04ZDCN_KRI]], [[sources/H4FKDYxS5ts]], [[sources/KKOqF8h1n1s]], [[sources/LgQlkikHS4k]], [[sources/XNUnwpzL8dY]], [[sources/Z_y9CYARajk]], [[sources/kvzQJ3wFaZs]], [[sources/l7dnXXgna6c]], 2 more
-- [[concepts/diversification|Diversification]] - Auto-generated concept topic — discussed across 11 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 11, degree: 5)
+- [[concepts/diversification|Diversification]] - Diversification in options trading refers to building a portfolio of uncorrelated strategies, asset classes, and positions that can perform across different market regimes rathe... (sources: 11, degree: 5)
   - links: [[concepts/delta-hedging|Delta Hedging]], [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/78f9Q_gcfh0]], [[sources/9AKqzGkSWmg]], [[sources/AoiTtWoNKv0]], [[sources/Ig1z2u_lK4k]], [[sources/OenKyq1bdeM]], [[sources/OwPmSCUS-bs]], [[sources/QZUk0K75gu8]], [[sources/UZOcepy6VxY]], [[sources/YuRM8JxNQzQ]], [[sources/l1ODyxEFKYY]], 1 more
-- [[concepts/hedging|Hedging]] - Auto-generated concept topic — discussed across 11 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 11, degree: 5)
+- [[concepts/hedging|Hedging]] - Hedging is a risk-management technique that uses options or other derivatives to offset or reduce losses in a primary portfolio position, functioning as "fire insurance" rather... (sources: 11, degree: 5)
   - links: [[concepts/correlation|Correlation]], [[concepts/delta-hedging|Delta Hedging]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/6ya9JCd_ogQ]], [[sources/AXGmgcD15_E]], [[sources/EjD6KPo3OZs]], [[sources/JuqhsVCGUCA]], [[sources/QZUk0K75gu8]], [[sources/UZOcepy6VxY]], [[sources/cnLc2wn6GMY]], [[sources/eiI0XD61His]], [[sources/fNW7e0SdtG0]], [[sources/lAmVmdKT85k]], 1 more
-- [[concepts/options-chain|Options Chain]] - Auto-generated concept topic — discussed across 11 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 11, degree: 5)
+- [[concepts/options-chain|Options Chain]] - An options chain is the complete set of available call and put contracts for a given stock across multiple strike prices and expiration dates, displayed in a structured format t... (sources: 11, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/market-maker|Market Maker]], [[concepts/open-interest|Open Interest]], [[securities/gme|GME]], [[strategies/long-call|Long Call]]
   - backing sources: [[sources/5bwYlR-1Tdk]], [[sources/AWB8d0uMeoA]], [[sources/BhkjwgGvZGY]], [[sources/DB6bc4LmKM4]], [[sources/GU0G-GnKDzQ]], [[sources/Rznj_dVN3kQ]], [[sources/YtZRjmZm8xY]], [[sources/f-PI_SmDAic]], [[sources/fGOxBtIqzBs]], [[sources/fdjndtACm7Y]], 1 more
-- [[concepts/options-chain-analysis|Options Chain Analysis]] - Auto-generated concept topic — discussed across 11 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 11, degree: 5)
+- [[concepts/options-chain-analysis|Options Chain Analysis]] - Options chain analysis is the examination of aggregate options market data—including call and put volumes, open interest, strike concentration, expiration dates, and implied vol... (sources: 11, degree: 5)
   - links: [[concepts/price-action|Price Action]], [[concepts/support-and-resistance|Support And Resistance]], [[concepts/technical-analysis|Technical Analysis]], [[securities/gme|GME]], [[securities/spy|SPY]]
   - backing sources: [[sources/2wlur2p61Mg]], [[sources/5G0_P4igVWQ]], [[sources/8U4dz8MZL70]], [[sources/FtZyB8apvC0]], [[sources/R6e51kygV6Q]], [[sources/TTX-FFvReOk]], [[sources/UjVO61nDAoc]], [[sources/ZbFvXEfwDzY]], [[sources/rjj0k0T0384]], [[sources/yH3QUCxPaz0]], 1 more
-- [[concepts/point-of-control|Point Of Control]] - Auto-generated concept topic — discussed across 11 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 11, degree: 5)
+- [[concepts/point-of-control|Point Of Control]] - Point of control is the price level at which the most trading volume has occurred over a specified time frame, identified through volume profile analysis. It serves as a key ref... (sources: 11, degree: 5)
   - links: [[concepts/consolidation|Consolidation]], [[concepts/market-breadth|Market Breadth]], [[concepts/volume-analysis|Volume Analysis]], [[securities/gme|GME]], [[securities/spy|SPY]]
   - backing sources: [[sources/3J1_0s0qHPU]], [[sources/Gsy_ncfFBpo]], [[sources/QeesqIsDnrA]], [[sources/RAj7HHErd4o]], [[sources/TTX-FFvReOk]], [[sources/bZ4I9a-QYlw]], [[sources/f-PI_SmDAic]], [[sources/k5BHQiGAMFo]], [[sources/nSZp-hUSjdk]], [[sources/oPtKXfkwgDI]], 1 more
-- [[concepts/sentiment|Sentiment]] - Auto-generated concept topic — discussed across 11 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 11, degree: 5)
+- [[concepts/sentiment|Sentiment]] - Sentiment in options trading refers to the collective positioning and emotional state of market participants—measured through indicators like short interest, implied volatility... (sources: 11, degree: 5)
   - links: [[concepts/market-regimes|Market Regimes]], [[people/david-hunter|David Hunter]], [[securities/gold|GOLD]], [[securities/silver|Silver]], [[securities/spy|SPY]]
   - backing sources: [[sources/-yvQLv-q9uk]], [[sources/93vPWsmgsQc]], [[sources/BZhZpyZzocY]], [[sources/FUNC-MTq9PQ]], [[sources/GVrANU08cAU]], [[sources/JEvI6g2-h94]], [[sources/Nfuui1cwi1w]], [[sources/PtGpKtyJfrs]], [[sources/Uu3DwGTOYHY]], [[sources/YY0b7ShDies]], 1 more
-- [[concepts/short-interest|Short Interest]] - Auto-generated concept topic — discussed across 11 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 11, degree: 5)
+- [[concepts/short-interest|Short Interest]] - Short interest refers to the aggregate number of shares that have been sold short in a security, representing a bet that the price will decline. In options trading, short intere... (sources: 11, degree: 5)
   - links: [[concepts/gamma-exposure|Gamma Exposure]], [[concepts/market-maker|Market Maker]], [[concepts/price-action|Price Action]], [[concepts/short-squeeze|Short Squeeze]], [[securities/gme|GME]]
   - backing sources: [[sources/5zUFVXiXFm0]], [[sources/86KGdDWuPJ0]], [[sources/H04ZDCN_KRI]], [[sources/R1j_tzSySPc]], [[sources/Rznj_dVN3kQ]], [[sources/asz1odhQh7w]], [[sources/bZkISrMJLCs]], [[sources/eEmORQO6WJI]], [[sources/ekhTOxldeFQ]], [[sources/j-bhFu_dQxM]], 1 more
-- [[concepts/gamma-scalping|Gamma Scalping]] - Auto-generated concept topic — discussed across 10 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 10, degree: 5)
+- [[concepts/gamma-scalping|Gamma Scalping]] - Gamma scalping is an active delta-rehedging strategy typically deployed around a long-premium base position, such as a long straddle, to offset theta decay through tactical buyi... (sources: 10, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/delta-hedging|Delta Hedging]], [[concepts/gamma|Gamma]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/0iZJfIu3Nac]], [[sources/3J3S-ewvxn0]], [[sources/8MTeMe1qln8]], [[sources/C_YEdo1Qlk8]], [[sources/OeMVz36bO5A]], [[sources/_meFsIpmzXM]], [[sources/d7uSUH3PqQM]], [[sources/e-AEE6CwLSs]], [[sources/i_TOxBb1d58]], [[sources/vMGBTlapBeA]]
-- [[concepts/gap-risk|Gap Risk]] - Auto-generated concept topic — discussed across 10 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 10, degree: 5)
+- [[concepts/gap-risk|Gap Risk]] - Gap risk refers to the possibility of a security's price opening significantly higher or lower than its previous close due to overnight news, earnings announcements, geopolitica... (sources: 10, degree: 5)
   - links: [[concepts/days-to-expiration|Days To Expiration]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/volatility-clustering|Volatility Clustering]], [[securities/qqq|QQQ]]
   - backing sources: [[sources/6UzoviSHtbk]], [[sources/AXGmgcD15_E]], [[sources/ID-Kl0y1bxs]], [[sources/JzxGOoYsAv0]], [[sources/KnORuwpxylI]], [[sources/LspC6Wx0QA8]], [[sources/SNVvZCtKt0Y]], [[sources/_oorJyxpFAI]], [[sources/jv5t8taB4Jw]], [[sources/n_LVYwnBcJY]]
-- [[concepts/no-code-tools|No Code Tools]] - Auto-generated concept topic — discussed across 10 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 10, degree: 5)
+- [[concepts/no-code-tools|No Code Tools]] - No Code Tools refers to using frontier AI models like Claude and ChatGPT to automate quantitative research, backtesting, and database construction for options trading without re... (sources: 10, degree: 5)
   - links: [[concepts/ai-assisted-trading|Ai Assisted Trading]], [[concepts/backtesting|Backtesting]], [[concepts/context-window-management|Context Window Management]], [[concepts/large-language-model|Large Language Model]], [[concepts/prompt-engineering|Prompt Engineering]]
   - backing sources: [[sources/3UlOiqsEyXQ]], [[sources/5j8nHk7s2ug]], [[sources/A-swXl6Xf7M]], [[sources/AoHUcyVh7NY]], [[sources/CZEXCE_HR60]], [[sources/I-RmKHjrD8g]], [[sources/K6RRH35k-1Y]], [[sources/QTluk95Oid8]], [[sources/TXEdY46Kf4k]], [[sources/_R71zK5XEew]]
-- [[concepts/overnight-risk-premium|Overnight Risk Premium]] - Auto-generated concept topic — discussed across 10 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 10, degree: 5)
+- [[concepts/overnight-risk-premium|Overnight Risk Premium]] - Overnight risk premium refers to the additional volatility and risk exposure that accumulates between market close and open, which can be mispriced in options pricing models. Tr... (sources: 10, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/gamma|Gamma]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/4D1XWrp3xec]], [[sources/6vQeTS9cyk0]], [[sources/FtZyB8apvC0]], [[sources/KKOqF8h1n1s]], [[sources/XW0ScMExu2I]], [[sources/e7RklZt2PjE]], [[sources/fNW7e0SdtG0]], [[sources/felr_mdjCKI]], [[sources/gIadiCaH2JM]], [[sources/sSJX-kn-LMw]]
-- [[concepts/sequence-of-returns|Sequence Of Returns]] - Auto-generated concept topic — discussed across 10 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 10, degree: 5)
+- [[concepts/sequence-of-returns|Sequence Of Returns]] - Sequence of returns refers to the order in which investment gains and losses occur over time, which significantly impacts the final portfolio value even when average returns rem... (sources: 10, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]], [[strategies/covered-call|Covered Call]]
   - backing sources: [[sources/-qSV5WZNlP4]], [[sources/AJP8M8DQ_1U]], [[sources/B3SW20MSNbM]], [[sources/EkAxyxtD0hc]], [[sources/V0YmZpEt1jY]], [[sources/ZTW-rWkkelk]], [[sources/l5k56cSP-Bs]], [[sources/mRy0jU6HJ_8]], [[sources/mguT9A4DuBY]], [[sources/qZCwehXEWys]]
-- [[concepts/at-the-money|At The Money]] - Auto-generated concept topic — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 9, degree: 5)
+- [[concepts/at-the-money|At The Money]] - At-the-money (ATM) refers to an option whose strike price equals or is very close to the current price of the underlying asset. ATM options exhibit the highest gamma and theta a... (sources: 9, degree: 5)
   - links: [[concepts/days-to-expiration|Days To Expiration]], [[concepts/delta|Delta]], [[concepts/gamma|Gamma]], [[concepts/moneyness|Moneyness]], [[concepts/out-of-the-money|Out Of The Money]]
   - backing sources: [[sources/0kXY1hY--Ww]], [[sources/1kGksRBt2aA]], [[sources/4CEmVAhaNbk]], [[sources/OeMVz36bO5A]], [[sources/SsbI2qzsLGY]], [[sources/TMqFFnQEWEg]], [[sources/X7k4qXrPQow]], [[sources/fUWoKrmJ2K0]], [[sources/x3KFIudWyGc]]
-- [[concepts/basis-adjustment|Basis Adjustment]] - Auto-generated concept topic — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 9, degree: 5)
+- [[concepts/basis-adjustment|Basis Adjustment]] - Basis adjustment is a tactical approach to reducing the cost basis of short option positions by rolling them to different strikes and expirations, typically employed when positi... (sources: 9, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/realized-vs-unrealized-pnl|Realized Vs Unrealized Pnl]], [[concepts/risk-management|Risk Management]], [[concepts/rolling-options|Rolling Options]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/0ocJTw3Tz9U]], [[sources/DumdXtGkUPQ]], [[sources/HcWY9Rqcssk]], [[sources/WjnUaAR4zIs]], [[sources/X7k4qXrPQow]], [[sources/cbMpZUz22cQ]], [[sources/ipm1LSctaHA]], [[sources/ju8yEQbi_HU]], [[sources/qW6h2g8C_NI]]
-- [[concepts/candlestick-reading|Candlestick Reading]] - Auto-generated concept topic — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 9, degree: 5)
+- [[concepts/candlestick-reading|Candlestick Reading]] - Candlestick reading is the practice of analyzing price action through candlestick patterns and structure to identify market trends, support/resistance levels, and entry or exit... (sources: 9, degree: 5)
   - links: [[concepts/momentum|Momentum]], [[concepts/moving-averages|Moving Averages]], [[concepts/price-action|Price Action]], [[concepts/support-and-resistance|Support And Resistance]], [[concepts/technical-analysis|Technical Analysis]]
   - backing sources: [[sources/7ukh8YpfNu0]], [[sources/B3SW20MSNbM]], [[sources/ID-Kl0y1bxs]], [[sources/KsO0hd_xRD4]], [[sources/YGm5Rh1b1uc]], [[sources/d_pt7wcQRnk]], [[sources/f-0qnXEI7eA]], [[sources/leqZ4DsC178]], [[sources/o3Z1aDmpQTk]]
-- [[concepts/fundamental-analysis|Fundamental Analysis]] - Auto-generated concept topic — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 9, degree: 5)
+- [[concepts/fundamental-analysis|Fundamental Analysis]] - Fundamental analysis in options trading refers to examining a company's financial statements, competitive advantages, sector positioning, and underlying business quality to iden... (sources: 9, degree: 5)
   - links: [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/position-sizing|Position Sizing]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/risk-management|Risk Management]], [[concepts/technical-analysis|Technical Analysis]]
   - backing sources: [[sources/DGMPiN0zvGk]], [[sources/F4QoJDjF4pA]], [[sources/OenKyq1bdeM]], [[sources/YGjNrwlRQTA]], [[sources/cnLc2wn6GMY]], [[sources/eZny4G7_4yY]], [[sources/utJ76_O6BNI]], [[sources/wS7sjV_UOMw]], [[sources/yjH-ap6hG0Q]]
-- [[concepts/gamma-hedging|Gamma Hedging]] - Auto-generated concept topic — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 9, degree: 5)
+- [[concepts/gamma-hedging|Gamma Hedging]] - Gamma hedging is the practice of rebalancing a delta hedge as the underlying price moves, allowing traders to lock in profits from directional moves while managing exposure. Dea... (sources: 9, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/delta-hedging|Delta Hedging]], [[concepts/market-maker|Market Maker]], [[concepts/moneyness|Moneyness]], [[concepts/theta-decay|Theta Decay]]
   - backing sources: [[sources/FPLK8vS5ono]], [[sources/FrqSC7Fbf14]], [[sources/H04ZDCN_KRI]], [[sources/KKOqF8h1n1s]], [[sources/SAAznQCMSco]], [[sources/dYfq58DkY5c]], [[sources/lx5bFeaCCZA]], [[sources/uif4pXs2wEI]], [[sources/waqORw_buvc]]
-- [[concepts/gamma-squeeze|Gamma Squeeze]] - Auto-generated concept topic — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 9, degree: 5)
+- [[concepts/gamma-squeeze|Gamma Squeeze]] - A gamma squeeze occurs when rapid price acceleration forces market makers to hedge their short call positions by buying shares, creating additional buying pressure that further... (sources: 9, degree: 5)
   - links: [[concepts/delta-hedging|Delta Hedging]], [[concepts/market-maker|Market Maker]], [[concepts/naked-short-selling|Naked Short Selling]], [[concepts/short-squeeze|Short Squeeze]], [[securities/gme|GME]]
   - backing sources: [[sources/5YK9YbXMgMM]], [[sources/86KGdDWuPJ0]], [[sources/FbCrTP3rBjY]], [[sources/GPpRFn5HUY4]], [[sources/R6e51kygV6Q]], [[sources/eEmORQO6WJI]], [[sources/joRW8VU2MYs]], [[sources/oCEtRjtaaSw]], [[sources/zQHTlfwJKDo]]
-- [[concepts/high-implied-volatility|High Implied Volatility]] - Auto-generated concept topic — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 9, degree: 5)
+- [[concepts/high-implied-volatility|High Implied Volatility]] - High implied volatility represents elevated option prices that attract premium sellers seeking to capture that excess premium, but it often signals underlying risk or market str... (sources: 9, degree: 5)
   - links: [[concepts/expected-value|Expected Value]], [[concepts/market-efficiency|Market Efficiency]], [[concepts/risk-management|Risk Management]], [[concepts/win-rate-vs-profitability|Win Rate Vs Profitability]], [[strategies/short-premium|Short Premium]]
   - backing sources: [[sources/FEz3MOM942g]], [[sources/FfMgFRoJjzc]], [[sources/GVoSqEj3k9I]], [[sources/JRg4V_uFeZA]], [[sources/KKOqF8h1n1s]], [[sources/LgQlkikHS4k]], [[sources/cDIVSQmRYBQ]], [[sources/mX-9Cl1ty3Q]], [[sources/nLC0tmrc_ao]]
-- [[concepts/number-of-occurrences|Number Of Occurrences]] - Auto-generated concept topic — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 9, degree: 5)
+- [[concepts/number-of-occurrences|Number Of Occurrences]] - Number of occurrences refers to the volume of trading decisions and repeated executions of a tested strategy over time, which is fundamental to building sustainable edge in opti... (sources: 9, degree: 5)
   - links: [[concepts/edge|Edge]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/3c6fsUwB1pw]], [[sources/UPNR9270_48]], [[sources/YbPvP6qH3is]], [[sources/cDIVSQmRYBQ]], [[sources/gonrT_M7wCo]], [[sources/jnjGRehToJU]], [[sources/lbwCYf8IC6g]], [[sources/p4-i8UtdUU4]], [[sources/wJvu98Naux0]]
-- [[concepts/price-extremes|Price Extremes]] - Auto-generated concept topic — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 9, degree: 5)
+- [[concepts/price-extremes|Price Extremes]] - Price extremes are significant deviations from a trend or moving average that signal potential reversal or breakout opportunities in options trading. They are identified using t... (sources: 9, degree: 5)
   - links: [[concepts/moving-averages|Moving Averages]], [[concepts/sector-rotation|Sector Rotation]], [[concepts/support-and-resistance|Support And Resistance]], [[concepts/technical-analysis|Technical Analysis]], [[securities/iwm|IWM]]
   - backing sources: [[sources/5-n_K32MGYo]], [[sources/92W1K8z2DKU]], [[sources/MrSY1py3kAE]], [[sources/QEsVdlDWlX8]], [[sources/W9Zk1YXytK0]], [[sources/cDIVSQmRYBQ]], [[sources/fpD8Hqa9ymk]], [[sources/w8z381jhxd4]], [[sources/wFerATg5V3s]]
-- [[concepts/put-skew|Put Skew]] - Auto-generated concept topic — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 9, degree: 5)
+- [[concepts/put-skew|Put Skew]] - Put skew is the phenomenon where out-of-the-money put options are systematically overpriced relative to calls, creating an implied volatility premium on the downside side of the... (sources: 9, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/moneyness|Moneyness]], [[concepts/risk-premium|Risk Premium]], [[concepts/volatility-skew|Volatility Skew]], [[securities/spy|SPY]]
   - backing sources: [[sources/3J3S-ewvxn0]], [[sources/7xLGynW-FdA]], [[sources/HpuG8zJ193E]], [[sources/Ix0ijJjqKwM]], [[sources/MrSY1py3kAE]], [[sources/cmacStWLbDA]], [[sources/dHvfZOw1ql0]], [[sources/oU0273VG4oE]], [[sources/vCPKKp5yMSA]]
-- [[concepts/robustness|Robustness]] - Auto-generated concept topic — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 9, degree: 5)
+- [[concepts/robustness|Robustness]] - Robustness in options trading refers to the quality of a strategy or system that performs reliably across different market conditions, time periods, and parameter ranges without... (sources: 9, degree: 5)
   - links: [[concepts/backtesting|Backtesting]], [[concepts/overfitting|Overfitting]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/volatility-clustering|Volatility Clustering]]
   - backing sources: [[sources/-qSV5WZNlP4]], [[sources/CzPirDlJWgM]], [[sources/IM2LefSdT5g]], [[sources/U6PB971mSlI]], [[sources/ayqbZirKPkM]], [[sources/cnLc2wn6GMY]], [[sources/dBD1IkHNlGY]], [[sources/vp6pJmcVgi8]], [[sources/y6xWA06K-74]]
-- [[concepts/skewness-premium|Skewness Premium]] - Auto-generated concept topic — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 9, degree: 5)
+- [[concepts/skewness-premium|Skewness Premium]] - Skewness premium refers to the excess value embedded in options that are skewed toward one side of the probability distribution, typically reflecting market expectations of fat... (sources: 9, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/market-maker|Market Maker]], [[concepts/market-regimes|Market Regimes]], [[concepts/volatility-skew|Volatility Skew]], [[securities/spy|SPY]]
   - backing sources: [[sources/6vQeTS9cyk0]], [[sources/G7gf-oXptxE]], [[sources/JkLLg4S1tXk]], [[sources/KKOqF8h1n1s]], [[sources/PwoEFKVQvSQ]], [[sources/Z5S_SU1Lfo4]], [[sources/sMmB3FoCwtI]], [[sources/u-gINUduTxM]], [[sources/xMVpIr1hVGs]]
-- [[concepts/consumer-confidence|Consumer Confidence]] - Auto-generated concept topic — discussed across 8 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 8, degree: 5)
+- [[concepts/consumer-confidence|Consumer Confidence]] - Consumer confidence is an economic indicator tracked by options traders as part of their broader assessment of market health and soft-landing probability. The channel discusses... (sources: 8, degree: 5)
   - links: [[concepts/market-regimes|Market Regimes]], [[concepts/position-sizing|Position Sizing]], [[concepts/sector-rotation|Sector Rotation]], [[securities/qqq|QQQ]], [[securities/spy|SPY]]
   - backing sources: [[sources/-qSV5WZNlP4]], [[sources/6-MMToTqJAE]], [[sources/C1UbvCjzUDE]], [[sources/MJdXttzj07k]], [[sources/RWkSHmI9QqI]], [[sources/WWVsuoWX8mU]], [[sources/WYfQsFADTfo]], [[sources/YuRM8JxNQzQ]]
-- [[concepts/dark-pools|Dark Pools]] - Auto-generated concept topic — discussed across 8 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 8, degree: 5)
+- [[concepts/dark-pools|Dark Pools]] - Dark pools are off-exchange trading venues where large block trades are executed away from public order books, representing a significant portion of market structure that can ob... (sources: 8, degree: 5)
   - links: [[concepts/market-maker|Market Maker]], [[concepts/order-flow|Order Flow]], [[concepts/order-internalization|Order Internalization]], [[concepts/position-sizing|Position Sizing]], [[securities/gme|GME]]
   - backing sources: [[sources/FfMgFRoJjzc]], [[sources/FuuVCSD5QVc]], [[sources/XEk0OnFpybI]], [[sources/fGOxBtIqzBs]], [[sources/hRUfZInB234]], [[sources/joRW8VU2MYs]], [[sources/kdGASnxDaRw]], [[sources/zQHTlfwJKDo]]
-- [[concepts/derivatives|Derivatives]] - Auto-generated concept topic — discussed across 8 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 8, degree: 5)
+- [[concepts/derivatives|Derivatives]] - Derivatives are financial instruments whose value is derived from underlying assets, and they play a central role in modern market structure and systemic risk. In options tradin... (sources: 8, degree: 5)
   - links: [[concepts/leverage|Leverage]], [[concepts/market-maker|Market Maker]], [[concepts/risk-management|Risk Management]], [[concepts/sector-rotation|Sector Rotation]], [[securities/spy|SPY]]
   - backing sources: [[sources/-XQGZSyM8O0]], [[sources/05aJUfUKE5Q]], [[sources/2I6SPZjnjew]], [[sources/6CZMjMvG4y4]], [[sources/H04ZDCN_KRI]], [[sources/Tb6sRWIsHR0]], [[sources/fnfgj_Lkl04]], [[sources/mG1VfOVZp4E]]
-- [[concepts/earnings-vol-play|Earnings Vol Play]] - Auto-generated concept topic — discussed across 8 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 8, degree: 5)
+- [[concepts/earnings-vol-play|Earnings Vol Play]] - An earnings vol play is a short-volatility strategy that capitalizes on elevated implied volatility ahead of earnings announcements by selling premium through positions like nak... (sources: 8, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[strategies/earnings-vol-play|Earnings Vol Play]], [[strategies/short-premium|Short Premium]]
   - backing sources: [[sources/GtpeFCueGAQ]], [[sources/HZot-hA0bLE]], [[sources/XEk0OnFpybI]], [[sources/Xe32uys9v5s]], [[sources/fpvGQkFeJd4]], [[sources/iFxhd-PYW1Q]], [[sources/kVvzt6IkUAE]], [[sources/oOyjSHIJSPs]]
-- [[concepts/iron-condor|Iron Condor]] - Auto-generated concept topic — discussed across 8 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 8, degree: 5)
+- [[concepts/iron-condor|Iron Condor]] - An iron condor is a defined-risk options strategy that sells an out-of-the-money call spread and an out-of-the-money put spread simultaneously, capping both maximum profit and m... (sources: 8, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/delta-neutral|Delta Neutral]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[strategies/iron-condor|Iron Condor]]
   - backing sources: [[sources/0nXEzaMT7Nc]], [[sources/NFmt1vpYpMw]], [[sources/RAtIwFj62pw]], [[sources/_L-xR6KNRkM]], [[sources/a4W-VNEdyJM]], [[sources/dYfq58DkY5c]], [[sources/ioA0l8F6RzI]], [[sources/n1C5DrxGQPg]]
-- [[concepts/leaps|Leaps]] - Auto-generated concept topic — discussed across 8 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 8, degree: 5)
+- [[concepts/leaps|Leaps]] - LEAPS (long-term equity anticipation securities) are options contracts with expiration dates greater than one year, functioning as leveraged stock replacements that allow trader... (sources: 8, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/extrinsic-value|Extrinsic Value]], [[concepts/gamma|Gamma]], [[concepts/leverage|Leverage]], [[concepts/position-sizing|Position Sizing]]
   - backing sources: [[sources/9APL8MtZu7Y]], [[sources/EMzsNLXZ1bc]], [[sources/ToCr_B-i9mI]], [[sources/_sYkIbkPItA]], [[sources/a14UA4oN82E]], [[sources/fp7kppTc384]], [[sources/sk8rQ8rfn3s]], [[sources/wB5s_9rthn4]]
-- [[concepts/loss-aversion|Loss Aversion]] - Auto-generated concept topic — discussed across 8 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 8, degree: 5)
+- [[concepts/loss-aversion|Loss Aversion]] - Loss aversion is a psychological bias that causes traders to hold losing positions longer than rational decision-making would warrant, often leading them to roll trades or hope... (sources: 8, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/7gLvDWJK2gg]], [[sources/BTU71jbUgDo]], [[sources/epGFY9R7U8I]], [[sources/fLRwLbcWWc4]], [[sources/iFxhd-PYW1Q]], [[sources/lMeuFtnZdu0]], [[sources/mDPYNyp23y4]], [[sources/tmJpAECNhnE]]
-- [[concepts/price-discovery|Price Discovery]] - Auto-generated concept topic — discussed across 8 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 8, degree: 5)
+- [[concepts/price-discovery|Price Discovery]] - Price discovery is the market mechanism by which the true value of an asset is established through the interaction of supply and demand across trading venues. In options trading... (sources: 8, degree: 5)
   - links: [[concepts/market-efficiency|Market Efficiency]], [[concepts/market-maker|Market Maker]], [[concepts/order-flow|Order Flow]], [[concepts/payment-for-order-flow|Payment For Order Flow]], [[securities/gme|GME]]
   - backing sources: [[sources/FbCrTP3rBjY]], [[sources/FfMgFRoJjzc]], [[sources/PwoEFKVQvSQ]], [[sources/aCj7f_NDuFA]], [[sources/hRUfZInB234]], [[sources/kx1yCEzrJ_M]], [[sources/uXLs5JCfZJI]], [[sources/vkBpeqKvUMY]]
-- [[concepts/reshoring|Reshoring]] - Auto-generated concept topic — discussed across 8 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 8, degree: 5)
+- [[concepts/reshoring|Reshoring]] - Reshoring refers to the policy-driven movement to bring manufacturing and supply-chain production back to the United States, primarily through tariff incentives and deregulation... (sources: 8, degree: 5)
   - links: [[concepts/tariffs|Tariffs]], [[securities/crude-oil|Crude Oil]], [[securities/gold|GOLD]], [[securities/natural-gas|Natural Gas]], [[securities/spy|SPY]]
   - backing sources: [[sources/6Sp4eF9ahW8]], [[sources/7XyTZoId-Aw]], [[sources/JuqhsVCGUCA]], [[sources/OWQs77SA_m4]], [[sources/gnABTnW-KX8]], [[sources/mvxthWIMMTU]], [[sources/pxNgK4vNV1g]], [[sources/qO34tGS8e3o]]
-- [[concepts/straddle-price|Straddle Price]] - Auto-generated concept topic — discussed across 8 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 8, degree: 5)
+- [[concepts/straddle-price|Straddle Price]] - A straddle price is the combined cost of buying (or premium received from selling) both a call and a put option at the same strike and expiration, representing the market's expe... (sources: 8, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/edge|Edge]], [[concepts/realized-volatility|Realized Volatility]], [[concepts/volatility-clustering|Volatility Clustering]], [[strategies/short-straddle|Short Straddle]]
   - backing sources: [[sources/BtW6QHGCaas]], [[sources/KKOqF8h1n1s]], [[sources/SNVvZCtKt0Y]], [[sources/YfN-O1Yu_9I]], [[sources/e-AEE6CwLSs]], [[sources/jlhuKAIenw0]], [[sources/kvzQJ3wFaZs]], [[sources/n1C5DrxGQPg]]
-- [[concepts/synthetic-long|Synthetic Long]] - Auto-generated concept topic — discussed across 8 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 8, degree: 5)
+- [[concepts/synthetic-long|Synthetic Long]] - A synthetic long is an options position that replicates the economic exposure of owning stock by pairing deep in-the-money calls with short puts (or equivalently, using deep ITM... (sources: 8, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[securities/gme|GME]], [[strategies/short-premium|Short Premium]], [[strategies/synthetic-long|Synthetic Long]]
   - backing sources: [[sources/05aJUfUKE5Q]], [[sources/2jG5SD-3F0w]], [[sources/BbKKEUZ9Gu4]], [[sources/Bxh8Fo7CiEI]], [[sources/Xe32uys9v5s]], [[sources/XuBtNCZme8s]], [[sources/ZbFvXEfwDzY]], [[sources/vkBpeqKvUMY]]
-- [[concepts/tail-risk|Tail Risk]] - Auto-generated concept topic — discussed across 8 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 8, degree: 5)
+- [[concepts/tail-risk|Tail Risk]] - Tail risk refers to the probability of extreme market moves that occur far more frequently than standard statistical models predict, creating outsized losses for traders who sel... (sources: 8, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spx|SPX]], [[strategies/short-strangle|Short Strangle]]
   - backing sources: [[sources/BM8veeOFQBk]], [[sources/IM2LefSdT5g]], [[sources/QN9WaA4ke60]], [[sources/RAtIwFj62pw]], [[sources/ckLbyp_yI88]], [[sources/fLRwLbcWWc4]], [[sources/mDPYNyp23y4]], [[sources/p4-i8UtdUU4]]
-- [[concepts/decision-making|Decision Making]] - Auto-generated concept topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[concepts/compounding|Compounding]] - Compounding in options trading refers to the reinvestment of profits and disciplined capital management to grow an account exponentially over time, enabled by consistent contrib... (sources: 7, degree: 1)
+  - links: [[concepts/position-sizing|Position Sizing]]
+  - backing sources: [[sources/JdPGS9FK-xw]], [[sources/Lp-SPerQHgY]], [[sources/Nz-gQlPR1KA]], [[sources/TigQwIC0PIU]], [[sources/apJP5YqqIXg]], [[sources/bdXfCa4LSh4]], [[sources/wh2h-43aK2A]]
+- [[concepts/decision-making|Decision Making]] - Decision-making in options trading is the systematic process of moving from portfolio-level hypotheses and capital allocation through opportunity identification to specific trad... (sources: 7, degree: 5)
   - links: [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[concepts/trading-plan|Trading Plan]], [[concepts/trading-psychology|Trading Psychology]]
   - backing sources: [[sources/9JdI1XeR1G0]], [[sources/Wxndr3Ady24]], [[sources/XOTD5YxkQ3w]], [[sources/eBOLGO1w-XI]], [[sources/llug0_5XK9Q]], [[sources/tzH0sp8RQ-M]], [[sources/xGZUHMXt9Fc]]
-- [[concepts/defined-risk|Defined Risk]] - Auto-generated concept topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[concepts/defined-risk|Defined Risk]] - Defined risk refers to an options position structure where the maximum possible loss is known and capped at the time of entry, typically achieved by pairing long and short optio... (sources: 7, degree: 5)
   - links: [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[strategies/ratio-call-diagonal|Ratio Call Diagonal]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/2Dv_fRuuTcc]], [[sources/ELLig97y0io]], [[sources/FPLK8vS5ono]], [[sources/IIcSjkSS80k]], [[sources/NFmt1vpYpMw]], [[sources/felr_mdjCKI]], [[sources/x-nNoEqBC8k]]
-- [[concepts/energy-markets|Energy Markets]] - Auto-generated concept topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[concepts/energy-markets|Energy Markets]] - Energy markets encompass the supply, pricing, and geopolitical dynamics of oil and natural gas, which serve as critical inputs to global manufacturing, power generation, and eco... (sources: 7, degree: 5)
   - links: [[concepts/geopolitical-risk|Geopolitical Risk]], [[concepts/tariffs|Tariffs]], [[securities/crude-oil|Crude Oil]], [[securities/natural-gas|Natural Gas]], [[securities/spy|SPY]]
   - backing sources: [[sources/Co4TngkoAyg]], [[sources/JQ8yly937tE]], [[sources/QZUk0K75gu8]], [[sources/pxNgK4vNV1g]], [[sources/r_im_g8YbUA]], [[sources/xFkLh7gIGVo]], [[sources/xOMa0r5zaMg]]
-- [[concepts/event-driven|Event Driven]] - Auto-generated concept topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[concepts/event-driven|Event Driven]] - Event-driven trading in options involves positioning around specific catalysts such as IPOs, earnings reports, public health emergencies, or corporate actions (mergers, restruct... (sources: 7, degree: 5)
   - links: [[concepts/earnings-move|Earnings Move]], [[concepts/market-breadth|Market Breadth]], [[concepts/position-sizing|Position Sizing]], [[securities/gme|GME]], [[securities/spy|SPY]]
   - backing sources: [[sources/-RsvTzf4OxA]], [[sources/2Dv_fRuuTcc]], [[sources/I-RmKHjrD8g]], [[sources/JIliIgFYrmE]], [[sources/MXxvcoskXEo]], [[sources/O1ZjVHom2ms]], [[sources/PzWLuzDBN6k]]
-- [[concepts/forecasting|Forecasting]] - Auto-generated concept topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[concepts/forecasting|Forecasting]] - Forecasting in options trading refers to the attempt to predict future market moves, price levels, or volatility regimes to gain an edge in positioning. According to the channel... (sources: 7, degree: 5)
   - links: [[concepts/edge|Edge]], [[concepts/market-efficiency|Market Efficiency]], [[concepts/market-regimes|Market Regimes]], [[securities/btc|BTC]], [[securities/spy|SPY]]
   - backing sources: [[sources/3c6fsUwB1pw]], [[sources/A-swXl6Xf7M]], [[sources/Ao4evQT3dOU]], [[sources/KKOqF8h1n1s]], [[sources/O8mP2Ine9ZQ]], [[sources/g_AN2fWZiVI]], [[sources/oOyjSHIJSPs]]
-- [[concepts/ftd|Ftd]] - Auto-generated concept topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[concepts/ftd|Ftd]] - FTD (failure to deliver) refers to a situation where a seller fails to deliver securities by the settlement deadline, and in the context of GameStop analysis, FTDs are examined... (sources: 7, degree: 5)
   - links: [[concepts/market-maker|Market Maker]], [[concepts/naked-short-selling|Naked Short Selling]], [[concepts/order-flow|Order Flow]], [[concepts/risk-management|Risk Management]], [[securities/gme|GME]]
   - backing sources: [[sources/7tBAlmNokFI]], [[sources/Cfs_0qgho_E]], [[sources/H04ZDCN_KRI]], [[sources/PwoEFKVQvSQ]], [[sources/Rznj_dVN3kQ]], [[sources/XEk0OnFpybI]], [[sources/lx5bFeaCCZA]]
-- [[concepts/futures-vs-options|Futures Vs Options]] - Auto-generated concept topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[concepts/futures-vs-options|Futures Vs Options]] - Futures and options are distinct derivative instruments, each suited to different trading objectives and account sizes. Futures offer superior liquidity and direct leverage for... (sources: 7, degree: 5)
   - links: [[concepts/delta-one|Delta One]], [[concepts/edge|Edge]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/trading-plan|Trading Plan]]
   - backing sources: [[sources/4rxAcNFNeGI]], [[sources/ID-Kl0y1bxs]], [[sources/KKOqF8h1n1s]], [[sources/KjiJVPSFB4M]], [[sources/fNW7e0SdtG0]], [[sources/uoh-21YL1bY]], [[sources/vo_Syrhq1J0]]
-- [[concepts/hypothesis-testing|Hypothesis Testing]] - Auto-generated concept topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 4)
+- [[concepts/hypothesis-testing|Hypothesis Testing]] - Hypothesis testing in options trading is the disciplined process of formulating a clear, testable thesis about market behavior across four dimensions—direction, timeline, severi... (sources: 7, degree: 4)
   - links: [[concepts/backtesting|Backtesting]], [[concepts/edge|Edge]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/profit-mechanism|Profit Mechanism]]
   - backing sources: [[sources/0ZE8GpkICU4]], [[sources/7lb6sXnN-ak]], [[sources/L97-jrSmShs]], [[sources/VslGPMjCas4]], [[sources/lVLyj2yDCJc]], [[sources/vp6pJmcVgi8]], [[sources/y6xWA06K-74]]
-- [[concepts/institutional-ownership|Institutional Ownership]] - Auto-generated concept topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[concepts/institutional-ownership|Institutional Ownership]] - Institutional ownership refers to the proportion of a company's shares held by large institutional investors, which correlates with realized volatility patterns and influences m... (sources: 7, degree: 5)
   - links: [[concepts/price-action|Price Action]], [[concepts/technical-analysis|Technical Analysis]], [[concepts/volatility-clustering|Volatility Clustering]], [[securities/btc|BTC]], [[securities/gme|GME]]
   - backing sources: [[sources/5zUFVXiXFm0]], [[sources/MJofIJZRODo]], [[sources/R6e51kygV6Q]], [[sources/UJFQ2WJVM88]], [[sources/b6xLHRo383c]], [[sources/l7dnXXgna6c]], [[sources/oCEtRjtaaSw]]
-- [[concepts/law-of-large-numbers|Law Of Large Numbers]] - Auto-generated concept topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[concepts/law-of-large-numbers|Law Of Large Numbers]] - The law of large numbers in options trading refers to the principle that consistent profitability emerges from executing a defined, repeatable trading process across many indepe... (sources: 7, degree: 5)
   - links: [[concepts/market-regimes|Market Regimes]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[strategies/short-premium|Short Premium]]
   - backing sources: [[sources/78f9Q_gcfh0]], [[sources/B48KOikbTs8]], [[sources/V0YmZpEt1jY]], [[sources/cDIVSQmRYBQ]], [[sources/dW3sNQFVTgA]], [[sources/eyHC3-yuANg]], [[sources/mvxthWIMMTU]]
-- [[concepts/market-effects|Market Effects]] - Auto-generated concept topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[concepts/market-effects|Market Effects]] - Market effects are reliable, measurable patterns in how markets behave—such as drift, index rebalancing, put skew, or earnings volatility—that create exploitable profit opportun... (sources: 7, degree: 5)
   - links: [[concepts/backtesting|Backtesting]], [[concepts/delta|Delta]], [[concepts/edge|Edge]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/trading-psychology|Trading Psychology]]
   - backing sources: [[sources/7fC4wwgyEsI]], [[sources/CzBpxADkCk0]], [[sources/QQoAD4Mu-l8]], [[sources/VpPB0Bmpgpk]], [[sources/Yz5p1a0ArL0]], [[sources/cFgz1nHWr3E]], [[sources/txpBH7yZjGA]]
-- [[concepts/max-drawdown|Max Drawdown]] - Auto-generated concept topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[concepts/max-drawdown|Max Drawdown]] - Max drawdown is a key performance metric that measures the largest peak-to-trough decline in a trading account or strategy's value, used to quantify downside risk and evaluate w... (sources: 7, degree: 5)
   - links: [[concepts/market-regimes|Market Regimes]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/AV3h8wrR3aM]], [[sources/B48KOikbTs8]], [[sources/NCZNV1K2Tcw]], [[sources/QnEymZVCzbo]], [[sources/ZTW-rWkkelk]], [[sources/_LwonWbC7LE]], [[sources/kVvzt6IkUAE]]
-- [[concepts/monetary-policy|Monetary Policy]] - Auto-generated concept topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[concepts/monetary-policy|Monetary Policy]] - Monetary policy refers to central bank actions—particularly interest rate adjustments and control over money supply—that shape the investment environment and drive asset allocat... (sources: 7, degree: 5)
   - links: [[concepts/fed-put|Fed Put]], [[concepts/inflation|Inflation]], [[concepts/market-regimes|Market Regimes]], [[securities/gold|GOLD]], [[securities/spy|SPY]]
   - backing sources: [[sources/0BI8bymKOIE]], [[sources/EMzsNLXZ1bc]], [[sources/IosIPXnYxq0]], [[sources/dtpj5VcLnjg]], [[sources/iCPgZN_UxQw]], [[sources/mG1VfOVZp4E]], [[sources/pXR7cHrPOV4]]
-- [[concepts/net-highs-lows|Net Highs Lows]] - Auto-generated concept topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[concepts/net-highs-lows|Net Highs Lows]] - Net highs/lows is a breadth indicator that measures the number of stocks reaching new highs versus new lows within a market index, serving as a gauge of broad market participati... (sources: 7, degree: 5)
   - links: [[concepts/market-breadth|Market Breadth]], [[concepts/momentum|Momentum]], [[concepts/risk-management|Risk Management]], [[securities/qqq|QQQ]], [[securities/spy|SPY]]
   - backing sources: [[sources/78EjRKsvDQA]], [[sources/BrLsg_ig6uk]], [[sources/F7zoiv61ohM]], [[sources/LspC6Wx0QA8]], [[sources/TTX-FFvReOk]], [[sources/_oorJyxpFAI]], [[sources/xAjJoCprnn8]]
-- [[concepts/scaling-out|Scaling Out]] - Auto-generated concept topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[concepts/scaling-out|Scaling Out]] - Scaling out is a position management technique where traders systematically close portions of a profitable trade at predetermined price levels or profit targets rather than hold... (sources: 7, degree: 5)
   - links: [[concepts/covered-strangle|Covered Strangle]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/gme|GME]], [[strategies/short-premium|Short Premium]]
   - backing sources: [[sources/-XQGZSyM8O0]], [[sources/I-RmKHjrD8g]], [[sources/SlisA7fCzRM]], [[sources/XLlTYEvy-XA]], [[sources/YLxbPvt79ho]], [[sources/llpfG64TOCY]], [[sources/rKr1cIoI4kY]]
-- [[concepts/short-call|Short Call]] - Auto-generated concept topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[concepts/short-call|Short Call]] - A short call is an options position where a trader sells a call contract, obligating them to deliver shares at a predetermined strike price if the buyer exercises. In covered-ca... (sources: 7, degree: 5)
   - links: [[concepts/capped-upside|Capped Upside]], [[concepts/covered-call|Covered Call]], [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[strategies/covered-call|Covered Call]]
   - backing sources: [[sources/-CUgdXmtp5o]], [[sources/0gdMTgMhN-s]], [[sources/2T8T8EDhfpQ]], [[sources/QksHJGZX-jA]], [[sources/bWTNhXqP99g]], [[sources/ndooCqDykok]], [[sources/vys1T-VeyFg]]
-- [[concepts/value-investing|Value Investing]] - Auto-generated concept topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[concepts/value-investing|Value Investing]] - Value investing is an approach focused on identifying undervalued assets based on fundamental analysis—such as cash generation, balance-sheet strength, and intrinsic worth—rathe... (sources: 7, degree: 5)
   - links: [[concepts/market-efficiency|Market Efficiency]], [[concepts/momentum|Momentum]], [[concepts/position-sizing|Position Sizing]], [[concepts/price-action|Price Action]], [[concepts/technical-analysis|Technical Analysis]]
   - backing sources: [[sources/NRNqMP0AULs]], [[sources/_t53iptQdcY]], [[sources/y5-f8abIDWs]], [[sources/yZrRPBztMOA]], [[sources/yjH-ap6hG0Q]], [[sources/zGjOGsRcxzo]], [[sources/zQHTlfwJKDo]]
-- [[concepts/beta|Beta]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[concepts/allocation|Allocation]] - Allocation in options trading refers to the framework for deploying capital across positions and managing how much of available funds are committed to active trades versus held... (sources: 6, degree: 5)
+  - links: [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/covered-strangle|Covered Strangle]], [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]]
+  - backing sources: [[sources/Lp-SPerQHgY]], [[sources/PRim4F0N4lY]], [[sources/YtOObiXC6E8]], [[sources/cz-aR_GUcXw]], [[sources/ju8yEQbi_HU]], [[sources/w8z381jhxd4]]
+- [[concepts/beta|Beta]] - Beta is a measure of an asset's price movement relative to the broader market, used in options trading to construct portfolios with predictable risk characteristics and return p... (sources: 6, degree: 5)
   - links: [[concepts/correlation|Correlation]], [[concepts/portfolio-first|Portfolio First]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/Ig1z2u_lK4k]], [[sources/S1f1zIfXVh8]], [[sources/_LwonWbC7LE]], [[sources/dW3sNQFVTgA]], [[sources/mDPYNyp23y4]], [[sources/qZCwehXEWys]]
-- [[concepts/bond-vigilantes|Bond Vigilantes]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[concepts/bond-vigilantes|Bond Vigilantes]] - Bond vigilantes are market participants—primarily bond traders and investors—who enforce discipline on government fiscal and monetary policy by selling bonds when they perceive... (sources: 6, degree: 5)
   - links: [[concepts/market-regimes|Market Regimes]], [[concepts/recession|Recession]], [[securities/crude-oil|Crude Oil]], [[securities/nasdaq|Nasdaq]], [[securities/spy|SPY]]
   - backing sources: [[sources/-NzEb1zc1bw]], [[sources/6Sp4eF9ahW8]], [[sources/GVrANU08cAU]], [[sources/O1ZjVHom2ms]], [[sources/QZUk0K75gu8]], [[sources/dtpj5VcLnjg]]
-- [[concepts/box-spread|Box Spread]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[concepts/box-spread|Box Spread]] - A box spread is a financing strategy that combines a call spread and a put spread on the same strike pair to borrow or lend capital at rates approximating the risk-free rate, ma... (sources: 6, degree: 5)
   - links: [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/position-sizing|Position Sizing]], [[securities/spx|SPX]], [[strategies/box-spread|Box Spread]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/BTU71jbUgDo]], [[sources/GK9EHx-NZ_M]], [[sources/SC9KjFkDXco]], [[sources/WWVsuoWX8mU]], [[sources/kVvzt6IkUAE]], [[sources/kx1yCEzrJ_M]]
-- [[concepts/break-even|Break Even]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[concepts/break-even|Break Even]] - Break-even in options trading refers to the price level at which a trade neither profits nor loses, determined by the strike price adjusted for the premium paid or received. Und... (sources: 6, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/extrinsic-value|Extrinsic Value]], [[concepts/theta-decay|Theta Decay]], [[securities/spy|SPY]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/2lvTJ6_Oc9E]], [[sources/KnORuwpxylI]], [[sources/LgQlkikHS4k]], [[sources/SAAznQCMSco]], [[sources/gIadiCaH2JM]], [[sources/tEfprIdZce0]]
-- [[concepts/confidence|Confidence]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[concepts/capital-allocation|Capital Allocation]] - Capital allocation in options trading refers to how traders distribute their trading capital across different strategies, positions, and risk levels to optimize returns while ma... (sources: 6, degree: 0)
+  - links: none
+  - backing sources: [[sources/Lp-SPerQHgY]], [[sources/PxjxVC--8mQ]], [[sources/TigQwIC0PIU]], [[sources/UR9e8ikROyc]], [[sources/Vnj-VSa7XF8]], [[sources/m566Ysll78w]]
+- [[concepts/confidence|Confidence]] - Confidence in options trading is built through demonstrated competence rather than motivational thinking—it emerges from mastering foundational concepts like profit mechanisms,... (sources: 6, degree: 5)
   - links: [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[concepts/trading-plan|Trading Plan]], [[concepts/trading-psychology|Trading Psychology]]
   - backing sources: [[sources/DGMPiN0zvGk]], [[sources/VpPB0Bmpgpk]], [[sources/h2D2trUqgDI]], [[sources/jcfgHCLBLzI]], [[sources/llug0_5XK9Q]], [[sources/vnPwS5jRTtM]]
-- [[concepts/delayed-gratification|Delayed Gratification]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[concepts/consistency|Consistency]] - Consistency in options trading refers to the disciplined, repeated execution of a well-defined trading process and risk-management framework rather than chasing individual trade... (sources: 6, degree: 5)
+  - links: [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[concepts/trading-psychology|Trading Psychology]]
+  - backing sources: [[sources/2t3Nv-63Jtc]], [[sources/A1el6GdNjOA]], [[sources/ErVmL1U0qpU]], [[sources/IFtkGhU5FjA]], [[sources/TigQwIC0PIU]], [[sources/joRW8VU2MYs]]
+- [[concepts/delayed-gratification|Delayed Gratification]] - Delayed gratification is the foundational principle of prioritizing long-term wealth accumulation over immediate consumption, particularly by maintaining discipline with savings... (sources: 6, degree: 5)
   - links: [[concepts/compound-annual-growth-rate|Compound Annual Growth Rate]], [[concepts/dollar-cost-averaging|Dollar Cost Averaging]], [[concepts/expected-return|Expected Return]], [[concepts/risk-tolerance|Risk Tolerance]], [[strategies/buy-and-hold|Buy And Hold]]
   - backing sources: [[sources/Ov-eX7b7Ai0]], [[sources/bdXfCa4LSh4]], [[sources/gxFU8o-ELjc]], [[sources/h01cM9oHZ5o]], [[sources/h6XH1IQRhC0]], [[sources/w-WUcnosQ0c]]
-- [[concepts/delta-one|Delta One]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 6)
+- [[concepts/delta-decay|Delta Decay]] - Delta decay, also called charm, is a second-order Greek that measures how an option's delta changes with the passage of time rather than underlying price movement. As expiration... (sources: 6, degree: 5)
+  - links: [[concepts/charm|Charm]], [[concepts/days-to-expiration|Days To Expiration]], [[concepts/delta|Delta]], [[concepts/gamma|Gamma]], [[concepts/moneyness|Moneyness]]
+  - backing sources: [[sources/0a1UROsFf_A]], [[sources/0fty1k3IGgY]], [[sources/1kGksRBt2aA]], [[sources/4zx4HK1i4RQ]], [[sources/mrHeOqzLZNo]], [[sources/vpcmDvmrwYI]]
+- [[concepts/delta-one|Delta One]] - Delta One refers to instruments or positions that move dollar-for-dollar with an underlying asset, meaning they have a delta of approximately one and behave like direct exposure... (sources: 6, degree: 6)
   - links: [[concepts/futures-vs-options|Futures Vs Options]], [[concepts/leverage|Leverage]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/trading-plan|Trading Plan]], [[strategies/momentum|Momentum]]
   - backing sources: [[sources/3JV19RH54eQ]], [[sources/ID-Kl0y1bxs]], [[sources/KKOqF8h1n1s]], [[sources/W8zDptG52a8]], [[sources/apJP5YqqIXg]], [[sources/fNW7e0SdtG0]]
-- [[concepts/dilution|Dilution]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[concepts/dilution|Dilution]] - Dilution refers to the reduction in ownership percentage and earnings per share that existing shareholders experience when a company issues additional shares, typically through... (sources: 6, degree: 5)
   - links: [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/naked-short-selling|Naked Short Selling]], [[concepts/volatility-skew|Volatility Skew]], [[securities/ebay|EBAY]], [[securities/gme|GME]]
   - backing sources: [[sources/7mlZTr3xeHA]], [[sources/UR9e8ikROyc]], [[sources/asz1odhQh7w]], [[sources/lQ1-aB9c7p8]], [[sources/oU0273VG4oE]], [[sources/qc0nNebirm0]]
-- [[concepts/direction|Direction]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[concepts/direction|Direction]] - Direction is the trader's hypothesis about whether an underlying asset will move up or down, and it serves as the foundational profit mechanism in options trading—more primary t... (sources: 6, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/expected-move|Expected Move]], [[concepts/profit-mechanism|Profit Mechanism]], [[strategies/long-call|Long Call]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/0ZE8GpkICU4]], [[sources/7wMdBbbfWZg]], [[sources/C_YEdo1Qlk8]], [[sources/F9GDgxBxBXI]], [[sources/NziP38PYxY4]], [[sources/xD5jg8FCuF0]]
-- [[concepts/expectancy|Expectancy]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[concepts/directional-trading|Directional Trading]] - Directional trading in options involves taking a position based on a predicted move in the underlying asset's price, but success depends critically on how the Greeks—particularl... (sources: 6, degree: 4)
+  - links: [[concepts/position-sizing|Position Sizing]], [[strategies/directional-trading|Directional Trading]], [[strategies/long-call|Long Call]], [[strategies/short-put|Short Put]]
+  - backing sources: [[sources/1fqO9v4SLeI]], [[sources/4zx4HK1i4RQ]], [[sources/Lp-SPerQHgY]], [[sources/P7vZRYmsOq8]], [[sources/eZv7SNIMbLs]], [[sources/twrjSknq4OY]]
+- [[concepts/expectancy|Expectancy]] - Expectancy is a measure of how a trading strategy performs across a large sample size of trades, revealing whether the strategy is genuinely profitable over time rather than rel... (sources: 6, degree: 5)
   - links: [[concepts/expected-value|Expected Value]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/win-rate-vs-profitability|Win Rate Vs Profitability]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/1jDrPx6lOgM]], [[sources/EkAxyxtD0hc]], [[sources/H87XHR8ErsE]], [[sources/fzWYHaO3za4]], [[sources/hPcJPFpJ_lM]], [[sources/luhrNt11h0o]]
 - [[concepts/implied-volatility|Implied Volatility (IV)]] - Implied volatility is the market's forward estimate of how much an underlying will move, backed out of option prices. In the Outlier corpus IV is treated less as a number to pre... (sources: 6, degree: 10)
   - links: [[concepts/delta|Delta]], [[concepts/extrinsic-value|Extrinsic Value]], [[concepts/gamma|Gamma]], [[concepts/implied-volatility-percentile|Implied Volatility Percentile]], [[concepts/implied-volatility-rank|Implied Volatility Rank]], [[concepts/vega|Vega]], [[concepts/volatility-risk-premium|Volatility Risk Premium (VRP)]], [[concepts/volatility-term-structure|Volatility Term Structure]], 2 more
   - backing sources: [[sources/sk8rQ8rfn3s]], [[sources/AJP8M8DQ_1U]], [[sources/kvzQJ3wFaZs]], [[sources/1rqLJW1nK40]], [[sources/Ao4evQT3dOU]], [[sources/AoHUcyVh7NY]]
-- [[concepts/interest-rates|Interest Rates]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[concepts/interest-rates|Interest Rates]] - Interest rates serve as a foundational driver of asset valuations and market cycles in the options-trading framework discussed across these videos. The channel emphasizes that s... (sources: 6, degree: 5)
   - links: [[concepts/fed-put|Fed Put]], [[concepts/inflation|Inflation]], [[concepts/market-regimes|Market Regimes]], [[securities/nasdaq|Nasdaq]], [[securities/spy|SPY]]
   - backing sources: [[sources/6CZMjMvG4y4]], [[sources/IosIPXnYxq0]], [[sources/Nfuui1cwi1w]], [[sources/PxjxVC--8mQ]], [[sources/mG1VfOVZp4E]], [[sources/vT5zl_KGnVo]]
-- [[concepts/number-of-decisions|Number Of Decisions]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[concepts/number-of-decisions|Number Of Decisions]] - Number of Decisions refers to the principle that trading success is fundamentally driven by the volume of decisions made over time rather than the quality of any individual trad... (sources: 6, degree: 5)
   - links: [[concepts/edge|Edge]], [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/3c6fsUwB1pw]], [[sources/80QGX7wPlJk]], [[sources/IBI4jiNvxJA]], [[sources/OenKyq1bdeM]], [[sources/cDIVSQmRYBQ]], [[sources/eHurZBXO5ck]]
-- [[concepts/ratio-call-diagonal|Ratio Call Diagonal]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[concepts/options-flow|Options Flow]] - Options flow refers to the volume and positioning of options contracts being traded, used by traders to gauge market sentiment and identify potential price moves or reversals. A... (sources: 6, degree: 5)
+  - links: [[concepts/market-maker|Market Maker]], [[concepts/position-sizing|Position Sizing]], [[concepts/volume-analysis|Volume Analysis]], [[securities/gme|GME]], [[strategies/short-premium|Short Premium]]
+  - backing sources: [[sources/3J1_0s0qHPU]], [[sources/FuuVCSD5QVc]], [[sources/Lp-SPerQHgY]], [[sources/b6xLHRo383c]], [[sources/j4-v_JEq8Sw]], [[sources/ok3KdqH6fNM]]
+- [[concepts/overconfidence|Overconfidence]] - Overconfidence is a core psychological failure mode in options trading where traders operate with unvalidated confidence in their strategies or market understanding, often mista... (sources: 6, degree: 5)
+  - links: [[concepts/disposition-effect|Disposition Effect]], [[concepts/edge|Edge]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[concepts/trading-plan|Trading Plan]]
+  - backing sources: [[sources/AowBcLl1u80]], [[sources/CzBpxADkCk0]], [[sources/Dc8Vjr4pZ84]], [[sources/kaYgLPcybfA]], [[sources/vnPwS5jRTtM]], [[sources/yZrRPBztMOA]]
+- [[concepts/ratio-call-diagonal|Ratio Call Diagonal]] - A ratio call diagonal is a directional options strategy that combines a long call at one expiration with short calls at a nearer expiration, rolled higher as the underlying move... (sources: 6, degree: 5)
   - links: [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[strategies/ratio-call-diagonal|Ratio Call Diagonal]]
   - backing sources: [[sources/ELLig97y0io]], [[sources/NV9OiepF6M0]], [[sources/P7vZRYmsOq8]], [[sources/U0u1rT_3Q6U]], [[sources/oeBzpxbNqsw]], [[sources/who9YWwLSNg]]
-- [[concepts/ratio-write|Ratio Write]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[concepts/ratio-write|Ratio Write]] - A ratio write is an options strategy where a trader sells a specific number of call options against a smaller number of long shares or underlying positions, with the ratio deter... (sources: 6, degree: 5)
   - links: [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[strategies/covered-call|Covered Call]], [[strategies/ratio-call-diagonal|Ratio Call Diagonal]]
   - backing sources: [[sources/RRBduDJPEt8]], [[sources/eAtljnDwFZY]], [[sources/j-ZxrbKG9SE]], [[sources/r_B4edd6-eU]], [[sources/wuYfqg15jHE]], [[sources/zmnG40atyAc]]
-- [[concepts/relative-strength|Relative Strength]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[concepts/relative-strength|Relative Strength]] - Relative strength in options trading refers to analyzing how a stock or sector performs compared to broader market indices or peer groups to identify leadership and confirm mark... (sources: 6, degree: 5)
   - links: [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/market-breadth|Market Breadth]], [[concepts/market-regimes|Market Regimes]], [[concepts/price-action|Price Action]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/2wlur2p61Mg]], [[sources/B3SW20MSNbM]], [[sources/BrLsg_ig6uk]], [[sources/Dj0jI9ykCeU]], [[sources/GVoSqEj3k9I]], [[sources/WglROZAI_SI]]
-- [[concepts/rsi|Rsi]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[concepts/rsi|Rsi]] - RSI (Relative Strength Index) is a technical momentum indicator used to identify overbought and oversold conditions on price charts across different timeframes. In the channel's... (sources: 6, degree: 5)
   - links: [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/position-sizing|Position Sizing]], [[concepts/support-and-resistance|Support And Resistance]], [[concepts/technical-analysis|Technical Analysis]], [[securities/gme|GME]]
   - backing sources: [[sources/783T-aRhwnI]], [[sources/DB6bc4LmKM4]], [[sources/X_uVb-PoRnM]], [[sources/hRUfZInB234]], [[sources/o3Z1aDmpQTk]], [[sources/quPgsIfyIgM]]
-- [[concepts/seasonality|Seasonality]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[concepts/seasonality|Seasonality]] - Seasonality refers to recurring patterns in market behavior that occur at predictable times of year, which traders can identify and exploit for edge discovery in options trading... (sources: 6, degree: 5)
   - links: [[concepts/backtesting|Backtesting]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[concepts/trading-psychology|Trading Psychology]]
   - backing sources: [[sources/CZEXCE_HR60]], [[sources/F8Mpls7PWfs]], [[sources/SNVvZCtKt0Y]], [[sources/apJP5YqqIXg]], [[sources/fNW7e0SdtG0]], [[sources/jcfgHCLBLzI]]
-- [[concepts/settlement|Settlement]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[concepts/self-awareness|Self Awareness]] - Self-awareness in options trading refers to a trader's honest understanding of their natural risk tolerance, psychological biases, behavioral weaknesses, and execution patterns—... (sources: 6, degree: 5)
+  - links: [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[concepts/trading-psychology|Trading Psychology]]
+  - backing sources: [[sources/1jDrPx6lOgM]], [[sources/BEsgfcSxGlc]], [[sources/Lp-SPerQHgY]], [[sources/llug0_5XK9Q]], [[sources/o3Z1aDmpQTk]], [[sources/vnPwS5jRTtM]]
+- [[concepts/settlement|Settlement]] - Settlement refers to the process and timeline by which options and other derivative contracts are finalized and obligations are fulfilled, governed by regulatory rules such as R... (sources: 6, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/gamma|Gamma]], [[concepts/leverage|Leverage]], [[concepts/risk-management|Risk Management]], [[securities/gme|GME]]
   - backing sources: [[sources/Cfs_0qgho_E]], [[sources/EkAxyxtD0hc]], [[sources/LuhAOKk3rjI]], [[sources/PwoEFKVQvSQ]], [[sources/Sue4LFwVQvU]], [[sources/fNW7e0SdtG0]]
-- [[concepts/soft-landing|Soft Landing]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[concepts/sharpe-ratio|Sharpe Ratio]] - The Sharpe ratio is a key performance metric used to evaluate whether a trading strategy's returns adequately compensate for the risk taken, calculated as return divided by vola... (sources: 6, degree: 5)
+  - links: [[concepts/backtesting|Backtesting]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
+  - backing sources: [[sources/AoiTtWoNKv0]], [[sources/B48KOikbTs8]], [[sources/Lp-SPerQHgY]], [[sources/ZTW-rWkkelk]], [[sources/ayqbZirKPkM]], [[sources/jlhuKAIenw0]]
+- [[concepts/soft-landing|Soft Landing]] - A soft landing refers to an economic scenario in which the Federal Reserve successfully slows inflation and moderates growth without triggering a recession, typically supported... (sources: 6, degree: 5)
   - links: [[concepts/fed-put|Fed Put]], [[concepts/inflation|Inflation]], [[concepts/market-regimes|Market Regimes]], [[concepts/recession|Recession]], [[securities/spy|SPY]]
   - backing sources: [[sources/2yu8jSYKuH4]], [[sources/6CZMjMvG4y4]], [[sources/HuQJywyMaT0]], [[sources/MJdXttzj07k]], [[sources/QZUk0K75gu8]], [[sources/qN1fw2Ckkd8]]
-- [[concepts/stock-split|Stock Split]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 4)
+- [[concepts/stock-split|Stock Split]] - A stock split is a corporate action in which a company increases the number of outstanding shares while proportionally reducing the share price, typically to improve accessibili... (sources: 6, degree: 4)
   - links: [[concepts/naked-short-selling|Naked Short Selling]], [[concepts/payment-for-order-flow|Payment For Order Flow]], [[concepts/short-squeeze|Short Squeeze]], [[securities/gme|GME]]
   - backing sources: [[sources/DYwzm8fAxM4]], [[sources/IsiLvT-L3vk]], [[sources/KKOqF8h1n1s]], [[sources/f4x1NncCFX0]], [[sources/j-bhFu_dQxM]], [[sources/xqxormeAmJA]]
-- [[concepts/volatility-drag|Volatility Drag]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[concepts/trade-management|Trade Management]] - Trade management is the systematic approach to monitoring, adjusting, and closing positions after entry, and its effectiveness depends entirely on aligning decisions with the sp... (sources: 6, degree: 3)
+  - links: [[concepts/position-sizing|Position Sizing]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/risk-management|Risk Management]]
+  - backing sources: [[sources/0twEAL_5pkI]], [[sources/3OzLFRmYpOY]], [[sources/7fC4wwgyEsI]], [[sources/Lp-SPerQHgY]], [[sources/YLxbPvt79ho]], [[sources/dYfq58DkY5c]]
+- [[concepts/vertical-spread|Vertical Spread]] - A vertical spread is an options strategy that combines long and short positions in the same underlying to neutralize Greek exposure and define maximum risk, with the spread's wi... (sources: 6, degree: 5)
+  - links: [[concepts/assignment|Assignment]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[strategies/credit-spread|Credit Spread]], [[strategies/ratio-call-diagonal|Ratio Call Diagonal]]
+  - backing sources: [[sources/DPveyyrHPNY]], [[sources/EkAxyxtD0hc]], [[sources/Lp-SPerQHgY]], [[sources/TvMC14yH7ck]], [[sources/felr_mdjCKI]], [[sources/i7eRB3QpmQE]]
+- [[concepts/vertical-spreads|Vertical Spreads]] - Vertical spreads are directional options strategies that combine a long and short option of the same type at different strike prices, offering defined risk and reduced capital r... (sources: 6, degree: 3)
+  - links: [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/position-sizing|Position Sizing]], [[securities/spy|SPY]]
+  - backing sources: [[sources/8FOQv9UHnsc]], [[sources/ELLig97y0io]], [[sources/Lp-SPerQHgY]], [[sources/O1ZjVHom2ms]], [[sources/PGmVCL_kf44]], [[sources/a4W-VNEdyJM]]
+- [[concepts/volatility-contraction|Volatility Contraction]] - Volatility contraction occurs when implied volatility decreases, typically after a significant market event or earnings announcement resolves uncertainty. Traders exploit volati... (sources: 6, degree: 2)
+  - links: [[concepts/delta|Delta]], [[concepts/risk-management|Risk Management]]
+  - backing sources: [[sources/1fqO9v4SLeI]], [[sources/HcWY9Rqcssk]], [[sources/Lp-SPerQHgY]], [[sources/WN3YZaMHZYw]], [[sources/fG_WirPbFrE]], [[sources/ov3HItjq5AU]]
+- [[concepts/volatility-drag|Volatility Drag]] - Volatility drag refers to the erosion of returns in leveraged or compounded positions due to the mathematical effect of volatility on rebalancing and price recovery. The concept... (sources: 6, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[securities/qqq|QQQ]], [[securities/tqqq|TQQQ]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/Ao4evQT3dOU]], [[sources/FPLK8vS5ono]], [[sources/KKOqF8h1n1s]], [[sources/O8mP2Ine9ZQ]], [[sources/iwQmDPafTCc]], [[sources/pCyYzVCMciI]]
 - [[concepts/volatility-risk-premium|Volatility Risk Premium (VRP)]] - The volatility risk premium is the tendency for implied volatility to be priced richer than the volatility that is ultimately realized. Option sellers are paid this spread as co... (sources: 6, degree: 12)
   - links: [[concepts/delta|Delta]], [[concepts/edge|Edge]], [[concepts/implied-volatility|Implied Volatility (IV)]], [[concepts/implied-volatility-rank|Implied Volatility Rank]], [[concepts/position-sizing|Position Sizing]], [[concepts/realized-volatility|Realized Volatility]], [[people/euan-sinclair|Euan Sinclair]], [[securities/spx|SPX]], 4 more
   - backing sources: [[sources/AJP8M8DQ_1U]], [[sources/1rqLJW1nK40]], [[sources/kvzQJ3wFaZs]], [[sources/Ao4evQT3dOU]], [[sources/6vQeTS9cyk0]], [[sources/AoHUcyVh7NY]]
-- [[concepts/volatility-smile|Volatility Smile]] - Auto-generated concept topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[concepts/volatility-smile|Volatility Smile]] - A volatility smile is a pattern in an options chain where implied volatility is higher at both out-of-the-money and in-the-money strikes compared to at-the-money strikes, creati... (sources: 6, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/expected-move|Expected Move]], [[concepts/moneyness|Moneyness]], [[concepts/volatility-skew|Volatility Skew]], [[securities/gme|GME]]
   - backing sources: [[sources/0qcfwt6wf2I]], [[sources/DRzKRGizkXw]], [[sources/FPLK8vS5ono]], [[sources/HM1wtbKEDzw]], [[sources/pw7kSyyX_BE]], [[sources/sMmB3FoCwtI]]
 
 ### Strategies
 
-- [[strategies/short-premium|Short Premium]] - Auto-generated strategy topic — discussed across 228 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 228, degree: 29)
-  - links: [[concepts/call-skew|Call Skew]], [[concepts/correlation|Correlation]], [[concepts/delta|Delta]], [[concepts/delta-hedging|Delta Hedging]], [[concepts/delta-neutral|Delta Neutral]], [[concepts/earnings-vol-play|Earnings Vol Play]], [[concepts/expected-value|Expected Value]], [[concepts/high-implied-volatility|High Implied Volatility]], 21 more
+- [[strategies/short-premium|Short Premium]] - Short premium is an options strategy in which a trader sells options (puts, calls, or combinations like straddles) to collect upfront premium, betting that the underlying price... (sources: 228, degree: 30)
+  - links: [[concepts/call-skew|Call Skew]], [[concepts/correlation|Correlation]], [[concepts/delta|Delta]], [[concepts/delta-hedging|Delta Hedging]], [[concepts/delta-neutral|Delta Neutral]], [[concepts/earnings-vol-play|Earnings Vol Play]], [[concepts/expected-value|Expected Value]], [[concepts/high-implied-volatility|High Implied Volatility]], 22 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-qSV5WZNlP4]], [[sources/05aJUfUKE5Q]], [[sources/0iZJfIu3Nac]], [[sources/0phfdNnT3Q0]], [[sources/1G-h4tqfQEM]], [[sources/26vVCJY9t00]], [[sources/2XS6kMnDUT4]], [[sources/2jG5SD-3F0w]], [[sources/2lvTJ6_Oc9E]], 218 more
-- [[strategies/short-put|Short Put]] - Auto-generated strategy topic — discussed across 196 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 196, degree: 40)
-  - links: [[concepts/annualized-return|Annualized Return]], [[concepts/assignment|Assignment]], [[concepts/basis-adjustment|Basis Adjustment]], [[concepts/box-spread|Box Spread]], [[concepts/break-even|Break Even]], [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/cost-basis|Cost Basis]], [[concepts/covered-call|Covered Call]], 32 more
+- [[strategies/short-put|Short Put]] - A short put is an options-selling strategy where a trader sells a put option to collect premium, profiting if the underlying stock stays above the strike price at expiration. Th... (sources: 196, degree: 41)
+  - links: [[concepts/annualized-return|Annualized Return]], [[concepts/assignment|Assignment]], [[concepts/basis-adjustment|Basis Adjustment]], [[concepts/box-spread|Box Spread]], [[concepts/break-even|Break Even]], [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/cost-basis|Cost Basis]], [[concepts/covered-call|Covered Call]], 33 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-MQ7kNM0dtI]], [[sources/-M_lC4RVmvM]], [[sources/-XQGZSyM8O0]], [[sources/-Zqys05mhkw]], [[sources/0-BUA66HVWg]], [[sources/04CvwImyHTA]], [[sources/05PKCIAe4_0]], [[sources/0fty1k3IGgY]], [[sources/0ocJTw3Tz9U]], 186 more
-- [[strategies/long-call|Long Call]] - Auto-generated strategy topic — discussed across 180 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 180, degree: 18)
-  - links: [[concepts/catalyst|Catalyst]], [[concepts/delta|Delta]], [[concepts/direction|Direction]], [[concepts/gamma-ramp|Gamma Ramp]], [[concepts/intrinsic-value|Intrinsic Value]], [[concepts/leverage|Leverage]], [[concepts/moneyness|Moneyness]], [[concepts/options-chain|Options Chain]], 10 more
+- [[strategies/long-call|Long Call]] - A long call is a directional options strategy where a trader buys a call option to profit from an expected price increase, offering unlimited upside potential with defined risk... (sources: 180, degree: 19)
+  - links: [[concepts/catalyst|Catalyst]], [[concepts/delta|Delta]], [[concepts/direction|Direction]], [[concepts/directional-trading|Directional Trading]], [[concepts/gamma-ramp|Gamma Ramp]], [[concepts/intrinsic-value|Intrinsic Value]], [[concepts/leverage|Leverage]], [[concepts/moneyness|Moneyness]], 11 more
   - backing sources: [[sources/-MQ7kNM0dtI]], [[sources/-jJkuhl2wyY]], [[sources/05PKCIAe4_0]], [[sources/0ZE8GpkICU4]], [[sources/0fty1k3IGgY]], [[sources/0iZJfIu3Nac]], [[sources/0kXY1hY--Ww]], [[sources/0quAC-m-NpM]], [[sources/1axDClx9vWQ]], [[sources/1rqLJW1nK40]], 170 more
-- [[strategies/covered-call|Covered Call]] - Auto-generated strategy topic — discussed across 151 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 151, degree: 19)
+- [[strategies/covered-call|Covered Call]] - A covered call is constructed by holding 100 shares of stock while selling one short call against that position, creating a capped-upside strategy that reaches maximum profit wh... (sources: 151, degree: 19)
   - links: [[concepts/assignment|Assignment]], [[concepts/capped-upside|Capped Upside]], [[concepts/covered-call|Covered Call]], [[concepts/delta|Delta]], [[concepts/delta-selection|Delta Selection]], [[concepts/opportunity-cost|Opportunity Cost]], [[concepts/position-sizing|Position Sizing]], [[concepts/premium|Premium]], 11 more
   - backing sources: [[sources/-CUgdXmtp5o]], [[sources/-M_lC4RVmvM]], [[sources/-jJkuhl2wyY]], [[sources/-qSV5WZNlP4]], [[sources/0gdMTgMhN-s]], [[sources/1exwniuHqP8]], [[sources/1rqLJW1nK40]], [[sources/2T8T8EDhfpQ]], [[sources/2XS6kMnDUT4]], [[sources/2jG5SD-3F0w]], 141 more
-- [[strategies/ratio-call-diagonal|Ratio Call Diagonal]] - Auto-generated strategy topic — discussed across 133 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 133, degree: 16)
-  - links: [[concepts/defined-risk|Defined Risk]], [[concepts/delta|Delta]], [[concepts/delta-selection|Delta Selection]], [[concepts/position-sizing|Position Sizing]], [[concepts/ratio-call-diagonal|Ratio Call Diagonal]], [[concepts/ratio-write|Ratio Write]], [[concepts/risk-management|Risk Management]], [[securities/bac|BAC]], 8 more
+- [[strategies/ratio-call-diagonal|Ratio Call Diagonal]] - A ratio call diagonal is a directional options strategy that pairs long-dated call options with shorter-dated short calls at different strikes to capture upside while managing r... (sources: 133, degree: 17)
+  - links: [[concepts/defined-risk|Defined Risk]], [[concepts/delta|Delta]], [[concepts/delta-selection|Delta Selection]], [[concepts/position-sizing|Position Sizing]], [[concepts/ratio-call-diagonal|Ratio Call Diagonal]], [[concepts/ratio-write|Ratio Write]], [[concepts/risk-management|Risk Management]], [[concepts/vertical-spread|Vertical Spread]], 9 more
   - backing sources: [[sources/-CUgdXmtp5o]], [[sources/0iZJfIu3Nac]], [[sources/1axDClx9vWQ]], [[sources/1kGksRBt2aA]], [[sources/1rqLJW1nK40]], [[sources/2Dv_fRuuTcc]], [[sources/2TdIx_Bn3BY]], [[sources/2jG5SD-3F0w]], [[sources/3STDqRx1o8w]], [[sources/4IZhG3hKW60]], 123 more
-- [[strategies/short-strangle|Short Strangle]] - Auto-generated strategy topic — discussed across 105 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 105, degree: 10)
+- [[strategies/short-strangle|Short Strangle]] - A short strangle is a premium-selling strategy that involves simultaneously selling an out-of-the-money put and an out-of-the-money call, profiting from time decay and realized... (sources: 105, degree: 10)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/short-volatility|Short Volatility]], [[concepts/tail-risk|Tail Risk]], [[concepts/volatility-risk-premium|Volatility Risk Premium (VRP)]], [[securities/spx|SPX]], [[strategies/iron-condor|Iron Condor]], 2 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/0phfdNnT3Q0]], [[sources/2Dv_fRuuTcc]], [[sources/2TdIx_Bn3BY]], [[sources/3_VUjiChU4o]], [[sources/58lYHJ_XDaY]], [[sources/5Tc9L4TvPR8]], [[sources/6SyrfdpEsy0]], [[sources/6WloCMY-aTw]], [[sources/72LcrOF6BHk]], 95 more
-- [[strategies/short-straddle|Short Straddle]] - Auto-generated strategy topic — discussed across 99 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 99, degree: 7)
+- [[strategies/short-straddle|Short Straddle]] - A short straddle is a short-premium strategy that sells both a call and a put at the same strike price, profiting from time decay and realized volatility staying below implied v... (sources: 99, degree: 7)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/straddle-price|Straddle Price]], [[securities/spx|SPX]], [[strategies/long-straddle|Long Straddle]], [[strategies/short-strangle|Short Strangle]]
   - backing sources: [[sources/0phfdNnT3Q0]], [[sources/1G-h4tqfQEM]], [[sources/2Dv_fRuuTcc]], [[sources/2TdIx_Bn3BY]], [[sources/3_VUjiChU4o]], [[sources/3hrdUyJ-KmE]], [[sources/58lYHJ_XDaY]], [[sources/5G0_P4igVWQ]], [[sources/5Tc9L4TvPR8]], [[sources/6SyrfdpEsy0]], 89 more
-- [[strategies/short-volatility|Short Volatility]] - Auto-generated strategy topic — discussed across 85 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 85, degree: 6)
+- [[strategies/short-volatility|Short Volatility]] - Short volatility is a premium-selling strategy where traders profit from the decay of implied volatility or the passage of time, typically by selling calls, puts, or spreads whe... (sources: 85, degree: 6)
   - links: [[concepts/market-efficiency|Market Efficiency]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/ndx|NDX]], [[securities/spy|SPY]], [[strategies/short-premium|Short Premium]]
   - backing sources: [[sources/-LgTPBfGngc]], [[sources/0qXakHvgYiQ]], [[sources/2xpqAj677Cc]], [[sources/4i11aVZeGxQ]], [[sources/4sYY-sUtlGQ]], [[sources/5K0UEOLDP5k]], [[sources/5YK9YbXMgMM]], [[sources/6UzoviSHtbk]], [[sources/6_FMAL6c_oM]], [[sources/6vQeTS9cyk0]], 75 more
-- [[strategies/momentum|Momentum]] - Auto-generated strategy topic — discussed across 76 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 76, degree: 6)
+- [[strategies/momentum|Momentum]] - Momentum in options trading refers to the repeatable pattern of price movement following specific catalysts—such as earnings announcements (post-earnings drift), breakouts above... (sources: 76, degree: 6)
   - links: [[concepts/delta-one|Delta One]], [[concepts/momentum|Momentum]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/0iZJfIu3Nac]], [[sources/1ILbgbgxl3A]], [[sources/1N1GFFpS9I8]], [[sources/1jDrPx6lOgM]], [[sources/2t3Nv-63Jtc]], [[sources/3hrdUyJ-KmE]], [[sources/4Ksbe6bpV8o]], [[sources/4NTh_FrF-0Y]], [[sources/6CZMjMvG4y4]], [[sources/7tBAlmNokFI]], 66 more
-- [[strategies/zero-dte|Zero Dte]] - Auto-generated strategy topic — discussed across 74 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 74, degree: 7)
+- [[strategies/zero-dte|Zero Dte]] - Zero-DTE (same-day expiration) options are binary events with amplified price movements and embedded high volatility risk premium, but they present distinct challenges depending... (sources: 74, degree: 7)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/zero-dte|Zero Dte]], [[securities/spx|SPX]], [[securities/spy|SPY]], [[strategies/weekly-options|Weekly Options]]
   - backing sources: [[sources/0a1UROsFf_A]], [[sources/19oL0B8i2Fc]], [[sources/5K0UEOLDP5k]], [[sources/5Tc9L4TvPR8]], [[sources/6j6nMarpVDQ]], [[sources/78f9Q_gcfh0]], [[sources/7xLGynW-FdA]], [[sources/93vPWsmgsQc]], [[sources/Ao4evQT3dOU]], [[sources/B48KOikbTs8]], 64 more
-- [[strategies/trend-following|Trend Following]] - Auto-generated strategy topic — discussed across 73 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 73, degree: 8)
+- [[strategies/trend-following|Trend Following]] - Trend following is a trading approach that prioritizes price action and momentum over contrarian conviction or fundamental predictions, emphasizing the importance of following w... (sources: 73, degree: 8)
   - links: [[concepts/market-timing|Market Timing]], [[concepts/momentum|Momentum]], [[concepts/position-sizing|Position Sizing]], [[concepts/price-action|Price Action]], [[concepts/risk-management|Risk Management]], [[concepts/trend-following|Trend Following]], [[securities/spy|SPY]], [[strategies/pullback-entry|Pullback Entry]]
   - backing sources: [[sources/-RsvTzf4OxA]], [[sources/0qXakHvgYiQ]], [[sources/1ILbgbgxl3A]], [[sources/1axDClx9vWQ]], [[sources/4Ksbe6bpV8o]], [[sources/4Lz5jr3grOs]], [[sources/4NTh_FrF-0Y]], [[sources/4gWjyPVh9j4]], [[sources/4i11aVZeGxQ]], [[sources/6CZMjMvG4y4]], 63 more
-- [[strategies/earnings-vol-play|Earnings Vol Play]] - Auto-generated strategy topic — discussed across 59 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 59, degree: 6)
+- [[strategies/earnings-vol-play|Earnings Vol Play]] - An earnings vol play is an options strategy that exploits the elevated implied volatility surrounding company earnings announcements by selling premium (such as short straddles... (sources: 59, degree: 6)
   - links: [[concepts/earnings-move|Earnings Move]], [[concepts/earnings-vol-play|Earnings Vol Play]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/gme|GME]], [[strategies/short-premium|Short Premium]]
   - backing sources: [[sources/-qSV5WZNlP4]], [[sources/1G-h4tqfQEM]], [[sources/26vVCJY9t00]], [[sources/3J3S-ewvxn0]], [[sources/3_ZnBr22yqo]], [[sources/3hrdUyJ-KmE]], [[sources/5K0UEOLDP5k]], [[sources/6WloCMY-aTw]], [[sources/80QGX7wPlJk]], [[sources/8D1JhjKiYww]], 49 more
-- [[strategies/breakout|Breakout]] - Auto-generated strategy topic — discussed across 48 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 48, degree: 6)
+- [[strategies/breakout|Breakout]] - A breakout is a directional price movement beyond established support or resistance levels that options traders use as a thesis for directional trades. Trading breakouts with op... (sources: 48, degree: 6)
   - links: [[concepts/breakout|Breakout]], [[concepts/position-sizing|Position Sizing]], [[concepts/price-action|Price Action]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/-MQ7kNM0dtI]], [[sources/-RsvTzf4OxA]], [[sources/6LpY37knkh4]], [[sources/6lIx0wSsN7Y]], [[sources/73cEIHM3FLg]], [[sources/8MTeMe1qln8]], [[sources/8U4dz8MZL70]], [[sources/9CqpFa4mYas]], [[sources/B3SW20MSNbM]], [[sources/BKbkWTwx2zI]], 38 more
-- [[strategies/short-call|Short Call]] - Auto-generated strategy topic — discussed across 48 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 48, degree: 5)
+- [[strategies/short-call|Short Call]] - A short call is a directional or premium-selling strategy in which a trader sells a call option to collect premium, obligating them to deliver shares at the strike price if assi... (sources: 48, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-Zqys05mhkw]], [[sources/0ZE8GpkICU4]], [[sources/1axDClx9vWQ]], [[sources/2xpqAj677Cc]], [[sources/3J1_0s0qHPU]], [[sources/58lYHJ_XDaY]], [[sources/7tBAlmNokFI]], [[sources/AdLEV_-zDSM]], [[sources/Dlw9oTPZE9c]], 38 more
-- [[strategies/iron-condor|Iron Condor]] - Auto-generated strategy topic — discussed across 44 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 44, degree: 6)
+- [[strategies/iron-condor|Iron Condor]] - An iron condor is a premium-selling strategy that combines short call and put spreads at different strike prices to profit from a range-bound market while defining maximum risk... (sources: 44, degree: 6)
   - links: [[concepts/delta|Delta]], [[concepts/iron-condor|Iron Condor]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spx|SPX]], [[strategies/short-strangle|Short Strangle]]
   - backing sources: [[sources/0nXEzaMT7Nc]], [[sources/1rqLJW1nK40]], [[sources/2t3Nv-63Jtc]], [[sources/4sYY-sUtlGQ]], [[sources/58lYHJ_XDaY]], [[sources/5Tc9L4TvPR8]], [[sources/78f9Q_gcfh0]], [[sources/B48KOikbTs8]], [[sources/BM8veeOFQBk]], [[sources/FFMykjQWv30]], 34 more
-- [[strategies/scaling-in|Scaling In]] - Auto-generated strategy topic — discussed across 40 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 40, degree: 6)
+- [[strategies/scaling-in|Scaling In]] - Scaling in is a position-management technique used within options strategies like covered strangles where traders incrementally add to or adjust positions based on price action,... (sources: 40, degree: 6)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/scaling-in|Scaling In]], [[concepts/support-and-resistance|Support And Resistance]], [[concepts/technical-analysis|Technical Analysis]]
   - backing sources: [[sources/-XQGZSyM8O0]], [[sources/0ocJTw3Tz9U]], [[sources/4Lz5jr3grOs]], [[sources/6aRyhwnDLfo]], [[sources/6epupAYLkYc]], [[sources/AdLEV_-zDSM]], [[sources/B3SW20MSNbM]], [[sources/GU0G-GnKDzQ]], [[sources/GVoSqEj3k9I]], [[sources/HuQJywyMaT0]], 30 more
-- [[strategies/ratio-write|Ratio Write]] - Auto-generated strategy topic — discussed across 39 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 39, degree: 5)
+- [[strategies/ratio-write|Ratio Write]] - A ratio write is a strategy where a trader sells more call options than the number of shares held long, typically at a higher strike price, to collect additional premium while p... (sources: 39, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/risk-management|Risk Management]], [[strategies/covered-call|Covered Call]]
   - backing sources: [[sources/2TdIx_Bn3BY]], [[sources/3JV19RH54eQ]], [[sources/6-wt8t1AguM]], [[sources/9H5G9H62lMQ]], [[sources/AdLEV_-zDSM]], [[sources/BhkjwgGvZGY]], [[sources/Bxh8Fo7CiEI]], [[sources/CO9TLXsZVLM]], [[sources/FRbKRktUDzA]], [[sources/GBX2otzV6jE]], 29 more
-- [[strategies/buy-and-hold|Buy And Hold]] - Auto-generated strategy topic — discussed across 36 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 36, degree: 9)
+- [[strategies/buy-and-hold|Buy And Hold]] - Buy and hold is a baseline strategy of purchasing and retaining equity positions long-term, often used as a benchmark comparison against more active options strategies. In the c... (sources: 36, degree: 9)
   - links: [[concepts/asset-allocation|Asset Allocation]], [[concepts/buy-and-hold|Buy And Hold]], [[concepts/delayed-gratification|Delayed Gratification]], [[concepts/dollar-cost-averaging|Dollar Cost Averaging]], [[concepts/edge|Edge]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], 1 more
   - backing sources: [[sources/0BI8bymKOIE]], [[sources/1rqLJW1nK40]], [[sources/3c6fsUwB1pw]], [[sources/4kj4Cp-qbsE]], [[sources/AWB8d0uMeoA]], [[sources/B3SW20MSNbM]], [[sources/CzBpxADkCk0]], [[sources/DB6bc4LmKM4]], [[sources/DGMPiN0zvGk]], [[sources/EMzsNLXZ1bc]], 26 more
-- [[strategies/gamma-scalping|Gamma Scalping]] - Auto-generated strategy topic — discussed across 36 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 36, degree: 5)
+- [[strategies/gamma-scalping|Gamma Scalping]] - Gamma scalping is a dynamic hedging strategy where a trader holds long options and repeatedly rehedges the underlying stock position as price moves, profiting from the differenc... (sources: 36, degree: 5)
   - links: [[concepts/delta-hedging|Delta Hedging]], [[concepts/market-maker|Market Maker]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/gme|GME]]
   - backing sources: [[sources/1O0HX-C-4PU]], [[sources/6_FMAL6c_oM]], [[sources/6epupAYLkYc]], [[sources/7mlZTr3xeHA]], [[sources/8d2PprSIK2g]], [[sources/Ao4evQT3dOU]], [[sources/AoiTtWoNKv0]], [[sources/BB_9Ivd8NLM]], [[sources/C_YEdo1Qlk8]], [[sources/FbCrTP3rBjY]], 26 more
-- [[strategies/rolling-options|Rolling Options]] - Auto-generated strategy topic — discussed across 31 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 31, degree: 5)
+- [[strategies/rolling-options|Rolling Options]] - Rolling options is the practice of closing an existing options position and simultaneously opening a new one at a different strike or expiration date, typically to manage advers... (sources: 31, degree: 5)
   - links: [[concepts/assignment|Assignment]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/rolling-options|Rolling Options]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/4p0xi0hLOZM]], [[sources/5YEY_IvBdPg]], [[sources/6aRyhwnDLfo]], [[sources/7gLvDWJK2gg]], [[sources/BbKKEUZ9Gu4]], [[sources/DumdXtGkUPQ]], [[sources/Eh6K1tD9EJE]], [[sources/ITG5Za7EH4o]], [[sources/KnORuwpxylI]], [[sources/ND_BRbTqVcg]], 21 more
-- [[strategies/contrarian-positioning|Contrarian Positioning]] - Auto-generated strategy topic — discussed across 30 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 30, degree: 5)
+- [[strategies/contrarian-positioning|Contrarian Positioning]] - Contrarian positioning is a macro-trading approach that identifies opportunities by betting against prevailing market sentiment and consensus, particularly during periods of ext... (sources: 30, degree: 5)
   - links: [[concepts/market-efficiency|Market Efficiency]], [[concepts/market-regimes|Market Regimes]], [[concepts/risk-management|Risk Management]], [[securities/gold|GOLD]], [[securities/spy|SPY]]
   - backing sources: [[sources/3hrdUyJ-KmE]], [[sources/4Lz5jr3grOs]], [[sources/6-MMToTqJAE]], [[sources/6CZMjMvG4y4]], [[sources/6Sp4eF9ahW8]], [[sources/80QGX7wPlJk]], [[sources/AXGmgcD15_E]], [[sources/AdLEV_-zDSM]], [[sources/BrLsg_ig6uk]], [[sources/DrfoNKd41I0]], 20 more
-- [[strategies/credit-spread|Credit Spread]] - Auto-generated strategy topic — discussed across 29 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 29, degree: 5)
-  - links: [[concepts/position-sizing|Position Sizing]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]], [[strategies/short-premium|Short Premium]]
+- [[strategies/credit-spread|Credit Spread]] - A credit spread is a short option strategy that sells premium while using a protective long option at a further strike to cap risk and reduce capital requirements. The strategy'... (sources: 29, degree: 6)
+  - links: [[concepts/position-sizing|Position Sizing]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/risk-management|Risk Management]], [[concepts/vertical-spread|Vertical Spread]], [[securities/spy|SPY]], [[strategies/short-premium|Short Premium]]
   - backing sources: [[sources/0phfdNnT3Q0]], [[sources/5qqDL8_cYGA]], [[sources/7xLGynW-FdA]], [[sources/8FOQv9UHnsc]], [[sources/AoHUcyVh7NY]], [[sources/BM8veeOFQBk]], [[sources/DPveyyrHPNY]], [[sources/FnVyDaukQZE]], [[sources/FtZyB8apvC0]], [[sources/Gti8ecxsHz0]], 19 more
-- [[strategies/pairs-trade|Pairs Trade]] - Auto-generated strategy topic — discussed across 27 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 27, degree: 5)
+- [[strategies/pairs-trade|Pairs Trade]] - A pairs trade is a relative-value strategy that exploits price divergences between two correlated assets by going long the outperformer and short the underperformer, neutralizin... (sources: 27, degree: 5)
   - links: [[concepts/market-regimes|Market Regimes]], [[concepts/position-sizing|Position Sizing]], [[concepts/price-action|Price Action]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/26vVCJY9t00]], [[sources/3J3S-ewvxn0]], [[sources/5-n_K32MGYo]], [[sources/5K0UEOLDP5k]], [[sources/6UzoviSHtbk]], [[sources/7tBAlmNokFI]], [[sources/AoiTtWoNKv0]], [[sources/C1UbvCjzUDE]], [[sources/G7_0D06aeEk]], [[sources/KKOqF8h1n1s]], 17 more
-- [[strategies/scaling-out|Scaling Out]] - Auto-generated strategy topic — discussed across 26 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 26, degree: 5)
+- [[strategies/scaling-out|Scaling Out]] - Scaling out is a position management technique where a trader exits portions of a profitable position incrementally as the underlying asset moves favorably, rather than closing... (sources: 26, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[concepts/trading-psychology|Trading Psychology]], [[securities/gme|GME]]
   - backing sources: [[sources/-XQGZSyM8O0]], [[sources/6epupAYLkYc]], [[sources/80QGX7wPlJk]], [[sources/9CqpFa4mYas]], [[sources/CcLu6CfZhEw]], [[sources/F7zoiv61ohM]], [[sources/GVoSqEj3k9I]], [[sources/JJv88Q2HbNM]], [[sources/MpkbcFWS9pk]], [[sources/NRNqMP0AULs]], 16 more
-- [[strategies/the-wheel|The Wheel]] - Auto-generated strategy topic — discussed across 26 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 26, degree: 6)
+- [[strategies/the-wheel|The Wheel]] - The wheel is a directional options strategy that sells cash-secured puts, takes assignment on the shares, and then sells covered calls against those shares to generate income. W... (sources: 26, degree: 6)
   - links: [[concepts/assignment|Assignment]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[strategies/covered-call|Covered Call]], [[strategies/covered-strangle|Covered Strangle (a.k.a. the "Coverage Triangle")]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/-MQ7kNM0dtI]], [[sources/-M_lC4RVmvM]], [[sources/5G0_P4igVWQ]], [[sources/6-wt8t1AguM]], [[sources/AJP8M8DQ_1U]], [[sources/Bwy3uhgddnA]], [[sources/E9AzqZhakcw]], [[sources/EvZE2RIwFE4]], [[sources/FRbKRktUDzA]], [[sources/GK9EHx-NZ_M]], 16 more
-- [[strategies/long-dated-calls|Long Dated Calls]] - Auto-generated strategy topic — discussed across 25 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 25, degree: 5)
+- [[strategies/long-dated-calls|Long Dated Calls]] - Long dated calls are far out-of-the-money call options purchased on conviction names with extended time horizons, allowing traders to capture significant upside moves while limi... (sources: 25, degree: 5)
   - links: [[concepts/leverage|Leverage]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/gme|GME]], [[securities/spy|SPY]]
   - backing sources: [[sources/EMzsNLXZ1bc]], [[sources/H04ZDCN_KRI]], [[sources/JIliIgFYrmE]], [[sources/KKOqF8h1n1s]], [[sources/LspC6Wx0QA8]], [[sources/PxjxVC--8mQ]], [[sources/Xe32uys9v5s]], [[sources/YuRM8JxNQzQ]], [[sources/apJP5YqqIXg]], [[sources/h6RuG7LFpdE]], 15 more
-- [[strategies/synthetic-long|Synthetic Long]] - Auto-generated strategy topic — discussed across 21 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 21, degree: 6)
+- [[strategies/synthetic-long|Synthetic Long]] - A synthetic long is an options structure that combines a long call and a short put at the same strike price and expiration to replicate long stock exposure with leveraged capita... (sources: 21, degree: 6)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/synthetic-long|Synthetic Long]], [[concepts/theta|Theta]], [[securities/spy|SPY]]
   - backing sources: [[sources/05aJUfUKE5Q]], [[sources/0fty1k3IGgY]], [[sources/6c3CUMAVF04]], [[sources/9JdI1XeR1G0]], [[sources/BbKKEUZ9Gu4]], [[sources/Bxh8Fo7CiEI]], [[sources/C_YEdo1Qlk8]], [[sources/F8Mpls7PWfs]], [[sources/KKOqF8h1n1s]], [[sources/NziP38PYxY4]], 11 more
-- [[strategies/call-credit-spread|Call Credit Spread]] - Auto-generated strategy topic — discussed across 20 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 20, degree: 6)
+- [[strategies/call-credit-spread|Call Credit Spread]] - A call credit spread is a vertical spread strategy in which a trader sells a call at a lower strike and buys a call at a higher strike, collecting net premium upfront while capp... (sources: 20, degree: 6)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[strategies/covered-strangle|Covered Strangle (a.k.a. the "Coverage Triangle")]], [[strategies/long-call|Long Call]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/05PKCIAe4_0]], [[sources/1rqLJW1nK40]], [[sources/2TdIx_Bn3BY]], [[sources/2xpqAj677Cc]], [[sources/4sYY-sUtlGQ]], [[sources/8Kgx-5Ij4po]], [[sources/AfFTysPxbns]], [[sources/K6RRH35k-1Y]], [[sources/KKOqF8h1n1s]], [[sources/MrSY1py3kAE]], 10 more
-- [[strategies/long-put|Long Put]] - Auto-generated strategy topic — discussed across 20 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 20, degree: 5)
+- [[strategies/long-put|Long Put]] - A long put is a directional bearish strategy where a trader purchases a put option to profit from a decline in the underlying asset's price, with maximum profit occurring if the... (sources: 20, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/gamma|Gamma]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/0ZE8GpkICU4]], [[sources/2Dv_fRuuTcc]], [[sources/58lYHJ_XDaY]], [[sources/7UFLVoQVRIY]], [[sources/AdLEV_-zDSM]], [[sources/Dlw9oTPZE9c]], [[sources/F9GDgxBxBXI]], [[sources/HcWY9Rqcssk]], [[sources/Kcm3EYvSusI]], [[sources/LuhAOKk3rjI]], 10 more
-- [[strategies/long-straddle|Long Straddle]] - Auto-generated strategy topic — discussed across 18 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 18, degree: 5)
+- [[strategies/long-straddle|Long Straddle]] - A long straddle is a volatility-based options position that profits from significant price movement in either direction by holding both a long call and long put at the same stri... (sources: 18, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[strategies/long-call|Long Call]], [[strategies/short-put|Short Put]], [[strategies/short-straddle|Short Straddle]]
   - backing sources: [[sources/2Dv_fRuuTcc]], [[sources/5G0_P4igVWQ]], [[sources/6SyrfdpEsy0]], [[sources/Ao4evQT3dOU]], [[sources/B48KOikbTs8]], [[sources/C_YEdo1Qlk8]], [[sources/KKOqF8h1n1s]], [[sources/OeMVz36bO5A]], [[sources/QTJd5em-rAw]], [[sources/U6PB971mSlI]], 8 more
-- [[strategies/vertical-spread|Vertical Spread]] - Auto-generated strategy topic — discussed across 17 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 17, degree: 5)
+- [[strategies/vertical-spread|Vertical Spread]] - A vertical spread is an options strategy that caps both maximum profit and maximum loss by simultaneously buying and selling options of the same type (calls or puts) at differen... (sources: 17, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/3OzLFRmYpOY]], [[sources/8Kgx-5Ij4po]], [[sources/93vPWsmgsQc]], [[sources/AfFTysPxbns]], [[sources/EkAxyxtD0hc]], [[sources/FnVyDaukQZE]], [[sources/IFtkGhU5FjA]], [[sources/K6RRH35k-1Y]], [[sources/NziP38PYxY4]], [[sources/Sol_YuCGQmc]], 7 more
-- [[strategies/box-spread|Box Spread]] - Auto-generated strategy topic — discussed across 16 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 16, degree: 6)
+- [[strategies/box-spread|Box Spread]] - A box spread is a delta-neutral arbitrage strategy that simultaneously sells a debit put spread and a debit call spread at identical strikes and expiration, exploiting the risk-... (sources: 16, degree: 6)
   - links: [[concepts/box-spread|Box Spread]], [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spx|SPX]]
   - backing sources: [[sources/3STDqRx1o8w]], [[sources/72LcrOF6BHk]], [[sources/BTU71jbUgDo]], [[sources/EvZE2RIwFE4]], [[sources/GK9EHx-NZ_M]], [[sources/JuqhsVCGUCA]], [[sources/K6RRH35k-1Y]], [[sources/QeesqIsDnrA]], [[sources/SC9KjFkDXco]], [[sources/TQe-HW7-x5I]], 6 more
-- [[strategies/leaps|Leaps]] - Auto-generated strategy topic — discussed across 14 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 14, degree: 5)
+- [[strategies/leaps|Leaps]] - LEAPS are long-dated call options (typically far out-of-the-money in strike but deep in-the-money in time value) used as leveraged stock replacements to gain directional exposur... (sources: 14, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/leverage|Leverage]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/8qAZX9Lx0Z0]], [[sources/9APL8MtZu7Y]], [[sources/EMzsNLXZ1bc]], [[sources/EvZE2RIwFE4]], [[sources/H04ZDCN_KRI]], [[sources/IsiLvT-L3vk]], [[sources/KKOqF8h1n1s]], [[sources/NelgJJ_pL9o]], [[sources/fp7kppTc384]], [[sources/gIadiCaH2JM]], 4 more
-- [[strategies/sector-rotation|Sector Rotation]] - Auto-generated strategy topic — discussed across 14 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 14, degree: 5)
+- [[strategies/sector-rotation|Sector Rotation]] - Sector rotation is a trading strategy that shifts capital allocation between different market sectors based on momentum, economic conditions, or policy regimes to capitalize on... (sources: 14, degree: 5)
   - links: [[concepts/momentum|Momentum]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/sector-rotation|Sector Rotation]], [[securities/spy|SPY]]
   - backing sources: [[sources/2I6SPZjnjew]], [[sources/4D1XWrp3xec]], [[sources/4Ksbe6bpV8o]], [[sources/OwPmSCUS-bs]], [[sources/QEsVdlDWlX8]], [[sources/QZUk0K75gu8]], [[sources/YuRM8JxNQzQ]], [[sources/ZTW-rWkkelk]], [[sources/ayqbZirKPkM]], [[sources/dHvfZOw1ql0]], 4 more
-- [[strategies/event-driven|Event Driven]] - Auto-generated strategy topic — discussed across 12 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 12, degree: 5)
+- [[strategies/event-driven|Event Driven]] - Event-driven trading is a strategy that exploits price dislocations and volatility spikes triggered by discrete catalysts—such as policy announcements, geopolitical developments... (sources: 12, degree: 5)
   - links: [[concepts/event-volatility|Event Volatility]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]], [[strategies/long-call|Long Call]]
   - backing sources: [[sources/5-n_K32MGYo]], [[sources/AXGmgcD15_E]], [[sources/BB_9Ivd8NLM]], [[sources/CcLu6CfZhEw]], [[sources/G7_0D06aeEk]], [[sources/IsiLvT-L3vk]], [[sources/SjjhNzFg66s]], [[sources/W9Zk1YXytK0]], [[sources/e7RklZt2PjE]], [[sources/nb31lb9UCrk]], 2 more
-- [[strategies/short-earnings-straddle|Short Earnings Straddle]] - Auto-generated strategy topic — discussed across 12 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 12, degree: 5)
+- [[strategies/short-earnings-straddle|Short Earnings Straddle]] - A short earnings straddle is a strategy where a trader sells both a call and a put at the same strike price before an earnings announcement, profiting from the tendency of impli... (sources: 12, degree: 5)
   - links: [[concepts/earnings-move|Earnings Move]], [[concepts/position-sizing|Position Sizing]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/6j6nMarpVDQ]], [[sources/Ao4evQT3dOU]], [[sources/EjD6KPo3OZs]], [[sources/I-RmKHjrD8g]], [[sources/OenKyq1bdeM]], [[sources/RRBduDJPEt8]], [[sources/cmacStWLbDA]], [[sources/fpvGQkFeJd4]], [[sources/hRjXKf4CvC8]], [[sources/kVvzt6IkUAE]], 2 more
-- [[strategies/delta-selection|Delta Selection]] - Auto-generated strategy topic — discussed across 11 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 11, degree: 5)
+- [[strategies/delta-selection|Delta Selection]] - Delta selection is a portfolio-management approach in which traders choose entry and exit points for options positions based on delta levels rather than fixed profit targets or... (sources: 11, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/delta-hedging|Delta Hedging]], [[concepts/delta-neutral|Delta Neutral]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/E9AzqZhakcw]], [[sources/NFyBJ03Mq0E]], [[sources/RzzDwFlwnqE]], [[sources/U8-yz9jILu4]], [[sources/euxFt-D7cv0]], [[sources/jcrvBUwcZ2E]], [[sources/l7dnXXgna6c]], [[sources/oOyjSHIJSPs]], [[sources/rpfmi88TQMo]], [[sources/sk8rQ8rfn3s]], 1 more
-- [[strategies/dollar-cost-averaging|Dollar Cost Averaging]] - Auto-generated strategy topic — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 9, degree: 5)
+- [[strategies/dollar-cost-averaging|Dollar Cost Averaging]] - Dollar cost averaging in options trading is a systematic approach to adding contracts to existing positions over time while managing total capital deployment, allowing traders t... (sources: 9, degree: 5)
   - links: [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/cost-basis|Cost Basis]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/0BI8bymKOIE]], [[sources/3c6fsUwB1pw]], [[sources/F7zoiv61ohM]], [[sources/aARByyfpEik]], [[sources/df94QtfAmSM]], [[sources/joRW8VU2MYs]], [[sources/sO6MeSuuOXA]], [[sources/who9YWwLSNg]], [[sources/xFkLh7gIGVo]]
-- [[strategies/pullback-entry|Pullback Entry]] - Auto-generated strategy topic — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 9, degree: 5)
+- [[strategies/pullback-entry|Pullback Entry]] - A pullback entry is a tactical approach to entering a trade by waiting for a price retracement within an established trend rather than chasing momentum at market extremes. The s... (sources: 9, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/price-action|Price Action]], [[concepts/risk-management|Risk Management]], [[concepts/support-and-resistance|Support And Resistance]], [[strategies/trend-following|Trend Following]]
   - backing sources: [[sources/9CqpFa4mYas]], [[sources/B3SW20MSNbM]], [[sources/F5ziPM7PxPo]], [[sources/GVoSqEj3k9I]], [[sources/PVTMNm5dH6g]], [[sources/ZWGDFQTvBb8]], [[sources/_bB29g2ofI0]], [[sources/f-0qnXEI7eA]], [[sources/teMEf3mtxEA]]
-- [[strategies/ratio-put-diagonal|Ratio Put Diagonal]] - Auto-generated strategy topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[strategies/ratio-put-diagonal|Ratio Put Diagonal]] - A ratio put diagonal is a multi-leg options strategy that combines puts at different strike prices and expiration dates to manage directional risk and extract premium in a decli... (sources: 7, degree: 5)
   - links: [[concepts/delta-hedging|Delta Hedging]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/aapl|AAPL]], [[strategies/ratio-call-diagonal|Ratio Call Diagonal]]
   - backing sources: [[sources/2Dv_fRuuTcc]], [[sources/MrSY1py3kAE]], [[sources/TjjfgZ7o68I]], [[sources/Udy0f07p2O8]], [[sources/_meFsIpmzXM]], [[sources/fLRwLbcWWc4]], [[sources/zRvT_B2E9tU]]
-- [[strategies/vertical-spreads|Vertical Spreads]] - Auto-generated strategy topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[strategies/vertical-spreads|Vertical Spreads]] - Vertical spreads are options strategies that simultaneously buy and sell options at different strike prices in the same expiration, creating positions that are structurally neut... (sources: 7, degree: 5)
   - links: [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/delta-neutral|Delta Neutral]], [[concepts/market-efficiency|Market Efficiency]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/30aBq8F5FB8]], [[sources/58lYHJ_XDaY]], [[sources/5qqDL8_cYGA]], [[sources/8FOQv9UHnsc]], [[sources/Cgjrux0qk9U]], [[sources/O1ZjVHom2ms]], [[sources/V0YmZpEt1jY]]
-- [[strategies/buying-the-panic|Buying The Panic]] - Auto-generated strategy topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[strategies/buying-the-panic|Buying The Panic]] - Buying the Panic is a contrarian strategy that treats extreme bearish sentiment, forced liquidation, and sharp market sell-offs as entry opportunities rather than signals to exi... (sources: 6, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/gamma|Gamma]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/theta|Theta]]
   - backing sources: [[sources/6Sp4eF9ahW8]], [[sources/7_bIW3YqY78]], [[sources/btR9-SRsxLU]], [[sources/tuLYhzeA-cE]], [[sources/vpcmDvmrwYI]], [[sources/xDEpkL2JB-c]]
-- [[strategies/calendar-spread|Calendar Spread]] - Auto-generated strategy topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[strategies/calendar-spread|Calendar Spread]] - A calendar spread is an options strategy that exploits differences in volatility across different expiration dates by simultaneously selling near-term options and buying longer-... (sources: 6, degree: 5)
   - links: [[concepts/market-maker|Market Maker]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/volatility-term-structure|Volatility Term Structure]], [[securities/spy|SPY]]
   - backing sources: [[sources/-jJkuhl2wyY]], [[sources/AdLEV_-zDSM]], [[sources/EjD6KPo3OZs]], [[sources/IFtkGhU5FjA]], [[sources/TxQPn4WGJBc]], [[sources/XHifNJG5l1I]]
-- [[strategies/risk-reversal|Risk Reversal]] - Auto-generated strategy topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 7)
+- [[strategies/risk-reversal|Risk Reversal]] - A risk reversal is an options strategy that pairs a long call with a short put (or vice versa) to express a directional market view while managing costs through the premium coll... (sources: 6, degree: 7)
   - links: [[concepts/delta|Delta]], [[concepts/edge|Edge]], [[concepts/risk-management|Risk Management]], [[concepts/theta|Theta]], [[concepts/volatility-risk-premium|Volatility Risk Premium (VRP)]], [[people/euan-sinclair|Euan Sinclair]], [[securities/spy|SPY]]
   - backing sources: [[sources/6vQeTS9cyk0]], [[sources/Xe32uys9v5s]], [[sources/YuRM8JxNQzQ]], [[sources/a4W-VNEdyJM]], [[sources/ge560JirQ_8]], [[sources/yiJUN_54_wE]]
-- [[strategies/short-squeeze|Short Squeeze]] - Auto-generated strategy topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[strategies/short-squeeze|Short Squeeze]] - A short squeeze occurs when a heavily shorted stock experiences rapid price appreciation, forcing short sellers to buy back shares at higher prices and thereby amplifying upward... (sources: 6, degree: 5)
   - links: [[concepts/market-efficiency|Market Efficiency]], [[concepts/market-maker|Market Maker]], [[concepts/naked-short-selling|Naked Short Selling]], [[concepts/short-squeeze|Short Squeeze]], [[securities/gme|GME]]
   - backing sources: [[sources/86KGdDWuPJ0]], [[sources/H04ZDCN_KRI]], [[sources/PwoEFKVQvSQ]], [[sources/j-bhFu_dQxM]], [[sources/oCEtRjtaaSw]], [[sources/zQHTlfwJKDo]]
-- [[strategies/weekly-options|Weekly Options]] - Auto-generated strategy topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[strategies/weekly-options|Weekly Options]] - Weekly options are shorter-dated derivatives contracts that expire within a week, offering traders access to volatility and theta decay dynamics on compressed timescales compare... (sources: 6, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/market-maker|Market Maker]], [[concepts/moneyness|Moneyness]], [[securities/gme|GME]], [[strategies/zero-dte|Zero Dte]]
   - backing sources: [[sources/6vQeTS9cyk0]], [[sources/KKOqF8h1n1s]], [[sources/Z_y9CYARajk]], [[sources/bwXQblAyWc0]], [[sources/d_pt7wcQRnk]], [[sources/f-PI_SmDAic]]
-- [[strategies/delta-neutral|Delta Neutral]] - Auto-generated strategy topic — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 5, degree: 5)
+- [[strategies/delta-neutral|Delta Neutral]] - Delta neutral is a hedging approach where a trader offsets the directional exposure of an options position by adjusting holdings in the underlying asset, creating a position wit... (sources: 5, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/delta-hedging|Delta Hedging]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/OeMVz36bO5A]], [[sources/TxQPn4WGJBc]], [[sources/cZvaEVW7Yf4]], [[sources/cy-eNQnNVA4]], [[sources/jcWfEZ8Ol6o]]
-- [[strategies/opening-range-breakout|Opening Range Breakout]] - Auto-generated strategy topic — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 5, degree: 1)
+- [[strategies/directional-trading|Directional Trading]] - Directional trading in options is a profit mechanism based on predicting and capitalizing on price movement of an underlying asset, where success depends critically on aligning... (sources: 5, degree: 1)
+  - links: [[concepts/directional-trading|Directional Trading]]
+  - backing sources: [[sources/1fqO9v4SLeI]], [[sources/4zx4HK1i4RQ]], [[sources/7wMdBbbfWZg]], [[sources/Kcm3EYvSusI]], [[sources/Lp-SPerQHgY]]
+- [[strategies/opening-range-breakout|Opening Range Breakout]] - Opening Range Breakout is a strategy that captures price movement in the initial trading period following a market open, typically by identifying a breakout above or below the e... (sources: 5, degree: 1)
   - links: [[concepts/volatility-term-structure|Volatility Term Structure]]
   - backing sources: [[sources/4gWjyPVh9j4]], [[sources/AoHUcyVh7NY]], [[sources/BTU71jbUgDo]], [[sources/J6i5PMmP4PA]], [[sources/oOyjSHIJSPs]]
-- [[strategies/post-earnings-drift|Post Earnings Drift]] - Auto-generated strategy topic — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 5, degree: 5)
+- [[strategies/post-earnings-drift|Post Earnings Drift]] - Post-earnings drift is a tactical options strategy that capitalizes on directional price movement occurring in the days and weeks following a company's earnings announcement, di... (sources: 5, degree: 5)
   - links: [[concepts/market-breadth|Market Breadth]], [[concepts/position-sizing|Position Sizing]], [[concepts/post-earnings-drift|Post Earnings Drift]], [[concepts/risk-management|Risk Management]], [[securities/qqq|QQQ]]
   - backing sources: [[sources/4NTh_FrF-0Y]], [[sources/Dj0jI9ykCeU]], [[sources/_oorJyxpFAI]], [[sources/_v0phs6V4nI]], [[sources/dW3sNQFVTgA]]
-- [[strategies/stock-replacement|Stock Replacement]] - Auto-generated strategy topic — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 5, degree: 5)
+- [[strategies/stock-replacement|Stock Replacement]] - Stock Replacement is a strategy that uses deep-in-the-money options—particularly put or call options—as an alternative to holding shares outright, allowing traders to acquire or... (sources: 5, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/delta-neutral|Delta Neutral]], [[concepts/gamma|Gamma]], [[concepts/greeks|Greeks]], [[concepts/position-sizing|Position Sizing]]
   - backing sources: [[sources/KKOqF8h1n1s]], [[sources/iwQmDPafTCc]], [[sources/lbpGVAWR6d0]], [[sources/sk8rQ8rfn3s]], [[sources/zdgAPRVOcwE]]
-- [[strategies/swing-trading|Swing Trading]] - Auto-generated strategy topic — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 5, degree: 5)
+- [[strategies/swing-trading|Swing Trading]] - Swing trading in options involves holding positions over multiple days or weeks to capture intermediate price moves, typically using technical analysis across multiple timeframe... (sources: 5, degree: 5)
   - links: [[concepts/market-regimes|Market Regimes]], [[concepts/momentum|Momentum]], [[concepts/price-action|Price Action]], [[concepts/risk-management|Risk Management]], [[concepts/technical-analysis|Technical Analysis]]
   - backing sources: [[sources/B3SW20MSNbM]], [[sources/FCHbsEEpzqw]], [[sources/KKOqF8h1n1s]], [[sources/RRhFuGfvBjA]], [[sources/_bB29g2ofI0]]
-- [[strategies/buy-write|Buy Write]] - Auto-generated strategy topic — discussed across 4 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 4, degree: 5)
+- [[strategies/buy-write|Buy Write]] - A buy-write strategy involves buying stock while simultaneously selling a call option against that position, effectively capping upside in exchange for the premium collected fro... (sources: 4, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/expected-value|Expected Value]], [[concepts/market-maker|Market Maker]], [[concepts/short-gamma|Short Gamma]], [[concepts/theta-decay|Theta Decay]]
   - backing sources: [[sources/KKOqF8h1n1s]], [[sources/LgQlkikHS4k]], [[sources/kvzQJ3wFaZs]], [[sources/vkBpeqKvUMY]]
-- [[strategies/delta-hedging|Delta Hedging]] - Auto-generated strategy topic — discussed across 4 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 4, degree: 5)
+- [[strategies/delta-hedging|Delta Hedging]] - Delta hedging is a risk management technique used by options market makers and professional traders to neutralize directional exposure by continuously adjusting positions as und... (sources: 4, degree: 5)
   - links: [[concepts/delta-hedging|Delta Hedging]], [[concepts/gamma|Gamma]], [[concepts/market-maker|Market Maker]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/trading-psychology|Trading Psychology]]
   - backing sources: [[sources/SsbI2qzsLGY]], [[sources/lbpGVAWR6d0]], [[sources/nxxdC4PK2BI]], [[sources/wiOEzumNBcE]]
-- [[strategies/put-credit-spread|Put Credit Spread]] - Auto-generated strategy topic — discussed across 4 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 4, degree: 5)
+- [[strategies/put-credit-spread|Put Credit Spread]] - A put credit spread is a multi-leg options strategy in which a trader sells a put at one strike and buys a put at a lower strike, collecting net premium upfront while capping ma... (sources: 4, degree: 5)
   - links: [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/gamma|Gamma]], [[concepts/portfolio-first|Portfolio First]], [[concepts/position-sizing|Position Sizing]], [[strategies/short-strangle|Short Strangle]]
   - backing sources: [[sources/AfFTysPxbns]], [[sources/Gsy_ncfFBpo]], [[sources/UNsis2_Blb8]], [[sources/bhvVBNtOMXk]]
 - [[strategies/covered-strangle|Covered Strangle (a.k.a. the "Coverage Triangle")]] - Long stock + short puts + ratio short calls. The host brands his version the "coverage triangle" / "covered triangle" — it is the same position as a covered strangle. 1rqLJW1nK4... (sources: 3, degree: 11)
   - links: [[concepts/delta|Delta]], [[concepts/implied-volatility|Implied Volatility (IV)]], [[concepts/implied-volatility-rank|Implied Volatility Rank]], [[concepts/scaling-in|Scaling In]], [[concepts/theta-decay|Theta Decay]], [[concepts/volatility-risk-premium|Volatility Risk Premium (VRP)]], [[people/euan-sinclair|Euan Sinclair]], [[securities/gme-saga|Gme Saga]], 3 more
   - backing sources: [[sources/AJP8M8DQ_1U]], [[sources/1rqLJW1nK40]], [[sources/kvzQJ3wFaZs]]
-- [[strategies/long-premium|Long Premium]] - Auto-generated strategy topic — discussed across 3 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 3, degree: 2)
+- [[strategies/long-premium|Long Premium]] - Long premium is not directly defined in the supplied material. The three video summaries discuss vertical spreads, implied volatility metrics for strategy selection, and sector-... (sources: 3, degree: 2)
   - links: [[concepts/mean-reversion|Mean Reversion]], [[strategies/short-premium|Short Premium]]
   - backing sources: [[sources/TvMC14yH7ck]], [[sources/Uu3DwGTOYHY]], [[sources/yVf9c0ZyyYw]]
-- [[strategies/mean-reversion|Mean Reversion]] - Auto-generated strategy topic — discussed across 3 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 3, degree: 5)
+- [[strategies/long-volatility|Long Volatility]] - Long volatility is a strategy that profits when implied volatility rises or when realized volatility exceeds the implied volatility priced into options, making it a core compone... (sources: 3, degree: 0)
+  - links: none
+  - backing sources: [[sources/Lp-SPerQHgY]], [[sources/SNVvZCtKt0Y]], [[sources/TxQPn4WGJBc]]
+- [[strategies/market-making|Market Making]] - Market making is the practice of providing liquidity by simultaneously quoting buy and sell prices, a role that institutional market makers perform with regulatory advantages un... (sources: 3, degree: 0)
+  - links: none
+  - backing sources: [[sources/Jfq38jbTtzE]], [[sources/Wxndr3Ady24]], [[sources/cnLiihvAXpc]]
+- [[strategies/mean-reversion|Mean Reversion]] - Mean reversion is not explicitly discussed as a named strategy in the supplied material. The corpus focuses on foundational principles for building options strategies—identifyin... (sources: 3, degree: 5)
   - links: [[concepts/edge|Edge]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/volatility-term-structure|Volatility Term Structure]], [[securities/spy|SPY]]
   - backing sources: [[sources/C1UbvCjzUDE]], [[sources/jlhuKAIenw0]], [[sources/u-gINUduTxM]]
-- [[strategies/scalping|Scalping]] - Auto-generated strategy topic — discussed across 3 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 3, degree: 5)
+- [[strategies/overnight-risk-premium|Overnight Risk Premium]] - Overnight risk premium refers to the additional return or risk exposure associated with holding positions through overnight and weekend periods when markets are closed, making i... (sources: 3, degree: 0)
+  - links: none
+  - backing sources: [[sources/Lp-SPerQHgY]], [[sources/fNW7e0SdtG0]], [[sources/uOY6kRco6r4]]
+- [[strategies/position-sizing|Position Sizing]] - Position sizing is the allocation of capital to individual trades and is the only element of risk a trader can control before execution occurs. Proper position sizing prevents r... (sources: 3, degree: 0)
+  - links: none
+  - backing sources: [[sources/BrLsg_ig6uk]], [[sources/JdPGS9FK-xw]], [[sources/TigQwIC0PIU]]
+- [[strategies/scalping|Scalping]] - The supplied material does not contain discussion of scalping as an options-trading strategy. The three video summaries address trading psychology, risk management, market volat... (sources: 3, degree: 5)
   - links: [[concepts/edge|Edge]], [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/mean-reversion|Mean Reversion]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]]
   - backing sources: [[sources/1jDrPx6lOgM]], [[sources/RRhFuGfvBjA]], [[sources/jlhuKAIenw0]]
-- [[strategies/short-call-spread|Short Call Spread]] - Auto-generated strategy topic — discussed across 3 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 3, degree: 0)
+- [[strategies/short-call-spread|Short Call Spread]] - A short call spread is a vertical spread strategy where a trader sells a call option at one strike price and buys a call option at a higher strike price, creating a defined-risk... (sources: 3, degree: 0)
   - links: none
   - backing sources: [[sources/ELLig97y0io]], [[sources/erYCMg8mwzI]], [[sources/l5k56cSP-Bs]]
-- [[strategies/volatility-risk-premium|Volatility Risk Premium]] - Auto-generated strategy topic — discussed across 3 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 3, degree: 0)
+- [[strategies/volatility-risk-premium|Volatility Risk Premium]] - Volatility Risk Premium refers to the profit opportunity from selling options when implied volatility is elevated relative to realized volatility, capturing the difference as de... (sources: 3, degree: 0)
   - links: none
   - backing sources: [[sources/5K0UEOLDP5k]], [[sources/Ig1z2u_lK4k]], [[sources/v1rw2Y_mjVQ]]
 
 ### Securities
 
-- [[securities/spy|SPY]] - Auto-generated security topic — discussed across 325 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 325, degree: 161)
-  - links: [[concepts/ai-assisted-trading|Ai Assisted Trading]], [[concepts/asset-allocation|Asset Allocation]], [[concepts/beta|Beta]], [[concepts/bid-ask-spread|Bid Ask Spread]], [[concepts/bond-vigilantes|Bond Vigilantes]], [[concepts/break-even|Break Even]], [[concepts/compound-annual-growth-rate|Compound Annual Growth Rate]], [[concepts/consolidation|Consolidation]], 153 more
+- [[securities/spy|SPY]] - SPY is not explicitly defined in the supplied material, though the corpus frequently references related broad-market indices like SPX (S&P 500 Index) and discusses general equit... (sources: 325, degree: 163)
+  - links: [[concepts/ai-assisted-trading|Ai Assisted Trading]], [[concepts/asset-allocation|Asset Allocation]], [[concepts/beta|Beta]], [[concepts/bid-ask-spread|Bid Ask Spread]], [[concepts/bond-vigilantes|Bond Vigilantes]], [[concepts/break-even|Break Even]], [[concepts/compound-annual-growth-rate|Compound Annual Growth Rate]], [[concepts/consolidation|Consolidation]], 155 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-CUgdXmtp5o]], [[sources/-NzEb1zc1bw]], [[sources/-XQGZSyM8O0]], [[sources/-jJkuhl2wyY]], [[sources/-qSV5WZNlP4]], [[sources/0BI8bymKOIE]], [[sources/0fty1k3IGgY]], [[sources/0gle3um9MoE]], [[sources/0iZJfIu3Nac]], 315 more
-- [[securities/gme|GME]] - Auto-generated security topic — discussed across 258 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 258, degree: 75)
-  - links: [[concepts/call-skew|Call Skew]], [[concepts/consolidation|Consolidation]], [[concepts/cost-basis|Cost Basis]], [[concepts/covered-strangle|Covered Strangle]], [[concepts/dark-pools|Dark Pools]], [[concepts/dealer-gamma|Dealer Gamma]], [[concepts/dealer-positioning|Dealer Positioning]], [[concepts/deep-itm-calls|Deep Itm Calls]], 67 more
+- [[securities/gme|GME]] - GameStop (GME) is a frequently analyzed equity security in the options-trading channel, used as a case study for volatility strategies and technical analysis due to its exceptio... (sources: 258, degree: 76)
+  - links: [[concepts/call-skew|Call Skew]], [[concepts/consolidation|Consolidation]], [[concepts/cost-basis|Cost Basis]], [[concepts/covered-strangle|Covered Strangle]], [[concepts/dark-pools|Dark Pools]], [[concepts/dealer-gamma|Dealer Gamma]], [[concepts/dealer-positioning|Dealer Positioning]], [[concepts/deep-itm-calls|Deep Itm Calls]], 68 more
   - backing sources: [[sources/-NzEb1zc1bw]], [[sources/-XQGZSyM8O0]], [[sources/-Zqys05mhkw]], [[sources/-jJkuhl2wyY]], [[sources/-mD-g1Io3II]], [[sources/0-BUA66HVWg]], [[sources/05aJUfUKE5Q]], [[sources/0gle3um9MoE]], [[sources/0iZJfIu3Nac]], [[sources/0kXY1hY--Ww]], 248 more
-- [[securities/spx|SPX]] - Auto-generated security topic — discussed across 150 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 150, degree: 23)
+- [[securities/spx|SPX]] - SPX is the S&P 500 Index, a broad-market equity index commonly used as the underlying for options strategies, particularly premium-selling approaches like short puts, short call... (sources: 150, degree: 23)
   - links: [[concepts/box-spread|Box Spread]], [[concepts/catalyst|Catalyst]], [[concepts/delta|Delta]], [[concepts/implied-volatility|Implied Volatility (IV)]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-free-rate|Risk Free Rate]], [[concepts/risk-management|Risk Management]], [[concepts/risk-reward|Risk Reward]], 15 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-MQ7kNM0dtI]], [[sources/-jJkuhl2wyY]], [[sources/-qSV5WZNlP4]], [[sources/0YG5XSvH_GA]], [[sources/0nXEzaMT7Nc]], [[sources/10mc7m0i_XM]], [[sources/1G-h4tqfQEM]], [[sources/1jDrPx6lOgM]], [[sources/2I6SPZjnjew]], 140 more
-- [[securities/qqq|QQQ]] - Auto-generated security topic — discussed across 136 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 136, degree: 19)
+- [[securities/qqq|QQQ]] - QQQ is a leveraged ETF tracking the Nasdaq-100 index that appears in the channel's discussions primarily as a component of broader market analysis and sector rotation commentary... (sources: 136, degree: 19)
   - links: [[concepts/consumer-confidence|Consumer Confidence]], [[concepts/gap-risk|Gap Risk]], [[concepts/geopolitical-risk|Geopolitical Risk]], [[concepts/higher-highs-lower-lows|Higher Highs Lower Lows]], [[concepts/market-breadth|Market Breadth]], [[concepts/market-regimes|Market Regimes]], [[concepts/net-highs-lows|Net Highs Lows]], [[concepts/position-sizing|Position Sizing]], 11 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-NzEb1zc1bw]], [[sources/-XQGZSyM8O0]], [[sources/-qSV5WZNlP4]], [[sources/0fty1k3IGgY]], [[sources/0gle3um9MoE]], [[sources/0iZJfIu3Nac]], [[sources/0ocJTw3Tz9U]], [[sources/1ILbgbgxl3A]], [[sources/26vVCJY9t00]], 126 more
-- [[securities/iwm|IWM]] - Auto-generated security topic — discussed across 117 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 117, degree: 10)
+- [[securities/iwm|IWM]] - IWM (the Russell 2000 small-cap index) is used in the channel's analysis as a barometer for market breadth and sector rotation dynamics. The index frequently appears in discussi... (sources: 117, degree: 10)
   - links: [[concepts/correlation|Correlation]], [[concepts/market-regimes|Market Regimes]], [[concepts/position-sizing|Position Sizing]], [[concepts/price-extremes|Price Extremes]], [[concepts/risk-management|Risk Management]], [[securities/crwd|CRWD]], [[securities/ndx|NDX]], [[securities/qqq|QQQ]], 2 more
   - backing sources: [[sources/-CUgdXmtp5o]], [[sources/-NzEb1zc1bw]], [[sources/0fty1k3IGgY]], [[sources/0gle3um9MoE]], [[sources/0iZJfIu3Nac]], [[sources/26vVCJY9t00]], [[sources/2I6SPZjnjew]], [[sources/2wlur2p61Mg]], [[sources/3J3S-ewvxn0]], [[sources/3hrdUyJ-KmE]], 107 more
-- [[securities/tsla|TSLA]] - Auto-generated security topic — discussed across 98 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 98, degree: 7)
+- [[securities/tsla|TSLA]] - Tesla (TSLA) appears in the channel's content as a live trading example security used to demonstrate options strategies and market analysis. The channel features a ratio call di... (sources: 98, degree: 7)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[securities/aapl|AAPL]], [[securities/ge|GE]], [[securities/spy|SPY]]
   - backing sources: [[sources/-M_lC4RVmvM]], [[sources/0BI8bymKOIE]], [[sources/0ZE8GpkICU4]], [[sources/0fty1k3IGgY]], [[sources/0iZJfIu3Nac]], [[sources/1axDClx9vWQ]], [[sources/2jG5SD-3F0w]], [[sources/3OzLFRmYpOY]], [[sources/3c6fsUwB1pw]], [[sources/4HHoWqBsc84]], 88 more
-- [[securities/nvda|NVDA]] - Auto-generated security topic — discussed across 85 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 85, degree: 9)
+- [[securities/nvda|NVDA]] - NVDA (Nvidia) is a major technology stock frequently analyzed in the channel's market recaps and earnings-focused content. The stock has experienced sharp single-day corrections... (sources: 85, degree: 9)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/price-action|Price Action]], [[concepts/risk-management|Risk Management]], [[securities/amd|AMD]], [[securities/avgo|AVGO]], [[securities/msft|MSFT]], [[securities/smci|SMCI]], 1 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-XQGZSyM8O0]], [[sources/-qSV5WZNlP4]], [[sources/0gle3um9MoE]], [[sources/0iZJfIu3Nac]], [[sources/2I6SPZjnjew]], [[sources/2dP1Cu9Pjt8]], [[sources/2xpqAj677Cc]], [[sources/3c6fsUwB1pw]], [[sources/6WloCMY-aTw]], 75 more
-- [[securities/aapl|AAPL]] - Auto-generated security topic — discussed across 80 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 80, degree: 11)
+- [[securities/aapl|AAPL]] - Apple (AAPL) is a large-cap equity security used as a reference point for comparing implied volatility levels and option strategy applications across the channel's content. The... (sources: 80, degree: 11)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/amzn|AMZN]], [[securities/hood|HOOD]], [[securities/msft|MSFT]], [[securities/orcl|ORCL]], [[securities/spy|SPY]], 3 more
   - backing sources: [[sources/-M_lC4RVmvM]], [[sources/-XQGZSyM8O0]], [[sources/-Zqys05mhkw]], [[sources/0BI8bymKOIE]], [[sources/0iZJfIu3Nac]], [[sources/0qcfwt6wf2I]], [[sources/2Dv_fRuuTcc]], [[sources/2jG5SD-3F0w]], [[sources/2t3Nv-63Jtc]], [[sources/30aBq8F5FB8]], 70 more
-- [[securities/vix|VIX]] - Auto-generated security topic — discussed across 80 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 80, degree: 5)
+- [[securities/vix|VIX]] - The VIX is a volatility index that measures market fear and can spike violently during geopolitical crises or market dislocations, making it a hazardous underlying for naked sho... (sources: 80, degree: 5)
   - links: [[concepts/market-regimes|Market Regimes]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/qqq|QQQ]], [[securities/spy|SPY]]
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-LgTPBfGngc]], [[sources/-NzEb1zc1bw]], [[sources/0gle3um9MoE]], [[sources/0iZJfIu3Nac]], [[sources/26vVCJY9t00]], [[sources/2hOfMXRWPls]], [[sources/4NTh_FrF-0Y]], [[sources/5-n_K32MGYo]], [[sources/6UzoviSHtbk]], 70 more
-- [[securities/btc|BTC]] - Auto-generated security topic — discussed across 72 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 72, degree: 8)
+- [[securities/btc|BTC]] - Bitcoin (BTC) appears in options-trading discussions primarily as an underlying asset for derivatives strategies, most notably through the iBit spot ETF, which allows traders to... (sources: 72, degree: 8)
   - links: [[concepts/forecasting|Forecasting]], [[concepts/institutional-ownership|Institutional Ownership]], [[concepts/market-regimes|Market Regimes]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/mstr|MSTR]], [[securities/qqq|QQQ]], [[securities/spy|SPY]]
   - backing sources: [[sources/-8XV5_gBP6I]], [[sources/0BI8bymKOIE]], [[sources/0ocJTw3Tz9U]], [[sources/4D1XWrp3xec]], [[sources/4Ksbe6bpV8o]], [[sources/4kj4Cp-qbsE]], [[sources/5-n_K32MGYo]], [[sources/5lJbpzPF1RY]], [[sources/5zUFVXiXFm0]], [[sources/6WloCMY-aTw]], 62 more
-- [[securities/crude-oil|Crude Oil]] - Auto-generated security topic — discussed across 63 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 63, degree: 17)
+- [[securities/crude-oil|Crude Oil]] - Crude oil is a commodity whose price movements are driven by geopolitical events (such as Middle East tensions, Iran nuclear facility strikes, and potential Strait of Hormuz blo... (sources: 63, degree: 17)
   - links: [[concepts/bond-vigilantes|Bond Vigilantes]], [[concepts/energy-markets|Energy Markets]], [[concepts/fed-put|Fed Put]], [[concepts/geopolitical-risk|Geopolitical Risk]], [[concepts/inflation|Inflation]], [[concepts/information-and-price|Information And Price]], [[concepts/market-efficiency|Market Efficiency]], [[concepts/market-regimes|Market Regimes]], 9 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-8XV5_gBP6I]], [[sources/0La1c59B5Zw]], [[sources/2yu8jSYKuH4]], [[sources/4Ksbe6bpV8o]], [[sources/4NTh_FrF-0Y]], [[sources/4ountK1Wflc]], [[sources/5-n_K32MGYo]], [[sources/6Sp4eF9ahW8]], [[sources/6UzoviSHtbk]], 53 more
-- [[securities/russell-2000|Russell 2000]] - Auto-generated security topic — discussed across 50 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 50, degree: 6)
+- [[securities/russell-2000|Russell 2000]] - The Russell 2000 is a small-cap equity index that serves as the underlying for the IWM ETF, used by options traders as an alternative to large-cap benchmarks like the S&P 500. T... (sources: 50, degree: 6)
   - links: [[concepts/market-breadth|Market Breadth]], [[concepts/market-regimes|Market Regimes]], [[concepts/price-action|Price Action]], [[securities/nasdaq|Nasdaq]], [[securities/smh|SMH]], [[securities/spy|SPY]]
   - backing sources: [[sources/-CUgdXmtp5o]], [[sources/2yu8jSYKuH4]], [[sources/4HHoWqBsc84]], [[sources/4Lz5jr3grOs]], [[sources/6CZMjMvG4y4]], [[sources/6Q76ymfUDpc]], [[sources/6Sp4eF9ahW8]], [[sources/73cEIHM3FLg]], [[sources/9AKqzGkSWmg]], [[sources/AXGmgcD15_E]], 40 more
-- [[securities/gold|GOLD]] - Auto-generated security topic — discussed across 47 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 47, degree: 19)
+- [[securities/gold|GOLD]] - Gold is a precious metal that serves as a hedge against geopolitical risk, monetary instability, and currency debasement, with its price driven by factors including central bank... (sources: 47, degree: 19)
   - links: [[concepts/deflationary-bust|Deflationary Bust]], [[concepts/fed-put|Fed Put]], [[concepts/geopolitical-risk|Geopolitical Risk]], [[concepts/inflation|Inflation]], [[concepts/market-efficiency|Market Efficiency]], [[concepts/market-regimes|Market Regimes]], [[concepts/melt-up|Melt Up]], [[concepts/monetary-policy|Monetary Policy]], 11 more
   - backing sources: [[sources/0BI8bymKOIE]], [[sources/2yu8jSYKuH4]], [[sources/3hrdUyJ-KmE]], [[sources/6CZMjMvG4y4]], [[sources/6Sp4eF9ahW8]], [[sources/6UzoviSHtbk]], [[sources/7XyTZoId-Aw]], [[sources/AdLEV_-zDSM]], [[sources/BZhZpyZzocY]], [[sources/CO9TLXsZVLM]], 37 more
-- [[securities/tlt|TLT]] - Auto-generated security topic — discussed across 45 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 45, degree: 5)
+- [[securities/tlt|TLT]] - TLT does not appear to be discussed as a distinct topic in the supplied material. While the corpus contains extensive discussion of options trading strategies, market analysis,... (sources: 45, degree: 5)
   - links: [[concepts/market-regimes|Market Regimes]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/qqq|QQQ]], [[securities/spy|SPY]]
   - backing sources: [[sources/-NzEb1zc1bw]], [[sources/-XQGZSyM8O0]], [[sources/-qSV5WZNlP4]], [[sources/4Ksbe6bpV8o]], [[sources/4kj4Cp-qbsE]], [[sources/6CZMjMvG4y4]], [[sources/73cEIHM3FLg]], [[sources/78EjRKsvDQA]], [[sources/80QGX7wPlJk]], [[sources/BTU71jbUgDo]], 35 more
-- [[securities/tqqq|TQQQ]] - Auto-generated security topic — discussed across 43 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 43, degree: 7)
+- [[securities/tqqq|TQQQ]] - TQQQ is a leveraged ETF (3x Nasdaq-100) used in options trading as an underlying for premium-selling strategies, particularly covered strangles, due to its higher volatility pro... (sources: 43, degree: 7)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[concepts/volatility-drag|Volatility Drag]], [[securities/qqq|QQQ]], [[securities/spy|SPY]], [[securities/sso|SSO]]
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/0ocJTw3Tz9U]], [[sources/4Lz5jr3grOs]], [[sources/5K0UEOLDP5k]], [[sources/93vPWsmgsQc]], [[sources/AWB8d0uMeoA]], [[sources/Ao4evQT3dOU]], [[sources/C1UbvCjzUDE]], [[sources/DGMPiN0zvGk]], [[sources/Dj0jI9ykCeU]], 33 more
-- [[securities/nasdaq|Nasdaq]] - Auto-generated security topic — discussed across 40 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 40, degree: 7)
+- [[securities/nasdaq|Nasdaq]] - The Nasdaq is a major equity index tracked alongside the S&P 500 and Russell 2000 as a barometer of broad market health and sector rotation, particularly sensitive to technology... (sources: 40, degree: 7)
   - links: [[concepts/bond-vigilantes|Bond Vigilantes]], [[concepts/interest-rates|Interest Rates]], [[concepts/market-breadth|Market Breadth]], [[concepts/market-regimes|Market Regimes]], [[concepts/sector-rotation|Sector Rotation]], [[securities/russell-2000|Russell 2000]], [[securities/spy|SPY]]
   - backing sources: [[sources/4HHoWqBsc84]], [[sources/4Lz5jr3grOs]], [[sources/6-MMToTqJAE]], [[sources/6CZMjMvG4y4]], [[sources/6Q76ymfUDpc]], [[sources/6Sp4eF9ahW8]], [[sources/8d2PprSIK2g]], [[sources/BZhZpyZzocY]], [[sources/GVrANU08cAU]], [[sources/ILHEm19JYs8]], 30 more
-- [[securities/pltr|PLTR]] - Auto-generated security topic — discussed across 40 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 40, degree: 6)
+- [[securities/pltr|PLTR]] - Palantir (PLTR) is a large-cap technology stock that appears across the channel's analysis as an example of richly-priced tech facing post-earnings volatility and overhead resis... (sources: 40, degree: 6)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/volatility-term-structure|Volatility Term Structure]], [[securities/meta|META]], [[securities/spy|SPY]]
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/26vVCJY9t00]], [[sources/3J3S-ewvxn0]], [[sources/4D1XWrp3xec]], [[sources/5bwYlR-1Tdk]], [[sources/73cEIHM3FLg]], [[sources/8MTeMe1qln8]], [[sources/AfFTysPxbns]], [[sources/B3SW20MSNbM]], [[sources/BKbkWTwx2zI]], 30 more
-- [[securities/xlv|XLV]] - Auto-generated security topic — discussed across 37 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 37, degree: 8)
+- [[securities/xlv|XLV]] - XLV is the healthcare sector ETF that appears in sector-rotation analysis across multiple market environments, including post-election positioning and Fed policy shifts. It is r... (sources: 37, degree: 8)
   - links: [[concepts/market-breadth|Market Breadth]], [[concepts/sector-rotation|Sector Rotation]], [[securities/spy|SPY]], [[securities/xlb|XLB]], [[securities/xlc|XLC]], [[securities/xlk|XLK]], [[securities/xlp|XLP]], [[securities/xlu|XLU]]
   - backing sources: [[sources/0La1c59B5Zw]], [[sources/0iZJfIu3Nac]], [[sources/1ILbgbgxl3A]], [[sources/26vVCJY9t00]], [[sources/2I6SPZjnjew]], [[sources/3hrdUyJ-KmE]], [[sources/4D1XWrp3xec]], [[sources/4Ksbe6bpV8o]], [[sources/6Ifus0KfJYQ]], [[sources/73cEIHM3FLg]], 27 more
-- [[securities/xlk|XLK]] - Auto-generated security topic — discussed across 34 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 34, degree: 6)
+- [[securities/xlk|XLK]] - XLK is the technology sector exchange-traded fund that serves as a benchmark for tracking large-cap tech stocks and their performance relative to broader market indices. In the... (sources: 34, degree: 6)
   - links: [[concepts/sector-rotation|Sector Rotation]], [[securities/spy|SPY]], [[securities/xlb|XLB]], [[securities/xlc|XLC]], [[securities/xlu|XLU]], [[securities/xlv|XLV]]
   - backing sources: [[sources/0La1c59B5Zw]], [[sources/0iZJfIu3Nac]], [[sources/1ILbgbgxl3A]], [[sources/2I6SPZjnjew]], [[sources/4D1XWrp3xec]], [[sources/4HHoWqBsc84]], [[sources/4Ksbe6bpV8o]], [[sources/6Ifus0KfJYQ]], [[sources/73cEIHM3FLg]], [[sources/Bxh8Fo7CiEI]], 24 more
-- [[securities/xlf|XLF]] - Auto-generated security topic — discussed across 30 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 30, degree: 8)
+- [[securities/xlf|XLF]] - XLF is a financial-sector exchange-traded fund that serves as a vehicle for sector-rotation trades in options strategies. It appears in the corpus primarily as a beneficiary of... (sources: 30, degree: 8)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/sector-rotation|Sector Rotation]], [[securities/bac|BAC]], [[securities/spy|SPY]], [[securities/xli|XLI]], [[securities/xlre|XLRE]], [[strategies/ratio-call-diagonal|Ratio Call Diagonal]]
   - backing sources: [[sources/0La1c59B5Zw]], [[sources/2I6SPZjnjew]], [[sources/4Ksbe6bpV8o]], [[sources/4Lz5jr3grOs]], [[sources/6CZMjMvG4y4]], [[sources/EzfR61qH4DI]], [[sources/F8Mpls7PWfs]], [[sources/Gsy_ncfFBpo]], [[sources/JIliIgFYrmE]], [[sources/KnORuwpxylI]], 20 more
-- [[securities/msft|MSFT]] - Auto-generated security topic — discussed across 29 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 29, degree: 7)
+- [[securities/msft|MSFT]] - MSFT does not appear as a primary topic of discussion across the supplied video corpus. While the channel covers broad market dynamics, sector rotation, and individual stock ana... (sources: 29, degree: 7)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/aapl|AAPL]], [[securities/nvda|NVDA]], [[securities/orcl|ORCL]], [[securities/spy|SPY]], [[securities/zm|ZM]]
   - backing sources: [[sources/-XQGZSyM8O0]], [[sources/0iZJfIu3Nac]], [[sources/73cEIHM3FLg]], [[sources/AdLEV_-zDSM]], [[sources/B3SW20MSNbM]], [[sources/C1UbvCjzUDE]], [[sources/EMzsNLXZ1bc]], [[sources/FrqSC7Fbf14]], [[sources/GVoSqEj3k9I]], [[sources/H04ZDCN_KRI]], 19 more
-- [[securities/xlc|XLC]] - Auto-generated security topic — discussed across 29 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 29, degree: 8)
+- [[securities/xlc|XLC]] - XLC is a communications sector exchange-traded fund that serves as a barometer for sector rotation dynamics in the broader market. The channel discusses XLC primarily in the con... (sources: 29, degree: 8)
   - links: [[concepts/sector-rotation|Sector Rotation]], [[securities/spy|SPY]], [[securities/xlb|XLB]], [[securities/xle|XLE]], [[securities/xlk|XLK]], [[securities/xlp|XLP]], [[securities/xlu|XLU]], [[securities/xlv|XLV]]
   - backing sources: [[sources/0iZJfIu3Nac]], [[sources/1ILbgbgxl3A]], [[sources/2I6SPZjnjew]], [[sources/4D1XWrp3xec]], [[sources/4Ksbe6bpV8o]], [[sources/5K0UEOLDP5k]], [[sources/73cEIHM3FLg]], [[sources/Bxh8Fo7CiEI]], [[sources/C1UbvCjzUDE]], [[sources/Gsy_ncfFBpo]], 19 more
-- [[securities/silver|Silver]] - Auto-generated security topic — discussed across 28 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 28, degree: 10)
+- [[securities/silver|Silver]] - Silver is discussed in the corpus primarily as a precious metal positioned to outperform during macro inflection points, particularly as the dollar weakens and real rates compre... (sources: 28, degree: 10)
   - links: [[concepts/deflationary-bust|Deflationary Bust]], [[concepts/market-regimes|Market Regimes]], [[concepts/melt-up|Melt Up]], [[concepts/sentiment|Sentiment]], [[people/david-hunter|David Hunter]], [[securities/copper|Copper]], [[securities/crude-oil|Crude Oil]], [[securities/gold|GOLD]], 2 more
   - backing sources: [[sources/2yu8jSYKuH4]], [[sources/6CZMjMvG4y4]], [[sources/6Sp4eF9ahW8]], [[sources/AdLEV_-zDSM]], [[sources/BZhZpyZzocY]], [[sources/FUNC-MTq9PQ]], [[sources/GVrANU08cAU]], [[sources/IosIPXnYxq0]], [[sources/JEvI6g2-h94]], [[sources/KKOqF8h1n1s]], 18 more
-- [[securities/xlb|XLB]] - Auto-generated security topic — discussed across 28 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 28, degree: 6)
+- [[securities/xlb|XLB]] - XLB is a sector exchange-traded fund tracking materials companies, discussed in the channel's market analysis as part of broader sector rotation patterns during periods of marke... (sources: 28, degree: 6)
   - links: [[concepts/sector-rotation|Sector Rotation]], [[securities/spy|SPY]], [[securities/xlc|XLC]], [[securities/xli|XLI]], [[securities/xlk|XLK]], [[securities/xlv|XLV]]
   - backing sources: [[sources/0iZJfIu3Nac]], [[sources/2I6SPZjnjew]], [[sources/4D1XWrp3xec]], [[sources/4Ksbe6bpV8o]], [[sources/6Ifus0KfJYQ]], [[sources/73cEIHM3FLg]], [[sources/Bxh8Fo7CiEI]], [[sources/C1UbvCjzUDE]], [[sources/Gsy_ncfFBpo]], [[sources/HcWY9Rqcssk]], 18 more
-- [[securities/amzn|AMZN]] - Auto-generated security topic — discussed across 24 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 24, degree: 5)
+- [[securities/amzn|AMZN]] - Amazon (AMZN) is a liquid equity underlying used in the channel's options-trading examples and technical analysis. The stock underwent a 20:1 split that reduced its share price... (sources: 24, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/technical-analysis|Technical Analysis]], [[securities/aapl|AAPL]], [[securities/spy|SPY]]
   - backing sources: [[sources/-XQGZSyM8O0]], [[sources/0BI8bymKOIE]], [[sources/0iZJfIu3Nac]], [[sources/1SkCf5UEWtc]], [[sources/73cEIHM3FLg]], [[sources/B3SW20MSNbM]], [[sources/BKbkWTwx2zI]], [[sources/EvZE2RIwFE4]], [[sources/G7_0D06aeEk]], [[sources/ITG5Za7EH4o]], 14 more
-- [[securities/ibit|IBIT]] - Auto-generated security topic — discussed across 22 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 22, degree: 5)
+- [[securities/ibit|IBIT]] - IBIT is a Bitcoin spot exchange-traded fund used as an underlying asset for options strategies, particularly covered strangles that combine long equity positions with simultaneo... (sources: 22, degree: 5)
   - links: [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/0ocJTw3Tz9U]], [[sources/3STDqRx1o8w]], [[sources/5lJbpzPF1RY]], [[sources/93vPWsmgsQc]], [[sources/Eh6K1tD9EJE]], [[sources/GVoSqEj3k9I]], [[sources/PPq6ISVm178]], [[sources/PRim4F0N4lY]], [[sources/RRhFuGfvBjA]], [[sources/Wjdn9qw7fQU]], 12 more
-- [[securities/googl|GOOGL]] - Auto-generated security topic — discussed across 21 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 21, degree: 5)
+- [[securities/googl|GOOGL]] - GOOGL (Google/Alphabet) appears in the corpus as a major technology holding used in options-trading examples and market analysis, particularly in discussions of mega-cap tech se... (sources: 21, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/price-action|Price Action]], [[concepts/risk-management|Risk Management]], [[concepts/technical-analysis|Technical Analysis]], [[securities/spy|SPY]]
   - backing sources: [[sources/-XQGZSyM8O0]], [[sources/0iZJfIu3Nac]], [[sources/6-MMToTqJAE]], [[sources/73cEIHM3FLg]], [[sources/93vPWsmgsQc]], [[sources/B3SW20MSNbM]], [[sources/C1UbvCjzUDE]], [[sources/EvZE2RIwFE4]], [[sources/FCHbsEEpzqw]], [[sources/ID-Kl0y1bxs]], 11 more
-- [[securities/sofi|SOFI]] - Auto-generated security topic — discussed across 21 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 21, degree: 5)
+- [[securities/sofi|SOFI]] - SoFi is a meme-adjacent security analyzed alongside other individual stocks for options trading opportunities, with particular attention to trend reversal signals and long-dated... (sources: 21, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/gamma|Gamma]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[strategies/long-call|Long Call]]
   - backing sources: [[sources/5bwYlR-1Tdk]], [[sources/73cEIHM3FLg]], [[sources/7UFLVoQVRIY]], [[sources/9CqpFa4mYas]], [[sources/BbKKEUZ9Gu4]], [[sources/CO9TLXsZVLM]], [[sources/EkAxyxtD0hc]], [[sources/Ig1z2u_lK4k]], [[sources/K6RRH35k-1Y]], [[sources/KKOqF8h1n1s]], 11 more
-- [[securities/amc|AMC]] - Auto-generated security topic — discussed across 20 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 20, degree: 5)
+- [[securities/amc|AMC]] - AMC is a meme stock frequently analyzed alongside GameStop and other high-volatility retail-traded securities to identify options trading opportunities and volatility-based stra... (sources: 20, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/price-action|Price Action]], [[concepts/risk-management|Risk Management]], [[concepts/technical-analysis|Technical Analysis]], [[securities/gme|GME]]
   - backing sources: [[sources/-XQGZSyM8O0]], [[sources/3J3S-ewvxn0]], [[sources/5bwYlR-1Tdk]], [[sources/7UFLVoQVRIY]], [[sources/7_bIW3YqY78]], [[sources/8d2PprSIK2g]], [[sources/DrfoNKd41I0]], [[sources/EjD6KPo3OZs]], [[sources/H04ZDCN_KRI]], [[sources/LnDi4DMTx-s]], 10 more
-- [[securities/chewy|CHEWY]] - Auto-generated security topic — discussed across 18 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 18, degree: 5)
+- [[securities/chewy|CHEWY]] - Chewy is a retail stock analyzed in the corpus primarily through its earnings events and options market structure, particularly notable for unusual call volume positioning ahead... (sources: 18, degree: 5)
   - links: [[concepts/market-maker|Market Maker]], [[concepts/order-flow|Order Flow]], [[concepts/position-sizing|Position Sizing]], [[concepts/price-action|Price Action]], [[securities/gme|GME]]
   - backing sources: [[sources/72LcrOF6BHk]], [[sources/7tBAlmNokFI]], [[sources/Cfs_0qgho_E]], [[sources/Dj0jI9ykCeU]], [[sources/JnY9onzLO_k]], [[sources/PwoEFKVQvSQ]], [[sources/S1f1zIfXVh8]], [[sources/Sue4LFwVQvU]], [[sources/a02m0ETxjkk]], [[sources/cT6vsQUM33k]], 8 more
-- [[securities/ko|KO]] - Auto-generated security topic — discussed across 17 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 17, degree: 6)
+- [[securities/ko|KO]] - KO (Kroger) appears in the corpus as a recurring position in the Small Stacks portfolio experiment, where it was traded using diagonal spreads—a strategy combining longer-dated... (sources: 17, degree: 6)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/bac|BAC]], [[strategies/covered-call|Covered Call]], [[strategies/ratio-call-diagonal|Ratio Call Diagonal]]
   - backing sources: [[sources/5OQNi5AthOk]], [[sources/A1el6GdNjOA]], [[sources/AJP8M8DQ_1U]], [[sources/FtZyB8apvC0]], [[sources/KKOqF8h1n1s]], [[sources/NelgJJ_pL9o]], [[sources/RJPIDB___YE]], [[sources/WWVsuoWX8mU]], [[sources/WYfQsFADTfo]], [[sources/YOgMXbP9yCE]], 7 more
-- [[securities/natural-gas|Natural Gas]] - Auto-generated security topic — discussed across 16 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 16, degree: 7)
+- [[securities/natural-gas|Natural Gas]] - Natural gas appears in the corpus primarily as part of broader energy-market discussions rather than as a standalone options-trading instrument. The channel discusses natural ga... (sources: 16, degree: 7)
   - links: [[concepts/energy-markets|Energy Markets]], [[concepts/market-efficiency|Market Efficiency]], [[concepts/market-regimes|Market Regimes]], [[concepts/reshoring|Reshoring]], [[securities/crude-oil|Crude Oil]], [[securities/gold|GOLD]], [[securities/spy|SPY]]
   - backing sources: [[sources/4ountK1Wflc]], [[sources/6Sp4eF9ahW8]], [[sources/7XyTZoId-Aw]], [[sources/KKOqF8h1n1s]], [[sources/OWQs77SA_m4]], [[sources/QZUk0K75gu8]], [[sources/UZOcepy6VxY]], [[sources/dtpj5VcLnjg]], [[sources/g_AN2fWZiVI]], [[sources/gnABTnW-KX8]], 6 more
-- [[securities/xlu|XLU]] - Auto-generated security topic — discussed across 16 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 16, degree: 6)
+- [[securities/xlu|XLU]] - XLU is a sector exchange-traded fund tracking utilities companies that serves as a defensive equity holding during periods of market stress and sector rotation away from growth-... (sources: 16, degree: 6)
   - links: [[concepts/sector-rotation|Sector Rotation]], [[securities/spy|SPY]], [[securities/xlc|XLC]], [[securities/xli|XLI]], [[securities/xlk|XLK]], [[securities/xlv|XLV]]
   - backing sources: [[sources/1ILbgbgxl3A]], [[sources/2I6SPZjnjew]], [[sources/Gsy_ncfFBpo]], [[sources/HcWY9Rqcssk]], [[sources/ILHEm19JYs8]], [[sources/JIliIgFYrmE]], [[sources/MJdXttzj07k]], [[sources/ayqbZirKPkM]], [[sources/m1cO50COTFs]], [[sources/nSZp-hUSjdk]], 6 more
-- [[securities/ung|UNG]] - Auto-generated security topic — discussed across 15 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 15, degree: 5)
+- [[securities/ung|UNG]] - UNG does not appear to be discussed as a distinct topic in the supplied material. The corpus focuses on options trading fundamentals, meme stocks (particularly GameStop), market... (sources: 15, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/market-efficiency|Market Efficiency]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/3hrdUyJ-KmE]], [[sources/73cEIHM3FLg]], [[sources/7UFLVoQVRIY]], [[sources/7tBAlmNokFI]], [[sources/Ao4evQT3dOU]], [[sources/DGMPiN0zvGk]], [[sources/KKOqF8h1n1s]], [[sources/OwPmSCUS-bs]], [[sources/dHvfZOw1ql0]], [[sources/gnABTnW-KX8]], 5 more
-- [[securities/xle|XLE]] - Auto-generated security topic — discussed across 15 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 15, degree: 5)
+- [[securities/xle|XLE]] - XLE is an energy sector exchange-traded fund that appears in the corpus as a tactical rotation target and options-trading vehicle within a small-account portfolio strategy. The... (sources: 15, degree: 5)
   - links: [[concepts/market-regimes|Market Regimes]], [[concepts/position-sizing|Position Sizing]], [[concepts/sector-rotation|Sector Rotation]], [[securities/spy|SPY]], [[securities/xlc|XLC]]
   - backing sources: [[sources/2I6SPZjnjew]], [[sources/2yu8jSYKuH4]], [[sources/4D1XWrp3xec]], [[sources/4HHoWqBsc84]], [[sources/5OQNi5AthOk]], [[sources/8Sk1oMYRq-Q]], [[sources/ILHEm19JYs8]], [[sources/TjjfgZ7o68I]], [[sources/ayqbZirKPkM]], [[sources/p5jeGg0pCl4]], 5 more
-- [[securities/rklb|RKLB]] - Auto-generated security topic — discussed across 13 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 13, degree: 5)
+- [[securities/rklb|RKLB]] - Rocket Lab (RKLB) is a space technology company that appears in the channel's market analysis as a stock exhibiting strong technical breakout continuation with bullish call skew... (sources: 13, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/price-action|Price Action]], [[concepts/support-and-resistance|Support And Resistance]], [[concepts/technical-analysis|Technical Analysis]], [[securities/spy|SPY]]
   - backing sources: [[sources/73cEIHM3FLg]], [[sources/AJP8M8DQ_1U]], [[sources/J8E9IARs4_k]], [[sources/KKOqF8h1n1s]], [[sources/erYCMg8mwzI]], [[sources/k5BHQiGAMFo]], [[sources/l7dnXXgna6c]], [[sources/muKq98Z6CoU]], [[sources/o3Z1aDmpQTk]], [[sources/s8JPCQgqcy0]], 3 more
-- [[securities/amd|AMD]] - Auto-generated security topic — discussed across 12 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 12, degree: 5)
+- [[securities/amd|AMD]] - AMD is a large-cap semiconductor company that appears in the channel's discussions primarily as a barometer of richly-priced technology sector health and a vehicle for demonstra... (sources: 12, degree: 5)
   - links: [[concepts/price-action|Price Action]], [[concepts/risk-management|Risk Management]], [[concepts/technical-analysis|Technical Analysis]], [[securities/nvda|NVDA]], [[securities/spy|SPY]]
   - backing sources: [[sources/4D1XWrp3xec]], [[sources/B3SW20MSNbM]], [[sources/C1UbvCjzUDE]], [[sources/FCHbsEEpzqw]], [[sources/GOIa64zrMUA]], [[sources/O79HiUNmYUw]], [[sources/QQ5DeQdx0yo]], [[sources/asz1odhQh7w]], [[sources/bwpQdWBueoI]], [[sources/felr_mdjCKI]], 2 more
-- [[securities/ccj|CCJ]] - Auto-generated security topic — discussed across 12 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 12, degree: 5)
+- [[securities/ccj|CCJ]] - CCJ (Cameco Corporation) is a uranium and nuclear energy company whose stock and options are used as a thematic play on nuclear energy infrastructure demand and geopolitical com... (sources: 12, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/expected-move|Expected Move]], [[concepts/position-sizing|Position Sizing]], [[concepts/technical-analysis|Technical Analysis]], [[securities/spy|SPY]]
   - backing sources: [[sources/3hrdUyJ-KmE]], [[sources/73cEIHM3FLg]], [[sources/7tBAlmNokFI]], [[sources/KKOqF8h1n1s]], [[sources/L97-jrSmShs]], [[sources/OGVRNLQd9OU]], [[sources/WWVsuoWX8mU]], [[sources/fdjndtACm7Y]], [[sources/m566Ysll78w]], [[sources/ok3KdqH6fNM]], 2 more
-- [[securities/chwy|CHWY]] - Auto-generated security topic — discussed across 12 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 12, degree: 5)
+- [[securities/chwy|CHWY]] - Chewy (CHWY) is a retail stock that has been the subject of significant options activity and position shifts, particularly following Roaring Kitty's disclosure of a large positi... (sources: 12, degree: 5)
   - links: [[concepts/open-interest|Open Interest]], [[concepts/price-action|Price Action]], [[concepts/unusual-options-activity|Unusual Options Activity]], [[concepts/volume-analysis|Volume Analysis]], [[securities/gme|GME]]
   - backing sources: [[sources/A9Uq-DNAV2I]], [[sources/DLhIhRsAyLk]], [[sources/DeQ8wc28Bic]], [[sources/FqRCqLNv9FU]], [[sources/RAj7HHErd4o]], [[sources/RG_ZzRP4mNM]], [[sources/cHPNVLWHf8k]], [[sources/d1vwalhsuig]], [[sources/nSZp-hUSjdk]], [[sources/vys1T-VeyFg]], 2 more
-- [[securities/hood|HOOD]] - Auto-generated security topic — discussed across 12 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 12, degree: 5)
+- [[securities/hood|HOOD]] - HOOD does not appear as a distinct topic in the supplied material. The corpus discusses GameStop (GME), options structures, risk management, and market volatility across multipl... (sources: 12, degree: 5)
   - links: [[concepts/market-maker|Market Maker]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/volatility-clustering|Volatility Clustering]], [[securities/aapl|AAPL]]
   - backing sources: [[sources/3J3S-ewvxn0]], [[sources/73cEIHM3FLg]], [[sources/GVoSqEj3k9I]], [[sources/H04ZDCN_KRI]], [[sources/KKOqF8h1n1s]], [[sources/QQ5DeQdx0yo]], [[sources/RRhFuGfvBjA]], [[sources/bhvVBNtOMXk]], [[sources/e-AEE6CwLSs]], [[sources/epGFY9R7U8I]], 2 more
-- [[securities/smci|SMCI]] - Auto-generated security topic — discussed across 12 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 12, degree: 5)
+- [[securities/smci|SMCI]] - SMCI is a semiconductor stock that has faced near-term headwinds despite the long-term value proposition of artificial intelligence and the broader semiconductor sector. The sto... (sources: 12, degree: 5)
   - links: [[concepts/market-breadth|Market Breadth]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/nvda|NVDA]], [[securities/spy|SPY]]
   - backing sources: [[sources/7_bIW3YqY78]], [[sources/BrLsg_ig6uk]], [[sources/BtW6QHGCaas]], [[sources/KnORuwpxylI]], [[sources/LspC6Wx0QA8]], [[sources/O1ZjVHom2ms]], [[sources/QQ5DeQdx0yo]], [[sources/YGm5Rh1b1uc]], [[sources/iCPgZN_UxQw]], [[sources/m1cO50COTFs]], 2 more
-- [[securities/xlp|XLP]] - Auto-generated security topic — discussed across 12 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 12, degree: 5)
+- [[securities/xlp|XLP]] - XLP is the consumer staples sector exchange-traded fund that serves as a defensive holding during periods of sector rotation away from growth and technology stocks. The channel... (sources: 12, degree: 5)
   - links: [[concepts/price-action|Price Action]], [[concepts/sector-rotation|Sector Rotation]], [[securities/spy|SPY]], [[securities/xlc|XLC]], [[securities/xlv|XLV]]
   - backing sources: [[sources/1ILbgbgxl3A]], [[sources/2I6SPZjnjew]], [[sources/Gsy_ncfFBpo]], [[sources/JIliIgFYrmE]], [[sources/QWLtyhY7q50]], [[sources/ayqbZirKPkM]], [[sources/j2jCalwPRKs]], [[sources/m1cO50COTFs]], [[sources/nSZp-hUSjdk]], [[sources/r3KuGhBC9N8]], 2 more
-- [[securities/djt|DJT]] - Auto-generated security topic — discussed across 11 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 11, degree: 5)
+- [[securities/djt|DJT]] - DJT (Trump Media & Technology Group) is a highly volatile equity security that trades as a direct proxy for 2024 U.S. presidential election outcomes, with implied volatility con... (sources: 11, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/event-volatility|Event Volatility]], [[concepts/price-action|Price Action]], [[concepts/risk-management|Risk Management]], [[securities/gme|GME]]
   - backing sources: [[sources/DLhIhRsAyLk]], [[sources/JIliIgFYrmE]], [[sources/JkLLg4S1tXk]], [[sources/SAAznQCMSco]], [[sources/SjjhNzFg66s]], [[sources/WJGSluAXwVw]], [[sources/btR9-SRsxLU]], [[sources/ekhTOxldeFQ]], [[sources/i_TOxBb1d58]], [[sources/m7gAGvmmmHo]], 1 more
-- [[securities/ebay|EBAY]] - Auto-generated security topic — discussed across 11 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 11, degree: 5)
+- [[securities/ebay|EBAY]] - eBay became the subject of an unsolicited acquisition bid by GameStop announced by Ryan Cohen, valued at approximately $56 billion with a 50% cash and 50% stock structure despit... (sources: 11, degree: 5)
   - links: [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/delta|Delta]], [[concepts/dilution|Dilution]], [[securities/gme|GME]], [[strategies/short-premium|Short Premium]]
   - backing sources: [[sources/05aJUfUKE5Q]], [[sources/7mlZTr3xeHA]], [[sources/BB_9Ivd8NLM]], [[sources/ML0KTSh2AVk]], [[sources/NV_N1zDszZI]], [[sources/bZkISrMJLCs]], [[sources/lQ1-aB9c7p8]], [[sources/oU0273VG4oE]], [[sources/qc0nNebirm0]], [[sources/umt5Cntilg4]], 1 more
-- [[securities/hims|HIMS]] - Auto-generated security topic — discussed across 11 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 11, degree: 5)
+- [[securities/hims|HIMS]] - HIMS is a meme-adjacent security that appears in the channel's options analysis as a case study for volatility trading and earnings management. The stock is discussed in the con... (sources: 11, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/price-action|Price Action]], [[concepts/risk-management|Risk Management]], [[concepts/support-and-resistance|Support And Resistance]]
   - backing sources: [[sources/3maiJI5DRXc]], [[sources/5bwYlR-1Tdk]], [[sources/73cEIHM3FLg]], [[sources/AJP8M8DQ_1U]], [[sources/BbKKEUZ9Gu4]], [[sources/JuqhsVCGUCA]], [[sources/KKOqF8h1n1s]], [[sources/UdK6dDmKF3k]], [[sources/XLlTYEvy-XA]], [[sources/iFxhd-PYW1Q]], 1 more
-- [[securities/meta|META]] - Auto-generated security topic — discussed across 11 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 11, degree: 5)
+- [[securities/meta|META]] - META is a mega-cap technology stock discussed in the corpus primarily as a real-world example of earnings-driven trading opportunities and market positioning dynamics. The chann... (sources: 11, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/pltr|PLTR]], [[securities/spy|SPY]]
   - backing sources: [[sources/6c3CUMAVF04]], [[sources/BKbkWTwx2zI]], [[sources/BrLsg_ig6uk]], [[sources/EvZE2RIwFE4]], [[sources/GVoSqEj3k9I]], [[sources/HM1wtbKEDzw]], [[sources/LspC6Wx0QA8]], [[sources/O1ZjVHom2ms]], [[sources/WYfQsFADTfo]], [[sources/j7hF0WXnfxA]], 1 more
-- [[securities/slv|SLV]] - Auto-generated security topic — discussed across 11 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 11, degree: 5)
+- [[securities/slv|SLV]] - SLV is a silver exchange-traded fund used in options trading to study volatility dynamics and relative pricing anomalies. The channel demonstrates SLV as a case study for identi... (sources: 11, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/momentum|Momentum]], [[concepts/realized-volatility|Realized Volatility]], [[concepts/technical-analysis|Technical Analysis]], [[securities/spy|SPY]]
   - backing sources: [[sources/3hrdUyJ-KmE]], [[sources/5zUFVXiXFm0]], [[sources/Bxh8Fo7CiEI]], [[sources/CO9TLXsZVLM]], [[sources/FFMykjQWv30]], [[sources/RRhFuGfvBjA]], [[sources/XHifNJG5l1I]], [[sources/cmacStWLbDA]], [[sources/dHvfZOw1ql0]], [[sources/jnjGRehToJU]], 1 more
-- [[securities/xrt|XRT]] - Auto-generated security topic — discussed across 11 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 11, degree: 5)
+- [[securities/xrt|XRT]] - XRT is a retail-sector exchange-traded fund used in correlation and volatility analysis alongside meme stocks like GameStop and AMC to understand broader market dynamics and pri... (sources: 11, degree: 5)
   - links: [[concepts/dealer-positioning|Dealer Positioning]], [[concepts/market-maker|Market Maker]], [[concepts/order-flow|Order Flow]], [[concepts/volume-analysis|Volume Analysis]], [[securities/gme|GME]]
   - backing sources: [[sources/3J3S-ewvxn0]], [[sources/7tBAlmNokFI]], [[sources/A9Uq-DNAV2I]], [[sources/FuuVCSD5QVc]], [[sources/H04ZDCN_KRI]], [[sources/MJofIJZRODo]], [[sources/OeAIWXkOaNY]], [[sources/S1f1zIfXVh8]], [[sources/YY0b7ShDies]], [[sources/b6xLHRo383c]], 1 more
-- [[securities/copper|Copper]] - Auto-generated security topic — discussed across 10 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 10, degree: 5)
+- [[securities/copper|Copper]] - Copper is not discussed as a standalone options-trading topic in the supplied material. The corpus focuses primarily on macro equity market dynamics, the "melt up into bust" the... (sources: 10, degree: 5)
   - links: [[people/david-hunter|David Hunter]], [[securities/crude-oil|Crude Oil]], [[securities/gold|GOLD]], [[securities/silver|Silver]], [[securities/spy|SPY]]
   - backing sources: [[sources/2yu8jSYKuH4]], [[sources/6CZMjMvG4y4]], [[sources/6Sp4eF9ahW8]], [[sources/BZhZpyZzocY]], [[sources/IosIPXnYxq0]], [[sources/KKOqF8h1n1s]], [[sources/QmF0V4wKdw4]], [[sources/Tb6sRWIsHR0]], [[sources/dtpj5VcLnjg]], [[sources/r_im_g8YbUA]]
-- [[securities/mstr|MSTR]] - Auto-generated security topic — discussed across 10 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 10, degree: 5)
+- [[securities/mstr|MSTR]] - MSTR is a security discussed in the context of leveraged Bitcoin exposure strategies, specifically referenced through Michael Sailor's approach to gaining concentrated cryptocur... (sources: 10, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/btc|BTC]], [[securities/spy|SPY]]
   - backing sources: [[sources/BtW6QHGCaas]], [[sources/Ig1z2u_lK4k]], [[sources/L97-jrSmShs]], [[sources/RJPIDB___YE]], [[sources/RRhFuGfvBjA]], [[sources/_V5TBIYHylk]], [[sources/cy-eNQnNVA4]], [[sources/gIadiCaH2JM]], [[sources/jcWfEZ8Ol6o]], [[sources/xFkLh7gIGVo]]
-- [[securities/vxx|VXX]] - Auto-generated security topic — discussed across 10 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 10, degree: 5)
+- [[securities/vxx|VXX]] - VXX is an exchange-traded note that tracks volatility by holding a weighted blend of front and next-month VIX futures contracts, making it directly tradable like a stock with bi... (sources: 10, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/volatility-term-structure|Volatility Term Structure]], [[securities/spy|SPY]]
   - backing sources: [[sources/5OQNi5AthOk]], [[sources/EMzsNLXZ1bc]], [[sources/Gti8ecxsHz0]], [[sources/O8mP2Ine9ZQ]], [[sources/UNsis2_Blb8]], [[sources/cFB8wKv1dII]], [[sources/g2xg3_vDRaw]], [[sources/nxxdC4PK2BI]], [[sources/qOAzGBsrtog]], [[sources/xMVpIr1hVGs]]
-- [[securities/orcl|ORCL]] - Auto-generated security topic — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 9, degree: 5)
+- [[securities/orcl|ORCL]] - Oracle (ORCL) is used in the channel's content as a case study for analyzing earnings-driven price movements and gamma exposure dynamics in options trading. The stock featured p... (sources: 9, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/aapl|AAPL]], [[securities/gme|GME]], [[securities/msft|MSFT]]
   - backing sources: [[sources/0iZJfIu3Nac]], [[sources/73cEIHM3FLg]], [[sources/AfFTysPxbns]], [[sources/Ao4evQT3dOU]], [[sources/FrqSC7Fbf14]], [[sources/K6RRH35k-1Y]], [[sources/KJbt4Bi-59w]], [[sources/KKOqF8h1n1s]], [[sources/S1f1zIfXVh8]]
-- [[securities/smh|SMH]] - Auto-generated security topic — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 9, degree: 5)
+- [[securities/smh|SMH]] - SMH does not appear as a distinct topic in the supplied material. The corpus discusses macro market themes (melt-up and bust cycles), options fundamentals and trading mechanics,... (sources: 9, degree: 5)
   - links: [[concepts/market-regimes|Market Regimes]], [[concepts/melt-up|Melt Up]], [[securities/gold|GOLD]], [[securities/russell-2000|Russell 2000]], [[securities/silver|Silver]]
   - backing sources: [[sources/2yu8jSYKuH4]], [[sources/6Sp4eF9ahW8]], [[sources/73cEIHM3FLg]], [[sources/CjLt6G24QyA]], [[sources/GVrANU08cAU]], [[sources/KKOqF8h1n1s]], [[sources/QmF0V4wKdw4]], [[sources/Tb6sRWIsHR0]], [[sources/cz-aR_GUcXw]]
-- [[securities/sso|SSO]] - Auto-generated security topic — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 9, degree: 5)
+- [[securities/sso|SSO]] - SSO is a leveraged ETF that tracks the S&P 500 with 3x daily leverage, used in options trading as an underlying for covered strangle strategies that capitalize on the volatility... (sources: 9, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]], [[securities/tqqq|TQQQ]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/F7zoiv61ohM]], [[sources/FPLK8vS5ono]], [[sources/KlHlEa4t-fU]], [[sources/LIItjS6pXQI]], [[sources/PPq6ISVm178]], [[sources/SMZTy4X81UI]], [[sources/WyzHPgbxb5k]], [[sources/vDyL0Aff0gk]], [[sources/wWC7fT4W_6k]]
-- [[securities/pfe|PFE]] - Auto-generated security topic — discussed across 8 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 8, degree: 5)
+- [[securities/pfe|PFE]] - PFE (Pfizer) is a healthcare stock used across the channel's portfolio examples as a vehicle for diagonal spread strategies and position management. In the Small Stacks account... (sources: 8, degree: 5)
   - links: [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[strategies/ratio-call-diagonal|Ratio Call Diagonal]]
   - backing sources: [[sources/26vVCJY9t00]], [[sources/2jG5SD-3F0w]], [[sources/ITG5Za7EH4o]], [[sources/L97-jrSmShs]], [[sources/NelgJJ_pL9o]], [[sources/NxU5WXfFKC8]], [[sources/YOgMXbP9yCE]], [[sources/fp7kppTc384]]
-- [[securities/qbts|QBTS]] - Auto-generated security topic — discussed across 8 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 8, degree: 5)
+- [[securities/qbts|QBTS]] - QBTS is an early-stage quantum computing stock mentioned as part of an emerging sector opportunity alongside peers like RGTI, IOQ, and UBTS. The channel discusses building watch... (sources: 8, degree: 5)
   - links: [[concepts/market-breadth|Market Breadth]], [[concepts/market-regimes|Market Regimes]], [[concepts/position-sizing|Position Sizing]], [[concepts/sector-rotation|Sector Rotation]], [[securities/spy|SPY]]
   - backing sources: [[sources/Bxh8Fo7CiEI]], [[sources/FCHbsEEpzqw]], [[sources/Ig1z2u_lK4k]], [[sources/KKOqF8h1n1s]], [[sources/LspC6Wx0QA8]], [[sources/WWVsuoWX8mU]], [[sources/ezIUX7oWrTU]], [[sources/j2jCalwPRKs]]
-- [[securities/bac|BAC]] - Auto-generated security topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[securities/bac|BAC]] - BAC (Bank of America) is a financial-sector stock used in the Small Stacks portfolio series as a vehicle for testing various options strategies including call diagonals, short p... (sources: 7, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/ko|KO]], [[securities/xlf|XLF]], [[strategies/ratio-call-diagonal|Ratio Call Diagonal]]
   - backing sources: [[sources/4Lz5jr3grOs]], [[sources/YOgMXbP9yCE]], [[sources/g2xg3_vDRaw]], [[sources/ok3KdqH6fNM]], [[sources/quPgsIfyIgM]], [[sources/rKr1cIoI4kY]], [[sources/r_B4edd6-eU]]
-- [[securities/gme-saga|Gme Saga]] - Auto-generated security topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 6)
+- [[securities/gme-saga|Gme Saga]] - The GME Saga refers to GameStop's emergence as a focal point for retail options trading and market structure debate, encompassing both the 2021 squeeze event and subsequent stra... (sources: 7, degree: 6)
   - links: [[concepts/market-maker|Market Maker]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/trading-psychology|Trading Psychology]], [[securities/gme|GME]], [[strategies/covered-strangle|Covered Strangle (a.k.a. the "Coverage Triangle")]]
   - backing sources: [[sources/7mlZTr3xeHA]], [[sources/86KGdDWuPJ0]], [[sources/MXxvcoskXEo]], [[sources/NRNqMP0AULs]], [[sources/PutNkB_KwvI]], [[sources/Sb-2npBXR-A]], [[sources/vkBpeqKvUMY]]
-- [[securities/intc|INTC]] - Auto-generated security topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[securities/intc|INTC]] - INTC (Intel) appears in the Small Stacks portfolio as a vehicle for diagonal call spread strategies, where the trader initiates positions by selling near-term call options again... (sources: 7, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/support-and-resistance|Support And Resistance]], [[concepts/theta-decay|Theta Decay]], [[strategies/ratio-call-diagonal|Ratio Call Diagonal]]
   - backing sources: [[sources/B3SW20MSNbM]], [[sources/MrSY1py3kAE]], [[sources/TwmxypaxWeU]], [[sources/asz1odhQh7w]], [[sources/g2xg3_vDRaw]], [[sources/j-ZxrbKG9SE]], [[sources/r_B4edd6-eU]]
-- [[securities/ups|UPS]] - Auto-generated security topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[securities/ups|UPS]] - UPS does not appear as a distinct options-trading topic in the supplied material. The corpus discusses various market updates, strategy frameworks, and sector analysis, but cont... (sources: 7, degree: 5)
   - links: [[concepts/expected-move|Expected Move]], [[concepts/position-sizing|Position Sizing]], [[concepts/realized-volatility|Realized Volatility]], [[concepts/risk-management|Risk Management]], [[concepts/volatility-term-structure|Volatility Term Structure]]
   - backing sources: [[sources/C1UbvCjzUDE]], [[sources/JuqhsVCGUCA]], [[sources/KKOqF8h1n1s]], [[sources/L97-jrSmShs]], [[sources/WWVsuoWX8mU]], [[sources/riofzmWfQm8]], [[sources/wWC7fT4W_6k]]
-- [[securities/xli|XLI]] - Auto-generated security topic — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 7, degree: 5)
+- [[securities/xli|XLI]] - XLI is an industrials sector exchange-traded fund that serves as a benchmark for tracking the performance of industrial companies within the broader market. In the context of se... (sources: 7, degree: 5)
   - links: [[concepts/sector-rotation|Sector Rotation]], [[securities/spy|SPY]], [[securities/xlb|XLB]], [[securities/xlf|XLF]], [[securities/xlu|XLU]]
   - backing sources: [[sources/2I6SPZjnjew]], [[sources/6CZMjMvG4y4]], [[sources/Gsy_ncfFBpo]], [[sources/JIliIgFYrmE]], [[sources/MJdXttzj07k]], [[sources/ayqbZirKPkM]], [[sources/m1cO50COTFs]]
-- [[securities/asts|ASTS]] - Auto-generated security topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[securities/asts|ASTS]] - ASTS is a stock held in the channel's portfolio and used as a case study for various options strategies, including put spreads and short strangles positioned to capture volatili... (sources: 6, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/market-maker|Market Maker]], [[concepts/position-sizing|Position Sizing]], [[concepts/sector-rotation|Sector Rotation]], [[securities/spy|SPY]]
   - backing sources: [[sources/3JV19RH54eQ]], [[sources/FuuVCSD5QVc]], [[sources/Gsy_ncfFBpo]], [[sources/ZbFvXEfwDzY]], [[sources/gIadiCaH2JM]], [[sources/muKq98Z6CoU]]
-- [[securities/avgo|AVGO]] - Auto-generated security topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[securities/avgo|AVGO]] - AVGO (Broadcom) is an optionable semiconductor stock that serves as a barometer for sector health and market breadth. In the discussed period, Broadcom reported mixed earnings w... (sources: 6, degree: 5)
   - links: [[concepts/earnings-move|Earnings Move]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/nvda|NVDA]], [[securities/spy|SPY]]
   - backing sources: [[sources/80QGX7wPlJk]], [[sources/a14UA4oN82E]], [[sources/pCLigo-JkFA]], [[sources/rjj0k0T0384]], [[sources/svpivGlCu1g]], [[sources/v3Eiz9bpRK4]]
-- [[securities/bbby|BBBY]] - Auto-generated security topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[securities/bbby|BBBY]] - BBBY (Bed Bath & Beyond) appears in the corpus primarily as a litigation case involving Ryan Cohen's activist investing activities and alleged insider trading violations under S... (sources: 6, degree: 5)
   - links: [[concepts/market-maker|Market Maker]], [[concepts/order-flow|Order Flow]], [[concepts/position-sizing|Position Sizing]], [[concepts/trading-psychology|Trading Psychology]], [[securities/gme|GME]]
   - backing sources: [[sources/F8Mpls7PWfs]], [[sources/PwoEFKVQvSQ]], [[sources/S1f1zIfXVh8]], [[sources/cT6vsQUM33k]], [[sources/hRUfZInB234]], [[sources/n2eS41ckh5A]]
-- [[securities/boil|BOIL]] - Auto-generated security topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[securities/boil|BOIL]] - The supplied material does not contain any discussion of "BOIL" across the six videos summarized. The corpus covers GameStop analysis, market volatility and bond auctions, volat... (sources: 6, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/edge|Edge]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/73cEIHM3FLg]], [[sources/93vPWsmgsQc]], [[sources/Ao4evQT3dOU]], [[sources/DrfoNKd41I0]], [[sources/GK9EHx-NZ_M]], [[sources/KKOqF8h1n1s]]
-- [[securities/corn|CORN]] - Auto-generated security topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[securities/corn|CORN]] - CORN is a commodity futures contract representing corn, a staple agricultural commodity traded on futures exchanges. It is used in options and futures trading as part of diversi... (sources: 6, degree: 5)
   - links: [[concepts/delta-hedging|Delta Hedging]], [[concepts/market-regimes|Market Regimes]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/crude-oil|Crude Oil]]
   - backing sources: [[sources/O1ZjVHom2ms]], [[sources/QZUk0K75gu8]], [[sources/UZOcepy6VxY]], [[sources/fNW7e0SdtG0]], [[sources/gnABTnW-KX8]], [[sources/oKKtoZ-v7as]]
-- [[securities/gld|GLD]] - Auto-generated security topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[securities/gld|GLD]] - GLD is a gold-based security discussed in the context of commodity volatility and inflation hedging strategies. The material references GLD alongside broader commodity moves (pa... (sources: 6, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/realized-volatility|Realized Volatility]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]]
   - backing sources: [[sources/Hkb0O9P5zf0]], [[sources/RRhFuGfvBjA]], [[sources/cmacStWLbDA]], [[sources/muKq98Z6CoU]], [[sources/vT5zl_KGnVo]], [[sources/xDEpkL2JB-c]]
-- [[securities/xlre|XLRE]] - Auto-generated security topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[securities/xlre|XLRE]] - XLRE is a real estate sector exchange-traded fund that represents defensive equity exposure within the broader market. It is discussed in the context of sector rotation dynamics... (sources: 6, degree: 5)
   - links: [[concepts/market-breadth|Market Breadth]], [[concepts/price-action|Price Action]], [[concepts/sector-rotation|Sector Rotation]], [[securities/spy|SPY]], [[securities/xlf|XLF]]
   - backing sources: [[sources/2I6SPZjnjew]], [[sources/4Lz5jr3grOs]], [[sources/Gsy_ncfFBpo]], [[sources/JIliIgFYrmE]], [[sources/m1cO50COTFs]], [[sources/rjj0k0T0384]]
-- [[securities/xsp|XSP]] - Auto-generated security topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[securities/xsp|XSP]] - I cannot write a summary of "XSP" based on the provided material, as XSP is not mentioned or discussed in any of the six video summaries supplied. The summaries cover zero-DTE o... (sources: 6, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/market-maker|Market Maker]], [[concepts/position-sizing|Position Sizing]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/5Tc9L4TvPR8]], [[sources/F8Mpls7PWfs]], [[sources/UPNR9270_48]], [[sources/dHvfZOw1ql0]], [[sources/f4ING1kOGxg]], [[sources/kVvzt6IkUAE]]
-- [[securities/zm|ZM]] - Auto-generated security topic — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 6, degree: 5)
+- [[securities/zm|ZM]] - Based on the supplied material, there is no discussion of ZM (Zoom) as a distinct options-trading topic across the six videos provided. The corpus covers GameStop analysis, port... (sources: 6, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/aapl|AAPL]], [[securities/msft|MSFT]]
   - backing sources: [[sources/73cEIHM3FLg]], [[sources/H04ZDCN_KRI]], [[sources/K6RRH35k-1Y]], [[sources/KKOqF8h1n1s]], [[sources/NelgJJ_pL9o]], [[sources/_bB29g2ofI0]]
-- [[securities/crwd|CRWD]] - Auto-generated security topic — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 5, degree: 5)
+- [[securities/crwd|CRWD]] - CrowdStrike (CRWD) is a high-volatility security that experienced a sharp gap-down move following a significant outage caused by a content-update bug that triggered system-wide... (sources: 5, degree: 5)
   - links: [[concepts/market-breadth|Market Breadth]], [[concepts/price-action|Price Action]], [[securities/gme|GME]], [[securities/iwm|IWM]], [[securities/spy|SPY]]
   - backing sources: [[sources/Udy0f07p2O8]], [[sources/XG_sFyM1oeo]], [[sources/btR9-SRsxLU]], [[sources/j7hF0WXnfxA]], [[sources/nSZp-hUSjdk]]
-- [[securities/f|F]] - Auto-generated security topic — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 5, degree: 5)
+- [[securities/f|F]] - Ford (F) is an automotive stock used in the Small Stacks portfolio as a vehicle for diagonal spread strategies and ratio-call adjustments to generate premium income while managi... (sources: 5, degree: 5)
   - links: [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/position-sizing|Position Sizing]], [[strategies/covered-call|Covered Call]], [[strategies/ratio-call-diagonal|Ratio Call Diagonal]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/5-n_K32MGYo]], [[sources/5OQNi5AthOk]], [[sources/TwmxypaxWeU]], [[sources/j-ZxrbKG9SE]], [[sources/wh2h-43aK2A]]
-- [[securities/ge|GE]] - Auto-generated security topic — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 5, degree: 5)
+- [[securities/ge|GE]] - I cannot write a summary of GE based on the supplied material, as GE is not discussed in any of the five video summaries provided. The videos cover general options-trading conce... (sources: 5, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/spy|SPY]], [[securities/tsla|TSLA]]
   - backing sources: [[sources/DrfoNKd41I0]], [[sources/F7zoiv61ohM]], [[sources/QQ5DeQdx0yo]], [[sources/UdK6dDmKF3k]], [[sources/m3tMjcX7_UI]]
-- [[securities/lmt|LMT]] - Auto-generated security topic — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 5, degree: 5)
+- [[securities/lmt|LMT]] - LMT is a defense-sector stock that appears in options-trading discussions as a tradable opportunity during periods of geopolitical volatility and macro uncertainty. The security... (sources: 5, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/price-action|Price Action]], [[concepts/realized-volatility|Realized Volatility]], [[strategies/short-put|Short Put]]
   - backing sources: [[sources/C1UbvCjzUDE]], [[sources/DrfoNKd41I0]], [[sources/Z5S_SU1Lfo4]], [[sources/_LwonWbC7LE]], [[sources/l7dnXXgna6c]]
-- [[securities/micron|Micron]] - Auto-generated security topic — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 5, degree: 5)
+- [[securities/micron|Micron]] - Micron is a semiconductor stock that exhibited unusual bullish options positioning, particularly in front-month calls with significant call premium flows that diverged from its... (sources: 5, degree: 5)
   - links: [[concepts/market-breadth|Market Breadth]], [[concepts/momentum|Momentum]], [[concepts/price-action|Price Action]], [[concepts/sector-rotation|Sector Rotation]], [[securities/spy|SPY]]
   - backing sources: [[sources/BrLsg_ig6uk]], [[sources/O79HiUNmYUw]], [[sources/_C94WFbAOGY]], [[sources/j2jCalwPRKs]], [[sources/q-H_6Ju7XRU]]
-- [[securities/ndx|NDX]] - Auto-generated security topic — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 5, degree: 5)
+- [[securities/ndx|NDX]] - NDX is a broad-based index option contract representing the Nasdaq-100 that offers traders a Section 1256 contract eligible for preferential 60/40 tax treatment, making it tax-e... (sources: 5, degree: 5)
   - links: [[concepts/risk-management|Risk Management]], [[securities/iwm|IWM]], [[securities/spx|SPX]], [[securities/spy|SPY]], [[strategies/short-volatility|Short Volatility]]
   - backing sources: [[sources/5K0UEOLDP5k]], [[sources/Dlw9oTPZE9c]], [[sources/Rlw_-sR5jm0]], [[sources/dHvfZOw1ql0]], [[sources/dW3sNQFVTgA]]
-- [[securities/pton|PTON]] - Auto-generated security topic — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 5, degree: 5)
+- [[securities/pton|PTON]] - I cannot write a summary of "PTON" based on the supplied material. The five video summaries provided discuss GameStop (GME), general options trading fundamentals, market structu... (sources: 5, degree: 5)
   - links: [[concepts/price-action|Price Action]], [[concepts/risk-management|Risk Management]], [[concepts/support-and-resistance|Support And Resistance]], [[concepts/technical-analysis|Technical Analysis]], [[concepts/volume-analysis|Volume Analysis]]
   - backing sources: [[sources/73cEIHM3FLg]], [[sources/B3SW20MSNbM]], [[sources/H04ZDCN_KRI]], [[sources/KKOqF8h1n1s]], [[sources/_bB29g2ofI0]]
-- [[securities/qs|QS]] - Auto-generated security topic — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 5, degree: 5)
+- [[securities/qs|QS]] - I cannot write a summary of "QS" based on the supplied material. The five video summaries provided discuss covered strangles, GameStop (GME), options fundamentals, market cataly... (sources: 5, degree: 5)
   - links: [[concepts/covered-strangle|Covered Strangle]], [[concepts/expected-move|Expected Move]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/iwm|IWM]]
   - backing sources: [[sources/6aRyhwnDLfo]], [[sources/73cEIHM3FLg]], [[sources/KKOqF8h1n1s]], [[sources/WWVsuoWX8mU]], [[sources/llpfG64TOCY]]
-- [[securities/rgti|RGTI]] - Auto-generated security topic — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 5, degree: 1)
+- [[securities/rgti|RGTI]] - RGTI is an early-stage quantum computing stock that experienced a significant rally and became the subject of a live options trade demonstrating long-put strategy execution. In... (sources: 5, degree: 1)
   - links: [[concepts/position-sizing|Position Sizing]]
   - backing sources: [[sources/FCHbsEEpzqw]], [[sources/SlisA7fCzRM]], [[sources/Xe32uys9v5s]], [[sources/ld6vn5GtAeI]], [[sources/llpfG64TOCY]]
-- [[securities/unh|UNH]] - Auto-generated security topic — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 5, degree: 5)
+- [[securities/unh|UNH]] - UNH is a healthcare sector stock used in options trading for earnings volatility plays and sector rotation strategies. The channel discusses trading UNH through volatility mecha... (sources: 5, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/expected-move|Expected Move]], [[concepts/moneyness|Moneyness]], [[concepts/position-sizing|Position Sizing]], [[concepts/volatility-term-structure|Volatility Term Structure]]
   - backing sources: [[sources/3hrdUyJ-KmE]], [[sources/93vPWsmgsQc]], [[sources/FuuVCSD5QVc]], [[sources/_sYkIbkPItA]], [[sources/yVf9c0ZyyYw]]
-- [[securities/upro|UPRO]] - Auto-generated security topic — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 5, degree: 5)
+- [[securities/upro|UPRO]] - UPRO is a 3x leveraged ETF tracking the S&P 500 that serves as an underlying for covered strangle positions in options trading. Traders use UPRO alongside other leveraged and no... (sources: 5, degree: 5)
   - links: [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[securities/gme|GME]], [[securities/qqq|QQQ]], [[securities/spy|SPY]]
   - backing sources: [[sources/3STDqRx1o8w]], [[sources/4kj4Cp-qbsE]], [[sources/F7zoiv61ohM]], [[sources/HcWY9Rqcssk]], [[sources/KlHlEa4t-fU]]
-- [[securities/uso|USO]] - Auto-generated security topic — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 5, degree: 5)
+- [[securities/uso|USO]] - USO is an oil-linked security used in options trading to gain exposure to crude oil volatility and directional moves in the energy sector. The channel discusses USO primarily in... (sources: 5, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/gamma|Gamma]], [[concepts/position-sizing|Position Sizing]], [[concepts/realized-volatility|Realized Volatility]], [[concepts/volatility-term-structure|Volatility Term Structure]]
   - backing sources: [[sources/TxQPn4WGJBc]], [[sources/XNUnwpzL8dY]], [[sources/Z5S_SU1Lfo4]], [[sources/cnLiihvAXpc]], [[sources/l7dnXXgna6c]]
-- [[securities/wfc|WFC]] - Auto-generated security topic — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below. (sources: 5, degree: 5)
+- [[securities/wfc|WFC]] - Wells Fargo (WFC) is a financial-sector stock that appeared in the corpus primarily in the context of regulatory and compliance issues affecting its price action. The stock decl... (sources: 5, degree: 5)
   - links: [[concepts/order-flow|Order Flow]], [[concepts/support-and-resistance|Support And Resistance]], [[concepts/technical-analysis|Technical Analysis]], [[concepts/volatility-term-structure|Volatility Term Structure]], [[securities/gme|GME]]
   - backing sources: [[sources/4Lz5jr3grOs]], [[sources/EzfR61qH4DI]], [[sources/ZbFvXEfwDzY]], [[sources/f4ING1kOGxg]], [[sources/tVkDtu_mOjI]]
 
 ### People
 
-- [[people/tom-sosnoff|Tom Sosnoff]] - Interviewed guest — appears in 23 video(s) in the corpus. Auto-generated stub pending curated synthesis of this person's distinctive views. (sources: 23, degree: 6)
+- [[people/tom-sosnoff|Tom Sosnoff]] - Tom Sosnoff is the founder of thinkorswim and tastytrade who built a career emphasizing retail trader education, risk management through position sizing, and contrarian market p... (sources: 23, degree: 6)
   - links: [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]], [[concepts/trading-psychology|Trading Psychology]], [[people/euan-sinclair|Euan Sinclair]], [[securities/spy|SPY]]
   - backing sources: [[sources/6bEYNNxbjEg]], [[sources/80QGX7wPlJk]], [[sources/AOoaC3-Cpgs]], [[sources/K73JGCGrw3k]], [[sources/L2ERh_SHQZ0]], [[sources/Lf4Qaos7YqE]], [[sources/O1ZjVHom2ms]], [[sources/OXdM2BxOE5s]], [[sources/PJESJd0_79U]], [[sources/RRhFuGfvBjA]], 13 more
-- [[people/david-hunter|David Hunter]] - Interviewed guest — appears in 17 video(s) in the corpus. Auto-generated stub pending curated synthesis of this person's distinctive views. (sources: 17, degree: 8)
+- [[people/david-hunter|David Hunter]] - David Hunter is a macro strategist and 48–50 year Wall Street veteran who advocates a contrarian "melt-up into global bust" thesis: he forecasts a parabolic rally in equities (S... (sources: 17, degree: 8)
   - links: [[concepts/deflationary-bust|Deflationary Bust]], [[concepts/market-regimes|Market Regimes]], [[concepts/melt-up|Melt Up]], [[concepts/sentiment|Sentiment]], [[securities/copper|Copper]], [[securities/gold|GOLD]], [[securities/silver|Silver]], [[securities/spy|SPY]]
   - backing sources: [[sources/2yu8jSYKuH4]], [[sources/6-MMToTqJAE]], [[sources/6CZMjMvG4y4]], [[sources/6Sp4eF9ahW8]], [[sources/BZhZpyZzocY]], [[sources/FUNC-MTq9PQ]], [[sources/GVrANU08cAU]], [[sources/IosIPXnYxq0]], [[sources/JEvI6g2-h94]], [[sources/Nfuui1cwi1w]], 7 more
-- [[people/richard-newton|Richard Newton]] - Interviewed guest — appears in 8 video(s) in the corpus. Auto-generated stub pending curated synthesis of this person's distinctive views. (sources: 8, degree: 5)
+- [[people/richard-newton|Richard Newton]] - Richard Newton is a GameStop researcher and options-market analyst who collaborates with Eric on deep-dive livestreams examining settlement mechanics, ETF creation-redemption cy... (sources: 8, degree: 5)
   - links: [[concepts/dealer-positioning|Dealer Positioning]], [[concepts/market-maker|Market Maker]], [[concepts/order-flow|Order Flow]], [[concepts/risk-management|Risk Management]], [[securities/gme|GME]]
   - backing sources: [[sources/Cfs_0qgho_E]], [[sources/IsiLvT-L3vk]], [[sources/S1f1zIfXVh8]], [[sources/Sue4LFwVQvU]], [[sources/h2D2trUqgDI]], [[sources/iN_Wx4ah5ek]], [[sources/llug0_5XK9Q]], [[sources/oCEtRjtaaSw]]
 - [[people/euan-sinclair|Euan Sinclair]] - Quant options trader and author, recurring guest on The Outlier Podcast (3 appearances in the current sample). His through-line: edge comes from a handful of durable, well-under... (sources: 3, degree: 7)
   - links: [[concepts/gamma-exposure|Gamma Exposure]], [[concepts/transaction-costs|Transaction Costs]], [[concepts/volatility-risk-premium|Volatility Risk Premium (VRP)]], [[people/tom-sosnoff|Tom Sosnoff]], [[securities/spx|SPX]], [[strategies/covered-strangle|Covered Strangle (a.k.a. the "Coverage Triangle")]], [[strategies/risk-reversal|Risk Reversal]]
   - backing sources: [[sources/6vQeTS9cyk0]], [[sources/Ao4evQT3dOU]], [[sources/kvzQJ3wFaZs]]
-- [[people/andrew-mack|Andrew Mack]] - Interviewed guest — appears in 2 video(s) in the corpus. Auto-generated stub pending curated synthesis of this person's distinctive views. (sources: 2, degree: 0)
+- [[people/andrew-mack|Andrew Mack]] - Andrew Mack is an options trader who approaches the market through systematic edge discovery and rigorous testing methodology, drawing parallels between options trading and spor... (sources: 2, degree: 0)
   - links: none
   - backing sources: [[sources/SNVvZCtKt0Y]], [[sources/u-gINUduTxM]]
-- [[people/tom-basso|Tom Basso]] - Interviewed guest — appears in 2 video(s) in the corpus. Auto-generated stub pending curated synthesis of this person's distinctive views. (sources: 2, degree: 0)
+- [[people/tom-basso|Tom Basso]] - Tom Basso is a legendary trend-following trader and author of Successful Traders who advocates for systematic, preparation-based approaches to trading rather than market predict... (sources: 2, degree: 0)
   - links: none
   - backing sources: [[sources/QZUk0K75gu8]], [[sources/UZOcepy6VxY]]
 
@@ -1220,215 +1277,221 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 
 ### Concepts
 
-- [[concepts/risk-management|risk-management]] - 527 source mention(s)
-- [[concepts/position-sizing|position-sizing]] - 473 source mention(s)
-- [[concepts/implied-volatility|implied-volatility]] - 458 source mention(s)
-- [[concepts/delta|delta]] - 333 source mention(s)
-- [[concepts/process-over-outcome|process-over-outcome]] - 322 source mention(s)
-- [[concepts/trading-psychology|trading-psychology]] - 270 source mention(s)
-- [[concepts/profit-mechanism|profit-mechanism]] - 210 source mention(s)
+- [[concepts/risk-management|risk-management]] - 531 source mention(s)
+- [[concepts/position-sizing|position-sizing]] - 477 source mention(s)
+- [[concepts/implied-volatility|implied-volatility]] - 463 source mention(s)
+- [[concepts/delta|delta]] - 337 source mention(s)
+- [[concepts/process-over-outcome|process-over-outcome]] - 323 source mention(s)
+- [[concepts/trading-psychology|trading-psychology]] - 272 source mention(s)
+- [[concepts/profit-mechanism|profit-mechanism]] - 211 source mention(s)
 - [[concepts/emotional-discipline|emotional-discipline]] - 209 source mention(s)
-- [[concepts/edge|edge]] - 203 source mention(s)
+- [[concepts/edge|edge]] - 204 source mention(s)
 - [[concepts/price-action|price-action]] - 202 source mention(s)
-- [[concepts/moneyness|moneyness]] - 198 source mention(s)
-- [[concepts/technical-analysis|technical-analysis]] - 193 source mention(s)
-- [[concepts/market-regimes|market-regimes]] - 165 source mention(s)
-- [[concepts/trading-plan|trading-plan]] - 159 source mention(s)
+- [[concepts/moneyness|moneyness]] - 200 source mention(s)
+- [[concepts/technical-analysis|technical-analysis]] - 194 source mention(s)
+- [[concepts/market-regimes|market-regimes]] - 166 source mention(s)
+- [[concepts/trading-plan|trading-plan]] - 160 source mention(s)
+- [[concepts/volatility-term-structure|volatility-term-structure]] - 157 source mention(s)
 - [[concepts/market-efficiency|market-efficiency]] - 156 source mention(s)
-- [[concepts/volatility-term-structure|volatility-term-structure]] - 154 source mention(s)
 - [[concepts/market-maker|market-maker]] - 153 source mention(s)
-- [[concepts/gamma|gamma]] - 147 source mention(s)
-- [[concepts/volatility-clustering|volatility-clustering]] - 146 source mention(s)
+- [[concepts/gamma|gamma]] - 150 source mention(s)
+- [[concepts/volatility-clustering|volatility-clustering]] - 147 source mention(s)
+- [[concepts/delta-hedging|delta-hedging]] - 139 source mention(s)
 - [[concepts/support-and-resistance|support-and-resistance]] - 137 source mention(s)
-- [[concepts/delta-hedging|delta-hedging]] - 137 source mention(s)
-- [[concepts/capital-efficiency|capital-efficiency]] - 136 source mention(s)
-- [[concepts/theta-decay|theta-decay]] - 131 source mention(s)
-- [[concepts/leverage|leverage]] - 130 source mention(s)
-- [[concepts/volatility-risk-premium|volatility-risk-premium]] - 123 source mention(s)
-- [[concepts/volume-analysis|volume-analysis]] - 121 source mention(s)
-- [[concepts/theta|theta]] - 120 source mention(s)
+- [[concepts/capital-efficiency|capital-efficiency]] - 137 source mention(s)
+- [[concepts/leverage|leverage]] - 133 source mention(s)
+- [[concepts/theta-decay|theta-decay]] - 133 source mention(s)
+- [[concepts/volatility-risk-premium|volatility-risk-premium]] - 125 source mention(s)
+- [[concepts/theta|theta]] - 124 source mention(s)
+- [[concepts/volume-analysis|volume-analysis]] - 122 source mention(s)
 - [[concepts/earnings-move|earnings-move]] - 115 source mention(s)
-- [[concepts/order-flow|order-flow]] - 112 source mention(s)
-- [[concepts/momentum|momentum]] - 110 source mention(s)
-- [[concepts/vega|vega]] - 107 source mention(s)
+- [[concepts/order-flow|order-flow]] - 113 source mention(s)
+- [[concepts/vega|vega]] - 112 source mention(s)
+- [[concepts/momentum|momentum]] - 112 source mention(s)
+- [[concepts/realized-volatility|realized-volatility]] - 107 source mention(s)
 - [[concepts/expected-move|expected-move]] - 107 source mention(s)
-- [[concepts/realized-volatility|realized-volatility]] - 106 source mention(s)
+- [[concepts/expected-value|expected-value]] - 104 source mention(s)
+- [[concepts/sector-rotation|sector-rotation]] - 104 source mention(s)
 - [[concepts/market-breadth|market-breadth]] - 104 source mention(s)
-- [[concepts/expected-value|expected-value]] - 103 source mention(s)
-- [[concepts/sector-rotation|sector-rotation]] - 103 source mention(s)
 - [[concepts/unusual-options-activity|unusual-options-activity]] - 98 source mention(s)
-- [[concepts/delta-neutral|delta-neutral]] - 93 source mention(s)
-- [[concepts/trading-log|trading-log]] - 92 source mention(s)
-- [[concepts/volatility-skew|volatility-skew]] - 90 source mention(s)
-- [[concepts/extrinsic-value|extrinsic-value]] - 89 source mention(s)
+- [[concepts/delta-neutral|delta-neutral]] - 94 source mention(s)
+- [[concepts/trading-log|trading-log]] - 93 source mention(s)
+- [[concepts/volatility-skew|volatility-skew]] - 92 source mention(s)
+- [[concepts/extrinsic-value|extrinsic-value]] - 90 source mention(s)
 - [[concepts/assignment|assignment]] - 85 source mention(s)
 - [[concepts/trend-identification|trend-identification]] - 85 source mention(s)
-- [[concepts/backtesting|backtesting]] - 81 source mention(s)
+- [[concepts/backtesting|backtesting]] - 82 source mention(s)
 - [[concepts/portfolio-first|portfolio-first]] - 81 source mention(s)
-- [[concepts/expected-return|expected-return]] - 77 source mention(s)
+- [[concepts/expected-return|expected-return]] - 78 source mention(s)
+- [[concepts/implied-volatility-percentile|implied-volatility-percentile]] - 77 source mention(s)
 - [[concepts/days-to-expiration|days-to-expiration]] - 77 source mention(s)
-- [[concepts/implied-volatility-percentile|implied-volatility-percentile]] - 76 source mention(s)
-- [[concepts/mean-reversion|mean-reversion]] - 71 source mention(s)
+- [[concepts/mean-reversion|mean-reversion]] - 72 source mention(s)
 - [[concepts/moving-averages|moving-averages]] - 70 source mention(s)
-- [[concepts/realized-vs-unrealized-pnl|realized-vs-unrealized-pnl]] - 67 source mention(s)
+- [[concepts/realized-vs-unrealized-pnl|realized-vs-unrealized-pnl]] - 68 source mention(s)
 - [[concepts/open-interest|open-interest]] - 67 source mention(s)
-- [[concepts/intrinsic-value|intrinsic-value]] - 65 source mention(s)
-- [[concepts/bid-ask-spread|bid-ask-spread]] - 64 source mention(s)
-- [[concepts/greeks|greeks]] - 61 source mention(s)
+- [[concepts/intrinsic-value|intrinsic-value]] - 66 source mention(s)
+- [[concepts/bid-ask-spread|bid-ask-spread]] - 65 source mention(s)
+- [[concepts/greeks|greeks]] - 62 source mention(s)
 - [[concepts/disposition-effect|disposition-effect]] - 60 source mention(s)
-- [[concepts/post-earnings-drift|post-earnings-drift]] - 59 source mention(s)
-- [[concepts/win-rate-vs-profitability|win-rate-vs-profitability]] - 57 source mention(s)
-- [[concepts/covered-strangle|covered-strangle]] - 57 source mention(s)
-- [[concepts/risk-tolerance|risk-tolerance]] - 57 source mention(s)
-- [[concepts/short-volatility|short-volatility]] - 56 source mention(s)
+- [[concepts/post-earnings-drift|post-earnings-drift]] - 60 source mention(s)
+- [[concepts/risk-tolerance|risk-tolerance]] - 59 source mention(s)
+- [[concepts/win-rate-vs-profitability|win-rate-vs-profitability]] - 58 source mention(s)
+- [[concepts/short-volatility|short-volatility]] - 58 source mention(s)
+- [[concepts/covered-strangle|covered-strangle]] - 58 source mention(s)
+- [[concepts/risk-premium|risk-premium]] - 54 source mention(s)
 - [[concepts/probability-of-touch|probability-of-touch]] - 53 source mention(s)
-- [[concepts/risk-premium|risk-premium]] - 52 source mention(s)
 - [[concepts/dealer-positioning|dealer-positioning]] - 51 source mention(s)
 - [[concepts/confirmation-bias|confirmation-bias]] - 50 source mention(s)
-- [[concepts/zero-dte|zero-dte]] - 48 source mention(s)
-- [[concepts/rolling-options|rolling-options]] - 47 source mention(s)
-- [[concepts/profit-taking|profit-taking]] - 46 source mention(s)
+- [[concepts/zero-dte|zero-dte]] - 49 source mention(s)
+- [[concepts/rolling-options|rolling-options]] - 48 source mention(s)
+- [[concepts/profit-taking|profit-taking]] - 47 source mention(s)
+- [[concepts/trend-following|trend-following]] - 46 source mention(s)
 - [[concepts/opportunity-cost|opportunity-cost]] - 46 source mention(s)
 - [[concepts/paper-trading|paper-trading]] - 45 source mention(s)
 - [[concepts/event-volatility|event-volatility]] - 45 source mention(s)
-- [[concepts/trend-following|trend-following]] - 44 source mention(s)
 - [[concepts/short-squeeze|short-squeeze]] - 44 source mention(s)
 - [[concepts/gamma-exposure|gamma-exposure]] - 42 source mention(s)
 - [[concepts/volatility-surface|volatility-surface]] - 41 source mention(s)
 - [[concepts/liquidity-cycle|liquidity-cycle]] - 41 source mention(s)
 - [[concepts/consolidation|consolidation]] - 40 source mention(s)
-- [[concepts/outlier-strategy-process|outlier-strategy-process]] - 39 source mention(s)
+- [[concepts/outlier-strategy-process|outlier-strategy-process]] - 40 source mention(s)
+- [[concepts/volatility|volatility]] - 40 source mention(s)
 - [[concepts/pnl-attribution|pnl-attribution]] - 39 source mention(s)
 - [[concepts/early-exercise|early-exercise]] - 38 source mention(s)
-- [[concepts/volatility|volatility]] - 37 source mention(s)
+- [[concepts/compound-annual-growth-rate|compound-annual-growth-rate]] - 36 source mention(s)
 - [[concepts/volume-profile|volume-profile]] - 36 source mention(s)
-- [[concepts/compound-annual-growth-rate|compound-annual-growth-rate]] - 35 source mention(s)
-- [[concepts/cost-basis|cost-basis]] - 35 source mention(s)
-- [[concepts/sample-size|sample-size]] - 35 source mention(s)
+- [[concepts/cost-basis|cost-basis]] - 36 source mention(s)
+- [[concepts/sample-size|sample-size]] - 36 source mention(s)
+- [[concepts/scaling-in|scaling-in]] - 35 source mention(s)
+- [[concepts/kelly-criterion|kelly-criterion]] - 35 source mention(s)
 - [[concepts/information-and-price|information-and-price]] - 35 source mention(s)
-- [[concepts/scaling-in|scaling-in]] - 34 source mention(s)
 - [[concepts/out-of-the-money|out-of-the-money]] - 34 source mention(s)
+- [[concepts/market-timing|market-timing]] - 34 source mention(s)
 - [[concepts/fed-put|fed-put]] - 33 source mention(s)
 - [[concepts/inflation|inflation]] - 33 source mention(s)
-- [[concepts/market-timing|market-timing]] - 33 source mention(s)
+- [[concepts/iv-crush|iv-crush]] - 33 source mention(s)
 - [[concepts/tariffs|tariffs]] - 33 source mention(s)
-- [[concepts/kelly-criterion|kelly-criterion]] - 33 source mention(s)
 - [[concepts/transaction-costs|transaction-costs]] - 32 source mention(s)
 - [[concepts/naked-short-selling|naked-short-selling]] - 32 source mention(s)
-- [[concepts/iv-crush|iv-crush]] - 32 source mention(s)
 - [[concepts/overfitting|overfitting]] - 32 source mention(s)
-- [[concepts/implied-volatility-rank|implied-volatility-rank]] - 31 source mention(s)
+- [[concepts/implied-volatility-rank|implied-volatility-rank]] - 32 source mention(s)
+- [[concepts/survivorship-bias|survivorship-bias]] - 31 source mention(s)
+- [[concepts/short-premium|short-premium]] - 30 source mention(s)
 - [[concepts/covered-call|covered-call]] - 30 source mention(s)
 - [[concepts/contrarian-sentiment|contrarian-sentiment]] - 30 source mention(s)
 - [[concepts/ai-assisted-trading|ai-assisted-trading]] - 30 source mention(s)
-- [[concepts/short-premium|short-premium]] - 29 source mention(s)
-- [[concepts/survivorship-bias|survivorship-bias]] - 29 source mention(s)
+- [[concepts/breakout|breakout]] - 28 source mention(s)
 - [[concepts/payment-for-order-flow|payment-for-order-flow]] - 27 source mention(s)
 - [[concepts/probability-cone|probability-cone]] - 27 source mention(s)
-- [[concepts/breakout|breakout]] - 27 source mention(s)
-- [[concepts/correlation|correlation]] - 26 source mention(s)
-- [[concepts/stop-loss|stop-loss]] - 25 source mention(s)
+- [[concepts/correlation|correlation]] - 27 source mention(s)
+- [[concepts/stop-loss|stop-loss]] - 26 source mention(s)
 - [[concepts/standard-deviation-channels|standard-deviation-channels]] - 25 source mention(s)
+- [[concepts/volatility-mean-reversion|volatility-mean-reversion]] - 25 source mention(s)
+- [[concepts/liquidity|liquidity]] - 25 source mention(s)
 - [[concepts/mark-to-market|mark-to-market]] - 24 source mention(s)
 - [[concepts/skew|skew]] - 24 source mention(s)
 - [[concepts/supply-and-demand|supply-and-demand]] - 24 source mention(s)
 - [[concepts/short-put|short-put]] - 24 source mention(s)
-- [[concepts/liquidity|liquidity]] - 24 source mention(s)
-- [[concepts/volatility-mean-reversion|volatility-mean-reversion]] - 23 source mention(s)
-- [[concepts/time-frames|time-frames]] - 23 source mention(s)
+- [[concepts/time-frames|time-frames]] - 24 source mention(s)
+- [[concepts/dollar-cost-averaging|dollar-cost-averaging]] - 23 source mention(s)
 - [[concepts/capped-upside|capped-upside]] - 22 source mention(s)
 - [[concepts/trust-your-plan|trust-your-plan]] - 22 source mention(s)
-- [[concepts/dollar-cost-averaging|dollar-cost-averaging]] - 22 source mention(s)
-- [[concepts/return-on-invested-capital|return-on-invested-capital]] - 21 source mention(s)
+- [[concepts/return-on-invested-capital|return-on-invested-capital]] - 22 source mention(s)
 - [[concepts/multi-timeframe-analysis|multi-timeframe-analysis]] - 21 source mention(s)
 - [[concepts/higher-highs-lower-lows|higher-highs-lower-lows]] - 21 source mention(s)
+- [[concepts/delta-selection|delta-selection]] - 21 source mention(s)
 - [[concepts/dealer-gamma|dealer-gamma]] - 21 source mention(s)
 - [[concepts/asset-allocation|asset-allocation]] - 20 source mention(s)
-- [[concepts/delta-selection|delta-selection]] - 20 source mention(s)
 - [[concepts/standard-deviation-move|standard-deviation-move]] - 20 source mention(s)
 - [[concepts/charm|charm]] - 19 source mention(s)
 - [[concepts/fomc|fomc]] - 19 source mention(s)
 - [[concepts/probabilistic-outcomes|probabilistic-outcomes]] - 19 source mention(s)
 - [[concepts/geopolitical-risk|geopolitical-risk]] - 18 source mention(s)
+- [[concepts/drawdown|drawdown]] - 18 source mention(s)
 - [[concepts/higher-order-greeks|higher-order-greeks]] - 18 source mention(s)
 - `variance-risk-premium` - 18 source mention(s)
 - [[concepts/recession|recession]] - 17 source mention(s)
-- [[concepts/drawdown|drawdown]] - 17 source mention(s)
 - [[concepts/meme-stock|meme-stock]] - 17 source mention(s)
+- [[concepts/convexity|convexity]] - 17 source mention(s)
 - [[concepts/context-window-management|context-window-management]] - 17 source mention(s)
 - [[concepts/strategy-time-frame-alignment|strategy-time-frame-alignment]] - 17 source mention(s)
 - [[concepts/yield-curve|yield-curve]] - 17 source mention(s)
+- [[concepts/risk-reward|risk-reward]] - 17 source mention(s)
 - [[concepts/market-structure|market-structure]] - 16 source mention(s)
 - [[concepts/mental-stop-vs-hard-stop|mental-stop-vs-hard-stop]] - 16 source mention(s)
 - [[concepts/fat-tails|fat-tails]] - 16 source mention(s)
-- [[concepts/convexity|convexity]] - 16 source mention(s)
 - [[concepts/large-language-model|large-language-model]] - 16 source mention(s)
 - [[concepts/deep-itm-calls|deep-itm-calls]] - 16 source mention(s)
-- [[concepts/risk-reward|risk-reward]] - 16 source mention(s)
+- [[concepts/quantitative-research|quantitative-research]] - 16 source mention(s)
 - [[concepts/buy-and-hold|buy-and-hold]] - 16 source mention(s)
 - `cash-secured-put` - 15 source mention(s)
 - [[concepts/risk-taking|risk-taking]] - 15 source mention(s)
-- [[concepts/quantitative-research|quantitative-research]] - 15 source mention(s)
+- [[concepts/risk-first|risk-first]] - 14 source mention(s)
 - [[concepts/linear-regression-channels|linear-regression-channels]] - 14 source mention(s)
+- [[concepts/monte-carlo-simulation|monte-carlo-simulation]] - 14 source mention(s)
 - [[concepts/order-internalization|order-internalization]] - 14 source mention(s)
 - [[concepts/premium|premium]] - 13 source mention(s)
 - [[concepts/annualized-return|annualized-return]] - 13 source mention(s)
-- [[concepts/risk-first|risk-first]] - 13 source mention(s)
+- [[concepts/dunning-kruger-effect|dunning-kruger-effect]] - 13 source mention(s)
 - [[concepts/melt-up|melt-up]] - 13 source mention(s)
 - [[concepts/deflationary-bust|deflationary-bust]] - 13 source mention(s)
 - [[concepts/counterparty|counterparty]] - 13 source mention(s)
 - [[concepts/prompt-engineering|prompt-engineering]] - 13 source mention(s)
 - [[concepts/risk-free-rate|risk-free-rate]] - 13 source mention(s)
-- [[concepts/monte-carlo-simulation|monte-carlo-simulation]] - 13 source mention(s)
+- [[concepts/short-gamma|short-gamma]] - 13 source mention(s)
 - [[concepts/research-depth|research-depth]] - 13 source mention(s)
 - [[concepts/call-skew|call-skew]] - 12 source mention(s)
-- [[concepts/dunning-kruger-effect|dunning-kruger-effect]] - 12 source mention(s)
 - [[concepts/margin|margin]] - 12 source mention(s)
 - [[concepts/catalyst|catalyst]] - 12 source mention(s)
-- [[concepts/short-gamma|short-gamma]] - 12 source mention(s)
+- [[concepts/hedging|hedging]] - 12 source mention(s)
+- [[concepts/diversification|diversification]] - 12 source mention(s)
 - [[concepts/gamma-ramp|gamma-ramp]] - 12 source mention(s)
 - [[concepts/sentiment|sentiment]] - 11 source mention(s)
+- [[concepts/gamma-scalping|gamma-scalping]] - 11 source mention(s)
 - [[concepts/options-chain-analysis|options-chain-analysis]] - 11 source mention(s)
 - [[concepts/point-of-control|point-of-control]] - 11 source mention(s)
+- [[concepts/overnight-risk-premium|overnight-risk-premium]] - 11 source mention(s)
 - [[concepts/options-chain|options-chain]] - 11 source mention(s)
 - [[concepts/short-interest|short-interest]] - 11 source mention(s)
-- [[concepts/hedging|hedging]] - 11 source mention(s)
-- [[concepts/diversification|diversification]] - 11 source mention(s)
+- [[concepts/gap-risk|gap-risk]] - 11 source mention(s)
+- [[concepts/robustness|robustness]] - 10 source mention(s)
 - [[concepts/sequence-of-returns|sequence-of-returns]] - 10 source mention(s)
-- [[concepts/gamma-scalping|gamma-scalping]] - 10 source mention(s)
 - [[concepts/put-skew|put-skew]] - 10 source mention(s)
 - [[concepts/no-code-tools|no-code-tools]] - 10 source mention(s)
-- [[concepts/overnight-risk-premium|overnight-risk-premium]] - 10 source mention(s)
-- [[concepts/gap-risk|gap-risk]] - 10 source mention(s)
-- [[concepts/robustness|robustness]] - 9 source mention(s)
+- [[concepts/hypothesis-testing|hypothesis-testing]] - 9 source mention(s)
 - [[concepts/at-the-money|at-the-money]] - 9 source mention(s)
+- [[concepts/iron-condor|iron-condor]] - 9 source mention(s)
 - [[concepts/basis-adjustment|basis-adjustment]] - 9 source mention(s)
+- [[concepts/max-drawdown|max-drawdown]] - 9 source mention(s)
 - [[concepts/number-of-occurrences|number-of-occurrences]] - 9 source mention(s)
 - [[concepts/price-extremes|price-extremes]] - 9 source mention(s)
 - [[concepts/gamma-squeeze|gamma-squeeze]] - 9 source mention(s)
 - [[concepts/skewness-premium|skewness-premium]] - 9 source mention(s)
+- [[concepts/loss-aversion|loss-aversion]] - 9 source mention(s)
 - [[concepts/candlestick-reading|candlestick-reading]] - 9 source mention(s)
+- [[concepts/tail-risk|tail-risk]] - 9 source mention(s)
 - [[concepts/fundamental-analysis|fundamental-analysis]] - 9 source mention(s)
 - [[concepts/high-implied-volatility|high-implied-volatility]] - 9 source mention(s)
 - [[concepts/gamma-hedging|gamma-hedging]] - 9 source mention(s)
+- [[concepts/earnings-vol-play|earnings-vol-play]] - 9 source mention(s)
 - [[concepts/derivatives|derivatives]] - 8 source mention(s)
 - [[concepts/consumer-confidence|consumer-confidence]] - 8 source mention(s)
 - [[concepts/synthetic-long|synthetic-long]] - 8 source mention(s)
-- [[concepts/iron-condor|iron-condor]] - 8 source mention(s)
 - [[concepts/reshoring|reshoring]] - 8 source mention(s)
-- [[concepts/loss-aversion|loss-aversion]] - 8 source mention(s)
 - [[concepts/leaps|leaps]] - 8 source mention(s)
-- [[concepts/tail-risk|tail-risk]] - 8 source mention(s)
+- [[concepts/decision-making|decision-making]] - 8 source mention(s)
+- [[concepts/confidence|confidence]] - 8 source mention(s)
 - [[concepts/straddle-price|straddle-price]] - 8 source mention(s)
 - [[concepts/price-discovery|price-discovery]] - 8 source mention(s)
 - [[concepts/dark-pools|dark-pools]] - 8 source mention(s)
-- [[concepts/earnings-vol-play|earnings-vol-play]] - 8 source mention(s)
 - [[concepts/short-call|short-call]] - 7 source mention(s)
 - [[concepts/event-driven|event-driven]] - 7 source mention(s)
 - [[concepts/scaling-out|scaling-out]] - 7 source mention(s)
 - [[concepts/monetary-policy|monetary-policy]] - 7 source mention(s)
-- [[concepts/hypothesis-testing|hypothesis-testing]] - 7 source mention(s)
+- [[concepts/volatility-smile|volatility-smile]] - 7 source mention(s)
+- [[concepts/expectancy|expectancy]] - 7 source mention(s)
 - [[concepts/defined-risk|defined-risk]] - 7 source mention(s)
+- [[concepts/consistency|consistency]] - 7 source mention(s)
 - [[concepts/forecasting|forecasting]] - 7 source mention(s)
 - [[concepts/futures-vs-options|futures-vs-options]] - 7 source mention(s)
 - [[concepts/institutional-ownership|institutional-ownership]] - 7 source mention(s)
@@ -1436,103 +1499,112 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - [[concepts/law-of-large-numbers|law-of-large-numbers]] - 7 source mention(s)
 - [[concepts/market-effects|market-effects]] - 7 source mention(s)
 - [[concepts/ftd|ftd]] - 7 source mention(s)
-- [[concepts/decision-making|decision-making]] - 7 source mention(s)
-- [[concepts/max-drawdown|max-drawdown]] - 7 source mention(s)
+- [[concepts/overconfidence|overconfidence]] - 7 source mention(s)
 - [[concepts/energy-markets|energy-markets]] - 7 source mention(s)
+- [[concepts/compounding|compounding]] - 7 source mention(s)
 - [[concepts/value-investing|value-investing]] - 7 source mention(s)
 - [[concepts/bond-vigilantes|bond-vigilantes]] - 6 source mention(s)
 - [[concepts/direction|direction]] - 6 source mention(s)
-- [[concepts/volatility-smile|volatility-smile]] - 6 source mention(s)
-- [[concepts/expectancy|expectancy]] - 6 source mention(s)
+- [[concepts/delta-decay|delta-decay]] - 6 source mention(s)
+- [[concepts/trade-management|trade-management]] - 6 source mention(s)
+- [[concepts/directional-trading|directional-trading]] - 6 source mention(s)
+- [[concepts/volatility-contraction|volatility-contraction]] - 6 source mention(s)
+- [[concepts/self-awareness|self-awareness]] - 6 source mention(s)
 - [[concepts/break-even|break-even]] - 6 source mention(s)
 - [[concepts/relative-strength|relative-strength]] - 6 source mention(s)
 - [[concepts/soft-landing|soft-landing]] - 6 source mention(s)
+- [[concepts/options-flow|options-flow]] - 6 source mention(s)
 - [[concepts/delta-one|delta-one]] - 6 source mention(s)
 - [[concepts/number-of-decisions|number-of-decisions]] - 6 source mention(s)
 - [[concepts/interest-rates|interest-rates]] - 6 source mention(s)
 - [[concepts/rsi|rsi]] - 6 source mention(s)
 - [[concepts/dilution|dilution]] - 6 source mention(s)
+- [[concepts/vertical-spreads|vertical-spreads]] - 6 source mention(s)
 - [[concepts/volatility-drag|volatility-drag]] - 6 source mention(s)
+- [[concepts/sharpe-ratio|sharpe-ratio]] - 6 source mention(s)
 - [[concepts/box-spread|box-spread]] - 6 source mention(s)
 - [[concepts/seasonality|seasonality]] - 6 source mention(s)
 - [[concepts/settlement|settlement]] - 6 source mention(s)
-- [[concepts/confidence|confidence]] - 6 source mention(s)
+- [[concepts/vertical-spread|vertical-spread]] - 6 source mention(s)
 - [[concepts/stock-split|stock-split]] - 6 source mention(s)
 - [[concepts/ratio-call-diagonal|ratio-call-diagonal]] - 6 source mention(s)
 - [[concepts/beta|beta]] - 6 source mention(s)
+- [[concepts/allocation|allocation]] - 6 source mention(s)
+- [[concepts/capital-allocation|capital-allocation]] - 6 source mention(s)
 - [[concepts/delayed-gratification|delayed-gratification]] - 6 source mention(s)
 - [[concepts/ratio-write|ratio-write]] - 6 source mention(s)
 - `supply-chain` - 5 source mention(s)
 - `insider-trading` - 5 source mention(s)
 - `dark-pool` - 5 source mention(s)
-- `delta-decay` - 5 source mention(s)
-- `trade-management` - 5 source mention(s)
+- `risk-profile` - 5 source mention(s)
 - `market-manipulation` - 5 source mention(s)
-- `self-awareness` - 5 source mention(s)
+- `greek-attribution` - 5 source mention(s)
 - `undefined-risk` - 5 source mention(s)
-- `consistency` - 5 source mention(s)
-- `options-flow` - 5 source mention(s)
 - `term-structure` - 5 source mention(s)
+- `long-call` - 5 source mention(s)
+- `probability-of-profit` - 5 source mention(s)
 - `dividend` - 5 source mention(s)
 - `dollar-strength` - 5 source mention(s)
+- `time-value` - 5 source mention(s)
 - `disinflation` - 5 source mention(s)
+- `put-call-ratio` - 5 source mention(s)
+- `stress-testing` - 5 source mention(s)
 - `pot-odds` - 5 source mention(s)
-- `vertical-spreads` - 5 source mention(s)
 - `portfolio-margin` - 5 source mention(s)
-- `sharpe-ratio` - 5 source mention(s)
-- `overconfidence` - 5 source mention(s)
-- `vertical-spread` - 5 source mention(s)
+- `black-scholes` - 5 source mention(s)
+- `volatility-forecasting` - 5 source mention(s)
+- `path-dependency` - 5 source mention(s)
+- `sortino-ratio` - 5 source mention(s)
+- `discipline` - 5 source mention(s)
 - `long-dated-calls` - 5 source mention(s)
+- `optimization` - 5 source mention(s)
 - `discretionary-trading` - 5 source mention(s)
 - `loss-management` - 5 source mention(s)
+- `volatility-trading` - 5 source mention(s)
 - `margin-requirement` - 5 source mention(s)
 - `pattern-recognition` - 5 source mention(s)
+- `options-trading` - 5 source mention(s)
 - `right-tail` - 5 source mention(s)
 - `speed-of-decision-making` - 5 source mention(s)
-- `allocation` - 5 source mention(s)
 - `execution` - 5 source mention(s)
 - `basis-management` - 4 source mention(s)
 - `max-pain` - 4 source mention(s)
+- `rebalancing` - 4 source mention(s)
 - `valuation` - 4 source mention(s)
 - `downside-protection` - 4 source mention(s)
-- `risk-profile` - 4 source mention(s)
 - `basis` - 4 source mention(s)
+- `greek-profile` - 4 source mention(s)
 - `in-the-money` - 4 source mention(s)
 - `average-true-range` - 4 source mention(s)
 - `cognitive-biases` - 4 source mention(s)
 - `notional-value` - 4 source mention(s)
 - `opening-range-breakout` - 4 source mention(s)
+- `time-to-expiration` - 4 source mention(s)
 - `pairs-trade` - 4 source mention(s)
 - `fed-policy` - 4 source mention(s)
-- `time-value` - 4 source mention(s)
 - `forward-guidance` - 4 source mention(s)
 - `equity-anomalies` - 4 source mention(s)
-- `put-call-ratio` - 4 source mention(s)
+- `value-at-risk` - 4 source mention(s)
 - `high-frequency-trading` - 4 source mention(s)
-- `black-scholes` - 4 source mention(s)
-- `volatility-forecasting` - 4 source mention(s)
+- `skill-development` - 4 source mention(s)
+- `account-growth` - 4 source mention(s)
+- `relative-value` - 4 source mention(s)
 - `trend-alignment` - 4 source mention(s)
-- `path-dependency` - 4 source mention(s)
-- `sortino-ratio` - 4 source mention(s)
 - `portfolio-management` - 4 source mention(s)
+- `positioning` - 4 source mention(s)
 - `gdp` - 4 source mention(s)
 - `dunning-krueger-effect` - 4 source mention(s)
-- `discipline` - 4 source mention(s)
 - `vanna` - 4 source mention(s)
 - `signal-identification` - 4 source mention(s)
 - `bayesian-analysis` - 4 source mention(s)
 - `conviction` - 4 source mention(s)
-- `optimization` - 4 source mention(s)
 - `option-greeks` - 4 source mention(s)
-- `volatility-trading` - 4 source mention(s)
-- `volatility-contraction` - 4 source mention(s)
+- `thesis-management` - 4 source mention(s)
 - `short-straddle` - 4 source mention(s)
+- `arbitrage` - 4 source mention(s)
+- `profit-management` - 4 source mention(s)
 - `short-strangle` - 4 source mention(s)
-- `options-trading` - 4 source mention(s)
 - `strong-convictions-loosely-held` - 4 source mention(s)
-- `long-call` - 4 source mention(s)
-- `compounding` - 4 source mention(s)
-- `capital-allocation` - 4 source mention(s)
 - `bull-market` - 4 source mention(s)
 - `bear-market` - 4 source mention(s)
 - `automation` - 4 source mention(s)
@@ -1542,64 +1614,80 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `ipo` - 3 source mention(s)
 - `distribution` - 3 source mention(s)
 - `short-selling` - 3 source mention(s)
-- `rebalancing` - 3 source mention(s)
 - `deregulation` - 3 source mention(s)
 - `volatility-decay` - 3 source mention(s)
 - `credit-spread` - 3 source mention(s)
 - `data-analysis` - 3 source mention(s)
 - `spot-price-sensitivity` - 3 source mention(s)
+- `systematic-trading` - 3 source mention(s)
 - `hard-landing` - 3 source mention(s)
+- `statistical-arbitrage` - 3 source mention(s)
+- `volatility-arbitrage` - 3 source mention(s)
 - `appeal-to-authority` - 3 source mention(s)
 - `energy-policy` - 3 source mention(s)
+- `strike-selection` - 3 source mention(s)
 - `diagonal` - 3 source mention(s)
 - `housing-market` - 3 source mention(s)
+- `volatility-crush` - 3 source mention(s)
 - `thesis-generation` - 3 source mention(s)
 - `cognitive-bias` - 3 source mention(s)
-- `value-at-risk` - 3 source mention(s)
 - `options-expiration` - 3 source mention(s)
+- `thesis-development` - 3 source mention(s)
 - `net-liquidating-value` - 3 source mention(s)
-- `stress-testing` - 3 source mention(s)
 - `etf-creation-redemption` - 3 source mention(s)
 - `synthetic-shares` - 3 source mention(s)
 - `stock-replacement` - 3 source mention(s)
-- `skill-development` - 3 source mention(s)
+- `variance` - 3 source mention(s)
 - `carry` - 3 source mention(s)
-- `relative-value` - 3 source mention(s)
+- `fomo` - 3 source mention(s)
+- `behavioral-biases` - 3 source mention(s)
+- `mental-model` - 3 source mention(s)
 - `coefficient-variance` - 3 source mention(s)
 - `parabolic` - 3 source mention(s)
 - `time-and-sales` - 3 source mention(s)
-- `positioning` - 3 source mention(s)
 - `feedback` - 3 source mention(s)
 - `unemployment` - 3 source mention(s)
 - `failed-to-deliver` - 3 source mention(s)
 - `indicator-selection` - 3 source mention(s)
 - `underconfidence` - 3 source mention(s)
+- `options-greeks` - 3 source mention(s)
 - `dividend-yield` - 3 source mention(s)
 - `simplicity` - 3 source mention(s)
 - `risk-to-reward` - 3 source mention(s)
 - `habit-formation` - 3 source mention(s)
 - `competitive-advantage` - 3 source mention(s)
+- `outlier-trade-process` - 3 source mention(s)
 - `vix` - 3 source mention(s)
-- `probability-of-profit` - 3 source mention(s)
 - `longevity` - 3 source mention(s)
+- `mechanical-trading` - 3 source mention(s)
 - `weekend-effect` - 3 source mention(s)
-- `thesis-management` - 3 source mention(s)
 - `market-concentration` - 3 source mention(s)
 - `exit-strategy` - 3 source mention(s)
 - `contango` - 3 source mention(s)
 - `margin-call` - 3 source mention(s)
 - `section-1256` - 3 source mention(s)
 - `yield-curve-inversion` - 3 source mention(s)
+- `black-scholes-merton` - 3 source mention(s)
+- `market-microstructure` - 3 source mention(s)
+- `etf-mechanics` - 3 source mention(s)
+- `trader-psychology` - 3 source mention(s)
 - `sensation-seeking` - 3 source mention(s)
-- `profit-management` - 3 source mention(s)
-- `arbitrage` - 3 source mention(s)
+- `front-running` - 3 source mention(s)
+- `bankroll-management` - 3 source mention(s)
+- `historical-volatility` - 3 source mention(s)
+- `optionality` - 3 source mention(s)
+- `process` - 3 source mention(s)
+- `strategy-optimization` - 3 source mention(s)
+- `thesis-validation` - 3 source mention(s)
+- `time-decay` - 3 source mention(s)
 - `entrepreneurship` - 3 source mention(s)
-- `directional-trading` - 3 source mention(s)
 - `relative-strength-index` - 3 source mention(s)
 - `binary-events` - 3 source mention(s)
+- `business-model` - 3 source mention(s)
 - `max-payne` - 3 source mention(s)
 - `cash-settled` - 3 source mention(s)
 - `basis-reduction` - 3 source mention(s)
+- `sharp-ratio` - 3 source mention(s)
 - `path-dependence` - 3 source mention(s)
 - `oscillators` - 3 source mention(s)
 - `forward-testing` - 3 source mention(s)
@@ -1614,20 +1702,22 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `market-indifference` - 2 source mention(s)
 - `incentive-structure` - 2 source mention(s)
 - `days-to-cover` - 2 source mention(s)
+- `directional-bias` - 2 source mention(s)
 - `hostile-takeover` - 2 source mention(s)
 - `profitability` - 2 source mention(s)
 - `real-return` - 2 source mention(s)
 - `hedge` - 2 source mention(s)
 - `strategy-outline` - 2 source mention(s)
 - `feedback-loop` - 2 source mention(s)
+- `skill` - 2 source mention(s)
 - `confluence` - 2 source mention(s)
+- `asymmetric-return-profile` - 2 source mention(s)
+- `entry-exit-conditions` - 2 source mention(s)
 - `risk-defined` - 2 source mention(s)
-- `systematic-trading` - 2 source mention(s)
 - `planning` - 2 source mention(s)
-- `statistical-arbitrage` - 2 source mention(s)
-- `volatility-arbitrage` - 2 source mention(s)
 - `capacity-constraints` - 2 source mention(s)
 - `portfolio-rebalancing` - 2 source mention(s)
+- `pairs-trading` - 2 source mention(s)
 - `dark-pool-trading` - 2 source mention(s)
 - `regulatory-framework` - 2 source mention(s)
 - `max-profit` - 2 source mention(s)
@@ -1637,6 +1727,7 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `grid-reliability` - 2 source mention(s)
 - `energy-demand` - 2 source mention(s)
 - `escalation` - 2 source mention(s)
+- `gamma-pnl` - 2 source mention(s)
 - `put-call-parity` - 2 source mention(s)
 - `american-options` - 2 source mention(s)
 - `european-options` - 2 source mention(s)
@@ -1645,50 +1736,58 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `wall-of-worry` - 2 source mention(s)
 - `credit-spreads` - 2 source mention(s)
 - `market-disposition` - 2 source mention(s)
+- `risk-mitigation` - 2 source mention(s)
 - `style-drift` - 2 source mention(s)
 - `total-return` - 2 source mention(s)
 - `outperformance` - 2 source mention(s)
 - `accumulation` - 2 source mention(s)
 - `portfolio-greeks` - 2 source mention(s)
+- `after-action-review` - 2 source mention(s)
+- `drawdown-minimization` - 2 source mention(s)
 - `expiration-liquidity` - 2 source mention(s)
+- `walk-forward-analysis` - 2 source mention(s)
+- `regime-switching` - 2 source mention(s)
 - `pattern-seeking` - 2 source mention(s)
 - `structural-alpha` - 2 source mention(s)
 - `mispricing` - 2 source mention(s)
+- `money-management` - 2 source mention(s)
 - `price-dislocation` - 2 source mention(s)
 - `efficiency` - 2 source mention(s)
 - `market-hypothesis` - 2 source mention(s)
 - `asymmetric-upside` - 2 source mention(s)
-- `variance` - 2 source mention(s)
-- `account-growth` - 2 source mention(s)
+- `aggressive-saving` - 2 source mention(s)
 - `iterative-process` - 2 source mention(s)
 - `value-averaging` - 2 source mention(s)
-- `mental-model` - 2 source mention(s)
+- `skill-gap` - 2 source mention(s)
+- `ego` - 2 source mention(s)
 - `regime-impact` - 2 source mention(s)
 - `strategy-hopping` - 2 source mention(s)
 - `accountability` - 2 source mention(s)
+- `luck` - 2 source mention(s)
+- `american-vs-european-options` - 2 source mention(s)
 - `secular-bull-market` - 2 source mention(s)
 - `foundational-knowledge` - 2 source mention(s)
 - `noise-filtering` - 2 source mention(s)
-- `options-greeks` - 2 source mention(s)
+- `knowledge-process-behavior` - 2 source mention(s)
 - `anchored-vwap` - 2 source mention(s)
 - `feedback-loops` - 2 source mention(s)
 - `relative-volatility` - 2 source mention(s)
+- `self-critical` - 2 source mention(s)
 - `market-beta` - 2 source mention(s)
 - `cash-flow` - 2 source mention(s)
 - `free-cash-flow` - 2 source mention(s)
-- `outlier-trade-process` - 2 source mention(s)
 - `exercise` - 2 source mention(s)
 - `collateral` - 2 source mention(s)
 - `financial-crisis` - 2 source mention(s)
 - `rate-hikes` - 2 source mention(s)
 - `cpi` - 2 source mention(s)
-- `fomo` - 2 source mention(s)
 - `psychology` - 2 source mention(s)
 - `spoofing` - 2 source mention(s)
 - `martingale-betting` - 2 source mention(s)
 - `market-recap` - 2 source mention(s)
-- `mechanical-trading` - 2 source mention(s)
 - `duration-management` - 2 source mention(s)
+- `macro-analysis` - 2 source mention(s)
+- `market-neutral` - 2 source mention(s)
 - `dispersion-trading` - 2 source mention(s)
 - `backwardation` - 2 source mention(s)
 - `tax-advantaged-accounts` - 2 source mention(s)
@@ -1700,35 +1799,70 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `geopolitics` - 2 source mention(s)
 - `commodity-markets` - 2 source mention(s)
 - `stoicism` - 2 source mention(s)
+- `drawdown-risk` - 2 source mention(s)
+- `risk-aversion` - 2 source mention(s)
+- `fair-value` - 2 source mention(s)
 - `tax-treatment` - 2 source mention(s)
-- `trader-psychology` - 2 source mention(s)
+- `leveraged-etf-mechanics` - 2 source mention(s)
+- `forced-flow` - 2 source mention(s)
 - `legacy` - 2 source mention(s)
 - `conflict-of-interest` - 2 source mention(s)
+- `account-size` - 2 source mention(s)
+- `beta-weighted-portfolio` - 2 source mention(s)
+- `capital-preservation` - 2 source mention(s)
+- `cash-management` - 2 source mention(s)
+- `catalyst-trading` - 2 source mention(s)
+- `drawdown-recovery` - 2 source mention(s)
+- `fundamental-investing` - 2 source mention(s)
+- `goal-setting` - 2 source mention(s)
+- `long-volatility` - 2 source mention(s)
+- `notional-sizing` - 2 source mention(s)
+- `ooda-loop` - 2 source mention(s)
+- `performance-psychology` - 2 source mention(s)
+- `position-management` - 2 source mention(s)
+- `process-improvement` - 2 source mention(s)
+- `regime-dependency` - 2 source mention(s)
+- `regime-shift` - 2 source mention(s)
+- `return-sequence` - 2 source mention(s)
+- `risk-adjusted-return` - 2 source mention(s)
+- `roll-yield` - 2 source mention(s)
+- `ruthless-accountability` - 2 source mention(s)
+- `ruthless-objectivity` - 2 source mention(s)
+- `scalping` - 2 source mention(s)
+- `signal-selection` - 2 source mention(s)
+- `statistical-significance` - 2 source mention(s)
+- `strategy-design` - 2 source mention(s)
+- `strategy-development` - 2 source mention(s)
+- `strategy-refinement` - 2 source mention(s)
+- `strategy-selection` - 2 source mention(s)
+- `systematic-investing` - 2 source mention(s)
+- `tail-hedging` - 2 source mention(s)
+- `testing-hypothesis` - 2 source mention(s)
+- `trade-adjustments` - 2 source mention(s)
+- `trading-process` - 2 source mention(s)
+- `volatility-expansion` - 2 source mention(s)
+- `volatility-management` - 2 source mention(s)
+- `volatility-modeling` - 2 source mention(s)
+- `volatility-premium` - 2 source mention(s)
 - `expectation-setting` - 2 source mention(s)
 - `wash-sale` - 2 source mention(s)
 - `hindsight-bias` - 2 source mention(s)
 - `utilization` - 2 source mention(s)
 - `self-sabotage` - 2 source mention(s)
-- `etf-mechanics` - 2 source mention(s)
 - `indicator` - 2 source mention(s)
 - `reserve-currency` - 2 source mention(s)
-- `bankroll-management` - 2 source mention(s)
 - `intraday-volatility` - 2 source mention(s)
-- `business-model` - 2 source mention(s)
 - `negotiation` - 2 source mention(s)
 - `beta-weighted-delta` - 2 source mention(s)
 - `european-style-options` - 2 source mention(s)
 - `loss-realization` - 2 source mention(s)
+- `runway` - 2 source mention(s)
 - `naive-reinforcement` - 2 source mention(s)
-- `optionality` - 2 source mention(s)
 - `cashless-exercise` - 2 source mention(s)
 - `compensation` - 2 source mention(s)
 - `employment` - 2 source mention(s)
 - `thesis` - 2 source mention(s)
 - `market-effect` - 2 source mention(s)
-- `front-running` - 2 source mention(s)
-- `historical-volatility` - 2 source mention(s)
-- `time-decay` - 2 source mention(s)
 - `rate-cycle` - 2 source mention(s)
 - `cross-sectional-momentum` - 2 source mention(s)
 - `wealth-building` - 2 source mention(s)
@@ -1751,8 +1885,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `deal-structure` - 2 source mention(s)
 - `synergy` - 2 source mention(s)
 - `fragility` - 2 source mention(s)
-- `black-scholes-merton` - 2 source mention(s)
-- `sharp-ratio` - 2 source mention(s)
 - `scarcity-mindset` - 2 source mention(s)
 - `settlement-cycles` - 2 source mention(s)
 - `rare-earths` - 2 source mention(s)
@@ -1761,10 +1893,8 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `portfolio-construction` - 2 source mention(s)
 - `averaging-down` - 2 source mention(s)
 - `inventory-preference` - 2 source mention(s)
-- `thesis-validation` - 2 source mention(s)
 - `rho` - 2 source mention(s)
 - `fail-to-deliver` - 2 source mention(s)
-- `strategy-optimization` - 2 source mention(s)
 - `average-daily-range` - 2 source mention(s)
 - `transitory` - 1 source mention(s)
 - `order-routing` - 1 source mention(s)
@@ -1790,7 +1920,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `currency-hedging` - 1 source mention(s)
 - `order-types` - 1 source mention(s)
 - `structure-fit` - 1 source mention(s)
-- `directional-bias` - 1 source mention(s)
 - `business-segments` - 1 source mention(s)
 - `fiat-currency` - 1 source mention(s)
 - `austrian-economics` - 1 source mention(s)
@@ -1813,11 +1942,11 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `gamma-expansion` - 1 source mention(s)
 - `short-term-downtrend` - 1 source mention(s)
 - `exit-rules` - 1 source mention(s)
-- `skill` - 1 source mention(s)
 - `downtrend` - 1 source mention(s)
 - `accessibility` - 1 source mention(s)
-- `asymmetric-return-profile` - 1 source mention(s)
 - `overextension` - 1 source mention(s)
+- `synthetic-short` - 1 source mention(s)
+- `peak-pnl` - 1 source mention(s)
 - `house-money-effect` - 1 source mention(s)
 - `securities-lending` - 1 source mention(s)
 - `negative-expectation` - 1 source mention(s)
@@ -1829,7 +1958,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `liquidity-provision` - 1 source mention(s)
 - `small-cap-inefficiencies` - 1 source mention(s)
 - `hurst-exponent` - 1 source mention(s)
-- `pairs-trading` - 1 source mention(s)
 - `api-gating` - 1 source mention(s)
 - `exposure` - 1 source mention(s)
 - `ceteris-paribus` - 1 source mention(s)
@@ -1841,6 +1969,8 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `fossil-fuels` - 1 source mention(s)
 - `nuclear-energy` - 1 source mention(s)
 - `political-risk` - 1 source mention(s)
+- `vega-exposure` - 1 source mention(s)
+- `price-target-bias` - 1 source mention(s)
 - `systematic-volatility` - 1 source mention(s)
 - `unsystematic-volatility` - 1 source mention(s)
 - `economic-events` - 1 source mention(s)
@@ -1863,7 +1993,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `beta-weighted-deltas` - 1 source mention(s)
 - `expiration-diversification` - 1 source mention(s)
 - `treasury-reserve-asset` - 1 source mention(s)
-- `risk-mitigation` - 1 source mention(s)
 - `arrogance` - 1 source mention(s)
 - `flash-crash` - 1 source mention(s)
 - `offshore-accounts` - 1 source mention(s)
@@ -1877,18 +2006,12 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `maximum-pain` - 1 source mention(s)
 - `trader-competence` - 1 source mention(s)
 - `calls-puts` - 1 source mention(s)
-- `thesis-development` - 1 source mention(s)
-- `after-action-review` - 1 source mention(s)
-- `drawdown-minimization` - 1 source mention(s)
 - `data-mining` - 1 source mention(s)
-- `walk-forward-analysis` - 1 source mention(s)
 - `parameter-sweep` - 1 source mention(s)
-- `regime-switching` - 1 source mention(s)
 - `options-liquidity` - 1 source mention(s)
 - `vwap` - 1 source mention(s)
 - `inefficiencies` - 1 source mention(s)
 - `value-dissonance` - 1 source mention(s)
-- `money-management` - 1 source mention(s)
 - `risk-assumption` - 1 source mention(s)
 - `market-inefficiency` - 1 source mention(s)
 - `standard-deviation` - 1 source mention(s)
@@ -1897,24 +2020,20 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `thesis-building` - 1 source mention(s)
 - `healthy-expectations` - 1 source mention(s)
 - `call-volume` - 1 source mention(s)
-- `time-to-expiration` - 1 source mention(s)
 - `commission-costs` - 1 source mention(s)
-- `aggressive-saving` - 1 source mention(s)
-- `strike-selection` - 1 source mention(s)
 - `trend-analysis` - 1 source mention(s)
 - `statistical-analysis` - 1 source mention(s)
 - `trader-organization` - 1 source mention(s)
 - `drift` - 1 source mention(s)
 - `adjustment` - 1 source mention(s)
-- `greek-profile` - 1 source mention(s)
 - `basis-trading` - 1 source mention(s)
+- `market-reality` - 1 source mention(s)
+- `external-validation` - 1 source mention(s)
 - `small-sample-bias` - 1 source mention(s)
 - `goldilocks-analysis` - 1 source mention(s)
 - `downside-deviation` - 1 source mention(s)
 - `wealth-creation` - 1 source mention(s)
 - `price-direction` - 1 source mention(s)
-- `luck` - 1 source mention(s)
-- `american-vs-european-options` - 1 source mention(s)
 - `hard-to-borrow` - 1 source mention(s)
 - `fed-liquidity` - 1 source mention(s)
 - `monetary-expansion` - 1 source mention(s)
@@ -1934,12 +2053,10 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `military-industrial-complex` - 1 source mention(s)
 - `economic-policy` - 1 source mention(s)
 - `signal-overlay` - 1 source mention(s)
-- `knowledge-process-behavior` - 1 source mention(s)
 - `tax-loss-harvesting` - 1 source mention(s)
 - `strategy-hop` - 1 source mention(s)
 - `speculation` - 1 source mention(s)
 - `residual-greeks` - 1 source mention(s)
-- `self-critical` - 1 source mention(s)
 - `competitiveness` - 1 source mention(s)
 - `imperfect-information` - 1 source mention(s)
 - `call-credit-spread` - 1 source mention(s)
@@ -1985,8 +2102,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `price-improvement` - 1 source mention(s)
 - `leader-identification` - 1 source mention(s)
 - `extension-hedges` - 1 source mention(s)
-- `macro-analysis` - 1 source mention(s)
-- `market-neutral` - 1 source mention(s)
 - `hypothesis-generation` - 1 source mention(s)
 - `decay` - 1 source mention(s)
 - `binary-moves` - 1 source mention(s)
@@ -2036,9 +2151,27 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `winners-mentality` - 1 source mention(s)
 - `long-term-thinking` - 1 source mention(s)
 - `economic-systems` - 1 source mention(s)
+- `win-rate` - 1 source mention(s)
+- `fractional-kelly` - 1 source mention(s)
+- `bad-path` - 1 source mention(s)
+- `ruin` - 1 source mention(s)
+- `option-pricing` - 1 source mention(s)
+- `samuelson-effect` - 1 source mention(s)
+- `continuous-hedging` - 1 source mention(s)
+- `replication` - 1 source mention(s)
+- `stock-price` - 1 source mention(s)
+- `etf-premium-discount` - 1 source mention(s)
+- `nav` - 1 source mention(s)
+- `market-making` - 1 source mention(s)
+- `information-asymmetry` - 1 source mention(s)
+- `limit-to-arbitrage` - 1 source mention(s)
 - `influence` - 1 source mention(s)
-- `volatility-crush` - 1 source mention(s)
 - `yield-trap` - 1 source mention(s)
+- `daily-rebalancing` - 1 source mention(s)
+- `negative-gamma` - 1 source mention(s)
+- `market-impact` - 1 source mention(s)
+- `participation-rate` - 1 source mention(s)
+- `reflexive-crowded-game` - 1 source mention(s)
 - `repeatable` - 1 source mention(s)
 - `expense-ratio` - 1 source mention(s)
 - `subconscious-priming` - 1 source mention(s)
@@ -2048,6 +2181,9 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `positive-drift` - 1 source mention(s)
 - `insider-selling` - 1 source mention(s)
 - `objective-analysis` - 1 source mention(s)
+- `growth-investing` - 1 source mention(s)
+- `index-ball` - 1 source mention(s)
+- `monthly-performance` - 1 source mention(s)
 - `canslim` - 1 source mention(s)
 - `protective-puts` - 1 source mention(s)
 - `disposition` - 1 source mention(s)
@@ -2058,7 +2194,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `product-quirks` - 1 source mention(s)
 - `cash-value-per-share` - 1 source mention(s)
 - `diagonal-spread` - 1 source mention(s)
-- `entry-exit-conditions` - 1 source mention(s)
 - `naked-options` - 1 source mention(s)
 - `tokenization` - 1 source mention(s)
 - `decentralized-trading` - 1 source mention(s)
@@ -2121,7 +2256,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `ordinary-income` - 1 source mention(s)
 - `long-term-capital-gains` - 1 source mention(s)
 - `price-manipulation` - 1 source mention(s)
-- `market-microstructure` - 1 source mention(s)
 - `collusion` - 1 source mention(s)
 - `interest-rate-risk` - 1 source mention(s)
 - `premium-selling` - 1 source mention(s)
@@ -2130,15 +2264,12 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `buying-premium` - 1 source mention(s)
 - `selling-premium` - 1 source mention(s)
 - `risk-preference` - 1 source mention(s)
-- `volatility-premium` - 1 source mention(s)
 - `market-on-close` - 1 source mention(s)
 - `social-consensus-bias` - 1 source mention(s)
 - `model-building` - 1 source mention(s)
-- `testing-hypothesis` - 1 source mention(s)
 - `election-impact` - 1 source mention(s)
 - `forward-price` - 1 source mention(s)
 - `cost-of-carry` - 1 source mention(s)
-- `gamma-pnl` - 1 source mention(s)
 - `intuition-and-experience` - 1 source mention(s)
 - `regulation-sho` - 1 source mention(s)
 - `options-pricing` - 1 source mention(s)
@@ -2152,6 +2283,7 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `cycle` - 1 source mention(s)
 - `currency-weakness` - 1 source mention(s)
 - `margin-debt` - 1 source mention(s)
+- `drawdown-survivability` - 1 source mention(s)
 - `options-trader-vs-stock-trader` - 1 source mention(s)
 - `asymmetric-payouts` - 1 source mention(s)
 - `risk-adjusted-returns` - 1 source mention(s)
@@ -2166,14 +2298,10 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `warrant` - 1 source mention(s)
 - `cash-rich-holding-company` - 1 source mention(s)
 - `overbought-oversold` - 1 source mention(s)
-- `strategy-selection` - 1 source mention(s)
 - `exposure-therapy` - 1 source mention(s)
-- `process-improvement` - 1 source mention(s)
 - `yolo` - 1 source mention(s)
 - `implied-volatility-skew` - 1 source mention(s)
 - `drs` - 1 source mention(s)
-- `skill-gap` - 1 source mention(s)
-- `account-size` - 1 source mention(s)
 - `bargain-hunting` - 1 source mention(s)
 - `core-vs-speculative` - 1 source mention(s)
 - `alignment` - 1 source mention(s)
@@ -2182,7 +2310,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `market-inefficiencies` - 1 source mention(s)
 - `loss-compounding` - 1 source mention(s)
 - `common-sense` - 1 source mention(s)
-- `catalyst-trading` - 1 source mention(s)
 - `short-term-moving-averages` - 1 source mention(s)
 - `options-exercise` - 1 source mention(s)
 - `vol-term-structure` - 1 source mention(s)
@@ -2207,7 +2334,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `small-caps` - 1 source mention(s)
 - `large-cap-dominance` - 1 source mention(s)
 - `implied-correlations` - 1 source mention(s)
-- `return-sequence` - 1 source mention(s)
 - `required-trade-count` - 1 source mention(s)
 - `biotech` - 1 source mention(s)
 - `compliance` - 1 source mention(s)
@@ -2216,14 +2342,12 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `market-power` - 1 source mention(s)
 - `round-number-strikes` - 1 source mention(s)
 - `conditions-based-triggers` - 1 source mention(s)
-- `regime-shift` - 1 source mention(s)
 - `fibonacci-retracement` - 1 source mention(s)
 - `support-resistance` - 1 source mention(s)
 - `pivot-points` - 1 source mention(s)
 - `gross-highs-lows` - 1 source mention(s)
 - `employment-data` - 1 source mention(s)
 - `non-farm-payrolls` - 1 source mention(s)
-- `volatility-expansion` - 1 source mention(s)
 - `news-driven` - 1 source mention(s)
 - `hypothesis` - 1 source mention(s)
 - `exit-protocol` - 1 source mention(s)
@@ -2231,13 +2355,11 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `fundamental-growth` - 1 source mention(s)
 - `earnings-growth` - 1 source mention(s)
 - `binary-bet` - 1 source mention(s)
-- `greek-attribution` - 1 source mention(s)
 - `institutional-trading` - 1 source mention(s)
 - `market-fragmentation` - 1 source mention(s)
 - `uncorrelated-assets` - 1 source mention(s)
 - `convertible-bonds` - 1 source mention(s)
 - `overvoting` - 1 source mention(s)
-- `strategy-development` - 1 source mention(s)
 - `trading-universe` - 1 source mention(s)
 - `composite-scoring` - 1 source mention(s)
 - `look-ahead-bias` - 1 source mention(s)
@@ -2249,7 +2371,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `fat-fire` - 1 source mention(s)
 - `liquid-net-worth` - 1 source mention(s)
 - `economic-health` - 1 source mention(s)
-- `fair-value` - 1 source mention(s)
 - `large-cap-vs-small-cap` - 1 source mention(s)
 - `lifestyle` - 1 source mention(s)
 - `income-expansion` - 1 source mention(s)
@@ -2261,30 +2382,22 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `incentive-alignment` - 1 source mention(s)
 - `mission-driven-business` - 1 source mention(s)
 - `track-record` - 1 source mention(s)
-- `roll-yield` - 1 source mention(s)
 - `income-growth` - 1 source mention(s)
 - `credit-received` - 1 source mention(s)
-- `position-management` - 1 source mention(s)
 - `withdrawal-strategy` - 1 source mention(s)
-- `runway` - 1 source mention(s)
 - `market-changes` - 1 source mention(s)
 - `wings` - 1 source mention(s)
-- `strategy-refinement` - 1 source mention(s)
 - `economies-of-scale` - 1 source mention(s)
 - `strike-vol` - 1 source mention(s)
 - `loss-recovery` - 1 source mention(s)
-- `long-volatility` - 1 source mention(s)
-- `tail-hedging` - 1 source mention(s)
 - `central-banks` - 1 source mention(s)
 - `mean-absolute-deviation` - 1 source mention(s)
 - `direct-registration` - 1 source mention(s)
-- `ruthless-accountability` - 1 source mention(s)
 - `learning-plan` - 1 source mention(s)
 - `informed-trading` - 1 source mention(s)
 - `extremes` - 1 source mention(s)
 - `financial-goals` - 1 source mention(s)
 - `margin-expansion` - 1 source mention(s)
-- `trading-process` - 1 source mention(s)
 - `kaizen-philosophy` - 1 source mention(s)
 - `market-analysis` - 1 source mention(s)
 - `cyclical-processes` - 1 source mention(s)
@@ -2292,7 +2405,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `expiration` - 1 source mention(s)
 - `dollar-return-expectations` - 1 source mention(s)
 - `portfolio-correlation` - 1 source mention(s)
-- `trade-adjustments` - 1 source mention(s)
 - `expiration-cycles` - 1 source mention(s)
 - `directional-hypothesis` - 1 source mention(s)
 - `short-calls` - 1 source mention(s)
@@ -2316,10 +2428,8 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `negative-expectancy` - 1 source mention(s)
 - `regime-dependent` - 1 source mention(s)
 - `directional-optionality` - 1 source mention(s)
-- `ego` - 1 source mention(s)
 - `market-observation` - 1 source mention(s)
 - `research-methodology` - 1 source mention(s)
-- `strategy-design` - 1 source mention(s)
 - `buying-power` - 1 source mention(s)
 - `spread-mechanics` - 1 source mention(s)
 - `off-exchange-routing` - 1 source mention(s)
@@ -2328,7 +2438,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `gamblers-fallacy` - 1 source mention(s)
 - `merger-arbitrage` - 1 source mention(s)
 - `quality` - 1 source mention(s)
-- `fundamental-investing` - 1 source mention(s)
 - `trailing-stops` - 1 source mention(s)
 - `reversal` - 1 source mention(s)
 - `lookback-windows` - 1 source mention(s)
@@ -2354,30 +2463,24 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `lockup` - 1 source mention(s)
 - `parabolic-move` - 1 source mention(s)
 - `heat-map-analysis` - 1 source mention(s)
-- `beta-weighted-portfolio` - 1 source mention(s)
 - `black-swan-risk` - 1 source mention(s)
 - `options-instrument-selection` - 1 source mention(s)
 - `echo-chambers` - 1 source mention(s)
 - `price-impact` - 1 source mention(s)
 - `average-favorable-excursion` - 1 source mention(s)
 - `mean-adverse-excursion` - 1 source mention(s)
-- `volatility-modeling` - 1 source mention(s)
 - `garch-models` - 1 source mention(s)
 - `order-book` - 1 source mention(s)
-- `scalping` - 1 source mention(s)
 - `constraint` - 1 source mention(s)
 - `creative-financing` - 1 source mention(s)
 - `network-effects` - 1 source mention(s)
-- `goal-setting` - 1 source mention(s)
 - `margin-utilization` - 1 source mention(s)
 - `knowledge` - 1 source mention(s)
-- `process` - 1 source mention(s)
 - `behavior` - 1 source mention(s)
 - `margin-account` - 1 source mention(s)
 - `capital-loss` - 1 source mention(s)
 - `recognition` - 1 source mention(s)
 - `execution-errors` - 1 source mention(s)
-- `drawdown-recovery` - 1 source mention(s)
 - `asymmetric-trading` - 1 source mention(s)
 - `financing` - 1 source mention(s)
 - `ownership-alignment` - 1 source mention(s)
@@ -2410,7 +2513,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `recovery-play` - 1 source mention(s)
 - `thesis-review` - 1 source mention(s)
 - `pricing-models` - 1 source mention(s)
-- `risk-aversion` - 1 source mention(s)
 - `obsessive-personality` - 1 source mention(s)
 - `bargain-buying` - 1 source mention(s)
 - `price-suppression` - 1 source mention(s)
@@ -2458,7 +2560,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `dark-pool-feed` - 1 source mention(s)
 - `structure` - 1 source mention(s)
 - `rule-set` - 1 source mention(s)
-- `notional-sizing` - 1 source mention(s)
 - `capital-gains` - 1 source mention(s)
 - `maximum-drawdown` - 1 source mention(s)
 - `operational-efficiency` - 1 source mention(s)
@@ -2487,15 +2588,11 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `max-draw-down` - 1 source mention(s)
 - `thesis-invalidation` - 1 source mention(s)
 - `unrealized-vs-realized-pnl` - 1 source mention(s)
-- `signal-selection` - 1 source mention(s)
-- `ooda-loop` - 1 source mention(s)
 - `behavioral-mathematics` - 1 source mention(s)
 - `absolute-return` - 1 source mention(s)
-- `risk-adjusted-return` - 1 source mention(s)
 - `personality` - 1 source mention(s)
 - `constraints` - 1 source mention(s)
 - `strengths-and-weaknesses` - 1 source mention(s)
-- `statistical-significance` - 1 source mention(s)
 - `mental-math` - 1 source mention(s)
 - `positive-expectancy` - 1 source mention(s)
 - `walk-forward-test` - 1 source mention(s)
@@ -2512,7 +2609,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `marketplace` - 1 source mention(s)
 - `e-commerce` - 1 source mention(s)
 - `liability` - 1 source mention(s)
-- `cash-management` - 1 source mention(s)
 - `crash-protection` - 1 source mention(s)
 - `reverse-planning` - 1 source mention(s)
 - `equity-risk-premium` - 1 source mention(s)
@@ -2522,7 +2618,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `competency` - 1 source mention(s)
 - `greed` - 1 source mention(s)
 - `desperation` - 1 source mention(s)
-- `performance-psychology` - 1 source mention(s)
 - `long-term-perspective` - 1 source mention(s)
 - `wealth-development` - 1 source mention(s)
 - `etf` - 1 source mention(s)
@@ -2534,26 +2629,21 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `control` - 1 source mention(s)
 - `infrastructure` - 1 source mention(s)
 - `warning-signs` - 1 source mention(s)
-- `capital-preservation` - 1 source mention(s)
 - `digital-scarcity` - 1 source mention(s)
 - `collar` - 1 source mention(s)
 - `bubble` - 1 source mention(s)
 - `hunch-and-buncher` - 1 source mention(s)
-- `drawdown-risk` - 1 source mention(s)
 - `sanctions` - 1 source mention(s)
 - `reserve-assets` - 1 source mention(s)
 - `energy-independence` - 1 source mention(s)
 - `preparation` - 1 source mention(s)
-- `ruthless-objectivity` - 1 source mention(s)
 - `emotional-regulation` - 1 source mention(s)
 - `adaptability` - 1 source mention(s)
 - `stress-inoculation` - 1 source mention(s)
 - `pe-ratio` - 1 source mention(s)
 - `bayesian-statistics` - 1 source mention(s)
 - `factor-investing` - 1 source mention(s)
-- `behavioral-biases` - 1 source mention(s)
 - `fee-minimization` - 1 source mention(s)
-- `systematic-investing` - 1 source mention(s)
 - `long-term-investing` - 1 source mention(s)
 - `scarcity` - 1 source mention(s)
 - `float` - 1 source mention(s)
@@ -2567,88 +2657,97 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 
 ### Strategies
 
-- [[strategies/short-premium|short-premium]] - 228 source mention(s)
-- [[strategies/short-put|short-put]] - 194 source mention(s)
-- [[strategies/covered-strangle|covered-strangle]] - 189 source mention(s)
-- [[strategies/long-call|long-call]] - 180 source mention(s)
-- [[strategies/covered-call|covered-call]] - 151 source mention(s)
+- [[strategies/short-premium|short-premium]] - 230 source mention(s)
+- [[strategies/short-put|short-put]] - 195 source mention(s)
+- [[strategies/covered-strangle|covered-strangle]] - 190 source mention(s)
+- [[strategies/long-call|long-call]] - 181 source mention(s)
+- [[strategies/covered-call|covered-call]] - 153 source mention(s)
 - [[strategies/ratio-call-diagonal|ratio-call-diagonal]] - 131 source mention(s)
-- [[strategies/short-strangle|short-strangle]] - 105 source mention(s)
+- [[strategies/short-strangle|short-strangle]] - 106 source mention(s)
 - [[strategies/short-straddle|short-straddle]] - 99 source mention(s)
-- [[strategies/short-volatility|short-volatility]] - 85 source mention(s)
-- [[strategies/momentum|momentum]] - 76 source mention(s)
-- [[strategies/zero-dte|zero-dte]] - 74 source mention(s)
-- [[strategies/trend-following|trend-following]] - 73 source mention(s)
-- [[strategies/earnings-vol-play|earnings-vol-play]] - 59 source mention(s)
-- [[strategies/short-call|short-call]] - 48 source mention(s)
-- [[strategies/breakout|breakout]] - 48 source mention(s)
-- [[strategies/iron-condor|iron-condor]] - 44 source mention(s)
-- [[strategies/scaling-in|scaling-in]] - 40 source mention(s)
+- [[strategies/short-volatility|short-volatility]] - 86 source mention(s)
+- [[strategies/momentum|momentum]] - 78 source mention(s)
+- [[strategies/trend-following|trend-following]] - 75 source mention(s)
+- [[strategies/zero-dte|zero-dte]] - 75 source mention(s)
+- [[strategies/earnings-vol-play|earnings-vol-play]] - 60 source mention(s)
+- [[strategies/short-call|short-call]] - 49 source mention(s)
+- [[strategies/breakout|breakout]] - 49 source mention(s)
+- [[strategies/iron-condor|iron-condor]] - 46 source mention(s)
+- [[strategies/scaling-in|scaling-in]] - 41 source mention(s)
 - [[strategies/ratio-write|ratio-write]] - 39 source mention(s)
-- [[strategies/buy-and-hold|buy-and-hold]] - 36 source mention(s)
-- [[strategies/gamma-scalping|gamma-scalping]] - 36 source mention(s)
-- [[strategies/rolling-options|rolling-options]] - 31 source mention(s)
+- [[strategies/gamma-scalping|gamma-scalping]] - 38 source mention(s)
+- [[strategies/buy-and-hold|buy-and-hold]] - 37 source mention(s)
+- [[strategies/rolling-options|rolling-options]] - 32 source mention(s)
 - [[strategies/contrarian-positioning|contrarian-positioning]] - 30 source mention(s)
 - [[strategies/credit-spread|credit-spread]] - 29 source mention(s)
-- [[strategies/pairs-trade|pairs-trade]] - 27 source mention(s)
+- [[strategies/pairs-trade|pairs-trade]] - 28 source mention(s)
 - [[strategies/the-wheel|the-wheel]] - 26 source mention(s)
 - [[strategies/scaling-out|scaling-out]] - 26 source mention(s)
 - [[strategies/long-dated-calls|long-dated-calls]] - 25 source mention(s)
-- [[strategies/synthetic-long|synthetic-long]] - 21 source mention(s)
+- [[strategies/synthetic-long|synthetic-long]] - 22 source mention(s)
 - [[strategies/call-credit-spread|call-credit-spread]] - 20 source mention(s)
 - [[strategies/long-put|long-put]] - 20 source mention(s)
+- [[strategies/vertical-spread|vertical-spread]] - 19 source mention(s)
 - [[strategies/long-straddle|long-straddle]] - 18 source mention(s)
-- [[strategies/vertical-spread|vertical-spread]] - 17 source mention(s)
-- [[strategies/box-spread|box-spread]] - 16 source mention(s)
+- [[strategies/box-spread|box-spread]] - 17 source mention(s)
 - [[strategies/sector-rotation|sector-rotation]] - 14 source mention(s)
 - [[strategies/leaps|leaps]] - 14 source mention(s)
-- [[strategies/event-driven|event-driven]] - 12 source mention(s)
+- [[strategies/event-driven|event-driven]] - 13 source mention(s)
 - [[strategies/short-earnings-straddle|short-earnings-straddle]] - 12 source mention(s)
 - [[strategies/delta-selection|delta-selection]] - 11 source mention(s)
 - [[strategies/dollar-cost-averaging|dollar-cost-averaging]] - 9 source mention(s)
 - [[strategies/pullback-entry|pullback-entry]] - 9 source mention(s)
+- [[strategies/calendar-spread|calendar-spread]] - 7 source mention(s)
 - [[strategies/ratio-put-diagonal|ratio-put-diagonal]] - 7 source mention(s)
 - [[strategies/vertical-spreads|vertical-spreads]] - 7 source mention(s)
-- [[strategies/calendar-spread|calendar-spread]] - 6 source mention(s)
+- [[strategies/post-earnings-drift|post-earnings-drift]] - 6 source mention(s)
+- [[strategies/stock-replacement|stock-replacement]] - 6 source mention(s)
 - [[strategies/buying-the-panic|buying-the-panic]] - 6 source mention(s)
 - [[strategies/risk-reversal|risk-reversal]] - 6 source mention(s)
 - [[strategies/weekly-options|weekly-options]] - 6 source mention(s)
 - [[strategies/short-squeeze|short-squeeze]] - 6 source mention(s)
-- [[strategies/post-earnings-drift|post-earnings-drift]] - 5 source mention(s)
+- [[strategies/delta-hedging|delta-hedging]] - 6 source mention(s)
+- [[strategies/delta-neutral|delta-neutral]] - 6 source mention(s)
+- [[strategies/directional-trading|directional-trading]] - 5 source mention(s)
 - [[strategies/opening-range-breakout|opening-range-breakout]] - 5 source mention(s)
+- [[strategies/put-credit-spread|put-credit-spread]] - 5 source mention(s)
 - [[strategies/swing-trading|swing-trading]] - 5 source mention(s)
-- [[strategies/stock-replacement|stock-replacement]] - 5 source mention(s)
-- [[strategies/delta-neutral|delta-neutral]] - 5 source mention(s)
-- [[strategies/put-credit-spread|put-credit-spread]] - 4 source mention(s)
+- [[strategies/mean-reversion|mean-reversion]] - 5 source mention(s)
+- [[strategies/scalping|scalping]] - 4 source mention(s)
 - [[strategies/buy-write|buy-write]] - 4 source mention(s)
-- [[strategies/delta-hedging|delta-hedging]] - 4 source mention(s)
-- [[strategies/scalping|scalping]] - 3 source mention(s)
 - `cash-secured-put` - 3 source mention(s)
-- [[strategies/mean-reversion|mean-reversion]] - 3 source mention(s)
+- [[strategies/position-sizing|position-sizing]] - 3 source mention(s)
 - [[strategies/short-call-spread|short-call-spread]] - 3 source mention(s)
+- [[strategies/market-making|market-making]] - 3 source mention(s)
+- [[strategies/long-volatility|long-volatility]] - 3 source mention(s)
+- [[strategies/overnight-risk-premium|overnight-risk-premium]] - 3 source mention(s)
 - [[strategies/long-premium|long-premium]] - 3 source mention(s)
 - `profit-taking` - 2 source mention(s)
 - `day-trading` - 2 source mention(s)
 - `variance-risk-premium` - 2 source mention(s)
-- `directional-trading` - 2 source mention(s)
 - `leveraged-etf-pairs-trade` - 2 source mention(s)
 - `relative-value` - 2 source mention(s)
 - `bull-put-spread` - 2 source mention(s)
 - `short-put-spread` - 2 source mention(s)
 - `broken-wing-butterfly` - 2 source mention(s)
+- `ratio-spread` - 2 source mention(s)
 - `value-investing` - 2 source mention(s)
 - `ratio-diagonal` - 2 source mention(s)
+- `hedging` - 2 source mention(s)
+- `mechanical-trading` - 2 source mention(s)
+- `protective-put` - 2 source mention(s)
+- `spread-trading` - 2 source mention(s)
+- `systematic-trading` - 2 source mention(s)
 - `put-spread` - 2 source mention(s)
-- `long-volatility` - 2 source mention(s)
 - `iron-butterfly` - 2 source mention(s)
 - `ratio-synthetic-long` - 2 source mention(s)
-- `market-making` - 2 source mention(s)
 - `long-strangle` - 2 source mention(s)
-- `overnight-risk-premium` - 2 source mention(s)
 - `short-calls` - 2 source mention(s)
 - `relative-value-trade` - 1 source mention(s)
 - `short-strangles` - 1 source mention(s)
 - `deep-itm-calls` - 1 source mention(s)
+- `synthetic-short` - 1 source mention(s)
+- `short-stock` - 1 source mention(s)
 - `coverage-triangle` - 1 source mention(s)
 - `long-stock` - 1 source mention(s)
 - `vertical-credit-spread` - 1 source mention(s)
@@ -2661,14 +2760,14 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `options-trading` - 1 source mention(s)
 - `volatility-capture` - 1 source mention(s)
 - `carry` - 1 source mention(s)
-- `position-sizing` - 1 source mention(s)
+- `outlier-strategy-process` - 1 source mention(s)
+- `outlier-trade-process` - 1 source mention(s)
 - `portfolio-first` - 1 source mention(s)
 - `vertical-call-spread` - 1 source mention(s)
 - `protective-puts` - 1 source mention(s)
 - `long-call-spread` - 1 source mention(s)
 - `long-put-spread` - 1 source mention(s)
 - `calendar-spreads` - 1 source mention(s)
-- `ratio-spread` - 1 source mention(s)
 - `short-term-trading` - 1 source mention(s)
 - `rebalancing` - 1 source mention(s)
 - `time-spread` - 1 source mention(s)
@@ -2676,23 +2775,25 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `stop-loss` - 1 source mention(s)
 - `coverage-strangle` - 1 source mention(s)
 - [[strategies/volatility-risk-premium|volatility-risk-premium]] - 1 source mention(s)
+- `kelly-criterion` - 1 source mention(s)
+- `fractional-kelly` - 1 source mention(s)
+- `front-running` - 1 source mention(s)
+- `index-ball` - 1 source mention(s)
+- `volatility-trading` - 1 source mention(s)
 - `all-weather-strategy` - 1 source mention(s)
 - `trading-plan` - 1 source mention(s)
 - `long-shares` - 1 source mention(s)
+- `volatility-targeting` - 1 source mention(s)
 - `counter-trend` - 1 source mention(s)
 - `long-term-futures` - 1 source mention(s)
 - `short-term-mean-reversion` - 1 source mention(s)
 - `delta-hedged` - 1 source mention(s)
 - `canslim` - 1 source mention(s)
-- `systematic-trading` - 1 source mention(s)
 - `long-treasuries` - 1 source mention(s)
 - `ratio-put-spread` - 1 source mention(s)
-- `spread-trading` - 1 source mention(s)
 - `trading-volatility` - 1 source mention(s)
 - `long-only` - 1 source mention(s)
-- `protective-put` - 1 source mention(s)
 - `execution-optimization` - 1 source mention(s)
-- `hedging` - 1 source mention(s)
 - `value` - 1 source mention(s)
 - `position-trading` - 1 source mention(s)
 - `growth-investing` - 1 source mention(s)
@@ -2700,7 +2801,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `order-book-sweep` - 1 source mention(s)
 - `seller-financing` - 1 source mention(s)
 - `private-money-lending` - 1 source mention(s)
-- `mechanical-trading` - 1 source mention(s)
 - `collar` - 1 source mention(s)
 - `vertical` - 1 source mention(s)
 - `options-flow` - 1 source mention(s)
@@ -2717,22 +2817,22 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 
 ### Securities
 
-- [[securities/spy|spy]] - 325 source mention(s)
-- [[securities/gme|gme]] - 258 source mention(s)
+- [[securities/spy|spy]] - 329 source mention(s)
+- [[securities/gme|gme]] - 259 source mention(s)
 - [[securities/spx|spx]] - 150 source mention(s)
-- [[securities/qqq|qqq]] - 136 source mention(s)
+- [[securities/qqq|qqq]] - 137 source mention(s)
 - [[securities/iwm|iwm]] - 117 source mention(s)
-- [[securities/tsla|tsla]] - 98 source mention(s)
-- [[securities/nvda|nvda]] - 85 source mention(s)
+- [[securities/tsla|tsla]] - 100 source mention(s)
+- [[securities/nvda|nvda]] - 86 source mention(s)
 - [[securities/vix|vix]] - 80 source mention(s)
 - [[securities/aapl|aapl]] - 80 source mention(s)
 - [[securities/btc|btc]] - 72 source mention(s)
 - [[securities/crude-oil|crude-oil]] - 62 source mention(s)
 - [[securities/russell-2000|russell-2000]] - 50 source mention(s)
 - [[securities/gold|gold]] - 47 source mention(s)
-- [[securities/tlt|tlt]] - 45 source mention(s)
+- [[securities/tlt|tlt]] - 46 source mention(s)
 - [[securities/tqqq|tqqq]] - 43 source mention(s)
-- [[securities/pltr|pltr]] - 40 source mention(s)
+- [[securities/pltr|pltr]] - 41 source mention(s)
 - [[securities/xlv|xlv]] - 40 source mention(s)
 - [[securities/nasdaq|nasdaq]] - 40 source mention(s)
 - [[securities/xlk|xlk]] - 34 source mention(s)
@@ -2742,32 +2842,32 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - [[securities/xlb|xlb]] - 28 source mention(s)
 - [[securities/silver|silver]] - 28 source mention(s)
 - [[securities/amzn|amzn]] - 24 source mention(s)
-- [[securities/ibit|ibit]] - 22 source mention(s)
+- [[securities/ibit|ibit]] - 23 source mention(s)
 - [[securities/googl|googl]] - 21 source mention(s)
 - [[securities/sofi|sofi]] - 21 source mention(s)
 - [[securities/amc|amc]] - 20 source mention(s)
+- [[securities/ko|ko]] - 18 source mention(s)
 - [[securities/chewy|chewy]] - 18 source mention(s)
-- [[securities/ko|ko]] - 17 source mention(s)
 - [[securities/xlu|xlu]] - 16 source mention(s)
+- [[securities/ung|ung]] - 16 source mention(s)
 - [[securities/natural-gas|natural-gas]] - 16 source mention(s)
 - [[securities/xle|xle]] - 15 source mention(s)
-- [[securities/ung|ung]] - 15 source mention(s)
 - [[securities/rklb|rklb]] - 13 source mention(s)
 - [[securities/xlp|xlp]] - 12 source mention(s)
 - [[securities/hood|hood]] - 12 source mention(s)
+- [[securities/slv|slv]] - 12 source mention(s)
 - [[securities/ccj|ccj]] - 12 source mention(s)
 - [[securities/amd|amd]] - 12 source mention(s)
 - [[securities/smci|smci]] - 12 source mention(s)
 - [[securities/chwy|chwy]] - 12 source mention(s)
 - [[securities/ebay|ebay]] - 11 source mention(s)
 - [[securities/xrt|xrt]] - 11 source mention(s)
-- [[securities/slv|slv]] - 11 source mention(s)
 - [[securities/hims|hims]] - 11 source mention(s)
+- [[securities/mstr|mstr]] - 11 source mention(s)
 - [[securities/meta|meta]] - 11 source mention(s)
 - [[securities/djt|djt]] - 11 source mention(s)
 - [[securities/copper|copper]] - 10 source mention(s)
 - [[securities/vxx|vxx]] - 10 source mention(s)
-- [[securities/mstr|mstr]] - 10 source mention(s)
 - [[securities/orcl|orcl]] - 9 source mention(s)
 - [[securities/pfe|pfe]] - 9 source mention(s)
 - [[securities/smh|smh]] - 9 source mention(s)
@@ -2780,6 +2880,7 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - [[securities/ups|ups]] - 7 source mention(s)
 - [[securities/xlre|xlre]] - 6 source mention(s)
 - [[securities/asts|asts]] - 6 source mention(s)
+- [[securities/ndx|ndx]] - 6 source mention(s)
 - [[securities/xsp|xsp]] - 6 source mention(s)
 - [[securities/zm|zm]] - 6 source mention(s)
 - [[securities/boil|boil]] - 6 source mention(s)
@@ -2792,7 +2893,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - [[securities/unh|unh]] - 5 source mention(s)
 - [[securities/wfc|wfc]] - 5 source mention(s)
 - [[securities/f|f]] - 5 source mention(s)
-- [[securities/ndx|ndx]] - 5 source mention(s)
 - [[securities/qs|qs]] - 5 source mention(s)
 - [[securities/pton|pton]] - 5 source mention(s)
 - [[securities/micron|micron]] - 5 source mention(s)
@@ -2801,9 +2901,11 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - [[securities/uso|uso]] - 5 source mention(s)
 - [[securities/crwd|crwd]] - 5 source mention(s)
 - `enph` - 4 source mention(s)
+- `spacex` - 4 source mention(s)
 - `qqqy` - 4 source mention(s)
 - `gm` - 4 source mention(s)
 - `rtx` - 4 source mention(s)
+- `qld` - 4 source mention(s)
 - `ford` - 4 source mention(s)
 - `oxy` - 4 source mention(s)
 - `xly` - 4 source mention(s)
@@ -2814,8 +2916,8 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `kr` - 4 source mention(s)
 - `es` - 4 source mention(s)
 - `wmt` - 4 source mention(s)
-- `spacex` - 3 source mention(s)
 - `netflix` - 3 source mention(s)
+- `tqs` - 3 source mention(s)
 - `svix` - 3 source mention(s)
 - `siri` - 3 source mention(s)
 - `intel` - 3 source mention(s)
@@ -2826,10 +2928,10 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `panw` - 3 source mention(s)
 - `aal` - 3 source mention(s)
 - `square` - 3 source mention(s)
-- `qld` - 3 source mention(s)
 - `rig` - 3 source mention(s)
 - `pypl` - 3 source mention(s)
 - `ms` - 3 source mention(s)
+- `rut` - 3 source mention(s)
 - `ionq` - 3 source mention(s)
 - `mos` - 3 source mention(s)
 - `nflx` - 3 source mention(s)
@@ -2842,6 +2944,7 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `gs` - 2 source mention(s)
 - `rsp` - 2 source mention(s)
 - `coal` - 2 source mention(s)
+- `coin` - 2 source mention(s)
 - `hyg` - 2 source mention(s)
 - `jnk` - 2 source mention(s)
 - `baba` - 2 source mention(s)
@@ -2889,7 +2992,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `cocoa` - 2 source mention(s)
 - `soybeans` - 2 source mention(s)
 - `open` - 2 source mention(s)
-- `rut` - 2 source mention(s)
 - `nclh` - 2 source mention(s)
 - `cf` - 2 source mention(s)
 - `v` - 2 source mention(s)
@@ -2918,7 +3020,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `nm` - 1 source mention(s)
 - `jpmorgan-etf-jep` - 1 source mention(s)
 - `jpmorgan-etf-jepq` - 1 source mention(s)
-- `tqs` - 1 source mention(s)
 - `dash` - 1 source mention(s)
 - `stx` - 1 source mention(s)
 - `cvlt` - 1 source mention(s)
@@ -3003,6 +3104,7 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `hertz` - 1 source mention(s)
 - `ewz` - 1 source mention(s)
 - `aamc` - 1 source mention(s)
+- `qid` - 1 source mention(s)
 - `carvana` - 1 source mention(s)
 - `onpl` - 1 source mention(s)
 - `tr` - 1 source mention(s)
@@ -3034,7 +3136,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `spce` - 1 source mention(s)
 - `mara` - 1 source mention(s)
 - `avgeo` - 1 source mention(s)
-- `coin` - 1 source mention(s)
 - `oklo` - 1 source mention(s)
 - `wlf` - 1 source mention(s)
 - `sqq` - 1 source mention(s)
@@ -3200,10 +3301,10 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 
 ### People
 
-- `eric` - 1033 source mention(s)
+- `eric` - 1041 source mention(s)
 - `roaring-kitty` - 135 source mention(s)
 - `jerome-powell` - 56 source mention(s)
-- `warren-buffett` - 51 source mention(s)
+- `warren-buffett` - 52 source mention(s)
 - [[people/richard-newton|richard-newton]] - 50 source mention(s)
 - `donald-trump` - 49 source mention(s)
 - `masayoshi-son` - 40 source mention(s)
@@ -3229,6 +3330,7 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `bill-ackman` - 2 source mention(s)
 - `ken-griffin` - 2 source mention(s)
 - `jim-roppel` - 2 source mention(s)
+- `augustin-lebron` - 2 source mention(s)
 - `ray-dalio` - 2 source mention(s)
 - `bill-dudley` - 2 source mention(s)
 - `david-lauer` - 2 source mention(s)
@@ -3239,6 +3341,7 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `jesse-livermore` - 2 source mention(s)
 - `dylan-ratigan` - 2 source mention(s)
 - `michelle-bowman` - 2 source mention(s)
+- `stan-druckenmiller` - 2 source mention(s)
 - `aoc` - 1 source mention(s)
 - `satoshi-nakamoto` - 1 source mention(s)
 - `brent-donnelly` - 1 source mention(s)
@@ -3255,9 +3358,9 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `charlie-munger` - 1 source mention(s)
 - `ludwig-von-mises` - 1 source mention(s)
 - `jamie-dimon` - 1 source mention(s)
-- `augustin-lebron` - 1 source mention(s)
 - `aaron-brown` - 1 source mention(s)
 - `jim-simons` - 1 source mention(s)
+- `richard-dennis` - 1 source mention(s)
 - `william-oneill` - 1 source mention(s)
 - `jim-roel` - 1 source mention(s)
 - `joseph-hogue` - 1 source mention(s)
@@ -3274,6 +3377,8 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `peter-zeihan` - 1 source mention(s)
 - `danielle-demartino-booth` - 1 source mention(s)
 - `tony-greer` - 1 source mention(s)
+- `merton` - 1 source mention(s)
+- `samuelson` - 1 source mention(s)
 - `tim-cook` - 1 source mention(s)
 - `bill-oneil` - 1 source mention(s)
 - `doomberg` - 1 source mention(s)
@@ -3298,7 +3403,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `wes-gray` - 1 source mention(s)
 - `timothy-pes` - 1 source mention(s)
 - `bill-oneill` - 1 source mention(s)
-- `stan-druckenmiller` - 1 source mention(s)
 - `robot-james` - 1 source mention(s)
 - `kenneth-griffin` - 1 source mention(s)
 - `brian-shannon` - 1 source mention(s)
@@ -3337,11 +3441,11 @@ These raw source-pass slugs did not resolve to `schema/slugs.md`. Review them be
 
 ### Series
 
-- `none` - 727 source page(s)
+- `none` - 730 source page(s)
 - `outlier-podcast` - 94 source page(s)
 - `market-update` - 84 source page(s)
-- `beginner-lab` - 78 source page(s)
-- `options-trench` - 55 source page(s)
+- `beginner-lab` - 80 source page(s)
+- `options-trench` - 60 source page(s)
 - `gme-analysis` - 40 source page(s)
 - `meme-stock-watch` - 24 source page(s)
 - `small-stacks` - 18 source page(s)
@@ -3352,17 +3456,17 @@ These raw source-pass slugs did not resolve to `schema/slugs.md`. Review them be
 
 ### Format
 
-- `education` - 978 source page(s)
-- `analysis` - 434 source page(s)
-- `strategy-breakdown` - 322 source page(s)
+- `education` - 987 source page(s)
+- `analysis` - 440 source page(s)
+- `strategy-breakdown` - 324 source page(s)
 - `market-note` - 198 source page(s)
-- `live` - 145 source page(s)
+- `live` - 147 source page(s)
 - `interview` - 135 source page(s)
 
 ## Source page catalog
 
 <details>
-<summary>All source pages (1139)</summary>
+<summary>All source pages (1149)</summary>
 
 | source | date | series | one-line summary |
 |---|---|---|---|
@@ -3396,6 +3500,7 @@ These raw source-pass slugs did not resolve to `schema/slugs.md`. Review them be
 | [[sources/w2DMt0P-sBo|The Outlier Trade Process: Portfolio Fit, Profit Mechanism, and Execution]] |  | `options-trench` | This video walks through the complete Outlier Trade Process—a four-stage framework for executing trading strategies with discipline and repeatability. The process emphasizes por... |
 | [[sources/UCBv-ZXHocg|UCBv-ZXHocgw97AfDG5yz9xw]] |  | `none` | This video could not be processed. YouTube blocked all download attempts, and no transcript data is available for analysis. |
 | [[sources/YY0b7ShDies|YY0b7ShDies]] |  | `meme-stock-watch` | Weekly GameStop update analyzing near-term price action in the context of broader market correction. The host reviews the covered-strangle position currently underwater, discuss... |
+| [[sources/ZNtTnBA-G0o|ZNtTnBA-G0o]] |  | `none` | Insufficient transcript data available for meaningful extraction. The provided de-noised transcript contains only a single word fragment at [00:00], making it impossible to iden... |
 | [[sources/agxpd8R-YWg|agxpd8R-YWg]] |  | `none` | This transcript is unintelligible. The de-noised text consists entirely of repetitive placeholder phrases ("going to go to the next room") with no substantive trading, market, o... |
 | [[sources/2t3Nv-63Jtc|How Things Started — Origin Story & 3 Lessons That Changed Everything]] | 2020-05-22 | `none` | Eric recounts his YouTube origin story (sparked by a beekeeper's offhand comment in April 2020) and shares two formative trading experiences: a catastrophic $50k loss on a wide... |
 | [[sources/Gti8ecxsHz0|VIX vs VXX]] | 2020-05-22 | `none` | The VIX and VXX are both volatility-tracking products tied to S&P 500 implied volatility, but they differ fundamentally in structure and mechanics. The VIX is a cash-settled ind... |
@@ -4505,6 +4610,15 @@ These raw source-pass slugs did not resolve to `schema/slugs.md`. Review them be
 | [[sources/_V5TBIYHylk|Why Most Exit Plans are Bad \/ Options Trading for Beginners Ep2]] | 2026-06-27 | `beginner-lab` | Episode 2 of the Outlier Options Trading Bootcamp examines why most traders' exit plans fail and how to build robust ones instead. The core issue: exit plans are typically built... |
 | [[sources/bWLpkHzqBqM|Why Most 0DTE Traders Get This Wrong]] | 2026-06-28 | `none` | An empirical analysis of ~970 SPX zero-DTE iron condors (2022–2026) reveals that resting orders at the mid price rather than crossing the bid-ask spread yields approximately 3%... |
 | [[sources/0fty1k3IGgY|Market Divergence and Trade Opportunities]] | 2026-06-30 | `none` | Eric reviews Greek attribution mechanics through a live options question-of-the-day scenario, then pivots to broad market analysis highlighting significant divergence across sec... |
+| [[sources/KSaqrK-GaBM|Gamma of Levered ETFs \/ The Options Trench]] | 2026-07-04 | `options-trench` | This episode dissects how leveraged ETFs (e.g., QLD, QID) achieve their promised daily returns through swap mechanics and daily rebalancing, revealing they exhibit short gamma c... |
+| [[sources/6Es1NmTvt6E|Why Most Options Traders Get Implied Volatility Completely Wrong \/ Options Trading for Beginners Ep3]] | 2026-07-04 | `beginner-lab` | This episode deconstructs common misconceptions about implied volatility (IV) in options trading, focusing on how traders overpay for vol on long options and undersell it on sho... |
+| [[sources/TigQwIC0PIU|Independence Day Special: Reclaiming Your Trading Independence]] | 2026-07-05 | `none` | Eric discusses the operational and psychological foundations required to trade for a living consistently. The core thesis: trading is one of the few paths to genuine financial i... |
+| [[sources/AowBcLl1u80|Your Strategy Isn't The Problem \/ Trading Psychology]] | 2026-07-05 | `options-trench` | Trading psychology is the primary variable separating profitable traders from unprofitable ones, even when they operate under identical systems and infrastructure. The video ide... |
+| [[sources/Lp-SPerQHgY|Erik's Trading Performance Review \/ 2026 H1 AAR]] | 2026-07-08 | `none` | Erik presents a detailed year-to-date performance review showing approximately 33% returns through mid-2026, driven primarily by speculative positions and a maturing skill set.... |
+| [[sources/1fqO9v4SLeI|I'm Short SPCX — Here's How Every Options Structure Reacts]] | 2026-07-09 | `options-trench` | Eric walks through a directional short position in SpaceX (entered ~$169 on 22 June post-IPO) and compares how different options structures—synthetic short, 30/45/70 DTE puts at... |
+| [[sources/Jfq38jbTtzE|Black Scholes Merton Inputs Decoded \/ The Options Trench]] | 2026-07-11 | `options-trench` | This episode decodes the five primary inputs to the Black-Scholes-Merton (BSM) option pricing model: underlying price, strike, time to expiration, risk-free rate, and volatility... |
+| [[sources/JdPGS9FK-xw|How to NOT Mess Up Your Position Sizing \/ Options Trading for Beginners Ep4]] | 2026-07-11 | `beginner-lab` | Episode 4 of the Outlier Options Trading Bootcamp focuses on position sizing as a critical trader mistake. The core lesson: position sizing is the only element of risk you can c... |
+| [[sources/4zx4HK1i4RQ|Why Your Call Options Lose Even When You're Right About Direction]] | 2026-07-12 | `options-trench` | Long call options can lose money even when the underlying moves in your predicted direction because strike selection, time-to-expiration (DTE), and implied volatility interact t... |
 
 </details>
 

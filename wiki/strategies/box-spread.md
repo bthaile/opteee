@@ -5,11 +5,14 @@ related_videos: ["3STDqRx1o8w", "72LcrOF6BHk", "BTU71jbUgDo", "EvZE2RIwFE4", "GK
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A box spread is a delta-neutral arbitrage strategy that simultaneously sells a debit put spread and a debit call spread at identical strikes and expiration, exploiting the risk-free rate embedded in options markets to generate low but guaranteed returns. The strategy requires European-style options (typically SPX) to avoid early assignment risk and is most useful for deploying idle capital while maintaining full collateral coverage. Box spread yields are compared against the risk-free rate and tracked via spreadsheet tools that calculate annualized returns and monitor fee impact across multiple concurrent positions."
 ---
 
 # Box Spread
 
-**Auto-generated strategy topic** — discussed across 16 video(s). Pending curated synthesis; the backing source pages are linked below.
+A box spread is a delta-neutral arbitrage strategy that simultaneously sells a debit put spread and a debit call spread at identical strikes and expiration, exploiting the risk-free rate embedded in options markets to generate low but guaranteed returns. The strategy requires European-style options (typically SPX) to avoid early assignment risk and is most useful for deploying idle capital while maintaining full collateral coverage. Box spread yields are compared against the risk-free rate and tracked via spreadsheet tools that calculate annualized returns and monitor fee impact across multiple concurrent positions.
+
+*Auto-generated summary from 16 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["-mD-g1Io3II", "3J1_0s0qHPU", "3maiJI5DRXc", "4p0xi0hLOZM", "5Y
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Open interest represents the total number of outstanding options contracts at a given strike and expiration, serving as a measure of position concentration and liquidity in the options chain. Traders use open interest alongside volume to identify where positions are being actively built or closed—particularly through the volume-to-open-interest ratio, which signals new position initiation when elevated—and combine it with term structure analysis to distinguish between routine roll activity and genuine directional conviction. Open interest concentration at specific strikes and expirations reveals institutional and retail positioning bias, helping traders spot unusual activity, infer market-maker hedging behavior, and generate trade ideas ahead of potential directional moves or volatility events."
 ---
 
 # Open Interest
 
-**Auto-generated concept topic** — discussed across 67 video(s). Pending curated synthesis; the backing source pages are linked below.
+Open interest represents the total number of outstanding options contracts at a given strike and expiration, serving as a measure of position concentration and liquidity in the options chain. Traders use open interest alongside volume to identify where positions are being actively built or closed—particularly through the volume-to-open-interest ratio, which signals new position initiation when elevated—and combine it with term structure analysis to distinguish between routine roll activity and genuine directional conviction. Open interest concentration at specific strikes and expirations reveals institutional and retail positioning bias, helping traders spot unusual activity, infer market-maker hedging behavior, and generate trade ideas ahead of potential directional moves or volatility events.
+
+*Auto-generated summary from 67 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

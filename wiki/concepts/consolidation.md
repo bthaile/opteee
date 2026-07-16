@@ -5,11 +5,14 @@ related_videos: ["-mD-g1Io3II", "2yu8jSYKuH4", "3J1_0s0qHPU", "5aId1F_kr24", "5z
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Consolidation is a price pattern in which a security trades within a narrow, bounded range over a period of time, reflecting a balance between supply and demand at that level. In options trading, consolidation periods are characterized by compressed implied volatility and light trading volume, creating strategic opportunities to reconfigure portfolio exposure, establish premium-selling positions, or wait for a breakout catalyst such as earnings or macroeconomic data. Traders use volume profile and price-level analysis to identify consolidation zones and the point of control, then position for either a breakout or a mean-reversion trade depending on their directional thesis and risk management framework."
 ---
 
 # Consolidation
 
-**Auto-generated concept topic** — discussed across 40 video(s). Pending curated synthesis; the backing source pages are linked below.
+Consolidation is a price pattern in which a security trades within a narrow, bounded range over a period of time, reflecting a balance between supply and demand at that level. In options trading, consolidation periods are characterized by compressed implied volatility and light trading volume, creating strategic opportunities to reconfigure portfolio exposure, establish premium-selling positions, or wait for a breakout catalyst such as earnings or macroeconomic data. Traders use volume profile and price-level analysis to identify consolidation zones and the point of control, then position for either a breakout or a mean-reversion trade depending on their directional thesis and risk management framework.
+
+*Auto-generated summary from 40 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

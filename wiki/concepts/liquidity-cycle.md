@@ -5,11 +5,14 @@ related_videos: ["29BtSz0VpA4", "4q843j_0kcc", "6-MMToTqJAE", "6Sp4eF9ahW8", "8q
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A liquidity cycle in options trading refers to the self-reinforcing pattern of volume clustering and order flow that emerges from structural market mechanics, such as auction-driven execution at market close, VWAP algorithms, and event-driven hedging around catalysts like earnings. These cycles create predictable surges in options volume that reflect how both institutional and retail traders manage transaction costs and isolate specific exposures within their operational constraints. Understanding liquidity cycles allows traders to anticipate when large orders will execute and how market-on-close mechanics and hedging demand interact to shape intraday and end-of-period trading patterns."
 ---
 
 # Liquidity Cycle
 
-**Auto-generated concept topic** — discussed across 41 video(s). Pending curated synthesis; the backing source pages are linked below.
+A liquidity cycle in options trading refers to the self-reinforcing pattern of volume clustering and order flow that emerges from structural market mechanics, such as auction-driven execution at market close, VWAP algorithms, and event-driven hedging around catalysts like earnings. These cycles create predictable surges in options volume that reflect how both institutional and retail traders manage transaction costs and isolate specific exposures within their operational constraints. Understanding liquidity cycles allows traders to anticipate when large orders will execute and how market-on-close mechanics and hedging demand interact to shape intraday and end-of-period trading patterns.
+
+*Auto-generated summary from 41 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

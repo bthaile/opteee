@@ -5,11 +5,14 @@ related_videos: ["-CUgdXmtp5o", "0iZJfIu3Nac", "1axDClx9vWQ", "1kGksRBt2aA", "1r
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A ratio call diagonal is a directional options strategy that pairs long-dated call options with shorter-dated short calls at different strikes to capture upside while managing risk through time decay and premium collection. The strategy is built on technical confluence signals and elevated volume, using the short calls to offset the cost of the long calls while the long calls provide upside exposure and gap protection. Execution requires careful position management and awareness of the ratio structure's drawbacks in fast-moving markets, where rapid price moves can create outsized losses if the underlying gaps through the short strike. The strategy's profitability depends on balancing delta decay (charm) and time decay against directional conviction and volatility conditions."
 ---
 
 # Ratio Call Diagonal
 
-**Auto-generated strategy topic** — discussed across 133 video(s). Pending curated synthesis; the backing source pages are linked below.
+A ratio call diagonal is a directional options strategy that pairs long-dated call options with shorter-dated short calls at different strikes to capture upside while managing risk through time decay and premium collection. The strategy is built on technical confluence signals and elevated volume, using the short calls to offset the cost of the long calls while the long calls provide upside exposure and gap protection. Execution requires careful position management and awareness of the ratio structure's drawbacks in fast-moving markets, where rapid price moves can create outsized losses if the underlying gaps through the short strike. The strategy's profitability depends on balancing delta decay (charm) and time decay against directional conviction and volatility conditions.
+
+*Auto-generated summary from 133 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

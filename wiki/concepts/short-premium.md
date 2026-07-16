@@ -5,11 +5,14 @@ related_videos: ["--aVVZQ5Pxw", "0phfdNnT3Q0", "2lvTJ6_Oc9E", "5qqDL8_cYGA", "78
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Short premium is an options-selling strategy where traders collect income by selling calls or puts, betting that the underlying price will not move far enough to trigger a loss before expiration. While short premium strategies often exhibit high win rates (65%+), they suffer from unfavorable expected value because small, frequent wins are offset by rare but catastrophic losses—a single max-loss trade can erase multiple winning trades. Retail traders employing short premium lack the structural advantages (rebates, special margining, low latency) that market makers possess, requiring disciplined risk management, proper position sizing, and diversification across uncorrelated positions to manufacture an edge. The strategy's profitability depends critically on market regime; in bear markets or periods of elevated volatility, naked short premium can face severe drawdowns unless combined with adaptive techniques or protective wings, though wings themselves consume edge through bid-ask spread costs."
 ---
 
 # Short Premium
 
-**Auto-generated concept topic** — discussed across 29 video(s). Pending curated synthesis; the backing source pages are linked below.
+Short premium is an options-selling strategy where traders collect income by selling calls or puts, betting that the underlying price will not move far enough to trigger a loss before expiration. While short premium strategies often exhibit high win rates (65%+), they suffer from unfavorable expected value because small, frequent wins are offset by rare but catastrophic losses—a single max-loss trade can erase multiple winning trades. Retail traders employing short premium lack the structural advantages (rebates, special margining, low latency) that market makers possess, requiring disciplined risk management, proper position sizing, and diversification across uncorrelated positions to manufacture an edge. The strategy's profitability depends critically on market regime; in bear markets or periods of elevated volatility, naked short premium can face severe drawdowns unless combined with adaptive techniques or protective wings, though wings themselves consume edge through bid-ask spread costs.
+
+*Auto-generated summary from 29 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

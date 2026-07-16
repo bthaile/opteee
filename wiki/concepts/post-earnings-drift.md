@@ -5,11 +5,14 @@ related_videos: ["0fty1k3IGgY", "0iZJfIu3Nac", "3hrdUyJ-KmE", "4D1XWrp3xec", "4H
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Post-earnings announcement drift (PEAD) is the tendency for stock prices to continue moving in the direction of an earnings surprise for days or weeks after the initial announcement, driven primarily by forward guidance rather than the reported EPS number itself. Traders exploit this mechanic by structuring options positions that capture drift moves occurring beyond the initial earnings volatility event, treating it as a repeatable, quantifiable profit mechanism. PEAD represents an inefficiency-based edge where understanding the underlying driver—market uncertainty about future direction—allows traders to match position structure to the specific drift pattern they expect to capture."
 ---
 
 # Post Earnings Drift
 
-**Auto-generated concept topic** — discussed across 59 video(s). Pending curated synthesis; the backing source pages are linked below.
+Post-earnings announcement drift (PEAD) is the tendency for stock prices to continue moving in the direction of an earnings surprise for days or weeks after the initial announcement, driven primarily by forward guidance rather than the reported EPS number itself. Traders exploit this mechanic by structuring options positions that capture drift moves occurring beyond the initial earnings volatility event, treating it as a repeatable, quantifiable profit mechanism. PEAD represents an inefficiency-based edge where understanding the underlying driver—market uncertainty about future direction—allows traders to match position structure to the specific drift pattern they expect to capture.
+
+*Auto-generated summary from 59 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

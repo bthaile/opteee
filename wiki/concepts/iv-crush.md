@@ -5,11 +5,14 @@ related_videos: ["0fty1k3IGgY", "4i11aVZeGxQ", "6c3CUMAVF04", "72LcrOF6BHk", "BT
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "IV crush refers to the rapid decline in implied volatility that typically occurs after an earnings announcement or other volatility-triggering event, which can erode the value of long options positions even if the underlying price moves favorably. Traders encounter IV crush when selling premium into high-IV environments ahead of earnings, as the subsequent volatility collapse can offset directional gains, and when buying options expecting large moves, since realized volatility may exceed implied volatility yet the position still loses value as IV contracts. Understanding IV crush mechanics is essential for structuring earnings trades and managing positions through volatility surfaces rather than relying solely on directional conviction."
 ---
 
 # Iv Crush
 
-**Auto-generated concept topic** — discussed across 32 video(s). Pending curated synthesis; the backing source pages are linked below.
+IV crush refers to the rapid decline in implied volatility that typically occurs after an earnings announcement or other volatility-triggering event, which can erode the value of long options positions even if the underlying price moves favorably. Traders encounter IV crush when selling premium into high-IV environments ahead of earnings, as the subsequent volatility collapse can offset directional gains, and when buying options expecting large moves, since realized volatility may exceed implied volatility yet the position still loses value as IV contracts. Understanding IV crush mechanics is essential for structuring earnings trades and managing positions through volatility surfaces rather than relying solely on directional conviction.
+
+*Auto-generated summary from 32 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

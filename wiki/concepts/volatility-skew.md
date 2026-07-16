@@ -5,11 +5,14 @@ related_videos: ["-Zqys05mhkw", "-jJkuhl2wyY", "-mD-g1Io3II", "26vVCJY9t00", "3J
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Volatility skew refers to the uneven distribution of implied volatility across different strike prices in an options chain, where calls and puts at various levels trade at different volatility levels rather than uniformly. In the context of GameStop and other stocks, skew manifests as elevated call volatility relative to puts (call skew), which traders exploit through premium-selling strategies like covered strangles to capture the volatility risk premium. Skew becomes particularly valuable when combined with term-structure analysis—examining how volatility changes across different expiration dates—to identify periods when the market is pricing in directional or volatility expectations that may be overextended. Traders use skew patterns alongside technical analysis and fundamental catalysts to time entry points for income strategies and to understand market participant positioning and sentiment."
 ---
 
 # Volatility Skew
 
-**Auto-generated concept topic** — discussed across 90 video(s). Pending curated synthesis; the backing source pages are linked below.
+Volatility skew refers to the uneven distribution of implied volatility across different strike prices in an options chain, where calls and puts at various levels trade at different volatility levels rather than uniformly. In the context of GameStop and other stocks, skew manifests as elevated call volatility relative to puts (call skew), which traders exploit through premium-selling strategies like covered strangles to capture the volatility risk premium. Skew becomes particularly valuable when combined with term-structure analysis—examining how volatility changes across different expiration dates—to identify periods when the market is pricing in directional or volatility expectations that may be overextended. Traders use skew patterns alongside technical analysis and fundamental catalysts to time entry points for income strategies and to understand market participant positioning and sentiment.
+
+*Auto-generated summary from 90 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

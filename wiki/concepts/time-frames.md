@@ -5,11 +5,14 @@ related_videos: ["5Tc9L4TvPR8", "8Sk1oMYRq-Q", "9JdI1XeR1G0", "B3SW20MSNbM", "Gf
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Time frames in options trading refer to the duration or expiration window selected for a position, which fundamentally shapes the trade's risk profile, theta decay, and flexibility. Rather than choosing expiration dates based on specific calendar dates, traders should think in terms of time windows that align with their thesis duration and expected move severity—longer-dated options typically offer lower daily theta decay and greater holding flexibility, while shorter-dated options (including zero-DTE) embed higher volatility risk premium but require tighter management. The selection of time frame is a critical component of trade construction that must align with the profit mechanism, expected move size, and personal risk tolerance, and is best determined through a systematic decision framework rather than ad-hoc calendar selection."
 ---
 
 # Time Frames
 
-**Auto-generated concept topic** — discussed across 23 video(s). Pending curated synthesis; the backing source pages are linked below.
+Time frames in options trading refer to the duration or expiration window selected for a position, which fundamentally shapes the trade's risk profile, theta decay, and flexibility. Rather than choosing expiration dates based on specific calendar dates, traders should think in terms of time windows that align with their thesis duration and expected move severity—longer-dated options typically offer lower daily theta decay and greater holding flexibility, while shorter-dated options (including zero-DTE) embed higher volatility risk premium but require tighter management. The selection of time frame is a critical component of trade construction that must align with the profit mechanism, expected move size, and personal risk tolerance, and is best determined through a systematic decision framework rather than ad-hoc calendar selection.
+
+*Auto-generated summary from 23 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

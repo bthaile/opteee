@@ -5,11 +5,14 @@ related_videos: ["2I6SPZjnjew", "4D1XWrp3xec", "4Ksbe6bpV8o", "OwPmSCUS-bs", "QE
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Sector rotation is a trading strategy that shifts capital allocation between different market sectors based on momentum, economic conditions, or policy regimes to capitalize on relative outperformance. The approach involves identifying which sectors are strengthening or weakening—such as rotating from tech into defensive names like staples, utilities, and healthcare during corrections, or into energy and industrials during growth phases—and positioning accordingly through sector ETFs or individual equities. Practitioners use trend-following indicators, momentum signals, and breadth analysis to time transitions between sectors, and the strategy can be applied across multiple timeframes from tactical 90-day plays to longer thematic positions tied to macroeconomic or political shifts."
 ---
 
 # Sector Rotation
 
-**Auto-generated strategy topic** — discussed across 14 video(s). Pending curated synthesis; the backing source pages are linked below.
+Sector rotation is a trading strategy that shifts capital allocation between different market sectors based on momentum, economic conditions, or policy regimes to capitalize on relative outperformance. The approach involves identifying which sectors are strengthening or weakening—such as rotating from tech into defensive names like staples, utilities, and healthcare during corrections, or into energy and industrials during growth phases—and positioning accordingly through sector ETFs or individual equities. Practitioners use trend-following indicators, momentum signals, and breadth analysis to time transitions between sectors, and the strategy can be applied across multiple timeframes from tactical 90-day plays to longer thematic positions tied to macroeconomic or political shifts.
+
+*Auto-generated summary from 14 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

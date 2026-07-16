@@ -5,11 +5,14 @@ related_videos: ["5Tc9L4TvPR8", "F8Mpls7PWfs", "UPNR9270_48", "dHvfZOw1ql0", "f4
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "I cannot write a summary of \"XSP\" based on the provided material, as XSP is not mentioned or discussed in any of the six video summaries supplied. The summaries cover zero-DTE options strategies, options trading mechanics, volatility risk premium, position management, and portfolio construction, but do not reference XSP as a security or trading topic."
 ---
 
 # XSP
 
-**Auto-generated security topic** — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below.
+I cannot write a summary of "XSP" based on the provided material, as XSP is not mentioned or discussed in any of the six video summaries supplied. The summaries cover zero-DTE options strategies, options trading mechanics, volatility risk premium, position management, and portfolio construction, but do not reference XSP as a security or trading topic.
+
+*Auto-generated summary from 6 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["1jDrPx6lOgM", "EkAxyxtD0hc", "H87XHR8ErsE", "fzWYHaO3za4", "hP
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Expectancy is a measure of how a trading strategy performs across a large sample size of trades, revealing whether the strategy is genuinely profitable over time rather than relying on misleading metrics like win rate or probability of profit alone. A strategy can have a high probability of profit or win rate yet still be negatively expectant and lose money overall, making expectancy the true indicator of trading edge. Proper position sizing based on actual strategy expectancy—derived from backtesting and detailed trading logs—is essential for consistent profitability, whereas beginners often fail by sizing positions arbitrarily without understanding their strategy's true expectancy."
 ---
 
 # Expectancy
 
-**Auto-generated concept topic** — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below.
+Expectancy is a measure of how a trading strategy performs across a large sample size of trades, revealing whether the strategy is genuinely profitable over time rather than relying on misleading metrics like win rate or probability of profit alone. A strategy can have a high probability of profit or win rate yet still be negatively expectant and lose money overall, making expectancy the true indicator of trading edge. Proper position sizing based on actual strategy expectancy—derived from backtesting and detailed trading logs—is essential for consistent profitability, whereas beginners often fail by sizing positions arbitrarily without understanding their strategy's true expectancy.
+
+*Auto-generated summary from 6 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

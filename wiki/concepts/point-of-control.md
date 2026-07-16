@@ -5,11 +5,14 @@ related_videos: ["3J1_0s0qHPU", "Gsy_ncfFBpo", "QeesqIsDnrA", "RAj7HHErd4o", "TT
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Point of control is the price level at which the most trading volume has occurred over a specified time frame, identified through volume profile analysis. It serves as a key reference point for options traders to understand price behavior and identify potential support or resistance levels, with price tending to gravitate toward or consolidate around this level. Traders monitor when price consolidates near the point of control as an indicator of equilibrium and use it to contextualize options positioning and potential breakout scenarios."
 ---
 
 # Point Of Control
 
-**Auto-generated concept topic** — discussed across 11 video(s). Pending curated synthesis; the backing source pages are linked below.
+Point of control is the price level at which the most trading volume has occurred over a specified time frame, identified through volume profile analysis. It serves as a key reference point for options traders to understand price behavior and identify potential support or resistance levels, with price tending to gravitate toward or consolidate around this level. Traders monitor when price consolidates near the point of control as an indicator of equilibrium and use it to contextualize options positioning and potential breakout scenarios.
+
+*Auto-generated summary from 11 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

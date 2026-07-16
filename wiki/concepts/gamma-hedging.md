@@ -5,11 +5,14 @@ related_videos: ["FPLK8vS5ono", "FrqSC7Fbf14", "H04ZDCN_KRI", "KKOqF8h1n1s", "SA
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Gamma hedging is the practice of rebalancing a delta hedge as the underlying price moves, allowing traders to lock in profits from directional moves while managing exposure. Dealers who are short options must continuously buy as prices rise and sell as prices fall to maintain a neutral delta position, a process that loses money over time due to the realized volatility being lower than the implied volatility priced into the option. Conversely, traders who are long options can gamma-scalp by executing the opposite trades—selling into rallies and buying into dips—which subsidizes their theta decay and can generate profits if realized volatility exceeds implied volatility. The mechanics of gamma hedging are central to understanding how market makers manage short option positions and how the cost of hedging affects option pricing and dealer behavior."
 ---
 
 # Gamma Hedging
 
-**Auto-generated concept topic** — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below.
+Gamma hedging is the practice of rebalancing a delta hedge as the underlying price moves, allowing traders to lock in profits from directional moves while managing exposure. Dealers who are short options must continuously buy as prices rise and sell as prices fall to maintain a neutral delta position, a process that loses money over time due to the realized volatility being lower than the implied volatility priced into the option. Conversely, traders who are long options can gamma-scalp by executing the opposite trades—selling into rallies and buying into dips—which subsidizes their theta decay and can generate profits if realized volatility exceeds implied volatility. The mechanics of gamma hedging are central to understanding how market makers manage short option positions and how the cost of hedging affects option pricing and dealer behavior.
+
+*Auto-generated summary from 9 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

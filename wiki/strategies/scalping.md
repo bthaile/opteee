@@ -5,11 +5,14 @@ related_videos: ["1jDrPx6lOgM", "RRhFuGfvBjA", "jlhuKAIenw0"]
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "The supplied material does not contain discussion of scalping as an options-trading strategy. The three video summaries address trading psychology, risk management, market volatility, and foundational strategy-building principles, but none specifically covers scalping or its mechanics in options trading."
 ---
 
 # Scalping
 
-**Auto-generated strategy topic** — discussed across 3 video(s). Pending curated synthesis; the backing source pages are linked below.
+The supplied material does not contain discussion of scalping as an options-trading strategy. The three video summaries address trading psychology, risk management, market volatility, and foundational strategy-building principles, but none specifically covers scalping or its mechanics in options trading.
+
+*Auto-generated summary from 3 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

@@ -5,11 +5,14 @@ related_videos: ["0kXY1hY--Ww", "1kGksRBt2aA", "4CEmVAhaNbk", "OeMVz36bO5A", "Ss
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "At-the-money (ATM) refers to an option whose strike price equals or is very close to the current price of the underlying asset. ATM options exhibit the highest gamma and theta among all strikes, meaning they experience the fastest rate of delta change per underlying price move and the most rapid premium decay per day passing. This concentration of Greeks makes ATM options critical reference points for position management: they represent the zone of maximum extrinsic value (important for rolling decisions) and the peak of time decay acceleration as expiration approaches. Traders use ATM strikes as decision thresholds—for example, rolling challenged short positions when they reach ATM to capture remaining extrinsic value before intrinsic value dominates."
 ---
 
 # At The Money
 
-**Auto-generated concept topic** — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below.
+At-the-money (ATM) refers to an option whose strike price equals or is very close to the current price of the underlying asset. ATM options exhibit the highest gamma and theta among all strikes, meaning they experience the fastest rate of delta change per underlying price move and the most rapid premium decay per day passing. This concentration of Greeks makes ATM options critical reference points for position management: they represent the zone of maximum extrinsic value (important for rolling decisions) and the peak of time decay acceleration as expiration approaches. Traders use ATM strikes as decision thresholds—for example, rolling challenged short positions when they reach ATM to capture remaining extrinsic value before intrinsic value dominates.
+
+*Auto-generated summary from 9 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

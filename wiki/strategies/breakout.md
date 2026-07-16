@@ -5,11 +5,14 @@ related_videos: ["-MQ7kNM0dtI", "-RsvTzf4OxA", "6LpY37knkh4", "6lIx0wSsN7Y", "73
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A breakout is a directional price movement beyond established support or resistance levels that options traders use as a thesis for directional trades. Trading breakouts with options requires defining three key elements: the expected direction and magnitude of the price move, the duration over which that move will occur (modeled through days to expiration), and the appropriate position sizing based on prior price action as a template. The profit mechanism underlying breakout trades is the directional momentum that follows price breaking through consolidation or resistance, which can be expressed through various option structures once the trader understands how Greeks and volatility will behave in the expected move scenario."
 ---
 
 # Breakout
 
-**Auto-generated strategy topic** — discussed across 48 video(s). Pending curated synthesis; the backing source pages are linked below.
+A breakout is a directional price movement beyond established support or resistance levels that options traders use as a thesis for directional trades. Trading breakouts with options requires defining three key elements: the expected direction and magnitude of the price move, the duration over which that move will occur (modeled through days to expiration), and the appropriate position sizing based on prior price action as a template. The profit mechanism underlying breakout trades is the directional momentum that follows price breaking through consolidation or resistance, which can be expressed through various option structures once the trader understands how Greeks and volatility will behave in the expected move scenario.
+
+*Auto-generated summary from 48 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

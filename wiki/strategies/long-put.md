@@ -5,11 +5,14 @@ related_videos: ["0ZE8GpkICU4", "2Dv_fRuuTcc", "58lYHJ_XDaY", "7UFLVoQVRIY", "Ad
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A long put is a directional bearish strategy where a trader purchases a put option to profit from a decline in the underlying asset's price, with maximum profit occurring if the stock falls below the strike price and maximum loss limited to the premium paid. This strategy is selected when a trader has a bearish directional hypothesis and wants defined risk exposure, making it one of the foundational single-option structures in a trader's toolkit. Long puts require accurate directional forecasting as the primary profit mechanism, with secondary considerations including time decay (theta), implied volatility levels, and strike selection relative to support levels and distribution zones."
 ---
 
 # Long Put
 
-**Auto-generated strategy topic** — discussed across 20 video(s). Pending curated synthesis; the backing source pages are linked below.
+A long put is a directional bearish strategy where a trader purchases a put option to profit from a decline in the underlying asset's price, with maximum profit occurring if the stock falls below the strike price and maximum loss limited to the premium paid. This strategy is selected when a trader has a bearish directional hypothesis and wants defined risk exposure, making it one of the foundational single-option structures in a trader's toolkit. Long puts require accurate directional forecasting as the primary profit mechanism, with secondary considerations including time decay (theta), implied volatility levels, and strike selection relative to support levels and distribution zones.
+
+*Auto-generated summary from 20 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

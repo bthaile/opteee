@@ -5,11 +5,14 @@ related_videos: ["1rqLJW1nK40", "2XS6kMnDUT4", "2wlur2p61Mg", "3c6fsUwB1pw", "3w
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Cost basis is the original purchase price of a stock or option position, and it serves as a critical reference point for managing short call positions in options strategies. When a position is underwater (trading below cost basis), selling calls below basis introduces assignment risk and operational complexity; conversely, selling calls above basis requires the stock to rally but minimizes management friction and reduces the likelihood of forced liquidation. Traders positioning to sell calls above basis aim to balance income generation with the ability to manage positions without being forced into unfavorable assignments or having to defend losing trades."
 ---
 
 # Cost Basis
 
-**Auto-generated concept topic** — discussed across 35 video(s). Pending curated synthesis; the backing source pages are linked below.
+Cost basis is the original purchase price of a stock or option position, and it serves as a critical reference point for managing short call positions in options strategies. When a position is underwater (trading below cost basis), selling calls below basis introduces assignment risk and operational complexity; conversely, selling calls above basis requires the stock to rally but minimizes management friction and reduces the likelihood of forced liquidation. Traders positioning to sell calls above basis aim to balance income generation with the ability to manage positions without being forced into unfavorable assignments or having to defend losing trades.
+
+*Auto-generated summary from 35 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

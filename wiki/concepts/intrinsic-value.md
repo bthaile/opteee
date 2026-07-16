@@ -5,11 +5,14 @@ related_videos: ["-jJkuhl2wyY", "0kXY1hY--Ww", "1rqLJW1nK40", "5Tc9L4TvPR8", "5l
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Intrinsic value is the portion of an option's price that reflects its in-the-money amount—the difference between the underlying asset's current price and the option's strike price. At expiration, an option's value consists entirely of intrinsic value (if in-the-money) or zero (if out-of-the-money), whereas before expiration, an option's total price also includes extrinsic value, which decays over time due to theta. Understanding intrinsic value is essential for evaluating whether an option retains worth at expiration and for distinguishing between price movement driven by the underlying asset versus time decay and volatility changes."
 ---
 
 # Intrinsic Value
 
-**Auto-generated concept topic** — discussed across 65 video(s). Pending curated synthesis; the backing source pages are linked below.
+Intrinsic value is the portion of an option's price that reflects its in-the-money amount—the difference between the underlying asset's current price and the option's strike price. At expiration, an option's value consists entirely of intrinsic value (if in-the-money) or zero (if out-of-the-money), whereas before expiration, an option's total price also includes extrinsic value, which decays over time due to theta. Understanding intrinsic value is essential for evaluating whether an option retains worth at expiration and for distinguishing between price movement driven by the underlying asset versus time decay and volatility changes.
+
+*Auto-generated summary from 65 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

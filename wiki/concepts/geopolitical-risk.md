@@ -5,11 +5,14 @@ related_videos: ["-8XV5_gBP6I", "4ountK1Wflc", "6UzoviSHtbk", "7XyTZoId-Aw", "AX
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Geopolitical risk encompasses military conflicts, trade tensions, and political realignments that create tradable market dislocations across equities, commodities, and volatility. In options trading, geopolitical events—such as military strikes, sanctions, or supply-chain disruptions (particularly in energy markets like the Strait of Hormuz)—trigger gaps at market open, volatility expansion, and shifts in hedging demand that create near-term trading opportunities and multi-scenario positioning requirements. Traders monitor geopolitical catalysts as potential accelerators or disruptors of longer-term macro trends, using them to time entries, adjust hedges, and size positions across correlated asset classes."
 ---
 
 # Geopolitical Risk
 
-**Auto-generated concept topic** — discussed across 18 video(s). Pending curated synthesis; the backing source pages are linked below.
+Geopolitical risk encompasses military conflicts, trade tensions, and political realignments that create tradable market dislocations across equities, commodities, and volatility. In options trading, geopolitical events—such as military strikes, sanctions, or supply-chain disruptions (particularly in energy markets like the Strait of Hormuz)—trigger gaps at market open, volatility expansion, and shifts in hedging demand that create near-term trading opportunities and multi-scenario positioning requirements. Traders monitor geopolitical catalysts as potential accelerators or disruptors of longer-term macro trends, using them to time entries, adjust hedges, and size positions across correlated asset classes.
+
+*Auto-generated summary from 18 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

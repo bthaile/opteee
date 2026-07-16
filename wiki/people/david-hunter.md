@@ -5,13 +5,16 @@ related_videos: ["2yu8jSYKuH4", "6-MMToTqJAE", "6CZMjMvG4y4", "6Sp4eF9ahW8", "BZ
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "David Hunter is a macro strategist and 48–50 year Wall Street veteran who advocates a contrarian \"melt-up into global bust\" thesis: he forecasts a parabolic rally in equities (S&P 500 targets ranging from 6,000 to 9,500 depending on timeframe) driven by Fed pivot, falling rates, dollar weakness, and capitulation buying, followed by a severe deflationary downturn and 80% bear market rooted in excessive global leverage (300+ trillion in debt, quadrillions in derivatives notional value) and delayed central bank response. His framework emphasizes sentiment extremes, technical inflection points, and outperformance of precious metals and commodities into the top, and he treats extreme bearish sentiment and forced liquidation as contrarian buy signals for the final melt-up leg. While his specific timing and targets have evolved across multiple appearances, Hunter maintains consistency on the core thesis of a final secular bull-market advance before a deflationary bust and subsequent central-bank reflation."
 category: interviews
 role: interviewed guest
 ---
 
 # David Hunter
 
-**Interviewed guest** — appears in 17 video(s) in the corpus. Auto-generated stub pending curated synthesis of this person's distinctive views.
+David Hunter is a macro strategist and 48–50 year Wall Street veteran who advocates a contrarian "melt-up into global bust" thesis: he forecasts a parabolic rally in equities (S&P 500 targets ranging from 6,000 to 9,500 depending on timeframe) driven by Fed pivot, falling rates, dollar weakness, and capitulation buying, followed by a severe deflationary downturn and 80% bear market rooted in excessive global leverage (300+ trillion in debt, quadrillions in derivatives notional value) and delayed central bank response. His framework emphasizes sentiment extremes, technical inflection points, and outperformance of precious metals and commodities into the top, and he treats extreme bearish sentiment and forced liquidation as contrarian buy signals for the final melt-up leg. While his specific timing and targets have evolved across multiple appearances, Hunter maintains consistency on the core thesis of a final secular bull-market advance before a deflationary bust and subsequent central-bank reflation.
+
+*Auto-generated summary from 17 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

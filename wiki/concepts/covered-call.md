@@ -5,11 +5,14 @@ related_videos: ["-CUgdXmtp5o", "2T8T8EDhfpQ", "2jG5SD-3F0w", "2uzcV42Gc7w", "5Y
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A covered call is a strategy where a trader holds shares of stock and sells call options against that position to collect premium, with the primary profit driver being appreciation of the underlying shares rather than the premium itself. The strategy caps upside potential above the short strike while providing supplementary income from the call premium, making it fundamentally limited as a pure income strategy compared to buy-and-hold approaches. Effective execution requires active management—including delta rebalancing as prices move, selective strike selection based on implied volatility and market context rather than mechanical selling, and careful attention to early assignment risk—rather than systematic or passive application."
 ---
 
 # Covered Call
 
-**Auto-generated concept topic** — discussed across 30 video(s). Pending curated synthesis; the backing source pages are linked below.
+A covered call is a strategy where a trader holds shares of stock and sells call options against that position to collect premium, with the primary profit driver being appreciation of the underlying shares rather than the premium itself. The strategy caps upside potential above the short strike while providing supplementary income from the call premium, making it fundamentally limited as a pure income strategy compared to buy-and-hold approaches. Effective execution requires active management—including delta rebalancing as prices move, selective strike selection based on implied volatility and market context rather than mechanical selling, and careful attention to early assignment risk—rather than systematic or passive application.
+
+*Auto-generated summary from 30 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

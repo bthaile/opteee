@@ -5,11 +5,14 @@ related_videos: ["DrfoNKd41I0", "F7zoiv61ohM", "QQ5DeQdx0yo", "UdK6dDmKF3k", "m3
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "I cannot write a summary of GE based on the supplied material, as GE is not discussed in any of the five video summaries provided. The videos cover general options-trading concepts, portfolio rebalancing strategies, trade-building methodology, market catalysts, and the Greeks, but do not mention GE as a specific security or trading topic."
 ---
 
 # GE
 
-**Auto-generated security topic** — discussed across 5 video(s). Pending curated synthesis; the backing source pages are linked below.
+I cannot write a summary of GE based on the supplied material, as GE is not discussed in any of the five video summaries provided. The videos cover general options-trading concepts, portfolio rebalancing strategies, trade-building methodology, market catalysts, and the Greeks, but do not mention GE as a specific security or trading topic.
+
+*Auto-generated summary from 5 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

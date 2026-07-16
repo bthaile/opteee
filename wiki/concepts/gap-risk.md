@@ -5,11 +5,14 @@ related_videos: ["6UzoviSHtbk", "AXGmgcD15_E", "ID-Kl0y1bxs", "JzxGOoYsAv0", "Kn
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Gap risk refers to the possibility of a security's price opening significantly higher or lower than its previous close due to overnight news, earnings announcements, geopolitical events, or other market-moving catalysts, creating sudden dislocations that can bypass stop-loss levels and trap traders in unfavorable positions. In options trading, gap risk is particularly acute around earnings releases, where post-earnings announcement drift can extend price movement beyond the initial gap, and around geopolitical or macroeconomic shocks that cause futures to open sharply away from prior closes. Traders manage gap risk through position sizing, protective hedges, and awareness of historical gap magnitudes for specific securities and event types, recognizing that gaps represent tail-risk scenarios where normal price discovery mechanisms are temporarily suspended."
 ---
 
 # Gap Risk
 
-**Auto-generated concept topic** — discussed across 10 video(s). Pending curated synthesis; the backing source pages are linked below.
+Gap risk refers to the possibility of a security's price opening significantly higher or lower than its previous close due to overnight news, earnings announcements, geopolitical events, or other market-moving catalysts, creating sudden dislocations that can bypass stop-loss levels and trap traders in unfavorable positions. In options trading, gap risk is particularly acute around earnings releases, where post-earnings announcement drift can extend price movement beyond the initial gap, and around geopolitical or macroeconomic shocks that cause futures to open sharply away from prior closes. Traders manage gap risk through position sizing, protective hedges, and awareness of historical gap magnitudes for specific securities and event types, recognizing that gaps represent tail-risk scenarios where normal price discovery mechanisms are temporarily suspended.
+
+*Auto-generated summary from 10 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

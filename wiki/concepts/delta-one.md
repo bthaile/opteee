@@ -5,11 +5,14 @@ related_videos: ["3JV19RH54eQ", "ID-Kl0y1bxs", "KKOqF8h1n1s", "W8zDptG52a8", "ap
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Delta One refers to instruments or positions that move dollar-for-dollar with an underlying asset, meaning they have a delta of approximately one and behave like direct exposure to the underlying without leverage or optionality. Futures contracts exemplify this delta-one nature, offering simplified, direct market participation with superior liquidity compared to options. In portfolio construction, delta-one instruments like outright futures are used for hedging, capturing overnight or weekend moves, and gaining direct commodity access, particularly as portfolio add-ons rather than primary vehicles for smaller accounts."
 ---
 
 # Delta One
 
-**Auto-generated concept topic** — discussed across 6 video(s). Pending curated synthesis; the backing source pages are linked below.
+Delta One refers to instruments or positions that move dollar-for-dollar with an underlying asset, meaning they have a delta of approximately one and behave like direct exposure to the underlying without leverage or optionality. Futures contracts exemplify this delta-one nature, offering simplified, direct market participation with superior liquidity compared to options. In portfolio construction, delta-one instruments like outright futures are used for hedging, capturing overnight or weekend moves, and gaining direct commodity access, particularly as portfolio add-ons rather than primary vehicles for smaller accounts.
+
+*Auto-generated summary from 6 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

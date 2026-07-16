@@ -5,11 +5,14 @@ related_videos: ["3c6fsUwB1pw", "UPNR9270_48", "YbPvP6qH3is", "cDIVSQmRYBQ", "go
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Number of occurrences refers to the volume of trading decisions and repeated executions of a tested strategy over time, which is fundamental to building sustainable edge in options trading. The concept emphasizes that profitability emerges from consistent process execution across many trades rather than from individual trade outcomes, and that traders need sufficient sample size and data collection to distinguish genuine edge from short-term luck or confirmation bias. Success in options trading is a function of decision volume and longevity—making the maximum number of disciplined trades according to a validated system—rather than waiting for perfect conditions or obsessing over any single trade result."
 ---
 
 # Number Of Occurrences
 
-**Auto-generated concept topic** — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below.
+Number of occurrences refers to the volume of trading decisions and repeated executions of a tested strategy over time, which is fundamental to building sustainable edge in options trading. The concept emphasizes that profitability emerges from consistent process execution across many trades rather than from individual trade outcomes, and that traders need sufficient sample size and data collection to distinguish genuine edge from short-term luck or confirmation bias. Success in options trading is a function of decision volume and longevity—making the maximum number of disciplined trades according to a validated system—rather than waiting for perfect conditions or obsessing over any single trade result.
+
+*Auto-generated summary from 9 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

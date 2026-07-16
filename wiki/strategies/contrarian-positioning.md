@@ -5,11 +5,14 @@ related_videos: ["3hrdUyJ-KmE", "4Lz5jr3grOs", "6-MMToTqJAE", "6CZMjMvG4y4", "6S
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Contrarian positioning is a macro-trading approach that identifies opportunities by betting against prevailing market sentiment and consensus, particularly during periods of extreme fear or complacency. The strategy involves recognizing when forced liquidations, panic selling, or widespread bearish sentiment create dislocations that present asymmetric risk-reward setups—such as buying into tariff-driven sell-offs or accumulating positions when investors capitulate after missing major rallies. Practitioners use sentiment extremes, breadth deterioration, and volatility spikes as signals to establish positions ahead of anticipated reversals, while maintaining discipline around mental frameworks and relative strength to guard against regime shifts. The approach is often paired with macro catalysts (Fed policy pivots, geopolitical events, earnings surprises) and requires active participation and paper-trading validation to build robust edge across different market conditions."
 ---
 
 # Contrarian Positioning
 
-**Auto-generated strategy topic** — discussed across 30 video(s). Pending curated synthesis; the backing source pages are linked below.
+Contrarian positioning is a macro-trading approach that identifies opportunities by betting against prevailing market sentiment and consensus, particularly during periods of extreme fear or complacency. The strategy involves recognizing when forced liquidations, panic selling, or widespread bearish sentiment create dislocations that present asymmetric risk-reward setups—such as buying into tariff-driven sell-offs or accumulating positions when investors capitulate after missing major rallies. Practitioners use sentiment extremes, breadth deterioration, and volatility spikes as signals to establish positions ahead of anticipated reversals, while maintaining discipline around mental frameworks and relative strength to guard against regime shifts. The approach is often paired with macro catalysts (Fed policy pivots, geopolitical events, earnings surprises) and requires active participation and paper-trading validation to build robust edge across different market conditions.
+
+*Auto-generated summary from 30 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

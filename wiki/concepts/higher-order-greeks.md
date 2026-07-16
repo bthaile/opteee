@@ -5,11 +5,14 @@ related_videos: ["1kGksRBt2aA", "8d2PprSIK2g", "Ao4evQT3dOU", "JuqhsVCGUCA", "Oe
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Higher-order Greeks are second-order and higher derivatives that measure how primary Greeks (delta, vega) themselves change in response to market conditions like time decay and volatility shifts, rather than just underlying price movement. Key higher-order Greeks include charm (delta decay over time), gamma (how fast delta changes with price), volga/vamma (how vega changes across the volatility surface), and vomma (how vega changes as volatility itself changes). These Greeks are critical for position management because they reveal non-linear risks and convexity effects that can turn seemingly safe trades into margin-draining disasters—for example, a position that appears vega-neutral at one volatility level can become dramatically short vega when implied volatility spikes. Understanding higher-order Greeks prevents traders from being blindsided by how their positions behave across different market regimes and time horizons."
 ---
 
 # Higher Order Greeks
 
-**Auto-generated concept topic** — discussed across 18 video(s). Pending curated synthesis; the backing source pages are linked below.
+Higher-order Greeks are second-order and higher derivatives that measure how primary Greeks (delta, vega) themselves change in response to market conditions like time decay and volatility shifts, rather than just underlying price movement. Key higher-order Greeks include charm (delta decay over time), gamma (how fast delta changes with price), volga/vamma (how vega changes across the volatility surface), and vomma (how vega changes as volatility itself changes). These Greeks are critical for position management because they reveal non-linear risks and convexity effects that can turn seemingly safe trades into margin-draining disasters—for example, a position that appears vega-neutral at one volatility level can become dramatically short vega when implied volatility spikes. Understanding higher-order Greeks prevents traders from being blindsided by how their positions behave across different market regimes and time horizons.
+
+*Auto-generated summary from 18 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

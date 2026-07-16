@@ -5,11 +5,14 @@ related_videos: ["0ocJTw3Tz9U", "3STDqRx1o8w", "3c6fsUwB1pw", "7gLvDWJK2gg", "Ej
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Mark to market is the practice of valuing an open options position at current market prices rather than at entry price, reflecting unrealized profit or loss in real time. This distinction is critical because mark-to-market P&L can move sharply due to changes in implied volatility, underlying price, or time decay—independent of whether the position will ultimately be profitable at expiration. Understanding mark-to-market mechanics is essential for proper position management, as a temporary adverse move in mark-to-market value does not necessarily indicate a failed trade if the underlying thesis (such as realized volatility staying below implied volatility sold) remains intact. Traders use mark-to-market data from tools like thinkorswim's Analyze tab to monitor positions dynamically and make informed rolling or adjustment decisions without conflating unrealized losses with realized losses."
 ---
 
 # Mark To Market
 
-**Auto-generated concept topic** — discussed across 24 video(s). Pending curated synthesis; the backing source pages are linked below.
+Mark to market is the practice of valuing an open options position at current market prices rather than at entry price, reflecting unrealized profit or loss in real time. This distinction is critical because mark-to-market P&L can move sharply due to changes in implied volatility, underlying price, or time decay—independent of whether the position will ultimately be profitable at expiration. Understanding mark-to-market mechanics is essential for proper position management, as a temporary adverse move in mark-to-market value does not necessarily indicate a failed trade if the underlying thesis (such as realized volatility staying below implied volatility sold) remains intact. Traders use mark-to-market data from tools like thinkorswim's Analyze tab to monitor positions dynamically and make informed rolling or adjustment decisions without conflating unrealized losses with realized losses.
+
+*Auto-generated summary from 24 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

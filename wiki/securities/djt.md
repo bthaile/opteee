@@ -5,11 +5,14 @@ related_videos: ["DLhIhRsAyLk", "JIliIgFYrmE", "JkLLg4S1tXk", "SAAznQCMSco", "Sj
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "DJT (Trump Media & Technology Group) is a highly volatile equity security that trades as a direct proxy for 2024 U.S. presidential election outcomes, with implied volatility consistently exceeding 300% and IV percentile near 98-100%. The stock exhibits extreme binary event risk and massive upside skew in probability distributions, making it a pure speculation vehicle decoupled from fundamental valuation and broad market beta. Options traders use DJT positions—particularly long calls and gamma plays—to capitalize on election-driven price moves and volatility expansion, though the undefined risk and parabolic nature of the move create significant challenges for premium sellers in high-IV environments."
 ---
 
 # DJT
 
-**Auto-generated security topic** — discussed across 11 video(s). Pending curated synthesis; the backing source pages are linked below.
+DJT (Trump Media & Technology Group) is a highly volatile equity security that trades as a direct proxy for 2024 U.S. presidential election outcomes, with implied volatility consistently exceeding 300% and IV percentile near 98-100%. The stock exhibits extreme binary event risk and massive upside skew in probability distributions, making it a pure speculation vehicle decoupled from fundamental valuation and broad market beta. Options traders use DJT positions—particularly long calls and gamma plays—to capitalize on election-driven price moves and volatility expansion, though the undefined risk and parabolic nature of the move create significant challenges for premium sellers in high-IV environments.
+
+*Auto-generated summary from 11 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

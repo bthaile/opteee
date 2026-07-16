@@ -5,11 +5,14 @@ related_videos: ["2Dv_fRuuTcc", "EvZE2RIwFE4", "ID-Kl0y1bxs", "KKOqF8h1n1s", "QT
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Risk-first is a foundational trading philosophy that prioritizes capital preservation and systematic position sizing before pursuing profit targets, treating risk management as a structural framework rather than an emotional or reactive discipline. The approach involves filtering strategy selection through risk profile and Greek exposure, maintaining portfolio-level monitoring across delta, gamma, theta, and vega, and aligning position size with annual return objectives to enable consistent compounding. Rather than relying on stop-losses or intuition, risk-first traders use deliberate planning, diversification, and multi-position portfolio construction to balance opportunity capture against drawdown control, recognizing that lower average returns with controlled volatility outperform higher returns interrupted by catastrophic losses."
 ---
 
 # Risk First
 
-**Auto-generated concept topic** — discussed across 13 video(s). Pending curated synthesis; the backing source pages are linked below.
+Risk-first is a foundational trading philosophy that prioritizes capital preservation and systematic position sizing before pursuing profit targets, treating risk management as a structural framework rather than an emotional or reactive discipline. The approach involves filtering strategy selection through risk profile and Greek exposure, maintaining portfolio-level monitoring across delta, gamma, theta, and vega, and aligning position size with annual return objectives to enable consistent compounding. Rather than relying on stop-losses or intuition, risk-first traders use deliberate planning, diversification, and multi-position portfolio construction to balance opportunity capture against drawdown control, recognizing that lower average returns with controlled volatility outperform higher returns interrupted by catastrophic losses.
+
+*Auto-generated summary from 13 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

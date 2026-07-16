@@ -5,11 +5,14 @@ related_videos: ["9AKqzGkSWmg", "9APL8MtZu7Y", "A9Uq-DNAV2I", "AoiTtWoNKv0", "FP
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Liquidity in options trading refers to the ease with which an option contract can be bought or sold without significantly moving its price, determined by bid-ask spreads, trading volume, and market-maker participation. Traders prioritize liquidity when selecting underlying assets and specific contracts, as poor liquidity increases transaction costs, widens spreads, and makes it harder to enter or exit positions at desired prices. Liquidity considerations influence strategic choices—such as preferring more liquid ETFs like IWM or SPY over less liquid alternatives, or selecting LEAPS with sufficient trading activity to manage Greeks and extrinsic value effectively. A pre-trade checklist typically includes liquidity screening as a foundational step before hypothesis generation and position structuring."
 ---
 
 # Liquidity
 
-**Auto-generated concept topic** — discussed across 24 video(s). Pending curated synthesis; the backing source pages are linked below.
+Liquidity in options trading refers to the ease with which an option contract can be bought or sold without significantly moving its price, determined by bid-ask spreads, trading volume, and market-maker participation. Traders prioritize liquidity when selecting underlying assets and specific contracts, as poor liquidity increases transaction costs, widens spreads, and makes it harder to enter or exit positions at desired prices. Liquidity considerations influence strategic choices—such as preferring more liquid ETFs like IWM or SPY over less liquid alternatives, or selecting LEAPS with sufficient trading activity to manage Greeks and extrinsic value effectively. A pre-trade checklist typically includes liquidity screening as a foundational step before hypothesis generation and position structuring.
+
+*Auto-generated summary from 24 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

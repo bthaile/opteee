@@ -5,11 +5,14 @@ related_videos: ["C1UbvCjzUDE", "JuqhsVCGUCA", "KKOqF8h1n1s", "L97-jrSmShs", "WW
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "UPS does not appear as a distinct options-trading topic in the supplied material. The corpus discusses various market updates, strategy frameworks, and sector analysis, but contains no focused discussion of UPS (United Parcel Service) as a security or trading vehicle. If UPS was mentioned in passing within broader market commentary or earnings discussions, it was not isolated as a topic worthy of dedicated explanation in these video summaries."
 ---
 
 # UPS
 
-**Auto-generated security topic** — discussed across 7 video(s). Pending curated synthesis; the backing source pages are linked below.
+UPS does not appear as a distinct options-trading topic in the supplied material. The corpus discusses various market updates, strategy frameworks, and sector analysis, but contains no focused discussion of UPS (United Parcel Service) as a security or trading vehicle. If UPS was mentioned in passing within broader market commentary or earnings discussions, it was not isolated as a topic worthy of dedicated explanation in these video summaries.
+
+*Auto-generated summary from 7 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

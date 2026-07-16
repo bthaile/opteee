@@ -5,11 +5,14 @@ related_videos: ["-MQ7kNM0dtI", "-M_lC4RVmvM", "-Zqys05mhkw", "1exwniuHqP8", "1r
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Assignment is the process by which a short option position is exercised against the trader, forcing them to either deliver shares (for short calls) or purchase shares (for short puts) at the strike price. In covered-call and covered-strangle strategies, assignment risk escalates when options move deep in-the-money with minimal extrinsic value remaining, particularly ahead of dividend dates or at expiration. Traders manage assignment through active monitoring, rolling positions, or adding shares to preserve their core equity holdings, and can evaluate whether early assignment is economically rational by comparing interest earned on short proceeds against forgone extrinsic value and optimal exercise timing. Understanding assignment mechanics and planning for it beforehand—rather than treating it as a surprise—is essential to executing strategies like the wheel and covered strangle without being forced into uncomfortable unplanned positions."
 ---
 
 # Assignment
 
-**Auto-generated concept topic** — discussed across 85 video(s). Pending curated synthesis; the backing source pages are linked below.
+Assignment is the process by which a short option position is exercised against the trader, forcing them to either deliver shares (for short calls) or purchase shares (for short puts) at the strike price. In covered-call and covered-strangle strategies, assignment risk escalates when options move deep in-the-money with minimal extrinsic value remaining, particularly ahead of dividend dates or at expiration. Traders manage assignment through active monitoring, rolling positions, or adding shares to preserve their core equity holdings, and can evaluate whether early assignment is economically rational by comparing interest earned on short proceeds against forgone extrinsic value and optimal exercise timing. Understanding assignment mechanics and planning for it beforehand—rather than treating it as a surprise—is essential to executing strategies like the wheel and covered strangle without being forced into uncomfortable unplanned positions.
+
+*Auto-generated summary from 85 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

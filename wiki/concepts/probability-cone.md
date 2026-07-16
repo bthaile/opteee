@@ -5,11 +5,14 @@ related_videos: ["0nXEzaMT7Nc", "6-xlQeiQWSg", "BTU71jbUgDo", "DRzKRGizkXw", "Ev
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A probability cone is a visualization tool that maps the expected range of price movement over time based on implied volatility and statistical distributions, helping traders understand where the market expects an underlying asset to trade at future expiration dates. Traders use probability cones alongside delta approximations and expected-move formulas to size positions relative to volatility, ensure portfolio risk is distributed logically, and align management plans with actual position behavior. The cone reveals market expectations embedded in options prices and is particularly useful for identifying when high-probability trades may still carry tail risk that can blow up accounts if position sizing ignores the true distribution of outcomes."
 ---
 
 # Probability Cone
 
-**Auto-generated concept topic** — discussed across 28 video(s). Pending curated synthesis; the backing source pages are linked below.
+A probability cone is a visualization tool that maps the expected range of price movement over time based on implied volatility and statistical distributions, helping traders understand where the market expects an underlying asset to trade at future expiration dates. Traders use probability cones alongside delta approximations and expected-move formulas to size positions relative to volatility, ensure portfolio risk is distributed logically, and align management plans with actual position behavior. The cone reveals market expectations embedded in options prices and is particularly useful for identifying when high-probability trades may still carry tail risk that can blow up accounts if position sizing ignores the true distribution of outcomes.
+
+*Auto-generated summary from 28 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

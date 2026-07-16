@@ -5,11 +5,14 @@ related_videos: ["-qSV5WZNlP4", "6-MMToTqJAE", "C1UbvCjzUDE", "MJdXttzj07k", "RW
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Consumer confidence is an economic indicator tracked by options traders as part of their broader assessment of market health and soft-landing probability. The channel discusses consumer confidence alongside other key economic data points—including PMI, GDP, jobless claims, and PCE—as scheduled releases that help traders gauge the trajectory of Fed rate cuts and corporate earnings expectations. Understanding shifts in consumer confidence informs positioning decisions around sector rotation, earnings season trades, and the forward-discounting nature of options markets, particularly when combined with analysis of implied volatility term structure around known event dates."
 ---
 
 # Consumer Confidence
 
-**Auto-generated concept topic** — discussed across 8 video(s). Pending curated synthesis; the backing source pages are linked below.
+Consumer confidence is an economic indicator tracked by options traders as part of their broader assessment of market health and soft-landing probability. The channel discusses consumer confidence alongside other key economic data points—including PMI, GDP, jobless claims, and PCE—as scheduled releases that help traders gauge the trajectory of Fed rate cuts and corporate earnings expectations. Understanding shifts in consumer confidence informs positioning decisions around sector rotation, earnings season trades, and the forward-discounting nature of options markets, particularly when combined with analysis of implied volatility term structure around known event dates.
+
+*Auto-generated summary from 8 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

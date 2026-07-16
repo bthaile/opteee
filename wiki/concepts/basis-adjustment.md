@@ -5,11 +5,14 @@ related_videos: ["0ocJTw3Tz9U", "DumdXtGkUPQ", "HcWY9Rqcssk", "WjnUaAR4zIs", "X7
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Basis adjustment is a tactical approach to reducing the cost basis of short option positions by rolling them to different strikes and expirations, typically employed when positions move against the trader in bear markets or corrections. The technique involves mentally simulating time decay and roll mechanics to identify low-friction opportunities to move risk without adding capital, often by rolling short puts progressively lower or to better strikes while maintaining capital efficiency and directional conviction. Optimal timing occurs when challenged positions reach at-the-money, where extrinsic value is maximized and intrinsic value is minimal, allowing traders to secure better adjustments before being forced to buy back deep intrinsic value with no credit. Basis adjustment enables traders to navigate losing trades through disciplined rebalancing rather than capitulation, accepting small realized losses as the cost of maintaining portfolio positioning and regaining spot price sensitivity."
 ---
 
 # Basis Adjustment
 
-**Auto-generated concept topic** — discussed across 9 video(s). Pending curated synthesis; the backing source pages are linked below.
+Basis adjustment is a tactical approach to reducing the cost basis of short option positions by rolling them to different strikes and expirations, typically employed when positions move against the trader in bear markets or corrections. The technique involves mentally simulating time decay and roll mechanics to identify low-friction opportunities to move risk without adding capital, often by rolling short puts progressively lower or to better strikes while maintaining capital efficiency and directional conviction. Optimal timing occurs when challenged positions reach at-the-money, where extrinsic value is maximized and intrinsic value is minimal, allowing traders to secure better adjustments before being forced to buy back deep intrinsic value with no credit. Basis adjustment enables traders to navigate losing trades through disciplined rebalancing rather than capitulation, accepting small realized losses as the cost of maintaining portfolio positioning and regaining spot price sensitivity.
+
+*Auto-generated summary from 9 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

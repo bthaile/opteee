@@ -5,11 +5,14 @@ related_videos: ["3tpHwfH9glU", "CO9TLXsZVLM", "DeQ8wc28Bic", "F4W52_7aQTs", "G9
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "A catalyst is a company-specific or external event—such as earnings announcements, regulatory decisions, or significant news—that can drive material price moves in an underlying security and is a key input to options trade planning. Traders actively identify and monitor catalysts as part of their thesis management and duration planning, since catalysts can either validate or invalidate a trade's core premise and determine the expected timeframe for a position to work. Catalysts are particularly valuable in low broad-market volatility regimes, where individual securities may exhibit extreme moves despite suppressed index-level implied volatility, and they serve as a concrete anchor for setting profit targets, loss management rules, and position exit timing rather than relying on arbitrary percentage-based rules."
 ---
 
 # Catalyst
 
-**Auto-generated concept topic** — discussed across 12 video(s). Pending curated synthesis; the backing source pages are linked below.
+A catalyst is a company-specific or external event—such as earnings announcements, regulatory decisions, or significant news—that can drive material price moves in an underlying security and is a key input to options trade planning. Traders actively identify and monitor catalysts as part of their thesis management and duration planning, since catalysts can either validate or invalidate a trade's core premise and determine the expected timeframe for a position to work. Catalysts are particularly valuable in low broad-market volatility regimes, where individual securities may exhibit extreme moves despite suppressed index-level implied volatility, and they serve as a concrete anchor for setting profit targets, loss management rules, and position exit timing rather than relying on arbitrary percentage-based rules.
+
+*Auto-generated summary from 12 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

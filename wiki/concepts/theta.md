@@ -5,11 +5,14 @@ related_videos: ["-CUgdXmtp5o", "-MQ7kNM0dtI", "-jJkuhl2wyY", "0fty1k3IGgY", "0i
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Theta is the Greek that measures the rate of premium decay per day passing, with decay accelerating as expiration approaches and varying based on how far an option is in or out of the money. In options trading, theta represents the profit mechanism for sellers and the cost for buyers, making it a critical consideration when structuring positions—buying cheap out-of-the-money options often results in significant losses due to accelerating theta bleed, while selling strategies benefit from theta decay but must be anchored to actual profit mechanics rather than arbitrary rules. Traders should evaluate theta exposure alongside other Greeks (delta, gamma, vega) when selecting strategies and managing positions, as understanding theta's behavior across different deltas and time horizons is foundational to consistent execution."
 ---
 
 # Theta
 
-**Auto-generated concept topic** — discussed across 120 video(s). Pending curated synthesis; the backing source pages are linked below.
+Theta is the Greek that measures the rate of premium decay per day passing, with decay accelerating as expiration approaches and varying based on how far an option is in or out of the money. In options trading, theta represents the profit mechanism for sellers and the cost for buyers, making it a critical consideration when structuring positions—buying cheap out-of-the-money options often results in significant losses due to accelerating theta bleed, while selling strategies benefit from theta decay but must be anchored to actual profit mechanics rather than arbitrary rules. Traders should evaluate theta exposure alongside other Greeks (delta, gamma, vega) when selecting strategies and managing positions, as understanding theta's behavior across different deltas and time horizons is foundational to consistent execution.
+
+*Auto-generated summary from 120 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

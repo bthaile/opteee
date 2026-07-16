@@ -5,11 +5,14 @@ related_videos: ["0ZE8GpkICU4", "0a1UROsFf_A", "0kXY1hY--Ww", "0qcfwt6wf2I", "1r
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Theta decay is the daily erosion of an option's premium value as time passes, measured by the Greek theta and accelerating as expiration approaches. It represents a mechanical headwind for long option buyers, who must overcome theta bleed through favorable price movement or volatility expansion to achieve profit; conversely, theta decay benefits sellers and strategies that are net short premium. Understanding theta's relationship to moneyness and days-to-expiration is essential for structuring positions that survive time decay rather than evaporating, particularly when buying out-of-the-money options that combine low theta decay with the requirement for larger underlying moves to generate gains."
 ---
 
 # Theta Decay
 
-**Auto-generated concept topic** — discussed across 131 video(s). Pending curated synthesis; the backing source pages are linked below.
+Theta decay is the daily erosion of an option's premium value as time passes, measured by the Greek theta and accelerating as expiration approaches. It represents a mechanical headwind for long option buyers, who must overcome theta bleed through favorable price movement or volatility expansion to achieve profit; conversely, theta decay benefits sellers and strategies that are net short premium. Understanding theta's relationship to moneyness and days-to-expiration is essential for structuring positions that survive time decay rather than evaporating, particularly when buying out-of-the-money options that combine low theta decay with the requirement for larger underlying moves to generate gains.
+
+*Auto-generated summary from 131 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

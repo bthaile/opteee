@@ -5,11 +5,14 @@ related_videos: ["BtW6QHGCaas", "Ig1z2u_lK4k", "L97-jrSmShs", "RJPIDB___YE", "RR
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "MSTR is a security discussed in the context of leveraged Bitcoin exposure strategies, specifically referenced through Michael Sailor's approach to gaining concentrated cryptocurrency exposure. The security appears in broader discussions of market themes and portfolio construction rather than as a dedicated options-trading vehicle, serving as an example of alternative ways to gain directional exposure to volatile assets within a diversified trading framework."
 ---
 
 # MSTR
 
-**Auto-generated security topic** — discussed across 10 video(s). Pending curated synthesis; the backing source pages are linked below.
+MSTR is a security discussed in the context of leveraged Bitcoin exposure strategies, specifically referenced through Michael Sailor's approach to gaining concentrated cryptocurrency exposure. The security appears in broader discussions of market themes and portfolio construction rather than as a dedicated options-trading vehicle, serving as an example of alternative ways to gain directional exposure to volatile assets within a diversified trading framework.
+
+*Auto-generated summary from 10 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

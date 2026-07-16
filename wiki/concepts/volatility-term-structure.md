@@ -5,11 +5,14 @@ related_videos: ["--aVVZQ5Pxw", "-jJkuhl2wyY", "0fty1k3IGgY", "0qcfwt6wf2I", "1I
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Volatility term structure refers to the time horizon of options activity and how it varies across different expiration dates, serving as a critical filter for interpreting unusual options volume and open interest. Far-dated options typically signal general directional bias, while near-term activity suggests imminent movement expectations. Understanding this distinction prevents false signals from routine roll activity and is identified as a primary profit mechanism in professional options trading."
 ---
 
 # Volatility Term Structure
 
-**Auto-generated concept topic** — discussed across 156 video(s). Pending curated synthesis; the backing source pages are linked below.
+Volatility term structure refers to the time horizon of options activity and how it varies across different expiration dates, serving as a critical filter for interpreting unusual options volume and open interest. Far-dated options typically signal general directional bias, while near-term activity suggests imminent movement expectations. Understanding this distinction prevents false signals from routine roll activity and is identified as a primary profit mechanism in professional options trading.
+
+*Auto-generated summary from 156 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

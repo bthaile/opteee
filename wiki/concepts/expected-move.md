@@ -5,11 +5,14 @@ related_videos: ["-qSV5WZNlP4", "0ZE8GpkICU4", "0iZJfIu3Nac", "0kXY1hY--Ww", "0q
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Expected move is a quantitative measure derived from implied volatility that estimates the likely price range a security will trade within over a specified time horizon, typically calculated using probability cones or volatility-based formulas. Traders use expected move to size positions appropriately, align option structures with realistic price targets, and determine whether a breakout or earnings move justifies the cost of entry relative to the anticipated magnitude of movement. By matching the expected move to days to expiration and prior price action, traders can structure long calls, spreads, and directional plays that account for both the direction and severity of anticipated price movement rather than relying on undefined or lottery-ticket assumptions."
 ---
 
 # Expected Move
 
-**Auto-generated concept topic** — discussed across 107 video(s). Pending curated synthesis; the backing source pages are linked below.
+Expected move is a quantitative measure derived from implied volatility that estimates the likely price range a security will trade within over a specified time horizon, typically calculated using probability cones or volatility-based formulas. Traders use expected move to size positions appropriately, align option structures with realistic price targets, and determine whether a breakout or earnings move justifies the cost of entry relative to the anticipated magnitude of movement. By matching the expected move to days to expiration and prior price action, traders can structure long calls, spreads, and directional plays that account for both the direction and severity of anticipated price movement rather than relying on undefined or lottery-ticket assumptions.
+
+*Auto-generated summary from 107 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

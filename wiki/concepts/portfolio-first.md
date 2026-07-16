@@ -5,11 +5,14 @@ related_videos: ["2Dv_fRuuTcc", "3c6fsUwB1pw", "4IZhG3hKW60", "4kj4Cp-qbsE", "6e
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Portfolio First is a foundational principle that prioritizes assessing portfolio-level needs, risk capacity, and capital allocation before selecting or adjusting individual option trades. Rather than choosing strategies opportunistically or defaulting to familiar structures, traders should systematically evaluate their market hypothesis, volatility disposition, Greek exposure targets, and position-sizing constraints, then match specific trades to those portfolio requirements. This approach treats each trade as a component of a coherent whole, ensuring that positions align with overall risk tolerance and that capital is allocated efficiently across uncorrelated opportunities. The framework bridges organizational discipline (goal-setting, trade logging, roadmap planning) with tactical execution, preventing the ad-hoc decision-making that characterizes most retail traders' failures."
 ---
 
 # Portfolio First
 
-**Auto-generated concept topic** — discussed across 81 video(s). Pending curated synthesis; the backing source pages are linked below.
+Portfolio First is a foundational principle that prioritizes assessing portfolio-level needs, risk capacity, and capital allocation before selecting or adjusting individual option trades. Rather than choosing strategies opportunistically or defaulting to familiar structures, traders should systematically evaluate their market hypothesis, volatility disposition, Greek exposure targets, and position-sizing constraints, then match specific trades to those portfolio requirements. This approach treats each trade as a component of a coherent whole, ensuring that positions align with overall risk tolerance and that capital is allocated efficiently across uncorrelated opportunities. The framework bridges organizational discipline (goal-setting, trade logging, roadmap planning) with tactical execution, preventing the ad-hoc decision-making that characterizes most retail traders' failures.
+
+*Auto-generated summary from 81 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

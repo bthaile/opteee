@@ -5,11 +5,14 @@ related_videos: ["1jDrPx6lOgM", "2i7PaIjmYtU", "2wYfOVlLOYg", "3c6fsUwB1pw", "78
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Risk tolerance in options trading refers to an individual trader's capacity and psychological willingness to accept losses and volatility, which must be honestly assessed and matched to a realistic trading plan and position-sizing framework. The channel emphasizes that most traders are naturally risk-averse yet often overestimate their actual tolerance, leading them to take positions misaligned with their goals and psychology, and that systematic safeguards—automated stops, position limits, diversification, and detailed trade logs—are essential to prevent catastrophic account drawdowns. Successful traders build their approach around their true risk profile rather than attempting to emulate institutional strategies or unrealistic return targets, and they integrate risk management across three levels: individual trades, strategies, and the overall portfolio."
 ---
 
 # Risk Tolerance
 
-**Auto-generated concept topic** — discussed across 57 video(s). Pending curated synthesis; the backing source pages are linked below.
+Risk tolerance in options trading refers to an individual trader's capacity and psychological willingness to accept losses and volatility, which must be honestly assessed and matched to a realistic trading plan and position-sizing framework. The channel emphasizes that most traders are naturally risk-averse yet often overestimate their actual tolerance, leading them to take positions misaligned with their goals and psychology, and that systematic safeguards—automated stops, position limits, diversification, and detailed trade logs—are essential to prevent catastrophic account drawdowns. Successful traders build their approach around their true risk profile rather than attempting to emulate institutional strategies or unrealistic return targets, and they integrate risk management across three levels: individual trades, strategies, and the overall portfolio.
+
+*Auto-generated summary from 57 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

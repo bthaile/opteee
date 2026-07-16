@@ -5,11 +5,14 @@ related_videos: ["7gLvDWJK2gg", "BTU71jbUgDo", "epGFY9R7U8I", "fLRwLbcWWc4", "iF
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Loss aversion is a psychological bias that causes traders to hold losing positions longer than rational decision-making would warrant, often leading them to roll trades or hope for recovery rather than accepting small losses quickly. The channel emphasizes that loss aversion distorts risk management by encouraging hedging mistakes, revenge trading, and infinite rolling attempts that ultimately violate margin constraints and compound losses. Overcoming loss aversion requires systematic pre-trade planning, predetermined profit/loss protocols, and the discipline to exit losing positions promptly rather than letting emotional attachment to capital drive poor decisions."
 ---
 
 # Loss Aversion
 
-**Auto-generated concept topic** — discussed across 8 video(s). Pending curated synthesis; the backing source pages are linked below.
+Loss aversion is a psychological bias that causes traders to hold losing positions longer than rational decision-making would warrant, often leading them to roll trades or hope for recovery rather than accepting small losses quickly. The channel emphasizes that loss aversion distorts risk management by encouraging hedging mistakes, revenge trading, and infinite rolling attempts that ultimately violate margin constraints and compound losses. Overcoming loss aversion requires systematic pre-trade planning, predetermined profit/loss protocols, and the discipline to exit losing positions promptly rather than letting emotional attachment to capital drive poor decisions.
+
+*Auto-generated summary from 8 source video(s); pending curated synthesis.*
 
 ## Discussed in
 

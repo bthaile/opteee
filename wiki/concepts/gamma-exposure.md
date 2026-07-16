@@ -5,11 +5,14 @@ related_videos: ["0qcfwt6wf2I", "1O0HX-C-4PU", "4Lz5jr3grOs", "7mlZTr3xeHA", "80
 last_updated: 2026-07-04
 confidence: auto
 auto_generated: true
+summary: "Gamma exposure (GEX) measures the aggregate gamma positioning of options dealers across strikes and expirations, reflecting their collective hedging obligations as prices move. When gamma exposure is positive, dealers are net long gamma and must buy stock as prices rise and sell as prices fall, potentially amplifying market moves; when negative, dealers are net short gamma and must do the opposite, potentially dampening volatility. GEX is used by traders to anticipate dealer hedging flows and potential price acceleration, though the metric relies on imperfect assumptions about dealer behavior and market structure that frequently break down in practice, making it a low-resolution snapshot rather than a reliable predictive signal."
 ---
 
 # Gamma Exposure
 
-**Auto-generated concept topic** — discussed across 42 video(s). Pending curated synthesis; the backing source pages are linked below.
+Gamma exposure (GEX) measures the aggregate gamma positioning of options dealers across strikes and expirations, reflecting their collective hedging obligations as prices move. When gamma exposure is positive, dealers are net long gamma and must buy stock as prices rise and sell as prices fall, potentially amplifying market moves; when negative, dealers are net short gamma and must do the opposite, potentially dampening volatility. GEX is used by traders to anticipate dealer hedging flows and potential price acceleration, though the metric relies on imperfect assumptions about dealer behavior and market structure that frequently break down in practice, making it a low-resolution snapshot rather than a reliable predictive signal.
+
+*Auto-generated summary from 42 source video(s); pending curated synthesis.*
 
 ## Discussed in
 
