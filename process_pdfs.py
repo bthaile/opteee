@@ -35,11 +35,14 @@ except ImportError:
 
 # Import config if available, otherwise use defaults
 try:
-    from pipeline_config import CHUNK_SIZE, OVERLAP, MIN_CHUNK_WORDS
+    from pipeline_config import CHUNK_SIZE, OVERLAP, MIN_CHUNK_WORDS, CHUNKER_BACKEND
 except ImportError:
     CHUNK_SIZE = 250  # Target words per chunk
     OVERLAP = 50      # Words of overlap
     MIN_CHUNK_WORDS = 30  # Minimum words for valid chunk
+    CHUNKER_BACKEND = 'chonkie'
+
+from chonkie_chunking import chunk_pdf_elements_with_chonkie
 
 # Directories
 DEFAULT_PDF_SOURCE = '/Users/bradfordhaile/Downloads/outlier-pro-market-study'
@@ -219,28 +222,24 @@ def extract_text_with_structure(pdf_path: str) -> List[Dict]:
     return elements
 
 
-def create_semantic_chunks(
+def create_legacy_semantic_chunks(
     elements: List[Dict],
     target_size: int = CHUNK_SIZE,
     overlap: int = OVERLAP,
     min_words: int = MIN_CHUNK_WORDS
 ) -> List[Dict]:
-    """
-    Create semantic chunks that respect section and paragraph boundaries.
-    Each chunk includes its section context for better retrieval.
-    """
+    """Legacy PDF chunking retained for fallback/rollback."""
     chunks = []
-    current_section = "Document"  # Default section name
+    current_section = "Document"
     current_chunk_text = []
     current_chunk_pages = set()
     chunk_index = 0
-    
+
     def flush_chunk():
         nonlocal current_chunk_text, current_chunk_pages, chunk_index
         if current_chunk_text:
             text = ' '.join(current_chunk_text)
             word_count = len(text.split())
-            
             if word_count >= min_words:
                 chunks.append({
                     'text': text,
@@ -250,45 +249,63 @@ def create_semantic_chunks(
                     'chunk_index': chunk_index
                 })
                 chunk_index += 1
-            
-            # Keep overlap for next chunk (last N words)
             if overlap > 0:
                 words = text.split()
-                overlap_words = words[-overlap:] if len(words) > overlap else []
-                current_chunk_text = overlap_words
-                # Keep page reference for overlap
+                current_chunk_text = words[-overlap:] if len(words) > overlap else []
             else:
                 current_chunk_text = []
             current_chunk_pages = set()
-    
+
     for element in elements:
-        if element['type'] == 'section':
-            # New section - flush current chunk and update section
-            flush_chunk()
-            current_section = element['text']
-            current_chunk_pages.add(element['page'])
-            
-        elif element['type'] == 'paragraph':
-            para_words = element['text'].split()
-            current_chunk_pages.add(element['page'])
-            
-            # If adding this paragraph would exceed target, flush first
-            current_word_count = len(' '.join(current_chunk_text).split())
-            if current_word_count + len(para_words) > target_size * 1.2:  # 20% buffer
+        element_type = element['type']
+        text = element['text']
+        page = element['page']
+        if element_type == 'section':
+            if current_chunk_text:
                 flush_chunk()
-                current_chunk_pages.add(element['page'])
-            
-            current_chunk_text.extend(para_words)
-            
-            # If we've reached target size at a paragraph boundary, flush
-            current_word_count = len(' '.join(current_chunk_text).split())
-            if current_word_count >= target_size:
+            current_section = text
+        else:
+            words = text.split()
+            current_chunk_words = len(' '.join(current_chunk_text).split()) if current_chunk_text else 0
+            if current_chunk_words + len(words) > target_size and current_chunk_text:
                 flush_chunk()
-    
-    # Flush any remaining content
-    flush_chunk()
-    
+            current_chunk_text.append(text)
+            current_chunk_pages.add(page)
+
+    if current_chunk_text:
+        flush_chunk()
+
+    for chunk in chunks:
+        pages = chunk['pages']
+        if pages:
+            chunk['page_number'] = pages[0]
+            chunk['page_range'] = str(pages[0]) if len(pages) == 1 else f"{pages[0]}-{pages[-1]}"
+        else:
+            chunk['page_number'] = 0
+            chunk['page_range'] = ''
     return chunks
+
+
+def create_semantic_chunks(
+    elements: List[Dict],
+    target_size: int = CHUNK_SIZE,
+    overlap: int = OVERLAP,
+    min_words: int = MIN_CHUNK_WORDS
+) -> List[Dict]:
+    """Create PDF chunks using the configured backend."""
+    if CHUNKER_BACKEND == 'chonkie':
+        return chunk_pdf_elements_with_chonkie(
+            elements,
+            target_size=target_size,
+            overlap=overlap,
+            min_words=min_words,
+        )
+    return create_legacy_semantic_chunks(
+        elements,
+        target_size=target_size,
+        overlap=overlap,
+        min_words=min_words,
+    )
 
 
 def process_pdf(
