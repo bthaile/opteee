@@ -13,6 +13,10 @@ export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 REPO_DIR="/Users/bradfordhaile/clawd/opteee"
 VENV="${REPO_DIR}/.venv-native"
+MARKER_VENV="${REPO_DIR}/.venv-marker"
+MARKER_REQUIREMENTS="${REPO_DIR}/requirements-marker.txt"
+MARKER_CHECK_SCRIPT="${REPO_DIR}/scripts/check_marker_env.py"
+MARKER_SMOKE_PDF="${REPO_DIR}/tests/fixtures/marker_smoke.pdf"
 PIPELINE_SCRIPT="${REPO_DIR}/run_transcripts.sh"
 HEALTH_URL="http://127.0.0.1:7860/api/health"
 LOCK_DIR="/tmp/opteee-weekly-refresh.lock"
@@ -44,6 +48,44 @@ cd "${REPO_DIR}"
 command -v git >/dev/null 2>&1 || { echo "git not found in PATH"; exit 1; }
 command -v curl >/dev/null 2>&1 || { echo "curl not found in PATH"; exit 1; }
 [[ -x "${VENV}/bin/python" ]] || { echo "native venv missing at ${VENV}"; exit 1; }
+[[ -f "${MARKER_REQUIREMENTS}" ]] || { echo "marker requirements missing at ${MARKER_REQUIREMENTS}"; exit 1; }
+[[ -f "${MARKER_CHECK_SCRIPT}" ]] || { echo "marker checker missing at ${MARKER_CHECK_SCRIPT}"; exit 1; }
+[[ -f "${MARKER_SMOKE_PDF}" ]] || { echo "marker smoke PDF missing at ${MARKER_SMOKE_PDF}"; exit 1; }
+
+find_marker_python() {
+  local candidate
+  for candidate in \
+    /Users/bradfordhaile/.local/bin/python3.11 \
+    /opt/homebrew/bin/python3.11 \
+    /opt/homebrew/bin/python3.12 \
+    /opt/homebrew/bin/python3.13 \
+    /opt/homebrew/bin/python3.14 \
+    /usr/bin/python3; do
+    [[ -x "$candidate" ]] && { echo "$candidate"; return 0; }
+  done
+  return 1
+}
+
+ensure_marker_env() {
+  local marker_python
+
+  if [[ ! -x "${MARKER_VENV}/bin/python" ]]; then
+    echo "Bootstrapping dedicated Marker venv at ${MARKER_VENV}"
+    marker_python="$(find_marker_python)" || { echo "No usable Python interpreter found for Marker venv"; exit 1; }
+    rm -rf "${MARKER_VENV}"
+    if command -v uv >/dev/null 2>&1; then
+      uv venv --seed --python "$marker_python" "${MARKER_VENV}"
+    else
+      "$marker_python" -m venv "${MARKER_VENV}"
+      "${MARKER_VENV}/bin/python" -m ensurepip --upgrade
+    fi
+  fi
+
+  echo "Refreshing dedicated Marker venv dependencies"
+  "${MARKER_VENV}/bin/python" -m pip install -q -r "${MARKER_REQUIREMENTS}"
+  echo "Verifying dedicated Marker venv"
+  "${MARKER_VENV}/bin/python" "${MARKER_CHECK_SCRIPT}" --smoke-pdf "${MARKER_SMOKE_PDF}"
+}
 
 commit_refresh_artifacts() {
   local current_branch refresh_commit_message
@@ -78,6 +120,8 @@ else
   echo "Pulling latest from origin/${current_branch} (autostash to survive dirty generated data)"
   git pull --ff-only --autostash origin "${current_branch}" || echo "⚠️ git pull failed (continuing with local code)"
 fi
+
+ensure_marker_env
 
 # Refresh transcript-backed content before restarting the native service.
 [[ -x "${PIPELINE_SCRIPT}" ]] || chmod +x "${PIPELINE_SCRIPT}"

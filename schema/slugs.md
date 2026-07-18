@@ -85,6 +85,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `backdoor-roth`
 - `backtesting`
 - `backwardation`
+- `bad-path`
 - `balance-sheet`
 - `bankroll-management`
 - `bargain-buying`
@@ -234,6 +235,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `content-creation`
 - `context-window-management`
 - `contextual-tools`
+- `continuous-hedging`
 - `continuous-net-settlement`
 - `contract-value`
 - `contrarian-positioning`
@@ -272,6 +274,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `currency-weakness`
 - `cycle`
 - `cyclical-processes`
+- `daily-rebalancing`
 - `dark-pool`
 - `dark-pool-feed`
 - `dark-pool-orders`
@@ -370,6 +373,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `drawdown-minimization`
 - `drawdown-recovery`
 - `drawdown-risk`
+- `drawdown-survivability`
 - `drawdowns`
 - `drift`
 - `drs`
@@ -434,6 +438,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `etf-creation-redemption`
 - `etf-inflows-outflows`
 - `etf-mechanics`
+- `etf-premium-discount`
 - `etf-rebalancing`
 - `european-options`
 - `european-style-options`
@@ -461,6 +466,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `exposure`
 - `exposure-therapy`
 - `extension-hedges`
+- `external-validation`
 - `extrapolation-fever`
 - `extremes`
 - `extrinsic-value`
@@ -504,12 +510,14 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `float`
 - `fomc`
 - `fomo`
+- `forced-flow`
 - `forecasting`
 - `forward-guidance`
 - `forward-price`
 - `forward-testing`
 - `fossil-fuels`
 - `foundational-knowledge`
+- `fractional-kelly`
 - `fragility`
 - `fraud`
 - `free-cash-flow`
@@ -552,6 +560,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `grid-reliability`
 - `gross-highs-lows`
 - `gross-profit`
+- `growth-investing`
 - `guidance`
 - `habit-formation`
 - `hard-edge`
@@ -598,6 +607,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `income-growth`
 - `income-limits`
 - `index`
+- `index-ball`
 - `indicator`
 - `indicator-selection`
 - `indirect-hedge`
@@ -608,6 +618,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `inflows-outflows`
 - `influence`
 - `information-and-price`
+- `information-asymmetry`
 - `informational-disadvantage`
 - `informed-trading`
 - `infrastructure`
@@ -673,10 +684,12 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `learning-process`
 - `legacy`
 - `leverage`
+- `leveraged-etf-mechanics`
 - `leveraged-etf-pairs-trade`
 - `liability`
 - `lidar-technology`
 - `lifestyle`
+- `limit-to-arbitrage`
 - `limited-attention`
 - `linear-regression-channels`
 - `liquefied-natural-gas`
@@ -741,12 +754,14 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `market-fragility`
 - `market-fragmentation`
 - `market-hypothesis`
+- `market-impact`
 - `market-indifference`
 - `market-inefficiencies`
 - `market-inefficiency`
 - `market-integrity`
 - `market-internals`
 - `market-maker`
+- `market-making`
 - `market-manipulation`
 - `market-microstructure`
 - `market-neutral`
@@ -755,6 +770,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `market-power`
 - `market-pricing-failure`
 - `market-psychology`
+- `market-reality`
 - `market-recap`
 - `market-regimes`
 - `market-sentiment`
@@ -800,6 +816,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `moneyness`
 - `monopoly`
 - `monte-carlo-simulation`
+- `monthly-performance`
 - `mortgage-rates`
 - `moving-averages`
 - `multi-timeframe-analysis`
@@ -813,8 +830,11 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `naked-short-selling`
 - `national-security`
 - `natural-gas`
+- `nav`
 - `negative-expectancy`
 - `negative-expectation`
+- `negative-gamma`
+- `negative-skew`
 - `negotiation`
 - `net-call-premium`
 - `net-highs-lows`
@@ -855,6 +875,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `opportunity-cost`
 - `optimal-stopping-problem`
 - `optimization`
+- `option-pricing`
 - `optionality`
 - `options-activity`
 - `options-chain`
@@ -898,6 +919,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `parabolic-move`
 - `parameter-sweep`
 - `pareto-principle`
+- `participation-rate`
 - `passive-loss`
 - `path-dependence`
 - `path-dependency`
@@ -907,6 +929,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `payoff-ratio`
 - `pe-multiples`
 - `pe-ratio`
+- `peak-pnl`
 - `performance-psychology`
 - `personality`
 - `petrodollar`
@@ -955,6 +978,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `price-manipulation`
 - `price-movement`
 - `price-suppression`
+- `price-target-bias`
 - `price-to-cash-flow`
 - `pricing`
 - `pricing-models`
@@ -1007,6 +1031,8 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `recovery-mechanics`
 - `recovery-play`
 - `redemption-cycles`
+- `reflexive-crowded-game`
+- `regime-dependency`
 - `regime-dependent`
 - `regime-impact`
 - `regime-shift`
@@ -1021,6 +1047,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `relative-value`
 - `relative-volatility`
 - `repeatable`
+- `replication`
 - `required-trade-count`
 - `research-depth`
 - `research-methodology`
@@ -1065,6 +1092,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `roth-conversion`
 - `round-number-strikes`
 - `rsi`
+- `ruin`
 - `rule-set`
 - `rule-set-definition`
 - `runway`
@@ -1072,6 +1100,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `ruthless-objectivity`
 - `s-and-p-500-inclusion`
 - `sample-size`
+- `samuelson-effect`
 - `sanctions`
 - `savings-rate`
 - `scale`
@@ -1162,6 +1191,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `statistical-approach`
 - `statistical-arbitrage`
 - `statistical-significance`
+- `stock-price`
 - `stock-replacement`
 - `stock-replication`
 - `stock-split`
@@ -1203,6 +1233,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `synergy`
 - `synthetic-long`
 - `synthetic-shares`
+- `synthetic-short`
 - `systematic-investing`
 - `systematic-risk`
 - `systematic-trading`
@@ -1301,6 +1332,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `variance-premium`
 - `veda`
 - `vega`
+- `vega-exposure`
 - `vega-neutral`
 - `vertical-spread`
 - `vertical-spreads`
@@ -1318,6 +1350,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `volatility-expansion`
 - `volatility-forecasting`
 - `volatility-indifferent`
+- `volatility-management`
 - `volatility-mean-reversion`
 - `volatility-modeling`
 - `volatility-percentile`
@@ -1348,6 +1381,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `wealth-gap`
 - `wealth-inequality`
 - `weekend-effect`
+- `win-rate`
 - `win-rate-vs-profitability`
 - `window-dressing`
 - `wings`
@@ -1385,6 +1419,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `credit-spread`
 - `day-trading`
 - `deep-itm-calls`
+- `defined-risk`
 - `delta-hedged`
 - `delta-hedging`
 - `delta-neutral`
@@ -1397,12 +1432,16 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `event-driven`
 - `execution-optimization`
 - `far-otm-calls`
+- `fractional-kelly`
+- `front-running`
 - `gamma-scalping`
 - `growth-investing`
 - `hedging`
+- `index-ball`
 - `iron-butterfly`
 - `iron-condor`
 - `iron-fly`
+- `kelly-criterion`
 - `leaps`
 - `leveraged-etf-pairs-trade`
 - `long-call`
@@ -1431,6 +1470,8 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `options-flow`
 - `options-trading`
 - `order-book-sweep`
+- `outlier-strategy-process`
+- `outlier-trade-process`
 - `overnight-risk-premium`
 - `pairs-trade`
 - `portfolio-first`
@@ -1473,6 +1514,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `short-puts`
 - `short-single-options`
 - `short-squeeze`
+- `short-stock`
 - `short-straddle`
 - `short-strangle`
 - `short-strangles`
@@ -1486,6 +1528,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `stop-market-orders`
 - `swing-trading`
 - `synthetic-long`
+- `synthetic-short`
 - `systematic-investing`
 - `systematic-trading`
 - `the-wheel`
@@ -1504,6 +1547,8 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `vertical-spreads`
 - `volatility-capture`
 - `volatility-risk-premium`
+- `volatility-targeting`
+- `volatility-trading`
 - `weekly-options`
 - `zero-dte`
 
@@ -1823,6 +1868,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `pypl`
 - `qbts`
 - `qcom`
+- `qid`
 - `qld`
 - `qqq`
 - `qqqj`
@@ -2076,6 +2122,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `mark-rober`
 - `masayoshi-son`
 - `matt-carusso`
+- `merton`
 - `michael-burry`
 - `michael-gayed`
 - `michael-jordan`
@@ -2098,11 +2145,13 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `ray-dalio`
 - `rfk`
 - `rfk-jr`
+- `richard-dennis`
 - `richard-newton`
 - `roaring-kitty`
 - `robot-james`
 - `ryan-cohen`
 - `sam-altman`
+- `samuelson`
 - `satoshi-nakamoto`
 - `stan-druckenmiller`
 - `stan-weinstein`

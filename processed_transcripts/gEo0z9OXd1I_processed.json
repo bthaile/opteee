@@ -1,0 +1,724 @@
+[
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "you you you you you you you you you you you you you you what's up outliers happy Friday welcome to outlier options trading bootcamp we are here at episode five and today we're meant to talk about zero d to e's gamma and some of these other effects that become pretty pronounced and can make it a little bit difficult in order to monetize and i want to talk about it. Now as you all are aware this is all part of a much longer term series we have eight episodes so believe it or not we're actually getting kind of close to wrapping this whole thing up which is little bit weird because we've been going out for a little bit it's generally i think pretty fun but i hope that at least the data itself the information itself has been useful to you guys so let's level set a little bit about what we're actually looking today and the main thing to keep in mind is zero d to e's i think really trap a lot of people and it's because they don't fully understand what they're looking at and they mistakenly will think oh cheap options easy to just pick a direction intraday 50 50 split and then make some money off of that and realistically believe it or not it's actually not a terrible idea like the instinct behind that isn't awful the part that is less ideal is the reality of how options behave",
+    "start_timestamp_seconds": 0.0,
+    "end_timestamp_seconds": 384.0,
+    "start_timestamp": "00:00",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=0",
+    "chunk_index": 0,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "easy to just pick a direction intraday 50 50 split and then make some money off of that and realistically believe it or not it's actually not a terrible idea like the instinct behind that isn't awful the part that is less ideal is the reality of how options behave and the fact that they can kind of they can catch it there's a lot of gimmies and gotches here and those i think are the more dasterly part of derivatives in general and how this tends to go for people so that's why i want to start now one quick admin note there's a new function on youtube i don't really know much about it but it's called shows i guess it's just like a different type of playlist and i want to drop in a link for you guys this is a link to the to the full series so far okay we have enough there it is time for us to continue on there's really three things on our agenda the first thing we're going to do is go through a couple level setting slides like this then i actually have a little bit of research that i want to share with you guys using live market data as per usual and then i want to work through some actual practical examples with you guys on what these can look like one thing to keep in mind i trade zero dte's regularly i traded them today did",
+    "start_timestamp_seconds": 365.0,
+    "end_timestamp_seconds": 462.92,
+    "start_timestamp": "06:05",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=365",
+    "chunk_index": 1,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "i want to share with you guys using live market data as per usual and then i want to work through some actual practical examples with you guys on what these can look like one thing to keep in mind i trade zero dte's regularly i traded them today did not trade them yesterday traded them today the reason for mentioning that is this in no way is designed to make it seem as if zero dte's are a nominally gonna blow you up it's not so much the case the difference with zero dte's compared to other durations is simply velocity and how fast things can happen that's pretty much it so the reason why that's just a generally important point to be aware of is that this isn't like directly saying you can ever trade zero dte's there's never a place to trade them or anything like that that's really not it at all there's absolutely a viable place to trade them but it's like anything else it's always it's you know in context and you have to know when to do things when it's logical when it's not so that you can avoid all right so looks like we got Tom and Reese it is great to see you both and we are going to jump right in here we go we have our quiz to start as you guys know we do these quizzes just wait a warm up the blood get the brain ready to",
+    "start_timestamp_seconds": 441.92,
+    "end_timestamp_seconds": 537.92,
+    "start_timestamp": "07:21",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=441",
+    "chunk_index": 2,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "like we got Tom and Reese it is great to see you both and we are going to jump right in here we go we have our quiz to start as you guys know we do these quizzes just wait a warm up the blood get the brain ready to go through a little bit of research so the defining risk of a zero dte long option versus a 30 dte option is what is it higher theta and nothing else extreme gamma is it lower liquidity than monthly or is it wider bid asks spreads only a b c or d what say you grow whatever you think it is into the chat we'll see where you guys land and if you guys are aligned we'll move on if not we'll talk about it so far I see a vote for B fair enough anybody else and then I see two more bees also a B alright so we're be across the board that's good that's exactly correct that what this is emphasizing is there is higher theta for sure but remember higher theta is actually very relative okay see I see one a perfect so Alex says a that's not a bad answer the reason why is incorrect in this scenario which again I don't know the answer I actually should pull up in case this thing is going a completely different direction and I'm grossly misleading you guys I don't believe that to be the case but",
+    "start_timestamp_seconds": 527.92,
+    "end_timestamp_seconds": 627.92,
+    "start_timestamp": "08:47",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=527",
+    "chunk_index": 3,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "that's not a bad answer the reason why is incorrect in this scenario which again I don't know the answer I actually should pull up in case this thing is going a completely different direction and I'm grossly misleading you guys I don't believe that to be the case but let's not let's not risk that so I'm going to go to the answers and I'll explain I'll explain why yeah okay so it's B definitely B so A is not a terrible answer though and the reason why A is not a terrible answer is really intuitive it's because you can have something like higher theta and nothing else of note so it's basic test taking question nothing else of note is incorrect here it can have higher theta and then also remember it's not always gross higher theta that's actually a really really important point to be aware of there's plenty of instances with short dated options that the theta as a relative ratio of the remaining time is super duper high but the gross theta might not be that high and we'll find an example for you guys here so let me show you guys this and I'm just grabbing a quick work book so that I can actually show you guys the numbers here so let's take a look at let's go further out of the money to make the point clear we will go out to a board delta three delta so out here at",
+    "start_timestamp_seconds": 611.92,
+    "end_timestamp_seconds": 735.92,
+    "start_timestamp": "10:11",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=611",
+    "chunk_index": 4,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "I'm just grabbing a quick work book so that I can actually show you guys the numbers here so let's take a look at let's go further out of the money to make the point clear we will go out to a board delta three delta so out here at like the three and four delta you can see your theta is like 0.97 1.067 stuff like that in there so 0.97 0.067 this is three days to go if we go out 34 days and we go all the way out to a wing so we got to go super far out here in order to get there because there's so many damn strikes so what you'll notice is even can't believe I have to go even further still okay so what you'll notice is if we go to like a three delta or so you'll see that your theta even out here at the super far wings that like so like your three delta wings these are still like 70 sensors so so this is still way way different as a ratio of your option relative to what's remaining because here's what happens one of the things that's going on here is these are 3DTE these are not 0DTE what happens with 0DTE is the options that are far enough out of the money there isn't really any theta left to come out of them so what that means is the theta the gross theta can actually be",
+    "start_timestamp_seconds": 706.92,
+    "end_timestamp_seconds": 817.92,
+    "start_timestamp": "11:46",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=706",
+    "chunk_index": 5,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "going on here is these are 3DTE these are not 0DTE what happens with 0DTE is the options that are far enough out of the money there isn't really any theta left to come out of them so what that means is the theta the gross theta can actually be a lower number but relative to the premium it's actually very high but most of the time again this because there's still three days left if there was less time left that's where you'll see that come into play we can take a look at a couple examples as we get a little bit further along here so for Alex I want to make sure that that's super super clear on why it's not the higher theta and the higher theta only there are other things that are happening with 0DTE's that cause this issue or just a series of complications to the position that is the most important part the most important takeaway or this question okay next on expiration day in at the money option gamma is near zero at the lowest point in its life at the highest point of its life unchanged from 30 days out what do we think this one's interesting because you can kind of interpret this one a few different ways I see two for C, three for C, I see everybody says C that's perfect, it says if it's near the money well that's the nature of an at the money",
+    "start_timestamp_seconds": 797.92,
+    "end_timestamp_seconds": 921.92,
+    "start_timestamp": "13:17",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=797",
+    "chunk_index": 6,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "what do we think this one's interesting because you can kind of interpret this one a few different ways I see two for C, three for C, I see everybody says C that's perfect, it says if it's near the money well that's the nature of an at the money option it's qualifying that it is near the money so Ryan says B or C really yeah that's kind of the trick here because the answer that this thing wants you to pick is super clear the answer that this thing wants you to pick is definitely C and again we have a couple direct examples that you can look at but here's the rub as you look at a zero DTE option as you get really really close to expiration it doesn't inherently rise into the clothes because we'll end up happening and actually we could probably take a look let me see what the zero's here show yeah this is perfect these are again it's a little bit stale because it's a bit after but take a look at this at the money option the gamma of this at the money option is zero point zero eight six then if we go out three days and we take a look at gamma here this is showing zero point zero five so what this is saying I understand what it's saying is effectively the one strike right near the money I totally understand and I agree with that the",
+    "start_timestamp_seconds": 885.92,
+    "end_timestamp_seconds": 1009.92,
+    "start_timestamp": "14:45",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=885",
+    "chunk_index": 7,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "then if we go out three days and we take a look at gamma here this is showing zero point zero five so what this is saying I understand what it's saying is effectively the one strike right near the money I totally understand and I agree with that the inverse isn't true if you go another strike out that's where things start to slow down so as you move out a few strikes then it doesn't it doesn't necessarily hold but in a pure sense at the money and considering like two strikes plus or minus meaning in the money or out of the money it's about right I think it's a fair way to put it but you can take a look at things that are like one one strike in the money beyond the at the money because normally when I look at the money it's kind of like the two to four strikes that are right about where the underlying is trading right now and what you'll notice is that the things that are out of the money actually a really high gamma relative to follow on explorations but you'll notice the stuff that's even a tiny bit in the money because now we're at expiration there's no gamma at all so it's some point that flip occurs and it's not directly at expiration so this is a this is a good question and see is definitely the correct answer here. All right what does buying",
+    "start_timestamp_seconds": 997.92,
+    "end_timestamp_seconds": 1079.92,
+    "start_timestamp": "16:37",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=997",
+    "chunk_index": 8,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "tiny bit in the money because now we're at expiration there's no gamma at all so it's some point that flip occurs and it's not directly at expiration so this is a this is a good question and see is definitely the correct answer here. All right what does buying zero dt options were move most of the reason to be long in option in the first place why does buying zero dt options remove most of the reason because they're cheap. The convexity you pay for needs time and movement because they to becomes positive for the buyer because gamma goes to zero at expiration. I actually don't like this question at all being honest. I think this one's kind of stupid. You kid it again basic test taking you can kind of tell what the thing wants. But let me get you guys back over here that you can see the actual. So why does buying zero dt options remove most of the reason to be long because they're cheap so there's little to gain the convexity you pay for needs time and movement because theta becomes positive for the buyer because gamma goes to zero at expiration. There's a couple here you can immediately knock off as just objectively and functionally wrong that is pretty easy. But then they're okay so I see d. So I see dbc we need somebody to break the tie we're actually all over the place. All right so it looks like",
+    "start_timestamp_seconds": 1058.92,
+    "end_timestamp_seconds": 1199.92,
+    "start_timestamp": "17:38",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=1058",
+    "chunk_index": 9,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "There's a couple here you can immediately knock off as just objectively and functionally wrong that is pretty easy. But then they're okay so I see d. So I see dbc we need somebody to break the tie we're actually all over the place. All right so it looks like consensus is b. The x is not really agree with this one what if you're scalping. That doesn't actually make a difference if you're scalping. Your intention. Doesn't really matter. This is about the like the structural force of what's happening. So what this is let's just go through it right the first thing is because there's cheap little to gain we can cross that off because especially with zero dt's especially because what we talked about with gamma. They can make an absolute ton of money. So that's also why d is not correct we just look at an example for at the money options that gamma actually sky rockets. Now if you're a bit out of the money then yeah your gamma can absolutely plummet but for your at the money options it actually sky rockets so it's not this one. We know theta does not become positive you don't all of a sudden begin collecting time for holding convexity that never will change. So then that leaves you with b through inference and again I don't know the right answer I'll go look make sure I'm not leaving you guys wrong. Yeah, it says be because it",
+    "start_timestamp_seconds": 1139.92,
+    "end_timestamp_seconds": 1281.92,
+    "start_timestamp": "18:59",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=1139",
+    "chunk_index": 10,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "you don't all of a sudden begin collecting time for holding convexity that never will change. So then that leaves you with b through inference and again I don't know the right answer I'll go look make sure I'm not leaving you guys wrong. Yeah, it says be because it I mean what it's trying to emphasize is that. Your your time compression against the convexity you have is really narrowed. The funny thing in general about this is that that's also why you see things like gamma. That start to go up and then the idea is like collapses toward a queen flip actually don't agree with that either. If you have some sort of system that is better at predicting then that's fine but we also know that short term windows are the hardest to predict so that I would give it a little bit more. Credence than the others. So yeah I don't hate this one because it forces the reconciliation of a couple weird edge things but I don't think this necessarily a great question either. The thing to note that I especially the the coin flip portion. Short term time frames are really really hard in order to predict and the one of the reasons why they're really hard to predict is because they contain a lot of noise. They contain a lot of things that you can't necessarily anticipate. So for example there's a lot of re balancing flows that you don't know if",
+    "start_timestamp_seconds": 1264.92,
+    "end_timestamp_seconds": 1374.92,
+    "start_timestamp": "21:04",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=1264",
+    "chunk_index": 11,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "in order to predict and the one of the reasons why they're really hard to predict is because they contain a lot of noise. They contain a lot of things that you can't necessarily anticipate. So for example there's a lot of re balancing flows that you don't know if they're actually coming in or not. Then there can be random other entries that are happening market micro structure effects can get really amplified in these short term time frames which a lot of them you can't actually predict. So I give it to it. Okay so a trader sells your DTE premium and collects small credits nine days in a row then loses on day 10 the likely outcome is not very profitable the high win rate carries it. net very profitable. Sorry. One gamma driven loss can erase many days of small credits negative skew roughly break even over the 10 days or impossible to lose if you're selling not buying. Love the the impossible's nice. That's pretty easy on you can already throw that one out if we know. Especially in markets just about anything's possible. So I see B. Any other guesses? Yeah you guys are right. Again, I don't know the right answer, but that's the right answer. And the reason why this is the right answer is because you can't say net very profitable you can't even say net profitable you can't say this definitively because you literally don't know. So the likely outcome",
+    "start_timestamp_seconds": 1354.92,
+    "end_timestamp_seconds": 1464.92,
+    "start_timestamp": "22:34",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=1354",
+    "chunk_index": 12,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "right. Again, I don't know the right answer, but that's the right answer. And the reason why this is the right answer is because you can't say net very profitable you can't even say net profitable you can't say this definitively because you literally don't know. So the likely outcome for something like this over such a small sample is probably losing. Now if this changed and it says that you made small credits 19 days in a row and then loses on day 10. That's where it gets a little trickier and the reason why it gets tricky there is because it very likely could be profitable in that window. So there's a relationship between the amount of capital that you collect and the probability and the frequency what you'll find is for a lot of short premium strategies it can be anywhere from 4 to 1, 6 to 1. If you're selling the tails it can be like really really bad. Let's take a look at an example really quick in the tails so that we could see what that looks like. The other thing I'm going to do really quick is just go into on demand. I just want to go back in time so that we can get to like an actual zero DTE we'll go to Tuesday I'll just pick a pick a day. Pick a day any day. I just want zero DTE with some some metrics in them versus you know an expired",
+    "start_timestamp_seconds": 1444.92,
+    "end_timestamp_seconds": 1532.92,
+    "start_timestamp": "24:04",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=1444",
+    "chunk_index": 13,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "just want to go back in time so that we can get to like an actual zero DTE we'll go to Tuesday I'll just pick a pick a day. Pick a day any day. I just want zero DTE with some some metrics in them versus you know an expired zero DTE and then 3DTE. So this will give us something actually to go off of. What we'll take a look at is understanding the risk reward relationship. Because that's that's ultimately what this is that's ultimately what's going on here. So let's take a look. And this is earlier in the day this is at 830 again the the Greeks and the markets all fucked up you can't don't read any of these they're all wrong. But the quotes are not bad. So you can infer things like delta and whatnot again like don't use any of the Greeks in here they're literally all completely wrong. But we can just guess so let's say that we sell this 7500 put and let's say that we go out to 7400 let's see what happens here. We're taken in 60 bucks. So we take in 60 dollars. And we have a hundred point wide spread. Your risk here is what your total risk is the width of the spread less the credit you receive. The issue with something like this is one losing trade will erase a shit ton of winning trades. That's why if you do stuff like this you",
+    "start_timestamp_seconds": 1522.92,
+    "end_timestamp_seconds": 1623.92,
+    "start_timestamp": "25:22",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=1522",
+    "chunk_index": 14,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "hundred point wide spread. Your risk here is what your total risk is the width of the spread less the credit you receive. The issue with something like this is one losing trade will erase a shit ton of winning trades. That's why if you do stuff like this you kind of what I have an adaptive sizing system based on different market variables that I analyzed throughout the day. So that I know if I'm going to buy wings how far out the wings go. And for example, one thing you'll know is that from the 73 90s up until the 73 40s. They're all bid offered about the same right 10 by 15. So there's not an incentive for me to go to the 73 90s versus the 73 40s. Now again, where you'll actually execute is a little bit different. You'll pay a little bit more here versus out here, but think of the incremental change in terms of the premium you collect versus the risk you're taking right so let's say that you execute here at 15 cents then here you execute at 10 cents. Just using an extreme example you get and I went out here further out here. So if you execute here at 15 cents you get five more dollars of credit, but you're taking what $40 of additional risk. So you get a nickel. It's not worth it right there's a relationship between how why do you want to go on something",
+    "start_timestamp_seconds": 1590.92,
+    "end_timestamp_seconds": 1699.92,
+    "start_timestamp": "26:30",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=1590",
+    "chunk_index": 15,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "here further out here. So if you execute here at 15 cents you get five more dollars of credit, but you're taking what $40 of additional risk. So you get a nickel. It's not worth it right there's a relationship between how why do you want to go on something like that versus. You want to even buy the wings or not. So you can analyze the relationship between how frequently you need to win against what you collect. There's a relationship between how frequently you experience the full loss and your total profitability. The wider your wings are the more frequently you will not have a max loss, but you'll make more money on the trades that you put on. But you have big tail risk. So if we look at this inversely we say well shit I don't want to do something that's a hundred points wide so I'm going to do something that's five points wide. Well the issue with five points wide is you make 12 cents if that right it's a wide bit asks spread it's a nickel by 12. So the problem with that. You're collecting nothing. And your risk relative to what you're collecting is still really high. You still have five hundred dollars of risk less whatever you get filled at let's call it a dime. So you're going to make ten bucks risking four ninety. What's the problem? Well think of the economics of that trade. If you lose how many",
+    "start_timestamp_seconds": 1680.92,
+    "end_timestamp_seconds": 1786.92,
+    "start_timestamp": "28:00",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=1680",
+    "chunk_index": 16,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "collecting is still really high. You still have five hundred dollars of risk less whatever you get filled at let's call it a dime. So you're going to make ten bucks risking four ninety. What's the problem? Well think of the economics of that trade. If you lose how many winners did you just get rid of. That's the issue that this question is highlighting it's a good one. All right. Let's continue. Zero DTE or any DTE should be viewed as speed and how volatile the Greeks are. The Greeks that you have are going to behave. That's what this is. BRB says are these AI questions yeah yeah those those questions are all made by Gemini. The read I don't know if it was Gemini maybe it was Claude. I always do those and I actually like to take the tests with you guys. But anyways. There are interesting effects and edges that you can find in different durations. But that doesn't mean that the zero DTE option itself is the edge. You still need some sort of market effect. The important part to acknowledge is when you move into zero DTE's. Everything is now amplified significantly. We know gamma dominates. But this is how much it dominates. If you are near the money you can see how relaxed your gamma is relative. The other thing to note is you can see that your gamma actually starts to meaningfully climb with like five days left. It's not even",
+    "start_timestamp_seconds": 1763.92,
+    "end_timestamp_seconds": 1899.92,
+    "start_timestamp": "29:23",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=1763",
+    "chunk_index": 17,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "know gamma dominates. But this is how much it dominates. If you are near the money you can see how relaxed your gamma is relative. The other thing to note is you can see that your gamma actually starts to meaningfully climb with like five days left. It's not even relegated to just zero days. Your gamma at five days relative to 30 is over double. So just also keep that in mind. It's not like the total gamma that you see or the risk that you have on is like super duper small. It absolutely is not. It begins pretty early. So yeah, general general point I think to be aware of. But then you can see how parabolic it continues to go as you get closer into time and zero DTE and expiration. The reason why this turns into a coin flip is think of what this does to your delta. So if we know in at the money SPX option that we were looking at has a gamma of you know point one or I mean with zero DTE it's way higher than that we can take a look actually to give you a specific number. Does this have a visual for that? Let me see. Because what I want to see is what actual gamma does. That's premium. There we go. Yeah, perfect. So you can see the the the other research slides that I have for you will have the actual answers. Don't care about",
+    "start_timestamp_seconds": 1874.92,
+    "end_timestamp_seconds": 1984.92,
+    "start_timestamp": "31:14",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=1874",
+    "chunk_index": 18,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "this have a visual for that? Let me see. Because what I want to see is what actual gamma does. That's premium. There we go. Yeah, perfect. So you can see the the the other research slides that I have for you will have the actual answers. Don't care about that. The key here with selling really short term zero DTE stuff is that there's a lot of negative skew you have to control the negative skew. There's different ways you can control it, but that's what kills you. If you think of the zero DTE lotto buyer and the propensity for them to lose that would lead the enter pricing trader to explore the other side of that trade it's actually a good way to think of it. The problem is that it's a bit more nuanced than that and you can't just sell blindly if you just sell. And then you can't sell blindly anyways. It's a terrible business plan and the likelihood of you living a long prosperous short term or even long term blind selling premium life is not that great. I would just keep that in mind because the your negative convexity that's what kills you. And then the edge like part of it is time. I also would argue the bigger part though is liquidity because what you'll notice with zero DTE options is as you get really really really close to expiration. You'll actually find that liquidity evaporates it straight up disappears. So",
+    "start_timestamp_seconds": 1959.92,
+    "end_timestamp_seconds": 2066.92,
+    "start_timestamp": "32:39",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=1959",
+    "chunk_index": 19,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "you. And then the edge like part of it is time. I also would argue the bigger part though is liquidity because what you'll notice with zero DTE options is as you get really really really close to expiration. You'll actually find that liquidity evaporates it straight up disappears. So that's one of the reasons why whenever I trade zero DTE options it's always an SPX. Anyways, if we're being honest because it's sized better don't have to put on as many contracts. And then it's also section 1256 of the tax code 6040 long term to short term capital gains tax so it's just a little bit tax advantage. So it'd be SPX anyways, but even if those were not the case the European style option component to it is actually really really important. So these are a couple things to keep in mind when you are forering into the world of zero DTE's and super duper short term things. And now I want to show you some actual metric and how things legitimately unfold in real markets. I will blow this up a bit more for the visually impaired. You know I am here for you. And let's get after it. We already know zero DTE's are huge. They came out broadly in May of 22 and there's just a massive demand. The overwhelming majority of daily SPX option volume is in is in zero DTE's and it's for a lot of different reasons there's a ton a",
+    "start_timestamp_seconds": 2038.92,
+    "end_timestamp_seconds": 2141.92,
+    "start_timestamp": "33:58",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=2038",
+    "chunk_index": 20,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "get after it. We already know zero DTE's are huge. They came out broadly in May of 22 and there's just a massive demand. The overwhelming majority of daily SPX option volume is in is in zero DTE's and it's for a lot of different reasons there's a ton a ton of different reasons. BRB says small edge wide distribution. Yeah, it's exactly right and I would. I'm sure he clarifies it in the post. I'm not sure the post that you're referring to. But the thing to keep in mind is it's not the centralization of the distribution. When you're selling things like selling premium or things that have small edges, you actually will have the density of the distribution pretty collected around wherever you know the edge lies or that strategy. So I'll show you what I mean. Let me grab my handy dandy drawing pad. So if we think of a sell side strategy and what BRB is talking about with respect to UN's post, BRB, if you have the link to that post, I'd actually love to pull it up on the stream. But let's say that this is your zero line. And let's say that your zero DTE strategy puts you here. So let's say that you're at like plus. 0 or plus point plus zero point eight zero somewhere in there. BRB, you can't post it in the chat. You have just email it to me or drop it in the discord and then",
+    "start_timestamp_seconds": 2126.92,
+    "end_timestamp_seconds": 2234.92,
+    "start_timestamp": "35:26",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=2126",
+    "chunk_index": 21,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "your zero DTE strategy puts you here. So let's say that you're at like plus. 0 or plus point plus zero point eight zero somewhere in there. BRB, you can't post it in the chat. You have just email it to me or drop it in the discord and then I can post it in the chat. YouTube doesn't let people post links. Maybe you could not actually have and tried this. Can you do like this center section? Just get rid of the first part like the WWE and all that shit. Could you just put the back half of it dot com? Will it let you do that? I'm actually super curious how we can get around this. Super annoying. YouTube is kind of kind of toxic with that shit. I guess people could also be super annoying in the chat and just try to like direct people to all sorts of bullshit. Anyways, while you're trying that. This is if we drew then a plot of the short premium strategy. The way it would look is the overwhelming bulk of returns would fall within this range. And oh cool. There we go. Thank you. So you can. It looks like you can drop in everything. Well, it's I think it's missing the let me see. Yeah, you could easily just drop that in Google. But anyways, here let me give you guys the link. It lets me share links. Which by the way, you definitely should. Subscribe",
+    "start_timestamp_seconds": 2215.92,
+    "end_timestamp_seconds": 2324.92,
+    "start_timestamp": "36:55",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=2215",
+    "chunk_index": 22,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "It looks like you can drop in everything. Well, it's I think it's missing the let me see. Yeah, you could easily just drop that in Google. But anyways, here let me give you guys the link. It lets me share links. Which by the way, you definitely should. Subscribe to this in general. It's just good like reading you and work in general is good. I don't know if this one's actually you and are not. I haven't read it and I don't see an author. But. I'll probably be able to tell from the writing in a couple seconds. But anyways, let's see. Let's see what we got on zero d t easier. So. Hey, yo, what's up? What is that? Easy. That's what I see. Easy. So the rides is your D t. Or yes, your D t options. Amusing mixture of excitement, moral panic and bad intuition. This does seem like you and writing right out of the gate. Some people see zero d t is the new day trading casino. Others is the purest possible form of volatility trading. They contain some truth. Okay. Okay. I love some. I would love some visuals. Yeah, it's it's interesting. The RB because some of the writing style looks very much like you and so specifically things like amusing mixture. That's definitely you and ask from his writing, but this. This I'm not sure like this doesn't seem like you and it's kind of interesting. And then it's",
+    "start_timestamp_seconds": 2300.92,
+    "end_timestamp_seconds": 2409.92,
+    "start_timestamp": "38:20",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=2300",
+    "chunk_index": 23,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "it's interesting. The RB because some of the writing style looks very much like you and so specifically things like amusing mixture. That's definitely you and ask from his writing, but this. This I'm not sure like this doesn't seem like you and it's kind of interesting. And then it's also weird to see that in parentheses. It's actually really curious. I have to ask him. He's coming on the podcast next week. I'll earmark this just as a random question to ask him. I'm just trying to see if there's anything. This is just generally about the paper though. Okay. So it looks like it says most of it, you know, based on real life. Scunus, which is exactly correct. And then now you guys are pretty well armed to understand this point, right? Based on what you just saw based on even the cursory level data that we've looked at so far. You know that game gamma becomes a dominating force. And you know that that has an outsized impact for a zero DT option and whatever its life is going to end up that. But real, but fragile there is compensation for selling same day variants. There's also enormous tales, unstable means, and strong dependence on the real life shape of the index path. Yeah, it's exactly correct. So here's what that means. The overall distribution, the centralization of the distribution actually is not wide. It's very narrow. So if we were to plot out like the",
+    "start_timestamp_seconds": 2389.92,
+    "end_timestamp_seconds": 2491.92,
+    "start_timestamp": "39:49",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=2389",
+    "chunk_index": 24,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "also enormous tales, unstable means, and strong dependence on the real life shape of the index path. Yeah, it's exactly correct. So here's what that means. The overall distribution, the centralization of the distribution actually is not wide. It's very narrow. So if we were to plot out like the number of samples that fall within this range, like this density of a range, it would be the overwhelming majority. And when I say the overwhelming majority, again, depending on the specific details of the trade, it could be 80% plus. So the actual distribution, most of the samples are going to fall in here. But what they're referencing is that there are samples that are all the way out here. So what that means is if you actually drew the distribution representative to what it is, it would look like this. If this is your zero curve, it would look something like this, not like that. Like this. Because what happens is your max profit is capped pretty quick. You can't make that much. But the tail risk that you take is massive. You can lose a shit ton relative to what you make, whether it's naked options, or whether it's a spread scenario applies to both. So really interesting call out and thank you, BRB for sharing that paper. Definitely something worth looking at a little more detail. Super cool. Okay, we continue. Where do you know how a lot of this stuff behaves, but let's actually take",
+    "start_timestamp_seconds": 2473.92,
+    "end_timestamp_seconds": 2579.92,
+    "start_timestamp": "41:13",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=2473",
+    "chunk_index": 25,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "whether it's a spread scenario applies to both. So really interesting call out and thank you, BRB for sharing that paper. Definitely something worth looking at a little more detail. Super cool. Okay, we continue. Where do you know how a lot of this stuff behaves, but let's actually take a look at what happens. What this is showing you is the 16 July, the at the money, 7550 call. What we did was buy it at the open. We bought it for 1670. This is crossing the bit as spread. This is just getting it at the offer. We can see that the value skyrocket after a plummet. So we go from 1670, we lose $6.70, then we gain up to like $23. And then you can see that it just slowly dies throughout the rest of the day. Here's the interesting part. Take a look at how active your delta was. Your delta started slightly in the money. Then it skyrocket. Well, it plummets to like a 30 delta. So your delta gets essentially cut in half. Then it doubles and change to 75. And then it slowly decays out as we move into the clothes. The other thing to note here is that this is super duper path dependent. That's the important factor to be aware of. So when we look at the different Greeks in how they behave, you can see what we were talking about before. So this is looking at specifically the 7550 call.",
+    "start_timestamp_seconds": 2554.92,
+    "end_timestamp_seconds": 2661.92,
+    "start_timestamp": "42:34",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=2554",
+    "chunk_index": 26,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "thing to note here is that this is super duper path dependent. That's the important factor to be aware of. So when we look at the different Greeks in how they behave, you can see what we were talking about before. So this is looking at specifically the 7550 call. And this is the gamma factor that we were talking about. Notice how gamma increases towards the end of the day and then it falls off a cliff. Because one something is far enough out of the money, it loses all of its gamma. And then also notice how something will have really big theta. And then notice how its theta also falls off a cliff. And then it's just really, really small into the clothes. Because it's already lost pretty much all of its extrinsic value. That's what this is showing you. This is showing you the delta as an S curve. And then the gamma peaks as you move throughout the day. This is showing you moneyness as a percent of strike against the spot. The reason why I use percent here versus raw counts is it just makes it easier to standardize across different research deliverables. That's why most of the time when you see moneyness from me, it's in this format. But you can clearly see how fast gamma ram. So at 10 a.m. you're at the money, you're like, you know, 11 12 gamma. Then by 1300, you're at like 16 gamma. And then at",
+    "start_timestamp_seconds": 2649.92,
+    "end_timestamp_seconds": 2740.92,
+    "start_timestamp": "44:09",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=2649",
+    "chunk_index": 27,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "why most of the time when you see moneyness from me, it's in this format. But you can clearly see how fast gamma ram. So at 10 a.m. you're at the money, you're like, you know, 11 12 gamma. Then by 1300, you're at like 16 gamma. And then at 15 30 a half hour before the clothes, you're at like 26 gamma at a decimal point there by the way. It's not 0.26. It's 0.026. So just don't feel like saying that for each one. Everything becomes hyperbolic. That's the important piece here. So if you think about what that does to your position is whatever you have on amplifies. And it actually requires way more active management in terms of how you adjust your position. Because if you are delta hedging something, it's going to be off sides super fast because of gamma. You have to try and gamma hedge then delta scalp. If you can and if you're short, you can't do that. You're just going to try and isolate, vol by delta hedging. The problem with that process is things move so damn fast. That's the really the part that you're fighting against. So let's talk about some mistakes, right? That's the broad theme for this overall season of outlier options trading bootcamp is mistakes. One of them is buying cheap options. Buying cheap options can seem wise. It can seem smart. You're generally doing something that's low risk. You're only putting up 30 bucks. It's",
+    "start_timestamp_seconds": 2719.92,
+    "end_timestamp_seconds": 2838.92,
+    "start_timestamp": "45:19",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=2719",
+    "chunk_index": 28,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "about some mistakes, right? That's the broad theme for this overall season of outlier options trading bootcamp is mistakes. One of them is buying cheap options. Buying cheap options can seem wise. It can seem smart. You're generally doing something that's low risk. You're only putting up 30 bucks. It's super cheap. The problem is your loto just decays into nothing the overwhelming majority of the time. So the zero DTE calls. If you buy them at 10 a.m. So given the first half hour chance for the underlying to settle its ball, you can see the various out of the money trades. So we have 0.2% so super close 0.4.8 1.3. And you can see the shape that all of these take. That at the money absolutely eroded into nothing. The stuff that's out of the money, generally speaking, stays cheap all day because it's already low. It can't decay that much more as you can see here, it went from a dime to nothing. So you need to hold a dime in extrinsic value throughout the day. Those are also the options that are going to have way less liquidity to keep in mind. 94% of those low delta options expire worthless. This is looking just at this year so far. So January to July. I have a piece of research that's way more in depth on zero DTE. That we're actually going to do on one of our market internal stream. One of the Tuesday streams because",
+    "start_timestamp_seconds": 2812.92,
+    "end_timestamp_seconds": 2919.92,
+    "start_timestamp": "46:52",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=2812",
+    "chunk_index": 29,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "delta options expire worthless. This is looking just at this year so far. So January to July. I have a piece of research that's way more in depth on zero DTE. That we're actually going to do on one of our market internal stream. One of the Tuesday streams because it's a big part of my operation is zero DTE. And it's actually a non trivial part of my performance so far this year in how stable it's been. The crox is to acknowledge the frequency that you have out of the money of various levels. So 1 to 2% 98% of those. 98% of those expire worthless. Anything that's 2% plus. So for all out of the money options, the majority of them turn into nothing. So the problem is rather than the short option side of the equation where you have many small winning trades and typically big losses. It's the inverse here. So you have many small losses and then your hope is that your one winning trade can offset those. And again, if you have a system it can. It's just not something that you can blindly just say along and a buy these cheap option is because they're cheap. When you buy cheap options and you size it based on the premium and then just leave it alone. The issue with that is you get left behind with what ends up realized. So as soon as things move a little bit out of your favor,",
+    "start_timestamp_seconds": 2900.92,
+    "end_timestamp_seconds": 3003.92,
+    "start_timestamp": "48:20",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=2900",
+    "chunk_index": 30,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "is because they're cheap. When you buy cheap options and you size it based on the premium and then just leave it alone. The issue with that is you get left behind with what ends up realized. So as soon as things move a little bit out of your favor, something like your gamma is going to plummet. So then if it does move subsequently in your favor, you're not getting paid as much as you otherwise think you should because things have already decayed and moved against you previously. That's the gotcha with stuff like this and that's why looking at it is just like a cheap solution can very easily lose you a ton of money. Now I will say especially with short dated options that you have to be very tail aware. And part of that tail awareness is just figuring out how you can manage and cut the tails logically without having too many occurrences generally cut off. You have to avoid that. I would also say for the majority of accounts, this is a place where defined risk makes a lot of sense. It needs to be thoughtful. For example, if we go back into the platform and we look at let's say we look at something a little bit later in the day. We'll look at something that's at like. You hours in. So you'll get a sense of width and what kind of width we're talking about. So let's say that your options",
+    "start_timestamp_seconds": 2979.92,
+    "end_timestamp_seconds": 3101.92,
+    "start_timestamp": "49:39",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=2979",
+    "chunk_index": 31,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "the platform and we look at let's say we look at something a little bit later in the day. We'll look at something that's at like. You hours in. So you'll get a sense of width and what kind of width we're talking about. So let's say that your options here, this is like a 30 delta or so, the 35s. And let's say that you try to go 5 wide. The problem with 5 wide is the net Greeks that you're actually collecting here are about nothing. So you might make money based on the directional movement of the underlying, but you're not actually taking advantage of things like variance risk premium and whatnot. It's because your net Greeks are so small. You're just playing part of the distribution curve. That's all. Then if you start going wider as we discussed earlier, there's a point of diminishing returns where you're collecting so little for the additional width that you're adding. So again, for the this block that's 15 by 20, let's just say that you get the full 20. Well, if you get the full 20 here and then you get 15. Here, saying that if you sold it, it would have to be at the 15. That 5 cent difference is covered by 15 dollars of total risk. That's not insignificant. And you have to strike a balance between how wide you go and. What tail risk you're comfortable with. And that all will be based on your",
+    "start_timestamp_seconds": 3068.92,
+    "end_timestamp_seconds": 3187.92,
+    "start_timestamp": "51:08",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=3068",
+    "chunk_index": 32,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "it would have to be at the 15. That 5 cent difference is covered by 15 dollars of total risk. That's not insignificant. And you have to strike a balance between how wide you go and. What tail risk you're comfortable with. And that all will be based on your system. However, you build in actual approach around this because remember the most important takeaway is that you can't just do this blindly. You can't just every day say I'm going to sell put spreads in zero DTEs. Well, you could do it. It's just not a good way to do business. You're going to be met with a pretty arduous business cycle and depending on the other economics of your business that just happens to be really really luck based not something that you can feel comfortable with. So. To summarize your DTEs, they're really fast. They amplify, amplify your Greeks tremendously. And they're unforgiving, especially on the long side in the sake of small moves just eviscerate your delta. And on the put side in terms of your tail risk. So regardless of which side you choose to explore or both. They each have a unique problem that you have to solve for in order for any sort of like zero DTE production to work for you. So what questions do you guys have about this now is the perfect time for any residual elements of what we covered that you'd like to double click into that you",
+    "start_timestamp_seconds": 3162.92,
+    "end_timestamp_seconds": 3255.92,
+    "start_timestamp": "52:42",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=3162",
+    "chunk_index": 33,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "you have to solve for in order for any sort of like zero DTE production to work for you. So what questions do you guys have about this now is the perfect time for any residual elements of what we covered that you'd like to double click into that you have questions on anything like that. The other thing I was going to show you while we do that is this. So if we take a look. We look at how things can behave. And let's say that we're looking at ticker a doesn't matter what it is. And we move to one DTE. At one DTE, well, we'll start a little bit more. We'll go to like 5 DTE. At 5 DTE, you can see how your residual position will behave over the life cycle of the trade. Right. So this is showing you how things will will progress as time passes. So let's say that you go from this is starting at 5 DTE and this is simulating one day as past. This is what happens. So your theta it essentially sky rockets relative to what you have. It can over double based on the moneyness of your option of what not. This is just a general scenario on a big ticker. But then take a look at what happens at 3 DTE. Notice how your theta again sky rockets even more. And this accelerates massively into the end of the curve. This is the primary risk that",
+    "start_timestamp_seconds": 3247.92,
+    "end_timestamp_seconds": 3377.92,
+    "start_timestamp": "54:07",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=3247",
+    "chunk_index": 34,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "option of what not. This is just a general scenario on a big ticker. But then take a look at what happens at 3 DTE. Notice how your theta again sky rockets even more. And this accelerates massively into the end of the curve. This is the primary risk that you run and take a look at what's happening to your gamma. So this gives and this takes. If you have an adverse move against you. So let's say spot drops a bit. If spot drops a bit, you have gamma that actively is ripping apart your delta as your experiencing things like charm, which is delta decay and accelerated theta. So literally everything you're doing is massively amplify. That's the entire point. So easy. EZE says zero DTE is it really more profitable than 3045 gamma risk is difficult to manage emotionally. Well, a couple things there. The first thing is it's it's not more profitable than 30 to 45 DTE. There's nothing that's inherently profitable about zero DTE's versus any other term. There's nothing inherent to it. But there are elements that increase its velocity. So relative to the risk that you're taking in the time that you're in the trade, you can definitely make a lot of money relative. But the issue is you know is how fast things move and how unforgiving it is. The second part of your question about emotionally. That exists for you because you don't have a plan that you trust yet.",
+    "start_timestamp_seconds": 3344.92,
+    "end_timestamp_seconds": 3465.92,
+    "start_timestamp": "55:44",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=3344",
+    "chunk_index": 35,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "in the trade, you can definitely make a lot of money relative. But the issue is you know is how fast things move and how unforgiving it is. The second part of your question about emotionally. That exists for you because you don't have a plan that you trust yet. The coolest part about building like a robust trading plan is once it's something that you're really confident in, your emotional reaction to things just dissipates. Just goes away. And it's because you're really not that concerned with it anymore because you have a known good. So that's more just a function of gaining experience over time. And that will abate pretty significantly. So yeah, completely fair. Tweet. All right, gang, two last things for you guys. Second to last is the monthly 30 minute one on one drawings are open. So if you would like to enter into that, I highly encourage you to do so. As always, I like to mention that it's zero risk to you and the winner will be announced tomorrow. So if you'd like to enter in a raffle for 30 minute call with me, that's that. And then tomorrow we're doing a live stream on the O talk. The research this actually, this is part of the O talk. This is Hugen. This is one of the interfaces that I use, but the O talk is more so about being able to back test and research things. It's available to everybody. So it",
+    "start_timestamp_seconds": 3449.92,
+    "end_timestamp_seconds": 3546.92,
+    "start_timestamp": "57:29",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=3449",
+    "chunk_index": 36,
+    "word_count": 250,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  },
+  {
+    "video_id": "gEo0z9OXd1I",
+    "title": "Why You're Probably Lighting Money on Fire with 0DTEs| Options Trading for Beginners Ep5",
+    "text": "stream on the O talk. The research this actually, this is part of the O talk. This is Hugen. This is one of the interfaces that I use, but the O talk is more so about being able to back test and research things. It's available to everybody. So it will be tomorrow around 5.5 30 kind of figure out what time is we get closer. So you need anything? Let me know. Be in our life. See you guys later.",
+    "start_timestamp_seconds": 3532.92,
+    "end_timestamp_seconds": 3555.92,
+    "start_timestamp": "58:52",
+    "video_url": "https://www.youtube.com/watch?v=gEo0z9OXd1I",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gEo0z9OXd1I&t=3532",
+    "chunk_index": 37,
+    "word_count": 81,
+    "upload_date": "20260711",
+    "published_at": "2026-07-11T22:51:15Z",
+    "duration": 3554.0,
+    "related_wiki_pages": [
+      "concepts/greek-attribution",
+      "strategies/put-spread"
+    ]
+  }
+]

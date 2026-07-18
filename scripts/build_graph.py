@@ -231,6 +231,7 @@ def collect_knowledge_pages(wiki_dir: Path) -> dict:
                 "category": category,
                 "theme": theme_for(folder, slug),
                 "label": str(fm.get("title") or slug),
+                "summary": str(fm.get("summary") or "")[:400],
                 "related_videos": related_videos,
                 "video_count": len(related_videos),
                 "aliases": _as_list(fm.get("aliases")),
@@ -553,6 +554,7 @@ def build_graph(wiki_dir: Path, include_sources: bool = False) -> dict:
             "theme": page["theme"],
             "size": page["video_count"],       # per §12: = len(related_videos)
             "video_count": page["video_count"],
+            "summary": page.get("summary", ""),
         }
 
     if include_sources:
@@ -567,6 +569,7 @@ def build_graph(wiki_dir: Path, include_sources: bool = False) -> dict:
                 "theme": "source",
                 "size": 1,
                 "video_count": 1,
+                "summary": "",
             }
         edges = edges + build_source_edges(pages, source_id_set)
 
@@ -593,6 +596,7 @@ def build_graph(wiki_dir: Path, include_sources: bool = False) -> dict:
             "theme": record.get("theme", record["category"]),
             "size": record["size"],
             "video_count": record["video_count"],
+            "summary": record.get("summary", ""),
             "degree": degree[node_id],
             "x": x,
             "y": y,

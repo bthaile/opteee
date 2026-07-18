@@ -1,0 +1,13 @@
+# Dedicated Marker OCR/extraction environment.
+# Keep this separate from both the serving env (.venv-native) and the pipeline env (venv)
+# so Marker can stay on a known-good Python/dependency stack.
+#
+# Bootstrapped by weekly-refresh.sh into .venv-marker using Python 3.11.
+
+setuptools>=83.0.0
+wheel>=0.47.0
+pip>=26.0
+
+marker-pdf==1.10.2
+surya-ocr==0.17.1
+transformers==4.57.6

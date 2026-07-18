@@ -166,7 +166,7 @@
       position: fixed;
       pointer-events: none;
       z-index: 10;
-      max-width: 260px;
+      max-width: 300px;
       padding: 8px 11px;
       border-radius: 8px;
       background: var(--bg-elev);
@@ -180,6 +180,7 @@
     #tooltip.show { opacity: 1; }
     #tooltip .tt-title { font-weight: 650; margin-bottom: 2px; }
     #tooltip .tt-meta { color: var(--fg-dim); }
+    #tooltip .tt-summary { margin-top: 6px; color: var(--fg); font-size: 12px; line-height: 1.4; }
 
     /* Side panel */
     #panel {
@@ -224,7 +225,8 @@
       cursor: pointer;
       line-height: 1;
     }
-    #panel-back {
+    #panel-back,
+    #panel-drill {
       flex: none;
       background: var(--bg-elev);
       border: 1px solid var(--border);
@@ -236,7 +238,12 @@
       cursor: pointer;
       line-height: 1;
     }
-    #panel-back[hidden] { display: none; }
+    #panel-drill {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    #panel-back[hidden],
+    #panel-drill[hidden] { display: none; }
     #panel-actions {
       display: flex;
       align-items: center;
@@ -407,14 +414,14 @@
         <button id="mode-explore" class="header-btn" type="button" aria-pressed="true"
                 title="Flat relationship graph — click a node to see everything it relates to">Explore</button>
         <button id="mode-browse" class="header-btn" type="button" aria-pressed="false"
-                title="Layered drill-down: themes → topics → videos">Layered</button>
+                title="Layered drill-down: themes → focused related nodes">Layered</button>
       </div>
       <span class="sub" id="counts">loading…</span>
-      <input id="search" type="search" placeholder="Find a topic… (Enter to open)"
-             autocomplete="off" title="Type to filter/highlight nodes; press Enter to open the top match" />
+      <input id="search" type="search" placeholder="Filter nodes by name… (Enter to open)"
+             autocomplete="off" title="Type to filter displayed nodes by name (Explore + Layered); press Enter to open the top match" />
       <button id="catalog-toggle" class="header-btn" type="button">Catalog</button>
       <div id="filters"></div>
-      <span class="sub" id="drill-hint">double-click a node to expand its videos</span>
+      <span class="sub" id="drill-hint">select a node to inspect relationships</span>
     </header>
 
     <div id="main">
@@ -422,8 +429,10 @@
       <div id="status">Loading knowledge graph…</div>
       <div id="graph-controls">
         <button id="browse-back" class="graph-ctrl" type="button" hidden>← Themes</button>
+        <button id="graph-prev" class="graph-ctrl" type="button" title="Return to previous selected node" disabled>Previous</button>
+        <button id="graph-next" class="graph-ctrl" type="button" title="Move forward to next selected node" disabled>Next</button>
         <button id="fit-btn" class="graph-ctrl" type="button" title="Fit all nodes into view">Fit view</button>
-        <button id="layout-btn" class="graph-ctrl" type="button" title="Toggle grid / cluster layout (Explore mode)">Grid layout</button>
+        <button id="layout-btn" class="graph-ctrl" type="button" title="Toggle grid / cluster layout for the current view">Grid layout</button>
       </div>
 
       <aside id="panel" aria-hidden="true">
@@ -434,6 +443,7 @@
           </div>
           <div id="panel-actions">
             <button id="panel-back" type="button" hidden>Back</button>
+            <button id="panel-drill" type="button" hidden>Drill Down</button>
             <button id="panel-close" title="Close" aria-label="Close panel">×</button>
           </div>
         </div>
@@ -490,9 +500,13 @@
 
     var cy = null;
     var activeCategories = {};   // category -> bool (shown)
+    var nameQuery = "";          // top-bar name filter (lowercased); hides non-matching nodes
     var wikiIndex = { pages: [], sources: [], page_count: 0, source_count: 0 };
     var panelHistory = [];
     var currentPanelState = null;
+    var selectedNodeId = null;
+    var selectedNodeHistory = [];
+    var selectedNodeForwardHistory = [];
     var PRIMARY_LABEL_LIMIT = 55;
     var INITIAL_FOCUS_LIMIT = 85;
     var NODE_LABEL_ZOOM = 0.78;
@@ -512,12 +526,15 @@
       panelBadges: document.getElementById("panel-badges"),
       panelBody: document.getElementById("panel-body"),
       panelBack: document.getElementById("panel-back"),
+      panelDrill: document.getElementById("panel-drill"),
       panelClose: document.getElementById("panel-close"),
       modeExplore: document.getElementById("mode-explore"),
       modeBrowse: document.getElementById("mode-browse"),
       drillHint: document.getElementById("drill-hint"),
       fitBtn: document.getElementById("fit-btn"),
       browseBack: document.getElementById("browse-back"),
+      graphPrev: document.getElementById("graph-prev"),
+      graphNext: document.getElementById("graph-next"),
       layoutBtn: document.getElementById("layout-btn")
     };
 
@@ -572,6 +589,7 @@
           category: cat,
           theme: n.theme || cat,
           video_count: vc,
+          summary: n.summary || "",
           degree: Number(n.degree) || 0,
           size: 22 + 34 * (vc / maxCount),
           color: colorFor(cat)
@@ -625,10 +643,15 @@
               "color": "#cdd6ea",
               "text-outline-width": 2,
               "text-outline-color": "#0f1420",
+              "text-background-color": "#0f1420",
+              "text-background-opacity": 0.72,
+              "text-background-padding": 2,
+              "text-wrap": "wrap",
+              "text-max-width": 120,
               "text-valign": "bottom",
               "text-margin-y": 3,
-              "text-opacity": 0,
-              "min-zoomed-font-size": 8,
+              "text-opacity": 1,
+              "min-zoomed-font-size": 0,
               "border-width": 0
             }
           },
@@ -678,7 +701,7 @@
           },
           {
             selector: "node.faded",
-            style: { "opacity": 0.12, "text-opacity": 0.12 }
+            style: { "opacity": 0.12, "text-opacity": 0.38 }
           },
           {
             selector: "edge.faded",
@@ -823,16 +846,29 @@
       });
     }
 
+    // A node is visible only if its category chip is on AND (no name query, or
+    // its label/id matches the query). Theme nodes ignore category chips.
+    function nodeMatchesName(n) {
+      if (!nameQuery) return true;
+      return String(n.data("label") || "").toLowerCase().indexOf(nameQuery) !== -1 ||
+             String(n.data("id") || "").toLowerCase().indexOf(nameQuery) !== -1;
+    }
+    function nodeVisibleByFilters(n) {
+      var catShown = n.hasClass("theme-node") ||
+        activeCategories[n.data("category")] !== false;
+      return catShown && nodeMatchesName(n);
+    }
+
     function applyCategoryFilter(skipLayout) {
       if (!cy) return;
       cy.batch(function () {
         cy.nodes().forEach(function (n) {
-          var shown = activeCategories[n.data("category")] !== false;
-          n.style("display", shown ? "element" : "none");
+          n.style("display", nodeVisibleByFilters(n) ? "element" : "none");
         });
       });
       if (!skipLayout && graphLayout === "grid") {
-        if (graphMode === "browse") layoutLayeredGrid(false);
+        if (focusedNodeId) layoutNodesGrid(visibleCurrentNodes(), 60);
+        else if (graphMode === "browse") layoutLayeredGrid(false);
         else layoutExploreGrid(false);
       }
     }
@@ -862,24 +898,17 @@
         }
       });
       cy.on("tap", "node", function (evt) {
-        var n = evt.target;
-        if (n.hasClass("theme-node")) { toggleTheme(n); return; }
-        var wasSelected = n.hasClass("selected");
-        cy.nodes().removeClass("selected");
-        clearHighlight();
-        if (wasSelected) return;         // click a selected node again to deselect
-        n.addClass("selected");
-        highlightNeighborhood(n);        // persists while you zoom / pan — clears on deselect
-        openPage(n.data("id"));
+        selectGraphNode(evt.target);
       });
       cy.on("tap", function (evt) {
         // Tap empty canvas to deselect (clear the highlighted node + its connections).
-        if (evt.target === cy) { cy.nodes().removeClass("selected"); clearHighlight(); }
-      });
-      // Double-click a knowledge node to drill down: pull in its source videos.
-      cy.on("dbltap", "node", function (evt) {
-        var n = evt.target;
-        if (n.data("category") !== "source") expandNode(n);
+        if (evt.target === cy) {
+          selectedNodeId = null;
+          cy.nodes().removeClass("selected");
+          clearHighlight();
+          updateDrillButton();
+          updateGraphHistoryButtons();
+        }
       });
       cy.on("zoom", updateZoomDeclutter);
       cy.on("resize", function () {
@@ -893,26 +922,28 @@
       els.panelClose.addEventListener("click", closePanel);
       els.catalogToggle.addEventListener("click", openCatalog);
       els.panelBack.addEventListener("click", goBack);
+      if (els.panelDrill) els.panelDrill.addEventListener("click", drillSelectedNode);
       if (els.modeExplore) els.modeExplore.addEventListener("click", enterExplore);
       if (els.modeBrowse) els.modeBrowse.addEventListener("click", enterBrowse);
       if (els.fitBtn) els.fitBtn.addEventListener("click", fitAll);
-      if (els.browseBack) els.browseBack.addEventListener("click", collapseToThemes);
+      if (els.browseBack) els.browseBack.addEventListener("click", goGraphUp);
+      if (els.graphPrev) els.graphPrev.addEventListener("click", goPreviousGraphNode);
+      if (els.graphNext) els.graphNext.addEventListener("click", goNextGraphNode);
       if (els.layoutBtn) els.layoutBtn.addEventListener("click", function () {
         setGraphLayout(graphLayout === "grid" ? "cluster" : "grid");
       });
       updateLayoutButton();
-      // In Browse mode, tapping empty canvas collapses back to the theme overview.
-      cy.on("tap", function (evt) {
-        if (evt.target === cy && graphMode === "browse" && expandedTheme) collapseToThemes();
-      });
+      updateGraphHistoryButtons();
     }
 
     function showTooltip(n) {
+      var summary = n.data("summary") || "";
       els.tooltip.innerHTML =
         '<div class="tt-title">' + esc(n.data("label")) + "</div>" +
         '<div class="tt-meta">' + esc(n.data("category")) + " · " +
         n.data("video_count") + " video" +
-        (n.data("video_count") === 1 ? "" : "s") + "</div>";
+        (n.data("video_count") === 1 ? "" : "s") + "</div>" +
+        (summary ? '<div class="tt-summary">' + esc(summary) + "</div>" : "");
       els.tooltip.classList.add("show");
       var pos = n.renderedPosition();
       var rect = els.cy.getBoundingClientRect();
@@ -957,18 +988,106 @@
       });
     }
 
-    function onSearch() {
-      var q = els.search.value.trim().toLowerCase();
+    function selectedGraphNode() {
+      if (!cy || !selectedNodeId) return cy ? cy.collection() : null;
+      return cy.getElementById(selectedNodeId);
+    }
+
+    function nodeCanDrill(n) {
+      if (!n || n.empty()) return false;
+      if (focusedNodeId === n.id()) return false;
+      if (n.hasClass("theme-node")) {
+        return graphMode === "browse" && expandedTheme !== n.data("theme");
+      }
+      return n.data("category") !== "source";
+    }
+
+    function updateDrillButton() {
+      if (!els.panelDrill) return;
+      var n = selectedGraphNode();
+      var canDrill = currentPanelState && currentPanelState.type !== "catalog" && nodeCanDrill(n);
+      els.panelDrill.hidden = !canDrill;
+      if (!canDrill || !n || n.empty()) return;
+      els.panelDrill.title = n.hasClass("theme-node")
+        ? "Show this theme's topics"
+        : "Show this node with directly related nodes";
+    }
+
+    function hasSelectableHistory(stack) {
+      if (!cy) return false;
+      for (var i = stack.length - 1; i >= 0; i--) {
+        if (cy.getElementById(stack[i]).nonempty()) return true;
+      }
+      return false;
+    }
+
+    function updateGraphHistoryButtons() {
+      if (els.graphPrev) els.graphPrev.disabled = !hasSelectableHistory(selectedNodeHistory);
+      if (els.graphNext) els.graphNext.disabled = !hasSelectableHistory(selectedNodeForwardHistory);
+    }
+
+    function moveSelectionBetweenStacks(fromStack, toStack) {
       if (!cy) return;
-      cy.nodes().removeClass("highlight");
-      if (!q) return;
-      var matches = cy.nodes().filter(function (n) {
-        return (n.data("label") || "").toLowerCase().indexOf(q) !== -1 ||
-               (n.data("id") || "").toLowerCase().indexOf(q) !== -1;
-      });
-      matches.addClass("highlight");
-      if (matches.length > 0) {
-        cy.animate({ fit: { eles: matches, padding: 120 }, duration: 250 });
+      while (fromStack.length) {
+        var id = fromStack.pop();
+        var n = cy.getElementById(id);
+        if (n.nonempty()) {
+          if (selectedNodeId && selectedNodeId !== n.id()) toStack.push(selectedNodeId);
+          cy.animate({ center: { eles: n }, duration: 220 });
+          selectGraphNode(n, true, true);
+          return;
+        }
+      }
+      updateGraphHistoryButtons();
+    }
+
+    function goPreviousGraphNode() {
+      moveSelectionBetweenStacks(selectedNodeHistory, selectedNodeForwardHistory);
+    }
+
+    function goNextGraphNode() {
+      moveSelectionBetweenStacks(selectedNodeForwardHistory, selectedNodeHistory);
+    }
+
+    function selectGraphNode(n, skipHistory, skipSelectionHistory) {
+      if (!cy || !n || n.empty()) return;
+      if (!skipSelectionHistory && selectedNodeId && selectedNodeId !== n.id()) {
+        selectedNodeHistory.push(selectedNodeId);
+        selectedNodeForwardHistory = [];
+      }
+      selectedNodeId = n.id();
+      cy.nodes().removeClass("selected");
+      clearHighlight();
+      n.addClass("selected");
+      highlightNeighborhood(n);
+      if (n.hasClass("theme-node")) {
+        openThemePanel(n.data("theme"), skipHistory);
+      } else {
+        openPage(n.data("id"), skipHistory);
+      }
+      updateDrillButton();
+      updateGraphHistoryButtons();
+    }
+
+    function drillSelectedNode() {
+      var n = selectedGraphNode();
+      if (!nodeCanDrill(n)) return;
+      showFocusedNeighborhood(n);
+      updateDrillButton();
+    }
+
+    // Top-bar filter: hide nodes whose name doesn't match, in BOTH Explore and
+    // Layered. Combines with the category chips via applyCategoryFilter, so it
+    // re-flows the grid layout and keeps the two filters consistent.
+    function onSearch() {
+      nameQuery = els.search.value.trim().toLowerCase();
+      if (!cy) return;
+      applyCategoryFilter();
+      if (graphLayout !== "grid" && !focusedNodeId) {
+        var visible = cy.nodes().filter(function (n) { return n.visible(); });
+        if (visible.nonempty()) {
+          cy.animate({ fit: { eles: visible, padding: 80 }, duration: 200 });
+        }
       }
     }
 
@@ -977,69 +1096,18 @@
       var q = els.search.value.trim().toLowerCase();
       if (!cy || !q) return;
       var matches = cy.nodes().filter(function (n) {
-        return (n.data("label") || "").toLowerCase().indexOf(q) !== -1 ||
-               (n.data("id") || "").toLowerCase().indexOf(q) !== -1;
+        return n.visible() && (
+               (n.data("label") || "").toLowerCase().indexOf(q) !== -1 ||
+               (n.data("id") || "").toLowerCase().indexOf(q) !== -1);
       });
       if (matches.length > 0) {
         var n = matches[0];
-        cy.nodes().removeClass("selected");
-        n.addClass("selected");
         cy.animate({ center: { eles: n }, duration: 250 });
-        openPage(n.data("id"));
+        selectGraphNode(n);
       }
     }
 
-    // ---- Drill-down: expand a knowledge node into its source videos -----
-    var expandedNodes = {};
-    function sourceTitleFor(pageId) {
-      for (var i = 0; i < wikiIndex.sources.length; i++) {
-        if (wikiIndex.sources[i].id === pageId) return wikiIndex.sources[i].title;
-      }
-      return pageId.split("/").pop();
-    }
-    function expandNode(n) {
-      var nid = n.data("id");
-      if (expandedNodes[nid]) return;
-      expandedNodes[nid] = true;
-      fetch("/api/wiki/pages/" + encodeURI(nid))
-        .then(function (r) { return r.ok ? r.json() : null; })
-        .then(function (page) {
-          if (!page || !page.frontmatter) return;
-          var rv = page.frontmatter.related_videos || [];
-          if (!rv.length) return;
-          var base = n.position();
-          var newEls = [];
-          rv.forEach(function (vid, i) {
-            var sid = "sources/" + vid;
-            var ang = (2 * Math.PI * i) / rv.length;
-            if (cy.getElementById(sid).empty()) {
-              newEls.push({ group: "nodes", data: {
-                id: sid, label: sourceTitleFor(sid), category: "source",
-                video_count: 1, size: 16, color: colorFor("source")
-              }, position: { x: base.x + 150 * Math.cos(ang), y: base.y + 150 * Math.sin(ang) } });
-            }
-            var eid = "exp:" + nid + ":" + sid;
-            if (cy.getElementById(eid).empty()) {
-              newEls.push({
-                group: "edges",
-                data: {
-                  id: eid, source: nid, target: sid, type: "source",
-                  weight: 1, shared_source_count: 0, label: "backing source"
-                },
-                classes: "edge-type-source"
-              });
-            }
-          });
-          if (newEls.length) {
-            cy.add(newEls);
-            ensureCategoryChip("source");
-            applyCategoryFilter();
-          }
-        })
-        .catch(function () { expandedNodes[nid] = false; });
-    }
-
-    // ---- Browse (drill-down) mode: themes -> topics -> videos ----------
+    // ---- Browse (drill-down) mode: themes -> focused relationship views ----------
     var THEME_TITLES = {
       "options-strategies": "Options Strategies", "options-mechanics": "Options Mechanics",
       "volatility-iv": "Volatility & IV", "greeks": "Greeks", "securities": "Securities",
@@ -1062,6 +1130,9 @@
     var bakedPositions = {};     // id -> {x,y} theme-cluster positions
     var graphLayout = "cluster";  // "cluster" | "grid"
     var gridReturnPositions = {}; // id -> {x,y} positions before switching to grid
+    var drillStack = [];         // previous graph views for explicit drill-up navigation
+    var focusedNodeId = null;
+    var RELATED_NODE_LIMIT = 36;
 
     function knowledgeTopics() {
       return cy.nodes().filter(function (n) {
@@ -1083,6 +1154,29 @@
         : "Arrange the current view in a grid";
     }
 
+    function updateGraphUpButton() {
+      if (!els.browseBack) return;
+      if (drillStack.length > 0) {
+        els.browseBack.hidden = false;
+        els.browseBack.textContent = "Up Level";
+        els.browseBack.title = "Return to the previous graph level";
+      } else if (graphMode === "browse" && expandedTheme) {
+        els.browseBack.hidden = false;
+        els.browseBack.textContent = "\u2190 Themes";
+        els.browseBack.title = "Return to the theme overview";
+      } else {
+        els.browseBack.hidden = true;
+      }
+    }
+
+    function goGraphUp() {
+      if (drillStack.length > 0) {
+        restoreGraphState(drillStack.pop());
+      } else {
+        collapseToThemes();
+      }
+    }
+
     function snapshotNodePositions() {
       var positions = {};
       cy.nodes().forEach(function (n) {
@@ -1098,29 +1192,50 @@
 
     function gridOptionsFor(nodes, padding) {
       var count = Math.max(1, nodes.length);
-      var width = Math.max(720, cy.width() * 1.6);
-      var height = Math.max(520, cy.height() * 1.45);
-      var aspect = Math.max(0.65, Math.min(2.2, width / Math.max(1, height)));
-      var cols = Math.ceil(Math.sqrt(count * aspect));
+      var cellWidth = graphMode === "browse" ? 150 : 126;
+      var cellHeight = graphMode === "browse" ? 82 : 64;
+      var aspect = Math.max(0.65, Math.min(2.2, cy.width() / Math.max(1, cy.height())));
+      var cols = Math.ceil(Math.sqrt(count * aspect * cellHeight / cellWidth));
       var rows = Math.ceil(count / Math.max(1, cols));
+      var width = Math.max(cellWidth * cols, 260);
+      var height = Math.max(cellHeight * rows, 180);
       return {
         name: "grid",
-        fit: true,
-        padding: padding || 60,
+        fit: false,
+        padding: padding || 36,
         boundingBox: { x1: -width / 2, y1: -height / 2, w: width, h: height },
         rows: rows,
         cols: cols,
         avoidOverlap: true,
-        avoidOverlapPadding: 24,
+        avoidOverlapPadding: 8,
+        nodeDimensionsIncludeLabels: true,
         condense: false,
         animate: true,
-        animationDuration: 220
+        animationDuration: 220,
+        sort: function (a, b) {
+          var catDiff = String(a.data("category")).localeCompare(String(b.data("category")));
+          if (catDiff !== 0) return catDiff;
+          return String(a.data("label")).localeCompare(String(b.data("label")));
+        }
       };
+    }
+
+    function focusGridViewport(nodes, padding) {
+      if (!nodes || nodes.empty()) return;
+      var pad = padding || 36;
+      if (nodes.length <= 36) {
+        cy.animate({ fit: { eles: nodes, padding: pad }, duration: 180 });
+        return;
+      }
+      var targetZoom = Math.min(cy.maxZoom(), Math.max(0.82, Math.min(cy.zoom(), 1.05)));
+      cy.animate({ center: { eles: nodes }, zoom: targetZoom, duration: 180 });
     }
 
     function layoutNodesGrid(nodes, padding) {
       if (!nodes || nodes.empty()) return;
-      nodes.layout(gridOptionsFor(nodes, padding)).run();
+      var layout = nodes.layout(gridOptionsFor(nodes, padding));
+      layout.one("layoutstop", function () { focusGridViewport(nodes, padding); });
+      layout.run();
     }
 
     // Snapshot the full graph so Explore can be restored and Browse can be built lightly.
@@ -1188,10 +1303,172 @@
       });
     }
 
+    function copyElementJson(el) {
+      var out = { group: el.group || (el.data && el.data.source ? "edges" : "nodes"), data: Object.assign({}, el.data || {}) };
+      if (el.classes) out.classes = el.classes;
+      if (el.position) out.position = { x: el.position.x, y: el.position.y };
+      return out;
+    }
+
+    function fullNodeById(id) {
+      for (var i = 0; i < fullElements.length; i++) {
+        var el = fullElements[i];
+        if (el.group === "nodes" && el.data.id === id) return el;
+      }
+      return null;
+    }
+
+    function relationshipStrength(edge) {
+      return Number(edge.data.shared_source_count || edge.data.weight) || 0;
+    }
+
+    function focusElementsForTheme(themeNode) {
+      var t = themeNode.data("theme");
+      var allThemeEls = elementsForTheme(t);
+      var topicNodes = allThemeEls.filter(function (el) {
+        return el.group === "nodes";
+      }).sort(function (a, b) {
+        var videoDiff = (Number(b.data.video_count) || 0) - (Number(a.data.video_count) || 0);
+        if (videoDiff !== 0) return videoDiff;
+        return String(a.data.label).localeCompare(String(b.data.label));
+      }).slice(0, RELATED_NODE_LIMIT);
+      var topicIds = {};
+      topicNodes.forEach(function (el) { topicIds[el.data.id] = true; });
+      var topicEls = topicNodes.concat(allThemeEls.filter(function (el) {
+        return el.group === "edges" && topicIds[el.data.source] && topicIds[el.data.target];
+      }));
+      var themeJson = copyElementJson(themeNode.json());
+      themeJson.position = { x: 0, y: 0 };
+      var out = [themeJson];
+
+      topicEls.forEach(function (el) { out.push(copyElementJson(el)); });
+      topicNodes.forEach(function (el, i) {
+        out.push({
+          group: "edges",
+          data: {
+            id: "theme-edge:" + t + ":" + el.data.id,
+            source: themeNode.id(),
+            target: el.data.id,
+            type: "theme",
+            weight: 1,
+            shared_source_count: 0,
+            label: "theme topic"
+          }
+        });
+      });
+      return out;
+    }
+
+    function focusElementsForKnowledgeNode(nodeId) {
+      var center = fullNodeById(nodeId);
+      if (!center) return [];
+
+      var relatedEdges = fullElements.filter(function (el) {
+        return el.group === "edges" && (el.data.source === nodeId || el.data.target === nodeId);
+      }).sort(function (a, b) {
+        var strengthDiff = relationshipStrength(b) - relationshipStrength(a);
+        if (strengthDiff !== 0) return strengthDiff;
+        return String(a.data.label || a.data.type).localeCompare(String(b.data.label || b.data.type));
+      });
+
+      var nodeIds = {};
+      nodeIds[nodeId] = true;
+      var selectedEdges = [];
+      for (var i = 0; i < relatedEdges.length; i++) {
+        var e = relatedEdges[i];
+        var other = e.data.source === nodeId ? e.data.target : e.data.source;
+        if (!nodeIds[other] && Object.keys(nodeIds).length > RELATED_NODE_LIMIT) continue;
+        nodeIds[other] = true;
+        selectedEdges.push(e);
+      }
+
+      var out = [];
+      Object.keys(nodeIds).forEach(function (id) {
+        var n = fullNodeById(id);
+        if (n) out.push(copyElementJson(n));
+      });
+      selectedEdges.forEach(function (e) { out.push(copyElementJson(e)); });
+      return out;
+    }
+
+    function currentGraphState() {
+      return {
+        elements: cy.elements().jsons(),
+        selectedNodeId: selectedNodeId,
+        expandedTheme: expandedTheme,
+        focusedNodeId: focusedNodeId
+      };
+    }
+
+    function restoreGraphState(state) {
+      if (!state) return;
+      cy.elements().remove();
+      cy.add(state.elements || []);
+      selectedNodeId = state.selectedNodeId || null;
+      expandedTheme = state.expandedTheme || null;
+      focusedNodeId = state.focusedNodeId || null;
+      applyCategoryFilter(true);
+
+      var selected = selectedGraphNode();
+      if (selected && selected.nonempty()) {
+        selectGraphNode(selected, true, true);
+      }
+      if (graphLayout === "grid") layoutNodesGrid(visibleCurrentNodes(), 60);
+      else cy.animate({ fit: { eles: visibleCurrentNodes(), padding: 70 }, duration: 220 });
+      updateGraphUpButton();
+      updateDrillButton();
+      updateGraphHistoryButtons();
+    }
+
+    function layoutFocusedNeighborhood(centerId) {
+      var center = cy.getElementById(centerId);
+      if (!center || center.empty()) return;
+      cy.layout({
+        name: "concentric",
+        fit: true,
+        padding: 70,
+        animate: true,
+        animationDuration: 220,
+        minNodeSpacing: 58,
+        avoidOverlap: true,
+        concentric: function (n) { return n.id() === centerId ? 2 : 1; },
+        levelWidth: function () { return 1; }
+      }).run();
+    }
+
+    function showFocusedNeighborhood(n) {
+      if (!cy || !n || n.empty()) return;
+      var focusId = n.id();
+      var nextElements = n.hasClass("theme-node")
+        ? focusElementsForTheme(n)
+        : focusElementsForKnowledgeNode(focusId);
+      if (!nextElements.length) return;
+
+      drillStack.push(currentGraphState());
+      focusedNodeId = focusId;
+      cy.elements().remove();
+      cy.add(nextElements);
+      selectedNodeId = focusId;
+      applyCategoryFilter(true);
+
+      var focused = cy.getElementById(focusId);
+      if (focused.nonempty()) {
+        focused.addClass("selected");
+        highlightNeighborhood(focused);
+      }
+      layoutFocusedNeighborhood(focusId);
+      updateGraphUpButton();
+      updateDrillButton();
+      updateGraphHistoryButtons();
+    }
+
     // Browse mode: cy holds ONLY the theme nodes (light); drilling ADDS one theme's topics.
     function enterBrowse() {
       if (!cy) return;
       graphMode = "browse"; expandedTheme = null;
+      selectedNodeId = null;
+      focusedNodeId = null;
+      drillStack = [];
       cy.elements().remove();
       buildThemeNodes();
       applyCategoryFilter(true);
@@ -1202,14 +1479,19 @@
       }
       setModeButtons();
       updateLayoutButton();
-      if (els.browseBack) els.browseBack.hidden = true;
-      if (els.drillHint) els.drillHint.textContent = "click a theme to reveal its topics";
+      updateDrillButton();
+      updateGraphHistoryButtons();
+      updateGraphUpButton();
+      if (els.drillHint) els.drillHint.textContent = "select a theme, then drill down from the drawer";
     }
 
     // Explore mode: restore the full flat graph (all nodes + relationship edges).
     function enterExplore() {
       if (!cy) return;
       graphMode = "explore"; expandedTheme = null;
+      selectedNodeId = null;
+      focusedNodeId = null;
+      drillStack = [];
       cy.elements().remove();
       cy.add(fullElements);
       cy.nodes().forEach(function (n) { var p = bakedPositions[n.id()]; if (p) n.position(p); });
@@ -1222,8 +1504,10 @@
       }
       setModeButtons();
       updateLayoutButton();
-      if (els.browseBack) els.browseBack.hidden = true;
-      if (els.drillHint) els.drillHint.textContent = "click a node to open · double-click to expand its videos";
+      updateDrillButton();
+      updateGraphHistoryButtons();
+      updateGraphUpButton();
+      if (els.drillHint) els.drillHint.textContent = "select a node to inspect relationships";
     }
 
     function fitAll() {
@@ -1307,7 +1591,10 @@
     function setGraphLayout(name) {
       if (!cy) return;
       graphLayout = name;
-      if (name === "grid") {
+      if (focusedNodeId) {
+        if (name === "grid") layoutNodesGrid(visibleCurrentNodes(), 60);
+        else layoutFocusedNeighborhood(focusedNodeId);
+      } else if (name === "grid") {
         if (graphMode === "browse") layoutLayeredGrid(true);
         else layoutExploreGrid(true);
       } else {
@@ -1321,36 +1608,17 @@
     function collapseToThemes() {
       if (!cy) return;
       expandedTheme = null;
+      selectedNodeId = null;
+      focusedNodeId = null;
       cy.elements().filter(function (el) { return !el.hasClass("theme-node"); }).remove();
       if (graphLayout === "grid") {
         layoutLayeredGrid(false);
       } else {
         restoreLayeredCluster(true);
       }
-      if (els.browseBack) els.browseBack.hidden = true;
-    }
-
-    // Click a theme node: load ONLY that theme's topics (light) around it; click again collapses.
-    function toggleTheme(themeNode) {
-      var t = themeNode.data("theme");
-      var collapse = (expandedTheme === t);
-      cy.elements().filter(function (el) { return !el.hasClass("theme-node"); }).remove();
-      expandedTheme = collapse ? null : t;
-      if (els.browseBack) els.browseBack.hidden = (expandedTheme === null);
-      if (collapse) {
-        if (graphLayout === "grid") layoutLayeredGrid(false);
-        else restoreLayeredCluster(true);
-        return;
-      }
-      cy.add(elementsForTheme(t));
-      var members = positionExpandedThemeMembers(themeNode);
-      applyCategoryFilter(true);
-      if (graphLayout === "grid") {
-        gridReturnPositions = snapshotNodePositions();
-        layoutLayeredGrid(false);
-      } else {
-        cy.animate({ fit: { eles: members.union(themeNode), padding: 70 }, duration: 250 });
-      }
+      updateGraphUpButton();
+      updateDrillButton();
+      updateGraphHistoryButtons();
     }
 
     // ---- Side panel: fetch + render a page -----------------------------
@@ -1365,6 +1633,7 @@
     function updateBackButton() {
       if (!els.panelBack) return;
       els.panelBack.hidden = panelHistory.length === 0;
+      updateDrillButton();
     }
 
     function goBack() {
@@ -1376,7 +1645,18 @@
       if (previous.type === "catalog") {
         openCatalog(true, previous.query || "");
       } else if (previous.type === "page") {
+        if (!focusGraphNode(previous.id)) {
+          selectedNodeId = null;
+          if (cy) {
+            cy.nodes().removeClass("selected");
+            clearHighlight();
+          }
+          updateDrillButton();
+          updateGraphHistoryButtons();
+        }
         openPage(previous.id, true);
+      } else if (previous.type === "theme") {
+        openThemePanel(previous.id, true);
       }
     }
 
@@ -1398,7 +1678,98 @@
             '<p style="color:var(--fg-dim)">Could not load <code>' +
             esc(pageId) + "</code> — " + esc(String(err)) +
             ". This page may not exist yet.</p>";
+          updateDrillButton();
         });
+    }
+
+    function openThemePanel(theme, skipHistory) {
+      pushPanelState({ type: "theme", id: theme }, skipHistory);
+      openPanel();
+      var themeNode = cy ? cy.getElementById("theme::" + theme) : null;
+      if (themeNode && themeNode.nonempty()) {
+        selectedNodeId = themeNode.id();
+        cy.nodes().removeClass("selected");
+        clearHighlight();
+        themeNode.addClass("selected");
+        highlightNeighborhood(themeNode);
+        updateGraphHistoryButtons();
+      }
+      els.panelTitle.textContent = themeTitle(theme);
+      els.panelBadges.innerHTML = "";
+
+      var groups = themeGroupsFromFull();
+      var members = (groups[theme] || []).slice().sort(function (a, b) {
+        var videoDiff = (Number(b.data.video_count) || 0) - (Number(a.data.video_count) || 0);
+        if (videoDiff !== 0) return videoDiff;
+        return String(a.data.label).localeCompare(String(b.data.label));
+      });
+      var vids = members.reduce(function (a, m) {
+        return a + (Number(m.data.video_count) || 0);
+      }, 0);
+      addBadge("theme", themeColorFor(theme));
+      addBadge(members.length + " topics");
+      addBadge(vids + " videos");
+
+      els.panelBody.innerHTML = "";
+
+      var input = document.createElement("input");
+      input.className = "catalog-search";
+      input.type = "search";
+      input.placeholder = "Filter topics…";
+      input.autocomplete = "off";
+      els.panelBody.appendChild(input);
+
+      var section = document.createElement("section");
+      section.className = "catalog-section";
+      var h = document.createElement("h3");
+      section.appendChild(h);
+      var list = document.createElement("div");
+      list.className = "catalog-list";
+      section.appendChild(list);
+      els.panelBody.appendChild(section);
+
+      function drawTopics() {
+        var q = String(input.value || "").trim().toLowerCase();
+        var shown = q ? members.filter(function (m) {
+          return String(m.data.label || "").toLowerCase().indexOf(q) !== -1 ||
+                 String(m.data.id || "").toLowerCase().indexOf(q) !== -1;
+        }) : members;
+        h.innerHTML = "<span>Topics</span><span>" + shown.length + "</span>";
+        list.innerHTML = "";
+        if (shown.length === 0) {
+          var empty = document.createElement("p");
+          empty.className = "catalog-empty";
+          empty.textContent = "No matching topics.";
+          list.appendChild(empty);
+          return;
+        }
+        shown.forEach(function (m) {
+          var a = document.createElement("a");
+          a.href = "#";
+          a.className = "catalog-item";
+          a.setAttribute("data-page", m.data.id);
+
+          var title = document.createElement("span");
+          title.className = "catalog-title";
+          title.textContent = m.data.label || m.data.id;
+          a.appendChild(title);
+
+          var meta = document.createElement("span");
+          meta.className = "catalog-meta";
+          meta.textContent = [
+            m.data.id,
+            m.data.category,
+            m.data.video_count != null ? m.data.video_count + " videos" : ""
+          ].filter(Boolean).join(" · ");
+          a.appendChild(meta);
+          list.appendChild(a);
+        });
+        wirePanelLinks();
+      }
+      input.addEventListener("input", drawTopics);
+      drawTopics();
+      els.panelBody.scrollTop = 0;
+      updateDrillButton();
     }
 
     function renderPage(page) {
@@ -1420,6 +1791,7 @@
       appendFrontmatter(fm);
       wirePanelLinks();
       els.panelBody.scrollTop = 0;
+      updateDrillButton();
     }
 
     function openCatalog(skipHistory, initialQuery) {
@@ -1429,6 +1801,7 @@
       els.panelBadges.innerHTML = "";
       addBadge(wikiIndex.page_count + " knowledge pages");
       addBadge(wikiIndex.source_count + " source pages");
+      updateDrillButton();
 
       els.panelBody.innerHTML = "";
       var input = document.createElement("input");
@@ -1591,7 +1964,13 @@
           e.preventDefault();
           var target = a.getAttribute("data-page");
           if (target) {
-            focusGraphNode(target);
+            if (!focusGraphNode(target)) {
+              selectedNodeId = null;
+              cy.nodes().removeClass("selected");
+              clearHighlight();
+              updateDrillButton();
+              updateGraphHistoryButtons();
+            }
             openPage(target);
           }
         });
@@ -1600,13 +1979,23 @@
 
     // If the clicked page is a graph node, select/centre it too.
     function focusGraphNode(pageId) {
-      if (!cy) return;
+      if (!cy) return false;
       var node = cy.getElementById(pageId);
       if (node && node.nonempty()) {
+        if (selectedNodeId && selectedNodeId !== node.id()) {
+          selectedNodeHistory.push(selectedNodeId);
+        }
+        selectedNodeId = node.id();
         cy.nodes().removeClass("selected");
+        clearHighlight();
         node.addClass("selected");
+        highlightNeighborhood(node);
         cy.animate({ center: { eles: node }, duration: 250 });
+        updateDrillButton();
+        updateGraphHistoryButtons();
+        return true;
       }
+      return false;
     }
 
     function openPanel() {
@@ -1618,8 +2007,13 @@
       els.panel.setAttribute("aria-hidden", "true");
       panelHistory = [];
       currentPanelState = null;
+      selectedNodeId = null;
       updateBackButton();
-      if (cy) cy.nodes().removeClass("selected");
+      updateGraphHistoryButtons();
+      if (cy) {
+        cy.nodes().removeClass("selected");
+        clearHighlight();
+      }
     }
 
     function esc(s) {

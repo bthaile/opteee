@@ -19,6 +19,8 @@ from app.models.chat_models import (
     ChatRequest,
     ChatResponse,
     HealthResponse,
+    PDFExtractRequest,
+    PDFExtractResponse,
     ConversationDetail,
     ConversationSummary,
     ConversationMessage,
@@ -27,6 +29,7 @@ from app.db.init_db import init_db
 from app.db.database import get_db
 from app.services.conversation_service import ConversationService
 from app.services.history_utils import sanitize_history_content
+from app.services.pdf_extractor_service import PDFExtractorService
 from app.services import wiki_service
 
 # Check if we're in test mode (no RAG initialization)
@@ -50,6 +53,7 @@ app.add_middleware(
 
 # Initialize RAG service
 rag_service = None
+pdf_extractor_service = PDFExtractorService()
 
 @app.on_event("startup")
 async def startup_event():
@@ -75,6 +79,238 @@ async def health_check():
         timestamp=datetime.now().isoformat(),
         version="1.0.0"
     )
+
+
+@app.post("/api/pdf/extract", response_model=PDFExtractResponse)
+async def extract_pdf_endpoint(request: PDFExtractRequest):
+    """Extract a local PDF using the pipeline venv and routed baseline/Marker backends."""
+    try:
+        payload = pdf_extractor_service.extract(
+            request.pdf_path,
+            backend=request.backend,
+            allow_ocr=request.allow_ocr,
+            marker_command=request.marker_command,
+        )
+        return PDFExtractResponse(ok=True, payload=payload)
+    except FileNotFoundError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    except RuntimeError as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+
+
+@app.get("/api/help")
+async def api_help():
+    """Machine-readable capability guide for external agents and integrations."""
+    return {
+        "name": "OPTEEE API",
+        "version": "1.0.0",
+        "purpose": "Options Trading Education Expert - RAG chat API with persisted conversations and a synthesized wiki/knowledge layer.",
+        "formats": {
+            "chat_formats": {
+                "html": "Browser-oriented answer plus formatted HTML sources.",
+                "json": "Agent/bot-oriented answer with structured raw_sources and wiki_references.",
+                "bot": "Alias of json for bot clients."
+            },
+            "wiki_page_formats": {
+                "html": "Rendered HTML page payload for browser use.",
+                "markdown": "Raw markdown payload for agent analysis.",
+                "json": "Combined structured page payload with frontmatter, markdown, html, and wikilinks."
+            }
+        },
+        "capabilities": {
+            "chat": [
+                "RAG question answering over options-trading transcripts and research PDFs.",
+                "Structured citations via raw_sources.",
+                "Top-level wiki_references synthesized from retrieved sources.",
+                "Conversation persistence via conversation_id.",
+                "Optional provider, model, effort, and num_results controls."
+            ],
+            "conversations": [
+                "Create a new persisted conversation.",
+                "Reuse a conversation across turns with conversation_id.",
+                "List recent conversations.",
+                "Fetch a full conversation transcript.",
+                "Delete a conversation."
+            ],
+            "wiki": [
+                "Fetch the graph-backed wiki index as structured JSON.",
+                "Fetch individual wiki pages as markdown, html, or combined json.",
+                "Traverse knowledge relationships through wikilinks and graph edges.",
+                "Drill down from chat responses into related synthesized wiki pages."
+            ],
+            "pdf_extraction": [
+                "Route local PDFs through baseline or Marker extraction.",
+                "Return provenance, quality scores, and extracted markdown in one payload.",
+                "Use the pipeline venv so serving stays decoupled from heavy PDF dependencies."
+            ]
+        },
+        "endpoints": [
+            {
+                "path": "/api/health",
+                "method": "GET",
+                "purpose": "Health check",
+                "returns": ["status", "timestamp", "version"]
+            },
+            {
+                "path": "/api/pdf/extract",
+                "method": "POST",
+                "purpose": "Extract one local PDF through the routed PDF processor service",
+                "returns": ["ok", "payload.backend_used", "payload.route_reason", "payload.quality", "payload.markdown"]
+            },
+            {
+                "path": "/api/help",
+                "method": "GET",
+                "purpose": "Machine-readable capability guide for agents",
+                "returns": ["capabilities", "endpoints", "workflows", "examples"]
+            },
+            {
+                "path": "/api/chat",
+                "method": "POST",
+                "purpose": "Main RAG chat endpoint",
+                "returns": ["answer", "sources", "raw_sources", "wiki_references", "conversation_id", "token_usage"]
+            },
+            {
+                "path": "/api/conversations",
+                "method": "POST",
+                "purpose": "Create a new persisted conversation",
+                "returns": ["id", "title", "created_at", "updated_at"]
+            },
+            {
+                "path": "/api/conversations?limit=20",
+                "method": "GET",
+                "purpose": "List recent conversations",
+                "returns": ["id", "title", "created_at", "updated_at"]
+            },
+            {
+                "path": "/api/conversations/{conversation_id}",
+                "method": "GET",
+                "purpose": "Fetch one conversation with full message history",
+                "returns": ["id", "title", "messages[]"]
+            },
+            {
+                "path": "/api/conversations/{conversation_id}",
+                "method": "DELETE",
+                "purpose": "Delete one persisted conversation",
+                "returns": ["ok"]
+            },
+            {
+                "path": "/api/wiki/index/document",
+                "method": "GET",
+                "purpose": "Structured JSON form of the generated wiki/index.md entrypoint",
+                "returns": ["path", "frontmatter", "markdown", "wikilinks"]
+            },
+            {
+                "path": "/api/wiki/index",
+                "method": "GET",
+                "purpose": "Lightweight wiki catalog for browse/search",
+                "returns": ["page_count", "source_count", "pages", "sources"]
+            },
+            {
+                "path": "/api/wiki/graph.json",
+                "method": "GET",
+                "purpose": "Knowledge graph topology",
+                "returns": ["nodes", "edges"]
+            },
+            {
+                "path": "/api/wiki/pages/{path}?format=json",
+                "method": "GET",
+                "purpose": "Fetch one wiki page with frontmatter, markdown, html, and wikilinks",
+                "returns": ["path", "frontmatter", "markdown", "html", "wikilinks"]
+            },
+            {
+                "path": "/wiki/page/{path}",
+                "method": "GET",
+                "purpose": "Standalone rendered wiki page view",
+                "returns": ["html_document"]
+            },
+            {
+                "path": "/openapi.json",
+                "method": "GET",
+                "purpose": "Formal OpenAPI schema for strict machine clients",
+                "returns": ["openapi", "paths", "components"]
+            }
+        ],
+        "request_shapes": {
+            "chat": {
+                "required": ["query"],
+                "optional": ["provider", "model", "effort", "num_results", "format", "conversation_history", "conversation_id"],
+                "example": {
+                    "query": "What is a covered strangle?",
+                    "provider": "claude",
+                    "num_results": 5,
+                    "format": "json"
+                }
+            }
+        },
+        "response_fields": {
+            "chat": {
+                "answer": "Primary plain-text answer.",
+                "sources": "Formatted sources string for the selected response format.",
+                "raw_sources": "Structured source/citation objects.",
+                "wiki_references": "Deduped synthesized wiki pages related to the retrieved sources.",
+                "conversation_id": "Conversation identifier to persist and reuse.",
+                "token_usage": "Provider/model token usage for the answer when available."
+            },
+            "wiki_reference": {
+                "path": "Wiki page path, e.g. concepts/portfolio-first.",
+                "category": "High-level page category, e.g. concept or strategy.",
+                "label": "Human-readable title.",
+                "url": "Relative browser URL for standalone wiki page view."
+            }
+        },
+        "workflows": {
+            "simple_chat": [
+                "Call POST /api/chat with format=json or format=bot.",
+                "Show answer to the user.",
+                "Optionally render raw_sources as citations."
+            ],
+            "conversation_chat": [
+                "Create a conversation with POST /api/conversations.",
+                "Store the returned id as conversation_id.",
+                "Send conversation_id on each POST /api/chat.",
+                "Persist the conversation_id returned by the chat response."
+            ],
+            "chat_to_wiki_drilldown": [
+                "Call POST /api/chat with format=json.",
+                "Inspect response wiki_references[].",
+                "Fetch one or more pages with GET /api/wiki/pages/{path}?format=json.",
+                "Use page frontmatter, markdown, html, and wikilinks for deeper follow-up."
+            ],
+            "open_ended_research": [
+                "Fetch GET /api/wiki/index/document as the knowledge-layer entrypoint.",
+                "Follow wikilinks or graph relationships from GET /api/wiki/graph.json.",
+                "Fetch detailed pages with GET /api/wiki/pages/{path}?format=json."
+            ]
+        },
+        "examples": {
+            "chat_to_wiki": {
+                "step_1": {
+                    "method": "POST",
+                    "path": "/api/chat",
+                    "body": {
+                        "query": "Teach one short lesson on portfolio-first trade evaluation.",
+                        "provider": "claude",
+                        "num_results": 5,
+                        "format": "json"
+                    }
+                },
+                "step_2": "Read answer and wiki_references from the chat response.",
+                "step_3": {
+                    "method": "GET",
+                    "path": "/api/wiki/pages/concepts/portfolio-first?format=json"
+                }
+            }
+        },
+        "notes": [
+            "Use /openapi.json for strict machine schema discovery.",
+            "Use /api/help for practical workflow guidance.",
+            "Use format=json or format=bot for external agent integrations.",
+            "When a conversation_id is supplied, server-side persisted history is the source of truth."
+        ]
+    }
+
 
 @app.post("/api/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest, db: Session = Depends(get_db)):

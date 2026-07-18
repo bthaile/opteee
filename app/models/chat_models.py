@@ -4,7 +4,7 @@ Pydantic models for API requests and responses
 
 import os
 from pydantic import BaseModel, Field
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Literal
 from datetime import datetime
 
 
@@ -105,6 +105,18 @@ class HealthResponse(BaseModel):
     status: str = Field(..., description="Service status")
     timestamp: str = Field(..., description="Health check timestamp")
     version: str = Field(..., description="API version")
+
+
+class PDFExtractRequest(BaseModel):
+    pdf_path: str = Field(..., description="Absolute or repo-relative path to a PDF on the local machine")
+    backend: Literal["auto", "baseline", "marker"] = Field(default="auto", description="Extraction backend strategy")
+    allow_ocr: bool = Field(default=True, description="Allow OCR when Marker is used")
+    marker_command: Optional[str] = Field(default=None, description="Optional explicit path to marker_single")
+
+
+class PDFExtractResponse(BaseModel):
+    ok: bool = Field(..., description="Whether extraction succeeded")
+    payload: Dict[str, Any] = Field(default_factory=dict, description="Structured extraction payload")
 
 class ErrorResponse(BaseModel):
     """Error response model"""

@@ -30,7 +30,8 @@ See [`DEPLOYMENT.md`](DEPLOYMENT.md) for the canonical operations guide.
 - Search: sentence-transformers + FAISS
 - Storage: Postgres recommended; SQLite fallback for local-only use
 - Native runtime: `.venv-native` + launchd
-- Pipeline/runtime tooling: `venv` for transcript + vector-store work
+- Pipeline runtime: `venv` for transcript + vector-store work
+- Dedicated Marker runtime: `.venv-marker` for reliable PDF OCR/extraction
 
 ## Key paths
 
@@ -47,7 +48,7 @@ See [`DEPLOYMENT.md`](DEPLOYMENT.md) for the canonical operations guide.
 
 ## Python environments
 
-OPTEEE intentionally uses two environments:
+OPTEEE intentionally uses three environments:
 
 ### 1. Native serving environment
 Used by the live macOS service.
@@ -62,6 +63,14 @@ Used for transcript ingestion, Whisper, preprocessing, and vector rebuilds.
 - Path: `venv/`
 - Purpose: local development and content pipeline work
 - Dependency file: `requirements.txt`
+
+### 3. Dedicated Marker environment
+Used only for Marker OCR/extraction so the PDF stack can stay on a proven Python 3.11 dependency set.
+
+- Path: `.venv-marker/`
+- Purpose: direct Marker extraction invoked by the routed PDF processor
+- Dependency file: `requirements-marker.txt`
+- Verification command: `./.venv-marker/bin/python scripts/check_marker_env.py --smoke-pdf tests/fixtures/marker_smoke.pdf`
 
 ## Quick start
 
@@ -186,12 +195,14 @@ There is exactly **one** supported weekly refresh path:
 - script: `./weekly-refresh.sh`
 
 The weekly refresh script:
-1. pulls latest Git changes when the repo worktree is clean,
-2. runs the transcript/content pipeline via `run_transcripts.sh`,
-3. refreshes `requirements-serve.txt` into `.venv-native`,
-4. restarts `com.opteee.native` indirectly by killing the running Python process,
-5. waits for `http://127.0.0.1:7860/api/health` to pass,
-6. stages refresh artifacts (`outlier_trading_videos*.json`, `transcripts/`, `processed_transcripts/`, `vector_store/`), commits them when changed, and pushes the refresh commit to `origin/<current-branch>`.
+1. pulls latest Git changes with `--autostash` so tracked generated artifacts do not block code updates,
+2. bootstraps/refreshes the dedicated `.venv-marker` from `requirements-marker.txt`,
+3. verifies Marker with `scripts/check_marker_env.py --smoke-pdf tests/fixtures/marker_smoke.pdf`,
+4. runs the transcript/content pipeline via `run_transcripts.sh`,
+5. refreshes `requirements-serve.txt` into `.venv-native`,
+6. restarts `com.opteee.native` indirectly by killing the running Python process,
+7. waits for `http://127.0.0.1:7860/api/health` to pass,
+8. stages refresh artifacts (`outlier_trading_videos*.json`, `transcripts/`, `processed_transcripts/`, `vector_store/`, `wiki/`), commits them when changed, and pushes the refresh commit to `origin/<current-branch>`.
 
 ## Transcript and vector-store workflow
 
@@ -303,7 +314,7 @@ opteee/
 ## Notes
 
 - The native service expects `com.opteee.native` to be installed with `KeepAlive=true`.
-- `weekly-refresh.sh` skips `git pull` when the repo worktree is dirty.
+- `weekly-refresh.sh` now uses `git pull --ff-only --autostash` and also owns the dedicated Marker stack bootstrap/verification path.
 - `DATABASE_URL` for the native app should point at `127.0.0.1`, not a container hostname.
 - Raw PDFs and downloaded audio are not meant to be committed; processed JSON artifacts are the durable searchable assets.
 

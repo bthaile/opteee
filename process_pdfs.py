@@ -20,17 +20,21 @@ import json
 import hashlib
 import argparse
 import re
+import sys
 from pathlib import Path
 from datetime import datetime
 from typing import List, Dict, Tuple, Optional
+
+sys.path.insert(0, str(Path(__file__).resolve().parent / "scripts"))
 
 # PDF extraction
 try:
     import pdfplumber
     from pypdf import PdfReader
+    from pdf_processor import extract_pdf
 except ImportError:
     print("❌ Missing dependencies. Install with:")
-    print("   pip3 install pdfplumber pypdf")
+    print("   pip3 install pdfplumber pypdf marker-pdf")
     exit(1)
 
 # Import config if available, otherwise use defaults
@@ -219,6 +223,57 @@ def extract_text_with_structure(pdf_path: str) -> List[Dict]:
     return elements
 
 
+def extract_pdf_text(
+    pdf_path: str,
+    *,
+    backend: str = "auto",
+    output_format: str = "markdown",
+    allow_ocr: bool = True,
+    marker_command: Optional[str] = None,
+) -> Dict:
+    result = extract_pdf(
+        pdf_path,
+        backend=backend,
+        output_format=output_format,
+        allow_ocr=allow_ocr,
+        title=Path(pdf_path).stem,
+        marker_command=marker_command,
+    )
+    return result.to_dict()
+
+
+def structure_text_elements(text: str) -> List[Dict]:
+    elements: List[Dict] = []
+    current_paragraph: List[str] = []
+
+    def flush_paragraph() -> None:
+        nonlocal current_paragraph
+        if not current_paragraph:
+            return
+        para_text = ' '.join(current_paragraph).strip()
+        if len(para_text.split()) >= 5:
+            is_header, header_text = is_section_header(para_text)
+            if is_header:
+                elements.append({'type': 'section', 'text': header_text, 'page': 1})
+            else:
+                elements.append({'type': 'paragraph', 'text': para_text, 'page': 1})
+        current_paragraph = []
+
+    for raw_line in text.splitlines():
+        line = raw_line.strip()
+        if not line:
+            flush_paragraph()
+            continue
+        is_header, header_text = is_section_header(line)
+        if is_header and not current_paragraph:
+            elements.append({'type': 'section', 'text': header_text, 'page': 1})
+        else:
+            current_paragraph.append(line)
+
+    flush_paragraph()
+    return elements
+
+
 def create_semantic_chunks(
     elements: List[Dict],
     target_size: int = CHUNK_SIZE,
@@ -297,7 +352,10 @@ def process_pdf(
     force: bool = False,
     title_override: str = None,
     chunk_size: int = CHUNK_SIZE,
-    overlap: int = OVERLAP
+    overlap: int = OVERLAP,
+    pdf_backend: str = "auto",
+    allow_ocr: bool = True,
+    marker_command: Optional[str] = None,
 ) -> Tuple[int, List[Dict]]:
     """
     Process a single PDF into semantic chunks.
@@ -331,9 +389,18 @@ def process_pdf(
     title = title.replace('_', ' ').replace('-', ' - ')
     title = re.sub(r'\s+', ' ', title).strip()
     
-    # Extract text with structure
-    elements = extract_text_with_structure(pdf_path)
-    
+    # Extract text using routed PDF processor
+    extraction = extract_pdf(
+        pdf_path,
+        backend=pdf_backend,
+        output_format="markdown",
+        allow_ocr=allow_ocr,
+        title=title,
+        marker_command=marker_command,
+    )
+    extracted_text = extraction.primary_text
+    elements = structure_text_elements(extracted_text)
+
     if not elements:
         print(f"  ⚠️ No text extracted from {filename}")
         return 0, []
@@ -371,6 +438,13 @@ def process_pdf(
             'chunk_index': chunk['chunk_index'],
             'word_count': chunk['word_count'],
             'author': metadata.get('author', ''),
+            'pdf_backend_requested': pdf_backend,
+            'pdf_backend_used': extraction.backend_used,
+            'pdf_route_reason': extraction.route_reason,
+            'pdf_quality_grade': extraction.quality.grade,
+            'pdf_quality_score': extraction.quality.score,
+            'pdf_quality_flags': extraction.quality.flags,
+            'pdf_runtime_sec': extraction.runtime_sec,
             
             # Compatibility with transcript format (for unified search)
             'video_id': '',
@@ -453,6 +527,16 @@ Examples:
                         help=f'Target words per chunk (default: {CHUNK_SIZE})')
     parser.add_argument('--overlap', type=int, default=OVERLAP,
                         help=f'Overlap words between chunks (default: {OVERLAP})')
+    parser.add_argument('--pdf-backend', choices=['auto', 'baseline', 'marker'], default='auto',
+                        help='PDF extraction backend routing strategy (default: auto)')
+    parser.add_argument('--allow-ocr', dest='allow_ocr', action='store_true', default=True,
+                        help='Allow OCR when Marker is used')
+    parser.add_argument('--no-ocr', dest='allow_ocr', action='store_false',
+                        help='Disable OCR when Marker is used')
+    parser.add_argument('--marker-command', type=str,
+                        help='Explicit path to marker_single executable')
+    parser.add_argument('--extract-json', type=str,
+                        help='Extract one PDF and write the raw routed extraction payload to this JSON file')
     
     args = parser.parse_args()
     
@@ -495,13 +579,32 @@ Examples:
         print(f"\n⚠️ No PDF files found in {source_dir}")
         return
     
-    print(f"\n📁 Source: {source_dir}")
+    print(f"📁 Source: {source_dir}")
     print(f"📁 Output: {args.output}")
     print(f"📄 PDFs found: {len(pdf_files)}")
     print(f"⚙️  Chunk size: {args.chunk_size} words, Overlap: {args.overlap} words")
+    print(f"🧭 PDF backend: {args.pdf_backend} (OCR={'on' if args.allow_ocr else 'off'})")
     print()
+
+    if args.extract_json:
+        if len(pdf_files) != 1:
+            print("❌ --extract-json requires exactly one PDF")
+            return
+        payload = extract_pdf_text(
+            pdf_files[0],
+            backend=args.pdf_backend,
+            output_format="markdown",
+            allow_ocr=args.allow_ocr,
+            marker_command=args.marker_command,
+        )
+        out_path = Path(args.extract_json)
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding='utf-8')
+        print(f"📝 Wrote extraction payload: {out_path}")
+        return
     
     # Process each PDF (use args values directly)
+
     total_chunks = 0
     processed_count = 0
     skipped_count = 0
@@ -517,7 +620,10 @@ Examples:
                 output_dir=args.output,
                 force=args.force,
                 chunk_size=args.chunk_size,
-                overlap=args.overlap
+                overlap=args.overlap,
+                pdf_backend=args.pdf_backend,
+                allow_ocr=args.allow_ocr,
+                marker_command=args.marker_command,
             )
             
             if chunk_count == -1:

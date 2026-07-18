@@ -1,0 +1,543 @@
+0.00s: you
+30.00s: you
+60.00s: you
+90.00s: you
+120.00s: you
+150.00s: you
+180.00s: you
+210.00s: you
+240.00s: you
+270.00s: you
+272.00s: you
+274.00s: you
+276.00s: you
+278.00s: you
+280.00s: what's up outliers happy Friday
+282.00s: welcome to outlier options trading bootcamp we are here
+286.00s: at episode
+288.00s: five
+290.00s: and today we're meant to talk about zero d to e's
+294.00s: gamma and some of these other effects
+296.00s: that become pretty pronounced and can make it a little bit difficult in order to monetize
+304.00s: and i want to talk about it.
+306.00s: Now as you all are aware this is all part of a much longer term series we have eight
+314.00s: episodes so believe it or not we're actually getting kind of close to wrapping this whole thing up which is
+322.00s: little bit weird because we've been going out for a little bit it's generally i think pretty fun but i hope that at least the
+330.00s: data itself the information itself has been useful to you guys so let's level set a little bit about what we're actually looking today
+344.00s: and the main thing to keep in mind is zero d to e's i think really trap a lot of people
+354.00s: and it's because they don't fully understand what they're looking at and they mistakenly
+365.00s: will think oh cheap options easy to just pick a direction intraday 50 50 split and then
+376.00s: make some money off of that and realistically believe it or not it's actually not a terrible idea like the instinct behind
+384.00s: that isn't awful the part that is less ideal is the reality of how options behave and the fact that they can
+393.92s: kind of they can catch it there's a lot of gimmies and gotches here and those i think are the more
+401.92s: dasterly part of derivatives in general and how this tends to go for people so that's why i want to start
+409.92s: now one quick admin note there's a new function on youtube i don't really know much about it but it's called shows
+419.92s: i guess it's just like a different type of playlist and i want to drop in a link for you guys this is a link to the to the full series so far
+431.92s: okay we have enough there it is time for us to continue on there's really three things on our agenda the first thing we're going to do
+441.92s: is go through a couple level setting slides like this then i actually have a little bit of research that i want to share with you guys using live market data as per usual
+453.92s: and then i want to work through some actual practical examples with you guys on what these can look like
+462.92s: one thing to keep in mind i trade zero dte's regularly i traded them today did not trade them yesterday traded them today
+471.92s: the reason for mentioning that is this in no way is designed to make it seem as if zero dte's are
+483.92s: a nominally gonna blow you up it's not so much the case the difference with zero dte's compared to other durations is simply velocity and how fast things can happen that's pretty much it
+501.92s: so the reason why that's just a generally important point to be aware of is that this isn't like
+508.92s: directly saying you can ever trade zero dte's there's never a place to trade them or anything like that that's really not it at all there's
+515.92s: absolutely a viable place to trade them but it's like anything else it's always it's you know in context and you have to know when to do things when it's logical when it's not so that you can avoid
+527.92s: all right so looks like we got Tom and Reese it is great to see you both and we are going to jump right in here we go
+537.92s: we have our quiz to start as you guys know we do these quizzes just wait a warm up the blood get the brain ready to go through a little bit of research so
+547.92s: the defining risk of a zero dte long option versus a 30 dte option is what is it higher theta and nothing else extreme gamma
+557.92s: is it lower liquidity than monthly or is it wider bid asks spreads only a b c or d what say you grow whatever you think it is into the chat we'll see where you guys land and if you guys are aligned
+575.92s: we'll move on if not we'll talk about it so far I see a vote for B fair enough
+589.92s: anybody else
+593.92s: and then I see two more bees also a B alright so we're be across the board that's good that's exactly correct
+601.92s: that what this is emphasizing is there is higher theta for sure but remember higher theta is actually very relative
+611.92s: okay see I see one a perfect so Alex says a that's not a bad answer the reason why is incorrect in this scenario which again I don't know the answer I actually should pull up in case this thing is going a completely different direction
+627.92s: and I'm grossly misleading you guys I don't believe that to be the case but let's not let's not risk that so I'm going to go to the answers
+638.92s: and I'll explain I'll explain why
+643.92s: yeah okay so it's B definitely B
+646.92s: so A is not a terrible answer though and the reason why A is not a terrible answer is really intuitive it's because
+655.92s: you can have something like
+661.92s: higher theta and nothing else of note so it's basic test taking question nothing else of note is incorrect here it can have higher theta and then also remember it's not always gross higher theta
+679.92s: that's actually a really really important point to be aware of there's plenty of instances with short dated options
+688.92s: that the theta as a relative ratio of the remaining time is super duper high but the gross theta might not be that high and we'll find an example for you guys here
+706.92s: so let me show you guys this and I'm just grabbing a quick work book so that I can actually show you guys the numbers here
+720.92s: so let's take a look at
+724.92s: let's go further out of the money to make the point clear
+728.92s: we will go out to a
+731.92s: board delta
+733.92s: three delta
+735.92s: so out here at like the three and four delta you can see your theta is like 0.97 1.067
+741.92s: stuff like that in there
+743.92s: so 0.97 0.067
+747.92s: this is three days to go if we go out 34 days and we go all the way out to a wing so we got to go super far out here
+756.92s: in order to get there because there's so many damn strikes
+760.92s: so what you'll notice is even
+763.92s: can't believe I have to go even further still
+770.92s: okay
+772.92s: so what you'll notice is if we go to like a three delta or so you'll see that your theta even out here
+780.92s: at the super far wings that like so like your three delta wings these are still like 70 sensors so
+789.92s: so this is still way way different as a ratio of your option relative to what's remaining
+797.92s: because here's what happens one of the things that's going on here is these are 3DTE these are not 0DTE
+805.92s: what happens with 0DTE is the options that are far enough out of the money there isn't really any theta left to come out of them
+817.92s: so what that means is the theta the gross theta can actually be a lower number
+824.92s: but relative to the premium it's actually very high
+828.92s: but most of the time again this because there's still three days left
+832.92s: if there was less time left that's where you'll see that come into play we can take a look at
+838.92s: a couple examples as we get a little bit further along here so for Alex I want to make sure that that's super
+846.92s: super clear on why it's not the higher theta and the higher theta only
+853.92s: there are other things that are happening with 0DTE's
+857.92s: that cause this issue or just a series of complications to the position that is the most important part the
+868.92s: most important takeaway or this question
+874.92s: okay next on expiration day in at the money option gamma is near zero at the lowest point in its life
+885.92s: at the highest point of its life unchanged from 30 days out what do we think
+897.92s: this one's interesting because you can kind of interpret this one a few different ways
+903.92s: I see two for C, three for C, I see everybody says C
+921.92s: that's perfect, it says if it's near the money well that's the nature of an at the money option it's qualifying
+928.92s: that it is near the money so Ryan says B or C really yeah that's kind of the trick here because the answer that this thing wants you to pick is super clear
+947.92s: the answer that this thing wants you to pick is definitely C and again we have a couple direct examples that you can look at
+956.92s: but here's the rub as you look at a zero DTE option as you get really really close to expiration it doesn't inherently rise
+969.92s: into the clothes because we'll end up happening and actually we could probably take a look let me see what the zero's here show
+977.92s: yeah this is perfect these are again it's a little bit stale because it's a bit after but take a look at this at the money option
+990.92s: the gamma of this at the money option is zero point zero eight six
+997.92s: then if we go out three days and we take a look at gamma here this is showing zero point zero five so what this is saying I understand what it's saying is
+1009.92s: effectively the one strike right near the money I totally understand and I agree with that the inverse isn't true if you go another strike out that's where things start to slow down so as you move out a few strikes
+1025.92s: then it doesn't it doesn't necessarily hold but in a pure sense at the money and considering like two strikes plus or minus meaning in the money or out of the money
+1038.92s: it's about right I think it's a fair way to put it but you can take a look at things that are like one one strike in the money beyond the at the money because normally when I look at the
+1047.92s: money it's kind of like the two to four strikes that are right about where the underlying is trading right now and what you'll notice is that the things that are out of the money actually a really high gamma
+1058.92s: relative to follow on explorations but you'll notice the stuff that's even a tiny bit in the money because now we're at expiration there's no gamma at all so it's some point that flip occurs and it's not directly at expiration
+1073.92s: so this is a this is a good question and see is definitely the correct answer here.
+1079.92s: All right what does buying zero dt options were move most of the reason to be long in option in the first place why does buying zero dt options remove most of the reason because they're cheap.
+1094.92s: The convexity you pay for needs time and movement because they to becomes positive for the buyer because gamma goes to zero at expiration.
+1106.92s: I actually don't like this question at all being honest.
+1111.92s: I think this one's kind of stupid.
+1114.92s: You kid it again basic test taking you can kind of tell what the thing wants.
+1120.92s: But let me get you guys back over here that you can see the actual.
+1126.92s: So why does buying zero dt options remove most of the reason to be long because they're cheap so there's little to gain the convexity you pay for needs time and movement because theta becomes positive for the buyer because gamma goes to zero at expiration.
+1139.92s: There's a couple here you can immediately knock off as just objectively and functionally wrong that is pretty easy.
+1151.92s: But then they're okay so I see d.
+1169.92s: So I see dbc we need somebody to break the tie we're actually all over the place.
+1199.92s: All right so it looks like consensus is b.
+1208.92s: The x is not really agree with this one what if you're scalping.
+1219.92s: That doesn't actually make a difference if you're scalping.
+1223.92s: Your intention.
+1225.92s: Doesn't really matter.
+1228.92s: This is about the like the structural force of what's happening.
+1231.92s: So what this is let's just go through it right the first thing is because there's cheap little to gain we can cross that off because especially with zero dt's especially because what we talked about with gamma.
+1242.92s: They can make an absolute ton of money.
+1245.92s: So that's also why d is not correct we just look at an example for at the money options that gamma actually sky rockets.
+1253.92s: Now if you're a bit out of the money then yeah your gamma can absolutely plummet but for your at the money options it actually sky rockets so it's not this one.
+1264.92s: We know theta does not become positive you don't all of a sudden begin collecting time for holding convexity that never will change.
+1273.92s: So then that leaves you with b through inference and again I don't know the right answer I'll go look make sure I'm not leaving you guys wrong.
+1281.92s: Yeah, it says be because it I mean what it's trying to emphasize is that.
+1287.92s: Your your time compression against the convexity you have is really narrowed.
+1297.92s: The funny thing in general about this is that that's also why you see things like gamma.
+1307.92s: That start to go up and then the idea is like collapses toward a queen flip actually don't agree with that either.
+1315.92s: If you have some sort of system that is better at predicting then that's fine but we also know that short term windows are the hardest to predict so that I would give it a little bit more.
+1331.92s: Credence than the others.
+1336.92s: So yeah I don't hate this one because it forces the reconciliation of a couple weird edge things but I don't think this necessarily a great question either.
+1348.92s: The thing to note that I especially the the coin flip portion.
+1354.92s: Short term time frames are really really hard in order to predict and the one of the reasons why they're really hard to predict is because they contain a lot of noise.
+1367.92s: They contain a lot of things that you can't necessarily anticipate.
+1374.92s: So for example there's a lot of re balancing flows that you don't know if they're actually coming in or not.
+1380.92s: Then there can be random other entries that are happening market micro structure effects can get really amplified in these short term time frames which a lot of them you can't actually predict.
+1393.92s: So I give it to it.
+1394.92s: Okay so a trader sells your DTE premium and collects small credits nine days in a row then loses on day 10 the likely outcome is not very profitable the high win rate carries it.
+1406.92s: net very profitable. Sorry.
+1408.92s: One gamma driven loss can erase many days of small credits negative skew roughly break even over the 10 days or impossible to lose if you're selling not buying.
+1420.92s: Love the the impossible's nice.
+1426.92s: That's pretty easy on you can already throw that one out if we know.
+1430.92s: Especially in markets just about anything's possible.
+1436.92s: So I see B.
+1442.92s: Any other guesses?
+1444.92s: Yeah you guys are right.
+1450.92s: Again, I don't know the right answer, but that's the right answer.
+1453.92s: And the reason why this is the right answer is because you can't say net very profitable you can't even say net profitable you can't say this definitively because you literally don't know.
+1464.92s: So the likely outcome for something like this over such a small sample is probably losing.
+1473.92s: Now if this changed and it says that you made small credits 19 days in a row and then loses on day 10.
+1483.92s: That's where it gets a little trickier and the reason why it gets tricky there is because it very likely could be profitable in that window.
+1494.92s: So there's a relationship between the amount of capital that you collect and the probability and the frequency what you'll find is for a lot of short premium strategies it can be anywhere from 4 to 1, 6 to 1.
+1508.92s: If you're selling the tails it can be like really really bad.
+1512.92s: Let's take a look at an example really quick in the tails so that we could see what that looks like.
+1518.92s: The other thing I'm going to do really quick is just go into on demand.
+1522.92s: I just want to go back in time so that we can get to like an actual zero DTE we'll go to Tuesday I'll just pick a pick a day.
+1531.92s: Pick a day any day.
+1532.92s: I just want zero DTE with some some metrics in them versus you know an expired zero DTE and then 3DTE.
+1539.92s: So this will give us something actually to go off of.
+1542.92s: What we'll take a look at is understanding the risk reward relationship.
+1546.92s: Because that's that's ultimately what this is that's ultimately what's going on here.
+1550.92s: So let's take a look.
+1551.92s: And this is earlier in the day this is at 830 again the the Greeks and the markets all fucked up you can't don't read any of these they're all wrong.
+1561.92s: But the quotes are not bad.
+1563.92s: So you can infer things like delta and whatnot again like don't use any of the Greeks in here they're literally all completely wrong.
+1571.92s: But we can just guess so let's say that we sell this 7500 put and let's say that we go out to 7400 let's see what happens here.
+1584.92s: We're taken in 60 bucks.
+1587.92s: So we take in 60 dollars.
+1590.92s: And we have a hundred point wide spread.
+1596.92s: Your risk here is what your total risk is the width of the spread less the credit you receive.
+1608.92s: The issue with something like this is one losing trade will erase a shit ton of winning trades.
+1623.92s: That's why if you do stuff like this you kind of what I have an adaptive sizing system based on different market variables that I analyzed throughout the day.
+1634.92s: So that I know if I'm going to buy wings how far out the wings go.
+1640.92s: And for example, one thing you'll know is that from the 73 90s up until the 73 40s.
+1649.92s: They're all bid offered about the same right 10 by 15.
+1654.92s: So there's not an incentive for me to go to the 73 90s versus the 73 40s.
+1660.92s: Now again, where you'll actually execute is a little bit different.
+1664.92s: You'll pay a little bit more here versus out here, but think of the incremental change in terms of the premium you collect versus the risk you're taking right so let's say that you execute here at 15 cents then here you execute at 10 cents.
+1680.92s: Just using an extreme example you get and I went out here further out here.
+1686.92s: So if you execute here at 15 cents you get five more dollars of credit, but you're taking what $40 of additional risk.
+1697.92s: So you get a nickel.
+1699.92s: It's not worth it right there's a relationship between how why do you want to go on something like that versus.
+1708.92s: You want to even buy the wings or not.
+1713.92s: So you can analyze the relationship between how frequently you need to win against what you collect.
+1721.92s: There's a relationship between how frequently you experience the full loss and your total profitability.
+1727.92s: The wider your wings are the more frequently you will not have a max loss, but you'll make more money on the trades that you put on.
+1737.92s: But you have big tail risk.
+1739.92s: So if we look at this inversely we say well shit I don't want to do something that's a hundred points wide so I'm going to do something that's five points wide.
+1747.92s: Well the issue with five points wide is you make 12 cents if that right it's a wide bit asks spread it's a nickel by 12.
+1757.92s: So the problem with that.
+1761.92s: You're collecting nothing.
+1763.92s: And your risk relative to what you're collecting is still really high.
+1768.92s: You still have five hundred dollars of risk less whatever you get filled at let's call it a dime.
+1775.92s: So you're going to make ten bucks risking four ninety.
+1780.92s: What's the problem?
+1782.92s: Well think of the economics of that trade.
+1786.92s: If you lose how many winners did you just get rid of.
+1791.92s: That's the issue that this question is highlighting it's a good one.
+1796.92s: All right.
+1798.92s: Let's continue.
+1802.92s: Zero DTE or any DTE should be viewed as speed and how volatile the Greeks are.
+1815.92s: The Greeks that you have are going to behave.
+1821.92s: That's what this is.
+1823.92s: BRB says are these AI questions yeah yeah those those questions are all made by Gemini.
+1829.92s: The read I don't know if it was Gemini maybe it was Claude.
+1833.92s: I always do those and I actually like to take the tests with you guys.
+1840.92s: But anyways.
+1844.92s: There are interesting effects and edges that you can find in different durations.
+1853.92s: But that doesn't mean that the zero DTE option itself is the edge.
+1858.92s: You still need some sort of market effect.
+1862.92s: The important part to acknowledge is when you move into zero DTE's.
+1868.92s: Everything is now amplified significantly.
+1874.92s: We know gamma dominates.
+1878.92s: But this is how much it dominates.
+1882.92s: If you are near the money you can see how relaxed your gamma is relative.
+1892.92s: The other thing to note is you can see that your gamma actually starts to meaningfully climb
+1897.92s: with like five days left.
+1899.92s: It's not even relegated to just zero days.
+1902.92s: Your gamma at five days relative to 30 is over double.
+1907.92s: So just also keep that in mind.
+1909.92s: It's not like the total gamma that you see or the risk that you have on is like super duper small.
+1917.92s: It absolutely is not.
+1919.92s: It begins pretty early.
+1922.92s: So yeah, general general point I think to be aware of.
+1927.92s: But then you can see how parabolic it continues to go as you get closer into time and zero DTE and expiration.
+1937.92s: The reason why this turns into a coin flip is think of what this does to your delta.
+1945.92s: So if we know in at the money SPX option that we were looking at has a gamma of you know point one or I mean with zero DTE it's way higher than that we can take a look actually to give you a specific number.
+1959.92s: Does this have a visual for that?
+1962.92s: Let me see.
+1964.92s: Because what I want to see is what actual gamma does.
+1969.92s: That's premium.
+1970.92s: There we go.
+1971.92s: Yeah, perfect.
+1972.92s: So you can see the the the other research slides that I have for you will have the actual answers.
+1984.92s: Don't care about that.
+1986.92s: The key here with selling really short term zero DTE stuff is that there's a lot of negative skew you have to control the negative skew.
+1994.92s: There's different ways you can control it, but that's what kills you.
+1998.92s: If you think of the zero DTE lotto buyer and the propensity for them to lose that would lead the enter pricing trader to explore the other side of that trade it's actually a good way to think of it.
+2012.92s: The problem is that it's a bit more nuanced than that and you can't just sell blindly if you just sell.
+2023.92s: And then you can't sell blindly anyways.
+2026.92s: It's a terrible business plan and the likelihood of you living a long prosperous short term or even long term blind selling premium life is not that great.
+2038.92s: I would just keep that in mind because the your negative convexity that's what kills you.
+2045.92s: And then the edge like part of it is time.
+2048.92s: I also would argue the bigger part though is liquidity because what you'll notice with zero DTE options is as you get really really really close to expiration.
+2061.92s: You'll actually find that liquidity evaporates it straight up disappears.
+2066.92s: So that's one of the reasons why whenever I trade zero DTE options it's always an SPX.
+2072.92s: Anyways, if we're being honest because it's sized better don't have to put on as many contracts.
+2077.92s: And then it's also section 1256 of the tax code 6040 long term to short term capital gains tax so it's just a little bit tax advantage.
+2087.92s: So it'd be SPX anyways, but even if those were not the case the European style option component to it is actually really really important.
+2096.92s: So these are a couple things to keep in mind when you are forering into the world of zero DTE's and super duper short term things.
+2109.92s: And now I want to show you some actual metric and how things legitimately unfold in real markets.
+2119.92s: I will blow this up a bit more for the visually impaired.
+2123.92s: You know I am here for you.
+2126.92s: And let's get after it.
+2131.92s: We already know zero DTE's are huge.
+2134.92s: They came out broadly in May of 22 and there's just a massive demand.
+2141.92s: The overwhelming majority of daily SPX option volume is in is in zero DTE's and it's for a lot of different reasons there's a ton a ton of different reasons.
+2156.92s: BRB says small edge wide distribution.
+2159.92s: Yeah, it's exactly right and I would.
+2164.92s: I'm sure he clarifies it in the post. I'm not sure the post that you're referring to.
+2169.92s: But the thing to keep in mind is it's not the centralization of the distribution.
+2174.92s: When you're selling things like selling premium or things that have small edges, you actually will have the density of the distribution pretty collected around wherever you know the edge lies or that strategy.
+2191.92s: So I'll show you what I mean.
+2195.92s: Let me grab my handy dandy drawing pad.
+2200.92s: So if we think of a sell side strategy and what BRB is talking about with respect to UN's post,
+2206.92s: BRB, if you have the link to that post, I'd actually love to pull it up on the stream.
+2211.92s: But let's say that this is your zero line.
+2215.92s: And let's say that your zero DTE strategy puts you here.
+2220.92s: So let's say that you're at like plus. 0 or plus point plus zero point eight zero somewhere in there.
+2230.92s: BRB, you can't post it in the chat.
+2234.92s: You have just email it to me or drop it in the discord and then I can post it in the chat.
+2239.92s: YouTube doesn't let people post links.
+2241.92s: Maybe you could not actually have and tried this.
+2243.92s: Can you do like this center section?
+2246.92s: Just get rid of the first part like the WWE and all that shit.
+2249.92s: Could you just put the back half of it dot com?
+2252.92s: Will it let you do that?
+2254.92s: I'm actually super curious how we can get around this.
+2260.92s: Super annoying.
+2262.92s: YouTube is kind of kind of toxic with that shit.
+2265.92s: I guess people could also be super annoying in the chat and just try to like direct people to all sorts of bullshit.
+2272.92s: Anyways, while you're trying that.
+2275.92s: This is if we drew then a plot of the short premium strategy.
+2283.92s: The way it would look is the overwhelming bulk of returns would fall within this range.
+2292.92s: And oh cool. There we go.
+2294.92s: Thank you.
+2295.92s: So you can.
+2300.92s: It looks like you can drop in everything.
+2305.92s: Well, it's I think it's missing the let me see.
+2312.92s: Yeah, you could easily just drop that in Google.
+2314.92s: But anyways, here let me give you guys the link.
+2318.92s: It lets me share links.
+2320.92s: Which by the way, you definitely should.
+2324.92s: Subscribe to this in general.
+2327.92s: It's just good like reading you and work in general is good.
+2332.92s: I don't know if this one's actually you and are not.
+2337.92s: I haven't read it and I don't see an author.
+2340.92s: But.
+2343.92s: I'll probably be able to tell from the writing in a couple seconds.
+2347.92s: But anyways, let's see.
+2350.92s: Let's see what we got on zero d t easier.
+2354.92s: So.
+2355.92s: Hey, yo, what's up?
+2357.92s: What is that?
+2358.92s: Easy.
+2359.92s: That's what I see.
+2360.92s: Easy.
+2361.92s: So the rides is your D t.
+2362.92s: Or yes, your D t options.
+2364.92s: Amusing mixture of excitement, moral panic and bad intuition.
+2367.92s: This does seem like you and writing right out of the gate.
+2370.92s: Some people see zero d t is the new day trading casino.
+2373.92s: Others is the purest possible form of volatility trading.
+2376.92s: They contain some truth.
+2378.92s: Okay.
+2381.92s: Okay.
+2383.92s: I love some.
+2386.92s: I would love some visuals.
+2389.92s: Yeah, it's it's interesting.
+2392.92s: The RB because some of the writing style looks very much like you and so specifically things like
+2398.92s: amusing mixture.
+2399.92s: That's definitely you and ask from his writing, but this.
+2405.92s: This I'm not sure like this doesn't seem like you and it's kind of interesting.
+2409.92s: And then it's also weird to see that in parentheses.
+2415.92s: It's actually really curious.
+2416.92s: I have to ask him.
+2417.92s: He's coming on the podcast next week.
+2419.92s: I'll earmark this just as a random question to ask him.
+2427.92s: I'm just trying to see if there's anything.
+2429.92s: This is just generally about the paper though.
+2432.92s: Okay.
+2434.92s: So it looks like it says most of it, you know, based on real life.
+2438.92s: Scunus, which is exactly correct.
+2442.92s: And then now you guys are pretty well armed to understand this point, right?
+2448.92s: Based on what you just saw based on even the cursory level data that we've looked at so far.
+2454.92s: You know that game gamma becomes a dominating force.
+2458.92s: And you know that that has an outsized impact for a zero DT option and whatever its life is going to end up that.
+2466.92s: But real, but fragile there is compensation for selling same day variants.
+2473.92s: There's also enormous tales, unstable means,
+2476.92s: and strong dependence on the real life shape of the index path.
+2479.92s: Yeah, it's exactly correct.
+2480.92s: So here's what that means.
+2482.92s: The overall distribution, the centralization of the distribution actually is not wide.
+2489.92s: It's very narrow.
+2491.92s: So if we were to plot out like the number of samples that fall within this range, like this density of a range, it would be the overwhelming majority.
+2502.92s: And when I say the overwhelming majority, again, depending on the specific details of the trade, it could be 80% plus.
+2509.92s: So the actual distribution, most of the samples are going to fall in here.
+2516.92s: But what they're referencing is that there are samples that are all the way out here.
+2523.92s: So what that means is if you actually drew the distribution representative to what it is, it would look like this.
+2530.92s: If this is your zero curve, it would look something like this, not like that.
+2542.92s: Like this.
+2544.92s: Because what happens is your max profit is capped pretty quick.
+2550.92s: You can't make that much.
+2551.92s: But the tail risk that you take is massive.
+2554.92s: You can lose a shit ton relative to what you make, whether it's naked options, or whether it's a spread scenario applies to both.
+2565.92s: So really interesting call out and thank you, BRB for sharing that paper.
+2571.92s: Definitely something worth looking at a little more detail.
+2573.92s: Super cool.
+2577.92s: Okay, we continue.
+2579.92s: Where do you know how a lot of this stuff behaves, but let's actually take a look at what happens.
+2586.92s: What this is showing you is the 16 July, the at the money, 7550 call.
+2594.92s: What we did was buy it at the open.
+2597.92s: We bought it for 1670.
+2600.92s: This is crossing the bit as spread.
+2602.92s: This is just getting it at the offer.
+2604.92s: We can see that the value skyrocket after a plummet.
+2608.92s: So we go from 1670, we lose $6.70, then we gain up to like $23.
+2618.92s: And then you can see that it just slowly dies throughout the rest of the day.
+2624.92s: Here's the interesting part.
+2626.92s: Take a look at how active your delta was.
+2630.92s: Your delta started slightly in the money.
+2634.92s: Then it skyrocket.
+2636.92s: Well, it plummets to like a 30 delta.
+2638.92s: So your delta gets essentially cut in half.
+2641.92s: Then it doubles and change to 75.
+2644.92s: And then it slowly decays out as we move into the clothes.
+2649.92s: The other thing to note here is that this is super duper path dependent.
+2653.92s: That's the important factor to be aware of.
+2656.92s: So when we look at the different Greeks in how they behave, you can see what we were talking about before.
+2661.92s: So this is looking at specifically the 7550 call.
+2664.92s: And this is the gamma factor that we were talking about.
+2667.92s: Notice how gamma increases towards the end of the day and then it falls off a cliff.
+2672.92s: Because one something is far enough out of the money, it loses all of its gamma.
+2677.92s: And then also notice how something will have really big theta.
+2681.92s: And then notice how its theta also falls off a cliff.
+2685.92s: And then it's just really, really small into the clothes.
+2688.92s: Because it's already lost pretty much all of its extrinsic value.
+2691.92s: That's what this is showing you.
+2694.92s: This is showing you the delta as an S curve.
+2698.92s: And then the gamma peaks as you move throughout the day.
+2702.92s: This is showing you moneyness as a percent of strike against the spot.
+2709.92s: The reason why I use percent here versus raw counts is it just makes it easier to standardize across different research deliverables.
+2719.92s: That's why most of the time when you see moneyness from me, it's in this format.
+2725.92s: But you can clearly see how fast gamma ram.
+2728.92s: So at 10 a.m. you're at the money, you're like, you know, 11 12 gamma.
+2733.92s: Then by 1300, you're at like 16 gamma.
+2740.92s: And then at 15 30 a half hour before the clothes, you're at like 26 gamma at a decimal point there by the way.
+2747.92s: It's not 0.26. It's 0.026.
+2750.92s: So just don't feel like saying that for each one.
+2753.92s: Everything becomes hyperbolic. That's the important piece here.
+2759.92s: So if you think about what that does to your position is whatever you have on amplifies.
+2772.92s: And it actually requires way more active management in terms of how you adjust your position.
+2781.92s: Because if you are delta hedging something, it's going to be off sides super fast because of gamma.
+2791.92s: You have to try and gamma hedge then delta scalp.
+2794.92s: If you can and if you're short, you can't do that.
+2798.92s: You're just going to try and isolate, vol by delta hedging.
+2802.92s: The problem with that process is things move so damn fast.
+2807.92s: That's the really the part that you're fighting against.
+2812.92s: So let's talk about some mistakes, right?
+2815.92s: That's the broad theme for this overall season of outlier options trading bootcamp is mistakes.
+2824.92s: One of them is buying cheap options.
+2827.92s: Buying cheap options can seem wise.
+2831.92s: It can seem smart.
+2833.92s: You're generally doing something that's low risk.
+2836.92s: You're only putting up 30 bucks.
+2838.92s: It's super cheap.
+2839.92s: The problem is your loto just decays into nothing the overwhelming majority of the time.
+2850.92s: So the zero DTE calls.
+2853.92s: If you buy them at 10 a.m.
+2855.92s: So given the first half hour chance for the underlying to settle its ball,
+2862.92s: you can see the various out of the money trades.
+2866.92s: So we have 0.2% so super close 0.4.8 1.3.
+2871.92s: And you can see the shape that all of these take.
+2874.92s: That at the money absolutely eroded into nothing.
+2879.92s: The stuff that's out of the money,
+2881.92s: generally speaking, stays cheap all day because it's already low.
+2887.92s: It can't decay that much more as you can see here,
+2890.92s: it went from a dime to nothing.
+2892.92s: So you need to hold a dime in extrinsic value throughout the day.
+2895.92s: Those are also the options that are going to have way less liquidity to keep in mind.
+2900.92s: 94% of those low delta options expire worthless.
+2906.92s: This is looking just at this year so far.
+2909.92s: So January to July.
+2911.92s: I have a piece of research that's way more in depth on zero DTE.
+2915.92s: That we're actually going to do on one of our market internal stream.
+2919.92s: One of the Tuesday streams because it's a big part of my operation is zero DTE.
+2923.92s: And it's actually a non trivial part of my performance so far this year in how stable it's been.
+2929.92s: The crox is to acknowledge the frequency that you have out of the money of various levels.
+2939.92s: So 1 to 2% 98% of those.
+2944.92s: 98% of those expire worthless.
+2946.92s: Anything that's 2% plus.
+2948.92s: So for all out of the money options, the majority of them turn into nothing.
+2954.92s: So the problem is rather than the short option side of the equation where you have many small winning trades and typically big losses.
+2967.92s: It's the inverse here.
+2969.92s: So you have many small losses and then your hope is that your one winning trade can offset those.
+2976.92s: And again, if you have a system it can.
+2979.92s: It's just not something that you can blindly just say along and a buy these cheap option is because they're cheap.
+2988.92s: When you buy cheap options and you size it based on the premium and then just leave it alone.
+2996.92s: The issue with that is you get left behind with what ends up realized.
+3003.92s: So as soon as things move a little bit out of your favor, something like your gamma is going to plummet.
+3009.92s: So then if it does move subsequently in your favor, you're not getting paid as much as you otherwise think you should because things have already decayed and moved against you previously.
+3021.92s: That's the gotcha with stuff like this and that's why looking at it is just like a cheap solution can very easily lose you a ton of money.
+3031.92s: Now I will say especially with short dated options that you have to be very tail aware.
+3041.92s: And part of that tail awareness is just figuring out how you can manage and cut the tails logically without having too many occurrences generally cut off.
+3054.92s: You have to avoid that.
+3056.92s: I would also say for the majority of accounts, this is a place where defined risk makes a lot of sense.
+3064.92s: It needs to be thoughtful.
+3068.92s: For example, if we go back into the platform and we look at let's say we look at something a little bit later in the day.
+3080.92s: We'll look at something that's at like.
+3085.92s: You hours in.
+3092.92s: So you'll get a sense of width and what kind of width we're talking about.
+3101.92s: So let's say that your options here, this is like a 30 delta or so, the 35s.
+3108.92s: And let's say that you try to go 5 wide.
+3112.92s: The problem with 5 wide is the net Greeks that you're actually collecting here are about nothing.
+3121.92s: So you might make money based on the directional movement of the underlying, but you're not actually taking advantage of things like variance risk premium and whatnot.
+3131.92s: It's because your net Greeks are so small.
+3134.92s: You're just playing part of the distribution curve.
+3136.92s: That's all.
+3137.92s: Then if you start going wider as we discussed earlier, there's a point of diminishing returns where you're collecting so little for the additional width that you're adding.
+3150.92s: So again, for the this block that's 15 by 20, let's just say that you get the full 20.
+3158.92s: Well, if you get the full 20 here and then you get 15.
+3162.92s: Here, saying that if you sold it, it would have to be at the 15.
+3167.92s: That 5 cent difference is covered by 15 dollars of total risk.
+3174.92s: That's not insignificant.
+3176.92s: And you have to strike a balance between how wide you go and.
+3184.92s: What tail risk you're comfortable with.
+3187.92s: And that all will be based on your system.
+3190.92s: However, you build in actual approach around this because remember the most important takeaway is that you can't just do this blindly.
+3199.92s: You can't just every day say I'm going to sell put spreads in zero DTEs.
+3204.92s: Well, you could do it. It's just not a good way to do business. You're going to be met with a pretty arduous business cycle and depending on the other economics of your business that just happens to be really really luck based not something that you can feel comfortable with.
+3220.92s: So.
+3222.92s: To summarize your DTEs, they're really fast. They amplify, amplify your Greeks tremendously.
+3229.92s: And they're unforgiving, especially on the long side in the sake of small moves just eviscerate your delta.
+3239.92s: And on the put side in terms of your tail risk.
+3242.92s: So regardless of which side you choose to explore or both.
+3247.92s: They each have a unique problem that you have to solve for in order for any sort of like zero DTE production to work for you.
+3255.92s: So what questions do you guys have about this now is the perfect time for any residual elements of what we covered that you'd like to double click into that you have questions on anything like that.
+3272.92s: The other thing I was going to show you while we do that is this.
+3283.92s: So if we take a look.
+3293.92s: We look at how things can behave.
+3298.92s: And let's say that we're looking at ticker a doesn't matter what it is.
+3304.92s: And we move to one DTE.
+3311.92s: At one DTE, well, we'll start a little bit more. We'll go to like 5 DTE.
+3318.92s: At 5 DTE, you can see how your residual position will behave over the life cycle of the trade.
+3329.92s: Right. So this is showing you how things will will progress as time passes.
+3336.92s: So let's say that you go from this is starting at 5 DTE and this is simulating one day as past.
+3344.92s: This is what happens. So your theta it essentially sky rockets relative to what you have. It can over double based on the moneyness of your option of what not.
+3357.92s: This is just a general scenario on a big ticker.
+3363.92s: But then take a look at what happens at 3 DTE.
+3366.92s: Notice how your theta again sky rockets even more.
+3372.92s: And this accelerates massively into the end of the curve.
+3377.92s: This is the primary risk that you run and take a look at what's happening to your gamma.
+3384.92s: So this gives and this takes.
+3388.92s: If you have an adverse move against you. So let's say spot drops a bit.
+3397.92s: If spot drops a bit, you have gamma that actively is ripping apart your delta as your experiencing things like charm, which is delta decay and accelerated theta.
+3411.92s: So literally everything you're doing is massively amplify. That's the entire point.
+3418.92s: So easy.
+3423.92s: EZE says zero DTE is it really more profitable than 3045 gamma risk is difficult to manage emotionally.
+3430.92s: Well, a couple things there. The first thing is it's it's not more profitable than 30 to 45 DTE.
+3436.92s: There's nothing that's inherently profitable about zero DTE's versus any other term.
+3442.92s: There's nothing inherent to it.
+3444.92s: But there are elements that increase its velocity.
+3449.92s: So relative to the risk that you're taking in the time that you're in the trade, you can definitely make a lot of money relative.
+3456.92s: But the issue is you know is how fast things move and how unforgiving it is.
+3461.92s: The second part of your question about emotionally.
+3465.92s: That exists for you because you don't have a plan that you trust yet.
+3469.92s: The coolest part about building like a robust trading plan is once it's something that you're really confident in, your emotional reaction to things just dissipates.
+3480.92s: Just goes away.
+3482.92s: And it's because you're really not that concerned with it anymore because you have a known good.
+3487.92s: So that's more just a function of gaining experience over time.
+3492.92s: And that will abate pretty significantly.
+3495.92s: So yeah, completely fair.
+3498.92s: Tweet.
+3500.92s: All right, gang, two last things for you guys.
+3503.92s: Second to last is the monthly 30 minute one on one drawings are open.
+3510.92s: So if you would like to enter into that, I highly encourage you to do so.
+3517.92s: As always, I like to mention that it's zero risk to you and the winner will be announced tomorrow.
+3526.92s: So if you'd like to enter in a raffle for 30 minute call with me, that's that.
+3532.92s: And then tomorrow we're doing a live stream on the O talk.
+3535.92s: The research this actually, this is part of the O talk.
+3538.92s: This is Hugen.
+3539.92s: This is one of the interfaces that I use, but the O talk is more so about being able to back test and research things.
+3545.92s: It's available to everybody.
+3546.92s: So it will be tomorrow around 5.5 30 kind of figure out what time is we get closer.
+3551.92s: So you need anything?
+3553.92s: Let me know.
+3554.92s: Be in our life.
+3555.92s: See you guys later.

@@ -6,12 +6,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 OPTEEE (Options Trading Education Expert) is a RAG chat app over a curated knowledge base of options-trading YouTube transcripts (from the Outlier Trading channel) and research PDFs. A FastAPI backend serves a browser chat UI, does semantic retrieval over a local FAISS index, and answers via a pluggable LLM (Claude / OpenAI / Ollama), returning answers with timestamped video and page-aware document citations. It runs natively on macOS under launchd on port `7860`.
 
-## Two Python environments (important)
+## Three Python environments (important)
 
-This repo deliberately keeps two venvs with different dependency sets. Activate the right one or imports/commands will fail:
+This repo deliberately keeps three venvs with different dependency sets. Activate the right one or imports/commands will fail:
 
 - **`.venv-native/`** — serving the live app. Deps: `requirements-serve.txt` (no Whisper/yt-dlp/PDF tooling). Used by launchd `com.opteee.native` via `start_native.sh`.
 - **`venv/`** — the content pipeline (scrape, Whisper, preprocess, vector rebuild). Deps: `requirements.txt`. Bootstrapped/managed by `run_transcripts.sh`.
+- **`.venv-marker/`** — dedicated Marker OCR/extraction runtime. Deps: `requirements-marker.txt`, pinned to the known-good Python 3.11 Marker stack. Bootstrapped/managed by `weekly-refresh.sh` and verified by `scripts/check_marker_env.py`.
 
 ## Common commands
 
@@ -35,6 +36,9 @@ python3 rebuild_vector_store.py                                    # rebuild ser
 
 # After a pipeline/vector change, refresh the running native app
 ./weekly-refresh.sh
+
+# Verify the dedicated Marker runtime
+./.venv-marker/bin/python scripts/check_marker_env.py --smoke-pdf tests/fixtures/marker_smoke.pdf
 ```
 
 See `DEPLOYMENT.md` (canonical) for launchd operations; do not add alternate deploy paths.
@@ -66,5 +70,5 @@ A compounding, LLM-maintained knowledge layer over the corpus, alongside the RAG
 - **Provider/model selection** is env-driven and resolved in `resolve_llm_selection`. Effort is restricted to `low`/`medium`, mapped per-provider via `{OPENAI,CLAUDE,OLLAMA}_MODEL_{LOW,MEDIUM}` env vars. A provider is only "available" if its key is set (`OPENAI_API_KEY`, `CLAUDE_API_KEY`/`ANTHROPIC_API_KEY`) or `OLLAMA_BASE_URL` is set. Some models omit the `temperature` param (`MODELS_NO_TEMPERATURE`); extend that list rather than passing temperature blindly. See `.env.example` for the full knob set.
 - **Two chunking configs exist and are not shared:** `config.py` (serving/retrieval: `CHUNK_SIZE=500`) vs `pipeline_config.py` (ingestion: `CHUNK_SIZE=250`). Edit the one for the layer you mean.
 - **`config.py` path switching**: paths resolve to `/app/...` when running from the packaged/mounted `/app` layout, else local repo paths. Keep both branches working.
-- **Weekly refresh** (`weekly-refresh.sh`, launchd `com.opteee.weekly-refresh`, Sun 23:00) runs the pipeline, refreshes `.venv-native`, restarts the app by killing its Python process (relies on `KeepAlive=true`), and commits/pushes refreshed artifacts. It **skips `git pull` when the worktree is dirty**. `DATABASE_URL` for the native app must point at `127.0.0.1`.
+- **Weekly refresh** (`weekly-refresh.sh`, launchd `com.opteee.weekly-refresh`, Sun 23:00) runs the pipeline, refreshes `.venv-native`, bootstraps/refreshes the dedicated `.venv-marker` from `requirements-marker.txt`, verifies Marker with `scripts/check_marker_env.py --smoke-pdf tests/fixtures/marker_smoke.pdf`, restarts the app by killing its Python process (relies on `KeepAlive=true`), and commits/pushes refreshed artifacts. It pulls with `--autostash` so tracked generated artifacts do not block code updates. `DATABASE_URL` for the native app must point at `127.0.0.1`.
 - Committed durable assets are the processed JSON + vector store; raw PDFs and downloaded audio are not meant to be committed.

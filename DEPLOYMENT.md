@@ -35,14 +35,15 @@ OPTEEE runs natively on macOS through **system launchd**.
 ## What the weekly refresh does
 
 `weekly-refresh.sh` is the only supported weekly refresh path. It:
-1. checks out the repo,
-2. pulls latest Git changes when the worktree is clean,
-3. runs the transcript/content pipeline via `run_transcripts.sh`,
-4. refreshes `.venv-native` dependencies from `requirements-serve.txt`,
-5. restarts the app by killing the live Python process,
-6. relies on `com.opteee.native` `KeepAlive=true` to respawn,
-7. waits for `http://127.0.0.1:7860/api/health` to pass,
-8. stages refresh artifacts (`outlier_trading_videos*.json`, `transcripts/`, `processed_transcripts/`, `vector_store/`), commits them when changed, and pushes the refresh commit to `origin/<current-branch>`.
+1. pulls latest Git changes with `git pull --ff-only --autostash`,
+2. bootstraps or refreshes the dedicated `.venv-marker` from `requirements-marker.txt`,
+3. verifies Marker with `scripts/check_marker_env.py --smoke-pdf tests/fixtures/marker_smoke.pdf`,
+4. runs the transcript/content pipeline via `run_transcripts.sh`,
+5. refreshes `.venv-native` dependencies from `requirements-serve.txt`,
+6. restarts the app by killing the live Python process,
+7. relies on `com.opteee.native` `KeepAlive=true` to respawn,
+8. waits for `http://127.0.0.1:7860/api/health` to pass,
+9. stages refresh artifacts (`outlier_trading_videos*.json`, `transcripts/`, `processed_transcripts/`, `vector_store/`, `wiki/`), commits them when changed, and pushes the refresh commit to `origin/<current-branch>`.
 
 ## Schedule
 
@@ -60,6 +61,18 @@ In plist terms:
 ### Verify app health
 ```bash
 curl -fsS http://127.0.0.1:7860/api/health
+```
+
+### Verify Marker runtime
+```bash
+cd /Users/bradfordhaile/clawd/opteee
+./.venv-marker/bin/python scripts/check_marker_env.py --smoke-pdf tests/fixtures/marker_smoke.pdf
+```
+
+### Dry-run the weekly refresh without restart/commit/push
+```bash
+cd /Users/bradfordhaile/clawd/opteee
+./weekly-refresh.sh --dry-run
 ```
 
 ### Run the weekly refresh immediately
@@ -92,6 +105,6 @@ sudo launchctl enable system/com.opteee.weekly-refresh
 ## Important constraints
 
 - The native app uses `DATABASE_URL` pointed at `127.0.0.1`.
-- `weekly-refresh.sh` intentionally skips `git pull` if the repo worktree is dirty.
+- `weekly-refresh.sh` owns the dedicated Marker stack as well as the native app refresh; if Marker starts failing, inspect `requirements-marker.txt`, `scripts/check_marker_env.py`, and `tests/fixtures/marker_smoke.pdf` together.
 - The content pipeline (`run_pipeline.py`, `run_transcripts.sh`, `rebuild_vector_store.py`) is separate from launchd ownership.
 - If launchd ownership changes in the future, update **this file first**, then `README.md`, then the tracked plist/script comments.
