@@ -1,0 +1,650 @@
+[
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "What's up everyone? Welcome to the options trench. Chris and I are embarking on a key cultural endeavor. We were first talking about Delta hedging. Then we were talking about regrets, which quickly moved to having no regrets. And if you don't know what I'm talking about, that's okay. We are going to get you plus stuff quick, fast in a hurry. So I'm going to share my screen, share a cultural, that you have to know this. This is, I don't even, I forgot the name of the movie already. I know this part of the movie. What, you say it's like, anyways, meet, yeah, that one. So anyways, enjoy this 10 second clip. And then we're going to talk to you all about regrets and how they are pretty common around the game of Delta hedging. Hey, those are cool tats, man. Oh, for real, thank you, bro. You see the cover? What is this one? Oh, this, this is my credo. Don't regret. You have no regrets? Dad? No. I think not even a single letter. No way. Not me. I love them. I think he's great. I think he's a real winner case. If I were you, I wouldn't use protection. So there you go. That is your intro to hedging Delta hedging and regrets. So for those that don't know right before we went live, Chris was starting to go through and changing the title on all of these. And as you guys know, Chris",
+    "start_timestamp_seconds": 0.0,
+    "end_timestamp_seconds": 94.44,
+    "start_timestamp": "00:00",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=0",
+    "chunk_index": 0,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "you, I wouldn't use protection. So there you go. That is your intro to hedging Delta hedging and regrets. So for those that don't know right before we went live, Chris was starting to go through and changing the title on all of these. And as you guys know, Chris is like just too nice of a human being. So he wasn't like Eric, you absolute buffoon. You misspelled the word regret terribly. It was just like, oh, we just got, you know, update these really quick. He's too kind to me. But in this case, the misspellings actually quite purposeful. So let's talk a little bit about hedging and how it can impact your positions. We have a couple of scenarios that we built using live options data. We'll go through that in a little bit. But before we start going through slides and examples, at figure we could start, just by having a conversation, about first, I think it might be good to just literally align on hedging. And what that actually means and looks like. So Chris, you've seen hedging from different capacities, like from your institutional career to your yellow retail trading career. I call it, that's an upgrade, I think. I think now you're on your, you're on your upshot. We're going to see you on Wall Street. That's pretty soon, I'm sure. But let's talk about hedging. So first, at a high level, what is it? Everybody will know in general, but we then",
+    "start_timestamp_seconds": 73.2,
+    "end_timestamp_seconds": 173.56,
+    "start_timestamp": "01:13",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=73",
+    "chunk_index": 1,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "that's an upgrade, I think. I think now you're on your, you're on your upshot. We're going to see you on Wall Street. That's pretty soon, I'm sure. But let's talk about hedging. So first, at a high level, what is it? Everybody will know in general, but we then click in a little bit further and talk about some of the nuances. Yeah, to hedging is reducing risk. That's how I see it. So you could hedging could be, I mean, it could literally be just trimming a position. Well, generally speaking, when people think about hedging with their really thinking about it, they're using one instrument to hedge another one as opposed to just closing down some of your risk in one position. So like if I'm long, Microsoft, and I wanted to hedge that, there are various forms of hedging that you could do that are not just sell some of the Microsoft that I'm long. I could buy puts on Microsoft. I could buy a correlated hedge. So I could sell some of the non-FSMP futures against it. I could sell, I could buy puts on something that's correlated to Microsoft. These would be like indirect hedges. I could do various kind of options structures on it. I could buy a risk reversal where I buy the put and sell the call. I could just outright sell calls. And that would hedge some of the exposure. Anything that basically reduces my exposure and therefore reduces my",
+    "start_timestamp_seconds": 155.96,
+    "end_timestamp_seconds": 253.32,
+    "start_timestamp": "02:35",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=155",
+    "chunk_index": 2,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "hedges. I could do various kind of options structures on it. I could buy a risk reversal where I buy the put and sell the call. I could just outright sell calls. And that would hedge some of the exposure. Anything that basically reduces my exposure and therefore reduces my risk feels like a good definition of a hedge. I love that. And I would say from my lay perspective from more the retail trader lens, you actually used to turn my use all the time. I don't know if it's a real term. I've always just used it, but direct and indirect hedges. Is that like an actual defined thing? I don't know if that's a proper language. I guess that's how I think of it too. I would say the way the professional way to think about it is like the how much the basis risk between the hedge and the thing that you're actually trading. So if you trade, if you are long the SMP basket and you sell SMP futures against it, that's a hedge and your basis risk is really small on that kind of hedge. If you buy a Microsoft and then short Apple against it, well, you could call that a hedge, but it's got a lot of basis risk in it. Yeah, and that's actually really clean way to describe it. Because it's a lot of times I think for especially the retail trader crowd, they come into this concept of hedging,",
+    "start_timestamp_seconds": 230.32,
+    "end_timestamp_seconds": 328.4,
+    "start_timestamp": "03:50",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=230",
+    "chunk_index": 3,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "against it, well, you could call that a hedge, but it's got a lot of basis risk in it. Yeah, and that's actually really clean way to describe it. Because it's a lot of times I think for especially the retail trader crowd, they come into this concept of hedging, it sounds really, really cool, who doesn't want to reduce their risk, sounds awesome. So let's then move into some of the structural forms and implications of hedging. Again, we have a couple of slides we'll go through in a few minutes giving some very specific examples. But first at a high level, if you were to think about those two different worlds, what hedging might look like in an institutional capacity, maybe something that you will have done at your time and say, or something like that, versus what it might look like on the retail side of the world, what is the range of hedging? Yeah, I mean, on the generally speaking, it's like the thing that you wanna, there's two things you have to kind of think about, it's like one is like the hedge is, because you're reducing your risk, you are, the question is like, why, you know, maybe like why are you choosing the hedge, versus just reducing your risk? Like why don't I just cut my position? Why am I choosing to hedge my position? And there could be a number of factors, a number of things kind of going on there, was",
+    "start_timestamp_seconds": 311.92,
+    "end_timestamp_seconds": 405.72,
+    "start_timestamp": "05:11",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=311",
+    "chunk_index": 4,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "why, you know, maybe like why are you choosing the hedge, versus just reducing your risk? Like why don't I just cut my position? Why am I choosing to hedge my position? And there could be a number of factors, a number of things kind of going on there, was take, we'll take an example of an oil company, right? The oil company is like, and now I was traded futures and futures auction. So the commodity stuff is pretty familiar to me. The, an oil company might have, they've got oil in the ground. And how do they hedge it? They sell it forward, because oil prices are pretty volatile. If that's their primary business, is drilling for oil, they want to limit, they might wanna limit their exposure to the how volatile oil prices actually are. And they would rather say, you know, I get paid a margin for pulling the stuff out of the ground and refining it, or just pulling it out of the ground and selling it. And I wanna isolate my business to just that aspect of it, right? I don't wanna be exposed to the actual commodity price. I just wanna be exposed to how good am I at pulling this out of the ground and basically being part of the supply chain. And so, that right there is a clue about what the hedging is about. The hedging is about isolating risk. It's about saying, the oil company has a view about",
+    "start_timestamp_seconds": 388.36,
+    "end_timestamp_seconds": 485.4,
+    "start_timestamp": "06:28",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=388",
+    "chunk_index": 5,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "to how good am I at pulling this out of the ground and basically being part of the supply chain. And so, that right there is a clue about what the hedging is about. The hedging is about isolating risk. It's about saying, the oil company has a view about how good it is at pulling oil out of the ground. It doesn't have a view necessarily about the price of oil in 10 years. So, if you had a view about the price of oil in 10 years and you can just speculate on oil features, you don't need to go set up an oil company. So, so what happens there is, they are trying to isolate what they're good at. And this is, this is idea goes to all traders and investors. What is it that you're trying to do? When you buy, let's say you buy ExxonMobile. If you buy ExxonMobile, are you betting on the price of oil? Are you betting on the equity market in general? Are you betting on how good ExxonMobile's management is at this business of pulling oil out of the ground and selling it? There's many different things you could be betting on. And if you want to isolate some of those things, you can hedge off the parts that you don't care about. So, if you buy ExxonMobile and you short the, say, S&P, then what you're doing is you're saying that I want to be long this company's ability",
+    "start_timestamp_seconds": 463.68,
+    "end_timestamp_seconds": 549.32,
+    "start_timestamp": "07:43",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=463",
+    "chunk_index": 6,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "betting on. And if you want to isolate some of those things, you can hedge off the parts that you don't care about. So, if you buy ExxonMobile and you short the, say, S&P, then what you're doing is you're saying that I want to be long this company's ability to drill for oil and sell oil, but I don't want to take equity systematic risk in general. So, I'll just hedge that part out. I don't have a view on that. So, I have a view on Exxon. So, most hedging stuff, especially in professional trading, is really about trying to isolate. So, get rid of it. Get rid of it. You don't want it. And how then do you think that that changes or morphs as you move into more of the retail, maybe smaller hedge fund world? Is it the same general idea? Or do you think that there's a different imperative? I think it's probably pretty similar where it's anybody that's trading anything for very specific reasons. Like they have an alpha and sort of edge and some thing that they understand very well. Then what they're going to do is they want you want to isolate as much of your exposure to that thing that you have a really strong view about and get rid of. And remember, like all those other things that you're implicitly betting on that you might not have a view on, are just sort of like eating up your risk",
+    "start_timestamp_seconds": 532.6,
+    "end_timestamp_seconds": 627.64,
+    "start_timestamp": "08:52",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=532",
+    "chunk_index": 7,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "isolate as much of your exposure to that thing that you have a really strong view about and get rid of. And remember, like all those other things that you're implicitly betting on that you might not have a view on, are just sort of like eating up your risk capital and in some regard. Like you really want to get the blue meth version of whatever the thing that you're good at. So, that's why you're trying to isolate. That's why you want to get rid of the hedge, get rid of the things you don't want to be betting on. So, you're trying to get the concentration that you want and just effectively lever that. I mean, in a sense, it's sort of the way all finance is kind of moved. Could you think about like even how a pod shops or work these days and everything. It's the big insight there is that you want to get paid for skill and you don't want to take on these things that you have no view on. That's why we evaluate people by, so, okay, how did this person do net of the market? Right? It's like, what's their alpha net of the market? Which is, if you had to turn that into a trade, it would look like a hedge, because you would say, okay, I'm going to buy manager XYZ and I'm going to short the SMP against it and I think that I'm going to be",
+    "start_timestamp_seconds": 613.28,
+    "end_timestamp_seconds": 699.64,
+    "start_timestamp": "10:13",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=613",
+    "chunk_index": 8,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "alpha net of the market? Which is, if you had to turn that into a trade, it would look like a hedge, because you would say, okay, I'm going to buy manager XYZ and I'm going to short the SMP against it and I think that I'm going to be earning their premium to what the market can give. So, this is, again, it's like this isolation stuff. Which is really interesting because I would argue on the regular retail trader side of things, probably the overwhelming majority of them would, I don't want to say my opically, but way over weight, just downside reduction. Like if you ask, if you go on like Reddit trading or something and you ask like, what's hedging? Most people immediately go to just straight down side reduction, which is just a very different lens, right? Then what you're talking about versus trying to like truly isolate the variables, obviously reduction risk reductions part of it, but there's like a different modality being targeted, which it leads to a really strange disease, I call it a disease, because there's a delicate relationship between the risk you're taking to make money and risk reduction. So, how do you think about that concept and striking that balance? Yeah, I think about it as, I think the first thing you have to recognize with hedging is that it's like insurance. Look, when you're talking about protection, it's like insurance. You should expect to pay for it hedging,",
+    "start_timestamp_seconds": 687.48,
+    "end_timestamp_seconds": 794.24,
+    "start_timestamp": "11:27",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=687",
+    "chunk_index": 9,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "how do you think about that concept and striking that balance? Yeah, I think about it as, I think the first thing you have to recognize with hedging is that it's like insurance. Look, when you're talking about protection, it's like insurance. You should expect to pay for it hedging, hedging, actually, I would say hedging is always a cost. It is hedging is always a cost, how expensive that cost is can vary, but like it's always a cost, and the way to think about it is, I'm paying this cost, presumably I'm paying this cost because it's giving me a benefit in terms of risk reduction that I think is worth it. So, that's basically the whole gist of hedging. I would say hedging is a funny thing. Like your, as if you don't want it to work. Right, right? I think kind of cuts back to like the difficult thing about all trading. Actually, you know what, you had it's great. You had August and LeBron on, you've had him on a couple of couple times. His book laws of trading is awesome. And I wanna say like maybe like in the first, maybe chapter two or something, he has an expression in there that says, you are, you are never happy with the size you traded. It's basically like, you know, if your trade works out well, you wish you did more, if your trade works out poorly, you wish you did zero. And so you're",
+    "start_timestamp_seconds": 774.4,
+    "end_timestamp_seconds": 878.36,
+    "start_timestamp": "12:54",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=774",
+    "chunk_index": 10,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "something, he has an expression in there that says, you are, you are never happy with the size you traded. It's basically like, you know, if your trade works out well, you wish you did more, if your trade works out poorly, you wish you did zero. And so you're never going, you're always signing up to be to have, rag threats. And so trading is always gonna have that. And hedging is always gonna have that. Like if the hedge, if you hedge a quarter of your position and the hedge works, you'll wish you hedged 100% of your position. And if the world goes on just perfectly fine, you'll be like, why did I waste money on the hedge? So it's like any, any, you know, any kind of intervention ever where you're sort of like doing something to protect yourself in the future and that thing doesn't happen. You feel like you wasted your time or your money or your effort. So yeah, I don't know, it's always, there's always this problem with hedging. It always means having to say you're wrong. The funny part too is there's this really common retail trader delusion that they'll be able to make money on their hedge and on their base position. Super common, super common. So I'll tell you this, like, whoops, it's kind of, yeah, we were obsessed by the way, with like, this is going back, this was especially prominent like my early, sort of like early",
+    "start_timestamp_seconds": 860.4,
+    "end_timestamp_seconds": 963.92,
+    "start_timestamp": "14:20",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=860",
+    "chunk_index": 11,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "able to make money on their hedge and on their base position. Super common, super common. So I'll tell you this, like, whoops, it's kind of, yeah, we were obsessed by the way, with like, this is going back, this was especially prominent like my early, sort of like early sigd days, but it was everything we would ever do is people would like look at their P&Ls and they would like sit oftentimes like separate their P&L into like how much of my P&L came from like what I was normally doing and how much did the hedge basically cost me and like all you would ever do is just look, if you separate these things and you look at them and you're like, my God, it was been so expensive to hedge and you become obsessed with like, how do I hedge less? How do I hedge less? Like the whole goal becomes like, I don't want to hedge because I can see how much hedging costs me and it's definitely something that weighs really heavily on you and makes you, you know, I don't think we could get into any of these delusions where like if you thought that the hedge was had was good to do, then you would like make a whole strategy that did that thing. Right. Yeah, I just don't think like, I don't think you can approach it with like, I'm gonna try to make money on the hedge. You want to",
+    "start_timestamp_seconds": 938.36,
+    "end_timestamp_seconds": 1027.88,
+    "start_timestamp": "15:38",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=938",
+    "chunk_index": 12,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "thought that the hedge was had was good to do, then you would like make a whole strategy that did that thing. Right. Yeah, I just don't think like, I don't think you can approach it with like, I'm gonna try to make money on the hedge. You want to reduce, you want to minimize the cost of the hedge but really what you want to do is minimize your need to hedge. Right, well, and there's also this other really awkward thing that I actually think is one of the more challenging aspects to a hedge to consider, which is like, when do you actually cash in on it? Like, when's the right time? Because most of the time when your hedge is profitable and making money, that's kind of when you need it because the base thing is not doing super great. So that also becomes a bit of a delicate dance. I find the irony there is it's, you know, not too infrequent where you find yourself in the scenario where you've dork up both sides and you know, your hedge that was meant to help you actually hurts you and then the base position didn't do you wanted it to do. And then you're like, well, shit, it all didn't work. No, you're chasing your turn. Yeah. So before you are talking a little bit about the cost, what we built is just a couple like really, really small cherry-pick scenarios. This isn't like some sort",
+    "start_timestamp_seconds": 1010.12,
+    "end_timestamp_seconds": 1093.28,
+    "start_timestamp": "16:50",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=1010",
+    "chunk_index": 13,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "you wanted it to do. And then you're like, well, shit, it all didn't work. No, you're chasing your turn. Yeah. So before you are talking a little bit about the cost, what we built is just a couple like really, really small cherry-pick scenarios. This isn't like some sort of massive study. This is just a handful of underlines over a small duration. Just to give you some ideas on like, what this can look like. So we looked at stuff like two scenarios for specifically a short straddle. One scenario I cherry-picked where the hedging helped, meaning it boosted your P&L. And then I gave you a scenario where the hedging hurt you, reduced your P&L to elucidate a super important point, which is your hedge can do either of those, depending on the position and what's going on sometimes it can help you. Sometimes it can hurt you with respect to stuff like this. And then Chris and I also had an interesting conversation about the idea of delta hedging in the beginning, because Chris's mind immediately focused a little bit more on strategies where it's like active delta management. So things like a long straddle, short straddle, where you're trying to rebalance your deltas to set points. And my mind obviously went a little bit more broadly than that. And I was looking at including stuff like covered calls, protected puts, callers, because those are also like really common hedging tools. But to Chris's mind's point,",
+    "start_timestamp_seconds": 1074.6,
+    "end_timestamp_seconds": 1170.64,
+    "start_timestamp": "17:54",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=1074",
+    "chunk_index": 14,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "straddle, where you're trying to rebalance your deltas to set points. And my mind obviously went a little bit more broadly than that. And I was looking at including stuff like covered calls, protected puts, callers, because those are also like really common hedging tools. But to Chris's mind's point, not necessarily exactly what we would correspond directly with delta hedging. So the point there is when we think about delta hedging itself, it can come in different forms. You can have something where you're delta hedging quite a lot. You can have something where you're delta hedging maybe daily, maybe weekly, or you can have something where you're delta hedging less frequently, but still trying to figure out how you want to manage this protective put, which we'll talk about a little bit later. So I figure we could spend a second on this slide, specifically Chris and see what you think. This just gives you a handful of ideas on when you're putting on a hedge, some of the different costs that are bundled into that idea and what you're building. Some of them are really straightforward, like how much it cost. Other ones maybe not so straightforward, like opportunity costs. So as you look through these, are there any specific avenues that stick out to you that you think are more impactful than others, maybe fly under the radar, or anything like that? I just think that separating or like, it's to do doing a good accounting",
+    "start_timestamp_seconds": 1149.48,
+    "end_timestamp_seconds": 1244.76,
+    "start_timestamp": "19:09",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=1149",
+    "chunk_index": 15,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "like opportunity costs. So as you look through these, are there any specific avenues that stick out to you that you think are more impactful than others, maybe fly under the radar, or anything like that? I just think that separating or like, it's to do doing a good accounting of your costs is to recognize how much of it is, is sort of direct and how much of it is, sort of like harder to measure. Like for example, if I let's say I buy out of the money put and the question is, is how much did that hedge cost me? And I think on some level, at the pure accounting level, you could say that the hedge cost to you how much option premium you paid for the put. Another point of view would be, well, the volatility of this asset is 30%. And I had to pay 35 of all to buy these puts. So, and let's say that just to make numbers up, let's say the option was $3, and you think the fair price for the option at 30 of all would have been $2.70. So you've paid 30 cents for the hedge in that regard. Like your paying 30 cents through what you think this option is probably worth. So you could say that the hedge is not $3, but it's 30 cents in that case. So I think, and then the other thing is like, you have, there's other very clear direct",
+    "start_timestamp_seconds": 1228.48,
+    "end_timestamp_seconds": 1338.04,
+    "start_timestamp": "20:28",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=1228",
+    "chunk_index": 16,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "that regard. Like your paying 30 cents through what you think this option is probably worth. So you could say that the hedge is not $3, but it's 30 cents in that case. So I think, and then the other thing is like, you have, there's other very clear direct costs, like your brokerage costs, the slippage, like bid asks bread that you pay. So, and then what I actually, the thing that stands out here to me is like, one of them is it was actually kind of one of the benefits where sometimes the benefit of the hedge doesn't show up on a balance sheet anywhere. Like for example, we would typically, one of the costs that you have is like, especially as a market maker, oftentimes as a market maker, you'll tend to own really far out of the money puts, for example. And the market makers would tend to own, like at least when I was market making, we would tend to own that stuff. And you could say, okay, well, that stuff was overpriced. It's okay, fine. Let's say I'm paying a million bucks a year in excessive option premium to own these out of the money puts. But the benefit is if the market tanks spreads go wide, a lot of the trading becomes people that are forced to trade, because they're forced to cut risk, or there's liquidations, or whatever, have you, people are trading for non economic reasons. They're trade because risk",
+    "start_timestamp_seconds": 1315.44,
+    "end_timestamp_seconds": 1426.96,
+    "start_timestamp": "21:55",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=1315",
+    "chunk_index": 17,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "the money puts. But the benefit is if the market tanks spreads go wide, a lot of the trading becomes people that are forced to trade, because they're forced to cut risk, or there's liquidations, or whatever, have you, people are trading for non economic reasons. They're trade because risk has happened on a shoulder in some way. Well, that's when the best time to be trading is, that's when there's the most amount of money when your counterparty can't, isn't trying to think about what the right price for this thing is they're just forced to act. So if you by owning those puts, what happens is like your account value goes up in those cases, your ability to lever goes up in those cases. In other words, like while everybody else has to cut risk, you're able to add risk. And that power to add risk when everybody is taking risk off is exactly when you want the power. It's exactly when you want to have the ability to trade bigger is when everybody else is forced to trade. So you could say, okay, you guys were spending a million dollars in extra option premium a year that you didn't need to own those puts. But it's be kind of, I don't know how much extra money we made from the fact that we were able to trade profitably. We were able, let's say I was able to trade 25% more contracts when shit hit the fan in",
+    "start_timestamp_seconds": 1398.08,
+    "end_timestamp_seconds": 1498.64,
+    "start_timestamp": "23:18",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=1398",
+    "chunk_index": 18,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "you didn't need to own those puts. But it's be kind of, I don't know how much extra money we made from the fact that we were able to trade profitably. We were able, let's say I was able to trade 25% more contracts when shit hit the fan in those periods of time. And how much money did I make in those periods of time? Did I, did, did, did, 25% extra volume I was constantly trading during those stress times, make up for the million dollars in premium. It's kind of hard to map it back to be like, you know, how much extra money that I make, how much of that was due to the fact that I had those puts in the first place that allowed me to trade bigger. Like, it's kind of hard to do it, but there was the sense there as the mark, you know, even though it was market making firms like we often didn't measure those values, but you might not know how to attribute it. We thought it was worth doing it. So again, like that kind of stands out to me is like, not all the costs and not all the costs can be hard to account for, the benefits are also a little bit hard to account for. It's not clear. And well, let's actually fast forward a little bit then I want to talk specifically about that puts scenario because it's kind of interesting. These ones",
+    "start_timestamp_seconds": 1483.16,
+    "end_timestamp_seconds": 1562.24,
+    "start_timestamp": "24:43",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=1483",
+    "chunk_index": 19,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "not all the costs can be hard to account for, the benefits are also a little bit hard to account for. It's not clear. And well, let's actually fast forward a little bit then I want to talk specifically about that puts scenario because it's kind of interesting. These ones you guys could, unless there's anything on any of these that you want to take a look at, but just these are pretty straightforward. There are instances where hedging can help you can hurt you. The scenario here between helping hurt becomes really relative to like, even if you lose money, it doesn't necessarily mean that the hedge quote unquote hurt you. You might lose money on that individual instance, but you're still in the case of this, Traddle, you're still getting a better look at the thing that you're trying to trade. Maybe the underlying idea that you're attacking is literally decaying and the hedge that you originally were putting on, maybe you didn't have a hedge or whatever, and then some other factor was making you profitable through it, then you're just kind of like making money off the wrong thing. So one super important note here that I would mention is if you put on a hedge and or if you're delta hedging in this scenario actively and you lose money that doesn't make delta hedging bad, it just means that the thing that you actually thought you were trading in this instance didn't work. And that's",
+    "start_timestamp_seconds": 1542.68,
+    "end_timestamp_seconds": 1626.52,
+    "start_timestamp": "25:42",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=1542",
+    "chunk_index": 20,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "I would mention is if you put on a hedge and or if you're delta hedging in this scenario actively and you lose money that doesn't make delta hedging bad, it just means that the thing that you actually thought you were trading in this instance didn't work. And that's actually really good feedback to get. Versus just being completely blind. But there's an interesting scenario specifically with puts that's worth talking about and then maybe we'll go back to covered calls really quick. You were just talking about puts. There's a lot of people that would like puts and they can do a lot for an account in terms of bad drawdowns, but we also know that there's something like, puts you and they're pretty expensive. So if you were thinking about trying to hedge, let's say a stock position and let's say that you wanted to use puts, what are some of the ways that you might think about decreasing the cost of that hedge? Yeah, well, you have a, you're trading off it on generally speaking, what you're trading off on is the range over which you will win on the puts and the cost of the structure. I mean, this is like you're just trading off between these ideas. So for example, you can buy a puts bread and that will cheapen the cost of your hedge. But if the stock falls far enough, then the puts bread's benefit is capped. So you buy a $5",
+    "start_timestamp_seconds": 1608.4,
+    "end_timestamp_seconds": 1711.4,
+    "start_timestamp": "26:48",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=1608",
+    "chunk_index": 21,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "structure. I mean, this is like you're just trading off between these ideas. So for example, you can buy a puts bread and that will cheapen the cost of your hedge. But if the stock falls far enough, then the puts bread's benefit is capped. So you buy a $5 wide puts bread on a $50 stock and the stock drops 20 bucks. Like you'll pick up five bucks of profit but you're still gonna have your sugar and a loss on the rest of that move. So you'll have done better, it was a hedge and that you did better off than just owning the stock from 50 down to 30. But you still, you haven't cut off your maximum loss in that case. Whereas if you bought the put outright, you can basically just tap out of the stock and you would, you know, the stock could go to zero and you know what your loss is gonna be. It's limited. So it's limited to the strike price, your basis minus the strike price, minus the cost of the premium. So, you know, if you want to be saved over a wider range is gonna cost you more. And that's just like there's no, so I think you can kind of do about that. If the other aspect is timing, so if you pick a longer dated put, then you will own that protection for longer, but the put will cost you a lot more. You can sheep",
+    "start_timestamp_seconds": 1687.88,
+    "end_timestamp_seconds": 1794.24,
+    "start_timestamp": "28:07",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=1687",
+    "chunk_index": 22,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "And that's just like there's no, so I think you can kind of do about that. If the other aspect is timing, so if you pick a longer dated put, then you will own that protection for longer, but the put will cost you a lot more. You can sheep in your insurance by buying a shorter dated put. But the problem with that is you should probably think about that as a repeated game where you're like, let's say I'm gonna hedge my exp, let's say, for example, let's say you own a stock, you're gonna own it for the next year. And you say, well, I don't want it to, I want to be hedge in case the stock goes from 100, like it's 100 bucks and I want to be hedged if the stock goes to 80 or less. Well, you could buy a one year 80 put or you can buy an 80 put every month. But if you buy the, if you can't look at it is like I'm gonna buy the 80 put expiring in a month, I need to think about it as I'm gonna buy the 80 put expiring in a month, but I'm gonna do that's what times. That's the true cost of that hedging program. Versus just buying a 12 month put for the 12 month 80 strike. Put the 12 month strike, you mean, well, sorry 80 Delta just to be clear there. I was seeing like a legend",
+    "start_timestamp_seconds": 1773.84,
+    "end_timestamp_seconds": 1864.88,
+    "start_timestamp": "29:33",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=1773",
+    "chunk_index": 23,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "but I'm gonna do that's what times. That's the true cost of that hedging program. Versus just buying a 12 month put for the 12 month 80 strike. Put the 12 month strike, you mean, well, sorry 80 Delta just to be clear there. I was seeing like a legend the stocks of 100 and it's just the 80 strike. Oh, oh, oh, sorry, sorry, sorry, sorry. Just trying to put struck at 80, I can buy the one year put struck at 80, but the, so you could be, you could be like sort of trading off between these two things. Like, go, I wanna buy the 80 put every single month, which might not be, which could be really cheap. If the stock's 100 bucks, the one month 80 put could be really cheap in that option. So you're sort of choosing between these two things. You know, what then what will happen is like everything's very path dependent. Like if you buy, if I buy the 80 put expiring in a month in the stock drops to 82 bucks this month, I'm gonna not only will I have lost $18 on the stock, dropping, I'm gonna lose my whole 80 put option premium. It might maybe that was small, but if I had bought the one year 80 put, that put would have won up in value on an $18 down move. So ultimately you're choosing you're kind of trading off between the delta of the put,",
+    "start_timestamp_seconds": 1843.56,
+    "end_timestamp_seconds": 1936.76,
+    "start_timestamp": "30:43",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=1843",
+    "chunk_index": 24,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "my whole 80 put option premium. It might maybe that was small, but if I had bought the one year 80 put, that put would have won up in value on an $18 down move. So ultimately you're choosing you're kind of trading off between the delta of the put, because what I'm saying is you buy a one year 80 put, that put as a higher delta than a one month 80 put, if the stocks at a hundred. So if you're, to the other thing you can do is just compare relative delta to each other and be like, well what is the 20 delta put in the one month cost and the 20 delta put in the one year cost? But the 20 delta put in a year is like a way lower strike. So the point is like, there's no getting around the fact that the more protection you want, the more it's gonna cost you. Like the better the protection, the better the insurance program that you buy into is the more it's gonna cost you. So if that weren't true, there would literally be an arbitrage. So it's not a, it's not a, it's just going to be true that more protection equals more cost. Then in that same scenario, how do we account and think about this scenario? I'm drawing with my mouse. With a completely messed up hand, give me a fucking break here. So we get into, that's not a bad",
+    "start_timestamp_seconds": 1918.2,
+    "end_timestamp_seconds": 2027.68,
+    "start_timestamp": "31:58",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=1918",
+    "chunk_index": 25,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "just going to be true that more protection equals more cost. Then in that same scenario, how do we account and think about this scenario? I'm drawing with my mouse. With a completely messed up hand, give me a fucking break here. So we get into, that's not a bad line to start. I'm pretty happy with that. We get into a stock and, okay that's, okay that's what I was expecting. So we get into a stock, this is just the background graph. And you know the stocks doing this whole thing and let's say that we get in at this point, point A. And we get in at point A, so we're like, oh, you know, for whatever reason, right? We think this is the right time to hedge, stocks are gonna go down, whatever. And we make that comparison that we're just talking about and we say, okay, yeah, I'm gonna do the long dated option bit cheaper for me and I'm gonna grab those. Then how do you think about baking in the cost of maybe the base position doing what you wanted to do, which is continuing to go up. So now your hedge originally to your point on your $100 stock and then your 80 hedge, you're taking your $20 of risk. But now let's say that the stock is 150. How do we think about that increase now in deduct? Oh my God. Ind deductible. That was an attempt at an arrow, by",
+    "start_timestamp_seconds": 1996.84,
+    "end_timestamp_seconds": 2103.48,
+    "start_timestamp": "33:16",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=1996",
+    "chunk_index": 26,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "to your point on your $100 stock and then your 80 hedge, you're taking your $20 of risk. But now let's say that the stock is 150. How do we think about that increase now in deduct? Oh my God. Ind deductible. That was an attempt at an arrow, by the way. We just went away. Wait, wait, sorry, this is, it's not showing up. Oh, that honestly is, I don't know if it's better or worse, give me one sec. Let me fix it. I'm not saying that you, I think the, yeah, well, I just, it would feel wrong if you could put it in. Give me one sec, you should be able to see it now. Okay. There we go. That's pretty good. So yeah, this was what I was done, oh, not dying, but kind of had a bit of a chuckle act because this was my first attempt at the arrow and we went quite a stray. But so you start off with this $20 deductible here. Then the underlying begins trickling up and now all of a sudden you have a $70 deductible. Yep. How do we think about that? Is there a way to systematically move the put up? Is there any sort of methodology to ease that pain? Yeah, I think that what you can do. So there's two, I would say there's two approaches to it that would be very common. I'm not saying there would be only two, but two",
+    "start_timestamp_seconds": 2078.16,
+    "end_timestamp_seconds": 2178.12,
+    "start_timestamp": "34:38",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=2078",
+    "chunk_index": 27,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "to systematically move the put up? Is there any sort of methodology to ease that pain? Yeah, I think that what you can do. So there's two, I would say there's two approaches to it that would be very common. I'm not saying there would be only two, but two that I can immediately think of that would be very common is the first one that I would call a tolerance. So the tolerance method is to say I wanna have this much dollar risk in this asset. And so when the stock was a lower price, you were willing to have say, you know, $100,000 of risk in that stock. And as the stock goes up in value, your position value is growing. And so let's, your position value is growing. And so let's say the stock goes up and it goes up to $150,000 of value. And you say I don't want my position, that's more risk than I want. So I need to, my choice is either I roll my put up to reestablish a hundred thousand dollars of length in terms of like my delta risk. Or I trim the position. So it's basically trying to target an amount of risk. Like in generally you could do this with like a dollar band. So it's saying, you know, instead of saying it's a hard cut off at 150,000, it's like, hey, I'm willing to have a hundred and, or sorry, in this case, I'm willing to",
+    "start_timestamp_seconds": 2156.96,
+    "end_timestamp_seconds": 2257.44,
+    "start_timestamp": "35:56",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=2156",
+    "chunk_index": 28,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "target an amount of risk. Like in generally you could do this with like a dollar band. So it's saying, you know, instead of saying it's a hard cut off at 150,000, it's like, hey, I'm willing to have a hundred and, or sorry, in this case, I'm willing to have between a hundred and a hundred and twenty five thousand dollars of risk on in this name. And if your risk in the name exceeds that, then you have a choice to trim the position or to hedge. So in other words, if you choose that strategy, it is unclear how many times you're ever gonna have to hedge, right? Because if the stock just keeps going up and up and up you're gonna have to keep rolling your puts up higher and higher and higher. So what's happening is you have a control over how much risk you have, but you don't have a control over how often you trade. This is effectively being in the same position as an option's professional options trader, where they have an idea, like I don't wanna have my delta as be larger than X or Y. So I'm gonna have to constantly hedge so that they don't, so it doesn't get out of my thresholds. So they don't know how often they're gonna have to hedge because they are targeting risk. The other approach you could have to take, you could take, is to say I'm gonna hedge every month at",
+    "start_timestamp_seconds": 2242.12,
+    "end_timestamp_seconds": 2324.4,
+    "start_timestamp": "37:22",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=2242",
+    "chunk_index": 29,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "constantly hedge so that they don't, so it doesn't get out of my thresholds. So they don't know how often they're gonna have to hedge because they are targeting risk. The other approach you could have to take, you could take, is to say I'm gonna hedge every month at this time. And I'm gonna re-center my risk back to this amount every month. And so what'll happen is there might be periods of the month where your risk got really large because your position, maybe the stock went up a ton, two weeks into the month, you have a ton of risk on the position, but your rule is I only hedge on the first of the month. So I gotta wait until two more weeks until the first of the month for maybe me to be able to hedge. In this case, you don't have much control over how much risk you have on at any point in time, but you do know you're gonna hedge 12 times a year. So those could be like two general approaches, like intermittent hedging on like a fixed schedule, versus letting how much risk you have dictate how much tolerance I have for letting it ride versus hedging. And how do you think about then setting up something that strikes an effective balance? Because at least for me, one of the good parts about being more on the retail side is one of the few benefits we have is agility. A",
+    "start_timestamp_seconds": 2309.08,
+    "end_timestamp_seconds": 2402.84,
+    "start_timestamp": "38:29",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=2309",
+    "chunk_index": 30,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "have for letting it ride versus hedging. And how do you think about then setting up something that strikes an effective balance? Because at least for me, one of the good parts about being more on the retail side is one of the few benefits we have is agility. A lot of times it's easier for me just to pair it down risk or just change my positioning versus carrying hedge with the base position. So most of the time though, if I'm implementing some sort of hedge there's really two main formats, one of them like we talked about before is an indirect hedge. And for me, that's way more loose, even than you were referring to as before, whereas I might have some long deltas in something and as part of my normal process, I'm generally looking both long and short. And I happen to find some shorts that happen to offset some of those deltas, but really I'm speculating on these shorts, like that's the purpose for those. But then there's this other part where I'm more directly hedging and it's less common, but most of the time where I'm doing some sort of like true direct risk hedge is if I'm heavily levered, which is quite rare, but there are times when my career were that had been the case. And in those instances, most of the time it was what I would refer to when we use this military-alot conditions base, like delta bands. If",
+    "start_timestamp_seconds": 2381.92,
+    "end_timestamp_seconds": 2468.28,
+    "start_timestamp": "39:41",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=2381",
+    "chunk_index": 31,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "risk hedge is if I'm heavily levered, which is quite rare, but there are times when my career were that had been the case. And in those instances, most of the time it was what I would refer to when we use this military-alot conditions base, like delta bands. If things get a little too far, then I step in whether it's one day or three days. Is there a way to think about that balance more so for the institutional side of business, because they might not necessarily have that same flexibility. I actually think they probably, that isn't pretty aligned with what they will do. It's the concept of like a hedging band or a delta band is very much how they might look at it. I think it's a very reasonable way for individual investors to look at it too. It's like, you know, let's say your equity exposure, let's say you're running a 75 roughly a 75% equity allocation in your personal portfolio. If you're running 75%, maybe your rule is, my delta band here is 65% to 85%. So this will cause you to naturally hedge or slash rebalance. So like when your equity exposure becomes only 65% of your total portfolio, that's a trigger to add. So you re-up back to 75. And when it gets up to 85, you trim to get back to 75. So you're just naturally rebalancing by keeping your equity exposure within a band. So this is the trade",
+    "start_timestamp_seconds": 2448.44,
+    "end_timestamp_seconds": 2563.24,
+    "start_timestamp": "40:48",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=2448",
+    "chunk_index": 32,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "becomes only 65% of your total portfolio, that's a trigger to add. So you re-up back to 75. And when it gets up to 85, you trim to get back to 75. So you're just naturally rebalancing by keeping your equity exposure within a band. So this is the trade off there, sorry, what you're doing there is you are naturally, you are naturally trading off between how often do I hedge and what is a reasonable amount of risk? I mean, if your strategy is to be 65% sorry, 75% invested in equities and you give yourself a 65 to 85% delta band, you know, you're only going to be rebalancing a couple times a year at most. So the market needs to drop like, the market basically needs to move like over 15% for you to kind of like get out of bounds on your boundaries there. I'm kind of ignoring how much the other 25% of your portfolio is moving around. But like, yeah, the market needs to make a pretty decent size move for you to make any adjustments, which means that if you have a rule like that, you are not trading all that often. And you know, it's like, hey, I looked at my portfolio and an 81% long equities. It's within the band of what I already deemed was okay. Nothing to do. Right. Yeah, no, that's awesome. And I think it's a useful way to think about it. So at a high",
+    "start_timestamp_seconds": 2537.8,
+    "end_timestamp_seconds": 2647.4,
+    "start_timestamp": "42:17",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=2537",
+    "chunk_index": 33,
+    "word_count": 250,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "And you know, it's like, hey, I looked at my portfolio and an 81% long equities. It's within the band of what I already deemed was okay. Nothing to do. Right. Yeah, no, that's awesome. And I think it's a useful way to think about it. So at a high level now, folks have at least a much better understanding of regrets and at least an introduction to this idea of delta hedging, hedging in general. Some of the decisions cycle that goes behind it, what we can cover in a future episode, if you guys would like, is doing something on active delta hedging, something a little bit more pure to what Chris was thinking about earlier and then also something that can be really useful. To great example, because you can have things like short straddles that a lot of times your hedge might not be your best friend, but it's helping you isolate your thing. But then on the inverse, if you're long match straddle, you can actually gamuscape as part of your hedging protocol, which can help you kind of a lot. So the worlds of hedging, gamuscape, specifically active delta hedging goes pretty deep, pretty fast and it's pretty fun. So you guys will catch us next week.",
+    "start_timestamp_seconds": 2630.2,
+    "end_timestamp_seconds": 2701.4,
+    "start_timestamp": "43:50",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=2630",
+    "chunk_index": 34,
+    "word_count": 213,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  },
+  {
+    "video_id": "gpTKidnOqLg",
+    "title": "Delta Hedging Cost Benefit Analysis | The Options Trench",
+    "text": "fast and it's pretty fun. So you guys will catch us next week.",
+    "start_timestamp_seconds": 2698.52,
+    "end_timestamp_seconds": 2701.4,
+    "start_timestamp": "44:58",
+    "video_url": "https://www.youtube.com/watch?v=gpTKidnOqLg",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=gpTKidnOqLg&t=2698",
+    "chunk_index": 35,
+    "word_count": 13,
+    "upload_date": "20260718",
+    "published_at": "2026-07-18T18:00:25Z",
+    "duration": 2704.0,
+    "related_wiki_pages": [
+      "strategies/protective-put"
+    ]
+  }
+]
