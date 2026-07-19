@@ -150,18 +150,21 @@ def create_legacy_chunks(segments, chunk_size=CHUNK_SIZE, overlap=OVERLAP, min_w
     """Legacy word-window transcript chunking retained for fallback/rollback."""
     if not segments:
         return []
-
+    
     chunks = []
+    
+    # Combine all text with timestamp markers
     all_words = []
     word_timestamps = []
-
+    
     for segment in segments:
         words = segment['text'].split()
         for word in words:
             all_words.append(word)
             word_timestamps.append(segment['timestamp'])
-
+    
     if len(all_words) < min_words:
+        # Return single chunk if too short
         return [{
             'text': ' '.join(all_words),
             'start_timestamp_seconds': segments[0]['timestamp'] if segments else 0,
@@ -169,39 +172,60 @@ def create_legacy_chunks(segments, chunk_size=CHUNK_SIZE, overlap=OVERLAP, min_w
             'word_count': len(all_words),
             'chunk_index': 0
         }]
-
+    
+    # Create overlapping chunks
     step_size = max(1, chunk_size - overlap)
     chunk_index = 0
+    
     i = 0
     while i < len(all_words):
+        # Get chunk words
         end_idx = min(i + chunk_size, len(all_words))
         chunk_words = all_words[i:end_idx]
+        
         if len(chunk_words) >= min_words:
+            chunk_text = ' '.join(chunk_words)
             start_ts = word_timestamps[i]
             end_ts = word_timestamps[end_idx - 1] if end_idx > 0 else start_ts
+            
             chunks.append({
-                'text': ' '.join(chunk_words),
+                'text': chunk_text,
                 'start_timestamp_seconds': start_ts,
                 'end_timestamp_seconds': end_ts,
                 'word_count': len(chunk_words),
                 'chunk_index': chunk_index
             })
             chunk_index += 1
+        
+        # Move to next chunk position
         i += step_size
+        
+        # If we're at the end and there's some remaining text, include it
         if i >= len(all_words):
             break
+    
     return chunks
 
 
 def create_chunks(segments, chunk_size=CHUNK_SIZE, overlap=OVERLAP, min_words=MIN_CHUNK_WORDS):
     """Create transcript chunks using the configured backend."""
+    if not segments:
+        return []
+
     if CHUNKER_BACKEND == 'chonkie':
-        return chunk_transcript_segments_with_chonkie(
+        total_words = sum(len(segment['text'].split()) for segment in segments)
+        if total_words < min_words:
+            return create_legacy_chunks(segments, chunk_size=chunk_size, overlap=overlap, min_words=min_words)
+
+        chonkie_chunks = chunk_transcript_segments_with_chonkie(
             segments,
             chunk_size=chunk_size,
             overlap=overlap,
             min_words=min_words,
         )
+        if chonkie_chunks:
+            return chonkie_chunks
+
     return create_legacy_chunks(segments, chunk_size=chunk_size, overlap=overlap, min_words=min_words)
 
 

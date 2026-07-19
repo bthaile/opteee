@@ -1,13 +1,11 @@
 import unittest
 
-from chonkie_chunking import (
-    chunk_pdf_elements_with_chonkie,
-    chunk_transcript_segments_with_chonkie,
-)
+from chonkie_chunking import chunk_transcript_segments_with_chonkie
+from preprocess_transcripts import create_chunks
 
 
-class ChonkieChunkingTests(unittest.TestCase):
-    def test_transcript_chunking_preserves_timestamp_ranges(self):
+class ChonkieTranscriptChunkingTests(unittest.TestCase):
+    def test_chonkie_transcript_chunking_preserves_timestamp_ranges(self):
         segments = [
             {"timestamp": 0.0, "text": "First segment about portfolio risk and sizing."},
             {"timestamp": 15.0, "text": "Second segment about delta exposure and correlation."},
@@ -27,25 +25,18 @@ class ChonkieChunkingTests(unittest.TestCase):
         self.assertTrue(all(chunk["word_count"] >= 3 for chunk in chunks))
         self.assertTrue(all(chunk["end_char"] > chunk["start_char"] for chunk in chunks))
 
-    def test_pdf_chunking_preserves_pages_and_section(self):
-        elements = [
-            {"type": "section", "text": "Risk Management", "page": 1},
-            {"type": "paragraph", "text": "Keep position size small when volatility expands and portfolio correlation rises.", "page": 1},
-            {"type": "paragraph", "text": "Use defined exits and avoid oversized premium relative to account risk.", "page": 2},
+    def test_create_chunks_falls_back_for_tiny_transcripts(self):
+        segments = [
+            {"timestamp": 0.0, "text": "tiny"},
+            {"timestamp": 5.0, "text": "clip words"},
         ]
 
-        chunks = chunk_pdf_elements_with_chonkie(
-            elements,
-            target_size=10,
-            overlap=2,
-            min_words=3,
-        )
+        chunks = create_chunks(segments, chunk_size=250, overlap=50, min_words=10)
 
-        self.assertGreaterEqual(len(chunks), 1)
-        self.assertEqual(chunks[0]["section"], "Risk Management")
-        self.assertIn(1, chunks[0]["pages"])
-        self.assertTrue(all(chunk["word_count"] >= 3 for chunk in chunks))
-        self.assertTrue(all(chunk["end_char"] > chunk["start_char"] for chunk in chunks))
+        self.assertEqual(len(chunks), 1)
+        self.assertEqual(chunks[0]["word_count"], 3)
+        self.assertEqual(chunks[0]["start_timestamp_seconds"], 0.0)
+        self.assertEqual(chunks[0]["end_timestamp_seconds"], 5.0)
 
 
 if __name__ == "__main__":

@@ -27,7 +27,6 @@ CHUNK_SIZE = 250  # Target words per chunk
 OVERLAP = 50      # Words of overlap between chunks
 MIN_CHUNK_WORDS = 10  # Minimum words required for a valid chunk
 CHUNKER_BACKEND = os.getenv('OPTEEE_CHUNKER_BACKEND', 'chonkie').strip().lower()
-CHUNKER_TOKENIZER = os.getenv('OPTEEE_CHUNKER_TOKENIZER', 'word').strip().lower()
 
 # YouTube Channel URLs
 CHANNEL_URLS = [
@@ -101,6 +100,9 @@ def validate_config(step=None):
     
     if MIN_CHUNK_WORDS <= 0:
         issues.append(f"Minimum chunk words ({MIN_CHUNK_WORDS}) must be positive")
+
+    if CHUNKER_BACKEND not in {'chonkie', 'legacy'}:
+        issues.append(f"Chunker backend ({CHUNKER_BACKEND}) must be 'chonkie' or 'legacy'")
     
     return issues
 
@@ -109,6 +111,7 @@ if __name__ == "__main__":
     print(f"Chunk Size: {CHUNK_SIZE} words")
     print(f"Overlap: {OVERLAP} words")
     print(f"Min Chunk Words: {MIN_CHUNK_WORDS}")
+    print(f"Chunker Backend: {CHUNKER_BACKEND}")
     print(f"Whisper Model: {WHISPER_MODEL}")
     print(f"YouTube API Key: {' Found' if YOUTUBE_API_KEY else '❌ Missing'}")
     
