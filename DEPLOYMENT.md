@@ -43,7 +43,9 @@ OPTEEE runs natively on macOS through **system launchd**.
 6. restarts the app by killing the live Python process,
 7. relies on `com.opteee.native` `KeepAlive=true` to respawn,
 8. waits for `http://127.0.0.1:7860/api/health` to pass,
-9. stages refresh artifacts (`outlier_trading_videos*.json`, `transcripts/`, `processed_transcripts/`, `vector_store/`, `wiki/`), commits them when changed, and pushes the refresh commit to `origin/<current-branch>`.
+9. waits an additional 3 minutes before the post-refresh smoke test so the native service can settle,
+10. runs the post-refresh smoke test and logs it to `logs/smoke-test.log`,
+11. stages refresh artifacts (`outlier_trading_videos*.json`, `transcripts/`, `processed_transcripts/`, `vector_store/`, `wiki/`), commits them when changed, and pushes the refresh commit to `origin/<current-branch>`.
 
 ## Schedule
 

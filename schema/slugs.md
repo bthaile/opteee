@@ -97,6 +97,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `basis-arb`
 - `basis-management`
 - `basis-reduction`
+- `basis-risk`
 - `basis-trading`
 - `basket-swap`
 - `bayesian-analysis`
@@ -314,6 +315,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `delayed-gratification`
 - `delayed-settlement`
 - `delta`
+- `delta-band`
 - `delta-decay`
 - `delta-hedging`
 - `delta-management`
@@ -371,6 +373,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `downtrend`
 - `drawdown`
 - `drawdown-minimization`
+- `drawdown-protection`
 - `drawdown-recovery`
 - `drawdown-risk`
 - `drawdown-survivability`
@@ -570,6 +573,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `healthy-expectations`
 - `heat-map-analysis`
 - `hedge`
+- `hedge-cost`
 - `hedging`
 - `high-frequency-trading`
 - `high-implied-volatility`
@@ -719,6 +723,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `loss-realization`
 - `loss-recovery`
 - `luck`
+- `machine-learning`
 - `macro`
 - `macro-analysis`
 - `macro-regimes`
@@ -1074,6 +1079,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `risk-defined`
 - `risk-first`
 - `risk-free-rate`
+- `risk-isolation`
 - `risk-management`
 - `risk-mitigation`
 - `risk-preference`
@@ -1388,6 +1394,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `winners-mentality`
 - `withdrawal-strategy`
 - `worker-fairness`
+- `workflow-optimization`
 - `worthiness`
 - `writing-craft`
 - `yield-curve`
@@ -1427,6 +1434,7 @@ These variants resolve to the canonical slug; never create separate pages for th
 - `directional`
 - `directional-breakout`
 - `directional-trading`
+- `discretionary-trading`
 - `dollar-cost-averaging`
 - `earnings-vol-play`
 - `event-driven`

@@ -150,6 +150,9 @@ for _ in {1..60}; do
   if curl -fsS "${HEALTH_URL}" >/dev/null 2>&1; then
     echo "Health check passed"
     # Post-refresh acceptance checks (Hardening §15 #10) — informational, logged.
+    # Give the native service a little extra time to settle after the first healthy response.
+    echo "Waiting 3 minutes before post-refresh smoke test"
+    sleep 180
     echo "Running post-refresh smoke test (acceptance checks)"
     "${REPO_DIR}/smoke_test.sh" > "${REPO_DIR}/logs/smoke-test.log" 2>&1 \
       && echo "Smoke test: PASS (see logs/smoke-test.log)" \

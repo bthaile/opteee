@@ -202,7 +202,9 @@ The weekly refresh script:
 5. refreshes `requirements-serve.txt` into `.venv-native`,
 6. restarts `com.opteee.native` indirectly by killing the running Python process,
 7. waits for `http://127.0.0.1:7860/api/health` to pass,
-8. stages refresh artifacts (`outlier_trading_videos*.json`, `transcripts/`, `processed_transcripts/`, `vector_store/`, `wiki/`), commits them when changed, and pushes the refresh commit to `origin/<current-branch>`.
+8. waits an additional 3 minutes so the native service can settle after first health,
+9. runs the post-refresh smoke test and logs it to `logs/smoke-test.log`,
+10. stages refresh artifacts (`outlier_trading_videos*.json`, `transcripts/`, `processed_transcripts/`, `vector_store/`, `wiki/`), commits them when changed, and pushes the refresh commit to `origin/<current-branch>`.
 
 ## Transcript and vector-store workflow
 

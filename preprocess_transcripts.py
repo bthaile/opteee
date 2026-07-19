@@ -20,8 +20,9 @@ from tqdm import tqdm
 
 from pipeline_config import (
     VIDEOS_JSON, TRANSCRIPT_DIR, PROCESSED_DIR,
-    CHUNK_SIZE, OVERLAP, MIN_CHUNK_WORDS, ensure_directories, get_metadata_file
+    CHUNK_SIZE, OVERLAP, MIN_CHUNK_WORDS, CHUNKER_BACKEND, ensure_directories, get_metadata_file
 )
+from chonkie_chunking import chunk_transcript_segments_with_chonkie
 
 
 def parse_timestamp(timestamp_str):
@@ -145,19 +146,8 @@ def parse_transcript(file_path):
         return []
 
 
-def create_chunks(segments, chunk_size=CHUNK_SIZE, overlap=OVERLAP, min_words=MIN_CHUNK_WORDS):
-    """
-    Create overlapping chunks from transcript segments.
-    
-    Args:
-        segments: List of {'timestamp': float, 'text': str} dicts
-        chunk_size: Target number of words per chunk
-        overlap: Number of words to overlap between chunks
-        min_words: Minimum words required for a valid chunk
-    
-    Returns:
-        List of chunk dictionaries with text and timestamp info
-    """
+def create_legacy_chunks(segments, chunk_size=CHUNK_SIZE, overlap=OVERLAP, min_words=MIN_CHUNK_WORDS):
+    """Legacy word-window transcript chunking retained for fallback/rollback."""
     if not segments:
         return []
     
@@ -215,6 +205,28 @@ def create_chunks(segments, chunk_size=CHUNK_SIZE, overlap=OVERLAP, min_words=MI
             break
     
     return chunks
+
+
+def create_chunks(segments, chunk_size=CHUNK_SIZE, overlap=OVERLAP, min_words=MIN_CHUNK_WORDS):
+    """Create transcript chunks using the configured backend."""
+    if not segments:
+        return []
+
+    if CHUNKER_BACKEND == 'chonkie':
+        total_words = sum(len(segment['text'].split()) for segment in segments)
+        if total_words < min_words:
+            return create_legacy_chunks(segments, chunk_size=chunk_size, overlap=overlap, min_words=min_words)
+
+        chonkie_chunks = chunk_transcript_segments_with_chonkie(
+            segments,
+            chunk_size=chunk_size,
+            overlap=overlap,
+            min_words=min_words,
+        )
+        if chonkie_chunks:
+            return chonkie_chunks
+
+    return create_legacy_chunks(segments, chunk_size=chunk_size, overlap=overlap, min_words=min_words)
 
 
 def process_transcript(video_id, transcript_path, video_metadata, force_reprocess=False):
