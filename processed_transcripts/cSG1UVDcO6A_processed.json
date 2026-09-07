@@ -1,0 +1,842 @@
+[
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "What's up everyone? Welcome to the options trench. Today Chris and I, mostly Chris on this one specifically is going to walk us through um flex options. And there's like a threepart series to this arc. We're going to talk really quick just about what they are and why somebody might use them. Then Chris is going to go into a little bit about 13Fs and how when derivatives are included in that analysis, it's often messed up. People get it wrong. We even see this reporting all the time with Michael Bur on X where all these news agencies are saying Michael Bur is short 15 gajillion dollars and he's like no bro it's like not even close to that. So that happens a lot on different filings. So we're going to talk about that. And then the last thing is a little more of a mental scholastic ststructural conversation about why is it that we can find ourselves in pretty efficient markets and still find pockets where there's kind of clear inefficiency or at least seeming inefficiency and how to avoid that especially if you interact with flex options. So if you're on the retail side of the equation, a lot of this is just general knowledge. You'll definitely want to listen to the 13F part just because exactly as Chris was saying before this, there's tons of articles that start circulating all",
+    "start_timestamp_seconds": 2.32,
+    "end_timestamp_seconds": 82.08,
+    "start_timestamp": "00:02",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=2",
+    "chunk_index": 0,
+    "word_count": 235,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "side of the equation, a lot of this is just general knowledge. You'll definitely want to listen to the 13F part just because exactly as Chris was saying before this, there's tons of articles that start circulating all around and like they're just wrong. It's like literally just wrong. And it's good to know that because it'll come from sources that you legitimately trust like seemingly like like Bloomberg has done this like good sources. Everybody makes mistakes, but it it helps you become a little bit more discerning. So, first Chris, I figure perfect starting place is a quick overview of what a flex option is and why might somebody be interested in them. >> Yeah. So, um a flex option is uh it's it's a custom option. So, it's traded on the exchange. So, for example, um let's say that you you want to trade an option on Tesla and for whatever reason you want to you want to buy the 397 call expiring on your birthday. Well, you can uh you can submit a a request to trade that um flex. Flex means that it has uh custom terms. So, that's your expiration date that you wanted. So you can choose the exact date. You can choose whether you want it to be AM or PM. So you can have it expire at the morning on the in the morning or you can",
+    "start_timestamp_seconds": 72.88,
+    "end_timestamp_seconds": 158.24,
+    "start_timestamp": "01:12",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=72",
+    "chunk_index": 1,
+    "word_count": 236,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "So you can choose the exact date. You can choose whether you want it to be AM or PM. So you can have it expire at the morning on the in the morning or you can have it expire in the in the evening as a normal option does. Um like SPX options have like an A they have an AM expiration, right? So you can choose AM or PM. Um you can do a flex on indexes, you can do it a flex option on an equity. And what's happening is the exchange is clearing the trade, but there's no screen or uh order book for for it because it's custom. So, in order to trade a flex option, you have to ask a broker to go find a counterparty to it and say, um, hey, go get me a quote for the that Tesla, uh, you know, July 12th, 19, uh, uh, 397 call, 397 and a half call. You can even trade a half strike if you want. um because you have and you might do that because you have a very specific thing you're trying to hedge where you want to be exactly matched up on the duration, you want to be exactly matched up on the strike. Um what you're giving up is you're giving up liquidity in the sense that you now need to go ask a broker to find you",
+    "start_timestamp_seconds": 148.72,
+    "end_timestamp_seconds": 230.64,
+    "start_timestamp": "02:28",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=148",
+    "chunk_index": 2,
+    "word_count": 237,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "be exactly matched up on the duration, you want to be exactly matched up on the strike. Um what you're giving up is you're giving up liquidity in the sense that you now need to go ask a broker to find you somebody to uh to to trade the other side of this, which means you've narrowed the universe of possible sellers for this option. um right off the bat. So, it's a less liquid thing to do um more opaque. Um and so the idea is you're probably going to give up a little bit more edge buying those options. Um but in exchange for that, at least it matches exactly the thing that you want. And the great thing about flex options is that the exchange clears them, which means that even though it is a custom trade, you're not taking any counterparty risk. the exchange is still acting as a clearing house for that option even though uh it is a a custom uh a custom option. So that's that's um kind of the benefit you get the drawback of it and then actually what a flex option is. A couple other clarifying questions. As I was telling you right before when you when you mentioned about doing this topic, I immediately was like, I'm gonna get a chance to learn a lot about this because I I know literally jack about it. The only",
+    "start_timestamp_seconds": 220.16,
+    "end_timestamp_seconds": 297.84,
+    "start_timestamp": "03:40",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=220",
+    "chunk_index": 3,
+    "word_count": 238,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "As I was telling you right before when you when you mentioned about doing this topic, I immediately was like, I'm gonna get a chance to learn a lot about this because I I know literally jack about it. The only place that I've really seen flex options from like a retail side is Are you familiar with like buffer ETFs? >> Yeah. >> So that's where I've seen them. >> Yeah. That's that's like the main place I've seen them. So my my broad question is like what other you gave an example of like if somebody wanted Tesla like 397 or whatever but what are like the other common uses for a flex option like specifically. >> Yeah. >> So the most the most common place you are very their use is uh really widespread. Um actually so what happened was this whole topic of flex options came came up because it was I was uh just scrolling Twitter and I saw that the conversation of flex options had come up and the context I originally saw it in was about um flex options and ETFs and I got the sense that there was some tinfoil hat around around it but the the the reality is like that's a great application of the flex option is because these ETFs have a very, you know, they they uh they have a specific mandate that they offer to customers. Like if",
+    "start_timestamp_seconds": 288.8,
+    "end_timestamp_seconds": 369.28,
+    "start_timestamp": "04:48",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=288",
+    "chunk_index": 4,
+    "word_count": 241,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "the reality is like that's a great application of the flex option is because these ETFs have a very, you know, they they uh they have a specific mandate that they offer to customers. Like if it's your buffered ETF, you're saying, \"Hey, I'm going to give you a cap or a floor of this price that expires on uh you know, that's that's one, let's say it's a a three-month buffer, and it's based and it the buffer uh cap and floor levels are set on some particular date based upon some some particular stock price. So that you know that if you buy the stock for if the prevailing stock price is $12067 today, you know that the prevailing buffer prices are um uh you know x% below or uh above and below. So those are very specific strikes that that that ETF needs in order to make uh to fulfill its promise to you as a customer. So they need to trade those flex. So that that's a great example of why you would need a flex. Now in this case a lot of these buffer ETFs they are on already very liquid assets. So you know the the uh very to give an example I used to get I used to get called to make quotes for buffer ETFs. That was part of my job. So somebody might call up and say hey um I",
+    "start_timestamp_seconds": 357.92,
+    "end_timestamp_seconds": 440.08,
+    "start_timestamp": "05:57",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=357",
+    "chunk_index": 5,
+    "word_count": 239,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "uh very to give an example I used to get I used to get called to make quotes for buffer ETFs. That was part of my job. So somebody might call up and say hey um I need to buy and sell this package of options in GLD. And actually the way they would do it is they would send you a spreadsheet and they would say, \"Here's a spreadsheet of everything I need to uh buy and sell and you basically fill in the prices and come back to me on what the prices I could do for all these are and or really what they do is like what's the net premium and then when you go to actually do the trade, we come up with prices that make the net premium work out to the amount that was agreed upon.\" But the point is you're competing on the net price because what's happening is they're sending that spreadsheet to five different market makers and five different traders and saying like hey can you price this package for me? So in something like GLD and by the way like these buffer ETFs like because they're not you know they're not uh most of them are not managing like a ton of uh AUM right so the amount the the size that they're trying to [clears throat] trade is not that huge. It's like you get a",
+    "start_timestamp_seconds": 430.56,
+    "end_timestamp_seconds": 502.72,
+    "start_timestamp": "07:10",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=430",
+    "chunk_index": 6,
+    "word_count": 238,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "not you know they're not uh most of them are not managing like a ton of uh AUM right so the amount the the size that they're trying to [clears throat] trade is not that huge. It's like you get a thing and it's like I need to buy 127 of these calls and sell you know you know 98 of these puts yada whatever it is. So and at the end of the day it's just not a lot of risk and you're going to go shop it to you know four or five different market makers like you're not getting ripped off. As a matter of fact, what used to actually happen on a lot of this stuff is a lot of uh brokers that would they would bring us here. I need you to fill an order in this like highly liquid asset. Even though they're flex options, the risk is liquid, right? If like if somebody comes and buys the 397 call and GLD from me and the 400 call is listed, like it's not very hard to price the 397 call. There's no risk here. It's like if I sell you the 397, I can lay it off by buying the 400s if I need to. And anyway, the amount of risk we're talking about is not even the kind of thing I would hedge. So, the the market makers",
+    "start_timestamp_seconds": 492.88,
+    "end_timestamp_seconds": 560.0,
+    "start_timestamp": "08:12",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=492",
+    "chunk_index": 7,
+    "word_count": 235,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "buying the 400s if I need to. And anyway, the amount of risk we're talking about is not even the kind of thing I would hedge. So, the the market makers will just give it's very simple for them to like give a bunch of prices for these and they're going to pretty much offer the whole package pretty close to fair value because you got to think about it from like a business point of view. There's not a lot of risk involved here. So what happens the market maker is just going to give it be willing to give it at a really good price to the broker like a fair price because they're thinking is like well I'm not going to make any edge on this. It's in competition with like five other guys and the risk is super low. So, why don't I just give the broker a really good price so that that broker when he has an order, a market order in something that's actually got some meat on the bone, something juicy, right? Something less liquid, he calls me. So, it's almost like from a market maker's point of view, a package of like really lowrisk flex options is a loss leader to be like, I'll just fill you on this at like a it's the throwin. It's the free drink in the casino. All right. And then",
+    "start_timestamp_seconds": 555.44,
+    "end_timestamp_seconds": 622.88,
+    "start_timestamp": "09:15",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=555",
+    "chunk_index": 8,
+    "word_count": 235,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "lowrisk flex options is a loss leader to be like, I'll just fill you on this at like a it's the throwin. It's the free drink in the casino. All right. And then you come back to me when you got something good. So, uh, so in that regard, I think the whole like this concern over like if you're worried about your buffered ETF getting ripped off on flex options, if the underlying is liquid, I think uh you're probably worrying about the wrong thing. Like they're probably getting a totally fine price on their flex options. So um that's that's uh in practice how that kind of works and I you know I don't probably from the outside you wouldn't understand you know one one would not have any idea that that's what's going on. No, absolutely not. Like I I I don't think anybody would reasonably think that it's effectively like a marketing relationship, you know, package more than something else. Yeah. A quick follow on on like the first theme, construction use, use use cases, stuff like that. Something like flex options versus like OTC options versus structured notes versus like equity swaps, like all these other different kinds of instruments that can be created, I'm assuming. One of the major features would be the counterparty risk management. But are there other elements that would lead you to a flex versus like any other",
+    "start_timestamp_seconds": 615.44,
+    "end_timestamp_seconds": 699.52,
+    "start_timestamp": "10:15",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=615",
+    "chunk_index": 9,
+    "word_count": 238,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "other different kinds of instruments that can be created, I'm assuming. One of the major features would be the counterparty risk management. But are there other elements that would lead you to a flex versus like any other configurable package? Yes. So the you could think about the flex almost as like the in between. It's like the the semi customizable, right? Because like even if you think about when you when you trade a flex like if you were to think about a flex as like a form that you fill out. It's like you can you can you can change the strike, you could change the expiration date. Um you can say AM or PM. You can actually a big thing is you can say Euro or American style. So it's it's interesting. Uh a lot of they're usually Euro style often times uh Euro style. So, it'll be an equity option that's Euro style, but it's still settled to shares, not cash. So, you know, if you're thinking about like the, you know, the flex form as being a bunch of radio buttons and be like, \"Okay, I want that and I want that, I want that, and I fill in my strike.\" Um, that's a fair amount of customization, but it's not perfect customization because you can go to a bank and say, \"I want an option that expires.\" Um, I mean, they used to",
+    "start_timestamp_seconds": 688.56,
+    "end_timestamp_seconds": 757.36,
+    "start_timestamp": "11:28",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=688",
+    "chunk_index": 10,
+    "word_count": 239,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "fill in my strike.\" Um, that's a fair amount of customization, but it's not perfect customization because you can go to a bank and say, \"I want an option that expires.\" Um, I mean, they used to do this like options that expire in the middle of the day at some time. Um, or you can say, I want an option on a very strange under I want to invent the underlier. I want it to be on a package of uh long 100 shares of this stock and short 80 shares of this stock. I mean, you can do whatever you want to do with a bilateral sort of trade. So, a flex option is a compromise and uh it's a compromise both in liquidity and in because you're going to get better liquidity on a flex than you if you're going to somebody and you want this incredibly bespoke contract, you're almost in the world of uh you know, bilateral insurance at that point. And so, um, if you want a very specific structured note, you're going to need, uh, or structured deal, you're going to need an ISDA. You're going to have to have credit agreements with the counterparty. Like, it's just a completely different ballgame. With the flex option, you don't need to have there's no credit concerns at all. It's like the exchange is going to clear it. So, the bar for a semi-customizable",
+    "start_timestamp_seconds": 748.72,
+    "end_timestamp_seconds": 826.64,
+    "start_timestamp": "12:28",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=748",
+    "chunk_index": 11,
+    "word_count": 239,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "counterparty. Like, it's just a completely different ballgame. With the flex option, you don't need to have there's no credit concerns at all. It's like the exchange is going to clear it. So, the bar for a semi-customizable trade with flexes is far far lower than this full customization option. on your left hand. Did I Did I leave my hair tie at your place? That's That's my bad if I Yeah. Okay. This it looks familiar. I just wanted to understand where Okay. Um I'll I'll grab that later. But the the next question on like the the first part and then we'll move on is like if you were to think of the flex option world what would you even wager like the standard again not standard but like the average expiration might be like that kind of thing just sheer curiosity. Oh, I'm not I don't really I I couldn't tell you what the average duration of a flex option is, but um I could one thing I do know I just because I read it in the last SIBO update, but flex options have uh grown dramatically as a percentage of the total volume actually. Um and and again, that's that's which is just reflecting the increased popularity of optionbased ETFs. Got it. Makes sense. Yeah. My my instinct would be that it would be like generally longer duration, but I",
+    "start_timestamp_seconds": 817.84,
+    "end_timestamp_seconds": 902.8,
+    "start_timestamp": "13:37",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=817",
+    "chunk_index": 12,
+    "word_count": 235,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "Um and and again, that's that's which is just reflecting the increased popularity of optionbased ETFs. Got it. Makes sense. Yeah. My my instinct would be that it would be like generally longer duration, but I literally no idea. >> Yeah. I mean, I would I I can say that by the way, like I didn't um you know, while I've traded a bunch of flex options, um I mean it would the the total composition of my options trading is like we're talking about like less than probably less than a quarter of a percent of all the options I've ever traded or were flex. So, um yeah, it's still it it it's a small part of the market. It just happens to be growing a lot. >> Yeah. Moving into the next part of the conversation. Once in a while on X, the example I gave earlier will come up. It's always comical to me where somebody will take a screenshot of some sort of financial form from Bur. It's always Bur Pretty much always Bur. And they're saying, \"Oh my god, you know, Bur is short. 92 gajillion dollars of these tech stocks. Obviously, the world is gonna collapse. And then normally like later that day or the next day, Barry comes out and like it's actually hilarious that he even does this, but it comes out and he's like, \"No, bro. Like,",
+    "start_timestamp_seconds": 889.52,
+    "end_timestamp_seconds": 972.96,
+    "start_timestamp": "14:49",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=889",
+    "chunk_index": 13,
+    "word_count": 236,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "Obviously, the world is gonna collapse. And then normally like later that day or the next day, Barry comes out and like it's actually hilarious that he even does this, but it comes out and he's like, \"No, bro. Like, this is the exact position. This is the size. They once again for the 15th time got it wrong.\" There's a lot of potential errors that people make when they're looking at 13Fs, specifically when derivatives are involved and specifically when we add something like flex options onto that package. So talk to me a little bit about that especially because you were mentioning I didn't know this but you were mentioning that there might be some interplay between our boy Salt and Leopold and his use of flex options potentially. So >> yeah, >> can you can you walk through flex options, how they would present on a 13F and how you actually interpret whatever that position might be? Yeah, I think what I saw was that somebody had uh I think in the chatter on Twitter it was it was somebody was saying like oh you don't have to you don't have to report the options if if on a 13F if you trade them flex um which first of all that's not actually true but I'll explain that in a second but really the larger point is that the 13F is useless for options the the 13 first",
+    "start_timestamp_seconds": 962.72,
+    "end_timestamp_seconds": 1043.36,
+    "start_timestamp": "16:02",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=962",
+    "chunk_index": 14,
+    "word_count": 241,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "on a 13F if you trade them flex um which first of all that's not actually true but I'll explain that in a second but really the larger point is that the 13F is useless for options the the 13 first of all the 13F F in options um you don't have to report any short option positions at all. So if you even if you saw an option position a large option option position you would have no idea if it was uh part of a spread. >> So right away it's like we're we're we're already useless here. like it's it's like if the shorts are excluded um this is uh um useless sort of information. And then the other part of it is the strikes and the experies. They're not listed either on the in in in the 13F. What they list is just they they tell you what the notional value of the underlying holding is. So there's no real differentiation between a one delta call and a 100 delta call. So you you really learn nothing from looking at an options uh 13F. So you know at you're looking at half the picture maybe at back like you don't even know if you're looking at half the picture or not because you don't know what the short legs are. And then for the long and and the whole thing's already on a lag.",
+    "start_timestamp_seconds": 1030.24,
+    "end_timestamp_seconds": 1117.52,
+    "start_timestamp": "17:10",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=1030",
+    "chunk_index": 15,
+    "word_count": 238,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "picture maybe at back like you don't even know if you're looking at half the picture or not because you don't know what the short legs are. And then for the long and and the whole thing's already on a lag. So, um, what in other words, like, well, that just inherits the general problem with the 13F, but the the fact the, uh, options, you don't know the actual strike or Xbury tells you that it's worthless. Um, and then when it comes to flexes, um, so the what's the rule with the flex options and and the 13F? So what determines whether or not you must report on the 13F with options is is whether the underlier is eligible to be reported on a 13F. So for example, you I don't believe you need to report on a 13F positions in the SPX, but you would have to report a position in SPY. And so if you had flex options on SPY, those are reportable because there and there's nowhere in a 13F where there's where they distinguish whether your option is flex or not. So it's just is it an option? So if the underlier is eligible for 13F reporting, then uh then you would need to report your flex options. But there's nothing that says that you there's no box that you check and say it's a flex option. It's just I",
+    "start_timestamp_seconds": 1109.6,
+    "end_timestamp_seconds": 1189.92,
+    "start_timestamp": "18:29",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=1109",
+    "chunk_index": 16,
+    "word_count": 236,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "eligible for 13F reporting, then uh then you would need to report your flex options. But there's nothing that says that you there's no box that you check and say it's a flex option. It's just I have an option and this is the notional uh that it can that that that option would control. Um so there's no premiums on it or anything like that for any of the options. So yeah, strictly speaking if he has if you have a 13F position in a name if you have a if you have an options position in a name that is 13F eligible then you have to report that. Um but again just the whole 13F is pretty useless for options. the the uh brother the rules for the 13F. I had to look this up because I wasn't exactly sure what they were, but you have to manage um $100 million. You have to manage $100 million as a as a as an investment manager or basically as a company if you're a company. Like I think if you have an LLC, you have to report if you're over 100 million. Um, but at the position level, you don't have I don't believe you need to report the position if the aggregate value of the position is below $200,000. So even if you are a reporting entity, you would not have to report positions below $200,000, which people probably",
+    "start_timestamp_seconds": 1179.2,
+    "end_timestamp_seconds": 1254.24,
+    "start_timestamp": "19:39",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=1179",
+    "chunk_index": 17,
+    "word_count": 241,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "have I don't believe you need to report the position if the aggregate value of the position is below $200,000. So even if you are a reporting entity, you would not have to report positions below $200,000, which people probably don't care about anyway, but that's that's just for the sake of what the rule is. >> Oh, that's curious. Anyways, if you were to look at a 13F and try to glean anything useful, so we know that we can't deduce specific positioning or anything like that, but is there anything useful that you think somebody could pull from a 13F? So, I mean, I could one. Okay. Yeah. So there's a I won't name any spec any any specific ticker but like there have been times where like for example a closed think of a closed end fund um if you go and you look at the 13F for a closed end fund and uh that might be trading at a discount and you go in there and then you see the list of holders is a bunch of wise guys like whether you know Sig, Jane Street, Citadel Securities, like basically you're seeing a list of a bunch of arbitrage oriented shops then um something like that can be interesting because you're kind of like you it's a confirming it's like you look at this thing and you say you know there's this closed end fund um you know",
+    "start_timestamp_seconds": 1242.0,
+    "end_timestamp_seconds": 1336.32,
+    "start_timestamp": "20:42",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=1242",
+    "chunk_index": 18,
+    "word_count": 242,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "bunch of arbitrage oriented shops then um something like that can be interesting because you're kind of like you it's a confirming it's like you look at this thing and you say you know there's this closed end fund um you know I'm getting a 15% discount on this thing um you know, is it worth buying this thing? You know, with closed end funds are kind of difficult. It's like you don't know if the gap's ever going to close. You know, there's there's a whole activist piece to it sometimes where like a closed end fund will some some somebody will come along, acquire a really big position in it, and then try to force the management to change something about their behavior to effectively close the gap. Like that's a that's a that's a strategy. Um, but that's an example to me of somewhere where you can kind of you look at a 13F and see who the holders are and be like, are these are these the kinds of people that are in things for a trade? And maybe that's kind of helpful. So, um, yeah, that's just giving one example of something where I have used the 13F before to to kind of try to glean. Do you think there's any do you think there's any efficacy in compiling 13Fs from multiple entities and then cross referencing the aggregate holdings and whatnot? Anything there?",
+    "start_timestamp_seconds": 1320.88,
+    "end_timestamp_seconds": 1408.24,
+    "start_timestamp": "22:00",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=1320",
+    "chunk_index": 19,
+    "word_count": 239,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "kind of try to glean. Do you think there's any do you think there's any efficacy in compiling 13Fs from multiple entities and then cross referencing the aggregate holdings and whatnot? Anything there? >> I mean, I haven't I haven't I haven't done it. So, it's I it's not which is not to say that it's useless or I just haven't done it. So, I wouldn't you know I don't have any authority to speak on that. The reason why I ask is I I have a like a massive library of different market effects and profit mechanisms that I have on like the research docket and different kind of form filings is one of them. And I was actually looking at building a series on that and then using like dislocations to see if there's anything interesting that happens there. Uh, thanks for nothing because I was just going to use your answer to tell me about the research. So sick. >> Guess that. >> Yeah. Still on the list. >> Just in general. In general, it's probably like the 13F to me seems like one of those things that's like a like it's probably difficult as a starting point, but like maybe it's it's it it's a you know it's like helps you to verify if like hey is the idea that I have who else might have noticed this and so it",
+    "start_timestamp_seconds": 1393.6,
+    "end_timestamp_seconds": 1472.4,
+    "start_timestamp": "23:13",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=1393",
+    "chunk_index": 20,
+    "word_count": 235,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "it's probably difficult as a starting point, but like maybe it's it's it it's a you know it's like helps you to verify if like hey is the idea that I have who else might have noticed this and so it might like confirm like whether this is an like there's even a thing here. >> Well, I'll take a note and I'll circle back. That's honestly pretty low on the priority list, but I am interested in it. I am going to look at it. So, if I find anything curious, I'll follow up with you. And that leads us to the third part in our arc, which is incentives of banks, fair pricing, and not getting ripped off when it comes to things like flex options. So, one thing I I was actually curious about is some other kinds of derivatives. Again, you you would know this better than me, so I I I don't want to speak out of term, but some of them they do have like different kind of costing and transparency functions that have like embedded broker commissions and and whatnot. How does all that stuff work with like a a flex option? Obviously, you said there's the shopping around function. So, we understand that part of going to get different people to look at it, but that to me would then mean I'm not going to get ripped off. That",
+    "start_timestamp_seconds": 1461.76,
+    "end_timestamp_seconds": 1538.64,
+    "start_timestamp": "24:21",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=1461",
+    "chunk_index": 21,
+    "word_count": 237,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "Obviously, you said there's the shopping around function. So, we understand that part of going to get different people to look at it, but that to me would then mean I'm not going to get ripped off. That seems like a pretty fair system. Like, go get some quotes and then pick the best one. So, where does it go wrong? >> Yeah, that's that's a fun question. So, um well, this this is like we should talk about a little bit about um execution and like what's actually happening in the broker market and executions cuz a lot of this stuff is um uh it's opaque and it's a bit uh and also it doesn't affect uh or or it affects more of like people that are using brokers more so than people that are trading on the screen. But um it's one thing with going to the flex option thing. So I remember there was a period this was probably 10 it could be 10 years ago maybe 15 years ago was in it was in the 2010s I remember early 2010s that um where there was a period of time where let's say you wanted to go let's say you wanted to buy an option and it was offered at the it was like you wanted to buy some out of the money some some call opt like some 40 delta call and it was",
+    "start_timestamp_seconds": 1526.8,
+    "end_timestamp_seconds": 1608.96,
+    "start_timestamp": "25:26",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=1526",
+    "chunk_index": 22,
+    "word_count": 238,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "say you wanted to go let's say you wanted to buy an option and it was offered at the it was like you wanted to buy some out of the money some some call opt like some 40 delta call and it was offered on the screen at four bucks And you would you could uh the customer might say uh I want to shop I want to I want to buy this and they go to a bank. Let's say they so first of all banks oftentimes act as brokers for people like let's say you're a long short hedge fund. You're generally using options for directional uh reasons and you have a clearing relationship with Goldman Sachs. And so you might go to Goldman Sachs and say, you go to their sales desk and you say, \"I want to buy uh I want to buy these options. What's your price?\" And Goldman says, \"Uh well uh they're offered at $4 on the screen. We can sell them to you for $4 at $4 or we can sell them to you uh for $3.99 if you if you trade them flex. And in other words, they'll give you a better deal on the options if you agree to trade them flex. Okay. So, what's a what's some reasons why? In other words, like this is the exact opposite of the narrative where the flex gets you ripped",
+    "start_timestamp_seconds": 1601.76,
+    "end_timestamp_seconds": 1680.88,
+    "start_timestamp": "26:41",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=1601",
+    "chunk_index": 23,
+    "word_count": 238,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "better deal on the options if you agree to trade them flex. Okay. So, what's a what's some reasons why? In other words, like this is the exact opposite of the narrative where the flex gets you ripped off in a sense because you're like, wait a minute, they're going to give me a better price if I trade them flex. So, what's h what's happening here? There was kind of like there's a couple things going on. One is that well first of all if you trade it flex with the bank they now know your pos that you know like they know your position and they know they know when you close the position because you'll trade it with them to get out of it if you decide to close it. Whereas like a regular vanilla option, if you go and you pay $4 for that option, they might uh they might not know when you get out of the position, right? Because you can lay that off in the general marketplace and they won't know. But here it's like they kind of know your position. That's part of it. But that was just actually the smaller probably the smaller part of it. The reason they would give you the better deal is actually what they were trying to do is they were trying to hide the print because when you trade an option, you",
+    "start_timestamp_seconds": 1669.52,
+    "end_timestamp_seconds": 1734.8,
+    "start_timestamp": "27:49",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=1669",
+    "chunk_index": 24,
+    "word_count": 237,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "probably the smaller part of it. The reason they would give you the better deal is actually what they were trying to do is they were trying to hide the print because when you trade an option, you know, it has to be printed within a very quick amount of time of like agreeing to the trade. It has to print on the exchange. But flex options don't have to be printed until the day is over. So what was happening is so in other words like it basically trades dark. And if it trades dark, what that means is Goldman who sells you this 40 delta call is now free to work out of the delta because they have to buy shares against this option that they sold you. But they are free to work out of the delta and buy back their shares without racing anybody else, any of the bots who read the prints and try to figure out what somebody needs to do to hedge. Because that was happening was like people would have programs that see like this option price [clears throat] go up at a high price and it would and they would be like well that's a 40 delta option and 10,000 of those traded. There's a lot of stock to buy here and then the bots would just go and buy the shares right away anticipating that whoever sold those",
+    "start_timestamp_seconds": 1727.04,
+    "end_timestamp_seconds": 1794.8,
+    "start_timestamp": "28:47",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=1727",
+    "chunk_index": 25,
+    "word_count": 238,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "that's a 40 delta option and 10,000 of those traded. There's a lot of stock to buy here and then the bots would just go and buy the shares right away anticipating that whoever sold those options needs to go buy stock. So by letting it trade in the dark, they didn't have to race the bots to buy the shares. So then they figured it was worth it to them um to give up some cents on the trade in order uh to not end up in this race condition. So that was that was uh one reason why the flexes you know sometimes these flexes were being offered because it gave the counterparty it g it gave the liquidity provider a way to trade in the dark. Okay. So go ahead >> a quick question on that. How does it work on the back end? So obviously that helps you, you know, get in on the the front of the position, but obviously to get back out, there's another liquidity constraint of some sort. And what once you're in that flex option with some sort of entity, what prevents them from taking the pound of flesh just on the back end, you know, once they have you? So they Yeah, they and they can they can but like because it's flex you can get a you will be able to get a quote from somebody else. >> Got it.",
+    "start_timestamp_seconds": 1786.32,
+    "end_timestamp_seconds": 1865.44,
+    "start_timestamp": "29:46",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=1786",
+    "chunk_index": 26,
+    "word_count": 241,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "back end, you know, once they have you? So they Yeah, they and they can they can but like because it's flex you can get a you will be able to get a quote from somebody else. >> Got it. Okay. >> Yeah. So like that's kind of the good part of it being a flex is that you will be able like you can go to your broker and say you can say to the broker, hey, I want you to go get me a get me a let's say you're long and you want to get out. Show me a bid. Go get me a bid in this flex option with these terms. Don't quote Goldman. >> Don't Don't ask, you know, I I I I forbid you from asking Goldman for a quote or whatever. And so, um, that could be that could be, uh, one way to do it. Cuz the idea being that like you show Goldman the quote, it's like, you know, they're not nobody's supposed to do this, but like if you if you if you ask them for the quote now, they know that there's a seller out there, and so what are they going to do? It's like they might become better sellers on the screens of options in general knowing that there's about to be some VA for sale. Um, and so they'll kind of like I",
+    "start_timestamp_seconds": 1854.64,
+    "end_timestamp_seconds": 1917.2,
+    "start_timestamp": "30:54",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=1854",
+    "chunk_index": 27,
+    "word_count": 237,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "what are they going to do? It's like they might become better sellers on the screens of options in general knowing that there's about to be some VA for sale. Um, and so they'll kind of like I would say the the experience like they'll ruin your picture, right? Like they know you're a seller and so even if you don't show them anything, they now know like, oh, this >> I know this person's long, they're probably looking to get out. Uh, I'm going to be a better seller of options knowing that there's going to be a supply of V coming in most likely. So, um, yeah, but because it's flex, you do have other outs. >> Fair. Okay. Yeah, that that was the the main thing I was curious about there. One other broad thing on the incentive structure and and whatnot. There's a little bit of kind of like the the relationship building function that you were talking about. Does there end up is it like all other kind of options? Are there certain entities that become just like the go-to for these? >> Yeah, it's it's um this kind of yeah get gets back down to like at the end of the day this is there there's a business here with various incentives and different people in the in the chains incentives um can diverge at certain points. So,",
+    "start_timestamp_seconds": 1910.4,
+    "end_timestamp_seconds": 1990.24,
+    "start_timestamp": "31:50",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=1910",
+    "chunk_index": 28,
+    "word_count": 234,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "gets back down to like at the end of the day this is there there's a business here with various incentives and different people in the in the chains incentives um can diverge at certain points. So, um, we were kind of talking about this before, but uh, in general, like with with with the question is was like, let's frame this in the Leopold thing. So what I realized on Twitter was people were people were kind of concerned that Liupold was trading by him trading flex options he was getting ripped off because uh because he's trading something that that that's um a little bit more opaque, right? So he was getting ripped off and I don't think the flexness of it is the reason you're getting picked off. It's the general if you're failing to put to get uh to bid out your deal. Like if you are not getting enough quotes, you are going to get ripped off. So if you go to just one counterparty and you don't shop it, how do you know what the right price for this option actually is or what the best price you can get is? So the failure isn't because you choosing flex. The failure could be even with the vanilla option where you choose to put the market makers in competition. We call it incomp. You're not putting them in in comp. So your",
+    "start_timestamp_seconds": 1977.6,
+    "end_timestamp_seconds": 2066.0,
+    "start_timestamp": "32:57",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=1977",
+    "chunk_index": 29,
+    "word_count": 237,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "you choosing flex. The failure could be even with the vanilla option where you choose to put the market makers in competition. We call it incomp. You're not putting them in in comp. So your broker's duty is to put um unless you say otherwise, your broker's duty is to put the marketplace in comp with each other so that you can get the best possible price as a client. Now there this is where it gets like a bit where it can it can get a little weird. So uh sometimes we see these trades that happen in the market at what look like absolutely egregious prices probably and meaning that like you XYZ stock 40,000 calls. Now granted it's a lot of risk. It's a ton of risk, but 40,000 calls and some XYZ stock and it could be like a large cap stock trade, you know, 50 cents through the screen offer, right? Some really high price and uh and it'll be like, you know, it'll be like one print and basically the whole derivatives trading community might be star standing around being like, who the hell did that? Who got the look on selling those? They made $2 million of screen edge on the print for selling those things. Who got who gets that piece of business? And um the other question is is like who who who who bought that price? Like let's",
+    "start_timestamp_seconds": 2056.64,
+    "end_timestamp_seconds": 2151.52,
+    "start_timestamp": "34:16",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=2056",
+    "chunk_index": 30,
+    "word_count": 238,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "screen edge on the print for selling those things. Who got who gets that piece of business? And um the other question is is like who who who who bought that price? Like let's say those let's say the off the offer was four bucks the prints at 450 on the calls and then it's immediately offered at four and a quarter like right afterwards which is the four and a quarter order right afterwards offer right afterwards is basically somebody that missed the print that is now wants to try to sell like they they think the option is worth $4. Let's say like may maybe they adjusted their f fair value up to like the prior offer and they think it's worth four. So like I'm at four and a quarter on these things. And they're hoping that some maybe even some of the people that sold the options at 450 will buy them from back from them for four and a quarter and lock get to lock in their free quarter in the process embarrassing the broker who printed it at 450 when there were people that were willing to sell at four and a quarter. Right? A broker that pays 450 in a world where something's offered at four and a quarter did a very bad job. Right? So if you if that happened in the real estate market, you'd be furious, right, with your realtor.",
+    "start_timestamp_seconds": 2139.6,
+    "end_timestamp_seconds": 2214.56,
+    "start_timestamp": "35:39",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=2139",
+    "chunk_index": 31,
+    "word_count": 240,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "pays 450 in a world where something's offered at four and a quarter did a very bad job. Right? So if you if that happened in the real estate market, you'd be furious, right, with your realtor. So um so why how does that happen? Like did the broker do something wrong? Did what happened? So and I I I'm going to this is me speculating, but I'll there has been a trend in recent years of large market makers putting people back on the floor. So like Citadel has traders on the option floor and you're like wow that seems like you know Benjamin Button like the time is going backwards. We're going back to like a prior era. What's what's happening here? And it's because the more coverage you have on the floors, the more capability you have to break up these crosses because usually these trades have to happen on a it's called a cross where the broker comes in and they have they have the seller, they have the buy order together and it's matched already and they go to the floor and they say, \"I'm going to print these at 450.\" And normally if there's if there's not a lot of um well- capitalized market makers in the pit, they might say like, \"Hey, just let us get it to sell a couple of these two and we'll let you do",
+    "start_timestamp_seconds": 2204.72,
+    "end_timestamp_seconds": 2285.6,
+    "start_timestamp": "36:44",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=2204",
+    "chunk_index": 32,
+    "word_count": 236,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "450.\" And normally if there's if there's not a lot of um well- capitalized market makers in the pit, they might say like, \"Hey, just let us get it to sell a couple of these two and we'll let you do it.\" But if Citadel has a trader in the pit that is willing to sell 20,000 of those calls at 440, they're going to tell them, \"No, I'm at I'm offered at 440. cannot put these tra you cannot put these up at 450. I'm offered at 440. >> Now, this sucks for the broker because the broker is like, \"Well, then I don't get to bill my seller that I went and found. I don't get to bill him for selling these at 450.\" So, you directly cutting in to the broker's commission if you do this. So, the broker wants to find somewhere where they can print the trade at 450 so they can get their whole commission. Now, that sounds pretty Now, so you're kind then you're kind of like, well, if the broker does this, isn't the broker going to look bad to their client because they're putting they're they're basically like being greedy for themselves and screwing their client over? And it what it comes down to is they're going to try to do this if they're broke. They're going to for enough money they're going to try they might try to screw over they they might",
+    "start_timestamp_seconds": 2272.96,
+    "end_timestamp_seconds": 2357.36,
+    "start_timestamp": "37:52",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=2272",
+    "chunk_index": 33,
+    "word_count": 243,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "client over? And it what it comes down to is they're going to try to do this if they're broke. They're going to for enough money they're going to try they might try to screw over they they might screw their client if their client won't notice. If you're the kind of customer that does not realize that you're being ripped off, if you're not really paying that much attention to the option prices, don't really understand how execution and um and competition work, you might not realize that you got ripped off on the price. And so, which that might sound crazy, but I can I promise you that that happens a lot. Um, where there are people using options that have no idea if they're if they're uh getting ripped off or not or they're not paying close enough attention. So, the broker knows how much attention because the what because like if you're a broker and you have a customer that's constantly uh badgering you like, \"Hey, why did you get me filled at, you know, $4 instead of $3.98? I could have got 398s if I just worked these on the screen for the next three hours instead of paying you to do them at $4 or whatever.\" like there's just like like um really really uh detail oriented customers that are annoying perhaps even to the to the point of being annoying",
+    "start_timestamp_seconds": 2347.84,
+    "end_timestamp_seconds": 2426.32,
+    "start_timestamp": "39:07",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=2347",
+    "chunk_index": 34,
+    "word_count": 237,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "screen for the next three hours instead of paying you to do them at $4 or whatever.\" like there's just like like um really really uh detail oriented customers that are annoying perhaps even to the to the point of being annoying and then there are some that are just like yeah whatever I don't care 50 who cares 25 cents that whatever um and so the question is is like did Liupole get ripped off on his options trades and it's like I don't know how how well does he understand execution how much does he realize is how much does he care about, you know, paying up $2 million for options that he could have bought for $2 million cheaper? Like, you know, somebody that is like splashing the pot and and kind of loose with that. That's is this is like market makaker's dreams is to try to like find a counterparty that doesn't realize that those nickels and dimes that they're giving up are everything that their whole business revolves around, right? It's like somebody I'm I'm out here trying to trade for a penny and I got this this new fish at the table that's that's you know spitting out hundreds. That's you know it's crazy. So, in the case with the broker that brings this that bring these trades that go up at these crazy prices, I don't know. I guess one of my suspicions, I guess, is that the brokers",
+    "start_timestamp_seconds": 2413.68,
+    "end_timestamp_seconds": 2493.2,
+    "start_timestamp": "40:13",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=2413",
+    "chunk_index": 35,
+    "word_count": 247,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "So, in the case with the broker that brings this that bring these trades that go up at these crazy prices, I don't know. I guess one of my suspicions, I guess, is that the brokers might also not shop the order because what they should do, their duty should be like to shop the order to everybody to, you know, to all the big trading firms to be able to get the best price. But they're also worried because these trading firms have sales desks. So broker might think like, you know, if I if I shop this order to XYZ trading firm and they got a sales desk, their sales trader is going to be like, wow, how do how does this how does this little broker have this gigantic order? We want to get we want that business. We got to figure we got to figure out who that client is and tell them that, hey, come do your business with us. We'll charge you the commission, but we'll get you b way better fills. Our trading desk will we'll we'll we'll make our trading desk trade at really competitive prices so that we can get the business. And so that would effectively steal the order from the broker uh if they shopped it to those firms. So you might say like, \"Oh, don't all the big firms are the ones that get in on",
+    "start_timestamp_seconds": 2482.56,
+    "end_timestamp_seconds": 2567.36,
+    "start_timestamp": "41:22",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=2482",
+    "chunk_index": 36,
+    "word_count": 238,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "And so that would effectively steal the order from the broker uh if they shopped it to those firms. So you might say like, \"Oh, don't all the big firms are the ones that get in on those prints?\" And it's like, no, you know who's more likely to get in on that print is a smaller trading group that's very plugged in that does not have a sales desk that is basically saying, I'll be very discreet and we have a very we have a very close relationship with the broker. You show me the order. I will I mean, I'm capable and willing to put up tons of risk. like I'm willing to trade you trade 40,000 options in this thing like so it's still a market maker that's got you know big balls but is not part of this big institution that can go out and try to steal the originating orders business from them. So, I don't know. That's my guess as to like how why that might happen. But otherwise, sometimes there are these trades that happen at really big prices and you just kind of think to yourself like, how did that happen? This guy got looks like this customer looked like they got ripped off. Why didn't anybody else get a look at this? So, I don't know. It's kind of a little bit like super inside baseball like execution. But,",
+    "start_timestamp_seconds": 2556.08,
+    "end_timestamp_seconds": 2638.0,
+    "start_timestamp": "42:36",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=2556",
+    "chunk_index": 37,
+    "word_count": 238,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "customer looked like they got ripped off. Why didn't anybody else get a look at this? So, I don't know. It's kind of a little bit like super inside baseball like execution. But, >> and what do you think about that trend? Like do you think that's likely to sustain with like Citadel putting traders on the floor to try to intercept those or like is there a defense against that? Um, you know, I I don't I don't uh God, I don't know what the latest is on like, you know, sometimes I've wondered like why is there why is there you know whatever 17 option exchanges, you know, like there's the there's the capitalism story where it's like, oh, it's like a new a new venue a new venue for that where like you can we can have a different matching engine and we can have a different way for you to execute and and and and variety is great for the ecosystem. them and and customer choice and all that stuff or is there a new venue because you know big trading firms want to have a place to cross their trades without being interfered with, right? Because the other thing is like if there were more and more and more and more exchanges, it would be more and more expensive to have coverage on all the floors and to be able to be a market",
+    "start_timestamp_seconds": 2629.04,
+    "end_timestamp_seconds": 2703.76,
+    "start_timestamp": "43:49",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=2629",
+    "chunk_index": 38,
+    "word_count": 239,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "Because the other thing is like if there were more and more and more and more exchanges, it would be more and more expensive to have coverage on all the floors and to be able to be a market maker on all the floors. So if you're a big if you're in other words like there's an advantage to being a really big firm in which like you can afford the fixed cost of coverage on every exchange and the small trader the smaller trading firm or whatever can't afford to have coverage everywhere. And so by having a like a bigger front they can ensure that they're going to be able to get more of the juicy business. That's my tinfoil hat version of like why there's so many exchanges and that the story of customer choice is a convenient cover for for that possible. But I I I say that as like I say tin foil because this is not anything I've actually researched myself. This is just like me sitting here thinking about like well you know if I were playing chess with all this stuff like how might how I might think about this. >> Yeah. Yeah. Well, the the old prisoners dilemma, I feel like that's a fair way to at least speculate on it, especially with your experience. So, if if anybody listening is anything like me, then over the last 40 minutes",
+    "start_timestamp_seconds": 2694.48,
+    "end_timestamp_seconds": 2773.52,
+    "start_timestamp": "44:54",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=2694",
+    "chunk_index": 39,
+    "word_count": 239,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "Yeah. Well, the the old prisoners dilemma, I feel like that's a fair way to at least speculate on it, especially with your experience. So, if if anybody listening is anything like me, then over the last 40 minutes or so, you now know more about flex options than you've ever possibly conceived of in the last decade plus. One one last question on [clears throat] flex options specifically. If you were to look at your crystal ball in the future, do you think that they're going to grow meaningfully? They've already been growing, but do you think that there's like a lot of growth left? And if so, why? Versus any other financial instrument? >> I think they'll I I mean, I think there's a good chance they just keep growing with the ETFs. I mean, that's what's been happening. And I would just, you know, I'm not gonna stand, you know, I wouldn't jump uh uh argue against that trend. Like, it makes sense. this, you know, I don't know if we're going to I don't know when we're at peak option ETF, you you know, uh but it doesn't seem like we're close to that at all. I mean, it it it just there there's more and more being listed all the time. There's some of there lately there have been uh some M&A in the ETF provider space where uh large asset managers are",
+    "start_timestamp_seconds": 2761.2,
+    "end_timestamp_seconds": 2838.08,
+    "start_timestamp": "46:01",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=2761",
+    "chunk_index": 40,
+    "word_count": 238,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  },
+  {
+    "video_id": "cSG1UVDcO6A",
+    "title": "What Are FLEX Options?| The Mechanics Explained | The Options Trench",
+    "text": "I mean, it it it just there there's more and more being listed all the time. There's some of there lately there have been uh some M&A in the ETF provider space where uh large asset managers are buying some of these ETF managers that have just popped up in the last few years. Um, so it feels like there's been a gold rush on the ETF uh option ETF manager side and tons of issuance of product and then um and then these guys are now getting acquired which is not going to uh slow the gold rush down in the sense that like now you're like whoa we can we can we can exit we can build an ETF company and then exit. It's like uh um I think you're just going to see more the incentives point to more and more um uh issuance and with more issuance we're going to get more flexes. I guess >> we will see. Time will tell as it always does. Everybody thanks for hanging out. We'll see you guys on the next one. catchy as",
+    "start_timestamp_seconds": 2828.0,
+    "end_timestamp_seconds": 2888.08,
+    "start_timestamp": "47:08",
+    "video_url": "https://www.youtube.com/watch?v=cSG1UVDcO6A",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=cSG1UVDcO6A&t=2828",
+    "chunk_index": 41,
+    "word_count": 185,
+    "upload_date": "20260822",
+    "published_at": "2026-08-22T18:00:28Z",
+    "duration": 2889.0,
+    "related_wiki_pages": [
+      "concepts/execution",
+      "concepts/market-microstructure",
+      "strategies/options-trading"
+    ]
+  }
+]

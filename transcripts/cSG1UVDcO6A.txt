@@ -1,0 +1,1174 @@
+2.32s: What's up everyone? Welcome to the
+3.84s: options trench. Today Chris and I,
+6.80s: mostly Chris on this one specifically is
+9.84s: going to walk us through um flex
+12.00s: options. And there's like a threepart
+15.20s: series to this arc. We're going to talk
+17.20s: really quick just about what they are
+19.60s: and why somebody might use them. Then
+21.76s: Chris is going to go into a little bit
+23.92s: about 13Fs
+26.00s: and how when derivatives are included in
+29.44s: that analysis, it's often messed up.
+32.64s: People get it wrong. We even see this
+34.16s: reporting all the time with Michael Bur
+35.84s: on X where all these news agencies are
+38.00s: saying Michael Bur is short 15 gajillion
+40.56s: dollars and he's like no bro it's like
+42.48s: not even close to that. So that happens
+45.12s: a lot on different filings. So we're
+47.04s: going to talk about that. And then the
+48.56s: last thing is a little more of a mental
+51.76s: scholastic ststructural conversation
+54.96s: about why is it that we can find
+57.60s: ourselves in pretty efficient markets
+60.48s: and still find pockets where there's
+63.76s: kind of clear inefficiency or at least
+66.08s: seeming inefficiency and how to avoid
+68.08s: that especially if you interact with
+70.72s: flex options. So if you're on the retail
+72.88s: side of the equation, a lot of this is
+74.88s: just general knowledge. You'll
+76.40s: definitely want to listen to the 13F
+78.24s: part just because exactly as Chris was
+80.40s: saying before this, there's tons of
+82.08s: articles that start circulating all
+83.60s: around and like they're just wrong. It's
+85.44s: like literally just wrong. And it's good
+87.68s: to know that because it'll come from
+89.28s: sources that you legitimately trust like
+91.12s: seemingly like like Bloomberg has done
+93.20s: this like good sources. Everybody makes
+95.36s: mistakes, but it it helps you become a
+98.32s: little bit more discerning. So, first
+99.68s: Chris, I figure perfect starting place
+102.24s: is a quick overview of what a flex
+106.32s: option is and why might somebody be
+110.88s: interested in them.
+113.04s: >> Yeah. So, um a flex option is uh it's
+117.36s: it's a custom option. So, it's traded on
+121.28s: the exchange. So, for example, um let's
+124.16s: say that you you want to trade an option
+126.56s: on Tesla and for whatever reason you
+130.48s: want to you want to buy the 397 call
+134.00s: expiring on your birthday. Well, you can
+138.16s: uh you can submit a a request to trade
+141.04s: that um flex. Flex means that it has
+146.48s: uh custom terms. So, that's your
+148.72s: expiration date that you wanted. So you
+150.72s: can choose the exact date. You can
+153.52s: choose whether you want it to be AM or
+155.36s: PM. So you can have it expire at the
+158.24s: morning on the in the morning or you can
+160.00s: have it expire in the in the evening as
+162.16s: a normal option does. Um like SPX
+165.68s: options have like an A they have an AM
+167.44s: expiration, right? So you can choose AM
+169.60s: or PM. Um you can do a flex on indexes,
+174.32s: you can do it a flex option on an
+176.88s: equity. And what's happening is the
+179.84s: exchange is clearing the trade, but
+183.20s: there's no screen or uh order book for
+187.60s: for it because it's custom. So, in order
+190.88s: to trade a flex option, you have to ask
+193.04s: a broker to go find a counterparty to it
+196.64s: and say, um, hey, go get me a quote for
+200.56s: the that Tesla,
+202.80s: uh, you know, July 12th, 19, uh, uh, 397
+208.48s: call, 397 and a half call. You can even
+210.88s: trade a half strike if you want. um
+212.96s: because you have and you might do that
+214.72s: because you have a very specific thing
+218.56s: you're trying to hedge where you want to
+220.16s: be exactly matched up on the duration,
+222.32s: you want to be exactly matched up on the
+224.48s: strike. Um
+227.04s: what you're giving up is you're giving
+228.80s: up liquidity in the sense that you now
+230.64s: need to go ask a broker to find you
+234.48s: somebody to uh to to trade the other
+236.48s: side of this, which means you've
+237.84s: narrowed the universe of possible
+240.48s: sellers for this option. um right off
+242.96s: the bat. So, it's a less liquid thing to
+245.28s: do um more opaque. Um and so the idea is
+250.72s: you're probably going to give up a
+252.40s: little bit more edge buying those
+253.92s: options. Um but in exchange for that, at
+257.36s: least it matches exactly the thing that
+259.44s: you want. And the great thing about flex
+261.68s: options is that the exchange clears
+263.76s: them, which means that even though it is
+265.44s: a custom trade, you're not taking any
+267.68s: counterparty risk. the exchange is still
+270.08s: acting as a clearing house for that
+272.64s: option even though uh it is a a custom
+277.20s: uh a custom option. So that's that's um
+280.16s: kind of the benefit you get the drawback
+283.20s: of it and then actually what a flex
+285.52s: option is. A couple other clarifying
+288.80s: questions. As I was telling you right
+290.08s: before when you when you mentioned about
+292.08s: doing this topic, I immediately was
+294.24s: like, I'm gonna get a chance to learn a
+296.48s: lot about this because I I know
+297.84s: literally jack about it. The only
+300.88s: place that I've really seen flex options
+302.56s: from like a retail side is Are you
+304.48s: familiar with like buffer ETFs?
+307.68s: >> Yeah.
+308.80s: >> So that's where I've seen them.
+310.56s: >> Yeah. That's that's like the main place
+312.16s: I've seen them. So my my broad question
+316.08s: is like what other you gave an example
+319.60s: of like if somebody wanted Tesla like
+321.20s: 397 or whatever but what are like the
+323.44s: other common uses for a flex option like
+326.16s: specifically.
+327.04s: >> Yeah.
+328.00s: >> So the most the most common place you
+330.40s: are very their use is uh really
+333.04s: widespread. Um actually so what happened
+335.60s: was this whole topic of flex options
+337.60s: came came up because it was I was uh
+340.80s: just scrolling Twitter and I saw that
+344.72s: the conversation of flex options had
+346.56s: come up and the context I originally saw
+348.72s: it in was about um flex options and ETFs
+353.04s: and I got the sense that there was some
+354.88s: tinfoil hat around around it but the the
+357.92s: the reality is like that's a great
+360.72s: application of the flex option is
+362.64s: because
+364.24s: these ETFs have a very, you know, they
+367.36s: they uh they have a specific mandate
+369.28s: that they offer to customers. Like if
+370.80s: it's your buffered ETF, you're saying,
+372.80s: "Hey, I'm going to give you a cap or a
+374.48s: floor of this price that expires on uh
+378.88s: you know, that's that's one, let's say
+380.24s: it's a a three-month buffer, and it's
+383.20s: based and it the buffer
+385.52s: uh cap and floor levels are set on some
+388.40s: particular date based upon some some
+390.16s: particular stock price. So that you know
+391.76s: that if you buy the stock for if the
+394.08s: prevailing stock price is $12067
+398.24s: today, you know that the prevailing
+400.80s: buffer prices are um uh you know x%
+404.96s: below or uh above and below. So those
+407.92s: are very specific strikes that that that
+410.00s: ETF needs in order to make uh to fulfill
+413.28s: its promise to you as a customer. So
+415.36s: they need to trade those flex. So that
+417.68s: that's a great example of why you would
+419.36s: need a flex. Now in this case a lot of
+423.92s: these buffer ETFs they are on already
+427.04s: very liquid assets. So you know the the
+430.56s: uh very to give an example I used to get
+433.36s: I used to get called to make quotes for
+436.56s: buffer ETFs. That was part of my job. So
+440.08s: somebody might call up and say hey um I
+442.72s: need to buy and sell this package of
+445.52s: options in GLD. And actually the way
+448.40s: they would do it is they would send you
+450.08s: a spreadsheet and they would say,
+452.16s: "Here's a spreadsheet of everything I
+454.08s: need to uh buy and sell and you
+458.24s: basically fill in the prices and come
+461.04s: back to me on what the prices I could do
+462.88s: for all these are and or really what
+465.84s: they do is like what's the net premium
+467.52s: and then when you go to actually do the
+469.36s: trade, we come up with prices that make
+471.84s: the net premium work out to the amount
+473.84s: that was agreed upon." But the point is
+477.52s: you're competing on the net price
+479.36s: because what's happening is they're
+480.40s: sending that spreadsheet to five
+482.32s: different market makers and five
+484.40s: different traders and saying like hey
+485.84s: can you price this package for me? So in
+488.48s: something like GLD and by the way like
+490.96s: these buffer ETFs like because they're
+492.88s: not you know they're not uh most of them
+496.40s: are not managing like a ton of uh AUM
+499.60s: right so the amount the the size that
+502.00s: they're trying to [clears throat] trade
+502.72s: is not that huge. It's like you get a
+504.32s: thing and it's like I need to buy 127 of
+507.36s: these calls and sell you know you know
+510.56s: 98 of these puts yada whatever it is. So
+514.32s: and at the end of the day it's just not
+515.68s: a lot of risk and you're going to go
+518.48s: shop it to you know four or five
+520.40s: different market makers
+522.48s: like you're not getting ripped off. As a
+524.00s: matter of fact, what used to actually
+525.20s: happen on a lot of this stuff is
+528.48s: a lot of uh brokers that would they
+530.40s: would bring us here. I need you to fill
+532.80s: an order in this like highly liquid
+536.32s: asset. Even though they're flex options,
+538.80s: the risk is liquid, right? If like if
+541.68s: somebody comes and buys the 397 call and
+544.88s: GLD from me and the 400 call is listed,
+549.68s: like it's not very hard to price the 397
+551.92s: call. There's no risk here. It's like if
+553.52s: I sell you the 397, I can lay it off by
+555.44s: buying the 400s if I need to. And
+557.28s: anyway, the amount of risk we're talking
+558.72s: about is not even the kind of thing I
+560.00s: would hedge. So, the the market makers
+563.60s: will just give it's very simple for them
+565.52s: to like give a bunch of prices for these
+567.04s: and they're going to pretty much offer
+568.88s: the whole package pretty close to fair
+570.80s: value because you got to think about it
+573.04s: from like a business point of view.
+575.76s: There's not a lot of risk involved here.
+577.68s: So what happens the market maker is just
+579.84s: going to give it be willing to give it
+581.76s: at a really good price to the broker
+583.60s: like a fair price because they're
+585.76s: thinking is like well I'm not going to
+588.16s: make any edge on this. It's in
+589.76s: competition with like five other guys
+591.36s: and the risk is super low. So, why don't
+594.08s: I just give the broker a really good
+595.76s: price so that that broker when he has an
+599.04s: order, a market order in something
+601.84s: that's actually got some meat on the
+603.36s: bone, something juicy, right? Something
+606.24s: less liquid, he calls me. So, it's
+610.96s: almost like from a market maker's point
+612.72s: of view, a package of like really
+615.44s: lowrisk flex options is a loss leader to
+619.28s: be like, I'll just fill you on this at
+621.20s: like a it's the throwin. It's the free
+622.88s: drink in the casino. All right. And then
+625.44s: you come back to me when you got
+626.72s: something good. So, uh, so in that
+630.48s: regard, I think the whole like this
+632.80s: concern over like if you're worried
+634.48s: about your buffered ETF getting ripped
+636.72s: off on flex options, if the underlying
+640.16s: is liquid,
+642.32s: I think uh you're probably worrying
+645.20s: about the wrong thing. Like they're
+646.64s: probably getting a totally fine price on
+648.96s: their flex options. So um that's that's
+652.88s: uh in practice how that kind of works
+655.76s: and I you know I don't probably from the
+657.68s: outside you wouldn't understand you know
+659.84s: one one would not have any idea that
+661.60s: that's what's going on. No, absolutely
+664.00s: not. Like I I I don't think anybody
+665.76s: would reasonably think that it's
+667.44s: effectively like a marketing
+668.64s: relationship, you know, package more
+670.40s: than something else. Yeah. A quick
+673.36s: follow on on like the first theme,
+676.24s: construction use, use use cases, stuff
+678.64s: like that.
+680.48s: Something like flex options versus like
+683.28s: OTC options versus structured notes
+686.24s: versus like equity swaps, like all these
+688.56s: other different kinds of instruments
+690.64s: that can be created, I'm assuming.
+693.36s: One of the major features would be the
+695.60s: counterparty risk management. But are
+697.60s: there other elements that would lead you
+699.52s: to a flex versus like any other
+702.00s: configurable package?
+704.16s: Yes. So the you could think about the
+705.60s: flex almost as like the in between. It's
+708.00s: like the the semi customizable, right?
+710.96s: Because like even if you think about
+712.80s: when you when you trade a flex like if
+715.28s: you were to think about a flex as like a
+716.80s: form that you fill out. It's like you
+719.20s: can you can you can change the strike,
+721.84s: you could change the expiration date. Um
+724.80s: you can say AM or PM. You can actually a
+726.96s: big thing is you can say Euro or
+728.48s: American style. So it's it's
+730.64s: interesting. Uh a lot of they're usually
+732.40s: Euro style often times uh Euro style.
+734.72s: So, it'll be an equity option that's
+736.72s: Euro style, but it's still settled to
+739.76s: shares, not cash. So, you know, if
+742.80s: you're thinking about like the, you
+744.16s: know, the flex form as being a bunch of
+745.68s: radio buttons and be like, "Okay, I want
+747.20s: that and I want that, I want that, and I
+748.72s: fill in my strike." Um, that's a fair
+752.16s: amount of customization, but it's not
+753.92s: perfect customization because you can go
+755.84s: to a bank and say, "I want an option
+757.36s: that expires." Um, I mean, they used to
+760.64s: do this like options that expire in the
+763.60s: middle of the day
+766.00s: at some time. Um, or you can say, I want
+769.68s: an option on a very strange under I want
+771.52s: to invent the underlier. I want it to be
+773.44s: on a package of uh long 100 shares of
+777.68s: this stock and short 80 shares of this
+779.68s: stock. I mean, you can do whatever you
+781.28s: want to do with a bilateral sort of
+784.48s: trade. So, a flex option is a compromise
+789.36s: and uh it's a compromise both in
+792.00s: liquidity and in because you're going to
+794.16s: get better liquidity on a flex than you
+796.24s: if you're going to somebody and you want
+797.60s: this incredibly bespoke contract, you're
+800.48s: almost in the world of uh you know,
+803.44s: bilateral insurance at that point. And
+806.24s: so, um, if you want a very specific
+809.68s: structured note, you're going to need,
+812.00s: uh, or structured deal, you're going to
+814.24s: need an ISDA. You're going to have to
+816.16s: have credit agreements with the
+817.84s: counterparty. Like, it's just a
+819.44s: completely different ballgame. With the
+820.64s: flex option, you don't need to have
+822.80s: there's no credit concerns at all. It's
+825.36s: like the exchange is going to clear it.
+826.64s: So, the bar for a semi-customizable
+829.84s: trade with flexes is far far lower than
+833.52s: this full customization option.
+836.32s: on your left hand. Did I Did I leave my
+839.28s: hair tie at your place? That's That's my
+841.44s: bad if I Yeah. Okay. This it looks
+844.24s: familiar. I just wanted to understand
+845.60s: where Okay. Um I'll I'll grab that
+848.16s: later. But the the next question on like
+852.32s: the the first part and then we'll move
+854.00s: on is like if you were to think of the
+856.24s: flex option world what would you even
+859.60s: wager like the standard again not
+862.48s: standard but like the average expiration
+864.80s: might be like that kind of thing just
+866.64s: sheer curiosity.
+869.28s: Oh, I'm not I don't really I I couldn't
+871.84s: tell you what the average duration of a
+873.28s: flex option is, but um I could one thing
+877.36s: I do know I just because I read it in
+880.00s: the last SIBO update, but flex options
+884.56s: have uh grown dramatically as a
+887.36s: percentage of the total volume actually.
+889.52s: Um and and again, that's that's which is
+892.00s: just reflecting the increased popularity
+895.36s: of optionbased ETFs.
+898.40s: Got it. Makes sense. Yeah. My my
+900.88s: instinct would be that it would be like
+902.80s: generally longer duration, but I
+905.52s: literally no idea.
+907.60s: >> Yeah. I mean, I would I I can say that
+909.44s: by the way, like I didn't um you know,
+912.56s: while I've traded a bunch of flex
+915.76s: options, um
+918.80s: I mean it would the the total
+921.84s: composition of my options trading is
+923.68s: like we're talking about like less than
+926.72s: probably less than a quarter of a
+928.72s: percent of all the options I've ever
+930.24s: traded or were flex. So, um yeah, it's
+933.60s: still it it it's a small part of the
+936.00s: market. It just happens to be growing a
+937.52s: lot.
+938.48s: >> Yeah.
+940.00s: Moving into the next part of the
+941.68s: conversation. Once in a while on X, the
+945.04s: example I gave earlier will come up.
+946.64s: It's always comical to me where somebody
+948.56s: will take a screenshot of some sort of
+952.16s: financial form from Bur. It's always Bur
+955.04s: Pretty much always Bur. And they're
+957.44s: saying, "Oh my god, you know, Bur is
+959.44s: short. 92 gajillion dollars of these
+962.72s: tech stocks. Obviously, the world is
+965.20s: gonna collapse. And then normally like
+967.36s: later that day or the next day, Barry
+969.04s: comes out and like it's actually
+970.96s: hilarious that he even does this, but it
+972.96s: comes out and he's like, "No, bro. Like,
+974.80s: this is the exact position. This is the
+976.80s: size. They once again for the 15th time
+979.52s: got it wrong." There's a lot of
+982.08s: potential errors that people make when
+983.68s: they're looking at 13Fs, specifically
+985.60s: when derivatives are involved and
+987.12s: specifically when we add something like
+988.64s: flex options onto that package. So talk
+992.48s: to me a little bit about that especially
+994.08s: because you were mentioning I didn't
+995.20s: know this but you were mentioning that
+996.48s: there might be some interplay between
+999.04s: our boy Salt and Leopold and his use of
+1003.76s: flex options potentially. So
+1006.32s: >> yeah,
+1006.88s: >> can you can you walk through flex
+1009.04s: options, how they would present on a 13F
+1012.48s: and how you actually interpret whatever
+1016.00s: that position might be?
+1018.56s: Yeah, I think what I saw was that
+1020.32s: somebody had uh I think in the chatter
+1023.12s: on Twitter it was it was somebody was
+1025.12s: saying like oh you don't have to you
+1027.36s: don't have to report the options if if
+1030.24s: on a 13F if you trade them flex um which
+1035.92s: first of all that's not actually true
+1038.16s: but I'll explain that in a second but
+1040.72s: really the larger point is that the 13F
+1043.36s: is useless for options the the 13 first
+1046.16s: of all the 13F F in options
+1049.76s: um you don't have to report any short
+1051.52s: option positions at all. So if you even
+1056.56s: if you saw an option position a large
+1059.36s: option option position you would have no
+1062.32s: idea if it was uh part of a spread.
+1065.20s: >> So right away it's like we're we're
+1067.76s: we're already useless here. like it's
+1070.32s: it's like if the shorts are excluded um
+1074.00s: this is uh
+1076.40s: um useless sort of information. And then
+1079.36s: the other part of it is the strikes and
+1083.36s: the experies. They're not listed either
+1085.44s: on the in in in the 13F. What they list
+1087.84s: is just they they tell you what the
+1089.52s: notional value of the underlying holding
+1092.24s: is. So there's no real differentiation
+1094.88s: between a one delta call and a 100 delta
+1097.12s: call. So you you really learn nothing
+1101.28s: from looking at an options uh 13F. So
+1105.36s: you know at you're looking at half the
+1109.60s: picture maybe at back like you don't
+1111.28s: even know if you're looking at half the
+1112.56s: picture or not because you don't know
+1113.68s: what the short legs are. And then for
+1115.92s: the long and and the whole thing's
+1117.52s: already on a lag. So, um, what in other
+1121.28s: words, like, well, that just inherits
+1122.64s: the general problem with the 13F, but
+1124.88s: the the fact the, uh, options, you don't
+1128.08s: know the actual strike or Xbury tells
+1131.20s: you that it's worthless. Um, and then
+1133.28s: when it comes to flexes, um, so the
+1136.00s: what's the rule with the flex options
+1137.52s: and and the 13F? So what determines
+1141.36s: whether or not you must report on the
+1143.20s: 13F with options is is whether the
+1146.08s: underlier is eligible to be reported on
+1149.68s: a 13F. So for example, you I don't
+1152.16s: believe you need to report on a 13F
+1155.36s: positions in the SPX,
+1158.00s: but you would have to report a position
+1160.40s: in SPY.
+1162.48s: And so if you had flex options on SPY,
+1165.12s: those are reportable because there and
+1168.16s: there's nowhere in a 13F where there's
+1170.24s: where they distinguish whether your
+1172.00s: option is flex or not. So it's just is
+1175.92s: it an option? So if the underlier is
+1179.20s: eligible for 13F reporting, then uh then
+1184.08s: you would need to report your flex
+1185.76s: options. But there's nothing that says
+1187.68s: that you there's no box that you check
+1189.92s: and say it's a flex option. It's just I
+1192.80s: have an option and this is the notional
+1195.20s: uh that it can that that that option
+1197.04s: would control. Um so there's no premiums
+1199.68s: on it or anything like that for any of
+1201.60s: the options. So yeah, strictly speaking
+1205.44s: if he has if you have a 13F position in
+1207.84s: a name if you have a if you have an
+1209.84s: options position in a name that is 13F
+1212.32s: eligible then you have to report that.
+1214.80s: Um but again just the whole 13F is
+1217.68s: pretty useless for options. the the uh
+1220.24s: brother the rules for the 13F. I had to
+1222.08s: look this up because I wasn't exactly
+1223.12s: sure what they were, but you have to
+1224.48s: manage um $100 million.
+1227.68s: You have to manage $100 million as a as
+1229.92s: a as an investment manager or basically
+1232.24s: as a company if you're a company. Like I
+1233.76s: think if you have an LLC, you have to
+1235.44s: report if you're over 100 million. Um,
+1238.08s: but at the position level, you don't
+1242.00s: have I don't believe you need to report
+1244.40s: the position if the aggregate value of
+1246.88s: the position is below $200,000.
+1249.68s: So even if you are a reporting entity,
+1252.32s: you would not have to report positions
+1254.24s: below $200,000, which people probably
+1256.80s: don't care about anyway, but that's
+1258.00s: that's just for the sake of what the
+1260.40s: rule is.
+1262.32s: >> Oh, that's curious. Anyways,
+1265.52s: if you were to look at a 13F and try to
+1269.04s: glean anything useful, so we know that
+1271.76s: we can't deduce specific positioning or
+1274.88s: anything like that, but is there
+1276.88s: anything useful that you think somebody
+1279.52s: could pull from a 13F?
+1282.96s: So, I mean, I could one. Okay. Yeah. So
+1287.04s: there's a I won't name any spec any any
+1290.80s: specific ticker but like there have been
+1292.64s: times where like for example a closed
+1296.96s: think of a closed end fund um if you go
+1300.00s: and you look at the 13F for a closed end
+1302.24s: fund
+1304.08s: and uh that might be trading at a
+1307.12s: discount and you go in there and then
+1310.24s: you see
+1312.00s: the list of holders is a bunch of wise
+1314.08s: guys like whether you know Sig, Jane
+1317.84s: Street, Citadel Securities, like
+1319.44s: basically you're seeing a list of a
+1320.88s: bunch of arbitrage
+1323.20s: oriented shops
+1325.60s: then
+1327.12s: um something like that can be
+1329.52s: interesting because you're kind of like
+1331.52s: you it's a confirming it's like you look
+1333.92s: at this thing and you say you know
+1336.32s: there's this closed end fund um you know
+1340.16s: I'm getting a 15% discount on this thing
+1344.56s: um you know, is it worth
+1349.36s: buying this thing? You know, with closed
+1350.56s: end funds are kind of difficult. It's
+1352.08s: like you don't know if the gap's ever
+1353.68s: going to close. You know, there's
+1355.52s: there's a whole activist piece to it
+1358.08s: sometimes where like a closed end fund
+1359.76s: will some some somebody will come along,
+1361.84s: acquire a really big position in it, and
+1363.84s: then try to force the management to
+1366.56s: change something about their behavior to
+1368.24s: effectively close the gap. Like that's a
+1370.64s: that's a that's a strategy. Um, but
+1373.44s: that's an example to me of somewhere
+1375.04s: where you can kind of you look at a 13F
+1378.00s: and see who the holders are and be like,
+1380.08s: are these
+1382.16s: are these the kinds of people that are
+1384.64s: in things for a trade? And maybe that's
+1387.60s: kind of helpful. So, um, yeah, that's
+1390.00s: just giving one example of something
+1391.28s: where I have used the 13F before to to
+1393.60s: kind of try to glean.
+1395.84s: Do you think there's any do you think
+1398.32s: there's any efficacy in compiling 13Fs
+1403.20s: from multiple entities and then cross
+1405.04s: referencing the aggregate holdings and
+1408.24s: whatnot? Anything there?
+1410.88s: >> I mean, I haven't I haven't I haven't
+1413.12s: done it. So, it's I it's not which is
+1415.36s: not to say that it's useless or I just
+1417.12s: haven't done it. So, I wouldn't you know
+1418.96s: I don't have any authority to speak on
+1420.72s: that. The reason why I ask is I I have a
+1424.72s: like a massive library of different
+1427.04s: market effects and profit mechanisms
+1428.96s: that I have on like the research docket
+1431.04s: and different kind of form filings is
+1433.44s: one of them. And I was actually looking
+1437.12s: at building a series on that and then
+1440.16s: using like dislocations to see if
+1442.24s: there's anything interesting that
+1444.48s: happens there. Uh, thanks for nothing
+1447.60s: because I was just going to use your
+1448.96s: answer to tell me about the research. So
+1451.44s: sick.
+1452.48s: >> Guess that.
+1453.04s: >> Yeah. Still on the list.
+1454.40s: >> Just in general. In general, it's
+1456.72s: probably like the 13F to me seems like
+1459.92s: one of those things that's like a like
+1461.76s: it's probably difficult as a starting
+1463.76s: point, but like maybe it's it's it it's
+1466.16s: a you know it's like helps you to verify
+1469.60s: if like hey is the idea that I have who
+1472.40s: else might have noticed this and so it
+1476.40s: might like confirm like whether this is
+1478.48s: an like there's even a thing here.
+1481.76s: >> Well, I'll take a note and I'll circle
+1484.24s: back. That's honestly pretty low on the
+1486.08s: priority list, but I am interested in
+1487.60s: it. I am going to look at it. So, if I
+1489.36s: find anything curious, I'll follow up
+1491.20s: with you. And that leads us to the third
+1493.84s: part in our arc, which is incentives of
+1497.60s: banks, fair pricing, and not getting
+1501.52s: ripped off when it comes to things like
+1503.84s: flex options. So, one thing I I was
+1507.36s: actually curious about is some other
+1509.52s: kinds of derivatives. Again, you you
+1511.04s: would know this better than me, so I I I
+1513.04s: don't want to speak out of term, but
+1515.04s: some of them they do have like different
+1516.64s: kind of costing and transparency
+1519.12s: functions that have like embedded broker
+1522.24s: commissions and and whatnot. How does
+1524.40s: all that stuff work with like a a flex
+1526.80s: option? Obviously, you said there's the
+1528.56s: shopping around function. So, we
+1530.32s: understand that part of going to get
+1532.56s: different people to look at it, but that
+1535.76s: to me would then mean
+1538.64s: I'm not going to get ripped off. That
+1541.04s: seems like a pretty fair system. Like,
+1542.40s: go get some quotes and then pick the
+1544.16s: best one. So, where does it go wrong?
+1547.76s: >> Yeah, that's that's a fun question. So,
+1551.20s: um well, this this is like we should
+1554.88s: talk about a little bit about um
+1557.52s: execution and like what's actually
+1560.00s: happening in the broker market and
+1561.84s: executions cuz a lot of this stuff is um
+1566.40s: uh it's opaque and it's a bit uh and
+1569.28s: also
+1571.20s: it doesn't affect
+1573.36s: uh or or it affects more of like people
+1575.84s: that are using brokers more so than
+1578.00s: people that are trading on the screen.
+1579.84s: But um
+1582.72s: it's one thing with going to the flex
+1584.32s: option thing. So I remember there was a
+1586.88s: period this was probably 10 it could be
+1590.40s: 10 years ago maybe 15 years ago was in
+1593.12s: it was in the 2010s I remember early
+1595.44s: 2010s that um where
+1599.60s: there was a period of time where let's
+1601.76s: say you wanted to go let's say you
+1603.36s: wanted to buy an option and it was
+1605.84s: offered at the it was like you wanted to
+1607.36s: buy some out of the money some some call
+1608.96s: opt like some 40 delta call and it was
+1611.20s: offered on the screen at four bucks
+1615.44s: And you would you could uh the customer
+1617.84s: might say uh I want to shop I want to I
+1620.72s: want to buy this and they go to a bank.
+1622.48s: Let's say they so first of all banks
+1624.16s: oftentimes act as brokers for people
+1626.56s: like let's say you're a long short hedge
+1628.64s: fund. You're generally using options for
+1631.20s: directional uh reasons and you have a
+1634.00s: clearing relationship with Goldman
+1636.08s: Sachs. And so you might go to Goldman
+1638.72s: Sachs and say, you go to their sales
+1641.28s: desk and you say, "I want to buy uh I
+1644.24s: want to buy these options. What's your
+1645.68s: price?" And Goldman says, "Uh well
+1650.96s: uh they're offered at $4 on the screen.
+1656.00s: We can sell them to you for $4 at $4 or
+1660.24s: we can sell them to you uh for $3.99 if
+1663.68s: you if you trade them flex.
+1667.20s: And in other words, they'll give you a
+1669.52s: better deal on the options if you agree
+1672.32s: to trade them flex. Okay. So, what's a
+1676.64s: what's some reasons why? In other words,
+1679.20s: like this is the exact opposite of the
+1680.88s: narrative where the flex gets you ripped
+1682.72s: off in a sense because you're like, wait
+1684.80s: a minute, they're going to give me a
+1686.00s: better price if I trade them flex. So,
+1687.68s: what's h what's happening here? There
+1689.68s: was kind of like there's a couple things
+1691.60s: going on. One is that well first of all
+1694.40s: if you trade it flex with the bank they
+1696.64s: now know your pos that you know like
+1698.96s: they know your position and they know
+1703.12s: they know when you close the position
+1705.20s: because you'll trade it with them to get
+1707.20s: out of it if you decide to close it.
+1709.52s: Whereas like a regular vanilla option,
+1711.84s: if you go and you pay $4 for that
+1713.92s: option, they might uh they might not
+1716.16s: know when you get out of the position,
+1717.92s: right? Because you can lay that off in
+1719.44s: the general marketplace and they won't
+1721.68s: know. But here it's like they kind of
+1723.20s: know your position. That's part of it.
+1724.88s: But that was just actually the smaller
+1727.04s: probably the smaller part of it. The
+1729.12s: reason they would give you the better
+1730.24s: deal is actually what they were trying
+1731.60s: to do is they were trying to hide the
+1732.96s: print
+1734.80s: because when you trade an option, you
+1736.88s: know, it has to be printed within a very
+1738.64s: quick amount of time of like agreeing to
+1740.80s: the trade. It has to print on the
+1742.40s: exchange. But flex options don't have to
+1745.12s: be printed until the day is over. So
+1747.76s: what was happening is so in other words
+1749.92s: like it basically trades dark. And if it
+1752.64s: trades dark, what that means is Goldman
+1755.84s: who sells you this 40 delta call is now
+1758.64s: free to work out of the delta because
+1760.56s: they have to buy shares against this
+1762.24s: option that they sold you. But they are
+1764.40s: free to work out of the delta and buy
+1766.24s: back their shares without racing anybody
+1769.04s: else, any of the bots who read the
+1772.16s: prints and try to figure out what
+1774.16s: somebody needs to do to hedge. Because
+1775.84s: that was happening was like people would
+1778.00s: have programs that see like this option
+1780.72s: price [clears throat] go up at a high
+1782.72s: price
+1784.72s: and it would and they would be like well
+1786.32s: that's a 40 delta option and 10,000 of
+1788.40s: those traded. There's a lot of stock to
+1790.24s: buy here and then the bots would just go
+1792.80s: and buy the shares right away
+1794.80s: anticipating that whoever sold those
+1797.04s: options needs to go buy stock. So by
+1800.48s: letting it trade in the dark, they
+1802.80s: didn't have to race the bots to buy the
+1804.80s: shares. So then they figured it was
+1808.48s: worth it to them um to give up some
+1811.84s: cents on the trade in order uh to not
+1814.88s: end up in this race condition. So that
+1817.52s: was that was uh one reason why the
+1820.24s: flexes you know sometimes these flexes
+1822.32s: were being offered because it gave the
+1825.44s: counterparty it g it gave the liquidity
+1827.52s: provider a way to trade in the dark.
+1829.68s: Okay. So go ahead
+1832.24s: >> a quick question on that. How does it
+1833.76s: work on the back end? So obviously that
+1836.40s: helps you, you know, get in on the the
+1839.28s: front of the position, but obviously to
+1841.04s: get back out, there's another liquidity
+1844.88s: constraint of some sort. And what once
+1848.00s: you're in that flex option with some
+1849.84s: sort of entity, what prevents them from
+1852.64s: taking the pound of flesh just on the
+1854.64s: back end, you know, once they have you?
+1856.48s: So they Yeah, they and they can they can
+1859.28s: but like because it's flex you can get a
+1862.16s: you will be able to get a quote from
+1864.24s: somebody else.
+1865.44s: >> Got it. Okay.
+1867.04s: >> Yeah. So like that's kind of the good
+1868.96s: part of it being a flex is that you will
+1871.28s: be able like you can go to your broker
+1873.20s: and say you can say to the broker, hey,
+1876.16s: I want you to go get me a get me a let's
+1878.72s: say you're long and you want to get out.
+1880.88s: Show me a bid. Go get me a bid in this
+1883.04s: flex option with these terms. Don't
+1885.60s: quote Goldman.
+1887.28s: >> Don't Don't ask, you know, I I I I
+1889.84s: forbid you from asking Goldman for a
+1891.60s: quote or whatever. And so, um, that
+1894.56s: could be that could be, uh, one way to
+1896.32s: do it. Cuz the idea being that like you
+1898.24s: show Goldman the quote, it's like, you
+1900.64s: know, they're not nobody's supposed to
+1902.16s: do this, but like if you if you if you
+1905.36s: ask them for the quote now, they know
+1908.16s: that there's a seller out there, and so
+1910.40s: what are they going to do? It's like
+1911.76s: they might become better sellers on the
+1913.44s: screens of options in general knowing
+1915.52s: that there's about to be some VA for
+1917.20s: sale. Um, and so they'll kind of like I
+1920.32s: would say the the experience like
+1921.84s: they'll ruin your picture, right? Like
+1924.00s: they know you're a seller and so even if
+1925.84s: you don't show them anything, they now
+1928.32s: know like, oh, this
+1930.16s: >> I know this person's long, they're
+1931.92s: probably looking to get out. Uh, I'm
+1934.40s: going to be a better seller of options
+1935.92s: knowing that there's going to be a
+1936.96s: supply of V coming in most likely. So,
+1940.40s: um, yeah, but because it's flex, you do
+1943.44s: have other outs.
+1945.84s: >> Fair. Okay. Yeah, that that was the the
+1947.76s: main thing I was curious about there.
+1951.44s: One other broad thing on the incentive
+1954.48s: structure and and whatnot. There's a
+1957.84s: little bit of kind of like the the
+1959.52s: relationship building function that you
+1961.52s: were talking about.
+1963.44s: Does there end up is it like all other
+1965.44s: kind of options? Are there certain
+1968.00s: entities that become just like the go-to
+1970.40s: for these?
+1973.76s: >> Yeah, it's it's um this kind of yeah get
+1977.60s: gets back down to like at the end of the
+1980.16s: day this is there there's a business
+1984.48s: here with various incentives and
+1986.48s: different people in the in the chains
+1988.48s: incentives
+1990.24s: um can diverge at certain points. So,
+1994.64s: um, we were kind of talking about this
+1996.08s: before, but
+1998.64s: uh, in general, like with with with the
+2002.00s: question is was like,
+2004.80s: let's frame this in the Leopold thing.
+2007.20s: So what I realized on Twitter was people
+2010.32s: were people were kind of concerned that
+2012.24s: Liupold was trading by him trading flex
+2015.68s: options he was getting ripped off
+2018.72s: because uh because he's trading
+2021.04s: something that that that's um a little
+2023.28s: bit more opaque, right? So he was
+2024.72s: getting ripped off and I don't think the
+2027.60s: flexness of it is the reason you're
+2030.24s: getting
+2032.08s: picked off. It's the general if you're
+2035.60s: failing to put to get uh to bid out your
+2039.92s: deal. Like if you are not getting enough
+2042.24s: quotes, you are going to get ripped off.
+2044.24s: So if you go to just one counterparty
+2046.16s: and you don't shop it, how do you know
+2048.56s: what the right price for this option
+2051.28s: actually is or what the best price you
+2053.44s: can get is? So the failure isn't because
+2056.64s: you choosing flex. The failure could be
+2059.36s: even with the vanilla option where you
+2061.28s: choose to put the market makers in
+2063.84s: competition. We call it incomp. You're
+2066.00s: not putting them in in comp. So your
+2069.04s: broker's duty is to put um unless you
+2072.96s: say otherwise, your broker's duty is to
+2075.76s: put the marketplace in comp with each
+2078.80s: other so that you can get the best
+2080.32s: possible price as a client. Now
+2083.76s: there this is where it gets like a bit
+2087.92s: where it can it can get a little weird.
+2090.00s: So uh
+2093.04s: sometimes we see these trades that
+2095.28s: happen in the market at what look like
+2097.52s: absolutely egregious prices probably and
+2100.32s: meaning that like you XYZ stock 40,000
+2105.52s: calls. Now granted it's a lot of risk.
+2107.60s: It's a ton of risk, but 40,000 calls and
+2110.08s: some XYZ stock and it could be like a
+2112.00s: large cap stock trade, you know, 50
+2115.36s: cents through the screen offer, right?
+2117.60s: Some really high price
+2120.64s: and
+2123.36s: uh and it'll be like, you know, it'll be
+2126.40s: like one print and basically the whole
+2129.84s: derivatives trading community might be
+2131.84s: star standing around being like, who the
+2133.68s: hell did that? Who got the look on
+2136.16s: selling those? They made $2 million of
+2139.60s: screen edge on the print for selling
+2142.72s: those things. Who got who gets that
+2145.60s: piece of business? And
+2148.80s: um the other question is is like who who
+2151.52s: who who bought that price? Like let's
+2154.64s: say those let's say the off the offer
+2156.24s: was four bucks the prints at 450 on the
+2159.76s: calls and then it's immediately offered
+2161.68s: at four and a quarter like right
+2163.36s: afterwards which is the four and a
+2165.04s: quarter order right afterwards offer
+2167.92s: right afterwards is basically somebody
+2169.84s: that missed the print
+2172.40s: that is now wants to try to sell like
+2174.40s: they they think the option is worth $4.
+2177.52s: Let's say like may maybe they adjusted
+2179.12s: their f fair value up to like the prior
+2182.08s: offer and they think it's worth four. So
+2183.84s: like I'm at four and a quarter on these
+2185.60s: things. And they're hoping that some
+2187.28s: maybe even some of the people that sold
+2188.88s: the options at 450 will buy them from
+2191.76s: back from them for four and a quarter
+2193.84s: and lock get to lock in their free
+2195.84s: quarter in the process embarrassing the
+2199.04s: broker who printed it at 450 when there
+2202.00s: were people that were willing to sell at
+2203.20s: four and a quarter. Right? A broker that
+2204.72s: pays 450 in a world where something's
+2206.88s: offered at four and a quarter did a very
+2208.56s: bad job. Right? So if you if that
+2211.36s: happened in the real estate market,
+2212.64s: you'd be furious, right, with your
+2214.56s: realtor. So
+2217.76s: um so why how does that happen? Like did
+2220.08s: the broker do something wrong? Did what
+2222.56s: happened? So and I
+2226.72s: I I'm going to this is me speculating,
+2229.28s: but I'll there has been a trend in
+2231.84s: recent years of large market makers
+2236.40s: putting people back on the floor. So
+2238.64s: like Citadel has traders on the option
+2241.76s: floor and you're like wow that seems
+2243.76s: like you know Benjamin Button like the
+2247.84s: time is going backwards. We're going
+2249.20s: back to like a prior era. What's what's
+2250.72s: happening here? And it's because the
+2253.76s: more coverage you have on the floors,
+2255.68s: the more capability you have to break up
+2258.16s: these crosses because usually these
+2259.68s: trades have to happen on a it's called a
+2262.00s: cross where the broker comes in and they
+2265.36s: have they have the seller, they have the
+2267.52s: buy order together and it's matched
+2269.68s: already and they go to the floor and
+2271.04s: they say, "I'm going to print these at
+2272.96s: 450." And normally if there's if there's
+2276.56s: not a lot of um well- capitalized market
+2280.16s: makers in the pit, they might say like,
+2282.96s: "Hey, just let us get it to sell a
+2285.60s: couple of these two and we'll let you do
+2287.84s: it." But if Citadel has a trader in the
+2291.84s: pit that is willing to sell 20,000 of
+2294.32s: those calls at 440, they're going to
+2297.92s: tell them, "No, I'm at I'm offered at
+2300.00s: 440. cannot put these tra you cannot put
+2302.88s: these up at 450. I'm offered at 440.
+2306.48s: >> Now, this sucks for the broker because
+2309.12s: the broker is like, "Well, then I don't
+2310.80s: get to bill my seller that I went and
+2313.36s: found.
+2315.28s: I don't get to bill him for selling
+2317.44s: these at 450." So, you directly cutting
+2320.80s: in to the broker's commission if you do
+2322.88s: this. So, the broker wants to find
+2324.88s: somewhere where they can print the trade
+2326.56s: at 450 so they can get their whole
+2328.88s: commission. Now,
+2332.40s: that sounds pretty Now, so you're kind
+2335.12s: then you're kind of like, well, if the
+2336.96s: broker does this,
+2340.00s: isn't the broker going to look bad to
+2342.08s: their client because they're putting
+2344.32s: they're they're basically like being
+2345.76s: greedy for themselves and screwing their
+2347.84s: client over? And it what it comes down
+2350.80s: to is they're going to try to do this if
+2353.44s: they're broke. They're going to for
+2355.04s: enough money they're going to try they
+2357.36s: might try to screw over they they might
+2359.36s: screw their client if their client won't
+2361.52s: notice. If you're the kind of customer
+2363.92s: that does not realize that you're being
+2365.76s: ripped off, if you're not really paying
+2367.44s: that much attention to the option
+2369.76s: prices, don't really understand how
+2372.00s: execution and um and competition work,
+2376.72s: you might not realize that you got
+2378.24s: ripped off on the price. And so, which
+2380.72s: that might sound crazy, but I can I
+2382.80s: promise you that that happens a lot. Um,
+2385.76s: where there are people using options
+2388.24s: that have no idea if they're if they're
+2390.72s: uh getting ripped off or not or they're
+2392.56s: not paying close enough attention. So,
+2394.64s: the broker knows how much attention
+2398.88s: because the what because like if you're
+2400.88s: a broker and you have a customer that's
+2402.64s: constantly uh badgering you like, "Hey,
+2406.48s: why did you get me filled at, you know,
+2408.56s: $4 instead of $3.98? I could have got
+2411.84s: 398s if I just worked these on the
+2413.68s: screen for the next three hours instead
+2415.36s: of paying you to do them at $4 or
+2417.68s: whatever." like there's just like like
+2419.76s: um really really uh detail oriented
+2423.44s: customers that are annoying perhaps even
+2426.32s: to the to the point of being annoying
+2428.08s: and then there are some that are just
+2429.52s: like yeah whatever I don't care 50 who
+2431.44s: cares 25 cents that whatever um and so
+2435.20s: the question is is like did Liupole get
+2437.12s: ripped off on his options trades and
+2438.80s: it's like I don't know how
+2441.92s: how well does he understand execution
+2444.88s: how much does he realize is how much
+2448.48s: does he care about, you know, paying up
+2451.36s: $2 million for options that he could
+2453.12s: have bought for $2 million cheaper?
+2454.64s: Like, you know, somebody that is like
+2457.52s: splashing the pot and and kind of loose
+2460.24s: with that. That's is this is like market
+2461.84s: makaker's dreams is to try to like find
+2463.92s: a counterparty that doesn't realize that
+2467.20s: those nickels and dimes that they're
+2470.00s: giving up are everything that their
+2471.68s: whole business revolves around, right?
+2473.68s: It's like somebody I'm I'm out here
+2475.92s: trying to trade for a penny and I got
+2477.44s: this this new fish at the table that's
+2480.00s: that's you know spitting out hundreds.
+2482.56s: That's you know it's crazy. So, in the
+2486.00s: case with the broker that brings this
+2488.00s: that bring these trades that go up at
+2489.76s: these crazy prices,
+2492.08s: I don't know. I guess one of my
+2493.20s: suspicions, I guess, is that the brokers
+2496.24s: might also not shop the order because
+2498.48s: what they should do, their duty should
+2499.76s: be like to shop the order to everybody
+2502.56s: to, you know, to all the big trading
+2504.48s: firms to be able to get the best price.
+2507.04s: But
+2509.44s: they're also worried because these
+2511.04s: trading firms have sales desks. So
+2513.84s: broker might think like, you know, if I
+2516.96s: if I shop this order to XYZ trading firm
+2521.44s: and they got a sales desk, their sales
+2524.32s: trader is going to be like, wow, how do
+2526.08s: how does this how does this little
+2528.16s: broker
+2529.68s: have this gigantic order? We want to get
+2533.20s: we want that business. We got to figure
+2534.96s: we got to figure out who that client is
+2537.12s: and tell them that, hey, come do your
+2540.32s: business with us. We'll charge you the
+2542.80s: commission, but we'll get you b way
+2544.48s: better fills. Our trading desk will
+2547.28s: we'll we'll we'll make our trading desk
+2549.76s: trade at really competitive prices so
+2553.44s: that we can get the business.
+2556.08s: And so that would effectively steal the
+2559.36s: order from the broker
+2562.08s: uh if they shopped it to those firms. So
+2565.68s: you might say like, "Oh, don't all the
+2567.36s: big firms are the ones that get in on
+2568.96s: those prints?" And it's like, no, you
+2570.48s: know who's more likely to get in on that
+2572.16s: print is
+2574.80s: a smaller trading group that's very
+2578.08s: plugged in that does not have a sales
+2580.72s: desk
+2582.24s: that is basically saying, I'll be very
+2584.96s: discreet and we have a very we have a
+2587.28s: very close relationship with the broker.
+2588.96s: You show me the order. I will I mean,
+2593.76s: I'm capable and willing to put up tons
+2596.56s: of risk. like I'm willing to trade you
+2598.96s: trade 40,000 options in this thing like
+2603.28s: so it's still a market maker that's got
+2606.16s: you know big balls but is not part of
+2609.84s: this big institution that can go out and
+2612.48s: try to steal the originating orders
+2614.88s: business from them. So, I don't know.
+2617.20s: That's my guess as to like how why that
+2620.08s: might happen. But otherwise, sometimes
+2622.24s: there are these trades that happen at
+2623.68s: really big prices and you just kind of
+2625.12s: think to yourself like, how did that
+2626.88s: happen? This guy got looks like this
+2629.04s: customer looked like they got ripped
+2630.24s: off. Why didn't anybody else get a look
+2632.96s: at this? So, I don't know. It's kind of
+2635.76s: a little bit like super inside baseball
+2638.00s: like execution. But,
+2640.08s: >> and what do you think about that trend?
+2641.92s: Like do you think that's likely to
+2643.20s: sustain with like Citadel putting
+2646.16s: traders on the floor to try to intercept
+2648.56s: those or like is there a defense against
+2650.88s: that?
+2653.12s: Um, you know, I I don't I don't uh God,
+2655.68s: I don't know what the latest is on like,
+2657.60s: you know, sometimes I've wondered like
+2659.60s: why is there
+2661.84s: why is there you know whatever 17 option
+2664.16s: exchanges, you know, like there's the
+2666.08s: there's the capitalism story where it's
+2668.08s: like, oh, it's like a new a new venue a
+2671.92s: new venue for that where like you can we
+2674.48s: can have a different matching engine and
+2676.32s: we can have a different way for you to
+2677.84s: execute and and and and variety is great
+2681.28s: for the ecosystem. them and and customer
+2684.00s: choice and all that stuff or is there a
+2687.20s: new venue because
+2690.24s: you know big trading firms want to have
+2692.40s: a place to cross their trades without
+2694.48s: being interfered with, right? Because
+2696.24s: the other thing is like if there were
+2698.80s: more and more and more and more
+2700.00s: exchanges, it would be more and more
+2701.76s: expensive to have coverage on all the
+2703.76s: floors and to be able to be a market
+2705.52s: maker on all the floors. So if you're a
+2706.88s: big if you're in other words like
+2708.72s: there's an advantage to being a really
+2710.56s: big firm in which like you can afford
+2712.40s: the fixed cost of coverage on every
+2715.04s: exchange and the small trader the
+2718.48s: smaller trading firm or whatever can't
+2721.36s: afford to have coverage everywhere. And
+2724.40s: so by having a like a bigger front they
+2730.00s: can ensure that they're going to be able
+2731.84s: to get more of the juicy business.
+2733.76s: That's my tinfoil hat version of like
+2736.64s: why there's so many exchanges and that
+2739.52s: the story of customer choice is a
+2741.60s: convenient cover for for that possible.
+2745.60s: But I I I say that as like I say tin
+2747.68s: foil because this is not anything I've
+2749.44s: actually researched myself. This is just
+2751.36s: like me sitting here thinking about like
+2754.64s: well you know if I were playing chess
+2756.96s: with all this stuff like how might how I
+2759.12s: might think about this.
+2761.20s: >> Yeah. Yeah. Well, the the old prisoners
+2763.44s: dilemma, I feel like that's a fair way
+2765.76s: to at least speculate on it, especially
+2767.76s: with your experience.
+2769.76s: So, if if anybody listening is anything
+2773.52s: like me, then over the last 40 minutes
+2776.48s: or so, you now know more about flex
+2778.16s: options than you've ever possibly
+2780.00s: conceived of in the last decade plus.
+2783.68s: One one last question on [clears throat]
+2786.64s: flex options specifically.
+2789.76s: If you were to look at your crystal ball
+2792.64s: in the future, do you think that they're
+2796.00s: going to grow meaningfully? They've
+2797.60s: already been growing, but do you think
+2799.28s: that there's like a lot of growth left?
+2801.68s: And if so, why? Versus any other
+2805.20s: financial instrument?
+2808.16s: >> I think they'll I I mean, I think
+2809.60s: there's a good chance they just keep
+2811.20s: growing with the ETFs. I mean, that's
+2812.56s: what's been happening. And I would just,
+2814.16s: you know, I'm not gonna stand, you know,
+2815.60s: I wouldn't jump uh uh argue against that
+2817.92s: trend. Like, it makes sense. this, you
+2819.92s: know, I don't know if we're going to I
+2822.16s: don't know when we're at peak option
+2824.56s: ETF, you you know, uh but it doesn't
+2828.00s: seem like we're close to that at all. I
+2829.68s: mean, it it it just there there's more
+2831.68s: and more being listed all the time.
+2833.44s: There's some of there lately there have
+2835.36s: been uh some M&A in the ETF provider
+2838.08s: space where uh large asset managers are
+2840.96s: buying some of these ETF managers that
+2843.12s: have just popped up in the last few
+2844.96s: years. Um, so it feels like there's been
+2848.40s: a gold rush on the ETF uh option ETF
+2852.24s: manager side and tons of issuance of
+2854.64s: product and then um and then these guys
+2858.72s: are now getting acquired which is not
+2860.56s: going to uh slow the gold rush down in
+2863.84s: the sense that like now you're like whoa
+2865.52s: we can we can we can exit we can build
+2868.00s: an ETF company and then exit. It's like
+2870.40s: uh um I think you're just going to see
+2872.56s: more the incentives point to more and
+2874.32s: more um uh issuance and with more
+2878.40s: issuance we're going to get more flexes.
+2879.84s: I guess
+2881.92s: >> we will see. Time will tell as it always
+2884.48s: does. Everybody thanks for hanging out.
+2886.64s: We'll see you guys on the next one.
+2888.08s: catchy as

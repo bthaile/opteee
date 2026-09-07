@@ -1,0 +1,855 @@
+0.44s: What's up, Outliers? Today, we're going
+2.00s: What's up, Outliers? Today, we're going to talk about delta hedging and gamma
+4.79s: to talk about delta hedging and gamma
+4.80s: to talk about delta hedging and gamma scalping. I'm going to walk you through
+7.31s: scalping. I'm going to walk you through
+7.32s: scalping. I'm going to walk you through exactly what this looks like, how it
+9.35s: exactly what this looks like, how it
+9.36s: exactly what this looks like, how it behaves, and then how you might think
+11.71s: behaves, and then how you might think
+11.72s: behaves, and then how you might think about integrating it into your own
+14.15s: about integrating it into your own
+14.16s: about integrating it into your own trading. The trick here is that there's
+16.51s: trading. The trick here is that there's
+16.52s: trading. The trick here is that there's a lot of small issues and errors you can
+20.83s: a lot of small issues and errors you can
+20.84s: a lot of small issues and errors you can make. So, my goal is to walk you through
+23.87s: make. So, my goal is to walk you through
+23.88s: make. So, my goal is to walk you through some of those.
+25.27s: some of those.
+25.28s: some of those. Now, first let's talk about delta
+27.35s: Now, first let's talk about delta
+27.36s: Now, first let's talk about delta hedging and what it is, why it exists.
+29.99s: hedging and what it is, why it exists.
+30.00s: hedging and what it is, why it exists. Let's say that you start with an
+32.83s: Let's say that you start with an
+32.84s: Let's say that you start with an at-the-money straddle in a stock that's
+35.03s: at-the-money straddle in a stock that's
+35.04s: at-the-money straddle in a stock that's 100 bucks, 20% implied vol, and premium
+39.47s: 100 bucks, 20% implied vol, and premium
+39.48s: 100 bucks, 20% implied vol, and premium is about 4.57.
+42.19s: is about 4.57.
+42.20s: is about 4.57. And when you first put this trade on,
+44.67s: And when you first put this trade on,
+44.68s: And when you first put this trade on, you have a call delta of positive 52,
+48.91s: you have a call delta of positive 52,
+48.92s: you have a call delta of positive 52, you're long the call, and the put delta
+52.79s: you're long the call, and the put delta
+52.80s: you're long the call, and the put delta of about -0.48.
+56.95s: of about -0.48.
+56.96s: of about -0.48. These essentially cancel each other out.
+62.11s: These essentially cancel each other out.
+62.12s: These essentially cancel each other out. So, the problem here is this is at
+66.39s: So, the problem here is this is at
+66.40s: So, the problem here is this is at entry.
+67.71s: entry.
+67.72s: entry. Now, as time passes, as the underlying
+73.03s: Now, as time passes, as the underlying
+73.04s: Now, as time passes, as the underlying moves, your delta begins to change. And
+78.39s: moves, your delta begins to change. And
+78.40s: moves, your delta begins to change. And a lot of this will come from gamma,
+80.79s: a lot of this will come from gamma,
+80.80s: a lot of this will come from gamma, which you'll see a couple examples a
+82.83s: which you'll see a couple examples a
+82.84s: which you'll see a couple examples a little bit later.
+84.43s: little bit later.
+84.44s: little bit later. The problem here is
+87.03s: The problem here is
+87.04s: The problem here is as the underlying moves, those two
+90.51s: as the underlying moves, those two
+90.52s: as the underlying moves, those two options that first were nice and
+93.39s: options that first were nice and
+93.40s: options that first were nice and offsetting,
+94.99s: offsetting,
+95.00s: offsetting, they actually compound inversely. You
+97.87s: they actually compound inversely. You
+97.88s: they actually compound inversely. You have one option that's going to more
+100.27s: have one option that's going to more
+100.28s: have one option that's going to more quickly approximate towards one, and
+102.35s: quickly approximate towards one, and
+102.36s: quickly approximate towards one, and then the other is going to more quickly
+103.83s: then the other is going to more quickly
+103.84s: then the other is going to more quickly approximate towards zero, which leads to
+106.75s: approximate towards zero, which leads to
+106.76s: approximate towards zero, which leads to a pretty significant residual
+109.63s: a pretty significant residual
+109.64s: a pretty significant residual delta exposure, which is direction.
+114.47s: delta exposure, which is direction.
+114.48s: delta exposure, which is direction. Now, let's Let's a look at these
+115.67s: Now, let's Let's a look at these
+115.68s: Now, let's Let's a look at these straddles with different DTE.
+119.43s: straddles with different DTE.
+119.44s: straddles with different DTE. And I want you to pay attention to the
+122.63s: And I want you to pay attention to the
+122.64s: And I want you to pay attention to the amount of variance you see with respect
+127.43s: amount of variance you see with respect
+127.44s: amount of variance you see with respect to both the value of the straddle and
+131.27s: to both the value of the straddle and
+131.28s: to both the value of the straddle and the delta.
+132.67s: the delta.
+132.68s: the delta. So, if you take a look at 30 days left,
+135.79s: So, if you take a look at 30 days left,
+135.80s: So, if you take a look at 30 days left, the value is actually a lot more steady
+140.07s: the value is actually a lot more steady
+140.08s: the value is actually a lot more steady when you're about the money than 10 days
+142.55s: when you're about the money than 10 days
+142.56s: when you're about the money than 10 days left or 2 days left. So, you'll notice
+145.71s: left or 2 days left. So, you'll notice
+145.72s: left or 2 days left. So, you'll notice that your total P&amp;L volatility increases
+148.99s: that your total P&amp;L volatility increases
+149.00s: that your total P&amp;L volatility increases as you get closer in time.
+151.11s: as you get closer in time.
+151.12s: as you get closer in time. The other thing you'll notice is your
+153.15s: The other thing you'll notice is your
+153.16s: The other thing you'll notice is your delta begins getting steeper and
+156.91s: delta begins getting steeper and
+156.92s: delta begins getting steeper and steeper.
+158.11s: steeper.
+158.12s: steeper. What that represents is every single
+160.27s: What that represents is every single
+160.28s: What that represents is every single option is making a pretty big decision
+162.03s: option is making a pretty big decision
+162.04s: option is making a pretty big decision at as it's coming into expiration. It's
+164.15s: at as it's coming into expiration. It's
+164.16s: at as it's coming into expiration. It's either going to be in the money with a
+165.55s: either going to be in the money with a
+165.56s: either going to be in the money with a delta of one or out of the money with a
+167.43s: delta of one or out of the money with a
+167.44s: delta of one or out of the money with a delta of zero. Every option needs to
+170.67s: delta of zero. Every option needs to
+170.68s: delta of zero. Every option needs to make that decision. That's represented
+173.19s: make that decision. That's represented
+173.20s: make that decision. That's represented here. So, you can see that this
+175.11s: here. So, you can see that this
+175.12s: here. So, you can see that this steepness of delta is actually way more
+178.39s: steepness of delta is actually way more
+178.40s: steepness of delta is actually way more mellow as the options have more time and
+181.03s: mellow as the options have more time and
+181.04s: mellow as the options have more time and then it becomes almost binary as you get
+183.67s: then it becomes almost binary as you get
+183.68s: then it becomes almost binary as you get closer in time.
+186.07s: closer in time.
+186.08s: closer in time. Let's talk about drift of delta.
+190.15s: Let's talk about drift of delta.
+190.16s: Let's talk about drift of delta. This represents your entry, right? Like
+192.19s: This represents your entry, right? Like
+192.20s: This represents your entry, right? Like when you get into the trade and then
+193.63s: when you get into the trade and then
+193.64s: when you get into the trade and then this is the passage of time, the number
+195.15s: this is the passage of time, the number
+195.16s: this is the passage of time, the number of trading days.
+196.71s: of trading days.
+196.72s: of trading days. And this shows you what spot did over
+199.19s: And this shows you what spot did over
+199.20s: And this shows you what spot did over the same duration. This bottom graph is
+201.15s: the same duration. This bottom graph is
+201.16s: the same duration. This bottom graph is showing you two different scenarios.
+203.35s: showing you two different scenarios.
+203.36s: showing you two different scenarios. It's showing you a scenario where you
+205.35s: It's showing you a scenario where you
+205.36s: It's showing you a scenario where you just didn't hedge at all and then
+207.91s: just didn't hedge at all and then
+207.92s: just didn't hedge at all and then another scenario where you hedged daily.
+210.87s: another scenario where you hedged daily.
+210.88s: another scenario where you hedged daily. Two things I want you to pay attention
+212.75s: Two things I want you to pay attention
+212.76s: Two things I want you to pay attention to. The first thing, in the beginning,
+215.35s: to. The first thing, in the beginning,
+215.36s: to. The first thing, in the beginning, notice how they don't necessarily move
+220.27s: notice how they don't necessarily move
+220.28s: notice how they don't necessarily move too much.
+222.07s: too much.
+222.08s: too much. You'll notice especially that the hedge
+225.07s: You'll notice especially that the hedge
+225.08s: You'll notice especially that the hedge position actually remains pretty tight
+229.51s: position actually remains pretty tight
+229.52s: position actually remains pretty tight about its delta. This is not your P&amp;L.
+231.99s: about its delta. This is not your P&amp;L.
+232.00s: about its delta. This is not your P&amp;L. Again, this is your overall positional
+234.71s: Again, this is your overall positional
+234.72s: Again, this is your overall positional delta.
+236.23s: delta.
+236.24s: delta. But then you'll notice as time passes
+238.07s: But then you'll notice as time passes
+238.08s: But then you'll notice as time passes and you get closer and closer to
+239.31s: and you get closer and closer to
+239.32s: and you get closer and closer to expiration, that even for the hedged
+242.55s: expiration, that even for the hedged
+242.56s: expiration, that even for the hedged daily setup, there's still a lot of
+246.79s: daily setup, there's still a lot of
+246.80s: daily setup, there's still a lot of volatility in your delta position.
+249.91s: volatility in your delta position.
+249.92s: volatility in your delta position. The reason for that is what we just
+252.03s: The reason for that is what we just
+252.04s: The reason for that is what we just looked at together.
+253.71s: looked at together.
+253.72s: looked at together. As you get closer in time, this is
+255.67s: As you get closer in time, this is
+255.68s: As you get closer in time, this is happening. So, smaller changes in price
+258.99s: happening. So, smaller changes in price
+259.00s: happening. So, smaller changes in price can lead to bigger changes in your
+261.27s: can lead to bigger changes in your
+261.28s: can lead to bigger changes in your delta, and bigger changes lead to even
+264.07s: delta, and bigger changes lead to even
+264.08s: delta, and bigger changes lead to even bigger changes.
+265.55s: bigger changes.
+265.56s: bigger changes. That's what leads to this factor. So,
+268.07s: That's what leads to this factor. So,
+268.08s: That's what leads to this factor. So, what's happening is if you don't hedge,
+271.03s: what's happening is if you don't hedge,
+271.04s: what's happening is if you don't hedge, there's a pretty big directional tilt
+273.27s: there's a pretty big directional tilt
+273.28s: there's a pretty big directional tilt that your position takes. Even if you do
+276.91s: that your position takes. Even if you do
+276.92s: that your position takes. Even if you do hedge daily, but you take it all the way
+280.75s: hedge daily, but you take it all the way
+280.76s: hedge daily, but you take it all the way to term,
+282.63s: to term,
+282.64s: to term, that daily frequency still isn't quite
+285.87s: that daily frequency still isn't quite
+285.88s: that daily frequency still isn't quite enough to offset
+288.79s: enough to offset
+288.80s: enough to offset the shift in price and the impact to
+291.47s: the shift in price and the impact to
+291.48s: the shift in price and the impact to your delta.
+292.71s: your delta.
+292.72s: your delta. So, the whole point of delta hedging in
+294.71s: So, the whole point of delta hedging in
+294.72s: So, the whole point of delta hedging in this context, whether you're long vol or
+296.87s: this context, whether you're long vol or
+296.88s: this context, whether you're long vol or short vol, long the straddle, short the
+298.47s: short vol, long the straddle, short the
+298.48s: short vol, long the straddle, short the straddle, long the strangle, short the
+301.51s: straddle, long the strangle, short the
+301.52s: straddle, long the strangle, short the strangle, is you're actually trying to
+303.91s: strangle, is you're actually trying to
+303.92s: strangle, is you're actually trying to remove or reduce this directional tilt.
+308.35s: remove or reduce this directional tilt.
+308.36s: remove or reduce this directional tilt. You're actually trying to isolate
+309.91s: You're actually trying to isolate
+309.92s: You're actually trying to isolate volatility. You don't want all of this
+311.63s: volatility. You don't want all of this
+311.64s: volatility. You don't want all of this directional bit. You want to be able to
+313.75s: directional bit. You want to be able to
+313.76s: directional bit. You want to be able to take an expression as close as you can
+315.99s: take an expression as close as you can
+316.00s: take an expression as close as you can to I think vol is high and I think it's
+317.95s: to I think vol is high and I think it's
+317.96s: to I think vol is high and I think it's going to come down. I think vol is low
+319.43s: going to come down. I think vol is low
+319.44s: going to come down. I think vol is low and I think it might go up. You don't
+321.35s: and I think it might go up. You don't
+321.36s: and I think it might go up. You don't want the directional component to it,
+323.27s: want the directional component to it,
+323.28s: want the directional component to it, you just want the delta.
+324.99s: you just want the delta.
+325.00s: you just want the delta. So, by going through a really simple
+328.27s: So, by going through a really simple
+328.28s: So, by going through a really simple process, you just take a look at your
+330.07s: process, you just take a look at your
+330.08s: process, you just take a look at your net deltas,
+331.83s: net deltas,
+331.84s: net deltas, then whatever those are, you just offset
+336.43s: then whatever those are, you just offset
+336.44s: then whatever those are, you just offset with your shares. That's it. Now, this
+339.43s: with your shares. That's it. Now, this
+339.44s: with your shares. That's it. Now, this misses an important piece though,
+342.11s: misses an important piece though,
+342.12s: misses an important piece though, which is you have to account also for
+345.83s: which is you have to account also for
+345.84s: which is you have to account also for your gamma.
+347.55s: your gamma.
+347.56s: your gamma. Because can delta hedge something
+349.55s: Because can delta hedge something
+349.56s: Because can delta hedge something perfectly, but if you don't offset your
+353.19s: perfectly, but if you don't offset your
+353.20s: perfectly, but if you don't offset your residual gamma, it's going to change
+355.91s: residual gamma, it's going to change
+355.92s: residual gamma, it's going to change almost immediately. And the way you can
+357.55s: almost immediately. And the way you can
+357.56s: almost immediately. And the way you can offset your residual gamma, a few
+359.15s: offset your residual gamma, a few
+359.16s: offset your residual gamma, a few different ways, you can use additional
+360.47s: different ways, you can use additional
+360.48s: different ways, you can use additional option legs to do that, or you could
+362.75s: option legs to do that, or you could
+362.76s: option legs to do that, or you could just rebalance
+364.87s: just rebalance
+364.88s: just rebalance your straddle or strangle to the
+367.19s: your straddle or strangle to the
+367.20s: your straddle or strangle to the original strikes or closer to the
+368.67s: original strikes or closer to the
+368.68s: original strikes or closer to the original strikes. You can roll
+370.83s: original strikes. You can roll
+370.84s: original strikes. You can roll individual legs. There's a lot of things
+372.99s: individual legs. There's a lot of things
+373.00s: individual legs. There's a lot of things you can do, but you don't just want to
+375.03s: you can do, but you don't just want to
+375.04s: you can do, but you don't just want to look at delta, because if you don't if
+377.87s: look at delta, because if you don't if
+377.88s: look at delta, because if you don't if you do that, then you're still going to
+380.31s: you do that, then you're still going to
+380.32s: you do that, then you're still going to have pretty big movements from gamma
+382.43s: have pretty big movements from gamma
+382.44s: have pretty big movements from gamma that appear pretty quickly.
+385.19s: that appear pretty quickly.
+385.20s: that appear pretty quickly. I want to show you a really important
+387.47s: I want to show you a really important
+387.48s: I want to show you a really important relationship between the frequency of
+389.51s: relationship between the frequency of
+389.52s: relationship between the frequency of your hedging and the maximum exposure
+391.83s: your hedging and the maximum exposure
+391.84s: your hedging and the maximum exposure you achieve.
+393.23s: you achieve.
+393.24s: you achieve. If you hedge every week, your maximum
+395.83s: If you hedge every week, your maximum
+395.84s: If you hedge every week, your maximum exposure is 92 deltas. And again,
+398.67s: exposure is 92 deltas. And again,
+398.68s: exposure is 92 deltas. And again, remember you started with effectively
+400.19s: remember you started with effectively
+400.20s: remember you started with effectively zero deltas. So, this is a massive
+402.11s: zero deltas. So, this is a massive
+402.12s: zero deltas. So, this is a massive change.
+403.15s: change.
+403.16s: change. If you
+404.55s: If you
+404.56s: If you hedge daily, your maximum exposure is
+407.15s: hedge daily, your maximum exposure is
+407.16s: hedge daily, your maximum exposure is now 75 deltas. And then if you hedge
+410.15s: now 75 deltas. And then if you hedge
+410.16s: now 75 deltas. And then if you hedge four times a day, your maximum exposure
+412.67s: four times a day, your maximum exposure
+412.68s: four times a day, your maximum exposure is 69 deltas.
+414.47s: is 69 deltas.
+414.48s: is 69 deltas. But what I want you to specifically pay
+416.75s: But what I want you to specifically pay
+416.76s: But what I want you to specifically pay attention to is take a look at how these
+418.39s: attention to is take a look at how these
+418.40s: attention to is take a look at how these behave in the first part of the trading
+420.51s: behave in the first part of the trading
+420.52s: behave in the first part of the trading days.
+421.55s: days.
+421.56s: days. If you're looking at this with respect
+423.31s: If you're looking at this with respect
+423.32s: If you're looking at this with respect to something that's like a 30 DTE that
+425.99s: to something that's like a 30 DTE that
+426.00s: to something that's like a 30 DTE that you hold for 15 days, your maximum
+428.11s: you hold for 15 days, your maximum
+428.12s: you hold for 15 days, your maximum exposure actually is really small if
+430.63s: exposure actually is really small if
+430.64s: exposure actually is really small if you're hedging quite frequently.
+433.15s: you're hedging quite frequently.
+433.16s: you're hedging quite frequently. You don't really start to experience
+435.23s: You don't really start to experience
+435.24s: You don't really start to experience this maximum exposure again until you're
+437.91s: this maximum exposure again until you're
+437.92s: this maximum exposure again until you're towards the last 5 days or so of this
+441.35s: towards the last 5 days or so of this
+441.36s: towards the last 5 days or so of this position, and that's the same case with
+443.35s: position, and that's the same case with
+443.36s: position, and that's the same case with daily.
+444.47s: daily.
+444.48s: daily. So, it doesn't necessarily mean that you
+446.43s: So, it doesn't necessarily mean that you
+446.44s: So, it doesn't necessarily mean that you just have to hedge more per day,
+449.99s: just have to hedge more per day,
+450.00s: just have to hedge more per day, but you could also think of just not
+452.43s: but you could also think of just not
+452.44s: but you could also think of just not taking something all the way to term
+454.67s: taking something all the way to term
+454.68s: taking something all the way to term where all of the Greeks start to get
+457.51s: where all of the Greeks start to get
+457.52s: where all of the Greeks start to get pretty parabolic.
+459.43s: pretty parabolic.
+459.44s: pretty parabolic. Now, this shows you the short straddle
+464.11s: Now, this shows you the short straddle
+464.12s: Now, this shows you the short straddle P&amp;L at expiration.
+466.87s: P&amp;L at expiration.
+466.88s: P&amp;L at expiration. And it's giving you the plot in terms of
+470.23s: And it's giving you the plot in terms of
+470.24s: And it's giving you the plot in terms of hedged, daily hedge, and hedge four
+472.71s: hedged, daily hedge, and hedge four
+472.72s: hedged, daily hedge, and hedge four times a day.
+474.07s: times a day.
+474.08s: times a day. The first thing I want you to notice is
+476.55s: The first thing I want you to notice is
+476.56s: The first thing I want you to notice is the peakiness.
+478.07s: the peakiness.
+478.08s: the peakiness. You'll notice that if you hedge four
+479.67s: You'll notice that if you hedge four
+479.68s: You'll notice that if you hedge four times a day, what's happening is you're
+481.91s: times a day, what's happening is you're
+481.92s: times a day, what's happening is you're actually getting a much tighter look of
+485.23s: actually getting a much tighter look of
+485.24s: actually getting a much tighter look of your system. And if you're good at
+488.35s: your system. And if you're good at
+488.36s: your system. And if you're good at finding underpriced vol or good at
+490.75s: finding underpriced vol or good at
+490.76s: finding underpriced vol or good at finding overpriced vol and putting on a
+492.51s: finding overpriced vol and putting on a
+492.52s: finding overpriced vol and putting on a representative position for that.
+495.19s: representative position for that.
+495.20s: representative position for that. If you take a look at unhedged, notice
+497.75s: If you take a look at unhedged, notice
+497.76s: If you take a look at unhedged, notice how short it is
+500.99s: how short it is
+501.00s: how short it is and how wide the distribution is.
+504.23s: and how wide the distribution is.
+504.24s: and how wide the distribution is. What this is telling you is that this is
+506.11s: What this is telling you is that this is
+506.12s: What this is telling you is that this is effectively path dependent. You don't
+509.11s: effectively path dependent. You don't
+509.12s: effectively path dependent. You don't know if you actually got cheap vol,
+511.35s: know if you actually got cheap vol,
+511.36s: know if you actually got cheap vol, expensive vol, you don't know.
+513.59s: expensive vol, you don't know.
+513.60s: expensive vol, you don't know. It this essentially is what happened to
+516.63s: It this essentially is what happened to
+516.64s: It this essentially is what happened to happen over the life cycle of that
+518.71s: happen over the life cycle of that
+518.72s: happen over the life cycle of that trade. That's about it.
+520.43s: trade. That's about it.
+520.44s: trade. That's about it. And you'll notice that if you hedge
+522.63s: And you'll notice that if you hedge
+522.64s: And you'll notice that if you hedge daily,
+523.83s: daily,
+523.84s: daily, you immediately improve this
+526.51s: you immediately improve this
+526.52s: you immediately improve this significantly. So you don't have to go
+528.99s: significantly. So you don't have to go
+529.00s: significantly. So you don't have to go to the extreme of delta hedging four
+531.43s: to the extreme of delta hedging four
+531.44s: to the extreme of delta hedging four times a day. You can literally start
+533.71s: times a day. You can literally start
+533.72s: times a day. You can literally start with something as simple as once a day
+536.43s: with something as simple as once a day
+536.44s: with something as simple as once a day and it drastically improves your signal
+540.87s: and it drastically improves your signal
+540.88s: and it drastically improves your signal on your ability to actually isolate the
+542.91s: on your ability to actually isolate the
+542.92s: on your ability to actually isolate the thing that you're attempting trade.
+544.87s: thing that you're attempting trade.
+544.88s: thing that you're attempting trade. Now there's a direct relationship
+548.15s: Now there's a direct relationship
+548.16s: Now there's a direct relationship between how frequently you hedge and
+551.83s: between how frequently you hedge and
+551.84s: between how frequently you hedge and what impact that has on your P&amp;L
+555.67s: what impact that has on your P&amp;L
+555.68s: what impact that has on your P&amp;L volatility.
+557.47s: volatility.
+557.48s: volatility. And that's represented here. It's just
+559.07s: And that's represented here. It's just
+559.08s: And that's represented here. It's just one over the square root of N. So if
+562.71s: one over the square root of N. So if
+562.72s: one over the square root of N. So if you're hedging four times a day, square
+564.95s: you're hedging four times a day, square
+564.96s: you're hedging four times a day, square root of four is two, this effectively
+567.19s: root of four is two, this effectively
+567.20s: root of four is two, this effectively will cut your overall P&amp;L volatility by
+572.19s: will cut your overall P&amp;L volatility by
+572.20s: will cut your overall P&amp;L volatility by 50%. It's going to be significantly
+574.47s: 50%. It's going to be significantly
+574.48s: 50%. It's going to be significantly less.
+575.51s: less.
+575.52s: less. And again, that's what you can see
+577.79s: And again, that's what you can see
+577.80s: And again, that's what you can see represented by the various lines here.
+580.03s: represented by the various lines here.
+580.04s: represented by the various lines here. Now, the issue though
+582.55s: Now, the issue though
+582.56s: Now, the issue though is that this also changes
+586.39s: is that this also changes
+586.40s: is that this also changes in terms of how frequently you're
+587.59s: in terms of how frequently you're
+587.60s: in terms of how frequently you're transacting. There's a cost associated
+589.83s: transacting. There's a cost associated
+589.84s: transacting. There's a cost associated with that. But there's also a point of
+592.27s: with that. But there's also a point of
+592.28s: with that. But there's also a point of diminishing returns, and you'll be able
+594.75s: diminishing returns, and you'll be able
+594.76s: diminishing returns, and you'll be able to identify that specifically in a
+596.91s: to identify that specifically in a
+596.92s: to identify that specifically in a little bit.
+598.39s: little bit.
+598.40s: little bit. This is showing you
+600.79s: This is showing you
+600.80s: This is showing you what the scenario looks like for a short
+602.83s: what the scenario looks like for a short
+602.84s: what the scenario looks like for a short straddle that you don't hedge and just
+605.59s: straddle that you don't hedge and just
+605.60s: straddle that you don't hedge and just take to term, that you hedge daily, take
+607.79s: take to term, that you hedge daily, take
+607.80s: take to term, that you hedge daily, take to term, that you hedge four times a
+609.55s: to term, that you hedge four times a
+609.56s: to term, that you hedge four times a day, or that you hedge every 5 minutes.
+611.67s: day, or that you hedge every 5 minutes.
+611.68s: day, or that you hedge every 5 minutes. The key here
+613.11s: The key here
+613.12s: The key here is the more you hedge, the more
+616.43s: is the more you hedge, the more
+616.44s: is the more you hedge, the more pure of an isolation of volatility
+619.03s: pure of an isolation of volatility
+619.04s: pure of an isolation of volatility you're going to have.
+620.63s: you're going to have.
+620.64s: you're going to have. It also means that you're going to have
+622.35s: It also means that you're going to have
+622.36s: It also means that you're going to have more transactions to deal with.
+625.43s: more transactions to deal with.
+625.44s: more transactions to deal with. Now, there's a distinct relationship
+628.39s: Now, there's a distinct relationship
+628.40s: Now, there's a distinct relationship between gamma scalping and delta
+631.31s: between gamma scalping and delta
+631.32s: between gamma scalping and delta hedging.
+632.43s: hedging.
+632.44s: hedging. Specifically for long vol. You can't
+636.19s: Specifically for long vol. You can't
+636.20s: Specifically for long vol. You can't really gamma scalp if you're short vol.
+638.43s: really gamma scalp if you're short vol.
+638.44s: really gamma scalp if you're short vol. If you're short the straddle, you're
+640.35s: If you're short the straddle, you're
+640.36s: If you're short the straddle, you're essentially doing the inverse of these,
+642.63s: essentially doing the inverse of these,
+642.64s: essentially doing the inverse of these, which is bad.
+644.31s: which is bad.
+644.32s: which is bad. When you're long the straddle, long the
+646.03s: When you're long the straddle, long the
+646.04s: When you're long the straddle, long the strangle, and you systemically
+649.71s: strangle, and you systemically
+649.72s: strangle, and you systemically are going to
+651.39s: are going to
+651.40s: are going to buy lows
+653.63s: buy lows
+653.64s: buy lows and you're going to sell highs. That's
+656.39s: and you're going to sell highs. That's
+656.40s: and you're going to sell highs. That's the net of your hedging activity
+658.91s: the net of your hedging activity
+658.92s: the net of your hedging activity if you're long the straddle or strangle.
+661.67s: if you're long the straddle or strangle.
+661.68s: if you're long the straddle or strangle. So, you can see that there are periods
+664.43s: So, you can see that there are periods
+664.44s: So, you can see that there are periods where your option your actual straddle
+667.47s: where your option your actual straddle
+667.48s: where your option your actual straddle or strangle, in this case the straddle,
+669.67s: or strangle, in this case the straddle,
+669.68s: or strangle, in this case the straddle, can literally be hurting you, right?
+671.99s: can literally be hurting you, right?
+672.00s: can literally be hurting you, right? Through decay, it's starting to decrease
+674.39s: Through decay, it's starting to decrease
+674.40s: Through decay, it's starting to decrease in overall value.
+676.15s: in overall value.
+676.16s: in overall value. But your hedging, your gamma scalping in
+678.91s: But your hedging, your gamma scalping in
+678.92s: But your hedging, your gamma scalping in this case, is actually not only
+680.71s: this case, is actually not only
+680.72s: this case, is actually not only subsidizing that cost, but it's making
+683.71s: subsidizing that cost, but it's making
+683.72s: subsidizing that cost, but it's making you profitable.
+685.27s: you profitable.
+685.28s: you profitable. And again, it's because of this
+686.67s: And again, it's because of this
+686.68s: And again, it's because of this condition here. So, for example, as the
+688.99s: condition here. So, for example, as the
+689.00s: condition here. So, for example, as the underlying makes this move down, you
+690.47s: underlying makes this move down, you
+690.48s: underlying makes this move down, you have to buy the underlying in order to
+693.19s: have to buy the underlying in order to
+693.20s: have to buy the underlying in order to hedge your position back. Then as it
+695.19s: hedge your position back. Then as it
+695.20s: hedge your position back. Then as it starts to go up, you're going to sell
+696.79s: starts to go up, you're going to sell
+696.80s: starts to go up, you're going to sell here, so you bought low, sold high.
+700.27s: here, so you bought low, sold high.
+700.28s: here, so you bought low, sold high. Then you're going to sell here, sell
+702.15s: Then you're going to sell here, sell
+702.16s: Then you're going to sell here, sell here, sell here. This is where it can
+704.87s: here, sell here. This is where it can
+704.88s: here, sell here. This is where it can get painful where you continue to sell
+708.15s: get painful where you continue to sell
+708.16s: get painful where you continue to sell into a rally, and that's one of your
+710.11s: into a rally, and that's one of your
+710.12s: into a rally, and that's one of your risk points. Because if it just
+711.99s: risk points. Because if it just
+712.00s: risk points. Because if it just continues to trend in one direction,
+713.55s: continues to trend in one direction,
+713.56s: continues to trend in one direction, you're going to get ran over. But if it
+715.95s: you're going to get ran over. But if it
+715.96s: you're going to get ran over. But if it does eventually begin to turn,
+719.07s: does eventually begin to turn,
+719.08s: does eventually begin to turn, then you will have accumulated a pretty
+720.99s: then you will have accumulated a pretty
+721.00s: then you will have accumulated a pretty big short position at a pretty high
+723.39s: big short position at a pretty high
+723.40s: big short position at a pretty high basis by the end of this that you can
+725.19s: basis by the end of this that you can
+725.20s: basis by the end of this that you can monetize on the next opportunity that
+727.51s: monetize on the next opportunity that
+727.52s: monetize on the next opportunity that you have to buy and flatten your
+729.55s: you have to buy and flatten your
+729.56s: you have to buy and flatten your position.
+731.63s: position.
+731.64s: position. So there's two different games going on
+734.83s: So there's two different games going on
+734.84s: So there's two different games going on here. If you're long the straddle,
+736.75s: here. If you're long the straddle,
+736.76s: here. If you're long the straddle, you're long gamma. If you're short the
+738.31s: you're long gamma. If you're short the
+738.32s: you're long gamma. If you're short the straddle, you're short gamma. And the
+741.11s: straddle, you're short gamma. And the
+741.12s: straddle, you're short gamma. And the relationship is completely different. If
+742.99s: relationship is completely different. If
+743.00s: relationship is completely different. If you're long the stra- If you're long the
+744.67s: you're long the stra- If you're long the
+744.68s: you're long the stra- If you're long the straddle, that's why you can gamma
+745.83s: straddle, that's why you can gamma
+745.84s: straddle, that's why you can gamma scalp, because you can actually harvest
+747.51s: scalp, because you can actually harvest
+747.52s: scalp, because you can actually harvest movement. The short straddle, you
+750.15s: movement. The short straddle, you
+750.16s: movement. The short straddle, you actually hurt. So the more you're
+752.71s: actually hurt. So the more you're
+752.72s: actually hurt. So the more you're hedging here, it actually can accumulate
+755.67s: hedging here, it actually can accumulate
+755.68s: hedging here, it actually can accumulate a pretty nasty P&amp;L for you. But the
+759.59s: a pretty nasty P&amp;L for you. But the
+759.60s: a pretty nasty P&amp;L for you. But the benefit here is you're collecting theta.
+761.79s: benefit here is you're collecting theta.
+761.80s: benefit here is you're collecting theta. So there is a pretty good relationship
+764.87s: So there is a pretty good relationship
+764.88s: So there is a pretty good relationship and balance between these. Just
+767.07s: and balance between these. Just
+767.08s: and balance between these. Just remember, if you're short the straddle,
+768.67s: remember, if you're short the straddle,
+768.68s: remember, if you're short the straddle, you're not gamma scalping. You're
+770.43s: you're not gamma scalping. You're
+770.44s: you're not gamma scalping. You're literally just trying to rebalance,
+772.11s: literally just trying to rebalance,
+772.12s: literally just trying to rebalance, which is still fine, but you're not
+773.71s: which is still fine, but you're not
+773.72s: which is still fine, but you're not going to monetize it like if you're long
+775.39s: going to monetize it like if you're long
+775.40s: going to monetize it like if you're long the straddle.
+776.87s: the straddle.
+776.88s: the straddle. Now, that leads the question then, why
+778.83s: Now, that leads the question then, why
+778.84s: Now, that leads the question then, why don't we just perpetually hedge? Why not
+780.71s: don't we just perpetually hedge? Why not
+780.72s: don't we just perpetually hedge? Why not just every second, every time the
+783.15s: just every second, every time the
+783.16s: just every second, every time the underlying moves? And it's because
+785.55s: underlying moves? And it's because
+785.56s: underlying moves? And it's because there's an actual sweet spot. There's an
+788.55s: there's an actual sweet spot. There's an
+788.56s: there's an actual sweet spot. There's an optimal point that you can find based on
+792.15s: optimal point that you can find based on
+792.16s: optimal point that you can find based on your specific strategy.
+794.11s: your specific strategy.
+794.12s: your specific strategy. And it's because what happens is as you
+796.23s: And it's because what happens is as you
+796.24s: And it's because what happens is as you look at a point where you're
+798.71s: look at a point where you're
+798.72s: look at a point where you're rebalancing at an extreme frequency,
+802.67s: rebalancing at an extreme frequency,
+802.68s: rebalancing at an extreme frequency, you'll notice that there's actually
+804.39s: you'll notice that there's actually
+804.40s: you'll notice that there's actually diminishing returns in terms of how much
+806.75s: diminishing returns in terms of how much
+806.76s: diminishing returns in terms of how much it impacts the standard deviation of
+808.99s: it impacts the standard deviation of
+809.00s: it impacts the standard deviation of your P&amp;L. So, for example, if you go
+811.03s: your P&amp;L. So, for example, if you go
+811.04s: your P&amp;L. So, for example, if you go from weekly to daily,
+812.91s: from weekly to daily,
+812.92s: from weekly to daily, you can see that there's a a huge huge
+815.47s: you can see that there's a a huge huge
+815.48s: you can see that there's a a huge huge impact to your P&amp;L standard deviation.
+817.27s: impact to your P&amp;L standard deviation.
+817.28s: impact to your P&amp;L standard deviation. You're going from $1.50 down to $0.75,
+819.59s: You're going from $1.50 down to $0.75,
+819.60s: You're going from $1.50 down to $0.75, right? So, you're again, just massive
+821.83s: right? So, you're again, just massive
+821.84s: right? So, you're again, just massive change.
+823.00s: change. Then if you go from daily to four times
+825.35s: Then if you go from daily to four times
+825.36s: Then if you go from daily to four times a day, you're going from 75 now down to
+828.19s: a day, you're going from 75 now down to
+828.20s: a day, you're going from 75 now down to like 30.
+829.75s: like 30.
+829.76s: like 30. Then if you go from four times a day to
+832.07s: Then if you go from four times a day to
+832.08s: Then if you go from four times a day to hourly, you're going from like 30 to
+834.31s: hourly, you're going from like 30 to
+834.32s: hourly, you're going from like 30 to maybe 26, right? So, your deviation is
+837.83s: maybe 26, right? So, your deviation is
+837.84s: maybe 26, right? So, your deviation is slowing down and your cost is going to
+842.27s: slowing down and your cost is going to
+842.28s: slowing down and your cost is going to be increasing.
+844.11s: be increasing.
+844.12s: be increasing. Now, I want to show you what happens if
+846.43s: Now, I want to show you what happens if
+846.44s: Now, I want to show you what happens if you do this successfully, which is
+848.71s: you do this successfully, which is
+848.72s: you do this successfully, which is you're actually isolating volatility.
+853.19s: you're actually isolating volatility.
+853.20s: you're actually isolating volatility. So, for example, if you sold a straddle
+854.83s: So, for example, if you sold a straddle
+854.84s: So, for example, if you sold a straddle at 20 vol and then you realize at 15,
+858.67s: at 20 vol and then you realize at 15,
+858.68s: at 20 vol and then you realize at 15, most of your runs are profitable. But
+861.19s: most of your runs are profitable. But
+861.20s: most of your runs are profitable. But notice how there's a small subset that
+863.83s: notice how there's a small subset that
+863.84s: notice how there's a small subset that still are not profitable. Why would that
+867.23s: still are not profitable. Why would that
+867.24s: still are not profitable. Why would that be? If you know, throw it in the
+868.95s: be? If you know, throw it in the
+868.96s: be? If you know, throw it in the comments.
+870.35s: comments.
+870.36s: comments. Then unpause the video cuz I'm going to
+872.35s: Then unpause the video cuz I'm going to
+872.36s: Then unpause the video cuz I'm going to tell you,
+873.59s: tell you,
+873.60s: tell you, it's cuz it's there's still path
+875.03s: it's cuz it's there's still path
+875.04s: it's cuz it's there's still path dependency.
+876.75s: dependency.
+876.76s: dependency. Now, the difference is again, if instead
+879.83s: Now, the difference is again, if instead
+879.84s: Now, the difference is again, if instead of hedging daily, you hedge more
+881.95s: of hedging daily, you hedge more
+881.96s: of hedging daily, you hedge more frequently,
+883.35s: frequently,
+883.36s: frequently, then these distributions will tighten up
+886.39s: then these distributions will tighten up
+886.40s: then these distributions will tighten up even more
+888.03s: even more
+888.04s: even more and centralize more and more into its
+891.79s: and centralize more and more into its
+891.80s: and centralize more and more into its actual performance.
+893.59s: actual performance.
+893.60s: actual performance. So, then you can see if you sold 20 vol
+896.31s: So, then you can see if you sold 20 vol
+896.32s: So, then you can see if you sold 20 vol and it realizes at 20,
+898.35s: and it realizes at 20,
+898.36s: and it realizes at 20, you can still make money a lot of the
+900.03s: you can still make money a lot of the
+900.04s: you can still make money a lot of the time. And again, it's because
+902.91s: time. And again, it's because
+902.92s: time. And again, it's because depending on what the path does
+906.07s: depending on what the path does
+906.08s: depending on what the path does is your resulting P&amp;L.
+908.75s: is your resulting P&amp;L.
+908.76s: is your resulting P&amp;L. And there's an even other scenario
+911.63s: And there's an even other scenario
+911.64s: And there's an even other scenario where if you sold at 20 and it realizes
+913.87s: where if you sold at 20 and it realizes
+913.88s: where if you sold at 20 and it realizes at 25, you can still make money on that
+917.15s: at 25, you can still make money on that
+917.16s: at 25, you can still make money on that short straddle. Again, because of the
+919.99s: short straddle. Again, because of the
+920.00s: short straddle. Again, because of the path dependency component. It's just
+923.71s: path dependency component. It's just
+923.72s: path dependency component. It's just majority of cases, that's not going to
+925.59s: majority of cases, that's not going to
+925.60s: majority of cases, that's not going to be the case.
+926.95s: be the case.
+926.96s: be the case. So, the way that you think about doing
+928.83s: So, the way that you think about doing
+928.84s: So, the way that you think about doing something like this is I generally think
+932.23s: something like this is I generally think
+932.24s: something like this is I generally think in the context of delta bands, not time.
+937.07s: in the context of delta bands, not time.
+937.08s: in the context of delta bands, not time. So, you can go a couple days without
+938.99s: So, you can go a couple days without
+939.00s: So, you can go a couple days without hedging if your deltas aren't moving
+940.51s: hedging if your deltas aren't moving
+940.52s: hedging if your deltas aren't moving that much. Or you might have to hedge a
+942.43s: that much. Or you might have to hedge a
+942.44s: that much. Or you might have to hedge a couple times within the same day and
+944.03s: couple times within the same day and
+944.04s: couple times within the same day and then not hedge after that if your deltas
+946.31s: then not hedge after that if your deltas
+946.32s: then not hedge after that if your deltas are are moving more.
+948.35s: are are moving more.
+948.36s: are are moving more. The other thing again is making sure
+950.31s: The other thing again is making sure
+950.32s: The other thing again is making sure that you're paying attention to your net
+952.43s: that you're paying attention to your net
+952.44s: that you're paying attention to your net gamma. If your gamma starts to expand
+955.23s: gamma. If your gamma starts to expand
+955.24s: gamma. If your gamma starts to expand too much, then that is
+958.43s: too much, then that is
+958.44s: too much, then that is going to force you to continually fight
+960.19s: going to force you to continually fight
+960.20s: going to force you to continually fight this thing effectively, no matter what.
+963.95s: this thing effectively, no matter what.
+963.96s: this thing effectively, no matter what. The last thing is you want to think
+966.79s: The last thing is you want to think
+966.80s: The last thing is you want to think deeply about the way that your delta
+969.31s: deeply about the way that your delta
+969.32s: deeply about the way that your delta hedging. Because if you're trading
+971.31s: hedging. Because if you're trading
+971.32s: hedging. Because if you're trading something that's hard to borrow or it's
+973.23s: something that's hard to borrow or it's
+973.24s: something that's hard to borrow or it's expensive to borrow, it might lead you
+975.91s: expensive to borrow, it might lead you
+975.92s: expensive to borrow, it might lead you to moving slightly different ways to
+979.11s: to moving slightly different ways to
+979.12s: to moving slightly different ways to manage your position.
+981.95s: manage your position.
+981.96s: manage your position. Last, a couple takeaways.
+984.95s: Last, a couple takeaways.
+984.96s: Last, a couple takeaways. Frequency
+986.51s: Frequency
+986.52s: Frequency doesn't materially change your edge in
+990.19s: doesn't materially change your edge in
+990.20s: doesn't materially change your edge in any way. It helps you isolate it and it
+993.51s: any way. It helps you isolate it and it
+993.52s: any way. It helps you isolate it and it helps you decrease the P&amp;L distribution
+997.67s: helps you decrease the P&amp;L distribution
+997.68s: helps you decrease the P&amp;L distribution so that you can more cleanly see if
+1000.39s: so that you can more cleanly see if
+1000.40s: so that you can more cleanly see if you're actually trading something
+1001.83s: you're actually trading something
+1001.84s: you're actually trading something effective. If you're long gamma, you can
+1004.19s: effective. If you're long gamma, you can
+1004.20s: effective. If you're long gamma, you can gamma scalp. If you're short gamma,
+1006.27s: gamma scalp. If you're short gamma,
+1006.28s: gamma scalp. If you're short gamma, you're not going to gamma scalp. You're
+1007.27s: you're not going to gamma scalp. You're
+1007.28s: you're not going to gamma scalp. You're going to be paying on those, but you're
+1008.95s: going to be paying on those, but you're
+1008.96s: going to be paying on those, but you're collecting theta.
+1010.55s: collecting theta.
+1010.56s: collecting theta. If you keep the straddle strangle
+1014.35s: If you keep the straddle strangle
+1014.36s: If you keep the straddle strangle actually delta hedge,
+1016.71s: actually delta hedge,
+1016.72s: actually delta hedge, it now is a more isolated bet of
+1021.75s: it now is a more isolated bet of
+1021.76s: it now is a more isolated bet of volatility
+1023.19s: volatility
+1023.20s: volatility and implied vol versus realized vol. And
+1025.47s: and implied vol versus realized vol. And
+1025.48s: and implied vol versus realized vol. And the last thing is if you hold things all
+1028.35s: the last thing is if you hold things all
+1028.36s: the last thing is if you hold things all the way into expiration, it becomes a
+1031.35s: the way into expiration, it becomes a
+1031.36s: the way into expiration, it becomes a real chore
+1033.67s: real chore
+1033.68s: real chore in order to delta hedge because
+1036.03s: in order to delta hedge because
+1036.04s: in order to delta hedge because everything begins going parabolic. You
+1038.27s: everything begins going parabolic. You
+1038.28s: everything begins going parabolic. You also want to think a little bit more
+1040.07s: also want to think a little bit more
+1040.08s: also want to think a little bit more about matching your DTE, the term that
+1043.91s: about matching your DTE, the term that
+1043.92s: about matching your DTE, the term that you're trading, with the vault tenor
+1046.67s: you're trading, with the vault tenor
+1046.68s: you're trading, with the vault tenor that you're trying to capture.
+1048.63s: that you're trying to capture.
+1048.64s: that you're trying to capture. As always, if you have any questions,
+1051.07s: As always, if you have any questions,
+1051.08s: As always, if you have any questions, let me know. Be an outlier. See you guys
+1052.79s: let me know. Be an outlier. See you guys
+1052.80s: let me know. Be an outlier. See you guys later.

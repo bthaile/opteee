@@ -1,0 +1,622 @@
+0.00s: What's up, Allys? Today, we're going to
+2.00s: What's up, Allys? Today, we're going to take a look at credit spreads. We're
+4.71s: take a look at credit spreads. We're
+4.72s: take a look at credit spreads. We're going to look at put credit spreads,
+6.51s: going to look at put credit spreads,
+6.52s: going to look at put credit spreads, call credit spreads. We're going to look
+8.23s: call credit spreads. We're going to look
+8.24s: call credit spreads. We're going to look at iron condors. We're going to look
+9.87s: at iron condors. We're going to look
+9.88s: at iron condors. We're going to look across 22 tickers over 1,600
+14.39s: across 22 tickers over 1,600
+14.40s: across 22 tickers over 1,600 strategies, almost 350,000
+18.99s: strategies, almost 350,000
+19.00s: strategies, almost 350,000 real trades to get to the bottom of what
+22.07s: real trades to get to the bottom of what
+22.08s: real trades to get to the bottom of what is the best configuration and what are
+25.15s: is the best configuration and what are
+25.16s: is the best configuration and what are some of the worst. So, let's start off
+29.91s: some of the worst. So, let's start off
+29.92s: some of the worst. So, let's start off with what credit spreads really make
+34.23s: with what credit spreads really make
+34.24s: with what credit spreads really make themselves out to be, which is you win a
+36.51s: themselves out to be, which is you win a
+36.52s: themselves out to be, which is you win a lot. That's the entire point of credit
+38.79s: lot. That's the entire point of credit
+38.80s: lot. That's the entire point of credit spreads. There is a lot of different
+40.59s: spreads. There is a lot of different
+40.60s: spreads. There is a lot of different ways you can set them up, but the way
+43.39s: ways you can set them up, but the way
+43.40s: ways you can set them up, but the way that most retail traders are using them
+46.47s: that most retail traders are using them
+46.48s: that most retail traders are using them is typically some sort of directional
+48.51s: is typically some sort of directional
+48.52s: is typically some sort of directional expression.
+49.79s: expression.
+49.80s: expression. And unfortunately, they're
+53.35s: And unfortunately, they're
+53.36s: And unfortunately, they're grossly misused, but I want to show you
+56.43s: grossly misused, but I want to show you
+56.44s: grossly misused, but I want to show you some key weaknesses of them so that you
+60.63s: some key weaknesses of them so that you
+60.64s: some key weaknesses of them so that you can learn how to adapt your use of them
+64.43s: can learn how to adapt your use of them
+64.44s: can learn how to adapt your use of them so that they make more sense.
+66.79s: so that they make more sense.
+66.80s: so that they make more sense. We had a scenario that you'll see in a
+68.99s: We had a scenario that you'll see in a
+69.00s: We had a scenario that you'll see in a little bit
+70.23s: little bit
+70.24s: little bit where one trade
+73.51s: where one trade
+73.52s: where one trade wiped out a series of winners.
+77.03s: wiped out a series of winners.
+77.04s: wiped out a series of winners. However, you can see that this kind of
+79.75s: However, you can see that this kind of
+79.76s: However, you can see that this kind of strategy can have some really, really
+83.79s: strategy can have some really, really
+83.80s: strategy can have some really, really strong trends. Here is part of the study
+87.95s: strong trends. Here is part of the study
+87.96s: strong trends. Here is part of the study you'll see. One of the strategies
+90.27s: you'll see. One of the strategies
+90.28s: you'll see. One of the strategies literally had 49 winning months in a
+93.71s: literally had 49 winning months in a
+93.72s: literally had 49 winning months in a row. It was a 97%
+98.63s: row. It was a 97%
+98.64s: row. It was a 97% win rate 4 years without a loss.
+102.95s: win rate 4 years without a loss.
+102.96s: win rate 4 years without a loss. Then,
+104.39s: Then,
+104.40s: Then, in February of 2020,
+108.12s: 41 months of profit evaporated
+112.28s: 41 months of profit evaporated in one trade.
+114.75s: in one trade.
+114.76s: in one trade. Think that through.
+116.95s: Think that through.
+116.96s: Think that through. That is one of the issues with
+119.11s: That is one of the issues with
+119.12s: That is one of the issues with verticals, which we'll see.
+121.67s: verticals, which we'll see.
+121.68s: verticals, which we'll see. So, here's the study as designed. I
+125.71s: So, here's the study as designed. I
+125.72s: So, here's the study as designed. I looked from '07 to '26. It's
+128.67s: looked from '07 to '26. It's
+128.68s: looked from '07 to '26. It's survivorship free. So, what that means
+131.55s: survivorship free. So, what that means
+131.56s: survivorship free. So, what that means is I included tickers that might have
+135.99s: is I included tickers that might have
+136.00s: is I included tickers that might have existed prior that don't anymore.
+138.63s: existed prior that don't anymore.
+138.64s: existed prior that don't anymore. I used tickers across sample, across
+142.39s: I used tickers across sample, across
+142.40s: I used tickers across sample, across different market caps, every market cap,
+144.95s: different market caps, every market cap,
+144.96s: different market caps, every market cap, every industry,
+146.87s: every industry,
+146.88s: every industry, and we tested 1656.
+150.71s: and we tested 1656.
+150.72s: and we tested 1656. This is all using the OTalk. I have a
+152.83s: This is all using the OTalk. I have a
+152.84s: This is all using the OTalk. I have a playlist below on how you can build your
+154.67s: playlist below on how you can build your
+154.68s: playlist below on how you can build your own version of this. This isn't
+156.07s: own version of this. This isn't
+156.08s: own version of this. This isn't something for sale. This is just
+157.75s: something for sale. This is just
+157.76s: something for sale. This is just literally the platform I use to analyze
+160.31s: literally the platform I use to analyze
+160.32s: literally the platform I use to analyze things.
+161.59s: things.
+161.60s: things. And we looked at pretty much every
+163.07s: And we looked at pretty much every
+163.08s: And we looked at pretty much every single delta, every width, every
+165.43s: single delta, every width, every
+165.44s: single delta, every width, every management rule that I could come
+167.19s: management rule that I could come
+167.20s: management rule that I could come across.
+168.51s: across.
+168.52s: across. And the key here is one of the
+171.27s: And the key here is one of the
+171.28s: And the key here is one of the assumptions I made, and then I show you
+172.95s: assumptions I made, and then I show you
+172.96s: assumptions I made, and then I show you the details around that assumption, is
+175.19s: the details around that assumption, is
+175.20s: the details around that assumption, is crossing the spread.
+177.31s: crossing the spread.
+177.32s: crossing the spread. The reason why I crossed the spread is
+179.47s: The reason why I crossed the spread is
+179.48s: The reason why I crossed the spread is cuz in a lot of these we're trading very
+181.91s: cuz in a lot of these we're trading very
+181.92s: cuz in a lot of these we're trading very liquid names, and it's a way to help
+185.75s: liquid names, and it's a way to help
+185.76s: liquid names, and it's a way to help approximate
+187.27s: approximate
+187.28s: approximate fills.
+188.43s: fills.
+188.44s: fills. Because spreads sometimes can have
+191.91s: Because spreads sometimes can have
+191.92s: Because spreads sometimes can have pretty rough fills.
+194.31s: pretty rough fills.
+194.32s: pretty rough fills. So,
+195.35s: So,
+195.36s: So, there is win rates that range in those
+198.31s: there is win rates that range in those
+198.32s: there is win rates that range in those different combinations from 62 to 97%,
+201.71s: different combinations from 62 to 97%,
+201.72s: different combinations from 62 to 97%, but 89% of them lose money. So, you'll
+205.31s: but 89% of them lose money. So, you'll
+205.32s: but 89% of them lose money. So, you'll be able to see which percentage don't
+207.95s: be able to see which percentage don't
+207.96s: be able to see which percentage don't lose money,
+209.11s: lose money,
+209.12s: lose money, and see if it's logical in some way for
+212.23s: and see if it's logical in some way for
+212.24s: and see if it's logical in some way for you to integrate into your work.
+215.79s: you to integrate into your work.
+215.80s: you to integrate into your work. So,
+216.81s: So, &gt;&gt; [clears throat]
+217.79s: &gt;&gt; [clears throat]
+217.80s: &gt;&gt; [clears throat] &gt;&gt; what I'm showing you here
+219.79s: &gt;&gt; what I'm showing you here
+219.80s: &gt;&gt; what I'm showing you here is what different loss rates can look
+223.11s: is what different loss rates can look
+223.12s: is what different loss rates can look like. So, for example, the 16 delta
+227.51s: like. So, for example, the 16 delta
+227.52s: like. So, for example, the 16 delta put spread,
+229.55s: put spread,
+229.56s: put spread, in this case you have a 69% win rate,
+233.19s: in this case you have a 69% win rate,
+233.20s: in this case you have a 69% win rate, but one loss
+235.15s: but one loss
+235.16s: but one loss eats six of your wins.
+237.51s: eats six of your wins.
+237.52s: eats six of your wins. This is the issue, but I want to show
+239.79s: This is the issue, but I want to show
+239.80s: This is the issue, but I want to show you the relationship.
+241.95s: you the relationship.
+241.96s: you the relationship. The first thing is take a look at the
+243.71s: The first thing is take a look at the
+243.72s: The first thing is take a look at the win rates between 16 and 30 delta.
+247.87s: win rates between 16 and 30 delta.
+247.88s: win rates between 16 and 30 delta. This is actually really
+249.91s: This is actually really
+249.92s: This is actually really counterintuitive.
+251.55s: counterintuitive.
+251.56s: counterintuitive. Same thing with the 10 delta. Now, this
+253.59s: Same thing with the 10 delta. Now, this
+253.60s: Same thing with the 10 delta. Now, this is looking at the call side, by the way.
+255.95s: is looking at the call side, by the way.
+255.96s: is looking at the call side, by the way. But, you'll notice that for some of the
+258.39s: But, you'll notice that for some of the
+258.40s: But, you'll notice that for some of the the puts and calls, there's some clear
+261.27s: the puts and calls, there's some clear
+261.28s: the puts and calls, there's some clear trends.
+262.71s: trends.
+262.72s: trends. But, you'll see that the closer you get
+265.11s: But, you'll see that the closer you get
+265.12s: But, you'll see that the closer you get the higher the delta, the better your
+268.67s: the higher the delta, the better your
+268.68s: the higher the delta, the better your max loss is.
+271.07s: max loss is.
+271.08s: max loss is. But, typically speaking, the lower your
+273.95s: But, typically speaking, the lower your
+273.96s: But, typically speaking, the lower your win rate, again, if you're normalized
+276.55s: win rate, again, if you're normalized
+276.56s: win rate, again, if you're normalized credit versus um put credit versus call
+280.15s: credit versus um put credit versus call
+280.16s: credit versus um put credit versus call credit.
+281.35s: credit.
+281.36s: credit. And this is why.
+284.03s: And this is why.
+284.04s: And this is why. If you take a look at this plot, this is
+285.75s: If you take a look at this plot, this is
+285.76s: If you take a look at this plot, this is showing you win rates and the expected
+288.51s: showing you win rates and the expected
+288.52s: showing you win rates and the expected value.
+289.71s: value.
+289.72s: value. And I show you put credit spreads in
+292.15s: And I show you put credit spreads in
+292.16s: And I show you put credit spreads in red, call in blue, iron condor in green.
+296.39s: red, call in blue, iron condor in green.
+296.40s: red, call in blue, iron condor in green. And just eyeball what you see.
+299.51s: And just eyeball what you see.
+299.52s: And just eyeball what you see. In general, the profitable variants are
+302.35s: In general, the profitable variants are
+302.36s: In general, the profitable variants are put credit spreads, which makes a lot of
+305.35s: put credit spreads, which makes a lot of
+305.36s: put credit spreads, which makes a lot of sense if we think of it. The market
+307.35s: sense if we think of it. The market
+307.36s: sense if we think of it. The market tends to go up. Not a big shock there.
+311.19s: tends to go up. Not a big shock there.
+311.20s: tends to go up. Not a big shock there. So, of 396 configurations, 354 have
+315.67s: So, of 396 configurations, 354 have
+315.68s: So, of 396 configurations, 354 have negative expected value.
+319.60s: It's a insane number. But, if you think
+323.32s: It's a insane number. But, if you think of the call and iron condor variants
+326.11s: of the call and iron condor variants
+326.12s: of the call and iron condor variants that have the call component, they're
+328.87s: that have the call component, they're
+328.88s: that have the call component, they're standing directly in the way
+332.63s: standing directly in the way
+332.64s: standing directly in the way of positive drift, the upside. Most of
+335.47s: of positive drift, the upside. Most of
+335.48s: of positive drift, the upside. Most of these things have gone up. Now, do
+336.91s: these things have gone up. Now, do
+336.92s: these things have gone up. Now, do remember this did go through some bear
+338.87s: remember this did go through some bear
+338.88s: remember this did go through some bear markets. That's why I went back to '07.
+341.03s: markets. That's why I went back to '07.
+341.04s: markets. That's why I went back to '07. This isn't just the bull market that we
+343.07s: This isn't just the bull market that we
+343.08s: This isn't just the bull market that we experienced.
+344.63s: experienced.
+344.64s: experienced. The other thing I want you to notice
+345.87s: The other thing I want you to notice
+345.88s: The other thing I want you to notice that for the put credit spread, there
+347.95s: that for the put credit spread, there
+347.96s: that for the put credit spread, there can be, based on variations,
+351.07s: can be, based on variations,
+351.08s: can be, based on variations, huge deviations. So, you can see that
+353.91s: huge deviations. So, you can see that
+353.92s: huge deviations. So, you can see that there's a concentration that literally
+355.83s: there's a concentration that literally
+355.84s: there's a concentration that literally are positively expected. But, more
+358.19s: are positively expected. But, more
+358.20s: are positively expected. But, more importantly, you can see that there are
+359.71s: importantly, you can see that there are
+359.72s: importantly, you can see that there are some that are very negatively expected.
+363.35s: some that are very negatively expected.
+363.36s: some that are very negatively expected. You can see some that actually have
+364.83s: You can see some that actually have
+364.84s: You can see some that actually have really good win rates. Here, we see a
+367.75s: really good win rates. Here, we see a
+367.76s: really good win rates. Here, we see a couple that are above 60%
+370.19s: couple that are above 60%
+370.20s: couple that are above 60% that still have some of the worst
+373.55s: that still have some of the worst
+373.56s: that still have some of the worst negative expected value. So, this is the
+376.11s: negative expected value. So, this is the
+376.12s: negative expected value. So, this is the same thing I talk about all the time,
+377.55s: same thing I talk about all the time,
+377.56s: same thing I talk about all the time, one of the weaknesses with spreads,
+378.87s: one of the weaknesses with spreads,
+378.88s: one of the weaknesses with spreads, which is expected value, and it tricks a
+380.99s: which is expected value, and it tricks a
+381.00s: which is expected value, and it tricks a lot of people because they typically see
+382.75s: lot of people because they typically see
+382.76s: lot of people because they typically see high win rates, and then they think that
+384.63s: high win rates, and then they think that
+384.64s: high win rates, and then they think that they're good.
+386.47s: they're good.
+386.48s: they're good. So, let's show you a quick heat map.
+389.99s: So, let's show you a quick heat map.
+390.00s: So, let's show you a quick heat map. This shows you some common delta
+393.87s: This shows you some common delta
+393.88s: This shows you some common delta selections, and then widths.
+397.15s: selections, and then widths.
+397.16s: selections, and then widths. And I show you the put credit spread,
+398.67s: And I show you the put credit spread,
+398.68s: And I show you the put credit spread, calls, iron condors.
+401.23s: calls, iron condors.
+401.24s: calls, iron condors. The main thing to focus on here, this is
+405.35s: The main thing to focus on here, this is
+405.36s: The main thing to focus on here, this is the mean, by the way, across the 11
+408.39s: the mean, by the way, across the 11
+408.40s: the mean, by the way, across the 11 underlines. So, that's why you'll see
+409.99s: underlines. So, that's why you'll see
+410.00s: underlines. So, that's why you'll see some variations here.
+412.55s: some variations here.
+412.56s: some variations here. One of the things that you'll know is
+414.43s: One of the things that you'll know is
+414.44s: One of the things that you'll know is that the wider your spreads are in
+417.15s: that the wider your spreads are in
+417.16s: that the wider your spreads are in general, the better off you are.
+419.79s: general, the better off you are.
+419.80s: general, the better off you are. And that's because that spread starts to
+422.83s: And that's because that spread starts to
+422.84s: And that's because that spread starts to behave increasingly more like the
+427.07s: behave increasingly more like the
+427.08s: behave increasingly more like the underlying trade that you're targeting,
+428.75s: underlying trade that you're targeting,
+428.76s: underlying trade that you're targeting, short call, short put, short strangle in
+431.47s: short call, short put, short strangle in
+431.48s: short call, short put, short strangle in these cases.
+433.15s: these cases.
+433.16s: these cases. But, the tight spreads, those really are
+437.15s: But, the tight spreads, those really are
+437.16s: But, the tight spreads, those really are a different play entirely. Those are
+439.23s: a different play entirely. Those are
+439.24s: a different play entirely. Those are kind of like just betting on a part of
+441.55s: kind of like just betting on a part of
+441.56s: kind of like just betting on a part of the distribution curve, and if you guys
+443.67s: the distribution curve, and if you guys
+443.68s: the distribution curve, and if you guys are interested in a video, I can do
+445.35s: are interested in a video, I can do
+445.36s: are interested in a video, I can do something in the future to explain that
+447.19s: something in the future to explain that
+447.20s: something in the future to explain that more in detail, but it's important to
+448.75s: more in detail, but it's important to
+448.76s: more in detail, but it's important to understand because when you're trading
+451.23s: understand because when you're trading
+451.24s: understand because when you're trading really, really narrow spreads, that's
+453.03s: really, really narrow spreads, that's
+453.04s: really, really narrow spreads, that's all you're doing. You're not really
+454.27s: all you're doing. You're not really
+454.28s: all you're doing. You're not really trading any other factors. It's
+456.23s: trading any other factors. It's
+456.24s: trading any other factors. It's important to know.
+458.19s: important to know.
+458.20s: important to know. Now,
+459.11s: Now,
+459.12s: Now, I also broke each down by market cap.
+463.27s: I also broke each down by market cap.
+463.28s: I also broke each down by market cap. And again, you'll notice a pretty clear
+465.39s: And again, you'll notice a pretty clear
+465.40s: And again, you'll notice a pretty clear trend.
+466.55s: trend.
+466.56s: trend. This is looking at the 16 delta
+469.75s: This is looking at the 16 delta
+469.76s: This is looking at the 16 delta variants.
+471.27s: variants.
+471.28s: variants. And specifically speaking,
+474.31s: And specifically speaking,
+474.32s: And specifically speaking, the large and mega cap
+477.07s: the large and mega cap
+477.08s: the large and mega cap hands down perform the best compared to
+479.59s: hands down perform the best compared to
+479.60s: hands down perform the best compared to mid and small. Hands down. And again,
+482.67s: mid and small. Hands down. And again,
+482.68s: mid and small. Hands down. And again, it's really only the put credit spread
+485.67s: it's really only the put credit spread
+485.68s: it's really only the put credit spread side. The call credit spread, the iron
+488.03s: side. The call credit spread, the iron
+488.04s: side. The call credit spread, the iron condor side, those really get ran over a
+491.63s: condor side, those really get ran over a
+491.64s: condor side, those really get ran over a lot, which causes a lot of issues.
+495.39s: lot, which causes a lot of issues.
+495.40s: lot, which causes a lot of issues. So, if we take a peek
+497.87s: So, if we take a peek
+497.88s: So, if we take a peek at how these behave
+500.19s: at how these behave
+500.20s: at how these behave against buy and hold, this is using a 10
+504.67s: against buy and hold, this is using a 10
+504.68s: against buy and hold, this is using a 10 delta put spread with the 97% win rate
+507.75s: delta put spread with the 97% win rate
+507.76s: delta put spread with the 97% win rate at 5%
+509.47s: at 5%
+509.48s: at 5% trade risk, and the 16 delta put spread,
+513.03s: trade risk, and the 16 delta put spread,
+513.04s: trade risk, and the 16 delta put spread, you can see
+514.71s: you can see
+514.72s: you can see they kind of don't do much. And they
+517.35s: they kind of don't do much. And they
+517.36s: they kind of don't do much. And they absolutely pale in comparison against
+520.67s: absolutely pale in comparison against
+520.68s: absolutely pale in comparison against literally just holding spy.
+523.99s: literally just holding spy.
+524.00s: literally just holding spy. And it has everything to do with how
+527.43s: And it has everything to do with how
+527.44s: And it has everything to do with how little these collect and what the
+530.03s: little these collect and what the
+530.04s: little these collect and what the prevailing market is doing. Now, I do
+531.87s: prevailing market is doing. Now, I do
+531.88s: prevailing market is doing. Now, I do want to be very clear.
+533.51s: want to be very clear.
+533.52s: want to be very clear. If you learn how to use these in
+536.35s: If you learn how to use these in
+536.36s: If you learn how to use these in different regimes, meaning just not
+539.11s: different regimes, meaning just not
+539.12s: different regimes, meaning just not always doing this as some sort of
+540.83s: always doing this as some sort of
+540.84s: always doing this as some sort of mechanical, this is all you do, there
+543.19s: mechanical, this is all you do, there
+543.20s: mechanical, this is all you do, there can be advantages, right? Take a look at
+545.71s: can be advantages, right? Take a look at
+545.72s: can be advantages, right? Take a look at how these performed during the bear
+547.83s: how these performed during the bear
+547.84s: how these performed during the bear market. They actually did pretty well.
+550.27s: market. They actually did pretty well.
+550.28s: market. They actually did pretty well. Take a look at how they performed during
+552.35s: Take a look at how they performed during
+552.36s: Take a look at how they performed during the bear market in 2020 comparatively.
+555.71s: the bear market in 2020 comparatively.
+555.72s: the bear market in 2020 comparatively. They did pretty well. And how did they
+557.87s: They did pretty well. And how did they
+557.88s: They did pretty well. And how did they perform in '22 when the market sold off
+560.51s: perform in '22 when the market sold off
+560.52s: perform in '22 when the market sold off pretty heavy? Again, they did pretty
+562.39s: pretty heavy? Again, they did pretty
+562.40s: pretty heavy? Again, they did pretty well. And how did they do during the
+564.83s: well. And how did they do during the
+564.84s: well. And how did they do during the tariff madness in '25? Again,
+568.35s: tariff madness in '25? Again,
+568.36s: tariff madness in '25? Again, they still went up.
+570.15s: they still went up.
+570.16s: they still went up. So, this is a clean scenario on you
+574.35s: So, this is a clean scenario on you
+574.36s: So, this is a clean scenario on you don't always just want to blindly
+576.59s: don't always just want to blindly
+576.60s: don't always just want to blindly compare against buy and hold because
+578.79s: compare against buy and hold because
+578.80s: compare against buy and hold because they all have different use cases,
+580.27s: they all have different use cases,
+580.28s: they all have different use cases, right? This is again, buy and hold.
+583.15s: right? This is again, buy and hold.
+583.16s: right? This is again, buy and hold. If you're doing something with your
+585.63s: If you're doing something with your
+585.64s: If you're doing something with your verticals where you're like taking money
+588.11s: verticals where you're like taking money
+588.12s: verticals where you're like taking money out to live off of and stuff like that,
+590.95s: out to live off of and stuff like that,
+590.96s: out to live off of and stuff like that, then it's obviously a different story
+593.47s: then it's obviously a different story
+593.48s: then it's obviously a different story than a proper comparison against buy and
+595.63s: than a proper comparison against buy and
+595.64s: than a proper comparison against buy and hold.
+597.03s: hold.
+597.04s: hold. Now,
+598.32s: Now, the mid price issue
+601.07s: the mid price issue
+601.08s: the mid price issue is a bit of a problem. And
+604.67s: is a bit of a problem. And
+604.68s: is a bit of a problem. And if we rerun fills at the mid, 84
+610.43s: if we rerun fills at the mid, 84
+610.44s: if we rerun fills at the mid, 84 of 126
+612.07s: of 126
+612.08s: of 126 of the profitable strategies flip
+613.83s: of the profitable strategies flip
+613.84s: of the profitable strategies flip negative.
+615.35s: negative.
+615.36s: negative. That's a problem.
+616.99s: That's a problem.
+617.00s: That's a problem. That's a real weakness
+619.95s: That's a real weakness
+619.96s: That's a real weakness in the strategy itself and the way it
+621.99s: in the strategy itself and the way it
+622.00s: in the strategy itself and the way it behaves. One thing to note again
+625.55s: behaves. One thing to note again
+625.56s: behaves. One thing to note again is that most of the stuff I'm showing in
+628.23s: is that most of the stuff I'm showing in
+628.24s: is that most of the stuff I'm showing in the sample or actually pretty liquid
+630.23s: the sample or actually pretty liquid
+630.24s: the sample or actually pretty liquid names. It's not like, you know, super
+633.95s: names. It's not like, you know, super
+633.96s: names. It's not like, you know, super trash small names and that's also why I
+637.67s: trash small names and that's also why I
+637.68s: trash small names and that's also why I looked at so many different
+639.03s: looked at so many different
+639.04s: looked at so many different configurations. The key here is again,
+641.87s: configurations. The key here is again,
+641.88s: configurations. The key here is again, there's just not a significant room for
+644.83s: there's just not a significant room for
+644.84s: there's just not a significant room for error.
+646.07s: error.
+646.08s: error. So then the next thing I did was look at
+647.75s: So then the next thing I did was look at
+647.76s: So then the next thing I did was look at common management rules and I looked at
+649.83s: common management rules and I looked at
+649.84s: common management rules and I looked at them in the 10 delta and 16 delta
+652.23s: them in the 10 delta and 16 delta
+652.24s: them in the 10 delta and 16 delta configurations. The left hand side shows
+655.43s: configurations. The left hand side shows
+655.44s: configurations. The left hand side shows you expected value by different
+656.91s: you expected value by different
+656.92s: you expected value by different management rules. So you want this to be
+659.59s: management rules. So you want this to be
+659.60s: management rules. So you want this to be higher because these are unfortunately
+660.99s: higher because these are unfortunately
+661.00s: higher because these are unfortunately all negative.
+662.39s: all negative.
+662.40s: all negative. So you can see that hold, doing nothing,
+665.59s: So you can see that hold, doing nothing,
+665.60s: So you can see that hold, doing nothing, is actually the best.
+668.11s: is actually the best.
+668.12s: is actually the best. If you take profit at 50%, you decrease
+671.39s: If you take profit at 50%, you decrease
+671.40s: If you take profit at 50%, you decrease your expected value by a little under
+673.19s: your expected value by a little under
+673.20s: your expected value by a little under two points.
+674.59s: two points.
+674.60s: two points. If you just manage it at 21 days, you
+677.79s: If you just manage it at 21 days, you
+677.80s: If you just manage it at 21 days, you decrease your performance by 11 or you
+682.11s: decrease your performance by 11 or you
+682.12s: decrease your performance by 11 or you move it down to negative 10, you
+685.55s: move it down to negative 10, you
+685.56s: move it down to negative 10, you decrease it by like four points. If you
+688.23s: decrease it by like four points. If you
+688.24s: decrease it by like four points. If you use a stop that's two times your credit
+690.71s: use a stop that's two times your credit
+690.72s: use a stop that's two times your credit received, you're kind of down at like
+692.55s: received, you're kind of down at like
+692.56s: received, you're kind of down at like nine.
+693.87s: nine.
+693.88s: nine. Then, if you start combining some of
+695.47s: Then, if you start combining some of
+695.48s: Then, if you start combining some of these, 50% profit or two times stop or
+698.27s: these, 50% profit or two times stop or
+698.28s: these, 50% profit or two times stop or 50% profit and 21 DTE, this is where you
+701.71s: 50% profit and 21 DTE, this is where you
+701.72s: 50% profit and 21 DTE, this is where you land.
+702.79s: land.
+702.80s: land. So, here's one of the key issues.
+706.19s: So, here's one of the key issues.
+706.20s: So, here's one of the key issues. If you look at the average winners
+709.11s: If you look at the average winners
+709.12s: If you look at the average winners erased
+710.87s: erased
+710.88s: erased by the worst trade, this is showing you
+714.55s: by the worst trade, this is showing you
+714.56s: by the worst trade, this is showing you how bad individual trades can unwind
+719.07s: how bad individual trades can unwind
+719.08s: how bad individual trades can unwind some of your winning positions.
+721.35s: some of your winning positions.
+721.36s: some of your winning positions. If you're taking things at 50%, your
+724.07s: If you're taking things at 50%, your
+724.08s: If you're taking things at 50%, your average win is really small. So, it
+726.19s: average win is really small. So, it
+726.20s: average win is really small. So, it makes you really, really susceptible to
+728.03s: makes you really, really susceptible to
+728.04s: makes you really, really susceptible to a bad loss erasing a lot, a lot of your
+731.67s: a bad loss erasing a lot, a lot of your
+731.68s: a bad loss erasing a lot, a lot of your gains. And it's the same thing here. If
+735.23s: gains. And it's the same thing here. If
+735.24s: gains. And it's the same thing here. If you manage at 21 days, and that's
+737.51s: you manage at 21 days, and that's
+737.52s: you manage at 21 days, and that's specifically because you're not giving
+740.07s: specifically because you're not giving
+740.08s: specifically because you're not giving the trade enough time in order to get
+743.07s: the trade enough time in order to get
+743.08s: the trade enough time in order to get all of that faded decay out that you're
+745.07s: all of that faded decay out that you're
+745.08s: all of that faded decay out that you're trying to capture. And remember, you're
+747.27s: trying to capture. And remember, you're
+747.28s: trying to capture. And remember, you're not really that worried about gamma and
+749.51s: not really that worried about gamma and
+749.52s: not really that worried about gamma and stuff like that with these verticals.
+751.95s: stuff like that with these verticals.
+751.96s: stuff like that with these verticals. They're probability distribution bets.
+753.99s: They're probability distribution bets.
+754.00s: They're probability distribution bets. You don't actually have that much gamma
+756.35s: You don't actually have that much gamma
+756.36s: You don't actually have that much gamma in your structure here.
+758.87s: in your structure here.
+758.88s: in your structure here. A couple other things.
+761.47s: A couple other things.
+761.48s: A couple other things. The way to think about running these
+763.83s: The way to think about running these
+763.84s: The way to think about running these kinds of strategies is you have to be
+765.47s: kinds of strategies is you have to be
+765.48s: kinds of strategies is you have to be very, very tail sensitive. You have to
+768.23s: very, very tail sensitive. You have to
+768.24s: very, very tail sensitive. You have to pay attention to what the tails look
+770.79s: pay attention to what the tails look
+770.80s: pay attention to what the tails look like in your strategy.
+772.59s: like in your strategy.
+772.60s: like in your strategy. And if you focus on good regime filters,
+778.83s: And if you focus on good regime filters,
+778.84s: And if you focus on good regime filters, you can actually come up with pretty
+781.55s: you can actually come up with pretty
+781.56s: you can actually come up with pretty viable strategies using verticals. But,
+784.15s: viable strategies using verticals. But,
+784.16s: viable strategies using verticals. But, if you run them as just like your base
+786.23s: if you run them as just like your base
+786.24s: if you run them as just like your base thing that you always do,
+788.47s: thing that you always do,
+788.48s: thing that you always do, there's some real, real risks with
+790.75s: there's some real, real risks with
+790.76s: there's some real, real risks with running it, as you can see here. So, if
+793.51s: running it, as you can see here. So, if
+793.52s: running it, as you can see here. So, if you want me to do a bit of a deeper
+795.23s: you want me to do a bit of a deeper
+795.24s: you want me to do a bit of a deeper study on put credit spreads and show you
+798.63s: study on put credit spreads and show you
+798.64s: study on put credit spreads and show you some of those things, just drop a
+800.43s: some of those things, just drop a
+800.44s: some of those things, just drop a comment below, let me know, and I'm
+802.71s: comment below, let me know, and I'm
+802.72s: comment below, let me know, and I'm happy to do a follow-up video in the
+804.15s: happy to do a follow-up video in the
+804.16s: happy to do a follow-up video in the future. Be an outlier. See you guys
+805.79s: future. Be an outlier. See you guys
+805.80s: future. Be an outlier. See you guys later.

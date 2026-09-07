@@ -1,0 +1,2506 @@
+0.48s: Okay,
+2.24s: Okay, &gt;&gt; what's up everyone? Welcome to the
+3.75s: &gt;&gt; what's up everyone? Welcome to the
+3.76s: &gt;&gt; what's up everyone? Welcome to the options trench. Today we are talking
+5.75s: options trench. Today we are talking
+5.76s: options trench. Today we are talking about ghosts and phantoms. Chris before
+9.43s: about ghosts and phantoms. Chris before
+9.44s: about ghosts and phantoms. Chris before we started was telling me all different
+11.03s: we started was telling me all different
+11.04s: we started was telling me all different kinds of fun ghost stories and we
+13.19s: kinds of fun ghost stories and we
+13.20s: kinds of fun ghost stories and we thought what better place than really to
+16.71s: thought what better place than really to
+16.72s: thought what better place than really to talk about phantoms. And in the context
+19.75s: talk about phantoms. And in the context
+19.76s: talk about phantoms. And in the context here, we're actually talking about
+21.03s: here, we're actually talking about
+21.04s: here, we're actually talking about things like phantom liquidity.
+23.99s: things like phantom liquidity.
+24.00s: things like phantom liquidity. The goal for the session today is to
+25.75s: The goal for the session today is to
+25.76s: The goal for the session today is to walk you through options, liquidity,
+29.27s: walk you through options, liquidity,
+29.28s: walk you through options, liquidity, just at a high level. This isn't
+30.95s: just at a high level. This isn't
+30.96s: just at a high level. This isn't necessarily a specific deep dive into
+32.63s: necessarily a specific deep dive into
+32.64s: necessarily a specific deep dive into any specific piece. You'll walk away
+34.55s: any specific piece. You'll walk away
+34.56s: any specific piece. You'll walk away with a pretty clear overview of, you
+36.39s: with a pretty clear overview of, you
+36.40s: with a pretty clear overview of, you know, really quick what it is, how to
+38.15s: know, really quick what it is, how to
+38.16s: know, really quick what it is, how to measure it, some nefarious ways that it
+40.23s: measure it, some nefarious ways that it
+40.24s: measure it, some nefarious ways that it might be a little worse than you might
+42.31s: might be a little worse than you might
+42.32s: might be a little worse than you might think it is, some common misconceptions,
+44.87s: think it is, some common misconceptions,
+44.88s: think it is, some common misconceptions, and then we have a little bit of a
+46.79s: and then we have a little bit of a
+46.80s: and then we have a little bit of a discussion about order routing. So,
+49.11s: discussion about order routing. So,
+49.12s: discussion about order routing. So, there's a lot to get into. We figured
+51.67s: there's a lot to get into. We figured
+51.68s: there's a lot to get into. We figured the best place for us to start is
+55.11s: the best place for us to start is
+55.12s: the best place for us to start is actually with a really quick overview.
+58.15s: actually with a really quick overview.
+58.16s: actually with a really quick overview. We'll level set with you guys and then
+60.63s: We'll level set with you guys and then
+60.64s: We'll level set with you guys and then we'll kind of get into the the more
+62.63s: we'll kind of get into the the more
+62.64s: we'll kind of get into the the more interesting stuff. So, I got my screen
+64.15s: interesting stuff. So, I got my screen
+64.16s: interesting stuff. So, I got my screen up.
+65.67s: up.
+65.68s: up. What is liquidity? Well, there's kind of
+67.99s: What is liquidity? Well, there's kind of
+68.00s: What is liquidity? Well, there's kind of a lot of different ways you can think of
+69.19s: a lot of different ways you can think of
+69.20s: a lot of different ways you can think of it, but in a nutshell, it's just like
+71.03s: it, but in a nutshell, it's just like
+71.04s: it, but in a nutshell, it's just like your ability to transact at fair prices.
+73.99s: your ability to transact at fair prices.
+74.00s: your ability to transact at fair prices. So, in the options markets, there's a
+76.39s: So, in the options markets, there's a
+76.40s: So, in the options markets, there's a bunch of different measures for it.
+77.75s: bunch of different measures for it.
+77.76s: bunch of different measures for it. We'll talk about those. This is just an
+79.43s: We'll talk about those. This is just an
+79.44s: We'll talk about those. This is just an options chain to give you some general
+81.43s: options chain to give you some general
+81.44s: options chain to give you some general metrics that we're going to talk about.
+83.27s: metrics that we're going to talk about.
+83.28s: metrics that we're going to talk about. So, you know, there's your bid size,
+85.59s: So, you know, there's your bid size,
+85.60s: So, you know, there's your bid size, your ask. There's stuff like your size
+90.39s: your ask. There's stuff like your size
+90.40s: your ask. There's stuff like your size actually offered by the market. So, on
+92.63s: actually offered by the market. So, on
+92.64s: actually offered by the market. So, on both the bid and the offer, there's
+94.63s: both the bid and the offer, there's
+94.64s: both the bid and the offer, there's things like volume, open interest,
+97.51s: things like volume, open interest,
+97.52s: things like volume, open interest, different kind of metrics that you can
+98.87s: different kind of metrics that you can
+98.88s: different kind of metrics that you can eyeball to try to get a sense of how
+101.19s: eyeball to try to get a sense of how
+101.20s: eyeball to try to get a sense of how liquid something is or isn't.
+104.39s: liquid something is or isn't.
+104.40s: liquid something is or isn't. And one tool that Chris and I were
+106.55s: And one tool that Chris and I were
+106.56s: And one tool that Chris and I were talking about are some of the different
+108.31s: talking about are some of the different
+108.32s: talking about are some of the different ways that you can actually measure
+110.87s: ways that you can actually measure
+110.88s: ways that you can actually measure liquidity to get a sense of like what
+113.35s: liquidity to get a sense of like what
+113.36s: liquidity to get a sense of like what makes sense for your use case. And one
+116.95s: makes sense for your use case. And one
+116.96s: makes sense for your use case. And one of the standardized ways that I will
+120.07s: of the standardized ways that I will
+120.08s: of the standardized ways that I will measure liquidity is actually just by
+122.15s: measure liquidity is actually just by
+122.16s: measure liquidity is actually just by taking the bid ask spread as a
+124.47s: taking the bid ask spread as a
+124.48s: taking the bid ask spread as a percentage of the strike. Then you could
+126.63s: percentage of the strike. Then you could
+126.64s: percentage of the strike. Then you could do something kind of like compare it
+129.11s: do something kind of like compare it
+129.12s: do something kind of like compare it against whatever your
+132.23s: against whatever your
+132.24s: against whatever your um you know what whatever your
+134.47s: um you know what whatever your
+134.48s: um you know what whatever your underlying is like a percentage. Compare
+136.39s: underlying is like a percentage. Compare
+136.40s: underlying is like a percentage. Compare it against like spy. Spy sometimes is a
+139.19s: it against like spy. Spy sometimes is a
+139.20s: it against like spy. Spy sometimes is a really extreme example. So this is just
+141.19s: really extreme example. So this is just
+141.20s: really extreme example. So this is just looking at today's what the 10th of AG.
+144.07s: looking at today's what the 10th of AG.
+144.08s: looking at today's what the 10th of AG. We're looking at 21 AUG XR. We're
+146.47s: We're looking at 21 AUG XR. We're
+146.48s: We're looking at 21 AUG XR. We're looking at 30 delta puts. You could see
+148.39s: looking at 30 delta puts. You could see
+148.40s: looking at 30 delta puts. You could see the bid spread here and the bid spread
+151.11s: the bid spread here and the bid spread
+151.12s: the bid spread here and the bid spread is a percentage of that strike and spy
+152.87s: is a percentage of that strike and spy
+152.88s: is a percentage of that strike and spy is 0.01%. It's tiny, right? SPY Super
+155.75s: is 0.01%. It's tiny, right? SPY Super
+155.76s: is 0.01%. It's tiny, right? SPY Super Liquid. Then you could take a look at
+157.83s: Liquid. Then you could take a look at
+157.84s: Liquid. Then you could take a look at something like XHB.
+160.31s: something like XHB.
+160.32s: something like XHB. Same term, same delta, and you're
+162.95s: Same term, same delta, and you're
+162.96s: Same term, same delta, and you're looking at a 3.4% spread. Now, massive
+167.43s: looking at a 3.4% spread. Now, massive
+167.44s: looking at a 3.4% spread. Now, massive difference. 3.4% spread. You kind of
+170.15s: difference. 3.4% spread. You kind of
+170.16s: difference. 3.4% spread. You kind of have to figure out like where your sweet
+172.07s: have to figure out like where your sweet
+172.08s: have to figure out like where your sweet spot is and how far you're willing to
+174.39s: spot is and how far you're willing to
+174.40s: spot is and how far you're willing to go. As we said at the top, a couple
+176.47s: go. As we said at the top, a couple
+176.48s: go. As we said at the top, a couple different metrics you can eyeball. But
+178.87s: different metrics you can eyeball. But
+178.88s: different metrics you can eyeball. But what I actually want to pivot to quickly
+181.51s: what I actually want to pivot to quickly
+181.52s: what I actually want to pivot to quickly is the way I got to refresh this. the
+184.71s: is the way I got to refresh this. the
+184.72s: is the way I got to refresh this. the way that Chris has like found a method
+189.43s: way that Chris has like found a method
+189.44s: way that Chris has like found a method to explore liquidity so that on
+192.39s: to explore liquidity so that on
+192.40s: to explore liquidity so that on something like his platform he can find
+195.99s: something like his platform he can find
+196.00s: something like his platform he can find liquid things to put in front of you and
+197.67s: liquid things to put in front of you and
+197.68s: liquid things to put in front of you and we'll talk about some of these different
+199.19s: we'll talk about some of these different
+199.20s: we'll talk about some of these different degrees of liquidity in a minute. He has
+201.67s: degrees of liquidity in a minute. He has
+201.68s: degrees of liquidity in a minute. He has those outlined here. So yeah, Chris,
+203.75s: those outlined here. So yeah, Chris,
+203.76s: those outlined here. So yeah, Chris, perfect place to start. Do you want to
+204.95s: perfect place to start. Do you want to
+204.96s: perfect place to start. Do you want to walk through the way that you think
+206.79s: walk through the way that you think
+206.80s: walk through the way that you think about liquidity and how you set it up in
+209.27s: about liquidity and how you set it up in
+209.28s: about liquidity and how you set it up in the platform?
+210.95s: the platform?
+210.96s: the platform? &gt;&gt; Yeah, so a couple couple things. So we
+213.35s: &gt;&gt; Yeah, so a couple couple things. So we
+213.36s: &gt;&gt; Yeah, so a couple couple things. So we think about liquidity. Liquidity is
+214.95s: think about liquidity. Liquidity is
+214.96s: think about liquidity. Liquidity is important. Um so first of all I'll just
+216.95s: important. Um so first of all I'll just
+216.96s: important. Um so first of all I'll just say that we're measuring our liquidity
+219.91s: say that we're measuring our liquidity
+219.92s: say that we're measuring our liquidity measure here is very similar to what you
+222.15s: measure here is very similar to what you
+222.16s: measure here is very similar to what you described which is a measure of the
+224.87s: described which is a measure of the
+224.88s: described which is a measure of the option markets width uh the basically
+227.35s: option markets width uh the basically
+227.36s: option markets width uh the basically the bid ask. So and what what we're
+230.47s: the bid ask. So and what what we're
+230.48s: the bid ask. So and what what we're doing here is we are fil we we create
+234.23s: doing here is we are fil we we create
+234.24s: doing here is we are fil we we create this filter. We tag every name with um
+238.07s: this filter. We tag every name with um
+238.08s: this filter. We tag every name with um either a low, medium or high liquidity
+240.23s: either a low, medium or high liquidity
+240.24s: either a low, medium or high liquidity label. And we determine the label by
+242.87s: label. And we determine the label by
+242.88s: label. And we determine the label by saying the general gist of it is we look
+245.59s: saying the general gist of it is we look
+245.60s: saying the general gist of it is we look at it and we say let's look at a 30-day
+248.79s: at it and we say let's look at a 30-day
+248.80s: at it and we say let's look at a 30-day option uh at the money option in this
+251.75s: option uh at the money option in this
+251.76s: option uh at the money option in this name and then we look at how wide the
+254.87s: name and then we look at how wide the
+254.88s: name and then we look at how wide the market is in that option and then we
+257.43s: market is in that option and then we
+257.44s: market is in that option and then we have thresholds for what we consider
+259.03s: have thresholds for what we consider
+259.04s: have thresholds for what we consider low, medium and high. So, just to give
+261.59s: low, medium and high. So, just to give
+261.60s: low, medium and high. So, just to give you an idea,
+263.59s: you an idea,
+263.60s: you an idea, uh, if you're a 20 V name and you're,
+267.91s: uh, if you're a 20 V name and you're,
+267.92s: uh, if you're a 20 V name and you're, uh, let's say you're looking at the at
+269.35s: uh, let's say you're looking at the at
+269.36s: uh, let's say you're looking at the at the money call on a 20% V name, if the
+271.99s: the money call on a 20% V name, if the
+272.00s: the money call on a 20% V name, if the bid ask is less than one V point wide or
+274.87s: bid ask is less than one V point wide or
+274.88s: bid ask is less than one V point wide or one Vega point wide would be another way
+276.95s: one Vega point wide would be another way
+276.96s: one Vega point wide would be another way to say that, um, then we consider you
+280.07s: to say that, um, then we consider you
+280.08s: to say that, um, then we consider you high liquidity. If you are between uh,
+283.11s: high liquidity. If you are between uh,
+283.12s: high liquidity. If you are between uh, one and two V points wide, we consider
+286.23s: one and two V points wide, we consider
+286.24s: one and two V points wide, we consider you medium liquidity. And if you're
+287.99s: you medium liquidity. And if you're
+288.00s: you medium liquidity. And if you're wider than two vault points wide on a 20
+290.55s: wider than two vault points wide on a 20
+290.56s: wider than two vault points wide on a 20 ball name, that would be uh labeled as a
+293.59s: ball name, that would be uh labeled as a
+293.60s: ball name, that would be uh labeled as a a low liquidity. And um it's possible
+296.79s: a low liquidity. And um it's possible
+296.80s: a low liquidity. And um it's possible that the liquidity in the name just does
+298.87s: that the liquidity in the name just does
+298.88s: that the liquidity in the name just does change over time, but they're fairly
+300.87s: change over time, but they're fairly
+300.88s: change over time, but they're fairly they're fairly stable. And the reason we
+303.35s: they're fairly stable. And the reason we
+303.36s: they're fairly stable. And the reason we add a filter like that is is one, it's
+305.99s: add a filter like that is is one, it's
+306.00s: add a filter like that is is one, it's just if you're trading and some people
+308.79s: just if you're trading and some people
+308.80s: just if you're trading and some people um might not want to uh trade a low
+311.83s: um might not want to uh trade a low
+311.84s: um might not want to uh trade a low liquidity name. So you can filter those
+313.83s: liquidity name. So you can filter those
+313.84s: liquidity name. So you can filter those names out. But the other thing is is
+315.67s: names out. But the other thing is is
+315.68s: names out. But the other thing is is whenever you're doing comparisons of the
+318.23s: whenever you're doing comparisons of the
+318.24s: whenever you're doing comparisons of the va markets between names uh low
+322.39s: va markets between names uh low
+322.40s: va markets between names uh low liquidity names
+324.55s: liquidity names
+324.56s: liquidity names um you have less confidence in the the
+328.23s: um you have less confidence in the the
+328.24s: um you have less confidence in the the metrics that you're getting from it like
+329.67s: metrics that you're getting from it like
+329.68s: metrics that you're getting from it like you have less confidence in the
+331.11s: you have less confidence in the
+331.12s: you have less confidence in the volatility. You don't know what's the
+332.79s: volatility. You don't know what's the
+332.80s: volatility. You don't know what's the right volatility. you were looking
+334.39s: right volatility. you were looking
+334.40s: right volatility. you were looking earlier at XHB and uh the the markets
+339.27s: earlier at XHB and uh the the markets
+339.28s: earlier at XHB and uh the the markets were wide and there was a bunch of put
+341.19s: were wide and there was a bunch of put
+341.20s: were wide and there was a bunch of put options um in the August Xpirie that um
+345.35s: options um in the August Xpirie that um
+345.36s: options um in the August Xpirie that um you know the the higher strike uh put
+348.79s: you know the the higher strike uh put
+348.80s: you know the the higher strike uh put had a uh higher volatility than a lower
+352.15s: had a uh higher volatility than a lower
+352.16s: had a uh higher volatility than a lower strike put which you'll almost never see
+354.95s: strike put which you'll almost never see
+354.96s: strike put which you'll almost never see and it's it was only an accident based
+357.59s: and it's it was only an accident based
+357.60s: and it's it was only an accident based upon the markets being wide on those
+359.43s: upon the markets being wide on those
+359.44s: upon the markets being wide on those options. So they're not liquid. So if
+362.15s: options. So they're not liquid. So if
+362.16s: options. So they're not liquid. So if you want to filter out vault metrics
+364.15s: you want to filter out vault metrics
+364.16s: you want to filter out vault metrics that are coming from low liquidity names
+366.15s: that are coming from low liquidity names
+366.16s: that are coming from low liquidity names which will make your comparisons more
+368.07s: which will make your comparisons more
+368.08s: which will make your comparisons more trustworthy um you can do that by uh uh
+372.15s: trustworthy um you can do that by uh uh
+372.16s: trustworthy um you can do that by uh uh uh just filtering out low. So but the
+374.71s: uh just filtering out low. So but the
+374.72s: uh just filtering out low. So but the gist of it is we are also looking at
+377.59s: gist of it is we are also looking at
+377.60s: gist of it is we are also looking at liquidity very similar to the way you
+379.91s: liquidity very similar to the way you
+379.92s: liquidity very similar to the way you did which is to say how wide is this
+382.47s: did which is to say how wide is this
+382.48s: did which is to say how wide is this market in volatility points or how wide
+385.03s: market in volatility points or how wide
+385.04s: market in volatility points or how wide is the bid ask spread
+387.03s: is the bid ask spread
+387.04s: is the bid ask spread &gt;&gt; in some normalized way. when when we
+390.55s: &gt;&gt; in some normalized way. when when we
+390.56s: &gt;&gt; in some normalized way. when when we think about something especially it's no
+393.91s: think about something especially it's no
+393.92s: think about something especially it's no surprise to anybody that you would do it
+395.43s: surprise to anybody that you would do it
+395.44s: surprise to anybody that you would do it through a V lens that's it's kind of I
+398.15s: through a V lens that's it's kind of I
+398.16s: through a V lens that's it's kind of I feel like that's the only way you would
+399.51s: feel like that's the only way you would
+399.52s: feel like that's the only way you would do it but mostly V hatchley has a
+405.19s: do it but mostly V hatchley has a
+405.20s: do it but mostly V hatchley has a massive impact right so how do you think
+408.07s: massive impact right so how do you think
+408.08s: massive impact right so how do you think about something like
+411.59s: about something like
+411.60s: about something like V and its impact on liquidity you might
+414.31s: V and its impact on liquidity you might
+414.32s: V and its impact on liquidity you might have something that maybe an
+417.19s: have something that maybe an
+417.20s: have something that maybe an insignificant amount of time it has low
+420.31s: insignificant amount of time it has low
+420.32s: insignificant amount of time it has low V and let's just say for whatever reason
+423.51s: V and let's just say for whatever reason
+423.52s: V and let's just say for whatever reason this underlying undergoes longer
+425.99s: this underlying undergoes longer
+426.00s: this underlying undergoes longer durations where the V actually jacks up
+428.07s: durations where the V actually jacks up
+428.08s: durations where the V actually jacks up a little bit. What's that relationship
+430.79s: a little bit. What's that relationship
+430.80s: a little bit. What's that relationship between the liquidity that you would
+432.31s: between the liquidity that you would
+432.32s: between the liquidity that you would assess in low vault versus the liquidity
+435.35s: assess in low vault versus the liquidity
+435.36s: assess in low vault versus the liquidity you might assess at a higher percentile?
+439.11s: you might assess at a higher percentile?
+439.12s: you might assess at a higher percentile? Yeah. So that's a really good question
+440.95s: Yeah. So that's a really good question
+440.96s: Yeah. So that's a really good question because well so
+443.91s: because well so
+443.92s: because well so if I go if we were to go into the
+445.83s: if I go if we were to go into the
+445.84s: if I go if we were to go into the details of our calculation what we
+447.83s: details of our calculation what we
+447.84s: details of our calculation what we actually do is we don't look at it like
+449.75s: actually do is we don't look at it like
+449.76s: actually do is we don't look at it like I mentioned I gave you ideas for like at
+451.99s: I mentioned I gave you ideas for like at
+452.00s: I mentioned I gave you ideas for like at 20 vs one point would be consider or
+454.87s: 20 vs one point would be consider or
+454.88s: 20 vs one point would be consider or less would be considered you know high
+456.87s: less would be considered you know high
+456.88s: less would be considered you know high liquidity we actually measure it
+459.67s: liquidity we actually measure it
+459.68s: liquidity we actually measure it according to the percentage of the
+461.43s: according to the percentage of the
+461.44s: according to the percentage of the volatility. So um so in a 100 va name uh
+467.19s: volatility. So um so in a 100 va name uh
+467.20s: volatility. So um so in a 100 va name uh five vault points wide or less would be
+470.23s: five vault points wide or less would be
+470.24s: five vault points wide or less would be considered high liquidity. So if you're
+472.15s: considered high liquidity. So if you're
+472.16s: considered high liquidity. So if you're a 100v name and you're only a v five
+474.39s: a 100v name and you're only a v five
+474.40s: a 100v name and you're only a v five ballpoint wide market that is considered
+476.55s: ballpoint wide market that is considered
+476.56s: ballpoint wide market that is considered to be as liquid as a 20 vall name that's
+478.79s: to be as liquid as a 20 vall name that's
+478.80s: to be as liquid as a 20 vall name that's one vault point wide. And it's just uh
+482.15s: one vault point wide. And it's just uh
+482.16s: one vault point wide. And it's just uh recognizing the fact that if the
+484.23s: recognizing the fact that if the
+484.24s: recognizing the fact that if the volatility in a name is higher you
+487.27s: volatility in a name is higher you
+487.28s: volatility in a name is higher you expect it to be wider in va terms. But
+490.07s: expect it to be wider in va terms. But
+490.08s: expect it to be wider in va terms. But if we just look compare all that in
+491.83s: if we just look compare all that in
+491.84s: if we just look compare all that in percent uh in a percent way um then we
+495.83s: percent uh in a percent way um then we
+495.84s: percent uh in a percent way um then we can compare across things. So it's
+497.83s: can compare across things. So it's
+497.84s: can compare across things. So it's absolutely true that you you would never
+499.67s: absolutely true that you you would never
+499.68s: absolutely true that you you would never expect a 100 vault name to be one vault
+502.55s: expect a 100 vault name to be one vault
+502.56s: expect a 100 vault name to be one vault point wide. That would be insanely
+504.31s: point wide. That would be insanely
+504.32s: point wide. That would be insanely liquid,
+506.15s: liquid,
+506.16s: liquid, &gt;&gt; right? And the interesting thing that
+508.63s: &gt;&gt; right? And the interesting thing that
+508.64s: &gt;&gt; right? And the interesting thing that we'll talk about in a little bit is, you
+510.63s: we'll talk about in a little bit is, you
+510.64s: we'll talk about in a little bit is, you know, depending on what size and what
+513.91s: know, depending on what size and what
+513.92s: know, depending on what size and what capacity you're trading at, your
+516.07s: capacity you're trading at, your
+516.08s: capacity you're trading at, your sensitivity to changes like this can
+518.55s: sensitivity to changes like this can
+518.56s: sensitivity to changes like this can range kind of a lot. So this plot here,
+523.43s: range kind of a lot. So this plot here,
+523.44s: range kind of a lot. So this plot here, it just shows you spread of different
+525.99s: it just shows you spread of different
+526.00s: it just shows you spread of different things compared to spy. The whole point
+528.47s: things compared to spy. The whole point
+528.48s: things compared to spy. The whole point is again just like the the basic example
+530.63s: is again just like the the basic example
+530.64s: is again just like the the basic example I showed you a little while ago that you
+532.39s: I showed you a little while ago that you
+532.40s: I showed you a little while ago that you can do in Google Sheets. This is just
+533.91s: can do in Google Sheets. This is just
+533.92s: can do in Google Sheets. This is just scaled out a little bit to give you a
+535.27s: scaled out a little bit to give you a
+535.28s: scaled out a little bit to give you a sense across some additional names. But
+537.75s: sense across some additional names. But
+537.76s: sense across some additional names. But there's an interesting conversation here
+540.07s: there's an interesting conversation here
+540.08s: there's an interesting conversation here about some general concepts of
+541.75s: about some general concepts of
+541.76s: about some general concepts of liquidity, Chris. And if you think of
+544.39s: liquidity, Chris. And if you think of
+544.40s: liquidity, Chris. And if you think of stuff like liquidity relationship with
+548.23s: stuff like liquidity relationship with
+548.24s: stuff like liquidity relationship with like moneyiness or liquidity
+550.39s: like moneyiness or liquidity
+550.40s: like moneyiness or liquidity relationship with expirations and time,
+554.23s: relationship with expirations and time,
+554.24s: relationship with expirations and time, what are some of those that just stand
+556.39s: what are some of those that just stand
+556.40s: what are some of those that just stand out to you as like, yeah, this
+557.67s: out to you as like, yeah, this
+557.68s: out to you as like, yeah, this definitely will impact your liquidity?
+560.63s: definitely will impact your liquidity?
+560.64s: definitely will impact your liquidity? Yeah. So moneyiness. So you you should
+564.07s: Yeah. So moneyiness. So you you should
+564.08s: Yeah. So moneyiness. So you you should expect that an in the money option will
+566.47s: expect that an in the money option will
+566.48s: expect that an in the money option will be wider than a than an out- of- the
+569.43s: be wider than a than an out- of- the
+569.44s: be wider than a than an out- of- the money option first of all. Um it will be
+572.07s: money option first of all. Um it will be
+572.08s: money option first of all. Um it will be wider um and it will really be wide in V
+576.31s: wider um and it will really be wide in V
+576.32s: wider um and it will really be wide in V terms especially because there's very
+579.43s: terms especially because there's very
+579.44s: terms especially because there's very little Vega on a deep in the money
+581.27s: little Vega on a deep in the money
+581.28s: little Vega on a deep in the money option. Um, so what that's telling you
+584.87s: option. Um, so what that's telling you
+584.88s: option. Um, so what that's telling you is that that wide bid ask spread, it's
+587.91s: is that that wide bid ask spread, it's
+587.92s: is that that wide bid ask spread, it's not worried about the volatility of that
+589.51s: not worried about the volatility of that
+589.52s: not worried about the volatility of that option because not a lot of Vega in the
+591.27s: option because not a lot of Vega in the
+591.28s: option because not a lot of Vega in the option. It's what it's it's worried
+593.19s: option. It's what it's it's worried
+593.20s: option. It's what it's it's worried about the delta of the option. It's just
+595.19s: about the delta of the option. It's just
+595.20s: about the delta of the option. It's just the idea that um, you know, market
+598.07s: the idea that um, you know, market
+598.08s: the idea that um, you know, market makers don't want to provide more
+600.07s: makers don't want to provide more
+600.08s: makers don't want to provide more liquidity in the options than there is
+601.99s: liquidity in the options than there is
+602.00s: liquidity in the options than there is in the underlying stock itself. You
+603.91s: in the underlying stock itself. You
+603.92s: in the underlying stock itself. You know, they don't they're not trying to
+605.59s: know, they don't they're not trying to
+605.60s: know, they don't they're not trying to be tighter than the stock traders are.
+608.47s: be tighter than the stock traders are.
+608.48s: be tighter than the stock traders are. So uh so in the money options you should
+611.35s: So uh so in the money options you should
+611.36s: So uh so in the money options you should expect to be wider than out of the money
+613.99s: expect to be wider than out of the money
+614.00s: expect to be wider than out of the money options. Longerdated options you should
+616.39s: options. Longerdated options you should
+616.40s: options. Longerdated options you should expect them to be uh wider and that
+619.91s: expect them to be uh wider and that
+619.92s: expect them to be uh wider and that again just follows from the fact that
+621.51s: again just follows from the fact that
+621.52s: again just follows from the fact that there's more Vega in those options. So
+624.15s: there's more Vega in those options. So
+624.16s: there's more Vega in those options. So um if you are let's just say that all
+626.39s: um if you are let's just say that all
+626.40s: um if you are let's just say that all the markets are one point wide. Well the
+629.75s: the markets are one point wide. Well the
+629.76s: the markets are one point wide. Well the Vega on a 12-month option is going to be
+634.31s: Vega on a 12-month option is going to be
+634.32s: Vega on a 12-month option is going to be um a multiple of the Vega on a
+636.47s: um a multiple of the Vega on a
+636.48s: um a multiple of the Vega on a three-month option. And so you would
+638.31s: three-month option. And so you would
+638.32s: three-month option. And so you would expect the market to be commenurately
+639.91s: expect the market to be commenurately
+639.92s: expect the market to be commenurately wide at least. Um, so that's pretty much
+643.99s: wide at least. Um, so that's pretty much
+644.00s: wide at least. Um, so that's pretty much the rel you can for the most part
+647.59s: the rel you can for the most part
+647.60s: the rel you can for the most part that's why your measure actually just
+649.83s: that's why your measure actually just
+649.84s: that's why your measure actually just works perfectly fine because you just
+651.59s: works perfectly fine because you just
+651.60s: works perfectly fine because you just said what's the what's the width of this
+653.83s: said what's the what's the width of this
+653.84s: said what's the what's the width of this market as a percentage of the spot price
+656.79s: market as a percentage of the spot price
+656.80s: market as a percentage of the spot price and the bit ask it will that measure
+660.15s: and the bit ask it will that measure
+660.16s: and the bit ask it will that measure will do a pretty good job of like
+661.91s: will do a pretty good job of like
+661.92s: will do a pretty good job of like accounting for all of these different
+663.43s: accounting for all of these different
+663.44s: accounting for all of these different considerations.
+665.75s: considerations.
+665.76s: considerations. And a couple other to add on like and
+668.39s: And a couple other to add on like and
+668.40s: And a couple other to add on like and we've talked about these in prior
+669.75s: we've talked about these in prior
+669.76s: we've talked about these in prior episodes but things like even strikes
+672.47s: episodes but things like even strikes
+672.48s: episodes but things like even strikes those typically will be made a little
+674.87s: those typically will be made a little
+674.88s: those typically will be made a little bit more liquid and there's a function
+677.11s: bit more liquid and there's a function
+677.12s: bit more liquid and there's a function of liquidity as represented as you know
+680.15s: of liquidity as represented as you know
+680.16s: of liquidity as represented as you know just what's being offered but then as
+682.39s: just what's being offered but then as
+682.40s: just what's being offered but then as you were kind of talking about there's
+684.39s: you were kind of talking about there's
+684.40s: you were kind of talking about there's also a relationship just between demand
+686.63s: also a relationship just between demand
+686.64s: also a relationship just between demand and trading activity at those levels.
+689.59s: and trading activity at those levels.
+689.60s: and trading activity at those levels. So, it's curious to think about. I'm
+692.23s: So, it's curious to think about. I'm
+692.24s: So, it's curious to think about. I'm curious your perspective. Is it like a
+693.75s: curious your perspective. Is it like a
+693.76s: curious your perspective. Is it like a chicken or the egg? Which one came first
+695.67s: chicken or the egg? Which one came first
+695.68s: chicken or the egg? Which one came first here? Is it that people go to the Yeah.
+698.87s: here? Is it that people go to the Yeah.
+698.88s: here? Is it that people go to the Yeah. Which So, what's your thought on that?
+702.31s: Which So, what's your thought on that?
+702.32s: Which So, what's your thought on that? &gt;&gt; You nailed it. I mean, you you nailed
+704.15s: &gt;&gt; You nailed it. I mean, you you nailed
+704.16s: &gt;&gt; You nailed it. I mean, you you nailed it. It's it it's a you know um liquidity
+708.39s: it. It's it it's a you know um liquidity
+708.40s: it. It's it it's a you know um liquidity attracts liquidity. I mean, this is like
+709.75s: attracts liquidity. I mean, this is like
+709.76s: attracts liquidity. I mean, this is like a saying that in the markets, right?
+711.67s: a saying that in the markets, right?
+711.68s: a saying that in the markets, right? It's like liquidity begets liquidity. So
+713.99s: It's like liquidity begets liquidity. So
+714.00s: It's like liquidity begets liquidity. So the more um if a strike uh garers a lot
+718.07s: the more um if a strike uh garers a lot
+718.08s: the more um if a strike uh garers a lot of attention starts trading a lot um it
+721.27s: of attention starts trading a lot um it
+721.28s: of attention starts trading a lot um it will end up becoming like the repository
+724.15s: will end up becoming like the repository
+724.16s: will end up becoming like the repository for that Greek you know it's like hey
+726.23s: for that Greek you know it's like hey
+726.24s: for that Greek you know it's like hey there's a lot of liquidity in this
+727.59s: there's a lot of liquidity in this
+727.60s: there's a lot of liquidity in this strike there's a lot of back and forth
+729.03s: strike there's a lot of back and forth
+729.04s: strike there's a lot of back and forth on it um what will happen is let's say
+733.35s: on it um what will happen is let's say
+733.36s: on it um what will happen is let's say that strike is the 120 strike and some
+736.07s: that strike is the 120 strike and some
+736.08s: that strike is the 120 strike and some name um you know would you rather and
+739.19s: name um you know would you rather and
+739.20s: name um you know would you rather and let's say you want to put a position on
+741.35s: let's say you want to put a position on
+741.36s: let's say you want to put a position on um that has a rough exposure to that
+743.59s: um that has a rough exposure to that
+743.60s: um that has a rough exposure to that strike.
+745.19s: strike.
+745.20s: strike. If you have a choice between the 121
+747.27s: If you have a choice between the 121
+747.28s: If you have a choice between the 121 strike and the 120 strike, I mean, maybe
+750.55s: strike and the 120 strike, I mean, maybe
+750.56s: strike and the 120 strike, I mean, maybe you have some nuanced view between the
+752.55s: you have some nuanced view between the
+752.56s: you have some nuanced view between the difference between 120 and 121, but like
+755.11s: difference between 120 and 121, but like
+755.12s: difference between 120 and 121, but like is that view going to be strong enough
+756.87s: is that view going to be strong enough
+756.88s: is that view going to be strong enough to overwhelm your desire to just trade
+759.75s: to overwhelm your desire to just trade
+759.76s: to overwhelm your desire to just trade the thing that that where that's super
+761.67s: the thing that that where that's super
+761.68s: the thing that that where that's super liquid? Like, you know, you're almost
+762.87s: liquid? Like, you know, you're almost
+762.88s: liquid? Like, you know, you're almost certainly getting a fair price on the
+764.95s: certainly getting a fair price on the
+764.96s: certainly getting a fair price on the 120 strike because it's actively uh
+767.75s: 120 strike because it's actively uh
+767.76s: 120 strike because it's actively uh trading. So, um, so I I don't I don't
+771.67s: trading. So, um, so I I don't I don't
+771.68s: trading. So, um, so I I don't I don't think it's, uh, you know, if there's no
+774.31s: think it's, uh, you know, if there's no
+774.32s: think it's, uh, you know, if there's no open interest and all of a sudden
+775.59s: open interest and all of a sudden
+775.60s: open interest and all of a sudden there's a lot of open interest in that
+777.27s: there's a lot of open interest in that
+777.28s: there's a lot of open interest in that strike, then that strike will likely
+779.59s: strike, then that strike will likely
+779.60s: strike, then that strike will likely become, uh, more liquid. Um, so that's
+783.83s: become, uh, more liquid. Um, so that's
+783.84s: become, uh, more liquid. Um, so that's uh, and that kind of goes this kind of
+785.67s: uh, and that kind of goes this kind of
+785.68s: uh, and that kind of goes this kind of goes into like this whole idea of, you
+787.91s: goes into like this whole idea of, you
+787.92s: goes into like this whole idea of, you know, we're we're measuring liquidity
+789.51s: know, we're we're measuring liquidity
+789.52s: know, we're we're measuring liquidity here in terms of like the bid ask width,
+792.63s: here in terms of like the bid ask width,
+792.64s: here in terms of like the bid ask width, which I think is a great way to measure
+794.23s: which I think is a great way to measure
+794.24s: which I think is a great way to measure the liquidity. Um but you know another
+797.43s: the liquidity. Um but you know another
+797.44s: the liquidity. Um but you know another way we can measure liquidity is also uh
+800.47s: way we can measure liquidity is also uh
+800.48s: way we can measure liquidity is also uh just to look at how much volume and open
+802.39s: just to look at how much volume and open
+802.40s: just to look at how much volume and open interest is there is in a name uh you
+804.63s: interest is there is in a name uh you
+804.64s: interest is there is in a name uh you know how active um how much interest is
+806.95s: know how active um how much interest is
+806.96s: know how active um how much interest is in the options. I mean when we were
+809.11s: in the options. I mean when we were
+809.12s: in the options. I mean when we were adding names to the platform we kind of
+811.03s: adding names to the platform we kind of
+811.04s: adding names to the platform we kind of had like a soft cut off of you know we
+814.63s: had like a soft cut off of you know we
+814.64s: had like a soft cut off of you know we weren't going to add names to the
+815.99s: weren't going to add names to the
+816.00s: weren't going to add names to the platform um where we're going to go and
+818.87s: platform um where we're going to go and
+818.88s: platform um where we're going to go and compute all these um volatility
+821.75s: compute all these um volatility
+821.76s: compute all these um volatility pipelines for a name that has like less
+823.67s: pipelines for a name that has like less
+823.68s: pipelines for a name that has like less than 30,000 of open interest um just
+826.87s: than 30,000 of open interest um just
+826.88s: than 30,000 of open interest um just because um you know you're pro people
+830.79s: because um you know you're pro people
+830.80s: because um you know you're pro people probably don't want to trade a name that
+832.31s: probably don't want to trade a name that
+832.32s: probably don't want to trade a name that has less than 30,000 contracts of of
+834.71s: has less than 30,000 contracts of of
+834.72s: has less than 30,000 contracts of of open interest. So, um, that's a that's
+837.27s: open interest. So, um, that's a that's
+837.28s: open interest. So, um, that's a that's it's not an it's an imperfect measure.
+839.19s: it's not an it's an imperfect measure.
+839.20s: it's not an it's an imperfect measure. We can talk about that a little later,
+840.47s: We can talk about that a little later,
+840.48s: We can talk about that a little later, but like it's an imperfect measure of
+841.91s: but like it's an imperfect measure of
+841.92s: but like it's an imperfect measure of liquidity, but open interest and how
+844.15s: liquidity, but open interest and how
+844.16s: liquidity, but open interest and how much volume um overturns relative to
+847.43s: much volume um overturns relative to
+847.44s: much volume um overturns relative to that open interest is a pretty good
+849.35s: that open interest is a pretty good
+849.36s: that open interest is a pretty good proxy for how active the name is. And if
+852.63s: proxy for how active the name is. And if
+852.64s: proxy for how active the name is. And if you combine that with how wide the
+854.31s: you combine that with how wide the
+854.32s: you combine that with how wide the markets are, you have a great sense of
+856.23s: markets are, you have a great sense of
+856.24s: markets are, you have a great sense of how easy how
+859.51s: how easy how
+859.52s: how easy how uh how low the cost is to get in and
+861.59s: uh how low the cost is to get in and
+861.60s: uh how low the cost is to get in and out. Ultimately, this is all about cost.
+863.35s: out. Ultimately, this is all about cost.
+863.36s: out. Ultimately, this is all about cost. It's like you care about liquidity
+864.79s: It's like you care about liquidity
+864.80s: It's like you care about liquidity because you're trying to have less
+866.95s: because you're trying to have less
+866.96s: because you're trying to have less costs.
+869.11s: costs.
+869.12s: costs. &gt;&gt; And when we think about what like what
+873.19s: &gt;&gt; And when we think about what like what
+873.20s: &gt;&gt; And when we think about what like what the cut off is, it's it's interesting
+874.63s: the cut off is, it's it's interesting
+874.64s: the cut off is, it's it's interesting because like for me on the the tool that
+877.19s: because like for me on the the tool that
+877.20s: because like for me on the the tool that I use like 30,000 I know cuts off a ton
+880.95s: I use like 30,000 I know cuts off a ton
+880.96s: I use like 30,000 I know cuts off a ton of names. And there's a really
+884.95s: of names. And there's a really
+884.96s: of names. And there's a really interesting dichotomy between different
+887.83s: interesting dichotomy between different
+887.84s: interesting dichotomy between different approaches. And as you and I were
+889.67s: approaches. And as you and I were
+889.68s: approaches. And as you and I were talking about before we started, I find
+892.47s: talking about before we started, I find
+892.48s: talking about before we started, I find some of my specific strategies and
+894.55s: some of my specific strategies and
+894.56s: some of my specific strategies and profit mechanisms actually pick up names
+897.43s: profit mechanisms actually pick up names
+897.44s: profit mechanisms actually pick up names that have a really low, boring, resting
+900.79s: that have a really low, boring, resting
+900.80s: that have a really low, boring, resting liquidity factor. They're kind of just
+902.79s: liquidity factor. They're kind of just
+902.80s: liquidity factor. They're kind of just like these, you know, generally I don't
+904.47s: like these, you know, generally I don't
+904.48s: like these, you know, generally I don't want to call them forgotten, but low
+905.99s: want to call them forgotten, but low
+906.00s: want to call them forgotten, but low liquid names. Think people aren't
+907.35s: liquid names. Think people aren't
+907.36s: liquid names. Think people aren't trading in them. And then for some
+909.19s: trading in them. And then for some
+909.20s: trading in them. And then for some reason there's like a piece of news that
+911.03s: reason there's like a piece of news that
+911.04s: reason there's like a piece of news that happens or a merger, whatever, and like
+914.23s: happens or a merger, whatever, and like
+914.24s: happens or a merger, whatever, and like the condition can change really quickly
+916.47s: the condition can change really quickly
+916.48s: the condition can change really quickly where then all of a sudden all this
+918.07s: where then all of a sudden all this
+918.08s: where then all of a sudden all this liquidity floods into this thing and
+919.67s: liquidity floods into this thing and
+919.68s: liquidity floods into this thing and then it spikes and you know there's
+921.19s: then it spikes and you know there's
+921.20s: then it spikes and you know there's different trade ideas there. When you
+924.47s: different trade ideas there. When you
+924.48s: different trade ideas there. When you think about just the stability of
+927.27s: think about just the stability of
+927.28s: think about just the stability of liquidity and something that I don't
+929.35s: liquidity and something that I don't
+929.36s: liquidity and something that I don't really have a sense of, I've not really
+930.87s: really have a sense of, I've not really
+930.88s: really have a sense of, I've not really done any research on it. Maybe it'd be a
+932.55s: done any research on it. Maybe it'd be a
+932.56s: done any research on it. Maybe it'd be a fun follow on idea, but do you have just
+934.87s: fun follow on idea, but do you have just
+934.88s: fun follow on idea, but do you have just an intuitive sense of like I don't even
+937.51s: an intuitive sense of like I don't even
+937.52s: an intuitive sense of like I don't even know the exact way to frame it, but like
+939.03s: know the exact way to frame it, but like
+939.04s: know the exact way to frame it, but like how much liquidity varies in an
+941.35s: how much liquidity varies in an
+941.36s: how much liquidity varies in an underlying over time? Is it like
+943.67s: underlying over time? Is it like
+943.68s: underlying over time? Is it like typically pretty stable or do you think
+946.47s: typically pretty stable or do you think
+946.48s: typically pretty stable or do you think that they go through like these really
+947.91s: that they go through like these really
+947.92s: that they go through like these really big standard deviation moves of just its
+950.87s: big standard deviation moves of just its
+950.88s: big standard deviation moves of just its base liquidity?
+953.51s: base liquidity?
+953.52s: base liquidity? &gt;&gt; Yeah, they can absolutely go through
+955.27s: &gt;&gt; Yeah, they can absolutely go through
+955.28s: &gt;&gt; Yeah, they can absolutely go through cycles. I mean it's it's um I mean
+957.19s: cycles. I mean it's it's um I mean
+957.20s: cycles. I mean it's it's um I mean there's there's extreme examples where
+960.23s: there's there's extreme examples where
+960.24s: there's there's extreme examples where um we were talking about it before like
+961.59s: um we were talking about it before like
+961.60s: um we were talking about it before like GME extreme example. I mean it's a it's
+963.99s: GME extreme example. I mean it's a it's
+964.00s: GME extreme example. I mean it's a it's a wasteland uh it can be a wasteland for
+967.59s: a wasteland uh it can be a wasteland for
+967.60s: a wasteland uh it can be a wasteland for some period of time and then all of a
+968.95s: some period of time and then all of a
+968.96s: some period of time and then all of a sudden uh that's where all the action
+971.19s: sudden uh that's where all the action
+971.20s: sudden uh that's where all the action is. Um the the the you know the
+973.43s: is. Um the the the you know the
+973.44s: is. Um the the the you know the expression that we used to use is uh it
+976.47s: expression that we used to use is uh it
+976.48s: expression that we used to use is uh it trades by appointment. So you'd have
+978.07s: trades by appointment. So you'd have
+978.08s: trades by appointment. So you'd have names that trade by appointment. So, um,
+981.59s: names that trade by appointment. So, um,
+981.60s: names that trade by appointment. So, um, you know, it would be unusual to see an
+983.75s: you know, it would be unusual to see an
+983.76s: you know, it would be unusual to see an order in a particular name and, you
+985.83s: order in a particular name and, you
+985.84s: order in a particular name and, you know, it would it would, uh, um, it
+987.99s: know, it would it would, uh, um, it
+988.00s: know, it would it would, uh, um, it would kind of, um, get your attention,
+990.07s: would kind of, um, get your attention,
+990.08s: would kind of, um, get your attention, raise your eyebrow, whatever. If all of
+992.07s: raise your eyebrow, whatever. If all of
+992.08s: raise your eyebrow, whatever. If all of a sudden some name that trades, you
+994.79s: a sudden some name that trades, you
+994.80s: a sudden some name that trades, you know, 10,000 contracts a day, uh,
+998.23s: know, 10,000 contracts a day, uh,
+998.24s: know, 10,000 contracts a day, uh, suddenly there's somebody that wants to
+999.75s: suddenly there's somebody that wants to
+999.76s: suddenly there's somebody that wants to trade 30,000 in the name. Uh, this is
+1002.39s: trade 30,000 in the name. Uh, this is
+1002.40s: trade 30,000 in the name. Uh, this is going to get your attention. Um, and
+1005.67s: going to get your attention. Um, and
+1005.68s: going to get your attention. Um, and once trades like that happen, a lot of
+1007.91s: once trades like that happen, a lot of
+1007.92s: once trades like that happen, a lot of times what will happen is, like I said,
+1009.35s: times what will happen is, like I said,
+1009.36s: times what will happen is, like I said, liquidity begets liquidity. So, let's
+1012.55s: liquidity begets liquidity. So, let's
+1012.56s: liquidity begets liquidity. So, let's say you you see a trade go up like that,
+1016.07s: say you you see a trade go up like that,
+1016.08s: say you you see a trade go up like that, it attracts a bunch of people's
+1017.43s: it attracts a bunch of people's
+1017.44s: it attracts a bunch of people's attention. You know, wasn't on anybody's
+1019.59s: attention. You know, wasn't on anybody's
+1019.60s: attention. You know, wasn't on anybody's radar and then people start looking at
+1021.11s: radar and then people start looking at
+1021.12s: radar and then people start looking at it and they say, "Whoa, look where these
+1023.03s: it and they say, "Whoa, look where these
+1023.04s: it and they say, "Whoa, look where these look where these puts traded." Um, lots
+1025.75s: look where these puts traded." Um, lots
+1025.76s: look where these puts traded." Um, lots of people will come in and form opinions
+1027.51s: of people will come in and form opinions
+1027.52s: of people will come in and form opinions and be like, "I think those are high. I
+1028.95s: and be like, "I think those are high. I
+1028.96s: and be like, "I think those are high. I think those are low. Oh, I think I I Oh,
+1031.35s: think those are low. Oh, I think I I Oh,
+1031.36s: think those are low. Oh, I think I I Oh, I like I like what it looks like the
+1033.51s: I like I like what it looks like the
+1033.52s: I like I like what it looks like the customer side did on this. I want to do
+1035.27s: customer side did on this. I want to do
+1035.28s: customer side did on this. I want to do it, too. And so, what'll happen is
+1038.47s: it, too. And so, what'll happen is
+1038.48s: it, too. And so, what'll happen is there'll be more interest in that name.
+1040.55s: there'll be more interest in that name.
+1040.56s: there'll be more interest in that name. And and and here's the other thing. What
+1042.39s: And and and here's the other thing. What
+1042.40s: And and and here's the other thing. What brokers do, I mean, this is like on
+1044.73s: brokers do, I mean, this is like on
+1044.74s: brokers do, I mean, this is like on [snorts] the voice brokerage side. Uh I'
+1047.67s: [snorts] the voice brokerage side. Uh I'
+1047.68s: [snorts] the voice brokerage side. Uh I' I made an extra normal YouTube video
+1049.59s: I made an extra normal YouTube video
+1049.60s: I made an extra normal YouTube video about this like many many many years
+1051.35s: about this like many many many years
+1051.36s: about this like many many many years ago, but like the way brokers would drum
+1054.31s: ago, but like the way brokers would drum
+1054.32s: ago, but like the way brokers would drum up business is they they would look at
+1056.87s: up business is they they would look at
+1056.88s: up business is they they would look at the tape, they see what trades
+1059.91s: the tape, they see what trades
+1059.92s: the tape, they see what trades And then what they'll do is they'll just
+1061.67s: And then what they'll do is they'll just
+1061.68s: And then what they'll do is they'll just go out and they'll just quote something
+1064.39s: go out and they'll just quote something
+1064.40s: go out and they'll just quote something similar to it or they'll quote a spread
+1066.79s: similar to it or they'll quote a spread
+1066.80s: similar to it or they'll quote a spread that uses the thing that traded as one
+1068.79s: that uses the thing that traded as one
+1068.80s: that uses the thing that traded as one of the legs. And what they're doing is
+1070.63s: of the legs. And what they're doing is
+1070.64s: of the legs. And what they're doing is they're trying to drum up business or
+1072.39s: they're trying to drum up business or
+1072.40s: they're trying to drum up business or interest in trading this other thing
+1075.03s: interest in trading this other thing
+1075.04s: interest in trading this other thing because they saw this other thing trade.
+1076.55s: because they saw this other thing trade.
+1076.56s: because they saw this other thing trade. Like they're the reasoning is like, hey,
+1077.91s: Like they're the reasoning is like, hey,
+1077.92s: Like they're the reasoning is like, hey, if this thing traded, there's probably
+1079.35s: if this thing traded, there's probably
+1079.36s: if this thing traded, there's probably more interest around it. Or guy,
+1081.51s: more interest around it. Or guy,
+1081.52s: more interest around it. Or guy, somebody that might have bought or sold
+1082.95s: somebody that might have bought or sold
+1082.96s: somebody that might have bought or sold it uh might be looking to spread it off
+1086.39s: it uh might be looking to spread it off
+1086.40s: it uh might be looking to spread it off against something else. So, I mean, we
+1090.55s: against something else. So, I mean, we
+1090.56s: against something else. So, I mean, we kind of like would look at this very
+1092.71s: kind of like would look at this very
+1092.72s: kind of like would look at this very cynically in a in a lot of ways where
+1094.79s: cynically in a in a lot of ways where
+1094.80s: cynically in a in a lot of ways where it's like these brokers are just like,
+1096.55s: it's like these brokers are just like,
+1096.56s: it's like these brokers are just like, you know, trying to they're trying to
+1098.55s: you know, trying to they're trying to
+1098.56s: you know, trying to they're trying to get market makers to trade with other
+1100.07s: get market makers to trade with other
+1100.08s: get market makers to trade with other market makers and they there's actually
+1101.51s: market makers and they there's actually
+1101.52s: market makers and they there's actually like no real interest in the name. It's
+1103.99s: like no real interest in the name. It's
+1104.00s: like no real interest in the name. It's just uh they're just trying to get
+1105.35s: just uh they're just trying to get
+1105.36s: just uh they're just trying to get people to match up with each other
+1106.63s: people to match up with each other
+1106.64s: people to match up with each other because, you know, they're just taking a
+1107.83s: because, you know, they're just taking a
+1107.84s: because, you know, they're just taking a commission. So, the um but in any case,
+1110.95s: commission. So, the um but in any case,
+1110.96s: commission. So, the um but in any case, uh it's not an accident. It's like
+1113.43s: uh it's not an accident. It's like
+1113.44s: uh it's not an accident. It's like there's there's there's a there's a uh a
+1116.39s: there's there's there's a there's a uh a
+1116.40s: there's there's there's a there's a uh a literal incentive there for like you see
+1119.35s: literal incentive there for like you see
+1119.36s: literal incentive there for like you see something trade, go try to drum up
+1121.75s: something trade, go try to drum up
+1121.76s: something trade, go try to drum up business in that name. So, um again,
+1124.79s: business in that name. So, um again,
+1124.80s: business in that name. So, um again, liquidity begets liquidity.
+1127.75s: liquidity begets liquidity.
+1127.76s: liquidity begets liquidity. &gt;&gt; Yeah, it's and it's funny too because
+1130.55s: &gt;&gt; Yeah, it's and it's funny too because
+1130.56s: &gt;&gt; Yeah, it's and it's funny too because when we look at all these different
+1132.55s: when we look at all these different
+1132.56s: when we look at all these different measures of liquidity, you'll also note
+1134.63s: measures of liquidity, you'll also note
+1134.64s: measures of liquidity, you'll also note that there's seasonality to some of it.
+1136.95s: that there's seasonality to some of it.
+1136.96s: that there's seasonality to some of it. there's a lot of like really curious
+1138.55s: there's a lot of like really curious
+1138.56s: there's a lot of like really curious factors that can impact things. And one
+1142.87s: factors that can impact things. And one
+1142.88s: factors that can impact things. And one of the things that can be a little bit
+1145.03s: of the things that can be a little bit
+1145.04s: of the things that can be a little bit surprising is when you find like these
+1146.95s: surprising is when you find like these
+1146.96s: surprising is when you find like these really really big companies, like big
+1149.51s: really really big companies, like big
+1149.52s: really really big companies, like big big companies that still have gross
+1153.75s: big companies that still have gross
+1153.76s: big companies that still have gross liquidity. There's just not much going
+1156.55s: liquidity. There's just not much going
+1156.56s: liquidity. There's just not much going on in there. So you can find again like
+1160.23s: on in there. So you can find again like
+1160.24s: on in there. So you can find again like relatively popular names for Johnson and
+1163.83s: relatively popular names for Johnson and
+1163.84s: relatively popular names for Johnson and Johnson, Coca-Cola,
+1165.99s: Johnson, Coca-Cola,
+1166.00s: Johnson, Coca-Cola, and just on a relative basis, they can
+1169.03s: and just on a relative basis, they can
+1169.04s: and just on a relative basis, they can actually be kind of uh a bit less
+1171.91s: actually be kind of uh a bit less
+1171.92s: actually be kind of uh a bit less liquid, which going off of what you were
+1174.55s: liquid, which going off of what you were
+1174.56s: liquid, which going off of what you were saying before, if you think of some of
+1177.19s: saying before, if you think of some of
+1177.20s: saying before, if you think of some of those names,
+1179.11s: those names,
+1179.12s: those names, why like why why would these be
+1182.63s: why like why why would these be
+1182.64s: why like why why would these be relatively and again to be clear,
+1184.87s: relatively and again to be clear,
+1184.88s: relatively and again to be clear, they're not like terribly illquid, but
+1186.55s: they're not like terribly illquid, but
+1186.56s: they're not like terribly illquid, but just relative relatively ill liquid
+1187.99s: just relative relatively ill liquid
+1188.00s: just relative relatively ill liquid compared to some of their counterparts.
+1189.43s: compared to some of their counterparts.
+1189.44s: compared to some of their counterparts. It seems like lots of people would want
+1191.51s: It seems like lots of people would want
+1191.52s: It seems like lots of people would want to trade Exxon Mobile, Coca-Cola, and so
+1193.91s: to trade Exxon Mobile, Coca-Cola, and so
+1193.92s: to trade Exxon Mobile, Coca-Cola, and so on.
+1196.07s: on.
+1196.08s: on. &gt;&gt; Yeah. I mean, you'd think, but at the
+1197.99s: &gt;&gt; Yeah. I mean, you'd think, but at the
+1198.00s: &gt;&gt; Yeah. I mean, you'd think, but at the end of the day, like how volatile are
+1199.67s: end of the day, like how volatile are
+1199.68s: end of the day, like how volatile are these It's like, you know, Exon Mobile,
+1201.91s: these It's like, you know, Exon Mobile,
+1201.92s: these It's like, you know, Exon Mobile, like if you're an oil company, the you
+1203.75s: like if you're an oil company, the you
+1203.76s: like if you're an oil company, the you know, in 2026, like you're more volatile
+1205.59s: know, in 2026, like you're more volatile
+1205.60s: know, in 2026, like you're more volatile than you usually are. And so, you like
+1207.59s: than you usually are. And so, you like
+1207.60s: than you usually are. And so, you like you're probably uh you have more volume
+1210.39s: you're probably uh you have more volume
+1210.40s: you're probably uh you have more volume and open interest probably happening in
+1212.15s: and open interest probably happening in
+1212.16s: and open interest probably happening in a in an oil name in 2026. But, you know,
+1215.75s: a in an oil name in 2026. But, you know,
+1215.76s: a in an oil name in 2026. But, you know, how many people care about Coke options?
+1217.83s: how many people care about Coke options?
+1217.84s: how many people care about Coke options? It's like, you know, people want to
+1220.23s: It's like, you know, people want to
+1220.24s: It's like, you know, people want to trade tech. I mean, if we were to go and
+1223.27s: trade tech. I mean, if we were to go and
+1223.28s: trade tech. I mean, if we were to go and just like pull up the list of like the
+1225.35s: just like pull up the list of like the
+1225.36s: just like pull up the list of like the most optionable or the most active
+1227.43s: most optionable or the most active
+1227.44s: most optionable or the most active optionable names,
+1229.67s: optionable names,
+1229.68s: optionable names, you know, most of them are going to be
+1232.23s: you know, most of them are going to be
+1232.24s: you know, most of them are going to be technology stocks, anything related to
+1234.95s: technology stocks, anything related to
+1234.96s: technology stocks, anything related to sort of like, you know, cryptoreated
+1236.71s: sort of like, you know, cryptoreated
+1236.72s: sort of like, you know, cryptoreated things, like it's all it's all like uh
+1239.11s: things, like it's all it's all like uh
+1239.12s: things, like it's all it's all like uh momentum, right? And that makes sense.
+1242.63s: momentum, right? And that makes sense.
+1242.64s: momentum, right? And that makes sense. It's like you want to trade things where
+1244.39s: It's like you want to trade things where
+1244.40s: It's like you want to trade things where there's actually money to be made or
+1245.91s: there's actually money to be made or
+1245.92s: there's actually money to be made or lost. Um that's volatile. Um what's I'll
+1250.15s: lost. Um that's volatile. Um what's I'll
+1250.16s: lost. Um that's volatile. Um what's I'll say something about the what's
+1251.35s: say something about the what's
+1251.36s: say something about the what's interesting about that is um
+1254.79s: interesting about that is um
+1254.80s: interesting about that is um the the other thing is
+1257.67s: the the other thing is
+1257.68s: the the other thing is to to actually move the needle.
+1260.71s: to to actually move the needle.
+1260.72s: to to actually move the needle. Even let's say that you were trading a
+1262.31s: Even let's say that you were trading a
+1262.32s: Even let's say that you were trading a name that was less volatile.
+1264.87s: name that was less volatile.
+1264.88s: name that was less volatile. Uh in order to to get an amount of risk
+1267.51s: Uh in order to to get an amount of risk
+1267.52s: Uh in order to to get an amount of risk on that you actually desired, you would
+1269.43s: on that you actually desired, you would
+1269.44s: on that you actually desired, you would have to trade more contracts.
+1272.07s: have to trade more contracts.
+1272.08s: have to trade more contracts. And the way liquidity scales, it's like,
+1274.55s: And the way liquidity scales, it's like,
+1274.56s: And the way liquidity scales, it's like, you know, if you try to trade more
+1276.23s: you know, if you try to trade more
+1276.24s: you know, if you try to trade more contracts, it's going to cost you more
+1278.55s: contracts, it's going to cost you more
+1278.56s: contracts, it's going to cost you more in terms of liquidity. Plus, there's the
+1279.99s: in terms of liquidity. Plus, there's the
+1280.00s: in terms of liquidity. Plus, there's the fixed cost of the contracts themselves,
+1282.39s: fixed cost of the contracts themselves,
+1282.40s: fixed cost of the contracts themselves, right? So, one of the allures of trading
+1285.03s: right? So, one of the allures of trading
+1285.04s: right? So, one of the allures of trading things that are very volatile is like,
+1286.55s: things that are very volatile is like,
+1286.56s: things that are very volatile is like, yeah, the maybe the spread is a little
+1289.11s: yeah, the maybe the spread is a little
+1289.12s: yeah, the maybe the spread is a little bit wider, but you don't have to trade
+1291.43s: bit wider, but you don't have to trade
+1291.44s: bit wider, but you don't have to trade as many contracts
+1293.51s: as many contracts
+1293.52s: as many contracts to actually get an amount of risk on
+1295.59s: to actually get an amount of risk on
+1295.60s: to actually get an amount of risk on that's moving the needle for you. So,
+1297.99s: that's moving the needle for you. So,
+1298.00s: that's moving the needle for you. So, um, that's a that's a, you know, a bit
+1300.95s: um, that's a that's a, you know, a bit
+1300.96s: um, that's a that's a, you know, a bit of an oblique observation. It's like the
+1303.11s: of an oblique observation. It's like the
+1303.12s: of an oblique observation. It's like the market could be wider, but, uh, but you
+1305.59s: market could be wider, but, uh, but you
+1305.60s: market could be wider, but, uh, but you have to trade less contracts. This is
+1307.59s: have to trade less contracts. This is
+1307.60s: have to trade less contracts. This is kind of an interesting one because,
+1310.55s: kind of an interesting one because,
+1310.56s: kind of an interesting one because, you know, you're you're looking at the
+1312.07s: you know, you're you're looking at the
+1312.08s: you know, you're you're looking at the the cost of the vertical spreads. And,
+1315.59s: the cost of the vertical spreads. And,
+1315.60s: the cost of the vertical spreads. And, you know,
+1317.59s: you know,
+1317.60s: you know, if a wide market on a vertical spread is
+1319.75s: if a wide market on a vertical spread is
+1319.76s: if a wide market on a vertical spread is kind of brutal because a vertical spread
+1321.59s: kind of brutal because a vertical spread
+1321.60s: kind of brutal because a vertical spread like just doesn't have that much risk in
+1323.67s: like just doesn't have that much risk in
+1323.68s: like just doesn't have that much risk in it. So you're like trying to trade
+1326.87s: it. So you're like trying to trade
+1326.88s: it. So you're like trying to trade something that's got not a lot of risk
+1328.87s: something that's got not a lot of risk
+1328.88s: something that's got not a lot of risk and you're paying a lot of spread for
+1330.47s: and you're paying a lot of spread for
+1330.48s: and you're paying a lot of spread for that which is like in the long you know
+1332.23s: that which is like in the long you know
+1332.24s: that which is like in the long you know you want to be on the other you want to
+1333.43s: you want to be on the other you want to
+1333.44s: you want to be on the other you want to be the market maker for that kind of
+1334.95s: be the market maker for that kind of
+1334.96s: be the market maker for that kind of thing. You don't want to be the enduser
+1337.75s: thing. You don't want to be the enduser
+1337.76s: thing. You don't want to be the enduser for that kind of thing. Uh so
+1341.83s: for that kind of thing. Uh so
+1341.84s: for that kind of thing. Uh so uh that's kind of the other you know we
+1345.43s: uh that's kind of the other you know we
+1345.44s: uh that's kind of the other you know we didn't talk about it but you could you
+1346.87s: didn't talk about it but you could you
+1346.88s: didn't talk about it but you could you could like uh look at these things in
+1349.67s: could like uh look at these things in
+1349.68s: could like uh look at these things in terms of like what is
+1353.03s: terms of like what is
+1353.04s: terms of like what is the spread cost relative to the
+1355.91s: the spread cost relative to the
+1355.92s: the spread cost relative to the volatility of the asset itself. you
+1358.71s: volatility of the asset itself. you
+1358.72s: volatility of the asset itself. you know, and like a very a low spread cost
+1361.35s: know, and like a very a low spread cost
+1361.36s: know, and like a very a low spread cost or or a high spread cost for an asset
+1363.59s: or or a high spread cost for an asset
+1363.60s: or or a high spread cost for an asset that's twice as volatile as another one
+1366.07s: that's twice as volatile as another one
+1366.08s: that's twice as volatile as another one might not be that bad
+1368.71s: might not be that bad
+1368.72s: might not be that bad &gt;&gt; once you consider how much more volatile
+1370.79s: &gt;&gt; once you consider how much more volatile
+1370.80s: &gt;&gt; once you consider how much more volatile that asset is.
+1373.19s: that asset is.
+1373.20s: that asset is. &gt;&gt; It's a really interesting way to look at
+1374.79s: &gt;&gt; It's a really interesting way to look at
+1374.80s: &gt;&gt; It's a really interesting way to look at it. And like that's actually one of the
+1376.71s: it. And like that's actually one of the
+1376.72s: it. And like that's actually one of the the cool things about looking stuff like
+1378.47s: the cool things about looking stuff like
+1378.48s: the cool things about looking stuff like this cuz like you're saying, you know,
+1380.31s: this cuz like you're saying, you know,
+1380.32s: this cuz like you're saying, you know, if you're looking at something like
+1381.59s: if you're looking at something like
+1381.60s: if you're looking at something like vertical spreads,
+1383.59s: vertical spreads,
+1383.60s: vertical spreads, especially from a retail trader lens, a
+1385.59s: especially from a retail trader lens, a
+1385.60s: especially from a retail trader lens, a lot of times retail traders, they'll try
+1387.19s: lot of times retail traders, they'll try
+1387.20s: lot of times retail traders, they'll try to do, you know, like convenient order
+1389.35s: to do, you know, like convenient order
+1389.36s: to do, you know, like convenient order styles through their broker. They'll try
+1390.87s: styles through their broker. They'll try
+1390.88s: styles through their broker. They'll try to do like rolls. They'll try to send
+1392.39s: to do like rolls. They'll try to send
+1392.40s: to do like rolls. They'll try to send the vertical off as one thing. They'll,
+1394.23s: the vertical off as one thing. They'll,
+1394.24s: the vertical off as one thing. They'll, you know, all that kind of stuff. And it
+1395.91s: you know, all that kind of stuff. And it
+1395.92s: you know, all that kind of stuff. And it always adds complexity, especially when
+1397.51s: always adds complexity, especially when
+1397.52s: always adds complexity, especially when they're doing the 16 leg iron dragon
+1400.63s: they're doing the 16 leg iron dragon
+1400.64s: they're doing the 16 leg iron dragon spitting fire spread. And you know,
+1403.59s: spitting fire spread. And you know,
+1403.60s: spitting fire spread. And you know, &gt;&gt; I call those broker dreams.
+1405.83s: &gt;&gt; I call those broker dreams.
+1405.84s: &gt;&gt; I call those broker dreams. &gt;&gt; Yeah,
+1406.07s: &gt;&gt; Yeah,
+1406.08s: &gt;&gt; Yeah, &gt;&gt; those are [laughter]
+1406.87s: &gt;&gt; those are [laughter]
+1406.88s: &gt;&gt; those are [laughter] I I would like literally call them
+1408.47s: I I would like literally call them
+1408.48s: I I would like literally call them broker dreams. Like a broker would call
+1410.47s: broker dreams. Like a broker would call
+1410.48s: broker dreams. Like a broker would call me up and show me one of these things
+1411.75s: me up and show me one of these things
+1411.76s: me up and show me one of these things and I'd be like, "Oh, this is a nice one
+1413.43s: and I'd be like, "Oh, this is a nice one
+1413.44s: and I'd be like, "Oh, this is a nice one for you when this trades."
+1416.23s: for you when this trades."
+1416.24s: for you when this trades." &gt;&gt; It's awesome. And like these so like the
+1419.59s: &gt;&gt; It's awesome. And like these so like the
+1419.60s: &gt;&gt; It's awesome. And like these so like the study that I did here that actually
+1421.19s: study that I did here that actually
+1421.20s: study that I did here that actually could be a fun one to do a follow-up on
+1422.95s: could be a fun one to do a follow-up on
+1422.96s: could be a fun one to do a follow-up on like verticals specifically and see how
+1425.99s: like verticals specifically and see how
+1426.00s: like verticals specifically and see how those are impacted because and even with
+1428.23s: those are impacted because and even with
+1428.24s: those are impacted because and even with respect to like different deltas, right?
+1429.75s: respect to like different deltas, right?
+1429.76s: respect to like different deltas, right? because these are using 16 delta short
+1432.07s: because these are using 16 delta short
+1432.08s: because these are using 16 delta short puts. And there's got to be like a a
+1435.67s: puts. And there's got to be like a a
+1435.68s: puts. And there's got to be like a a really curious comparison. Maybe I'll
+1437.99s: really curious comparison. Maybe I'll
+1438.00s: really curious comparison. Maybe I'll add that to the to-do list and we could
+1439.51s: add that to the to-do list and we could
+1439.52s: add that to the to-do list and we could look at it in the future. Just see how
+1441.03s: look at it in the future. Just see how
+1441.04s: look at it in the future. Just see how like different spreads behave against
+1442.63s: like different spreads behave against
+1442.64s: like different spreads behave against this which would be pretty fun.
+1445.11s: this which would be pretty fun.
+1445.12s: this which would be pretty fun. &gt;&gt; So, I'll tell you this too, like related
+1447.03s: &gt;&gt; So, I'll tell you this too, like related
+1447.04s: &gt;&gt; So, I'll tell you this too, like related to what we're saying.
+1448.55s: to what we're saying.
+1448.56s: to what we're saying. &gt;&gt; No, like the bro like again
+1452.07s: &gt;&gt; No, like the bro like again
+1452.08s: &gt;&gt; No, like the bro like again it's very telling, right? Because what
+1453.91s: it's very telling, right? Because what
+1453.92s: it's very telling, right? Because what would happen in a lot of markets is like
+1455.67s: would happen in a lot of markets is like
+1455.68s: would happen in a lot of markets is like brokers are always trying to shop these
+1458.95s: brokers are always trying to shop these
+1458.96s: brokers are always trying to shop these like super lowrisk things that are like
+1461.91s: like super lowrisk things that are like
+1461.92s: like super lowrisk things that are like position maintenance things. Like for
+1463.67s: position maintenance things. Like for
+1463.68s: position maintenance things. Like for example like uh reversal conversions are
+1466.47s: example like uh reversal conversions are
+1466.48s: example like uh reversal conversions are like a way for people to um convert
+1470.15s: like a way for people to um convert
+1470.16s: like a way for people to um convert their c stock position into a uh option
+1474.39s: their c stock position into a uh option
+1474.40s: their c stock position into a uh option position or vice versa. It has no delta.
+1476.23s: position or vice versa. It has no delta.
+1476.24s: position or vice versa. It has no delta. Like it really has no risk. It's really
+1477.99s: Like it really has no risk. It's really
+1478.00s: Like it really has no risk. It's really a funding transaction. But like you
+1480.47s: a funding transaction. But like you
+1480.48s: a funding transaction. But like you would have brokers that that's all they
+1482.23s: would have brokers that that's all they
+1482.24s: would have brokers that that's all they did was specialize in those. But think
+1485.03s: did was specialize in those. But think
+1485.04s: did was specialize in those. But think about what's happening there. They're
+1486.15s: about what's happening there. They're
+1486.16s: about what's happening there. They're getting to charge
+1487.51s: getting to charge
+1487.52s: getting to charge &gt;&gt; for two legs on every trade,
+1490.15s: &gt;&gt; for two legs on every trade,
+1490.16s: &gt;&gt; for two legs on every trade, &gt;&gt; right? So you just have um brokers
+1493.35s: &gt;&gt; right? So you just have um brokers
+1493.36s: &gt;&gt; right? So you just have um brokers trying to traffic in like really lowrisk
+1497.43s: trying to traffic in like really lowrisk
+1497.44s: trying to traffic in like really lowrisk structures where people where the end
+1499.91s: structures where people where the end
+1499.92s: structures where people where the end user does a ton of volume. I mean
+1501.91s: user does a ton of volume. I mean
+1501.92s: user does a ton of volume. I mean eventually the market sort of like adapt
+1503.51s: eventually the market sort of like adapt
+1503.52s: eventually the market sort of like adapt to these things and so the brokers that
+1505.99s: to these things and so the brokers that
+1506.00s: to these things and so the brokers that really wanted to specialize in this
+1507.91s: really wanted to specialize in this
+1507.92s: really wanted to specialize in this stuff would um lower their rates
+1511.75s: stuff would um lower their rates
+1511.76s: stuff would um lower their rates [snorts] and be like hey come to us for
+1514.23s: [snorts] and be like hey come to us for
+1514.24s: [snorts] and be like hey come to us for all your RevCon trading and you know
+1516.31s: all your RevCon trading and you know
+1516.32s: all your RevCon trading and you know instead of charging you 50 cents a
+1517.99s: instead of charging you 50 cents a
+1518.00s: instead of charging you 50 cents a contract we'll charge you 25 cents a
+1519.51s: contract we'll charge you 25 cents a
+1519.52s: contract we'll charge you 25 cents a contract
+1520.79s: contract
+1520.80s: contract &gt;&gt; or whatever.
+1522.47s: &gt;&gt; or whatever.
+1522.48s: &gt;&gt; or whatever. But yeah, it's it's uh it's very
+1524.79s: But yeah, it's it's uh it's very
+1524.80s: But yeah, it's it's uh it's very important to think about, you know, how
+1527.59s: important to think about, you know, how
+1527.60s: important to think about, you know, how um what are my costs per unit of risk
+1530.07s: um what are my costs per unit of risk
+1530.08s: um what are my costs per unit of risk that I'm getting,
+1532.31s: that I'm getting,
+1532.32s: that I'm getting, &gt;&gt; which a small admin note for the retail
+1535.59s: &gt;&gt; which a small admin note for the retail
+1535.60s: &gt;&gt; which a small admin note for the retail traders of the group, if you don't know,
+1537.59s: traders of the group, if you don't know,
+1537.60s: traders of the group, if you don't know, you should be reaching out to your
+1539.11s: you should be reaching out to your
+1539.12s: you should be reaching out to your broker to negotiate with them. They're
+1541.83s: broker to negotiate with them. They're
+1541.84s: broker to negotiate with them. They're they're flexible on whatever their
+1544.39s: they're flexible on whatever their
+1544.40s: they're flexible on whatever their commissions are. So, if you kind of have
+1547.59s: commissions are. So, if you kind of have
+1547.60s: commissions are. So, if you kind of have to if you're not a squeaky wheel to some
+1549.99s: to if you're not a squeaky wheel to some
+1550.00s: to if you're not a squeaky wheel to some degree, then they're happily going to
+1552.31s: degree, then they're happily going to
+1552.32s: degree, then they're happily going to leave you wherever you are. But if
+1554.07s: leave you wherever you are. But if
+1554.08s: leave you wherever you are. But if you're paying, you know, 65 cents 75
+1556.23s: you're paying, you know, 65 cents 75
+1556.24s: you're paying, you know, 65 cents 75 cents an option, which is like kind of
+1557.99s: cents an option, which is like kind of
+1558.00s: cents an option, which is like kind of common. It's just it's a lot for what
+1561.19s: common. It's just it's a lot for what
+1561.20s: common. It's just it's a lot for what you should be paying. You can easily get
+1563.03s: you should be paying. You can easily get
+1563.04s: you should be paying. You can easily get that down like a lot. And it's economies
+1565.91s: that down like a lot. And it's economies
+1565.92s: that down like a lot. And it's economies of scale, right? Like the bigger you
+1567.19s: of scale, right? Like the bigger you
+1567.20s: of scale, right? Like the bigger you trade, the more they're going to want to
+1568.23s: trade, the more they're going to want to
+1568.24s: trade, the more they're going to want to work with you. So, just make sure that
+1570.15s: work with you. So, just make sure that
+1570.16s: work with you. So, just make sure that you add that to your list of things to,
+1572.07s: you add that to your list of things to,
+1572.08s: you add that to your list of things to, you know, on an annual basis or
+1573.83s: you know, on an annual basis or
+1573.84s: you know, on an annual basis or whatever. just reach out and try to
+1575.59s: whatever. just reach out and try to
+1575.60s: whatever. just reach out and try to renegotiate a little bit. It can save
+1577.27s: renegotiate a little bit. It can save
+1577.28s: renegotiate a little bit. It can save you a lot in the long run which leads to
+1580.39s: you a lot in the long run which leads to
+1580.40s: you a lot in the long run which leads to size and the impact of size on
+1583.91s: size and the impact of size on
+1583.92s: size and the impact of size on liquidity. So there's illquid is not
+1588.47s: liquidity. So there's illquid is not
+1588.48s: liquidity. So there's illquid is not good. You don't want a liquid stuff. But
+1591.43s: good. You don't want a liquid stuff. But
+1591.44s: good. You don't want a liquid stuff. But what you will find is you start to get
+1595.03s: what you will find is you start to get
+1595.04s: what you will find is you start to get priced out of things that otherwise you
+1597.67s: priced out of things that otherwise you
+1597.68s: priced out of things that otherwise you could kind of get away with and deal
+1599.03s: could kind of get away with and deal
+1599.04s: could kind of get away with and deal with something that's kind of gross and
+1600.55s: with something that's kind of gross and
+1600.56s: with something that's kind of gross and illquid with a smaller account. And one
+1603.35s: illquid with a smaller account. And one
+1603.36s: illquid with a smaller account. And one of the things to note is sometimes
+1606.63s: of the things to note is sometimes
+1606.64s: of the things to note is sometimes for smaller accounts, there actually can
+1610.07s: for smaller accounts, there actually can
+1610.08s: for smaller accounts, there actually can be like really good places for you to be
+1613.19s: be like really good places for you to be
+1613.20s: be like really good places for you to be in those less liquid names. There's just
+1615.75s: in those less liquid names. There's just
+1615.76s: in those less liquid names. There's just less competition there.
+1618.39s: less competition there.
+1618.40s: less competition there. It's not always
+1620.55s: It's not always
+1620.56s: It's not always really cool to do in terms of, you know,
+1623.59s: really cool to do in terms of, you know,
+1623.60s: really cool to do in terms of, you know, flashy big positions or tons of P&amp;L. But
+1626.23s: flashy big positions or tons of P&amp;L. But
+1626.24s: flashy big positions or tons of P&amp;L. But that's one of the benefits you have is
+1627.67s: that's one of the benefits you have is
+1627.68s: that's one of the benefits you have is you can actually kind of swim with the
+1628.95s: you can actually kind of swim with the
+1628.96s: you can actually kind of swim with the guppies and play in that smaller pool to
+1632.23s: guppies and play in that smaller pool to
+1632.24s: guppies and play in that smaller pool to find some opportunities. A place that I
+1634.39s: find some opportunities. A place that I
+1634.40s: find some opportunities. A place that I spend a lot of time with stuff like that
+1635.67s: spend a lot of time with stuff like that
+1635.68s: spend a lot of time with stuff like that is actually in biotech. Like biotech is
+1640.23s: is actually in biotech. Like biotech is
+1640.24s: is actually in biotech. Like biotech is pretty gross, pretty incestuous. The
+1642.87s: pretty gross, pretty incestuous. The
+1642.88s: pretty gross, pretty incestuous. The spreads in there, especially from a V
+1644.87s: spreads in there, especially from a V
+1644.88s: spreads in there, especially from a V lens, can be pretty significant, but
+1648.23s: lens, can be pretty significant, but
+1648.24s: lens, can be pretty significant, but there are some really clean ideas that
+1651.11s: there are some really clean ideas that
+1651.12s: there are some really clean ideas that you can express in there. Now, the only
+1653.91s: you can express in there. Now, the only
+1653.92s: you can express in there. Now, the only thing that this is showing you is the
+1656.79s: thing that this is showing you is the
+1656.80s: thing that this is showing you is the aggregate total impact that it can have.
+1659.67s: aggregate total impact that it can have.
+1659.68s: aggregate total impact that it can have. This is not saying like, no, you can't
+1662.15s: This is not saying like, no, you can't
+1662.16s: This is not saying like, no, you can't trade Exxon Mobile if you have a $2
+1663.91s: trade Exxon Mobile if you have a $2
+1663.92s: trade Exxon Mobile if you have a $2 million account. That's not it at all.
+1665.59s: million account. That's not it at all.
+1665.60s: million account. That's not it at all. It's just saying that that's where those
+1667.43s: It's just saying that that's where those
+1667.44s: It's just saying that that's where those spread costs start to really scale with
+1670.87s: spread costs start to really scale with
+1670.88s: spread costs start to really scale with your operation, especially as you start
+1673.03s: your operation, especially as you start
+1673.04s: your operation, especially as you start to consume more of the size that's
+1675.19s: to consume more of the size that's
+1675.20s: to consume more of the size that's offered.
+1677.27s: offered.
+1677.28s: offered. One question
+1679.27s: One question
+1679.28s: One question when you're trading on the institutional
+1681.99s: when you're trading on the institutional
+1682.00s: when you're trading on the institutional side and you were talking a little bit
+1685.19s: side and you were talking a little bit
+1685.20s: side and you were talking a little bit before about some of the difficulty for
+1688.31s: before about some of the difficulty for
+1688.32s: before about some of the difficulty for you know some of these long short V
+1690.23s: you know some of these long short V
+1690.24s: you know some of these long short V funds and stuff like that to like find
+1692.23s: funds and stuff like that to like find
+1692.24s: funds and stuff like that to like find liquidity.
+1693.91s: liquidity.
+1693.92s: liquidity. What's like what's the route then? Do
+1696.71s: What's like what's the route then? Do
+1696.72s: What's like what's the route then? Do you just put on the size that you can
+1699.27s: you just put on the size that you can
+1699.28s: you just put on the size that you can and that is what it is or do you just
+1702.63s: and that is what it is or do you just
+1702.64s: and that is what it is or do you just not do the thing?
+1705.51s: not do the thing?
+1705.52s: not do the thing? &gt;&gt; Yeah. that that's a it's a big choice
+1707.43s: &gt;&gt; Yeah. that that's a it's a big choice
+1707.44s: &gt;&gt; Yeah. that that's a it's a big choice that somebody has to make is like
+1708.95s: that somebody has to make is like
+1708.96s: that somebody has to make is like sometimes it's it's um you know they're
+1712.07s: sometimes it's it's um you know they're
+1712.08s: sometimes it's it's um you know they're going to they might shop an order around
+1714.23s: going to they might shop an order around
+1714.24s: going to they might shop an order around and if the price like if you're trying
+1717.03s: and if the price like if you're trying
+1717.04s: and if the price like if you're trying to buy let's say you're trying to buy
+1718.47s: to buy let's say you're trying to buy
+1718.48s: to buy let's say you're trying to buy put you're a long short you're a
+1719.91s: put you're a long short you're a
+1719.92s: put you're a long short you're a directional trader and you're trying to
+1721.27s: directional trader and you're trying to
+1721.28s: directional trader and you're trying to buy puts and you go to the screens and
+1725.51s: buy puts and you go to the screens and
+1725.52s: buy puts and you go to the screens and uh let's say the option on the screen
+1727.27s: uh let's say the option on the screen
+1727.28s: uh let's say the option on the screen it's like uh $3 offered at 320 and then
+1732.95s: it's like uh $3 offered at 320 and then
+1732.96s: it's like uh $3 offered at 320 and then uh you start shopping the order around
+1735.03s: uh you start shopping the order around
+1735.04s: uh you start shopping the order around and you say, you know, where's the offer
+1737.19s: and you say, you know, where's the offer
+1737.20s: and you say, you know, where's the offer on these puts? I need to buy 3,000 of
+1739.19s: on these puts? I need to buy 3,000 of
+1739.20s: on these puts? I need to buy 3,000 of them. And it's like, well, somebody's
+1741.19s: them. And it's like, well, somebody's
+1741.20s: them. And it's like, well, somebody's like, okay, well, it's offered at 320 on
+1742.95s: like, okay, well, it's offered at 320 on
+1742.96s: like, okay, well, it's offered at 320 on the screen, but there's 20 contracts
+1744.63s: the screen, but there's 20 contracts
+1744.64s: the screen, but there's 20 contracts offered. You need to buy 3,000. My offer
+1747.43s: offered. You need to buy 3,000. My offer
+1747.44s: offered. You need to buy 3,000. My offer on 3,000 is 350.
+1751.27s: on 3,000 is 350.
+1751.28s: on 3,000 is 350. And if you're uh that fund might go,
+1755.35s: And if you're uh that fund might go,
+1755.36s: And if you're uh that fund might go, well, three if at 350, I don't want to
+1757.59s: well, three if at 350, I don't want to
+1757.60s: well, three if at 350, I don't want to buy these puts at all. It's like it's
+1759.35s: buy these puts at all. It's like it's
+1759.36s: buy these puts at all. It's like it's it's it's it's more than I want to pay
+1761.99s: it's it's it's more than I want to pay
+1762.00s: it's it's it's more than I want to pay for them. uh you know it's too high of a
+1764.95s: for them. uh you know it's too high of a
+1764.96s: for them. uh you know it's too high of a ball level um whatever it is. So you may
+1768.23s: ball level um whatever it is. So you may
+1768.24s: ball level um whatever it is. So you may pass on it and what you'll do is you'll
+1770.07s: pass on it and what you'll do is you'll
+1770.08s: pass on it and what you'll do is you'll probably continue to shop the order.
+1773.11s: probably continue to shop the order.
+1773.12s: probably continue to shop the order. You'll shop it around. Shop it around
+1774.71s: You'll shop it around. Shop it around
+1774.72s: You'll shop it around. Shop it around and if you can't the it's challenging
+1778.15s: and if you can't the it's challenging
+1778.16s: and if you can't the it's challenging because if you'll shop the order around
+1780.15s: because if you'll shop the order around
+1780.16s: because if you'll shop the order around through the broker market
+1782.63s: through the broker market
+1782.64s: through the broker market and then if you're unhappy with all the
+1784.63s: and then if you're unhappy with all the
+1784.64s: and then if you're unhappy with all the prices that you get, the problem is now
+1786.47s: prices that you get, the problem is now
+1786.48s: prices that you get, the problem is now everybody knows that there's a buyer of
+1789.11s: everybody knows that there's a buyer of
+1789.12s: everybody knows that there's a buyer of that put. So, if all of a sudden now you
+1792.55s: that put. So, if all of a sudden now you
+1792.56s: that put. So, if all of a sudden now you switch and you say, "Okay, I'm going to
+1794.71s: switch and you say, "Okay, I'm going to
+1794.72s: switch and you say, "Okay, I'm going to try to buy them electronically." So, you
+1797.51s: try to buy them electronically." So, you
+1797.52s: try to buy them electronically." So, you go and you lift the 320s.
+1801.27s: go and you lift the 320s.
+1801.28s: go and you lift the 320s. You can lift the 320s, but everybody
+1803.03s: You can lift the 320s, but everybody
+1803.04s: You can lift the 320s, but everybody that was shown that order uh knows that
+1806.63s: that was shown that order uh knows that
+1806.64s: that was shown that order uh knows that you're a buyer of 3 knows that there's,
+1808.55s: you're a buyer of 3 knows that there's,
+1808.56s: you're a buyer of 3 knows that there's, you know, 2,980 contracts behind that 20
+1812.55s: you know, 2,980 contracts behind that 20
+1812.56s: you know, 2,980 contracts behind that 20 lot that just traded. So, they're not
+1814.95s: lot that just traded. So, they're not
+1814.96s: lot that just traded. So, they're not going to sell it to you at 320. Now what
+1816.95s: going to sell it to you at 320. Now what
+1816.96s: going to sell it to you at 320. Now what you can do so what you have to do there
+1818.87s: you can do so what you have to do there
+1818.88s: you can do so what you have to do there is gauge
+1820.87s: is gauge
+1820.88s: is gauge uh kind of gauge but and this is like
+1823.11s: uh kind of gauge but and this is like
+1823.12s: uh kind of gauge but and this is like comes down to like watching the markets
+1824.71s: comes down to like watching the markets
+1824.72s: comes down to like watching the markets and knowing these names kind of gauge
+1827.03s: and knowing these names kind of gauge
+1827.04s: and knowing these names kind of gauge like okay the people that were shot this
+1829.83s: like okay the people that were shot this
+1829.84s: like okay the people that were shot this order passed on it but maybe there are
+1833.59s: order passed on it but maybe there are
+1833.60s: order passed on it but maybe there are other players on there that are like
+1835.43s: other players on there that are like
+1835.44s: other players on there that are like purely electronic
+1838.23s: purely electronic
+1838.24s: purely electronic that didn't see the order that would be
+1841.03s: that didn't see the order that would be
+1841.04s: that didn't see the order that would be willing to sell it to me for 320
+1845.27s: willing to sell it to me for 320
+1845.28s: willing to sell it to me for 320 right I mean you'd some risk of one of
+1848.39s: right I mean you'd some risk of one of
+1848.40s: right I mean you'd some risk of one of the people that
+1850.39s: the people that
+1850.40s: the people that they're not supposed to do this,
+1852.35s: they're not supposed to do this,
+1852.36s: they're not supposed to do this, [snorts] but one of the people that was
+1853.99s: [snorts] but one of the people that was
+1854.00s: [snorts] but one of the people that was shown your bid might see that you're 320
+1858.07s: shown your bid might see that you're 320
+1858.08s: shown your bid might see that you're 320 bid on the screen and be like, "Well, I
+1859.99s: bid on the screen and be like, "Well, I
+1860.00s: bid on the screen and be like, "Well, I know that they got a lot to buy. I'll
+1861.67s: know that they got a lot to buy. I'll
+1861.68s: know that they got a lot to buy. I'll bid three and a quarter." [snorts]
+1864.07s: bid three and a quarter." [snorts]
+1864.08s: bid three and a quarter." [snorts] And so,
+1865.83s: And so,
+1865.84s: And so, uh, that it's a poker game at that
+1868.07s: uh, that it's a poker game at that
+1868.08s: uh, that it's a poker game at that point. It's like, you're not they're not
+1869.99s: point. It's like, you're not they're not
+1870.00s: point. It's like, you're not they're not really supposed to do that. they're not
+1871.11s: really supposed to do that. they're not
+1871.12s: really supposed to do that. they're not supposed to like go in and like bid uh
+1873.91s: supposed to like go in and like bid uh
+1873.92s: supposed to like go in and like bid uh ahead of you, but um you know, it's kind
+1877.27s: ahead of you, but um you know, it's kind
+1877.28s: ahead of you, but um you know, it's kind of hard to it's probably hard to kind of
+1879.59s: of hard to it's probably hard to kind of
+1879.60s: of hard to it's probably hard to kind of police these things. So, um yeah, it's
+1882.55s: police these things. So, um yeah, it's
+1882.56s: police these things. So, um yeah, it's it's a bit of uh if the price is too
+1884.63s: it's a bit of uh if the price is too
+1884.64s: it's a bit of uh if the price is too high, you're just not going to pay it.
+1886.31s: high, you're just not going to pay it.
+1886.32s: high, you're just not going to pay it. So, that that can h So, it's just it's
+1887.91s: So, that that can h So, it's just it's
+1887.92s: So, that that can h So, it's just it's just not liquid enough. Um you're or you
+1890.39s: just not liquid enough. Um you're or you
+1890.40s: just not liquid enough. Um you're or you were kind of fooled by the fact that
+1893.27s: were kind of fooled by the fact that
+1893.28s: were kind of fooled by the fact that there's 20 lots offered there and it's
+1895.59s: there's 20 lots offered there and it's
+1895.60s: there's 20 lots offered there and it's just like it's just not the right 320 is
+1898.79s: just like it's just not the right 320 is
+1898.80s: just like it's just not the right 320 is not nearly the right price for 3,000
+1901.83s: not nearly the right price for 3,000
+1901.84s: not nearly the right price for 3,000 contracts according to the marketplace.
+1905.83s: contracts according to the marketplace.
+1905.84s: contracts according to the marketplace. &gt;&gt; Or you might try to space it out and you
+1907.51s: &gt;&gt; Or you might try to space it out and you
+1907.52s: &gt;&gt; Or you might try to space it out and you say, "Fine, I'll I'll I'll pay 320. I'll
+1910.79s: say, "Fine, I'll I'll I'll pay 320. I'll
+1910.80s: say, "Fine, I'll I'll I'll pay 320. I'll see how many I can get today." And then
+1912.71s: see how many I can get today." And then
+1912.72s: see how many I can get today." And then if you're not super urgent about it and
+1914.47s: if you're not super urgent about it and
+1914.48s: if you're not super urgent about it and it's like, you know, you don't have a a
+1915.99s: it's like, you know, you don't have a a
+1916.00s: it's like, you know, you don't have a a near-term catalyst that you're worried
+1917.43s: near-term catalyst that you're worried
+1917.44s: near-term catalyst that you're worried about or anything like that, you're
+1918.39s: about or anything like that, you're
+1918.40s: about or anything like that, you're like, I might work the order over a
+1920.07s: like, I might work the order over a
+1920.08s: like, I might work the order over a couple days and try to piece into this
+1921.83s: couple days and try to piece into this
+1921.84s: couple days and try to piece into this 30,000 lot. Um so uh yeah it's it's uh
+1927.99s: 30,000 lot. Um so uh yeah it's it's uh
+1928.00s: 30,000 lot. Um so uh yeah it's it's uh this it's kind of this is always the
+1929.75s: this it's kind of this is always the
+1929.76s: this it's kind of this is always the challenge is like you know the way the
+1933.11s: challenge is like you know the way the
+1933.12s: challenge is like you know the way the market structure is right now is
+1937.27s: market structure is right now is
+1937.28s: market structure is right now is really great for a small retail trader
+1940.79s: really great for a small retail trader
+1940.80s: really great for a small retail trader and very challenging for anybody trading
+1944.31s: and very challenging for anybody trading
+1944.32s: and very challenging for anybody trading sort of like institutional size.
+1947.67s: sort of like institutional size.
+1947.68s: sort of like institutional size. That's actually a perfect segue because
+1949.67s: That's actually a perfect segue because
+1949.68s: That's actually a perfect segue because there's actually a Yeah, there there's
+1952.31s: there's actually a Yeah, there there's
+1952.32s: there's actually a Yeah, there there's actually a program called RPO that you
+1954.55s: actually a program called RPO that you
+1954.56s: actually a program called RPO that you can just learn about through SIBO.
+1956.55s: can just learn about through SIBO.
+1956.56s: can just learn about through SIBO. &gt;&gt; This just talks about different order
+1958.23s: &gt;&gt; This just talks about different order
+1958.24s: &gt;&gt; This just talks about different order routing and queuing and stuff like that.
+1960.55s: routing and queuing and stuff like that.
+1960.56s: routing and queuing and stuff like that. It's we're not going to go deep into
+1961.99s: It's we're not going to go deep into
+1962.00s: It's we're not going to go deep into detail. It's just you should know that
+1963.35s: detail. It's just you should know that
+1963.36s: detail. It's just you should know that that exists. Like when you submit an
+1965.11s: that exists. Like when you submit an
+1965.12s: that exists. Like when you submit an order, it's not always as clean as like
+1967.83s: order, it's not always as clean as like
+1967.84s: order, it's not always as clean as like I was in line first. There are nuances
+1971.19s: I was in line first. There are nuances
+1971.20s: I was in line first. There are nuances that change who's where in line. And you
+1974.15s: that change who's where in line. And you
+1974.16s: that change who's where in line. And you were talking a little bit about size
+1976.47s: were talking a little bit about size
+1976.48s: were talking a little bit about size being a a part of that.
+1979.83s: being a a part of that.
+1979.84s: being a a part of that. &gt;&gt; Yeah. So I can talk about this a little
+1981.35s: &gt;&gt; Yeah. So I can talk about this a little
+1981.36s: &gt;&gt; Yeah. So I can talk about this a little bit. So first of all, let's just say
+1982.87s: bit. So first of all, let's just say
+1982.88s: bit. So first of all, let's just say this. Um if you are a customer
+1986.07s: this. Um if you are a customer
+1986.08s: this. Um if you are a customer considered a customer status, customer
+1987.91s: considered a customer status, customer
+1987.92s: considered a customer status, customer order and retail traders are considered
+1989.75s: order and retail traders are considered
+1989.76s: order and retail traders are considered customers. Um this is uh no problem for
+1994.07s: customers. Um this is uh no problem for
+1994.08s: customers. Um this is uh no problem for you if you
+1996.23s: you if you
+1996.24s: you if you uh bid or offer on a first of all, let
+1998.95s: uh bid or offer on a first of all, let
+1998.96s: uh bid or offer on a first of all, let me back up for a second. There's two
+2000.95s: me back up for a second. There's two
+2000.96s: me back up for a second. There's two sort of ways that orders can get that
+2003.19s: sort of ways that orders can get that
+2003.20s: sort of ways that orders can get that that uh order books work in the options
+2005.83s: that uh order books work in the options
+2005.84s: that uh order books work in the options market. There's what we call make or
+2007.67s: market. There's what we call make or
+2007.68s: market. There's what we call make or taker. Make taker is what is uh what we
+2011.99s: taker. Make taker is what is uh what we
+2012.00s: taker. Make taker is what is uh what we commonly uh understand which is um if
+2014.79s: commonly uh understand which is um if
+2014.80s: commonly uh understand which is um if I'm first I get it right. It's like if
+2016.79s: I'm first I get it right. It's like if
+2016.80s: I'm first I get it right. It's like if I'm the first it's time priority. So if
+2019.03s: I'm the first it's time priority. So if
+2019.04s: I'm the first it's time priority. So if I bid um and I'm the first uh to get
+2022.15s: I bid um and I'm the first uh to get
+2022.16s: I bid um and I'm the first uh to get there. If I bid for 20 contracts and 50
+2025.19s: there. If I bid for 20 contracts and 50
+2025.20s: there. If I bid for 20 contracts and 50 contracts come in for sale I definitely
+2027.11s: contracts come in for sale I definitely
+2027.12s: contracts come in for sale I definitely get my 20. If only 10 contracts come in
+2029.67s: get my 20. If only 10 contracts come in
+2029.68s: get my 20. If only 10 contracts come in for sale, I definitely get my 10. I'm
+2031.59s: for sale, I definitely get my 10. I'm
+2031.60s: for sale, I definitely get my 10. I'm first. I get them. So that's a on a make
+2034.31s: first. I get them. So that's a on a make
+2034.32s: first. I get them. So that's a on a make or taker exchange. On a prata exchange,
+2037.99s: or taker exchange. On a prata exchange,
+2038.00s: or taker exchange. On a prata exchange, um there's a different mechanism. So the
+2039.83s: um there's a different mechanism. So the
+2039.84s: um there's a different mechanism. So the prata exchanges tend to be like um uh
+2043.19s: prata exchanges tend to be like um uh
+2043.20s: prata exchanges tend to be like um uh the SIBO, the NASDAQ Phil or like Phil X
+2046.63s: the SIBO, the NASDAQ Phil or like Phil X
+2046.64s: the SIBO, the NASDAQ Phil or like Phil X basic, what was the Phil, the NASDAQ
+2048.47s: basic, what was the Phil, the NASDAQ
+2048.48s: basic, what was the Phil, the NASDAQ ice, um the NYSE
+2051.19s: ice, um the NYSE
+2051.20s: ice, um the NYSE on those prata exchanges. It's it's
+2054.47s: on those prata exchanges. It's it's
+2054.48s: on those prata exchanges. It's it's basically their matching engine kind of
+2056.23s: basically their matching engine kind of
+2056.24s: basically their matching engine kind of as a remnant of the old floor the way it
+2058.71s: as a remnant of the old floor the way it
+2058.72s: as a remnant of the old floor the way it was used to be on the floor which is um
+2062.55s: was used to be on the floor which is um
+2062.56s: was used to be on the floor which is um well first of all like I said if you're
+2063.75s: well first of all like I said if you're
+2063.76s: well first of all like I said if you're a customer order you're in the first in
+2065.99s: a customer order you're in the first in
+2066.00s: a customer order you're in the first in the queue automatically so it doesn't um
+2069.59s: the queue automatically so it doesn't um
+2069.60s: the queue automatically so it doesn't um it doesn't affect you you're always get
+2071.27s: it doesn't affect you you're always get
+2071.28s: it doesn't affect you you're always get to be you have priority as a customer
+2073.91s: to be you have priority as a customer
+2073.92s: to be you have priority as a customer but if you're not a customer meaning
+2075.59s: but if you're not a customer meaning
+2075.60s: but if you're not a customer meaning that you're institutional or you're a
+2077.59s: that you're institutional or you're a
+2077.60s: that you're institutional or you're a professional trader now what happens is
+2081.51s: professional trader now what happens is
+2081.52s: professional trader now what happens is the way the sizing works is it they call
+2083.91s: the way the sizing works is it they call
+2083.92s: the way the sizing works is it they call it pratta meaning that um let's say
+2088.95s: it pratta meaning that um let's say
+2088.96s: it pratta meaning that um let's say uh the example I gave before is that
+2092.39s: uh the example I gave before is that
+2092.40s: uh the example I gave before is that Eric puts a thousand contracts on the
+2094.55s: Eric puts a thousand contracts on the
+2094.56s: Eric puts a thousand contracts on the offer I put 500 contracts on the offer
+2098.31s: offer I put 500 contracts on the offer
+2098.32s: offer I put 500 contracts on the offer and then six contracts come in to buy
+2103.11s: and then six contracts come in to buy
+2103.12s: and then six contracts come in to buy um it doesn't matter even if I was there
+2105.99s: um it doesn't matter even if I was there
+2106.00s: um it doesn't matter even if I was there first
+2107.83s: first
+2107.84s: first Eric gets four I get two because Eric
+2111.35s: Eric gets four I get two because Eric
+2111.36s: Eric gets four I get two because Eric showed a thousand contracts and I showed
+2113.91s: showed a thousand contracts and I showed
+2113.92s: showed a thousand contracts and I showed 500, you've showed prata twothirds of
+2117.19s: 500, you've showed prata twothirds of
+2117.20s: 500, you've showed prata twothirds of the offer size. So you get twothirds
+2119.83s: the offer size. So you get twothirds
+2119.84s: the offer size. So you get twothirds allocation on everything that comes in
+2121.91s: allocation on everything that comes in
+2121.92s: allocation on everything that comes in on that offer regardless of the fact
+2123.83s: on that offer regardless of the fact
+2123.84s: on that offer regardless of the fact that you were sent the order after me.
+2126.87s: that you were sent the order after me.
+2126.88s: that you were sent the order after me. Doesn't matter. So what is what is the
+2130.79s: Doesn't matter. So what is what is the
+2130.80s: Doesn't matter. So what is what is the point of that? Um what that does is it
+2133.83s: point of that? Um what that does is it
+2133.84s: point of that? Um what that does is it incentivizes
+2136.15s: incentivizes
+2136.16s: incentivizes traders to show more liquidity than they
+2139.19s: traders to show more liquidity than they
+2139.20s: traders to show more liquidity than they actually want to trade. Because if you
+2141.11s: actually want to trade. Because if you
+2141.12s: actually want to trade. Because if you want to get an allocation, you basically
+2142.79s: want to get an allocation, you basically
+2142.80s: want to get an allocation, you basically have to show a lot of size. So it's not
+2144.79s: have to show a lot of size. So it's not
+2144.80s: have to show a lot of size. So it's not necessarily that you want to trade a
+2147.11s: necessarily that you want to trade a
+2147.12s: necessarily that you want to trade a thousand contracts. It's just that I
+2148.63s: thousand contracts. It's just that I
+2148.64s: thousand contracts. It's just that I need to show a,000 contracts if I want
+2150.47s: need to show a,000 contracts if I want
+2150.48s: need to show a,000 contracts if I want to get the lion share when 50 contracts
+2153.43s: to get the lion share when 50 contracts
+2153.44s: to get the lion share when 50 contracts trade. So I call this this is so what
+2156.39s: trade. So I call this this is so what
+2156.40s: trade. So I call this this is so what this does is this creates this
+2158.15s: this does is this creates this
+2158.16s: this does is this creates this environment of like fake liquidity. Like
+2160.55s: environment of like fake liquidity. Like
+2160.56s: environment of like fake liquidity. Like the size that's posted is not really the
+2163.83s: the size that's posted is not really the
+2163.84s: the size that's posted is not really the size that you can trade at unless you
+2166.39s: size that you can trade at unless you
+2166.40s: size that you can trade at unless you sweep the entire size. um if you try to
+2169.03s: sweep the entire size. um if you try to
+2169.04s: sweep the entire size. um if you try to chip away at it, those uh the market's
+2171.83s: chip away at it, those uh the market's
+2171.84s: chip away at it, those uh the market's probably going to move on you. And that
+2173.19s: probably going to move on you. And that
+2173.20s: probably going to move on you. And that size was not really there. It was only
+2175.43s: size was not really there. It was only
+2175.44s: size was not really there. It was only posted there because of the incentive
+2177.11s: posted there because of the incentive
+2177.12s: posted there because of the incentive structure. Um so this is like I call
+2181.19s: structure. Um so this is like I call
+2181.20s: structure. Um so this is like I call this um this is like phantom illquidity.
+2184.55s: this um this is like phantom illquidity.
+2184.56s: this um this is like phantom illquidity. Uh and we were kind of talk talking
+2185.91s: Uh and we were kind of talk talking
+2185.92s: Uh and we were kind of talk talking about that before like there's phantom
+2187.51s: about that before like there's phantom
+2187.52s: about that before like there's phantom liquidity and there's phantom
+2188.71s: liquidity and there's phantom
+2188.72s: liquidity and there's phantom illquidity.
+2191.59s: illquidity.
+2191.60s: illquidity. &gt;&gt; Now what's the what's the risk then?
+2194.79s: &gt;&gt; Now what's the what's the risk then?
+2194.80s: &gt;&gt; Now what's the what's the risk then? Obviously, there's a risk for the person
+2196.55s: Obviously, there's a risk for the person
+2196.56s: Obviously, there's a risk for the person that posts a bigger size just to get,
+2199.27s: that posts a bigger size just to get,
+2199.28s: that posts a bigger size just to get, you know, their expected smaller order
+2202.15s: you know, their expected smaller order
+2202.16s: you know, their expected smaller order flow, but what happens if somebody does
+2205.67s: flow, but what happens if somebody does
+2205.68s: flow, but what happens if somebody does come in and sweep them?
+2207.99s: come in and sweep them?
+2208.00s: come in and sweep them? &gt;&gt; Yeah. Then that's the risk. So, yeah,
+2210.95s: &gt;&gt; Yeah. Then that's the risk. So, yeah,
+2210.96s: &gt;&gt; Yeah. Then that's the risk. So, yeah, that that's that's the risk. So, um, you
+2213.43s: that that's that's the risk. So, um, you
+2213.44s: that that's that's the risk. So, um, you know, if they're they're po you're
+2214.55s: know, if they're they're po you're
+2214.56s: know, if they're they're po you're posting a bunch of size because you're
+2216.39s: posting a bunch of size because you're
+2216.40s: posting a bunch of size because you're trying to get because at the end of the
+2218.31s: trying to get because at the end of the
+2218.32s: trying to get because at the end of the day, what people want to do is they want
+2219.59s: day, what people want to do is they want
+2219.60s: day, what people want to do is they want to trade against the small order sizes
+2221.75s: to trade against the small order sizes
+2221.76s: to trade against the small order sizes because that's it's uh less infected
+2223.91s: because that's it's uh less infected
+2223.92s: because that's it's uh less infected with uh toxicity. So, they want to trade
+2226.95s: with uh toxicity. So, they want to trade
+2226.96s: with uh toxicity. So, they want to trade against the smaller order sizes, but in
+2228.87s: against the smaller order sizes, but in
+2228.88s: against the smaller order sizes, but in order to do that, they have to show a
+2230.23s: order to do that, they have to show a
+2230.24s: order to do that, they have to show a bunch of size. And what happens is they
+2231.83s: bunch of size. And what happens is they
+2231.84s: bunch of size. And what happens is they then they then uh you know they show
+2234.23s: then they then uh you know they show
+2234.24s: then they then uh you know they show their belly to the person that uh you
+2237.19s: their belly to the person that uh you
+2237.20s: their belly to the person that uh you know is smart and comes in is like I'm
+2240.55s: know is smart and comes in is like I'm
+2240.56s: know is smart and comes in is like I'm going to lift the whole thing because
+2241.67s: going to lift the whole thing because
+2241.68s: going to lift the whole thing because this they were looking for liquidity. So
+2243.67s: this they were looking for liquidity. So
+2243.68s: this they were looking for liquidity. So um that's that's kind of um that's 100%
+2246.47s: um that's that's kind of um that's 100%
+2246.48s: um that's that's kind of um that's 100% the risk. That's the game. And another
+2249.35s: the risk. That's the game. And another
+2249.36s: the risk. That's the game. And another big thing that I don't think is
+2252.07s: big thing that I don't think is
+2252.08s: big thing that I don't think is necessarily appreciated too much at
+2254.39s: necessarily appreciated too much at
+2254.40s: necessarily appreciated too much at least from the retail side of market
+2257.27s: least from the retail side of market
+2257.28s: least from the retail side of market makers or just you know people not super
+2259.91s: makers or just you know people not super
+2259.92s: makers or just you know people not super familiar with the market making side is
+2261.91s: familiar with the market making side is
+2261.92s: familiar with the market making side is the the requirement that there is to
+2264.71s: the the requirement that there is to
+2264.72s: the the requirement that there is to quote and to have markets [snorts]
+2267.27s: quote and to have markets [snorts]
+2267.28s: quote and to have markets [snorts] offered. So,
+2270.15s: offered. So,
+2270.16s: offered. So, what kind of gamesmanship
+2273.27s: what kind of gamesmanship
+2273.28s: what kind of gamesmanship goes on with that where you maybe
+2277.27s: goes on with that where you maybe
+2277.28s: goes on with that where you maybe already have too much of a tilt in your
+2279.11s: already have too much of a tilt in your
+2279.12s: already have too much of a tilt in your book in, you know, some specific
+2281.27s: book in, you know, some specific
+2281.28s: book in, you know, some specific underlying and like you actually don't
+2282.63s: underlying and like you actually don't
+2282.64s: underlying and like you actually don't want to offer, you don't want to sell
+2284.23s: want to offer, you don't want to sell
+2284.24s: want to offer, you don't want to sell more calls or, you know, you don't want
+2286.79s: more calls or, you know, you don't want
+2286.80s: more calls or, you know, you don't want to sell more puts or you want to buy
+2288.15s: to sell more puts or you want to buy
+2288.16s: to sell more puts or you want to buy whatever, right? Like, how how do market
+2291.19s: whatever, right? Like, how how do market
+2291.20s: whatever, right? Like, how how do market makers navigate that?
+2295.11s: makers navigate that?
+2295.12s: makers navigate that? &gt;&gt; Yeah, they just I mean, they just they
+2296.79s: &gt;&gt; Yeah, they just I mean, they just they
+2296.80s: &gt;&gt; Yeah, they just I mean, they just they can just move their quotes. I mean, it's
+2298.31s: can just move their quotes. I mean, it's
+2298.32s: can just move their quotes. I mean, it's like, you know, if you don't want to be
+2299.75s: like, you know, if you don't want to be
+2299.76s: like, you know, if you don't want to be the best offer, you can be the best bid.
+2302.39s: the best offer, you can be the best bid.
+2302.40s: the best offer, you can be the best bid. So, um, you know, there there's
+2305.11s: So, um, you know, there there's
+2305.12s: So, um, you know, there there's requirements, and I'm not familiar what
+2307.27s: requirements, and I'm not familiar what
+2307.28s: requirements, and I'm not familiar what the requirements are these days about
+2308.79s: the requirements are these days about
+2308.80s: the requirements are these days about like how, but there's a bunch of
+2310.79s: like how, but there's a bunch of
+2310.80s: like how, but there's a bunch of requirements about what percentage of
+2312.39s: requirements about what percentage of
+2312.40s: requirements about what percentage of the options market you need to be
+2313.99s: the options market you need to be
+2314.00s: the options market you need to be quoting, uh, how much size you need to
+2316.47s: quoting, uh, how much size you need to
+2316.48s: quoting, uh, how much size you need to be quoting, how um, continuously you
+2318.95s: be quoting, how um, continuously you
+2318.96s: be quoting, how um, continuously you need to be quoting, like all of these
+2320.23s: need to be quoting, like all of these
+2320.24s: need to be quoting, like all of these things. there's all these require
+2321.51s: things. there's all these require
+2321.52s: things. there's all these require there's a very high bar to be because
+2323.83s: there's a very high bar to be because
+2323.84s: there's a very high bar to be because there are like uh uh you know to to get
+2326.31s: there are like uh uh you know to to get
+2326.32s: there are like uh uh you know to to get the privileges of being a market maker
+2328.71s: the privileges of being a market maker
+2328.72s: the privileges of being a market maker um there's a high bar that you have to
+2330.71s: um there's a high bar that you have to
+2330.72s: um there's a high bar that you have to meet in order to be able to get those
+2333.19s: meet in order to be able to get those
+2333.20s: meet in order to be able to get those like one of the example by the way of a
+2335.35s: like one of the example by the way of a
+2335.36s: like one of the example by the way of a privilege is on these prora exchanges we
+2338.79s: privilege is on these prora exchanges we
+2338.80s: privilege is on these prora exchanges we kind of talked about like Eric offers a
+2340.39s: kind of talked about like Eric offers a
+2340.40s: kind of talked about like Eric offers a thousand and I offer 500 and Eric gets
+2342.71s: thousand and I offer 500 and Eric gets
+2342.72s: thousand and I offer 500 and Eric gets it it doesn't there's a step before that
+2345.75s: it it doesn't there's a step before that
+2345.76s: it it doesn't there's a step before that which is that um there's something
+2347.67s: which is that um there's something
+2347.68s: which is that um there's something called a designated primary market maker
+2350.79s: called a designated primary market maker
+2350.80s: called a designated primary market maker So if in there's a different one, it
+2353.99s: So if in there's a different one, it
+2354.00s: So if in there's a different one, it could be for every name. So for example,
+2355.83s: could be for every name. So for example,
+2355.84s: could be for every name. So for example, if IBM is list, IBM options are listed
+2358.63s: if IBM is list, IBM options are listed
+2358.64s: if IBM is list, IBM options are listed on uh I'm using IBM as an example,
+2361.35s: on uh I'm using IBM as an example,
+2361.36s: on uh I'm using IBM as an example, totally showing my age by the way. Um
+2364.31s: totally showing my age by the way. Um
+2364.32s: totally showing my age by the way. Um but IBM options, uh on the SIBO, uh
+2368.47s: but IBM options, uh on the SIBO, uh
+2368.48s: but IBM options, uh on the SIBO, uh maybe Citadel Securities is the market
+2371.51s: maybe Citadel Securities is the market
+2371.52s: maybe Citadel Securities is the market maker for those. Um and there maybe
+2374.47s: maker for those. Um and there maybe
+2374.48s: maker for those. Um and there maybe they're like meaning that they're the
+2376.07s: they're like meaning that they're the
+2376.08s: they're like meaning that they're the designated primary market maker. So what
+2378.71s: designated primary market maker. So what
+2378.72s: designated primary market maker. So what will happen is anything that trades on
+2380.63s: will happen is anything that trades on
+2380.64s: will happen is anything that trades on the bidder offer that's posted there
+2383.59s: the bidder offer that's posted there
+2383.60s: the bidder offer that's posted there once the customer orders are satisfied
+2385.67s: once the customer orders are satisfied
+2385.68s: once the customer orders are satisfied because remember they have priority but
+2387.19s: because remember they have priority but
+2387.20s: because remember they have priority but after that citadel is entitled to 40% of
+2390.63s: after that citadel is entitled to 40% of
+2390.64s: after that citadel is entitled to 40% of all the size that trades on the offer.
+2392.71s: all the size that trades on the offer.
+2392.72s: all the size that trades on the offer. So they get the right to trade 40%
+2395.51s: So they get the right to trade 40%
+2395.52s: So they get the right to trade 40% before the logic comes down to how much
+2398.23s: before the logic comes down to how much
+2398.24s: before the logic comes down to how much did Eric offer how much did Chris offer.
+2400.63s: did Eric offer how much did Chris offer.
+2400.64s: did Eric offer how much did Chris offer. So that is a huge privilege to be able
+2404.07s: So that is a huge privilege to be able
+2404.08s: So that is a huge privilege to be able to be guaranteed that allocation. So
+2406.63s: to be guaranteed that allocation. So
+2406.64s: to be guaranteed that allocation. So that privilege comes at the uh you know
+2409.27s: that privilege comes at the uh you know
+2409.28s: that privilege comes at the uh you know at because there's obligations um for
+2412.39s: at because there's obligations um for
+2412.40s: at because there's obligations um for quoting. So um but yeah, you can what'll
+2415.59s: quoting. So um but yeah, you can what'll
+2415.60s: quoting. So um but yeah, you can what'll happen is they don't want to be the best
+2416.71s: happen is they don't want to be the best
+2416.72s: happen is they don't want to be the best offer then they're going to be the best
+2417.75s: offer then they're going to be the best
+2417.76s: offer then they're going to be the best bid. They're just going to raise the
+2418.71s: bid. They're just going to raise the
+2418.72s: bid. They're just going to raise the market,
+2420.23s: market,
+2420.24s: market, &gt;&gt; right?
+2421.75s: &gt;&gt; right?
+2421.76s: &gt;&gt; right? &gt;&gt; And we don't want to go necessarily
+2424.79s: &gt;&gt; And we don't want to go necessarily
+2424.80s: &gt;&gt; And we don't want to go necessarily hyper deep on it, but it is an honorable
+2426.79s: hyper deep on it, but it is an honorable
+2426.80s: hyper deep on it, but it is an honorable mention something like payment for order
+2428.39s: mention something like payment for order
+2428.40s: mention something like payment for order flow. And you and I were talking about
+2430.47s: flow. And you and I were talking about
+2430.48s: flow. And you and I were talking about it before because it's it's a really
+2433.35s: it before because it's it's a really
+2433.36s: it before because it's it's a really interesting function and there's a lot
+2435.59s: interesting function and there's a lot
+2435.60s: interesting function and there's a lot of differing opinions on it. Some people
+2437.83s: of differing opinions on it. Some people
+2437.84s: of differing opinions on it. Some people think that, you know, markets are more
+2439.35s: think that, you know, markets are more
+2439.36s: think that, you know, markets are more liquid now than before and, you know,
+2441.19s: liquid now than before and, you know,
+2441.20s: liquid now than before and, you know, that means it's good. Some people think
+2442.87s: that means it's good. Some people think
+2442.88s: that means it's good. Some people think that it's still super nefarious and
+2445.43s: that it's still super nefarious and
+2445.44s: that it's still super nefarious and there's bad incentives and whatnot. So
+2448.79s: there's bad incentives and whatnot. So
+2448.80s: there's bad incentives and whatnot. So when you assess something like payment
+2451.59s: when you assess something like payment
+2451.60s: when you assess something like payment for order flow with respect to
+2453.59s: for order flow with respect to
+2453.60s: for order flow with respect to liquidity, what do you generally think?
+2456.55s: liquidity, what do you generally think?
+2456.56s: liquidity, what do you generally think? Help didn't help. Good, bad, where do
+2460.23s: Help didn't help. Good, bad, where do
+2460.24s: Help didn't help. Good, bad, where do you set?
+2460.71s: you set?
+2460.72s: you set? &gt;&gt; Yeah. So, obviously you kind of
+2463.67s: &gt;&gt; Yeah. So, obviously you kind of
+2463.68s: &gt;&gt; Yeah. So, obviously you kind of mentioned it. It's a it's like this very
+2465.75s: mentioned it. It's a it's like this very
+2465.76s: mentioned it. It's a it's like this very very wonky rabbit hole that like you
+2468.47s: very wonky rabbit hole that like you
+2468.48s: very wonky rabbit hole that like you know this is this is like legions of uh
+2472.39s: know this is this is like legions of uh
+2472.40s: know this is this is like legions of uh lawyers and market observers sort of
+2474.55s: lawyers and market observers sort of
+2474.56s: lawyers and market observers sort of like like tackle. So like to pretend
+2477.51s: like like tackle. So like to pretend
+2477.52s: like like tackle. So like to pretend that I have like any definitive like uh
+2479.91s: that I have like any definitive like uh
+2479.92s: that I have like any definitive like uh you know right or wrong on this is is it
+2481.59s: you know right or wrong on this is is it
+2481.60s: you know right or wrong on this is is it would be completely naive. But this is
+2485.99s: would be completely naive. But this is
+2486.00s: would be completely naive. But this is my sense of it.
+2487.67s: my sense of it.
+2487.68s: my sense of it. Uh
+2489.99s: Uh
+2490.00s: Uh I think that the payment for order flow
+2491.67s: I think that the payment for order flow
+2491.68s: I think that the payment for order flow I'm guessing on at the first order where
+2494.79s: I'm guessing on at the first order where
+2494.80s: I'm guessing on at the first order where it's like you know our customer are our
+2497.67s: it's like you know our customer are our
+2497.68s: it's like you know our customer are our retail traders getting better fills I
+2501.59s: retail traders getting better fills I
+2501.60s: retail traders getting better fills I think that they can probably show that
+2503.11s: think that they can probably show that
+2503.12s: think that they can probably show that they get better fills
+2506.80s: now is this
+2509.04s: now is this for the whole ecosystem in general is
+2512.23s: for the whole ecosystem in general is
+2512.24s: for the whole ecosystem in general is this uh better or worse like I said
+2515.59s: this uh better or worse like I said
+2515.60s: this uh better or worse like I said that's first order
+2517.35s: that's first order
+2517.36s: that's first order I'd argue I think that the market
+2520.15s: I'd argue I think that the market
+2520.16s: I'd argue I think that the market structure is probably worse for anybody
+2523.51s: structure is probably worse for anybody
+2523.52s: structure is probably worse for anybody trying to trade institutional size,
+2525.35s: trying to trade institutional size,
+2525.36s: trying to trade institutional size, anybody trying to trade sort of like
+2527.43s: anybody trying to trade sort of like
+2527.44s: anybody trying to trade sort of like professional size. And one might say,
+2531.27s: professional size. And one might say,
+2531.28s: professional size. And one might say, okay, well that's uh tough luck for
+2535.19s: okay, well that's uh tough luck for
+2535.20s: okay, well that's uh tough luck for them. But you got to remember that that
+2537.75s: them. But you got to remember that that
+2537.76s: them. But you got to remember that that goes for everybody that is trying to
+2540.47s: goes for everybody that is trying to
+2540.48s: goes for everybody that is trying to sell calls, hedge by buying puts. And a
+2544.07s: sell calls, hedge by buying puts. And a
+2544.08s: sell calls, hedge by buying puts. And a lot of people that are doing that at
+2545.59s: lot of people that are doing that at
+2545.60s: lot of people that are doing that at institutional size might be the funds
+2548.55s: institutional size might be the funds
+2548.56s: institutional size might be the funds that you're uh that your pension is in.
+2551.99s: that you're uh that your pension is in.
+2552.00s: that you're uh that your pension is in. Right? So there's public money is in
+2554.55s: Right? So there's public money is in
+2554.56s: Right? So there's public money is in these funds and the liquidity is worse
+2557.35s: these funds and the liquidity is worse
+2557.36s: these funds and the liquidity is worse for these institutional players. And so
+2560.07s: for these institutional players. And so
+2560.08s: for these institutional players. And so um the money that people have
+2562.39s: um the money that people have
+2562.40s: um the money that people have investments in their retirements account
+2564.55s: investments in their retirements account
+2564.56s: investments in their retirements account could be getting worse fills even though
+2566.71s: could be getting worse fills even though
+2566.72s: could be getting worse fills even though the retail trader is getting better
+2568.79s: the retail trader is getting better
+2568.80s: the retail trader is getting better fills. How does that cash out for any
+2570.55s: fills. How does that cash out for any
+2570.56s: fills. How does that cash out for any one individual? It just depends how much
+2572.23s: one individual? It just depends how much
+2572.24s: one individual? It just depends how much you trade versus how much money you have
+2574.07s: you trade versus how much money you have
+2574.08s: you trade versus how much money you have sort of like in these things. So I think
+2576.39s: sort of like in these things. So I think
+2576.40s: sort of like in these things. So I think it's a bit unclearer that way. But I do
+2578.71s: it's a bit unclearer that way. But I do
+2578.72s: it's a bit unclearer that way. But I do overall have the sense that it's
+2581.03s: overall have the sense that it's
+2581.04s: overall have the sense that it's probably the whole system is worse for
+2583.83s: probably the whole system is worse for
+2583.84s: probably the whole system is worse for institutional trader [clears throat]
+2585.43s: institutional trader [clears throat]
+2585.44s: institutional trader [clears throat] worse for institutional traders probably
+2587.91s: worse for institutional traders probably
+2587.92s: worse for institutional traders probably better for somebody that just wants to
+2589.43s: better for somebody that just wants to
+2589.44s: better for somebody that just wants to trade five contracts. Um but even then
+2593.43s: trade five contracts. Um but even then
+2593.44s: trade five contracts. Um but even then like I said it's first order meaning
+2595.03s: like I said it's first order meaning
+2595.04s: like I said it's first order meaning it's not clear because if you had if you
+2597.67s: it's not clear because if you had if you
+2597.68s: it's not clear because if you had if you did not have payment for order flow
+2599.27s: did not have payment for order flow
+2599.28s: did not have payment for order flow because if you think about what pay for
+2600.71s: because if you think about what pay for
+2600.72s: because if you think about what pay for orderflow does
+2602.87s: orderflow does
+2602.88s: orderflow does it wouldn't it it should widen markets
+2605.51s: it wouldn't it it should widen markets
+2605.52s: it wouldn't it it should widen markets in the sense that if I know that all the
+2609.27s: in the sense that if I know that all the
+2609.28s: in the sense that if I know that all the order flow that is paid for is
+2611.03s: order flow that is paid for is
+2611.04s: order flow that is paid for is effectively a closed system it is
+2613.19s: effectively a closed system it is
+2613.20s: effectively a closed system it is entirely internalized by four companies
+2616.95s: entirely internalized by four companies
+2616.96s: entirely internalized by four companies that get to see that flow and nobody
+2618.87s: that get to see that flow and nobody
+2618.88s: that get to see that flow and nobody else can actually interact with that
+2620.47s: else can actually interact with that
+2620.48s: else can actually interact with that flow. flow, then there's very little
+2623.03s: flow. flow, then there's very little
+2623.04s: flow. flow, then there's very little incentive to quote the the the lit
+2626.63s: incentive to quote the the the lit
+2626.64s: incentive to quote the the the lit markets tightly because all the flow
+2630.39s: markets tightly because all the flow
+2630.40s: markets tightly because all the flow that you know is non-toxic is bought and
+2632.55s: that you know is non-toxic is bought and
+2632.56s: that you know is non-toxic is bought and paid for and what does that leave
+2634.39s: paid for and what does that leave
+2634.40s: paid for and what does that leave behind? Flow you really don't want to be
+2636.15s: behind? Flow you really don't want to be
+2636.16s: behind? Flow you really don't want to be trading against. So the incentive would
+2638.47s: trading against. So the incentive would
+2638.48s: trading against. So the incentive would be to widen the markets and for people
+2640.63s: be to widen the markets and for people
+2640.64s: be to widen the markets and for people to not want to quote tightly. So if you
+2645.59s: to not want to quote tightly. So if you
+2645.60s: to not want to quote tightly. So if you got rid of payment for order flow and
+2647.83s: got rid of payment for order flow and
+2647.84s: got rid of payment for order flow and effectively increased the competition,
+2650.87s: effectively increased the competition,
+2650.88s: effectively increased the competition, I could see how that would tighten the
+2652.71s: I could see how that would tighten the
+2652.72s: I could see how that would tighten the markets up as people had as people as
+2655.11s: markets up as people had as people as
+2655.12s: markets up as people had as people as everybody now had to fight for their
+2657.27s: everybody now had to fight for their
+2657.28s: everybody now had to fight for their share.
+2658.87s: share.
+2658.88s: share. I was kind of saying before it is, you
+2661.99s: I was kind of saying before it is, you
+2662.00s: I was kind of saying before it is, you know, if Citadel Securities is taking
+2664.31s: know, if Citadel Securities is taking
+2664.32s: know, if Citadel Securities is taking too much of a pound of flesh from Robin
+2667.03s: too much of a pound of flesh from Robin
+2667.04s: too much of a pound of flesh from Robin Hood,
+2668.79s: Hood,
+2668.80s: Hood, um, and the metrics that they're showing
+2670.63s: um, and the metrics that they're showing
+2670.64s: um, and the metrics that they're showing are like, hey, you know what, you're
+2672.23s: are like, hey, you know what, you're
+2672.24s: are like, hey, you know what, you're taking too much
+2674.63s: taking too much
+2674.64s: taking too much profit on these traders, you know, an
+2678.31s: profit on these traders, you know, an
+2678.32s: profit on these traders, you know, an IMC or an Optiver or name your favorite
+2680.95s: IMC or an Optiver or name your favorite
+2680.96s: IMC or an Optiver or name your favorite market maker that's not in the
+2688.08s: I can just start with pick or
+2691.12s: I can just start with pick or &gt;&gt; Yeah.
+2691.59s: &gt;&gt; Yeah.
+2691.60s: &gt;&gt; Yeah. &gt;&gt; Here you go.
+2692.15s: &gt;&gt; Here you go.
+2692.16s: &gt;&gt; Here you go. &gt;&gt; Yeah. Off you go.
+2693.75s: &gt;&gt; Yeah. Off you go.
+2693.76s: &gt;&gt; Yeah. Off you go. &gt;&gt; If if Citadel if Citadel Securities is
+2696.55s: &gt;&gt; If if Citadel if Citadel Securities is
+2696.56s: &gt;&gt; If if Citadel if Citadel Securities is is taking, you know, too much profit on
+2700.07s: is taking, you know, too much profit on
+2700.08s: is taking, you know, too much profit on this paid for order flow,
+2703.19s: this paid for order flow,
+2703.20s: this paid for order flow, uh another market maker like it, you
+2705.43s: uh another market maker like it, you
+2705.44s: uh another market maker like it, you know, I don't know, like IMC, I don't
+2707.03s: know, I don't know, like IMC, I don't
+2707.04s: know, I don't know, like IMC, I don't know, just name market maker. They're
+2708.55s: know, just name market maker. They're
+2708.56s: know, just name market maker. They're going to step up and say like, "Hey,
+2709.83s: going to step up and say like, "Hey,
+2709.84s: going to step up and say like, "Hey, we'll do the business." So, it's not
+2711.67s: we'll do the business." So, it's not
+2711.68s: we'll do the business." So, it's not perfectly anti-competitive. there is a
+2714.23s: perfectly anti-competitive. there is a
+2714.24s: perfectly anti-competitive. there is a layer there is a tier of market makers
+2715.99s: layer there is a tier of market makers
+2716.00s: layer there is a tier of market makers that would happily take is trying to
+2719.19s: that would happily take is trying to
+2719.20s: that would happily take is trying to compete to take Citadel's place or
+2721.75s: compete to take Citadel's place or
+2721.76s: compete to take Citadel's place or whoever's sig's place or whoever. So um
+2725.75s: whoever's sig's place or whoever. So um
+2725.76s: whoever's sig's place or whoever. So um yeah overall though that is my my my
+2728.71s: yeah overall though that is my my my
+2728.72s: yeah overall though that is my my my guess is that better for retail worse
+2731.83s: guess is that better for retail worse
+2731.84s: guess is that better for retail worse for institutional
+2733.75s: for institutional
+2733.76s: for institutional um but you know I would I hold all these
+2736.63s: um but you know I would I hold all these
+2736.64s: um but you know I would I hold all these opinions with a very loose grip.
+2739.67s: opinions with a very loose grip.
+2739.68s: opinions with a very loose grip. Yeah, and it's the the cool part is
+2741.83s: Yeah, and it's the the cool part is
+2741.84s: Yeah, and it's the the cool part is there's a ton of research. So, if
+2743.51s: there's a ton of research. So, if
+2743.52s: there's a ton of research. So, if anybody's like particularly interested
+2745.59s: anybody's like particularly interested
+2745.60s: anybody's like particularly interested in payment order flow and impacts and
+2748.23s: in payment order flow and impacts and
+2748.24s: in payment order flow and impacts and whatnot, you literally can go to onto a
+2750.31s: whatnot, you literally can go to onto a
+2750.32s: whatnot, you literally can go to onto a place like SSRN, just literally type in
+2752.47s: place like SSRN, just literally type in
+2752.48s: place like SSRN, just literally type in payment for order flow and you will come
+2753.99s: payment for order flow and you will come
+2754.00s: payment for order flow and you will come across a litany of research about it
+2757.19s: across a litany of research about it
+2757.20s: across a litany of research about it droves because it is it is really
+2759.75s: droves because it is it is really
+2759.76s: droves because it is it is really interesting. And I I generally agree
+2761.59s: interesting. And I I generally agree
+2761.60s: interesting. And I I generally agree with a lot of what you you generally
+2764.87s: with a lot of what you you generally
+2764.88s: with a lot of what you you generally believe because I I do think from a
+2767.99s: believe because I I do think from a
+2768.00s: believe because I I do think from a retail trader lens again it it is pretty
+2771.83s: retail trader lens again it it is pretty
+2771.84s: retail trader lens again it it is pretty clear that markets are more liquid than
+2774.07s: clear that markets are more liquid than
+2774.08s: clear that markets are more liquid than they were previously. But you also bring
+2775.67s: they were previously. But you also bring
+2775.68s: they were previously. But you also bring up a good point before we started
+2777.11s: up a good point before we started
+2777.12s: up a good point before we started recording which is you know like the
+2779.43s: recording which is you know like the
+2779.44s: recording which is you know like the counterfactual like what would it look
+2781.35s: counterfactual like what would it look
+2781.36s: counterfactual like what would it look like SANS because we actually we don't
+2784.55s: like SANS because we actually we don't
+2784.56s: like SANS because we actually we don't really know that we just kind of moved
+2786.79s: really know that we just kind of moved
+2786.80s: really know that we just kind of moved into payment for order flow and then a
+2789.27s: into payment for order flow and then a
+2789.28s: into payment for order flow and then a ton of other stuff happened at the same
+2790.79s: ton of other stuff happened at the same
+2790.80s: ton of other stuff happened at the same time. So it's kind of hard to like
+2792.23s: time. So it's kind of hard to like
+2792.24s: time. So it's kind of hard to like really break it apart but we also know
+2794.55s: really break it apart but we also know
+2794.56s: really break it apart but we also know that there are very very clear pieces of
+2797.35s: that there are very very clear pieces of
+2797.36s: that there are very very clear pieces of research that show some level of adverse
+2801.59s: research that show some level of adverse
+2801.60s: research that show some level of adverse selection. there's an incentive to
+2803.67s: selection. there's an incentive to
+2803.68s: selection. there's an incentive to bundle order flow before you send it and
+2806.63s: bundle order flow before you send it and
+2806.64s: bundle order flow before you send it and that leads to latency and so on and so
+2809.43s: that leads to latency and so on and so
+2809.44s: that leads to latency and so on and so forth. So there are fortunately a couple
+2812.47s: forth. So there are fortunately a couple
+2812.48s: forth. So there are fortunately a couple pretty easy ways to just bypass all that
+2815.19s: pretty easy ways to just bypass all that
+2815.20s: pretty easy ways to just bypass all that and you and I were talking about a
+2817.43s: and you and I were talking about a
+2817.44s: and you and I were talking about a couple of those in the beginning which
+2818.79s: couple of those in the beginning which
+2818.80s: couple of those in the beginning which is leveraging your order routing. So do
+2821.03s: is leveraging your order routing. So do
+2821.04s: is leveraging your order routing. So do you want to talk a little bit about
+2821.91s: you want to talk a little bit about
+2821.92s: you want to talk a little bit about that?
+2823.99s: that?
+2824.00s: that? Um well I just want to say one more
+2825.51s: Um well I just want to say one more
+2825.52s: Um well I just want to say one more thing first of all on like the the the
+2827.67s: thing first of all on like the the the
+2827.68s: thing first of all on like the the the difficulty the difficulty of sort of
+2829.27s: difficulty the difficulty of sort of
+2829.28s: difficulty the difficulty of sort of measuring like are you know are the
+2832.47s: measuring like are you know are the
+2832.48s: measuring like are you know are the markets we say like oh the markets are
+2834.55s: markets we say like oh the markets are
+2834.56s: markets we say like oh the markets are more liquid or we making a statement
+2836.07s: more liquid or we making a statement
+2836.08s: more liquid or we making a statement that they're less liquid for these
+2837.27s: that they're less liquid for these
+2837.28s: that they're less liquid for these people and more liquid for these people.
+2839.19s: people and more liquid for these people.
+2839.20s: people and more liquid for these people. The other thing that's confounding all
+2840.87s: The other thing that's confounding all
+2840.88s: The other thing that's confounding all of this is like you know payment for
+2843.43s: of this is like you know payment for
+2843.44s: of this is like you know payment for order flow is not happening in a vacuum.
+2845.43s: order flow is not happening in a vacuum.
+2845.44s: order flow is not happening in a vacuum. It's happening within the context of
+2847.27s: It's happening within the context of
+2847.28s: It's happening within the context of like technology improving uh logic
+2850.55s: like technology improving uh logic
+2850.56s: like technology improving uh logic improving markets becoming more
+2852.63s: improving markets becoming more
+2852.64s: improving markets becoming more efficient in the sense that like people
+2855.35s: efficient in the sense that like people
+2855.36s: efficient in the sense that like people um you know can quote on on machinery
+2858.31s: um you know can quote on on machinery
+2858.32s: um you know can quote on on machinery that can and and pipes that are faster
+2861.11s: that can and and pipes that are faster
+2861.12s: that can and and pipes that are faster than they used to be. So there's a whole
+2863.91s: than they used to be. So there's a whole
+2863.92s: than they used to be. So there's a whole technological aspect to all of this
+2866.07s: technological aspect to all of this
+2866.08s: technological aspect to all of this which is like let's say markets are
+2867.91s: which is like let's say markets are
+2867.92s: which is like let's say markets are getting more liquid. Um how much of that
+2870.95s: getting more liquid. Um how much of that
+2870.96s: getting more liquid. Um how much of that is due to um technology, people getting
+2874.15s: is due to um technology, people getting
+2874.16s: is due to um technology, people getting smarter about pricing options and being
+2875.91s: smarter about pricing options and being
+2875.92s: smarter about pricing options and being able to then price them tighter. Um
+2878.15s: able to then price them tighter. Um
+2878.16s: able to then price them tighter. Um liquidity across more ass more asset
+2880.95s: liquidity across more ass more asset
+2880.96s: liquidity across more ass more asset classes just in general being more
+2882.55s: classes just in general being more
+2882.56s: classes just in general being more interrelated, giving market makers more
+2884.95s: interrelated, giving market makers more
+2884.96s: interrelated, giving market makers more outs to trade this thing versus that
+2886.71s: outs to trade this thing versus that
+2886.72s: outs to trade this thing versus that thing. All of that will create a system
+2889.75s: thing. All of that will create a system
+2889.76s: thing. All of that will create a system that is more liquid that doesn't have to
+2893.03s: that is more liquid that doesn't have to
+2893.04s: that is more liquid that doesn't have to have anything to do with payment for
+2894.31s: have anything to do with payment for
+2894.32s: have anything to do with payment for order flow. So like disentangling how
+2896.63s: order flow. So like disentangling how
+2896.64s: order flow. So like disentangling how much it pee off sort of make the market
+2899.35s: much it pee off sort of make the market
+2899.36s: much it pee off sort of make the market more or less liquid is is is a uh you
+2901.59s: more or less liquid is is is a uh you
+2901.60s: more or less liquid is is is a uh you know feels like a threebody problem to
+2903.19s: know feels like a threebody problem to
+2903.20s: know feels like a threebody problem to me. So um yeah just yeah so sorry you're
+2907.59s: me. So um yeah just yeah so sorry you're
+2907.60s: me. So um yeah just yeah so sorry you're you're uh you had a question about like
+2909.27s: you're uh you had a question about like
+2909.28s: you're uh you had a question about like order routing.
+2911.43s: order routing.
+2911.44s: order routing. &gt;&gt; Yeah. Yeah. And we because it's just an
+2914.15s: &gt;&gt; Yeah. Yeah. And we because it's just an
+2914.16s: &gt;&gt; Yeah. Yeah. And we because it's just an easy way to kind of remove yourself from
+2917.27s: easy way to kind of remove yourself from
+2917.28s: easy way to kind of remove yourself from even the equation broadly.
+2920.31s: even the equation broadly.
+2920.32s: even the equation broadly. &gt;&gt; Yeah. I mean,
+2922.95s: &gt;&gt; Yeah. I mean,
+2922.96s: &gt;&gt; Yeah. I mean, you know, if you're tra like we were
+2925.27s: you know, if you're tra like we were
+2925.28s: you know, if you're tra like we were kind of talking about like if you've got
+2926.71s: kind of talking about like if you've got
+2926.72s: kind of talking about like if you've got an account at uh your brokerage, you
+2929.75s: an account at uh your brokerage, you
+2929.76s: an account at uh your brokerage, you have the ability to route yourself, in
+2932.63s: have the ability to route yourself, in
+2932.64s: have the ability to route yourself, in which case it gives you more control
+2935.51s: which case it gives you more control
+2935.52s: which case it gives you more control over your order. And um
+2940.07s: over your order. And um
+2940.08s: over your order. And um I think the more price sensitive you are
+2943.59s: I think the more price sensitive you are
+2943.60s: I think the more price sensitive you are because you're trading, you're going to
+2945.11s: because you're trading, you're going to
+2945.12s: because you're trading, you're going to be more price sensitive the more
+2946.55s: be more price sensitive the more
+2946.56s: be more price sensitive the more frequently you sort of if you trade like
+2948.31s: frequently you sort of if you trade like
+2948.32s: frequently you sort of if you trade like an you know 50 contracts a year like
+2951.91s: an you know 50 contracts a year like
+2951.92s: an you know 50 contracts a year like you're probably not going to go
+2953.11s: you're probably not going to go
+2953.12s: you're probably not going to go mastermind the 50 contracts. But like if
+2955.43s: mastermind the 50 contracts. But like if
+2955.44s: mastermind the 50 contracts. But like if you're trading a lot of volume where
+2957.27s: you're trading a lot of volume where
+2957.28s: you're trading a lot of volume where execution costs become a significant
+2960.63s: execution costs become a significant
+2960.64s: execution costs become a significant part of your annual spend, you're going
+2963.59s: part of your annual spend, you're going
+2963.60s: part of your annual spend, you're going to probably want to uh get a lot better
+2966.95s: to probably want to uh get a lot better
+2966.96s: to probably want to uh get a lot better at execution. In which case, um you're
+2970.31s: at execution. In which case, um you're
+2970.32s: at execution. In which case, um you're going to want more you're probably going
+2971.51s: going to want more you're probably going
+2971.52s: going to want more you're probably going to want more control over your routing.
+2973.67s: to want more control over your routing.
+2973.68s: to want more control over your routing. You might, you know, look at some
+2976.07s: You might, you know, look at some
+2976.08s: You might, you know, look at some algorithmic vendors to kind of like sit
+2978.07s: algorithmic vendors to kind of like sit
+2978.08s: algorithmic vendors to kind of like sit between what you're doing and the um and
+2981.35s: between what you're doing and the um and
+2981.36s: between what you're doing and the um and the exchange. Um, so you're going to
+2984.47s: the exchange. Um, so you're going to
+2984.48s: the exchange. Um, so you're going to choose order routing if you want to get
+2986.87s: choose order routing if you want to get
+2986.88s: choose order routing if you want to get into the weeds of order routing because
+2988.55s: into the weeds of order routing because
+2988.56s: into the weeds of order routing because you're trying to save cost at the end of
+2989.99s: you're trying to save cost at the end of
+2990.00s: you're trying to save cost at the end of the day. If you're if that's not a big
+2993.03s: the day. If you're if that's not a big
+2993.04s: the day. If you're if that's not a big concern for you because you're not
+2994.31s: concern for you because you're not
+2994.32s: concern for you because you're not trading all that much, then you're
+2996.31s: trading all that much, then you're
+2996.32s: trading all that much, then you're probably just fine with the default um
+2998.79s: probably just fine with the default um
+2998.80s: probably just fine with the default um settings on your account where they're
+3000.55s: settings on your account where they're
+3000.56s: settings on your account where they're basically selling your order flow. But
+3002.39s: basically selling your order flow. But
+3002.40s: basically selling your order flow. But like if you're trading 50 contracts a
+3003.99s: like if you're trading 50 contracts a
+3004.00s: like if you're trading 50 contracts a year, you don't care. They're selling
+3005.11s: year, you don't care. They're selling
+3005.12s: year, you don't care. They're selling your order flow.
+3007.19s: your order flow.
+3007.20s: your order flow. And another note on that is a lot of
+3009.03s: And another note on that is a lot of
+3009.04s: And another note on that is a lot of brokers, they actually have to provide
+3012.07s: brokers, they actually have to provide
+3012.08s: brokers, they actually have to provide um some research and documentation each
+3014.47s: um some research and documentation each
+3014.48s: um some research and documentation each year about fills fill quality and stuff
+3016.79s: year about fills fill quality and stuff
+3016.80s: year about fills fill quality and stuff like that. So you can always look some
+3018.95s: like that. So you can always look some
+3018.96s: like that. So you can always look some of that up. It's, you know, all
+3020.55s: of that up. It's, you know, all
+3020.56s: of that up. It's, you know, all aggregate level data. You can't get like
+3022.31s: aggregate level data. You can't get like
+3022.32s: aggregate level data. You can't get like super specific, but it could still give
+3024.31s: super specific, but it could still give
+3024.32s: super specific, but it could still give you something to go off of so that if
+3026.39s: you something to go off of so that if
+3026.40s: you something to go off of so that if you're curious, you're not necessarily
+3028.15s: you're curious, you're not necessarily
+3028.16s: you're curious, you're not necessarily flying completely blind on the uh the
+3031.19s: flying completely blind on the uh the
+3031.20s: flying completely blind on the uh the total impact to you. So, Chris taught
+3034.63s: total impact to you. So, Chris taught
+3034.64s: total impact to you. So, Chris taught you a little bit about phantoms. I
+3037.27s: you a little bit about phantoms. I
+3037.28s: you a little bit about phantoms. I always enjoy some ghost stories. As
+3040.47s: always enjoy some ghost stories. As
+3040.48s: always enjoy some ghost stories. As always, if you guys want to see us chat
+3042.47s: always, if you guys want to see us chat
+3042.48s: always, if you guys want to see us chat about anything, let us know. And we'll
+3044.55s: about anything, let us know. And we'll
+3044.56s: about anything, let us know. And we'll see you guys on the next episode. T.

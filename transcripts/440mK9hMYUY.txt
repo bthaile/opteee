@@ -1,0 +1,1194 @@
+1.20s: What's up everyone?
+3.20s: Uh
+4.28s: shocked we're here. It was a bumpy go.
+7.52s: As you can tell, there is a completely
+9.24s: different interface we're working with
+10.64s: right now, which is the laptop. Because
+13.24s: I decided to see how aquatic my desktop
+16.92s: was. And so far I've learned I've
+20.04s: learned good I mean I've gotten good
+22.04s: data. And what I've primarily learned is
+24.52s: that it is it is not that aquatic.
+27.36s: So
+28.64s: what we're going to talk about today was
+31.72s: going to be like a a big quiz. I I
+33.96s: wanted to do uh I was actually going to
+35.88s: build something for it. But I didn't
+38.52s: obviously have time to do that. So I
+41.72s: guess that the punishment there will be
+43.04s: good CG because it just means before we
+46.28s: do our next one like I'm going to have
+47.36s: tons of time in order to build it, which
+49.12s: is I think even better. But
+53.60s: what I wanted to do today
+55.80s: is start like getting a little deeper
+59.24s: into the weeds on trading, trading
+62.48s: philosophy, and some of the stuff that
+64.96s: you're going to need in order to have
+67.76s: like any realistic shot at this thing.
+70.32s: So let's start first with
+74.20s: like a self-assessment. How do you
+76.52s: self-assess your current ability with
+79.96s: respect to like basics? Understanding
+82.04s: you're still super new. But your ability
+84.36s: to navigate stuff like
+87.96s: the Greeks.
+89.76s: Delta, gamma, theta, Vega. How do you
+93.12s: feel about those?
+95.40s: >> My ability to understand them I think
+97.12s: has gotten a lot better.
+98.72s: My ability to like implement them in any
+101.04s: way in like the way I decide how to pick
+103.92s: a trade is basically nothing still. So
+107.40s: implementing them is very weak, but like
+109.32s: I I'm pretty sure I understand what all
+111.16s: of them are measuring and telling us
+113.88s: about uh investment. Um and that got a
+117.44s: lot better recently when I was doing the
+119.72s: paper trading. Actually going in and
+121.92s: having to like look at that
+124.56s: in a way that it's not being explained
+126.24s: to you, but you're having to like
+127.36s: actually understand it and read it was
+129.44s: big and like understanding that stuff.
+132.36s: >> Good. So, let's do a quick
+137.12s: a quick prac app here. I'm going to move
+139.08s: you over to this screen and I'm going to
+141.28s: share my main screen.
+143.32s: You'll have to let me know
+145.28s: if everything comes through all right. I
+146.84s: think it will, but
+148.64s: let's see.
+155.04s: Let's see what that gives us. All right,
+156.80s: so it's doing a small part of the
+158.48s: screen. Give me 1 sec.
+162.16s: So, we want like here.
+169.92s: All right, you should be able to see the
+171.36s: trading platform now.
+172.96s: >> Yes.
+174.08s: Perfect.
+175.16s: >> So, we're in spy right now. Let's go to
+178.44s: the trade tab and let's do do some
+181.72s: really quick prac app.
+185.96s: Looking across this options chain,
+189.00s: the first thing I want to know is
+192.64s: where is gamma
+195.32s: the highest
+197.16s: with respect to terms. So, not
+200.00s: moneyness, but terms, expirations.
+205.92s: >> Mhm.
+207.08s: The time component of gamma is
+211.64s: I believe it ramps as you get closer to
+215.00s: expiration,
+216.88s: especially for like out of the money.
+221.40s: >> For out So, you were you were doing okay
+223.96s: and then you [ __ ] it up.
+226.80s: You started off okay.
+230.00s: >> I was thinking
+230.92s: >> So,
+231.48s: everything
+233.60s: the delta
+235.52s: gets if it's in the money, gets
+237.88s: completely
+239.76s: valued by the intrinsic value, I think
+242.08s: at expiration. Basically, the Greek
+243.96s: footprint goes away essentially.
+246.84s: And then
+247.28s: >> You're You're confusing things.
+249.20s: >> Okay.
+249.72s: >> So
+250.96s: let's start with just the the simpler
+253.40s: pieces and then we'll
+255.44s: we'll hone it in a bit more.
+258.88s: So, you're correct in that gamma
+261.28s: definitely starts to accelerate as you
+263.40s: get closer in time.
+265.48s: The next question is for theta. Where is
+268.36s: theta the greatest?
+274.36s: >> Theta
+275.88s: is the greatest
+279.72s: Well, the decay is most rapidly at the
+282.76s: nearer you go to, right?
+284.64s: To expiration?
+290.04s: >> Sounds like you're asking me, but
+293.20s: it's your question.
+294.88s: >> Uh theta is the greatest
+298.40s: the closer you get to expiration.
+301.28s: >> That is an incorrect answer.
+307.20s: So, oh, I forgot to tell the chat. Hey,
+309.16s: what's up? Chloe, oh my god, it our
+312.08s: friend Chloe, the homie with the 62
+315.28s: names is here. It's always good to see
+317.84s: Chloe. Then we got Ryan and Reese. Great
+320.12s: to see you all. Joseph, good to see you.
+322.16s: I'm actually shocked there's as many
+324.80s: people that were able to
+326.48s: follow along with this [ __ ]
+328.60s: hodgepodge of me trying to get my [ __ ]
+330.68s: together. So, it was great to see
+332.24s: everybody.
+334.04s: So, take a look at E Hodge. E Hodge is
+336.40s: trying to help you.
+339.52s: >> I see the answer from E E Hodge.
+342.57s: >> [clears throat]
+343.68s: >> So
+344.76s: the the other thing though before we get
+346.52s: into the answers that I did forget to
+348.56s: say is that
+350.60s: for the chat, if Stephen gets answers
+354.48s: wrong, there's going to be an
+356.00s: opportunity for you guys to vote on how
+359.76s: bad his answer was. And if his answer is
+362.80s: bad enough, then he owes 10 push-ups per
+366.68s: bad answer.
+368.20s: So,
+370.00s: I'm really big into
+372.88s: interlaying some level of pain with
+375.44s: learning because it ups the stakes
+377.84s: massively. It's something that we do in
+379.84s: the military all the time.
+382.32s: And I actually think that there's value
+384.76s: in it. I'm not going to lie, CG.
+389.28s: One of the ways that I would teach
+392.24s: myself super early on
+395.44s: the basics of like intrinsic value,
+398.08s: extrinsic value, calculating both in the
+400.32s: Greeks, is I literally put a shock
+402.40s: collar around my calf, and I would shock
+405.04s: myself.
+406.10s: >> [snorts]
+408.96s: >> I don't doubt it.
+410.40s: >> I literally would shock myself. I've
+412.44s: never told that story before because
+414.36s: it's [ __ ] weird. But, the if I had a
+417.92s: choice to hook you up to a shock collar,
+420.80s: I would, but I don't. So, we'll have to
+424.88s: we'll have to do push-ups instead.
+426.00s: >> to arrange this.
+427.96s: >> Yeah. Oh, I forgot you have dogs. Cuz
+429.84s: the other thing that
+431.88s: the other thing that like I would rather
+433.56s: you do realistically is burpees because
+435.92s: everybody hates burpees, but I'm also
+439.64s: like reasonable, and you're probably
+441.96s: going to get everything wrong. So, I
+444.36s: wouldn't want you to
+446.96s: have cardiac arrest, right? Like I'm not
+449.52s: I'm not I'm not that [ __ ] up. So,
+452.84s: I'm going to keep What I'm going to do
+454.84s: is on your This is your trade log.
+458.12s: So, I need to
+460.64s: Thank you for that. I'm going to crunch
+462.32s: this down.
+464.64s: Crunch this down again.
+467.24s: And let's find a perfect, a nice clean
+471.60s: sheet.
+479.32s: Punishment.
+481.60s: So, today is 15 August.
+485.36s: And then this will be our question
+488.44s: counter.
+496.12s: And I'm not brutal.
+499.16s: There will be an opportunity for some of
+502.04s: your questions
+503.76s: to remove
+506.04s: to remove punishment. It's not all net
+509.08s: add.
+510.16s: Unfortunately,
+512.04s: most of it is net add.
+515.28s: But it's not all net add.
+525.92s: Dude, this is a nice [ __ ] keyboard.
+532.48s: I think I said that before. This is a
+534.16s: nice keyboard. Having a nice keyboard is
+536.68s: just a good It's a good feeling.
+539.73s: >> [sighs]
+540.72s: >> Okay.
+542.12s: So, the tracker starts now.
+544.24s: Uh E Hodge says you have a video on how
+545.84s: to use Thinkorswim. I I have a couple
+547.64s: videos on Thinkorswim. If you just go to
+549.44s: the the channel and type in Thinkorswim,
+551.52s: I'm sure you'll you'll come across a few
+553.12s: things.
+554.28s: But I I don't know specifically what's
+558.08s: there. It's not like a how-to, so to
+560.92s: speak. There's enough of that literally
+562.64s: on Thinkorswim or on Schwab directly.
+568.00s: But I have like different
+569.56s: set up stuff and whatnot.
+572.16s: Okay.
+573.68s: Back to our questions, back for your
+576.32s: chance for salvation or for or not.
+582.24s: The next question I have
+585.28s: is
+587.76s: theta
+589.72s: has a couple pieces to it.
+593.32s: There's gross theta
+596.56s: and then there's a percentage of value
+601.00s: theta.
+603.40s: What's the difference between those two?
+605.12s: This is not one that you can get wrong,
+606.60s: by the way. This is just like a
+607.76s: conceptual discussion so that you
+610.16s: understand the way that to conceptualize
+612.32s: theta.
+615.32s: >> So, the two different things were gross
+617.08s: value and what was the other one?
+619.76s: >> Percentage of value.
+622.44s: >> So, gross value and percentage of value?
+624.68s: >> Mhm.
+626.16s: >> I wonder if this is due to like the
+628.40s: shrinking
+630.40s: nature of options as they get towards
+633.04s: expiration. If they are not in the
+635.20s: money, expiring worthless.
+637.80s: If that
+640.52s: If that's where I went wrong if when I
+642.60s: was thinking about theta to begin with
+644.56s: because like
+646.32s: maybe the overall value of it is greater
+648.72s: the farther you go away just because the
+650.24s: option has more intrinsic or intrinsic
+652.84s: and extrinsic value. And then as you get
+655.24s: closer
+656.48s: it will shrink no matter what. So, like
+658.20s: overall net it's smaller, but maybe the
+660.44s: percentage is higher.
+662.76s: >> Really good. Really good. There's a part
+665.24s: that you [ __ ] up terribly, but really
+667.12s: good.
+668.64s: The
+670.40s: The next question is to see if you can
+673.44s: right the ship. This one is This one is
+676.92s: for for countsies.
+680.28s: How does intrinsic value change with
+683.32s: time?
+696.84s: >> My intuition is telling me that
+699.36s: intrinsic value does not change with
+701.52s: time.
+704.16s: >> Perfect. Follow your intuition. It's
+706.40s: exactly correct. Good.
+708.92s: The next question
+711.04s: is and I well, before we get into more
+713.28s: questions on that, I do want to show you
+714.84s: that theta thing cuz it's it's really
+716.36s: important for you to know and understand
+717.84s: that. The reason why and again, the like
+721.32s: all the stuff that I'm guiding you
+722.60s: through is it really is like super
+724.64s: purposeful.
+726.00s: And what I'm what I'm getting at here is
+729.60s: if you're to speculate on long options,
+732.76s: so like you're long, you want to get
+735.04s: long something for whatever reason,
+737.12s: understanding the dynamics on how that
+740.04s: contract behaves is unbelievably
+743.20s: important. It is the basis for how you
+745.76s: decide to build your position.
+748.20s: So,
+749.36s: let's take a look at a few scenarios.
+751.52s: I'm going to track in your
+754.96s: in your thing.
+756.44s: I'm just going to go to sheet one. Sheet
+758.44s: one, I'm going to change this name in
+760.32s: your it's going to be notes. Like a
+762.56s: place for us to to track random [ __ ]
+764.72s: like this.
+765.96s: And what I'm going to do is I'm going to
+767.68s: look at spy.
+769.36s: And I'm going to create a little bit of
+772.08s: a grid. I'm going to specifically start
+775.40s: though with money in this. Actually,
+777.68s: this is better for you to fill in versus
+779.28s: me doing. Go to the notes section.
+781.56s: >> Mhm.
+781.76s: >> I kind of forgot that notes like taking
+784.20s: notes is like a really good learning
+785.80s: vector.
+788.48s: And
+789.68s: in this section,
+792.40s: are you in here?
+793.36s: >> Yes, I'm here.
+794.52s: >> Yeah, okay, perfect. So, in this
+796.60s: section, what we're going to do is we're
+797.80s: going to just look at a couple different
+799.12s: terms. So, we're going to look at 21
+800.56s: August.
+801.88s: We're going to look at 18 Sep.
+805.04s: And then we're going to look at 19
+806.68s: March.
+809.24s: And today is 15 Aug.
+821.56s: All I'm doing here is calculating
+824.84s: our DTE
+828.12s: so that you can see it in one spot.
+838.28s: And then there's going to be a couple
+839.80s: metrics that you're going to pull up for
+841.48s: me.
+843.96s: You are going to pull up
+846.44s: delta
+850.92s: and
+852.00s: theta. Actually, look, we can [ __ ] off
+854.48s: with delta. We're just going to do
+857.24s: theta for now.
+859.88s: And it's all going to be at the same
+861.72s: delta. So, we're going to pick a 50
+864.36s: delta call and at-the-money call.
+868.88s: So, right now, if you were to like look
+871.88s: for options,
+874.52s: like look for, you know, potential
+877.04s: positions and building positions, where
+878.84s: are you doing that?
+882.76s: >> Like what platform?
+884.20s: >> Yeah.
+885.80s: >> Um a mixture of TradingView and
+888.12s: Robinhood.
+890.16s: >> Okay. Is there
+892.92s: in uh in TradingView, is there a way for
+895.72s: you to share your screen and look at the
+897.76s: options chain like you normally would?
+899.44s: Or do you want You can look at it
+900.96s: online. I don't care. The thing that I
+903.60s: want is I want you to look at the
+905.88s: options however you're actually going to
+908.36s: look at them. Like I want you to start
+909.84s: getting that that repetition in. So, I
+912.80s: don't care where it is. Just tell me
+915.24s: where, and then I want you to look at
+917.88s: them there specifically.
+921.92s: >> It's typically been on
+923.80s: when I actually put the positions like
+926.20s: in my log.
+927.64s: >> Okay. So, you'll pull up and is there
+930.12s: any way for you to share part of your
+931.88s: screen there
+933.64s: safely?
+934.80s: >> Let me see.
+936.28s: >> So, the way that you do that is
+940.04s: you go into share at the bottom.
+947.32s: And then you go to um you see the
+951.64s: the little button on top. You see where
+953.56s: it says more?
+957.76s: >> Um
+961.32s: I think mine may be a little different
+963.08s: on a Mac or cuz I don't see more.
+966.20s: >> On the top right So, when you click
+968.40s: share and the window pops up, do you get
+970.60s: a thing that says more?
+971.88s: >> Uh yeah, here we go. Yep.
+973.20s: >> There you go. And on the top row
+975.04s: right-hand side, it'll say portion of
+976.80s: screen.
+982.28s: >> Yep.
+983.28s: >> So, you can click that
+985.44s: and what it's going to do is give you a
+987.08s: little box like you saw in the beginning
+988.72s: when I did it. There you go. So, keep
+990.64s: your account number out of it.
+994.12s: >> Where is that?
+995.44s: >> So, right now the you can see the
+997.28s: section that you're sharing. Yeah,
+998.64s: perfect. So, now go to your options
+1002.52s: account. What you should do first is put
+1004.08s: this stop sharing really quick.
+1006.36s: Go to the options chain and then just
+1008.56s: make sure that nothing pops up. So, you
+1011.08s: want to verify that it's not going to be
+1013.96s: squirrely or anything.
+1018.92s: >> Um
+1025.96s: It shows the
+1028.36s: Oh, you know what the the issue is? When
+1030.36s: I look at it on desktop, it doesn't
+1032.48s: actually give me the gamma, so I look on
+1033.96s: my phone for that. But I think
+1036.68s: if I go on this legend thing it has it,
+1039.24s: which I haven't really used but
+1040.72s: >> I'll just share mine.
+1042.00s: >> Okay.
+1042.44s: >> And you could fill it in from here, but
+1045.92s: what we want to do for sure is make sure
+1049.52s: that you get in the habit of like
+1052.04s: looking wherever you trade. I still
+1054.36s: think that you could get thinkorswim. I
+1055.96s: don't even think you have to like you
+1057.32s: just have to open an account I think and
+1058.92s: then you can get it. Like you don't even
+1060.28s: have to have any money in it, it's free.
+1062.36s: >> It'll be actually good for the streams
+1063.88s: probably.
+1064.68s: >> Yeah, it's definitely worth it.
+1067.32s: Cuz it's nothing. So anyways,
+1070.80s: um
+1072.64s: inside this tab, the first thing we're
+1074.88s: going to go is to 21 August. We're going
+1077.16s: to find that 50 delta call, which is
+1080.40s: here.
+1081.36s: And your theta
+1085.08s: is
+1086.40s: .354.
+1091.64s: And I'm going to actually move this over
+1093.32s: one. So enter your thing so that it
+1096.08s: moves.
+1097.08s: >> Yep.
+1098.32s: >> And then
+1100.16s: what I also want you to throw in is your
+1102.92s: premium.
+1104.84s: So the premium for this option is $3.36.
+1110.04s: >> Should I put it in with the
+1113.20s: like this?
+1115.96s: Or no?
+1116.32s: >> No, you don't need the negative. Just
+1117.84s: keep it
+1121.20s: Yeah, just keep it normal for now, it
+1122.52s: doesn't matter.
+1126.20s: Okay.
+1127.52s: So then let's go to 18 Sep.
+1130.96s: Find that 50 delta again, it's right
+1132.92s: here.
+1136.24s: Your theta
+1139.12s: is .2.
+1144.56s: And your premium is 11.5.
+1151.96s: >> Okay.
+1153.48s: Oh, wait.
+1159.84s: This is in the wrong spot. Move it over
+1162.12s: here.
+1163.36s: >> Okay.
+1163.68s: >> Into the
+1164.64s: 18 separate.
+1169.28s: You did not just move them one by one,
+1170.72s: did you?
+1174.64s: You did. Okay, where Okay, that's
+1176.52s: another thing I realized that we're
+1177.56s: going to need some serious work on is
+1179.08s: like basic Excel.
+1182.36s: Got it.
+1183.12s: >> That's why I asked if you're connected
+1185.80s: cuz of your Excel skills.
+1188.36s: >> Connected to what?
+1190.52s: >> CDs.
+1192.40s: >> You already know about CDs. By the way,
+1194.80s: do you like tapes or CDs?
+1199.08s: >> I think I'm more of a streaming type of
+1201.32s: guy.
+1202.16s: >> Streaming?
+1203.20s: >> Yeah.
+1204.36s: >> I thought you might be a tape guy.
+1206.56s: >> Nah.
+1207.76s: >> Have you ever seen a cassette tape?
+1211.08s: >> Cassette tape? I don't believe so. I go
+1213.64s: back to like
+1214.96s: VCR.
+1217.12s: >> Wait, how old are you?
+1218.60s: >> 27.
+1223.00s: >> So, how do you go back to VCR but not
+1224.44s: cassette tapes?
+1225.92s: >> Well, VCRs were at my grandma's house. I
+1227.56s: don't know Are cassette tapes after
+1228.84s: that? That's what we had there when I
+1230.20s: was growing up.
+1231.00s: >> after that? I don't remember the the
+1233.00s: timing. They were definitely around one
+1234.32s: another, I think.
+1236.60s: >> What did cassette tapes play in? Those
+1238.20s: are like those square like things,
+1239.64s: right?
+1240.16s: >> Yeah, yeah, yeah. They The only stuff
+1242.48s: that I used to see it in is like in the
+1244.68s: like a a radio inside a car.
+1250.24s: Because there used to be adapters where
+1252.72s: it was like a cassette tape with a cord
+1254.84s: that comes out of it so that you could
+1256.24s: plug it into like a like a phone. I
+1259.20s: think at that point it wasn't a phone.
+1261.88s: >> Yeah. Yeah, exactly.
+1266.36s: So, you do strike me as a tape guy. I
+1268.32s: think is the the combination of that.
+1272.52s: >> That's cool. I can accept that.
+1274.56s: >> Yeah.
+1275.64s: >> Cuz of my Excel sheet skills?
+1277.96s: >> Yeah, well, what I was thinking is I
+1279.40s: could take tape my dick to your forehead
+1281.92s: so you could see these nuts, but
+1285.12s: >> [laughter]
+1285.68s: >> There might be a photo of that from
+1286.92s: Hibachi yesterday.
+1288.52s: >> Yeah, good.
+1289.56s: >> Our chef made a dick balloon animal.
+1292.33s: [laughter]
+1293.88s: >> That's
+1295.64s: I mean, I feel like that's pretty easy.
+1297.60s: >> Yeah.
+1300.40s: >> Um
+1301.64s: >> All right.
+1302.80s: >> So we're in 19 March.
+1305.08s: Your theta here is -11.6.
+1314.08s: >> Wait.
+1314.96s: >> Just 11.6, like .116.
+1320.20s: And your premium is 36.14.
+1332.36s: Okay.
+1335.36s: So
+1337.08s: let's
+1338.72s: analyze a little bit.
+1342.84s: I'll zoom this in for the visually
+1344.16s: impaired.
+1346.72s: And
+1348.80s: let's take a look at a few different
+1351.60s: values. The first thing
+1354.16s: is what do you notice about the gross
+1356.24s: value?
+1362.52s: >> The gross value is going
+1366.12s: down with time.
+1368.08s: >> Okay.
+1369.88s: And what do you notice
+1374.68s: about the relationship
+1376.68s: between premium
+1379.12s: as a percent
+1384.24s: or your theta as a percent of premium.
+1388.00s: >> It increases closer you go to
+1390.16s: expiration.
+1392.16s: >> Okay.
+1396.08s: The last thing that you need to know
+1400.00s: is your gross amount of extrinsic value.
+1404.08s: What do you notice between
+1407.64s: your gross amount of extrinsic value?
+1413.20s: >> There's a ton more This is for the
+1415.28s: premium?
+1416.92s: >> You tell me.
+1418.80s: >> Um yeah, there's a ton more of extrinsic
+1421.52s: value
+1422.80s: the farther out you go in time.
+1424.76s: >> Okay.
+1426.00s: So, what can we conclude here? What do
+1428.68s: you conclude with that general trend?
+1433.76s: >> Premium and theta are inverse.
+1437.44s: >> The [ __ ] does that mean?
+1439.84s: >> Premium's getting more going up as time
+1442.32s: goes on and theta is going down as time
+1444.72s: goes on.
+1445.52s: >> Good.
+1446.60s: And
+1448.04s: what would happen if we filled this in
+1450.56s: for a 30 delta option now?
+1454.92s: >> Okay.
+1456.28s: So,
+1462.04s: that would be
+1464.12s: more out of the money
+1467.92s: than 0.5.
+1470.56s: So,
+1473.48s: delta uh theta would
+1478.28s: I believe
+1484.76s: get even smaller as you're getting to
+1486.80s: expiration because
+1490.00s: the contract's going to get smaller.
+1494.00s: And
+1498.12s: maybe it would make up a higher
+1499.32s: percentage as you go farther away cuz
+1501.04s: there's less intrinsic value, more
+1502.80s: extrinsic
+1504.32s: for option that's out of the money by
+1506.60s: ratio.
+1508.88s: >> Maybe.
+1511.16s: That didn't sound very confident though.
+1513.32s: >> That's well, I'm thinking out loud, but
+1515.12s: that's what I think. That's what I
+1516.52s: believe.
+1517.52s: >> What's your confidence interval?
+1520.60s: >> Uh 3/4.
+1522.92s: >> So, you're pretty confident.
+1525.60s: >> I think the logic is there to support
+1527.12s: it.
+1528.04s: >> Okay.
+1529.12s: So, let's take a look at one of these
+1531.76s: really quick, and then your homework is
+1533.72s: actually going to one of your homework
+1535.20s: pieces is going to be to finish filling
+1537.68s: this in.
+1539.28s: So, we'll find the closest to a 20 delta
+1542.52s: here.
+1543.88s: And your theta for your 20 delta is
+1546.84s: point 212.
+1549.76s: And your premium is point 89.
+1553.40s: And then we're just going to go all the
+1554.40s: way out to 19 March.
+1562.20s: Your theta for the 20 delta is point
+1564.56s: 063.
+1568.36s: And your theta is like 8.55.
+1576.80s: Okay.
+1579.04s: What do What do you see?
+1591.16s: >> I think I was right about the I was
+1593.28s: right about the expiration closer to
+1596.20s: expiration, August 21st. It's a higher
+1598.96s: percentage.
+1601.04s: And the contract is smaller.
+1605.16s: The one farther away, I'm
+1607.52s: less certain because the number is kind
+1609.36s: of I mean, And
+1610.60s: bigger.
+1612.72s: Forgetting if that's what I I even said.
+1616.32s: Yeah, because it's there's more
+1617.92s: extrinsic value in that contract, so it
+1619.80s: should be a higher percentage.
+1623.52s: Yeah, that makes sense.
+1626.36s: >> A higher percentage than what?
+1629.68s: >> In a contract out of the money, there'll
+1631.64s: be more on a net basis, there'll be more
+1635.36s: ratio-wise, there'll be more extrinsic
+1637.64s: to intrinsic value
+1639.52s: because
+1640.88s: it has a bigger Greek footprint.
+1647.36s: Damn.
+1648.60s: All right.
+1650.56s: 10 push-ups ain't bad.
+1653.08s: >> That's just the start.
+1658.84s: Is this in the money or out of the
+1660.44s: money?
+1661.48s: >> That's at the money.
+1664.08s: >> So, does this have intrinsic value?
+1667.56s: >> Yes.
+1671.36s: As long as it's not at the expiration
+1673.80s: date, right?
+1679.56s: >> Here's your 50 delta option.
+1689.60s: >> Which date is this?
+1691.88s: >> 19 March.
+1703.24s: Does this have intrinsic value?
+1707.00s: >> Does it only get intrinsic value when
+1708.92s: it's in the money? That can't be, right?
+1713.84s: >> Are you asking or telling?
+1715.36s: >> Um I'm I'm asking, thinking out loud.
+1724.52s: >> What does intrinsic value mean?
+1728.36s: >> Is it that rigid though? It's It's the
+1730.72s: actual like
+1732.28s: value of the underlying position in the
+1734.72s: option.
+1737.04s: >> The [ __ ] does that mean?
+1739.00s: Hold on. 1 second. Sorry. That's my bad.
+1741.88s: >> Chat, help me out.
+1743.76s: I thought he was leaving.
+1746.40s: There you go.
+1748.52s: The intrinsic value is like if the
+1749.88s: option is going to expire
+1753.40s: like it won't expire worthless. There is
+1755.00s: this set value that is tied to the
+1757.96s: contract.
+1759.04s: >> And how do we figure out what options
+1761.48s: have intrinsic value?
+1780.20s: >> I would just look at their like
+1781.92s: price. I don't I don't know. I'm
+1783.56s: definitely don't know this.
+1785.64s: Is it their delta?
+1790.84s: God, it's going up quick.
+1792.48s: >> They add up fast, don't they?
+1794.76s: >> Yeah, they do.
+1800.84s: >> So, what is extrinsic value?
+1804.92s: >> Extrinsic value
+1807.40s: is all of the
+1810.24s: time value. I think it's
+1812.76s: I don't want to say it again cuz I've
+1813.88s: said it a lot, but I think it's like the
+1815.24s: Greek footprint. It's like all of the
+1816.56s: values that are associated with time and
+1819.24s: like volatility and
+1822.32s: all of the Greeks, basically.
+1837.76s: >> Extrinsic value
+1840.36s: is simply time value.
+1842.80s: That's it.
+1843.88s: There's nothing to do with the Greeks.
+1846.68s: Extrinsic value
+1849.00s: is how much time
+1851.64s: is associated with that option.
+1855.04s: Intrinsic value
+1857.48s: is how far the option is in the money.
+1865.68s: Those two combined
+1868.52s: equal
+1870.52s: the premium of an option.
+1872.84s: Intrinsic plus extrinsic value.
+1878.72s: So, back to our 50 delta question.
+1881.64s: Does this option
+1883.68s: have intrinsic value?
+1888.24s: >> No, sir.
+1890.00s: >> Good. It's exactly correct.
+1892.64s: So, what I'm showing you there
+1895.68s: is that there is a difference between
+1898.80s: what your delta is
+1900.88s: and the moneyness of the option.
+1903.64s: You can have options that have a delta
+1906.44s: of 50 or higher that are still out of
+1909.68s: the money.
+1918.32s: This, generally speaking,
+1921.84s: happens when you go further out in time
+1925.24s: and it exists because of skewness
+1928.52s: in the options.
+1930.32s: So, you see that your 50 delta here is
+1932.76s: at like the 781s.
+1934.96s: If we go 34 DTE,
+1937.64s: 50 delta is now at like the 779s. It's
+1940.84s: closer to the money and closer to the
+1942.24s: money.
+1945.88s: >> And that can be interpreted as the
+1948.28s: expectation that the market goes up over
+1950.04s: time. So, like the farther you go out,
+1952.08s: the options chain is pricing in at the
+1954.52s: money like above where it is at today.
+1958.00s: >> That's correct.
+1960.36s: Now, there's a there's a important
+1962.76s: metric that you can use to figure out
+1967.24s: what the market is actually pricing in
+1971.92s: for some sort of future event
+1976.64s: or some sort of future time frame.
+1979.64s: And we'll get to that in a second.
+1985.96s: What I want now is to give you a
+1988.96s: redemption question.
+1991.20s: If you get this right, you get a
+1992.64s: redemption question.
+1995.56s: Or you get a yeah, you get a redem-
+1997.20s: redemption.
+2000.72s: Where is Vega the highest
+2005.20s: with respect to expirations?
+2025.56s: >> Now, I'm wondering if Vega will have the
+2027.44s: same
+2030.92s: net or percentage based as
+2036.00s: beta did.
+2037.96s: Um
+2041.92s: Did you ask where is Vega higher higher
+2044.68s: in percentage based?
+2051.64s: >> No.
+2055.16s: Just where is Vega the highest?
+2071.16s: >> I don't know.
+2072.48s: I'm not sure
+2074.60s: um how these things relate to time. So,
+2077.84s: this is actually
+2079.08s: crucial that
+2080.68s: go over, but I'm not sure.
+2083.56s: I know it tracks Vega tracks volatility.
+2088.28s: Or the change of volatility.
+2091.96s: But, I don't know how it relates in
+2093.60s: time.
+2096.60s: I told you that we were going to go over
+2097.96s: all this [ __ ] today.
+2101.20s: I know there's a lot to go over.
+2103.20s: >> What did you study?
+2104.56s: >> I
+2105.19s: >> [laughter]
+2106.24s: >> I have them written down right here.
+2109.48s: But, I didn't I didn't I didn't hit the
+2111.08s: time component of the time is tripping
+2112.68s: me up.
+2115.16s: >> Let's take a look.
+2117.64s: We'll do a 50 delta option to start.
+2120.48s: Vega here is 0.389.
+2127.08s: If I look at an 80 delta option,
+2130.12s: Vega is 0.28.
+2134.52s: And if I look at a 20 delta option, Vega
+2137.56s: is 0.27.
+2142.00s: So, what can we conclude so far?
+2147.48s: >> Delt uh Vega is highest
+2152.36s: at the money.
+2153.84s: >> Okay?
+2155.44s: And then,
+2158.16s: what happens as an option goes deeper in
+2160.08s: the money or deeper out of the money?
+2165.96s: >> It gets
+2168.12s: either more intrinsic value or less
+2171.32s: intrinsic value.
+2174.08s: Or no intrinsic value.
+2179.52s: >> Close.
+2182.80s: Just look at the value
+2186.04s: of your
+2187.56s: extrinsic
+2189.60s: And you'll see extrinsic value is always
+2191.52s: highest at the money.
+2193.80s: And as you go deeper in money,
+2195.92s: you have less extrinsic value.
+2198.48s: And as you go deeper out of the money,
+2200.00s: you have less extrinsic value.
+2201.88s: >> Mhm.
+2204.00s: >> So, what you're seeing here is a
+2205.72s: relationship
+2207.40s: between
+2209.40s: the amount of extrinsic value
+2211.64s: and Vega.
+2215.04s: So, based on that, what do you think
+2217.52s: we'll see if we go out here to this 97
+2220.16s: DTE term?
+2225.20s: >> It should have the same
+2227.16s: structure.
+2230.88s: >> And how would it compare though to the
+2232.68s: term we were just looking at?
+2237.56s: >> Um it will have higher
+2240.40s: values, I believe, because of the added
+2243.48s: time component.
+2244.84s: >> Exactly.
+2247.48s: >> So, you're absolutely correct. It has
+2249.64s: the same structure. And since you added
+2251.60s: that in,
+2253.44s: you do get a right question.
+2256.44s: >> Let's go.
+2258.56s: >> And
+2260.48s: it's exactly correct.
+2262.76s: So, the relationship between moneyness
+2265.44s: you have and then the relationship
+2267.40s: between time you have
+2270.32s: is perfect.
+2273.48s: All right.
+2276.24s: The last thing I want to talk about
+2279.08s: is
+2281.40s: a trade idea.
+2283.92s: So, let's take a look at your log.
+2286.84s: And the first thing is, do any of these
+2289.80s: need management?
+2293.08s: >> Not as of today. I did some chopping and
+2295.60s: cutting on Friday, so
+2297.68s: I think
+2299.32s: the log looks good to me.
+2306.44s: >> Okay.
+2309.20s: Good.
+2311.00s: And
+2314.84s: talk me through a little bit
+2318.20s: on your ideas and how your ideas are
+2321.80s: doing so far.
+2325.00s: >> I think so far I'm pretty pleased with
+2328.64s: um
+2329.68s: the trades I've put on and also even
+2331.60s: just the ideas that I've written down.
+2334.44s: I've
+2336.52s: gained a bit of confidence in like my
+2339.28s: the way I'm seeing the market and seeing
+2342.00s: them
+2344.36s: do well so far. I mean I've closed four
+2345.92s: for four.
+2347.40s: Um I like the fact that I have like I
+2350.36s: don't I don't know. I feel like
+2352.12s: sometimes you you've questioned the
+2354.68s: the length in time I've put in the
+2357.84s: options expiration date which with with
+2360.20s: the one I sold for I but I completely
+2361.76s: get that how that was wrong now. But for
+2363.52s: the other ones I like how it gives me
+2365.08s: like this
+2366.60s: less stress of like a day-to-day and
+2368.24s: it's kind of just like I'm watching them
+2369.52s: move and seeing if my overall thought
+2371.56s: process works out. But
+2373.48s: um
+2375.72s: I've been pleased so far with the things
+2378.40s: I've done.
+2379.60s: Nothing seems to have gone haywire.
+2381.84s: >> And has there been anything that would
+2384.20s: have been stopped out?
+2387.92s: >> Um
+2392.48s: I don't believe so. Um
+2396.24s: No, I don't think so. None of them have
+2397.76s: really moved against me in a way. I
+2399.52s: don't I don't know how to track I don't
+2401.68s: I haven't been tracking that exactly,
+2403.44s: but I really doubt it because none of
+2406.68s: them have moved against me so much.
+2409.92s: >> Okay.
+2411.12s: Um Ben has a question from the chat. Ben
+2413.40s: says time doesn't make sense to me. Like
+2415.92s: cash sitting in nothing would seem
+2419.12s: infinite time to be deployed.
+2422.48s: So paying for time doesn't seem right.
+2426.68s: How would you answer that?
+2432.76s: >> Me?
+2433.80s: >> Yeah.
+2436.56s: >> Wait, I have to read this comment for
+2437.80s: myself.
+2441.68s: Cash sitting in nothing would seem
+2443.08s: infinite time to be deployed. So paying
+2445.44s: for time doesn't seem right. I think
+2448.24s: where
+2449.52s: that thought process goes wrong in the
+2451.76s: market is the fact that
+2454.60s: cash just sitting there is being
+2458.08s: under like going inflation. So the cash
+2460.16s: is not really staying stable in value
+2463.04s: while the market is going up. So
+2465.36s: you're actually losing out by not
+2467.60s: investing and just having cash sit there
+2470.52s: eroding while assets are going up in the
+2472.72s: meantime.
+2474.20s: Um
+2476.32s: So really cash doesn't have infinite
+2478.12s: time because of inflation, I feel like.
+2481.92s: >> And turn that now into the option. Why
+2487.32s: do we pay if somebody buys an option,
+2489.88s: why do they pay
+2491.80s: extrinsic value?
+2498.16s: >> For the
+2504.04s: Well, you can make a lot of money if the
+2505.40s: stock goes up or down if you buy a call
+2507.96s: or put by
+2510.60s: by that date.
+2512.28s: >> Exactly. And
+2514.64s: what is it that that option gives you
+2520.08s: that makes that mechanism happen?
+2522.60s: >> The right to like the right to buy the
+2524.88s: underlying at that strike price on that
+2526.76s: date.
+2528.28s: >> Or
+2529.88s: >> for the strike price plus the premium.
+2533.72s: >> Um no, I was asking just for the put
+2535.72s: side as well. So, you have you just did
+2537.68s: the call side.
+2539.32s: What is the What is the put side give
+2541.12s: you if you buy the put?
+2547.96s: >> Hm.
+2554.16s: I'm not exactly sure.
+2555.68s: >> It gives you the right to sell.
+2560.80s: >> So, do you have to own the stock?
+2562.88s: >> No.
+2574.08s: Because remember, you don't you don't
+2575.72s: have to exercise your option.
+2578.40s: Your option becomes expire worthless.
+2581.12s: Well, that or you could just sell it.
+2582.92s: >> Mhm.
+2584.84s: >> Because if I buy the right to sell
+2587.12s: something, let's say that, you know,
+2589.60s: spot price is $100 and I buy a 90 put,
+2593.96s: and I buy the right to sell the equity
+2597.16s: at 90, and let's say that the market
+2600.08s: drops and now the underlying is at 50.
+2604.64s: That put is more valuable now.
+2607.24s: Because you can sell It gives you the
+2609.52s: right to sell at a price that's much
+2612.24s: higher
+2614.08s: than what it is right now.
+2617.56s: So, it has more value.
+2621.48s: So, the correct answer to Ben's question
+2624.92s: is that the reason you're not just
+2626.80s: paying for time,
+2629.32s: you're paying for the right to do
+2631.96s: something over the course of that time.
+2636.56s: So, for the example with spy,
+2640.44s: if I buy the 20 November 800 calls,
+2645.60s: and the underlying goes up, let say spy
+2648.08s: goes up to 900.
+2651.24s: That gives me the right to buy shares at
+2653.76s: 800, even though spot is at 900.
+2659.32s: So it literally allows me to buy the
+2661.96s: underlying
+2663.32s: at 100 points less than what it's worth
+2665.44s: today.
+2667.00s: That's why that's valuable.
+2669.12s: So with options and with time, you're
+2671.08s: not just paying for time.
+2673.09s: >> [snorts]
+2673.12s: >> You're paying literally for optionality.
+2676.36s: The fact that these things can move
+2678.52s: around and they become more valuable as
+2681.96s: they move around.
+2686.52s: Okay.
+2687.96s: So the last thing for you, CG,
+2691.56s: is
+2693.32s: we need to start actually discussing
+2697.20s: edge
+2698.48s: a little bit more in detail
+2700.76s: and how you think you can find it.
+2704.40s: So we you sent me actually a list of
+2708.76s: ideas. I haven't looked at them. Let me
+2711.32s: see.
+2715.68s: Okay.
+2721.24s: So when you think about edge and what
+2725.68s: you suspect your edge might be,
+2733.32s: what do you think?
+2738.20s: >> Well, that one I sent you was a forced
+2741.04s: flow idea
+2743.32s: where
+2744.80s: I've just been looking up articles in
+2746.48s: SSRN
+2748.04s: cuz you've mentioned it and then
+2750.60s: um
+2752.00s: I haven't researched any of them yet,
+2753.64s: but they've all just been
+2756.48s: about the idea of like how you could get
+2758.04s: edge in the markets. That one was
+2759.52s: interesting to me that could because it
+2761.16s: was on the back of that workshop, so it
+2763.40s: was like a similar type of idea.
+2765.84s: Um
+2769.04s: >> Honestly, besides the force flow
+2771.48s: mechanism
+2772.76s: I don't know how a small
+2775.92s: trader investor
+2777.68s: like me could get edge over
+2780.28s: these monsters in the market. I don't
+2782.00s: know.
+2783.84s: >> There's tons of ways. Like we went
+2786.80s: through in the
+2788.40s: in the workshop and then in some of the
+2790.24s: recent videos, like inventorying risk is
+2793.68s: a really common one.
+2795.44s: And stuff like that, but you don't have
+2796.84s: to quite worry about those just yet.
+2799.36s: What I want you to do now is devise a
+2802.52s: way that you think
+2805.32s: you could analyze this and see if it's
+2807.20s: true or not.
+2827.88s: How would you
+2829.92s: How would you test this out?
+2832.32s: >> I would definitely definitely need to
+2834.24s: have the
+2838.20s: statistics of
+2841.52s: I think the the first thing I would want
+2842.76s: to research is on days where those
+2845.44s: those stocks that have big moves
+2847.96s: that have leveraged
+2850.28s: tickers that are associated with them.
+2852.84s: What percentage of the daily gain occurs
+2854.88s: in the last hour on days when they move
+2857.44s: like plus 3%, 5%, 10%, like I wrote down
+2859.76s: there. So, I would want to like look at
+2861.52s: the history of that and see if there's
+2863.16s: any correlation to where that last hour
+2865.96s: is a larger percentage of their total
+2867.76s: daily move or they have a net
+2870.56s: bullish or bearish move. Um cuz it works
+2873.56s: both ways from what I was reading, this
+2876.44s: force mechanism.
+2878.12s: >> Okay.
+2878.44s: >> So, I'd want [clears throat] to research
+2879.72s: that first, I think.
+2881.24s: >> Okay.
+2883.12s: And
+2885.00s: how would you actually execute that
+2887.24s: research?
+2891.44s: >> I would probably use Claude or ChatGPT.
+2896.52s: >> To do what?
+2899.32s: >> Um
+2901.04s: well, I'd have to see if it has access
+2904.04s: to the data first. And then if it did, I
+2906.48s: think I could just keep directing it
+2908.00s: until
+2910.44s: until I could get, you know, the answers
+2912.20s: for it.
+2915.88s: >> How far back would you go?
+2919.08s: >> This is why this one was interesting to
+2920.92s: me cuz they're not such old products.
+2923.08s: So, I think they're only have they only
+2925.12s: have like a 5-year history or so of
+2927.76s: having leveraged ETFs for single stocks.
+2930.04s: So, I think you could go back to
+2931.76s: basically the inception of it.
+2934.12s: >> Okay.
+2936.40s: So,
+2937.72s: your second piece of homework
+2940.68s: is to actually do this research.
+2944.16s: So, your first piece of homework is to
+2945.64s: fill in that table that we did.
+2947.80s: Your second piece of homework is to
+2950.04s: literally take the first pass on this
+2951.68s: research.
+2954.80s: So, with that is your homework,
+2959.40s: what
+2960.60s: what questions do you think you're going
+2963.16s: to have before you begin that I can
+2965.92s: answer for you now
+2967.68s: so that you can execute?
+2973.08s: >> Do you think
+2975.80s: either of those AI tools will have this
+2977.84s: data available to them?
+2980.40s: Or will I have to
+2982.28s: import it somehow?
+2983.92s: >> They'll they'll have the data. You can
+2986.32s: get it through Y Finance. So, Yahoo
+2989.40s: Finance
+2990.84s: has an API that they can use. So, you'll
+2994.00s: probably I don't know if you'll be able
+2995.60s: to use like Claude or if you have to use
+2997.40s: Claude code, that part I'm not sure.
+2999.52s: But, they'll be able to access that
+3001.80s: data.
+3010.72s: What's one of the first things you need
+3012.48s: to do
+3015.12s: when you use Claude or whatever
+3018.16s: to access the data?
+3027.08s: >> If I was going to do it right now, I
+3028.68s: would probably just give it the
+3030.44s: background of what I'm trying to do and
+3032.68s: like my goals of why I need the data and
+3034.92s: then
+3036.24s: break down like
+3038.16s: why we need the data, give it all the
+3039.88s: context, and then go from there.
+3044.20s: >> Fair.
+3045.56s: And let's say that Claude starts the
+3048.92s: starts the study, starts the research,
+3051.76s: then
+3053.64s: what's something you need to check
+3056.20s: to make sure that what you're doing is
+3058.28s: good?
+3064.60s: >> If there actually is any correlation to
+3066.60s: my idea to begin with.
+3069.04s: >> Before that.
+3071.24s: >> If the data's correct that it gives me.
+3073.04s: >> Bingo. You have to clean the data.
+3075.60s: So, the thing that I'm trying to make
+3077.20s: sure you understand here is that you
+3079.16s: cannot simply just give the task to AI
+3083.60s: and hope AI completes it.
+3085.92s: You have to look at each pass of what
+3090.04s: it's doing
+3091.48s: so that you can
+3093.44s: validate what it's doing the research on
+3097.96s: and that there's no issues with it.
+3100.52s: The other thing that would be better for
+3102.60s: you to do
+3104.08s: than just do do in some sort of cloud
+3106.64s: chat
+3108.12s: is to set up like a Jupiter notebook and
+3112.52s: you can literally do it inside Google
+3114.60s: Colab.
+3116.24s: The reason for doing it inside of a
+3118.24s: notebook
+3119.96s: is so that
+3124.68s: you have a record of something
+3127.80s: that you can go back, look at, cross
+3130.08s: compare cuz if you do all of these in
+3132.20s: siloed chats, you're not really going to
+3134.84s: get anywhere.
+3139.92s: >> And how is Jupiter notebook different?
+3143.24s: >> Jupiter notebook, it's like um are you
+3145.88s: familiar with Python and whatnot?
+3148.96s: >> I mean, I'm not familiar with it. I know
+3151.00s: it's used to code, right?
+3152.84s: >> Yeah.
+3153.80s: And so Jupiter notebook like Jupiter
+3156.08s: notebook is just a way for Python to
+3159.32s: execute and live.
+3161.36s: So you can think of it more of like
+3163.40s: literally like a notebook, like a
+3164.68s: notepad, so then you can keep history of
+3167.48s: stuff. And you can then cross compare
+3171.08s: between notebooks and stuff like that.
+3177.04s: >> Okay.
+3178.12s: >> So for this one, there's no issue with
+3179.84s: you just using the chat outright, it'll
+3182.12s: be easier.
+3183.40s: But a better target, if you feel up to
+3186.28s: it,
+3187.24s: is to actually do it
+3190.08s: in a notebook or inside Google Colab and
+3193.24s: then you can still have AI help you with
+3195.36s: that.
+3203.96s: >> Do you have any hunch about this
+3205.68s: research topic?
+3208.12s: >> Doesn't matter.
+3212.81s: >> [laughter]
+3213.32s: >> Why are you smirking like that? I feel
+3215.40s: like you've you've done it already.
+3217.40s: >> Yeah, I already know it's a waste.
+3220.04s: I already know everything about this.
+3224.68s: >> All right, well
+3226.08s: I will too soon.
+3228.00s: >> Perfect.
+3230.60s: All right, everyone. That wraps us up.
+3233.08s: CG has his own homework and if you guys
+3236.56s: are feeling froggy you should do the
+3240.52s: same thing.
+3241.64s: And it'll be a good exercise for you
+3243.72s: guys. We will see you on our next
+3245.64s: stream. Might still be on the mobile
+3247.24s: setup. We'll see how the PC thing goes.
+3249.92s: And we'll catch you guys on the next
+3251.44s: one. Pro members, we have our um market
+3255.12s: prep tomorrow. So, I'll see you guys
+3256.40s: there.

@@ -5114,6 +5114,61 @@
   "target": "strategies/short-put",
   "weight": 4
  },
+ "concepts/discretionary-trading||concepts/gamma": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "FtZyB8apvC0"
+  },
+  "label": "exposes traders to gamma risk",
+  "relation": "drives",
+  "source": "concepts/discretionary-trading",
+  "target": "concepts/gamma",
+  "weight": 3
+ },
+ "concepts/discretionary-trading||concepts/position-sizing": {
+  "evidence": {
+   "timestamp": "17:03",
+   "video_id": "FtZyB8apvC0"
+  },
+  "label": "requires disciplined approach to",
+  "relation": "requires",
+  "source": "concepts/discretionary-trading",
+  "target": "concepts/position-sizing",
+  "weight": 4
+ },
+ "concepts/discretionary-trading||concepts/risk-management": {
+  "evidence": {
+   "timestamp": "44:54",
+   "video_id": "FtZyB8apvC0"
+  },
+  "label": "requires disciplined risk management framework",
+  "relation": "requires",
+  "source": "concepts/discretionary-trading",
+  "target": "concepts/risk-management",
+  "weight": 3
+ },
+ "concepts/discretionary-trading||concepts/theta-decay": {
+  "evidence": {
+   "timestamp": "39:05",
+   "video_id": "FtZyB8apvC0"
+  },
+  "label": "discretionary decisions affected by time decay dynamics",
+  "relation": "related-to",
+  "source": "concepts/theta-decay",
+  "target": "concepts/discretionary-trading",
+  "weight": 3
+ },
+ "concepts/discretionary-trading||securities/spy": {
+  "evidence": {
+   "timestamp": "39:38",
+   "video_id": "l5k56cSP-Bs"
+  },
+  "label": "discretionary choice of underlying asset",
+  "relation": "related-to",
+  "source": "concepts/discretionary-trading",
+  "target": "securities/spy",
+  "weight": 4
+ },
  "concepts/disposition-effect||concepts/emotional-discipline": {
   "evidence": {
    "timestamp": "",
@@ -15080,6 +15135,17 @@
   "target": "securities/crude-oil",
   "weight": 5
  },
+ "concepts/reshoring||securities/gold": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "6Sp4eF9ahW8"
+  },
+  "label": "drives demand for hedging of",
+  "relation": "drives",
+  "source": "concepts/reshoring",
+  "target": "securities/gold",
+  "weight": 5
+ },
  "concepts/reshoring||securities/natural-gas": {
   "evidence": {
    "timestamp": "",
@@ -15629,6 +15695,17 @@
   "source": "concepts/risk-management",
   "target": "concepts/volatility-term-structure",
   "weight": 5
+ },
+ "concepts/risk-management||concepts/volatility-trading": {
+  "evidence": {
+   "timestamp": "07:34",
+   "video_id": "ge560JirQ_8"
+  },
+  "label": "enables strategic positioning in",
+  "relation": "drives",
+  "source": "concepts/risk-management",
+  "target": "concepts/volatility-trading",
+  "weight": 3
  },
  "concepts/risk-management||concepts/win-rate-vs-profitability": {
   "evidence": {

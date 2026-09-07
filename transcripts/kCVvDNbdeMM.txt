@@ -1,0 +1,2725 @@
+622.56s: What's up Outliers? Happy Thursday.
+624.68s: What's up Outliers? Happy Thursday. Welcome to skill development. We
+626.83s: Welcome to skill development. We
+626.84s: Welcome to skill development. We [clears throat] are here with a new
+629.35s: [clears throat] are here with a new
+629.36s: [clears throat] are here with a new week, new focus.
+631.39s: week, new focus.
+631.40s: week, new focus. If we take a peek at the calendar,
+633.71s: If we take a peek at the calendar,
+633.72s: If we take a peek at the calendar, this this month, the pro community is
+637.03s: this this month, the pro community is
+637.04s: this this month, the pro community is focusing on trade execution. This is
+641.63s: focusing on trade execution. This is
+641.64s: focusing on trade execution. This is doing the thing. This is how we actually
+645.43s: doing the thing. This is how we actually
+645.44s: doing the thing. This is how we actually build and more importantly implement
+649.07s: build and more importantly implement
+649.08s: build and more importantly implement strategies.
+650.71s: strategies.
+650.72s: strategies. So,
+652.07s: So,
+652.08s: So, we have three ELOs for this month.
+656.15s: we have three ELOs for this month.
+656.16s: we have three ELOs for this month. Today, we're going to talk about
+657.87s: Today, we're going to talk about
+657.88s: Today, we're going to talk about profiling profit mechanisms.
+660.91s: profiling profit mechanisms.
+660.92s: profiling profit mechanisms. ELO two is aligning signals, which today
+666.15s: ELO two is aligning signals, which today
+666.16s: ELO two is aligning signals, which today we're actually going through some of
+667.75s: we're actually going through some of
+667.76s: we're actually going through some of that as well, but ELO two will go into
+671.35s: that as well, but ELO two will go into
+671.36s: that as well, but ELO two will go into that in kind of a lot more detail to
+673.51s: that in kind of a lot more detail to
+673.52s: that in kind of a lot more detail to help you understand
+675.67s: help you understand
+675.68s: help you understand some of the nuances that you'll pick up
+679.11s: some of the nuances that you'll pick up
+679.12s: some of the nuances that you'll pick up artifacts of today, for sure, but it
+681.07s: artifacts of today, for sure, but it
+681.08s: artifacts of today, for sure, but it won't be quite as thorough just cuz it
+683.19s: won't be quite as thorough just cuz it
+683.20s: won't be quite as thorough just cuz it kind of takes a long time.
+684.91s: kind of takes a long time.
+684.92s: kind of takes a long time. And then, implementation, trade
+686.79s: And then, implementation, trade
+686.80s: And then, implementation, trade management. That's your third enabling
+689.19s: management. That's your third enabling
+689.20s: management. That's your third enabling learning objective for this month.
+692.23s: learning objective for this month.
+692.24s: learning objective for this month. The reason why
+694.07s: The reason why
+694.08s: The reason why I slotted this where I did is we've done
+697.67s: I slotted this where I did is we've done
+697.68s: I slotted this where I did is we've done a lot of
+698.79s: a lot of
+698.80s: a lot of focus recently on things like conducting
+701.95s: focus recently on things like conducting
+701.96s: focus recently on things like conducting research,
+703.15s: research,
+703.16s: research, on things like analyzing research,
+705.95s: on things like analyzing research,
+705.96s: on things like analyzing research, scoping profit mechanisms, meaning
+707.83s: scoping profit mechanisms, meaning
+707.84s: scoping profit mechanisms, meaning trying to find them, and all of that
+710.79s: trying to find them, and all of that
+710.80s: trying to find them, and all of that kind of stuff.
+712.39s: kind of stuff.
+712.40s: kind of stuff. What I'm actually working on in the
+714.03s: What I'm actually working on in the
+714.04s: What I'm actually working on in the background
+715.47s: background
+715.48s: background is a tool
+718.27s: is a tool
+718.28s: is a tool that
+719.47s: that
+719.48s: that you guys will be able to use to like
+722.35s: you guys will be able to use to like
+722.36s: you guys will be able to use to like input information as you're working
+725.31s: input information as you're working
+725.32s: input information as you're working through the outlier strategy process
+728.27s: through the outlier strategy process
+728.28s: through the outlier strategy process and get live feedback on how it's going,
+732.67s: and get live feedback on how it's going,
+732.68s: and get live feedback on how it's going, right? Like it's going to help you
+734.75s: right? Like it's going to help you
+734.76s: right? Like it's going to help you prompt engineer, answer questions. That
+737.71s: prompt engineer, answer questions. That
+737.72s: prompt engineer, answer questions. That is a much further down the pipeline
+740.39s: is a much further down the pipeline
+740.40s: is a much further down the pipeline thing,
+741.47s: thing,
+741.48s: thing, but I'm starting to build some of the
+743.55s: but I'm starting to build some of the
+743.56s: but I'm starting to build some of the stuff that's ultimately going to support
+746.03s: stuff that's ultimately going to support
+746.04s: stuff that's ultimately going to support that, and this is one of those things
+748.15s: that, and this is one of those things
+748.16s: that, and this is one of those things that that tool you're going to have to
+750.35s: that that tool you're going to have to
+750.36s: that that tool you're going to have to do. So, that's why we're we're covering
+752.99s: do. So, that's why we're we're covering
+753.00s: do. So, that's why we're we're covering this stuff. Now, we are getting towards
+756.59s: this stuff. Now, we are getting towards
+756.60s: this stuff. Now, we are getting towards the end of the year. There's 4 months
+758.15s: the end of the year. There's 4 months
+758.16s: the end of the year. There's 4 months left. So, we have a handful of other
+761.67s: left. So, we have a handful of other
+761.68s: left. So, we have a handful of other terminal learning objectives for this
+763.67s: terminal learning objectives for this
+763.68s: terminal learning objectives for this year. The last month,
+766.39s: year. The last month,
+766.40s: year. The last month, December, is definitely going to be an
+768.23s: December, is definitely going to be an
+768.24s: December, is definitely going to be an after-action review focus. So, going
+770.79s: after-action review focus. So, going
+770.80s: after-action review focus. So, going through what we did, making things
+772.83s: through what we did, making things
+772.84s: through what we did, making things better, that kind of stuff, but then
+776.47s: better, that kind of stuff, but then
+776.48s: better, that kind of stuff, but then I actually think next month what I want
+778.71s: I actually think next month what I want
+778.72s: I actually think next month what I want to do is how to use AI effectively in
+782.63s: to do is how to use AI effectively in
+782.64s: to do is how to use AI effectively in your trading operation. And there's a
+784.71s: your trading operation. And there's a
+784.72s: your trading operation. And there's a good chance that might be 2 months. I
+788.55s: good chance that might be 2 months. I
+788.56s: good chance that might be 2 months. I might need that to be 2 months long. I'm
+790.55s: might need that to be 2 months long. I'm
+790.56s: might need that to be 2 months long. I'm not positive. We'll see. But, there's
+793.39s: not positive. We'll see. But, there's
+793.40s: not positive. We'll see. But, there's just so much that goes into using AI
+796.35s: just so much that goes into using AI
+796.36s: just so much that goes into using AI effectively, and it's I think
+799.15s: effectively, and it's I think
+799.16s: effectively, and it's I think awesome. It's a really good tool, net
+802.15s: awesome. It's a really good tool, net
+802.16s: awesome. It's a really good tool, net positive, for sure, but I also do think
+806.03s: positive, for sure, but I also do think
+806.04s: positive, for sure, but I also do think it is a little bit dangerous
+809.07s: it is a little bit dangerous
+809.08s: it is a little bit dangerous because people can start to
+813.59s: because people can start to
+813.60s: because people can start to uh
+814.35s: uh
+814.36s: uh kind of like
+815.79s: kind of like
+815.80s: kind of like over rely on it and not learn the
+817.95s: over rely on it and not learn the
+817.96s: over rely on it and not learn the underlying stuff that we need to do. So,
+820.59s: underlying stuff that we need to do. So,
+820.60s: underlying stuff that we need to do. So, I think that'll be interesting. So,
+821.87s: I think that'll be interesting. So,
+821.88s: I think that'll be interesting. So, let's get
+823.87s: let's get
+823.88s: let's get Let's get on to the task for today. E
+826.55s: Let's get on to the task for today. E
+826.56s: Let's get on to the task for today. E Hodge, great to see you. Luis, is it
+830.19s: Hodge, great to see you. Luis, is it
+830.20s: Hodge, great to see you. Luis, is it Luis? Lewis?
+833.27s: Luis? Lewis?
+833.28s: Luis? Lewis? It's actually kind of funny how
+835.79s: It's actually kind of funny how
+835.80s: It's actually kind of funny how that that Lewis Luis can Well, I guess
+838.99s: that that Lewis Luis can Well, I guess
+839.00s: that that Lewis Luis can Well, I guess that's Lewis is what I would guess cuz
+840.63s: that's Lewis is what I would guess cuz
+840.64s: that's Lewis is what I would guess cuz Luis I I'm guessing has an e.
+843.15s: Luis I I'm guessing has an e.
+843.16s: Luis I I'm guessing has an e. Lauren Shray J, Ryan, great to see you
+845.59s: Lauren Shray J, Ryan, great to see you
+845.60s: Lauren Shray J, Ryan, great to see you all.
+847.43s: all.
+847.44s: all. So,
+848.52s: So, by the end of today's workshop, you will
+854.07s: by the end of today's workshop, you will
+854.08s: by the end of today's workshop, you will have
+855.43s: have
+855.44s: have a very clear understanding not only of
+860.47s: a very clear understanding not only of
+860.48s: a very clear understanding not only of what goes into successfully profiling a
+863.95s: what goes into successfully profiling a
+863.96s: what goes into successfully profiling a profit mechanism,
+865.55s: profit mechanism,
+865.56s: profit mechanism, but how to do it, some of the metrics
+870.03s: but how to do it, some of the metrics
+870.04s: but how to do it, some of the metrics that are relevant to you, and a starting
+874.55s: that are relevant to you, and a starting
+874.56s: that are relevant to you, and a starting point on how to interpret them.
+877.75s: point on how to interpret them.
+877.76s: point on how to interpret them. So,
+879.16s: So, we already know about the outlier
+882.19s: we already know about the outlier
+882.20s: we already know about the outlier strategy process. You guys have seen
+884.11s: strategy process. You guys have seen
+884.12s: strategy process. You guys have seen this tons of times, nothing new here.
+887.55s: this tons of times, nothing new here.
+887.56s: this tons of times, nothing new here. Where we're picking up on this is stage
+891.95s: Where we're picking up on this is stage
+891.96s: Where we're picking up on this is stage one.
+892.87s: one.
+892.88s: one. Right? You can see for trade execution,
+894.99s: Right? You can see for trade execution,
+895.00s: Right? You can see for trade execution, we're kind of working through the
+896.15s: we're kind of working through the
+896.16s: we're kind of working through the strategy process for this month. Except
+899.15s: strategy process for this month. Except
+899.16s: strategy process for this month. Except really what we're going to do is abridge
+901.71s: really what we're going to do is abridge
+901.72s: really what we're going to do is abridge three and four into the actual
+903.67s: three and four into the actual
+903.68s: three and four into the actual execution.
+905.51s: execution.
+905.52s: execution. And
+906.71s: And
+906.72s: And there's four key steps. We have
+909.39s: there's four key steps. We have
+909.40s: there's four key steps. We have profiling is what we're going to talk
+911.15s: profiling is what we're going to talk
+911.16s: profiling is what we're going to talk about. We have overlaying signals. Then
+913.75s: about. We have overlaying signals. Then
+913.76s: about. We have overlaying signals. Then we have figuring out structures, rules,
+916.63s: we have figuring out structures, rules,
+916.64s: we have figuring out structures, rules, testing those, and then building a
+918.55s: testing those, and then building a
+918.56s: testing those, and then building a strategy based on on And I guess
+921.19s: strategy based on on And I guess
+921.20s: strategy based on on And I guess technically I should update that cuz
+923.39s: technically I should update that cuz
+923.40s: technically I should update that cuz it's like strategies. You can have like
+925.51s: it's like strategies. You can have like
+925.52s: it's like strategies. You can have like multiple variants for one thing, but you
+928.27s: multiple variants for one thing, but you
+928.28s: multiple variants for one thing, but you know, whatever. Who cares?
+932.16s: The important part here, and the
+934.68s: The important part here, and the exercise that I want you guys to start
+937.19s: exercise that I want you guys to start
+937.20s: exercise that I want you guys to start with,
+938.27s: with,
+938.28s: with, is if
+940.63s: is if
+940.64s: is if you were given
+942.47s: you were given
+942.48s: you were given a scenario
+944.15s: a scenario
+944.16s: a scenario where you knew
+946.79s: where you knew
+946.80s: where you knew something was going to go up 10%
+951.79s: something was going to go up 10%
+951.80s: something was going to go up 10% in the next day
+953.59s: in the next day
+953.60s: in the next day and its volatility
+956.03s: and its volatility
+956.04s: and its volatility was going to drop
+958.03s: was going to drop
+958.04s: was going to drop by three points.
+962.64s: The way you would build that trade is
+965.56s: The way you would build that trade is different
+967.03s: different
+967.04s: different than the way if we had a scenario where
+970.15s: than the way if we had a scenario where
+970.16s: than the way if we had a scenario where tomorrow the stock is likely to go up a
+973.75s: tomorrow the stock is likely to go up a
+973.76s: tomorrow the stock is likely to go up a percent and a half
+976.27s: percent and a half
+976.28s: percent and a half and volatility is going to increase
+980.27s: and volatility is going to increase
+980.28s: and volatility is going to increase by a point.
+982.59s: by a point.
+982.60s: by a point. Those two scenarios would lead you to
+984.83s: Those two scenarios would lead you to
+984.84s: Those two scenarios would lead you to two different option structures or two
+986.91s: two different option structures or two
+986.92s: two different option structures or two different expressions.
+988.87s: different expressions.
+988.88s: different expressions. And I just want you to take a second to
+991.03s: And I just want you to take a second to
+991.04s: And I just want you to take a second to just brainstorm really fast how you
+993.31s: just brainstorm really fast how you
+993.32s: just brainstorm really fast how you might tackle both of those scenarios.
+995.63s: might tackle both of those scenarios.
+995.64s: might tackle both of those scenarios. The scenario where spot's going to go up
+998.11s: The scenario where spot's going to go up
+998.12s: The scenario where spot's going to go up 10% and vol's going to drop three
+1001.27s: 10% and vol's going to drop three
+1001.28s: 10% and vol's going to drop three points.
+1002.43s: points.
+1002.44s: points. And second scenario,
+1005.23s: And second scenario,
+1005.24s: And second scenario, spot's going to go up a percent and a
+1006.59s: spot's going to go up a percent and a
+1006.60s: spot's going to go up a percent and a half.
+1007.83s: half.
+1007.84s: half. Vol's going to go up one point.
+1010.59s: Vol's going to go up one point.
+1010.60s: Vol's going to go up one point. Just think of that for a second.
+1014.44s: The reason why this profiling question
+1017.56s: The reason why this profiling question matters
+1018.99s: matters
+1019.00s: matters is because in reality, we don't know the
+1021.83s: is because in reality, we don't know the
+1021.84s: is because in reality, we don't know the answer to that. We really don't.
+1024.03s: answer to that. We really don't.
+1024.04s: answer to that. We really don't. But what we can do is gain a better
+1027.19s: But what we can do is gain a better
+1027.20s: But what we can do is gain a better understanding of how a specific profit
+1030.27s: understanding of how a specific profit
+1030.28s: understanding of how a specific profit mechanism tends to look
+1033.63s: mechanism tends to look
+1033.64s: mechanism tends to look and then we can build things for how it
+1038.35s: and then we can build things for how it
+1038.36s: and then we can build things for how it tends to look. Obviously, I'm placing
+1042.07s: tends to look. Obviously, I'm placing
+1042.08s: tends to look. Obviously, I'm placing a bit of emphasis on the tends to look.
+1047.23s: a bit of emphasis on the tends to look.
+1047.24s: a bit of emphasis on the tends to look. So, let's take a quick look. I'm going
+1049.99s: So, let's take a quick look. I'm going
+1050.00s: So, let's take a quick look. I'm going to pull you guys over
+1053.31s: to pull you guys over
+1053.32s: to pull you guys over to this screen. I just want my writing
+1056.15s: to this screen. I just want my writing
+1056.16s: to this screen. I just want my writing pad.
+1057.59s: pad.
+1057.60s: pad. And I want to give you guys
+1061.07s: And I want to give you guys
+1061.08s: And I want to give you guys a bit of a
+1062.51s: a bit of a
+1062.52s: a bit of a a look. So, here
+1066.23s: a look. So, here
+1066.24s: a look. So, here we have CRM
+1068.71s: we have CRM
+1068.72s: we have CRM and it just had earnings.
+1071.35s: and it just had earnings.
+1071.36s: and it just had earnings. Now, its earnings follows
+1075.31s: Now, its earnings follows
+1075.32s: Now, its earnings follows a really interesting pattern.
+1078.47s: a really interesting pattern.
+1078.48s: a really interesting pattern. In that
+1080.27s: In that
+1080.28s: In that it
+1081.47s: it
+1081.48s: it absolutely crushed.
+1083.51s: absolutely crushed.
+1083.52s: absolutely crushed. It was expected at $2.35, came in at
+1086.83s: It was expected at $2.35, came in at
+1086.84s: It was expected at $2.35, came in at $5.90. Again, there's a lot of [&nbsp;__&nbsp;]
+1089.47s: $5.90. Again, there's a lot of [&nbsp;__&nbsp;]
+1089.48s: $5.90. Again, there's a lot of [&nbsp;__&nbsp;] that goes in with EPS numbers. You can't
+1091.71s: that goes in with EPS numbers. You can't
+1091.72s: that goes in with EPS numbers. You can't don't bother trying to say like, "Oh my
+1093.67s: don't bother trying to say like, "Oh my
+1093.68s: don't bother trying to say like, "Oh my god, did they actually double it?" It
+1095.03s: god, did they actually double it?" It
+1095.04s: god, did they actually double it?" It doesn't matter. The thing in this case
+1097.19s: doesn't matter. The thing in this case
+1097.20s: doesn't matter. The thing in this case that just kind of matters is the fact
+1098.95s: that just kind of matters is the fact
+1098.96s: that just kind of matters is the fact that they beat. That's the the base case
+1101.67s: that they beat. That's the the base case
+1101.68s: that they beat. That's the the base case here.
+1102.67s: here.
+1102.68s: here. And then you'll notice that price had
+1105.59s: And then you'll notice that price had
+1105.60s: And then you'll notice that price had this massive gap up.
+1107.43s: this massive gap up.
+1107.44s: this massive gap up. And after that gap up so far, it's
+1110.19s: And after that gap up so far, it's
+1110.20s: And after that gap up so far, it's broadly continued up.
+1112.47s: broadly continued up.
+1112.48s: broadly continued up. This so far is what's known as
+1115.07s: This so far is what's known as
+1115.08s: This so far is what's known as post-earnings announcement drift.
+1118.75s: post-earnings announcement drift.
+1118.76s: post-earnings announcement drift. So, the scenario that I painted a second
+1120.83s: So, the scenario that I painted a second
+1120.84s: So, the scenario that I painted a second ago is the next day you knew what was
+1124.07s: ago is the next day you knew what was
+1124.08s: ago is the next day you knew what was going to happen. Well, that's not real.
+1127.07s: going to happen. Well, that's not real.
+1127.08s: going to happen. Well, that's not real. It's just a simplifying starting point
+1129.23s: It's just a simplifying starting point
+1129.24s: It's just a simplifying starting point for us to have an understanding. So,
+1130.91s: for us to have an understanding. So,
+1130.92s: for us to have an understanding. So, what's the next thing we could do? The
+1132.87s: what's the next thing we could do? The
+1132.88s: what's the next thing we could do? The next thing we could do is we could say,
+1134.47s: next thing we could do is we could say,
+1134.48s: next thing we could do is we could say, "Well, I know that there's this thing
+1136.71s: "Well, I know that there's this thing
+1136.72s: "Well, I know that there's this thing called post-earnings announcement
+1138.11s: called post-earnings announcement
+1138.12s: called post-earnings announcement drift."
+1139.31s: drift."
+1139.32s: drift." What I can do is I can say like, "How
+1142.03s: What I can do is I can say like, "How
+1142.04s: What I can do is I can say like, "How does this typically look?
+1144.99s: does this typically look?
+1145.00s: does this typically look? What does it normally look like?" And I
+1148.95s: What does it normally look like?" And I
+1148.96s: What does it normally look like?" And I can ask myself questions like, what's
+1152.23s: can ask myself questions like, what's
+1152.24s: can ask myself questions like, what's the average gap
+1156.11s: the average gap
+1156.12s: the average gap as a percent? And then based on that
+1159.11s: as a percent? And then based on that
+1159.12s: as a percent? And then based on that average gap,
+1160.91s: average gap,
+1160.92s: average gap, I can say if something falls into the
+1163.83s: I can say if something falls into the
+1163.84s: I can say if something falls into the first quartile, the second quartile,
+1166.99s: first quartile, the second quartile,
+1167.00s: first quartile, the second quartile, third quartile, fourth quartile of
+1169.43s: third quartile, fourth quartile of
+1169.44s: third quartile, fourth quartile of historic gaps,
+1171.27s: historic gaps,
+1171.28s: historic gaps, what is the follow-on probability
+1174.07s: what is the follow-on probability
+1174.08s: what is the follow-on probability of price going a certain direction and
+1176.91s: of price going a certain direction and
+1176.92s: of price going a certain direction and by how much over that direction?
+1180.23s: by how much over that direction?
+1180.24s: by how much over that direction? So, I don't have the scenario still and
+1182.83s: So, I don't have the scenario still and
+1182.84s: So, I don't have the scenario still and I don't have the answer for
+1185.27s: I don't have the answer for
+1185.28s: I don't have the answer for knowing what's going to happen in the
+1186.83s: knowing what's going to happen in the
+1186.84s: knowing what's going to happen in the future. Nobody does.
+1189.35s: future. Nobody does.
+1189.36s: future. Nobody does. But what we can do is create a informed
+1194.07s: But what we can do is create a informed
+1194.08s: But what we can do is create a informed [snorts] guess. That's mostly what
+1196.23s: [snorts] guess. That's mostly what
+1196.24s: [snorts] guess. That's mostly what trading is, by the way. It might sound a
+1197.67s: trading is, by the way. It might sound a
+1197.68s: trading is, by the way. It might sound a little, you know, ridiculous to say, but
+1200.07s: little, you know, ridiculous to say, but
+1200.08s: little, you know, ridiculous to say, but that's the fact, man. None of us knows
+1201.67s: that's the fact, man. None of us knows
+1201.68s: that's the fact, man. None of us knows what's really going to happen. So, we're
+1202.83s: what's really going to happen. So, we're
+1202.84s: what's really going to happen. So, we're all making informed guesses out here.
+1205.07s: all making informed guesses out here.
+1205.08s: all making informed guesses out here. That's kind of ridiculous if you think
+1206.79s: That's kind of ridiculous if you think
+1206.80s: That's kind of ridiculous if you think of how much money is going into informed
+1208.63s: of how much money is going into informed
+1208.64s: of how much money is going into informed guesses, but
+1210.03s: guesses, but
+1210.04s: guesses, but it's a [&nbsp;__&nbsp;] thing.
+1213.28s: This
+1214.96s: This This information here
+1218.31s: This information here
+1218.32s: This information here is profiling.
+1220.35s: is profiling.
+1220.36s: is profiling. The way that we arrive at understanding
+1223.39s: The way that we arrive at understanding
+1223.40s: The way that we arrive at understanding these details and what details we care
+1227.07s: these details and what details we care
+1227.08s: these details and what details we care about is exactly how we profile a profit
+1230.11s: about is exactly how we profile a profit
+1230.12s: about is exactly how we profile a profit mechanism. Full disclosure, I'm long
+1231.79s: mechanism. Full disclosure, I'm long
+1231.80s: mechanism. Full disclosure, I'm long right now in CRM. That's why it's up.
+1236.15s: right now in CRM. That's why it's up.
+1236.16s: right now in CRM. That's why it's up. But
+1238.07s: But
+1238.08s: But there's
+1239.47s: there's
+1239.48s: there's a lot of scenarios like this. This is
+1241.95s: a lot of scenarios like this. This is
+1241.96s: a lot of scenarios like this. This is actually a great graph.
+1244.23s: actually a great graph.
+1244.24s: actually a great graph. Because take a look at this scenario.
+1247.11s: Because take a look at this scenario.
+1247.12s: Because take a look at this scenario. This earnings, it had a very different
+1250.39s: This earnings, it had a very different
+1250.40s: This earnings, it had a very different behavior.
+1251.83s: behavior.
+1251.84s: behavior. When was this? After the the close?
+1255.92s: Oops.
+1259.20s: Let's see.
+1264.32s: It was after the market.
+1266.68s: It was after the market. They beat on EPS,
+1269.75s: They beat on EPS,
+1269.76s: They beat on EPS, and then you'll notice the next day move
+1272.07s: and then you'll notice the next day move
+1272.08s: and then you'll notice the next day move was kind of like in line. It didn't
+1274.67s: was kind of like in line. It didn't
+1274.68s: was kind of like in line. It didn't really do a whole lot.
+1276.55s: really do a whole lot.
+1276.56s: really do a whole lot. Then we have another scenario here
+1278.87s: Then we have another scenario here
+1278.88s: Then we have another scenario here where it beat,
+1281.03s: where it beat,
+1281.04s: where it beat, it had a gap, so this also might
+1284.91s: it had a gap, so this also might
+1284.92s: it had a gap, so this also might initially qualify for a post earnings
+1286.95s: initially qualify for a post earnings
+1286.96s: initially qualify for a post earnings announcement drift, and then this one
+1289.47s: announcement drift, and then this one
+1289.48s: announcement drift, and then this one didn't work.
+1291.19s: didn't work.
+1291.20s: didn't work. Just because you profile is something
+1293.11s: Just because you profile is something
+1293.12s: Just because you profile is something doesn't mean it's going to work.
+1295.51s: doesn't mean it's going to work.
+1295.52s: doesn't mean it's going to work. But what it does mean is you can develop
+1298.03s: But what it does mean is you can develop
+1298.04s: But what it does mean is you can develop an understanding of what it might look
+1300.91s: an understanding of what it might look
+1300.92s: an understanding of what it might look like if it's working, and what does it
+1304.39s: like if it's working, and what does it
+1304.40s: like if it's working, and what does it tend to look like if it's not working.
+1307.75s: tend to look like if it's not working.
+1307.76s: tend to look like if it's not working. So a good example of that with post
+1309.39s: So a good example of that with post
+1309.40s: So a good example of that with post earnings announcement drift is if you
+1311.91s: earnings announcement drift is if you
+1311.92s: earnings announcement drift is if you get your gap, and then the next day
+1315.27s: get your gap, and then the next day
+1315.28s: get your gap, and then the next day it's below
+1317.39s: it's below
+1317.40s: it's below the low, whichever the open or close,
+1319.95s: the low, whichever the open or close,
+1319.96s: the low, whichever the open or close, whichever's lower on the gap day,
+1323.35s: whichever's lower on the gap day,
+1323.36s: whichever's lower on the gap day, if it's below that the next day or any
+1326.19s: if it's below that the next day or any
+1326.20s: if it's below that the next day or any real 5 days following that, that's
+1328.71s: real 5 days following that, that's
+1328.72s: real 5 days following that, that's abnormal.
+1330.59s: abnormal.
+1330.60s: abnormal. That doesn't inherently mean that this
+1333.43s: That doesn't inherently mean that this
+1333.44s: That doesn't inherently mean that this might not do that and then continue up,
+1336.23s: might not do that and then continue up,
+1336.24s: might not do that and then continue up, but what it does mean is that it's not
+1338.55s: but what it does mean is that it's not
+1338.56s: but what it does mean is that it's not putting you in front of the actual
+1340.55s: putting you in front of the actual
+1340.56s: putting you in front of the actual opportunities you might want depending
+1342.63s: opportunities you might want depending
+1342.64s: opportunities you might want depending on what flavor of post earnings
+1344.19s: on what flavor of post earnings
+1344.20s: on what flavor of post earnings announcement drift you're targeting.
+1347.59s: announcement drift you're targeting.
+1347.60s: announcement drift you're targeting. This specific example
+1350.15s: This specific example
+1350.16s: This specific example is hopefully
+1351.87s: is hopefully
+1351.88s: is hopefully giving you some ideas and inspiration
+1356.07s: giving you some ideas and inspiration
+1356.08s: giving you some ideas and inspiration for what you can do in your own profit
+1358.67s: for what you can do in your own profit
+1358.68s: for what you can do in your own profit mechanisms on the way that you're
+1360.59s: mechanisms on the way that you're
+1360.60s: mechanisms on the way that you're trading your own stuff.
+1362.87s: trading your own stuff.
+1362.88s: trading your own stuff. And what I want to do is give you
+1366.27s: And what I want to do is give you
+1366.28s: And what I want to do is give you a bit more detail
+1369.19s: a bit more detail
+1369.20s: a bit more detail on how this thing ultimately can work.
+1373.47s: on how this thing ultimately can work.
+1373.48s: on how this thing ultimately can work. That's
+1374.71s: That's
+1374.72s: That's that's more or less where I want to go
+1376.27s: that's more or less where I want to go
+1376.28s: that's more or less where I want to go here.
+1377.40s: here. So let's continue.
+1380.27s: So let's continue.
+1380.28s: So let's continue. And we You guys have seen this before.
+1382.75s: And we You guys have seen this before.
+1382.76s: And we You guys have seen this before. This is from a a prior slide, but
+1384.99s: This is from a a prior slide, but
+1385.00s: This is from a a prior slide, but there's a a bit of a box that I've added
+1386.95s: there's a a bit of a box that I've added
+1386.96s: there's a a bit of a box that I've added to this.
+1388.11s: to this.
+1388.12s: to this. I want to start with the idea of VRP,
+1392.31s: I want to start with the idea of VRP,
+1392.32s: I want to start with the idea of VRP, trading variance risk premium.
+1394.71s: trading variance risk premium.
+1394.72s: trading variance risk premium. And somebody might say, I sell
+1397.43s: And somebody might say, I sell
+1397.44s: And somebody might say, I sell volatility, I sell theta, I sell
+1399.59s: volatility, I sell theta, I sell
+1399.60s: volatility, I sell theta, I sell variance risk premium, whatever.
+1401.87s: variance risk premium, whatever.
+1401.88s: variance risk premium, whatever. The thing about that is it's a really,
+1404.83s: The thing about that is it's a really,
+1404.84s: The thing about that is it's a really, really, really gross generalization.
+1408.87s: really, really gross generalization.
+1408.88s: really, really gross generalization. You can do things like trade variance
+1412.55s: You can do things like trade variance
+1412.56s: You can do things like trade variance risk premium in a lot of different ways.
+1415.91s: risk premium in a lot of different ways.
+1415.92s: risk premium in a lot of different ways. And the different ways that you do it
+1418.15s: And the different ways that you do it
+1418.16s: And the different ways that you do it has a massive impact on how you actually
+1420.99s: has a massive impact on how you actually
+1421.00s: has a massive impact on how you actually build the thing.
+1422.63s: build the thing.
+1422.64s: build the thing. So, we did a video, and this was also I
+1425.99s: So, we did a video, and this was also I
+1426.00s: So, we did a video, and this was also I think for pro members, but then I also
+1428.47s: think for pro members, but then I also
+1428.48s: think for pro members, but then I also released a version of the the live
+1430.67s: released a version of the the live
+1430.68s: released a version of the the live stream called sources of edge.
+1432.91s: stream called sources of edge.
+1432.92s: stream called sources of edge. And the purpose of the sources of edge
+1435.59s: And the purpose of the sources of edge
+1435.60s: And the purpose of the sources of edge was figuring out where we landed on this
+1438.95s: was figuring out where we landed on this
+1438.96s: was figuring out where we landed on this box. And this is where the overwhelming
+1442.39s: box. And this is where the overwhelming
+1442.40s: box. And this is where the overwhelming majority of retail traders like
+1444.55s: majority of retail traders like
+1444.56s: majority of retail traders like legitimately never get to. They get to
+1446.75s: legitimately never get to. They get to
+1446.76s: legitimately never get to. They get to things like I trade an orb, or I trade
+1450.91s: things like I trade an orb, or I trade
+1450.92s: things like I trade an orb, or I trade whatever, I just sell premium. That's
+1452.91s: whatever, I just sell premium. That's
+1452.92s: whatever, I just sell premium. That's another common one that you'll come
+1454.35s: another common one that you'll come
+1454.36s: another common one that you'll come across.
+1455.99s: across.
+1456.00s: across. The only reason why we go to this level
+1459.23s: The only reason why we go to this level
+1459.24s: The only reason why we go to this level of detail is so that we can make better
+1462.07s: of detail is so that we can make better
+1462.08s: of detail is so that we can make better decisions with the structure. Better
+1464.35s: decisions with the structure. Better
+1464.36s: decisions with the structure. Better decisions with the strategy. That's the
+1466.91s: decisions with the strategy. That's the
+1466.92s: decisions with the strategy. That's the entire point here. We're not going
+1469.59s: entire point here. We're not going
+1469.60s: entire point here. We're not going answering these different kinds of
+1471.23s: answering these different kinds of
+1471.24s: answering these different kinds of questions just cuz. It's literally a
+1474.67s: questions just cuz. It's literally a
+1474.68s: questions just cuz. It's literally a waste of time to do that. But, if we go
+1477.31s: waste of time to do that. But, if we go
+1477.32s: waste of time to do that. But, if we go back to the original questions I posed
+1479.43s: back to the original questions I posed
+1479.44s: back to the original questions I posed to you, if you knew the next day stock
+1482.43s: to you, if you knew the next day stock
+1482.44s: to you, if you knew the next day stock was going to go up 10%, vol drops three
+1484.39s: was going to go up 10%, vol drops three
+1484.40s: was going to go up 10%, vol drops three points, versus the scenario where stock
+1486.95s: points, versus the scenario where stock
+1486.96s: points, versus the scenario where stock goes up a percent and a half, vol goes
+1488.75s: goes up a percent and a half, vol goes
+1488.76s: goes up a percent and a half, vol goes up a point, you would build different
+1491.23s: up a point, you would build different
+1491.24s: up a point, you would build different structures to capitalize on that effect.
+1498.56s: You have to have an idea
+1501.00s: You have to have an idea on what the effect and what the profit
+1503.07s: on what the effect and what the profit
+1503.08s: on what the effect and what the profit mechanism tends to look like
+1505.47s: mechanism tends to look like
+1505.48s: mechanism tends to look like so that you could build something
+1506.75s: so that you could build something
+1506.76s: so that you could build something logical because
+1509.39s: logical because
+1509.40s: logical because if you build something that's very
+1511.75s: if you build something that's very
+1511.76s: if you build something that's very specifically designed to maximize
+1515.27s: specifically designed to maximize
+1515.28s: specifically designed to maximize a single instance of a structure, it
+1517.95s: a single instance of a structure, it
+1517.96s: a single instance of a structure, it literally probably would fail
+1520.59s: literally probably would fail
+1520.60s: literally probably would fail going forward. So, going back to that
+1523.23s: going forward. So, going back to that
+1523.24s: going forward. So, going back to that original scenario, we have those two
+1526.99s: original scenario, we have those two
+1527.00s: original scenario, we have those two choices, stock up 10%, vol down three,
+1530.03s: choices, stock up 10%, vol down three,
+1530.04s: choices, stock up 10%, vol down three, that scenario.
+1531.79s: that scenario.
+1531.80s: that scenario. And let's say that you build a structure
+1534.99s: And let's say that you build a structure
+1535.00s: And let's say that you build a structure that completely maximizes that
+1537.43s: that completely maximizes that
+1537.44s: that completely maximizes that potential. Cool.
+1540.15s: potential. Cool.
+1540.16s: potential. Cool. But let's say if we look in a broader
+1543.67s: But let's say if we look in a broader
+1543.68s: But let's say if we look in a broader sample size
+1545.71s: sample size
+1545.72s: sample size that one day
+1547.55s: that one day
+1547.56s: that one day is actually the max. We've never seen
+1549.67s: is actually the max. We've never seen
+1549.68s: is actually the max. We've never seen anything bigger than that before. And
+1552.31s: anything bigger than that before. And
+1552.32s: anything bigger than that before. And let's say the average is more like the
+1556.03s: let's say the average is more like the
+1556.04s: let's say the average is more like the second scenario where it's up a percent
+1558.31s: second scenario where it's up a percent
+1558.32s: second scenario where it's up a percent and a half.
+1559.75s: and a half.
+1559.76s: and a half. You can still make a ton of money if you
+1561.47s: You can still make a ton of money if you
+1561.48s: You can still make a ton of money if you can even remotely reasonably predict
+1563.39s: can even remotely reasonably predict
+1563.40s: can even remotely reasonably predict something up a percent and a half. But
+1565.51s: something up a percent and a half. But
+1565.52s: something up a percent and a half. But if you're building something
+1567.47s: if you're building something
+1567.48s: if you're building something that's average doing that, that's
+1570.23s: that's average doing that, that's
+1570.24s: that's average doing that, that's predicated on the max potential scenario
+1573.51s: predicated on the max potential scenario
+1573.52s: predicated on the max potential scenario where it's up 10%, you literally could
+1575.99s: where it's up 10%, you literally could
+1576.00s: where it's up 10%, you literally could build something that is the right idea
+1579.19s: build something that is the right idea
+1579.20s: build something that is the right idea that literally loses money because it's
+1581.55s: that literally loses money because it's
+1581.56s: that literally loses money because it's not engineered properly.
+1583.39s: not engineered properly.
+1583.40s: not engineered properly. That's what we're solving for here in a
+1585.55s: That's what we're solving for here in a
+1585.56s: That's what we're solving for here in a nutshell. And there's a few things we
+1587.15s: nutshell. And there's a few things we
+1587.16s: nutshell. And there's a few things we need to do in order to do that.
+1589.39s: need to do in order to do that.
+1589.40s: need to do in order to do that. When we're profiling a profit mechanism
+1592.43s: When we're profiling a profit mechanism
+1592.44s: When we're profiling a profit mechanism there are a handful of questions. My
+1595.39s: there are a handful of questions. My
+1595.40s: there are a handful of questions. My goal with this presentation is to strike
+1599.23s: goal with this presentation is to strike
+1599.24s: goal with this presentation is to strike a bit of the Pareto principle. This is
+1601.47s: a bit of the Pareto principle. This is
+1601.48s: a bit of the Pareto principle. This is not full detail. This is not full depth,
+1604.43s: not full detail. This is not full depth,
+1604.44s: not full detail. This is not full depth, but if you get to this level of detail,
+1607.63s: but if you get to this level of detail,
+1607.64s: but if you get to this level of detail, you're pretty good. Like you're pretty
+1609.19s: you're pretty good. Like you're pretty
+1609.20s: you're pretty good. Like you're pretty good. You could be completely fine with
+1610.79s: good. You could be completely fine with
+1610.80s: good. You could be completely fine with this level of detail alone without going
+1612.63s: this level of detail alone without going
+1612.64s: this level of detail alone without going further. So,
+1614.71s: further. So,
+1614.72s: further. So, I just don't want to get too far into
+1616.19s: I just don't want to get too far into
+1616.20s: I just don't want to get too far into the weeds without having a good
+1618.75s: the weeds without having a good
+1618.76s: the weeds without having a good foundation. This, again, will get you
+1621.75s: foundation. This, again, will get you
+1621.76s: foundation. This, again, will get you really, really close to where you want
+1623.31s: really, really close to where you want
+1623.32s: really, really close to where you want to be. So, we want to understand things
+1624.87s: to be. So, we want to understand things
+1624.88s: to be. So, we want to understand things like behaviors, ranges, frequency,
+1628.35s: like behaviors, ranges, frequency,
+1628.36s: like behaviors, ranges, frequency, severity, robustness, correlations,
+1631.59s: severity, robustness, correlations,
+1631.60s: severity, robustness, correlations, clustering, all of those.
+1635.63s: clustering, all of those.
+1635.64s: clustering, all of those. So, if we look at different decisions
+1638.47s: So, if we look at different decisions
+1638.48s: So, if we look at different decisions somebody might make to enter a trade,
+1641.91s: somebody might make to enter a trade,
+1641.92s: somebody might make to enter a trade, they might say, "Well, I only buy stock
+1646.19s: they might say, "Well, I only buy stock
+1646.20s: they might say, "Well, I only buy stock or I'm only long equities when RSI is
+1649.03s: or I'm only long equities when RSI is
+1649.04s: or I'm only long equities when RSI is less than 30 and I only use vertical
+1651.67s: less than 30 and I only use vertical
+1651.68s: less than 30 and I only use vertical spreads or iron condors." You guys here
+1654.51s: spreads or iron condors." You guys here
+1654.52s: spreads or iron condors." You guys here at this point know, without a doubt,
+1656.75s: at this point know, without a doubt,
+1656.76s: at this point know, without a doubt, that that's there's no edge in any of
+1658.55s: that that's there's no edge in any of
+1658.56s: that that's there's no edge in any of that. Those are all business decisions.
+1660.51s: that. Those are all business decisions.
+1660.52s: that. Those are all business decisions. Those are all just strategy-based
+1662.35s: Those are all just strategy-based
+1662.36s: Those are all just strategy-based decisions. That's literally it.
+1665.71s: decisions. That's literally it.
+1665.72s: decisions. That's literally it. The problem, though, is a lot of people
+1668.95s: The problem, though, is a lot of people
+1668.96s: The problem, though, is a lot of people will mistreat those as edges, and the
+1672.11s: will mistreat those as edges, and the
+1672.12s: will mistreat those as edges, and the worst-case scenario that tends to happen
+1674.99s: worst-case scenario that tends to happen
+1675.00s: worst-case scenario that tends to happen is you might do that for a little while
+1677.95s: is you might do that for a little while
+1677.96s: is you might do that for a little while and make money doing it, and that's
+1679.99s: and make money doing it, and that's
+1680.00s: and make money doing it, and that's actually super dangerous because then
+1682.27s: actually super dangerous because then
+1682.28s: actually super dangerous because then you think what you're doing actually has
+1684.51s: you think what you're doing actually has
+1684.52s: you think what you're doing actually has edge and it doesn't. That's when you
+1686.51s: edge and it doesn't. That's when you
+1686.52s: edge and it doesn't. That's when you normally start sizing up, and that's a
+1689.27s: normally start sizing up, and that's a
+1689.28s: normally start sizing up, and that's a lot of times when you get a pretty bad
+1691.51s: lot of times when you get a pretty bad
+1691.52s: lot of times when you get a pretty bad move, then that hurts you, if not blows
+1694.51s: move, then that hurts you, if not blows
+1694.52s: move, then that hurts you, if not blows the account up.
+1696.43s: the account up.
+1696.44s: the account up. So,
+1698.44s: So, whenever we think about details like
+1701.95s: whenever we think about details like
+1701.96s: whenever we think about details like delta, DTE,
+1704.63s: delta, DTE,
+1704.64s: delta, DTE, if we're getting wings, what structure,
+1707.39s: if we're getting wings, what structure,
+1707.40s: if we're getting wings, what structure, what time we're going to enter,
+1709.87s: what time we're going to enter,
+1709.88s: what time we're going to enter, all of those, those are different
+1712.15s: all of those, those are different
+1712.16s: all of those, those are different choices that you make,
+1715.11s: choices that you make,
+1715.12s: choices that you make, but the profit mechanism is not a
+1718.31s: but the profit mechanism is not a
+1718.32s: but the profit mechanism is not a choice.
+1719.67s: choice.
+1719.68s: choice. The profit mechanism is a literal fact
+1723.23s: The profit mechanism is a literal fact
+1723.24s: The profit mechanism is a literal fact about the market that exists whether you
+1726.59s: about the market that exists whether you
+1726.60s: about the market that exists whether you do something with it or not.
+1729.47s: do something with it or not.
+1729.48s: do something with it or not. You want to differentiate those.
+1732.27s: You want to differentiate those.
+1732.28s: You want to differentiate those. Because the way you can logically pose
+1735.55s: Because the way you can logically pose
+1735.56s: Because the way you can logically pose it is
+1737.59s: it is
+1737.60s: it is could this profit mechanism, could this
+1739.91s: could this profit mechanism, could this
+1739.92s: could this profit mechanism, could this thing be true if I never put on a
+1742.47s: thing be true if I never put on a
+1742.48s: thing be true if I never put on a position?
+1743.79s: position?
+1743.80s: position? And if not, then it's not a mechanism,
+1746.99s: And if not, then it's not a mechanism,
+1747.00s: And if not, then it's not a mechanism, right? It's just different decisions
+1748.59s: right? It's just different decisions
+1748.60s: right? It's just different decisions that you're making. So, for example,
+1750.39s: that you're making. So, for example,
+1750.40s: that you're making. So, for example, selling premium. That's probably one of
+1752.55s: selling premium. That's probably one of
+1752.56s: selling premium. That's probably one of the most common offenders for newer
+1754.91s: the most common offenders for newer
+1754.92s: the most common offenders for newer retail options traders.
+1757.47s: retail options traders.
+1757.48s: retail options traders. And selling premium is literally just an
+1760.55s: And selling premium is literally just an
+1760.56s: And selling premium is literally just an action. That there's no effect with
+1763.23s: action. That there's no effect with
+1763.24s: action. That there's no effect with selling premium. Now, a lot of times
+1765.31s: selling premium. Now, a lot of times
+1765.32s: selling premium. Now, a lot of times people who sell premium are
+1767.31s: people who sell premium are
+1767.32s: people who sell premium are inadvertently
+1769.19s: inadvertently
+1769.20s: inadvertently gaining exposure to an effect that they
+1770.75s: gaining exposure to an effect that they
+1770.76s: gaining exposure to an effect that they don't even know it's there. And then
+1772.43s: don't even know it's there. And then
+1772.44s: don't even know it's there. And then it's no surprise that they end up making
+1774.79s: it's no surprise that they end up making
+1774.80s: it's no surprise that they end up making bad mistakes like premium chasing. And
+1777.63s: bad mistakes like premium chasing. And
+1777.64s: bad mistakes like premium chasing. And only selling when implied volatility is
+1780.19s: only selling when implied volatility is
+1780.20s: only selling when implied volatility is really high and you know, all of those
+1781.87s: really high and you know, all of those
+1781.88s: really high and you know, all of those kind of things.
+1786.04s: We want to get a little bit more
+1788.72s: We want to get a little bit more specific.
+1790.15s: specific.
+1790.16s: specific. So, if we think of the starting point,
+1794.43s: So, if we think of the starting point,
+1794.44s: So, if we think of the starting point, a lot of times I will say things like
+1796.83s: a lot of times I will say things like
+1796.84s: a lot of times I will say things like the starting profit mechanism is price
+1799.43s: the starting profit mechanism is price
+1799.44s: the starting profit mechanism is price direction up or down.
+1801.75s: direction up or down.
+1801.76s: direction up or down. So, we think something is going to go up
+1803.11s: So, we think something is going to go up
+1803.12s: So, we think something is going to go up or down.
+1804.11s: or down.
+1804.12s: or down. That's what I would refer to as an
+1805.67s: That's what I would refer to as an
+1805.68s: That's what I would refer to as an umbrella.
+1807.43s: umbrella.
+1807.44s: umbrella. Within that umbrella, let's say if price
+1809.83s: Within that umbrella, let's say if price
+1809.84s: Within that umbrella, let's say if price going up.
+1811.83s: going up.
+1811.84s: going up. Price can go up in a lot of different
+1814.39s: Price can go up in a lot of different
+1814.40s: Price can go up in a lot of different ways. It can go up real fast. It can go
+1817.15s: ways. It can go up real fast. It can go
+1817.16s: ways. It can go up real fast. It can go up real slow, grindy like. It can go
+1819.71s: up real slow, grindy like. It can go
+1819.72s: up real slow, grindy like. It can go down then up, like a reversal, and so
+1822.27s: down then up, like a reversal, and so
+1822.28s: down then up, like a reversal, and so on.
+1823.31s: on.
+1823.32s: on. So, we want to be a little bit more
+1824.51s: So, we want to be a little bit more
+1824.52s: So, we want to be a little bit more specific. So, let's say that we hone in
+1827.71s: specific. So, let's say that we hone in
+1827.72s: specific. So, let's say that we hone in on momentum.
+1829.67s: on momentum.
+1829.68s: on momentum. We notice that things tend to win tend
+1831.99s: We notice that things tend to win tend
+1832.00s: We notice that things tend to win tend to continue to win. Well, even with
+1835.35s: to continue to win. Well, even with
+1835.36s: to continue to win. Well, even with momentum,
+1836.75s: momentum,
+1836.76s: momentum, there are a lot of different
+1840.39s: there are a lot of different
+1840.40s: there are a lot of different subcategories
+1841.99s: subcategories
+1842.00s: subcategories of momentum.
+1843.75s: of momentum.
+1843.76s: of momentum. The way I want you to think of this is
+1846.87s: The way I want you to think of this is
+1846.88s: The way I want you to think of this is when you identify
+1849.07s: when you identify
+1849.08s: when you identify an umbrella,
+1851.35s: an umbrella,
+1851.36s: an umbrella, that umbrella will have certain traits
+1854.27s: that umbrella will have certain traits
+1854.28s: that umbrella will have certain traits that automatically applies to its
+1857.15s: that automatically applies to its
+1857.16s: that automatically applies to its constituents, things that fall within
+1859.31s: constituents, things that fall within
+1859.32s: constituents, things that fall within it.
+1860.35s: it.
+1860.36s: it. But, the way that the things fall within
+1862.99s: But, the way that the things fall within
+1863.00s: But, the way that the things fall within it look and behave will be different.
+1866.63s: it look and behave will be different.
+1866.64s: it look and behave will be different. So, for example, post-earnings
+1869.15s: So, for example, post-earnings
+1869.16s: So, for example, post-earnings announcement drift has a different
+1871.87s: announcement drift has a different
+1871.88s: announcement drift has a different profile than analyst revision drifts.
+1877.47s: profile than analyst revision drifts.
+1877.48s: profile than analyst revision drifts. They look differently, they behave
+1880.03s: They look differently, they behave
+1880.04s: They look differently, they behave differently, the way that I capture
+1882.99s: differently, the way that I capture
+1883.00s: differently, the way that I capture those things are different.
+1886.59s: those things are different.
+1886.60s: those things are different. What I'm emphasizing here is you
+1889.55s: What I'm emphasizing here is you
+1889.56s: What I'm emphasizing here is you identify the umbrella,
+1891.51s: identify the umbrella,
+1891.52s: identify the umbrella, and then you try to go one layer deeper.
+1894.63s: and then you try to go one layer deeper.
+1894.64s: and then you try to go one layer deeper. This, if you don't know what you don't
+1897.39s: This, if you don't know what you don't
+1897.40s: This, if you don't know what you don't know, is not easy. I'm obviously giving
+1900.59s: know, is not easy. I'm obviously giving
+1900.60s: know, is not easy. I'm obviously giving you a bit of a playbook, and I'll give
+1902.31s: you a bit of a playbook, and I'll give
+1902.32s: you a bit of a playbook, and I'll give you more later,
+1904.63s: you more later,
+1904.64s: you more later, but
+1905.95s: but
+1905.96s: but by being able to bucket these things a
+1907.95s: by being able to bucket these things a
+1907.96s: by being able to bucket these things a little bit differently, it makes your
+1910.19s: little bit differently, it makes your
+1910.20s: little bit differently, it makes your job way easier. So, to help you with
+1913.03s: job way easier. So, to help you with
+1913.04s: job way easier. So, to help you with that in your own operation, is just
+1916.27s: that in your own operation, is just
+1916.28s: that in your own operation, is just think about the catalyst around the
+1918.75s: think about the catalyst around the
+1918.76s: think about the catalyst around the profit mechanism. If the catalyst
+1921.71s: profit mechanism. If the catalyst
+1921.72s: profit mechanism. If the catalyst changes,
+1923.59s: changes,
+1923.60s: changes, then you probably have
+1925.79s: then you probably have
+1925.80s: then you probably have some different variant of either an
+1928.15s: some different variant of either an
+1928.16s: some different variant of either an umbrella or some variant of a sub profit
+1932.91s: umbrella or some variant of a sub profit
+1932.92s: umbrella or some variant of a sub profit mechanism.
+1934.15s: mechanism.
+1934.16s: mechanism. So, for example, post-earnings
+1936.12s: So, for example, post-earnings announcement drift, what's the catalyst?
+1937.55s: announcement drift, what's the catalyst?
+1937.56s: announcement drift, what's the catalyst? The catalyst is earnings. Analyst
+1939.71s: The catalyst is earnings. Analyst
+1939.72s: The catalyst is earnings. Analyst revision drift, what's the catalyst? The
+1941.35s: revision drift, what's the catalyst? The
+1941.36s: revision drift, what's the catalyst? The catalyst is the analyst revision. You
+1943.79s: catalyst is the analyst revision. You
+1943.80s: catalyst is the analyst revision. You have two different catalysts there that
+1946.75s: have two different catalysts there that
+1946.76s: have two different catalysts there that can very easily help you differentiate
+1949.51s: can very easily help you differentiate
+1949.52s: can very easily help you differentiate and immediately think, these might look
+1951.87s: and immediately think, these might look
+1951.88s: and immediately think, these might look the same, they might look really
+1953.43s: the same, they might look really
+1953.44s: the same, they might look really similar, I don't know, but they could
+1955.47s: similar, I don't know, but they could
+1955.48s: similar, I don't know, but they could look really different, and I want to
+1957.63s: look really different, and I want to
+1957.64s: look really different, and I want to know that.
+1959.03s: know that.
+1959.04s: know that. That's the idea.
+1962.28s: When
+1963.80s: When we get to that level, we have an
+1965.43s: we get to that level, we have an
+1965.44s: we get to that level, we have an understanding of the catalyst that we're
+1967.75s: understanding of the catalyst that we're
+1967.76s: understanding of the catalyst that we're looking at,
+1969.07s: looking at,
+1969.08s: looking at, we want to immediately measure the
+1972.79s: we want to immediately measure the
+1972.80s: we want to immediately measure the mechanism,
+1974.31s: mechanism,
+1974.32s: mechanism, not your trade. This is precisely why
+1977.95s: not your trade. This is precisely why
+1977.96s: not your trade. This is precisely why when people are asking about building
+1979.75s: when people are asking about building
+1979.76s: when people are asking about building the O talk, and they're asking me like
+1981.83s: the O talk, and they're asking me like
+1981.84s: the O talk, and they're asking me like what kind of data you need and stuff
+1983.43s: what kind of data you need and stuff
+1983.44s: what kind of data you need and stuff like that,
+1984.63s: like that,
+1984.64s: like that, the overwhelming majority of stuff that
+1987.83s: the overwhelming majority of stuff that
+1987.84s: the overwhelming majority of stuff that you might want to look at, even as an
+1989.79s: you might want to look at, even as an
+1989.80s: you might want to look at, even as an options trader, can be done with just
+1991.95s: options trader, can be done with just
+1991.96s: options trader, can be done with just stock data.
+1993.47s: stock data.
+1993.48s: stock data. It's not perfectly so, obviously.
+1996.63s: It's not perfectly so, obviously.
+1996.64s: It's not perfectly so, obviously. There's some things that you need
+1998.15s: There's some things that you need
+1998.16s: There's some things that you need options data. So, this right here,
+2000.07s: options data. So, this right here,
+2000.08s: options data. So, this right here, implied and realized volatility, aka
+2003.27s: implied and realized volatility, aka
+2003.28s: implied and realized volatility, aka VRP, you need options data for that.
+2005.91s: VRP, you need options data for that.
+2005.92s: VRP, you need options data for that. There's no you can't get around that.
+2008.19s: There's no you can't get around that.
+2008.20s: There's no you can't get around that. But, let's say what CG's working on, for
+2011.15s: But, let's say what CG's working on, for
+2011.16s: But, let's say what CG's working on, for those that saw the stream yesterday. If
+2013.51s: those that saw the stream yesterday. If
+2013.52s: those that saw the stream yesterday. If you'll recall during the workshop/stream
+2015.99s: you'll recall during the workshop/stream
+2016.00s: you'll recall during the workshop/stream yesterday, I guess it's a podcast,
+2018.27s: yesterday, I guess it's a podcast,
+2018.28s: yesterday, I guess it's a podcast, he asked, he's like, well, there's no,
+2021.55s: he asked, he's like, well, there's no,
+2021.56s: he asked, he's like, well, there's no, you know, options in this at all yet.
+2023.99s: you know, options in this at all yet.
+2024.00s: you know, options in this at all yet. So, like how do I know how the options
+2026.71s: So, like how do I know how the options
+2026.72s: So, like how do I know how the options stuff would work?
+2028.63s: stuff would work?
+2028.64s: stuff would work? The answer I gave him is that it
+2030.07s: The answer I gave him is that it
+2030.08s: The answer I gave him is that it literally doesn't matter yet. Because if
+2032.75s: literally doesn't matter yet. Because if
+2032.76s: literally doesn't matter yet. Because if you can see the profit mechanism and
+2034.31s: you can see the profit mechanism and
+2034.32s: you can see the profit mechanism and understand the profit mechanism for what
+2035.95s: understand the profit mechanism for what
+2035.96s: understand the profit mechanism for what it is, then you can literally logically
+2038.83s: it is, then you can literally logically
+2038.84s: it is, then you can literally logically begin overlaying options. So, for
+2040.99s: begin overlaying options. So, for
+2041.00s: begin overlaying options. So, for example, back to the original scenario,
+2044.35s: example, back to the original scenario,
+2044.36s: example, back to the original scenario, if I think a stock is going to go up on
+2047.99s: if I think a stock is going to go up on
+2048.00s: if I think a stock is going to go up on average 10% following a certain
+2051.27s: average 10% following a certain
+2051.28s: average 10% following a certain catalyst,
+2052.75s: catalyst,
+2052.76s: catalyst, the way that I would build that around
+2055.31s: the way that I would build that around
+2055.32s: the way that I would build that around that average, I can infer with zero
+2059.39s: that average, I can infer with zero
+2059.40s: that average, I can infer with zero options data. I can do it simply by
+2062.35s: options data. I can do it simply by
+2062.36s: options data. I can do it simply by understanding options. Now, I want to be
+2064.67s: understanding options. Now, I want to be
+2064.68s: understanding options. Now, I want to be clear, there's no benefit to not having
+2067.47s: clear, there's no benefit to not having
+2067.48s: clear, there's no benefit to not having the options data to look at it. That you
+2069.51s: the options data to look at it. That you
+2069.52s: the options data to look at it. That you should look at it if you can. And that's
+2071.59s: should look at it if you can. And that's
+2071.60s: should look at it if you can. And that's one of the things for the Pro Plus
+2073.87s: one of the things for the Pro Plus
+2073.88s: one of the things for the Pro Plus members when we do our workshops via
+2076.23s: members when we do our workshops via
+2076.24s: members when we do our workshops via Zoom. It's one thing I can legitimately
+2078.99s: Zoom. It's one thing I can legitimately
+2079.00s: Zoom. It's one thing I can legitimately help you guys with because my version of
+2081.03s: help you guys with because my version of
+2081.04s: help you guys with because my version of the O talk has literally everything. So,
+2084.11s: the O talk has literally everything. So,
+2084.12s: the O talk has literally everything. So, I can help you guys look at slightly
+2086.23s: I can help you guys look at slightly
+2086.24s: I can help you guys look at slightly more nuanced stuff. That's what I'm
+2088.07s: more nuanced stuff. That's what I'm
+2088.08s: more nuanced stuff. That's what I'm going to do with CG. I'm literally going
+2090.39s: going to do with CG. I'm literally going
+2090.40s: going to do with CG. I'm literally going to help him with the options side of the
+2093.27s: to help him with the options side of the
+2093.28s: to help him with the options side of the research because I already have all the
+2095.07s: research because I already have all the
+2095.08s: research because I already have all the data and it's not necessarily easy to
+2097.55s: data and it's not necessarily easy to
+2097.56s: data and it's not necessarily easy to get. But, what I would say
+2100.15s: get. But, what I would say
+2100.16s: get. But, what I would say is that if you're choosing to give
+2104.51s: is that if you're choosing to give
+2104.52s: is that if you're choosing to give options trading a real shot, like you're
+2107.31s: options trading a real shot, like you're
+2107.32s: options trading a real shot, like you're really going to give it a try,
+2109.39s: really going to give it a try,
+2109.40s: really going to give it a try, it's worth getting a little bit of
+2110.67s: it's worth getting a little bit of
+2110.68s: it's worth getting a little bit of options data. You don't need a ton. You
+2112.75s: options data. You don't need a ton. You
+2112.76s: options data. You don't need a ton. You could literally just get the last 5-6
+2114.63s: could literally just get the last 5-6
+2114.64s: could literally just get the last 5-6 years. You could just focus on the
+2116.55s: years. You could just focus on the
+2116.56s: years. You could just focus on the indices, maybe the sector ETFs, and like
+2119.47s: indices, maybe the sector ETFs, and like
+2119.48s: indices, maybe the sector ETFs, and like a sample of liquid underlyings, and then
+2123.67s: a sample of liquid underlyings, and then
+2123.68s: a sample of liquid underlyings, and then otherwise just use stock data. That's
+2125.91s: otherwise just use stock data. That's
+2125.92s: otherwise just use stock data. That's like pretty good. That'll let you look
+2128.51s: like pretty good. That'll let you look
+2128.52s: like pretty good. That'll let you look at a ton of [&nbsp;__&nbsp;] pretty effectively.
+2130.47s: at a ton of [&nbsp;__&nbsp;] pretty effectively.
+2130.48s: at a ton of [&nbsp;__&nbsp;] pretty effectively. Again, it's not It's It's a concession,
+2132.83s: Again, it's not It's It's a concession,
+2132.84s: Again, it's not It's It's a concession, right? Like there's going to be a lot of
+2134.15s: right? Like there's going to be a lot of
+2134.16s: right? Like there's going to be a lot of gaps and limitations in doing that, but
+2136.39s: gaps and limitations in doing that, but
+2136.40s: gaps and limitations in doing that, but it's so much better than nothing. And
+2138.71s: it's so much better than nothing. And
+2138.72s: it's so much better than nothing. And what you don't want to do is allow
+2141.67s: what you don't want to do is allow
+2141.68s: what you don't want to do is allow perfection to get in the way of
+2143.19s: perfection to get in the way of
+2143.20s: perfection to get in the way of progress. You're way better off with
+2145.11s: progress. You're way better off with
+2145.12s: progress. You're way better off with that level of information and fidelity
+2147.03s: that level of information and fidelity
+2147.04s: that level of information and fidelity than without, for sure, without a doubt.
+2155.32s: So, we need to understand
+2157.75s: we need to understand
+2157.76s: we need to understand how to measure mechanisms.
+2162.23s: how to measure mechanisms.
+2162.24s: how to measure mechanisms. After we measure the mechanism, that's
+2165.83s: After we measure the mechanism, that's
+2165.84s: After we measure the mechanism, that's when we can start testing structures,
+2168.31s: when we can start testing structures,
+2168.32s: when we can start testing structures, different management plans, different
+2170.83s: different management plans, different
+2170.84s: different management plans, different DTEs. You can start going down the
+2173.79s: DTEs. You can start going down the
+2173.80s: DTEs. You can start going down the rabbit hole of looking at all kinds of
+2177.91s: rabbit hole of looking at all kinds of
+2177.92s: rabbit hole of looking at all kinds of stuff.
+2179.03s: stuff.
+2179.04s: stuff. But, the most important thing that
+2181.27s: But, the most important thing that
+2181.28s: But, the most important thing that begins up front is the mechanism. That's
+2183.31s: begins up front is the mechanism. That's
+2183.32s: begins up front is the mechanism. That's where all your effort should go. You
+2185.51s: where all your effort should go. You
+2185.52s: where all your effort should go. You should spend zero time, effort, or
+2187.79s: should spend zero time, effort, or
+2187.80s: should spend zero time, effort, or energy comparing the wings of your iron
+2191.39s: energy comparing the wings of your iron
+2191.40s: energy comparing the wings of your iron condor
+2193.79s: condor
+2193.80s: condor before you understand the mechanism in
+2195.75s: before you understand the mechanism in
+2195.76s: before you understand the mechanism in detail.
+2197.35s: detail.
+2197.36s: detail. Because there's no magic combination of
+2200.63s: Because there's no magic combination of
+2200.64s: Because there's no magic combination of iron condor with their wings that's
+2203.31s: iron condor with their wings that's
+2203.32s: iron condor with their wings that's going to spawn edge.
+2206.47s: going to spawn edge.
+2206.48s: going to spawn edge. The profit mechanism is what provides
+2209.39s: The profit mechanism is what provides
+2209.40s: The profit mechanism is what provides edge.
+2212.24s: So, what we can do
+2214.32s: So, what we can do is within that stage we gave earlier,
+2219.75s: is within that stage we gave earlier,
+2219.76s: is within that stage we gave earlier, I'm giving you literal
+2222.75s: I'm giving you literal
+2222.76s: I'm giving you literal data points to consider.
+2225.67s: data points to consider.
+2225.68s: data points to consider. So, for example, the behavior of
+2227.83s: So, for example, the behavior of
+2227.84s: So, for example, the behavior of something. How does it tend to look?
+2231.75s: something. How does it tend to look?
+2231.76s: something. How does it tend to look? You're answering questions like what's
+2233.75s: You're answering questions like what's
+2233.76s: You're answering questions like what's the shape? What's the horizon? What's
+2236.35s: the shape? What's the horizon? What's
+2236.36s: the shape? What's the horizon? What's the half-life?
+2237.87s: the half-life?
+2237.88s: the half-life? You want to understand how it tends to
+2241.15s: You want to understand how it tends to
+2241.16s: You want to understand how it tends to behave. Again, we can look at a live
+2244.55s: behave. Again, we can look at a live
+2244.56s: behave. Again, we can look at a live example together to have
+2247.97s: example together to have
+2247.99s: example together to have &gt;&gt; [snorts]
+2248.51s: &gt;&gt; [snorts]
+2248.52s: &gt;&gt; [snorts] &gt;&gt; something to look at. So, let's take a
+2250.99s: &gt;&gt; something to look at. So, let's take a
+2251.00s: &gt;&gt; something to look at. So, let's take a look at CRM. If we go into CRM and we'll
+2254.75s: look at CRM. If we go into CRM and we'll
+2254.76s: look at CRM. If we go into CRM and we'll go to daily data, we'll go back a few
+2257.83s: go to daily data, we'll go back a few
+2257.84s: go to daily data, we'll go back a few years
+2260.15s: years
+2260.16s: years so that you can see a few
+2262.59s: so that you can see a few
+2262.60s: so that you can see a few instances of these earnings.
+2266.31s: instances of these earnings.
+2266.32s: instances of these earnings. I'm just doing it in CRM right now, but
+2268.79s: I'm just doing it in CRM right now, but
+2268.80s: I'm just doing it in CRM right now, but if we just look at this earnings and
+2270.83s: if we just look at this earnings and
+2270.84s: if we just look at this earnings and what this one looked like, you can start
+2273.39s: what this one looked like, you can start
+2273.40s: what this one looked like, you can start with no data. You can start with
+2275.11s: with no data. You can start with
+2275.12s: with no data. You can start with literally Google Sheets.
+2277.31s: literally Google Sheets.
+2277.32s: literally Google Sheets. You can say, well, what was
+2280.15s: You can say, well, what was
+2280.16s: You can say, well, what was stock price before earnings? What was
+2282.79s: stock price before earnings? What was
+2282.80s: stock price before earnings? What was EPS before earnings?
+2284.95s: EPS before earnings?
+2284.96s: EPS before earnings? What was stock price and EPS post
+2287.35s: What was stock price and EPS post
+2287.36s: What was stock price and EPS post earnings? And then what is the T plus 1,
+2290.15s: earnings? And then what is the T plus 1,
+2290.16s: earnings? And then what is the T plus 1, T plus 2, T plus 3, T plus 4, T plus 5,
+2293.27s: T plus 2, T plus 3, T plus 4, T plus 5,
+2293.28s: T plus 2, T plus 3, T plus 4, T plus 5, T plus 10, which is just time plus, and
+2296.55s: T plus 10, which is just time plus, and
+2296.56s: T plus 10, which is just time plus, and see how it moved past that. So, you can
+2299.19s: see how it moved past that. So, you can
+2299.20s: see how it moved past that. So, you can do that here. Then you can go to this
+2301.47s: do that here. Then you can go to this
+2301.48s: do that here. Then you can go to this one and you can do that here. And then
+2304.11s: one and you can do that here. And then
+2304.12s: one and you can do that here. And then you can go back to this one and do that
+2306.51s: you can go back to this one and do that
+2306.52s: you can go back to this one and do that here. And so on and so forth. You can go
+2310.43s: here. And so on and so forth. You can go
+2310.44s: here. And so on and so forth. You can go back tons of them. So then if we look at
+2312.15s: back tons of them. So then if we look at
+2312.16s: back tons of them. So then if we look at this one, we have an interesting
+2313.95s: this one, we have an interesting
+2313.96s: this one, we have an interesting scenario where it definitely beat. You
+2316.47s: scenario where it definitely beat. You
+2316.48s: scenario where it definitely beat. You got your gap. So it looks like it might
+2319.71s: got your gap. So it looks like it might
+2319.72s: got your gap. So it looks like it might qualify and you start to get your price
+2322.59s: qualify and you start to get your price
+2322.60s: qualify and you start to get your price behavior. And you get this pullback.
+2325.31s: behavior. And you get this pullback.
+2325.32s: behavior. And you get this pullback. Again, maybe that's normal, maybe that's
+2327.07s: Again, maybe that's normal, maybe that's
+2327.08s: Again, maybe that's normal, maybe that's not. You'll know when you look at stuff.
+2329.79s: not. You'll know when you look at stuff.
+2329.80s: not. You'll know when you look at stuff. And then you'll see a continuation,
+2331.55s: And then you'll see a continuation,
+2331.56s: And then you'll see a continuation, rolls back over and so on. What I'm
+2333.51s: rolls back over and so on. What I'm
+2333.52s: rolls back over and so on. What I'm emphasizing is that with any sort of
+2336.07s: emphasizing is that with any sort of
+2336.08s: emphasizing is that with any sort of strategy, you're trading the propensity
+2339.03s: strategy, you're trading the propensity
+2339.04s: strategy, you're trading the propensity of something to do something. You are
+2340.95s: of something to do something. You are
+2340.96s: of something to do something. You are not trading
+2342.71s: not trading
+2342.72s: not trading the individual circumstance for
+2344.55s: the individual circumstance for
+2344.56s: the individual circumstance for everything and even with something like
+2346.11s: everything and even with something like
+2346.12s: everything and even with something like post earnings announcement drift, there
+2347.99s: post earnings announcement drift, there
+2348.00s: post earnings announcement drift, there are sub variants of that. There are some
+2352.03s: are sub variants of that. There are some
+2352.04s: are sub variants of that. There are some versions of post earnings announcement
+2353.67s: versions of post earnings announcement
+2353.68s: versions of post earnings announcement drift that lead to these launch off
+2356.35s: drift that lead to these launch off
+2356.36s: drift that lead to these launch off style patterns. There's some versions of
+2359.47s: style patterns. There's some versions of
+2359.48s: style patterns. There's some versions of post earnings announcement drift that
+2361.55s: post earnings announcement drift that
+2361.56s: post earnings announcement drift that lead to an initial aggressive response
+2364.63s: lead to an initial aggressive response
+2364.64s: lead to an initial aggressive response that mellows out and trends sideways.
+2367.27s: that mellows out and trends sideways.
+2367.28s: that mellows out and trends sideways. There's other versions that lead to
+2369.15s: There's other versions that lead to
+2369.16s: There's other versions that lead to reversals.
+2370.67s: reversals.
+2370.68s: reversals. But each one of those has specific
+2373.99s: But each one of those has specific
+2374.00s: But each one of those has specific footprints that give you some insight to
+2377.39s: footprints that give you some insight to
+2377.40s: footprints that give you some insight to know which one you're looking at as it's
+2380.43s: know which one you're looking at as it's
+2380.44s: know which one you're looking at as it's happening.
+2381.75s: happening.
+2381.76s: happening. Because for example, if you see
+2384.19s: Because for example, if you see
+2384.20s: Because for example, if you see something like this
+2385.83s: something like this
+2385.84s: something like this and then you'll look at your T plus
+2388.11s: and then you'll look at your T plus
+2388.12s: and then you'll look at your T plus four, T plus five and even after the
+2391.51s: four, T plus five and even after the
+2391.52s: four, T plus five and even after the earnings gap from that point, it's up
+2394.27s: earnings gap from that point, it's up
+2394.28s: earnings gap from that point, it's up another 15%
+2396.79s: another 15%
+2396.80s: another 15% that looks a hell of a lot different
+2399.03s: that looks a hell of a lot different
+2399.04s: that looks a hell of a lot different than these versions.
+2401.15s: than these versions.
+2401.16s: than these versions. So you can use that information to again
+2404.11s: So you can use that information to again
+2404.12s: So you can use that information to again help you make better decisions with how
+2407.35s: help you make better decisions with how
+2407.36s: help you make better decisions with how you choose to build something.
+2409.99s: you choose to build something.
+2410.00s: you choose to build something. That's what these different buckets are
+2412.59s: That's what these different buckets are
+2412.60s: That's what these different buckets are designed for.
+2414.59s: designed for.
+2414.60s: designed for. So
+2416.75s: So
+2416.76s: So you can literally screenshot this
+2419.95s: you can literally screenshot this
+2419.96s: you can literally screenshot this and then use this as a baseline. For the
+2423.47s: and then use this as a baseline. For the
+2423.48s: and then use this as a baseline. For the pro members in the Patreon, I'm just
+2425.47s: pro members in the Patreon, I'm just
+2425.48s: pro members in the Patreon, I'm just going to give you there's like two
+2427.03s: going to give you there's like two
+2427.04s: going to give you there's like two little handouts that I made with this.
+2429.03s: little handouts that I made with this.
+2429.04s: little handouts that I made with this. So you guys will just be able to to pull
+2430.87s: So you guys will just be able to to pull
+2430.88s: So you guys will just be able to to pull those that kind of captures this stuff.
+2432.91s: those that kind of captures this stuff.
+2432.92s: those that kind of captures this stuff. But for everybody else, literally just
+2434.07s: But for everybody else, literally just
+2434.08s: But for everybody else, literally just grab a screenshot. You you have the
+2435.75s: grab a screenshot. You you have the
+2435.76s: grab a screenshot. You you have the stuff that you need here.
+2439.96s: Remember
+2441.56s: Remember the profile
+2443.91s: the profile
+2443.92s: the profile is the starting point.
+2447.15s: is the starting point.
+2447.16s: is the starting point. The purpose of the profile
+2450.03s: The purpose of the profile
+2450.04s: The purpose of the profile is that it helps you then generate what
+2453.95s: is that it helps you then generate what
+2453.96s: is that it helps you then generate what kind of rule set might make sense for
+2457.79s: kind of rule set might make sense for
+2457.80s: kind of rule set might make sense for what you're doing.
+2459.23s: what you're doing.
+2459.24s: what you're doing. For example, if I'm trading short ball
+2461.95s: For example, if I'm trading short ball
+2461.96s: For example, if I'm trading short ball through earnings and I'm analyzing that
+2465.07s: through earnings and I'm analyzing that
+2465.08s: through earnings and I'm analyzing that profit mechanism
+2466.59s: profit mechanism
+2466.60s: profit mechanism and I notice that there's a very
+2468.03s: and I notice that there's a very
+2468.04s: and I notice that there's a very specific relationship with volatility
+2471.39s: specific relationship with volatility
+2471.40s: specific relationship with volatility through an earnings release.
+2473.35s: through an earnings release.
+2473.36s: through an earnings release. That might logically lead me to not sell
+2478.79s: That might logically lead me to not sell
+2478.80s: That might logically lead me to not sell 60-day options
+2481.07s: 60-day options
+2481.08s: 60-day options if I'm trying to capture the earnings
+2482.67s: if I'm trying to capture the earnings
+2482.68s: if I'm trying to capture the earnings effect.
+2484.15s: effect.
+2484.16s: effect. Does that mean that I use the term that
+2486.55s: Does that mean that I use the term that
+2486.56s: Does that mean that I use the term that has earnings in it directly?
+2489.03s: has earnings in it directly?
+2489.04s: has earnings in it directly? Do I use the next primary term?
+2492.19s: Do I use the next primary term?
+2492.20s: Do I use the next primary term? Those are variants that you can explore.
+2496.03s: Those are variants that you can explore.
+2496.04s: Those are variants that you can explore. But what I'm saying here is that once
+2499.19s: But what I'm saying here is that once
+2499.20s: But what I'm saying here is that once you begin profiling that profit
+2501.47s: you begin profiling that profit
+2501.48s: you begin profiling that profit mechanism, it's literally going to help
+2503.47s: mechanism, it's literally going to help
+2503.48s: mechanism, it's literally going to help you answer those questions. And if you
+2505.67s: you answer those questions. And if you
+2505.68s: you answer those questions. And if you have access to options data,
+2508.07s: have access to options data,
+2508.08s: have access to options data, that's when you can measure instead of
+2510.19s: that's when you can measure instead of
+2510.20s: that's when you can measure instead of guess. You can say, well, how does the
+2513.99s: guess. You can say, well, how does the
+2514.00s: guess. You can say, well, how does the volatility contraction and gamma
+2517.67s: volatility contraction and gamma
+2517.68s: volatility contraction and gamma exposure
+2519.31s: exposure
+2519.32s: exposure behave
+2520.95s: behave
+2520.96s: behave when I trade the the whatever the front
+2524.43s: when I trade the the whatever the front
+2524.44s: when I trade the the whatever the front term is that has earnings
+2527.39s: term is that has earnings
+2527.40s: term is that has earnings or if I trade the next primary
+2529.47s: or if I trade the next primary
+2529.48s: or if I trade the next primary expiration and see how long on average
+2532.19s: expiration and see how long on average
+2532.20s: expiration and see how long on average that is with respect to DTE.
+2534.83s: that is with respect to DTE.
+2534.84s: that is with respect to DTE. And you might find that you don't always
+2537.59s: And you might find that you don't always
+2537.60s: And you might find that you don't always do one of them.
+2539.11s: do one of them.
+2539.12s: do one of them. Based on the conditions that you see
+2540.87s: Based on the conditions that you see
+2540.88s: Based on the conditions that you see coming into an earnings release, you
+2542.95s: coming into an earnings release, you
+2542.96s: coming into an earnings release, you might selectively choose to have a
+2545.99s: might selectively choose to have a
+2546.00s: might selectively choose to have a little less exposure to the short vol
+2549.07s: little less exposure to the short vol
+2549.08s: little less exposure to the short vol through earnings and that collapse to
+2551.87s: through earnings and that collapse to
+2551.88s: through earnings and that collapse to get rid of some of your gamma exposure.
+2555.07s: get rid of some of your gamma exposure.
+2555.08s: get rid of some of your gamma exposure. You still might get enough in your next
+2557.23s: You still might get enough in your next
+2557.24s: You still might get enough in your next primary expiration provided, let's say
+2559.83s: primary expiration provided, let's say
+2559.84s: primary expiration provided, let's say it's less than 15 days.
+2562.99s: it's less than 15 days.
+2563.00s: it's less than 15 days. So, the way that you answer those
+2565.63s: So, the way that you answer those
+2565.64s: So, the way that you answer those questions is through profiling and
+2568.31s: questions is through profiling and
+2568.32s: questions is through profiling and having a better idea.
+2571.27s: having a better idea.
+2571.28s: having a better idea. What I'm showing you here is different
+2573.19s: What I'm showing you here is different
+2573.20s: What I'm showing you here is different ways that behavior can look.
+2575.75s: ways that behavior can look.
+2575.76s: ways that behavior can look. So, you can have things that have some
+2577.91s: So, you can have things that have some
+2577.92s: So, you can have things that have some type of decay. An easy way to measure
+2580.39s: type of decay. An easy way to measure
+2580.40s: type of decay. An easy way to measure decay is through time and half-lives.
+2583.91s: decay is through time and half-lives.
+2583.92s: decay is through time and half-lives. Half-lives sounds a little fancier than
+2587.27s: Half-lives sounds a little fancier than
+2587.28s: Half-lives sounds a little fancier than what it is. It just tells you how
+2589.71s: what it is. It just tells you how
+2589.72s: what it is. It just tells you how something decays. That's literally it.
+2592.79s: something decays. That's literally it.
+2592.80s: something decays. That's literally it. And it gives you, again, an idea
+2595.71s: And it gives you, again, an idea
+2595.72s: And it gives you, again, an idea on average. So, for example, let's say
+2598.99s: on average. So, for example, let's say
+2599.00s: on average. So, for example, let's say that you think you want to trade the
+2601.15s: that you think you want to trade the
+2601.16s: that you think you want to trade the collapse
+2603.27s: collapse
+2603.28s: collapse of a vol spike.
+2605.27s: of a vol spike.
+2605.28s: of a vol spike. Well, we also know that vol clusters.
+2607.75s: Well, we also know that vol clusters.
+2607.76s: Well, we also know that vol clusters. So, what we can do is we can figure out
+2609.87s: So, what we can do is we can figure out
+2609.88s: So, what we can do is we can figure out how long does it cluster on average, so
+2612.71s: how long does it cluster on average, so
+2612.72s: how long does it cluster on average, so then I can make a trade that allows me
+2615.11s: then I can make a trade that allows me
+2615.12s: then I can make a trade that allows me to actually capture what I'm trying to
+2617.99s: to actually capture what I'm trying to
+2618.00s: to actually capture what I'm trying to trade, the collapse of vol.
+2621.15s: trade, the collapse of vol.
+2621.16s: trade, the collapse of vol. Event stuff or catalyst stuff, you can
+2624.15s: Event stuff or catalyst stuff, you can
+2624.16s: Event stuff or catalyst stuff, you can kind of bucket those together.
+2627.47s: kind of bucket those together.
+2627.48s: kind of bucket those together. There's normally a very specific
+2630.03s: There's normally a very specific
+2630.04s: There's normally a very specific catalyst that we know is coming that
+2632.27s: catalyst that we know is coming that
+2632.28s: catalyst that we know is coming that leads to something. Earnings is a great
+2635.31s: leads to something. Earnings is a great
+2635.32s: leads to something. Earnings is a great example. For biotech company, different
+2637.95s: example. For biotech company, different
+2637.96s: example. For biotech company, different phase trial releases an example and so
+2640.67s: phase trial releases an example and so
+2640.68s: phase trial releases an example and so on and so forth.
+2642.83s: on and so forth.
+2642.84s: on and so forth. So,
+2644.04s: So, time and the way things behave over time
+2648.23s: time and the way things behave over time
+2648.24s: time and the way things behave over time is a feature of the mechanism, and it's
+2650.79s: is a feature of the mechanism, and it's
+2650.80s: is a feature of the mechanism, and it's really commonly one that people tend to
+2653.79s: really commonly one that people tend to
+2653.80s: really commonly one that people tend to miss.
+2654.99s: miss.
+2655.00s: miss. The next flavor for profiling that we
+2658.31s: The next flavor for profiling that we
+2658.32s: The next flavor for profiling that we talked about is ranges.
+2660.19s: talked about is ranges.
+2660.20s: talked about is ranges. This is where we can literally just
+2661.83s: This is where we can literally just
+2661.84s: This is where we can literally just create a distribution of what the thing
+2665.43s: create a distribution of what the thing
+2665.44s: create a distribution of what the thing looks like and how it looks. So, for
+2667.83s: looks like and how it looks. So, for
+2667.84s: looks like and how it looks. So, for example,
+2669.19s: example,
+2669.20s: example, if we're doing something like selling,
+2673.31s: if we're doing something like selling,
+2673.32s: if we're doing something like selling, let's say index ball,
+2675.55s: let's say index ball,
+2675.56s: let's say index ball, we can see what that tends to look like.
+2677.95s: we can see what that tends to look like.
+2677.96s: we can see what that tends to look like. And then, once you understand what it
+2680.43s: And then, once you understand what it
+2680.44s: And then, once you understand what it tends to look like, you can use that
+2682.27s: tends to look like, you can use that
+2682.28s: tends to look like, you can use that information to try and cut the tails.
+2684.71s: information to try and cut the tails.
+2684.72s: information to try and cut the tails. Here's what that means.
+2686.47s: Here's what that means.
+2686.48s: Here's what that means. If we notice,
+2688.55s: If we notice,
+2688.56s: If we notice, and we drew an actual distribution for
+2692.11s: and we drew an actual distribution for
+2692.12s: and we drew an actual distribution for something that's trading index ball,
+2694.95s: something that's trading index ball,
+2694.96s: something that's trading index ball, I'll bring you guys over to the main
+2697.03s: I'll bring you guys over to the main
+2697.04s: I'll bring you guys over to the main screen so that I can attempt to draw
+2699.91s: screen so that I can attempt to draw
+2699.92s: screen so that I can attempt to draw something
+2701.39s: something
+2701.40s: something for this example that probably will be
+2704.95s: for this example that probably will be
+2704.96s: for this example that probably will be terrible cuz
+2709.12s: your boy ain't into drawing that much.
+2711.36s: your boy ain't into drawing that much. Meaning, I'm not good at it.
+2713.99s: Meaning, I'm not good at it.
+2714.00s: Meaning, I'm not good at it. But, let's say that we have ah, we
+2716.35s: But, let's say that we have ah, we
+2716.36s: But, let's say that we have ah, we already have a line. So, this is our
+2718.99s: already have a line. So, this is our
+2719.00s: already have a line. So, this is our starting line.
+2720.51s: starting line.
+2720.52s: starting line. And let's say that this is zero.
+2723.35s: And let's say that this is zero.
+2723.36s: And let's say that this is zero. And your distribution
+2725.83s: And your distribution
+2725.84s: And your distribution that you see,
+2727.63s: that you see,
+2727.64s: that you see, this is a P&amp;L distribution, by the
+2730.72s: this is a P&amp;L distribution, by the
+2730.73s: this is a P&amp;L distribution, by the [clears throat] way.
+2732.11s: [clears throat] way.
+2732.12s: [clears throat] way. This is your P&amp;L distribution.
+2735.71s: This is your P&amp;L distribution.
+2735.72s: This is your P&amp;L distribution. And you might find something
+2739.76s: that looks like this.
+2743.84s: So, what this means is you have
+2746.12s: So, what this means is you have something that on average, your mean
+2751.35s: something that on average, your mean
+2751.36s: something that on average, your mean is positive. So, the density of what
+2754.75s: is positive. So, the density of what
+2754.76s: is positive. So, the density of what you're trading and where you're trading
+2756.23s: you're trading and where you're trading
+2756.24s: you're trading and where you're trading is positive. It tends to make money.
+2758.43s: is positive. It tends to make money.
+2758.44s: is positive. It tends to make money. But, you'll notice how fat the tail is
+2762.43s: But, you'll notice how fat the tail is
+2762.44s: But, you'll notice how fat the tail is compared to your upside tail.
+2764.99s: compared to your upside tail.
+2765.00s: compared to your upside tail. This is skew. This is the downside risk.
+2768.03s: This is skew. This is the downside risk.
+2768.04s: This is skew. This is the downside risk. This is the insurance that you're
+2769.31s: This is the insurance that you're
+2769.32s: This is the insurance that you're selling.
+2770.95s: selling.
+2770.96s: selling. Very frequently, you're going to make or
+2773.87s: Very frequently, you're going to make or
+2773.88s: Very frequently, you're going to make or lose
+2775.11s: lose
+2775.12s: lose not a ton of money. It'll be about right
+2779.07s: not a ton of money. It'll be about right
+2779.08s: not a ton of money. It'll be about right around zero, little positive, little
+2780.99s: around zero, little positive, little
+2781.00s: around zero, little positive, little negative on your individual
+2782.39s: negative on your individual
+2782.40s: negative on your individual circumstances. Those add up and on
+2784.63s: circumstances. Those add up and on
+2784.64s: circumstances. Those add up and on average, they lead out to a positive
+2787.43s: average, they lead out to a positive
+2787.44s: average, they lead out to a positive outcome. But every once in a while,
+2790.27s: outcome. But every once in a while,
+2790.28s: outcome. But every once in a while, you're going to experience things that
+2792.27s: you're going to experience things that
+2792.28s: you're going to experience things that are just way out here. This is your
+2795.27s: are just way out here. This is your
+2795.28s: are just way out here. This is your COVID crash. This is the '08.com bubble.
+2798.79s: COVID crash. This is the '08.com bubble.
+2798.80s: COVID crash. This is the '08.com bubble. This is some periods of the 2023 bear
+2802.99s: This is some periods of the 2023 bear
+2803.00s: This is some periods of the 2023 bear market.
+2804.91s: market.
+2804.92s: market. These will happen.
+2806.95s: These will happen.
+2806.96s: These will happen. So then what you can say is, well,
+2810.39s: So then what you can say is, well,
+2810.40s: So then what you can say is, well, once I understand what the distribution
+2813.67s: once I understand what the distribution
+2813.68s: once I understand what the distribution of the profit mechanism itself looks
+2815.99s: of the profit mechanism itself looks
+2816.00s: of the profit mechanism itself looks like,
+2817.15s: like,
+2817.16s: like, I can say, well, are there certain rules
+2820.03s: I can say, well, are there certain rules
+2820.04s: I can say, well, are there certain rules I can employ
+2822.23s: I can employ
+2822.24s: I can employ that decrease my
+2825.23s: that decrease my
+2825.24s: that decrease my my susceptibility to these events
+2828.07s: my susceptibility to these events
+2828.08s: my susceptibility to these events without scooting this distribution too
+2831.31s: without scooting this distribution too
+2831.32s: without scooting this distribution too far to the left?
+2833.39s: far to the left?
+2833.40s: far to the left? Because there will be a number of
+2834.67s: Because there will be a number of
+2834.68s: Because there will be a number of instances where something
+2836.83s: instances where something
+2836.84s: instances where something might go over here temporarily and then
+2840.31s: might go over here temporarily and then
+2840.32s: might go over here temporarily and then over the lifespan of that same trade
+2842.43s: over the lifespan of that same trade
+2842.44s: over the lifespan of that same trade might come right back and end up over
+2844.51s: might come right back and end up over
+2844.52s: might come right back and end up over here.
+2845.60s: here. That's why a lot of times when you try
+2848.35s: That's why a lot of times when you try
+2848.36s: That's why a lot of times when you try to cut the tails, you're going to notice
+2850.03s: to cut the tails, you're going to notice
+2850.04s: to cut the tails, you're going to notice that your distribution
+2851.95s: that your distribution
+2851.96s: that your distribution shifts a bit.
+2853.83s: shifts a bit.
+2853.84s: shifts a bit. But sometimes if there are things that
+2856.23s: But sometimes if there are things that
+2856.24s: But sometimes if there are things that are egregious enough,
+2858.99s: are egregious enough,
+2859.00s: are egregious enough, you can literally cut that out. It's
+2861.99s: you can literally cut that out. It's
+2862.00s: you can literally cut that out. It's going to cut some of these out that
+2864.55s: going to cut some of these out that
+2864.56s: going to cut some of these out that would end up over here, but it can
+2866.67s: would end up over here, but it can
+2866.68s: would end up over here, but it can actually improve your average P&amp;L
+2871.35s: actually improve your average P&amp;L
+2871.36s: actually improve your average P&amp;L because this is so devastating that even
+2875.15s: because this is so devastating that even
+2875.16s: because this is so devastating that even though you're removing a sample of
+2877.43s: though you're removing a sample of
+2877.44s: though you're removing a sample of things that end up profitable anyways,
+2879.67s: things that end up profitable anyways,
+2879.68s: things that end up profitable anyways, this outweighs those.
+2881.99s: this outweighs those.
+2882.00s: this outweighs those. Again, the way that we get there
+2885.75s: Again, the way that we get there
+2885.76s: Again, the way that we get there is through profiling. The way that we
+2887.91s: is through profiling. The way that we
+2887.92s: is through profiling. The way that we understand and make a decision like this
+2891.67s: understand and make a decision like this
+2891.68s: understand and make a decision like this is through profiling the profit maker.
+2899.28s: All right.
+2905.28s: the next thing that we have to consider
+2907.52s: the next thing that we have to consider is the frequency of something.
+2910.43s: is the frequency of something.
+2910.44s: is the frequency of something. A big part of frequency is how fast can
+2914.91s: A big part of frequency is how fast can
+2914.92s: A big part of frequency is how fast can you build an understanding of the thing
+2917.15s: you build an understanding of the thing
+2917.16s: you build an understanding of the thing that you're looking at? So, for example,
+2919.59s: that you're looking at? So, for example,
+2919.60s: that you're looking at? So, for example, if you're trading a strategy that's
+2921.87s: if you're trading a strategy that's
+2921.88s: if you're trading a strategy that's based on election cycles, we only get
+2924.91s: based on election cycles, we only get
+2924.92s: based on election cycles, we only get one of those every 4 years.
+2928.35s: one of those every 4 years.
+2928.36s: one of those every 4 years. The way that you build something around
+2930.83s: The way that you build something around
+2930.84s: The way that you build something around an election cycle will actually look a
+2933.63s: an election cycle will actually look a
+2933.64s: an election cycle will actually look a lot different, like a whole lot
+2935.19s: lot different, like a whole lot
+2935.20s: lot different, like a whole lot different, than the way that you might
+2937.91s: different, than the way that you might
+2937.92s: different, than the way that you might trade something else.
+2940.79s: trade something else.
+2940.80s: trade something else. And that doesn't mean that you can't
+2942.71s: And that doesn't mean that you can't
+2942.72s: And that doesn't mean that you can't trade election cycles, but what it does
+2945.35s: trade election cycles, but what it does
+2945.36s: trade election cycles, but what it does mean is if I build a strategy that's
+2947.87s: mean is if I build a strategy that's
+2947.88s: mean is if I build a strategy that's based around election cycles,
+2950.51s: based around election cycles,
+2950.52s: based around election cycles, I need to be really careful. That's not
+2952.99s: I need to be really careful. That's not
+2953.00s: I need to be really careful. That's not the thing that I'm going to bet the farm
+2954.71s: the thing that I'm going to bet the farm
+2954.72s: the thing that I'm going to bet the farm on for me personally as a risk-averse
+2957.31s: on for me personally as a risk-averse
+2957.32s: on for me personally as a risk-averse trader. A more risk-on trader might look
+2959.91s: trader. A more risk-on trader might look
+2959.92s: trader. A more risk-on trader might look at an effect around there and be like,
+2961.43s: at an effect around there and be like,
+2961.44s: at an effect around there and be like, "Yeah, it doesn't happen that much, but
+2962.91s: "Yeah, it doesn't happen that much, but
+2962.92s: "Yeah, it doesn't happen that much, but it's dominant enough that I don't really
+2964.67s: it's dominant enough that I don't really
+2964.68s: it's dominant enough that I don't really care. I'm willing to risk more on it."
+2966.75s: care. I'm willing to risk more on it."
+2966.76s: care. I'm willing to risk more on it." And that's cool. There's different
+2968.59s: And that's cool. There's different
+2968.60s: And that's cool. There's different levels
+2969.87s: levels
+2969.88s: levels of risk tolerance, and that's for you to
+2973.43s: of risk tolerance, and that's for you to
+2973.44s: of risk tolerance, and that's for you to determine where you fit.
+2975.87s: determine where you fit.
+2975.88s: determine where you fit. But, there's a trap here as well.
+2979.75s: But, there's a trap here as well.
+2979.76s: But, there's a trap here as well. Sometimes people will use things like
+2982.67s: Sometimes people will use things like
+2982.68s: Sometimes people will use things like zero DTEs,
+2984.67s: zero DTEs,
+2984.68s: zero DTEs, and they might say, "Well, zero DTEs,
+2986.91s: and they might say, "Well, zero DTEs,
+2986.92s: and they might say, "Well, zero DTEs, you get a really big sample size really
+2988.59s: you get a really big sample size really
+2988.60s: you get a really big sample size really fast." And it's not wrong.
+2990.63s: fast." And it's not wrong.
+2990.64s: fast." And it's not wrong. But, one of the issues with that is what
+2992.75s: But, one of the issues with that is what
+2992.76s: But, one of the issues with that is what you'll find is zero DTEs. This is like
+2995.03s: you'll find is zero DTEs. This is like
+2995.04s: you'll find is zero DTEs. This is like short vol trading, by the way.
+2997.27s: short vol trading, by the way.
+2997.28s: short vol trading, by the way. Which is with zero DTEs, if you're
+2999.79s: Which is with zero DTEs, if you're
+2999.80s: Which is with zero DTEs, if you're trading short vol and whatnot, what
+3001.87s: trading short vol and whatnot, what
+3001.88s: trading short vol and whatnot, what you'll also find is that your
+3003.87s: you'll also find is that your
+3003.88s: you'll also find is that your performance is really regime dependent.
+3006.15s: performance is really regime dependent.
+3006.16s: performance is really regime dependent. So, you could build something that you
+3008.31s: So, you could build something that you
+3008.32s: So, you could build something that you consider to be a really good zero DTE
+3010.83s: consider to be a really good zero DTE
+3010.84s: consider to be a really good zero DTE strategy with a really large sample
+3012.71s: strategy with a really large sample
+3012.72s: strategy with a really large sample size, but then you'll find as soon as we
+3015.55s: size, but then you'll find as soon as we
+3015.56s: size, but then you'll find as soon as we come into a year like this where
+3017.67s: come into a year like this where
+3017.68s: come into a year like this where volatility is just absolutely suppressed
+3020.83s: volatility is just absolutely suppressed
+3020.84s: volatility is just absolutely suppressed for a good part of the year, that your
+3022.27s: for a good part of the year, that your
+3022.28s: for a good part of the year, that your strategy starts completely coming undone
+3024.67s: strategy starts completely coming undone
+3024.68s: strategy starts completely coming undone even though you thought you had a really
+3025.99s: even though you thought you had a really
+3026.00s: even though you thought you had a really good understanding of it in a big sample
+3027.55s: good understanding of it in a big sample
+3027.56s: good understanding of it in a big sample size. There's nuance here is what that
+3029.91s: size. There's nuance here is what that
+3029.92s: size. There's nuance here is what that means. You have to apply a logical
+3033.27s: means. You have to apply a logical
+3033.28s: means. You have to apply a logical thought process around it. You have to
+3034.99s: thought process around it. You have to
+3035.00s: thought process around it. You have to be a thinking trader.
+3037.95s: be a thinking trader.
+3037.96s: be a thinking trader. Because you might see something that has
+3040.07s: Because you might see something that has
+3040.08s: Because you might see something that has a ton of samples, but if you aren't
+3043.03s: a ton of samples, but if you aren't
+3043.04s: a ton of samples, but if you aren't smart enough to realize that those
+3045.87s: smart enough to realize that those
+3045.88s: smart enough to realize that those samples are regime dependent on the
+3048.47s: samples are regime dependent on the
+3048.48s: samples are regime dependent on the thing that you're looking at, it can be
+3050.19s: thing that you're looking at, it can be
+3050.20s: thing that you're looking at, it can be kind of problematic.
+3056.20s: Next, severity.
+3059.36s: Next, severity. We just looked at some part
+3062.71s: We just looked at some part
+3062.72s: We just looked at some part of severity in that little plot that I
+3065.47s: of severity in that little plot that I
+3065.48s: of severity in that little plot that I gave you.
+3066.91s: gave you.
+3066.92s: gave you. But, what we want to understand is when
+3070.11s: But, what we want to understand is when
+3070.12s: But, what we want to understand is when losing conditions, notice that this
+3071.91s: losing conditions, notice that this
+3071.92s: losing conditions, notice that this still isn't about structures. This isn't
+3073.91s: still isn't about structures. This isn't
+3073.92s: still isn't about structures. This isn't about DTE. This isn't about any of that.
+3076.59s: about DTE. This isn't about any of that.
+3076.60s: about DTE. This isn't about any of that. This is still literally just around the
+3078.63s: This is still literally just around the
+3078.64s: This is still literally just around the profit mechanism. So, for example, if
+3080.39s: profit mechanism. So, for example, if
+3080.40s: profit mechanism. So, for example, if we're using VRP,
+3082.11s: we're using VRP,
+3082.12s: we're using VRP, when VRP goes negative, we know that's
+3084.63s: when VRP goes negative, we know that's
+3084.64s: when VRP goes negative, we know that's when we would be losing. So, how bad is
+3087.23s: when we would be losing. So, how bad is
+3087.24s: when we would be losing. So, how bad is it when it goes negative?
+3091.03s: it when it goes negative?
+3091.04s: it when it goes negative? When it goes negative,
+3093.79s: When it goes negative,
+3093.80s: When it goes negative, how does it tend to cluster?
+3095.91s: how does it tend to cluster?
+3095.92s: how does it tend to cluster? How long does it tend to cluster for?
+3098.75s: How long does it tend to cluster for?
+3098.76s: How long does it tend to cluster for? All of those can be used, again, to make
+3102.27s: All of those can be used, again, to make
+3102.28s: All of those can be used, again, to make decisions.
+3103.67s: decisions.
+3103.68s: decisions. So, you want to use metrics like max
+3106.11s: So, you want to use metrics like max
+3106.12s: So, you want to use metrics like max drawdown, downside deviation,
+3108.27s: drawdown, downside deviation,
+3108.28s: drawdown, downside deviation, conditional value at risk, worst single
+3111.35s: conditional value at risk, worst single
+3111.36s: conditional value at risk, worst single date,
+3112.71s: date,
+3112.72s: date, time to recover. All of those are useful
+3116.23s: time to recover. All of those are useful
+3116.24s: time to recover. All of those are useful metrics to help you again build
+3118.47s: metrics to help you again build
+3118.48s: metrics to help you again build something that's logical.
+3121.19s: something that's logical.
+3121.20s: something that's logical. Robustness is the fifth feature that we
+3123.99s: Robustness is the fifth feature that we
+3124.00s: Robustness is the fifth feature that we talked about.
+3125.83s: talked about.
+3125.84s: talked about. The reason why we care about robustness
+3129.03s: The reason why we care about robustness
+3129.04s: The reason why we care about robustness is you might find things that fail
+3131.91s: is you might find things that fail
+3131.92s: is you might find things that fail miserably under certain circumstances,
+3135.11s: miserably under certain circumstances,
+3135.12s: miserably under certain circumstances, but perform really well in others.
+3137.87s: but perform really well in others.
+3137.88s: but perform really well in others. So, that doesn't mean that the strategy
+3139.43s: So, that doesn't mean that the strategy
+3139.44s: So, that doesn't mean that the strategy is bad. It just means that you need to
+3141.87s: is bad. It just means that you need to
+3141.88s: is bad. It just means that you need to be thoughtful about when you choose to
+3143.87s: be thoughtful about when you choose to
+3143.88s: be thoughtful about when you choose to apply it and how you know when to apply
+3146.11s: apply it and how you know when to apply
+3146.12s: apply it and how you know when to apply it.
+3147.28s: it. The other thing is when you start
+3150.95s: The other thing is when you start
+3150.96s: The other thing is when you start overlaying different kinds of filters
+3153.71s: overlaying different kinds of filters
+3153.72s: overlaying different kinds of filters and stuff,
+3154.95s: and stuff,
+3154.96s: and stuff, you want to be really careful that
+3157.83s: you want to be really careful that
+3157.84s: you want to be really careful that you're looking for plateaus
+3160.63s: you're looking for plateaus
+3160.64s: you're looking for plateaus versus
+3162.27s: versus
+3162.28s: versus spikes or peaks.
+3165.11s: spikes or peaks.
+3165.12s: spikes or peaks. This is something we've reviewed a lot
+3167.03s: This is something we've reviewed a lot
+3167.04s: This is something we've reviewed a lot in the last couple weeks with respect to
+3169.63s: in the last couple weeks with respect to
+3169.64s: in the last couple weeks with respect to conducting research, but this is equally
+3172.47s: conducting research, but this is equally
+3172.48s: conducting research, but this is equally the case when we're looking at
+3175.55s: the case when we're looking at
+3175.56s: the case when we're looking at profit mechanisms and profiling them.
+3177.27s: profit mechanisms and profiling them.
+3177.28s: profit mechanisms and profiling them. So, for example,
+3178.83s: So, for example,
+3178.84s: So, for example, if I look at variance risk premium and
+3181.63s: if I look at variance risk premium and
+3181.64s: if I look at variance risk premium and I'm looking at it for different
+3183.47s: I'm looking at it for different
+3183.48s: I'm looking at it for different durations, for different underlyings,
+3187.15s: durations, for different underlyings,
+3187.16s: durations, for different underlyings, I'm looking for things that look stable
+3189.63s: I'm looking for things that look stable
+3189.64s: I'm looking for things that look stable versus finding something that looks
+3192.51s: versus finding something that looks
+3192.52s: versus finding something that looks really good, but it's really not there
+3196.11s: really good, but it's really not there
+3196.12s: really good, but it's really not there that frequently. So, for example,
+3198.47s: that frequently. So, for example,
+3198.48s: that frequently. So, for example, if you're looking at variance risk
+3199.99s: if you're looking at variance risk
+3200.00s: if you're looking at variance risk premium and you're looking at it across
+3201.95s: premium and you're looking at it across
+3201.96s: premium and you're looking at it across different equities and you find one
+3204.15s: different equities and you find one
+3204.16s: different equities and you find one equity that is just really good risk
+3206.43s: equity that is just really good risk
+3206.44s: equity that is just really good risk premium compared to everything else,
+3208.63s: premium compared to everything else,
+3208.64s: premium compared to everything else, probably doesn't [&nbsp;__&nbsp;] mean anything.
+3210.35s: probably doesn't [&nbsp;__&nbsp;] mean anything.
+3210.36s: probably doesn't [&nbsp;__&nbsp;] mean anything. It means that it might have had really
+3211.59s: It means that it might have had really
+3211.60s: It means that it might have had really good risk premium in the past, but that
+3213.03s: good risk premium in the past, but that
+3213.04s: good risk premium in the past, but that doesn't mean it's going to have really
+3214.03s: doesn't mean it's going to have really
+3214.04s: doesn't mean it's going to have really good risk premium in the future, and it
+3215.47s: good risk premium in the future, and it
+3215.48s: good risk premium in the future, and it might mean that the specific flavor of
+3217.15s: might mean that the specific flavor of
+3217.16s: might mean that the specific flavor of risk premium that you're looking at is
+3218.51s: risk premium that you're looking at is
+3218.52s: risk premium that you're looking at is brittle as [&nbsp;__&nbsp;]
+3220.39s: brittle as [&nbsp;__&nbsp;]
+3220.40s: brittle as [&nbsp;__&nbsp;] So, you want to find things general that
+3223.11s: So, you want to find things general that
+3223.12s: So, you want to find things general that look stable. Again, there are
+3226.27s: look stable. Again, there are
+3226.28s: look stable. Again, there are exceptions. There's no no broad rules
+3231.11s: exceptions. There's no no broad rules
+3231.12s: exceptions. There's no no broad rules with something like this that I would
+3233.07s: with something like this that I would
+3233.08s: with something like this that I would automatically take. There are spike
+3236.67s: automatically take. There are spike
+3236.68s: automatically take. There are spike style things that I trade, for sure.
+3239.43s: style things that I trade, for sure.
+3239.44s: style things that I trade, for sure. But,
+3240.55s: But,
+3240.56s: But, those are really nuanced, and they are
+3242.95s: those are really nuanced, and they are
+3242.96s: those are really nuanced, and they are way more the exception than the rule.
+3246.07s: way more the exception than the rule.
+3246.08s: way more the exception than the rule. So,
+3247.28s: So, we now need to come up with a few rules
+3249.99s: we now need to come up with a few rules
+3250.00s: we now need to come up with a few rules that help us look at things.
+3253.51s: that help us look at things.
+3253.52s: that help us look at things. And this is exactly how we profile
+3257.99s: And this is exactly how we profile
+3258.00s: And this is exactly how we profile profit mechanisms, and then begin
+3260.55s: profit mechanisms, and then begin
+3260.56s: profit mechanisms, and then begin overlaying
+3262.47s: overlaying
+3262.48s: overlaying different kinds of indicators, signals
+3266.39s: different kinds of indicators, signals
+3266.40s: different kinds of indicators, signals to assess
+3267.99s: to assess
+3268.00s: to assess how strong they are.
+3270.19s: how strong they are.
+3270.20s: how strong they are. So,
+3271.36s: So, the idea of pre-registration is to make
+3273.91s: the idea of pre-registration is to make
+3273.92s: the idea of pre-registration is to make sure that you outline, generally
+3276.55s: sure that you outline, generally
+3276.56s: sure that you outline, generally speaking, what you're expecting to
+3278.23s: speaking, what you're expecting to
+3278.24s: speaking, what you're expecting to happen before you look. Uh give me one
+3282.19s: happen before you look. Uh give me one
+3282.20s: happen before you look. Uh give me one sec, sorry.
+3285.76s: I just got an email that I got to
+3287.52s: I just got an email that I got to respond to.
+3313.36s: Okay.
+3318.60s: So, the There's a couple other things that
+3321.03s: the There's a couple other things that
+3321.04s: the There's a couple other things that you generally want to keep in mind.
+3322.63s: you generally want to keep in mind.
+3322.64s: you generally want to keep in mind. Again, you can go back through all the
+3324.07s: Again, you can go back through all the
+3324.08s: Again, you can go back through all the research thing that we did last month.
+3325.47s: research thing that we did last month.
+3325.48s: research thing that we did last month. I'm not looking to to rehash all of
+3328.11s: I'm not looking to to rehash all of
+3328.12s: I'm not looking to to rehash all of that. But, a big one is cost aware. So,
+3332.23s: that. But, a big one is cost aware. So,
+3332.24s: that. But, a big one is cost aware. So, understanding how expensive something is
+3334.03s: understanding how expensive something is
+3334.04s: understanding how expensive something is to actually implement, and then making
+3336.23s: to actually implement, and then making
+3336.24s: to actually implement, and then making sure that the data that you have is
+3338.19s: sure that the data that you have is
+3338.20s: sure that the data that you have is accurate. So you can use two sources to
+3341.11s: accurate. So you can use two sources to
+3341.12s: accurate. So you can use two sources to validate them against one another. You
+3342.67s: validate them against one another. You
+3342.68s: validate them against one another. You can spot check them. Is another really
+3345.23s: can spot check them. Is another really
+3345.24s: can spot check them. Is another really good way and there's
+3346.59s: good way and there's
+3346.60s: good way and there's different levels of difficulty with
+3349.99s: different levels of difficulty with
+3350.00s: different levels of difficulty with this. But you can look at stock prices
+3352.83s: this. But you can look at stock prices
+3352.84s: this. But you can look at stock prices really easy. You can look at stock price
+3354.39s: really easy. You can look at stock price
+3354.40s: really easy. You can look at stock price a bunch of different places. But if
+3356.11s: a bunch of different places. But if
+3356.12s: a bunch of different places. But if you're looking at things like implied
+3357.83s: you're looking at things like implied
+3357.84s: you're looking at things like implied vol calculations or whatnot, that's a
+3360.27s: vol calculations or whatnot, that's a
+3360.28s: vol calculations or whatnot, that's a little more difficult, but it can still
+3361.95s: little more difficult, but it can still
+3361.96s: little more difficult, but it can still be done. The thing here is that there
+3363.67s: be done. The thing here is that there
+3363.68s: be done. The thing here is that there can just be gremlins in data. So you
+3366.39s: can just be gremlins in data. So you
+3366.40s: can just be gremlins in data. So you don't want a
+3368.19s: don't want a
+3368.20s: don't want a gremlin
+3369.35s: gremlin
+3369.36s: gremlin to lead you down a
+3371.31s: to lead you down a
+3371.32s: to lead you down a bad conclusion. Bad conclusion can be
+3373.39s: bad conclusion. Bad conclusion can be
+3373.40s: bad conclusion. Bad conclusion can be something that look profitable that
+3374.75s: something that look profitable that
+3374.76s: something that look profitable that actually isn't or vice versa. Something
+3376.55s: actually isn't or vice versa. Something
+3376.56s: actually isn't or vice versa. Something that doesn't look profitable that
+3377.75s: that doesn't look profitable that
+3377.76s: that doesn't look profitable that actually is.
+3379.79s: actually is.
+3379.80s: actually is. We already know data can mislead you in
+3382.87s: We already know data can mislead you in
+3382.88s: We already know data can mislead you in a lot of different ways. This is all
+3384.15s: a lot of different ways. This is all
+3384.16s: a lot of different ways. This is all [&nbsp;__&nbsp;] that we reviewed last month. So I'm
+3386.59s: [&nbsp;__&nbsp;] that we reviewed last month. So I'm
+3386.60s: [&nbsp;__&nbsp;] that we reviewed last month. So I'm not going to spend a bunch of time on
+3387.79s: not going to spend a bunch of time on
+3387.80s: not going to spend a bunch of time on here. The key is that there are a lot of
+3391.35s: here. The key is that there are a lot of
+3391.36s: here. The key is that there are a lot of different things that can hold you up.
+3393.91s: different things that can hold you up.
+3393.92s: different things that can hold you up. That's all.
+3394.99s: That's all.
+3395.00s: That's all. So you can grab a screenshot of this.
+3397.99s: So you can grab a screenshot of this.
+3398.00s: So you can grab a screenshot of this. The biggest one by far,
+3400.63s: The biggest one by far,
+3400.64s: The biggest one by far, by far, cognitive bias. Looking for what
+3403.55s: by far, cognitive bias. Looking for what
+3403.56s: by far, cognitive bias. Looking for what you want to see
+3405.15s: you want to see
+3405.16s: you want to see versus developing a methodology for just
+3407.43s: versus developing a methodology for just
+3407.44s: versus developing a methodology for just looking at things as they are and then
+3410.15s: looking at things as they are and then
+3410.16s: looking at things as they are and then exploring them from there. That's the
+3411.95s: exploring them from there. That's the
+3411.96s: exploring them from there. That's the big thing there for sure.
+3414.87s: big thing there for sure.
+3414.88s: big thing there for sure. What we can do is build an occurrence
+3418.71s: What we can do is build an occurrence
+3418.72s: What we can do is build an occurrence table
+3419.83s: table
+3419.84s: table and then we can look at the different
+3422.51s: and then we can look at the different
+3422.52s: and then we can look at the different features on that table.
+3425.27s: features on that table.
+3425.28s: features on that table. So you can have a literal row per
+3427.99s: So you can have a literal row per
+3428.00s: So you can have a literal row per occurrence of the effect, not per day,
+3429.95s: occurrence of the effect, not per day,
+3429.96s: occurrence of the effect, not per day, not per trade. You can look at
+3432.19s: not per trade. You can look at
+3432.20s: not per trade. You can look at individual occurrences. Then you could
+3433.71s: individual occurrences. Then you could
+3433.72s: individual occurrences. Then you could do a version of this per trade if you
+3435.91s: do a version of this per trade if you
+3435.92s: do a version of this per trade if you want.
+3436.99s: want.
+3437.00s: want. The reason why doing this is useful
+3441.35s: The reason why doing this is useful
+3441.36s: The reason why doing this is useful is that it allows you to spot how things
+3444.63s: is that it allows you to spot how things
+3444.64s: is that it allows you to spot how things behave over time relative one another
+3447.23s: behave over time relative one another
+3447.24s: behave over time relative one another and so on. And this is something you can
+3449.23s: and so on. And this is something you can
+3449.24s: and so on. And this is something you can literally do in Google Sheets or Excel.
+3452.11s: literally do in Google Sheets or Excel.
+3452.12s: literally do in Google Sheets or Excel. You don't need the O talk or, you know,
+3454.95s: You don't need the O talk or, you know,
+3454.96s: You don't need the O talk or, you know, different kinds of programming in order
+3457.15s: different kinds of programming in order
+3457.16s: different kinds of programming in order to execute it.
+3458.99s: to execute it.
+3459.00s: to execute it. So,
+3460.56s: So, I want you guys to answer this question.
+3463.11s: I want you guys to answer this question.
+3463.12s: I want you guys to answer this question. Spot the trap here.
+3466.03s: Spot the trap here.
+3466.04s: Spot the trap here. We have 250
+3469.68s: trading days of data on our month-end
+3473.68s: trading days of data on our month-end flow effect over the past year, and the
+3476.39s: flow effect over the past year, and the
+3476.40s: flow effect over the past year, and the T stat is 2.4. That's a solid sample.
+3480.87s: T stat is 2.4. That's a solid sample.
+3480.88s: T stat is 2.4. That's a solid sample. So, which trap is this? Is it A, regime
+3484.31s: So, which trap is this? Is it A, regime
+3484.32s: So, which trap is this? Is it A, regime impact, B, small sample, C, Goldilocks,
+3486.95s: impact, B, small sample, C, Goldilocks,
+3486.96s: impact, B, small sample, C, Goldilocks, or D, cognitive bias? What do you guys
+3489.03s: or D, cognitive bias? What do you guys
+3489.04s: or D, cognitive bias? What do you guys think? ABCD?
+3495.24s: Which one of them
+3498.04s: Which one of them do you see?
+3506.80s: Think of it this way.
+3509.24s: Think of it this way. There's
+3510.79s: There's
+3510.80s: There's regime impact, so how does something
+3512.75s: regime impact, so how does something
+3512.76s: regime impact, so how does something behave in different market conditions?
+3516.35s: behave in different market conditions?
+3516.36s: behave in different market conditions? There's a small sample size, where you
+3518.35s: There's a small sample size, where you
+3518.36s: There's a small sample size, where you literally just don't have a lot of views
+3520.35s: literally just don't have a lot of views
+3520.36s: literally just don't have a lot of views of something.
+3521.79s: of something.
+3521.80s: of something. Goldilocks analysis is when you're
+3523.67s: Goldilocks analysis is when you're
+3523.68s: Goldilocks analysis is when you're interpreting things as favorable as
+3526.75s: interpreting things as favorable as
+3526.76s: interpreting things as favorable as possible, and you're not red selling,
+3529.91s: possible, and you're not red selling,
+3529.92s: possible, and you're not red selling, you're not looking for gaps.
+3531.87s: you're not looking for gaps.
+3531.88s: you're not looking for gaps. And then cognitive bias is again looking
+3534.43s: And then cognitive bias is again looking
+3534.44s: And then cognitive bias is again looking for what you want to see.
+3537.63s: for what you want to see.
+3537.64s: for what you want to see. So,
+3539.40s: So, the issue that this one has
+3542.47s: the issue that this one has
+3542.48s: the issue that this one has is a little confusing for people,
+3545.47s: is a little confusing for people,
+3545.48s: is a little confusing for people, but it's the small sample effect.
+3548.67s: but it's the small sample effect.
+3548.68s: but it's the small sample effect. Even though you have 250 trading days of
+3551.27s: Even though you have 250 trading days of
+3551.28s: Even though you have 250 trading days of data, it's a month-end
+3553.95s: data, it's a month-end
+3553.96s: data, it's a month-end flow effect.
+3555.55s: flow effect.
+3555.56s: flow effect. So, you don't actually get that many of
+3559.15s: So, you don't actually get that many of
+3559.16s: So, you don't actually get that many of them.
+3561.68s: If you do this over the course of 1
+3563.80s: If you do this over the course of 1 year,
+3564.95s: year,
+3564.96s: year, you don't really get that far.
+3568.07s: you don't really get that far.
+3568.08s: you don't really get that far. So,
+3569.20s: So, you can sprinkle on layers of the
+3571.75s: you can sprinkle on layers of the
+3571.76s: you can sprinkle on layers of the others, but it looks like Reese's got
+3573.79s: others, but it looks like Reese's got
+3573.80s: others, but it looks like Reese's got it, Mamba's got it, Trey's got it, and
+3576.11s: it, Mamba's got it, Trey's got it, and
+3576.12s: it, Mamba's got it, Trey's got it, and Strinkowski's got it perfect. It's
+3577.83s: Strinkowski's got it perfect. It's
+3577.84s: Strinkowski's got it perfect. It's exactly right, guys.
+3579.71s: exactly right, guys.
+3579.72s: exactly right, guys. Even though it's 250 trading days, the
+3582.51s: Even though it's 250 trading days, the
+3582.52s: Even though it's 250 trading days, the issue is you don't really get to see it
+3584.35s: issue is you don't really get to see it
+3584.36s: issue is you don't really get to see it that much.
+3585.51s: that much.
+3585.52s: that much. So, that's exactly correct.
+3588.91s: So, that's exactly correct.
+3588.92s: So, that's exactly correct. Now, let's talk about
+3591.67s: Now, let's talk about
+3591.68s: Now, let's talk about a mechanism.
+3593.39s: a mechanism.
+3593.40s: a mechanism. And we're looking at the month end
+3596.55s: And we're looking at the month end
+3596.56s: And we're looking at the month end effect.
+3598.44s: effect. You can have a really rudimentary
+3602.43s: You can have a really rudimentary
+3602.44s: You can have a really rudimentary understanding that's at a high level.
+3604.15s: understanding that's at a high level.
+3604.16s: understanding that's at a high level. You can say that there's lots of
+3605.19s: You can say that there's lots of
+3605.20s: You can say that there's lots of opportunities, that the drawdowns are
+3606.67s: opportunities, that the drawdowns are
+3606.68s: opportunities, that the drawdowns are manageable, that it was back tested
+3609.07s: manageable, that it was back tested
+3609.08s: manageable, that it was back tested since 2010 with a sharp of 1.4.
+3612.03s: since 2010 with a sharp of 1.4.
+3612.04s: since 2010 with a sharp of 1.4. And a better premise and a better way to
+3615.43s: And a better premise and a better way to
+3615.44s: And a better premise and a better way to look at this is through profiling, which
+3617.99s: look at this is through profiling, which
+3618.00s: look at this is through profiling, which is actually giving true data points.
+3622.63s: is actually giving true data points.
+3622.64s: is actually giving true data points. So, we can say that the behavior is that
+3625.91s: So, we can say that the behavior is that
+3625.92s: So, we can say that the behavior is that it actually concentrates in the last
+3627.79s: it actually concentrates in the last
+3627.80s: it actually concentrates in the last three sessions with 70% landing on the
+3630.15s: three sessions with 70% landing on the
+3630.16s: three sessions with 70% landing on the last day.
+3631.63s: last day.
+3631.64s: last day. The range is the median is plus 0.22%,
+3636.15s: The range is the median is plus 0.22%,
+3636.16s: The range is the median is plus 0.22%, the interquartile range is 0.1 to plus
+3640.39s: the interquartile range is 0.1 to plus
+3640.40s: the interquartile range is 0.1 to plus 0.7. And the worst decile is -1.8%.
+3644.67s: 0.7. And the worst decile is -1.8%.
+3644.68s: 0.7. And the worst decile is -1.8%. This is literally a profile and so on.
+3648.07s: This is literally a profile and so on.
+3648.08s: This is literally a profile and so on. By the way, this is some of the stuff
+3650.19s: By the way, this is some of the stuff
+3650.20s: By the way, this is some of the stuff that we discussed with the paid workshop
+3653.35s: that we discussed with the paid workshop
+3653.36s: that we discussed with the paid workshop that we did for the strategy, the forced
+3656.91s: that we did for the strategy, the forced
+3656.92s: that we did for the strategy, the forced flow effect. There's literally artifacts
+3659.23s: flow effect. There's literally artifacts
+3659.24s: flow effect. There's literally artifacts of that in here.
+3661.55s: of that in here.
+3661.56s: of that in here. So, what I'm trying to show you is what
+3664.51s: So, what I'm trying to show you is what
+3664.52s: So, what I'm trying to show you is what an actual profile looks like versus just
+3668.27s: an actual profile looks like versus just
+3668.28s: an actual profile looks like versus just superficial data.
+3670.79s: superficial data.
+3670.80s: superficial data. Superficial, top line. Actual profile
+3673.63s: Superficial, top line. Actual profile
+3673.64s: Superficial, top line. Actual profile details, bottom line.
+3676.11s: details, bottom line.
+3676.12s: details, bottom line. So,
+3677.80s: So, when we're looking at mechanism,
+3680.99s: when we're looking at mechanism,
+3681.00s: when we're looking at mechanism, notice what we're actually focusing on
+3684.31s: notice what we're actually focusing on
+3684.32s: notice what we're actually focusing on here.
+3685.28s: here. There's no DTE, there's no win rates,
+3688.07s: There's no DTE, there's no win rates,
+3688.08s: There's no DTE, there's no win rates, there's no equity curve, there's no
+3689.91s: there's no equity curve, there's no
+3689.92s: there's no equity curve, there's no cumulative P&amp;L, there's none of that.
+3693.03s: cumulative P&amp;L, there's none of that.
+3693.04s: cumulative P&amp;L, there's none of that. Everything that we're looking at when
+3695.23s: Everything that we're looking at when
+3695.24s: Everything that we're looking at when we're focusing on the profit mechanism
+3697.55s: we're focusing on the profit mechanism
+3697.56s: we're focusing on the profit mechanism profile are details about that profit
+3700.79s: profile are details about that profit
+3700.80s: profile are details about that profit mechanism. Everything is about the
+3703.71s: mechanism. Everything is about the
+3703.72s: mechanism. Everything is about the mechanism.
+3705.32s: mechanism. So, if we look at that example that we
+3708.11s: So, if we look at that example that we
+3708.12s: So, if we look at that example that we gave earlier about variance risk
+3709.95s: gave earlier about variance risk
+3709.96s: gave earlier about variance risk premium, and we look at it in two
+3712.31s: premium, and we look at it in two
+3712.32s: premium, and we look at it in two different scenarios.
+3714.07s: different scenarios.
+3714.08s: different scenarios. We have variance risk premium when we're
+3715.35s: We have variance risk premium when we're
+3715.36s: We have variance risk premium when we're looking at the indices, and then
+3717.27s: looking at the indices, and then
+3717.28s: looking at the indices, and then earnings.
+3718.71s: earnings.
+3718.72s: earnings. Notice the behavior. Index variance risk
+3720.91s: Notice the behavior. Index variance risk
+3720.92s: Notice the behavior. Index variance risk premium, it's very grindy. It pays you a
+3723.59s: premium, it's very grindy. It pays you a
+3723.60s: premium, it's very grindy. It pays you a little bit each day, generally on.
+3726.99s: little bit each day, generally on.
+3727.00s: little bit each day, generally on. Earnings is super concentrated in one
+3730.87s: Earnings is super concentrated in one
+3730.88s: Earnings is super concentrated in one single night, one single event wrapped
+3732.63s: single night, one single event wrapped
+3732.64s: single night, one single event wrapped around that earnings.
+3734.03s: around that earnings.
+3734.04s: around that earnings. And so on and so forth.
+3737.15s: And so on and so forth.
+3737.16s: And so on and so forth. So, what this is offering
+3739.83s: So, what this is offering
+3739.84s: So, what this is offering is an understanding
+3742.39s: is an understanding
+3742.40s: is an understanding of the variance risk premium umbrella
+3745.79s: of the variance risk premium umbrella
+3745.80s: of the variance risk premium umbrella in giving you two subversions that live
+3749.91s: in giving you two subversions that live
+3749.92s: in giving you two subversions that live within the variance risk premium
+3751.75s: within the variance risk premium
+3751.76s: within the variance risk premium umbrella in two very different flavors.
+3754.83s: umbrella in two very different flavors.
+3754.84s: umbrella in two very different flavors. Index variance risk premium has a
+3756.67s: Index variance risk premium has a
+3756.68s: Index variance risk premium has a specific profile.
+3758.51s: specific profile.
+3758.52s: specific profile. Earnings event risk premium has a
+3760.63s: Earnings event risk premium has a
+3760.64s: Earnings event risk premium has a specific profile. By understanding the
+3763.27s: specific profile. By understanding the
+3763.28s: specific profile. By understanding the differences in those profiles, it leads
+3765.35s: differences in those profiles, it leads
+3765.36s: differences in those profiles, it leads to building trades differently. So, for
+3767.55s: to building trades differently. So, for
+3767.56s: to building trades differently. So, for example,
+3768.92s: example, if we look at index variance risk
+3770.71s: if we look at index variance risk
+3770.72s: if we look at index variance risk premium for me personally, very
+3772.43s: premium for me personally, very
+3772.44s: premium for me personally, very frequently I'm naked. I'm selling short
+3775.07s: frequently I'm naked. I'm selling short
+3775.08s: frequently I'm naked. I'm selling short straddles, I'm selling short strangles,
+3777.07s: straddles, I'm selling short strangles,
+3777.08s: straddles, I'm selling short strangles, I'm mostly naked. When it comes to
+3779.47s: I'm mostly naked. When it comes to
+3779.48s: I'm mostly naked. When it comes to earnings variance risk premium, I'm
+3781.83s: earnings variance risk premium, I'm
+3781.84s: earnings variance risk premium, I'm mixed. There are some things I'm naked.
+3784.87s: mixed. There are some things I'm naked.
+3784.88s: mixed. There are some things I'm naked. There are other things that I will add
+3787.35s: There are other things that I will add
+3787.36s: There are other things that I will add wings. Sometimes it's just a call wing.
+3790.39s: wings. Sometimes it's just a call wing.
+3790.40s: wings. Sometimes it's just a call wing. Sometimes it's an iron condor
+3793.39s: Sometimes it's an iron condor
+3793.40s: Sometimes it's an iron condor or an iron fly. But, the reason for the
+3796.59s: or an iron fly. But, the reason for the
+3796.60s: or an iron fly. But, the reason for the differences is again based on the
+3799.35s: differences is again based on the
+3799.36s: differences is again based on the different profiles between these.
+3802.83s: different profiles between these.
+3802.84s: different profiles between these. So,
+3804.52s: So, if we have
+3806.27s: if we have
+3806.28s: if we have a profile
+3807.87s: a profile
+3807.88s: a profile that we can't find something [snorts]
+3810.63s: that we can't find something [snorts]
+3810.64s: that we can't find something [snorts] logical
+3811.99s: logical
+3812.00s: logical that is actually a good thing. Most of
+3815.11s: that is actually a good thing. Most of
+3815.12s: that is actually a good thing. Most of the profiles that you'll find will
+3816.67s: the profiles that you'll find will
+3816.68s: the profiles that you'll find will probably land in here.
+3818.63s: probably land in here.
+3818.64s: probably land in here. Now,
+3819.75s: Now,
+3819.76s: Now, you guys have a benefit because I come
+3823.67s: you guys have a benefit because I come
+3823.68s: you guys have a benefit because I come with gifts and literally show you
+3826.67s: with gifts and literally show you
+3826.68s: with gifts and literally show you different groups that you can look at.
+3829.35s: different groups that you can look at.
+3829.36s: different groups that you can look at. Again, pro members have seen this
+3830.99s: Again, pro members have seen this
+3831.00s: Again, pro members have seen this before.
+3832.15s: before.
+3832.16s: before. This is giving you literal families of
+3835.11s: This is giving you literal families of
+3835.12s: This is giving you literal families of profit mechanisms. There's more than
+3836.63s: profit mechanisms. There's more than
+3836.64s: profit mechanisms. There's more than this. This is not all of them.
+3838.71s: this. This is not all of them.
+3838.72s: this. This is not all of them. But there are things that are wrapped
+3840.11s: But there are things that are wrapped
+3840.12s: But there are things that are wrapped around price movement, so price
+3841.43s: around price movement, so price
+3841.44s: around price movement, so price direction up down, volatility movement
+3843.59s: direction up down, volatility movement
+3843.60s: direction up down, volatility movement up down, relative relationship, yields,
+3846.31s: up down, relative relationship, yields,
+3846.32s: up down, relative relationship, yields, correlations, things I refer to as
+3848.31s: correlations, things I refer to as
+3848.32s: correlations, things I refer to as structural alpha, and so on.
+3850.71s: structural alpha, and so on.
+3850.72s: structural alpha, and so on. So, each of these have inputs that
+3855.07s: So, each of these have inputs that
+3855.08s: So, each of these have inputs that matter no matter what. So, if I'm
+3857.59s: matter no matter what. So, if I'm
+3857.60s: matter no matter what. So, if I'm looking at price movement, yields,
+3860.83s: looking at price movement, yields,
+3860.84s: looking at price movement, yields, correlations, there are details that
+3863.03s: correlations, there are details that
+3863.04s: correlations, there are details that matter to me no matter what.
+3865.15s: matter to me no matter what.
+3865.16s: matter to me no matter what. But then,
+3866.59s: But then,
+3866.60s: But then, when we move in a little bit deeper,
+3870.91s: when we move in a little bit deeper,
+3870.92s: when we move in a little bit deeper, there's stuff that actually starts to
+3873.75s: there's stuff that actually starts to
+3873.76s: there's stuff that actually starts to become more specialized to that specific
+3876.27s: become more specialized to that specific
+3876.28s: become more specialized to that specific umbrella and to that specific thing.
+3879.67s: umbrella and to that specific thing.
+3879.68s: umbrella and to that specific thing. So, for example,
+3882.20s: So, for example, if we look at these different families
+3884.31s: if we look at these different families
+3884.32s: if we look at these different families of things, what I'm showing you
+3886.67s: of things, what I'm showing you
+3886.68s: of things, what I'm showing you are different kinds of signals that are
+3888.87s: are different kinds of signals that are
+3888.88s: are different kinds of signals that are generally useful in these different
+3891.31s: generally useful in these different
+3891.32s: generally useful in these different families. Again, recommend grab a
+3893.23s: families. Again, recommend grab a
+3893.24s: families. Again, recommend grab a screenshot. Again, pro members, you guys
+3895.39s: screenshot. Again, pro members, you guys
+3895.40s: screenshot. Again, pro members, you guys will have the download in the post for
+3898.91s: will have the download in the post for
+3898.92s: will have the download in the post for this.
+3900.07s: this.
+3900.08s: this. But the purpose here
+3902.07s: But the purpose here
+3902.08s: But the purpose here is that you can
+3904.87s: is that you can
+3904.88s: is that you can build these buckets
+3906.95s: build these buckets
+3906.96s: build these buckets of things that tend to apply
+3911.03s: of things that tend to apply
+3911.04s: of things that tend to apply and you don't have to recreate this
+3912.79s: and you don't have to recreate this
+3912.80s: and you don't have to recreate this every damn time you're looking at a
+3914.27s: every damn time you're looking at a
+3914.28s: every damn time you're looking at a profile and a profit mechanism.
+3917.27s: profile and a profit mechanism.
+3917.28s: profile and a profit mechanism. So then when you're looking at something
+3918.51s: So then when you're looking at something
+3918.52s: So then when you're looking at something like price direction,
+3920.23s: like price direction,
+3920.24s: like price direction, you generally are going to look at
+3921.39s: you generally are going to look at
+3921.40s: you generally are going to look at moving averages. They may or may not be
+3923.31s: moving averages. They may or may not be
+3923.32s: moving averages. They may or may not be relevant or the type of moving average
+3925.63s: relevant or the type of moving average
+3925.64s: relevant or the type of moving average you look at is going to change, but
+3928.39s: you look at is going to change, but
+3928.40s: you look at is going to change, but nonetheless, you'll generally speaking
+3930.87s: nonetheless, you'll generally speaking
+3930.88s: nonetheless, you'll generally speaking have a playbook to go off of. So this is
+3934.35s: have a playbook to go off of. So this is
+3934.36s: have a playbook to go off of. So this is looking at different kind of price
+3935.95s: looking at different kind of price
+3935.96s: looking at different kind of price movement signals and then different
+3938.19s: movement signals and then different
+3938.20s: movement signals and then different things that you can look at with respect
+3940.59s: things that you can look at with respect
+3940.60s: things that you can look at with respect to those.
+3941.99s: to those.
+3942.00s: to those. Notice a lot of stuff can be done in
+3945.63s: Notice a lot of stuff can be done in
+3945.64s: Notice a lot of stuff can be done in relative or absolute terms. Relative
+3948.39s: relative or absolute terms. Relative
+3948.40s: relative or absolute terms. Relative means cross-sectional, comparing against
+3950.47s: means cross-sectional, comparing against
+3950.48s: means cross-sectional, comparing against other things.
+3951.95s: other things.
+3951.96s: other things. Absolute is relative to oneself or one
+3955.55s: Absolute is relative to oneself or one
+3955.56s: Absolute is relative to oneself or one thing on its own.
+3958.43s: thing on its own.
+3958.44s: thing on its own. Volatility has
+3960.91s: Volatility has
+3960.92s: Volatility has different bucket of stuff that's
+3962.55s: different bucket of stuff that's
+3962.56s: different bucket of stuff that's relevant. So for example,
+3965.35s: relevant. So for example,
+3965.36s: relevant. So for example, I might find something like IV rank or
+3968.51s: I might find something like IV rank or
+3968.52s: I might find something like IV rank or percentiles really, really important
+3970.63s: percentiles really, really important
+3970.64s: percentiles really, really important when I'm looking at a lot of different
+3972.03s: when I'm looking at a lot of different
+3972.04s: when I'm looking at a lot of different volatility effects, but if I look at
+3973.51s: volatility effects, but if I look at
+3973.52s: volatility effects, but if I look at price movement, it might not be as
+3975.07s: price movement, it might not be as
+3975.08s: price movement, it might not be as important. Note, you will find things
+3977.91s: important. Note, you will find things
+3977.92s: important. Note, you will find things that are actually quite predictive for
+3980.87s: that are actually quite predictive for
+3980.88s: that are actually quite predictive for multiple buckets. So things like skew or
+3983.19s: multiple buckets. So things like skew or
+3983.20s: multiple buckets. So things like skew or term structure actually does a lot
+3986.31s: term structure actually does a lot
+3986.32s: term structure actually does a lot inside of price movement. Again,
+3987.87s: inside of price movement. Again,
+3987.88s: inside of price movement. Again, depending on what kind of price movement
+3989.15s: depending on what kind of price movement
+3989.16s: depending on what kind of price movement that you're looking at.
+3990.67s: that you're looking at.
+3990.68s: that you're looking at. Yields has its own list of stuff that's
+3994.23s: Yields has its own list of stuff that's
+3994.24s: Yields has its own list of stuff that's important. Same thing with correlations.
+3996.63s: important. Same thing with correlations.
+3996.64s: important. Same thing with correlations. Correlations are really interesting
+3998.95s: Correlations are really interesting
+3998.96s: Correlations are really interesting because there's a lot of different you
+4001.15s: because there's a lot of different you
+4001.16s: because there's a lot of different you can trade things wrapped around
+4002.71s: can trade things wrapped around
+4002.72s: can trade things wrapped around correlations and then structural alpha
+4005.47s: correlations and then structural alpha
+4005.48s: correlations and then structural alpha is a similar bucket in that it will have
+4008.39s: is a similar bucket in that it will have
+4008.40s: is a similar bucket in that it will have very, very specific things that you need
+4011.75s: very, very specific things that you need
+4011.76s: very, very specific things that you need to look at.
+4013.23s: to look at.
+4013.24s: to look at. So
+4015.12s: So what this generally means and what your
+4017.51s: what this generally means and what your
+4017.52s: what this generally means and what your homework is, this is for the Outlier Pro
+4021.71s: homework is, this is for the Outlier Pro
+4021.72s: homework is, this is for the Outlier Pro trading pods. So this is something for
+4023.71s: trading pods. So this is something for
+4023.72s: trading pods. So this is something for you to work with your group on,
+4026.71s: you to work with your group on,
+4026.72s: you to work with your group on, which is pick a mechanism that you
+4029.23s: which is pick a mechanism that you
+4029.24s: which is pick a mechanism that you already trade and fill in the sheet that
+4033.87s: already trade and fill in the sheet that
+4033.88s: already trade and fill in the sheet that I'm going to attach to the
+4037.07s: I'm going to attach to the
+4037.08s: I'm going to attach to the to the post that I made today. Let me
+4038.75s: to the post that I made today. Let me
+4038.76s: to the post that I made today. Let me see if I can add those directly.
+4041.83s: see if I can add those directly.
+4041.84s: see if I can add those directly. And literally all I want you to do
+4045.07s: And literally all I want you to do
+4045.08s: And literally all I want you to do is work with your partner
+4049.35s: is work with your partner
+4049.36s: is work with your partner on profiling a profit mechanism that you
+4054.15s: on profiling a profit mechanism that you
+4054.16s: on profiling a profit mechanism that you already trade today right now.
+4056.95s: already trade today right now.
+4056.96s: already trade today right now. Then you guys should red sell one
+4059.67s: Then you guys should red sell one
+4059.68s: Then you guys should red sell one another. You guys should
+4062.47s: another. You guys should
+4062.48s: another. You guys should go back and forth
+4064.11s: go back and forth
+4064.12s: go back and forth on exploring
+4066.23s: on exploring
+4066.24s: on exploring and
+4067.55s: and
+4067.56s: and poking holes, trying to find better
+4071.15s: poking holes, trying to find better
+4071.16s: poking holes, trying to find better ways, better details to profile.
+4075.87s: ways, better details to profile.
+4075.88s: ways, better details to profile. And then for the Pro Plus members as
+4078.63s: And then for the Pro Plus members as
+4078.64s: And then for the Pro Plus members as always, if you guys do the homework and
+4081.47s: always, if you guys do the homework and
+4081.48s: always, if you guys do the homework and you guys would like me to take a peek at
+4083.87s: you guys would like me to take a peek at
+4083.88s: you guys would like me to take a peek at what you've done
+4085.47s: what you've done
+4085.48s: what you've done then just drop it in the Ask Eric
+4089.31s: then just drop it in the Ask Eric
+4089.32s: then just drop it in the Ask Eric channel in the Discord and I'm more than
+4091.15s: channel in the Discord and I'm more than
+4091.16s: channel in the Discord and I'm more than happy to take a peek. But this is the
+4094.51s: happy to take a peek. But this is the
+4094.52s: happy to take a peek. But this is the post for you guys that has that stuff.
+4100.11s: post for you guys that has that stuff.
+4100.12s: post for you guys that has that stuff. And
+4101.52s: And that's profiling profit mechanism in a
+4104.19s: that's profiling profit mechanism in a
+4104.20s: that's profiling profit mechanism in a nutshell.
+4105.51s: nutshell.
+4105.52s: nutshell. So what questions do you guys have about
+4108.23s: So what questions do you guys have about
+4108.24s: So what questions do you guys have about the process?
+4109.99s: the process?
+4110.00s: the process? Uh Ryan says where would you recommend
+4112.03s: Uh Ryan says where would you recommend
+4112.04s: Uh Ryan says where would you recommend getting the options data from? I have a
+4113.87s: getting the options data from? I have a
+4113.88s: getting the options data from? I have a bunch of videos that go through that in
+4115.95s: bunch of videos that go through that in
+4115.96s: bunch of videos that go through that in detail. But I mean I I personally use
+4118.51s: detail. But I mean I I personally use
+4118.52s: detail. But I mean I I personally use Orats. So that's that's what I use.
+4123.03s: Orats. So that's that's what I use.
+4123.04s: Orats. So that's that's what I use. And then Ryan says it's interesting that
+4124.43s: And then Ryan says it's interesting that
+4124.44s: And then Ryan says it's interesting that you use medical terminology in your
+4125.83s: you use medical terminology in your
+4125.84s: you use medical terminology in your trading, half-life, placebo.
+4128.23s: trading, half-life, placebo.
+4128.24s: trading, half-life, placebo. Well, believe it or not, that's actually
+4129.87s: Well, believe it or not, that's actually
+4129.88s: Well, believe it or not, that's actually not medical terminology. Those are
+4133.03s: not medical terminology. Those are
+4133.04s: not medical terminology. Those are actually research terminology. You'll
+4135.55s: actually research terminology. You'll
+4135.56s: actually research terminology. You'll see those used in all different kinds of
+4138.99s: see those used in all different kinds of
+4139.00s: see those used in all different kinds of data-based research. So it's more data
+4141.39s: data-based research. So it's more data
+4141.40s: data-based research. So it's more data analysis than anything.
+4147.84s: Anything else
+4151.08s: Anything else that you guys have questions of or
+4155.75s: that you guys have questions of or
+4155.76s: that you guys have questions of or you want to hit?
+4160.56s: Rule number one, keep the seltzer water
+4162.84s: Rule number one, keep the seltzer water away from the PC.
+4165.83s: away from the PC.
+4165.84s: away from the PC. Motherboards apparently do not like
+4167.67s: Motherboards apparently do not like
+4167.68s: Motherboards apparently do not like seltzer water.
+4171.04s: Lesson learned.
+4172.76s: Lesson learned. I wasn't fully certain on it myself.
+4178.92s: Beautiful.
+4180.12s: Beautiful. All right, gang.
+4181.55s: All right, gang.
+4181.56s: All right, gang. That wraps me up for today, then. If you
+4183.51s: That wraps me up for today, then. If you
+4183.52s: That wraps me up for today, then. If you guys have any questions, you can drop
+4185.47s: guys have any questions, you can drop
+4185.48s: guys have any questions, you can drop them in the Discord. Happy to take a
+4186.79s: them in the Discord. Happy to take a
+4186.80s: them in the Discord. Happy to take a peek.
+4187.91s: peek.
+4187.92s: peek. Be an outlier.
+4189.55s: Be an outlier.
+4189.56s: Be an outlier. See you guys later.
+4190.91s: See you guys later.
+4190.92s: See you guys later. Get out there and start profiling.
