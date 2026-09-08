@@ -223,7 +223,8 @@ That runs:
 2. fetch transcripts
 3. Whisper fallback
 4. preprocess transcript chunks
-5. rebuild vectors
+5. repair ID-only transcript titles from canonical metadata or yt-dlp
+6. rebuild vectors
 
 ### Run individual steps
 
@@ -233,7 +234,17 @@ python3 run_pipeline.py --step scrape --non-interactive
 python3 run_pipeline.py --step transcripts --non-interactive
 python3 run_pipeline.py --step whisper --non-interactive
 python3 run_pipeline.py --step preprocess --non-interactive
+python3 run_pipeline.py --step metadata-repair --non-interactive
 python3 run_pipeline.py --step vectors --non-interactive
+```
+
+Preview or apply only the idempotent metadata backfill (no transcript refresh or
+vector rebuild):
+
+```bash
+source venv/bin/activate
+python3 scripts/repair_transcript_metadata.py --dry-run
+python3 scripts/repair_transcript_metadata.py --strict
 ```
 
 ### Rebuild vectors directly

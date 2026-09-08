@@ -41,11 +41,12 @@ source "$VENV_DIR/bin/activate"
 # Ensure full deps (Whisper, yt-dlp, etc.)
 python -m pip install -q -r requirements.txt
 
-echo "Running transcript pipeline (scrape → transcripts → whisper → preprocess → wiki → vectors)..."
+echo "Running transcript pipeline (scrape → transcripts → whisper → preprocess → metadata repair → wiki → vectors)..."
 python3 run_pipeline.py --step scrape --non-interactive
 python3 run_pipeline.py --step transcripts --non-interactive
 python3 retry_and_whisper.py
 python3 run_pipeline.py --step preprocess --non-interactive
+python3 run_pipeline.py --step metadata-repair --non-interactive
 
 # --- LLM Wiki (see schema/WIKI_SCHEMA.md + docs/plans/2026-07-03-llm-wiki-design.md) ---
 # ATOMIC PUBLISH CONTRACT (Hardening §15 #1, #6): annotate + lint are HARD GATES that

@@ -11,7 +11,7 @@ OPTEEE (Options Trading Education Expert) is a RAG chat app over a curated knowl
 This repo deliberately keeps three venvs with different dependency sets. Activate the right one or imports/commands will fail:
 
 - **`.venv-native/`** — serving the live app. Deps: `requirements-serve.txt` (no Whisper/yt-dlp/PDF tooling). Used by launchd `com.opteee.native` via `start_native.sh`.
-- **`venv/`** — the content pipeline (scrape, Whisper, preprocess, vector rebuild). Deps: `requirements.txt`. Bootstrapped/managed by `run_transcripts.sh`.
+- **`venv/`** — the content pipeline (scrape, Whisper, preprocess, metadata repair, vector rebuild). Deps: `requirements.txt`. Bootstrapped/managed by `run_transcripts.sh`.
 - **`.venv-marker/`** — dedicated Marker OCR/extraction runtime. Deps: `requirements-marker.txt`, pinned to the known-good Python 3.11 Marker stack. Bootstrapped/managed by `weekly-refresh.sh` and verified by `scripts/check_marker_env.py`.
 
 ## Common commands
@@ -31,7 +31,7 @@ python -m unittest tests.test_query_routing                        # unittest eq
 
 # Content pipeline (pipeline env) — full run, or one step
 source venv/bin/activate && ./run_transcripts.sh
-python3 run_pipeline.py --step {scrape|transcripts|whisper|preprocess|vectors} --non-interactive
+python3 run_pipeline.py --step {scrape|transcripts|whisper|preprocess|metadata-repair|vectors} --non-interactive
 python3 rebuild_vector_store.py                                    # rebuild serving index only
 
 # After a pipeline/vector change, refresh the running native app

@@ -7,7 +7,8 @@ This script orchestrates the complete video processing pipeline:
 2. Transcripts - Fetch transcripts via YouTube API (marks failures for Whisper)
 3. Whisper - Second pass: download audio and transcribe failed videos with Whisper
 4. Preprocess - Chunk transcripts for vector search
-5. Vectors - Build the vector store for semantic search
+5. Metadata repair - Replace bare-ID titles without re-chunking
+6. Vectors - Build the vector store for semantic search
 
 Usage:
     python3 run_pipeline.py                          # Run complete pipeline
@@ -15,6 +16,7 @@ Usage:
     python3 run_pipeline.py --step transcripts       # Run only transcript generation
     python3 run_pipeline.py --step whisper           # Run Whisper on failed videos only
     python3 run_pipeline.py --step preprocess        # Run only preprocessing
+    python3 run_pipeline.py --step metadata-repair   # Repair processed transcript titles
     python3 run_pipeline.py --step vectors           # Run only vector store creation
     python3 run_pipeline.py --non-interactive        # Run without prompts (for CI/CD)
     python3 run_pipeline.py --force-reprocess        # Force reprocessing of all files
@@ -33,6 +35,7 @@ from pipeline_config import (
     CHANNEL_URLS, YOUTUBE_API_KEY, TRANSCRIPT_REQUEST_DELAY,
     ensure_directories, validate_config
 )
+from transcript_metadata import load_metadata_records, merge_video_metadata
 
 
 def print_banner(step_name):
@@ -159,14 +162,24 @@ def run_scrape(args):
     else:
         print("  ⚠️ YOUTUBE_API_KEY not set — upload_date will be empty")
     
-    # Save results (both files so preprocess uses fresh metadata via get_metadata_file)
+    # Preserve metadata for older/unlisted videos whose transcripts still exist. A flat
+    # channel scrape is a current listing, not a complete historical source of truth.
+    existing_videos = load_metadata_records(
+        [path for path in (METADATA_JSON, VIDEOS_JSON) if os.path.exists(path)]
+    )
+    discovered_count = len(unique_videos)
+    historical_metadata = merge_video_metadata(existing_videos, unique_videos)
+
+    # Keep VIDEOS_JSON as the current transcript work queue. METADATA_JSON is the
+    # durable historical source used by preprocessing and metadata repair.
     with open(VIDEOS_JSON, 'w', encoding='utf-8') as jsonfile:
         json.dump(unique_videos, jsonfile, indent=4, ensure_ascii=False)
     with open(METADATA_JSON, 'w', encoding='utf-8') as jsonfile:
-        json.dump(unique_videos, jsonfile, indent=4, ensure_ascii=False)
+        json.dump(historical_metadata, jsonfile, indent=4, ensure_ascii=False)
     
     print(f"\n📊 Discovery Results:")
-    print(f"  ✅ {len(unique_videos)} unique videos saved to {VIDEOS_JSON}")
+    print(f"  ✅ {discovered_count} unique videos discovered")
+    print(f"  ✅ {len(historical_metadata)} historical records saved to {METADATA_JSON}")
     print(f"  🔄 {duplicate_count} duplicates removed")
     
     return True
@@ -380,9 +393,27 @@ def run_preprocess(args):
         return False
 
 
+def run_metadata_repair(args):
+    """Repair processed chunks whose titles are bare YouTube IDs."""
+    print_banner("STEP 5: TRANSCRIPT METADATA REPAIR")
+    from pathlib import Path
+
+    from transcript_metadata import repair_processed_transcript_metadata
+
+    stats = repair_processed_transcript_metadata(
+        Path(PROCESSED_DIR),
+        [Path(METADATA_JSON)],
+    )
+    print(
+        f"Repaired {stats['chunks_changed']} chunks in {stats['files_changed']} files "
+        f"({stats['unresolved_videos']} videos unresolved)."
+    )
+    return stats["invalid_files"] == 0
+
+
 def run_vectors(args):
-    """Step 5: Create vector store"""
-    print_banner("STEP 5: VECTOR STORE CREATION")
+    """Step 6: Create vector store"""
+    print_banner("STEP 6: VECTOR STORE CREATION")
     
     try:
         import create_vector_store
@@ -417,6 +448,7 @@ Examples:
   python3 run_pipeline.py --step transcripts       # Run only transcript generation
   python3 run_pipeline.py --step whisper           # Run Whisper on failed videos
   python3 run_pipeline.py --step preprocess        # Run only preprocessing
+  python3 run_pipeline.py --step metadata-repair   # Repair processed transcript titles
   python3 run_pipeline.py --step vectors           # Run only vector store creation
   python3 run_pipeline.py --non-interactive        # Run without prompts (for CI/CD)
   python3 run_pipeline.py --force-reprocess        # Force reprocessing of all files
@@ -425,7 +457,7 @@ Examples:
     
     parser.add_argument(
         '--step', 
-        choices=['scrape', 'transcripts', 'whisper', 'preprocess', 'vectors'],
+        choices=['scrape', 'transcripts', 'whisper', 'preprocess', 'metadata-repair', 'vectors'],
         help='Run a specific step only'
     )
     parser.add_argument(
@@ -480,6 +512,7 @@ Examples:
         'transcripts': ('Transcript Generation', run_transcripts),
         'whisper': ('Whisper (failed videos)', run_whisper),
         'preprocess': ('Transcript Preprocessing', run_preprocess),
+        'metadata-repair': ('Transcript Metadata Repair', run_metadata_repair),
         'vectors': ('Vector Store Creation', run_vectors),
     }
     
@@ -540,4 +573,3 @@ Examples:
 
 if __name__ == "__main__":
     main()
-
