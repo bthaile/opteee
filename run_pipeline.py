@@ -408,7 +408,9 @@ def run_metadata_repair(args):
         f"Repaired {stats['chunks_changed']} chunks in {stats['files_changed']} files "
         f"({stats['unresolved_videos']} videos unresolved)."
     )
-    return stats["invalid_files"] == 0
+    if stats["unresolved_videos"]:
+        print("❌ Metadata repair left unresolved ID-only titles; refusing to rebuild vectors.")
+    return stats["invalid_files"] == 0 and stats["unresolved_videos"] == 0
 
 
 def run_vectors(args):

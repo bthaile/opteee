@@ -238,13 +238,16 @@ python3 run_pipeline.py --step metadata-repair --non-interactive
 python3 run_pipeline.py --step vectors --non-interactive
 ```
 
-Preview or apply only the idempotent metadata backfill (no transcript refresh or
-vector rebuild):
+Preview or apply the idempotent metadata backfill. Applying it changes processed
+transcripts only; rebuild vectors and restart the native service before expecting
+API citations to show repaired titles:
 
 ```bash
 source venv/bin/activate
 python3 scripts/repair_transcript_metadata.py --dry-run
 python3 scripts/repair_transcript_metadata.py --strict
+python3 rebuild_vector_store.py
+sudo launchctl kickstart -k system/com.opteee.native
 ```
 
 ### Rebuild vectors directly

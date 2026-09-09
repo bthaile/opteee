@@ -49,10 +49,15 @@ def load_metadata_records(paths: Iterable[Path | str]) -> list[dict]:
         path = Path(path_value)
         if not path.exists():
             continue
-        with path.open(encoding="utf-8") as handle:
-            records = json.load(handle)
+        try:
+            with path.open(encoding="utf-8") as handle:
+                records = json.load(handle)
+        except (OSError, json.JSONDecodeError) as exc:
+            print(f"  warning: skipped unreadable metadata file {path}: {exc}")
+            continue
         if not isinstance(records, list):
-            raise ValueError(f"Metadata file must contain a JSON array: {path}")
+            print(f"  warning: skipped non-array metadata file {path}")
+            continue
         for record in records:
             if not isinstance(record, dict):
                 continue
@@ -110,7 +115,11 @@ def merge_video_metadata(
 
 def fetch_metadata_with_ytdlp(video_id: str) -> dict | None:
     """Fetch one video's metadata without downloading media."""
-    import yt_dlp
+    try:
+        import yt_dlp
+    except ImportError:
+        print("  warning: yt-dlp is unavailable; cannot repair missing video metadata")
+        return None
 
     options = {
         "quiet": True,
