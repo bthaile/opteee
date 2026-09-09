@@ -118,6 +118,27 @@ Example:
 
 For agents/bots, use `format: "json"` or `format: "bot"`. Responses include `wiki_references` when retrieved sources map to synthesized wiki pages.
 
+### Prepare deterministic daily-lesson sources
+
+Run the source-selection step independently of lesson generation:
+
+```bash
+cd /Users/bradfordhaile/clawd/opteee
+python3 scripts/prepare_outlier_lesson.py \
+  --output /tmp/outlier-lesson-preparation.json
+```
+
+The helper reads the preceding 14 calendar days from
+`/Users/bradfordhaile/clawd/reports/trading-education`, makes at most six
+requests to `http://127.0.0.1:7860/api/chat`, and atomically writes a compact
+JSON artifact containing one topic, exactly two validated video sources, and a
+duplicate-history summary. It exits nonzero with a reason on stderr if no valid
+pair can be prepared. `--endpoint`, `--history-dir`, `--max-queries`,
+`--num-results`, and `--timeout` may be set explicitly; hard limits keep a run
+to at most eight queries, 20 results per query, 120 seconds per request, and a
+2 MB response. This command does not write or deliver a lesson, change cron,
+restart a service, or rebuild an index.
+
 ### LLM Wiki endpoints
 
 The wiki API exposes the compiled education layer as REST data for other web apps and AI agents.
