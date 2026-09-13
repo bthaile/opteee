@@ -147,7 +147,7 @@ def choose_candidate_topics(
     return eligible, skipped
 
 
-def _youtube_identity(url: str) -> Optional[Tuple[str, int]]:
+def _youtube_identity(url: str, *, allow_missing_zero_timestamp: bool = False) -> Optional[Tuple[str, int]]:
     try:
         parsed = urlparse(url)
     except (TypeError, ValueError):
@@ -161,8 +161,10 @@ def _youtube_identity(url: str) -> Optional[Tuple[str, int]]:
     timestamp = query.get("t", [""])[0]
     if not _YOUTUBE_ID_RE.fullmatch(video_id):
         return None
+    if not timestamp and allow_missing_zero_timestamp:
+        return video_id, 0
     match = re.fullmatch(r"(\d+)s?", timestamp)
-    if not match or int(match.group(1)) <= 0:
+    if not match:
         return None
     return video_id, int(match.group(1))
 
@@ -191,16 +193,19 @@ def validate_raw_source(source: Mapping[str, Any]) -> Tuple[bool, str]:
         return False, "title is missing, generic, or ID-like"
 
     seconds = source.get("start_timestamp_seconds")
-    if isinstance(seconds, bool) or not isinstance(seconds, (int, float)) or not math.isfinite(seconds) or seconds <= 0:
-        return False, "start_timestamp_seconds is not a positive number"
+    if isinstance(seconds, bool) or not isinstance(seconds, (int, float)) or not math.isfinite(seconds) or seconds < 0:
+        return False, "start_timestamp_seconds is not a non-negative number"
 
     clock = str(source.get("start_timestamp") or source.get("timestamp") or "").strip()
     if not _CLOCK_RE.fullmatch(clock):
         return False, "start_timestamp is not clock-form"
 
     timestamp_url = str(source.get("video_url_with_timestamp") or "").strip()
-    if _youtube_identity(timestamp_url) is None:
-        return False, "video_url_with_timestamp is not an HTTPS YouTube watch URL with positive t="
+    identity = _youtube_identity(timestamp_url, allow_missing_zero_timestamp=seconds == 0)
+    if identity is None:
+        return False, "video_url_with_timestamp is not an HTTPS YouTube watch URL with t="
+    if int(seconds) != identity[1]:
+        return False, "start_timestamp_seconds does not match video_url_with_timestamp"
 
     excerpt = " ".join(str(source.get("excerpt") or source.get("content") or "").split())
     excerpt_words = _WORD_RE.findall(excerpt.lower())
@@ -216,8 +221,11 @@ def validate_raw_source(source: Mapping[str, Any]) -> Tuple[bool, str]:
 def normalize_source(source: Mapping[str, Any]) -> Dict[str, Any]:
     """Keep only lesson-preparation fields in a stable shape."""
     url = str(source["video_url_with_timestamp"]).strip()
-    identity = _youtube_identity(url)
+    seconds = source["start_timestamp_seconds"]
+    identity = _youtube_identity(url, allow_missing_zero_timestamp=seconds == 0)
     assert identity is not None
+    if identity[1] == 0 and "t" not in parse_qs(urlparse(url).query):
+        url = f"{url}&t=0"
     excerpt = " ".join(str(source.get("excerpt") or source.get("content") or "").split())
     return {
         "title": " ".join(str(source["title"]).split()),

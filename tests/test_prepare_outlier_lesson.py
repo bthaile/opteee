@@ -50,7 +50,7 @@ class CitationAcceptanceTests(unittest.TestCase):
             "id title": {"title": "abcDEF123_-"},
             "generic ID title": {"title": "Video abcDEF123_-"},
             "unknown title": {"title": "Unknown Title"},
-            "zero seconds": {"start_timestamp_seconds": 0},
+            "negative seconds": {"start_timestamp_seconds": -1},
             "non-clock timestamp": {"start_timestamp": "82 seconds"},
             "http URL": {"video_url_with_timestamp": "http://www.youtube.com/watch?v=abcDEF123_-&t=82"},
             "non-watch URL": {"video_url_with_timestamp": "https://youtu.be/abcDEF123_-?t=82"},
@@ -64,6 +64,14 @@ class CitationAcceptanceTests(unittest.TestCase):
                 accepted, reason = validate_raw_source(source(**update))
                 self.assertFalse(accepted)
                 self.assertNotEqual(reason, "accepted")
+
+    def test_accepts_and_canonicalizes_a_video_source_at_zero(self):
+        item = source(
+            timestamp=0,
+            start_timestamp="00:00",
+            video_url_with_timestamp="https://www.youtube.com/watch?v=abcDEF123_-",
+        )
+        self.assertEqual(validate_raw_source(item), (True, "accepted"))
 
 
 class SourcePairTests(unittest.TestCase):
