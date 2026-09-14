@@ -274,6 +274,17 @@
   "target": "concepts/early-exercise",
   "weight": 5
  },
+ "concepts/assignment||concepts/portfolio-margin": {
+  "evidence": {
+   "timestamp": "01:10:35",
+   "video_id": "GK9EHx-NZ_M"
+  },
+  "label": "can trigger margin requirement for",
+  "relation": "drives",
+  "source": "concepts/assignment",
+  "target": "concepts/portfolio-margin",
+  "weight": 3
+ },
  "concepts/assignment||concepts/position-sizing": {
   "evidence": {
    "timestamp": "01:19:00",
@@ -637,6 +648,17 @@
   "target": "concepts/sharpe-ratio",
   "weight": 5
  },
+ "concepts/backtesting||concepts/sortino-ratio": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "B48KOikbTs8"
+  },
+  "label": "evaluates strategy performance using",
+  "relation": "measures",
+  "source": "concepts/backtesting",
+  "target": "concepts/sortino-ratio",
+  "weight": 3
+ },
  "concepts/basis-adjustment||concepts/position-sizing": {
   "evidence": {
    "timestamp": "10:16",
@@ -801,6 +823,28 @@
   "source": "concepts/bid-ask-spread",
   "target": "securities/spy",
   "weight": 5
+ },
+ "concepts/black-scholes||concepts/delta": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "8Sk1oMYRq-Q"
+  },
+  "label": "calculates delta as output of",
+  "relation": "measures",
+  "source": "concepts/black-scholes",
+  "target": "concepts/delta",
+  "weight": 4
+ },
+ "concepts/black-scholes||concepts/market-maker": {
+  "evidence": {
+   "timestamp": "12:54",
+   "video_id": "JzxGOoYsAv0"
+  },
+  "label": "assumptions underpin market maker hedging",
+  "relation": "drives",
+  "source": "concepts/black-scholes",
+  "target": "concepts/market-maker",
+  "weight": 3
  },
  "concepts/bond-vigilantes||concepts/market-regimes": {
   "evidence": {
@@ -1252,6 +1296,17 @@
   "source": "concepts/capital-efficiency",
   "target": "concepts/margin",
   "weight": 5
+ },
+ "concepts/capital-efficiency||concepts/portfolio-margin": {
+  "evidence": {
+   "timestamp": "00:22",
+   "video_id": "8Kgx-5Ij4po"
+  },
+  "label": "measures capital requirement reduction through",
+  "relation": "measures",
+  "source": "concepts/portfolio-margin",
+  "target": "concepts/capital-efficiency",
+  "weight": 3
  },
  "concepts/capital-efficiency||concepts/position-sizing": {
   "evidence": {
@@ -2463,6 +2518,39 @@
   "target": "concepts/covered-strangle",
   "weight": 5
  },
+ "concepts/credit-spread||concepts/position-sizing": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "0phfdNnT3Q0"
+  },
+  "label": "determines appropriate sizing constraints for",
+  "relation": "requires",
+  "source": "concepts/credit-spread",
+  "target": "concepts/position-sizing",
+  "weight": 3
+ },
+ "concepts/credit-spread||strategies/credit-spread": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "0phfdNnT3Q0"
+  },
+  "label": "same concept discussed in risk management context",
+  "relation": "related-to",
+  "source": "concepts/credit-spread",
+  "target": "strategies/credit-spread",
+  "weight": 3
+ },
+ "concepts/credit-spread||strategies/short-premium": {
+  "evidence": {
+   "timestamp": "10:50",
+   "video_id": "FnVyDaukQZE"
+  },
+  "label": "harvests the premium of",
+  "relation": "harvests",
+  "source": "concepts/credit-spread",
+  "target": "strategies/short-premium",
+  "weight": 3
+ },
  "concepts/dark-pools||concepts/market-maker": {
   "evidence": {
    "timestamp": "01:00:06",
@@ -2560,6 +2648,17 @@
   "relation": "drives",
   "source": "concepts/days-to-expiration",
   "target": "concepts/gap-risk",
+  "weight": 3
+ },
+ "concepts/days-to-expiration||concepts/in-the-money": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "1kGksRBt2aA"
+  },
+  "label": "determines probability of reaching",
+  "relation": "drives",
+  "source": "concepts/days-to-expiration",
+  "target": "concepts/in-the-money",
   "weight": 3
  },
  "concepts/days-to-expiration||concepts/moneyness": {
@@ -2857,6 +2956,17 @@
   "relation": "drives",
   "source": "concepts/defined-risk",
   "target": "concepts/position-sizing",
+  "weight": 4
+ },
+ "concepts/defined-risk||concepts/undefined-risk": {
+  "evidence": {
+   "timestamp": "01:57",
+   "video_id": "2Dv_fRuuTcc"
+  },
+  "label": "opposite risk management approaches",
+  "relation": "contrasts-with",
+  "source": "concepts/defined-risk",
+  "target": "concepts/undefined-risk",
   "weight": 4
  },
  "concepts/defined-risk||strategies/ratio-call-diagonal": {
@@ -3189,6 +3299,17 @@
   "target": "concepts/iron-condor",
   "weight": 3
  },
+ "concepts/delta-neutral||concepts/portfolio-margin": {
+  "evidence": {
+   "timestamp": "19:29",
+   "video_id": "GK9EHx-NZ_M"
+  },
+  "label": "enables efficient capital allocation within",
+  "relation": "requires",
+  "source": "concepts/delta-neutral",
+  "target": "concepts/portfolio-margin",
+  "weight": 3
+ },
  "concepts/delta-neutral||concepts/position-sizing": {
   "evidence": {
    "timestamp": "20:05",
@@ -3199,6 +3320,17 @@
   "source": "concepts/delta-neutral",
   "target": "concepts/position-sizing",
   "weight": 5
+ },
+ "concepts/delta-neutral||concepts/rebalancing": {
+  "evidence": {
+   "timestamp": "01:02:19",
+   "video_id": "C_YEdo1Qlk8"
+  },
+  "label": "drives the need for periodic",
+  "relation": "drives",
+  "source": "concepts/delta-neutral",
+  "target": "concepts/rebalancing",
+  "weight": 3
  },
  "concepts/delta-neutral||concepts/risk-management": {
   "evidence": {
@@ -3607,6 +3739,17 @@
   "target": "concepts/delta",
   "weight": 5
  },
+ "concepts/delta||concepts/in-the-money": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "1kGksRBt2aA"
+  },
+  "label": "measures probability of expiring",
+  "relation": "measures",
+  "source": "concepts/delta",
+  "target": "concepts/in-the-money",
+  "weight": 3
+ },
  "concepts/delta||concepts/intrinsic-value": {
   "evidence": {
    "timestamp": "02:59",
@@ -3705,6 +3848,17 @@
   "source": "concepts/delta",
   "target": "concepts/loss-aversion",
   "weight": 5
+ },
+ "concepts/delta||concepts/loss-management": {
+  "evidence": {
+   "timestamp": "05:27",
+   "video_id": "G92IzbFzhN8"
+  },
+  "label": "drives the need for duration management in",
+  "relation": "drives",
+  "source": "concepts/delta",
+  "target": "concepts/loss-management",
+  "weight": 3
  },
  "concepts/delta||concepts/margin": {
   "evidence": {
@@ -3882,6 +4036,17 @@
   "target": "concepts/probability-cone",
   "weight": 5
  },
+ "concepts/delta||concepts/probability-of-profit": {
+  "evidence": {
+   "timestamp": "13:24",
+   "video_id": "SAAznQCMSco"
+  },
+  "label": "measures directional exposure affecting",
+  "relation": "measures",
+  "source": "concepts/delta",
+  "target": "concepts/probability-of-profit",
+  "weight": 3
+ },
  "concepts/delta||concepts/probability-of-touch": {
   "evidence": {
    "timestamp": "04:38",
@@ -3958,6 +4123,17 @@
   "source": "concepts/delta",
   "target": "concepts/realized-vs-unrealized-pnl",
   "weight": 5
+ },
+ "concepts/delta||concepts/rebalancing": {
+  "evidence": {
+   "timestamp": "01:02:19",
+   "video_id": "C_YEdo1Qlk8"
+  },
+  "label": "drives the need for position rebalancing",
+  "relation": "drives",
+  "source": "concepts/delta",
+  "target": "concepts/rebalancing",
+  "weight": 3
  },
  "concepts/delta||concepts/return-on-invested-capital": {
   "evidence": {
@@ -4178,6 +4354,17 @@
   "source": "concepts/delta",
   "target": "concepts/transaction-costs",
   "weight": 5
+ },
+ "concepts/delta||concepts/undefined-risk": {
+  "evidence": {
+   "timestamp": "02:34",
+   "video_id": "2Dv_fRuuTcc"
+  },
+  "label": "directional exposure component of",
+  "relation": "related-to",
+  "source": "concepts/delta",
+  "target": "concepts/undefined-risk",
+  "weight": 4
  },
  "concepts/delta||concepts/vega": {
   "evidence": {
@@ -5026,6 +5213,17 @@
   "target": "concepts/greek-attribution",
   "weight": 3
  },
+ "concepts/directional-trading||concepts/greek-profile": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "1fqO9v4SLeI"
+  },
+  "label": "requires understanding of",
+  "relation": "requires",
+  "source": "concepts/directional-trading",
+  "target": "concepts/greek-profile",
+  "weight": 3
+ },
  "concepts/directional-trading||concepts/position-sizing": {
   "evidence": {
    "timestamp": "00:00",
@@ -5245,6 +5443,61 @@
   "source": "concepts/disposition-effect",
   "target": "concepts/trading-psychology",
   "weight": 5
+ },
+ "concepts/distribution||concepts/naked-short-selling": {
+  "evidence": {
+   "timestamp": "07:13",
+   "video_id": "-XQGZSyM8O0"
+  },
+  "label": "Market mechanism distinct from naked short selling",
+  "relation": "related-to",
+  "source": "concepts/distribution",
+  "target": "concepts/naked-short-selling",
+  "weight": 3
+ },
+ "concepts/distribution||concepts/price-action": {
+  "evidence": {
+   "timestamp": "07:13",
+   "video_id": "-XQGZSyM8O0"
+  },
+  "label": "creates patterns in price movement",
+  "relation": "drives",
+  "source": "concepts/distribution",
+  "target": "concepts/price-action",
+  "weight": 3
+ },
+ "concepts/distribution||concepts/support-and-resistance": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "-XQGZSyM8O0"
+  },
+  "label": "identifies price levels where distribution occurs",
+  "relation": "related-to",
+  "source": "concepts/support-and-resistance",
+  "target": "concepts/distribution",
+  "weight": 3
+ },
+ "concepts/distribution||concepts/technical-analysis": {
+  "evidence": {
+   "timestamp": "04:40",
+   "video_id": "-XQGZSyM8O0"
+  },
+  "label": "both inform price movement assessment",
+  "relation": "related-to",
+  "source": "concepts/distribution",
+  "target": "concepts/technical-analysis",
+  "weight": 3
+ },
+ "concepts/distribution||securities/gme": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "-XQGZSyM8O0"
+  },
+  "label": "describes outcome patterns of",
+  "relation": "related-to",
+  "source": "concepts/distribution",
+  "target": "securities/gme",
+  "weight": 3
  },
  "concepts/diversification||concepts/emotional-discipline": {
   "evidence": {
@@ -5895,6 +6148,17 @@
   "target": "concepts/edge",
   "weight": 5
  },
+ "concepts/edge||concepts/volatility-forecasting": {
+  "evidence": {
+   "timestamp": "14:46",
+   "video_id": "jlhuKAIenw0"
+  },
+  "label": "requires superior forecasting to establish",
+  "relation": "requires",
+  "source": "concepts/edge",
+  "target": "concepts/volatility-forecasting",
+  "weight": 3
+ },
  "concepts/edge||concepts/volatility-risk-premium": {
   "evidence": {
    "timestamp": "03:41",
@@ -5959,6 +6223,17 @@
   "relation": "drives",
   "source": "concepts/edge",
   "target": "strategies/scalping",
+  "weight": 3
+ },
+ "concepts/emotional-discipline||concepts/execution": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "fnobZLWPnWU"
+  },
+  "label": "enables consistent and disciplined trade execution",
+  "relation": "drives",
+  "source": "concepts/emotional-discipline",
+  "target": "concepts/execution",
   "weight": 3
  },
  "concepts/emotional-discipline||concepts/kelly-criterion": {
@@ -6181,6 +6456,17 @@
   "target": "people/tom-sosnoff",
   "weight": 5
  },
+ "concepts/emotional-discipline||securities/es": {
+  "evidence": {
+   "timestamp": "17:03",
+   "video_id": "apJP5YqqIXg"
+  },
+  "label": "is necessary for trading",
+  "relation": "requires",
+  "source": "concepts/emotional-discipline",
+  "target": "securities/es",
+  "weight": 3
+ },
  "concepts/emotional-discipline||strategies/put-credit-spread": {
   "evidence": {
    "timestamp": "",
@@ -6356,6 +6642,50 @@
   "source": "strategies/event-driven",
   "target": "concepts/event-volatility",
   "weight": 5
+ },
+ "concepts/execution||concepts/position-sizing": {
+  "evidence": {
+   "timestamp": "16:00",
+   "video_id": "h41zEfos4G0"
+  },
+  "label": "depends on proper planning of",
+  "relation": "requires",
+  "source": "concepts/execution",
+  "target": "concepts/position-sizing",
+  "weight": 3
+ },
+ "concepts/execution||concepts/process-over-outcome": {
+  "evidence": {
+   "timestamp": "08:49",
+   "video_id": "cnLc2wn6GMY"
+  },
+  "label": "demands rigorous attention to process over",
+  "relation": "requires",
+  "source": "concepts/execution",
+  "target": "concepts/process-over-outcome",
+  "weight": 4
+ },
+ "concepts/execution||concepts/profit-mechanism": {
+  "evidence": {
+   "timestamp": "10:04",
+   "video_id": "cnLc2wn6GMY"
+  },
+  "label": "determines success of profit-taking strategy",
+  "relation": "drives",
+  "source": "concepts/execution",
+  "target": "concepts/profit-mechanism",
+  "weight": 3
+ },
+ "concepts/execution||concepts/trading-psychology": {
+  "evidence": {
+   "timestamp": "51:45",
+   "video_id": "cnLiihvAXpc"
+  },
+  "label": "execution quality influences trader decision-making",
+  "relation": "drives",
+  "source": "concepts/execution",
+  "target": "concepts/trading-psychology",
+  "weight": 4
  },
  "concepts/expectancy||concepts/expected-value": {
   "evidence": {
@@ -6719,6 +7049,17 @@
   "source": "concepts/extrinsic-value",
   "target": "concepts/risk-management",
   "weight": 5
+ },
+ "concepts/extrinsic-value||concepts/time-value": {
+  "evidence": {
+   "timestamp": "02:12",
+   "video_id": "NelgJJ_pL9o"
+  },
+  "label": "is a component of time value",
+  "relation": "is-a",
+  "source": "concepts/extrinsic-value",
+  "target": "concepts/time-value",
+  "weight": 3
  },
  "concepts/fat-tails||concepts/market-regimes": {
   "evidence": {
@@ -7325,6 +7666,17 @@
   "target": "concepts/gamma",
   "weight": 3
  },
+ "concepts/gamma||concepts/in-the-money": {
+  "evidence": {
+   "timestamp": "01:16",
+   "video_id": "1kGksRBt2aA"
+  },
+  "label": "measures delta sensitivity when moving in-the-money",
+  "relation": "measures",
+  "source": "concepts/gamma",
+  "target": "concepts/in-the-money",
+  "weight": 3
+ },
  "concepts/gamma||concepts/leaps": {
   "evidence": {
    "timestamp": "00:23",
@@ -7434,6 +7786,17 @@
   "source": "concepts/gamma",
   "target": "concepts/vega",
   "weight": 5
+ },
+ "concepts/gamma||concepts/volatility-forecasting": {
+  "evidence": {
+   "timestamp": "50:38",
+   "video_id": "lbpGVAWR6d0"
+  },
+  "label": "drives the need for dynamic hedging in",
+  "relation": "drives",
+  "source": "concepts/gamma",
+  "target": "concepts/volatility-forecasting",
+  "weight": 3
  },
  "concepts/gamma||securities/sofi": {
   "evidence": {
@@ -7611,6 +7974,17 @@
   "target": "securities/spy",
   "weight": 5
  },
+ "concepts/greek-attribution||concepts/greek-profile": {
+  "evidence": {
+   "timestamp": "03:28",
+   "video_id": "1fqO9v4SLeI"
+  },
+  "label": "is a component of the overall",
+  "relation": "part-of",
+  "source": "concepts/greek-attribution",
+  "target": "concepts/greek-profile",
+  "weight": 3
+ },
  "concepts/greek-attribution||strategies/directional-trading": {
   "evidence": {
    "timestamp": "",
@@ -7619,6 +7993,39 @@
   "label": "quantifies risk exposure in",
   "relation": "measures",
   "source": "concepts/greek-attribution",
+  "target": "strategies/directional-trading",
+  "weight": 3
+ },
+ "concepts/greek-profile||concepts/position-management": {
+  "evidence": {
+   "timestamp": "03:09",
+   "video_id": "5iqVJWFhpPA"
+  },
+  "label": "measures exposure dynamics for",
+  "relation": "measures",
+  "source": "concepts/greek-profile",
+  "target": "concepts/position-management",
+  "weight": 3
+ },
+ "concepts/greek-profile||concepts/time-decay": {
+  "evidence": {
+   "timestamp": "14:17",
+   "video_id": "3L6XRJq0IUo"
+  },
+  "label": "measures the impact of time decay",
+  "relation": "measures",
+  "source": "concepts/greek-profile",
+  "target": "concepts/time-decay",
+  "weight": 3
+ },
+ "concepts/greek-profile||strategies/directional-trading": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "1fqO9v4SLeI"
+  },
+  "label": "quantifies risk exposure in",
+  "relation": "measures",
+  "source": "concepts/greek-profile",
   "target": "strategies/directional-trading",
   "weight": 3
  },
@@ -7665,6 +8072,17 @@
   "source": "concepts/vega",
   "target": "concepts/greeks",
   "weight": 5
+ },
+ "concepts/greeks||concepts/volatility-forecasting": {
+  "evidence": {
+   "timestamp": "17:44",
+   "video_id": "jlhuKAIenw0"
+  },
+  "label": "understanding Greeks informs accurate volatility forecasting",
+  "relation": "requires",
+  "source": "concepts/greeks",
+  "target": "concepts/volatility-forecasting",
+  "weight": 3
  },
  "concepts/greeks||strategies/stock-replacement": {
   "evidence": {
@@ -7950,6 +8368,28 @@
   "relation": "measures",
   "source": "concepts/implied-volatility",
   "target": "securities/spx",
+  "weight": 4
+ },
+ "concepts/in-the-money||concepts/moneyness": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "1kGksRBt2aA"
+  },
+  "label": "is a state of",
+  "relation": "is-a",
+  "source": "concepts/in-the-money",
+  "target": "concepts/moneyness",
+  "weight": 4
+ },
+ "concepts/in-the-money||concepts/out-of-the-money": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "1kGksRBt2aA"
+  },
+  "label": "opposite moneyness states with delta endpoints",
+  "relation": "contrasts-with",
+  "source": "concepts/in-the-money",
+  "target": "concepts/out-of-the-money",
   "weight": 4
  },
  "concepts/inflation||concepts/interest-rates": {
@@ -8458,6 +8898,28 @@
   "target": "concepts/margin",
   "weight": 5
  },
+ "concepts/leverage||concepts/options-trading": {
+  "evidence": {
+   "timestamp": "02:09:52",
+   "video_id": "NRNqMP0AULs"
+  },
+  "label": "primary motivation for participation in",
+  "relation": "drives",
+  "source": "concepts/leverage",
+  "target": "concepts/options-trading",
+  "weight": 3
+ },
+ "concepts/leverage||concepts/portfolio-margin": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "8Kgx-5Ij4po"
+  },
+  "label": "enables higher capital efficiency in",
+  "relation": "drives",
+  "source": "concepts/leverage",
+  "target": "concepts/portfolio-margin",
+  "weight": 4
+ },
  "concepts/leverage||concepts/position-sizing": {
   "evidence": {
    "timestamp": "25:06",
@@ -8489,6 +8951,17 @@
   "relation": "contrasts-with",
   "source": "concepts/leverage",
   "target": "concepts/settlement",
+  "weight": 3
+ },
+ "concepts/leverage||securities/es": {
+  "evidence": {
+   "timestamp": "23:45",
+   "video_id": "OwPmSCUS-bs"
+  },
+  "label": "risk management consideration in trading",
+  "relation": "related-to",
+  "source": "concepts/leverage",
+  "target": "securities/es",
   "weight": 3
  },
  "concepts/leverage||securities/spy": {
@@ -8699,6 +9172,50 @@
   "source": "concepts/loss-aversion",
   "target": "concepts/risk-management",
   "weight": 5
+ },
+ "concepts/loss-management||concepts/position-sizing": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "OHsa-XZ6o_M"
+  },
+  "label": "determines how much exposure to reduce",
+  "relation": "drives",
+  "source": "concepts/loss-management",
+  "target": "concepts/position-sizing",
+  "weight": 3
+ },
+ "concepts/loss-management||concepts/process-over-outcome": {
+  "evidence": {
+   "timestamp": "07:08",
+   "video_id": "Yz5p1a0ArL0"
+  },
+  "label": "requires disciplined process to execute",
+  "relation": "requires",
+  "source": "concepts/loss-management",
+  "target": "concepts/process-over-outcome",
+  "weight": 3
+ },
+ "concepts/loss-management||concepts/profit-mechanism": {
+  "evidence": {
+   "timestamp": "00:24",
+   "video_id": "G92IzbFzhN8"
+  },
+  "label": "complementary risk management dimensions",
+  "relation": "contrasts-with",
+  "source": "concepts/loss-management",
+  "target": "concepts/profit-mechanism",
+  "weight": 3
+ },
+ "concepts/loss-management||concepts/risk-management": {
+  "evidence": {
+   "timestamp": "04:07",
+   "video_id": "NCZNV1K2Tcw"
+  },
+  "label": "is a component of comprehensive risk management",
+  "relation": "part-of",
+  "source": "concepts/loss-management",
+  "target": "concepts/risk-management",
+  "weight": 3
  },
  "concepts/margin||concepts/position-sizing": {
   "evidence": {
@@ -9250,6 +9767,17 @@
   "target": "concepts/order-internalization",
   "weight": 5
  },
+ "concepts/market-maker||concepts/pattern-recognition": {
+  "evidence": {
+   "timestamp": "23:47",
+   "video_id": "JQ8yly937tE"
+  },
+  "label": "operates with different constraints than retail pattern reco",
+  "relation": "contrasts-with",
+  "source": "concepts/market-maker",
+  "target": "concepts/pattern-recognition",
+  "weight": 3
+ },
  "concepts/market-maker||concepts/payment-for-order-flow": {
   "evidence": {
    "timestamp": "08:12",
@@ -9512,6 +10040,17 @@
   "relation": "drives",
   "source": "concepts/market-maker",
   "target": "strategies/weekly-options",
+  "weight": 3
+ },
+ "concepts/market-microstructure||concepts/regime-dependency": {
+  "evidence": {
+   "timestamp": "18:12",
+   "video_id": "Lp-SPerQHgY"
+  },
+  "label": "determines optimal trading approach across",
+  "relation": "drives",
+  "source": "concepts/market-microstructure",
+  "target": "concepts/regime-dependency",
   "weight": 3
  },
  "concepts/market-regimes||concepts/market-timing": {
@@ -10019,6 +10558,17 @@
   "source": "concepts/max-drawdown",
   "target": "concepts/risk-management",
   "weight": 5
+ },
+ "concepts/max-drawdown||concepts/sortino-ratio": {
+  "evidence": {
+   "timestamp": "03:13",
+   "video_id": "QnEymZVCzbo"
+  },
+  "label": "measures downside risk component of",
+  "relation": "measures",
+  "source": "concepts/max-drawdown",
+  "target": "concepts/sortino-ratio",
+  "weight": 3
  },
  "concepts/max-drawdown||securities/spy": {
   "evidence": {
@@ -11164,6 +11714,39 @@
   "target": "strategies/short-premium",
   "weight": 3
  },
+ "concepts/options-trading||concepts/position-sizing": {
+  "evidence": {
+   "timestamp": "01:40:48",
+   "video_id": "NRNqMP0AULs"
+  },
+  "label": "requires disciplined position sizing for",
+  "relation": "requires",
+  "source": "concepts/position-sizing",
+  "target": "concepts/options-trading",
+  "weight": 3
+ },
+ "concepts/options-trading||concepts/trading-psychology": {
+  "evidence": {
+   "timestamp": "26:13",
+   "video_id": "NRNqMP0AULs"
+  },
+  "label": "requires disciplined decision-making in",
+  "relation": "requires",
+  "source": "concepts/options-trading",
+  "target": "concepts/trading-psychology",
+  "weight": 3
+ },
+ "concepts/options-trading||securities/gme": {
+  "evidence": {
+   "timestamp": "35:35",
+   "video_id": "NRNqMP0AULs"
+  },
+  "label": "trading activity applied to specific security",
+  "relation": "related-to",
+  "source": "concepts/options-trading",
+  "target": "securities/gme",
+  "weight": 4
+ },
  "concepts/order-flow||concepts/payment-for-order-flow": {
   "evidence": {
    "timestamp": "59:27",
@@ -11571,6 +12154,17 @@
   "target": "concepts/risk-management",
   "weight": 5
  },
+ "concepts/paper-trading||concepts/sortino-ratio": {
+  "evidence": {
+   "timestamp": "08:12",
+   "video_id": "B48KOikbTs8"
+  },
+  "label": "context for evaluating risk-adjusted returns",
+  "relation": "related-to",
+  "source": "concepts/paper-trading",
+  "target": "concepts/sortino-ratio",
+  "weight": 4
+ },
  "concepts/paper-trading||concepts/trading-log": {
   "evidence": {
    "timestamp": "06:20",
@@ -11581,6 +12175,83 @@
   "source": "concepts/trading-log",
   "target": "concepts/paper-trading",
   "weight": 5
+ },
+ "concepts/path-dependence||concepts/position-management": {
+  "evidence": {
+   "timestamp": "09:21",
+   "video_id": "5iqVJWFhpPA"
+  },
+  "label": "determines outcomes requiring active management",
+  "relation": "drives",
+  "source": "concepts/path-dependence",
+  "target": "concepts/position-management",
+  "weight": 3
+ },
+ "concepts/path-dependence||concepts/position-sizing": {
+  "evidence": {
+   "timestamp": "01:41:51",
+   "video_id": "ezIUX7oWrTU"
+  },
+  "label": "determines optimal sizing constraints for",
+  "relation": "drives",
+  "source": "concepts/path-dependence",
+  "target": "concepts/position-sizing",
+  "weight": 3
+ },
+ "concepts/path-dependence||concepts/time-decay": {
+  "evidence": {
+   "timestamp": "14:36",
+   "video_id": "AFaEtRA6jVg"
+  },
+  "label": "determines realized P&L alongside",
+  "relation": "drives",
+  "source": "concepts/path-dependence",
+  "target": "concepts/time-decay",
+  "weight": 3
+ },
+ "concepts/pattern-recognition||concepts/position-sizing": {
+  "evidence": {
+   "timestamp": "01:17:51",
+   "video_id": "fLRwLbcWWc4"
+  },
+  "label": "enables informed decisions about",
+  "relation": "drives",
+  "source": "concepts/pattern-recognition",
+  "target": "concepts/position-sizing",
+  "weight": 3
+ },
+ "concepts/pattern-recognition||concepts/process-over-outcome": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "KsO0hd_xRD4"
+  },
+  "label": "emerges from disciplined learning approach",
+  "relation": "drives",
+  "source": "concepts/process-over-outcome",
+  "target": "concepts/pattern-recognition",
+  "weight": 3
+ },
+ "concepts/pattern-recognition||concepts/risk-management": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "JQ8yly937tE"
+  },
+  "label": "enables identification of hedging opportunities in",
+  "relation": "drives",
+  "source": "concepts/pattern-recognition",
+  "target": "concepts/risk-management",
+  "weight": 3
+ },
+ "concepts/pattern-recognition||securities/spy": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "JQ8yly937tE"
+  },
+  "label": "identifies trading opportunities in",
+  "relation": "related-to",
+  "source": "concepts/pattern-recognition",
+  "target": "securities/spy",
+  "weight": 4
  },
  "concepts/payment-for-order-flow||concepts/position-sizing": {
   "evidence": {
@@ -11791,6 +12462,17 @@
   "target": "strategies/put-credit-spread",
   "weight": 3
  },
+ "concepts/portfolio-margin||concepts/position-sizing": {
+  "evidence": {
+   "timestamp": "20:58",
+   "video_id": "C_YEdo1Qlk8"
+  },
+  "label": "determines allowable size of positions",
+  "relation": "drives",
+  "source": "concepts/portfolio-margin",
+  "target": "concepts/position-sizing",
+  "weight": 3
+ },
  "concepts/position-sizing||concepts/post-earnings-drift": {
   "evidence": {
    "timestamp": "01:25:07",
@@ -11922,6 +12604,17 @@
   "source": "concepts/position-sizing",
   "target": "concepts/realized-vs-unrealized-pnl",
   "weight": 5
+ },
+ "concepts/position-sizing||concepts/rebalancing": {
+  "evidence": {
+   "timestamp": "01:02:19",
+   "video_id": "C_YEdo1Qlk8"
+  },
+  "label": "determines frequency and magnitude of",
+  "relation": "drives",
+  "source": "concepts/position-sizing",
+  "target": "concepts/rebalancing",
+  "weight": 3
  },
  "concepts/position-sizing||concepts/research-depth": {
   "evidence": {
@@ -12319,6 +13012,17 @@
   "target": "concepts/position-sizing",
   "weight": 5
  },
+ "concepts/position-sizing||concepts/time-value": {
+  "evidence": {
+   "timestamp": "02:12",
+   "video_id": "NelgJJ_pL9o"
+  },
+  "label": "determines when to adjust position sizing",
+  "relation": "drives",
+  "source": "concepts/time-value",
+  "target": "concepts/position-sizing",
+  "weight": 3
+ },
  "concepts/position-sizing||concepts/trade-management": {
   "evidence": {
    "timestamp": "01:23",
@@ -12483,6 +13187,17 @@
   "source": "concepts/position-sizing",
   "target": "concepts/volatility-drag",
   "weight": 5
+ },
+ "concepts/position-sizing||concepts/volatility-forecasting": {
+  "evidence": {
+   "timestamp": "10:03",
+   "video_id": "jlhuKAIenw0"
+  },
+  "label": "informs sizing decisions based on",
+  "relation": "requires",
+  "source": "concepts/volatility-forecasting",
+  "target": "concepts/position-sizing",
+  "weight": 3
  },
  "concepts/position-sizing||concepts/volatility-mean-reversion": {
   "evidence": {
@@ -12681,6 +13396,17 @@
   "source": "concepts/position-sizing",
   "target": "securities/corn",
   "weight": 5
+ },
+ "concepts/position-sizing||securities/es": {
+  "evidence": {
+   "timestamp": "02:33",
+   "video_id": "OwPmSCUS-bs"
+  },
+  "label": "fundamental risk management for trading",
+  "relation": "related-to",
+  "source": "concepts/position-sizing",
+  "target": "securities/es",
+  "weight": 3
  },
  "concepts/position-sizing||securities/f": {
   "evidence": {
@@ -14255,6 +14981,50 @@
   "target": "securities/spy",
   "weight": 5
  },
+ "concepts/probability-of-profit||concepts/time-decay": {
+  "evidence": {
+   "timestamp": "43:09",
+   "video_id": "Ibg6xIOikvc"
+  },
+  "label": "time decay drives probability of profit",
+  "relation": "drives",
+  "source": "concepts/time-decay",
+  "target": "concepts/probability-of-profit",
+  "weight": 4
+ },
+ "concepts/probability-of-profit||strategies/long-call": {
+  "evidence": {
+   "timestamp": "02:13",
+   "video_id": "SAAznQCMSco"
+  },
+  "label": "measures profit potential of",
+  "relation": "measures",
+  "source": "concepts/probability-of-profit",
+  "target": "strategies/long-call",
+  "weight": 3
+ },
+ "concepts/probability-of-profit||strategies/short-put": {
+  "evidence": {
+   "timestamp": "01:17:45",
+   "video_id": "FPLK8vS5ono"
+  },
+  "label": "measures likelihood of profit realization in",
+  "relation": "measures",
+  "source": "concepts/probability-of-profit",
+  "target": "strategies/short-put",
+  "weight": 3
+ },
+ "concepts/probability-of-profit||strategies/short-strangle": {
+  "evidence": {
+   "timestamp": "01:17:45",
+   "video_id": "FPLK8vS5ono"
+  },
+  "label": "measures probability of profit for",
+  "relation": "measures",
+  "source": "concepts/probability-of-profit",
+  "target": "strategies/short-strangle",
+  "weight": 3
+ },
  "concepts/probability-of-touch||securities/spy": {
   "evidence": {
    "timestamp": "02:28",
@@ -14453,6 +15223,17 @@
   "target": "concepts/strategy-time-frame-alignment",
   "weight": 5
  },
+ "concepts/process-over-outcome||concepts/stress-testing": {
+  "evidence": {
+   "timestamp": "12:23",
+   "video_id": "7lb6sXnN-ak"
+  },
+  "label": "rigorous testing regimen validates",
+  "relation": "drives",
+  "source": "concepts/process-over-outcome",
+  "target": "concepts/stress-testing",
+  "weight": 3
+ },
  "concepts/process-over-outcome||concepts/survivorship-bias": {
   "evidence": {
    "timestamp": "55:55",
@@ -14518,6 +15299,17 @@
   "source": "concepts/process-over-outcome",
   "target": "concepts/trust-your-plan",
   "weight": 5
+ },
+ "concepts/process-over-outcome||concepts/volatility-forecasting": {
+  "evidence": {
+   "timestamp": "15:26",
+   "video_id": "jlhuKAIenw0"
+  },
+  "label": "enables identification of optimal trading windows in",
+  "relation": "drives",
+  "source": "concepts/process-over-outcome",
+  "target": "concepts/volatility-forecasting",
+  "weight": 3
  },
  "concepts/process-over-outcome||people/tom-sosnoff": {
   "evidence": {
@@ -14683,6 +15475,17 @@
   "source": "concepts/profit-mechanism",
   "target": "concepts/sharpe-ratio",
   "weight": 4
+ },
+ "concepts/profit-mechanism||concepts/stress-testing": {
+  "evidence": {
+   "timestamp": "12:23",
+   "video_id": "7lb6sXnN-ak"
+  },
+  "label": "requires rigorous testing to validate",
+  "relation": "requires",
+  "source": "concepts/profit-mechanism",
+  "target": "concepts/stress-testing",
+  "weight": 3
  },
  "concepts/profit-mechanism||concepts/trade-management": {
   "evidence": {
@@ -15870,6 +16673,17 @@
   "relation": "drives",
   "source": "concepts/risk-management",
   "target": "securities/djt",
+  "weight": 4
+ },
+ "concepts/risk-management||securities/es": {
+  "evidence": {
+   "timestamp": "02:33",
+   "video_id": "OwPmSCUS-bs"
+  },
+  "label": "drives position sizing decisions in",
+  "relation": "drives",
+  "source": "concepts/risk-management",
+  "target": "securities/es",
   "weight": 4
  },
  "concepts/risk-management||securities/ge": {
@@ -17148,6 +17962,17 @@
   "target": "concepts/sector-rotation",
   "weight": 5
  },
+ "concepts/sector-rotation||securities/xly": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "JIliIgFYrmE"
+  },
+  "label": "drives allocation shifts within",
+  "relation": "drives",
+  "source": "concepts/sector-rotation",
+  "target": "securities/xly",
+  "weight": 4
+ },
  "concepts/sector-rotation||strategies/sector-rotation": {
   "evidence": {
    "timestamp": "00:42",
@@ -17246,6 +18071,17 @@
   "source": "concepts/settlement",
   "target": "securities/gme",
   "weight": 5
+ },
+ "concepts/sharpe-ratio||concepts/sortino-ratio": {
+  "evidence": {
+   "timestamp": "08:12",
+   "video_id": "B48KOikbTs8"
+  },
+  "label": "penalizes downside volatility differently than",
+  "relation": "contrasts-with",
+  "source": "concepts/sharpe-ratio",
+  "target": "concepts/sortino-ratio",
+  "weight": 4
  },
  "concepts/sharpe-ratio||securities/spy": {
   "evidence": {
@@ -17466,6 +18302,17 @@
   "source": "concepts/soft-landing",
   "target": "securities/spy",
   "weight": 5
+ },
+ "concepts/sortino-ratio||securities/spy": {
+  "evidence": {
+   "timestamp": "08:12",
+   "video_id": "B48KOikbTs8"
+  },
+  "label": "risk-adjusted performance metric for",
+  "relation": "related-to",
+  "source": "concepts/sortino-ratio",
+  "target": "securities/spy",
+  "weight": 4
  },
  "concepts/standard-deviation-channels||concepts/technical-analysis": {
   "evidence": {
@@ -18214,6 +19061,39 @@
   "source": "concepts/trend-identification",
   "target": "securities/spy",
   "weight": 5
+ },
+ "concepts/undefined-risk||strategies/short-put": {
+  "evidence": {
+   "timestamp": "04:25",
+   "video_id": "2Dv_fRuuTcc"
+  },
+  "label": "inverse risk profile compared to",
+  "relation": "contrasts-with",
+  "source": "concepts/undefined-risk",
+  "target": "strategies/short-put",
+  "weight": 5
+ },
+ "concepts/undefined-risk||strategies/short-straddle": {
+  "evidence": {
+   "timestamp": "04:25",
+   "video_id": "2Dv_fRuuTcc"
+  },
+  "label": "opposite risk characteristic to",
+  "relation": "contrasts-with",
+  "source": "concepts/undefined-risk",
+  "target": "strategies/short-straddle",
+  "weight": 4
+ },
+ "concepts/undefined-risk||strategies/short-strangle": {
+  "evidence": {
+   "timestamp": "04:25",
+   "video_id": "2Dv_fRuuTcc"
+  },
+  "label": "opposite risk profile compared to",
+  "relation": "contrasts-with",
+  "source": "concepts/undefined-risk",
+  "target": "strategies/short-strangle",
+  "weight": 4
  },
  "concepts/unusual-options-activity||concepts/volume-analysis": {
   "evidence": {
@@ -19238,6 +20118,17 @@
   "target": "strategies/short-premium",
   "weight": 5
  },
+ "securities/es||securities/gold": {
+  "evidence": {
+   "timestamp": "19:10",
+   "video_id": "OwPmSCUS-bs"
+  },
+  "label": "inverse correlation during risk-off scenarios",
+  "relation": "contrasts-with",
+  "source": "securities/es",
+  "target": "securities/gold",
+  "weight": 3
+ },
  "securities/f||strategies/covered-call": {
   "evidence": {
    "timestamp": "00:29",
@@ -20261,6 +21152,17 @@
   "target": "securities/xlv",
   "weight": 5
  },
+ "securities/spy||securities/xly": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "HcWY9Rqcssk"
+  },
+  "label": "broader market index versus sector constituent",
+  "relation": "related-to",
+  "source": "securities/spy",
+  "target": "securities/xly",
+  "weight": 4
+ },
  "securities/spy||strategies/breakout": {
   "evidence": {
    "timestamp": "",
@@ -20580,6 +21482,17 @@
   "target": "securities/xlv",
   "weight": 5
  },
+ "securities/xlb||securities/xly": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "JIliIgFYrmE"
+  },
+  "label": "sector rotation alternative to",
+  "relation": "contrasts-with",
+  "source": "securities/xly",
+  "target": "securities/xlb",
+  "weight": 4
+ },
  "securities/xlc||securities/xle": {
   "evidence": {
    "timestamp": "",
@@ -20634,6 +21547,17 @@
   "source": "securities/xlc",
   "target": "securities/xlv",
   "weight": 5
+ },
+ "securities/xlc||securities/xly": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "JIliIgFYrmE"
+  },
+  "label": "sector showing different performance pattern than",
+  "relation": "contrasts-with",
+  "source": "securities/xlc",
+  "target": "securities/xly",
+  "weight": 4
  },
  "securities/xlf||securities/xli": {
   "evidence": {
@@ -20700,6 +21624,17 @@
   "source": "securities/xlk",
   "target": "securities/xlv",
   "weight": 5
+ },
+ "securities/xlk||securities/xly": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "JIliIgFYrmE"
+  },
+  "label": "sector showing different performance than",
+  "relation": "contrasts-with",
+  "source": "securities/xlk",
+  "target": "securities/xly",
+  "weight": 4
  },
  "securities/xlp||securities/xlv": {
   "evidence": {
@@ -20821,6 +21756,17 @@
   "source": "strategies/iron-condor",
   "target": "strategies/short-strangle",
   "weight": 5
+ },
+ "strategies/long-call-spread||strategies/short-put-spread": {
+  "evidence": {
+   "timestamp": "05:56",
+   "video_id": "ELLig97y0io"
+  },
+  "label": "is a type of vertical spread like",
+  "relation": "is-a",
+  "source": "strategies/short-put-spread",
+  "target": "strategies/long-call-spread",
+  "weight": 4
  },
  "strategies/long-call||strategies/long-straddle": {
   "evidence": {

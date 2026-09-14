@@ -1,0 +1,2367 @@
+0.48s: What's up outliers? Buckle up. Big video
+3.12s: What's up outliers? Buckle up. Big video today. Do not feel like you got to get
+4.71s: today. Do not feel like you got to get
+4.72s: today. Do not feel like you got to get through it all in one shot, but this is
+6.63s: through it all in one shot, but this is
+6.64s: through it all in one shot, but this is literally an end toend look at option
+10.39s: literally an end toend look at option
+10.40s: literally an end toend look at option volatility through the lens of risk
+13.75s: volatility through the lens of risk
+13.76s: volatility through the lens of risk premium. So, this is going to talk about
+16.07s: premium. So, this is going to talk about
+16.08s: premium. So, this is going to talk about the variance or volatility risk premium
+19.51s: the variance or volatility risk premium
+19.52s: the variance or volatility risk premium aka VRP. You will hear you will hear me
+22.23s: aka VRP. You will hear you will hear me
+22.24s: aka VRP. You will hear you will hear me refer to them both. By the end of the
+24.95s: refer to them both. By the end of the
+24.96s: refer to them both. By the end of the video, you will understand exactly what
+27.27s: video, you will understand exactly what
+27.28s: video, you will understand exactly what it is, why it exists, why people
+30.55s: it is, why it exists, why people
+30.56s: it is, why it exists, why people mistakenly think they can take advantage
+32.79s: mistakenly think they can take advantage
+32.80s: mistakenly think they can take advantage of it and they blow themselves up trying
+34.87s: of it and they blow themselves up trying
+34.88s: of it and they blow themselves up trying to do so, and how you can fit something
+38.23s: to do so, and how you can fit something
+38.24s: to do so, and how you can fit something like this into your actual trading
+40.55s: like this into your actual trading
+40.56s: like this into your actual trading operation at a practical level. There is
+43.83s: operation at a practical level. There is
+43.84s: operation at a practical level. There is some detail that we got to get to. So,
+45.83s: some detail that we got to get to. So,
+45.84s: some detail that we got to get to. So, if there are spots that are a little bit
+47.27s: if there are spots that are a little bit
+47.28s: if there are spots that are a little bit sticky, it's to be expected. just hit
+49.59s: sticky, it's to be expected. just hit
+49.60s: sticky, it's to be expected. just hit pause, rewind it, go back through, throw
+52.07s: pause, rewind it, go back through, throw
+52.08s: pause, rewind it, go back through, throw it into AI to clear up some of these
+54.31s: it into AI to clear up some of these
+54.32s: it into AI to clear up some of these points that you catch. But this is
+57.83s: points that you catch. But this is
+57.84s: points that you catch. But this is broken down is about as far as I can get
+60.39s: broken down is about as far as I can get
+60.40s: broken down is about as far as I can get it to get you the information that you
+62.79s: it to get you the information that you
+62.80s: it to get you the information that you need about this topic. So everything
+65.91s: need about this topic. So everything
+65.92s: need about this topic. So everything that you see going forward is going to
+68.31s: that you see going forward is going to
+68.32s: that you see going forward is going to be a mix of public available data. I'll
+71.43s: be a mix of public available data. I'll
+71.44s: be a mix of public available data. I'll explain what that is so that you can do
+72.79s: explain what that is so that you can do
+72.80s: explain what that is so that you can do your own research with that. A mix of my
+75.19s: your own research with that. A mix of my
+75.20s: your own research with that. A mix of my own data set through the O talk. So
+78.39s: own data set through the O talk. So
+78.40s: own data set through the O talk. So everything in here is stuff that you can
+81.59s: everything in here is stuff that you can
+81.60s: everything in here is stuff that you can replicate depending on what data you
+83.99s: replicate depending on what data you
+84.00s: replicate depending on what data you have access to. We have to start with a
+86.31s: have access to. We have to start with a
+86.32s: have access to. We have to start with a super quick primer on implied
+88.15s: super quick primer on implied
+88.16s: super quick primer on implied volatility. We are not going to go into
+91.59s: volatility. We are not going to go into
+91.60s: volatility. We are not going to go into supreme detail here. The assumption I
+94.07s: supreme detail here. The assumption I
+94.08s: supreme detail here. The assumption I have is that most of you will have like
+95.51s: have is that most of you will have like
+95.52s: have is that most of you will have like a pretty good idea what this is, but if
+97.03s: a pretty good idea what this is, but if
+97.04s: a pretty good idea what this is, but if you don't, this is just a primer, a
+98.63s: you don't, this is just a primer, a
+98.64s: you don't, this is just a primer, a reminder so that we're on the same page
+100.23s: reminder so that we're on the same page
+100.24s: reminder so that we're on the same page going forward. I have videos that go
+102.39s: going forward. I have videos that go
+102.40s: going forward. I have videos that go through implied volatility in extreme
+104.95s: through implied volatility in extreme
+104.96s: through implied volatility in extreme detail. I'll link to those in the notes
+106.79s: detail. I'll link to those in the notes
+106.80s: detail. I'll link to those in the notes below if you need a primer. But in a
+109.51s: below if you need a primer. But in a
+109.52s: below if you need a primer. But in a nutshell, this is the underlying factor
+114.55s: nutshell, this is the underlying factor
+114.56s: nutshell, this is the underlying factor of what makes options what they are.
+118.07s: of what makes options what they are.
+118.08s: of what makes options what they are. When you think about the pricing of an
+119.51s: When you think about the pricing of an
+119.52s: When you think about the pricing of an option, there's a lot of stuff we know.
+121.51s: option, there's a lot of stuff we know.
+121.52s: option, there's a lot of stuff we know. And then there's literally only one
+123.19s: And then there's literally only one
+123.20s: And then there's literally only one thing we don't know, which is the
+125.11s: thing we don't know, which is the
+125.12s: thing we don't know, which is the volatility input. We have no idea. What
+128.47s: volatility input. We have no idea. What
+128.48s: volatility input. We have no idea. What happens is from a retail trading
+130.87s: happens is from a retail trading
+130.88s: happens is from a retail trading perspective, we use what's called
+134.07s: perspective, we use what's called
+134.08s: perspective, we use what's called implied volatility,
+137.03s: implied volatility,
+137.04s: implied volatility, all that is is us taking the price of an
+140.79s: all that is is us taking the price of an
+140.80s: all that is is us taking the price of an option and breaking it apart because
+143.67s: option and breaking it apart because
+143.68s: option and breaking it apart because there's a most of the details about that
+145.83s: there's a most of the details about that
+145.84s: there's a most of the details about that option we know. We know the underlying,
+148.87s: option we know. We know the underlying,
+148.88s: option we know. We know the underlying, we know the strike price, we know the
+150.71s: we know the strike price, we know the
+150.72s: we know the strike price, we know the days to expiration, we know spot price,
+153.91s: days to expiration, we know spot price,
+153.92s: days to expiration, we know spot price, we know the risk-free rate, we know if
+155.75s: we know the risk-free rate, we know if
+155.76s: we know the risk-free rate, we know if there's a dividend. All of these traits
+157.99s: there's a dividend. All of these traits
+158.00s: there's a dividend. All of these traits we know, but the one trait that has to
+162.23s: we know, but the one trait that has to
+162.24s: we know, but the one trait that has to be forecasted is volatility and that's
+165.99s: be forecasted is volatility and that's
+166.00s: be forecasted is volatility and that's mostly what market makers and people
+168.31s: mostly what market makers and people
+168.32s: mostly what market makers and people that are providing liquidity in the
+169.91s: that are providing liquidity in the
+169.92s: that are providing liquidity in the market are doing because that's how you
+172.47s: market are doing because that's how you
+172.48s: market are doing because that's how you arrive at what price is quoted on the
+174.79s: arrive at what price is quoted on the
+174.80s: arrive at what price is quoted on the screen. What we can do is break that
+177.27s: screen. What we can do is break that
+177.28s: screen. What we can do is break that apart. We can figure out what is the
+179.59s: apart. We can figure out what is the
+179.60s: apart. We can figure out what is the volatility that the market is implying
+183.43s: volatility that the market is implying
+183.44s: volatility that the market is implying implied volatility. That's why we call
+185.27s: implied volatility. That's why we call
+185.28s: implied volatility. That's why we call it exactly that.
+187.67s: it exactly that.
+187.68s: it exactly that. When we talk about implied volatility,
+190.71s: When we talk about implied volatility,
+190.72s: When we talk about implied volatility, it's you'll see some important traits
+193.03s: it's you'll see some important traits
+193.04s: it's you'll see some important traits about it, but it's essentially a
+195.19s: about it, but it's essentially a
+195.20s: about it, but it's essentially a forecast and it's not a directional
+197.19s: forecast and it's not a directional
+197.20s: forecast and it's not a directional forecast in that we think something is
+199.35s: forecast in that we think something is
+199.36s: forecast in that we think something is going to go up or down. It's simply a
+203.11s: going to go up or down. It's simply a
+203.12s: going to go up or down. It's simply a variance. How much do we think something
+205.75s: variance. How much do we think something
+205.76s: variance. How much do we think something is likely to vary in a one standard
+208.79s: is likely to vary in a one standard
+208.80s: is likely to vary in a one standard deviation world? I want to emphasize
+212.07s: deviation world? I want to emphasize
+212.08s: deviation world? I want to emphasize that one standard deviation because 68%
+215.75s: that one standard deviation because 68%
+215.76s: that one standard deviation because 68% of samples on a normal distribution will
+218.47s: of samples on a normal distribution will
+218.48s: of samples on a normal distribution will fall within one standard deviation. So a
+222.95s: fall within one standard deviation. So a
+222.96s: fall within one standard deviation. So a lot of the data does but not all of it
+225.43s: lot of the data does but not all of it
+225.44s: lot of the data does but not all of it and that's an important function as we
+227.19s: and that's an important function as we
+227.20s: and that's an important function as we go further. So as we look at two
+230.79s: go further. So as we look at two
+230.80s: go further. So as we look at two different scenarios, this is same option
+233.59s: different scenarios, this is same option
+233.60s: different scenarios, this is same option everything. The only thing I'm doing is
+236.07s: everything. The only thing I'm doing is
+236.08s: everything. The only thing I'm doing is changing the implied volatility function
+239.03s: changing the implied volatility function
+239.04s: changing the implied volatility function and then what the expected range is.
+242.71s: and then what the expected range is.
+242.72s: and then what the expected range is. When we see a higher implied volatility,
+245.83s: When we see a higher implied volatility,
+245.84s: When we see a higher implied volatility, that means that option is more
+247.19s: that means that option is more
+247.20s: that means that option is more expensive. It's the only thing that can
+248.95s: expensive. It's the only thing that can
+248.96s: expensive. It's the only thing that can make an option more expensive relative
+250.63s: make an option more expensive relative
+250.64s: make an option more expensive relative to those other inputs if you isolate
+252.71s: to those other inputs if you isolate
+252.72s: to those other inputs if you isolate those. So what that means is if you have
+254.95s: those. So what that means is if you have
+254.96s: those. So what that means is if you have something that's a 12% vault that might
+257.75s: something that's a 12% vault that might
+257.76s: something that's a 12% vault that might have a $8.29
+259.99s: have a $8.29
+260.00s: have a $8.29 range in this example,
+262.55s: range in this example,
+262.56s: range in this example, if we jack that up to 30, you'll see
+265.27s: if we jack that up to 30, you'll see
+265.28s: if we jack that up to 30, you'll see that it goes to 20.72.
+268.15s: that it goes to 20.72.
+268.16s: that it goes to 20.72. There's a really important relationship
+270.95s: There's a really important relationship
+270.96s: There's a really important relationship that you will see between these numbers
+273.19s: that you will see between these numbers
+273.20s: that you will see between these numbers that we're going to talk about in terms
+274.95s: that we're going to talk about in terms
+274.96s: that we're going to talk about in terms of how volatility scale. The way to
+278.71s: of how volatility scale. The way to
+278.72s: of how volatility scale. The way to think about low IV versus high IV, if
+281.99s: think about low IV versus high IV, if
+282.00s: think about low IV versus high IV, if implied volatility is low, the market is
+284.87s: implied volatility is low, the market is
+284.88s: implied volatility is low, the market is implying a narrower range of outcomes.
+289.27s: implying a narrower range of outcomes.
+289.28s: implying a narrower range of outcomes. If implied volatility is high, that
+292.23s: If implied volatility is high, that
+292.24s: If implied volatility is high, that means the market is anticipating or
+294.87s: means the market is anticipating or
+294.88s: means the market is anticipating or implying a much wider range. And you can
+298.07s: implying a much wider range. And you can
+298.08s: implying a much wider range. And you can see this expressed in different kinds of
+300.23s: see this expressed in different kinds of
+300.24s: see this expressed in different kinds of underlings. If you have a company like
+303.59s: underlings. If you have a company like
+303.60s: underlings. If you have a company like let's say Walmart versus a company like
+306.39s: let's say Walmart versus a company like
+306.40s: let's say Walmart versus a company like Tesla, you'll notice that their implied
+308.71s: Tesla, you'll notice that their implied
+308.72s: Tesla, you'll notice that their implied volatilities are completely different
+311.03s: volatilities are completely different
+311.04s: volatilities are completely different and there's an expectation of a
+314.55s: and there's an expectation of a
+314.56s: and there's an expectation of a different relationship on how those
+316.63s: different relationship on how those
+316.64s: different relationship on how those things will move. We know in general
+319.83s: things will move. We know in general
+319.84s: things will move. We know in general going back since 1990,
+322.71s: going back since 1990,
+322.72s: going back since 1990, that's what my data goes back to for
+324.63s: that's what my data goes back to for
+324.64s: that's what my data goes back to for this specific piece of research, but it
+326.39s: this specific piece of research, but it
+326.40s: this specific piece of research, but it goes back even further than that. that
+328.79s: goes back even further than that. that
+328.80s: goes back even further than that. that options in the S&amp;P 500 are generally
+332.15s: options in the S&amp;P 500 are generally
+332.16s: options in the S&amp;P 500 are generally speaking overpriced about 85% of the
+335.51s: speaking overpriced about 85% of the
+335.52s: speaking overpriced about 85% of the time. That's most of the time. Here's
+339.43s: time. That's most of the time. Here's
+339.44s: time. That's most of the time. Here's the funny thing about it, though. Most
+342.39s: the funny thing about it, though. Most
+342.40s: the funny thing about it, though. Most traders that try to harvest
+346.39s: traders that try to harvest
+346.40s: traders that try to harvest this exact VRP
+349.19s: this exact VRP
+349.20s: this exact VRP end up blowing up or losing money doing
+351.75s: end up blowing up or losing money doing
+351.76s: end up blowing up or losing money doing so. And both of those things can be true
+354.71s: so. And both of those things can be true
+354.72s: so. And both of those things can be true at the same time. This video is going to
+356.39s: at the same time. This video is going to
+356.40s: at the same time. This video is going to explain to you exactly
+358.95s: explain to you exactly
+358.96s: explain to you exactly why that is, how you can measure it
+362.15s: why that is, how you can measure it
+362.16s: why that is, how you can measure it without fooling yourself, why it's even
+365.11s: without fooling yourself, why it's even
+365.12s: without fooling yourself, why it's even there, and why it being there doesn't
+369.91s: there, and why it being there doesn't
+369.92s: there, and why it being there doesn't mean it automatically enters your
+372.07s: mean it automatically enters your
+372.08s: mean it automatically enters your account. So, let's talk about a really
+375.03s: account. So, let's talk about a really
+375.04s: account. So, let's talk about a really important aligning function. I only put
+377.75s: important aligning function. I only put
+377.76s: important aligning function. I only put this in because I think the majority of
+380.71s: this in because I think the majority of
+380.72s: this in because I think the majority of more retail newer options traders don't
+383.67s: more retail newer options traders don't
+383.68s: more retail newer options traders don't actually understand this and it's super
+385.91s: actually understand this and it's super
+385.92s: actually understand this and it's super important. There's a relationship
+388.87s: important. There's a relationship
+388.88s: important. There's a relationship between implied volatility and realized
+391.83s: between implied volatility and realized
+391.84s: between implied volatility and realized volatility.
+393.51s: volatility.
+393.52s: volatility. So implied volatility
+395.99s: So implied volatility
+396.00s: So implied volatility is what the market is pricing. That is
+399.91s: is what the market is pricing. That is
+399.92s: is what the market is pricing. That is how the that is the market rate for V on
+404.31s: how the that is the market rate for V on
+404.32s: how the that is the market rate for V on whatever that thing is that you're
+406.23s: whatever that thing is that you're
+406.24s: whatever that thing is that you're looking at.
+408.15s: looking at.
+408.16s: looking at. You can literally think of the value of
+411.43s: You can literally think of the value of
+411.44s: You can literally think of the value of an option in terms of its balls because
+415.03s: an option in terms of its balls because
+415.04s: an option in terms of its balls because again it's the only thing that
+418.23s: again it's the only thing that
+418.24s: again it's the only thing that realistically changes if we control for
+420.87s: realistically changes if we control for
+420.88s: realistically changes if we control for the other factors. You could say the
+423.11s: the other factors. You could say the
+423.12s: the other factors. You could say the relationship for example between your
+425.67s: relationship for example between your
+425.68s: relationship for example between your strike price and spot price those things
+427.83s: strike price and spot price those things
+427.84s: strike price and spot price those things can absolutely move. they will impact
+429.51s: can absolutely move. they will impact
+429.52s: can absolutely move. they will impact your price but we can calculate those
+431.43s: your price but we can calculate those
+431.44s: your price but we can calculate those perfectly. Implied volatility is
+434.07s: perfectly. Implied volatility is
+434.08s: perfectly. Implied volatility is different because again it's dependent
+436.79s: different because again it's dependent
+436.80s: different because again it's dependent on a model. So you should at least
+440.71s: on a model. So you should at least
+440.72s: on a model. So you should at least consider thinking of volatility as a
+443.03s: consider thinking of volatility as a
+443.04s: consider thinking of volatility as a price not so much as some sort of
+445.91s: price not so much as some sort of
+445.92s: price not so much as some sort of prediction. This is the value that
+448.87s: prediction. This is the value that
+448.88s: prediction. This is the value that people are assigning to something.
+452.39s: people are assigning to something.
+452.40s: people are assigning to something. You can have
+454.47s: You can have
+454.48s: You can have different options that have all
+457.91s: different options that have all
+457.92s: different options that have all different kinds of volatilities. This is
+460.39s: different kinds of volatilities. This is
+460.40s: different kinds of volatilities. This is called a volatility surface.
+463.19s: called a volatility surface.
+463.20s: called a volatility surface. Something that the black shells merin
+464.71s: Something that the black shells merin
+464.72s: Something that the black shells merin model does to simplify
+467.35s: model does to simplify
+467.36s: model does to simplify option pricing is it assumes volatility
+469.91s: option pricing is it assumes volatility
+469.92s: option pricing is it assumes volatility is uniform. It's not. We know it's not.
+472.55s: is uniform. It's not. We know it's not.
+472.56s: is uniform. It's not. We know it's not. And the reason why this is the case is
+476.07s: And the reason why this is the case is
+476.08s: And the reason why this is the case is because each option has its own little
+479.19s: because each option has its own little
+479.20s: because each option has its own little traits and we can literally visualize
+482.07s: traits and we can literally visualize
+482.08s: traits and we can literally visualize that implied volatility surface. So this
+486.31s: that implied volatility surface. So this
+486.32s: that implied volatility surface. So this is showing you going back just 10 days
+490.87s: is showing you going back just 10 days
+490.88s: is showing you going back just 10 days and I'm looking at the close in S&amp;P and
+495.83s: and I'm looking at the close in S&amp;P and
+495.84s: and I'm looking at the close in S&amp;P and then the daily log return. We're going
+498.15s: then the daily log return. We're going
+498.16s: then the daily log return. We're going to talk about log return and and why
+500.39s: to talk about log return and and why
+500.40s: to talk about log return and and why that matters in a little bit.
+502.71s: that matters in a little bit.
+502.72s: that matters in a little bit. But we can take the daily log return
+505.83s: But we can take the daily log return
+505.84s: But we can take the daily log return take their standard deviation over a
+508.47s: take their standard deviation over a
+508.48s: take their standard deviation over a window and then annualize it.
+511.99s: window and then annualize it.
+512.00s: window and then annualize it. That is realized volatility. That's what
+515.67s: That is realized volatility. That's what
+515.68s: That is realized volatility. That's what happened. So here this is again showing
+519.43s: happened. So here this is again showing
+519.44s: happened. So here this is again showing you this exact concept over a 10day
+522.87s: you this exact concept over a 10day
+522.88s: you this exact concept over a 10day window just so that you could see what
+524.31s: window just so that you could see what
+524.32s: window just so that you could see what it looks like. And one trait that you
+526.79s: it looks like. And one trait that you
+526.80s: it looks like. And one trait that you should pay really close attention to is
+528.71s: should pay really close attention to is
+528.72s: should pay really close attention to is the fact that most of the bars are
+530.79s: the fact that most of the bars are
+530.80s: the fact that most of the bars are green. Meaning that there is some type
+535.03s: green. Meaning that there is some type
+535.04s: green. Meaning that there is some type of relationship between up moves and
+537.35s: of relationship between up moves and
+537.36s: of relationship between up moves and down move in the market. Market a lot of
+539.27s: down move in the market. Market a lot of
+539.28s: down move in the market. Market a lot of times goes up. But we need to think
+542.55s: times goes up. But we need to think
+542.56s: times goes up. But we need to think about next how we measure these things
+545.75s: about next how we measure these things
+545.76s: about next how we measure these things relative to one another.
+548.07s: relative to one another.
+548.08s: relative to one another. Log returns help us compare things
+551.19s: Log returns help us compare things
+551.20s: Log returns help us compare things objectively.
+553.19s: objectively.
+553.20s: objectively. If a stock goes from 100 to 150 and then
+559.59s: If a stock goes from 100 to 150 and then
+559.60s: If a stock goes from 100 to 150 and then back to 100, you are flat. You've done
+562.71s: back to 100, you are flat. You've done
+562.72s: back to 100, you are flat. You've done nothing. But if you did a percentage
+565.91s: nothing. But if you did a percentage
+565.92s: nothing. But if you did a percentage return there, it's 50% minus 33 and
+571.43s: return there, it's 50% minus 33 and
+571.44s: return there, it's 50% minus 33 and those that sum to a plus 17%. That's not
+576.55s: those that sum to a plus 17%. That's not
+576.56s: those that sum to a plus 17%. That's not actually what happened there. So the
+579.83s: actually what happened there. So the
+579.84s: actually what happened there. So the arithmetic in that first scenario would
+582.31s: arithmetic in that first scenario would
+582.32s: arithmetic in that first scenario would lead you to believe that you made money
+583.83s: lead you to believe that you made money
+583.84s: lead you to believe that you made money but you didn't. This is exactly why we
+587.51s: but you didn't. This is exactly why we
+587.52s: but you didn't. This is exactly why we use log returns.
+590.47s: use log returns.
+590.48s: use log returns. So if we look at a standard deviation
+594.55s: So if we look at a standard deviation
+594.56s: So if we look at a standard deviation and we can apply a standard deviation or
+598.39s: and we can apply a standard deviation or
+598.40s: and we can apply a standard deviation or an expected move for something over all
+600.71s: an expected move for something over all
+600.72s: an expected move for something over all different kinds of time frames, but we
+604.63s: different kinds of time frames, but we
+604.64s: different kinds of time frames, but we actually need to understand what a
+606.87s: actually need to understand what a
+606.88s: actually need to understand what a standard deviation is really quick. All
+609.51s: standard deviation is really quick. All
+609.52s: standard deviation is really quick. All it tells us is the relationship of
+613.27s: it tells us is the relationship of
+613.28s: it tells us is the relationship of something against an average of a data
+616.47s: something against an average of a data
+616.48s: something against an average of a data set. That's all. So what you see here is
+620.47s: set. That's all. So what you see here is
+620.48s: set. That's all. So what you see here is that vertical line is your mean and then
+623.59s: that vertical line is your mean and then
+623.60s: that vertical line is your mean and then those points are plotted. Those are the
+625.83s: those points are plotted. Those are the
+625.84s: those points are plotted. Those are the dates we looked at earlier relative to
+628.39s: dates we looked at earlier relative to
+628.40s: dates we looked at earlier relative to that mean. And you can see what standard
+631.83s: that mean. And you can see what standard
+631.84s: that mean. And you can see what standard deviations fall. This is a one standard
+635.11s: deviations fall. This is a one standard
+635.12s: deviations fall. This is a one standard deviation zone plus or minus one. And
+637.75s: deviation zone plus or minus one. And
+637.76s: deviation zone plus or minus one. And you can see that this specific date to
+640.31s: you can see that this specific date to
+640.32s: you can see that this specific date to Feb is at 84 standard deviations. So it
+644.23s: Feb is at 84 standard deviations. So it
+644.24s: Feb is at 84 standard deviations. So it gives us a way to contextualize
+647.51s: gives us a way to contextualize
+647.52s: gives us a way to contextualize movements and compare them against what
+650.95s: movements and compare them against what
+650.96s: movements and compare them against what our ex expectations are.
+655.11s: our ex expectations are.
+655.12s: our ex expectations are. This is another thing that trips a lot
+658.23s: This is another thing that trips a lot
+658.24s: This is another thing that trips a lot of people up. We annualize on trading
+661.43s: of people up. We annualize on trading
+661.44s: of people up. We annualize on trading days, not calendar days. So when you
+666.07s: days, not calendar days. So when you
+666.08s: days, not calendar days. So when you annualize, you multiply by the square
+669.35s: annualize, you multiply by the square
+669.36s: annualize, you multiply by the square root of the periods in a year. So,
+672.55s: root of the periods in a year. So,
+672.56s: root of the periods in a year. So, whatever the periods that you're looking
+673.99s: whatever the periods that you're looking
+674.00s: whatever the periods that you're looking at, and that number changes a lot based
+677.35s: at, and that number changes a lot based
+677.36s: at, and that number changes a lot based on what you're sampling. So, trading
+680.47s: on what you're sampling. So, trading
+680.48s: on what you're sampling. So, trading days give you one constant, calendar
+683.03s: days give you one constant, calendar
+683.04s: days give you one constant, calendar days give you a different one, and if
+684.79s: days give you a different one, and if
+684.80s: days give you a different one, and if you use the wrong one, you'll
+687.27s: you use the wrong one, you'll
+687.28s: you use the wrong one, you'll essentially set yourself up for a false
+689.19s: essentially set yourself up for a false
+689.20s: essentially set yourself up for a false comparison. Easiest way to fix this is
+692.47s: comparison. Easiest way to fix this is
+692.48s: comparison. Easiest way to fix this is implied v includes everything. It
+695.67s: implied v includes everything. It
+695.68s: implied v includes everything. It includes calendar days, it includes
+697.83s: includes calendar days, it includes
+697.84s: includes calendar days, it includes working days, it has everything. It's
+699.51s: working days, it has everything. It's
+699.52s: working days, it has everything. It's forward-looking.
+701.03s: forward-looking.
+701.04s: forward-looking. Realized V because the market does not
+703.91s: Realized V because the market does not
+703.92s: Realized V because the market does not trade over the weekend. Realize V cares
+708.31s: trade over the weekend. Realize V cares
+708.32s: trade over the weekend. Realize V cares about trading days.
+711.03s: about trading days.
+711.04s: about trading days. These metrics here are giving you the
+713.67s: These metrics here are giving you the
+713.68s: These metrics here are giving you the way that volatility square or scales
+717.03s: way that volatility square or scales
+717.04s: way that volatility square or scales with the square root of time. And I'm
+719.91s: with the square root of time. And I'm
+719.92s: with the square root of time. And I'm literally just giving you the actual
+722.07s: literally just giving you the actual
+722.08s: literally just giving you the actual data points you should use. So for
+724.39s: data points you should use. So for
+724.40s: data points you should use. So for example, weekly is the square root of
+726.31s: example, weekly is the square root of
+726.32s: example, weekly is the square root of five, monthly square&lt;unk&gt; of 21, and so
+728.79s: five, monthly square&lt;unk&gt; of 21, and so
+728.80s: five, monthly square&lt;unk&gt; of 21, and so on. Implied
+731.51s: on. Implied
+731.52s: on. Implied volatility as we already talked about is
+733.11s: volatility as we already talked about is
+733.12s: volatility as we already talked about is forwards looking. Realized volatility is
+735.27s: forwards looking. Realized volatility is
+735.28s: forwards looking. Realized volatility is what happens backwards. Another really
+737.83s: what happens backwards. Another really
+737.84s: what happens backwards. Another really common mistake here is when somebody is
+741.35s: common mistake here is when somebody is
+741.36s: common mistake here is when somebody is comparing implied to realize volatility.
+744.79s: comparing implied to realize volatility.
+744.80s: comparing implied to realize volatility. You actually have to create a gap
+747.99s: You actually have to create a gap
+748.00s: You actually have to create a gap because of this. If I'm looking at
+750.55s: because of this. If I'm looking at
+750.56s: because of this. If I'm looking at 30-day V forward, and I look at today's
+755.67s: 30-day V forward, and I look at today's
+755.68s: 30-day V forward, and I look at today's realized V 20, which is 20 days
+758.47s: realized V 20, which is 20 days
+758.48s: realized V 20, which is 20 days backwards, notice the problem here. If
+761.99s: backwards, notice the problem here. If
+762.00s: backwards, notice the problem here. If I'm looking at realized V from today
+763.83s: I'm looking at realized V from today
+763.84s: I'm looking at realized V from today backwards, but my current V is 30-day V
+767.19s: backwards, but my current V is 30-day V
+767.20s: backwards, but my current V is 30-day V going forwards,
+769.51s: going forwards,
+769.52s: going forwards, I'm literally not measuring the same
+771.11s: I'm literally not measuring the same
+771.12s: I'm literally not measuring the same thing. So, if I want to be able to say
+773.83s: thing. So, if I want to be able to say
+773.84s: thing. So, if I want to be able to say to myself,
+775.51s: to myself,
+775.52s: to myself, was there actually risk premium? What I
+779.11s: was there actually risk premium? What I
+779.12s: was there actually risk premium? What I need to do is take implied vault now and
+782.15s: need to do is take implied vault now and
+782.16s: need to do is take implied vault now and then I have to wait 20 trading days, 21
+785.83s: then I have to wait 20 trading days, 21
+785.84s: then I have to wait 20 trading days, 21 trading days and then measure realized
+788.39s: trading days and then measure realized
+788.40s: trading days and then measure realized vault at that point and then I can say
+790.95s: vault at that point and then I can say
+790.96s: vault at that point and then I can say well implied vault at that time was
+792.55s: well implied vault at that time was
+792.56s: well implied vault at that time was blank. Realized vault came out to blank.
+795.35s: blank. Realized vault came out to blank.
+795.36s: blank. Realized vault came out to blank. There was or wasn't variance risk
+798.39s: There was or wasn't variance risk
+798.40s: There was or wasn't variance risk premium positive or negative. The metric
+800.23s: premium positive or negative. The metric
+800.24s: premium positive or negative. The metric can be positive or negative. It's
+801.67s: can be positive or negative. It's
+801.68s: can be positive or negative. It's typically positive. This is a super
+805.99s: typically positive. This is a super
+806.00s: typically positive. This is a super common mistake. It's super easy to
+807.59s: common mistake. It's super easy to
+807.60s: common mistake. It's super easy to avoid. Just think about what they're
+809.51s: avoid. Just think about what they're
+809.52s: avoid. Just think about what they're measuring. That's all
+812.87s: measuring. That's all
+812.88s: measuring. That's all you want to match the window length. So,
+816.23s: you want to match the window length. So,
+816.24s: you want to match the window length. So, I already gave you the conversion for
+817.91s: I already gave you the conversion for
+817.92s: I already gave you the conversion for that. It's the same thing if you're
+820.07s: that. It's the same thing if you're
+820.08s: that. It's the same thing if you're comparing longer duration. So, if you're
+821.91s: comparing longer duration. So, if you're
+821.92s: comparing longer duration. So, if you're comparing two month to 60-day implied V
+826.15s: comparing two month to 60-day implied V
+826.16s: comparing two month to 60-day implied V or you're doing 3 month, six month, you
+828.15s: or you're doing 3 month, six month, you
+828.16s: or you're doing 3 month, six month, you can do all of these implied volatility
+830.95s: can do all of these implied volatility
+830.96s: can do all of these implied volatility and realized volatility. Thus, the
+832.71s: and realized volatility. Thus, the
+832.72s: and realized volatility. Thus, the variance risk premium has a common
+835.11s: variance risk premium has a common
+835.12s: variance risk premium has a common relationship across all these periods.
+837.27s: relationship across all these periods.
+837.28s: relationship across all these periods. You can have VRP for one day vault,
+840.87s: You can have VRP for one day vault,
+840.88s: You can have VRP for one day vault, 2-day vault, 5day vault, 10day vault,
+843.27s: 2-day vault, 5day vault, 10day vault,
+843.28s: 2-day vault, 5day vault, 10day vault, and so on. It's not all based around the
+846.07s: and so on. It's not all based around the
+846.08s: and so on. It's not all based around the 30-day clock that just our standard
+849.11s: 30-day clock that just our standard
+849.12s: 30-day clock that just our standard quotation of implied vault is.
+853.27s: quotation of implied vault is.
+853.28s: quotation of implied vault is. This gives you a scenario where you can
+856.95s: This gives you a scenario where you can
+856.96s: This gives you a scenario where you can have a mistake in this. I'm showing you
+861.03s: have a mistake in this. I'm showing you
+861.04s: have a mistake in this. I'm showing you two different plots. That first plot is
+865.43s: two different plots. That first plot is
+865.44s: two different plots. That first plot is comparing them measured at the same
+867.83s: comparing them measured at the same
+867.84s: comparing them measured at the same point and then the second plot is
+871.11s: point and then the second plot is
+871.12s: point and then the second plot is comparing implied to realized that are
+874.07s: comparing implied to realized that are
+874.08s: comparing implied to realized that are correctly aligned. All I'm showing you
+877.11s: correctly aligned. All I'm showing you
+877.12s: correctly aligned. All I'm showing you is how things can skew pretty quickly
+879.35s: is how things can skew pretty quickly
+879.36s: is how things can skew pretty quickly and the periods that you come across
+881.03s: and the periods that you come across
+881.04s: and the periods that you come across with are completely wrong. So again
+883.75s: with are completely wrong. So again
+883.76s: with are completely wrong. So again remember you need to measure implied
+886.71s: remember you need to measure implied
+886.72s: remember you need to measure implied realized against a subsequent realized
+890.47s: realized against a subsequent realized
+890.48s: realized against a subsequent realized period that matches.
+893.03s: period that matches.
+893.04s: period that matches. We already talked about implied vault
+896.23s: We already talked about implied vault
+896.24s: We already talked about implied vault typically
+898.15s: typically
+898.16s: typically outpaces what's realized a little over
+900.79s: outpaces what's realized a little over
+900.80s: outpaces what's realized a little over 85% of time. This is again from 1990 to
+903.83s: 85% of time. This is again from 1990 to
+903.84s: 85% of time. This is again from 1990 to 2026.
+905.35s: 2026.
+905.36s: 2026. So everywhere that you see gold above
+907.59s: So everywhere that you see gold above
+907.60s: So everywhere that you see gold above gray, that is exactly where implied
+910.07s: gray, that is exactly where implied
+910.08s: gray, that is exactly where implied vault was rich. And it implied more
+912.63s: vault was rich. And it implied more
+912.64s: vault was rich. And it implied more movement than what actually showed up.
+915.83s: movement than what actually showed up.
+915.84s: movement than what actually showed up. It's there through 1998. It's there
+919.67s: It's there through 1998. It's there
+919.68s: It's there through 1998. It's there through 2008. It's there through the
+922.23s: through 2008. It's there through the
+922.24s: through 2008. It's there through the pandemic. It's there all It's there all
+924.79s: pandemic. It's there all It's there all
+924.80s: pandemic. It's there all It's there all the time, most of the time. But there's
+930.23s: the time, most of the time. But there's
+930.24s: the time, most of the time. But there's some really important nuance that we
+933.19s: some really important nuance that we
+933.20s: some really important nuance that we have to address here.
+935.19s: have to address here.
+935.20s: have to address here. The first thing is we can calculate what
+937.51s: The first thing is we can calculate what
+937.52s: The first thing is we can calculate what the average implied V is. This is in the
+939.99s: the average implied V is. This is in the
+940.00s: the average implied V is. This is in the S&amp;P. What the subsequent realized is,
+942.31s: S&amp;P. What the subsequent realized is,
+942.32s: S&amp;P. What the subsequent realized is, what the gap is, and the periods that
+944.31s: what the gap is, and the periods that
+944.32s: what the gap is, and the periods that they won. You can see all of that here.
+947.03s: they won. You can see all of that here.
+947.04s: they won. You can see all of that here. But here's the here's the fun part.
+950.87s: But here's the here's the fun part.
+950.88s: But here's the here's the fun part. Notice the tail.
+954.71s: Notice the tail.
+954.72s: Notice the tail. This is a really tricky part about
+959.75s: This is a really tricky part about
+959.76s: This is a really tricky part about trying to capture the variance risk
+962.07s: trying to capture the variance risk
+962.08s: trying to capture the variance risk premium. And I don't like the saying
+964.79s: premium. And I don't like the saying
+964.80s: premium. And I don't like the saying because it's a little misunderstood and
+966.31s: because it's a little misunderstood and
+966.32s: because it's a little misunderstood and abused, but it does make sense. This is
+968.87s: abused, but it does make sense. This is
+968.88s: abused, but it does make sense. This is the picking up pennies in front of a
+970.87s: the picking up pennies in front of a
+970.88s: the picking up pennies in front of a steamroller thing that you've probably
+972.55s: steamroller thing that you've probably
+972.56s: steamroller thing that you've probably heard. Most of the time you're
+974.95s: heard. Most of the time you're
+974.96s: heard. Most of the time you're collecting a little tiny bit of money
+977.51s: collecting a little tiny bit of money
+977.52s: collecting a little tiny bit of money and then every once in a while you get
+980.07s: and then every once in a while you get
+980.08s: and then every once in a while you get absolutely
+981.59s: absolutely
+981.60s: absolutely ran over, absolutely crushed.
+985.83s: ran over, absolutely crushed.
+985.84s: ran over, absolutely crushed. That's the problem. So when we're
+989.11s: That's the problem. So when we're
+989.12s: That's the problem. So when we're thinking about how can we possibly
+991.11s: thinking about how can we possibly
+991.12s: thinking about how can we possibly capture this, we have to take into
+993.51s: capture this, we have to take into
+993.52s: capture this, we have to take into account that exact fail.
+997.27s: account that exact fail.
+997.28s: account that exact fail. We already talked a little bit about the
+999.67s: We already talked a little bit about the
+999.68s: We already talked a little bit about the fact that VIX is a variance rate, but we
+1003.03s: fact that VIX is a variance rate, but we
+1003.04s: fact that VIX is a variance rate, but we need to understand a little bit more
+1004.39s: need to understand a little bit more
+1004.40s: need to understand a little bit more what that is because let VIX it's not
+1008.71s: what that is because let VIX it's not
+1008.72s: what that is because let VIX it's not the implied volatility of an at the
+1011.19s: the implied volatility of an at the
+1011.20s: the implied volatility of an at the money option. It's a literal it's a
+1013.67s: money option. It's a literal it's a
+1013.68s: money option. It's a literal it's a model. It's a model free 30-day variance
+1017.27s: model. It's a model free 30-day variance
+1017.28s: model. It's a model free 30-day variance rate. There's a lot of really
+1018.95s: rate. There's a lot of really
+1018.96s: rate. There's a lot of really interesting things about how they
+1020.23s: interesting things about how they
+1020.24s: interesting things about how they calculate it, but what they do is they
+1022.39s: calculate it, but what they do is they
+1022.40s: calculate it, but what they do is they integrate prices across the entire
+1025.11s: integrate prices across the entire
+1025.12s: integrate prices across the entire surface. So that means strikes across
+1027.83s: surface. So that means strikes across
+1027.84s: surface. So that means strikes across the entire range, which includes put
+1029.99s: the entire range, which includes put
+1030.00s: the entire range, which includes put wings, which tend to be expensive
+1033.99s: wings, which tend to be expensive
+1034.00s: wings, which tend to be expensive relative to calls. This is what you will
+1036.23s: relative to calls. This is what you will
+1036.24s: relative to calls. This is what you will typically hear as put skew.
+1039.11s: typically hear as put skew.
+1039.12s: typically hear as put skew. The reason why that matters is because
+1041.51s: The reason why that matters is because
+1041.52s: The reason why that matters is because it nudges the level of premium that
+1043.91s: it nudges the level of premium that
+1043.92s: it nudges the level of premium that we're actually measuring up just a
+1045.99s: we're actually measuring up just a
+1046.00s: we're actually measuring up just a little bit. The premium isn't just like
+1048.95s: little bit. The premium isn't just like
+1048.96s: little bit. The premium isn't just like there out of nothing.
+1051.19s: there out of nothing.
+1051.20s: there out of nothing. The other thing to note is
+1055.19s: The other thing to note is
+1055.20s: The other thing to note is in general there are defined
+1057.51s: in general there are defined
+1057.52s: in general there are defined relationships in volatility specifically
+1060.31s: relationships in volatility specifically
+1060.32s: relationships in volatility specifically with something like VIX where there's a
+1063.11s: with something like VIX where there's a
+1063.12s: with something like VIX where there's a state of contango and backwardation.
+1065.51s: state of contango and backwardation.
+1065.52s: state of contango and backwardation. This is just looking at term structure,
+1067.83s: This is just looking at term structure,
+1067.84s: This is just looking at term structure, which is how do different expirations
+1069.91s: which is how do different expirations
+1069.92s: which is how do different expirations compare. Most of the time you'll see it
+1072.23s: compare. Most of the time you'll see it
+1072.24s: compare. Most of the time you'll see it in contango, which is it kind of goes up
+1073.91s: in contango, which is it kind of goes up
+1073.92s: in contango, which is it kind of goes up as you go further out in time. But
+1075.35s: as you go further out in time. But
+1075.36s: as you go further out in time. But sometimes you'll find it in
+1076.55s: sometimes you'll find it in
+1076.56s: sometimes you'll find it in backwardation, which is where a
+1078.31s: backwardation, which is where a
+1078.32s: backwardation, which is where a near-term expiration can be higher than
+1080.23s: near-term expiration can be higher than
+1080.24s: near-term expiration can be higher than a front term. That's typically where
+1082.07s: a front term. That's typically where
+1082.08s: a front term. That's typically where something chaotic happens today. The
+1084.47s: something chaotic happens today. The
+1084.48s: something chaotic happens today. The market is really jazzed about it for
+1087.27s: market is really jazzed about it for
+1087.28s: market is really jazzed about it for some reason, trying to figure out what
+1088.47s: some reason, trying to figure out what
+1088.48s: some reason, trying to figure out what to do, and then they don't expect it to
+1092.47s: to do, and then they don't expect it to
+1092.48s: to do, and then they don't expect it to linger super far into the future.
+1095.91s: linger super far into the future.
+1095.92s: linger super far into the future. Now, we need to talk about if implied
+1098.23s: Now, we need to talk about if implied
+1098.24s: Now, we need to talk about if implied volatility is actually high or low in
+1100.55s: volatility is actually high or low in
+1100.56s: volatility is actually high or low in some different ways that we can do this.
+1103.67s: some different ways that we can do this.
+1103.68s: some different ways that we can do this. I'm giving you effectively fourish tools
+1107.19s: I'm giving you effectively fourish tools
+1107.20s: I'm giving you effectively fourish tools relative. So, just the number or I
+1109.51s: relative. So, just the number or I
+1109.52s: relative. So, just the number or I should say raw, just the number by
+1111.43s: should say raw, just the number by
+1111.44s: should say raw, just the number by itself. Then we'll look at implied
+1112.87s: itself. Then we'll look at implied
+1112.88s: itself. Then we'll look at implied volatility rank, percentile, and zcores.
+1117.43s: volatility rank, percentile, and zcores.
+1117.44s: volatility rank, percentile, and zcores. Most platforms I would say probably give
+1120.15s: Most platforms I would say probably give
+1120.16s: Most platforms I would say probably give you IV rank. and IV rank is okay. But
+1125.59s: you IV rank. and IV rank is okay. But
+1125.60s: you IV rank. and IV rank is okay. But what I want to show you is the
+1127.43s: what I want to show you is the
+1127.44s: what I want to show you is the differences in these metrics
+1129.59s: differences in these metrics
+1129.60s: differences in these metrics specifically somewhere like here. You
+1131.83s: specifically somewhere like here. You
+1131.84s: specifically somewhere like here. You can see everything pops around this
+1134.31s: can see everything pops around this
+1134.32s: can see everything pops around this time. So this is during COVID supern
+1136.63s: time. So this is during COVID supern
+1136.64s: time. So this is during COVID supern normal. But then I want you to notice
+1139.43s: normal. But then I want you to notice
+1139.44s: normal. But then I want you to notice what happens after that with IV rank.
+1142.95s: what happens after that with IV rank.
+1142.96s: what happens after that with IV rank. You'll notice that everything is like
+1144.71s: You'll notice that everything is like
+1144.72s: You'll notice that everything is like seemingly much lower than this point.
+1147.67s: seemingly much lower than this point.
+1147.68s: seemingly much lower than this point. But if you look at percentile, you'll
+1149.83s: But if you look at percentile, you'll
+1149.84s: But if you look at percentile, you'll actually see some periods where it's
+1151.83s: actually see some periods where it's
+1151.84s: actually see some periods where it's well above the 50 percentile, sometimes
+1153.99s: well above the 50 percentile, sometimes
+1154.00s: well above the 50 percentile, sometimes above the 75 percentile line, whereas IV
+1156.87s: above the 75 percentile line, whereas IV
+1156.88s: above the 75 percentile line, whereas IV rank is still maybe like 30%.
+1159.99s: rank is still maybe like 30%.
+1160.00s: rank is still maybe like 30%. This is because IV rank is really prone
+1162.71s: This is because IV rank is really prone
+1162.72s: This is because IV rank is really prone to skew and it's how it's calculated.
+1166.95s: to skew and it's how it's calculated.
+1166.96s: to skew and it's how it's calculated. So what IV rank does is it takes today's
+1171.83s: So what IV rank does is it takes today's
+1171.84s: So what IV rank does is it takes today's implied v. We subtract the lowest
+1175.35s: implied v. We subtract the lowest
+1175.36s: implied v. We subtract the lowest implied vault over the same look back
+1177.59s: implied vault over the same look back
+1177.60s: implied vault over the same look back window. So most of the time it's for the
+1179.11s: window. So most of the time it's for the
+1179.12s: window. So most of the time it's for the past year and we divide by the range
+1182.47s: past year and we divide by the range
+1182.48s: past year and we divide by the range between the highest and the lowest in
+1184.15s: between the highest and the lowest in
+1184.16s: between the highest and the lowest in that same window. The problem is as soon
+1188.71s: that same window. The problem is as soon
+1188.72s: that same window. The problem is as soon as you get something that pins it one
+1192.87s: as you get something that pins it one
+1192.88s: as you get something that pins it one way or the other, it's in there for a
+1195.11s: way or the other, it's in there for a
+1195.12s: way or the other, it's in there for a full year no matter what. So if V spiked
+1200.39s: full year no matter what. So if V spiked
+1200.40s: full year no matter what. So if V spiked in any ticker for any reason 230
+1205.11s: in any ticker for any reason 230
+1205.12s: in any ticker for any reason 230 days just for whatever reason ago almost
+1208.79s: days just for whatever reason ago almost
+1208.80s: days just for whatever reason ago almost a year that artifact is still going to
+1212.47s: a year that artifact is still going to
+1212.48s: a year that artifact is still going to influence what's going on today.
+1215.83s: influence what's going on today.
+1215.84s: influence what's going on today. So you just need to understand how to
+1218.71s: So you just need to understand how to
+1218.72s: So you just need to understand how to take these tools into context. Most of
+1220.87s: take these tools into context. Most of
+1220.88s: take these tools into context. Most of the time I definitely prefer implied
+1224.23s: the time I definitely prefer implied
+1224.24s: the time I definitely prefer implied volatility percentile. All this does is
+1227.19s: volatility percentile. All this does is
+1227.20s: volatility percentile. All this does is says what fraction of days in the look
+1229.75s: says what fraction of days in the look
+1229.76s: says what fraction of days in the look back. So typically a year was IV below
+1232.87s: back. So typically a year was IV below
+1232.88s: back. So typically a year was IV below today's like that's that's kind of it.
+1235.99s: today's like that's that's kind of it.
+1236.00s: today's like that's that's kind of it. So you'll see that this tells a really
+1239.03s: So you'll see that this tells a really
+1239.04s: So you'll see that this tells a really different story compared to what we were
+1241.35s: different story compared to what we were
+1241.36s: different story compared to what we were just talking about in IV rank. Then we
+1245.43s: just talking about in IV rank. Then we
+1245.44s: just talking about in IV rank. Then we have zcores. Zcores are actually super
+1249.11s: have zcores. Zcores are actually super
+1249.12s: have zcores. Zcores are actually super interesting. But we again have to talk
+1252.15s: interesting. But we again have to talk
+1252.16s: interesting. But we again have to talk about some small subtleties here with a
+1255.59s: about some small subtleties here with a
+1255.60s: about some small subtleties here with a zcore.
+1257.43s: zcore.
+1257.44s: zcore. It assumes a normal distribution that
+1260.71s: It assumes a normal distribution that
+1260.72s: It assumes a normal distribution that you see there on the left hand side of
+1262.23s: you see there on the left hand side of
+1262.24s: you see there on the left hand side of your graph. The problem is that
+1265.03s: your graph. The problem is that
+1265.04s: your graph. The problem is that volatility is actually quite right
+1267.27s: volatility is actually quite right
+1267.28s: volatility is actually quite right skewed. It's bounded at zero and it's
+1271.35s: skewed. It's bounded at zero and it's
+1271.36s: skewed. It's bounded at zero and it's unbounded above.
+1273.99s: unbounded above.
+1274.00s: unbounded above. So the way that we come up with those
+1276.23s: So the way that we come up with those
+1276.24s: So the way that we come up with those our zcores, we just take the average IV
+1279.83s: our zcores, we just take the average IV
+1279.84s: our zcores, we just take the average IV over our look back, divide by the
+1281.51s: over our look back, divide by the
+1281.52s: over our look back, divide by the standard deviation, and you get a
+1284.15s: standard deviation, and you get a
+1284.16s: standard deviation, and you get a standard deviation units metric instead
+1286.31s: standard deviation units metric instead
+1286.32s: standard deviation units metric instead of some sort of like bounded scale. It's
+1288.95s: of some sort of like bounded scale. It's
+1288.96s: of some sort of like bounded scale. It's useful but we have to understand how to
+1292.15s: useful but we have to understand how to
+1292.16s: useful but we have to understand how to make it useful because
+1295.27s: make it useful because
+1295.28s: make it useful because if we look at log IV it looks like a
+1300.15s: if we look at log IV it looks like a
+1300.16s: if we look at log IV it looks like a bell curve which is your right side
+1302.07s: bell curve which is your right side
+1302.08s: bell curve which is your right side here.
+1304.07s: here.
+1304.08s: here. Vix itself or in this case just balls
+1306.23s: Vix itself or in this case just balls
+1306.24s: Vix itself or in this case just balls we're talking about isn't this is
+1308.95s: we're talking about isn't this is
+1308.96s: we're talking about isn't this is another reason why we use log and
+1311.75s: another reason why we use log and
+1311.76s: another reason why we use log and logarithmic functions so much in stuff
+1315.75s: logarithmic functions so much in stuff
+1315.76s: logarithmic functions so much in stuff like this in pricing vault because what
+1318.31s: like this in pricing vault because what
+1318.32s: like this in pricing vault because what you'll notice is if we take the log of v
+1323.27s: you'll notice is if we take the log of v
+1323.28s: you'll notice is if we take the log of v we can create something that's way more
+1325.19s: we can create something that's way more
+1325.20s: we can create something that's way more normally distributed so then we can
+1327.91s: normally distributed so then we can
+1327.92s: normally distributed so then we can measure more effectively how crazy it's
+1331.67s: measure more effectively how crazy it's
+1331.68s: measure more effectively how crazy it's moved compared to some other function.
+1335.03s: moved compared to some other function.
+1335.04s: moved compared to some other function. If you don't take the log and you take a
+1337.59s: If you don't take the log and you take a
+1337.60s: If you don't take the log and you take a zcore, it's of nothing. You really can't
+1340.07s: zcore, it's of nothing. You really can't
+1340.08s: zcore, it's of nothing. You really can't do a whole lot with it. You can still
+1341.51s: do a whole lot with it. You can still
+1341.52s: do a whole lot with it. You can still track it, but it's way more difficult in
+1344.71s: track it, but it's way more difficult in
+1344.72s: track it, but it's way more difficult in order to interpret.
+1346.63s: order to interpret.
+1346.64s: order to interpret. So, this is giving you different look
+1348.79s: So, this is giving you different look
+1348.80s: So, this is giving you different look back periods. Most of the time it'll be
+1351.99s: back periods. Most of the time it'll be
+1352.00s: back periods. Most of the time it'll be about a year. That's like what most
+1353.43s: about a year. That's like what most
+1353.44s: about a year. That's like what most platforms are going to default to
+1355.03s: platforms are going to default to
+1355.04s: platforms are going to default to generally speaking. That's kind of the
+1356.47s: generally speaking. That's kind of the
+1356.48s: generally speaking. That's kind of the the most useful I would say just at a at
+1359.35s: the most useful I would say just at a at
+1359.36s: the most useful I would say just at a at a high level. But then you definitely
+1362.07s: a high level. But then you definitely
+1362.08s: a high level. But then you definitely can go down rabbit holes and compare
+1364.39s: can go down rabbit holes and compare
+1364.40s: can go down rabbit holes and compare longer term windows. Nothing wrong with
+1366.31s: longer term windows. Nothing wrong with
+1366.32s: longer term windows. Nothing wrong with it. It's just all contextual. So like
+1368.47s: it. It's just all contextual. So like
+1368.48s: it. It's just all contextual. So like none of these is wrong. They're just
+1370.47s: none of these is wrong. They're just
+1370.48s: none of these is wrong. They're just different. And
+1373.59s: different. And
+1373.60s: different. And every measure we've looked at so far. So
+1377.03s: every measure we've looked at so far. So
+1377.04s: every measure we've looked at so far. So raw numbers, rank, percentile, zcore, it
+1380.79s: raw numbers, rank, percentile, zcore, it
+1380.80s: raw numbers, rank, percentile, zcore, it gives us an idea about that underlying
+1384.07s: gives us an idea about that underlying
+1384.08s: gives us an idea about that underlying relative to itself.
+1387.03s: relative to itself.
+1387.04s: relative to itself. This doesn't actually answer the
+1388.87s: This doesn't actually answer the
+1388.88s: This doesn't actually answer the question we're looking for. So for those
+1391.59s: question we're looking for. So for those
+1391.60s: question we're looking for. So for those that like to sell premium, a lot of
+1394.07s: that like to sell premium, a lot of
+1394.08s: that like to sell premium, a lot of those traders will say something like,
+1396.31s: those traders will say something like,
+1396.32s: those traders will say something like, "Well, I only sell when V is high." It's
+1399.67s: "Well, I only sell when V is high." It's
+1399.68s: "Well, I only sell when V is high." It's literally a mistake because you're
+1403.27s: literally a mistake because you're
+1403.28s: literally a mistake because you're you're not actual that that's not what
+1405.35s: you're not actual that that's not what
+1405.36s: you're not actual that that's not what you're capitalizing on. That's not what
+1406.87s: you're capitalizing on. That's not what
+1406.88s: you're capitalizing on. That's not what you're monetizing when you're selling
+1408.95s: you're monetizing when you're selling
+1408.96s: you're monetizing when you're selling your premium in that way. More often
+1410.87s: your premium in that way. More often
+1410.88s: your premium in that way. More often than not, what you're attempting to
+1413.35s: than not, what you're attempting to
+1413.36s: than not, what you're attempting to capture is the variance risk premium.
+1415.11s: capture is the variance risk premium.
+1415.12s: capture is the variance risk premium. It's the propensity for implied vault to
+1417.35s: It's the propensity for implied vault to
+1417.36s: It's the propensity for implied vault to be high relative to realized, not just
+1419.19s: be high relative to realized, not just
+1419.20s: be high relative to realized, not just the fact that implied is high. Because
+1421.51s: the fact that implied is high. Because
+1421.52s: the fact that implied is high. Because you will come across some other really
+1423.35s: you will come across some other really
+1423.36s: you will come across some other really important functions because then if you
+1424.79s: important functions because then if you
+1424.80s: important functions because then if you go on to say, well, vault clusters, it
+1427.51s: go on to say, well, vault clusters, it
+1427.52s: go on to say, well, vault clusters, it does. And a lot of people think that
+1431.75s: does. And a lot of people think that
+1431.76s: does. And a lot of people think that mean reversion is what they're
+1433.43s: mean reversion is what they're
+1433.44s: mean reversion is what they're attempting to capture. But you're kind
+1435.43s: attempting to capture. But you're kind
+1435.44s: attempting to capture. But you're kind of not because it clusters.
+1437.99s: of not because it clusters.
+1438.00s: of not because it clusters. So
+1439.59s: So
+1439.60s: So when we look at
+1441.99s: when we look at
+1442.00s: when we look at these different metrics,
+1445.43s: these different metrics,
+1445.44s: these different metrics, it's all contextual
+1448.23s: it's all contextual
+1448.24s: it's all contextual IV rank, IV percentile. It's giving you
+1451.35s: IV rank, IV percentile. It's giving you
+1451.36s: IV rank, IV percentile. It's giving you context of the ticker relative to
+1454.07s: context of the ticker relative to
+1454.08s: context of the ticker relative to itself.
+1455.75s: itself.
+1455.76s: itself. You can have a high volatility name that
+1459.43s: You can have a high volatility name that
+1459.44s: You can have a high volatility name that has a modest rank that has more implied
+1462.87s: has a modest rank that has more implied
+1462.88s: has a modest rank that has more implied V than a quiet low IV rank name. So we
+1466.63s: V than a quiet low IV rank name. So we
+1466.64s: V than a quiet low IV rank name. So we need to contextualize against itself.
+1469.03s: need to contextualize against itself.
+1469.04s: need to contextualize against itself. That's why these metrics are useful. But
+1471.59s: That's why these metrics are useful. But
+1471.60s: That's why these metrics are useful. But we need to understand how V actually
+1475.67s: we need to understand how V actually
+1475.68s: we need to understand how V actually behaves.
+1477.83s: behaves.
+1477.84s: behaves. As we were talking about a second ago,
+1480.31s: As we were talking about a second ago,
+1480.32s: As we were talking about a second ago, moves cluster. This is actually showing
+1482.71s: moves cluster. This is actually showing
+1482.72s: moves cluster. This is actually showing you daily S&amp;P returns over the entire
+1485.83s: you daily S&amp;P returns over the entire
+1485.84s: you daily S&amp;P returns over the entire history that we were talking about from
+1487.67s: history that we were talking about from
+1487.68s: history that we were talking about from 1990 to 2026. You don't really need any
+1491.83s: 1990 to 2026. You don't really need any
+1491.84s: 1990 to 2026. You don't really need any sort of big test to see that big moves
+1495.99s: sort of big test to see that big moves
+1496.00s: sort of big test to see that big moves kind of pop up, but when they pop up,
+1499.19s: kind of pop up, but when they pop up,
+1499.20s: kind of pop up, but when they pop up, you notice how they're they're kind of
+1500.79s: you notice how they're they're kind of
+1500.80s: you notice how they're they're kind of like fat. It's not like just a single
+1502.87s: like fat. It's not like just a single
+1502.88s: like fat. It's not like just a single line that comes up and then immediately
+1504.79s: line that comes up and then immediately
+1504.80s: line that comes up and then immediately goes back down. Even in 2020 when we see
+1508.23s: goes back down. Even in 2020 when we see
+1508.24s: goes back down. Even in 2020 when we see like these massive moves, it's still not
+1511.19s: like these massive moves, it's still not
+1511.20s: like these massive moves, it's still not just like one,
+1513.75s: just like one,
+1513.76s: just like one, there's quite a few big moves that fall
+1516.95s: there's quite a few big moves that fall
+1516.96s: there's quite a few big moves that fall right around this period.
+1519.59s: right around this period.
+1519.60s: right around this period. The clustering
+1521.43s: The clustering
+1521.44s: The clustering is one of the important traits that
+1523.99s: is one of the important traits that
+1524.00s: is one of the important traits that we're going to talk about here.
+1526.31s: we're going to talk about here.
+1526.32s: we're going to talk about here. If you look at these two, these are
+1528.39s: If you look at these two, these are
+1528.40s: If you look at these two, these are autocorrelations.
+1529.99s: autocorrelations.
+1530.00s: autocorrelations. It's a statistical way for me to analyze
+1533.19s: It's a statistical way for me to analyze
+1533.20s: It's a statistical way for me to analyze things relative to each other. And what
+1536.39s: things relative to each other. And what
+1536.40s: things relative to each other. And what you'll notice is the difference between
+1538.63s: you'll notice is the difference between
+1538.64s: you'll notice is the difference between the left-hand side and the right hand
+1540.31s: the left-hand side and the right hand
+1540.32s: the left-hand side and the right hand side. Lefthand side is of returns. And
+1542.15s: side. Lefthand side is of returns. And
+1542.16s: side. Lefthand side is of returns. And you'll notice that there's kind of like
+1543.19s: you'll notice that there's kind of like
+1543.20s: you'll notice that there's kind of like nothing there. It's just generally flat.
+1546.15s: nothing there. It's just generally flat.
+1546.16s: nothing there. It's just generally flat. right hand side, you'll notice that's
+1547.83s: right hand side, you'll notice that's
+1547.84s: right hand side, you'll notice that's taking absolute returns.
+1550.55s: taking absolute returns.
+1550.56s: taking absolute returns. And do you notice how it tends to
+1553.51s: And do you notice how it tends to
+1553.52s: And do you notice how it tends to trickle down? The reason why this is
+1556.79s: trickle down? The reason why this is
+1556.80s: trickle down? The reason why this is important is because magnitude
+1560.87s: important is because magnitude
+1560.88s: important is because magnitude is extremely forecastable.
+1563.75s: is extremely forecastable.
+1563.76s: is extremely forecastable. Direction is much harder to forecast.
+1567.67s: Direction is much harder to forecast.
+1567.68s: Direction is much harder to forecast. This is literally one of the superpowers
+1570.07s: This is literally one of the superpowers
+1570.08s: This is literally one of the superpowers of people who get into trading options
+1572.23s: of people who get into trading options
+1572.24s: of people who get into trading options and derivatives is you have access to
+1575.27s: and derivatives is you have access to
+1575.28s: and derivatives is you have access to this thing right here. This is very
+1577.99s: this thing right here. This is very
+1578.00s: this thing right here. This is very unique. Most other systems don't have
+1583.19s: unique. Most other systems don't have
+1583.20s: unique. Most other systems don't have something quite as neat as this. And
+1586.71s: something quite as neat as this. And
+1586.72s: something quite as neat as this. And when I say neat, I don't mean cool,
+1588.07s: when I say neat, I don't mean cool,
+1588.08s: when I say neat, I don't mean cool, although it is cool. I mean neat in
+1590.79s: although it is cool. I mean neat in
+1590.80s: although it is cool. I mean neat in terms of it's kind of packaged and you
+1593.51s: terms of it's kind of packaged and you
+1593.52s: terms of it's kind of packaged and you can kind of see it most of the time.
+1597.19s: can kind of see it most of the time.
+1597.20s: can kind of see it most of the time. The important thing is understanding
+1601.11s: The important thing is understanding
+1601.12s: The important thing is understanding that V decays over time. Mean reversion
+1607.43s: that V decays over time. Mean reversion
+1607.44s: that V decays over time. Mean reversion is about the probability of a move. It's
+1610.23s: is about the probability of a move. It's
+1610.24s: is about the probability of a move. It's not a set schedule and it changes.
+1613.43s: not a set schedule and it changes.
+1613.44s: not a set schedule and it changes. This is again a reason why people who
+1617.35s: This is again a reason why people who
+1617.36s: This is again a reason why people who think that they're trading mean
+1618.71s: think that they're trading mean
+1618.72s: think that they're trading mean reversion by selling when ball is high.
+1621.19s: reversion by selling when ball is high.
+1621.20s: reversion by selling when ball is high. Unless you have some good context on
+1623.27s: Unless you have some good context on
+1623.28s: Unless you have some good context on what you're attempting to do there,
+1625.51s: what you're attempting to do there,
+1625.52s: what you're attempting to do there, you're probably not doing that. And I'm
+1628.23s: you're probably not doing that. And I'm
+1628.24s: you're probably not doing that. And I'm going to explain to you why. So, what
+1631.19s: going to explain to you why. So, what
+1631.20s: going to explain to you why. So, what I'm showing you is an auto reggressive
+1633.03s: I'm showing you is an auto reggressive
+1633.04s: I'm showing you is an auto reggressive fit, which is fi that's just like a
+1636.47s: fit, which is fi that's just like a
+1636.48s: fit, which is fi that's just like a regression line. And what you can see is
+1639.11s: regression line. And what you can see is
+1639.12s: regression line. And what you can see is the expected change in v is proportional
+1642.15s: the expected change in v is proportional
+1642.16s: the expected change in v is proportional to how far along we are on the current
+1645.51s: to how far along we are on the current
+1645.52s: to how far along we are on the current level
+1647.03s: level
+1647.04s: level and from its like long run average. So
+1650.87s: and from its like long run average. So
+1650.88s: and from its like long run average. So in this this is based on a log vix and
+1655.59s: in this this is based on a log vix and
+1655.60s: in this this is based on a log vix and what we can do is take the next periods
+1658.07s: what we can do is take the next periods
+1658.08s: what we can do is take the next periods deviation from the mean. So just how far
+1660.31s: deviation from the mean. So just how far
+1660.32s: deviation from the mean. So just how far does it sit off that average and we can
+1664.71s: does it sit off that average and we can
+1664.72s: does it sit off that average and we can look at that compared to five times
+1668.39s: look at that compared to five times
+1668.40s: look at that compared to five times today's deviation plus some sort of
+1670.47s: today's deviation plus some sort of
+1670.48s: today's deviation plus some sort of noise function. This is a little
+1672.87s: noise function. This is a little
+1672.88s: noise function. This is a little statistical depth. You don't have to get
+1674.55s: statistical depth. You don't have to get
+1674.56s: statistical depth. You don't have to get too crazy in here. The thing that I I
+1677.35s: too crazy in here. The thing that I I
+1677.36s: too crazy in here. The thing that I I mostly want you to understand is that if
+1681.03s: mostly want you to understand is that if
+1681.04s: mostly want you to understand is that if one of those lines is closer, like the
+1684.07s: one of those lines is closer, like the
+1684.08s: one of those lines is closer, like the closer that fi that line gets to one,
+1687.51s: closer that fi that line gets to one,
+1687.52s: closer that fi that line gets to one, the slower the pullback towards the mean
+1690.47s: the slower the pullback towards the mean
+1690.48s: the slower the pullback towards the mean it is. The closer to zero, the faster it
+1694.39s: it is. The closer to zero, the faster it
+1694.40s: it is. The closer to zero, the faster it goes. That's the takeaway here. And I'm
+1696.79s: goes. That's the takeaway here. And I'm
+1696.80s: goes. That's the takeaway here. And I'm going to convert it into something a
+1698.07s: going to convert it into something a
+1698.08s: going to convert it into something a little easier called half- livives. So
+1700.95s: little easier called half- livives. So
+1700.96s: little easier called half- livives. So fi is useful, but it's not necessarily
+1703.19s: fi is useful, but it's not necessarily
+1703.20s: fi is useful, but it's not necessarily super intuitive.
+1705.03s: super intuitive.
+1705.04s: super intuitive. I can turn it into a half-life for you.
+1707.43s: I can turn it into a half-life for you.
+1707.44s: I can turn it into a half-life for you. And it tells you literally the number of
+1709.03s: And it tells you literally the number of
+1709.04s: And it tells you literally the number of trading days for a shock to decay
+1711.35s: trading days for a shock to decay
+1711.36s: trading days for a shock to decay halfway back to the and it's literally
+1714.47s: halfway back to the and it's literally
+1714.48s: halfway back to the and it's literally just a it's a set formula. There's
+1716.31s: just a it's a set formula. There's
+1716.32s: just a it's a set formula. There's nothing magic here. It's log of 1/2
+1718.63s: nothing magic here. It's log of 1/2
+1718.64s: nothing magic here. It's log of 1/2 divided by the log of five. That's it.
+1720.87s: divided by the log of five. That's it.
+1720.88s: divided by the log of five. That's it. That's how you come up with half lives
+1722.23s: That's how you come up with half lives
+1722.24s: That's how you come up with half lives here. So you can see how long it takes
+1725.83s: here. So you can see how long it takes
+1725.84s: here. So you can see how long it takes based on our data set for a shock to
+1728.79s: based on our data set for a shock to
+1728.80s: based on our data set for a shock to actually decay.
+1730.87s: actually decay.
+1730.88s: actually decay. Here's another important function.
+1733.14s: Here's another important function.
+1733.15s: Here's another important function. &gt;&gt; [clears throat]
+1733.27s: &gt;&gt; [clears throat]
+1733.28s: &gt;&gt; [clears throat] &gt;&gt; The idea that VS snaps back fast and
+1737.27s: &gt;&gt; The idea that VS snaps back fast and
+1737.28s: &gt;&gt; The idea that VS snaps back fast and calm periods just sit there is not
+1740.71s: calm periods just sit there is not
+1740.72s: calm periods just sit there is not accurate. So I split the history into
+1743.75s: accurate. So I split the history into
+1743.76s: accurate. So I split the history into days that started above and below the
+1748.15s: days that started above and below the
+1748.16s: days that started above and below the median VIX and I just fit that same auto
+1752.55s: median VIX and I just fit that same auto
+1752.56s: median VIX and I just fit that same auto reggressive model on each half. So what
+1756.23s: reggressive model on each half. So what
+1756.24s: reggressive model on each half. So what happens is the two fitted FIS come out
+1759.11s: happens is the two fitted FIS come out
+1759.12s: happens is the two fitted FIS come out really close to one another. like there
+1760.63s: really close to one another. like there
+1760.64s: really close to one another. like there isn't a statistically distinguishable
+1763.27s: isn't a statistically distinguishable
+1763.28s: isn't a statistically distinguishable difference between those. You can see it
+1764.71s: difference between those. You can see it
+1764.72s: difference between those. You can see it represented here. And if anything, it
+1768.23s: represented here. And if anything, it
+1768.24s: represented here. And if anything, it kind of shows the other way, which is
+1771.35s: kind of shows the other way, which is
+1771.36s: kind of shows the other way, which is just kind of interesting. The conclusion
+1773.51s: just kind of interesting. The conclusion
+1773.52s: just kind of interesting. The conclusion from this is that if a spike occurs,
+1777.83s: from this is that if a spike occurs,
+1777.84s: from this is that if a spike occurs, don't think that if it's a bigger spike,
+1779.83s: don't think that if it's a bigger spike,
+1779.84s: don't think that if it's a bigger spike, there's a faster reversion. It isn't so
+1782.47s: there's a faster reversion. It isn't so
+1782.48s: there's a faster reversion. It isn't so much how it works.
+1784.79s: much how it works.
+1784.80s: much how it works. Then we have the bigger issue which is
+1787.99s: Then we have the bigger issue which is
+1788.00s: Then we have the bigger issue which is the relationship of our halflife and the
+1791.91s: the relationship of our halflife and the
+1791.92s: the relationship of our halflife and the DTE that people commonly trade. So, for
+1795.03s: DTE that people commonly trade. So, for
+1795.04s: DTE that people commonly trade. So, for example, if we look at a 34-day
+1798.15s: example, if we look at a 34-day
+1798.16s: example, if we look at a 34-day half-life, which is really common, if
+1800.31s: half-life, which is really common, if
+1800.32s: half-life, which is really common, if you sell your premium about 30 days or
+1803.43s: you sell your premium about 30 days or
+1803.44s: you sell your premium about 30 days or so, and you take it all the way to
+1807.75s: so, and you take it all the way to
+1807.76s: so, and you take it all the way to expiration, which is again what most
+1809.27s: expiration, which is again what most
+1809.28s: expiration, which is again what most people don't, the options still have a
+1814.15s: people don't, the options still have a
+1814.16s: people don't, the options still have a ton of that shock ball left. Now, that's
+1817.35s: ton of that shock ball left. Now, that's
+1817.36s: ton of that shock ball left. Now, that's not inherently a good thing or a bad
+1818.87s: not inherently a good thing or a bad
+1818.88s: not inherently a good thing or a bad thing. It depends on your relationship
+1820.47s: thing. It depends on your relationship
+1820.48s: thing. It depends on your relationship of that shock vault to realize vault and
+1823.59s: of that shock vault to realize vault and
+1823.60s: of that shock vault to realize vault and how you think those will behave with one
+1827.19s: how you think those will behave with one
+1827.20s: how you think those will behave with one another. But let's say that it spikes
+1829.43s: another. But let's say that it spikes
+1829.44s: another. But let's say that it spikes big and you choose to sell like a really
+1831.99s: big and you choose to sell like a really
+1832.00s: big and you choose to sell like a really nearterm duration like 7 days. Well, 87%
+1835.99s: nearterm duration like 7 days. Well, 87%
+1836.00s: nearterm duration like 7 days. Well, 87% of that V is still in there. 30 days
+1838.07s: of that V is still in there. 30 days
+1838.08s: of that V is still in there. 30 days it's like 54%. 45 days it's now below
+1841.59s: it's like 54%. 45 days it's now below
+1841.60s: it's like 54%. 45 days it's now below half. At like 40% it flips in like the
+1844.95s: half. At like 40% it flips in like the
+1844.96s: half. At like 40% it flips in like the mid30s.
+1846.87s: mid30s.
+1846.88s: mid30s. So just remember that depending on what
+1849.43s: So just remember that depending on what
+1849.44s: So just remember that depending on what your expectation of volatility is based
+1852.07s: your expectation of volatility is based
+1852.08s: your expectation of volatility is based on the shock, which again, you now are
+1854.15s: on the shock, which again, you now are
+1854.16s: on the shock, which again, you now are armed. You have an idea. You have a way
+1856.31s: armed. You have an idea. You have a way
+1856.32s: armed. You have an idea. You have a way to contextualize this. And for those
+1857.99s: to contextualize this. And for those
+1858.00s: to contextualize this. And for those that are a little more statistically
+1859.27s: that are a little more statistically
+1859.28s: that are a little more statistically inclined, you can literally create your
+1861.51s: inclined, you can literally create your
+1861.52s: inclined, you can literally create your own line and measure what the current
+1863.91s: own line and measure what the current
+1863.92s: own line and measure what the current move is relative to that to be more
+1865.75s: move is relative to that to be more
+1865.76s: move is relative to that to be more granular than this. You'll have a much
+1868.31s: granular than this. You'll have a much
+1868.32s: granular than this. You'll have a much better idea on what durations make sense
+1871.83s: better idea on what durations make sense
+1871.84s: better idea on what durations make sense and how to line those up. So
+1875.43s: and how to line those up. So
+1875.44s: and how to line those up. So this is a clustering function of losers.
+1879.27s: this is a clustering function of losers.
+1879.28s: this is a clustering function of losers. And what we need to understand is that
+1882.71s: And what we need to understand is that
+1882.72s: And what we need to understand is that it's kind of difficult to capture this
+1886.23s: it's kind of difficult to capture this
+1886.24s: it's kind of difficult to capture this risk premia because you're dealing with
+1888.71s: risk premia because you're dealing with
+1888.72s: risk premia because you're dealing with these big left tail moves. Every once in
+1891.67s: these big left tail moves. Every once in
+1891.68s: these big left tail moves. Every once in a while things move pretty big. But then
+1893.83s: a while things move pretty big. But then
+1893.84s: a while things move pretty big. But then there's a second issue which is a lot of
+1896.39s: there's a second issue which is a lot of
+1896.40s: there's a second issue which is a lot of times those losses cluster which is
+1900.31s: times those losses cluster which is
+1900.32s: times those losses cluster which is actually a good tradable function in
+1903.35s: actually a good tradable function in
+1903.36s: actually a good tradable function in terms of the way you deploy your system
+1906.39s: terms of the way you deploy your system
+1906.40s: terms of the way you deploy your system but it's really nuanced because if every
+1909.35s: but it's really nuanced because if every
+1909.36s: but it's really nuanced because if every single time you take your system down or
+1911.83s: single time you take your system down or
+1911.84s: single time you take your system down or pause it after a losing trade you're not
+1913.43s: pause it after a losing trade you're not
+1913.44s: pause it after a losing trade you're not really going to get anything done.
+1916.47s: really going to get anything done.
+1916.48s: really going to get anything done. We know about contango and backwardation
+1920.23s: We know about contango and backwardation
+1920.24s: We know about contango and backwardation from what we talked about before. And
+1924.39s: from what we talked about before. And
+1924.40s: from what we talked about before. And the reason why this matters is because
+1927.43s: the reason why this matters is because
+1927.44s: the reason why this matters is because this is also another tradable function.
+1930.31s: this is also another tradable function.
+1930.32s: this is also another tradable function. For example, if we see ourselves in
+1933.83s: For example, if we see ourselves in
+1933.84s: For example, if we see ourselves in backwardation that generally is not a
+1937.83s: backwardation that generally is not a
+1937.84s: backwardation that generally is not a consistent basis for us to sit at. A lot
+1941.59s: consistent basis for us to sit at. A lot
+1941.60s: consistent basis for us to sit at. A lot of times that will revert.
+1945.19s: of times that will revert.
+1945.20s: of times that will revert. volatility actually reverts.
+1949.35s: volatility actually reverts.
+1949.36s: volatility actually reverts. We know that volatility reverts to its
+1951.91s: We know that volatility reverts to its
+1951.92s: We know that volatility reverts to its own long run average. What we have to
+1955.19s: own long run average. What we have to
+1955.20s: own long run average. What we have to remember is that price doesn't do that.
+1959.59s: remember is that price doesn't do that.
+1959.60s: remember is that price doesn't do that. And if you're confused about this, all
+1962.23s: And if you're confused about this, all
+1962.24s: And if you're confused about this, all you need to do is take a look at a
+1964.71s: you need to do is take a look at a
+1964.72s: you need to do is take a look at a 20-year graph of VIX. Compare that to
+1967.11s: 20-year graph of VIX. Compare that to
+1967.12s: 20-year graph of VIX. Compare that to S&amp;P. You'll see a big difference. VIX is
+1970.07s: S&amp;P. You'll see a big difference. VIX is
+1970.08s: S&amp;P. You'll see a big difference. VIX is kind of like flat. SPX is almost
+1972.47s: kind of like flat. SPX is almost
+1972.48s: kind of like flat. SPX is almost parabolic up. It's not mean reversion on
+1976.71s: parabolic up. It's not mean reversion on
+1976.72s: parabolic up. It's not mean reversion on price to the degree that we're having a
+1979.59s: price to the degree that we're having a
+1979.60s: price to the degree that we're having a conversation here. You could argue if
+1982.07s: conversation here. You could argue if
+1982.08s: conversation here. You could argue if like short-term if it flutters around a
+1984.15s: like short-term if it flutters around a
+1984.16s: like short-term if it flutters around a level or whatever that's fine. But the
+1987.43s: level or whatever that's fine. But the
+1987.44s: level or whatever that's fine. But the way I would consider mean reversion is
+1989.43s: way I would consider mean reversion is
+1989.44s: way I would consider mean reversion is that it's actually like a magnet.
+1993.51s: that it's actually like a magnet.
+1993.52s: that it's actually like a magnet. Price can flutter around levels, but
+1996.47s: Price can flutter around levels, but
+1996.48s: Price can flutter around levels, but other times it can just shoot past and
+1998.31s: other times it can just shoot past and
+1998.32s: other times it can just shoot past and never go back. That's happened tons of
+2000.23s: never go back. That's happened tons of
+2000.24s: never go back. That's happened tons of times historically. That hasn't happened
+2002.39s: times historically. That hasn't happened
+2002.40s: times historically. That hasn't happened with Vault because it's like a magnet.
+2004.71s: with Vault because it's like a magnet.
+2004.72s: with Vault because it's like a magnet. So why is it here? It's here because in
+2008.71s: So why is it here? It's here because in
+2008.72s: So why is it here? It's here because in general it is a risky proposition to be
+2014.07s: general it is a risky proposition to be
+2014.08s: general it is a risky proposition to be on the short side of the variance risk
+2015.83s: on the short side of the variance risk
+2015.84s: on the short side of the variance risk premium play. If you are the one selling
+2019.67s: premium play. If you are the one selling
+2019.68s: premium play. If you are the one selling premium and you're looking at through
+2021.83s: premium and you're looking at through
+2021.84s: premium and you're looking at through the lens of an insurance company, that's
+2023.51s: the lens of an insurance company, that's
+2023.52s: the lens of an insurance company, that's pretty common. It's a lot of
+2024.87s: pretty common. It's a lot of
+2024.88s: pretty common. It's a lot of differences, but still a good example.
+2028.23s: differences, but still a good example.
+2028.24s: differences, but still a good example. The way that you make money is by taking
+2031.59s: The way that you make money is by taking
+2031.60s: The way that you make money is by taking somebody's risk for them. But if you
+2033.51s: somebody's risk for them. But if you
+2033.52s: somebody's risk for them. But if you think about how insurance companies stay
+2035.51s: think about how insurance companies stay
+2035.52s: think about how insurance companies stay alive, it's because they have a really
+2037.99s: alive, it's because they have a really
+2038.00s: alive, it's because they have a really big business. They have tons of
+2040.23s: big business. They have tons of
+2040.24s: big business. They have tons of different products and instruments they
+2041.75s: different products and instruments they
+2041.76s: different products and instruments they insure. They might insure your car and
+2043.83s: insure. They might insure your car and
+2043.84s: insure. They might insure your car and your house, appliances inside your
+2046.63s: your house, appliances inside your
+2046.64s: your house, appliances inside your house. And the reason why they do that
+2048.79s: house. And the reason why they do that
+2048.80s: house. And the reason why they do that is to spread out their risk because the
+2052.15s: is to spread out their risk because the
+2052.16s: is to spread out their risk because the Southeast might get hit with a
+2054.07s: Southeast might get hit with a
+2054.08s: Southeast might get hit with a hurricane, but there's stuff in the
+2055.51s: hurricane, but there's stuff in the
+2055.52s: hurricane, but there's stuff in the Midwest that might be completely fine
+2058.47s: Midwest that might be completely fine
+2058.48s: Midwest that might be completely fine until tornado season and maybe the
+2060.71s: until tornado season and maybe the
+2060.72s: until tornado season and maybe the Southeast has calmed down by then.
+2062.71s: Southeast has calmed down by then.
+2062.72s: Southeast has calmed down by then. Tornado season comes in and they're
+2064.95s: Tornado season comes in and they're
+2064.96s: Tornado season comes in and they're banking on a smaller number of claims
+2067.59s: banking on a smaller number of claims
+2067.60s: banking on a smaller number of claims being paid out than what they're
+2068.71s: being paid out than what they're
+2068.72s: being paid out than what they're collecting. This is difficult. This is
+2071.67s: collecting. This is difficult. This is
+2071.68s: collecting. This is difficult. This is difficult for retail traders to do
+2073.99s: difficult for retail traders to do
+2074.00s: difficult for retail traders to do because as we just talked about, when
+2077.03s: because as we just talked about, when
+2077.04s: because as we just talked about, when there's a hurricane or when there's some
+2079.51s: there's a hurricane or when there's some
+2079.52s: there's a hurricane or when there's some sort of covered event, the insurance
+2081.99s: sort of covered event, the insurance
+2082.00s: sort of covered event, the insurance company has to pay out and they can't
+2084.63s: company has to pay out and they can't
+2084.64s: company has to pay out and they can't just immediately stop selling insurance
+2087.27s: just immediately stop selling insurance
+2087.28s: just immediately stop selling insurance as soon as something bad happens because
+2089.35s: as soon as something bad happens because
+2089.36s: as soon as something bad happens because otherwise their business won't survive.
+2091.59s: otherwise their business won't survive.
+2091.60s: otherwise their business won't survive. It's based on those occurrences and
+2094.15s: It's based on those occurrences and
+2094.16s: It's based on those occurrences and getting enough numbers on. Somebody has
+2097.59s: getting enough numbers on. Somebody has
+2097.60s: getting enough numbers on. Somebody has to hold that risk. Holding tail risk is
+2100.63s: to hold that risk. Holding tail risk is
+2100.64s: to hold that risk. Holding tail risk is uncomfortable, the fact that something
+2102.23s: uncomfortable, the fact that something
+2102.24s: uncomfortable, the fact that something can move really big against you and
+2103.99s: can move really big against you and
+2104.00s: can move really big against you and that's why there's a compensation for
+2105.83s: that's why there's a compensation for
+2105.84s: that's why there's a compensation for it.
+2107.59s: it.
+2107.60s: it. There's a pretty strong demand for puts,
+2111.91s: There's a pretty strong demand for puts,
+2111.92s: There's a pretty strong demand for puts, not so much for calls. This is again
+2114.47s: not so much for calls. This is again
+2114.48s: not so much for calls. This is again what leads generally speaking to puts
+2116.63s: what leads generally speaking to puts
+2116.64s: what leads generally speaking to puts skew is the fact that large
+2118.47s: skew is the fact that large
+2118.48s: skew is the fact that large institutional portfolios, pension funds,
+2120.47s: institutional portfolios, pension funds,
+2120.48s: institutional portfolios, pension funds, insurers, allocators, all of those have
+2123.59s: insurers, allocators, all of those have
+2123.60s: insurers, allocators, all of those have different kind of draw down limits and
+2125.03s: different kind of draw down limits and
+2125.04s: different kind of draw down limits and mandates that effectively push them to
+2129.11s: mandates that effectively push them to
+2129.12s: mandates that effectively push them to buy puts even though they're expensive.
+2131.43s: buy puts even though they're expensive.
+2131.44s: buy puts even though they're expensive. That doesn't happen with calls. And this
+2133.83s: That doesn't happen with calls. And this
+2133.84s: That doesn't happen with calls. And this is an important concept when we're
+2135.59s: is an important concept when we're
+2135.60s: is an important concept when we're talking about the risk premium and where
+2137.27s: talking about the risk premium and where
+2137.28s: talking about the risk premium and where it lives. Note,
+2140.23s: it lives. Note,
+2140.24s: it lives. Note, I am specifically talking in the context
+2143.19s: I am specifically talking in the context
+2143.20s: I am specifically talking in the context of index options. Right now, when it
+2145.99s: of index options. Right now, when it
+2146.00s: of index options. Right now, when it comes to constituents or individual
+2148.07s: comes to constituents or individual
+2148.08s: comes to constituents or individual companies, it's a bit different and it's
+2150.15s: companies, it's a bit different and it's
+2150.16s: companies, it's a bit different and it's varied, way more varied than it is here.
+2153.75s: varied, way more varied than it is here.
+2153.76s: varied, way more varied than it is here. That imbalance is where we get skew. So,
+2157.27s: That imbalance is where we get skew. So,
+2157.28s: That imbalance is where we get skew. So, when we're looking at the volatility
+2158.87s: when we're looking at the volatility
+2158.88s: when we're looking at the volatility smile, most of the time we will see puts
+2162.15s: smile, most of the time we will see puts
+2162.16s: smile, most of the time we will see puts trade above the calls. And it's for that
+2165.35s: trade above the calls. And it's for that
+2165.36s: trade above the calls. And it's for that exact function that we're just talking
+2167.67s: exact function that we're just talking
+2167.68s: exact function that we're just talking about. So when variance pays off,
+2174.23s: about. So when variance pays off,
+2174.24s: about. So when variance pays off, generally speaking, it can also hurt at
+2177.35s: generally speaking, it can also hurt at
+2177.36s: generally speaking, it can also hurt at the same time. So long vault positions
+2179.99s: the same time. So long vault positions
+2180.00s: the same time. So long vault positions tend to pay off precisely when the
+2182.23s: tend to pay off precisely when the
+2182.24s: tend to pay off precisely when the broader portfolio is down. It's
+2184.87s: broader portfolio is down. It's
+2184.88s: broader portfolio is down. It's generally speaking the opposite if
+2186.31s: generally speaking the opposite if
+2186.32s: generally speaking the opposite if you're on the selling side. So then the
+2188.23s: you're on the selling side. So then the
+2188.24s: you're on the selling side. So then the question you have to ask yourself is, is
+2191.11s: question you have to ask yourself is, is
+2191.12s: question you have to ask yourself is, is this a mispricing? Is this an
+2192.63s: this a mispricing? Is this an
+2192.64s: this a mispricing? Is this an inefficiency? or not. And it really
+2197.35s: inefficiency? or not. And it really
+2197.36s: inefficiency? or not. And it really isn't. This is very clearly a risk
+2201.11s: isn't. This is very clearly a risk
+2201.12s: isn't. This is very clearly a risk premium. There's no inefficiency here
+2203.67s: premium. There's no inefficiency here
+2203.68s: premium. There's no inefficiency here because generally speaking on the other
+2205.67s: because generally speaking on the other
+2205.68s: because generally speaking on the other side of this position are very logical
+2208.07s: side of this position are very logical
+2208.08s: side of this position are very logical actors that are doing something for a
+2209.91s: actors that are doing something for a
+2209.92s: actors that are doing something for a specific reason. You could argue that
+2212.39s: specific reason. You could argue that
+2212.40s: specific reason. You could argue that for the lotto buyers that yeah, that
+2214.55s: for the lotto buyers that yeah, that
+2214.56s: for the lotto buyers that yeah, that that might be an actual mispricing. Like
+2218.47s: that might be an actual mispricing. Like
+2218.48s: that might be an actual mispricing. Like they could just be paying way too much
+2219.83s: they could just be paying way too much
+2219.84s: they could just be paying way too much and they don't even know it. But most of
+2221.91s: and they don't even know it. But most of
+2221.92s: and they don't even know it. But most of the people on the other side of this are
+2224.63s: the people on the other side of this are
+2224.64s: the people on the other side of this are rational actors.
+2227.19s: rational actors.
+2227.20s: rational actors. We know that the premium is persistent.
+2229.11s: We know that the premium is persistent.
+2229.12s: We know that the premium is persistent. Why isn't it completely gone? Right?
+2231.99s: Why isn't it completely gone? Right?
+2232.00s: Why isn't it completely gone? Right? I've even had conversations with you and
+2233.83s: I've even had conversations with you and
+2233.84s: I've even had conversations with you and Sinclair about this to get his take on
+2235.43s: Sinclair about this to get his take on
+2235.44s: Sinclair about this to get his take on it cuz it's really interesting and
+2236.63s: it cuz it's really interesting and
+2236.64s: it cuz it's really interesting and there's a few specific reasons that I
+2239.35s: there's a few specific reasons that I
+2239.36s: there's a few specific reasons that I can point to. It's that variance
+2241.83s: can point to. It's that variance
+2241.84s: can point to. It's that variance exposure is difficult. It's an ugly
+2243.91s: exposure is difficult. It's an ugly
+2243.92s: exposure is difficult. It's an ugly thing to hold. Nobody really wants to
+2245.99s: thing to hold. Nobody really wants to
+2246.00s: thing to hold. Nobody really wants to hold it. That's why you get compensated
+2248.23s: hold it. That's why you get compensated
+2248.24s: hold it. That's why you get compensated to do it. The tail risk a seller is
+2251.35s: to do it. The tail risk a seller is
+2251.36s: to do it. The tail risk a seller is exposed to is technically unbounded.
+2253.75s: exposed to is technically unbounded.
+2253.76s: exposed to is technically unbounded. Again, there's reality of systems, but
+2256.95s: Again, there's reality of systems, but
+2256.96s: Again, there's reality of systems, but just big big skew and the capital
+2260.47s: just big big skew and the capital
+2260.48s: just big big skew and the capital available to absorb that risk is finite
+2263.19s: available to absorb that risk is finite
+2263.20s: available to absorb that risk is finite and there's a cost associated with it.
+2265.91s: and there's a cost associated with it.
+2265.92s: and there's a cost associated with it. Then you have to also think of all the
+2267.51s: Then you have to also think of all the
+2267.52s: Then you have to also think of all the other like qualitative bits, right?
+2269.43s: other like qualitative bits, right?
+2269.44s: other like qualitative bits, right? There's career dimensions to a lot of
+2270.95s: There's career dimensions to a lot of
+2270.96s: There's career dimensions to a lot of these people. A manager who runs a short
+2272.79s: these people. A manager who runs a short
+2272.80s: these people. A manager who runs a short volatility through a bad year, they
+2275.27s: volatility through a bad year, they
+2275.28s: volatility through a bad year, they might may they may never get hired
+2276.71s: might may they may never get hired
+2276.72s: might may they may never get hired again. So there's a from an
+2280.31s: again. So there's a from an
+2280.32s: again. So there's a from an institutional lens an entire world that
+2283.67s: institutional lens an entire world that
+2283.68s: institutional lens an entire world that also makes being on the short side of
+2287.19s: also makes being on the short side of
+2287.20s: also makes being on the short side of that a little more challenging and less
+2289.11s: that a little more challenging and less
+2289.12s: that a little more challenging and less attractive.
+2291.19s: attractive.
+2291.20s: attractive. You can have years where it's
+2294.39s: You can have years where it's
+2294.40s: You can have years where it's underwater.
+2296.39s: underwater.
+2296.40s: underwater. This is exactly why it's also really
+2298.31s: This is exactly why it's also really
+2298.32s: This is exactly why it's also really important to try and hone any sort of
+2300.39s: important to try and hone any sort of
+2300.40s: important to try and hone any sort of timing system you have, but you have to
+2301.99s: timing system you have, but you have to
+2302.00s: timing system you have, but you have to be real careful because it's one of
+2304.55s: be real careful because it's one of
+2304.56s: be real careful because it's one of those things that most of the time you
+2306.63s: those things that most of the time you
+2306.64s: those things that most of the time you kind of have to be exposed to it in some
+2308.95s: kind of have to be exposed to it in some
+2308.96s: kind of have to be exposed to it in some way because if you try to time it
+2313.03s: way because if you try to time it
+2313.04s: way because if you try to time it perfectly, there's a good chance that
+2314.95s: perfectly, there's a good chance that
+2314.96s: perfectly, there's a good chance that you get stuck during one of these really
+2317.11s: you get stuck during one of these really
+2317.12s: you get stuck during one of these really bad paths. So, as you can see, this
+2319.19s: bad paths. So, as you can see, this
+2319.20s: bad paths. So, as you can see, this isn't a free lunch. There is a risk
+2322.55s: isn't a free lunch. There is a risk
+2322.56s: isn't a free lunch. There is a risk here. This is the risk premium.
+2326.07s: here. This is the risk premium.
+2326.08s: here. This is the risk premium. How do we how do we capture this thing?
+2329.35s: How do we how do we capture this thing?
+2329.36s: How do we how do we capture this thing? How do we look at it?
+2332.23s: How do we look at it?
+2332.24s: How do we look at it? Let's think of it in two scenarios. We
+2333.83s: Let's think of it in two scenarios. We
+2333.84s: Let's think of it in two scenarios. We have theta and gamma. Theta obviously is
+2338.15s: have theta and gamma. Theta obviously is
+2338.16s: have theta and gamma. Theta obviously is the time decay of options. And in
+2341.99s: the time decay of options. And in
+2342.00s: the time decay of options. And in general, when you are selling options to
+2345.27s: general, when you are selling options to
+2345.28s: general, when you are selling options to attempt to capture this risk premium,
+2347.59s: attempt to capture this risk premium,
+2347.60s: attempt to capture this risk premium, you're going to be long theta. You're
+2348.95s: you're going to be long theta. You're
+2348.96s: you're going to be long theta. You're going to be collecting theta, but you're
+2351.19s: going to be collecting theta, but you're
+2351.20s: going to be collecting theta, but you're going to be short gamma.
+2353.35s: going to be short gamma.
+2353.36s: going to be short gamma. There's a direct relationship
+2356.87s: There's a direct relationship
+2356.88s: There's a direct relationship with these two and we're going to talk
+2359.43s: with these two and we're going to talk
+2359.44s: with these two and we're going to talk about it.
+2361.99s: about it.
+2362.00s: about it. Notice how that edge is kind of like
+2365.91s: Notice how that edge is kind of like
+2365.92s: Notice how that edge is kind of like trickled in each day.
+2369.27s: trickled in each day.
+2369.28s: trickled in each day. Don't let the fact that the trade goes
+2371.43s: Don't let the fact that the trade goes
+2371.44s: Don't let the fact that the trade goes on for a credit confuse you. That's not
+2374.55s: on for a credit confuse you. That's not
+2374.56s: on for a credit confuse you. That's not your money yet. That is literally money
+2376.79s: your money yet. That is literally money
+2376.80s: your money yet. That is literally money that's tied to an open trade. So each
+2380.71s: that's tied to an open trade. So each
+2380.72s: that's tied to an open trade. So each day you'll collect a little bit more of
+2383.51s: day you'll collect a little bit more of
+2383.52s: day you'll collect a little bit more of it and every once in a while there could
+2387.67s: it and every once in a while there could
+2387.68s: it and every once in a while there could be a big move that undoes it massively.
+2392.39s: be a big move that undoes it massively.
+2392.40s: be a big move that undoes it massively. So theta comes in slow. Gamma tends to
+2396.07s: So theta comes in slow. Gamma tends to
+2396.08s: So theta comes in slow. Gamma tends to rip stuff apart really fast.
+2399.83s: rip stuff apart really fast.
+2399.84s: rip stuff apart really fast. Your P&amp;L is literally the scoreboard of
+2403.83s: Your P&amp;L is literally the scoreboard of
+2403.84s: Your P&amp;L is literally the scoreboard of this exact function.
+2406.07s: this exact function.
+2406.08s: this exact function. How much implied vault did you sell?
+2408.79s: How much implied vault did you sell?
+2408.80s: How much implied vault did you sell? What was the realized vault that
+2410.55s: What was the realized vault that
+2410.56s: What was the realized vault that occurred? And did you do a good job
+2413.83s: occurred? And did you do a good job
+2413.84s: occurred? And did you do a good job finding lucrative points, managing your
+2415.83s: finding lucrative points, managing your
+2415.84s: finding lucrative points, managing your risk, all of those kind of things to
+2418.47s: risk, all of those kind of things to
+2418.48s: risk, all of those kind of things to come out positive? That's it. There's
+2421.91s: come out positive? That's it. There's
+2421.92s: come out positive? That's it. There's another piece to this, which is
+2424.71s: another piece to this, which is
+2424.72s: another piece to this, which is depending on what structures you choose
+2426.87s: depending on what structures you choose
+2426.88s: depending on what structures you choose to trade, you're going to have different
+2429.19s: to trade, you're going to have different
+2429.20s: to trade, you're going to have different risk exposure. For example, if you sell
+2433.51s: risk exposure. For example, if you sell
+2433.52s: risk exposure. For example, if you sell something like a short put, a lot of
+2435.27s: something like a short put, a lot of
+2435.28s: something like a short put, a lot of times people will think, okay, short
+2436.87s: times people will think, okay, short
+2436.88s: times people will think, okay, short put, I'm going to try to collect its
+2438.87s: put, I'm going to try to collect its
+2438.88s: put, I'm going to try to collect its variance versus premium. But we don't
+2441.03s: variance versus premium. But we don't
+2441.04s: variance versus premium. But we don't really acknowledge the fact that that's
+2442.63s: really acknowledge the fact that that's
+2442.64s: really acknowledge the fact that that's actually like quite directional. Like
+2445.11s: actually like quite directional. Like
+2445.12s: actually like quite directional. Like quite directional. And it's because not
+2447.67s: quite directional. And it's because not
+2447.68s: quite directional. And it's because not only do you start off with a certain
+2449.11s: only do you start off with a certain
+2449.12s: only do you start off with a certain delta profile, but you also have gamma.
+2451.35s: delta profile, but you also have gamma.
+2451.36s: delta profile, but you also have gamma. And gamma is going to change your delta.
+2453.91s: And gamma is going to change your delta.
+2453.92s: And gamma is going to change your delta. So your position is going to move around
+2455.51s: So your position is going to move around
+2455.52s: So your position is going to move around a lot. If you trade something like a
+2459.59s: a lot. If you trade something like a
+2459.60s: a lot. If you trade something like a shortput and try to hedge your deltas,
+2461.91s: shortput and try to hedge your deltas,
+2461.92s: shortput and try to hedge your deltas, you could do that. You have to hedge a
+2464.07s: you could do that. You have to hedge a
+2464.08s: you could do that. You have to hedge a whole lot. And the reason why you have
+2465.59s: whole lot. And the reason why you have
+2465.60s: whole lot. And the reason why you have to hedge a whole lot is because you have
+2467.99s: to hedge a whole lot is because you have
+2468.00s: to hedge a whole lot is because you have gamma. That's exactly why most of the
+2471.19s: gamma. That's exactly why most of the
+2471.20s: gamma. That's exactly why most of the time if you're really trying to isolate
+2473.83s: time if you're really trying to isolate
+2473.84s: time if you're really trying to isolate the risk premium in some way, you'll
+2476.63s: the risk premium in some way, you'll
+2476.64s: the risk premium in some way, you'll very frequently gravitate more towards
+2479.03s: very frequently gravitate more towards
+2479.04s: very frequently gravitate more towards things like short strangles, short
+2480.79s: things like short strangles, short
+2480.80s: things like short strangles, short straddles, stuff like that. There is no
+2483.75s: straddles, stuff like that. There is no
+2483.76s: straddles, stuff like that. There is no oneizefits-all. This is just to give you
+2485.83s: oneizefits-all. This is just to give you
+2485.84s: oneizefits-all. This is just to give you a continuum of ideas on how these
+2488.23s: a continuum of ideas on how these
+2488.24s: a continuum of ideas on how these different things fit here. So, I'm going
+2491.11s: different things fit here. So, I'm going
+2491.12s: different things fit here. So, I'm going to show you an actual example. This is a
+2493.91s: to show you an actual example. This is a
+2493.92s: to show you an actual example. This is a straddle and it's using the observed VIX
+2497.83s: straddle and it's using the observed VIX
+2497.84s: straddle and it's using the observed VIX prices on 17 July 24. And what I'm doing
+2503.99s: prices on 17 July 24. And what I'm doing
+2504.00s: prices on 17 July 24. And what I'm doing on the bottom there is breaking down
+2506.55s: on the bottom there is breaking down
+2506.56s: on the bottom there is breaking down what your P&amp;L is per day. The thing that
+2509.59s: what your P&amp;L is per day. The thing that
+2509.60s: what your P&amp;L is per day. The thing that you should see is that you have a lot of
+2513.75s: you should see is that you have a lot of
+2513.76s: you should see is that you have a lot of factors to your P&amp;L. Sometimes you'll
+2516.79s: factors to your P&amp;L. Sometimes you'll
+2516.80s: factors to your P&amp;L. Sometimes you'll see gamma popping up kind of a lot.
+2518.87s: see gamma popping up kind of a lot.
+2518.88s: see gamma popping up kind of a lot. You'll see theta pretty consistent.
+2520.71s: You'll see theta pretty consistent.
+2520.72s: You'll see theta pretty consistent. You'll see Vega sneak in there a little
+2522.55s: You'll see Vega sneak in there a little
+2522.56s: You'll see Vega sneak in there a little bit. What I'm pointing out is that
+2525.35s: bit. What I'm pointing out is that
+2525.36s: bit. What I'm pointing out is that there's different ways to trade the risk
+2526.95s: there's different ways to trade the risk
+2526.96s: there's different ways to trade the risk premium. You can think about it as two
+2529.19s: premium. You can think about it as two
+2529.20s: premium. You can think about it as two points in time. And there's an argument
+2531.91s: points in time. And there's an argument
+2531.92s: points in time. And there's an argument for that. The problem is there's a lot
+2534.23s: for that. The problem is there's a lot
+2534.24s: for that. The problem is there's a lot of stuff that can happen over those two
+2535.83s: of stuff that can happen over those two
+2535.84s: of stuff that can happen over those two points in time. and your intermediate
+2538.79s: points in time. and your intermediate
+2538.80s: points in time. and your intermediate P&amp;L can be really noisy if you do it
+2540.95s: P&amp;L can be really noisy if you do it
+2540.96s: P&amp;L can be really noisy if you do it that way, but it's really up to you to
+2543.11s: that way, but it's really up to you to
+2543.12s: that way, but it's really up to you to decide what methodology you prefer. So,
+2547.35s: decide what methodology you prefer. So,
+2547.36s: decide what methodology you prefer. So, we already know we're getting delta,
+2549.35s: we already know we're getting delta,
+2549.36s: we already know we're getting delta, we're getting theta in, we're getting
+2551.19s: we're getting theta in, we're getting
+2551.20s: we're getting theta in, we're getting gamma out, and then there's a a net P&amp;L.
+2554.07s: gamma out, and then there's a a net P&amp;L.
+2554.08s: gamma out, and then there's a a net P&amp;L. The thing to note, theta most of the
+2556.63s: The thing to note, theta most of the
+2556.64s: The thing to note, theta most of the time is there. Then, every once in a
+2558.87s: time is there. Then, every once in a
+2558.88s: time is there. Then, every once in a while, you will get slapped in the face
+2560.95s: while, you will get slapped in the face
+2560.96s: while, you will get slapped in the face with a big gamma move that really
+2563.67s: with a big gamma move that really
+2563.68s: with a big gamma move that really flattens out your P&amp;L.
+2566.31s: flattens out your P&amp;L.
+2566.32s: flattens out your P&amp;L. This is showing you the same thing, but
+2568.55s: This is showing you the same thing, but
+2568.56s: This is showing you the same thing, but this is artificially shocking
+2570.95s: this is artificially shocking
+2570.96s: this is artificially shocking volatility.
+2572.88s: volatility. And I want you to see the difference.
+2575.83s: And I want you to see the difference.
+2575.84s: And I want you to see the difference. Theta still accumulates how it normally
+2578.55s: Theta still accumulates how it normally
+2578.56s: Theta still accumulates how it normally does, but gamma changes its profile kind
+2583.43s: does, but gamma changes its profile kind
+2583.44s: does, but gamma changes its profile kind of a lot because the underlying is
+2585.51s: of a lot because the underlying is
+2585.52s: of a lot because the underlying is moving really hard in a few days, like
+2588.31s: moving really hard in a few days, like
+2588.32s: moving really hard in a few days, like few days in a row. So when we're looking
+2591.67s: few days in a row. So when we're looking
+2591.68s: few days in a row. So when we're looking at the relationship between highvall
+2595.43s: at the relationship between highvall
+2595.44s: at the relationship between highvall selling, lowvall selling, there's just
+2598.15s: selling, lowvall selling, there's just
+2598.16s: selling, lowvall selling, there's just different relationships and dominant
+2601.11s: different relationships and dominant
+2601.12s: different relationships and dominant forces that exist here. It's not
+2602.79s: forces that exist here. It's not
+2602.80s: forces that exist here. It's not suggesting that one is necessarily
+2604.71s: suggesting that one is necessarily
+2604.72s: suggesting that one is necessarily better than the other. But you again
+2607.35s: better than the other. But you again
+2607.36s: better than the other. But you again have to understand how both of these
+2608.63s: have to understand how both of these
+2608.64s: have to understand how both of these things work so that you can kind of pick
+2610.07s: things work so that you can kind of pick
+2610.08s: things work so that you can kind of pick your fights on what you prefer to be
+2612.07s: your fights on what you prefer to be
+2612.08s: your fights on what you prefer to be around.
+2613.59s: around.
+2613.60s: around. This is giving you an idea on both of
+2616.39s: This is giving you an idea on both of
+2616.40s: This is giving you an idea on both of those and their actual P&amp;L curves over
+2619.99s: those and their actual P&amp;L curves over
+2620.00s: those and their actual P&amp;L curves over time.
+2621.67s: time.
+2621.68s: time. What this is showing you is negative
+2623.27s: What this is showing you is negative
+2623.28s: What this is showing you is negative skew. The fact that in that spike you
+2626.31s: skew. The fact that in that spike you
+2626.32s: skew. The fact that in that spike you can get smashed. That's really the
+2628.31s: can get smashed. That's really the
+2628.32s: can get smashed. That's really the thing. So again, when we look at what
+2633.19s: thing. So again, when we look at what
+2633.20s: thing. So again, when we look at what you're trading, how much of it is
+2634.79s: you're trading, how much of it is
+2634.80s: you're trading, how much of it is actually VRP depends a lot on the actual
+2637.91s: actually VRP depends a lot on the actual
+2637.92s: actually VRP depends a lot on the actual structure. But remember the directional
+2640.87s: structure. But remember the directional
+2640.88s: structure. But remember the directional term is almost always bigger than the
+2643.03s: term is almost always bigger than the
+2643.04s: term is almost always bigger than the premium. So we have a variance term
+2645.75s: premium. So we have a variance term
+2645.76s: premium. So we have a variance term volatility based the relationship
+2647.27s: volatility based the relationship
+2647.28s: volatility based the relationship between implied and realized and then we
+2648.87s: between implied and realized and then we
+2648.88s: between implied and realized and then we have a directional term which is just
+2650.79s: have a directional term which is just
+2650.80s: have a directional term which is just magnitude. How much does something
+2653.11s: magnitude. How much does something
+2653.12s: magnitude. How much does something actually behave?
+2655.35s: actually behave?
+2655.36s: actually behave? Generally speaking you are paid most
+2658.95s: Generally speaking you are paid most
+2658.96s: Generally speaking you are paid most where you're exposed. So the putwing
+2662.23s: where you're exposed. So the putwing
+2662.24s: where you're exposed. So the putwing those are the strikes that are the most
+2664.31s: those are the strikes that are the most
+2664.32s: those are the strikes that are the most exposed to the bad state that we talked
+2666.95s: exposed to the bad state that we talked
+2666.96s: exposed to the bad state that we talked about before. It carries the richest
+2669.51s: about before. It carries the richest
+2669.52s: about before. It carries the richest premium. Notice how I'm talking about
+2671.59s: premium. Notice how I'm talking about
+2671.60s: premium. Notice how I'm talking about like a 16 delta. I'm not talking about
+2673.43s: like a 16 delta. I'm not talking about
+2673.44s: like a 16 delta. I'm not talking about teeny options like five delta, 2 delta.
+2676.47s: teeny options like five delta, 2 delta.
+2676.48s: teeny options like five delta, 2 delta. We literally don't have enough data to
+2678.55s: We literally don't have enough data to
+2678.56s: We literally don't have enough data to figure out if they're if it's fatter
+2680.79s: figure out if they're if it's fatter
+2680.80s: figure out if they're if it's fatter there or not. We might assume it to be,
+2682.39s: there or not. We might assume it to be,
+2682.40s: there or not. We might assume it to be, but we really don't know. So, there's no
+2686.31s: but we really don't know. So, there's no
+2686.32s: but we really don't know. So, there's no mistake that the strikes that put you in
+2690.31s: mistake that the strikes that put you in
+2690.32s: mistake that the strikes that put you in front of the roughest scenarios are
+2693.03s: front of the roughest scenarios are
+2693.04s: front of the roughest scenarios are compensated
+2694.79s: compensated
+2694.80s: compensated generally more so than the others.
+2698.31s: generally more so than the others.
+2698.32s: generally more so than the others. And this is when we can look at the
+2701.43s: And this is when we can look at the
+2701.44s: And this is when we can look at the measured risk premia. This is a naive
+2705.51s: measured risk premia. This is a naive
+2705.52s: measured risk premia. This is a naive forward VRP by horizon. And what you
+2709.19s: forward VRP by horizon. And what you
+2709.20s: forward VRP by horizon. And what you should note is that it declines the
+2711.99s: should note is that it declines the
+2712.00s: should note is that it declines the shorter you measure. So five trading
+2714.79s: shorter you measure. So five trading
+2714.80s: shorter you measure. So five trading days out looks richer than 63 days out.
+2719.51s: days out looks richer than 63 days out.
+2719.52s: days out looks richer than 63 days out. The realized vault estimator itself is
+2722.71s: The realized vault estimator itself is
+2722.72s: The realized vault estimator itself is biased downwards at short windows
+2725.51s: biased downwards at short windows
+2725.52s: biased downwards at short windows because there's literally just less data
+2727.99s: because there's literally just less data
+2728.00s: because there's literally just less data to estimate a standard deviation from
+2729.83s: to estimate a standard deviation from
+2729.84s: to estimate a standard deviation from it. The takeaway from this slide is you
+2732.63s: it. The takeaway from this slide is you
+2732.64s: it. The takeaway from this slide is you can't really decide if 5 days is truly
+2735.27s: can't really decide if 5 days is truly
+2735.28s: can't really decide if 5 days is truly richer than 42. That's the important
+2737.75s: richer than 42. That's the important
+2737.76s: richer than 42. That's the important factor. They're really not that
+2739.03s: factor. They're really not that
+2739.04s: factor. They're really not that different.
+2740.95s: different.
+2740.96s: different. We can combine these to figure out where
+2744.79s: We can combine these to figure out where
+2744.80s: We can combine these to figure out where we might want to be based on the strike
+2749.03s: we might want to be based on the strike
+2749.04s: we might want to be based on the strike axis and the tenor axis. So you can kind
+2751.67s: axis and the tenor axis. So you can kind
+2751.68s: axis and the tenor axis. So you can kind of put them together because again VRP
+2753.43s: of put them together because again VRP
+2753.44s: of put them together because again VRP can exists can exist at different
+2755.51s: can exists can exist at different
+2755.52s: can exists can exist at different strikes and across different teners.
+2758.71s: strikes and across different teners.
+2758.72s: strikes and across different teners. Let's talk about why it doesn't get to
+2761.19s: Let's talk about why it doesn't get to
+2761.20s: Let's talk about why it doesn't get to your account. There's four hurdles that
+2765.59s: your account. There's four hurdles that
+2765.60s: your account. There's four hurdles that typically mess people up. It's the wrong
+2768.31s: typically mess people up. It's the wrong
+2768.32s: typically mess people up. It's the wrong expression. This is the people that say,
+2769.83s: expression. This is the people that say,
+2769.84s: expression. This is the people that say, "Well, there's really big risk premium.
+2771.67s: "Well, there's really big risk premium.
+2771.68s: "Well, there's really big risk premium. I'm going to trade a dollar wide
+2772.87s: I'm going to trade a dollar wide
+2772.88s: I'm going to trade a dollar wide vertical spread." You're not trading
+2774.71s: vertical spread." You're not trading
+2774.72s: vertical spread." You're not trading risk premium at all. Your Greeks are
+2777.27s: risk premium at all. Your Greeks are
+2777.28s: risk premium at all. Your Greeks are essentially flat. That's not what you're
+2779.27s: essentially flat. That's not what you're
+2779.28s: essentially flat. That's not what you're doing. The regime, as we talked about,
+2782.07s: doing. The regime, as we talked about,
+2782.08s: doing. The regime, as we talked about, volatility goes through different
+2785.11s: volatility goes through different
+2785.12s: volatility goes through different moods and it clusters
+2788.39s: moods and it clusters
+2788.40s: moods and it clusters the shape. So that's your win rate and
+2791.43s: the shape. So that's your win rate and
+2791.44s: the shape. So that's your win rate and negative skewess and how you capture and
+2793.67s: negative skewess and how you capture and
+2793.68s: negative skewess and how you capture and maintain those. And then costs.
+2796.23s: maintain those. And then costs.
+2796.24s: maintain those. And then costs. So, we already know that a lot of times,
+2799.19s: So, we already know that a lot of times,
+2799.20s: So, we already know that a lot of times, depending on what structure you're
+2800.39s: depending on what structure you're
+2800.40s: depending on what structure you're trading, a lot of times direction finds
+2803.51s: trading, a lot of times direction finds
+2803.52s: trading, a lot of times direction finds its way into your book. You can accept
+2806.71s: its way into your book. You can accept
+2806.72s: its way into your book. You can accept that or you can try to neutralize it,
+2809.43s: that or you can try to neutralize it,
+2809.44s: that or you can try to neutralize it, but it's something that you have to
+2810.87s: but it's something that you have to
+2810.88s: but it's something that you have to acknowledge.
+2813.27s: acknowledge.
+2813.28s: acknowledge. We're talking about an average effect.
+2816.23s: We're talking about an average effect.
+2816.24s: We're talking about an average effect. This isn't something that is paid out on
+2818.79s: This isn't something that is paid out on
+2818.80s: This isn't something that is paid out on some sort of reliable basis. And the
+2821.03s: some sort of reliable basis. And the
+2821.04s: some sort of reliable basis. And the spread is huge. So, if you're planning
+2823.83s: spread is huge. So, if you're planning
+2823.84s: spread is huge. So, if you're planning around like the long-term mean, the
+2827.43s: around like the long-term mean, the
+2827.44s: around like the long-term mean, the problem is it's not a fixed rate. Not
+2829.83s: problem is it's not a fixed rate. Not
+2829.84s: problem is it's not a fixed rate. Not kidding. OBS literally just turned off
+2831.67s: kidding. OBS literally just turned off
+2831.68s: kidding. OBS literally just turned off said I ran out of disc space cuz this
+2833.19s: said I ran out of disc space cuz this
+2833.20s: said I ran out of disc space cuz this video is so big. So, anyways, it's not a
+2835.67s: video is so big. So, anyways, it's not a
+2835.68s: video is so big. So, anyways, it's not a fixed rate and we need to talk about
+2837.35s: fixed rate and we need to talk about
+2837.36s: fixed rate and we need to talk about this negative skew because you need to
+2840.39s: this negative skew because you need to
+2840.40s: this negative skew because you need to be able to survive both the infrequent
+2843.35s: be able to survive both the infrequent
+2843.36s: be able to survive both the infrequent but pretty significant moves that can
+2845.67s: but pretty significant moves that can
+2845.68s: but pretty significant moves that can happen and then also the probability
+2847.11s: happen and then also the probability
+2847.12s: happen and then also the probability that sometimes there's multiple of them.
+2850.07s: that sometimes there's multiple of them.
+2850.08s: that sometimes there's multiple of them. We already know that win rates are quite
+2852.55s: We already know that win rates are quite
+2852.56s: We already know that win rates are quite deceptive because you can have win rates
+2855.43s: deceptive because you can have win rates
+2855.44s: deceptive because you can have win rates that are super high, but if the downside
+2857.99s: that are super high, but if the downside
+2858.00s: that are super high, but if the downside moves are big enough,
+2860.15s: moves are big enough,
+2860.16s: moves are big enough, they [clears throat] can literally erase
+2861.67s: they [clears throat] can literally erase
+2861.68s: they [clears throat] can literally erase you. So, the key here is you just you
+2864.71s: you. So, the key here is you just you
+2864.72s: you. So, the key here is you just you can't evaluate the short premium
+2867.11s: can't evaluate the short premium
+2867.12s: can't evaluate the short premium strategy on win rate alone. You need the
+2869.35s: strategy on win rate alone. You need the
+2869.36s: strategy on win rate alone. You need the size of the wins and losses, not just
+2871.27s: size of the wins and losses, not just
+2871.28s: size of the wins and losses, not just how rarely they show up. So, what I'm
+2874.39s: how rarely they show up. So, what I'm
+2874.40s: how rarely they show up. So, what I'm showing you here is the general gap
+2877.99s: showing you here is the general gap
+2878.00s: showing you here is the general gap between you and the account. There's the
+2880.95s: between you and the account. There's the
+2880.96s: between you and the account. There's the bid ask spread that is a little tricky.
+2885.11s: bid ask spread that is a little tricky.
+2885.12s: bid ask spread that is a little tricky. So, this is measuring the spread as a
+2887.03s: So, this is measuring the spread as a
+2887.04s: So, this is measuring the spread as a percentage of the strike price across
+2889.91s: percentage of the strike price across
+2889.92s: percentage of the strike price across the range of options and it's super
+2892.07s: the range of options and it's super
+2892.08s: the range of options and it's super aggressive on cheap options, small out
+2894.39s: aggressive on cheap options, small out
+2894.40s: aggressive on cheap options, small out of the money contracts, they can feel
+2896.63s: of the money contracts, they can feel
+2896.64s: of the money contracts, they can feel like pretty low risk. the spreads are
+2898.71s: like pretty low risk. the spreads are
+2898.72s: like pretty low risk. the spreads are huge and on the most expensive closer to
+2901.91s: huge and on the most expensive closer to
+2901.92s: huge and on the most expensive closer to the money, the spread is like pretty
+2904.63s: the money, the spread is like pretty
+2904.64s: the money, the spread is like pretty modest relative to the overall ticket
+2908.95s: modest relative to the overall ticket
+2908.96s: modest relative to the overall ticket price. So cheap options that can feel
+2911.91s: price. So cheap options that can feel
+2911.92s: price. So cheap options that can feel conservative, small bet, most of the
+2913.99s: conservative, small bet, most of the
+2914.00s: conservative, small bet, most of the time they're the worst premium that you
+2915.43s: time they're the worst premium that you
+2915.44s: time they're the worst premium that you can find on the board. This is looking
+2917.51s: can find on the board. This is looking
+2917.52s: can find on the board. This is looking at a really basic timing system based on
+2919.99s: at a really basic timing system based on
+2920.00s: at a really basic timing system based on IV rank decile. Generally speaking, what
+2923.11s: IV rank decile. Generally speaking, what
+2923.12s: IV rank decile. Generally speaking, what I'm showing you is that there's not a
+2924.39s: I'm showing you is that there's not a
+2924.40s: I'm showing you is that there's not a super strong relationship here. You
+2926.87s: super strong relationship here. You
+2926.88s: super strong relationship here. You should note a simple function is you
+2930.95s: should note a simple function is you
+2930.96s: should note a simple function is you don't really want to be at either
+2932.47s: don't really want to be at either
+2932.48s: don't really want to be at either extreme. You don't want to be selling
+2935.03s: extreme. You don't want to be selling
+2935.04s: extreme. You don't want to be selling when you're in the lowest decile and you
+2939.03s: when you're in the lowest decile and you
+2939.04s: when you're in the lowest decile and you don't want to be selling when you're at
+2940.39s: don't want to be selling when you're at
+2940.40s: don't want to be selling when you're at the highest decile either. You kind of
+2943.35s: the highest decile either. You kind of
+2943.36s: the highest decile either. You kind of want to be somewhere between like the
+2945.35s: want to be somewhere between like the
+2945.36s: want to be somewhere between like the the 30 and 80 range in terms of IV rank
+2949.83s: the 30 and 80 range in terms of IV rank
+2949.84s: the 30 and 80 range in terms of IV rank deciles here. That's all. But it's like
+2952.87s: deciles here. That's all. But it's like
+2952.88s: deciles here. That's all. But it's like a really really crude just basic tool.
+2956.71s: a really really crude just basic tool.
+2956.72s: a really really crude just basic tool. It's not really going to save you a
+2958.55s: It's not really going to save you a
+2958.56s: It's not really going to save you a whole lot. But again, it's good to know.
+2960.71s: whole lot. But again, it's good to know.
+2960.72s: whole lot. But again, it's good to know. What's more useful here by the way is
+2963.11s: What's more useful here by the way is
+2963.12s: What's more useful here by the way is using things like IV rank, IV
+2965.03s: using things like IV rank, IV
+2965.04s: using things like IV rank, IV percentile, VRP is a sizing protocol.
+2969.11s: percentile, VRP is a sizing protocol.
+2969.12s: percentile, VRP is a sizing protocol. Meaning, do you add wings? How wide are
+2971.27s: Meaning, do you add wings? How wide are
+2971.28s: Meaning, do you add wings? How wide are the wings? Stuff like that. We already
+2973.99s: the wings? Stuff like that. We already
+2974.00s: the wings? Stuff like that. We already talked about the fact that your book,
+2977.11s: talked about the fact that your book,
+2977.12s: talked about the fact that your book, generally speaking, if you're sizing it
+2978.87s: generally speaking, if you're sizing it
+2978.88s: generally speaking, if you're sizing it well, isn't going to get ran over by a
+2981.27s: well, isn't going to get ran over by a
+2981.28s: well, isn't going to get ran over by a single trade. A lot of times, it's the
+2983.35s: single trade. A lot of times, it's the
+2983.36s: single trade. A lot of times, it's the clustering that we experience.
+2986.15s: clustering that we experience.
+2986.16s: clustering that we experience. So,
+2988.31s: So,
+2988.32s: So, we already know
+2990.71s: we already know
+2990.72s: we already know a lot of the things that go into doing
+2992.63s: a lot of the things that go into doing
+2992.64s: a lot of the things that go into doing this well come down to selection. So
+2994.79s: this well come down to selection. So
+2994.80s: this well come down to selection. So what structure, what strike, what
+2996.79s: what structure, what strike, what
+2996.80s: what structure, what strike, what signals you want to use, what durations,
+2999.59s: signals you want to use, what durations,
+2999.60s: signals you want to use, what durations, all of the gaps that we just talked
+3001.19s: all of the gaps that we just talked
+3001.20s: all of the gaps that we just talked about, they can be solved in navigating.
+3005.11s: about, they can be solved in navigating.
+3005.12s: about, they can be solved in navigating. There's nothing novel about any of this.
+3006.95s: There's nothing novel about any of this.
+3006.96s: There's nothing novel about any of this. This is really just designed to give you
+3008.55s: This is really just designed to give you
+3008.56s: This is really just designed to give you a really deep understanding. And we need
+3011.35s: a really deep understanding. And we need
+3011.36s: a really deep understanding. And we need to talk a little bit about some myths
+3013.51s: to talk a little bit about some myths
+3013.52s: to talk a little bit about some myths really quick. This is the last bit.
+3016.23s: really quick. This is the last bit.
+3016.24s: really quick. This is the last bit. IV crush being an edge, that's that's
+3019.75s: IV crush being an edge, that's that's
+3019.76s: IV crush being an edge, that's that's not your edge. That is the gap between
+3023.03s: not your edge. That is the gap between
+3023.04s: not your edge. That is the gap between implied and realized ball. That's that's
+3025.91s: implied and realized ball. That's that's
+3025.92s: implied and realized ball. That's that's where you make your money. High IV rank,
+3028.55s: where you make your money. High IV rank,
+3028.56s: where you make your money. High IV rank, as you previously saw, does not mean
+3030.63s: as you previously saw, does not mean
+3030.64s: as you previously saw, does not mean sell. It's actually some of the worst
+3032.39s: sell. It's actually some of the worst
+3032.40s: sell. It's actually some of the worst performing periods. Theta is also not an
+3035.91s: performing periods. Theta is also not an
+3035.92s: performing periods. Theta is also not an edge. It's just a number. And gamma is
+3039.19s: edge. It's just a number. And gamma is
+3039.20s: edge. It's just a number. And gamma is the cost of theta. There's no edge in
+3041.75s: the cost of theta. There's no edge in
+3041.76s: the cost of theta. There's no edge in theta. It just is what it is. The edge
+3043.75s: theta. It just is what it is. The edge
+3043.76s: theta. It just is what it is. The edge comes from other parts of the system.
+3046.15s: comes from other parts of the system.
+3046.16s: comes from other parts of the system. Another common one is VIX is a fear
+3047.99s: Another common one is VIX is a fear
+3048.00s: Another common one is VIX is a fear gauge. And it's not. We already talked
+3050.71s: gauge. And it's not. We already talked
+3050.72s: gauge. And it's not. We already talked about it being a model free variance
+3052.79s: about it being a model free variance
+3052.80s: about it being a model free variance rate. So it moves often during periods
+3057.51s: rate. So it moves often during periods
+3057.52s: rate. So it moves often during periods of distress, but it also moves during
+3060.07s: of distress, but it also moves during
+3060.08s: of distress, but it also moves during periods where we're not in distress. You
+3061.99s: periods where we're not in distress. You
+3062.00s: periods where we're not in distress. You can't break it down that grotesqually.
+3064.23s: can't break it down that grotesqually.
+3064.24s: can't break it down that grotesqually. You miss too much. And a high win rate
+3068.71s: You miss too much. And a high win rate
+3068.72s: You miss too much. And a high win rate does not mean it's working. It can work,
+3072.39s: does not mean it's working. It can work,
+3072.40s: does not mean it's working. It can work, but the other metrics matter a lot.
+3076.47s: but the other metrics matter a lot.
+3076.48s: but the other metrics matter a lot. This is back to the first chart. When we
+3079.35s: This is back to the first chart. When we
+3079.36s: This is back to the first chart. When we opened with this chart, you just kind of
+3081.83s: opened with this chart, you just kind of
+3081.84s: opened with this chart, you just kind of had a paradox, right? The fact that it's
+3083.99s: had a paradox, right? The fact that it's
+3084.00s: had a paradox, right? The fact that it's generally priced above what happens, but
+3086.15s: generally priced above what happens, but
+3086.16s: generally priced above what happens, but people harvesting it often lose. Now you
+3089.83s: people harvesting it often lose. Now you
+3089.84s: people harvesting it often lose. Now you have the end to end.
+3093.19s: have the end to end.
+3093.20s: have the end to end. You know what it is. It's a price
+3095.59s: You know what it is. It's a price
+3095.60s: You know what it is. It's a price compared to an outcome on a lag that you
+3097.75s: compared to an outcome on a lag that you
+3097.76s: compared to an outcome on a lag that you have to understand and a lot. You also
+3100.23s: have to understand and a lot. You also
+3100.24s: have to understand and a lot. You also understand how to measure it objectively
+3102.71s: understand how to measure it objectively
+3102.72s: understand how to measure it objectively without fooling yourself. We know it's
+3104.47s: without fooling yourself. We know it's
+3104.48s: without fooling yourself. We know it's forward. It's not trailing. And rank
+3107.75s: forward. It's not trailing. And rank
+3107.76s: forward. It's not trailing. And rank doesn't equal rich. We know why it
+3109.75s: doesn't equal rich. We know why it
+3109.76s: doesn't equal rich. We know why it exists. There's three real mechanisms
+3113.19s: exists. There's three real mechanisms
+3113.20s: exists. There's three real mechanisms that are not market error. It is a risk
+3115.27s: that are not market error. It is a risk
+3115.28s: that are not market error. It is a risk premium because you're doing something
+3117.59s: premium because you're doing something
+3117.60s: premium because you're doing something kind of tough and the reasons why it
+3121.03s: kind of tough and the reasons why it
+3121.04s: kind of tough and the reasons why it doesn't reach your account. We walk
+3122.95s: doesn't reach your account. We walk
+3122.96s: doesn't reach your account. We walk through four gaps, all of them fixable,
+3126.39s: through four gaps, all of them fixable,
+3126.40s: through four gaps, all of them fixable, every single one of them. So
+3129.91s: every single one of them. So
+3129.92s: every single one of them. So remember these. The premium is
+3132.23s: remember these. The premium is
+3132.24s: remember these. The premium is compensation for a service. It's not
+3134.23s: compensation for a service. It's not
+3134.24s: compensation for a service. It's not like a discount. It's not something
+3135.75s: like a discount. It's not something
+3135.76s: like a discount. It's not something cheap that's sitting there. You're doing
+3137.43s: cheap that's sitting there. You're doing
+3137.44s: cheap that's sitting there. You're doing something that somebody needs you to do.
+3139.27s: something that somebody needs you to do.
+3139.28s: something that somebody needs you to do. It's a service. It reaches you through
+3142.23s: It's a service. It reaches you through
+3142.24s: It's a service. It reaches you through the gap between what theta provides you
+3145.11s: the gap between what theta provides you
+3145.12s: the gap between what theta provides you and what gamma takes back out. It's not
+3147.91s: and what gamma takes back out. It's not
+3147.92s: and what gamma takes back out. It's not necessarily being right about direction.
+3150.31s: necessarily being right about direction.
+3150.32s: necessarily being right about direction. It's the decomposition that we looked at
+3152.87s: It's the decomposition that we looked at
+3152.88s: It's the decomposition that we looked at earlier that the directional piece is
+3154.55s: earlier that the directional piece is
+3154.56s: earlier that the directional piece is usually bigger if you're not careful.
+3156.95s: usually bigger if you're not careful.
+3156.96s: usually bigger if you're not careful. And the edge in this space isn't
+3159.75s: And the edge in this space isn't
+3159.76s: And the edge in this space isn't discovering that this exists. The
+3161.83s: discovering that this exists. The
+3161.84s: discovering that this exists. The premium exists. Plenty of people already
+3163.51s: premium exists. Plenty of people already
+3163.52s: premium exists. Plenty of people already know that. It's how you express and size
+3167.43s: know that. It's how you express and size
+3167.44s: know that. It's how you express and size it. Those are the decisions that you
+3170.55s: it. Those are the decisions that you
+3170.56s: it. Those are the decisions that you actually have in your control literally
+3173.19s: actually have in your control literally
+3173.20s: actually have in your control literally all the time. So everything from here,
+3175.83s: all the time. So everything from here,
+3175.84s: all the time. So everything from here, you can get it from Yahoo Finance. It's
+3178.63s: you can get it from Yahoo Finance. It's
+3178.64s: you can get it from Yahoo Finance. It's all public data and we spend a lot of
+3180.95s: all public data and we spend a lot of
+3180.96s: all public data and we spend a lot of time working on this exact kind of stuff
+3183.03s: time working on this exact kind of stuff
+3183.04s: time working on this exact kind of stuff in the Outlier Pro Plus workshops. We
+3185.91s: in the Outlier Pro Plus workshops. We
+3185.92s: in the Outlier Pro Plus workshops. We meet twice a month. If you are
+3187.75s: meet twice a month. If you are
+3187.76s: meet twice a month. If you are interested in coming to check one out
+3189.35s: interested in coming to check one out
+3189.36s: interested in coming to check one out and you made it to the end of the video,
+3190.79s: and you made it to the end of the video,
+3190.80s: and you made it to the end of the video, just shoot me an email and I will
+3193.11s: just shoot me an email and I will
+3193.12s: just shoot me an email and I will happily invite you to one so you can
+3194.95s: happily invite you to one so you can
+3194.96s: happily invite you to one so you can come hang out, be an outlier. See you
+3196.47s: come hang out, be an outlier. See you
+3196.48s: come hang out, be an outlier. See you guys later.
