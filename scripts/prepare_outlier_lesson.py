@@ -239,19 +239,26 @@ def normalize_source(source: Mapping[str, Any]) -> Dict[str, Any]:
 
 
 def source_relevance_score(source: Mapping[str, Any], topic: TopicCandidate) -> int:
-    """Score lexical topic evidence without asking an LLM to judge relevance."""
+    """Score deterministic topic evidence without asking an LLM to judge relevance.
+
+    OPTEEE returns semantically ranked sources, but its excerpts do not always
+    repeat the exact anchor phrase.  An exact anchor remains preferred; a
+    source can also support a lesson when it explicitly names a bucket term.
+    """
     haystack = " ".join(
         str(source.get(field) or "") for field in ("title", "excerpt", "content")
     ).lower()
     haystack = " ".join(haystack.split())
-    shared_tokens = _tokens(f"{topic.bucket} {topic.concept}") & _tokens(haystack)
+    haystack_tokens = _tokens(haystack)
+    shared_tokens = _tokens(f"{topic.bucket} {topic.concept}") & haystack_tokens
+    bucket_hits = _tokens(topic.bucket) & haystack_tokens
     anchors = TOPIC_ANCHORS.get(topic.bucket, ())
     anchor_hits = sum(1 for anchor in anchors if anchor in haystack)
-    if anchors and not anchor_hits:
-        return 0
-    if not anchors and len(shared_tokens) < 2:
-        return 0
-    return anchor_hits * 100 + len(shared_tokens)
+    if anchor_hits:
+        return anchor_hits * 100 + len(shared_tokens)
+    if bucket_hits:
+        return 10 + len(shared_tokens)
+    return 0
 
 
 def select_source_pair(
