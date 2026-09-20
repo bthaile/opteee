@@ -406,7 +406,7 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
     parser.add_argument("--history-dir", type=Path, default=DEFAULT_HISTORY_DIR)
     parser.add_argument("--endpoint", default=DEFAULT_ENDPOINT)
     parser.add_argument("--max-queries", type=int, default=6)
-    parser.add_argument("--num-results", type=int, default=12)
+    parser.add_argument("--num-results", type=int, default=20)
     parser.add_argument("--timeout", type=float, default=45.0, help="per-request timeout in seconds")
     parser.add_argument("--today", type=date.fromisoformat, default=None, metavar="YYYY-MM-DD", help=argparse.SUPPRESS)
     args = parser.parse_args(argv)
