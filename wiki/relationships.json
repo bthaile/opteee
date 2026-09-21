@@ -6500,6 +6500,17 @@
   "target": "concepts/energy-markets",
   "weight": 5
  },
+ "concepts/energy-markets||concepts/supply-chain": {
+  "evidence": {
+   "timestamp": "12:25",
+   "video_id": "pxNgK4vNV1g"
+  },
+  "label": "geopolitical factors affecting both markets",
+  "relation": "related-to",
+  "source": "concepts/energy-markets",
+  "target": "concepts/supply-chain",
+  "weight": 3
+ },
  "concepts/energy-markets||concepts/tariffs": {
   "evidence": {
    "timestamp": "02:15",
@@ -7104,6 +7115,50 @@
   "source": "concepts/fat-tails",
   "target": "concepts/standard-deviation-move",
   "weight": 5
+ },
+ "concepts/fed-policy||concepts/support-and-resistance": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "C1UbvCjzUDE"
+  },
+  "label": "drives formation and movement of",
+  "relation": "drives",
+  "source": "concepts/fed-policy",
+  "target": "concepts/support-and-resistance",
+  "weight": 3
+ },
+ "concepts/fed-policy||concepts/technical-analysis": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "C1UbvCjzUDE"
+  },
+  "label": "influences market conditions that technical analysis interpr",
+  "relation": "drives",
+  "source": "concepts/fed-policy",
+  "target": "concepts/technical-analysis",
+  "weight": 3
+ },
+ "concepts/fed-policy||securities/nasdaq": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "6-MMToTqJAE"
+  },
+  "label": "drives volatility and pricing of",
+  "relation": "drives",
+  "source": "concepts/fed-policy",
+  "target": "securities/nasdaq",
+  "weight": 3
+ },
+ "concepts/fed-policy||securities/spy": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "6-MMToTqJAE"
+  },
+  "label": "drives underlying price movements of",
+  "relation": "drives",
+  "source": "concepts/fed-policy",
+  "target": "securities/spy",
+  "weight": 4
  },
  "concepts/fed-put||concepts/fomc": {
   "evidence": {
@@ -7928,6 +7983,17 @@
   "relation": "drives",
   "source": "concepts/geopolitical-risk",
   "target": "concepts/market-regimes",
+  "weight": 5
+ },
+ "concepts/geopolitical-risk||concepts/supply-chain": {
+  "evidence": {
+   "timestamp": "46:27",
+   "video_id": "-8XV5_gBP6I"
+  },
+  "label": "creates disruption risks within",
+  "relation": "drives",
+  "source": "concepts/geopolitical-risk",
+  "target": "concepts/supply-chain",
   "weight": 5
  },
  "concepts/geopolitical-risk||securities/crude-oil": {
@@ -10195,6 +10261,17 @@
   "source": "concepts/soft-landing",
   "target": "concepts/market-regimes",
   "weight": 5
+ },
+ "concepts/market-regimes||concepts/supply-chain": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "-8XV5_gBP6I"
+  },
+  "label": "drives volatility and pricing in",
+  "relation": "drives",
+  "source": "concepts/market-regimes",
+  "target": "concepts/supply-chain",
+  "weight": 3
  },
  "concepts/market-regimes||concepts/tariffs": {
   "evidence": {
@@ -14981,6 +15058,17 @@
   "target": "securities/spy",
   "weight": 5
  },
+ "concepts/probability-of-profit||concepts/strike-selection": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "4zx4HK1i4RQ"
+  },
+  "label": "determines optimal strike selection for",
+  "relation": "drives",
+  "source": "concepts/probability-of-profit",
+  "target": "concepts/strike-selection",
+  "weight": 3
+ },
  "concepts/probability-of-profit||concepts/time-decay": {
   "evidence": {
    "timestamp": "43:09",
@@ -18413,6 +18501,17 @@
   "target": "strategies/short-straddle",
   "weight": 5
  },
+ "concepts/strike-selection||concepts/time-decay": {
+  "evidence": {
+   "timestamp": "01:35:02",
+   "video_id": "Ibg6xIOikvc"
+  },
+  "label": "determines exposure to time decay",
+  "relation": "drives",
+  "source": "concepts/strike-selection",
+  "target": "concepts/time-decay",
+  "weight": 3
+ },
  "concepts/supply-and-demand||concepts/technical-analysis": {
   "evidence": {
    "timestamp": "04:18",
@@ -18433,6 +18532,28 @@
   "relation": "drives",
   "source": "concepts/supply-and-demand",
   "target": "securities/spy",
+  "weight": 5
+ },
+ "concepts/supply-chain||concepts/tariffs": {
+  "evidence": {
+   "timestamp": "05:41",
+   "video_id": "pxNgK4vNV1g"
+  },
+  "label": "subject to cost pressures from",
+  "relation": "related-to",
+  "source": "concepts/supply-chain",
+  "target": "concepts/tariffs",
+  "weight": 3
+ },
+ "concepts/supply-chain||securities/crude-oil": {
+  "evidence": {
+   "timestamp": "13:35",
+   "video_id": "pxNgK4vNV1g"
+  },
+  "label": "increased production capacity drives crude oil price",
+  "relation": "drives",
+  "source": "concepts/supply-chain",
+  "target": "securities/crude-oil",
   "weight": 5
  },
  "concepts/support-and-resistance||concepts/technical-analysis": {
