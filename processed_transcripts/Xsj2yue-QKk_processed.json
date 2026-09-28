@@ -1,0 +1,477 @@
+[
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "What's up, everyone? Welcome to the Options Trench. Today, Chris and I were talking about Kelly Criterion, which we were actually joking a second ago. I don't know why we call it criterion versus criteria. I'm sure somebody that knows that stuff will be able to chime in and let me know. I just haven't Googled it yet. But, this opens the door to the world of bet sizing. So, by the end of the video today, there's a few things you should walk away with. One of them is a better, more practical sense of sizing things, but then also some of the common mistakes that people make when you first start integrating something like Kelly Kelly bet sizing because it's meant to optimize a specific thing, which is effectively your your log wealth. But, there's different permutations that you can use that allow you to optimize for some different things. So, what I'm going to do really quick is share my screen and we will go through a little bit of this at a high level, and then we have a couple specific examples we want to walk you through to try to help make the point pretty clear. So, what I'm showing you here is literally just a a fake strategy, and I'm applying a Kelly sizing factor to them everything from quarter Kelly up to two Kelly to give you an idea",
+    "start_timestamp_seconds": 2.32,
+    "end_timestamp_seconds": 83.56,
+    "start_timestamp": "00:02",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=2",
+    "chunk_index": 0,
+    "word_count": 236,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "point pretty clear. So, what I'm showing you here is literally just a a fake strategy, and I'm applying a Kelly sizing factor to them everything from quarter Kelly up to two Kelly to give you an idea on how these different things behave over time. That's all. So, you'll understand all of this stuff a little bit later. But, to give you an idea of what we're looking at up front, when you see the leverage factor, again, it's all fake. This is all synthetic. But, what this is saying is at one times Kelly, in order for you to optimize that specific thing for log wealth log return growth over time, is that should be ran at four times leverage. And that takes into account a couple specific factors we'll get into in a little bit. But then you see that we can size that down, size that up, and there are some details associated with pros and cons of these different things. Another general admin note is with Kelly and Kelly bet sizing in general is that you can apply it to different lenses and there's different formulas to do that. So you can look at it at an individual trade perspective, at a strategy perspective, or at a portfolio perspective. So when we think of stuff like trying to maximize the growth of an individual trader strategy, that brings us down one path, but we",
+    "start_timestamp_seconds": 71.16,
+    "end_timestamp_seconds": 159.72,
+    "start_timestamp": "01:11",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=71",
+    "chunk_index": 1,
+    "word_count": 239,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "it at an individual trade perspective, at a strategy perspective, or at a portfolio perspective. So when we think of stuff like trying to maximize the growth of an individual trader strategy, that brings us down one path, but we also know that assets have relationships with one another and that's what the portfolio level view is designed to help you pull apart so that you have a better sensitivity across the different positions that you're building and holding. These give you a quick overview of some of the formulas that you'll see a little bit more in detail later. This is literally just something you screenshot. This is for your context. I know Chris, I don't know this might get you aroused a little bit cuz I know you like math a lot, but we'll get you on to a more concrete example here through the idea of bet sizes. And I will say Chris, I am slightly bummed which is I don't see darts in here. I thought I thought we had an opportunity to talk about PDC which we still don't know what that means either. I think it's like professional darts competition challenge, maybe. So talk to us about this in the context of these different events where we're even, favored, and then an underdog. >> Yeah, cool. So you know, you you said it earlier, so I just want to repeat it. Uh it's good to know.",
+    "start_timestamp_seconds": 145.68,
+    "end_timestamp_seconds": 236.36,
+    "start_timestamp": "02:25",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=145",
+    "chunk_index": 2,
+    "word_count": 242,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "different events where we're even, favored, and then an underdog. >> Yeah, cool. So you know, you you said it earlier, so I just want to repeat it. Uh it's good to know. Kelly uh what Kelly was is a um it's a solution to the problem of what is the amount to bet to maximize your compounded wealth. That's what when you when people hear log wealth, um that that's all it means is to what's your compounded your compounded wealth. So, um the idea being that you know, when you when you're making bets, you're probably not just going to make one bet over the course of your life. You're going to make lots of bets over your life. And the question is this, how much of your bankroll to bet on any um on a on a bet that has certain where you believe you have an edge on it. And the the idea again, maximize your compounded wealth. I mean, if you want if the if the name of the game was to like maximize your wealth on any bet where you had an advantage, you would just bet everything. But that would not maximize your compounded wealth because uh you know, if you bet everything on a coin flip and lose, even if you had an advantage on the coin flip, uh you're out of the game and there will be no compounding of your wealth.",
+    "start_timestamp_seconds": 225.92,
+    "end_timestamp_seconds": 301.24,
+    "start_timestamp": "03:45",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=225",
+    "chunk_index": 3,
+    "word_count": 241,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "compounded wealth because uh you know, if you bet everything on a coin flip and lose, even if you had an advantage on the coin flip, uh you're out of the game and there will be no compounding of your wealth. So, um that's the whole concept behind Kelly in the first place. And you put up um a number of different formulas, but the one the formula that it kind of started from is this uh construct of, \"Hey, you're going to just make a simple bet.\" And the one of the ways I became aware of Kelly is that there is a uh former hedge fund manager and a current uh he's an investment manager named Victor Haghani. And him and a um a guy named Dewey did this study where they brought in a bunch of people. And a lot of people were very educated, um people that had economics or STEM kind of degrees, and people that were uh involved in investing. And they brought them into a room, and they gave them a game they had them play a game with real money where they were going to bet on a coin, but the coin was rigged in their favor. So, they had a 60% chance of winning. And uh so, you could like if you wager a dollar and you win, you would get a you would make a dollar or you would lose your dollar.",
+    "start_timestamp_seconds": 291.52,
+    "end_timestamp_seconds": 369.92,
+    "start_timestamp": "04:51",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=291",
+    "chunk_index": 4,
+    "word_count": 242,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "favor. So, they had a 60% chance of winning. And uh so, you could like if you wager a dollar and you win, you would get a you would make a dollar or you would lose your dollar. So, basically even even money bet, but you had a 60% chance of winning and you had an even money bet. And what the what basically happened is very few people did a very good job at this game. Most of the people just blew up their account um because they were betting far too much. Um and then and then there was also a court cohort of people that just massively underperformed your expected value of getting to play this game over time. So, they just did very poorly. So, um and the solution to doing a good job in this game is is actually just to use the Kelly criterion. So, the the formula that I'm going to pick on here that uh out of the ones you had presented was the bankroll, which is um P minus Q over B in the top right of the screen there. P minus Q over B. That is a what that's saying is um it's your probability of winning minus your probability of losing um but we divide the probability of losing by uh the return that you would your odds or another way of saying odds is um your return on your bet.",
+    "start_timestamp_seconds": 359.32,
+    "end_timestamp_seconds": 440.4,
+    "start_timestamp": "05:59",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=359",
+    "chunk_index": 5,
+    "word_count": 242,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "your probability of winning minus your probability of losing um but we divide the probability of losing by uh the return that you would your odds or another way of saying odds is um your return on your bet. It's the same thing. So, let's use the example of the Hogani um study where they were betting on the coin flip. They had a 60% advantage. That's the first uh box on the left there. And in that case, your probability of winning is 60%, so your probability of losing must be 40% since there's only two possibilities. And um you win 100% of your money, right? So you bet a dollar and you win, you get 100% back. Um so your B in this case is 1.00 or 100% return. Um that's that's what your odds are. So uh in this case since your odds is an even money bet, all even money bets means that the B is one. So the whole formula just collapses to what's your probability of winning minus your probability of losing, which is very straightforward. So here it's just 20% 60% minus 40%. So in that game you should have just bet 20% of your bankroll every time. And if you think about it, it will be very uh uh you can never blow out doing that cuz A, you're only betting a fraction of your bankroll.",
+    "start_timestamp_seconds": 426.44,
+    "end_timestamp_seconds": 513.6,
+    "start_timestamp": "07:06",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=426",
+    "chunk_index": 6,
+    "word_count": 234,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "should have just bet 20% of your bankroll every time. And if you think about it, it will be very uh uh you can never blow out doing that cuz A, you're only betting a fraction of your bankroll. You never bet your entire bankroll. Um and you know, if you're flipping coins it would be very hard to roll sort of like four or five bad rolls in a uh or bad flips in a row, right? So you're probably um going to be you're probably if you as long as you've got an advantage and you can stay in the game, your money's going to grow. So you should bet 20% of your bankroll. That's what Kelly would tell you. Um we'll do a couple other examples. We'll do another We'll do an example where you are uh getting odds. I kind of looked this up on Cal Sheet before we started recording. Um the Bills um the Bills are trading for uh the uh the prediction market says 13 cents settling to a dollar. 13 cents of the Bills going to win the Super Bowl this year. So if you pay 13 cents and the Bills do win the Super Bowl uh you would get a a dollar back. So you would make 87 cents. So you're going to make 87 over 13 87 cents over 13 cents. That would be your return.",
+    "start_timestamp_seconds": 502.6,
+    "end_timestamp_seconds": 574.4,
+    "start_timestamp": "08:22",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=502",
+    "chunk_index": 7,
+    "word_count": 236,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "and the Bills do win the Super Bowl uh you would get a a dollar back. So you would make 87 cents. So you're going to make 87 over 13 87 cents over 13 cents. That would be your return. Um if the Bills win the Super Bowl. That corresponds to a B of 6.69 or a little under seven. You're getting a little bit less than seven to one on that. Um, so let's say that you think the probability of the Bills to win is higher than 13% 13 13% 13 cents. You think it's 18%. So, we put a P of 18 and we solve P minus Q over B and we get 5.7%. So, you should you should bet 5. Full Kelly would prescribe to you to bet 5.7% of your bankroll. Um, this is the case where you are getting odds. I'm going to give another example where um, again, this is right off Kalshi. This was um, the Bills to win the AFC East. So, the if the Bills win the AFC East, um, it pays uh, you actually have to lay odds in that case. Um, you're going to pay 1.4 uh, basically to win uh, uh, you're going to pay a dollar and you're only going to make a 40% return on the dollar. So, you're going to get less you're going to get you you're going to pay uh,",
+    "start_timestamp_seconds": 562.76,
+    "end_timestamp_seconds": 648.24,
+    "start_timestamp": "09:22",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=562",
+    "chunk_index": 8,
+    "word_count": 238,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "uh, basically to win uh, uh, you're going to pay a dollar and you're only going to make a 40% return on the dollar. So, you're going to get less you're going to get you you're going to pay uh, um, because you're a favorite, you're not going to get 100% return on your money. You're going to get less than that. So, in this case, uh, the Bills to win the AFC East, but that was at 1.4x. Let's say you think it's 80% to win, not 70% to win. So, in that case, uh, we just solve the equation. It's just your your P of winning is 80%. That's what you think it is. Um, minus the 20% and but we have to increase the 20% by dividing it by 0.4 and it says to uh, you will end up betting 30% of your bankroll. I do want to point something out that is a bit interesting about Kelly is that um if you gave Kelly the same amount of edge on a trade but in one case you are a favorite and in one case you are an underdog uh where you're like so you're laying odds versus getting odds Kelly will actually tell you to bet more on being on the favorites scenario uh despite the fact that it's the same amount of edge. It's a very strange property I think of of Kelly and I think",
+    "start_timestamp_seconds": 637.12,
+    "end_timestamp_seconds": 720.8,
+    "start_timestamp": "10:37",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=637",
+    "chunk_index": 9,
+    "word_count": 241,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "odds versus getting odds Kelly will actually tell you to bet more on being on the favorites scenario uh despite the fact that it's the same amount of edge. It's a very strange property I think of of Kelly and I think it it it comes back to the fact that Kelly really penalizes volatility and so if when you're an underdog you're more likely to lose all your money and it really penal sort of like penalizes that versus um when you're a favorite. So just be aware that there's a bit of an asymmetry there. Um and then the next uh So one one thing about Kelly is like your your it's pretty obvious that it's a great tool for betting on binary outcomes like sports betting or just a bar bet that kind of thing. It's very obvious it's it's good for that but it's actually pretty interesting to help you think through um more like real life problems. The one one that uh example I kind of came up with here is insurance. So we're sort of everybody's constantly getting insurance offered to them in some way. Like here buy this umbrella insurance, buy this homeowners insurance, buy hey buy you bought a computer at Best Buy do you want the protection plan, right? That's an insurance that's all insurance like you're constantly being sold insurance cuz selling insurance is a good business. So uh",
+    "start_timestamp_seconds": 707.12,
+    "end_timestamp_seconds": 801.48,
+    "start_timestamp": "11:47",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=707",
+    "chunk_index": 10,
+    "word_count": 239,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "computer at Best Buy do you want the protection plan, right? That's an insurance that's all insurance like you're constantly being sold insurance cuz selling insurance is a good business. So uh So one of the an example here it's and this is I live in California. We've got a lot of a lot of fires here and like your and and uh homeowners insurance is crazy expensive. Uh so, you always have to think like, well, am I better off self-insuring? Self-insuring just means I just don't buy the insurance and I set aside the money I I might have spent on the insurance or I invest I can maybe set that aside, invest it, and then uh roll the dice and if if something happens to my home, um well, now I have to pay out of pocket to fix it, but instead of paying that that insurance fee every year. So, one way you could kind of think about this is I set up a little problem here where let's say that your home is and maybe this person doesn't live in California cuz this home is only $500,000, but there's a $500,000 home and uh their choice is do I pay $3,000 a year in insurance premiums? And what if I think that the chance of loss is is a one in 500? And this is not considering any of those other cases like, you know, your",
+    "start_timestamp_seconds": 789.24,
+    "end_timestamp_seconds": 874.56,
+    "start_timestamp": "13:09",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=789",
+    "chunk_index": 11,
+    "word_count": 241,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "year in insurance premiums? And what if I think that the chance of loss is is a one in 500? And this is not considering any of those other cases like, you know, your a tree falls on your house and you have to fix like a little part of your house and it's not a total wreckage of your house or whatever, but like just imagine total loss. You have a a one in 500 chance of a total loss. So, one way you could kind of think about that is you can run it through Kelly and say, \"Okay, my probability of not losing, that's my victory, of not having a insurance event, is 99.8% or 499 out of 500. Uh [snorts] therefore, uh my P is 99.8, my Q is .2, and then uh my payoff or in this case um what happens to you when you lose is, well, you lose $500,000 to try in an attempt to save $3,000 a year, right? So, you have this you're laying massive odds, right? You're you're laying massive odds here. You're you're really betting on the favorite. So, when we compute that, our B is .00 uh six. And when you compute that, it says that uh she can bet 66 and a half 66 a little about 66% of um the $500,000 would be an appropriate bet. So, this is um she is able this is saying that um",
+    "start_timestamp_seconds": 863.24,
+    "end_timestamp_seconds": 960.96,
+    "start_timestamp": "14:23",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=863",
+    "chunk_index": 12,
+    "word_count": 242,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "uh she can bet 66 and a half 66 a little about 66% of um the $500,000 would be an appropriate bet. So, this is um she is able this is saying that um what I well, you have to do is go back to be like, well, what's her bankroll? And so, I'm just kind of say like, what's her net worth? And if she does not she should insure this house. Uh but if she has a million dollars net worth for if her net worth is 500k, um she should probably buy the insurance. If she has a million dollar net worth, then uh now she is below full Kelly, but she's above half Kelly. So, she should pro I in my opinion, actually I think she should take the insurance. But, if she's worth $5 million in a 500k house, then this bet of not buying the insurance is only like 10% of Kelly. So, uh or sorry, it's like less than a quarter Kelly. So, she can skip the insurance. So, this is like one way you could kind of think about um you know, you can even use a Kelly framework to say, \"Hey, do I want to take the high deductible plan?\" Um you know, you got your um usually insurance at different deductibles. If you take the higher deductible plan, what you're saying is I'm going to be willing to pay out more",
+    "start_timestamp_seconds": 944.4,
+    "end_timestamp_seconds": 1038.76,
+    "start_timestamp": "15:44",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=944",
+    "chunk_index": 13,
+    "word_count": 241,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "take the high deductible plan?\" Um you know, you got your um usually insurance at different deductibles. If you take the higher deductible plan, what you're saying is I'm going to be willing to pay out more often out of pocket, um but in exchange for less premium. Well, those are the two Those are the variables that you're playing with. I mean, the premium that you save is the amount that you bet. And the amount that you're risking is what you would lose um if that insurance event did did end up happening. The difference between your deductible um in the two cases is is what you're um playing for. Right? So, you can use Kelly to think about not just sports betting, but like uh bets in real life. You just have to be aware that Kelly um Well, that's kind of what we're going to talk about next. Is that full Kelly is is actually a pretty it it it will maximize your growth rate, but it will feel very risky. So, you pretty most people in the in a betting context are not going to be betting full Kelly. Um First of all, one thing to note right away, if you bet more than full Kelly, you are uh destroying long-term uh CAGR um versus the optimal amount. So, you're like immediately this is a bad It's sort of uh",
+    "start_timestamp_seconds": 1027.32,
+    "end_timestamp_seconds": 1116.04,
+    "start_timestamp": "17:07",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=1027",
+    "chunk_index": 14,
+    "word_count": 235,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "away, if you bet more than full Kelly, you are uh destroying long-term uh CAGR um versus the optimal amount. So, you're like immediately this is a bad It's sort of uh It's a pretty bad decision right off the bat to go more than full Kelly, but going less than full Kelly, it's true that it will slow down your growth relative to optimal, but um it actually has very nice scaling properties. If you bet half Kelly, you you uh you cut your growth rate, but you actually cut your your uh your risk faster than your growth rate drops off. That's what's pretty pretty neat about it. So, um at half Kelly, you get 75% of the growth, but you're taking half the risk. So, uh there's a you get a lot of bank for your buck from going uh to a lower amount to a lower betting size than full Kelly. Obviously, there's a limit to that. If you were to go all the way to zero, then there's no growth rate at all, right? So, um half Kelly, even quarter Kelly, uh is very much like where a lot of people will tend to live on on betting scenarios. Um I'm going to I'll turn it over to Eric here cuz you're going to uh um I've been talking more in like these betting contexts where it's I sort of either/or situations, but in",
+    "start_timestamp_seconds": 1101.64,
+    "end_timestamp_seconds": 1190.8,
+    "start_timestamp": "18:21",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=1101",
+    "chunk_index": 15,
+    "word_count": 239,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "on on betting scenarios. Um I'm going to I'll turn it over to Eric here cuz you're going to uh um I've been talking more in like these betting contexts where it's I sort of either/or situations, but in investing uh that's it's we're rarely investing in a just an either/or situation. We're running We have portfolios. >> Yeah, it's exactly it. And so what Chris is alluding to there is there's different ways that we can build Kelly around different scenarios. So, we can have binary outcomes, multiple outcomes that are also discrete, and then continuous. And a lot of stuff that you do in the market actually could be bucketed into either of these depending on what exactly you're doing. But, a lot of what we do in trading is continuous. There's things that you could do throughout the life cycle of the trade and a range of outcomes that can exist. And that generally speaking leads to a couple important ways to frame how you want to use in the way that we think about using Kelly. First, take a close look at what's going into the different terms. And as Chris was talking about before, volatility is a really big part of a continuous system. And I want to give you an example in I think it's like maybe in a slide or two, but pay attention to that specifically because there are some",
+    "start_timestamp_seconds": 1178.6,
+    "end_timestamp_seconds": 1266.8,
+    "start_timestamp": "19:38",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=1178",
+    "chunk_index": 16,
+    "word_count": 238,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "a really big part of a continuous system. And I want to give you an example in I think it's like maybe in a slide or two, but pay attention to that specifically because there are some important trade-offs that come with that. So here this is showing you uh kind of a common issue that you can run across. So you come across Kelly, you're like, \"Oh, this is awesome. I can optimize my growth. Sick.\" And one of the ways that a lot of people will diversify things is through using multiple strategies, right? So you might sell a strangle there, do short put spread there, whatever. But if you use Kelly bet sizing on each of those positions in a vacuum there's a massive gap, which is a lot of times those things are correlated. So you might sell the short put spread in S&P and sell a strangle in Qs and you might size them both with Kelly, but all of a sudden your size is actually probably a bit bigger than you think. And it's the same thing. Think like strip everything else away, if you buy S&P and you buy Nasdaq, you know you're correlated there. And you know that that total risk is greater than each individual piece because there's overlap. That happens with Kelly sizing as well. The issue is that it can be a little bit",
+    "start_timestamp_seconds": 1257.88,
+    "end_timestamp_seconds": 1341.08,
+    "start_timestamp": "20:57",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=1257",
+    "chunk_index": 17,
+    "word_count": 235,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "you're correlated there. And you know that that total risk is greater than each individual piece because there's overlap. That happens with Kelly sizing as well. The issue is that it can be a little bit nefarious in that we don't fully see that if we think that we're optimizing for growth for each individual trade. Easiest way to circumnavigate this is actually go back to one of the slides we were showing you earlier that shows you the portfolio aware version of Kelly. All that does is take into account correlations. So then instead of stacking positions and being oversized a little bit too quickly, you can be a little bit more aware about it. Now going back to this real quick, emphasizing that volatility bit that we were talking about, I'm going to flip over to this one. And Chris, you were talking a little bit about Kelly sizing across these different scenarios, and obviously something that sticks out here is the fact that that top one is pretty low volatility. So, what do you make of that and then the subsequent sizing that happens because of that? >> Yeah, so one of the um one of the crazy things about very, very skewed distributions is that they they actually mask risk. A really an easy way to kind of like think about that is if I told you that you have some stock",
+    "start_timestamp_seconds": 1330.56,
+    "end_timestamp_seconds": 1417.4,
+    "start_timestamp": "22:10",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=1330",
+    "chunk_index": 18,
+    "word_count": 236,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "um one of the crazy things about very, very skewed distributions is that they they actually mask risk. A really an easy way to kind of like think about that is if I told you that you have some stock like let's say you have one stock, and I haven't worked out the numbers for this, but like um I think just a qualitative example will will highlight the uh the point I'm trying to make. If you let's say you have one stock that moves uh one and a one and a half percent a day. Um and let's say that it doesn't have any real tails to it. Like it just it's just something that moves one and a half percent a day, and it's like almost like just a normal just normally distributed kind of thing. And you had another asset that um moved only that moved uh say like 1% a day, but had like a 10% chance of falling 50% in one day. So, it has this like really fat tail to it, but it doesn't move and that tail shows up like very infrequently, but and then and then otherwise that asset just kind of like moves around like it's almost like a bond that just kind of like bounces around like a pretty tight range. What will happen is that asset the volatility is sort of the volatility of that asset is low. The like if there",
+    "start_timestamp_seconds": 1403.44,
+    "end_timestamp_seconds": 1494.4,
+    "start_timestamp": "23:23",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=1403",
+    "chunk_index": 19,
+    "word_count": 244,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "like it's almost like a bond that just kind of like bounces around like a pretty tight range. What will happen is that asset the volatility is sort of the volatility of that asset is low. The like if there was a straddle on that asset, it would not be a very expensive straddle because day-to-day it doesn't move around a lot. But, that would lead you to think that it was not very risky. When in in in some ways it's sort of riskier than the other thing that moves around 1 and 1/2% a day but doesn't have these really fat tails to it. So, what happens is Now, the options, by the way, the options market would sort of reveal the second stock to be a lot riskier than it appears by how much it moves around because it would bid up the the far out of the money puts even though the straddle was somewhat cheap. Whereas, in the first stock the straddle would be more expensive, but there wouldn't be a crazy skew to the options, right? What hap- So, what happens is if you think about Kelly, the inputs here are really about like um they're really more about the volatility in a sense. And so Kelly will tend to overstate how much you should bet in the presence of a lot of skew. The The risk um if you're only representing risk in this formula with a concept of",
+    "start_timestamp_seconds": 1483.96,
+    "end_timestamp_seconds": 1567.88,
+    "start_timestamp": "24:43",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=1483",
+    "chunk_index": 20,
+    "word_count": 246,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "in a sense. And so Kelly will tend to overstate how much you should bet in the presence of a lot of skew. The The risk um if you're only representing risk in this formula with a concept of volatility, you are not giving a full picture of the risk. So Kelly will end up uh like I said, it will end up encouraging you to bet more than you really should. So in this diagram, we have this thing called low vol. You see that There's that blue line that says \"Oh, uh this is the low a low vol strategy, the premium seller.\" And it feels like selling premium is oftentimes low vol because especially if you're selling way out of the money options, it just feels like you win every week. And Kelly will completely uh uh you you just cannot use Kelly in that way because it's going to tell you to bet way more than you can afford to lose in that sense. So, I just want to highlight that Kelly is deeply sensitive to the fact that you're just giving it a volatility in a sense. Um but volatility is not the only thing that describes the risk of any asset. >> Literally perfect. And especially for people that are selling premium specifically a lot of times the the tails end up making a break they don't happen that much. So, they can hide pretty well.",
+    "start_timestamp_seconds": 1551.84,
+    "end_timestamp_seconds": 1644.16,
+    "start_timestamp": "25:51",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=1551",
+    "chunk_index": 21,
+    "word_count": 242,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": ">> Literally perfect. And especially for people that are selling premium specifically a lot of times the the tails end up making a break they don't happen that much. So, they can hide pretty well. And this leads to one final important point. Which is if you're using Kelly in any of those facets that we just showed you, it's based on some inputs. One of the important inputs is your expected edge. And we kind of like just take that for granted, but the reality is is in trading you probably don't know that. You might have a good guess, but you might be off. And depending on how volatile the thing is, those two have a relationship. So, if you're off a little and there's a lot of vol, that can back you into a bad corner where you might be completely missized. So, this just gives you another, you know, piece to consider when you're using sizing and generally speaking why most of us when we use things like Kelly, we do not rest on full Kelly. You can save yourself, add a little bit of a fudge factor, and move down half, quarter, again, whatever variant you don't have to move in even increments like that either. It can be, you know, whatever you need it to be. But just know that there's a huge assumption, and one of those huge assumptions is",
+    "start_timestamp_seconds": 1632.4,
+    "end_timestamp_seconds": 1712.52,
+    "start_timestamp": "27:12",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=1632",
+    "chunk_index": 22,
+    "word_count": 237,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "don't have to move in even increments like that either. It can be, you know, whatever you need it to be. But just know that there's a huge assumption, and one of those huge assumptions is something that you literally don't know. So, you have to take that into account. So, >> Yeah, that's >> You now know Oh, sorry, go ahead. I was going to say >> I was going to say I love I love that chart cuz it's like it's such a stark thing there. It's like, \"Hey, if your edge is half what you think it was, then now full Kelly is like you're compounding at zero.\" >> Right. >> that's that's like, \"Hey, I thought I had a 10% edge and I only have a 5% edge. And I've just completely like just which is not a crazy thing to think. I mean, you can certainly be wrong by that amount on your edge.\" It's like, \"Hey, I you know, in in in options trading would be like I think I'm getting 4 cents of edge on this trade.\" But it's like, \"If you were like, no, you were actually only getting 2 cents of edge, I wouldn't have been like, that's impossible.\" I'd have been like, \"Oh, okay. [clears throat] I mean, that's that's like, okay. Like, I'd like to hear why, but that that it's 100% like completely within the realm of possibility.",
+    "start_timestamp_seconds": 1704.44,
+    "end_timestamp_seconds": 1769.88,
+    "start_timestamp": "28:24",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=1704",
+    "chunk_index": 23,
+    "word_count": 240,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  },
+  {
+    "video_id": "Xsj2yue-QKk",
+    "title": "Kelly Criterion vs. Intuition: How to Actually Size Your Trades | The Options Trench",
+    "text": "have been like, that's impossible.\" I'd have been like, \"Oh, okay. [clears throat] I mean, that's that's like, okay. Like, I'd like to hear why, but that that it's 100% like completely within the realm of possibility. Like our error bars around how much risk we have are pretty wide. And this is saying that it's like at full Kelly, you have no margin for error or very little margin for error. You can only be off by half. And then you've just blown your trade up entirely. Whereas like if you're at quarter Kelly, um it's so much more forgiving. I mean, even even here like at quarter Kelly, um you are still compounding at a very healthy rate even if your edge was half or even a quarter of what you thought it was. >> Yeah, it gives you a little bit of room to maneuver. And markets are imperfect, continually dealing with shifting information. So you now know a lot more about Kelly than probably 90% of people cuz it's not just the fact that it exists. There's a lot of different forms, how to use it, and you know a couple of the gotchas that are associated with it. We will see you guys on the next one.",
+    "start_timestamp_seconds": 1758.24,
+    "end_timestamp_seconds": 1821.2,
+    "start_timestamp": "29:18",
+    "video_url": "https://www.youtube.com/watch?v=Xsj2yue-QKk",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=Xsj2yue-QKk&t=1758",
+    "chunk_index": 24,
+    "word_count": 212,
+    "upload_date": "20260925",
+    "published_at": "2026-09-25T19:00:13Z",
+    "duration": 1823,
+    "related_wiki_pages": [
+      "strategies/kelly-criterion",
+      "strategies/portfolio-first"
+    ]
+  }
+]

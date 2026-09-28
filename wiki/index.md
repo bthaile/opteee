@@ -1,12 +1,12 @@
 ---
 type: index
 title: "OPTEEE Wiki - Knowledge Graph Index"
-last_updated: 2026-09-20
+last_updated: 2026-09-27
 status: generated
 generated_by: scripts/build_wiki_index.py
-knowledge_page_count: 462
-source_count: 1195
-graph_edge_count: 2034
+knowledge_page_count: 467
+source_count: 1199
+graph_edge_count: 2037
 ---
 
 # OPTEEE Wiki - Knowledge Graph Index
@@ -17,17 +17,17 @@ Start here, choose relevant graph nodes or source-derived candidate nodes, then 
 
 ## Graph summary
 
-- Materialized knowledge nodes: 462
-- Knowledge edges: 2034
-- Source pages: 1195
+- Materialized knowledge nodes: 467
+- Knowledge edges: 2037
+- Source pages: 1199
 - Registry-recategorized source mentions: 0
 
 | top-level category | materialized graph nodes | registered candidate slugs | registered source mentions | unregistered raw slugs |
 |---|---:|---:|---:|---:|
-| Concepts | 288 | 1534 | 14927 | 0 |
-| Strategies | 80 | 181 | 2858 | 0 |
-| Securities | 88 | 511 | 3337 | 0 |
-| People | 6 | 139 | 1819 | 0 |
+| Concepts | 289 | 1543 | 15008 | 0 |
+| Strategies | 84 | 184 | 2886 | 0 |
+| Securities | 88 | 511 | 3348 | 0 |
+| People | 6 | 139 | 1824 | 0 |
 | Macro | 0 | 0 | 0 | 0 |
 | Syntheses | 0 | 0 | 0 | 0 |
 
@@ -85,8 +85,8 @@ These pages are currently in `wiki/graph.json` and therefore appear in the inter
 - [[concepts/market-maker|Market Maker]] - Market makers are financial intermediaries who provide liquidity by continuously quoting buy and sell prices, optimizing their operations for profit rather than deliberately man... (sources: 153, degree: 46)
   - links: [[concepts/bid-ask-spread|Bid Ask Spread]], [[concepts/black-scholes|Black Scholes]], [[concepts/counterparty|Counterparty]], [[concepts/dark-pools|Dark Pools]], [[concepts/dealer-gamma|Dealer Gamma]], [[concepts/dealer-positioning|Dealer Positioning]], [[concepts/delta|Delta]], [[concepts/derivatives|Derivatives]], 38 more
   - backing sources: [[sources/-8XV5_gBP6I]], [[sources/-XQGZSyM8O0]], [[sources/-jJkuhl2wyY]], [[sources/-yvQLv-q9uk]], [[sources/1O0HX-C-4PU]], [[sources/29BtSz0VpA4]], [[sources/2uzcV42Gc7w]], [[sources/30aBq8F5FB8]], [[sources/4q843j_0kcc]], [[sources/5G0_P4igVWQ]], 143 more
-- [[concepts/gamma|Gamma]] - Gamma measures the rate at which delta changes as the underlying price moves, making it a critical Greek for understanding how option positions respond to price action. Long opt... (sources: 147, degree: 30)
-  - links: [[concepts/at-the-money|At The Money]], [[concepts/charm|Charm]], [[concepts/convexity|Convexity]], [[concepts/days-to-expiration|Days To Expiration]], [[concepts/delta|Delta]], [[concepts/delta-decay|Delta Decay]], [[concepts/discretionary-trading|Discretionary Trading]], [[concepts/gamma-scalping|Gamma Scalping]], 22 more
+- [[concepts/gamma|Gamma]] - Gamma measures the rate at which delta changes as the underlying price moves, making it a critical Greek for understanding how option positions respond to price action. Long opt... (sources: 147, degree: 31)
+  - links: [[concepts/at-the-money|At The Money]], [[concepts/charm|Charm]], [[concepts/convexity|Convexity]], [[concepts/days-to-expiration|Days To Expiration]], [[concepts/delta|Delta]], [[concepts/delta-decay|Delta Decay]], [[concepts/discretionary-trading|Discretionary Trading]], [[concepts/gamma-scalping|Gamma Scalping]], 23 more
   - backing sources: [[sources/-CUgdXmtp5o]], [[sources/-MQ7kNM0dtI]], [[sources/0a1UROsFf_A]], [[sources/0fty1k3IGgY]], [[sources/0iZJfIu3Nac]], [[sources/0kXY1hY--Ww]], [[sources/1kGksRBt2aA]], [[sources/1rqLJW1nK40]], [[sources/2Dv_fRuuTcc]], [[sources/2dP1Cu9Pjt8]], 137 more
 - [[concepts/volatility-clustering|Volatility Clustering]] - Volatility clustering refers to the tendency for periods of high volatility to concentrate in specific securities, sectors, or timeframes rather than distributing uniformly acro... (sources: 146, degree: 13)
   - links: [[concepts/delta|Delta]], [[concepts/gap-risk|Gap Risk]], [[concepts/institutional-ownership|Institutional Ownership]], [[concepts/position-sizing|Position Sizing]], [[concepts/risk-management|Risk Management]], [[concepts/robustness|Robustness]], [[concepts/short-gamma|Short Gamma]], [[concepts/standard-deviation-move|Standard Deviation Move]], 5 more
@@ -799,6 +799,9 @@ These pages are currently in `wiki/graph.json` and therefore appear in the inter
 - [[concepts/loss-management|Loss Management]] - Loss management is the predetermined plan for exiting or adjusting a trade when it moves against the trader, grounded in the underlying profit mechanism rather than arbitrary pe... (sources: 6, degree: 5)
   - links: [[concepts/delta|Delta]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/profit-mechanism|Profit Mechanism]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/G92IzbFzhN8]], [[sources/NCZNV1K2Tcw]], [[sources/O2tcRxX_Ju0]], [[sources/OHsa-XZ6o_M]], [[sources/Yz5p1a0ArL0]], [[sources/_v0phs6V4nI]]
+- [[concepts/margin-requirement|Margin Requirement]] - Margin requirement is the amount of capital a broker requires a trader to hold in reserve to open and maintain a short options position, serving as a collateral buffer against p... (sources: 6, degree: 3)
+  - links: [[concepts/gamma|Gamma]], [[securities/spy|SPY]], [[strategies/short-put|Short Put]]
+  - backing sources: [[sources/Gti8ecxsHz0]], [[sources/KlHlEa4t-fU]], [[sources/MJX5QoAfLMw]], [[sources/SAAznQCMSco]], [[sources/a4W-VNEdyJM]], [[sources/cLI41tgOpLc]]
 - [[concepts/number-of-decisions|Number Of Decisions]] - Number of Decisions refers to the principle that trading success is fundamentally driven by the volume of decisions made over time rather than the quality of any individual trad... (sources: 6, degree: 5)
   - links: [[concepts/edge|Edge]], [[concepts/emotional-discipline|Emotional Discipline]], [[concepts/position-sizing|Position Sizing]], [[concepts/process-over-outcome|Process Over Outcome]], [[concepts/risk-management|Risk Management]]
   - backing sources: [[sources/3c6fsUwB1pw]], [[sources/80QGX7wPlJk]], [[sources/IBI4jiNvxJA]], [[sources/OenKyq1bdeM]], [[sources/cDIVSQmRYBQ]], [[sources/eHurZBXO5ck]]
@@ -907,8 +910,8 @@ These pages are currently in `wiki/graph.json` and therefore appear in the inter
 - [[strategies/short-premium|Short Premium]] - Short premium is an options strategy in which a trader sells options (puts, calls, or combinations like straddles) to collect upfront premium, betting that the underlying price... (sources: 228, degree: 31)
   - links: [[concepts/call-skew|Call Skew]], [[concepts/correlation|Correlation]], [[concepts/credit-spread|Credit Spread]], [[concepts/delta|Delta]], [[concepts/delta-hedging|Delta Hedging]], [[concepts/delta-neutral|Delta Neutral]], [[concepts/earnings-vol-play|Earnings Vol Play]], [[concepts/expected-value|Expected Value]], 23 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-qSV5WZNlP4]], [[sources/05aJUfUKE5Q]], [[sources/0iZJfIu3Nac]], [[sources/0phfdNnT3Q0]], [[sources/1G-h4tqfQEM]], [[sources/26vVCJY9t00]], [[sources/2XS6kMnDUT4]], [[sources/2jG5SD-3F0w]], [[sources/2lvTJ6_Oc9E]], 218 more
-- [[strategies/short-put|Short Put]] - A short put is an options-selling strategy where a trader sells a put option to collect premium, profiting if the underlying stock stays above the strike price at expiration. Th... (sources: 196, degree: 42)
-  - links: [[concepts/annualized-return|Annualized Return]], [[concepts/assignment|Assignment]], [[concepts/basis-adjustment|Basis Adjustment]], [[concepts/box-spread|Box Spread]], [[concepts/break-even|Break Even]], [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/cost-basis|Cost Basis]], [[concepts/covered-call|Covered Call]], 34 more
+- [[strategies/short-put|Short Put]] - A short put is an options-selling strategy where a trader sells a put option to collect premium, profiting if the underlying stock stays above the strike price at expiration. Th... (sources: 196, degree: 43)
+  - links: [[concepts/annualized-return|Annualized Return]], [[concepts/assignment|Assignment]], [[concepts/basis-adjustment|Basis Adjustment]], [[concepts/box-spread|Box Spread]], [[concepts/break-even|Break Even]], [[concepts/capital-efficiency|Capital Efficiency]], [[concepts/cost-basis|Cost Basis]], [[concepts/covered-call|Covered Call]], 35 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-MQ7kNM0dtI]], [[sources/-M_lC4RVmvM]], [[sources/-XQGZSyM8O0]], [[sources/-Zqys05mhkw]], [[sources/0-BUA66HVWg]], [[sources/04CvwImyHTA]], [[sources/05PKCIAe4_0]], [[sources/0fty1k3IGgY]], [[sources/0ocJTw3Tz9U]], 186 more
 - [[strategies/long-call|Long Call]] - A long call is a directional options strategy where a trader buys a call option to profit from an expected price increase, offering unlimited upside potential with defined risk... (sources: 180, degree: 20)
   - links: [[concepts/catalyst|Catalyst]], [[concepts/delta|Delta]], [[concepts/direction|Direction]], [[concepts/directional-trading|Directional Trading]], [[concepts/gamma-ramp|Gamma Ramp]], [[concepts/intrinsic-value|Intrinsic Value]], [[concepts/leverage|Leverage]], [[concepts/moneyness|Moneyness]], 12 more
@@ -1087,6 +1090,9 @@ These pages are currently in `wiki/graph.json` and therefore appear in the inter
 - [[strategies/covered-strangle|Covered Strangle (a.k.a. the "Coverage Triangle")]] - Long stock + short puts + ratio short calls. The host brands his version the "coverage triangle" / "covered triangle" — it is the same position as a covered strangle. 1rqLJW1nK4... (sources: 3, degree: 11)
   - links: [[concepts/delta|Delta]], [[concepts/implied-volatility|Implied Volatility (IV)]], [[concepts/implied-volatility-rank|Implied Volatility Rank]], [[concepts/scaling-in|Scaling In]], [[concepts/theta-decay|Theta Decay]], [[concepts/volatility-risk-premium|Volatility Risk Premium (VRP)]], [[people/euan-sinclair|Euan Sinclair]], [[securities/gme-saga|Gme Saga]], 3 more
   - backing sources: [[sources/AJP8M8DQ_1U]], [[sources/1rqLJW1nK40]], [[sources/kvzQJ3wFaZs]]
+- [[strategies/kelly-criterion|Kelly Criterion]] - The Kelly Criterion is a mathematical framework for determining optimal position sizing to maximize long-term compounded wealth by balancing edge and risk. In options trading, i... (sources: 3, degree: 0)
+  - links: none
+  - backing sources: [[sources/EVXBft9mslk]], [[sources/JdPGS9FK-xw]], [[sources/Xsj2yue-QKk]]
 - [[strategies/long-premium|Long Premium]] - Long premium is not directly defined in the supplied material. The three video summaries discuss vertical spreads, implied volatility metrics for strategy selection, and sector-... (sources: 3, degree: 2)
   - links: [[concepts/mean-reversion|Mean Reversion]], [[strategies/short-premium|Short Premium]]
   - backing sources: [[sources/TvMC14yH7ck]], [[sources/Uu3DwGTOYHY]], [[sources/yVf9c0ZyyYw]]
@@ -1114,6 +1120,9 @@ These pages are currently in `wiki/graph.json` and therefore appear in the inter
 - [[strategies/overnight-risk-premium|Overnight Risk Premium]] - Overnight risk premium refers to the additional return or risk exposure associated with holding positions through overnight and weekend periods when markets are closed, making i... (sources: 3, degree: 0)
   - links: none
   - backing sources: [[sources/Lp-SPerQHgY]], [[sources/fNW7e0SdtG0]], [[sources/uOY6kRco6r4]]
+- [[strategies/portfolio-first|Portfolio First]] - Portfolio First" is an options-trading approach that prioritizes managing overall portfolio risk and position sizing discipline before entering individual trades, rather than si... (sources: 3, degree: 0)
+  - links: none
+  - backing sources: [[sources/A6sBDAFOAZU]], [[sources/ByVdcvNqi2E]], [[sources/Xsj2yue-QKk]]
 - [[strategies/position-sizing|Position Sizing]] - Position sizing is the allocation of capital to individual trades and is the only element of risk a trader can control before execution occurs. Proper position sizing prevents r... (sources: 3, degree: 0)
   - links: none
   - backing sources: [[sources/BrLsg_ig6uk]], [[sources/JdPGS9FK-xw]], [[sources/TigQwIC0PIU]]
@@ -1123,6 +1132,9 @@ These pages are currently in `wiki/graph.json` and therefore appear in the inter
 - [[strategies/protective-put|Protective Put]] - A protective put is a hedging strategy in which an investor buys a put option on an underlying position to limit downside risk while retaining upside potential. Like all hedges,... (sources: 3, degree: 0)
   - links: none
   - backing sources: [[sources/Lp-SPerQHgY]], [[sources/bhvVBNtOMXk]], [[sources/gpTKidnOqLg]]
+- [[strategies/protective-puts|Protective Puts]] - A protective put is a hedging strategy in which an investor buys put options to insure against downside risk in an underlying position, providing a defined floor below which los... (sources: 3, degree: 0)
+  - links: none
+  - backing sources: [[sources/DRzKRGizkXw]], [[sources/MJX5QoAfLMw]], [[sources/vbvJRKTsRuk]]
 - [[strategies/put-spread|Put Spread]] - A put spread is a multi-leg options strategy that involves buying and selling put options at different strike prices to define risk and reduce the cost of entry compared to buyi... (sources: 3, degree: 0)
   - links: none
   - backing sources: [[sources/PGmVCL_kf44]], [[sources/gEo0z9OXd1I]], [[sources/vT5zl_KGnVo]]
@@ -1135,6 +1147,9 @@ These pages are currently in `wiki/graph.json` and therefore appear in the inter
 - [[strategies/short-call-spread|Short Call Spread]] - A short call spread is a vertical spread strategy where a trader sells a call option at one strike price and buys a call option at a higher strike price, creating a defined-risk... (sources: 3, degree: 0)
   - links: none
   - backing sources: [[sources/ELLig97y0io]], [[sources/erYCMg8mwzI]], [[sources/l5k56cSP-Bs]]
+- [[strategies/short-calls|Short Calls]] - A short call is an options strategy where a trader sells a call contract, profiting if the underlying asset stays below the strike price or declines, with the seller collecting... (sources: 3, degree: 0)
+  - links: none
+  - backing sources: [[sources/riofzmWfQm8]], [[sources/xDlGMSj4rME]], [[sources/yVf9c0ZyyYw]]
 - [[strategies/systematic-trading|Systematic Trading]] - Systematic trading in options involves applying disciplined, rule-based decision-making processes rather than relying on emotion or intuition, with success depending on identify... (sources: 3, degree: 0)
   - links: none
   - backing sources: [[sources/Lp-SPerQHgY]], [[sources/Wxndr3Ady24]], [[sources/rLRUpaTcrxE]]
@@ -1147,8 +1162,8 @@ These pages are currently in `wiki/graph.json` and therefore appear in the inter
 
 ### Securities
 
-- [[securities/spy|SPY]] - SPY is not explicitly defined in the supplied material, though the corpus frequently references related broad-market indices like SPX (S&P 500 Index) and discusses general equit... (sources: 325, degree: 168)
-  - links: [[concepts/ai-assisted-trading|Ai Assisted Trading]], [[concepts/asset-allocation|Asset Allocation]], [[concepts/beta|Beta]], [[concepts/bid-ask-spread|Bid Ask Spread]], [[concepts/bond-vigilantes|Bond Vigilantes]], [[concepts/break-even|Break Even]], [[concepts/compound-annual-growth-rate|Compound Annual Growth Rate]], [[concepts/consolidation|Consolidation]], 160 more
+- [[securities/spy|SPY]] - SPY is not explicitly defined in the supplied material, though the corpus frequently references related broad-market indices like SPX (S&P 500 Index) and discusses general equit... (sources: 325, degree: 169)
+  - links: [[concepts/ai-assisted-trading|Ai Assisted Trading]], [[concepts/asset-allocation|Asset Allocation]], [[concepts/beta|Beta]], [[concepts/bid-ask-spread|Bid Ask Spread]], [[concepts/bond-vigilantes|Bond Vigilantes]], [[concepts/break-even|Break Even]], [[concepts/compound-annual-growth-rate|Compound Annual Growth Rate]], [[concepts/consolidation|Consolidation]], 161 more
   - backing sources: [[sources/--aVVZQ5Pxw]], [[sources/-CUgdXmtp5o]], [[sources/-NzEb1zc1bw]], [[sources/-XQGZSyM8O0]], [[sources/-jJkuhl2wyY]], [[sources/-qSV5WZNlP4]], [[sources/0BI8bymKOIE]], [[sources/0fty1k3IGgY]], [[sources/0gle3um9MoE]], [[sources/0iZJfIu3Nac]], 315 more
 - [[securities/gme|GME]] - GameStop (GME) is a frequently analyzed equity security in the options-trading channel, used as a case study for volatility strategies and technical analysis due to its exceptio... (sources: 258, degree: 78)
   - links: [[concepts/call-skew|Call Skew]], [[concepts/consolidation|Consolidation]], [[concepts/cost-basis|Cost Basis]], [[concepts/covered-strangle|Covered Strangle]], [[concepts/dark-pools|Dark Pools]], [[concepts/dealer-gamma|Dealer Gamma]], [[concepts/dealer-positioning|Dealer Positioning]], [[concepts/deep-itm-calls|Deep Itm Calls]], 70 more
@@ -1439,57 +1454,57 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 
 ### Concepts
 
-- [[concepts/risk-management|risk-management]] - 552 source mention(s)
-- [[concepts/position-sizing|position-sizing]] - 507 source mention(s)
-- [[concepts/implied-volatility|implied-volatility]] - 492 source mention(s)
-- [[concepts/delta|delta]] - 354 source mention(s)
+- [[concepts/risk-management|risk-management]] - 555 source mention(s)
+- [[concepts/position-sizing|position-sizing]] - 510 source mention(s)
+- [[concepts/implied-volatility|implied-volatility]] - 495 source mention(s)
+- [[concepts/delta|delta]] - 355 source mention(s)
 - [[concepts/process-over-outcome|process-over-outcome]] - 328 source mention(s)
 - [[concepts/trading-psychology|trading-psychology]] - 273 source mention(s)
 - [[concepts/profit-mechanism|profit-mechanism]] - 218 source mention(s)
-- [[concepts/edge|edge]] - 216 source mention(s)
+- [[concepts/edge|edge]] - 217 source mention(s)
 - [[concepts/emotional-discipline|emotional-discipline]] - 210 source mention(s)
-- [[concepts/moneyness|moneyness]] - 205 source mention(s)
+- [[concepts/moneyness|moneyness]] - 206 source mention(s)
 - [[concepts/price-action|price-action]] - 203 source mention(s)
 - [[concepts/technical-analysis|technical-analysis]] - 198 source mention(s)
-- [[concepts/volatility-term-structure|volatility-term-structure]] - 172 source mention(s)
-- [[concepts/market-regimes|market-regimes]] - 166 source mention(s)
+- [[concepts/volatility-term-structure|volatility-term-structure]] - 174 source mention(s)
+- [[concepts/market-regimes|market-regimes]] - 167 source mention(s)
 - [[concepts/gamma|gamma]] - 166 source mention(s)
 - [[concepts/trading-plan|trading-plan]] - 160 source mention(s)
 - [[concepts/market-efficiency|market-efficiency]] - 159 source mention(s)
 - [[concepts/market-maker|market-maker]] - 156 source mention(s)
-- [[concepts/delta-hedging|delta-hedging]] - 151 source mention(s)
-- [[concepts/volatility-clustering|volatility-clustering]] - 149 source mention(s)
+- [[concepts/delta-hedging|delta-hedging]] - 153 source mention(s)
+- [[concepts/volatility-clustering|volatility-clustering]] - 150 source mention(s)
 - [[concepts/leverage|leverage]] - 139 source mention(s)
 - [[concepts/support-and-resistance|support-and-resistance]] - 138 source mention(s)
+- [[concepts/capital-efficiency|capital-efficiency]] - 138 source mention(s)
+- [[concepts/volatility-risk-premium|volatility-risk-premium]] - 138 source mention(s)
 - [[concepts/theta-decay|theta-decay]] - 138 source mention(s)
-- [[concepts/capital-efficiency|capital-efficiency]] - 137 source mention(s)
 - [[concepts/theta|theta]] - 136 source mention(s)
-- [[concepts/volatility-risk-premium|volatility-risk-premium]] - 136 source mention(s)
 - [[concepts/vega|vega]] - 123 source mention(s)
 - [[concepts/volume-analysis|volume-analysis]] - 122 source mention(s)
 - [[concepts/momentum|momentum]] - 121 source mention(s)
 - [[concepts/order-flow|order-flow]] - 117 source mention(s)
 - [[concepts/earnings-move|earnings-move]] - 115 source mention(s)
 - [[concepts/realized-volatility|realized-volatility]] - 114 source mention(s)
-- [[concepts/expected-move|expected-move]] - 112 source mention(s)
-- [[concepts/expected-value|expected-value]] - 110 source mention(s)
+- [[concepts/expected-move|expected-move]] - 113 source mention(s)
+- [[concepts/expected-value|expected-value]] - 112 source mention(s)
 - [[concepts/sector-rotation|sector-rotation]] - 110 source mention(s)
 - [[concepts/market-breadth|market-breadth]] - 106 source mention(s)
+- [[concepts/volatility-skew|volatility-skew]] - 99 source mention(s)
 - [[concepts/delta-neutral|delta-neutral]] - 99 source mention(s)
-- [[concepts/volatility-skew|volatility-skew]] - 98 source mention(s)
 - [[concepts/unusual-options-activity|unusual-options-activity]] - 98 source mention(s)
 - [[concepts/extrinsic-value|extrinsic-value]] - 95 source mention(s)
 - [[concepts/trading-log|trading-log]] - 93 source mention(s)
 - [[concepts/backtesting|backtesting]] - 89 source mention(s)
 - [[concepts/assignment|assignment]] - 87 source mention(s)
 - [[concepts/trend-identification|trend-identification]] - 85 source mention(s)
-- [[concepts/mean-reversion|mean-reversion]] - 84 source mention(s)
+- [[concepts/mean-reversion|mean-reversion]] - 85 source mention(s)
 - [[concepts/implied-volatility-percentile|implied-volatility-percentile]] - 83 source mention(s)
 - [[concepts/portfolio-first|portfolio-first]] - 82 source mention(s)
 - [[concepts/expected-return|expected-return]] - 78 source mention(s)
 - [[concepts/days-to-expiration|days-to-expiration]] - 78 source mention(s)
-- [[concepts/open-interest|open-interest]] - 73 source mention(s)
-- [[concepts/bid-ask-spread|bid-ask-spread]] - 72 source mention(s)
+- [[concepts/open-interest|open-interest]] - 74 source mention(s)
+- [[concepts/bid-ask-spread|bid-ask-spread]] - 73 source mention(s)
 - [[concepts/moving-averages|moving-averages]] - 71 source mention(s)
 - [[concepts/intrinsic-value|intrinsic-value]] - 70 source mention(s)
 - [[concepts/realized-vs-unrealized-pnl|realized-vs-unrealized-pnl]] - 68 source mention(s)
@@ -1504,7 +1519,7 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - [[concepts/zero-dte|zero-dte]] - 55 source mention(s)
 - [[concepts/probability-of-touch|probability-of-touch]] - 54 source mention(s)
 - [[concepts/confirmation-bias|confirmation-bias]] - 53 source mention(s)
-- [[concepts/dealer-positioning|dealer-positioning]] - 51 source mention(s)
+- [[concepts/dealer-positioning|dealer-positioning]] - 52 source mention(s)
 - [[concepts/profit-taking|profit-taking]] - 50 source mention(s)
 - [[concepts/trend-following|trend-following]] - 48 source mention(s)
 - [[concepts/opportunity-cost|opportunity-cost]] - 48 source mention(s)
@@ -1513,10 +1528,10 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - [[concepts/event-volatility|event-volatility]] - 46 source mention(s)
 - [[concepts/short-squeeze|short-squeeze]] - 45 source mention(s)
 - [[concepts/volatility-surface|volatility-surface]] - 45 source mention(s)
+- [[concepts/volatility|volatility]] - 44 source mention(s)
 - [[concepts/gamma-exposure|gamma-exposure]] - 44 source mention(s)
-- [[concepts/volatility|volatility]] - 43 source mention(s)
+- [[concepts/kelly-criterion|kelly-criterion]] - 43 source mention(s)
 - [[concepts/liquidity-cycle|liquidity-cycle]] - 41 source mention(s)
-- [[concepts/kelly-criterion|kelly-criterion]] - 41 source mention(s)
 - [[concepts/consolidation|consolidation]] - 40 source mention(s)
 - [[concepts/outlier-strategy-process|outlier-strategy-process]] - 40 source mention(s)
 - [[concepts/pnl-attribution|pnl-attribution]] - 40 source mention(s)
@@ -1539,29 +1554,29 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - [[concepts/tariffs|tariffs]] - 33 source mention(s)
 - [[concepts/implied-volatility-rank|implied-volatility-rank]] - 33 source mention(s)
 - [[concepts/liquidity|liquidity]] - 33 source mention(s)
+- [[concepts/short-premium|short-premium]] - 32 source mention(s)
 - [[concepts/naked-short-selling|naked-short-selling]] - 32 source mention(s)
-- [[concepts/short-premium|short-premium]] - 31 source mention(s)
 - [[concepts/covered-call|covered-call]] - 31 source mention(s)
 - [[concepts/contrarian-sentiment|contrarian-sentiment]] - 30 source mention(s)
+- [[concepts/correlation|correlation]] - 30 source mention(s)
 - [[concepts/breakout|breakout]] - 29 source mention(s)
-- [[concepts/correlation|correlation]] - 29 source mention(s)
 - [[concepts/payment-for-order-flow|payment-for-order-flow]] - 28 source mention(s)
+- [[concepts/skew|skew]] - 28 source mention(s)
 - [[concepts/stop-loss|stop-loss]] - 27 source mention(s)
 - [[concepts/probability-cone|probability-cone]] - 27 source mention(s)
-- [[concepts/skew|skew]] - 27 source mention(s)
 - [[concepts/standard-deviation-channels|standard-deviation-channels]] - 26 source mention(s)
+- `variance-risk-premium` - 26 source mention(s)
 - [[concepts/volatility-mean-reversion|volatility-mean-reversion]] - 25 source mention(s)
-- `variance-risk-premium` - 25 source mention(s)
 - [[concepts/time-frames|time-frames]] - 25 source mention(s)
 - [[concepts/mark-to-market|mark-to-market]] - 24 source mention(s)
 - [[concepts/supply-and-demand|supply-and-demand]] - 24 source mention(s)
 - [[concepts/short-put|short-put]] - 24 source mention(s)
 - [[concepts/return-on-invested-capital|return-on-invested-capital]] - 23 source mention(s)
 - [[concepts/dollar-cost-averaging|dollar-cost-averaging]] - 23 source mention(s)
+- [[concepts/risk-reward|risk-reward]] - 23 source mention(s)
 - [[concepts/capped-upside|capped-upside]] - 22 source mention(s)
 - [[concepts/trust-your-plan|trust-your-plan]] - 22 source mention(s)
 - [[concepts/dealer-gamma|dealer-gamma]] - 22 source mention(s)
-- [[concepts/risk-reward|risk-reward]] - 22 source mention(s)
 - [[concepts/geopolitical-risk|geopolitical-risk]] - 21 source mention(s)
 - [[concepts/multi-timeframe-analysis|multi-timeframe-analysis]] - 21 source mention(s)
 - [[concepts/higher-highs-lower-lows|higher-highs-lower-lows]] - 21 source mention(s)
@@ -1571,8 +1586,8 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - [[concepts/charm|charm]] - 20 source mention(s)
 - [[concepts/fomc|fomc]] - 20 source mention(s)
 - [[concepts/standard-deviation-move|standard-deviation-move]] - 20 source mention(s)
+- [[concepts/market-structure|market-structure]] - 19 source mention(s)
 - [[concepts/probabilistic-outcomes|probabilistic-outcomes]] - 19 source mention(s)
-- [[concepts/market-structure|market-structure]] - 18 source mention(s)
 - [[concepts/higher-order-greeks|higher-order-greeks]] - 18 source mention(s)
 - [[concepts/recession|recession]] - 17 source mention(s)
 - [[concepts/gamma-scalping|gamma-scalping]] - 17 source mention(s)
@@ -1584,26 +1599,26 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - [[concepts/yield-curve|yield-curve]] - 17 source mention(s)
 - [[concepts/buy-and-hold|buy-and-hold]] - 17 source mention(s)
 - [[concepts/mental-stop-vs-hard-stop|mental-stop-vs-hard-stop]] - 16 source mention(s)
+- [[concepts/call-skew|call-skew]] - 16 source mention(s)
 - [[concepts/fat-tails|fat-tails]] - 16 source mention(s)
 - [[concepts/large-language-model|large-language-model]] - 16 source mention(s)
 - [[concepts/deep-itm-calls|deep-itm-calls]] - 16 source mention(s)
+- [[concepts/tail-risk|tail-risk]] - 16 source mention(s)
 - [[concepts/quantitative-research|quantitative-research]] - 16 source mention(s)
-- [[concepts/call-skew|call-skew]] - 15 source mention(s)
 - `cash-secured-put` - 15 source mention(s)
 - [[concepts/risk-taking|risk-taking]] - 15 source mention(s)
+- [[concepts/market-microstructure|market-microstructure]] - 15 source mention(s)
+- [[concepts/hedging|hedging]] - 15 source mention(s)
 - [[concepts/monte-carlo-simulation|monte-carlo-simulation]] - 15 source mention(s)
+- [[concepts/premium|premium]] - 14 source mention(s)
 - [[concepts/annualized-return|annualized-return]] - 14 source mention(s)
 - [[concepts/risk-first|risk-first]] - 14 source mention(s)
 - [[concepts/dunning-kruger-effect|dunning-kruger-effect]] - 14 source mention(s)
 - [[concepts/options-chain-analysis|options-chain-analysis]] - 14 source mention(s)
 - [[concepts/margin|margin]] - 14 source mention(s)
-- [[concepts/market-microstructure|market-microstructure]] - 14 source mention(s)
-- [[concepts/tail-risk|tail-risk]] - 14 source mention(s)
-- [[concepts/hedging|hedging]] - 14 source mention(s)
 - [[concepts/short-gamma|short-gamma]] - 14 source mention(s)
 - [[concepts/linear-regression-channels|linear-regression-channels]] - 14 source mention(s)
 - [[concepts/order-internalization|order-internalization]] - 14 source mention(s)
-- [[concepts/premium|premium]] - 13 source mention(s)
 - [[concepts/at-the-money|at-the-money]] - 13 source mention(s)
 - [[concepts/greek-attribution|greek-attribution]] - 13 source mention(s)
 - [[concepts/melt-up|melt-up]] - 13 source mention(s)
@@ -1617,20 +1632,22 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - [[concepts/diversification|diversification]] - 13 source mention(s)
 - [[concepts/loss-aversion|loss-aversion]] - 13 source mention(s)
 - [[concepts/research-depth|research-depth]] - 13 source mention(s)
+- [[concepts/gamma-hedging|gamma-hedging]] - 13 source mention(s)
+- [[concepts/gamma-ramp|gamma-ramp]] - 13 source mention(s)
 - [[concepts/hypothesis-testing|hypothesis-testing]] - 12 source mention(s)
-- [[concepts/gamma-hedging|gamma-hedging]] - 12 source mention(s)
-- [[concepts/gamma-ramp|gamma-ramp]] - 12 source mention(s)
+- [[concepts/decision-making|decision-making]] - 12 source mention(s)
 - [[concepts/robustness|robustness]] - 11 source mention(s)
 - [[concepts/sentiment|sentiment]] - 11 source mention(s)
 - [[concepts/iron-condor|iron-condor]] - 11 source mention(s)
 - [[concepts/point-of-control|point-of-control]] - 11 source mention(s)
 - [[concepts/time-decay|time-decay]] - 11 source mention(s)
 - [[concepts/overnight-risk-premium|overnight-risk-premium]] - 11 source mention(s)
+- [[concepts/probability-of-profit|probability-of-profit]] - 11 source mention(s)
 - [[concepts/options-chain|options-chain]] - 11 source mention(s)
 - [[concepts/short-interest|short-interest]] - 11 source mention(s)
 - [[concepts/gap-risk|gap-risk]] - 11 source mention(s)
-- [[concepts/decision-making|decision-making]] - 11 source mention(s)
 - [[concepts/sequence-of-returns|sequence-of-returns]] - 10 source mention(s)
+- [[concepts/synthetic-long|synthetic-long]] - 10 source mention(s)
 - [[concepts/directional-trading|directional-trading]] - 10 source mention(s)
 - [[concepts/max-drawdown|max-drawdown]] - 10 source mention(s)
 - [[concepts/defined-risk|defined-risk]] - 10 source mention(s)
@@ -1638,14 +1655,14 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - [[concepts/gamma-squeeze|gamma-squeeze]] - 10 source mention(s)
 - [[concepts/skewness-premium|skewness-premium]] - 10 source mention(s)
 - [[concepts/derivatives|derivatives]] - 9 source mention(s)
+- [[concepts/rebalancing|rebalancing]] - 9 source mention(s)
 - [[concepts/directional-bias|directional-bias]] - 9 source mention(s)
-- [[concepts/synthetic-long|synthetic-long]] - 9 source mention(s)
 - [[concepts/monetary-policy|monetary-policy]] - 9 source mention(s)
 - [[concepts/basis-adjustment|basis-adjustment]] - 9 source mention(s)
 - [[concepts/volatility-smile|volatility-smile]] - 9 source mention(s)
 - [[concepts/number-of-occurrences|number-of-occurrences]] - 9 source mention(s)
-- [[concepts/probability-of-profit|probability-of-profit]] - 9 source mention(s)
 - [[concepts/price-extremes|price-extremes]] - 9 source mention(s)
+- [[concepts/law-of-large-numbers|law-of-large-numbers]] - 9 source mention(s)
 - [[concepts/candlestick-reading|candlestick-reading]] - 9 source mention(s)
 - [[concepts/leaps|leaps]] - 9 source mention(s)
 - [[concepts/confidence|confidence]] - 9 source mention(s)
@@ -1655,11 +1672,11 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - [[concepts/high-implied-volatility|high-implied-volatility]] - 9 source mention(s)
 - [[concepts/price-discovery|price-discovery]] - 9 source mention(s)
 - [[concepts/regime-dependency|regime-dependency]] - 9 source mention(s)
+- [[concepts/compounding|compounding]] - 9 source mention(s)
 - [[concepts/capital-allocation|capital-allocation]] - 9 source mention(s)
 - [[concepts/event-driven|event-driven]] - 8 source mention(s)
 - [[concepts/scaling-out|scaling-out]] - 8 source mention(s)
 - [[concepts/consumer-confidence|consumer-confidence]] - 8 source mention(s)
-- [[concepts/rebalancing|rebalancing]] - 8 source mention(s)
 - [[concepts/trade-management|trade-management]] - 8 source mention(s)
 - [[concepts/greek-profile|greek-profile]] - 8 source mention(s)
 - [[concepts/expectancy|expectancy]] - 8 source mention(s)
@@ -1668,11 +1685,10 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - [[concepts/discretionary-trading|discretionary-trading]] - 8 source mention(s)
 - [[concepts/volatility-forecasting|volatility-forecasting]] - 8 source mention(s)
 - [[concepts/reshoring|reshoring]] - 8 source mention(s)
-- [[concepts/law-of-large-numbers|law-of-large-numbers]] - 8 source mention(s)
 - [[concepts/overconfidence|overconfidence]] - 8 source mention(s)
 - [[concepts/straddle-price|straddle-price]] - 8 source mention(s)
 - [[concepts/dark-pools|dark-pools]] - 8 source mention(s)
-- [[concepts/compounding|compounding]] - 8 source mention(s)
+- [[concepts/portfolio-construction|portfolio-construction]] - 8 source mention(s)
 - [[concepts/execution|execution]] - 8 source mention(s)
 - [[concepts/short-call|short-call]] - 7 source mention(s)
 - [[concepts/distribution|distribution]] - 7 source mention(s)
@@ -1693,8 +1709,8 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - [[concepts/beta|beta]] - 7 source mention(s)
 - [[concepts/ratio-write|ratio-write]] - 7 source mention(s)
 - [[concepts/pattern-recognition|pattern-recognition]] - 7 source mention(s)
+- [[concepts/win-rate|win-rate]] - 7 source mention(s)
 - [[concepts/value-investing|value-investing]] - 7 source mention(s)
-- [[concepts/portfolio-construction|portfolio-construction]] - 7 source mention(s)
 - [[concepts/supply-chain|supply-chain]] - 6 source mention(s)
 - [[concepts/bond-vigilantes|bond-vigilantes]] - 6 source mention(s)
 - [[concepts/direction|direction]] - 6 source mention(s)
@@ -1726,7 +1742,8 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - [[concepts/stock-split|stock-split]] - 6 source mention(s)
 - [[concepts/ratio-call-diagonal|ratio-call-diagonal]] - 6 source mention(s)
 - [[concepts/loss-management|loss-management]] - 6 source mention(s)
-- [[concepts/win-rate|win-rate]] - 6 source mention(s)
+- [[concepts/margin-requirement|margin-requirement]] - 6 source mention(s)
+- `iv-rank` - 6 source mention(s)
 - [[concepts/allocation|allocation]] - 6 source mention(s)
 - [[concepts/options-trading|options-trading]] - 6 source mention(s)
 - [[concepts/data-quality|data-quality]] - 6 source mention(s)
@@ -1748,6 +1765,7 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `put-call-ratio` - 5 source mention(s)
 - `value-at-risk` - 5 source mention(s)
 - `pot-odds` - 5 source mention(s)
+- `stock-replacement` - 5 source mention(s)
 - `skill-development` - 5 source mention(s)
 - `relative-value` - 5 source mention(s)
 - `behavioral-biases` - 5 source mention(s)
@@ -1762,10 +1780,10 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `risk-reversal` - 5 source mention(s)
 - `statistical-significance` - 5 source mention(s)
 - `exit-strategy` - 5 source mention(s)
-- `margin-requirement` - 5 source mention(s)
-- `iv-rank` - 5 source mention(s)
 - `black-scholes-merton` - 5 source mention(s)
 - `trader-psychology` - 5 source mention(s)
+- `drawdown-management` - 5 source mention(s)
+- `bankroll-management` - 5 source mention(s)
 - `right-tail` - 5 source mention(s)
 - `speed-of-decision-making` - 5 source mention(s)
 - `automation` - 5 source mention(s)
@@ -1786,13 +1804,14 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `time-to-expiration` - 4 source mention(s)
 - `housing-market` - 4 source mention(s)
 - `equity-anomalies` - 4 source mention(s)
+- `put-premium` - 4 source mention(s)
 - `thesis-development` - 4 source mention(s)
 - `high-frequency-trading` - 4 source mention(s)
 - `standard-deviation` - 4 source mention(s)
-- `stock-replacement` - 4 source mention(s)
 - `account-growth` - 4 source mention(s)
 - `drawdown-recovery` - 4 source mention(s)
 - `forward-testing` - 4 source mention(s)
+- `directional-risk` - 4 source mention(s)
 - `mental-model` - 4 source mention(s)
 - `trend-alignment` - 4 source mention(s)
 - `portfolio-management` - 4 source mention(s)
@@ -1803,21 +1822,24 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `simplicity` - 4 source mention(s)
 - `bayesian-analysis` - 4 source mention(s)
 - `option-greeks` - 4 source mention(s)
+- `mechanical-trading` - 4 source mention(s)
 - `thesis-management` - 4 source mention(s)
 - `breadth-indicators` - 4 source mention(s)
 - `market-internals` - 4 source mention(s)
 - `thesis-validation` - 4 source mention(s)
 - `contango` - 4 source mention(s)
+- `backwardation` - 4 source mention(s)
 - `margin-call` - 4 source mention(s)
 - `short-straddle` - 4 source mention(s)
 - `option-pricing` - 4 source mention(s)
 - `drawdown-risk` - 4 source mention(s)
 - `arbitrage` - 4 source mention(s)
-- `bankroll-management` - 4 source mention(s)
+- `contrarian-positioning` - 4 source mention(s)
 - `capital-preservation` - 4 source mention(s)
 - `profit-management` - 4 source mention(s)
 - `signal-selection` - 4 source mention(s)
 - `strategy-optimization` - 4 source mention(s)
+- `premium-selling` - 4 source mention(s)
 - `short-strangle` - 4 source mention(s)
 - `strong-convictions-loosely-held` - 4 source mention(s)
 - `binary-events` - 4 source mention(s)
@@ -1846,7 +1868,7 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `american-options` - 3 source mention(s)
 - `demand-destruction` - 3 source mention(s)
 - `thesis-generation` - 3 source mention(s)
-- `put-premium` - 3 source mention(s)
+- `call-premium` - 3 source mention(s)
 - `cash-flow` - 3 source mention(s)
 - `earnings-per-share` - 3 source mention(s)
 - `options-expiration` - 3 source mention(s)
@@ -1855,7 +1877,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `structural-alpha` - 3 source mention(s)
 - `synthetic-shares` - 3 source mention(s)
 - `variance` - 3 source mention(s)
-- `directional-risk` - 3 source mention(s)
 - `long-volatility` - 3 source mention(s)
 - `iterative-process` - 3 source mention(s)
 - `carry` - 3 source mention(s)
@@ -1880,7 +1901,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `financial-crisis` - 3 source mention(s)
 - `longevity` - 3 source mention(s)
 - `martingale-betting` - 3 source mention(s)
-- `mechanical-trading` - 3 source mention(s)
 - `weekend-effect` - 3 source mention(s)
 - `duration-management` - 3 source mention(s)
 - `inventory-preference` - 3 source mention(s)
@@ -1890,7 +1910,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `market-concentration` - 3 source mention(s)
 - `market-effect` - 3 source mention(s)
 - `equity-risk-premium` - 3 source mention(s)
-- `backwardation` - 3 source mention(s)
 - `day-trading` - 3 source mention(s)
 - `section-1256` - 3 source mention(s)
 - `rho` - 3 source mention(s)
@@ -1900,7 +1919,7 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `information-asymmetry` - 3 source mention(s)
 - `sensation-seeking` - 3 source mention(s)
 - `front-running` - 3 source mention(s)
-- `drawdown-management` - 3 source mention(s)
+- `strategy-design` - 3 source mention(s)
 - `catalyst-trading` - 3 source mention(s)
 - `historical-volatility` - 3 source mention(s)
 - `process` - 3 source mention(s)
@@ -1914,13 +1933,11 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `relative-strength-index` - 3 source mention(s)
 - `business-model` - 3 source mention(s)
 - `max-payne` - 3 source mention(s)
-- `premium-selling` - 3 source mention(s)
 - `basis-reduction` - 3 source mention(s)
 - `options-pricing` - 3 source mention(s)
 - `sharp-ratio` - 3 source mention(s)
 - `oscillators` - 3 source mention(s)
 - `vol-term-structure` - 3 source mention(s)
-- `contrarian-positioning` - 3 source mention(s)
 - `duration` - 3 source mention(s)
 - `fails-to-deliver` - 3 source mention(s)
 - `savings-rate` - 3 source mention(s)
@@ -1982,7 +1999,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `style-drift` - 2 source mention(s)
 - `total-return` - 2 source mention(s)
 - `outperformance` - 2 source mention(s)
-- `call-premium` - 2 source mention(s)
 - `convertible-bonds` - 2 source mention(s)
 - `gross-profit` - 2 source mention(s)
 - `operating-margin` - 2 source mention(s)
@@ -2088,7 +2104,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `roll-yield` - 2 source mention(s)
 - `ruthless-accountability` - 2 source mention(s)
 - `scalping` - 2 source mention(s)
-- `strategy-design` - 2 source mention(s)
 - `strategy-refinement` - 2 source mention(s)
 - `strategy-selection` - 2 source mention(s)
 - `systematic-investing` - 2 source mention(s)
@@ -2097,6 +2112,8 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `trade-adjustments` - 2 source mention(s)
 - `trading-process` - 2 source mention(s)
 - `protective-puts` - 2 source mention(s)
+- `iv-percentile` - 2 source mention(s)
+- `volatility-regime` - 2 source mention(s)
 - `expectation-setting` - 2 source mention(s)
 - `tilt` - 2 source mention(s)
 - `stress-inoculation` - 2 source mention(s)
@@ -2143,6 +2160,7 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `supply-chain-disruption` - 2 source mention(s)
 - `capacity-constrained` - 2 source mention(s)
 - `gamma-risk` - 2 source mention(s)
+- `options-volume` - 2 source mention(s)
 - `insider-buying` - 2 source mention(s)
 - `reversal` - 2 source mention(s)
 - `dynamic-lot-sizing` - 2 source mention(s)
@@ -2422,6 +2440,7 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `participation-rate` - 1 source mention(s)
 - `reflexive-crowded-game` - 1 source mention(s)
 - `repeatable` - 1 source mention(s)
+- `trade-sizing` - 1 source mention(s)
 - `expense-ratio` - 1 source mention(s)
 - `subconscious-priming` - 1 source mention(s)
 - `structure-selection` - 1 source mention(s)
@@ -2433,6 +2452,11 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `index-ball` - 1 source mention(s)
 - `monthly-performance` - 1 source mention(s)
 - `canslim` - 1 source mention(s)
+- `volatility-persistence` - 1 source mention(s)
+- `shock-recovery` - 1 source mention(s)
+- `entry-conditions` - 1 source mention(s)
+- `sizing-decisions` - 1 source mention(s)
+- `efficiency-frontier` - 1 source mention(s)
 - `disposition` - 1 source mention(s)
 - `iteration` - 1 source mention(s)
 - `objectivity` - 1 source mention(s)
@@ -2590,6 +2614,8 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `portfolio-fit` - 1 source mention(s)
 - `news-driven-trading` - 1 source mention(s)
 - `signal-library` - 1 source mention(s)
+- `bet-sizing` - 1 source mention(s)
+- `log-wealth` - 1 source mention(s)
 - `delta-management` - 1 source mention(s)
 - `pricing` - 1 source mention(s)
 - `credit-event` - 1 source mention(s)
@@ -2744,7 +2770,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `volatility-normalization` - 1 source mention(s)
 - `liquidity-measurement` - 1 source mention(s)
 - `retail-trading` - 1 source mention(s)
-- `options-volume` - 1 source mention(s)
 - `gamblers-fallacy` - 1 source mention(s)
 - `merger-arbitrage` - 1 source mention(s)
 - `quality` - 1 source mention(s)
@@ -2784,7 +2809,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `pre-registration` - 1 source mention(s)
 - `cost-aware` - 1 source mention(s)
 - `conditional-value-at-risk` - 1 source mention(s)
-- `iv-percentile` - 1 source mention(s)
 - `creative-financing` - 1 source mention(s)
 - `network-effects` - 1 source mention(s)
 - `margin-utilization` - 1 source mention(s)
@@ -2949,6 +2973,7 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `infrastructure` - 1 source mention(s)
 - `warning-signs` - 1 source mention(s)
 - `digital-scarcity` - 1 source mention(s)
+- `near-term-options` - 1 source mention(s)
 - `bubble` - 1 source mention(s)
 - `hunch-and-buncher` - 1 source mention(s)
 - `sanctions` - 1 source mention(s)
@@ -2957,7 +2982,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `preparation` - 1 source mention(s)
 - `emotional-regulation` - 1 source mention(s)
 - `adaptability` - 1 source mention(s)
-- `volatility-regime` - 1 source mention(s)
 - `causality` - 1 source mention(s)
 - `pe-ratio` - 1 source mention(s)
 - `bayesian-statistics` - 1 source mention(s)
@@ -2977,59 +3001,59 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 ### Strategies
 
 - [[strategies/short-premium|short-premium]] - 241 source mention(s)
-- [[strategies/short-put|short-put]] - 204 source mention(s)
-- [[strategies/covered-strangle|covered-strangle]] - 197 source mention(s)
+- [[strategies/short-put|short-put]] - 206 source mention(s)
+- [[strategies/covered-strangle|covered-strangle]] - 198 source mention(s)
 - [[strategies/long-call|long-call]] - 196 source mention(s)
-- [[strategies/covered-call|covered-call]] - 163 source mention(s)
+- [[strategies/covered-call|covered-call]] - 164 source mention(s)
 - [[strategies/ratio-call-diagonal|ratio-call-diagonal]] - 132 source mention(s)
-- [[strategies/short-strangle|short-strangle]] - 111 source mention(s)
-- [[strategies/short-straddle|short-straddle]] - 106 source mention(s)
+- [[strategies/short-strangle|short-strangle]] - 113 source mention(s)
+- [[strategies/short-straddle|short-straddle]] - 107 source mention(s)
 - [[strategies/short-volatility|short-volatility]] - 90 source mention(s)
 - [[strategies/momentum|momentum]] - 83 source mention(s)
 - [[strategies/zero-dte|zero-dte]] - 79 source mention(s)
 - [[strategies/trend-following|trend-following]] - 78 source mention(s)
 - [[strategies/earnings-vol-play|earnings-vol-play]] - 65 source mention(s)
 - [[strategies/short-call|short-call]] - 51 source mention(s)
-- [[strategies/iron-condor|iron-condor]] - 50 source mention(s)
+- [[strategies/iron-condor|iron-condor]] - 51 source mention(s)
 - [[strategies/breakout|breakout]] - 49 source mention(s)
-- [[strategies/gamma-scalping|gamma-scalping]] - 45 source mention(s)
+- [[strategies/gamma-scalping|gamma-scalping]] - 46 source mention(s)
 - [[strategies/scaling-in|scaling-in]] - 42 source mention(s)
 - [[strategies/ratio-write|ratio-write]] - 40 source mention(s)
 - [[strategies/buy-and-hold|buy-and-hold]] - 37 source mention(s)
-- [[strategies/rolling-options|rolling-options]] - 33 source mention(s)
+- [[strategies/rolling-options|rolling-options]] - 34 source mention(s)
 - [[strategies/credit-spread|credit-spread]] - 32 source mention(s)
 - [[strategies/contrarian-positioning|contrarian-positioning]] - 32 source mention(s)
 - [[strategies/pairs-trade|pairs-trade]] - 30 source mention(s)
-- [[strategies/vertical-spread|vertical-spread]] - 28 source mention(s)
+- [[strategies/vertical-spread|vertical-spread]] - 29 source mention(s)
 - [[strategies/scaling-out|scaling-out]] - 27 source mention(s)
 - [[strategies/the-wheel|the-wheel]] - 26 source mention(s)
 - [[strategies/long-dated-calls|long-dated-calls]] - 26 source mention(s)
 - [[strategies/long-straddle|long-straddle]] - 25 source mention(s)
-- [[strategies/synthetic-long|synthetic-long]] - 23 source mention(s)
-- [[strategies/long-put|long-put]] - 23 source mention(s)
+- [[strategies/synthetic-long|synthetic-long]] - 24 source mention(s)
+- [[strategies/long-put|long-put]] - 24 source mention(s)
 - [[strategies/call-credit-spread|call-credit-spread]] - 22 source mention(s)
 - [[strategies/sector-rotation|sector-rotation]] - 19 source mention(s)
+- [[strategies/delta-hedging|delta-hedging]] - 18 source mention(s)
 - [[strategies/box-spread|box-spread]] - 17 source mention(s)
-- [[strategies/delta-hedging|delta-hedging]] - 17 source mention(s)
 - [[strategies/leaps|leaps]] - 14 source mention(s)
 - [[strategies/event-driven|event-driven]] - 13 source mention(s)
 - [[strategies/short-earnings-straddle|short-earnings-straddle]] - 13 source mention(s)
 - [[strategies/delta-selection|delta-selection]] - 12 source mention(s)
+- [[strategies/short-call-spread|short-call-spread]] - 11 source mention(s)
 - [[strategies/stock-replacement|stock-replacement]] - 10 source mention(s)
 - [[strategies/delta-neutral|delta-neutral]] - 10 source mention(s)
 - [[strategies/mean-reversion|mean-reversion]] - 10 source mention(s)
-- [[strategies/short-call-spread|short-call-spread]] - 10 source mention(s)
 - [[strategies/dollar-cost-averaging|dollar-cost-averaging]] - 9 source mention(s)
 - [[strategies/directional-trading|directional-trading]] - 9 source mention(s)
+- [[strategies/position-sizing|position-sizing]] - 9 source mention(s)
 - [[strategies/pullback-entry|pullback-entry]] - 9 source mention(s)
 - [[strategies/calendar-spread|calendar-spread]] - 8 source mention(s)
 - [[strategies/long-premium|long-premium]] - 8 source mention(s)
-- [[strategies/position-sizing|position-sizing]] - 8 source mention(s)
+- [[strategies/short-put-spread|short-put-spread]] - 8 source mention(s)
 - [[strategies/ratio-put-diagonal|ratio-put-diagonal]] - 7 source mention(s)
 - [[strategies/vertical-spreads|vertical-spreads]] - 7 source mention(s)
 - [[strategies/risk-reversal|risk-reversal]] - 7 source mention(s)
 - [[strategies/put-credit-spread|put-credit-spread]] - 7 source mention(s)
-- [[strategies/short-put-spread|short-put-spread]] - 7 source mention(s)
 - [[strategies/long-volatility|long-volatility]] - 6 source mention(s)
 - [[strategies/post-earnings-drift|post-earnings-drift]] - 6 source mention(s)
 - [[strategies/buying-the-panic|buying-the-panic]] - 6 source mention(s)
@@ -3048,41 +3072,45 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - [[strategies/systematic-trading|systematic-trading]] - 4 source mention(s)
 - [[strategies/options-trading|options-trading]] - 3 source mention(s)
 - `variance-risk-premium` - 3 source mention(s)
+- [[strategies/portfolio-first|portfolio-first]] - 3 source mention(s)
 - [[strategies/long-strangle|long-strangle]] - 3 source mention(s)
 - [[strategies/rebalancing|rebalancing]] - 3 source mention(s)
 - `cash-secured-put` - 3 source mention(s)
+- [[strategies/protective-puts|protective-puts]] - 3 source mention(s)
 - [[strategies/long-put-spread|long-put-spread]] - 3 source mention(s)
+- [[strategies/kelly-criterion|kelly-criterion]] - 3 source mention(s)
 - [[strategies/collar|collar]] - 3 source mention(s)
 - `ratio-diagonal` - 3 source mention(s)
 - [[strategies/volatility-trading|volatility-trading]] - 3 source mention(s)
 - [[strategies/premium-selling|premium-selling]] - 3 source mention(s)
 - [[strategies/mechanical-trading|mechanical-trading]] - 3 source mention(s)
 - [[strategies/overnight-risk-premium|overnight-risk-premium]] - 3 source mention(s)
+- [[strategies/short-calls|short-calls]] - 3 source mention(s)
 - `profit-taking` - 2 source mention(s)
 - `day-trading` - 2 source mention(s)
 - `risk-first` - 2 source mention(s)
-- `portfolio-first` - 2 source mention(s)
 - `leveraged-etf-pairs-trade` - 2 source mention(s)
 - `relative-value` - 2 source mention(s)
 - `bull-put-spread` - 2 source mention(s)
-- `protective-puts` - 2 source mention(s)
-- `kelly-criterion` - 2 source mention(s)
 - `broken-wing-butterfly` - 2 source mention(s)
 - `value-investing` - 2 source mention(s)
 - `long-shares` - 2 source mention(s)
 - `debit-spread` - 2 source mention(s)
 - [[strategies/volatility-risk-premium|volatility-risk-premium]] - 2 source mention(s)
+- `fractional-kelly` - 2 source mention(s)
+- `put-vertical-spread` - 2 source mention(s)
 - `hedging` - 2 source mention(s)
 - `index-ball` - 2 source mention(s)
 - `spread-trading` - 2 source mention(s)
+- `risk-budgeting` - 2 source mention(s)
 - `paper-trading` - 2 source mention(s)
 - `iron-butterfly` - 2 source mention(s)
 - `ratio-synthetic-long` - 2 source mention(s)
 - `long-only` - 2 source mention(s)
 - `execution-optimization` - 2 source mention(s)
+- `long-calls` - 2 source mention(s)
 - `iron-fly` - 2 source mention(s)
 - `short-puts` - 2 source mention(s)
-- `short-calls` - 2 source mention(s)
 - `long-puts` - 2 source mention(s)
 - `relative-value-trade` - 1 source mention(s)
 - `short-strangles` - 1 source mention(s)
@@ -3111,16 +3139,16 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `spread` - 1 source mention(s)
 - `stop-loss` - 1 source mention(s)
 - `coverage-strangle` - 1 source mention(s)
-- `fractional-kelly` - 1 source mention(s)
 - `front-running` - 1 source mention(s)
-- `put-vertical-spread` - 1 source mention(s)
 - `call-vertical-spread` - 1 source mention(s)
 - `long-call-vertical-spread` - 1 source mention(s)
+- `short-vertical-spread` - 1 source mention(s)
+- `naked-short-put` - 1 source mention(s)
+- `half-kelly` - 1 source mention(s)
 - `fading-small-caps` - 1 source mention(s)
 - `long-short` - 1 source mention(s)
 - `concentrated-positioning` - 1 source mention(s)
 - `leverage` - 1 source mention(s)
-- `risk-budgeting` - 1 source mention(s)
 - `options-as-hedge` - 1 source mention(s)
 - `index-rebalancing` - 1 source mention(s)
 - `liquidity-provision` - 1 source mention(s)
@@ -3137,7 +3165,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `trading-volatility` - 1 source mention(s)
 - `defined-risk` - 1 source mention(s)
 - `thematic-positioning` - 1 source mention(s)
-- `long-calls` - 1 source mention(s)
 - `strangle` - 1 source mention(s)
 - `jade-lizard` - 1 source mention(s)
 - `value` - 1 source mention(s)
@@ -3160,14 +3187,14 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 
 ### Securities
 
-- [[securities/spy|spy]] - 355 source mention(s)
-- [[securities/gme|gme]] - 262 source mention(s)
+- [[securities/spy|spy]] - 356 source mention(s)
+- [[securities/gme|gme]] - 263 source mention(s)
 - [[securities/spx|spx]] - 158 source mention(s)
-- [[securities/qqq|qqq]] - 148 source mention(s)
+- [[securities/qqq|qqq]] - 149 source mention(s)
 - [[securities/iwm|iwm]] - 124 source mention(s)
 - [[securities/tsla|tsla]] - 104 source mention(s)
-- [[securities/nvda|nvda]] - 90 source mention(s)
-- [[securities/vix|vix]] - 85 source mention(s)
+- [[securities/nvda|nvda]] - 91 source mention(s)
+- [[securities/vix|vix]] - 86 source mention(s)
 - [[securities/aapl|aapl]] - 83 source mention(s)
 - [[securities/btc|btc]] - 73 source mention(s)
 - [[securities/crude-oil|crude-oil]] - 64 source mention(s)
@@ -3192,13 +3219,13 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - [[securities/xlu|xlu]] - 19 source mention(s)
 - [[securities/ko|ko]] - 19 source mention(s)
 - [[securities/chewy|chewy]] - 18 source mention(s)
+- [[securities/meta|meta]] - 17 source mention(s)
 - [[securities/xle|xle]] - 16 source mention(s)
 - [[securities/ung|ung]] - 16 source mention(s)
 - [[securities/natural-gas|natural-gas]] - 16 source mention(s)
-- [[securities/meta|meta]] - 16 source mention(s)
 - [[securities/xlp|xlp]] - 15 source mention(s)
+- [[securities/amd|amd]] - 15 source mention(s)
 - [[securities/slv|slv]] - 14 source mention(s)
-- [[securities/amd|amd]] - 14 source mention(s)
 - [[securities/ccj|ccj]] - 13 source mention(s)
 - [[securities/smci|smci]] - 13 source mention(s)
 - [[securities/rklb|rklb]] - 13 source mention(s)
@@ -3216,11 +3243,11 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - [[securities/gld|gld]] - 10 source mention(s)
 - [[securities/pfe|pfe]] - 9 source mention(s)
 - [[securities/xli|xli]] - 9 source mention(s)
+- [[securities/mu|mu]] - 9 source mention(s)
 - [[securities/intc|intc]] - 9 source mention(s)
 - [[securities/sso|sso]] - 9 source mention(s)
 - [[securities/xlre|xlre]] - 8 source mention(s)
 - [[securities/micron|micron]] - 8 source mention(s)
-- [[securities/mu|mu]] - 8 source mention(s)
 - [[securities/qbts|qbts]] - 8 source mention(s)
 - [[securities/spacex|spacex]] - 7 source mention(s)
 - [[securities/bac|bac]] - 7 source mention(s)
@@ -3259,6 +3286,8 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `pfizer` - 4 source mention(s)
 - `vz` - 4 source mention(s)
 - `etha` - 4 source mention(s)
+- `nflx` - 4 source mention(s)
+- `ibm` - 4 source mention(s)
 - `soxl` - 4 source mention(s)
 - `kr` - 4 source mention(s)
 - `cat` - 4 source mention(s)
@@ -3285,11 +3314,10 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `rig` - 3 source mention(s)
 - `pypl` - 3 source mention(s)
 - `ms` - 3 source mention(s)
+- `uber` - 3 source mention(s)
 - `rut` - 3 source mention(s)
-- `ibm` - 3 source mention(s)
 - `ionq` - 3 source mention(s)
 - `mos` - 3 source mention(s)
-- `nflx` - 3 source mention(s)
 - `smr` - 3 source mention(s)
 - `noc` - 3 source mention(s)
 - `hal` - 2 source mention(s)
@@ -3365,7 +3393,6 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 - `vst` - 2 source mention(s)
 - `brk-b` - 2 source mention(s)
 - `rost` - 2 source mention(s)
-- `uber` - 2 source mention(s)
 - `oil` - 2 source mention(s)
 - `costco` - 2 source mention(s)
 - `dal` - 2 source mention(s)
@@ -3674,16 +3701,16 @@ These candidate nodes are source-page mentions that resolve to `schema/slugs.md`
 
 ### People
 
-- `eric` - 1079 source mention(s)
+- `eric` - 1082 source mention(s)
 - `roaring-kitty` - 138 source mention(s)
 - `jerome-powell` - 57 source mention(s)
 - `warren-buffett` - 52 source mention(s)
 - `donald-trump` - 50 source mention(s)
 - [[people/richard-newton|richard-newton]] - 50 source mention(s)
 - `masayoshi-son` - 40 source mention(s)
-- [[people/tom-sosnoff|tom-sosnoff]] - 35 source mention(s)
+- [[people/tom-sosnoff|tom-sosnoff]] - 36 source mention(s)
+- `ryan-cohen` - 34 source mention(s)
 - [[people/euan-sinclair|euan-sinclair]] - 33 source mention(s)
-- `ryan-cohen` - 33 source mention(s)
 - `nassim-taleb` - 27 source mention(s)
 - [[people/david-hunter|david-hunter]] - 20 source mention(s)
 - `elon-musk` - 18 source mention(s)
@@ -3822,32 +3849,32 @@ These raw source-pass slugs did not resolve to `schema/slugs.md`. Review them be
 
 ### Series
 
-- `none` - 744 source page(s)
+- `none` - 746 source page(s)
 - `outlier-podcast` - 96 source page(s)
 - `market-update` - 86 source page(s)
 - `beginner-lab` - 85 source page(s)
-- `options-trench` - 80 source page(s)
+- `options-trench` - 81 source page(s)
 - `gme-analysis` - 40 source page(s)
 - `meme-stock-watch` - 24 source page(s)
 - `small-stacks` - 18 source page(s)
 - `money-talks` - 11 source page(s)
 - `project-no-code` - 7 source page(s)
-- `unhedged` - 3 source page(s)
+- `unhedged` - 4 source page(s)
 - `stock-watch` - 1 source page(s)
 
 ### Format
 
-- `education` - 1032 source page(s)
-- `analysis` - 463 source page(s)
-- `strategy-breakdown` - 332 source page(s)
+- `education` - 1036 source page(s)
+- `analysis` - 465 source page(s)
+- `strategy-breakdown` - 333 source page(s)
 - `market-note` - 204 source page(s)
 - `live` - 157 source page(s)
-- `interview` - 145 source page(s)
+- `interview` - 146 source page(s)
 
 ## Source page catalog
 
 <details>
-<summary>All source pages (1195)</summary>
+<summary>All source pages (1199)</summary>
 
 | source | date | series | one-line summary |
 |---|---|---|---|
@@ -5046,6 +5073,10 @@ These raw source-pass slugs did not resolve to `schema/slugs.md`. Review them be
 | [[sources/aO59B5UNWqI|David Hunter: The Fed Just Hiked Rates: Here's What You Need to Know \/ The Outlier Podcast]] | 2026-09-16 | `outlier-podcast` | The Fed announced a 25 basis point rate hike—the first in three years—which markets had largely priced in. David Hunter discusses the hawkish tone of Powell's press conference,... |
 | [[sources/NvH-SdOQcT8|Market Internals & 40K Milestone \/ Outlier Pro]] | 2026-09-16 | `none` | Eric celebrates hitting 40,000 YouTube subscribers and reflects on channel growth and content strategy evolution. The bulk of the session focuses on FOMC preparation: analyzing... |
 | [[sources/KYDotmzkLJY|Buying vs Selling Options: Which is Better?]] | 2026-09-20 | `none` | This analysis examines 2.4 million options trades across 1,149 underlyings over 19 years (2007–2026) to contextualize the relationship between buying and selling options. The da... |
+| [[sources/xDlGMSj4rME|The GME Gamma Ramp Explained: Can It Actually Happen?]] | 2026-09-23 | `none` | Eric analyzes unusual options activity in GameStop (GME) following insider buying by Ryan Cohen, identifying what appears to be a manufactured gamma ramp in the front-month call... |
+| [[sources/KijPxWgoMqI|Tom Sosnoff: Why Most Option Strategies Fail (And How to Fix Yours) \/ Unhedged]] | 2026-09-23 | `unhedged` | Tom Sosnoff discusses the evolution of his approach to options trading, emphasizing that successful strategies are built on mechanical optimization and capital efficiency rather... |
+| [[sources/Xsj2yue-QKk|Kelly Criterion vs. Intuition: How to Actually Size Your Trades \/ The Options Trench]] | 2026-09-25 | `options-trench` | This episode explores the Kelly Criterion as a mathematical framework for optimal bet sizing to maximize long-term compounded wealth. Eric and Chris walk through the formula's a... |
+| [[sources/MJX5QoAfLMw|Is Low VIX a Trap? I Ran 19 Years of Data]] | 2026-09-27 | `none` | This analysis examines whether selling premium during low-VIX environments is inherently risky by testing 9,227 trading days from 1990–2026 across five VIX bands. The data shows... |
 
 </details>
 

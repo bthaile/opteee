@@ -1,0 +1,792 @@
+2.32s: What's up, everyone? Welcome to the
+3.88s: Options Trench. Today, Chris and I were
+6.40s: talking about Kelly Criterion, which we
+10.80s: were actually joking a second ago. I
+12.32s: don't know why we call it criterion
+14.36s: versus criteria. I'm sure somebody that
+16.80s: knows that stuff will be able to chime
+18.28s: in and let me know. I just haven't
+20.16s: Googled it yet.
+21.56s: But,
+22.80s: this opens the door to the world of bet
+25.44s: sizing. So, by the end of the video
+27.36s: today, there's a few things you should
+29.28s: walk away with. One of them is a better,
+31.84s: more practical sense of sizing things,
+35.56s: but then also some of the common
+37.36s: mistakes that people make when you first
+39.60s: start integrating something like Kelly
+41.96s: Kelly bet sizing because it's meant to
+45.28s: optimize a specific thing, which is
+47.20s: effectively your your log wealth. But,
+49.20s: there's different permutations that you
+51.44s: can use that allow you to optimize for
+54.56s: some different things. So, what I'm
+56.48s: going to do really quick is share my
+58.56s: screen
+59.64s: and we will go through a little bit of
+63.16s: this at a high level, and then we have a
+66.20s: couple specific examples we want to walk
+68.60s: you through to try to help make the
+71.16s: point pretty clear. So, what I'm showing
+73.76s: you here is literally just a a fake
+76.92s: strategy, and I'm applying a Kelly
+79.64s: sizing factor to them everything from
+81.80s: quarter Kelly up to two Kelly to give
+83.56s: you an idea
+85.04s: on how these different things behave
+87.92s: over time. That's all. So, you'll
+90.24s: understand all of this stuff a little
+92.52s: bit later. But, to give you an idea of
+94.96s: what we're looking at up front, when you
+96.84s: see the leverage factor, again, it's all
+98.88s: fake. This is all synthetic. But, what
+100.92s: this is saying is at one times Kelly, in
+104.00s: order for you to optimize that specific
+106.04s: thing for log wealth log return growth
+109.36s: over time,
+110.68s: is that should be ran at four times
+113.28s: leverage. And that takes into account a
+115.48s: couple specific factors we'll get into
+117.40s: in a little bit. But then you see that
+119.72s: we can size that down, size that up, and
+122.36s: there are some details
+125.80s: associated with pros and cons of these
+128.36s: different things.
+130.52s: Another general admin note
+133.80s: is with Kelly and Kelly bet sizing in
+137.20s: general is that you can apply it to
+139.72s: different lenses and there's different
+142.68s: formulas to do that. So you can look at
+145.68s: it at an individual trade perspective,
+148.76s: at a strategy perspective, or at a
+151.84s: portfolio perspective. So when we think
+154.96s: of stuff like trying to maximize the
+157.92s: growth of an individual trader strategy,
+159.72s: that brings us down one path, but we
+162.24s: also know that assets have relationships
+164.52s: with one another and that's what the
+166.80s: portfolio level view is designed to help
+170.20s: you pull apart so that you have a better
+173.32s: sensitivity across the different
+174.96s: positions that you're building and
+177.72s: holding.
+179.68s: These give you a quick overview of some
+183.20s: of the formulas that you'll see a little
+185.24s: bit more in detail later. This is
+186.64s: literally just something you screenshot.
+188.32s: This is for your context. I know Chris,
+191.12s: I don't know
+192.68s: this might get you aroused a little bit
+194.68s: cuz I know you like math a lot, but
+196.24s: we'll get you on to a more concrete
+199.72s: example here through the idea of bet
+202.08s: sizes. And I will say Chris, I am
+205.76s: slightly bummed
+207.68s: which is I don't see darts in here.
+211.00s: I thought I thought we had an
+212.52s: opportunity to talk about PDC which we
+215.36s: still don't know what that means either.
+216.92s: I think it's like professional darts
+217.96s: competition challenge, maybe. So talk to
+221.00s: us about this in the context of these
+225.92s: different events where we're even,
+228.40s: favored, and then an underdog.
+231.60s: >> Yeah, cool. So you know, you you said it
+234.48s: earlier, so I just want to repeat it. Uh
+236.36s: it's good to know. Kelly uh what Kelly
+238.72s: was is a um
+241.04s: it's a solution to the problem of what
+244.04s: is the amount to bet
+246.12s: to maximize your compounded wealth.
+248.88s: That's what when you when people hear
+250.92s: log wealth, um that that's all it means
+253.72s: is to what's your compounded your
+255.40s: compounded wealth. So, um
+258.04s: the idea being that you know, when you
+260.56s: when you're making bets, you're probably
+262.68s: not just going to make one bet over the
+264.44s: course of your life. You're going to
+265.52s: make lots of bets over your life. And
+267.76s: the question is this, how much of your
+269.64s: bankroll to bet on any um on a on a bet
+273.16s: that has certain where you believe you
+274.76s: have an edge on it.
+276.56s: And the the idea again, maximize your
+278.96s: compounded wealth. I mean, if you want
+280.96s: if the if the name of the game was to
+282.52s: like maximize your wealth
+285.52s: on any bet where you had an advantage,
+288.04s: you would just bet everything.
+289.76s: But that would not maximize your
+291.52s: compounded wealth because uh you know,
+293.84s: if you bet everything on a coin flip and
+295.88s: lose, even if you had an advantage on
+297.80s: the coin flip, uh you're out of the game
+299.84s: and there will be no compounding of your
+301.24s: wealth. So, um that's the whole concept
+303.68s: behind Kelly in the first place. And you
+307.20s: put up um
+308.88s: a number of different formulas, but the
+310.56s: one the formula that it kind of started
+312.76s: from is this uh construct of, "Hey,
+315.44s: you're going to just make a simple bet."
+318.00s: And the one of the ways I became aware
+320.76s: of Kelly is that there is a uh
+324.16s: former hedge fund manager and a current
+326.64s: uh he's an investment manager named
+327.68s: Victor Haghani. And him and a
+330.40s: um a guy named Dewey did this study
+333.36s: where
+334.92s: they brought in a bunch of people. And a
+337.92s: lot of people were very educated, um
+340.48s: people that had economics or STEM kind
+342.60s: of degrees, and people that were uh
+344.88s: involved in investing. And they brought
+347.40s: them into a room, and they gave them a
+350.20s: game they had them play a game with real
+351.96s: money
+353.12s: where they were going to bet on
+357.04s: a coin, but the coin was rigged in their
+359.32s: favor. So, they had a 60% chance of
+361.96s: winning.
+363.12s: And uh so, you could like if you wager a
+365.92s: dollar and you win, you would get a
+368.36s: you would make a dollar or you would
+369.92s: lose your dollar. So, basically even
+371.84s: even money bet, but you had a 60% chance
+374.00s: of winning and you had an even money
+375.72s: bet. And what
+378.20s: the what basically happened is very few
+380.36s: people did a very good job at this game.
+383.12s: Most of the people just blew up their
+385.12s: account um because they were betting far
+388.32s: too much.
+389.56s: Um and then and then there was also a
+391.44s: court cohort of people that just
+393.76s: massively underperformed your expected
+396.56s: value of getting to play this game over
+398.48s: time. So, they just did very poorly. So,
+401.64s: um and the solution to doing a good job
+404.12s: in this game is is actually just to use
+406.04s: the Kelly criterion. So, the the formula
+409.60s: that I'm going to pick on here that
+412.36s: uh out of the ones you had presented was
+415.60s: the bankroll, which is
+417.84s: um
+418.48s: P minus Q over B in the top right of the
+421.40s: screen there. P minus Q over B.
+424.08s: That is a what that's saying is um it's
+426.44s: your probability of winning
+428.68s: minus your probability of losing um but
+432.32s: we divide the probability of losing by
+435.44s: uh the return that you would your odds
+438.20s: or another way of saying odds is
+440.40s: um your return on your bet.
+443.44s: It's the same thing. So,
+446.28s: let's use the example of the Hogani um
+450.00s: study where they were betting on the
+451.72s: coin flip. They had a 60% advantage.
+453.88s: That's the first
+455.48s: uh box on the left there. And in that
+458.04s: case, your probability of winning is
+460.16s: 60%, so your probability of losing must
+463.00s: be 40% since there's only two
+464.44s: possibilities. And um you win 100% of
+468.80s: your money, right? So you bet a dollar
+470.24s: and you win, you get 100% back. Um so
+472.96s: your B in this case is 1.00 or 100%
+477.36s: return. Um that's that's what your odds
+479.80s: are. So
+482.16s: uh in this case since your odds is an
+485.20s: even money bet, all even money bets
+487.32s: means that the B is one. So the whole
+490.04s: formula just collapses to what's your
+492.64s: probability of winning minus your
+494.04s: probability of losing, which is very
+495.80s: straightforward. So here it's just 20%
+498.64s: 60% minus 40%. So in that game you
+502.60s: should have just bet 20% of your
+504.44s: bankroll every time. And if you think
+506.60s: about it, it will be very uh
+509.28s: uh you can never blow out doing that cuz
+512.04s: A, you're only betting a fraction of
+513.60s: your bankroll. You never bet your entire
+515.32s: bankroll. Um and you know, if you're
+519.16s: flipping coins it would be very hard to
+521.04s: roll sort of like four or five bad rolls
+524.32s: in a uh or bad flips in a row, right? So
+527.00s: you're probably um going to be you're
+529.32s: probably if you as long as you've got an
+530.84s: advantage and you can stay in the game,
+532.64s: your money's going to grow. So you
+534.12s: should bet 20% of your bankroll. That's
+535.84s: what Kelly would tell you. Um we'll do a
+537.84s: couple other examples. We'll do another
+539.48s: We'll do an example where you are uh
+541.88s: getting odds. I kind of looked this up
+544.36s: on Cal Sheet before we started
+545.40s: recording. Um the Bills
+547.96s: um
+549.36s: the Bills are trading for uh the uh the
+551.96s: prediction market says 13 cents settling
+554.52s: to a dollar. 13 cents of the Bills going
+557.48s: to win the Super Bowl this year. So if
+560.60s: you pay 13 cents
+562.76s: and the Bills do win the Super Bowl
+565.44s: uh you would get a a dollar back. So you
+567.68s: would make 87 cents. So you're going to
+570.00s: make 87 over 13 87 cents over 13 cents.
+574.40s: That would be your return.
+576.60s: Um if the Bills win the Super Bowl. That
+578.56s: corresponds to a B of 6.69
+582.00s: or a little under seven. You're getting
+583.76s: a little bit less than seven to one on
+585.96s: that.
+586.96s: Um,
+587.84s: so
+589.04s: let's say that you think the probability
+590.76s: of the Bills to win is higher than 13%
+593.08s: 13 13% 13 cents. You think it's 18%. So,
+598.52s: we put a P of 18 and we solve P minus Q
+602.04s: over B and we get 5.7%. So, you should
+606.28s: you should bet 5. Full Kelly would
+609.20s: prescribe to you to bet 5.7%
+612.20s: of your bankroll. Um, this is the case
+614.44s: where you are getting odds.
+616.60s: I'm going to give another example where
+618.64s: um, again, this is right off Kalshi.
+620.92s: This was um, the Bills to win the AFC
+623.52s: East. So, the if the Bills win the AFC
+626.36s: East, um,
+628.80s: it pays uh, you actually have to lay
+631.56s: odds in that case. Um, you're going to
+635.04s: pay 1.4
+637.12s: uh, basically to win
+639.44s: uh,
+640.32s: uh, you're going to pay a dollar and
+641.96s: you're only going to make a 40% return
+644.04s: on the dollar. So, you're going to get
+645.56s: less you're going to get you you're
+647.08s: going to pay
+648.24s: uh,
+649.72s: um, because you're a favorite,
+652.72s: you're not going to get 100% return on
+655.72s: your money. You're going to get less
+656.76s: than that. So, in this case,
+660.12s: uh, the Bills to win the AFC East, but
+661.92s: that was at 1.4x. Let's say you think
+664.48s: it's 80% to win, not 70% to win. So, in
+668.60s: that case, uh, we just solve the
+670.84s: equation. It's just your your P of
+672.72s: winning is 80%. That's what you think it
+674.88s: is. Um, minus the 20% and but we have to
+678.44s: increase the 20% by dividing it by 0.4
+681.96s: and it says to uh, you will end up
+685.16s: betting 30% of your bankroll.
+688.36s: I do want to point something out that is
+689.96s: a bit interesting about Kelly
+692.12s: is that
+693.40s: um
+694.40s: if you gave Kelly the same amount of
+696.88s: edge on a trade
+698.80s: but in one case you are a favorite and
+701.16s: in one case you are an underdog
+705.20s: uh where you're like so you're laying
+707.12s: odds versus getting odds Kelly will
+709.08s: actually tell you to bet more
+711.92s: on being on the favorites scenario
+715.36s: uh despite the fact that it's the same
+718.08s: amount of edge. It's a very strange
+720.80s: property I think of of Kelly and I think
+722.88s: it it it comes back to the fact that
+724.72s: Kelly really penalizes
+727.08s: volatility
+728.72s: and so
+730.80s: if when you're an underdog you're more
+732.68s: likely to lose all your money and it
+734.84s: really penal sort of like penalizes that
+737.32s: versus um when you're a favorite. So
+739.28s: just be aware that there's a bit of an
+741.28s: asymmetry there.
+743.12s: Um and then the next uh
+746.72s: So one one thing about Kelly is like
+748.76s: your your
+750.04s: it's pretty obvious that it's a great
+752.48s: tool for
+754.84s: betting on binary outcomes like sports
+757.88s: betting or just a bar bet that kind of
+760.40s: thing. It's very obvious it's it's good
+761.84s: for that but it's actually pretty
+763.36s: interesting to help you think through um
+767.16s: more like real life problems.
+769.60s: The one one that uh example I kind of
+773.76s: came up with here
+775.76s: is insurance. So we're sort of
+779.68s: everybody's
+780.88s: constantly getting insurance offered to
+783.48s: them in some way. Like here buy this
+785.08s: umbrella insurance, buy this homeowners
+786.76s: insurance, buy hey buy you bought a
+789.24s: computer at Best Buy do you want the
+793.40s: protection plan, right? That's an
+795.04s: insurance that's all insurance like
+796.56s: you're constantly being sold insurance
+798.40s: cuz selling insurance is a good
+799.56s: business. So
+801.48s: uh
+802.48s: So one of the an example here it's and
+804.48s: this is
+805.96s: I live in California. We've got a lot of
+807.84s: a lot of fires here and like your and
+810.68s: and uh homeowners insurance is crazy
+813.28s: expensive.
+814.84s: Uh so, you always have to think like,
+817.36s: well,
+818.40s: am I better off self-insuring?
+820.92s: Self-insuring just means I just don't
+823.00s: buy the insurance
+824.92s: and I set aside the money I I might have
+827.64s: spent on the insurance or I invest I can
+830.32s: maybe set that aside, invest it, and
+832.84s: then
+833.92s: uh roll the dice and if if something
+836.76s: happens to my home, um well, now I have
+839.36s: to pay out of pocket to fix it, but
+840.92s: instead of paying that that insurance
+842.84s: fee every year. So, one way you could
+844.96s: kind of think about this is I set up a
+847.12s: little problem here where let's say that
+849.00s: your home
+850.56s: is
+851.64s: and maybe this person doesn't live in
+852.96s: California cuz this home is only
+854.60s: $500,000, but there's a $500,000 home
+858.60s: and uh their choice is do I pay $3,000 a
+863.24s: year
+864.40s: in insurance premiums?
+866.60s: And what if I think that the chance of
+868.72s: loss
+870.04s: is is a one in 500? And this is not
+872.84s: considering any of those other cases
+874.56s: like, you know, your
+877.48s: a tree falls on your house and you have
+879.48s: to fix like a little part of your house
+881.00s: and it's not a total wreckage of your
+882.36s: house or whatever, but like just imagine
+884.60s: total loss. You have a a one in 500
+886.64s: chance of a total loss.
+888.52s: So, one way you could kind of think
+890.40s: about that is you can run it through
+892.12s: Kelly and say, "Okay, my probability of
+895.64s: not losing, that's my victory, of not
+898.60s: having a insurance event, is 99.8%
+901.80s: or 499 out of 500.
+904.48s: Uh [snorts]
+905.44s: therefore,
+906.96s: uh my P is 99.8, my Q is .2, and then
+911.80s: uh
+912.68s: my payoff or in this case
+916.04s: um what happens to you when you lose is,
+919.12s: well, you lose
+921.12s: $500,000
+923.52s: to
+924.36s: try in an attempt to save $3,000 a year,
+927.56s: right? So, you have this you're laying
+929.92s: massive odds, right? You're you're
+931.64s: laying massive odds here. You're you're
+933.12s: really betting on the favorite. So, when
+935.88s: we compute that, our B is .00 uh six.
+940.32s: And
+941.92s: when you compute that, it says that
+944.40s: uh
+945.24s: she can bet 66 and a half 66 a little
+948.60s: about 66%
+950.68s: of
+952.12s: um the $500,000
+954.44s: would be an appropriate bet. So, this is
+958.28s: um she is able
+960.96s: this is saying that um
+964.40s: what I well, you have to do is go back
+965.88s: to be like, well, what's her bankroll?
+967.32s: And so, I'm just kind of say like,
+968.56s: what's her net worth? And
+971.36s: if
+972.48s: she does not she should insure this
+974.32s: house.
+975.84s: Uh
+977.44s: but if she has a million dollars net
+979.64s: worth for if her net worth is 500k, um
+982.68s: she should probably buy the insurance.
+984.56s: If she has a million dollar net worth,
+988.00s: then
+989.28s: uh now she is
+992.48s: below full Kelly, but she's above half
+994.96s: Kelly. So, she should pro I in my
+997.32s: opinion, actually I think she should
+998.72s: take the insurance. But, if she's worth
+1000.40s: $5 million in a 500k house, then this
+1004.24s: bet of not buying the insurance
+1008.36s: is only like 10% of Kelly. So,
+1012.28s: uh or sorry, it's like less than a
+1013.44s: quarter Kelly. So, she can skip the
+1015.32s: insurance. So, this is like one way you
+1018.76s: could kind of
+1020.32s: think about um
+1022.16s: you know, you can even use a Kelly
+1024.16s: framework to say, "Hey, do I want to
+1027.32s: take the high deductible plan?"
+1029.80s: Um you know, you got your um
+1032.08s: usually insurance at different
+1033.32s: deductibles. If you take the higher
+1034.80s: deductible plan, what you're saying is
+1038.76s: I'm going to be willing to pay out more
+1041.40s: often out of pocket, um but in exchange
+1045.08s: for less premium. Well, those are the
+1047.12s: two Those are the variables that you're
+1048.76s: playing with. I mean, the premium that
+1050.76s: you save is the amount that you bet. And
+1053.44s: the amount that you're risking is what
+1055.24s: you would lose
+1056.80s: um
+1057.40s: if that insurance event did did end up
+1059.88s: happening. The difference between your
+1061.68s: deductible um
+1063.72s: in the two cases is is what you're um
+1066.52s: playing for. Right? So, you can use
+1069.08s: Kelly to think about not just sports
+1071.20s: betting, but like
+1072.64s: uh bets in real life. You just have to
+1074.88s: be aware that Kelly um
+1077.68s: Well, that's kind of what we're going to
+1078.44s: talk about next.
+1080.80s: Is that
+1082.00s: full Kelly is is actually a pretty
+1086.08s: it it it will maximize your growth rate,
+1088.48s: but it will feel very risky. So,
+1092.24s: you pretty most people in the in a
+1094.48s: betting context are not going to be
+1096.92s: betting full Kelly. Um
+1100.00s: First of all, one thing to note right
+1101.64s: away, if you bet more than full Kelly,
+1104.44s: you are
+1105.80s: uh
+1106.96s: destroying
+1108.64s: long-term uh CAGR
+1111.48s: um versus the optimal amount. So, you're
+1113.52s: like immediately this is a bad It's sort
+1116.04s: of uh
+1117.40s: It's a pretty bad decision right off the
+1118.88s: bat to go more than full Kelly, but
+1121.68s: going less than full Kelly, it's true
+1124.72s: that it will slow down
+1126.96s: your growth relative to optimal,
+1129.64s: but um
+1131.84s: it actually has very nice scaling
+1133.44s: properties. If you bet half Kelly,
+1136.52s: you you uh you cut your growth rate, but
+1140.48s: you actually cut your your uh your risk
+1144.00s: faster than your growth rate drops off.
+1146.20s: That's what's pretty pretty neat about
+1147.80s: it. So, um at half Kelly, you get 75% of
+1151.56s: the growth, but you're taking half the
+1153.48s: risk.
+1155.12s: So,
+1156.48s: uh there's a you get a lot of bank for
+1158.20s: your buck from going uh
+1162.56s: to a lower amount to a lower betting
+1164.76s: size than full Kelly. Obviously, there's
+1167.04s: a limit to that. If you were to go all
+1168.40s: the way to zero, then there's no growth
+1169.80s: rate at all, right? So, um half Kelly,
+1172.80s: even quarter Kelly, uh is very much like
+1176.08s: where a lot of people will tend to live
+1178.60s: on on betting scenarios. Um I'm going to
+1181.76s: I'll turn it over to Eric here cuz
+1183.32s: you're going to uh
+1185.20s: um I've been talking more in like
+1188.08s: these betting contexts where it's I sort
+1190.80s: of either/or situations, but in
+1193.72s: investing uh that's it's we're rarely
+1196.60s: investing in a just an either/or
+1197.96s: situation. We're running We have
+1199.28s: portfolios.
+1201.52s: >> Yeah, it's exactly it. And so what Chris
+1204.64s: is alluding to there is there's
+1206.20s: different ways that we can build Kelly
+1210.24s: around different scenarios. So, we can
+1212.96s: have binary outcomes, multiple outcomes
+1215.44s: that are also discrete, and then
+1217.48s: continuous. And a lot of stuff that you
+1219.20s: do in the market actually could be
+1221.40s: bucketed into either of these depending
+1223.36s: on what exactly you're doing. But, a lot
+1226.52s: of what we do in trading is continuous.
+1229.68s: There's things that you could do
+1231.32s: throughout the life cycle of the trade
+1233.28s: and a range of outcomes that can exist.
+1237.60s: And that generally speaking leads to a
+1240.80s: couple important ways to frame how you
+1244.04s: want to use in the way that we think
+1246.08s: about using Kelly.
+1247.96s: First, take a close look at what's going
+1252.60s: into the different terms. And as Chris
+1254.96s: was talking about before, volatility is
+1257.88s: a really big part of a continuous
+1260.28s: system. And I want to give you an
+1262.04s: example in I think it's like maybe in a
+1264.28s: slide or two, but pay attention to that
+1266.80s: specifically because there are some
+1269.16s: important trade-offs that come with
+1271.08s: that.
+1272.48s: So here
+1274.44s: this is showing you uh
+1277.08s: kind of a common issue that you can run
+1279.36s: across. So you come across Kelly, you're
+1281.76s: like, "Oh, this is awesome. I can
+1283.40s: optimize my growth. Sick." And one of
+1287.12s: the ways that a lot of people will
+1288.12s: diversify things is through using
+1290.28s: multiple strategies, right? So you might
+1292.24s: sell a strangle there, do short put
+1295.24s: spread there, whatever.
+1297.12s: But if you use Kelly bet sizing on each
+1301.68s: of those positions in a vacuum
+1304.80s: there's a massive gap, which is a lot of
+1308.36s: times those things are correlated.
+1311.12s: So you might sell the short put spread
+1313.72s: in S&P and sell a strangle in Qs
+1317.20s: and you might size them both with Kelly,
+1319.08s: but all of a sudden your size is
+1321.20s: actually probably a bit bigger than you
+1322.84s: think. And it's the same thing. Think
+1324.32s: like strip everything else away, if you
+1327.00s: buy S&P and you buy Nasdaq, you know
+1330.56s: you're correlated there. And you know
+1332.36s: that that total risk is greater than
+1334.64s: each individual piece because there's
+1336.56s: overlap. That happens with Kelly sizing
+1339.76s: as well.
+1341.08s: The issue is that it can be a little bit
+1342.84s: nefarious in that we don't fully see
+1345.04s: that if we think that we're optimizing
+1346.88s: for growth for each individual trade.
+1350.12s: Easiest way to circumnavigate this is
+1352.00s: actually go back to one of the slides we
+1353.52s: were showing you earlier
+1355.32s: that shows you the portfolio aware
+1359.12s: version of Kelly. All that does is take
+1361.80s: into account correlations. So then
+1364.48s: instead of stacking positions and being
+1367.00s: oversized a little bit too quickly, you
+1369.44s: can be a little bit more aware about it.
+1371.36s: Now
+1372.44s: going back to this real quick,
+1374.00s: emphasizing that volatility bit that we
+1376.56s: were talking about, I'm going to
+1378.96s: flip over to this one.
+1380.76s: And Chris, you were talking a little bit
+1383.96s: about Kelly sizing across these
+1386.92s: different scenarios, and obviously
+1388.92s: something that sticks out here is the
+1390.72s: fact that that top one is pretty low
+1393.92s: volatility. So, what do you make of that
+1397.08s: and then the subsequent sizing that
+1398.48s: happens because of that?
+1401.12s: >> Yeah, so one of the
+1403.44s: um
+1404.88s: one of the crazy things about very, very
+1407.32s: skewed distributions is that they they
+1410.72s: actually mask risk. A really an easy way
+1414.04s: to kind of like think about that is if I
+1415.80s: told you that
+1417.40s: you have some stock
+1419.64s: like let's say you have one stock, and I
+1421.68s: haven't worked out the numbers for this,
+1423.04s: but like um
+1424.96s: I think just a qualitative example will
+1427.84s: will highlight the uh
+1430.96s: the point I'm trying to make.
+1432.96s: If you let's say you have one stock that
+1434.56s: moves
+1436.16s: uh one and a one and a half percent a
+1438.56s: day.
+1439.76s: Um
+1440.92s: and let's say that it doesn't have any
+1443.76s: real tails to it. Like it just it's just
+1445.72s: something that moves one and a half
+1446.84s: percent a day, and it's like almost like
+1448.72s: just a normal just normally distributed
+1451.60s: kind of thing. And you had another asset
+1454.32s: that um moved only
+1458.16s: that moved uh say like 1% a day, but had
+1462.28s: like a 10% chance
+1465.08s: of falling 50% in one day.
+1469.28s: So, it has this like
+1471.20s: really fat tail to it,
+1474.32s: but it doesn't move and that tail shows
+1476.96s: up like very infrequently,
+1479.80s: but and then and then otherwise that
+1482.24s: asset just kind of like moves around
+1483.96s: like it's almost like a bond that just
+1485.32s: kind of like bounces around like a
+1486.68s: pretty tight range.
+1488.44s: What will happen is that asset
+1491.92s: the volatility is sort of the volatility
+1494.40s: of that asset is low. The like if there
+1496.76s: was a straddle on that asset, it would
+1499.12s: not be a very expensive straddle because
+1501.52s: day-to-day it doesn't move around a lot.
+1504.80s: But, that would lead you to think that
+1506.96s: it was not very risky. When in in in
+1509.48s: some ways it's sort of riskier than the
+1511.40s: other thing that moves around 1 and 1/2%
+1513.32s: a day but doesn't have these really fat
+1514.76s: tails to it. So, what happens is Now,
+1517.64s: the options, by the way, the options
+1519.32s: market would sort of reveal the second
+1521.44s: stock
+1522.76s: to be
+1524.44s: a lot riskier than it appears by how
+1526.36s: much it moves around because it would
+1527.96s: bid up the the far out of the money puts
+1531.56s: even though the straddle was somewhat
+1533.36s: cheap. Whereas, in the first stock
+1536.68s: the straddle would be more expensive,
+1539.16s: but there wouldn't be a crazy skew to
+1540.76s: the options, right?
+1542.44s: What hap- So, what happens is if you
+1544.28s: think about Kelly, the inputs here are
+1546.32s: really about like
+1548.12s: um
+1549.76s: they're really more about the volatility
+1551.84s: in a sense.
+1553.52s: And so
+1555.56s: Kelly will tend to overstate how much
+1558.52s: you should bet in the presence of a lot
+1561.00s: of skew.
+1562.88s: The The risk
+1564.80s: um if you're only representing risk in
+1567.88s: this formula with a concept of
+1569.64s: volatility, you are not giving a full
+1572.56s: picture of the risk.
+1575.32s: So Kelly will end up uh
+1578.68s: like I said, it will end up
+1580.64s: encouraging you to bet more than you
+1582.48s: really should. So
+1584.76s: in this diagram, we have this thing
+1587.04s: called low vol. You see that There's
+1589.12s: that blue line that says "Oh,
+1591.16s: uh this is the low a low vol strategy,
+1593.76s: the premium seller."
+1595.88s: And
+1597.64s: it feels like selling premium is
+1600.08s: oftentimes low vol because especially if
+1602.20s: you're selling way out of the money
+1603.28s: options, it just feels like you win
+1604.56s: every week.
+1606.12s: And Kelly will completely uh
+1608.56s: uh you you just cannot use Kelly in that
+1611.28s: way because it's going to tell you to
+1612.92s: bet way more than you can afford to lose
+1616.08s: in that sense. So, I just want to
+1617.84s: highlight that Kelly is deeply sensitive
+1621.52s: to the fact that you're just giving it a
+1623.68s: volatility in a sense.
+1625.64s: Um but volatility is not the only thing
+1628.20s: that describes the risk of any asset.
+1632.40s: >> Literally perfect. And especially for
+1635.84s: people that are selling premium
+1637.56s: specifically a lot of times the the
+1639.80s: tails end up making a break they don't
+1641.68s: happen that much. So, they can hide
+1644.16s: pretty well. And this leads to one final
+1646.76s: important point.
+1648.48s: Which is if you're using Kelly in any of
+1651.40s: those facets that we just showed you,
+1653.08s: it's based on some inputs.
+1655.76s: One of the important inputs is your
+1658.84s: expected edge.
+1660.72s: And we kind of like just take that for
+1662.44s: granted, but the reality is is in
+1664.44s: trading
+1665.96s: you probably don't know that. You might
+1668.32s: have a good guess, but you might be off.
+1671.52s: And depending on how volatile the thing
+1674.04s: is, those two have a relationship. So,
+1676.76s: if you're off a little and there's a lot
+1678.44s: of vol, that can back you into a bad
+1680.48s: corner where you might be completely
+1682.12s: missized.
+1683.52s: So, this just gives you another, you
+1686.48s: know, piece to consider when you're
+1688.80s: using sizing and generally speaking why
+1692.96s: most of us when we use things like
+1694.52s: Kelly, we do not rest on full Kelly. You
+1697.40s: can save yourself, add a little bit of a
+1699.64s: fudge factor, and move down half,
+1702.32s: quarter, again, whatever variant you
+1704.44s: don't have to move in even increments
+1706.00s: like that either. It can be, you know,
+1707.88s: whatever you need it to be. But just
+1709.88s: know that there's a huge assumption, and
+1712.52s: one of those huge assumptions is
+1713.84s: something that you literally don't know.
+1716.24s: So, you have to take that into account.
+1719.28s: So,
+1719.88s: >> Yeah, that's
+1720.28s: >> You now know Oh, sorry, go ahead. I was
+1722.00s: going to say
+1722.88s: >> I was going to say I love I love that
+1724.12s: chart cuz it's like it's such a stark
+1726.44s: thing there. It's like, "Hey, if your
+1728.08s: edge is half what you think it was,
+1731.04s: then now full Kelly is like you're
+1732.80s: compounding at zero."
+1734.80s: >> Right.
+1735.48s: >> that's that's like, "Hey, I thought I
+1736.88s: had a 10% edge and I only have a 5%
+1739.52s: edge.
+1740.88s: And I've just completely like just which
+1743.92s: is not a crazy thing to think. I mean,
+1745.52s: you can certainly be wrong by that
+1747.28s: amount on your edge." It's like, "Hey, I
+1749.68s: you know, in in in options trading would
+1752.36s: be like I think I'm getting 4 cents of
+1753.76s: edge on this trade." But it's like, "If
+1755.68s: you were like, no, you were actually
+1756.84s: only getting 2 cents of edge, I wouldn't
+1758.24s: have been like,
+1760.28s: that's impossible." I'd have been like,
+1762.32s: "Oh, okay. [clears throat] I mean,
+1763.04s: that's that's like, okay. Like, I'd like
+1765.92s: to hear why, but that that it's 100%
+1768.24s: like completely within the realm of
+1769.88s: possibility. Like our error bars around
+1772.12s: how much risk we have are pretty wide.
+1774.28s: And this is
+1775.64s: saying that it's like at full Kelly, you
+1777.60s: have no margin for error or very little
+1779.48s: margin for error. You can only be off by
+1781.20s: half.
+1782.56s: And then you've just blown your trade up
+1784.04s: entirely. Whereas like if you're at
+1785.92s: quarter Kelly,
+1787.44s: um it's so much more forgiving. I mean,
+1789.48s: even even here like at quarter Kelly,
+1792.12s: um
+1792.92s: you are still compounding at a very
+1795.64s: healthy rate even if your edge was half
+1798.36s: or even a quarter of what you thought it
+1799.72s: was.
+1801.08s: >> Yeah, it gives you a little bit of room
+1802.60s: to maneuver. And markets are imperfect,
+1805.64s: continually dealing with shifting
+1807.40s: information. So you now know a lot more
+1810.24s: about Kelly than probably 90% of people
+1812.64s: cuz it's not just the fact that it
+1813.88s: exists. There's a lot of different
+1815.28s: forms, how to use it, and you know a
+1817.40s: couple of the gotchas that are
+1819.00s: associated with it. We will see you guys
+1821.20s: on the next one.
