@@ -1,0 +1,268 @@
+[
+  {
+    "video_id": "wKIxZ9Z9mSE",
+    "title": "Can You Beat The Market With The Wheel? 20 Years of Proof",
+    "text": "What's up, Outliers? Today, we're going to talk about the wheel since 2007. And seven. So, this is effectively 20 years of data that walks through the wheel, how it performs. What I want to walk you through are a couple things. First, super fast overview of like what the thing is, why it might be useful. But then more importantly, I want to talk about some of the tradeoffs that people typically ignore. And then at the end of the video, I'm going to show you specific ways on how you can improve this kind of strategy. So, at a high level, this is a flowchart of the wheel, and we begin in this top left box selling a cash secured put. Then that put is either in the money or out of the money. If it's in the money, we go through the rest of this pipeline. If it's out of the money, we just continue in this quadrant. And there's a couple things that I want to highlight about this strategy at a high level. First, the wheel itself is not a strategy. It's just a series of trades. In this context, trading the wheel in something like SPY, which we're going to talk about, is effectively just getting long beta. You're just trading the market tending to go up, maybe some other factors depending on what you overlay.",
+    "start_timestamp_seconds": 0.32,
+    "end_timestamp_seconds": 82.92,
+    "start_timestamp": "00:00",
+    "video_url": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE&t=0",
+    "chunk_index": 0,
+    "word_count": 232,
+    "upload_date": "20261004",
+    "published_at": "2026-10-04T18:00:27Z",
+    "duration": 1092,
+    "related_wiki_pages": [
+      "concepts/drawdown-management",
+      "concepts/premium-selling"
+    ]
+  },
+  {
+    "video_id": "wKIxZ9Z9mSE",
+    "title": "Can You Beat The Market With The Wheel? 20 Years of Proof",
+    "text": "In this context, trading the wheel in something like SPY, which we're going to talk about, is effectively just getting long beta. You're just trading the market tending to go up, maybe some other factors depending on what you overlay. And we need to talk about that because that highlights a couple issues with the wheel that we're going to want to think through. So first, if we look at how the position starts, it's via a cash secured put. So, we would sell cash secured puts until we get assigned. The first issue you'll notice is that that is a capped upside profit potential position. That means you you do not enjoy unlimited upside profit, but you have unlimited downside risk. That's not inherently good or bad by itself, but if we think what this means in the context of spy, the fact that it tends to go up, yet we've capped our upside on the initial leg. That's a little bit of a problem. The next issue is when you get assigned, you buy shares at whatever your price was, you keep your premium, and then we would sell a call against those shares. And what do we notice again? We've capped upside profit potential. So, the thing that we're trying to get exposure to, the fact that the market tends to go up, is fine, but then each configuration we've looked at so far in",
+    "start_timestamp_seconds": 66.88,
+    "end_timestamp_seconds": 166.0,
+    "start_timestamp": "01:06",
+    "video_url": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE&t=66",
+    "chunk_index": 1,
+    "word_count": 238,
+    "upload_date": "20261004",
+    "published_at": "2026-10-04T18:00:27Z",
+    "duration": 1092,
+    "related_wiki_pages": [
+      "concepts/drawdown-management",
+      "concepts/premium-selling"
+    ]
+  },
+  {
+    "video_id": "wKIxZ9Z9mSE",
+    "title": "Can You Beat The Market With The Wheel? 20 Years of Proof",
+    "text": "And what do we notice again? We've capped upside profit potential. So, the thing that we're trying to get exposure to, the fact that the market tends to go up, is fine, but then each configuration we've looked at so far in the base wheel as most people trade it, literally caps the upside. It doesn't make a lot of sense. So, keep that in mind as we go through the rest of the video, and I'm going to give you ideas on how you can manage through that. And here are some of the the common tropes around the wheel. Stuff like, you know, you get paid to buy the stock. That's what people say because when you sell a cash secured put, you collect a premium, and then if you get assigned, people will say, \"Well, you get it at a price that you wanted and you get paid to do it.\" The problem with that, as a lot of you know, is conditions change. The point that you might have been happy taking assignment might change in the future depending on what's going on in the world. That tends to be a problem for people. The next thing is you get paid to sell your shares because when you sell a call, you would sell your shares if it's in the money at your strike price, and you collect a premium there. But again,",
+    "start_timestamp_seconds": 151.04,
+    "end_timestamp_seconds": 226.96,
+    "start_timestamp": "02:31",
+    "video_url": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE&t=151",
+    "chunk_index": 2,
+    "word_count": 237,
+    "upload_date": "20261004",
+    "published_at": "2026-10-04T18:00:27Z",
+    "duration": 1092,
+    "related_wiki_pages": [
+      "concepts/drawdown-management",
+      "concepts/premium-selling"
+    ]
+  },
+  {
+    "video_id": "wKIxZ9Z9mSE",
+    "title": "Can You Beat The Market With The Wheel? 20 Years of Proof",
+    "text": "The next thing is you get paid to sell your shares because when you sell a call, you would sell your shares if it's in the money at your strike price, and you collect a premium there. But again, the issue with that is we're capping our upside. So, you're missing a lot of upside profit potential. It's not all bad. And what I'm emphasizing here is just being able to look at a strategy objectively and saying these are the things that are good about this thing, these are the things that kind of aren't ideal, and is there a way to help me improve it? And it's not all a bad because when we have periods like 2011 and 2015 when the market was kind of doing nothing and going sideways, you'll notice that the wheel actually does well. It outperformed S&P both those years because of that premium you're collecting during periods when things are quiet. We also have the effect of collecting premium, which is a dampening effect, and we could take a look at the performance in '08 and '22, which was a bear market, and the wheel outperformed spy in both of those. So, I'm not painting this as if the wheel is all bad. A lot of you know I actually trade a permutation of the wheel. That permutation is actually designed to fix some of these exact issues called a",
+    "start_timestamp_seconds": 217.8,
+    "end_timestamp_seconds": 294.2,
+    "start_timestamp": "03:37",
+    "video_url": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE&t=217",
+    "chunk_index": 3,
+    "word_count": 238,
+    "upload_date": "20261004",
+    "published_at": "2026-10-04T18:00:27Z",
+    "duration": 1092,
+    "related_wiki_pages": [
+      "concepts/drawdown-management",
+      "concepts/premium-selling"
+    ]
+  },
+  {
+    "video_id": "wKIxZ9Z9mSE",
+    "title": "Can You Beat The Market With The Wheel? 20 Years of Proof",
+    "text": "So, I'm not painting this as if the wheel is all bad. A lot of you know I actually trade a permutation of the wheel. That permutation is actually designed to fix some of these exact issues called a covered strangle, which you'll see a little bit about that as we move on. And one of the reasons why this performs better is not just because of the premiums you collect, but it's because of the fact that there are periods where you're just completely flat. So, you don't have any long equity exposure, you might have some short puts out or something like that, but you're not always fully exposed. And that leads to a follow-on issue, which is when the market tends to recover or goes through a recovery, you lag because of what we talked about before, the fact that we cap the upside potential. So, if we look in 2020, the market rallied back pretty hard, and the S&P outright absolutely beat the wheel pretty significantly. The other thing to keep in mind is with the wheel, you are creating occurrences, meaning you are actively trading. Each time you interact with the market, there's a cost associated with that via friction of different sorts. And there's tax implications. So, you cannot look at it as, \"Oh, I just need to, you know, outperform the spy by a percent over a 10-year window.\" Because once you include costs and all that",
+    "start_timestamp_seconds": 281.2,
+    "end_timestamp_seconds": 371.76,
+    "start_timestamp": "04:41",
+    "video_url": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE&t=281",
+    "chunk_index": 4,
+    "word_count": 244,
+    "upload_date": "20261004",
+    "published_at": "2026-10-04T18:00:27Z",
+    "duration": 1092,
+    "related_wiki_pages": [
+      "concepts/drawdown-management",
+      "concepts/premium-selling"
+    ]
+  },
+  {
+    "video_id": "wKIxZ9Z9mSE",
+    "title": "Can You Beat The Market With The Wheel? 20 Years of Proof",
+    "text": "friction of different sorts. And there's tax implications. So, you cannot look at it as, \"Oh, I just need to, you know, outperform the spy by a percent over a 10-year window.\" Because once you include costs and all that stuff, you're drastically underperforming. You have to do a little bit better than that. When we look at where this premium is coming from and how options behave, I decided to create a grid for you guys. And all I'm doing is saying we're going to have a 30 delta entry for both the put and calls. And the x-axis here is just days to expiration. This should be pretty straightforward, where we know gamma gets more excitable as we get closer in time, and Vega is larger when you go further out in time. Except remember, changes in Vega are a little bit slower when you're far out in time. This is just designed to help you understand some of the exposure of the individual legs that you're getting here. So, if we look at the total period, the dates here got messed up on the export. This is literally just looking back from '07 to present. Which was September when I made this in 2026. And you'll see that a base wheel, 30 DTE, 30 delta, you sit somewhere around an 8% compound annual growth rate, whereas spy's like 11%. You lag massively. So, there's a couple things that we want",
+    "start_timestamp_seconds": 359.72,
+    "end_timestamp_seconds": 453.4,
+    "start_timestamp": "05:59",
+    "video_url": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE&t=359",
+    "chunk_index": 5,
+    "word_count": 243,
+    "upload_date": "20261004",
+    "published_at": "2026-10-04T18:00:27Z",
+    "duration": 1092,
+    "related_wiki_pages": [
+      "concepts/drawdown-management",
+      "concepts/premium-selling"
+    ]
+  },
+  {
+    "video_id": "wKIxZ9Z9mSE",
+    "title": "Can You Beat The Market With The Wheel? 20 Years of Proof",
+    "text": "I made this in 2026. And you'll see that a base wheel, 30 DTE, 30 delta, you sit somewhere around an 8% compound annual growth rate, whereas spy's like 11%. You lag massively. So, there's a couple things that we want to try to figure out. What I did is run a massive grid. Literally hundreds and hundreds of combinations of different days to expirations, different deltas, different holding durations based on time, based on percent premium. I looked at all of it. And what I want to show you is spy is in this corner over here. And notice the drawdown. The drawdown's pretty bad. And notice where it sits on the Y axis with its return. We know where that generally landed about 11%. But I want you to take a peek at some of these other variants, like these here. Notice how these have like a little over 40% drawdown and about the same annualized return. Or some of these even further left that have like mid-20% drawdown and maybe underperforming by like two, three points. So in this case, you're cutting your maximum downside by like uh half and you're offlaying a few points to the upside each year. This is where we start to be able to use options and our understanding of options to build different configurations, understanding how things behave. So what I did here is I'm showing you the",
+    "start_timestamp_seconds": 437.0,
+    "end_timestamp_seconds": 531.28,
+    "start_timestamp": "07:17",
+    "video_url": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE&t=437",
+    "chunk_index": 6,
+    "word_count": 237,
+    "upload_date": "20261004",
+    "published_at": "2026-10-04T18:00:27Z",
+    "duration": 1092,
+    "related_wiki_pages": [
+      "concepts/drawdown-management",
+      "concepts/premium-selling"
+    ]
+  },
+  {
+    "video_id": "wKIxZ9Z9mSE",
+    "title": "Can You Beat The Market With The Wheel? 20 Years of Proof",
+    "text": "upside each year. This is where we start to be able to use options and our understanding of options to build different configurations, understanding how things behave. So what I did here is I'm showing you the differences in annualized return and drawdown based on your day to expiration selection, which is the Y axis, and then your X axis here is your delta. And this should be pretty straightforward. Where if we look across the window, there's a little bit of a sweet spot. And it's anywhere from like uh high 20 to mid-30 delta where you try and strike a balance between what you're making and what your drawdown is. So then the next stuff that we need to look at is different ways we can manage the positions. So, the left-hand side, we're looking at if you just start with cash and you're doing your cash secured puts to begin, or if you're starting with actually some exposure via long shares, 50% of your utilization. And take a look at the difference in performance broadly, and I want you to pay attention to the exits. So, if you exit at 25% of your DTE time window, 50% versus taking to expiration, generally speaking, going to expiration helps you out a bit more. But, if you hold to expiration, typically speaking, you're going to have a bit more of a drawdown. Again, there is no perfect answer here, but",
+    "start_timestamp_seconds": 519.16,
+    "end_timestamp_seconds": 622.2,
+    "start_timestamp": "08:39",
+    "video_url": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE&t=519",
+    "chunk_index": 7,
+    "word_count": 241,
+    "upload_date": "20261004",
+    "published_at": "2026-10-04T18:00:27Z",
+    "duration": 1092,
+    "related_wiki_pages": [
+      "concepts/drawdown-management",
+      "concepts/premium-selling"
+    ]
+  },
+  {
+    "video_id": "wKIxZ9Z9mSE",
+    "title": "Can You Beat The Market With The Wheel? 20 Years of Proof",
+    "text": "expiration, generally speaking, going to expiration helps you out a bit more. But, if you hold to expiration, typically speaking, you're going to have a bit more of a drawdown. Again, there is no perfect answer here, but what this is meant to do is to help you begin understanding some of the tradeoffs. Now, here I'm showing you some of those other configurations from that first plot that did pretty well compared to spy, but we're going to make them better in a little bit. What I did is looked at the base, right? 30 DTE, 30 deltas. Your compound annual growth rate about 8% max drawdown about 32. Then, if we look at a 20 DTE and a 30 and 25 delta, notice what happens to your compound annual growth rate and your max drawdown. It's actually a little bit better. So, going shorter in time is a little bit strange here and might be a little bit contrary to what people are thinking, but the reason why this is something to at least ruminate on is because you're not really worried about your gamma. One of the downsides of holding short options up to expiration is gamma starts to get really high. But, when you're trading something like the wheel, you've already made a decision. If my short put is in the money, I'm going to just buy the underlying. So, it doesn't matter how bumpy your P&L is",
+    "start_timestamp_seconds": 608.68,
+    "end_timestamp_seconds": 698.6,
+    "start_timestamp": "10:08",
+    "video_url": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE&t=608",
+    "chunk_index": 8,
+    "word_count": 242,
+    "upload_date": "20261004",
+    "published_at": "2026-10-04T18:00:27Z",
+    "duration": 1092,
+    "related_wiki_pages": [
+      "concepts/drawdown-management",
+      "concepts/premium-selling"
+    ]
+  },
+  {
+    "video_id": "wKIxZ9Z9mSE",
+    "title": "Can You Beat The Market With The Wheel? 20 Years of Proof",
+    "text": "But, when you're trading something like the wheel, you've already made a decision. If my short put is in the money, I'm going to just buy the underlying. So, it doesn't matter how bumpy your P&L is coming into that window, if you already know your resolution at the end of the thing. So, it allows you to attack a different part of the curve that a lot of people generally are deterred from, and there's a bit more compensation for that part of the curve for that exact reason. One of the things to know is that if we start with cash, meaning selling cash-secured puts, 50% stock utilization, or 100% stock utilization, it all kind of converges pretty quickly in terms of what the position looks like, and it's just because of that assignment factor. It's because the market tends to go up. So, your short calls, generally speaking, are going to end up in the money, and you're going to end up flattening the thing out relatively quickly. So, it doesn't matter so much like what happens right in the beginning. What matters is how you maintain the rules going forward. So, let's talk about some of these rules that can help us. One of them is not capping your upside. So, what we can do is, instead of selling a call against each share we own this scenario, we could allow ourselves to accumulate more shares and sell fewer calls.",
+    "start_timestamp_seconds": 687.88,
+    "end_timestamp_seconds": 772.8,
+    "start_timestamp": "11:27",
+    "video_url": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE&t=687",
+    "chunk_index": 9,
+    "word_count": 244,
+    "upload_date": "20261004",
+    "published_at": "2026-10-04T18:00:27Z",
+    "duration": 1092,
+    "related_wiki_pages": [
+      "concepts/drawdown-management",
+      "concepts/premium-selling"
+    ]
+  },
+  {
+    "video_id": "wKIxZ9Z9mSE",
+    "title": "Can You Beat The Market With The Wheel? 20 Years of Proof",
+    "text": "that can help us. One of them is not capping your upside. So, what we can do is, instead of selling a call against each share we own this scenario, we could allow ourselves to accumulate more shares and sell fewer calls. You get less of a credit, but you maintain upside. And again, remember, that's the primary return source that this kind of strategy, in general, is going to benefit from. So, with that, I give you a couple different annualized return and maximum drawdown metrics. The first thing to note is if we look at covering less and less of the upside, you'll notice that you make more money, and you tend to have more of a drawdown. Literally just means you're holding more equity. You're taking on more beta. So, you can make a decision based on that or you can try to time things. So, in this case I looked at a couple really basic timing features, only selling calls if we're above the 200 period moving average, if we're below, if implied vol is greater than realized vol, if we're below the MA plus IV's greater than RV. And what you'll notice is a handful of these actually do outperform. But then, some of them have different relationships with the drawdown, meaning most of them don't help your drawdown, but most of them improve your total return potential. Interesting. If we think about what you get for you",
+    "start_timestamp_seconds": 754.72,
+    "end_timestamp_seconds": 856.04,
+    "start_timestamp": "12:34",
+    "video_url": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE&t=754",
+    "chunk_index": 10,
+    "word_count": 243,
+    "upload_date": "20261004",
+    "published_at": "2026-10-04T18:00:27Z",
+    "duration": 1092,
+    "related_wiki_pages": [
+      "concepts/drawdown-management",
+      "concepts/premium-selling"
+    ]
+  },
+  {
+    "video_id": "wKIxZ9Z9mSE",
+    "title": "Can You Beat The Market With The Wheel? 20 Years of Proof",
+    "text": "But then, some of them have different relationships with the drawdown, meaning most of them don't help your drawdown, but most of them improve your total return potential. Interesting. If we think about what you get for you those short calls, it's not that much. What this left axis is showing you, those blue bars, that's the intrinsic value, essentially that you gave up with those short calls at the time. It doesn't compensate well for the short calls covering all your shares. This logically makes sense. The markets, especially indices, tend to have put skew. The put options tend to be a bit rich. The calls, not so much. And the other factor here is the fact again that the market tends to go up. So, then we have another choice. Should we close at half profit and then sell new options? And what we found is going closer to expiration helps you about 75% max profit. What this is showing you is not whether or not it made money. All of these made money. This is just relative to the baseline. And the 75% profit actually did a little bit better. And take a look at which ones had more wealth in smaller drawdowns. Again, something interesting underlying here. This talks about just rebalancing your deltas via delta bands. This is a just lay approach. Anytime there's a move, we get back.",
+    "start_timestamp_seconds": 838.36,
+    "end_timestamp_seconds": 940.44,
+    "start_timestamp": "13:58",
+    "video_url": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE&t=838",
+    "chunk_index": 11,
+    "word_count": 234,
+    "upload_date": "20261004",
+    "published_at": "2026-10-04T18:00:27Z",
+    "duration": 1092,
+    "related_wiki_pages": [
+      "concepts/drawdown-management",
+      "concepts/premium-selling"
+    ]
+  },
+  {
+    "video_id": "wKIxZ9Z9mSE",
+    "title": "Can You Beat The Market With The Wheel? 20 Years of Proof",
+    "text": "wealth in smaller drawdowns. Again, something interesting underlying here. This talks about just rebalancing your deltas via delta bands. This is a just lay approach. Anytime there's a move, we get back. And this doesn't do that well because you don't spend enough time in the trade. There's ways to fix this as well, but a thing to be aware of as another management methodology. But you can't just rebalance your deltas too hyperactively or not allowing enough time to pass cuz you need that time to pass on those options. So then we have the put side. And what happens if we sell more cash secured puts only when we're above the 200 period moving average, when implied vol is greater than realized vol, or both conditions? And take a look. Which of these actually improved your total position? And it's really interesting. There's a table that will compare compare this in a little bit. But the trend gate for adding more risk tended to help you. And there's a simple way to think about that. As we go through these different scenarios that we want to try and address, there's different levers you can pull on to build a configuration that you want. And in the end, if we take a look at some of these different wheel structures compared to a base wheel and compared to spy, if you look at the combined 30",
+    "start_timestamp_seconds": 925.12,
+    "end_timestamp_seconds": 1021.48,
+    "start_timestamp": "15:25",
+    "video_url": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE&t=925",
+    "chunk_index": 12,
+    "word_count": 237,
+    "upload_date": "20261004",
+    "published_at": "2026-10-04T18:00:27Z",
+    "duration": 1092,
+    "related_wiki_pages": [
+      "concepts/drawdown-management",
+      "concepts/premium-selling"
+    ]
+  },
+  {
+    "video_id": "wKIxZ9Z9mSE",
+    "title": "Can You Beat The Market With The Wheel? 20 Years of Proof",
+    "text": "can pull on to build a configuration that you want. And in the end, if we take a look at some of these different wheel structures compared to a base wheel and compared to spy, if you look at the combined 30 delta and the combined 25 delta, what these are doing are 30 delta short options, generally speaking, at 20 DTE or whatever is closest. 50% capping your call upside, and only selling new puts when you're above a 200-period moving average, and you're holding long equity from the jump, meaning you're coming into the position and you're actually buying shares, not just waiting to get assigned, and take a look at your performance here. You have about one point less of compound annual growth rate, but you cut your max drawdown from 55% down to 31, and you take your average drawdown per year down like six, five and a half points. This is a covered strangle. That's what these things are at the very end, and that's why they exist to address the very specific issues that we just discussed with a base wheel. It's a fantastic starting point, but there's a bunch of ways you can improve it. As always, if you have any questions, let me know. Be an outlier. See you guys later.",
+    "start_timestamp_seconds": 1010.44,
+    "end_timestamp_seconds": 1091.4,
+    "start_timestamp": "16:50",
+    "video_url": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=wKIxZ9Z9mSE&t=1010",
+    "chunk_index": 13,
+    "word_count": 219,
+    "upload_date": "20261004",
+    "published_at": "2026-10-04T18:00:27Z",
+    "duration": 1092,
+    "related_wiki_pages": [
+      "concepts/drawdown-management",
+      "concepts/premium-selling"
+    ]
+  }
+]

@@ -1,0 +1,437 @@
+0.32s: What's up, Outliers? Today, we're going
+1.60s: to talk about the wheel since 2007. And
+5.84s: seven. So, this is effectively 20 years
+9.68s: of data that walks through the wheel,
+12.16s: how it performs. What I want to walk you
+14.72s: through are a couple things. First,
+17.12s: super fast overview of like what the
+18.60s: thing is, why it might be useful. But
+21.80s: then more importantly, I want to talk
+23.28s: about some of the tradeoffs that people
+24.76s: typically ignore. And then at the end of
+26.60s: the video, I'm going to show you
+28.44s: specific ways on how you can improve
+32.04s: this kind of strategy.
+34.20s: So, at a high level, this is a flowchart
+38.16s: of the wheel, and we begin in this top
+41.44s: left box selling a cash secured put.
+45.40s: Then that put is either in the money or
+47.16s: out of the money. If it's in the money,
+48.92s: we go through the rest of this pipeline.
+50.56s: If it's out of the money, we just
+51.84s: continue in this quadrant.
+54.84s: And there's a couple things that I want
+57.28s: to highlight about this strategy at a
+61.04s: high level. First, the wheel itself is
+63.24s: not a strategy. It's just a series of
+65.60s: trades.
+66.88s: In this context, trading the wheel in
+69.64s: something like SPY, which we're going to
+71.92s: talk about, is effectively
+75.44s: just getting long beta. You're just
+78.24s: trading the market tending to go up,
+80.88s: maybe some other factors depending on
+82.92s: what you overlay.
+84.48s: And we need to talk about that because
+86.60s: that highlights a couple issues with the
+90.04s: wheel that we're going to want to think
+92.00s: through. So first, if we look at how the
+95.28s: position starts, it's via a cash secured
+98.80s: put. So, we would sell cash secured puts
+101.92s: until we get assigned.
+103.60s: The first issue you'll notice is that
+106.64s: that is a capped upside profit potential
+109.96s: position. That means you you do not
+113.12s: enjoy unlimited upside profit, but you
+116.76s: have unlimited downside risk.
+119.80s: That's not inherently good or bad by
+121.80s: itself, but if we think what this means
+125.56s: in the context of spy, the fact that it
+129.76s: tends to go up, yet we've capped our
+133.28s: upside on the initial leg. That's a
+136.12s: little bit of a problem.
+138.16s: The next issue
+140.36s: is when you get assigned, you buy shares
+144.28s: at whatever your price was, you keep
+146.36s: your premium,
+147.68s: and then we would sell a call against
+151.04s: those shares. And what do we notice
+153.24s: again?
+154.44s: We've capped upside profit potential.
+158.60s: So, the thing that we're trying to get
+160.40s: exposure to, the fact that the market
+161.92s: tends to go up, is fine, but then each
+166.00s: configuration we've looked at so far in
+168.32s: the base wheel as most people trade it,
+171.28s: literally caps the upside. It doesn't
+173.96s: make a lot of sense. So, keep that in
+176.04s: mind as we go through the rest of the
+177.28s: video, and I'm going to give you ideas
+180.20s: on how you can manage through that. And
+183.24s: here are some of the the common tropes
+186.48s: around the wheel.
+188.12s: Stuff like, you know, you get paid to
+190.84s: buy the stock. That's what people say
+193.04s: because when you sell a cash secured
+194.92s: put, you collect a premium, and then if
+197.52s: you get assigned, people will say,
+199.00s: "Well, you get it at a price that you
+200.36s: wanted and you get paid to do it." The
+202.16s: problem with that, as a lot of you know,
+204.52s: is conditions change. The point that you
+207.24s: might have been happy taking assignment
+209.60s: might change in the future depending on
+213.08s: what's going on in the world.
+215.12s: That tends to be a problem for people.
+217.80s: The next thing is you get paid to sell
+220.40s: your shares because when you sell a
+222.04s: call, you would sell your shares if it's
+225.00s: in the money at your strike price, and
+226.96s: you collect a premium there. But again,
+228.48s: the issue with that is we're capping our
+230.68s: upside. So, you're missing a lot of
+232.84s: upside profit potential.
+235.24s: It's not all bad. And what I'm
+237.56s: emphasizing here is just being able to
+239.88s: look at a strategy objectively
+242.84s: and saying these are the things that are
+244.32s: good about this thing, these are the
+245.60s: things that kind of aren't ideal, and is
+248.44s: there a way to help me improve it? And
+251.20s: it's not all a bad because when we have
+253.56s: periods like 2011 and 2015 when the
+255.96s: market was kind of doing nothing and
+257.48s: going sideways, you'll notice that the
+259.36s: wheel actually does well. It
+261.24s: outperformed S&P both those years
+264.48s: because of that premium you're
+266.00s: collecting during periods when things
+267.56s: are quiet. We also have the effect of
+271.20s: collecting premium, which is a dampening
+273.12s: effect, and we could take a look at the
+275.24s: performance in '08 and '22, which was a
+277.96s: bear market, and the wheel outperformed
+281.20s: spy in both of those. So,
+284.64s: I'm not painting this as if the wheel is
+287.08s: all bad. A lot of you know I actually
+288.72s: trade a permutation of the wheel. That
+291.24s: permutation is actually designed to fix
+294.20s: some of these exact issues called a
+296.32s: covered strangle, which you'll see a
+299.40s: little bit about that as we move on.
+302.64s: And one of the reasons why this performs
+306.64s: better is not just because of the
+308.24s: premiums you collect, but it's because
+310.04s: of the fact that there are periods where
+312.36s: you're just completely flat. So, you
+315.36s: don't have any long equity exposure, you
+318.12s: might have some short puts out or
+320.68s: something like that, but you're not
+322.68s: always fully exposed. And that leads to
+326.36s: a follow-on issue, which is when the
+328.48s: market tends to recover or goes through
+330.72s: a recovery, you lag because of what we
+333.68s: talked about before, the fact that we
+335.32s: cap the upside potential.
+338.52s: So, if we look in 2020, the market
+341.04s: rallied back pretty hard, and the S&P
+344.56s: outright absolutely beat the wheel
+346.76s: pretty significantly.
+348.52s: The other thing to keep in mind is with
+351.40s: the wheel, you are creating occurrences,
+354.08s: meaning you are actively trading. Each
+356.16s: time you interact with the market,
+357.68s: there's a cost associated with that via
+359.72s: friction of different sorts.
+361.64s: And there's tax implications. So, you
+364.20s: cannot look at it as, "Oh, I just need
+366.48s: to, you know, outperform the spy by a
+368.92s: percent over a 10-year window." Because
+371.76s: once you include costs and all that
+373.40s: stuff, you're drastically
+374.36s: underperforming.
+375.92s: You have to do a little bit better than
+377.16s: that.
+378.08s: When we look at where this premium is
+380.36s: coming from and how options behave, I
+383.52s: decided to create a grid for you guys.
+386.96s: And all I'm doing is saying we're going
+389.84s: to have a 30 delta entry for both the
+393.52s: put and calls.
+395.24s: And the x-axis here is just days to
+398.68s: expiration. This should be
+402.16s: pretty straightforward, where we know
+405.36s: gamma gets more excitable as we get
+408.24s: closer in time, and Vega is larger when
+412.48s: you go further out in time. Except
+414.08s: remember, changes in Vega are a little
+416.52s: bit slower when you're far out in time.
+418.24s: This is just designed to help you
+419.44s: understand some of the exposure
+422.68s: of the individual legs that you're
+423.96s: getting here.
+425.48s: So, if we look at the total period, the
+429.00s: dates here got messed up on the export.
+431.44s: This is literally just looking back from
+433.40s: '07 to present. Which was September when
+437.00s: I made this in 2026.
+439.64s: And you'll see that a base wheel, 30
+442.80s: DTE, 30 delta,
+444.92s: you sit somewhere around an 8% compound
+447.88s: annual growth rate, whereas spy's like
+449.88s: 11%. You lag massively.
+453.40s: So, there's a couple things that we want
+455.84s: to try to figure out. What I did is run
+459.40s: a massive grid. Literally hundreds and
+462.48s: hundreds of combinations of different
+465.40s: days to expirations, different deltas,
+467.52s: different holding durations based on
+469.32s: time, based on percent premium. I looked
+472.12s: at all of it.
+473.40s: And what I want to show you is spy is in
+477.36s: this corner over here. And notice the
+479.64s: drawdown. The drawdown's pretty bad.
+482.12s: And notice where it sits on the Y axis
+485.24s: with its return. We know where that
+486.68s: generally landed about 11%. But I want
+490.40s: you to take a peek at some of these
+492.08s: other variants, like these here. Notice
+494.92s: how these have like a little over 40%
+498.44s: drawdown and about the same annualized
+501.12s: return. Or some of these even further
+503.96s: left that have like mid-20% drawdown and
+508.72s: maybe underperforming by like two, three
+510.76s: points. So in this case, you're cutting
+512.96s: your maximum downside by like uh half
+516.44s: and you're offlaying a few points to the
+519.16s: upside each year.
+521.00s: This is where we start to be able to use
+524.40s: options and our understanding of options
+526.76s: to build different configurations,
+528.64s: understanding how things behave. So
+531.28s: what I did here is I'm showing you the
+536.12s: differences in annualized return and
+539.44s: drawdown based on your day to expiration
+543.20s: selection, which is the Y axis, and then
+545.04s: your X axis here is your delta.
+548.04s: And this should be pretty
+551.20s: straightforward. Where if we look across
+555.36s: the window, there's a little bit of a
+557.68s: sweet spot. And it's anywhere from like
+561.28s: uh high 20 to mid-30 delta where you try
+566.04s: and strike a balance between what you're
+569.16s: making and what your drawdown is. So
+572.24s: then the next stuff that we need to look
+574.64s: at
+575.92s: is different ways we can manage the
+578.92s: positions. So, the left-hand side, we're
+581.64s: looking at if you just start with cash
+584.16s: and you're doing your cash secured puts
+585.76s: to begin, or if you're starting with
+588.72s: actually some exposure via long shares,
+591.44s: 50% of your utilization.
+594.64s: And take a look at the difference in
+597.52s: performance broadly,
+600.04s: and I want you to pay attention to the
+602.40s: exits. So, if you exit at 25% of your
+606.16s: DTE time window, 50% versus taking to
+608.68s: expiration, generally speaking, going to
+611.68s: expiration helps you out a bit more.
+614.28s: But, if you hold to expiration,
+616.92s: typically speaking, you're going to have
+618.84s: a bit more of a drawdown.
+620.96s: Again,
+622.20s: there is no perfect answer here, but
+624.68s: what this is meant to do is to help you
+627.12s: begin understanding some of the
+629.12s: tradeoffs.
+630.68s: Now, here I'm showing you some of those
+633.32s: other configurations from that first
+635.20s: plot that did pretty well compared to
+638.88s: spy, but we're going to make them better
+640.84s: in a little bit.
+642.44s: What I did is looked at the base, right?
+645.44s: 30 DTE, 30 deltas. Your compound annual
+648.80s: growth rate about 8% max drawdown about
+650.72s: 32.
+651.84s: Then, if we look at a 20 DTE and a 30
+656.56s: and 25 delta, notice what happens to
+658.92s: your compound annual growth rate and
+660.52s: your max drawdown. It's actually a
+663.36s: little bit better.
+665.00s: So, going shorter in time is a little
+667.72s: bit strange here
+669.40s: and might be a little bit contrary to
+671.16s: what people are thinking, but
+673.08s: the reason why this is something to at
+677.32s: least ruminate on
+679.76s: is because you're not really worried
+682.32s: about your gamma.
+683.76s: One of the downsides of holding short
+685.80s: options up to expiration is gamma starts
+687.88s: to get really high. But, when you're
+689.76s: trading something like the wheel, you've
+691.64s: already made a decision.
+693.48s: If my short put is in the money, I'm
+696.20s: going to just buy the underlying. So, it
+698.60s: doesn't matter how bumpy your P&L is
+701.04s: coming into that window, if you already
+703.12s: know your resolution at the end of the
+705.08s: thing.
+706.08s: So, it allows you to attack a different
+708.36s: part of the curve that a lot of people
+710.56s: generally are deterred from,
+712.56s: and there's a bit more compensation for
+715.40s: that part of the curve for that exact
+717.20s: reason.
+718.96s: One of the things to know is that if we
+720.92s: start with cash, meaning selling
+723.68s: cash-secured puts, 50% stock
+725.52s: utilization, or 100% stock utilization,
+728.56s: it all kind of converges pretty quickly
+730.88s: in terms of what the position looks
+732.44s: like,
+733.48s: and it's just because of that assignment
+735.16s: factor. It's because the market tends to
+736.92s: go up. So, your short calls, generally
+738.84s: speaking, are going to end up in the
+739.96s: money, and you're going to end up
+741.36s: flattening the thing out relatively
+743.32s: quickly. So, it doesn't matter so much
+745.80s: like what happens right in the
+747.44s: beginning. What matters is how you
+749.72s: maintain the rules going forward.
+752.16s: So, let's talk about some of these rules
+754.72s: that can help us.
+756.40s: One of them is not capping your upside.
+761.00s: So, what we can do is, instead
+764.84s: of selling a call against each share we
+768.32s: own this scenario,
+770.68s: we could allow ourselves to accumulate
+772.80s: more shares and sell fewer calls. You
+776.04s: get less of a credit, but you maintain
+779.24s: upside. And again, remember, that's the
+782.16s: primary return source that this kind of
+785.36s: strategy, in general, is going to
+788.20s: benefit from.
+789.68s: So, with that, I give you a couple
+793.52s: different annualized return and maximum
+795.60s: drawdown metrics. The first thing to
+797.80s: note is if we look at covering less and
+801.96s: less of the upside, you'll notice that
+805.36s: you make more money, and you tend to
+807.96s: have more of a drawdown. Literally just
+810.68s: means you're holding more equity. You're
+812.20s: taking on more beta.
+813.96s: So, you can make a decision based on
+815.92s: that or you can try to time things.
+818.64s: So, in this case I looked at a couple
+820.24s: really basic timing features, only
+822.68s: selling calls if we're above the 200
+824.12s: period moving average, if we're below,
+826.80s: if implied vol is greater than realized
+828.80s: vol, if we're below the MA plus IV's
+833.28s: greater than RV.
+835.16s: And what you'll notice is a handful of
+838.36s: these actually do outperform. But then,
+842.64s: some of them have different
+844.72s: relationships with the drawdown, meaning
+847.56s: most of them don't help your drawdown,
+849.48s: but most of them improve your total
+852.56s: return potential.
+854.32s: Interesting.
+856.04s: If we think about what you get for you
+858.80s: those short calls,
+861.16s: it's not that much.
+862.64s: What this left axis is showing you,
+864.52s: those blue bars, that's the intrinsic
+867.48s: value, essentially that you gave up with
+870.72s: those short calls at the time. It
+872.84s: doesn't compensate well
+874.92s: for the short calls covering all your
+877.36s: shares.
+878.92s: This logically makes sense. The markets,
+881.84s: especially indices, tend to have put
+883.52s: skew. The put options tend to be a bit
+885.44s: rich. The calls, not so much.
+887.80s: And the other factor here is the fact
+890.28s: again that the market tends to go up.
+894.16s: So, then we have another choice. Should
+896.64s: we close at half profit and then sell
+901.28s: new options?
+902.96s: And what we found is going closer to
+907.08s: expiration helps you about 75% max
+910.92s: profit. What this is showing you is not
+913.64s: whether or not it made money. All of
+915.04s: these made money. This is just relative
+917.28s: to the baseline. And the 75% profit
+920.80s: actually did a little bit better.
+922.72s: And take a look at which ones had more
+925.12s: wealth in smaller drawdowns. Again,
+928.84s: something interesting underlying here.
+932.00s: This talks about just rebalancing your
+934.48s: deltas via delta bands. This is a just
+937.96s: lay approach. Anytime there's a move, we
+940.44s: get back. And this doesn't do that well
+943.40s: because you don't spend enough time in
+945.32s: the trade. There's ways to fix this as
+947.44s: well, but a thing to be aware of as
+950.64s: another management methodology. But you
+953.96s: can't just rebalance your deltas too
+956.80s: hyperactively
+958.40s: or
+960.00s: not allowing enough time to pass cuz you
+961.96s: need that time to pass on those options.
+964.48s: So then we have the put side.
+966.72s: And what happens if we sell more cash
+971.72s: secured puts only when we're above the
+973.48s: 200 period moving average, when implied
+975.84s: vol is greater than realized vol, or
+977.48s: both conditions?
+979.08s: And take a look.
+980.88s: Which of these actually improved your
+984.72s: total
+986.32s: position? And it's
+989.00s: really interesting. There's a table that
+990.52s: will compare compare this in a little
+992.16s: bit. But
+994.32s: the trend gate for adding more risk
+997.64s: tended to help you.
+999.96s: And there's a simple way to think about
+1002.68s: that.
+1003.64s: As we go through these different
+1005.28s: scenarios that we want to try and
+1007.80s: address, there's different levers you
+1010.44s: can pull on to build a configuration
+1012.44s: that you want.
+1013.76s: And in the end, if we take a look at
+1016.16s: some of these different wheel structures
+1019.44s: compared to a base wheel and compared to
+1021.48s: spy, if you look at the combined 30
+1024.52s: delta and the combined 25 delta, what
+1027.32s: these are doing are 30 delta short
+1030.56s: options, generally speaking, at 20 DTE
+1034.60s: or whatever is closest.
+1037.16s: 50% capping your call upside, and only
+1041.24s: selling new puts when you're above a
+1042.84s: 200-period moving average, and you're
+1045.80s: holding long equity from the jump,
+1048.40s: meaning you're coming into the position
+1050.24s: and you're actually buying shares, not
+1051.88s: just waiting to get assigned, and take a
+1054.52s: look at your performance here. You have
+1056.96s: about one point less of compound annual
+1059.68s: growth rate, but you cut your max
+1063.32s: drawdown from 55% down to 31, and you
+1067.00s: take your average drawdown per year down
+1069.52s: like six, five and a half points.
+1073.08s: This is a covered strangle. That's what
+1074.92s: these things are at the very end, and
+1076.68s: that's why they exist to address the
+1080.16s: very specific issues that we just
+1081.96s: discussed with a base wheel. It's a
+1084.08s: fantastic starting point, but there's a
+1085.96s: bunch of ways you can improve it. As
+1088.84s: always, if you have any questions, let
+1089.92s: me know. Be an outlier. See you guys
+1091.40s: later.
