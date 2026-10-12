@@ -1,0 +1,1130 @@
+515.68s: Welcome outliers. Happy Saturday. Today
+519.04s: we're doing a update day. I don't know
+521.92s: if it's 145. That that sounds about
+524.80s: right. It's close, but this is
+527.44s: effectively 6 months in. So the O talk
+530.96s: the outlier trading operations center
+533.44s: started was born via project no code and
+537.52s: that started back in May I think it was
+540.80s: like the 16th or something something
+542.48s: like that don't totally remember but
+544.72s: that sounds pretty right to me somewhere
+546.16s: around there and uh lot of members have
+551.44s: started building their own version which
+553.12s: is awesome you're supposed to that's why
+555.60s: we have the infrastructure available to
+557.76s: you to do that I'll share a couple links
+559.44s: for you guys to be able to do that in a
+561.60s: moment. But first, I need to drop the
+565.52s: pre-stream music. That's what I was
+567.52s: listening to right before we started.
+571.04s: And then let me grab the
+575.20s: link for you guys that has the downloads
+578.48s: here.
+580.00s: So that that there gives you the outline
+583.60s: for this tool. Admittedly, I have not
+585.76s: updated it. That's actually something I
+587.52s: probably should do pretty soon based on
+590.08s: some of the stuff that we're going to go
+591.28s: through today. And my intent for this is
+595.92s: really for those that are on the fence
+598.32s: about building your own or if you are in
+602.00s: the process of building your own,
+603.44s: hopefully to give you some ideas, answer
+605.44s: some questions, and help you more
+607.92s: efficiently do the thing. So, what's up
+611.92s: Bruce, SG, and Lauren Reese? Great to
+614.48s: see you all. Uh, SGN says, "Will you be
+616.88s: covering GME in this live?" I am not
+618.88s: planning on it. So, if you guys want to
+621.60s: do a GME live stream, you could probably
+623.12s: do one on Monday. I don't think we have
+625.04s: anything scheduled for Monday. More than
+626.96s: happy to, but today is going to focus on
+630.16s: the O talk. I have kind of a lot that I
+633.28s: have to get through, but as always, if
+635.52s: there's time at the end, I'm always
+636.72s: happy to go off script and take a look
+639.36s: at whatever we want. All right,
+642.80s: this is the OT talk in a nutshell from
+646.16s: what we've where we land now. So as it
+651.04s: sits there's 561 tables. There's 50
+655.92s: billion plus rows of market data.
+659.20s: There's over 60 terabytes of data.
+661.68s: 657,000
+663.52s: parquet files over the well over 194
+667.52s: research studies. Those are like
+669.04s: original components, not each iteration.
+673.68s: Just a ton of stuff has been done, which
+675.84s: is really, really cool. I asked AI to
+679.36s: put some of this into perspective. I
+681.04s: always find these interesting. So, if
+683.28s: you take the 50 billion rows of market
+686.32s: data and you put them on a paper stack,
+689.44s: each sheet of paper is about 1
+690.96s: millimeter.1 millimeter. It's
+694.40s: effectively 11 Mount Everests and
+697.60s: reaches the edge of space.
+700.64s: [ __ ] crazy. Here's the interesting
+703.28s: thing about all of this is it was all
+706.56s: done with AI. This is what my operation
+710.88s: has looked like. So, it looks like May
+713.04s: 17th, the dates in here. So, May 17th, I
+716.00s: think it was the 16th that it started
+717.52s: and then the 17th is when we started
+719.20s: like documentation and whatnot. So May
+722.96s: 17th is the day that this thing kicked
+726.08s: off and you can see every single square
+729.84s: represents where work was done. This is
+732.40s: just different amounts of stuff that was
+735.28s: committed. The brighter the square I got
+738.64s: to take my shirt off. It's hot. Um the
+741.12s: brighter the square, the more work that
+744.88s: was done. And things that have those
+748.08s: black dots means that it was a new piece
+751.68s: of research that was commissioned that
+753.84s: day. Uh, generally speaking, like 200
+757.76s: plus studies in 146 days means that
+761.20s: there's essentially a new study every
+764.16s: like 12 to 14 hours. There's research
+768.16s: coming out of this thing at rates that
+771.04s: it's just hard to believe. This gives
+773.76s: you an idea of what those tables break
+776.56s: down into. This is the warehouse. So
+779.04s: there's app and scanner snapshots.
+781.20s: You'll see that a little bit within
+782.80s: Hugan. And then there's a ton of backend
+786.24s: supporting data that feeds all of this.
+788.48s: So half of the objects power the apps.
+792.00s: The other half hold 11 domains of data
+796.48s: essentially. So there's 255 data
+799.28s: objects, 82 tables, and 173 views across
+802.24s: this whole thing. The only reason why
+804.40s: I'm giving you all of this stuff is for
+806.72s: context literally on what one person can
+809.76s: do with this. That's that's the neat
+811.60s: thing about it.
+813.92s: This gives you an idea of just the flow
+817.76s: through of research. So there's over 3
+820.24s: million simulated trades about you know
+823.60s: 250,000 plus configurations tested 281
+828.08s: research units 194 unique research
+831.12s: studies that led to six str 16
+834.16s: strategies of those 16 several of them
+837.12s: are things that I ported in meaning
+839.36s: they're things that I've already done
+841.36s: but I've brought in to do different
+843.52s: stuff with either to optimize it to try
+846.00s: to tweak it and improve it. This is the
+848.40s: cool part. This is the cool part. A
+852.64s: average programmer typically writes
+855.52s: anywhere from 10 to 50 production ready
+859.44s: lines of code. That is from Google. I
+862.48s: don't know how accurate that is. It
+863.76s: sounded low to me. So, I actually did a
+865.20s: little homework on it and then I
+866.88s: understood what it meant when it said
+868.48s: like production ready.
+871.52s: What I've done with AI over 146 days is
+877.84s: get through 2.2 million lines of code.
+881.36s: So it's about 176 programmer years with
+885.28s: one person with no background in this.
+889.12s: That's project no code. That's what this
+891.60s: whole thing is about. And that's why we
+893.92s: spend time talking about it. It is an
+896.88s: enabler that's hard to fully comprehend.
+900.40s: And it's something that I think is
+902.64s: really useful for pretty much everybody
+904.88s: regardless of what level of depth you
+907.20s: choose to go into.
+909.84s: This gives you a list of strategies that
+913.28s: actually come from the research
+916.16s: directly. Now, for example, things like
+919.60s: post earnings drift, earnings longfall,
+922.16s: these are things that I've done for a
+923.76s: long time, but they're novel takes from
+928.24s: the OT talk. These are things that are
+931.12s: like a a second variant of what I do and
+935.60s: these are things that come directly from
+937.76s: the O talk. This gives you their general
+940.32s: performance numbers and the main thing
+943.36s: with these is how they behave together.
+946.08s: So that book that I look through, if I
+950.16s: combine them and operate them as a
+952.64s: shared portfolio, as I do, that suite
+955.92s: that I just showed you returns about 22%
+958.96s: compound annual growth rate with 12% VA,
+961.76s: a max draw down of about 11%. That's
+964.80s: what those things do. And again, all of
+967.60s: that was from the OT talk outright.
+970.48s: We're at a new we're just at a new
+972.56s: thing. Like that's that's really what
+974.56s: this means. It's kind of an insane place
+977.04s: to be. All right, there's a lot of
+979.52s: questions that I got on data. So, this
+983.60s: is how the data surface generally breaks
+987.36s: down. There's daily equity prices back
+990.48s: to 03. Then there's minute level data.
+994.48s: Then there's end of day options back to
+996.40s: 07 with a V surface that's smoothed.
+1000.48s: Then there's 60 minute and 15 minute and
+1003.76s: one to two minute increments to 2015.
+1007.76s: This is a data this is a data question
+1011.76s: and it's because if I find uh where is
+1016.96s: it
+1019.20s: here? We'll go back. But if I find like
+1023.36s: where the data sits and how much of it
+1025.68s: is there, a ton of it is the short-term
+1029.36s: data. A ton of it. It's options data is
+1034.48s: an insane an insane amount of storage
+1038.64s: and it's just because there's so much
+1041.68s: that goes into options data.
+1046.72s: This gives you again the the same thing
+1049.20s: in terms of like rows and where
+1050.64s: everything goes back to. This is how I
+1052.64s: break them out into like different views
+1056.40s: and for different purposes. So this is
+1058.32s: more stuff just for your general
+1059.76s: context.
+1062.08s: Macro is pretty cool because
+1065.44s: macro itself
+1067.84s: goes back really far. I literally have
+1072.48s: some macro series that go back to 1854.
+1077.76s: You can go back insanely insanely far
+1081.44s: with different macro level indicators
+1084.24s: and news, which is actually just really
+1086.08s: really cool. I'm able to pull in all
+1088.72s: different kinds of alternative
+1089.92s: positioning data, institutional
+1091.44s: holdings, insider filings, all of this
+1093.60s: stuff. And again, this breaks down where
+1097.20s: all of that stuff is born, where it
+1099.12s: sits. Let's talk about some sources.
+1102.40s: There are
+1104.72s: a bunch of different sources that narrow
+1107.60s: down into a couple buckets and I have
+1110.72s: two main ways that I ingest the data.
+1114.00s: Three main ways. One of them is
+1116.16s: streaming. So during the day I have
+1119.28s: listeners that are pulling in data,
+1122.16s: writing and storing it. It's the first
+1125.60s: there's four ways I realized there's
+1127.04s: another one. So there's streaming, then
+1129.68s: there's intraday polls. So I have
+1132.24s: refresh buttons for certain things that
+1134.32s: need to pull from different sources to
+1136.08s: give me a new snapshot to make a
+1137.68s: decision based on what's happening right
+1139.28s: now. So there's a refresh function. So
+1142.16s: it's like intraday polls. Then there's
+1144.64s: the daily incremental poll. Every single
+1147.60s: day at 13:05 Pacific time, daily
+1150.40s: incremental kicks off on the machine.
+1152.48s: Takes about 2 hours. It's big, but the
+1156.08s: reason why it's large like that is
+1158.56s: because it's updating quite literally
+1161.28s: everything. And the reason why it's only
+1164.40s: 2 hours is because it's appending. It's
+1167.20s: keeping everything up until that point
+1168.72s: and it's just adding stuff for that day
+1170.80s: and then making sure that everything is
+1172.56s: resolved going back in time with a quick
+1174.48s: check. That's dink, daily incremental.
+1177.28s: Then there's think, full incremental.
+1179.44s: I'm actually going to run that after
+1180.80s: this live stream. Full incremental is
+1183.44s: hours. It's anywhere from like 3 to
+1185.60s: seven hours depending on how much is in
+1187.44s: there. That's when I pull a bunch of
+1190.48s: stuff that I don't really need each day.
+1193.84s: So different kind of filings, regulatory
+1196.72s: elements, all of those earnings
+1199.52s: transcripts, all that stuff. Polls from
+1202.72s: full incremental. It's something I can
+1204.48s: run overnight during the weekend. No
+1207.12s: disruption whatsoever.
+1209.92s: the commercial. You'll see I think on
+1213.44s: this one. Yeah. So, this is a question.
+1216.72s: Let me see who this question was from.
+1218.40s: Give me one sec.
+1221.68s: Uh,
+1226.32s: that one's about scanners. We'll talk
+1228.00s: about that. Okay. So, Lost Hiker asked
+1231.68s: about the breakdown of what API
+1233.60s: connections I have and how I implement
+1235.44s: them. This is this is that this is
+1239.28s: essentially everything that I'm
+1240.80s: ingesting. So, there's a bunch of free
+1245.04s: sources that you can pull from. Then the
+1248.56s: commercial feeds, you guys already know
+1251.36s: I'm an affiliate for most of them and
+1253.44s: it's literally because I [ __ ] use it.
+1256.48s: So, it's stuff like OATS, Unusual
+1259.36s: Whales, Massive, which used to be
+1262.16s: Polygon, Alpha Vantage. Those are the
+1265.60s: main providers when it comes to
+1267.84s: commercial data that I'm pulling in. The
+1270.80s: other thing is, as you guys know, I work
+1273.52s: at the hedge fund. So, a lot of my
+1276.56s: operation there also has a bunch of
+1279.20s: different data sources that most of the
+1281.52s: time when I'm doing any sort of research
+1283.20s: for, it's kind of sequestered, you know,
+1285.20s: to what I'm doing for the fund. But,
+1287.28s: nonetheless, that's another place with
+1289.84s: more so like alternative data. doesn't
+1291.68s: really provide anything that I don't
+1293.12s: already have access to.
+1295.76s: So this is I mean this is what it looks
+1298.56s: like the the public most of this stuff
+1301.60s: comes from Fred. You can see that
+1303.28s: there's over 200 macro series that you
+1305.68s: can ingest directly from Fred with
+1309.04s: nothing else and that API is completely
+1311.04s: free. It's fast enough. There's no
+1312.96s: issues with any of that. So if there's
+1316.16s: any questions on the data ingest stuff
+1318.80s: obviously let me know. This is the stuff
+1321.20s: that's like wired in and programmatic.
+1323.92s: There's other data sources that are more
+1326.48s: ad hoc or run by individual bases. So
+1329.52s: for example, SSRN, I have wiring that I
+1334.40s: use to ingest new research from SSRN,
+1339.84s: pull that into an ingest folder that
+1342.56s: then gets OCRD, categorized, tagged, so
+1346.88s: then I can find it in the future easily.
+1349.04s: I get a weekly write up from AI about
+1351.12s: all new research that came out that
+1352.80s: week. And it allows me to efficiently
+1356.24s: find other existing research. If I'm
+1359.52s: looking up something, you guys saw a
+1361.28s: recent bit that I did in Gex, right? I
+1363.12s: did a couple videos in Gex that this is
+1364.80s: how I did it. I used the O talk used all
+1367.44s: the data ingestion that I have. I used
+1369.52s: all the existing data that I could find
+1371.36s: about existing research. Try to
+1373.04s: replicate that research first to make
+1374.72s: sure that there's no massive gremlins or
+1376.40s: errors in my own data. and then from
+1378.48s: there do my own novel stuff and see what
+1380.80s: I come up with. These are the sources.
+1382.88s: It's really not that much. Like that's
+1384.64s: the cool thing is that there really
+1386.32s: isn't that much. Okay.
+1389.84s: Oh yeah, there was another question that
+1391.52s: somebody asked because there are there
+1393.92s: are some sources that I started with
+1397.44s: that I stopped using. One of them and
+1400.00s: again I have no affiliation with these
+1401.44s: guys. I have no ill will, hard feelings,
+1403.28s: nothing. I didn't even communicate with
+1404.48s: them. But one of them is I think it's
+1407.12s: called Theta Data. I tried them. I I
+1410.96s: just didn't like the tool at all. The
+1414.32s: ingest was really slow. It just wasn't a
+1417.36s: good fit for me. So that's a good
+1418.72s: example of one that I tried to use that
+1421.84s: didn't fit and I was able to get the
+1423.92s: data better faster from places like OATS
+1428.00s: and yeah. So I don't um I don't work
+1431.76s: with them anymore. There was uh let me I
+1435.92s: don't want to like cherrypick. Let me
+1437.92s: look up like options data API sources
+1442.56s: and I'll let you know which other ones.
+1444.08s: Massive was good. Options data I looked
+1447.12s: at. I didn't I didn't go with them. I
+1450.40s: didn't see anything that they do that I
+1452.72s: didn't have already. Oats I already
+1455.12s: have. Intrinia was slow. Intrinio was
+1458.16s: fine but I didn't like that one. data
+1460.24s: bento I looked at at that point I was
+1462.88s: already built out with oats and massive
+1466.08s: so there was nothing for me there and
+1468.32s: then the other one that's not on here is
+1470.80s: live streaming data through places like
+1473.12s: Schwab so Schwab allows me to again have
+1477.12s: listeners running throughout the day so
+1479.44s: that I can just passively ingest market
+1481.84s: data that's also running um pretty
+1485.44s: pretty much all the
+1488.80s: The cool thing about when you start this
+1491.52s: thing is the first few iterations are
+1496.40s: really bumpy, blocky, slow, but once you
+1500.16s: get the big history built out, it's
+1504.08s: really not that hard to maintain like at
+1506.00s: all. The big thing is getting the
+1508.40s: history built out and then make sure
+1511.20s: that all the data is correct, there are
+1513.84s: no errors. You go through your standard
+1515.52s: cleaning process. And the thing that I
+1520.16s: like the most about having your own data
+1523.60s: source and infrastructure like this is
+1527.12s: you actually can build history that you
+1530.64s: can't get anywhere else. What I mean by
+1533.20s: that is other places they might provide
+1535.44s: GEX. GEX is a great example. Some places
+1538.72s: only provide GEX back like 60 days or
+1541.44s: something. You can only get history
+1542.96s: maybe even 30 days. I don't know. But
+1544.72s: you can only get a certain amount of
+1546.16s: history and then you just can't you
+1547.60s: can't get it. It's gone. So if you start
+1550.40s: this process and you maintain it going
+1552.56s: forward, you create your own history
+1555.04s: that reaches back further. It takes the
+1557.36s: passage of time to do it, but it's
+1559.60s: literally not available anywhere else.
+1561.28s: It is a complete unique data source that
+1564.16s: you have because you're running the
+1566.48s: thing and just keeping up with it.
+1568.88s: That's generally speaking a good thing
+1572.08s: to be aware of. Like just running it is
+1576.48s: going to establish history that you can
+1578.16s: use. This is how it works. I get raw
+1582.80s: files in. The raw files are never
+1586.80s: adjusted. They're never I tamper with
+1589.52s: them. Zero.
+1591.60s: Everything is done off of the raw files.
+1596.48s: That's what turns into my actual data
+1598.56s: warehouse. That's where I clean the
+1600.96s: data. I don't the raw files. If there's
+1604.08s: stuff that I cleaned, it's in a second
+1606.32s: file. The raw file is always always
+1610.24s: mechanical. It doesn't change. There's
+1612.00s: no adjustments to it. I do that so that
+1614.48s: I have a completely defined history so
+1618.24s: that if something rolls back, if there's
+1620.24s: ever an error, I never am questioning
+1622.80s: like, oh, is this something that I
+1624.56s: adjusted? is there was some other gap
+1626.32s: somewhere. I have a completely clean
+1628.40s: starting point so that I never have to
+1630.48s: do that big backfill ever again.
+1633.12s: Essentially,
+1634.96s: all of those raw files work through a
+1638.72s: writer and that's through duct DB and
+1643.04s: that's how it enters the warehouse in
+1645.92s: the clean form that's formatted as it
+1649.04s: needs to be for then me to ingest it in
+1653.28s: other places.
+1655.68s: This is what storage looks like every
+1658.72s: single week. Did it last night. Every
+1661.44s: single week there's a full backup that I
+1663.84s: do. It takes hours. I run it overnight.
+1667.44s: And the purpose of the backup is so that
+1672.32s: the data that I have is safe. What this
+1677.44s: means is I have the engine, so the hot
+1682.40s: data that is taken from all of the raw
+1686.80s: data and cleaned. It's put in a
+1690.08s: standardized format. There are no errors
+1693.04s: that I can then use to actually run data
+1695.60s: analysis on. Then there is a master. The
+1700.40s: master is everything. It's the cleaned
+1702.48s: stuff. It's the raw stuff. It's
+1705.04s: everything. And then there's literally a
+1707.68s: full copy of that master for redundancy.
+1712.56s: That's it. What I'm trying to do here is
+1716.88s: keep most of the data that I'm actively
+1720.40s: using for running analysis, for research
+1723.36s: on my internal SSDs. The reason for
+1726.80s: putting them on the internal SSDs is
+1728.88s: it's way faster. It's way faster to do
+1732.32s: any sort of analysis, to do any sort of
+1734.40s: homework with that data as compared to
+1737.44s: anything else. External SSD is fine, but
+1741.04s: it's slower. It's much much slower than
+1743.04s: an internal SSD. And then external HDD,
+1747.76s: that's where I have the master and then
+1751.84s: the mirror. Both of those are external
+1754.16s: HDD. I'm not actively using them to run
+1756.48s: data analysis. Those are there again for
+1760.00s: me to have data sources so that I never
+1763.84s: have an error. If I have any sort of
+1766.56s: corruption in my data, I can go back to
+1768.96s: either of those and get what I need.
+1771.76s: You already saw this data intensive is
+1774.40s: what options data is.
+1777.28s: This goes into the daily engine. So this
+1781.20s: is looking at dink and how this runs.
+1784.56s: Funny enough, on day 13 when we did like
+1787.84s: our twoe update early on, there's about
+1790.56s: 672
+1792.16s: lines of pipeline code at that point.
+1795.12s: And now there's about 15,500 lines of
+1798.64s: pipeline code. It's expanded. And the
+1802.08s: reason why is because I've been able to
+1804.56s: slowly add more data, expand that data,
+1808.16s: find new sources for things that I'm
+1811.04s: interested in doing research on, stuff
+1813.20s: that I maintain regularly, stuff that I
+1815.36s: do a little less regularly. But this
+1818.16s: gives me like literally everything I
+1821.28s: want in order to do data analysis. I
+1823.84s: have everything.
+1826.88s: This is just the growth of different
+1830.56s: elements of the base. So you could see
+1833.76s: the shared library modules that grew by
+1836.48s: 22 times. Scripts is up six times. Daily
+1838.80s: pipeline 23 times. Test functions 90
+1841.28s: times. This is just scaling, right? What
+1844.64s: if we do another one of these in like
+1847.04s: another 6 months? I would expect it to
+1850.88s: be way more of a plateau. I would I mean
+1854.32s: I definitely expect it to expand still
+1856.56s: but nowhere near the rate that it is
+1858.64s: now. It's doubling plus you know over
+1861.28s: the last update and remember the the
+1864.48s: distance between those is a little bit
+1867.92s: um closer in time. This just goes
+1870.32s: through the research stuff to give you
+1872.16s: an idea of like what you can do with the
+1874.08s: thing. So there's different kinds of
+1876.88s: like base research that are like core.
+1881.04s: It's a novel thing. And then there's sub
+1883.60s: research off of some of those. This is
+1885.68s: just breaking that out for you. This
+1887.36s: shows you where different things go. So
+1890.48s: workshop, a lot of those things are for
+1893.04s: you guys. So when I'm doing a lot of
+1895.44s: different kind of workshop stuff, a lot
+1897.52s: of times it's like a a scrappy. I just
+1899.68s: want to prove something out quickly to
+1901.60s: see something. A lot of it is for my own
+1903.28s: use as well. And the convention I wrap
+1906.80s: around workshop style studies is much
+1909.04s: lighter. There's nowhere near as much
+1910.80s: documentation required. It's not that
+1912.96s: strict.
+1914.48s: As soon as things go into the research
+1916.40s: folder, entirely different. Inside the
+1919.52s: research folder, there's very specific
+1921.44s: rules that the infrastructure needs to
+1924.72s: maintain so that stuff becomes easily
+1927.44s: searched. It's durable.
+1930.00s: And what you'll find is if you don't
+1933.76s: stay organized with this kind of stuff,
+1937.60s: disorganization
+1939.28s: can be literally your undoing. You could
+1942.08s: have all this great data, but you can
+1944.64s: find yourself where you don't know where
+1947.12s: anything is and you are recreating stuff
+1950.16s: that you've already done, stuff like
+1952.00s: that, which is just generally good to
+1954.16s: avoid.
+1958.40s: Good organization up front saves you
+1960.16s: that.
+1963.12s: This just shows shows you some of the
+1965.12s: different grids that I ran looking at
+1967.60s: different kinds of strategies.
+1970.64s: So looking at momentum versus reversal
+1974.00s: over a short-term time horizon. It's
+1975.84s: actually pretty cool. The reason for
+1978.16s: this, it's actually important to track
+1980.48s: how many iterations of stuff that you
+1982.72s: look at because it gives you a lot of
+1984.56s: ideas as to how durable the edge is that
+1987.68s: you might uncover. It's not, you know,
+1990.56s: definitive. You can still have an edge
+1993.68s: at the end of a ton of different
+1995.20s: iterations and grids, but I normally am
+1998.40s: a little more skeptical of it.
+2001.76s: These are just some stuff that I ran
+2003.60s: through the idea or that I ran through
+2005.52s: the O talk that didn't necessarily bear
+2008.32s: out how you might expect. So, for
+2010.56s: example, high win rate credit spreads.
+2012.64s: You guys already know a lot of times
+2014.00s: those actually lose. There's a bunch of
+2016.80s: like really common entry signals. So,
+2019.20s: different simple moving average stuff.
+2022.40s: Um
+2023.92s: really, really basic things, crossovers,
+2026.64s: stuff like that. And funny enough, a lot
+2029.84s: of them are actually negative expected
+2031.68s: value out of sample. That's just at a at
+2033.60s: a raw look. That's not to say any of
+2035.04s: them couldn't be turned into something.
+2036.48s: They very reasonable. But the point that
+2039.60s: I'm making is you can use your data
+2042.72s: source to prove or disprove stuff that
+2045.92s: you hear and see if it has a utility for
+2049.76s: you.
+2051.28s: These are different things that ended up
+2053.92s: surviving the process actually quite
+2056.96s: well. The put selling versus call
+2061.12s: selling that you guys saw a couple
+2063.44s: pieces of research on from the wheel the
+2066.48s: wheel video that came out and the
+2068.88s: coverage strangle stuff which is just
+2070.72s: that's good general stuff to know. What
+2074.56s: I mean by that is, for example,
+2078.40s: you should know in the indices if you
+2081.04s: sell a put, you're going to generally
+2082.80s: underperform buy and hold with lower
+2084.64s: volatility. If you sell the call, you're
+2087.84s: probably negative expected value.
+2090.24s: Probably being able to have those kind
+2093.28s: of inferences and just general
+2095.28s: understandings based on doing research
+2097.52s: is useful. It helps you navigate ideas
+2101.12s: much more efficiently.
+2103.52s: There was a question uh this was from
+2110.16s: this one is from Reeve. Reev asked about
+2114.16s: how I'm scanning for trades with the O
+2117.68s: talk.
+2119.44s: And then
+2121.76s: there was another question.
+2125.60s: Uh where is it?
+2133.04s: Yeah. So this one's for Reef. I think
+2134.72s: there's one other question in here
+2136.00s: that's about the same stuff on like
+2139.04s: what's the what's the infrastructure for
+2141.36s: Hugan, which is the tool that you guys
+2143.20s: see me use all the time. This is Hugan.
+2146.48s: And this is where I I literally am
+2148.96s: looking at the market myself, which is
+2152.00s: easy to, you know, get a visual for cuz
+2155.60s: you guys have seen most of this a lot.
+2158.48s: Now, this next bit goes through that
+2162.80s: exact thing. What's what Hugan is and
+2166.40s: where it came from.
+2169.20s: This is a it's completely built within
+2172.96s: Python. It's all open source.
+2178.00s: There are no tools in here that are paid
+2182.72s: or anything. Most of it is ran via
+2185.84s: Streamlit and it's Streamlit 1.57 and
+2190.24s: that runs the app broadly. There's 61
+2192.72s: fragments that refresh on their own.
+2195.92s: Then Plotly 67 draws every chart.
+2200.80s: There's [snorts]
+2201.68s: 271
+2203.20s: charts in the app. Duck DB serves the
+2207.36s: data read only and it's one handle per
+2210.48s: run. And then there's a HTML and
+2213.92s: JavaScript shell that provides the
+2216.96s: navigation overlays and stuff like that.
+2222.40s: That's what makes the thing. Literally,
+2224.64s: that's it. the data side of the equation
+2229.28s: that's done by just standard standard
+2232.24s: tools there pandas polars pi arrow that
+2234.72s: stuff so everything is done through
+2237.68s: Python and Python add-ons that's it
+2242.32s: the pipeline
+2245.04s: does pretty much everything and that's
+2248.64s: by design the reason why I do that so
+2251.20s: when I say the pipeline that's daily
+2252.72s: incremental when everything is
+2255.76s: premputed.
+2258.08s: It's It makes it way faster. So, inside
+2262.72s: of Hugan, it's not computing pretty much
+2266.16s: anything. That's why daily incremental
+2269.84s: takes so long for me to download the
+2272.16s: data that I need for the day for daily
+2274.40s: incremental. It's literally like 20 30
+2277.36s: minutes, maybe 20, 30 minutes. The rest
+2280.64s: of that 2hour window is precomputing
+2284.08s: everything served in Hugan so that it's
+2287.28s: fast otherwise it can be really slow and
+2291.04s: if it's slow it's unusable. You won't
+2294.56s: use it. If you click something and you
+2296.96s: have to wait 40 seconds I know it's you
+2299.20s: know dramatic high class problem but the
+2301.68s: reality is is you're not going to wait
+2303.28s: 40 seconds for the thing to load. You're
+2305.04s: just going to say do I really have to
+2306.24s: click that? And then you won't [ __ ]
+2307.36s: click it. That's also why in Hugan, a
+2310.64s: lot of the stuff is pre-rendered.
+2313.04s: There's no loading on the sitrep tab.
+2315.52s: That's by design. So, if we go to sitrep
+2320.16s: and we scroll through,
+2322.96s: everything is here. There's no there's
+2325.12s: no loading. It's all there. So, I can go
+2327.92s: through all of the stuff that I'm
+2330.00s: interested in seeing without any sort of
+2333.28s: loading hurdle to get over because that
+2336.72s: sucks. It's really annoying to deal with
+2339.12s: it. And that's also why, by the way, I
+2342.40s: have a warm hugan function and then
+2344.88s: persistent pages.
+2347.12s: Persistent pages means once it's loaded,
+2350.32s: it's its own streamlit iteration. If I
+2353.60s: navigate away from it and navigate back,
+2355.92s: it's instant because nothing has
+2358.16s: changed. It doesn't need to rerender. It
+2360.56s: doesn't need to redo anything because
+2362.96s: it's a static data set unless I'm in
+2365.60s: different places like cockpit which I
+2367.44s: can turn on a listening mode where it's
+2370.40s: every 2 seconds it updates.
+2374.40s: All of that is to make it more navigable
+2378.16s: because again if it's slow not going to
+2382.48s: use it. I think I made that point clear.
+2385.84s: This shows the different sections that
+2388.00s: are in there right now. There's 63
+2390.40s: subtabs total. There's like 77 reachable
+2393.36s: views in in across like the whole thing.
+2396.72s: The daily briefing which is hugan it's
+2399.84s: sit wrapped as 20 sections and macro is
+2403.92s: a massive massive section with 17
+2406.48s: subtabs. It's huge but it's also all
+2409.92s: pre-built. So it's actually really
+2411.76s: really really fast to navigate. trade
+2413.52s: plan is something that's been building
+2416.72s: out over time as I'm porting more and
+2418.64s: more strategies over to this. My
+2421.60s: expectation is that in the trade plan
+2423.68s: there'll probably be maybe 20 strategies
+2425.84s: total. I'm not going to port everything
+2428.08s: into it just because it doesn't really
+2430.00s: need to happen. But the stuff that I
+2433.20s: benefit from seeing daily tracking their
+2435.52s: P&L curves more regularly like that, I
+2438.96s: absolutely will add there.
+2444.72s: This shows you where most of the charts
+2448.80s: live and what happens with the premputee
+2453.36s: that I'm talking about. For example, the
+2456.40s: confluence scan, it's just a scan that I
+2458.48s: run that used to be 131 seconds. It now
+2462.56s: renders in 0.01 seconds because it's
+2465.92s: premputed. It's giving you an example on
+2469.28s: what kind of time savings you can see
+2471.92s: from doing this. Revision drift is
+2474.24s: another one. 13 and a half seconds. It's
+2476.80s: now 13.
+2479.12s: Precomputing is worth it. What happens
+2482.88s: is and there's different ways you can
+2484.56s: navigate precomputing by the while by by
+2486.72s: the way because it takes a while and if
+2489.28s: dink is running I can't do anything else
+2491.36s: during dink. I can't read from the
+2494.48s: database because it's being written to.
+2496.48s: That's one of the things with duct DB
+2497.92s: that's very specific. So there's ways
+2500.96s: for me to navigate around that. One way
+2503.28s: is you can literally have a persistent
+2505.36s: view of Hugan if I wanted. The other
+2508.48s: thing I do is if I'm doing other
+2510.48s: research, I just use the parquet files
+2512.40s: files. I have them vectorized so that
+2514.64s: they're fast for me to navigate and I
+2517.52s: just literally skirt around the tables
+2520.48s: and I have other tables that are meant
+2523.68s: for doing things that are kind of urgent
+2525.52s: that are happening during dink that
+2527.04s: otherwise couldn't happen then.
+2530.96s: This just gives you an idea of how I
+2532.72s: build out a strategy. So once the
+2534.80s: strategy is made, there's the signal
+2537.68s: element, there's the trade plan which it
+2540.16s: gets its own tab in there. It's a
+2541.52s: monitoring surface for me. Then there's
+2544.00s: a strategy tab that goes much further
+2546.64s: into detail. And then there's an excerpt
+2548.64s: in the cockpit, which is where I go to
+2550.64s: get daily signals, feedback on the thing
+2553.44s: that I'm using,
+2555.44s: the platform in general. These are like
+2557.68s: the main surfaces. So there's Hugan, you
+2559.84s: guys are familiar with that. There's
+2560.88s: Artemis, which is within Hugan. That's
+2563.76s: what feeds all of my scans. So there was
+2567.36s: a question from
+2570.48s: who was this one from? Okay. Yeah. So
+2573.52s: Ree was asking about the UI. So Reev
+2576.00s: hopefully you have your answer there now
+2578.48s: on the UI. And then the other thing was
+2583.92s: from Lost Hiker and also Reeve which is
+2587.44s: about scanners and that's what Artemis
+2591.52s: is. That's all the scanners in one tool.
+2595.28s: It has everything that I normally look
+2597.60s: at. So stuff that you guys saw me look
+2600.16s: at bar chart because they had a a good
+2602.56s: tool that was completely usable. Most of
+2604.88s: that stuff is in here now. And all of
+2607.52s: the unique options stuff, most of that
+2609.92s: stuff that you guys saw me used to do a
+2612.00s: lot of on unusual whales, you'll see me
+2613.92s: do that here. So most of the the
+2616.88s: standard scanning, researching,
+2619.12s: rendering of visuals is all built into
+2622.48s: this already. That's again the the whole
+2625.68s: point of it. And when I decided that I
+2628.00s: was going to turn this into the canical
+2630.00s: thing that I use hopefully to serve as
+2632.32s: like an example for you guys, it needs
+2634.96s: to do everything that I normally needed
+2637.28s: to do. A couple other things I don't
+2639.52s: talk about quite as much. Munan, you
+2641.20s: guys have heard of that I think
+2642.48s: intermittently, but that's where all
+2644.80s: documentation lives. So every study,
+2647.84s: research, every strategy, SSR and paper,
+2652.16s: every book that I've downloaded,
+2654.08s: everything is in there. Everything. Then
+2656.88s: there's the back tester, which is just
+2659.20s: right now I refer to as the workstation.
+2661.12s: It doesn't really have a name, but the
+2663.28s: the back tester is a series of harnesses
+2666.56s: that I can reuse and modify to do
+2669.52s: different kinds of tests. So, I could do
+2671.52s: it for individual trades. I could do it
+2673.52s: at the strategy level. I could do it at
+2675.84s: multiple strategy levels. I could do it
+2677.52s: at a portfolio level. It allows me to
+2680.16s: test everything pretty much every way
+2682.16s: that I want. And then ai is actually
+2685.52s: really cool. This is something I mostly
+2687.20s: use with coaching clients, but it's a
+2690.16s: way to like go back in time and have
+2693.68s: them see things for the first time that
+2696.40s: they've not seen before. walk through
+2699.28s: their decision cycle, what they're
+2701.12s: thinking of doing, why they're thinking
+2702.40s: of doing it, and then we can fast
+2704.32s: forward time and see what happens. It's
+2707.12s: very similar to on demand in Think or
+2710.16s: Swim. The only difference is it's more
+2712.72s: robust. It has everything. So, I have
+2714.96s: full options data. There's none of those
+2716.72s: weird glitches with stuff that has stock
+2719.44s: splits or anything like that because
+2720.80s: realistically speaking, I wouldn't have
+2722.32s: built it if on demand was like fully
+2725.20s: what it could be. I I unfortunately
+2727.60s: think on demand just doesn't get the
+2729.52s: attention it deserves because it's
+2730.64s: probably not used that much. But that's
+2732.24s: what that was inspired by. It was trying
+2734.64s: to fix some of the deficiencies that I
+2736.56s: saw there cuz it's a tool that I think
+2738.16s: there's a a whole lot of value in.
+2742.40s: These are what I've published. These are
+2745.12s: the things that I've published from
+2747.12s: where we started. And there's some
+2750.00s: research papers that I've built as well
+2753.12s: as part of this. I don't like publish to
+2755.92s: SSRN. I have literally no reason to, but
+2758.80s: I still write research papers and I
+2761.76s: house them at places for me to go back,
+2764.24s: revisit. And then you guys are also
+2766.16s: familiar with the basic school that's
+2768.16s: coming up. That is unfortunately for
+2771.04s: Shrej. So everybody should tip your hat
+2773.84s: to to Shrej cuz he volunteered to go
+2776.00s: through it. But that is now 957 slides.
+2780.16s: I am hopeful that I might be able to cut
+2782.88s: a little bit out of it, but I don't
+2785.84s: really think so. I think it's probably
+2787.60s: going to land around there. It has to be
+2789.12s: under a thousand slides. Like that is
+2790.80s: the hard cap. I don't care at that point
+2793.12s: what's left out. If I can't get the
+2796.16s: majority of what I need to get across in
+2797.68s: a thousand slides, then that's [ __ ]
+2801.20s: But one of the reasons why there are a
+2803.52s: lot of slides is because I I really like
+2805.76s: visuals. As you guys can tell, for me,
+2808.56s: it always helps me like tie things
+2811.12s: together, right? To see the thing. And
+2814.16s: so that's why it's not like it's 957
+2816.48s: slides of like text and [ __ ] like that.
+2818.32s: There's a ton of visuals designed to
+2820.72s: help, right, with that to connect dots,
+2823.04s: but it's a [ __ ] bear. For those that
+2825.84s: are unfamiliar, the basic school, that's
+2827.84s: actually framed after the Marine Corps.
+2829.60s: All officers go through a place called
+2831.84s: the basic school. It's exactly what it
+2833.20s: sounds like. It's 6 months and it's
+2834.96s: where you go to learn how to be a marine
+2836.96s: officer at just at a basic level. And
+2840.56s: the I'm lifting and shifting that just
+2842.48s: like the O talk, the outlier trading
+2845.04s: operations center that's from the
+2846.40s: military tactical operations center. And
+2850.08s: what this is meant to do is be literally
+2853.04s: a resource for people to go through. You
+2856.72s: start at the beginning, you get to the
+2858.88s: end, and you should have a pretty good
+2861.76s: idea of how markets work and how to
+2863.20s: trade. Whether or not it could be done
+2864.88s: successfully, that's always up to the
+2866.48s: individual. I unfortunately have zero
+2868.48s: control out of that. As much as I would
+2870.00s: love that to be a different story, I
+2871.44s: have no control there. But it's designed
+2873.76s: to give you pretty much exposure to just
+2877.12s: about everything I could think of that's
+2879.36s: useful. And it's trying to strike a
+2882.08s: balance between the depth that you get
+2886.16s: and the um
+2889.44s: the ability to like get through it
+2891.84s: because it would be very reasonable for
+2894.40s: that to be like thousands of pages. But
+2896.56s: I just think that becomes a little bit
+2897.84s: untenable.
+2900.56s: This is the general commit structure
+2903.84s: that you see. So there's about 14,000
+2906.64s: commits since the 17th of May and
+2909.52s: there's 625 merges of finished work and
+2913.68s: 44%
+2915.20s: have AI co-author tags which means
+2919.44s: AI did effectively everything. That
+2923.68s: said, I do go through some of the code
+2926.16s: that AI does to just one learn, but two
+2930.72s: to look for gremlins that I learned in
+2932.88s: my own experience previously. And there
+2936.00s: was a question I got, I think it might
+2938.00s: have been [snorts] from
+2940.88s: uh I think this one might be from Ryan
+2944.24s: about using like different AI tools. I
+2948.64s: think it was from him, but Yeah. Yeah.
+2951.68s: Okay. So Ryan says, "Another thing I
+2953.68s: just thought of. It would be cool if you
+2955.04s: go in a little more detail of what
+2956.48s: you've done with codeex and how you're
+2959.04s: using it with cloud code. The punchline
+2961.84s: is now that's changed massively. It used
+2965.20s: to be one wrote the code, the other
+2967.76s: reviewed the code. Now that's gone. They
+2970.72s: both do everything by themselves." The
+2973.28s: reason is because both of those tools,
+2977.04s: Claude and Codeex, now have given their
+2980.72s: agents the ability to coordinate
+2983.68s: internally.
+2985.28s: So internally, I have code reviewers. So
+2988.96s: now instead of me having to take one
+2990.88s: from codeex to the other one to get a
+2992.48s: second set of eyes, I'll have codeex
+2994.56s: that's running in, you know, GPT61
+2997.52s: and after a big work block, I'll say
+3000.96s: send it to Astra to have it review punch
+3003.60s: holes. It's a I call it well I think
+3005.84s: it's technical term. I I don't know. I'm
+3007.76s: not from the industry, but adversarial
+3009.60s: review look for issues and that's
+3013.20s: exactly what it is now. So the short
+3015.68s: answer is it used to be a check and
+3018.16s: balance. Now those checks and balances
+3020.64s: are quite literally internal to each
+3022.88s: tool. I just use each tool for the
+3025.76s: capacity because I run out of tokens
+3029.04s: pretty regularly. So I split the work
+3032.24s: and they have different points that they
+3034.16s: run out. So I just make it so that
+3035.84s: there's never a point where like I'm
+3037.36s: fully dead in the water. That's the the
+3040.08s: main thing. On average, I would say that
+3044.08s: there's probably
+3047.36s: maybe
+3048.96s: eight 8 to 15 sessions per tool open.
+3055.04s: So like right now in claude active
+3059.20s: pipelines, I have 1 2 3 4 5 6 7 8 9 10
+3064.08s: 11 12 13. I have 13 open in that right
+3068.48s: now. And then in codeex I have 1 2 3 4 5
+3071.52s: 6 7 8 nine. And then I have nine in
+3076.00s: codeex. And those are things that are
+3077.44s: just active right now working on stuff.
+3081.04s: Again, it's an accelerator.
+3084.40s: This is where we are. This is where the
+3087.36s: O talk sits right now. So I know that
+3090.16s: you guys have some questions in the
+3091.68s: chat. I will rocket through those now.
+3093.76s: If you have any other questions or
+3095.12s: anything that you want to take a look
+3096.16s: at, anything like that, now's the
+3097.60s: perfect time. Ryan says, "What about
+3100.64s: equity and option data going forward?
+3102.48s: Are you pulling it daily and from what
+3104.32s: sources?" Yes, I'm pulling it daily. So,
+3106.96s: that's part of the the dink thing that
+3109.20s: we referred to. And I'm pulling it
+3111.28s: literally from all those sources that I
+3113.20s: listed earlier. So, that's OATS, that's
+3117.20s: Massive, Alpha, Vantage, Unusual Whales,
+3120.96s: all of them. And then also from Ryan
+3123.76s: says, "What do you mean by cleaned data?
+3126.00s: Are there issues with the data when you
+3127.52s: first get it?" So this is a standard
+3130.64s: part of data analysis. Cleaning data is
+3135.12s: you going through and making sure there
+3139.04s: are no issues. Ideally, if it's coming
+3141.76s: from a good vendor, there should be few
+3144.04s: [snorts] issues. There will never be
+3145.84s: zero, even from great vendors. When I
+3148.80s: spent literally six figures getting data
+3151.52s: from SIBO over six figures, I straight
+3155.76s: up had tons of errors in that data. So
+3159.36s: you have to go through it. So what
+3161.28s: that's actually part of the thing that's
+3162.64s: in the basic school deck that's coming
+3164.40s: out, which is like basic research
+3166.72s: protocols and statistics. But cleaning
+3169.84s: data is when you go through and you make
+3171.92s: sure that the data is formatted
+3174.48s: properly. So let's say for example, one
+3177.20s: tool is using accounting, the other
+3179.12s: one's using currency that has an extra
+3181.04s: decimal. That creates issues down the
+3183.76s: pipeline. Or you have something that's
+3186.48s: artificially not it's dividing by zero
+3189.52s: or it needs to be multiplied out by 100
+3191.68s: to get to the correct number. That's
+3193.68s: another issue especially if you take it
+3195.44s: from different sources. So for example,
+3197.60s: you might have one source that gives you
+3199.52s: delta like 30 means 30 delta but another
+3204.40s: tool might be30
+3207.60s: huge problem if that's not reconciled.
+3210.24s: So cleaning data is doing that. It's
+3212.40s: making sure that everything is
+3214.08s: standardized to whatever the convention
+3216.08s: is for your tool and then it's making
+3218.64s: sure that there like literally aren't
+3220.40s: any problems. So you'll find nulls,
+3223.04s: you'll find blanks, you'll find numbers
+3225.68s: that can't be. For example, a big thing
+3228.64s: that you'll come across especially with
+3230.32s: price data is split adjusting. Split
+3233.60s: adjusting is a massive problem with
+3235.44s: price data. It creates all sorts of
+3237.60s: gremlins. Dividends are another gremlin
+3240.96s: monster when it comes to data. All of
+3244.00s: those you effectively have to go through
+3247.04s: and just make sure that it's aligned
+3248.72s: with your convention. The way that I do
+3251.20s: that is look at so for example those
+3253.76s: data sources that I referred to earlier
+3256.24s: look at all of them see how many of them
+3258.56s: agree on something if five of them are
+3262.08s: formatted the same way for delta then
+3264.64s: that's the canical way I use delta the
+3267.12s: other one is going to get converted to
+3268.64s: that delta and it's going to be double
+3270.56s: checked that's why I have multi multiple
+3274.08s: data sources that give me the same thing
+3276.80s: is so that I can check things Because
+3280.00s: for example, sometimes you you'll get
+3281.76s: stuff where like an earnings date is
+3284.00s: wrong or an earnings time of day is
+3286.64s: wrong. One of them say it's it's P.M.
+3289.04s: and the other two say it's A.M. And
+3290.80s: you're like, well, [ __ ] bro. That
+3292.56s: actually kind of makes a material
+3293.76s: difference. Which one is it? By having
+3296.80s: multiple data sources like that, it
+3298.56s: allows me to validate really
+3300.96s: efficiently. Now again, that's me being
+3304.80s: really cautious because obviously
+3307.28s: there's a lot of like follow-on problems
+3310.32s: if your data is wrong. But that's
+3311.68s: cleaning in a nutshell. It's going
+3313.44s: through making sure there are no errors
+3314.96s: and everything's standardized.
+3317.20s: The the thing that Ehodge said at the
+3319.36s: bottom is exactly right. You cannot
+3322.88s: expect any data that you get to be fully
+3326.56s: clean. Any data. It is an expectation
+3330.80s: that you have to go through and make
+3332.80s: sure that it's cleaned. Otherwise,
+3335.28s: again, you're just the foundation of
+3337.36s: what you're doing is [ __ ] Kind of
+3339.68s: makes it a problem to do it. All right.
+3341.84s: JG says, "Disorganization is probably
+3343.76s: the single biggest threat to the system,
+3345.36s: especially with verbose agents like Opus
+3348.08s: 5 if you don't wrangle it in." Yeah.
+3350.08s: Yeah. And overbuilding is another really
+3352.40s: big one, right? like some of them,
+3354.32s: especially Opus 5, to your point, that
+3356.88s: used to be where it would write, you
+3359.92s: know, 10 times the amount of code it
+3361.76s: needed to do something really [ __ ]
+3363.44s: simple. Completely, completely agree,
+3366.08s: for sure.
+3368.00s: JG says, "Glad to hear I'm not the only
+3369.76s: one finding so many mainstream options
+3371.68s: expressions are negative EV. I've been
+3374.32s: so struck by how few things have
+3376.00s: positive EV." Yeah. Well, I and again,
+3379.36s: it it all depends, right? It depends on
+3382.16s: what you're looking at, what people are
+3384.56s: using. Most of the stuff that I look at
+3387.68s: that is negative EV are things that I
+3391.68s: think pretty much should be expected to
+3395.44s: be negative EV. And what I mean by that
+3398.08s: is, for example, let's say that you have
+3401.52s: a system that always buys a certain
+3403.84s: stock when it crosses above a 50 period
+3405.60s: moving average.
+3408.08s: Most of those kind of signals need other
+3411.52s: things to be efficacious. Very rarely
+3414.96s: the signal by itself will be
+3416.72s: efficacious. So yeah, that's that's
+3418.56s: exactly right. Most of those like really
+3420.72s: simplistic things that you come across
+3422.64s: almost always won't carry positive EV.
+3425.76s: That's right.
+3427.68s: And then JG says, I also found really
+3430.32s: encouraging signal with pre-earnings
+3432.00s: long ball in the exploration. That's
+3434.32s: good. Yeah. Yeah. Yeah. That's really
+3435.44s: really good.
+3436.80s: Trey says, "How are you context
+3439.36s: switching in your brain to review all of
+3442.08s: the outputs from 18 active sessions?"
+3449.44s: I honestly think that's just something
+3452.72s: that I'm kind of good at. If I'm again,
+3455.76s: not not to sound like being unhumb, but
+3460.56s: I'm good at that.
+3462.88s: So most of the stuff that's ongoing I
+3467.12s: like I kind of know what it is and I
+3468.72s: know where it is. So yeah, I I wish that
+3472.08s: there was like a better answer for that,
+3474.40s: but
+3476.56s: I really don't have a problem. The I
+3478.32s: guess one of the things that's really
+3479.44s: useful, let me let me reframe that.
+3480.96s: Something that's massively useful is
+3482.32s: making sure that you name the chats. If
+3484.48s: I didn't name the chats, it would be a
+3485.84s: nightmare.
+3487.36s: That for sure is huge. So if you're not
+3489.28s: doing that, do that. Name the chat to be
+3491.60s: about whatever you think it is. I think
+3493.44s: that's actually probably what it is.
+3494.64s: You'll probably be equally as good at it
+3496.16s: now that I think about it. It's not me
+3497.60s: being good at it. It's again just being
+3499.84s: organized. Each chat is named after the
+3503.20s: thing that I'm doing. So, for example,
+3504.80s: right here, one I'm looking at is VIX
+3506.64s: timing strats. That one is going through
+3510.32s: existing and new novel different kinds
+3513.28s: of strategies in timing, not just VIX,
+3516.32s: but VIX complex. and I already know what
+3518.88s: that's doing, what it's trying to do,
+3520.80s: and that sort of stuff just by the name.
+3523.68s: I would say that's probably the biggest
+3524.88s: one is make sure you name the chats. It
+3527.68s: takes two seconds and it's absolutely
+3530.40s: worth worth doing. I'd take it one step
+3533.12s: further and say like there's really no
+3534.72s: reason not to. It's super easy to do.
+3538.80s: All right, let me see if there's any
+3540.08s: other questions that I missed from the
+3544.16s: chat.
+3546.16s: Reeve, we already talked about for UI,
+3548.64s: so you know that.
+3551.52s: Ryan, we talked about cloud and codeex.
+3558.64s: Ryan asked about updating data, which we
+3561.52s: got.
+3569.60s: Yeah, I think we got everything.
+3575.12s: Hell yeah. All right, gang. That's the
+3578.40s: [ __ ] O talk. 6 months in. We will see
+3582.00s: where it is in another six months. Enjoy
+3585.60s: your guys' weekend, pro members. I'll
+3587.20s: see you guys tomorrow. Be an allar. See
+3588.56s: you guys later.

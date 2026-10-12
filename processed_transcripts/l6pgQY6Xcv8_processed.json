@@ -1,0 +1,722 @@
+[
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "Welcome outliers. Happy Saturday. Today we're doing a update day. I don't know if it's 145. That that sounds about right. It's close, but this is effectively 6 months in. So the O talk the outlier trading operations center started was born via project no code and that started back in May I think it was like the 16th or something something like that don't totally remember but that sounds pretty right to me somewhere around there and uh lot of members have started building their own version which is awesome you're supposed to that's why we have the infrastructure available to you to do that I'll share a couple links for you guys to be able to do that in a moment. But first, I need to drop the pre-stream music. That's what I was listening to right before we started. And then let me grab the link for you guys that has the downloads here. So that that there gives you the outline for this tool. Admittedly, I have not updated it. That's actually something I probably should do pretty soon based on some of the stuff that we're going to go through today. And my intent for this is really for those that are on the fence about building your own or if you are in the process of building your own, hopefully to give you some ideas, answer some questions, and help you more",
+    "start_timestamp_seconds": 515.68,
+    "end_timestamp_seconds": 605.44,
+    "start_timestamp": "08:35",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=515",
+    "chunk_index": 0,
+    "word_count": 238,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "And my intent for this is really for those that are on the fence about building your own or if you are in the process of building your own, hopefully to give you some ideas, answer some questions, and help you more efficiently do the thing. So, what's up Bruce, SG, and Lauren Reese? Great to see you all. Uh, SGN says, \"Will you be covering GME in this live?\" I am not planning on it. So, if you guys want to do a GME live stream, you could probably do one on Monday. I don't think we have anything scheduled for Monday. More than happy to, but today is going to focus on the O talk. I have kind of a lot that I have to get through, but as always, if there's time at the end, I'm always happy to go off script and take a look at whatever we want. All right, this is the OT talk in a nutshell from what we've where we land now. So as it sits there's 561 tables. There's 50 billion plus rows of market data. There's over 60 terabytes of data. 657,000 parquet files over the well over 194 research studies. Those are like original components, not each iteration. Just a ton of stuff has been done, which is really, really cool. I asked AI to put some of this into perspective. I",
+    "start_timestamp_seconds": 591.28,
+    "end_timestamp_seconds": 679.36,
+    "start_timestamp": "09:51",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=591",
+    "chunk_index": 1,
+    "word_count": 233,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "research studies. Those are like original components, not each iteration. Just a ton of stuff has been done, which is really, really cool. I asked AI to put some of this into perspective. I always find these interesting. So, if you take the 50 billion rows of market data and you put them on a paper stack, each sheet of paper is about 1 millimeter.1 millimeter. It's effectively 11 Mount Everests and reaches the edge of space. [ __ ] crazy. Here's the interesting thing about all of this is it was all done with AI. This is what my operation has looked like. So, it looks like May 17th, the dates in here. So, May 17th, I think it was the 16th that it started and then the 17th is when we started like documentation and whatnot. So May 17th is the day that this thing kicked off and you can see every single square represents where work was done. This is just different amounts of stuff that was committed. The brighter the square I got to take my shirt off. It's hot. Um the brighter the square, the more work that was done. And things that have those black dots means that it was a new piece of research that was commissioned that day. Uh, generally speaking, like 200 plus studies in 146 days means that there's essentially a new study every",
+    "start_timestamp_seconds": 667.52,
+    "end_timestamp_seconds": 761.2,
+    "start_timestamp": "11:07",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=667",
+    "chunk_index": 2,
+    "word_count": 234,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "And things that have those black dots means that it was a new piece of research that was commissioned that day. Uh, generally speaking, like 200 plus studies in 146 days means that there's essentially a new study every like 12 to 14 hours. There's research coming out of this thing at rates that it's just hard to believe. This gives you an idea of what those tables break down into. This is the warehouse. So there's app and scanner snapshots. You'll see that a little bit within Hugan. And then there's a ton of backend supporting data that feeds all of this. So half of the objects power the apps. The other half hold 11 domains of data essentially. So there's 255 data objects, 82 tables, and 173 views across this whole thing. The only reason why I'm giving you all of this stuff is for context literally on what one person can do with this. That's that's the neat thing about it. This gives you an idea of just the flow through of research. So there's over 3 million simulated trades about you know 250,000 plus configurations tested 281 research units 194 unique research studies that led to six str 16 strategies of those 16 several of them are things that I ported in meaning they're things that I've already done but I've brought in to do different stuff with either to optimize it to try",
+    "start_timestamp_seconds": 744.88,
+    "end_timestamp_seconds": 843.52,
+    "start_timestamp": "12:24",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=744",
+    "chunk_index": 3,
+    "word_count": 238,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "studies that led to six str 16 strategies of those 16 several of them are things that I ported in meaning they're things that I've already done but I've brought in to do different stuff with either to optimize it to try to tweak it and improve it. This is the cool part. This is the cool part. A average programmer typically writes anywhere from 10 to 50 production ready lines of code. That is from Google. I don't know how accurate that is. It sounded low to me. So, I actually did a little homework on it and then I understood what it meant when it said like production ready. What I've done with AI over 146 days is get through 2.2 million lines of code. So it's about 176 programmer years with one person with no background in this. That's project no code. That's what this whole thing is about. And that's why we spend time talking about it. It is an enabler that's hard to fully comprehend. And it's something that I think is really useful for pretty much everybody regardless of what level of depth you choose to go into. This gives you a list of strategies that actually come from the research directly. Now, for example, things like post earnings drift, earnings longfall, these are things that I've done for a long time, but they're novel takes from the OT talk.",
+    "start_timestamp_seconds": 831.12,
+    "end_timestamp_seconds": 928.24,
+    "start_timestamp": "13:51",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=831",
+    "chunk_index": 4,
+    "word_count": 236,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "actually come from the research directly. Now, for example, things like post earnings drift, earnings longfall, these are things that I've done for a long time, but they're novel takes from the OT talk. These are things that are like a a second variant of what I do and these are things that come directly from the O talk. This gives you their general performance numbers and the main thing with these is how they behave together. So that book that I look through, if I combine them and operate them as a shared portfolio, as I do, that suite that I just showed you returns about 22% compound annual growth rate with 12% VA, a max draw down of about 11%. That's what those things do. And again, all of that was from the OT talk outright. We're at a new we're just at a new thing. Like that's that's really what this means. It's kind of an insane place to be. All right, there's a lot of questions that I got on data. So, this is how the data surface generally breaks down. There's daily equity prices back to 03. Then there's minute level data. Then there's end of day options back to 07 with a V surface that's smoothed. Then there's 60 minute and 15 minute and one to two minute increments to 2015. This is a data this is a data question",
+    "start_timestamp_seconds": 913.28,
+    "end_timestamp_seconds": 1007.76,
+    "start_timestamp": "15:13",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=913",
+    "chunk_index": 5,
+    "word_count": 236,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "Then there's minute level data. Then there's end of day options back to 07 with a V surface that's smoothed. Then there's 60 minute and 15 minute and one to two minute increments to 2015. This is a data this is a data question and it's because if I find uh where is it here? We'll go back. But if I find like where the data sits and how much of it is there, a ton of it is the short-term data. A ton of it. It's options data is an insane an insane amount of storage and it's just because there's so much that goes into options data. This gives you again the the same thing in terms of like rows and where everything goes back to. This is how I break them out into like different views and for different purposes. So this is more stuff just for your general context. Macro is pretty cool because macro itself goes back really far. I literally have some macro series that go back to 1854. You can go back insanely insanely far with different macro level indicators and news, which is actually just really really cool. I'm able to pull in all different kinds of alternative positioning data, institutional holdings, insider filings, all of this stuff. And again, this breaks down where all of that stuff is born, where it sits. Let's talk about some sources. There are",
+    "start_timestamp_seconds": 990.48,
+    "end_timestamp_seconds": 1102.4,
+    "start_timestamp": "16:30",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=990",
+    "chunk_index": 6,
+    "word_count": 238,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "different kinds of alternative positioning data, institutional holdings, insider filings, all of this stuff. And again, this breaks down where all of that stuff is born, where it sits. Let's talk about some sources. There are a bunch of different sources that narrow down into a couple buckets and I have two main ways that I ingest the data. Three main ways. One of them is streaming. So during the day I have listeners that are pulling in data, writing and storing it. It's the first there's four ways I realized there's another one. So there's streaming, then there's intraday polls. So I have refresh buttons for certain things that need to pull from different sources to give me a new snapshot to make a decision based on what's happening right now. So there's a refresh function. So it's like intraday polls. Then there's the daily incremental poll. Every single day at 13:05 Pacific time, daily incremental kicks off on the machine. Takes about 2 hours. It's big, but the reason why it's large like that is because it's updating quite literally everything. And the reason why it's only 2 hours is because it's appending. It's keeping everything up until that point and it's just adding stuff for that day and then making sure that everything is resolved going back in time with a quick check. That's dink, daily incremental. Then there's think, full incremental.",
+    "start_timestamp_seconds": 1088.72,
+    "end_timestamp_seconds": 1177.28,
+    "start_timestamp": "18:08",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=1088",
+    "chunk_index": 7,
+    "word_count": 235,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "It's keeping everything up until that point and it's just adding stuff for that day and then making sure that everything is resolved going back in time with a quick check. That's dink, daily incremental. Then there's think, full incremental. I'm actually going to run that after this live stream. Full incremental is hours. It's anywhere from like 3 to seven hours depending on how much is in there. That's when I pull a bunch of stuff that I don't really need each day. So different kind of filings, regulatory elements, all of those earnings transcripts, all that stuff. Polls from full incremental. It's something I can run overnight during the weekend. No disruption whatsoever. the commercial. You'll see I think on this one. Yeah. So, this is a question. Let me see who this question was from. Give me one sec. Uh, that one's about scanners. We'll talk about that. Okay. So, Lost Hiker asked about the breakdown of what API connections I have and how I implement them. This is this is that this is essentially everything that I'm ingesting. So, there's a bunch of free sources that you can pull from. Then the commercial feeds, you guys already know I'm an affiliate for most of them and it's literally because I [ __ ] use it. So, it's stuff like OATS, Unusual Whales, Massive, which used to be",
+    "start_timestamp_seconds": 1164.4,
+    "end_timestamp_seconds": 1259.36,
+    "start_timestamp": "19:24",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=1164",
+    "chunk_index": 8,
+    "word_count": 231,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "Then the commercial feeds, you guys already know I'm an affiliate for most of them and it's literally because I [ __ ] use it. So, it's stuff like OATS, Unusual Whales, Massive, which used to be Polygon, Alpha Vantage. Those are the main providers when it comes to commercial data that I'm pulling in. The other thing is, as you guys know, I work at the hedge fund. So, a lot of my operation there also has a bunch of different data sources that most of the time when I'm doing any sort of research for, it's kind of sequestered, you know, to what I'm doing for the fund. But, nonetheless, that's another place with more so like alternative data. doesn't really provide anything that I don't already have access to. So this is I mean this is what it looks like the the public most of this stuff comes from Fred. You can see that there's over 200 macro series that you can ingest directly from Fred with nothing else and that API is completely free. It's fast enough. There's no issues with any of that. So if there's any questions on the data ingest stuff obviously let me know. This is the stuff that's like wired in and programmatic. There's other data sources that are more ad hoc or run by individual bases. So for example, SSRN, I have wiring that I",
+    "start_timestamp_seconds": 1245.04,
+    "end_timestamp_seconds": 1329.52,
+    "start_timestamp": "20:45",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=1245",
+    "chunk_index": 9,
+    "word_count": 235,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "obviously let me know. This is the stuff that's like wired in and programmatic. There's other data sources that are more ad hoc or run by individual bases. So for example, SSRN, I have wiring that I use to ingest new research from SSRN, pull that into an ingest folder that then gets OCRD, categorized, tagged, so then I can find it in the future easily. I get a weekly write up from AI about all new research that came out that week. And it allows me to efficiently find other existing research. If I'm looking up something, you guys saw a recent bit that I did in Gex, right? I did a couple videos in Gex that this is how I did it. I used the O talk used all the data ingestion that I have. I used all the existing data that I could find about existing research. Try to replicate that research first to make sure that there's no massive gremlins or errors in my own data. and then from there do my own novel stuff and see what I come up with. These are the sources. It's really not that much. Like that's the cool thing is that there really isn't that much. Okay. Oh yeah, there was another question that somebody asked because there are there are some sources that I started with that I stopped using. One of them and",
+    "start_timestamp_seconds": 1318.8,
+    "end_timestamp_seconds": 1397.44,
+    "start_timestamp": "21:58",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=1318",
+    "chunk_index": 10,
+    "word_count": 236,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "the cool thing is that there really isn't that much. Okay. Oh yeah, there was another question that somebody asked because there are there are some sources that I started with that I stopped using. One of them and again I have no affiliation with these guys. I have no ill will, hard feelings, nothing. I didn't even communicate with them. But one of them is I think it's called Theta Data. I tried them. I I just didn't like the tool at all. The ingest was really slow. It just wasn't a good fit for me. So that's a good example of one that I tried to use that didn't fit and I was able to get the data better faster from places like OATS and yeah. So I don't um I don't work with them anymore. There was uh let me I don't want to like cherrypick. Let me look up like options data API sources and I'll let you know which other ones. Massive was good. Options data I looked at. I didn't I didn't go with them. I didn't see anything that they do that I didn't have already. Oats I already have. Intrinia was slow. Intrinio was fine but I didn't like that one. data bento I looked at at that point I was already built out with oats and massive",
+    "start_timestamp_seconds": 1384.64,
+    "end_timestamp_seconds": 1462.88,
+    "start_timestamp": "23:04",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=1384",
+    "chunk_index": 11,
+    "word_count": 226,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "didn't have already. Oats I already have. Intrinia was slow. Intrinio was fine but I didn't like that one. data bento I looked at at that point I was already built out with oats and massive so there was nothing for me there and then the other one that's not on here is live streaming data through places like Schwab so Schwab allows me to again have listeners running throughout the day so that I can just passively ingest market data that's also running um pretty pretty much all the The cool thing about when you start this thing is the first few iterations are really bumpy, blocky, slow, but once you get the big history built out, it's really not that hard to maintain like at all. The big thing is getting the history built out and then make sure that all the data is correct, there are no errors. You go through your standard cleaning process. And the thing that I like the most about having your own data source and infrastructure like this is you actually can build history that you can't get anywhere else. What I mean by that is other places they might provide GEX. GEX is a great example. Some places only provide GEX back like 60 days or something. You can only get history maybe even 30 days. I don't know. But you can only get a certain amount of",
+    "start_timestamp_seconds": 1452.72,
+    "end_timestamp_seconds": 1544.72,
+    "start_timestamp": "24:12",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=1452",
+    "chunk_index": 12,
+    "word_count": 237,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "GEX is a great example. Some places only provide GEX back like 60 days or something. You can only get history maybe even 30 days. I don't know. But you can only get a certain amount of history and then you just can't you can't get it. It's gone. So if you start this process and you maintain it going forward, you create your own history that reaches back further. It takes the passage of time to do it, but it's literally not available anywhere else. It is a complete unique data source that you have because you're running the thing and just keeping up with it. That's generally speaking a good thing to be aware of. Like just running it is going to establish history that you can use. This is how it works. I get raw files in. The raw files are never adjusted. They're never I tamper with them. Zero. Everything is done off of the raw files. That's what turns into my actual data warehouse. That's where I clean the data. I don't the raw files. If there's stuff that I cleaned, it's in a second file. The raw file is always always mechanical. It doesn't change. There's no adjustments to it. I do that so that I have a completely defined history so that if something rolls back, if there's",
+    "start_timestamp_seconds": 1535.44,
+    "end_timestamp_seconds": 1618.24,
+    "start_timestamp": "25:35",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=1535",
+    "chunk_index": 13,
+    "word_count": 225,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "file. The raw file is always always mechanical. It doesn't change. There's no adjustments to it. I do that so that I have a completely defined history so that if something rolls back, if there's ever an error, I never am questioning like, oh, is this something that I adjusted? is there was some other gap somewhere. I have a completely clean starting point so that I never have to do that big backfill ever again. Essentially, all of those raw files work through a writer and that's through duct DB and that's how it enters the warehouse in the clean form that's formatted as it needs to be for then me to ingest it in other places. This is what storage looks like every single week. Did it last night. Every single week there's a full backup that I do. It takes hours. I run it overnight. And the purpose of the backup is so that the data that I have is safe. What this means is I have the engine, so the hot data that is taken from all of the raw data and cleaned. It's put in a standardized format. There are no errors that I can then use to actually run data analysis on. Then there is a master. The master is everything. It's the cleaned stuff. It's the raw stuff. It's everything.",
+    "start_timestamp_seconds": 1606.32,
+    "end_timestamp_seconds": 1705.04,
+    "start_timestamp": "26:46",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=1606",
+    "chunk_index": 14,
+    "word_count": 227,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "that I can then use to actually run data analysis on. Then there is a master. The master is everything. It's the cleaned stuff. It's the raw stuff. It's everything. And then there's literally a full copy of that master for redundancy. That's it. What I'm trying to do here is keep most of the data that I'm actively using for running analysis, for research on my internal SSDs. The reason for putting them on the internal SSDs is it's way faster. It's way faster to do any sort of analysis, to do any sort of homework with that data as compared to anything else. External SSD is fine, but it's slower. It's much much slower than an internal SSD. And then external HDD, that's where I have the master and then the mirror. Both of those are external HDD. I'm not actively using them to run data analysis. Those are there again for me to have data sources so that I never have an error. If I have any sort of corruption in my data, I can go back to either of those and get what I need. You already saw this data intensive is what options data is. This goes into the daily engine. So this is looking at dink and how this runs. Funny enough, on day 13 when we did like our twoe update early on, there's about 672",
+    "start_timestamp_seconds": 1693.04,
+    "end_timestamp_seconds": 1790.56,
+    "start_timestamp": "28:13",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=1693",
+    "chunk_index": 15,
+    "word_count": 233,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "what options data is. This goes into the daily engine. So this is looking at dink and how this runs. Funny enough, on day 13 when we did like our twoe update early on, there's about 672 lines of pipeline code at that point. And now there's about 15,500 lines of pipeline code. It's expanded. And the reason why is because I've been able to slowly add more data, expand that data, find new sources for things that I'm interested in doing research on, stuff that I maintain regularly, stuff that I do a little less regularly. But this gives me like literally everything I want in order to do data analysis. I have everything. This is just the growth of different elements of the base. So you could see the shared library modules that grew by 22 times. Scripts is up six times. Daily pipeline 23 times. Test functions 90 times. This is just scaling, right? What if we do another one of these in like another 6 months? I would expect it to be way more of a plateau. I would I mean I definitely expect it to expand still but nowhere near the rate that it is now. It's doubling plus you know over the last update and remember the the distance between those is a little bit um closer in time. This just goes through the research stuff to give you",
+    "start_timestamp_seconds": 1774.4,
+    "end_timestamp_seconds": 1870.32,
+    "start_timestamp": "29:34",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=1774",
+    "chunk_index": 16,
+    "word_count": 235,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "now. It's doubling plus you know over the last update and remember the the distance between those is a little bit um closer in time. This just goes through the research stuff to give you an idea of like what you can do with the thing. So there's different kinds of like base research that are like core. It's a novel thing. And then there's sub research off of some of those. This is just breaking that out for you. This shows you where different things go. So workshop, a lot of those things are for you guys. So when I'm doing a lot of different kind of workshop stuff, a lot of times it's like a a scrappy. I just want to prove something out quickly to see something. A lot of it is for my own use as well. And the convention I wrap around workshop style studies is much lighter. There's nowhere near as much documentation required. It's not that strict. As soon as things go into the research folder, entirely different. Inside the research folder, there's very specific rules that the infrastructure needs to maintain so that stuff becomes easily searched. It's durable. And what you'll find is if you don't stay organized with this kind of stuff, disorganization can be literally your undoing. You could have all this great data, but you can",
+    "start_timestamp_seconds": 1858.64,
+    "end_timestamp_seconds": 1942.08,
+    "start_timestamp": "30:58",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=1858",
+    "chunk_index": 17,
+    "word_count": 228,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "searched. It's durable. And what you'll find is if you don't stay organized with this kind of stuff, disorganization can be literally your undoing. You could have all this great data, but you can find yourself where you don't know where anything is and you are recreating stuff that you've already done, stuff like that, which is just generally good to avoid. Good organization up front saves you that. This just shows shows you some of the different grids that I ran looking at different kinds of strategies. So looking at momentum versus reversal over a short-term time horizon. It's actually pretty cool. The reason for this, it's actually important to track how many iterations of stuff that you look at because it gives you a lot of ideas as to how durable the edge is that you might uncover. It's not, you know, definitive. You can still have an edge at the end of a ton of different iterations and grids, but I normally am a little more skeptical of it. These are just some stuff that I ran through the idea or that I ran through the O talk that didn't necessarily bear out how you might expect. So, for example, high win rate credit spreads. You guys already know a lot of times those actually lose. There's a bunch of like really common entry signals. So, different simple moving average stuff. Um really, really basic things, crossovers,",
+    "start_timestamp_seconds": 1927.44,
+    "end_timestamp_seconds": 2023.92,
+    "start_timestamp": "32:07",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=1927",
+    "chunk_index": 18,
+    "word_count": 240,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "example, high win rate credit spreads. You guys already know a lot of times those actually lose. There's a bunch of like really common entry signals. So, different simple moving average stuff. Um really, really basic things, crossovers, stuff like that. And funny enough, a lot of them are actually negative expected value out of sample. That's just at a at a raw look. That's not to say any of them couldn't be turned into something. They very reasonable. But the point that I'm making is you can use your data source to prove or disprove stuff that you hear and see if it has a utility for you. These are different things that ended up surviving the process actually quite well. The put selling versus call selling that you guys saw a couple pieces of research on from the wheel the wheel video that came out and the coverage strangle stuff which is just that's good general stuff to know. What I mean by that is, for example, you should know in the indices if you sell a put, you're going to generally underperform buy and hold with lower volatility. If you sell the call, you're probably negative expected value. Probably being able to have those kind of inferences and just general understandings based on doing research is useful. It helps you navigate ideas much more efficiently. There was a question uh this was from",
+    "start_timestamp_seconds": 2010.56,
+    "end_timestamp_seconds": 2103.52,
+    "start_timestamp": "33:30",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=2010",
+    "chunk_index": 19,
+    "word_count": 236,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "probably negative expected value. Probably being able to have those kind of inferences and just general understandings based on doing research is useful. It helps you navigate ideas much more efficiently. There was a question uh this was from this one is from Reeve. Reev asked about how I'm scanning for trades with the O talk. And then there was another question. Uh where is it? Yeah. So this one's for Reef. I think there's one other question in here that's about the same stuff on like what's the what's the infrastructure for Hugan, which is the tool that you guys see me use all the time. This is Hugan. And this is where I I literally am looking at the market myself, which is easy to, you know, get a visual for cuz you guys have seen most of this a lot. Now, this next bit goes through that exact thing. What's what Hugan is and where it came from. This is a it's completely built within Python. It's all open source. There are no tools in here that are paid or anything. Most of it is ran via Streamlit and it's Streamlit 1.57 and that runs the app broadly. There's 61 fragments that refresh on their own. Then Plotly 67 draws every chart. There's [snorts] 271 charts in the app. Duck DB serves the data read only and it's one handle per run.",
+    "start_timestamp_seconds": 2087.84,
+    "end_timestamp_seconds": 2210.48,
+    "start_timestamp": "34:47",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=2087",
+    "chunk_index": 20,
+    "word_count": 235,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "There's 61 fragments that refresh on their own. Then Plotly 67 draws every chart. There's [snorts] 271 charts in the app. Duck DB serves the data read only and it's one handle per run. And then there's a HTML and JavaScript shell that provides the navigation overlays and stuff like that. That's what makes the thing. Literally, that's it. the data side of the equation that's done by just standard standard tools there pandas polars pi arrow that stuff so everything is done through Python and Python add-ons that's it the pipeline does pretty much everything and that's by design the reason why I do that so when I say the pipeline that's daily incremental when everything is premputed. It's It makes it way faster. So, inside of Hugan, it's not computing pretty much anything. That's why daily incremental takes so long for me to download the data that I need for the day for daily incremental. It's literally like 20 30 minutes, maybe 20, 30 minutes. The rest of that 2hour window is precomputing everything served in Hugan so that it's fast otherwise it can be really slow and if it's slow it's unusable. You won't use it. If you click something and you have to wait 40 seconds I know it's you know dramatic high class problem but the reality is is you're not going to wait 40 seconds for the thing to load. You're",
+    "start_timestamp_seconds": 2190.24,
+    "end_timestamp_seconds": 2303.28,
+    "start_timestamp": "36:30",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=2190",
+    "chunk_index": 21,
+    "word_count": 237,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "use it. If you click something and you have to wait 40 seconds I know it's you know dramatic high class problem but the reality is is you're not going to wait 40 seconds for the thing to load. You're just going to say do I really have to click that? And then you won't [ __ ] click it. That's also why in Hugan, a lot of the stuff is pre-rendered. There's no loading on the sitrep tab. That's by design. So, if we go to sitrep and we scroll through, everything is here. There's no there's no loading. It's all there. So, I can go through all of the stuff that I'm interested in seeing without any sort of loading hurdle to get over because that sucks. It's really annoying to deal with it. And that's also why, by the way, I have a warm hugan function and then persistent pages. Persistent pages means once it's loaded, it's its own streamlit iteration. If I navigate away from it and navigate back, it's instant because nothing has changed. It doesn't need to rerender. It doesn't need to redo anything because it's a static data set unless I'm in different places like cockpit which I can turn on a listening mode where it's every 2 seconds it updates. All of that is to make it more navigable because again if it's slow not going to",
+    "start_timestamp_seconds": 2294.56,
+    "end_timestamp_seconds": 2378.16,
+    "start_timestamp": "38:14",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=2294",
+    "chunk_index": 22,
+    "word_count": 235,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "it's a static data set unless I'm in different places like cockpit which I can turn on a listening mode where it's every 2 seconds it updates. All of that is to make it more navigable because again if it's slow not going to use it. I think I made that point clear. This shows the different sections that are in there right now. There's 63 subtabs total. There's like 77 reachable views in in across like the whole thing. The daily briefing which is hugan it's sit wrapped as 20 sections and macro is a massive massive section with 17 subtabs. It's huge but it's also all pre-built. So it's actually really really really fast to navigate. trade plan is something that's been building out over time as I'm porting more and more strategies over to this. My expectation is that in the trade plan there'll probably be maybe 20 strategies total. I'm not going to port everything into it just because it doesn't really need to happen. But the stuff that I benefit from seeing daily tracking their P&L curves more regularly like that, I absolutely will add there. This shows you where most of the charts live and what happens with the premputee that I'm talking about. For example, the confluence scan, it's just a scan that I run that used to be 131 seconds. It now renders in 0.01 seconds because it's premputed.",
+    "start_timestamp_seconds": 2362.96,
+    "end_timestamp_seconds": 2465.92,
+    "start_timestamp": "39:22",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=2362",
+    "chunk_index": 23,
+    "word_count": 237,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "live and what happens with the premputee that I'm talking about. For example, the confluence scan, it's just a scan that I run that used to be 131 seconds. It now renders in 0.01 seconds because it's premputed. It's giving you an example on what kind of time savings you can see from doing this. Revision drift is another one. 13 and a half seconds. It's now 13. Precomputing is worth it. What happens is and there's different ways you can navigate precomputing by the while by by the way because it takes a while and if dink is running I can't do anything else during dink. I can't read from the database because it's being written to. That's one of the things with duct DB that's very specific. So there's ways for me to navigate around that. One way is you can literally have a persistent view of Hugan if I wanted. The other thing I do is if I'm doing other research, I just use the parquet files files. I have them vectorized so that they're fast for me to navigate and I just literally skirt around the tables and I have other tables that are meant for doing things that are kind of urgent that are happening during dink that otherwise couldn't happen then. This just gives you an idea of how I build out a strategy. So once the",
+    "start_timestamp_seconds": 2448.8,
+    "end_timestamp_seconds": 2532.72,
+    "start_timestamp": "40:48",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=2448",
+    "chunk_index": 24,
+    "word_count": 233,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "and I have other tables that are meant for doing things that are kind of urgent that are happening during dink that otherwise couldn't happen then. This just gives you an idea of how I build out a strategy. So once the strategy is made, there's the signal element, there's the trade plan which it gets its own tab in there. It's a monitoring surface for me. Then there's a strategy tab that goes much further into detail. And then there's an excerpt in the cockpit, which is where I go to get daily signals, feedback on the thing that I'm using, the platform in general. These are like the main surfaces. So there's Hugan, you guys are familiar with that. There's Artemis, which is within Hugan. That's what feeds all of my scans. So there was a question from who was this one from? Okay. Yeah. So Ree was asking about the UI. So Reev hopefully you have your answer there now on the UI. And then the other thing was from Lost Hiker and also Reeve which is about scanners and that's what Artemis is. That's all the scanners in one tool. It has everything that I normally look at. So stuff that you guys saw me look at bar chart because they had a a good tool that was completely usable. Most of that stuff is in here now.",
+    "start_timestamp_seconds": 2520.48,
+    "end_timestamp_seconds": 2604.88,
+    "start_timestamp": "42:00",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=2520",
+    "chunk_index": 25,
+    "word_count": 232,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "It has everything that I normally look at. So stuff that you guys saw me look at bar chart because they had a a good tool that was completely usable. Most of that stuff is in here now. And all of the unique options stuff, most of that stuff that you guys saw me used to do a lot of on unusual whales, you'll see me do that here. So most of the the standard scanning, researching, rendering of visuals is all built into this already. That's again the the whole point of it. And when I decided that I was going to turn this into the canical thing that I use hopefully to serve as like an example for you guys, it needs to do everything that I normally needed to do. A couple other things I don't talk about quite as much. Munan, you guys have heard of that I think intermittently, but that's where all documentation lives. So every study, research, every strategy, SSR and paper, every book that I've downloaded, everything is in there. Everything. Then there's the back tester, which is just right now I refer to as the workstation. It doesn't really have a name, but the the back tester is a series of harnesses that I can reuse and modify to do different kinds of tests. So, I could do it for individual trades. I could do it",
+    "start_timestamp_seconds": 2595.28,
+    "end_timestamp_seconds": 2671.52,
+    "start_timestamp": "43:15",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=2595",
+    "chunk_index": 26,
+    "word_count": 235,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "It doesn't really have a name, but the the back tester is a series of harnesses that I can reuse and modify to do different kinds of tests. So, I could do it for individual trades. I could do it at the strategy level. I could do it at multiple strategy levels. I could do it at a portfolio level. It allows me to test everything pretty much every way that I want. And then ai is actually really cool. This is something I mostly use with coaching clients, but it's a way to like go back in time and have them see things for the first time that they've not seen before. walk through their decision cycle, what they're thinking of doing, why they're thinking of doing it, and then we can fast forward time and see what happens. It's very similar to on demand in Think or Swim. The only difference is it's more robust. It has everything. So, I have full options data. There's none of those weird glitches with stuff that has stock splits or anything like that because realistically speaking, I wouldn't have built it if on demand was like fully what it could be. I I unfortunately think on demand just doesn't get the attention it deserves because it's probably not used that much. But that's what that was inspired by. It was trying",
+    "start_timestamp_seconds": 2661.12,
+    "end_timestamp_seconds": 2732.24,
+    "start_timestamp": "44:21",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=2661",
+    "chunk_index": 27,
+    "word_count": 230,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "what it could be. I I unfortunately think on demand just doesn't get the attention it deserves because it's probably not used that much. But that's what that was inspired by. It was trying to fix some of the deficiencies that I saw there cuz it's a tool that I think there's a a whole lot of value in. These are what I've published. These are the things that I've published from where we started. And there's some research papers that I've built as well as part of this. I don't like publish to SSRN. I have literally no reason to, but I still write research papers and I house them at places for me to go back, revisit. And then you guys are also familiar with the basic school that's coming up. That is unfortunately for Shrej. So everybody should tip your hat to to Shrej cuz he volunteered to go through it. But that is now 957 slides. I am hopeful that I might be able to cut a little bit out of it, but I don't really think so. I think it's probably going to land around there. It has to be under a thousand slides. Like that is the hard cap. I don't care at that point what's left out. If I can't get the majority of what I need to get across in",
+    "start_timestamp_seconds": 2725.2,
+    "end_timestamp_seconds": 2796.16,
+    "start_timestamp": "45:25",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=2725",
+    "chunk_index": 28,
+    "word_count": 228,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "It has to be under a thousand slides. Like that is the hard cap. I don't care at that point what's left out. If I can't get the majority of what I need to get across in a thousand slides, then that's [ __ ] But one of the reasons why there are a lot of slides is because I I really like visuals. As you guys can tell, for me, it always helps me like tie things together, right? To see the thing. And so that's why it's not like it's 957 slides of like text and [ __ ] like that. There's a ton of visuals designed to help, right, with that to connect dots, but it's a [ __ ] bear. For those that are unfamiliar, the basic school, that's actually framed after the Marine Corps. All officers go through a place called the basic school. It's exactly what it sounds like. It's 6 months and it's where you go to learn how to be a marine officer at just at a basic level. And the I'm lifting and shifting that just like the O talk, the outlier trading operations center that's from the military tactical operations center. And what this is meant to do is be literally a resource for people to go through. You start at the beginning, you get to the end, and you should have a pretty good",
+    "start_timestamp_seconds": 2787.6,
+    "end_timestamp_seconds": 2858.88,
+    "start_timestamp": "46:27",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=2787",
+    "chunk_index": 29,
+    "word_count": 235,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "military tactical operations center. And what this is meant to do is be literally a resource for people to go through. You start at the beginning, you get to the end, and you should have a pretty good idea of how markets work and how to trade. Whether or not it could be done successfully, that's always up to the individual. I unfortunately have zero control out of that. As much as I would love that to be a different story, I have no control there. But it's designed to give you pretty much exposure to just about everything I could think of that's useful. And it's trying to strike a balance between the depth that you get and the um the ability to like get through it because it would be very reasonable for that to be like thousands of pages. But I just think that becomes a little bit untenable. This is the general commit structure that you see. So there's about 14,000 commits since the 17th of May and there's 625 merges of finished work and 44% have AI co-author tags which means AI did effectively everything. That said, I do go through some of the code that AI does to just one learn, but two to look for gremlins that I learned in my own experience previously. And there was a question I got, I think it might have been [snorts] from",
+    "start_timestamp_seconds": 2846.4,
+    "end_timestamp_seconds": 2938.0,
+    "start_timestamp": "47:26",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=2846",
+    "chunk_index": 30,
+    "word_count": 236,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "that AI does to just one learn, but two to look for gremlins that I learned in my own experience previously. And there was a question I got, I think it might have been [snorts] from uh I think this one might be from Ryan about using like different AI tools. I think it was from him, but Yeah. Yeah. Okay. So Ryan says, \"Another thing I just thought of. It would be cool if you go in a little more detail of what you've done with codeex and how you're using it with cloud code. The punchline is now that's changed massively. It used to be one wrote the code, the other reviewed the code. Now that's gone. They both do everything by themselves.\" The reason is because both of those tools, Claude and Codeex, now have given their agents the ability to coordinate internally. So internally, I have code reviewers. So now instead of me having to take one from codeex to the other one to get a second set of eyes, I'll have codeex that's running in, you know, GPT61 and after a big work block, I'll say send it to Astra to have it review punch holes. It's a I call it well I think it's technical term. I I don't know. I'm not from the industry, but adversarial review look for issues and that's exactly what it is now.",
+    "start_timestamp_seconds": 2926.16,
+    "end_timestamp_seconds": 3013.2,
+    "start_timestamp": "48:46",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=2926",
+    "chunk_index": 31,
+    "word_count": 234,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "holes. It's a I call it well I think it's technical term. I I don't know. I'm not from the industry, but adversarial review look for issues and that's exactly what it is now. So the short answer is it used to be a check and balance. Now those checks and balances are quite literally internal to each tool. I just use each tool for the capacity because I run out of tokens pretty regularly. So I split the work and they have different points that they run out. So I just make it so that there's never a point where like I'm fully dead in the water. That's the the main thing. On average, I would say that there's probably maybe eight 8 to 15 sessions per tool open. So like right now in claude active pipelines, I have 1 2 3 4 5 6 7 8 9 10 11 12 13. I have 13 open in that right now. And then in codeex I have 1 2 3 4 5 6 7 8 nine. And then I have nine in codeex. And those are things that are just active right now working on stuff. Again, it's an accelerator. This is where we are. This is where the O talk sits right now. So I know that you guys have some questions in the chat. I will rocket through those now.",
+    "start_timestamp_seconds": 3003.6,
+    "end_timestamp_seconds": 3091.68,
+    "start_timestamp": "50:03",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=3003",
+    "chunk_index": 32,
+    "word_count": 232,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "Again, it's an accelerator. This is where we are. This is where the O talk sits right now. So I know that you guys have some questions in the chat. I will rocket through those now. If you have any other questions or anything that you want to take a look at, anything like that, now's the perfect time. Ryan says, \"What about equity and option data going forward? Are you pulling it daily and from what sources?\" Yes, I'm pulling it daily. So, that's part of the the dink thing that we referred to. And I'm pulling it literally from all those sources that I listed earlier. So, that's OATS, that's Massive, Alpha, Vantage, Unusual Whales, all of them. And then also from Ryan says, \"What do you mean by cleaned data? Are there issues with the data when you first get it?\" So this is a standard part of data analysis. Cleaning data is you going through and making sure there are no issues. Ideally, if it's coming from a good vendor, there should be few [snorts] issues. There will never be zero, even from great vendors. When I spent literally six figures getting data from SIBO over six figures, I straight up had tons of errors in that data. So you have to go through it. So what that's actually part of the thing that's in the basic school deck that's coming",
+    "start_timestamp_seconds": 3081.04,
+    "end_timestamp_seconds": 3162.64,
+    "start_timestamp": "51:21",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=3081",
+    "chunk_index": 33,
+    "word_count": 235,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "from SIBO over six figures, I straight up had tons of errors in that data. So you have to go through it. So what that's actually part of the thing that's in the basic school deck that's coming out, which is like basic research protocols and statistics. But cleaning data is when you go through and you make sure that the data is formatted properly. So let's say for example, one tool is using accounting, the other one's using currency that has an extra decimal. That creates issues down the pipeline. Or you have something that's artificially not it's dividing by zero or it needs to be multiplied out by 100 to get to the correct number. That's another issue especially if you take it from different sources. So for example, you might have one source that gives you delta like 30 means 30 delta but another tool might be30 huge problem if that's not reconciled. So cleaning data is doing that. It's making sure that everything is standardized to whatever the convention is for your tool and then it's making sure that there like literally aren't any problems. So you'll find nulls, you'll find blanks, you'll find numbers that can't be. For example, a big thing that you'll come across especially with price data is split adjusting. Split adjusting is a massive problem with price data. It creates all sorts of gremlins.",
+    "start_timestamp_seconds": 3151.52,
+    "end_timestamp_seconds": 3237.6,
+    "start_timestamp": "52:31",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=3151",
+    "chunk_index": 34,
+    "word_count": 233,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "that can't be. For example, a big thing that you'll come across especially with price data is split adjusting. Split adjusting is a massive problem with price data. It creates all sorts of gremlins. Dividends are another gremlin monster when it comes to data. All of those you effectively have to go through and just make sure that it's aligned with your convention. The way that I do that is look at so for example those data sources that I referred to earlier look at all of them see how many of them agree on something if five of them are formatted the same way for delta then that's the canical way I use delta the other one is going to get converted to that delta and it's going to be double checked that's why I have multi multiple data sources that give me the same thing is so that I can check things Because for example, sometimes you you'll get stuff where like an earnings date is wrong or an earnings time of day is wrong. One of them say it's it's P.M. and the other two say it's A.M. And you're like, well, [ __ ] bro. That actually kind of makes a material difference. Which one is it? By having multiple data sources like that, it allows me to validate really efficiently. Now again, that's me being really cautious because obviously",
+    "start_timestamp_seconds": 3225.68,
+    "end_timestamp_seconds": 3304.8,
+    "start_timestamp": "53:45",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=3225",
+    "chunk_index": 35,
+    "word_count": 234,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "That actually kind of makes a material difference. Which one is it? By having multiple data sources like that, it allows me to validate really efficiently. Now again, that's me being really cautious because obviously there's a lot of like follow-on problems if your data is wrong. But that's cleaning in a nutshell. It's going through making sure there are no errors and everything's standardized. The the thing that Ehodge said at the bottom is exactly right. You cannot expect any data that you get to be fully clean. Any data. It is an expectation that you have to go through and make sure that it's cleaned. Otherwise, again, you're just the foundation of what you're doing is [ __ ] Kind of makes it a problem to do it. All right. JG says, \"Disorganization is probably the single biggest threat to the system, especially with verbose agents like Opus 5 if you don't wrangle it in.\" Yeah. Yeah. And overbuilding is another really big one, right? like some of them, especially Opus 5, to your point, that used to be where it would write, you know, 10 times the amount of code it needed to do something really [ __ ] simple. Completely, completely agree, for sure. JG says, \"Glad to hear I'm not the only one finding so many mainstream options expressions are negative EV. I've been so struck by how few things have",
+    "start_timestamp_seconds": 3290.8,
+    "end_timestamp_seconds": 3374.32,
+    "start_timestamp": "54:50",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=3290",
+    "chunk_index": 36,
+    "word_count": 236,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "simple. Completely, completely agree, for sure. JG says, \"Glad to hear I'm not the only one finding so many mainstream options expressions are negative EV. I've been so struck by how few things have positive EV.\" Yeah. Well, I and again, it it all depends, right? It depends on what you're looking at, what people are using. Most of the stuff that I look at that is negative EV are things that I think pretty much should be expected to be negative EV. And what I mean by that is, for example, let's say that you have a system that always buys a certain stock when it crosses above a 50 period moving average. Most of those kind of signals need other things to be efficacious. Very rarely the signal by itself will be efficacious. So yeah, that's that's exactly right. Most of those like really simplistic things that you come across almost always won't carry positive EV. That's right. And then JG says, I also found really encouraging signal with pre-earnings long ball in the exploration. That's good. Yeah. Yeah. Yeah. That's really really good. Trey says, \"How are you context switching in your brain to review all of the outputs from 18 active sessions?\" I honestly think that's just something that I'm kind of good at. If I'm again, not not to sound like being unhumb, but I'm good at that.",
+    "start_timestamp_seconds": 3363.44,
+    "end_timestamp_seconds": 3460.56,
+    "start_timestamp": "56:03",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=3363",
+    "chunk_index": 37,
+    "word_count": 233,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "switching in your brain to review all of the outputs from 18 active sessions?\" I honestly think that's just something that I'm kind of good at. If I'm again, not not to sound like being unhumb, but I'm good at that. So most of the stuff that's ongoing I like I kind of know what it is and I know where it is. So yeah, I I wish that there was like a better answer for that, but I really don't have a problem. The I guess one of the things that's really useful, let me let me reframe that. Something that's massively useful is making sure that you name the chats. If I didn't name the chats, it would be a nightmare. That for sure is huge. So if you're not doing that, do that. Name the chat to be about whatever you think it is. I think that's actually probably what it is. You'll probably be equally as good at it now that I think about it. It's not me being good at it. It's again just being organized. Each chat is named after the thing that I'm doing. So, for example, right here, one I'm looking at is VIX timing strats. That one is going through existing and new novel different kinds of strategies in timing, not just VIX, but VIX complex. and I already know what that's doing, what it's trying to do,",
+    "start_timestamp_seconds": 3439.36,
+    "end_timestamp_seconds": 3518.88,
+    "start_timestamp": "57:19",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=3439",
+    "chunk_index": 38,
+    "word_count": 237,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  },
+  {
+    "video_id": "l6pgQY6Xcv8",
+    "title": "Outlier Trading Operations Center 6-Month Update",
+    "text": "timing strats. That one is going through existing and new novel different kinds of strategies in timing, not just VIX, but VIX complex. and I already know what that's doing, what it's trying to do, and that sort of stuff just by the name. I would say that's probably the biggest one is make sure you name the chats. It takes two seconds and it's absolutely worth worth doing. I'd take it one step further and say like there's really no reason not to. It's super easy to do. All right, let me see if there's any other questions that I missed from the chat. Reeve, we already talked about for UI, so you know that. Ryan, we talked about cloud and codeex. Ryan asked about updating data, which we got. Yeah, I think we got everything. Hell yeah. All right, gang. That's the [ __ ] O talk. 6 months in. We will see where it is in another six months. Enjoy your guys' weekend, pro members. I'll see you guys tomorrow. Be an allar. See you guys later.",
+    "start_timestamp_seconds": 3506.64,
+    "end_timestamp_seconds": 3588.56,
+    "start_timestamp": "58:26",
+    "video_url": "https://www.youtube.com/watch?v=l6pgQY6Xcv8",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=l6pgQY6Xcv8&t=3506",
+    "chunk_index": 39,
+    "word_count": 180,
+    "upload_date": "20261011",
+    "published_at": "2026-10-11T11:59:05Z",
+    "duration": 3591,
+    "related_wiki_pages": [
+      "concepts/data-analysis"
+    ]
+  }
+]

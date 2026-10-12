@@ -2606,6 +2606,61 @@
   "target": "securities/gme",
   "weight": 5
  },
+ "concepts/dark-pool||concepts/order-flow": {
+  "evidence": {
+   "timestamp": "01:53:50",
+   "video_id": "7tBAlmNokFI"
+  },
+  "label": "venue where institutional order flow executes",
+  "relation": "related-to",
+  "source": "concepts/dark-pool",
+  "target": "concepts/order-flow",
+  "weight": 3
+ },
+ "concepts/dark-pool||concepts/price-action": {
+  "evidence": {
+   "timestamp": "07:58",
+   "video_id": "-mD-g1Io3II"
+  },
+  "label": "provides context for interpreting",
+  "relation": "related-to",
+  "source": "concepts/dark-pool",
+  "target": "concepts/price-action",
+  "weight": 4
+ },
+ "concepts/dark-pool||concepts/support-and-resistance": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "-mD-g1Io3II"
+  },
+  "label": "can obscure price discovery for",
+  "relation": "related-to",
+  "source": "concepts/dark-pool",
+  "target": "concepts/support-and-resistance",
+  "weight": 3
+ },
+ "concepts/dark-pool||concepts/technical-analysis": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "-mD-g1Io3II"
+  },
+  "label": "operates outside visibility that technical analysis relies o",
+  "relation": "contrasts-with",
+  "source": "concepts/dark-pool",
+  "target": "concepts/technical-analysis",
+  "weight": 4
+ },
+ "concepts/dark-pool||securities/gme": {
+  "evidence": {
+   "timestamp": "01:24:54",
+   "video_id": "vkBpeqKvUMY"
+  },
+  "label": "venue for trading shares of",
+  "relation": "related-to",
+  "source": "concepts/dark-pool",
+  "target": "securities/gme",
+  "weight": 5
+ },
  "concepts/days-to-expiration||concepts/delta": {
   "evidence": {
    "timestamp": "30:45",
@@ -5112,6 +5167,17 @@
   "relation": "drives",
   "source": "strategies/zero-dte",
   "target": "concepts/delta",
+  "weight": 5
+ },
+ "concepts/derivatives||concepts/leverage": {
+  "evidence": {
+   "timestamp": "33:35",
+   "video_id": "-XQGZSyM8O0"
+  },
+  "label": "enables amplified exposure through",
+  "relation": "drives",
+  "source": "concepts/derivatives",
+  "target": "concepts/leverage",
   "weight": 5
  },
  "concepts/derivatives||concepts/market-maker": {
