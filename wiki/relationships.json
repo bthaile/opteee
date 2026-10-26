@@ -2320,6 +2320,28 @@
   "target": "strategies/short-put",
   "weight": 5
  },
+ "concepts/cost-of-carry||concepts/drawdown-protection": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "vbvJRKTsRuk"
+  },
+  "label": "accumulates expense of implementing",
+  "relation": "drives",
+  "source": "concepts/cost-of-carry",
+  "target": "concepts/drawdown-protection",
+  "weight": 4
+ },
+ "concepts/cost-of-carry||concepts/protective-puts": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "4usgdTe77Bo"
+  },
+  "label": "makes protective puts expensive",
+  "relation": "drives",
+  "source": "concepts/cost-of-carry",
+  "target": "concepts/protective-puts",
+  "weight": 4
+ },
  "concepts/counterparty||concepts/delta-hedging": {
   "evidence": {
    "timestamp": "01:38:25",
@@ -3288,6 +3310,17 @@
   "target": "concepts/hedging",
   "weight": 4
  },
+ "concepts/delta-hedging||concepts/market-manipulation": {
+  "evidence": {
+   "timestamp": "23:15",
+   "video_id": "1O0HX-C-4PU"
+  },
+  "label": "legitimate hedging versus artificial price movement",
+  "relation": "contrasts-with",
+  "source": "concepts/delta-hedging",
+  "target": "concepts/market-manipulation",
+  "weight": 3
+ },
  "concepts/delta-hedging||concepts/position-sizing": {
   "evidence": {
    "timestamp": "11:26",
@@ -3407,6 +3440,17 @@
   "relation": "is-a",
   "source": "concepts/delta-neutral",
   "target": "concepts/iron-condor",
+  "weight": 3
+ },
+ "concepts/delta-neutral||concepts/market-manipulation": {
+  "evidence": {
+   "timestamp": "55:54",
+   "video_id": "iVRYIr3ezYw"
+  },
+  "label": "opposes the intent of market manipulation",
+  "relation": "contrasts-with",
+  "source": "concepts/delta-neutral",
+  "target": "concepts/market-manipulation",
   "weight": 3
  },
  "concepts/delta-neutral||concepts/portfolio-margin": {
@@ -5717,6 +5761,17 @@
   "relation": "related-to",
   "source": "concepts/dollar-cost-averaging",
   "target": "strategies/buy-and-hold",
+  "weight": 5
+ },
+ "concepts/drawdown-protection||concepts/protective-puts": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "3m2zIOGx7fg"
+  },
+  "label": "primary objective achieved through",
+  "relation": "is-a",
+  "source": "concepts/protective-puts",
+  "target": "concepts/drawdown-protection",
   "weight": 5
  },
  "concepts/drawdown||concepts/emotional-discipline": {
@@ -9712,6 +9767,17 @@
   "target": "concepts/trading-psychology",
   "weight": 5
  },
+ "concepts/market-efficiency||concepts/market-manipulation": {
+  "evidence": {
+   "timestamp": "01:14",
+   "video_id": "1O0HX-C-4PU"
+  },
+  "label": "undermined by presence of",
+  "relation": "contrasts-with",
+  "source": "concepts/market-manipulation",
+  "target": "concepts/market-efficiency",
+  "weight": 4
+ },
  "concepts/market-efficiency||concepts/position-sizing": {
   "evidence": {
    "timestamp": "47:21",
@@ -9920,6 +9986,17 @@
   "source": "concepts/market-efficiency",
   "target": "strategies/vertical-spreads",
   "weight": 3
+ },
+ "concepts/market-maker||concepts/market-manipulation": {
+  "evidence": {
+   "timestamp": "01:14",
+   "video_id": "1O0HX-C-4PU"
+  },
+  "label": "legitimate market function versus illegal price distortion",
+  "relation": "contrasts-with",
+  "source": "concepts/market-maker",
+  "target": "concepts/market-manipulation",
+  "weight": 5
  },
  "concepts/market-maker||concepts/market-structure": {
   "evidence": {
@@ -10261,6 +10338,17 @@
   "source": "concepts/market-maker",
   "target": "strategies/weekly-options",
   "weight": 3
+ },
+ "concepts/market-manipulation||securities/gme": {
+  "evidence": {
+   "timestamp": "01:14",
+   "video_id": "1O0HX-C-4PU"
+  },
+  "label": "alleged manipulation scheme involving",
+  "relation": "related-to",
+  "source": "concepts/market-manipulation",
+  "target": "securities/gme",
+  "weight": 5
  },
  "concepts/market-microstructure||concepts/regime-dependency": {
   "evidence": {
