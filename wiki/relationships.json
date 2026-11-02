@@ -263,6 +263,17 @@
   "target": "concepts/assignment",
   "weight": 5
  },
+ "concepts/assignment||concepts/dividend": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "5YEY_IvBdPg"
+  },
+  "label": "increases risk of early assignment",
+  "relation": "drives",
+  "source": "concepts/dividend",
+  "target": "concepts/assignment",
+  "weight": 3
+ },
  "concepts/assignment||concepts/early-exercise": {
   "evidence": {
    "timestamp": "05:51",
@@ -5708,6 +5719,50 @@
   "target": "concepts/diversification",
   "weight": 5
  },
+ "concepts/dividend||concepts/position-sizing": {
+  "evidence": {
+   "timestamp": "01:02:01",
+   "video_id": "JuqhsVCGUCA"
+  },
+  "label": "influences risk assessment in position sizing",
+  "relation": "drives",
+  "source": "concepts/dividend",
+  "target": "concepts/position-sizing",
+  "weight": 3
+ },
+ "concepts/dividend||concepts/risk-management": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "5YEY_IvBdPg"
+  },
+  "label": "drives early assignment risk requiring",
+  "relation": "drives",
+  "source": "concepts/dividend",
+  "target": "concepts/risk-management",
+  "weight": 3
+ },
+ "concepts/dividend||strategies/covered-call": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "5YEY_IvBdPg"
+  },
+  "label": "triggers early assignment risk in",
+  "relation": "drives",
+  "source": "concepts/dividend",
+  "target": "strategies/covered-call",
+  "weight": 4
+ },
+ "concepts/dividend||strategies/short-put": {
+  "evidence": {
+   "timestamp": "09:10",
+   "video_id": "cRntDv1akM0"
+  },
+  "label": "drives early assignment risk in",
+  "relation": "drives",
+  "source": "concepts/dividend",
+  "target": "strategies/short-put",
+  "weight": 4
+ },
  "concepts/dollar-cost-averaging||concepts/position-sizing": {
   "evidence": {
    "timestamp": "01:33:09",
@@ -9206,6 +9261,17 @@
   "target": "concepts/settlement",
   "weight": 3
  },
+ "concepts/leverage||concepts/stock-replacement": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "9APL8MtZu7Y"
+  },
+  "label": "enables cost-efficient capital deployment in",
+  "relation": "drives",
+  "source": "concepts/leverage",
+  "target": "concepts/stock-replacement",
+  "weight": 3
+ },
  "concepts/leverage||securities/es": {
   "evidence": {
    "timestamp": "23:45",
@@ -11911,6 +11977,61 @@
   "source": "concepts/opportunity-cost",
   "target": "strategies/covered-call",
   "weight": 5
+ },
+ "concepts/optimization||concepts/process-over-outcome": {
+  "evidence": {
+   "timestamp": "41:06",
+   "video_id": "MyDkYjuogQ0"
+  },
+  "label": "depends on consistent iteration of",
+  "relation": "requires",
+  "source": "concepts/optimization",
+  "target": "concepts/process-over-outcome",
+  "weight": 3
+ },
+ "concepts/optimization||concepts/profit-mechanism": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "F9GDgxBxBXI"
+  },
+  "label": "drives the effectiveness of",
+  "relation": "drives",
+  "source": "concepts/optimization",
+  "target": "concepts/profit-mechanism",
+  "weight": 3
+ },
+ "concepts/optimization||concepts/risk-management": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "F9GDgxBxBXI"
+  },
+  "label": "informs strategic decisions in",
+  "relation": "drives",
+  "source": "concepts/optimization",
+  "target": "concepts/risk-management",
+  "weight": 4
+ },
+ "concepts/optimization||concepts/trading-log": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "MyDkYjuogQ0"
+  },
+  "label": "informs iterative refinement of",
+  "relation": "drives",
+  "source": "concepts/trading-log",
+  "target": "concepts/optimization",
+  "weight": 3
+ },
+ "concepts/optimization||concepts/trading-plan": {
+  "evidence": {
+   "timestamp": "41:06",
+   "video_id": "MyDkYjuogQ0"
+  },
+  "label": "iterative refinement of trading plan",
+  "relation": "drives",
+  "source": "concepts/optimization",
+  "target": "concepts/trading-plan",
+  "weight": 3
  },
  "concepts/options-chain-analysis||concepts/price-action": {
   "evidence": {

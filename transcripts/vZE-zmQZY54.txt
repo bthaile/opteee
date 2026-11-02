@@ -1,0 +1,557 @@
+0.00s: What's up, Outliers? Today we're talking
+2.12s: about how to size options trades. This
+4.36s: video is going to go a little deeper
+5.48s: into detail than some of the prior ones
+7.24s: that I've done. It's a dense video
+9.60s: that's going to cover three three levels
+12.64s: that I think about, the portfolio,
+14.44s: strategy, and trade level. Then at the
+16.12s: end of the video, I'm going to give you
+17.20s: a worked example to help tie all of this
+20.96s: stuff together. So, what I'm going to do
+23.04s: is start with why does this matter? This
+25.04s: is showing you a strategy that is sized
+30.16s: at three different levels. The strategy
+32.72s: has positive edge by itself. It's about
+35.48s: 3 and 1/2% per dollar at risk. What I'm
+39.96s: doing then is showing a 300 trade
+43.76s: derivation of that where we're
+47.08s: simulating 4,000 paths. So, it's taking
+49.76s: something that has edge and then it's
+51.92s: simulating it at these different sizes.
+54.44s: So, the one-time size, the base size for
+57.24s: this is 12 and 1/2% risk per trade.
+60.32s: That's the yellow line. Then you have
+61.80s: the blue line, which is two times that,
+63.88s: and then that orange line, which is four
+65.84s: times that. What I'm showing you is that
+68.92s: this is the same strategy, the same
+71.32s: trade, the same edge.
+73.80s: But, the way that you size it has a
+77.52s: massive impact on your performance.
+81.80s: That's why sizing is so important. So,
+86.68s: if you have a strategy that has a real
+89.20s: edge, you should be asking yourself, how
+92.20s: is your sizing impacting it?
+95.16s: Let's start with some core concepts. I
+96.92s: think of it at three levels, portfolio,
+98.92s: strategy, trade. Portfolio tells me how
+102.44s: the entire book can lose or behave
+106.16s: together. Strategy tells me how much
+109.56s: capital each strategy gets to operate
+112.40s: with, and then the trade is individual
+115.96s: expressions of that strategy. The reason
+119.36s: for
+120.89s: is because this is like I think of it as
+123.37s: a as a nested
+125.45s: way to manage risk. The portfolio I use
+128.57s: things that are referred to as circuit
+130.13s: breakers that if I exceed a certain
+132.65s: amount of drawdown, I start cutting risk
+135.13s: because something's happening that's
+136.45s: abnormal and so on. We're going to focus
+138.77s: more so on two and three here. But we
+141.21s: have to talk about how we actually
+144.17s: manage risk.
+145.65s: Funny enough, risk management and sizing
+149.33s: is really the only thing you can fully
+150.85s: control as an options trader. How much
+152.65s: capital you choose to put out. And I
+155.37s: have two ways I view it. There is the
+157.65s: structural risk and then there's the
+159.85s: managed risk. Structural risk is
+162.53s: whatever the cost is for you to put on
+164.93s: the thing that you're trading. So for
+167.45s: example,
+168.97s: if I'm buying a put and I buy the put
+172.25s: for a dollar, my structural risk there
+173.97s: is a dollar. If I decide that I have a
+176.81s: management point where I'm not actually
+179.33s: going to lose the full dollar more
+180.69s: likely than not, I am intending to do
+183.97s: something before that, that's the
+185.45s: managed risk.
+186.89s: This can be a little bit difficult
+188.53s: because you'll notice that there are
+191.33s: some strategies that have defined risk
+194.61s: built in, makes it kind of easy. But
+196.57s: then there's others that have undefined
+199.25s: risk.
+200.61s: The way that I think about undefined
+203.61s: risk is by applying different stress
+207.37s: metrics to that position. A lot of times
+210.61s: for example, if you have a portfolio
+212.13s: margin account, your broker will have a
+214.01s: margin requirement. You're that is your
+216.25s: broker saying this is what I think this
+217.97s: thing is likely to lose based on things
+219.93s: right now.
+221.09s: The problem though is that that number
+223.09s: can also change.
+226.01s: You'll learn a little bit more about
+227.53s: that in a couple slides.
+230.65s: Here you should think about structural
+232.97s: risk is dependent on what capital is
+236.89s: actually out at risk. So in the
+239.93s: undefined scenario, we might have a
+241.89s: stress loss, meaning let's say the
+244.21s: broker is asking you for two grand. And
+246.61s: then you model up several standard
+248.61s: deviation move past that, and you model
+251.21s: your stress loss as seven grand. That's
+253.89s: still not your max loss, right? For a
+256.45s: short put, technically speaking, your
+258.93s: max risk is if the thing goes to zero.
+262.01s: So, it's generally speaking important to
+265.45s: be aware of what the max potential is,
+268.81s: but the stress loss is really meant to
+270.97s: capture 99% of scenarios that would be
+274.69s: more likely to happen than the thing
+276.29s: necessarily going to zero.
+278.73s: The purpose of differentiating
+280.29s: structural risk from manage risk is
+281.97s: because you can trade more. If I'm
+284.37s: putting on something, and I'm simply
+286.93s: going to take it at the struct-
+288.65s: structural risk level,
+290.61s: what this is showing you
+292.45s: is
+293.61s: if each one is 1820 per contract, and
+296.65s: I'm willing to risk about 5800 bucks, I
+298.97s: can trade three of these.
+300.81s: But if I know I'm going to manage these
+303.13s: on average at say 480 per contract, that
+307.21s: means for that same risk, because
+309.53s: there's a management element to it, I
+311.21s: can trade a bigger size. Now, remember,
+313.89s: you can't just use that as a way to
+315.57s: trade more size. You have to pick the
+317.61s: way you manage it in a way that makes
+320.53s: sense for your strategy. We actually
+322.17s: reviewed a very detailed version of this
+325.53s: in a recent skill development live
+327.61s: stream on a Thursday for the pro
+329.25s: members. The way to think about that is
+331.45s: it has to be made specific to the
+333.81s: strategy. However the strategy
+336.09s: specifically operates and behaves,
+338.57s: that's how you will arrive at what's
+339.89s: logical here, not the size that you
+342.13s: think you want to trade.
+344.49s: One of the issue
+346.41s: is markets can gap. So, let's say that
+350.45s: you sell a short strangle, and you're
+352.93s: planning on managing your risk at two
+355.29s: times the credit you received, which
+356.89s: we'll talk about that later. There's
+358.53s: some errors with that. Well, let's just
+360.69s: say that that's what you're planning to
+361.65s: do.
+362.49s: And there's a gap.
+364.57s: Problem is, if there's a gap, then you
+367.42s: don't actually realize that managed risk
+370.81s: level.
+371.89s: So, what happens here is we have a
+374.50s: planned budget based on our risk
+377.69s: tolerance, but then we have to accept
+379.98s: the fact that there can be gaps if we're
+382.50s: trading some sort of naked strategy.
+384.74s: And for that, you can think of managing
+387.25s: it a few different ways.
+389.13s: I would size that position either a
+392.45s: little bit more conservatively if the
+394.62s: thing I'm trading gaps a lot. If the
+396.81s: thing that I'm trading doesn't gap that
+398.74s: much, then again, it's good to be aware
+400.57s: of it, but the probability of some sort
+402.74s: of massive gap risk isn't super high.
+406.77s: And then the other thing beyond all of
+408.13s: those is if you can hedge it. So, for
+409.74s: example, let's say I'm trading a short
+411.25s: strangle in SPX. I can't trade SPX after
+413.65s: hours, it's closed. What I can do
+416.54s: is hedge with E-minis. For example, if
+419.77s: the, you know, futures market is
+421.25s: trading.
+422.38s: With that scenario,
+424.50s: I can still offset some of that gap
+426.77s: risk, which is another consideration to
+429.38s: keep in mind.
+431.77s: Okay. So, let's move on
+435.06s: and talk about how we size through these
+438.30s: things.
+439.77s: Depending on how confident you can be in
+442.38s: your ability to execute at that managed
+445.57s: risk level,
+448.38s: you can generally size pretty close to
+450.86s: that.
+452.25s: However,
+453.65s: you have to be able to survive
+456.38s: structural risk. In this case, if we're
+459.06s: selling naked strangles, we need to be
+461.18s: able to survive gaps.
+463.10s: The way we figure out the size of the
+465.38s: gap that we need to plan for, again, is
+466.86s: by looking
+468.33s: at the history of the thing that we're
+469.50s: trading. And picking something that
+472.50s: gives us a balance between getting the
+474.89s: size on that we need,
+477.50s: >> [clears throat]
+477.89s: >> and then also surviving unlikely
+481.57s: outcomes,
+482.89s: like gap risk, which can happen.
+486.38s: So,
+487.74s: remember that if you use things like
+491.62s: margin requirement, buying power
+493.30s: reduction, buying power,
+495.62s: all of those is just some sort of
+498.58s: capital set aside. It's not your actual
+501.18s: risk. We were talking about this a
+503.02s: little bit earlier.
+504.58s: With a trade that is using a margin
+507.70s: requirement to maintain its size, in
+509.58s: this example, you can start at something
+511.18s: like 7,300 bucks. That's what the broker
+513.26s: is asking you to set aside for that
+514.54s: short strangle.
+515.90s: Then, as soon as things start getting a
+517.82s: little hairy, vol's going up, the
+520.14s: underlying is moving against you, your
+522.26s: broker is going to say, "I need you to
+523.70s: put more risk aside. I need you to put
+526.14s: more capital." This is where margin
+527.26s: calls come from.
+528.62s: You have to be able to survive through
+530.02s: that.
+530.98s: So, the way to think about being able to
+533.58s: exist and survive is you can't base
+536.30s: everything off of these crash
+537.94s: potentials. A lot of it, again, is very
+539.86s: specific to the strategy and the way
+541.38s: that it behaves. Because if you size
+544.22s: your option positions off of the
+545.78s: worst-case scenario in every single one
+547.30s: of them, you'll never put any risk on.
+550.58s: You have to have a probabilistic
+552.10s: understanding of the thing that you're
+553.34s: trading and what it's likely to do.
+555.98s: That said, let's take a look at the
+557.82s: portfolio level.
+559.86s: When we look at this at that top
+562.66s: portfolio level, we generally need to
+565.06s: define our account size and whatever our
+568.22s: downside budget is, your risk tolerance.
+571.54s: Generally speaking, if you want larger
+573.78s: returns, you generally speaking should
+576.50s: expect larger potential drawdowns.
+579.18s: That's not linear, but generally
+581.54s: speaking, that's the relationship to
+582.82s: prepare for. I say that because
+584.82s: everybody would prefer no drawdown, very
+587.14s: little drawdown, and really big upside.
+589.34s: That sets you down a pretty unlikely
+591.46s: path.
+593.18s: When we define the drawdown, the way I
+598.06s: build around that, again, is via circuit
+600.78s: breakers. And that's stuff that I
+602.82s: monitor myself. And what that means is
+605.42s: if we hit that drawdown, I immediately
+608.54s: have to start cutting positions, because
+611.34s: that drawdown for me is defined by a
+613.98s: point that shouldn't really happen.
+617.06s: If it happens, that means something is
+619.54s: happening that I haven't accounted for,
+622.34s: which shouldn't really happen. It means
+624.54s: something's changed drastically and
+627.70s: something's going on that I don't
+628.90s: understand and I need to stop it.
+631.74s: So, the other thing to keep in mind is
+634.26s: the way that a portfolio behaves,
+636.66s: because the risk that you take in
+639.58s: different strategies is quite disparate.
+643.70s: Let's take a look at covered calls
+645.10s: versus short strangles.
+647.10s: If we take a covered call, we look at
+648.98s: our stress loss. The way you might
+650.66s: figure out your stress loss for a
+651.86s: covered calls, you take a look at your
+653.22s: covered call
+654.62s: and then you say, "Okay,
+656.42s: let's say that the average monthly range
+659.06s: for the thing that you're trading is 5%.
+661.62s: You see that the largest one-month range
+664.02s: in the last 5 years is 15%. So, then
+668.46s: you're budgeting, you know, 15, 20% for
+671.34s: your max stress loss.
+673.98s: With that scenario, you can compare that
+676.10s: against the short strangles applying a
+677.74s: simpler a similar idea.
+680.26s: But, what you'll find is the covered
+681.82s: call has way lower stress loss based on
+684.90s: the thing that we're trading, its
+685.82s: volatility and so on.
+687.94s: What this is telling you is that if you
+689.70s: arbitrarily split your capital 50/50
+691.94s: between these, your risk is way
+694.26s: different. You are taking way more risk
+696.06s: than you think. If you're actually risk
+699.06s: adjusting this, you have to size
+702.26s: effectively the inverse of what you see
+704.18s: at the bottom there. 77% of your capital
+706.42s: would be in the covered calls and 23%
+708.14s: would be in the short strangles.
+709.78s: It's cuz there's way more risk there.
+711.82s: What I'm emphasizing here is you have to
+713.42s: take a look at the structure and the
+715.30s: profile of the things that you're
+716.98s: trading and how they look when they're
+719.02s: combined and sized how you intend to,
+721.94s: because you could be taking risk that
+723.34s: you didn't fully think.
+725.54s: Things become more correlated as things
+730.22s: go down, which is just generally
+732.78s: important to note. We literally see an
+734.66s: interesting scenario right now where
+736.94s: bonds and equities are pretty strongly
+740.02s: positively correlated over like 0.4 to
+742.70s: 0.5. That's crazy. So, the thing that a
+746.50s: lot of people would use to offset some
+749.38s: of their risk bonds for their equities,
+751.22s: it's not actually working. You have to
+752.78s: pay attention to that kind of thing.
+754.86s: This leads to, depending on the
+756.42s: different kinds of positions that you
+757.98s: put on, they can actually be more or
+760.02s: less the same bets.
+761.70s: So, what you should think about here is
+764.62s: what your independent bets look like and
+767.78s: how those bets
+770.22s: work with one another.
+772.86s: If you find that there's a really high
+775.10s: correlation, so again, a good example of
+777.14s: this. Let's say
+778.46s: that you're selling puts in SPY and then
+780.62s: you say, "Well, I also really like
+781.90s: Amazon here." You might look at that as
+783.90s: two different positions. But, if you're
+785.74s: selling puts in SPY and selling puts in
+787.50s: Amazon, they're super correlated. That's
+790.02s: more like one position than it's not.
+792.42s: That's not saying that they're the same
+794.58s: thing. They're not. But, if the market
+797.10s: starts to go down, the probability of
+798.86s: those two going down together is pretty
+800.90s: high. You want to think through that.
+803.58s: And you can literally use some basic
+806.94s: math to figure out
+809.54s: what your overall bet looks like.
+813.46s: Now, when we look at an entire book,
+818.10s: I use an idea called heat, which places
+822.22s: the entire book in a bad scenario where
+825.78s: everything is happening at once. This is
+828.06s: when I'm analyzing things at the
+829.78s: portfolio level. It's just a good idea
+832.62s: to
+833.94s: get an understanding of how all of these
+835.70s: things would actually look if they were
+838.14s: put on at the same time and you go
+840.46s: through a bad scenario. The reason for
+842.54s: this is to, again, arrive at whether or
+846.02s: not your current size is supportable. If
+848.74s: you're okay with it or if you're not. If
+851.06s: you're not, that's a scenario where
+852.86s: like, "Okay, if I'm positioned with
+854.70s: these things and these can do this,
+857.18s: maybe that's when I do need to carry a
+858.98s: hedge even though I don't really want
+860.86s: to.
+861.66s: It's the only way for me to stay within
+863.18s: my risk budget, that sort of thing.
+865.74s: At the strategy level, this is how we
+868.54s: start defining what will make sense at
+871.46s: the trade level. So, for example, if you
+873.94s: sell premium in general, you're
+875.74s: typically going to win frequently,
+877.94s: smaller wins, and larger losses when
+881.34s: they happen. Trend followers, momentum,
+884.38s: it's again, this is just giving you
+886.06s: examples. None of these are set in
+887.54s: stone, but it's typically the inverse.
+889.86s: A lot of trend following strategies will
+891.58s: have lots of small losses and very
+895.50s: infrequently or moderately frequently,
+897.66s: depending on what you're doing, larger
+899.30s: wins.
+900.70s: That risk-to-reward relationship tells
+903.22s: you a lot about how you will build
+905.42s: something, but it's not just about the
+908.02s: average win, average loss, it's also how
+910.50s: frequently do these things cluster?
+913.58s: Because, let's say for example, you're
+915.66s: running your trend following strategy
+918.54s: and you're sizing things based on that
+920.94s: one loss, but in general
+923.90s: you'll notice that, let's say for that
+925.78s: specific strategy, a bunch of them show
+927.90s: up at the same time. That might lead you
+930.22s: to size that thing a little bit
+932.06s: differently. So, what I like to do is I
+935.78s: plan for the clustering.
+938.38s: I don't plan just off of the average
+941.50s: loser, I have to be aware of what the
+944.62s: clustering losses look like. Now, you
+946.98s: can take the average of those
+948.38s: clusterings or you can take the
+951.18s: independent losses, but what this is
+953.34s: showing you is that you have a 95%
+956.06s: confidence interval that you'll be about
+958.50s: eight.
+959.58s: That's good to know.
+961.34s: So, if we have that bad scenario,
+966.42s: we need to make sure that it still keeps
+969.02s: us generally within our budget both at
+972.74s: the strategy and then at the portfolio
+975.70s: level.
+976.86s: There's a bunch of resources that I've
+979.02s: shared already on Kelly Kelly criterion
+980.98s: in sizing. I'm not going to go through
+982.54s: this in detail, but this is
+985.14s: a good place to think about risk and how
+987.62s: much you should risk. Kelly gives you an
+990.06s: optimal growth rate per trade. You can
+992.90s: Normally, people will use a little bit
+995.42s: under Kelly, quarter Kelly, half Kelly
+997.18s: for stuff, but it's just a framework to
+999.54s: think about actually sizing things. And
+1001.66s: again, there's a standalone video that
+1003.90s: goes into it into a bit more detail.
+1007.02s: But just note that if you use something
+1009.62s: like half Kelly, more often than not,
+1011.66s: you actually keep more of the growth,
+1014.30s: most of the growth, and you scrub a fair
+1018.86s: amount of the variance, which is one of
+1021.38s: the reasons why coming off Kelly a
+1024.34s: little bit from full Kelly is generally
+1028.38s: a fair starting point.
+1030.86s: The other thing to remember is that when
+1033.70s: we're estimating things from a sample,
+1035.90s: you have to remember that calm samples
+1038.30s: tend to overstate the edge.
+1040.90s: That's just because rare things happen
+1043.90s: rarely. COVID market is a great example.
+1046.14s: You can over-engineer for that, but you
+1048.22s: have to be able to wear that that
+1049.58s: exists. Okay, let's get into the trade
+1051.70s: level.
+1052.82s: So,
+1054.10s: if we begin a position with a certain
+1057.82s: amount of budget for this thing,
+1061.18s: we first want to acknowledge that if we
+1064.34s: adjust things, our risk changes. It's
+1068.82s: not dynamic. Or I'm sorry, it's not
+1071.02s: static. It is dynamic. You want to be
+1073.78s: aware of that based on the strategy that
+1075.98s: you're operating. If you have
+1077.90s: adjustments as part of your protocol,
+1079.70s: you have to track how that changes your
+1081.30s: risk throughout the life cycle of that
+1083.34s: trade.
+1085.42s: In a
+1087.74s: end-to-end look at this, if you take the
+1091.14s: risk budget per trade, whatever that is,
+1093.66s: so in this case we're saying that you
+1095.06s: could put up 5814,
+1097.22s: and that's saying for that specific
+1099.50s: iteration, so that gives you 1820 per
+1101.94s: contract. You could put on 3.19. You
+1103.98s: have to roll down to three. There's no
+1106.54s: partial contracts.
+1109.30s: After you define that risk per trade,
+1111.34s: you need to see how that fits into your
+1114.62s: portfolio heat cap and the total capital
+1118.38s: that you have available to use.
+1121.62s: So, let's tie it together.
+1125.50s: We have a portfolio here where we have a
+1127.82s: $500,000 account with a 25% max drawdown
+1131.18s: tolerance.
+1132.46s: We're planning to split that into two
+1135.38s: main strategies, a premium selling
+1137.58s: strategy and a trend following strategy.
+1140.34s: We understand the bad runs, what those
+1145.18s: look like. So, it's 12.9 for the seller
+1147.50s: and it's 23.2 for the trend follower.
+1151.02s: With that, we can figure out of the
+1154.58s: budget that we get, the premium seller
+1156.82s: is getting 75k, the trend follower is
+1159.42s: getting 50. This is based on the way
+1162.14s: that these strategies behave and where
+1164.98s: you want your capital.
+1167.14s: You can then figure out how much you
+1170.22s: want to put in each individual trade
+1172.54s: based on the structure and the way that
+1174.10s: you approach that strategy
+1176.78s: and get to how many contracts go on for
+1180.54s: that individual thing.
+1182.38s: This might look a little bit heavy,
+1185.14s: but remember, it's it's really not. Once
+1188.78s: you build the infrastructure for you to
+1190.54s: track your individual trades, your size
+1193.18s: limits for your individual trades, how
+1194.82s: those play together at the strategy
+1196.30s: level and the portfolio level,
+1198.34s: it becomes really, really simple to do.
+1200.66s: You can build a tool using AI to
+1203.98s: literally import all of your information
+1207.14s: from your broker. That's actually a
+1208.98s: project that I'm working on right now
+1210.30s: with the Pro Plus members in one of our
+1212.50s: trading workshops.
+1214.58s: It's super easy to do.
+1216.74s: You set up an API with your broker. You
+1218.38s: have it ingest. Then, you literally tell
+1221.02s: whatever your AI tool is of choice that
+1223.94s: you want to run this kind of analysis
+1226.55s: and make sure that everything sized
+1227.87s: correctly and it literally can do it for
+1229.98s: you.
+1230.90s: So, remember think of this at the
+1232.94s: portfolio strategy trade level. Across
+1235.74s: each of these you have a few questions
+1237.94s: to ask yourself and these nine are
+1241.38s: generally speaking the entire framework
+1244.18s: that we're talking about and using here.
+1247.14s: A couple mistakes that people make at
+1249.27s: the portfolio level trades a lot of
+1251.79s: times can go on randomly and we don't
+1255.31s: actually track the way that different
+1257.51s: positions behave together.
+1259.98s: That's again a error. A lot of times you
+1262.70s: will come up with something that you
+1264.18s: don't fully understand. At the strategy
+1266.62s: level if you're planning off of your
+1268.07s: average losses and your sizing off of an
+1270.14s: average loss size you tend to forget
+1271.79s: streaks.
+1273.22s: Kelly is a ceiling. You shouldn't go
+1275.90s: over Kelly, but it's not necessarily the
+1278.55s: optimal place for your risk tolerance to
+1280.87s: be.
+1281.70s: And at the trade level you have to use
+1284.11s: stress losses to understand what your
+1286.87s: thing will look like if it's a vertical
+1289.46s: spread you already know. The stress is
+1291.27s: the max. That's easy.
+1292.83s: But if you're trading other kind of
+1294.14s: things you have to know that. And if you
+1296.90s: start playing and managing with your
+1299.27s: position after it's on
+1301.98s: your risk dynamic changes and you have
+1304.55s: to account for that.
+1306.83s: At the end of the day the way that you
+1309.27s: size a position needs to align not just
+1313.42s: with the individual trade, but it needs
+1316.66s: to align at the strategy level and at
+1319.07s: the book level. If you have any
+1320.51s: questions let me know. Be an outlier.
+1321.94s: See you guys later.
