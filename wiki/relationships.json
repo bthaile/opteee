@@ -1682,6 +1682,17 @@
   "target": "concepts/theta",
   "weight": 5
  },
+ "concepts/collar||concepts/downside-protection": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "1-se7NvwW84"
+  },
+  "label": "harvests downside protection by sacrificing upside",
+  "relation": "harvests",
+  "source": "concepts/collar",
+  "target": "concepts/downside-protection",
+  "weight": 3
+ },
  "concepts/compound-annual-growth-rate||concepts/delayed-gratification": {
   "evidence": {
    "timestamp": "05:51",
@@ -5488,6 +5499,28 @@
   "target": "strategies/short-put",
   "weight": 4
  },
+ "concepts/discipline||concepts/edge": {
+  "evidence": {
+   "timestamp": "08:00",
+   "video_id": "eHurZBXO5ck"
+  },
+  "label": "enables consistent execution of",
+  "relation": "requires",
+  "source": "concepts/discipline",
+  "target": "concepts/edge",
+  "weight": 3
+ },
+ "concepts/discipline||concepts/risk-management": {
+  "evidence": {
+   "timestamp": "",
+   "video_id": "CzBpxADkCk0"
+  },
+  "label": "enables consistent execution of",
+  "relation": "drives",
+  "source": "concepts/discipline",
+  "target": "concepts/risk-management",
+  "weight": 3
+ },
  "concepts/discretionary-trading||concepts/gamma": {
   "evidence": {
    "timestamp": "",
@@ -5817,6 +5850,17 @@
   "source": "concepts/dollar-cost-averaging",
   "target": "strategies/buy-and-hold",
   "weight": 5
+ },
+ "concepts/downside-protection||concepts/risk-premium": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "eiI0XD61His"
+  },
+  "label": "harvests the premium of risk",
+  "relation": "harvests",
+  "source": "concepts/risk-premium",
+  "target": "concepts/downside-protection",
+  "weight": 3
  },
  "concepts/drawdown-protection||concepts/protective-puts": {
   "evidence": {
@@ -6521,6 +6565,17 @@
   "source": "concepts/emotional-discipline",
   "target": "concepts/opportunity-cost",
   "weight": 5
+ },
+ "concepts/emotional-discipline||concepts/portfolio-management": {
+  "evidence": {
+   "timestamp": "16:00",
+   "video_id": "h41zEfos4G0"
+  },
+  "label": "enables disciplined execution of",
+  "relation": "requires",
+  "source": "concepts/emotional-discipline",
+  "target": "concepts/portfolio-management",
+  "weight": 3
  },
  "concepts/emotional-discipline||concepts/position-sizing": {
   "evidence": {
@@ -12955,6 +13010,50 @@
   "relation": "related-to",
   "source": "concepts/portfolio-first",
   "target": "strategies/put-credit-spread",
+  "weight": 3
+ },
+ "concepts/portfolio-management||concepts/position-sizing": {
+  "evidence": {
+   "timestamp": "05:52",
+   "video_id": "BKbkWTwx2zI"
+  },
+  "label": "requires disciplined approach to",
+  "relation": "requires",
+  "source": "concepts/portfolio-management",
+  "target": "concepts/position-sizing",
+  "weight": 4
+ },
+ "concepts/portfolio-management||concepts/process-over-outcome": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "BKbkWTwx2zI"
+  },
+  "label": "requires disciplined focus on process over outcome",
+  "relation": "requires",
+  "source": "concepts/portfolio-management",
+  "target": "concepts/process-over-outcome",
+  "weight": 3
+ },
+ "concepts/portfolio-management||concepts/profit-mechanism": {
+  "evidence": {
+   "timestamp": "01:17",
+   "video_id": "BKbkWTwx2zI"
+  },
+  "label": "requires understanding of profit mechanisms",
+  "relation": "requires",
+  "source": "concepts/portfolio-management",
+  "target": "concepts/profit-mechanism",
+  "weight": 4
+ },
+ "concepts/portfolio-management||concepts/risk-management": {
+  "evidence": {
+   "timestamp": "00:00",
+   "video_id": "BKbkWTwx2zI"
+  },
+  "label": "foundational concepts in trading strategy",
+  "relation": "related-to",
+  "source": "concepts/portfolio-management",
+  "target": "concepts/risk-management",
   "weight": 3
  },
  "concepts/portfolio-margin||concepts/position-sizing": {
