@@ -1,0 +1,1140 @@
+2.24s: What's up everyone? Welcome to the
+3.76s: options trench. Today Chris and I are
+6.24s: going to be chatting a little bit about
+9.04s: how to integrate options logically into
+11.36s: a trading process and specifically some
+13.84s: some ways to build really precise
+17.76s: positions that are as efficient as we
+21.36s: can make them. And then another key
+23.20s: thing that we want to discuss is how to
+25.76s: think about like this continuum between
+28.80s: mapping an idea and being as efficient
+31.28s: as a possible versus accepting a wider
+34.64s: array of outcomes and how you can build
+37.28s: something that kind of fits anywhere you
+39.52s: fall along that continuum because
+41.92s: options are a little bit complex. They
+44.16s: have a lot of bits that go into them and
+46.64s: sometimes you can be right and lose
+48.64s: money. I think pretty much most of us
+50.08s: have been there. super annoying and this
+52.96s: is really designed to help us avoid
+54.96s: that. We're going to mostly be looking
+57.12s: through the lens of a vertical spread.
+60.32s: We're going to talk about some other
+61.84s: ways to think about it. And you had a
+63.52s: specific example that you wanted to work
+66.00s: through through a catalyst like
+68.64s: earnings. So, the first bit I figure we
+71.76s: could dive into, Chris, is when you
+75.20s: think about using an option versus any
+79.04s: other instrument, how do you arrive at I
+82.32s: want to use an option here?
+85.60s: Yeah. The the thing that makes me want
+88.24s: to reach for options is how specific my
+91.84s: view is. So, the very very first thing
+94.56s: is do I have a view on timing? Um, so if
+98.00s: I have a view on timing, then I'm going
+99.76s: to look at the options chain um that
+102.64s: corresponds to the expiry that I'm
+104.96s: concerned with. Um, if I don't have a
+108.16s: view, if I have no view on timing at all
+110.40s: and I'm just have a vibe sort of, hey,
+112.72s: I'm just bullish this thing or I'm
+114.24s: bearish this thing, then you should just
+115.76s: trade the outright. just just you know
+117.76s: just buy the stock if you're bullish and
+119.84s: you don't have a view on the timing
+121.76s: because um like you said before um you
+125.36s: know that's not it stings uh to buy an
+128.96s: option be right on the direction and be
+131.52s: wrong on the timing. Um, at least if you
+135.12s: lose in that if you lose by buying an
+137.60s: option, at least you went into it from
+140.08s: good hygiene of being, well, I went into
+142.72s: this understanding that if I'm not right
+145.20s: on the timing, I'm going to lose. The
+147.52s: the worst thing that happens is you go
+149.12s: in and you don't understand that the
+151.68s: timing matters quite a lot. Um, and you
+155.36s: just buy a call because you're like, I'm
+157.04s: bullish. I'm like, no, no, no. Make sure
+159.28s: you got make sure you have a view on the
+161.20s: timing. um otherwise just buy the stock.
+165.20s: >> And another big part to the equation
+167.52s: that you and I were chatting a little
+168.96s: bit about is also things like
+172.24s: volatility. Big part of an option by
+175.68s: itself impacts the price and the outcome
+177.92s: pretty significantly. How would you
+180.48s: factor in V as another filter that you
+185.36s: apply? So we have timing as one filter.
+189.36s: V being right now another at least for
+192.00s: the conversation. How would you factor
+193.52s: that into the equation?
+195.84s: Yeah, I think one of the one of the neat
+197.76s: things um
+200.24s: this is we don't have to allude to this
+202.32s: with the math but one of the neat things
+203.92s: is that timing and V are actually
+205.60s: basically the same thing in this problem
+207.92s: because
+209.76s: the the minute you have a view on timing
+212.64s: you actually have a view on V also
+215.68s: because if I say I think the stock is
+219.28s: going to go up 10% and I don't have and
+222.32s: I say that with no view on timing then I
+224.72s: have no view on the ball. But the minute
+226.96s: I say I think this stock is going to go
+228.56s: up 10% in the next month, I
+230.96s: automatically have just turned my
+233.20s: opinion into one that has a V component
+235.52s: to it. Um, which is very different than
+237.76s: saying I think this stock is going to go
+239.68s: up 10% in the next year.
+242.40s: Then you have created some idea about
+246.00s: what the possible volatility of that
+247.92s: asset is. So the minute that you are
+250.72s: thinking about timing, you're actually
+252.32s: thinking about V also, which is very
+254.40s: convenient. It turns out that the math
+256.00s: of options pricing um shows that to
+259.04s: actually there there's an equivalence
+260.64s: there anyway. But um to have a view on
+264.56s: timing is to have a view on V. If you
+266.32s: think I'm this thing is going to move X
+268.00s: amount in some period of time, um this
+271.44s: is all already having a view on the
+273.36s: timing. Now you can go ahead and do the
+275.20s: extra step of converting the size that
+279.20s: you think and the period of time into an
+281.20s: actual volatility number which you could
+282.88s: then compare with the volatility number
+285.84s: that comes out of the options chain like
+288.00s: you can you can go ahead and do that. Um
+290.88s: but uh the point is you're actually have
+294.24s: you do have some view a second the
+296.40s: second you have a view on timing. Um,
+299.04s: so, uh, that's that's kind of, um,
+304.00s: it it goes handinhand with this idea
+306.24s: that options are surgical and you should
+308.40s: only use them when you have a view on
+310.24s: timing or volatility, but conveniently,
+313.20s: they're kind of the same.
+315.52s: And how do you think about things like
+317.68s: velocity or how do you think about
+321.84s: things um
+326.08s: specifically that can impact the outcome
+329.52s: of what type of option you reach for
+333.60s: right so we're talking about these
+334.96s: different buckets broad buckets I can be
+337.20s: in delta 1 and scrub all that off or
+341.44s: based on things like magnitude
+343.44s: specificity what your target is and so
+345.44s: on and so forth that might change what
+348.88s: option I reach for. So if you were to
+351.76s: think of like a quick mental model and
+353.76s: then we'll get into the example because
+355.04s: it'll kind of walk through a lot of this
+356.40s: I think in detail but if you were to
+358.64s: think of like a quick mental model that
+360.80s: you might use to work through that
+363.20s: continuum of do I want to use options
+365.84s: yes or no and then what might I want to
+368.72s: use based on these other things.
+371.60s: >> Totally. So we can I think a good way to
+374.96s: look at it is to think about it as two
+376.96s: gates. Your first gate is
+381.20s: determines whether or not you should use
+382.88s: options in the first place. So the first
+385.68s: gate says do I have a view on timing?
+387.92s: And as we just talked about, if you have
+389.68s: a view on timing, you sort of have a
+391.12s: view on vault. If I do have a view on
+393.44s: timing,
+395.12s: then my first gate is options are
+398.40s: probably the weapon to reach for here.
+400.40s: they're the right tool for the job.
+403.28s: The second gate is how specific
+407.28s: is the price target that you have in
+411.04s: that timing range. So, if you're
+414.48s: thinking to yourself, well, I think this
+416.16s: is generally going to go down by this
+418.72s: period of time. Well, that might lead
+420.96s: you to just say, I just want to buy a
+422.96s: put because I want to capture all that
+425.76s: area of possibility where the stock
+428.24s: price could go in the time range that
+430.96s: I'm thinking about. If I have a very
+433.60s: specific view or an increasingly
+436.72s: specific view where I think, you know, I
+440.08s: think if this stock goes down, I don't
+443.60s: think it's going if if if what I think,
+446.00s: let's say I'm negative on a stock and I
+448.00s: think if the negative thing that I come
+450.32s: that I believe comes to bear, I don't
+452.48s: think that this is just a 3% drop in the
+455.44s: stock. I think the stock is down between
+459.44s: somewhere between 8 and 12%. Let's say
+462.40s: that is a much more specific view than
+464.88s: I'm just generally bearish in this time
+467.04s: frame. That's the second gate. The
+469.44s: second gate says how specific is your
+471.28s: view. And the more specific it is, you
+473.60s: probably want to reach for a vertical
+476.08s: spread. In this case, a put spread. if
+478.16s: I'm feeling negative. Um, the more uh
+481.52s: the wider that range of possibility that
+484.64s: exists,
+486.24s: uh, the more you want to be going with a
+488.32s: wide put spread. And a wide put spread
+491.36s: at some point just starts to look at
+493.52s: just starts to look like just buying an
+496.08s: outright put if it's wide enough. I
+498.56s: mean, as a matter of fact, you could
+499.84s: think of buying any outright put as buy
+502.32s: like let's say the stock is 50 bucks. If
+504.80s: I just buy the 40 put, that's the same
+507.76s: thing as sort of buying the 40 put
+510.00s: spread also. So like at some once you go
+513.52s: wide enough on a put spread, it's kind
+515.76s: of like just like buying the put anyway.
+518.08s: Uh so
+520.40s: uh so if you think we're going to drop
+521.84s: say between say 8 and 12%, then I might
+526.00s: uh want a a little bit of a wider put
+528.32s: spread um to capture all the possibility
+531.92s: down to say 12%. If you thought that we
+534.72s: were just going to stop at like 10%,
+537.04s: then you might want to choose a tight
+538.48s: put spread that's like right before 10%.
+540.64s: So, the more specific your view, the
+542.80s: tighter you can get on your put spread.
+544.88s: The looser your view, um, you can go to
+547.76s: a wider put spread and then at the
+549.36s: limit, you're just picking a put
+550.56s: outright,
+552.96s: which leads us, I think, right into your
+555.12s: example because we have a chance to look
+557.04s: at something and actually work through
+559.68s: that continuum. So Chris is going to
+561.76s: pull up his screen. He has a couple
+564.40s: slides for us to work through. And while
+566.88s: you're while you're grabbing that,
+568.96s: another thing that's probably useful for
+571.36s: traders to think about, especially with
+573.68s: verticals, because a lot of times I I
+576.40s: think that there's
+578.40s: different ways to like establish the
+581.36s: vertical, whether you choose to buy or
+583.12s: sell a vertical, and then whether or not
+585.76s: you want to be um like where you pick
+588.96s: your strikes. So, we'll go through a
+591.04s: little bit of that in here as well.
+593.12s: Especially for the narrower strikes, you
+594.88s: have a pretty good way of doing that, I
+596.72s: think.
+598.00s: >> So,
+600.00s: all right,
+600.56s: >> we will
+602.40s: take a peek here.
+605.60s: Okay. So, let me
+611.20s: There you go. I'll just I'll just get
+613.12s: rid of my bookmark bar here.
+618.24s: Okay.
+621.28s: So
+624.00s: uh this is kind of what we were saying
+625.20s: before where if um the my view is that
+628.80s: the op options are surgical tools. the
+632.16s: um you know, one of the one of the
+633.60s: things about options that you get to
+635.60s: learn about is how
+638.00s: their directional exposure in the option
+640.72s: changes because they have a delta and if
+643.76s: the option is out of the money, the
+646.40s: delta will will kind of shrink as time
+649.04s: passes if the stock doesn't do anything.
+650.96s: So options are dynamic like the exposure
+654.56s: changes just because time passes.
+657.44s: Whereas if you just buy the stock, you
+659.60s: know what your exposure is. If I buy uh
+662.88s: $50,000 worth of some stock, I own
+665.28s: $50,000 of that stock. Um if the stock
+668.56s: is unchanged and time passes, I still
+671.36s: own 50,000. If you buy an option, your
+673.92s: actual exposure tends to change even if
+677.20s: the stock doesn't move. So, I said
+680.32s: options really ask you to be pretty
+682.48s: specific in what you want to do. And the
+684.88s: more specific you are, they're probably
+686.64s: the better tool for the job. Uh, but if
+689.60s: you're wishy-washy, and like I there's
+691.52s: nothing wrong with feeling wishy-washy
+693.44s: about an investment. Um, just if you
+695.76s: are, just avoid the options and um uh
+700.32s: buy the just buy the stock itself.
+703.36s: >> That'll that that way you know your
+704.64s: delta is 100%.
+707.60s: when you're saying things like um you
+711.68s: know narrowing into options being the
+714.08s: the right tool, what makes them the
+717.60s: right tool? Why specifically is the
+720.56s: option a thing to reach for?
+723.04s: Yeah, we're gonna that's and that that
+724.64s: we're gonna we're going to cover that in
+726.08s: the presentation, but the gist of it is
+727.84s: that you will get
+730.40s: the highest amount of bang for your buck
+733.52s: for being right if you use options.
+737.60s: That's that and we're going to we're
+739.04s: going to show that in the example.
+742.72s: >> Beautiful.
+744.32s: >> Yeah. Let's let me uh get to the next
+746.08s: slide here. Okay. So, let let's talk
+748.64s: about a a little bit of a setup here.
+751.68s: So this was
+754.32s: um th this data is back from uh October
+757.84s: 29th. Um so we were looking at I was
+761.44s: looking at Coinbase. So Coinbase was
+765.04s: going to announce earnings and the
+769.92s: Coinbase Straddle. So the stock is $160
+773.76s: and the Coinbase Straddle that covers
+777.20s: earnings um is is about $10. So, the
+781.12s: market's expecting that Coinbase is
+783.12s: going to move $10 or about 6% of the
+785.76s: stock price on earnings. Um, these
+789.20s: options expire uh exactly a day later
+793.36s: after the earnings call. So, there's
+795.52s: it's mo the $10 is mostly about what's
+798.80s: going to happen in the market's reaction
+800.72s: to the earnings. So, it's a very clean
+803.36s: sort of uh uh bet on earnings. Like the
+807.52s: straddle is completely about earnings. A
+809.76s: day later, the straddle expires. It's
+811.60s: off the board. So, uh, we're okay. We're
+814.56s: expecting a $10 move in Coinbase based
+817.60s: on the straddle and, uh, or a 6% move.
+822.08s: So, let's say
+825.60s: that you want to bet on the stock
+827.60s: dropping to $150. Meaning that
+832.88s: you accept that the market is doing a
+836.80s: good job of pricing earnings and you
+839.04s: say, "Okay, $10 sounds like a reasonable
+842.24s: amount for the stock to move on this
+844.08s: earnings. The stock is either going to
+846.16s: go up 6% or it's going to fall 6%." And
+849.52s: let's say for whatever reason, this is
+851.60s: your analysis that's upstream of
+855.36s: thinking about the best way to bet on
+857.52s: it. Your analysis says, I think that the
+860.16s: stock is going to go down on earnings.
+862.56s: Uh it's going to be negative. So the
+865.04s: stock is going to drop. So you say,
+867.20s: okay, so I think the stock will probably
+868.56s: drop to 150. That's the straddle is
+870.80s: probably well priced and we want to bet
+873.28s: on the stock going to 150. So, let's
+876.64s: talk about the different ways that you
+878.64s: could bet on the stock going to 150. So,
+882.08s: one of them that I didn't write here is
+884.08s: just you could just short the stock. The
+886.24s: stock is $160 and you could short the
+889.20s: stock. Um, but what I would say is
+892.72s: that's probably not the thing you want
+894.96s: to do in this case because you want to
+898.72s: make a very specific bet that the stock
+901.52s: is going to make a move on earnings.
+905.04s: So by trading the stock remember you
+907.44s: have no view on direction or you have no
+909.76s: view on timing. If you have if you do
+912.08s: have a view on timing which is the fact
+914.88s: that there's earnings coming out you
+916.80s: definitely want to look at the options.
+920.08s: So we're going to limit ourselves to
+922.48s: option trades because we do have a view
+924.24s: on timing. We're saying that earnings is
+926.32s: the catalyst for this stock to drop $10.
+930.16s: >> A quick note there.
+930.96s: >> Now I bet on 150. What's that? I was
+933.92s: just saying a quick note there as well.
+935.76s: Sometimes, especially in a scenario
+937.92s: where you're looking at the downside is
+941.84s: the getting short sometimes is literally
+944.24s: just easier with options. And it depends
+946.80s: on, you know, what you're trading, what
+947.92s: the underlying is, but some things can
+949.60s: be hard to borrow. Some things can be
+951.68s: really expensive to borrow. So, there's
+954.48s: other constraints structurally that
+956.96s: might bleed into the choice of I want to
+959.36s: be short something. you know, to your
+962.00s: point here, we're talking about a
+963.20s: catalyst, but there can be other
+964.48s: structural issues where you're like, I I
+966.40s: can't even like get short shares on this
+968.56s: cheap enough for this to be reasonable
+970.72s: for me. So, just another thing to keep
+972.32s: in mind.
+973.60s: >> Yep. And also on the just on the risk
+975.44s: management side, if again, if you think
+977.84s: the stock's going to drop 10 bucks and
+979.36s: you just want to take a bet on it, um
+982.56s: this is a the risk is already
+984.56s: controlled. You're b you're going to
+985.92s: we're going to be buying a put or a put
+987.44s: spread as you're going to see. So, the
+989.12s: risk is already controlled. If you short
+990.64s: the stock and the stock has, you know,
+993.36s: killer earnings and and and and they
+995.68s: announce something uh amazing and, you
+998.24s: know, the stock goes up 20 bucks, you're
+999.84s: going to be pretty sad that that's the
+1001.60s: way that you chose to bet on it.
+1003.12s: Whereas, like here, you're just trying
+1004.40s: to isolate a a riskbudgeted bet on the
+1007.36s: stock um dropping uh 10 bucks. So,
+1011.84s: here's the three different uh three
+1013.76s: different ways that you could bet on the
+1015.12s: stock dropping 10 bucks that we can
+1017.12s: compare. See, um, so the most vibe way
+1020.00s: of doing it is just saying, I think the
+1022.32s: stock is going to drop. Um, I'm not exa
+1026.24s: and you say like, well, I'm not really
+1027.68s: sure how much is going to drop, so I'm
+1029.28s: just going to like buy the put because I
+1030.72s: want to cover my bases for all level of
+1033.60s: size, many different sizes of the drop.
+1037.20s: But what happens if the stock goes to
+1039.12s: 150 is what you're going to double,
+1041.12s: you'll double your money that that 160
+1043.60s: put, it's going to cost, it costs $5.
+1046.40s: So, if the stock goes to 150, uh, you're
+1049.36s: going to make a $5 profit. So, you'll
+1051.12s: double your your money on the premium
+1053.12s: that you spend. So, that's one way that
+1055.12s: you could, uh, you could make the bet as
+1057.60s: I could buy basically buy the at the
+1059.12s: money put. Another way you could make
+1061.52s: the bet is you could buy a further out
+1063.52s: of the money put that would be that
+1065.28s: would be cheaper.
+1067.52s: Now, that put could be the 152 put, but
+1070.40s: let's say that that put costs $2.50.
+1074.00s: Well, if you only go to 150, if you only
+1077.44s: go to 150, you basically just break
+1079.12s: even. You don't even make a profit. You
+1081.04s: just break even on the stock going to
+1082.88s: your target. So, buying the 152 and a
+1085.36s: half put doesn't sound that great. The
+1089.52s: benefit of buying a 152 and a half put
+1091.60s: outright like that would be to say,
+1093.76s: well, if the stock goes to
+1097.84s: 142 and a half, let's say it goes to 142
+1100.16s: and a half, like really collapses on
+1102.08s: earnings, then that put is going to pay
+1105.68s: you 3:1 because you pay 250 and it's
+1108.96s: going to be worth $10 at expiration. So,
+1112.72s: uh, so it'll go from 250 to being worth
+1114.88s: 10, which means you you you will have
+1116.96s: got paid three to one on that put. So,
+1119.52s: that will be a better choice. You'll
+1122.40s: you'll make uh
+1125.04s: uh you'll make a lot of return on your
+1127.44s: money buying that put on a move that
+1130.08s: that large, but you really need the
+1132.80s: stock to collapse for you to get paid
+1135.68s: there. So, it's not a great way to
+1138.32s: express the I think the stock's going to
+1140.80s: 150 point of view because you're paying
+1142.80s: for all this downside that you don't
+1144.64s: believe is going to happen if you're
+1146.00s: just targeting 150.
+1148.32s: At 150, what you can do is buy a put
+1152.64s: spread. So, you could buy the 152 and a
+1155.12s: half 150 put spread. And the way I chose
+1157.52s: that put spread is you want to choose
+1160.16s: your short strike to be the strike
+1162.96s: that's close to your price target. In
+1165.92s: this case, it's at our price target. So,
+1167.60s: we're going to be short the 150 put. And
+1170.64s: then we're going to buy the closest
+1173.36s: listed strike to that put because we
+1176.40s: want to create the tightest possible put
+1178.48s: spread that we can. Um, it's almost
+1180.72s: turning your bet into a very binary bet.
+1183.52s: You're just saying, I think that this
+1185.20s: stock is going to go to 150. How much am
+1188.40s: I going to get paid? Well, that spread
+1190.72s: will cost you 60.
+1194.24s: And the maximum that spread can be worth
+1196.88s: is $2 and a half dollars if it if it uh
+1200.32s: um because the the 50 152 and a half put
+1202.64s: will be worth 250. The 150 put will be
+1205.36s: worth zero and you'll get paid uh it'll
+1207.68s: be worth 250 and you paid 60 cents for
+1209.52s: it. So you're getting 3.2 to one on your
+1213.36s: investment uh on your premium. So
+1217.44s: if you're trying to bet on 150 is
+1221.04s: exactly
+1222.72s: you will make the most money in return
+1226.24s: in return terms betting on the tightest
+1229.68s: possible put spread. So this is very
+1233.04s: precise and it's in a way what options
+1236.00s: are made for. It's their the
+1237.76s: surgicalness. It's like I want to make a
+1239.60s: very specific bet and the most bang for
+1242.00s: your buck is going to come from trading
+1244.16s: this vertical spread where this uh to
+1246.48s: bet on the strike uh the stock going
+1248.32s: towards your um target.
+1251.52s: >> Okay, few questions. First one,
+1254.08s: >> yeah,
+1254.72s: >> let's say this this looks great, right?
+1258.24s: We see we get better odds. We have
+1261.36s: effectively lower risk. It becomes
+1264.64s: essentially a no-brainer, right? Why
+1266.16s: wouldn't everybody always just trade
+1268.16s: that 152 and a half 150? You already
+1270.24s: mentioned it a little bit. But just to
+1272.64s: draw out the downsides and the the
+1276.16s: trade-offs here. Yeah. The reason the
+1280.00s: reason why you might not choose that is
+1283.04s: because
+1284.72s: uh you're very low confidence in landing
+1286.80s: in that range. You have a very narrow
+1288.64s: range where you win here. Uh in this
+1291.04s: case, your break even on the spread is
+1293.44s: the stock needs to go to 15190.
+1296.48s: So your your winning area on the spread
+1299.60s: is there's a dollar you have a $1.90 of
+1302.08s: wi of of winning or you also win below
+1304.72s: 150, but you don't continue to win more
+1306.88s: money. Like you're you're going to be
+1308.16s: capped out at uh making um 3 to 0.2 to
+1312.48s: one and you're not going to continue to
+1313.84s: make money as the stock falls. So it's
+1316.40s: very precise. It's saying if the stock
+1319.04s: in this case if the stock doesn't go to
+1321.04s: 15190
+1323.20s: you you're going to lose you're going to
+1324.72s: lose uh you're going to lose money if it
+1327.60s: doesn't go to uh if it doesn't go to 152
+1330.88s: and a half or lower you're going to lose
+1332.56s: all your premium. So you are losing
+1335.60s: everything if it does not get below 152
+1339.60s: and a half. Whereas, if you just bought
+1342.24s: the 160 put, you would have ended up
+1345.52s: with a profit. Uh because that 160 put
+1348.16s: would have been worth 750. So, you would
+1350.56s: have turned your $5 would have turned
+1352.32s: into $7.50. So, you would have gotten
+1355.12s: 50% back on your premium. So you have a
+1359.28s: the highest amount of possible reward in
+1362.24s: terms of return, but you also have a lot
+1365.28s: of risk in the sense that you you need
+1369.12s: the stock to make a substantial enough
+1371.04s: move uh to get paid. So that's that's
+1374.48s: the trade-off. If there's also a
+1377.36s: possibility that you could try to say,
+1379.84s: let me buy a wider put spread that wins
+1382.72s: in more places. So, for example, you
+1384.96s: could buy something wider like the 160
+1387.76s: 155 put spread. And there you're just
+1391.36s: sitting sort of like in between the
+1393.52s: scenario where you're picking a very pre
+1395.84s: precise put spread with a very high
+1398.00s: return and picking this 160 put which
+1401.68s: costs more but wins in a lot of areas
+1405.04s: and continues to win as the stock keeps
+1407.28s: falling. If you pick a put spread, uh
+1410.40s: you can basically dial in exactly how
+1413.68s: much sort of uh risk you're willing to
+1416.00s: take and how much reward um kind of
+1418.80s: comes with that. So the put spread is
+1421.04s: the compromise, the wide put spread is
+1423.44s: the compromise between this discrete
+1426.16s: tight put spread and just buying the put
+1428.32s: outright.
+1430.56s: I would say another honorable mention
+1432.48s: here is you were very specific about
+1436.48s: wrapping this around a catalyst. So just
+1438.40s: to make sure that that didn't fly under
+1439.92s: the radar for anybody because another
+1442.24s: thing that can happen here is if you
+1444.00s: know you're trading this this 1521 150
+1447.04s: put spread and you're 30 days out and
+1450.48s: you get your move it's at you know it's
+1452.64s: gone past your strike. If you're just
+1454.72s: short the shares or maybe you know just
+1456.56s: long the put again depending on all the
+1458.00s: details that vertical tends to move
+1460.48s: pretty slow. You kind of have to wait
+1462.48s: for that timing piece which is again
+1464.48s: something Chris made very clear but just
+1466.72s: making sure that those connections are
+1468.00s: made for people and the the catalyst
+1470.56s: here is super important for you know the
+1473.44s: context that we're talking about
+1475.92s: >> 100% like the catalyst here is what's
+1478.48s: allowing us to think about this trade in
+1481.36s: in a very discreet turn. I mean, at the
+1483.52s: end of the day, it's like it feels like
+1485.20s: we're flipping a coin because you kind
+1486.88s: of are. It's earnings are coming out and
+1488.88s: this thing's going to
+1490.32s: >> do one thing or the other and then it's
+1492.48s: and then it's over.
+1494.16s: >> So, uh yeah, 100%.
+1498.88s: >> Uh this is we I kind of covered this
+1501.12s: already, your return on premium at
+1503.28s: Xirie. um you know you if you buy the
+1506.96s: put outright the especially the 152 and
+1509.84s: a half put you get an amazing return if
+1511.84s: the stock continues to drop um but above
+1515.84s: 152 and a half you're not going to get
+1517.84s: paid uh anything at all. So um you know
+1521.36s: the question is is when you buy when
+1523.84s: you're choosing the put to buy what
+1526.48s: you're doing is you're choosing
+1528.88s: uh how much of the possibilities do I
+1532.48s: want to be buying here right it's like
+1535.52s: you might get paid if the stock goes all
+1537.28s: the way down to 140 but you're also
+1539.92s: going to pay for the right to be able to
+1541.92s: to to make money in that scenario so
+1544.40s: you're trading off between how far do I
+1546.64s: think this stock could really drop and
+1548.88s: what um and and and is uh buying an
+1551.60s: outright option um then that might make
+1554.24s: sense. But if you're like I don't really
+1556.08s: think that this stock is going to move
+1557.60s: more than what the straddle says like if
+1559.92s: it if we go down uh I only want to bet
+1564.16s: on the possibility of the stock going as
+1566.32s: far as the straddle said it would go. Um
+1568.80s: and I don't want to pay for all this
+1570.80s: extra part of the distribution that I
+1573.12s: don't really care about.
+1575.92s: One followup here. My my disposition
+1580.40s: with verticals typically is just like
+1582.72s: keeping them for the majority of their
+1584.32s: lifespan.
+1586.00s: Again, context dependent. Is there a
+1588.64s: scenario where you you might be trading
+1590.80s: a longer view vertical spread again
+1593.36s: maybe 30 days, 60 days, whatever that
+1596.08s: you would manage it early or how do you
+1598.88s: approach the management of a vertical
+1600.80s: spread that might be a little bit
+1601.92s: further out in time?
+1604.24s: Yeah, I I'm I'm with you on my use of
+1607.28s: vertical spreads tends to be as I say
+1610.24s: like I'm going to the grave with this
+1611.60s: thing. Like it's a bet. It's the beauty
+1615.60s: of the vertical spread is that uh you
+1619.04s: get it's like you're paying a fixed
+1620.80s: amount of premium. You know how much
+1622.24s: you're going to get paid if you're right
+1623.68s: on on it. And the risk management is
+1627.20s: embedded in the fact that you just know
+1629.04s: how much you're going to lose already.
+1631.68s: uh things that I would do like if I
+1635.12s: really was going to trade out of wanted
+1636.88s: to trade out of it, the things I would
+1638.48s: probably do is um assess if my opinions
+1642.56s: changed. So, you know, you could be in
+1644.16s: the trade and the you know, you update
+1646.56s: on what happened in the uh either via
+1650.24s: prices or via the news or just your
+1653.12s: opinion on the stock. And if you update
+1656.08s: then it's like any it's like day it's
+1658.00s: like day zero, right? It's like you
+1659.60s: update and you say, "I don't really want
+1660.88s: to be bullish anymore and I own this
+1662.48s: call spread." Well, then you should just
+1663.76s: sell the call spread. Um because you no
+1666.48s: longer have that opinion anymore. Um the
+1668.72s: other thing you could do is [snorts]
+1671.52s: uh you could roll it. So let's say it's
+1676.16s: becoming uh let's say you're winning on
+1678.48s: the trade. Like the call the call spread
+1680.72s: that you bought, it's not expiration
+1682.16s: yet. The call spread that you bought um
+1684.48s: is winning. and now you've updated and
+1687.36s: been like, I actually think this thing
+1688.48s: could continue to follow through. You
+1690.48s: could roll your call spread up. So, you
+1692.40s: could close your current call spread and
+1694.32s: buy the call spread above it or one
+1696.48s: that's further out of the money. Um, but
+1699.28s: I think in general, it's a very day zero
+1702.00s: mentality. It's like when I if you
+1704.00s: approach the market, the question about
+1705.60s: like do I close it, do I roll it, um, or
+1709.60s: do I hang on to it is always,
+1712.40s: you know, has your opinion changed or
+1714.48s: not? Um, and if it has changed, then you
+1716.72s: should change your position to to match
+1719.04s: your uh to match your opinion.
+1722.24s: >> Fair enough.
+1726.40s: >> Uh, the next thing we're going to go
+1728.00s: here is Okay. So, what I what I wanted
+1730.32s: to do is I thought this would be very
+1732.64s: practical is to take
+1735.68s: um to take a trade like this, which is a
+1739.28s: very discreet trade.
+1742.40s: It's a bet really. It's like I'm gonna I
+1745.12s: I I'm negative on coin earnings and I
+1748.48s: think that the stock is going to drop by
+1750.00s: the amount of the straddle that is being
+1752.96s: priced by the marketplace and I think
+1755.68s: that let's say the straddle like we said
+1757.92s: is $10. So what I'm going to do is I'm
+1759.84s: going to let's say I make a
+1760.88s: simplification and I say
+1763.76s: the real world doesn't work exactly like
+1765.52s: this. The real in the real world
+1767.12s: earnings could come out and the stock
+1768.64s: could go to any any price, right? It can
+1771.36s: go down a dollar. It can go down se $7.
+1774.08s: It can go up $3. It can go up $12.
+1776.96s: There's all the possibilities. But if we
+1779.60s: just reduce the world to the straddle's
+1782.64s: $10 and I say I think this is like a
+1785.36s: coin flip and the stock is either going
+1787.28s: to go up or down 10 bucks. I'm going to
+1790.24s: accept the market straddle as consensus
+1792.56s: and say okay, we're either going to be
+1794.40s: up or down 10 bucks. And I think it's
+1796.64s: down again for reasons that are upstream
+1799.44s: of thinking about options.
+1802.08s: So, I want to bet on the stock dropping
+1804.72s: 10 bucks. How do I size this bet once I
+1809.52s: realize that my target is 150 and I
+1812.40s: accept that I'm going to trade the 152
+1816.32s: 150 put spread. So, let's say that I
+1821.20s: think that the stock is going to go down
+1823.20s: and I assign a 40% probability to that.
+1827.28s: um at least now I think the stock is
+1829.44s: 50/50 but I'm going to be conservative
+1831.52s: here and I'm just going to say let's put
+1833.92s: a 40% probability on the stock dropping
+1837.92s: $10.
+1839.44s: How many put spreads do I buy? And what
+1842.80s: we're going to do is assume that you
+1844.80s: have a that you have a $5,000 trading
+1847.36s: account. You have $5,000 in capital. And
+1850.48s: we're gonna we're going to figure out
+1852.48s: how many put spreads to buy using Kelly
+1856.24s: to go um to figure out what is the
+1859.84s: amount of our capital that we should bet
+1862.08s: on this spread.
+1867.04s: So remember, Kelly, this is Kelly is not
+1870.72s: useful for all kinds of trading
+1872.24s: decisions, but this is a pretty clean
+1874.88s: example of where Kelly is useful, where
+1879.12s: you
+1881.04s: uh you're going to make a bet, a very
+1882.96s: precise bet, and if you're wrong, you
+1884.96s: just assume you're going to lose your
+1886.48s: full premium. And that's the way Kelly
+1889.60s: bets kind of are. It's like it's like a
+1891.52s: coin flip bat. I'm going to win or I'm
+1892.96s: going to lose. And if I lose, I lose all
+1895.12s: my capital. And Kelly helps you size
+1897.36s: bets like that. So the Kelly formula
+1900.88s: says that the amount that you should bet
+1902.56s: of your bankroll is um you just take the
+1905.84s: probability of winning minus the
+1907.68s: probability of losing, but you have to
+1909.44s: divide the probability of losing by um
+1913.44s: the odds that you get paid um when you
+1916.08s: win. So in this case, you get paid 3.2
+1920.16s: to one. So you're getting paid you're
+1922.72s: getting paid odds on it. You're getting
+1925.28s: So we're going to do is that's going to
+1926.72s: shrink the probability of losing, right?
+1929.28s: So we go from your P is 40% to win. That
+1932.88s: means your Q your probability of losing
+1935.20s: must be 60%.
+1937.20s: So we take 40% minus 60% and we shrink
+1940.80s: the 60% by dividing it by our odds
+1943.76s: because we know we're going to get paid
+1945.12s: 3.2 to1 when we win. So 40 divided uh 40
+1949.76s: minus 60 divided by 3.2 is uh it's about
+1953.92s: 21% and change. We just be conservative
+1955.92s: and say call it we'll just call it 20%.
+1958.56s: So Kelly says you should bet 20% of your
+1962.24s: bankroll. And if you have a $5,000
+1964.40s: account then that's a $1,000 uh that's a
+1968.24s: $1,000 bet. You can spend $1,000 on
+1971.04s: premium and um again if you're wrong
+1975.04s: you're going to lose the whole amount.
+1976.32s: But that's already baked into the Kelly
+1978.08s: prescription.
+1980.16s: So remember that the spreads cost 60s.
+1983.12s: That the 152 and a half 150 put spread
+1985.84s: cost 60. So that's $60 per per spread
+1989.84s: because the multiplier is 100. So $1,000
+1993.76s: uh divided by 60 bucks um is 16 spreads.
+1998.16s: So, the full Kelly bet here would be buy
+2003.28s: 16 put spreads for 60 cents. And we
+2007.04s: already know that a lot of people
+2008.56s: recognize that Kelly uh is a pretty
+2010.96s: aggressive betting style. Um,
+2015.76s: so what we'll do is say, okay, you could
+2018.40s: bet half Kelly, then that would just be
+2020.64s: it's it's simple. You just divide it in
+2022.32s: two. So, it's it's it would be eight
+2024.00s: spreads. If you wanted to bet quarter
+2025.84s: Kelly, it would just be four spreads.
+2027.76s: So, our Kelly betting uh prescribes 16,
+2031.28s: but if you want to trade something less
+2032.96s: than 16, that would be uh totally
+2035.12s: reasonable as well.
+2038.32s: Now,
+2039.84s: when we're thinking about the the Kelly
+2042.24s: sizing and the way that we use it for
+2045.28s: context for everybody, we have a
+2046.64s: detailed video that goes through Kelly
+2049.60s: criterion, how to use it, end to end,
+2052.24s: all different kinds of variations,
+2054.32s: pieces to it, and so on. The natural
+2056.88s: question here, Chris, is the confidence
+2060.08s: interval on the probability of winning.
+2062.64s: So we can use something like the the
+2065.76s: options chain to again it literally
+2068.80s: gives you the probabilities right there.
+2072.08s: What are your thoughts on using like a
+2075.84s: gradient of some sort? So let's say that
+2078.64s: the options market is pricing in a
+2080.16s: probability of point you know 40%.
+2083.36s: I'm sorry 40%.40 4. And do you would you
+2088.00s: look at something like this and be like,
+2089.20s: "Oh, well, let me eyeball what the
+2091.52s: sizing would be if it's a little bit
+2094.00s: lower and instead of 040, it's actually
+2097.20s: like 0.35 or if it's a little higher.
+2099.20s: Instead of 040, it's like 045, something
+2101.60s: like that."
+2103.76s: Yeah. So, first of all, the the the the
+2106.96s: um
+2108.96s: the great thing is we used a P of 04.
+2112.56s: What you can do here is like you can
+2114.96s: change your P and put the numbers in the
+2117.60s: formula and it will tell you and you can
+2119.92s: just it'll you know you can get a
+2122.56s: different uh bet amount a different
+2124.88s: F-star based upon how you change your P
+2128.24s: and if you lower your P enough your F
+2130.72s: star is going to go to zero or negative
+2132.40s: in which case you shouldn't make the bet
+2133.76s: at all. So one thing you can do is you
+2135.92s: can just solve for what is my break what
+2138.80s: what is the minimum P needs to be for me
+2141.92s: to even make this bet. So you can look
+2144.08s: you can approach it that way as well.
+2147.12s: Now if you're making a bet that's this
+2150.24s: says 3.2 to1 but let's just use 3 to one
+2152.32s: to make it easy.
+2154.64s: If you're if you're making a bet that
+2157.36s: you get paid 3 to one when you're right,
+2159.76s: then you need to have a 25% chance of
+2162.24s: winning for that bet to make sense,
+2164.80s: right? Because um if you're getting paid
+2166.88s: three to one on just think about any
+2168.72s: bet. If you're getting paid three to
+2170.16s: one, let's say you play a game four
+2172.16s: times and you win uh one time out of the
+2175.76s: four. Well, that means you're going to
+2178.00s: win uh you're going to uh you're going
+2180.32s: to win $4 or you're going to get to pay
+2184.24s: $3 on the times that you win. You lose a
+2186.24s: dollar on the times that you lose. That
+2188.00s: will be your uh your break even. Um, if
+2191.28s: you play if you play the game uh let's
+2194.08s: see uh four times you wait you make $3
+2197.76s: once and you lose a dollar the three
+2199.68s: each of the other three times. So that
+2202.48s: would be a zero um expectancy kind of
+2205.84s: trade. So if I'm getting paid three to
+2208.48s: one I I must win 25% of the time for
+2211.60s: that bet to make sense. If I win 25% of
+2214.32s: the time or more, then it's a positive
+2217.20s: uh it's a positive bet. I have an
+2218.80s: advantage. So then I can use uh and then
+2221.68s: Kelly will tell me how much I should bet
+2223.52s: depending on what that advantage is. So
+2226.48s: I would you the way I would think about
+2228.48s: this is to use Kelly in reverse and just
+2230.88s: say well what is the minimum P I need in
+2234.32s: order to even make this bet given the
+2236.32s: odds because the odds are the odds are
+2238.40s: right there for you like the market is
+2240.64s: giving you the odds like you look at the
+2242.08s: put spread and say okay the put spread
+2243.92s: costs 60 cents and it can be worth two
+2246.80s: and a half. So the options market is
+2249.04s: always giving you the odds. So one of
+2251.36s: the uh so that's solved for you and you
+2254.64s: just need to figure out well what is the
+2256.08s: minimum P I need to be willing to accept
+2258.64s: those odds and then that's a judgment
+2260.16s: call like you know here we used the 40%
+2263.36s: the break even is somewhere around 25%.
+2267.12s: If you think it's a 30% chance uh then
+2270.88s: then it's still going to tell you you
+2272.48s: should make a bet. there'll be a smaller
+2274.08s: bet when we once we chug the numbers
+2276.32s: through the equation. Um, but if the
+2278.40s: probability if you think it's only a 20%
+2280.56s: chance that the stock drops $10, then
+2282.72s: you shouldn't take this bet at all
+2284.40s: because the put spread is not offering
+2286.00s: you enough odds. You would need this put
+2288.48s: spread to offer you better than 4 to
+2291.36s: one. So, I would need the put spread to
+2293.04s: cost something more like 40 cents, not
+2296.16s: 60 cents. And if it was 40 cents, then
+2298.88s: I'd be willing to make the bet. So, um,
+2301.92s: does that answer the question?
+2303.76s: >> It does. It's perfect. And the reason
+2305.68s: why I actually wanted you to walk
+2307.68s: through that is because that's actually,
+2310.72s: I think, one of the most useful ways to
+2313.12s: use Kelly is based on these odds, like
+2318.00s: what's the floor and how do I feel about
+2319.76s: that floor? And that's a it's a great
+2322.72s: starting point. Then everything off of
+2324.24s: that is just refinement in terms of
+2326.08s: sizing. And then obviously as long as
+2328.00s: you have good trade logs, good trade
+2330.16s: documentation depending on, you know,
+2332.00s: what you're actually trying to attack.
+2334.24s: Ideally over time, you're not just, you
+2336.64s: know, using whatever the market is
+2338.16s: showing you, but you can use some of
+2339.44s: your own data and say like, you know,
+2341.36s: based on this specific thing that I'm
+2343.36s: doing, this is my win rate or where it
+2345.36s: tends to land and use that for context.
+2347.76s: So, I think it's perfect.
+2349.92s: >> Yeah. I and I think the I think the
+2351.68s: great thing about you know the the Kelly
+2354.32s: thing is that the idea is to get you in
+2356.48s: the right ballpark like if because when
+2360.56s: you a person starts out they might not
+2362.64s: have a great intuition for like what's
+2364.40s: the right amount of size and risk and
+2366.24s: all that and so you know you show up and
+2368.64s: let's say if you have a $5,000 account
+2370.64s: and you show up and you think like okay
+2372.40s: I'm going to bet I'm going to buy 50
+2374.08s: spreads it's like do you're off by a
+2375.92s: factor of three on how much is even
+2378.24s: reasonable and Kelly will get you into
+2382.00s: like the right ballpark very quickly and
+2384.08s: that's just very very useful and and
+2386.24s: over time
+2387.44s: >> as one gets more experienced you might
+2389.28s: not use Kelly at all because you have
+2391.36s: built up sort of a um a muscle memory
+2394.24s: for
+2395.60s: >> uh what is the right amount to bet given
+2397.84s: a certain proposition and you don't even
+2399.84s: need to use Kelly like you'll you'll be
+2401.60s: like from experience I know when a bet
+2403.28s: looks like this this is about how much
+2406.56s: um I'm willing to risk for this for
+2409.60s: these odds.
+2411.76s: >> Hell yeah.
+2414.32s: >> Uh next
+2416.64s: um this just goes through the actual the
+2420.16s: details which then these things are
+2421.92s: important. So if you buy eight eight of
+2424.24s: these put spreads, you're buying the 152
+2426.80s: and a half 150 put spread at a 60cent
+2429.68s: debit. So that's going to cost you $480,
+2433.12s: which is about 10% of your capital. And
+2436.80s: um you're going to make $2,000. The
+2440.08s: value of them will be $2,000 if coin
+2442.96s: goes to $150 or less um at expiration.
+2447.20s: So your profit will be uh $1,520.
+2452.88s: So again, makes sense a little bit more
+2454.72s: than 3:1. And of course, the break even
+2457.44s: on these put spreads is if the stock
+2459.04s: goes to 15190 and expires there, you'll
+2462.08s: just break even on the spreads. Um, last
+2466.08s: kind of thing I'll point out is just
+2467.68s: well what h what actually happened the
+2469.36s: postcript on this. Um, so what what
+2473.28s: actually happened in Coinbase is first
+2474.80s: of all point out that the that the the
+2477.20s: stock was 160 and uh the straddle price
+2481.52s: was uh if anything it was far too low.
+2485.20s: So,
+2487.28s: Coinbase went to 137
+2491.04s: in an intraday low the next day and
+2493.52s: settled down more than $15. It went to
+2497.28s: 143 and a half. So, uh in this case, you
+2500.80s: would have been uh happiest probably if
+2502.96s: you would have just bought the 152 and a
+2504.88s: half put outright or even like a 150 put
+2508.40s: would have been really nice um because
+2510.88s: it would have been you would have a lot
+2512.32s: of bang for your buck on that. Um, but
+2515.28s: of course the put spread here still pays
+2517.68s: its maximum value. You still would have
+2519.60s: made your three uh your 3 to one. Um,
+2522.24s: but you would probably just be kicking
+2523.76s: yourself because uh, you know, you
+2526.24s: didn't you didn't pick up all those
+2527.68s: extra dollars uh from the stock having
+2529.76s: fallen uh even further. And uh if
+2534.64s: anything, what's interesting is the
+2535.84s: straddle ended up being too cheap,
+2539.68s: >> which fun fact for Coinbase over the
+2542.64s: history of its earnings, it actually
+2544.32s: runs a little bit cheap. It's one of the
+2547.12s: tickers that I tend not to sell V
+2550.16s: through earnings because it has a a
+2552.48s: tendency or the old dick punch if you're
+2556.48s: short V.
+2559.92s: I did not know that. So, thank you.
+2561.84s: That's good. Good to know. [laughter]
+2563.36s: Don't uh don't don't be selling Coinbase
+2565.68s: straddles.
+2566.64s: >> Yeah, it's it's kind of funny because
+2569.36s: >> like the the short V the short earnings
+2571.92s: V sleeve for me is it's it's a big
+2573.84s: producer. It's like super important for
+2575.52s: the portfolio delivery over the course
+2577.36s: of a year just because of how
+2578.24s: uncorrelated a lot of it is. And man,
+2581.68s: it's like some of some of the names
+2583.76s: develop like a literal profile. And it
+2587.68s: actually is really interesting to me cuz
+2589.68s: I you markets are efficient so people
+2591.92s: can see this but then you start
+2594.32s: realizing that like something becomes
+2596.00s: systemically underpriced relative to
+2598.40s: itself which seems like it wouldn't
+2601.04s: happen but alas
+2604.08s: markets are what they are. They offer
+2606.08s: stuff like that from time to time and
+2608.16s: you know you kind of never know when the
+2610.24s: next one is. Now one other quick
+2611.60s: question on this one.
+2613.76s: One of the the tricks I think that comes
+2615.60s: with with verticals is they can have
+2619.12s: like really high percent returns. Now,
+2622.56s: you mentioned before, you know, you
+2624.56s: would have been really happy if you just
+2625.92s: grabbed, you know, like the 150 or
+2627.52s: whatever and had a lower percent return
+2631.52s: but higher gross return.
+2633.84s: What do you think about the the return
+2636.64s: like how does the potential return
+2638.64s: profile lead to your decision on width
+2642.96s: specifically? So let's say Coinbase
+2645.44s: let's say that you thought you know
+2647.12s: there was a pretty good probability that
+2648.56s: it was going to exceed the straddle.
+2652.72s: What's your calculus there to figure out
+2655.36s: do I personally want this long put or do
+2659.04s: I want the narrow spread or do I want a
+2661.76s: wide spread? you went over before how to
+2663.68s: think through those, but I'm curious in
+2665.68s: this example how you would approach it.
+2668.16s: >> I think like for for that it's I think
+2672.24s: it's tough to
+2675.20s: I I think I I I would struggle to have
+2679.68s: uh a very differentiated view from where
+2683.12s: the straddle was pricing. So, I'm really
+2686.56s: just going to look at the straddle and
+2688.88s: be like, okay, that's like the vote of
+2691.36s: many people who care a lot about this
+2693.68s: stock and pay attention to it to a
+2695.76s: degree that's far better than I'm going
+2698.48s: to pay attention to it and understand
+2700.56s: about it. So, I'm very willing to just
+2704.80s: outsource my opinion about how much the
+2707.60s: stock can move to the options market on
+2709.60s: that. And so this is more in this kind
+2713.68s: of scenario. I'm giving the options
+2716.24s: market plenty of credit by saying it's
+2719.20s: going to price the straddle pretty well.
+2721.12s: Just the fact that it didn't price the
+2722.80s: straddle well here is not a referendum
+2724.96s: on its ability to price straddles in
+2727.04s: general. There's a lot of randomness
+2729.44s: around these things. But I would just
+2731.76s: say, "Hey market, you price a straddle
+2733.68s: for me." And then what I'm going to do
+2735.52s: is I might look at it and say
+2740.64s: the big logical thing that happened here
+2742.80s: is to say I'm going to pretend that this
+2747.04s: continuous distribution that exists is
+2750.48s: actually just an up or down.
+2753.20s: And the minute you say, I think the
+2755.44s: stock is only going to be up or down the
+2758.24s: straddle amount, then what happens is
+2761.04s: these trades light up because obviously
+2764.40s: the market does not price the options as
+2766.96s: if there's only an up and a down. It's
+2769.44s: pricing something that's a lot smoother.
+2771.60s: But if I'm willing to make that, so I
+2775.84s: might not have an opinion on the size of
+2778.00s: the straddle, but I might have an
+2779.52s: opinion about the nature of the
+2781.20s: distribution. And the nature of the
+2783.52s: distribution being that uh it's more
+2787.44s: binary than the market thinks. So I
+2789.44s: think they got the size right, but they
+2791.36s: don't have the shape. They might not
+2793.36s: have the shape right. And so
+2796.88s: my disagreement with that aspect of it
+2799.44s: is what allows the trade to uh to appear
+2803.04s: to offer itself to me. Um if I just
+2805.76s: agree with every single aspect of the
+2808.08s: options market, well then of course
+2809.52s: there's going to be no there's going to
+2811.52s: be no trade. So the the the um slight of
+2815.68s: hand here was that I reduced the
+2819.12s: scenarios to there's only an up or a
+2821.20s: down. And if I assume there's only an up
+2823.92s: or a down, I only need to be right on
+2827.44s: the direction 40% of the time for me to
+2831.36s: get paid on that on that put spread.
+2836.24s: Dig it.
+2838.40s: Now you have some ideas on how to use
+2841.76s: vertical spreads and really like
+2844.08s: building some trade thesis that you want
+2847.12s: to use options to navigate through. We
+2850.40s: have that other link that we mentioned
+2852.16s: that goes through Kelly sizing a bit
+2854.40s: more detail. We'll throw that in the
+2855.84s: notes below. And as always, if there's
+2858.40s: any specific topics, questions, anything
+2860.56s: like that that you guys would like to
+2861.92s: see a video on, feel free, throw it in
+2863.52s: the comments, shoot us an email. We are
+2865.52s: more than happy to take a peek at that
+2867.84s: and try to really put stuff out that you
+2870.16s: guys are interested in. Anything else
+2872.00s: that you want to hit, Chris, before we
+2873.44s: wrap? Uh, no, just a reminder that uh
+2877.28s: just a a reminder about the gates that
+2879.36s: we talked about here. The more uh the
+2881.92s: more specific your view, the more you
+2883.84s: want to be using options. Um, meaning
+2886.24s: that if you have a view on timing, then
+2888.24s: options are probably going to be an
+2890.00s: attractive way to get the most bang for
+2892.00s: your buck. And then if you have a very
+2893.76s: tight view on um the the price target,
+2898.16s: then you want to be looking probably
+2899.68s: more at the vertical spreads, which will
+2901.44s: give you even a higher return. um than
+2904.88s: an outright option.
+2907.84s: We will see you on the next one.

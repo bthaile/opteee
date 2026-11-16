@@ -1,0 +1,451 @@
+0.00s: What's up, Al Lyers? You may or may not
+2.32s: know that options contain an insane
+5.36s: amount of information. The video is
+7.36s: going to talk about the volatility
+9.64s: surface and five things it shows you. If
+12.84s: you enjoy this, let me know, and then we
+15.00s: could do a more advanced version in the
+17.44s: future. This one will be at the beginner
+19.48s: level, meant to introduce you to this
+22.36s: and some of the things that you can
+23.80s: learn literally today very easily and
+26.40s: implement effectively immediately.
+28.88s: We got to start with the volatility
+30.12s: surface and what it actually is. Unlike
+31.96s: the Black-Scholes Merton model, which
+33.40s: assumes uniform vol, the real market
+35.60s: prices individual volatility for every
+39.00s: single strike and expiry combination in
+41.72s: in underlying's options chains.
+45.40s: So,
+46.48s: each point gets its own vol. We look at
+50.44s: things like what the strike price is. We
+54.80s: look at things like the days to
+56.96s: expiration. And then every single option
+60.80s: along there gets a vol. And depending on
+64.68s: the underlying, there are some really
+66.44s: unique instances or pieces that we can
+69.00s: find in a vol surface that we're going
+70.84s: to talk about a little bit as we go on,
+73.56s: but we need to remember first that
+76.44s: implied volatility is a common unit. So,
+81.12s: it allows us to compare strikes and
+83.60s: expirations directly. And what you
+86.60s: typically will find is that puts tend to
+89.72s: cost more money than calls. This is
+92.16s: called put skew. It exists because most
+94.44s: underlyings, puts are used to hedge.
+97.08s: There's hedging demand and there's a
+99.12s: little bit of a premium priced on top of
+100.80s: that. That's what you see here. This is
+102.16s: looking at SPX, but it's not always the
+104.40s: case. Things like GameStop right now and
+106.48s: very frequently has call skew, where
+109.12s: this would literally be flipped. You
+111.28s: would see the put side over here lower
+114.32s: and the call side over here higher. So,
+117.24s: it's not always the same, but generally
+119.80s: speaking, you will expect to see that.
+123.32s: When we look at the front to back of
+127.56s: this, so we're looking at near-term
+130.40s: expirations and later-term expirations,
+133.00s: that's called term structure, and it
+135.08s: helps us understand how different
+137.08s: expirations are being priced.
+139.88s: When we're looking within a specific
+142.60s: term, left to right, and we're looking
+144.80s: at those various deltas, we call that
+147.16s: skew.
+148.36s: And that's why it's referred to as put
+149.84s: skew that we're talking about before.
+151.52s: Here are the five things that we're
+152.48s: going to cover at a high level today.
+154.00s: We're going to talk about how to
+155.48s: determine if an option is expensive or
+158.04s: cheap. We're going to talk about the
+160.00s: relationship
+161.64s: of
+163.24s: volatility expectations, aka fear. I
+166.80s: don't really like using fear. I'm using
+168.88s: it here just because most people
+170.60s: associate it, but I would simply think
+173.16s: of it in terms of vol, how much
+174.60s: something moves.
+176.08s: We can then also look at
+178.68s: trading things like short vol through
+180.88s: earnings, and there's a slightly
+182.28s: counterintuitive piece to this that I
+184.16s: think a lot of you will learn a lot
+185.68s: from.
+186.80s: And then, if put [snorts] fear is
+191.00s: really gaining momentum, sometimes that
+193.64s: can signal positioning ahead of
+195.48s: something that the market knows is
+197.24s: coming that we may not know yet. You'll
+199.40s: be able to do all five. So, let's start
+201.60s: with how do we know when things are
+202.88s: expensive? We can compare implied
+205.84s: volatility to its own trailing period,
+208.96s: not to something else. So, this is what
+211.32s: we would refer to as absolute
+214.56s: comparison.
+216.00s: And one of the things that you'll note
+217.56s: here is that I'm using a percentile. So,
+220.40s: there's two different metrics you'll see
+222.04s: for this used a lot. There's implied
+223.96s: volatility rank and implied volatility
+226.56s: percentile. The short version of that, I
+229.84s: have a video that goes into it more in
+231.16s: detail below, but the short version is
+233.00s: just use IVP. It's better than IVR, it's
+235.24s: less prone to skew, there's literally no
+236.88s: reason not to. Just use IVP.
+239.24s: And all IVP tells us is the share of
+241.96s: past year's days with lower IV. That's
+245.00s: it. So, we can calculate where we sit
+248.52s: right now relative to a prior period.
+252.52s: That, generally speaking, tells us
+256.08s: a lot about how rich those options are
+259.40s: being priced. Now, whether or not
+262.68s: an option is expensive
+265.24s: is a completely different question from
+267.76s: should I buy or sell vol here. They're
+269.72s: two different things. When we think
+272.04s: about selling vol, we're really
+273.72s: interested in what's referred to as
+275.32s: variance risk premium, and you'll see
+276.76s: that a little bit later.
+279.04s: Generally speaking, if you see high
+282.00s: implied volatility relative to itself,
+284.44s: over the next 30 days most of it comes
+286.80s: out. So, what that
+289.28s: tells you is from a tradeable concept,
+292.12s: if you see implied volatility percentile
+295.60s: really elevated, there's an extremely
+298.08s: good chance that over the next month
+300.28s: that vol is going to come back down.
+302.44s: Now, remember,
+303.92s: you have to trade the vol that you're
+305.80s: looking at. What that means is here
+308.32s: we're looking at 30-day implied
+310.52s: volatility percentile. Let's say that
+312.12s: you like to trade 7-day options, 5-day
+314.12s: options, whatever. That is a different
+316.44s: number than this. That has its own
+318.40s: implied volatility percentile.
+320.20s: Frequently, it'll be pretty close. But,
+322.40s: just know that it's different. So, if
+323.96s: you're using the implied volatility
+325.56s: percentile provided from a platform,
+328.00s: most of the time that's just for the
+329.68s: underlying, which is 30-day. Just be
+332.04s: aware of that.
+333.68s: Okay.
+334.80s: The next thing is implied volatility
+337.68s: coming down doesn't inherently mean that
+341.20s: short premium wins.
+343.36s: The reason for that has to do with what
+347.16s: you make against what movement actually
+350.00s: happens.
+351.52s: Short premium doesn't inherently win
+354.56s: more frequently after spikes. So, in
+358.00s: 2015
+359.72s: to 2021, it was 62 versus 66%. And then
+363.72s: 2022 to 2026, 67 versus 62%. So, all
+367.88s: this is saying is that
+369.88s: if you have realized vol and realized
+374.52s: vol happens to elevate significantly
+377.28s: even though IV is high already, you may
+379.52s: not win. That doesn't mean that selling
+383.04s: after a spike is bad. Actually, a lot of
+384.76s: times it's a good risk reward as far as
+387.08s: what you're making, but just know that
+389.44s: the probabilities aren't massively
+391.88s: shifting between these. That's all.
+395.24s: So, next, we're going to take a quick
+396.96s: look at when options are deemed cheap.
+400.68s: That's using the very same thing you
+402.96s: just learned about, implied volatility
+404.60s: percentile. And here, that generally
+409.24s: means if we're at the lower range of the
+412.20s: percentile. And it's normally calculated
+415.00s: over a trailing 1-year period. It
+416.76s: doesn't have to be, but just for
+419.36s: context,
+421.00s: low implied vol typically expands within
+425.32s: about a month. So, if you have implied
+427.80s: volatility percentile pegged at a lower
+431.52s: price point, generally speaking, the
+433.68s: probability of implied volatility being
+435.56s: up over the next month is pretty good.
+438.60s: In 2015 to 2021, it was 65% of the time
+441.68s: compared to a regular period. In 22 to
+444.60s: 26, 73%. The reason, by the way, why
+447.32s: these are broken is because it's trained
+450.04s: here and then validated here. So, it's
+452.20s: designed to have a little bit of
+453.96s: out-of-sample results to to balance
+456.16s: everything out.
+458.04s: That
+459.28s: is an interesting period because low IV
+462.80s: sets up cheap relative convexity. Most
+466.64s: months can be really quiet and the edge
+469.16s: is actually implied volatility
+471.00s: expanding.
+472.36s: So the interesting thing here is if
+473.96s: you're sizing long vol trades,
+477.52s: you have to size them appropriately so
+480.24s: that subsequent quiet months don't erode
+484.76s: too much of your capital. But generally
+486.88s: speaking,
+488.20s: you can see that the range is very real
+492.20s: for being long vol when implied
+494.88s: volatility percentile is at a very low
+497.44s: end of its range. Again, this is looking
+499.24s: inside indices and sector ETFs.
+504.24s: Let's talk about near-term fear.
+506.92s: We need to talk about contango and
+508.40s: backwardation. Contango is what the
+511.68s: market normally looks like. And what
+513.72s: that means is it's an upward sloping
+515.72s: curve of volatility as we go through
+517.72s: different terms. So 30-day vol is a
+519.64s: little bit lower than 60-day, which is a
+521.16s: little bit lower than 90-day. And the
+523.24s: reason that exists is because most of
+525.40s: the time we're less certain about what
+527.76s: might happen over the next 90 days
+529.48s: compared to the next 30 days and we
+530.96s: expect more could happen over this
+532.84s: period.
+534.00s: But then sometimes that shifts
+535.60s: massively.
+536.84s: And something near-term can happen that
+539.68s: we realize is a big big problem up
+541.76s: front. You can think about the Trump
+543.16s: tariffs, you can think about the attacks
+544.68s: on Iran, you can think about
+546.36s: Ukraine-Russia, you can think about
+547.96s: COVID. All of those periods
+550.52s: have backwardation. And that's where the
+553.00s: front becomes more expensive than the
+554.88s: back. There are a lot of ways, very
+558.00s: lucrative ways I will mention, to trade
+561.52s: when this happens because it's it's not
+563.92s: common and it's very predictable
+566.44s: subsequently what happens from here.
+569.48s: There's also a lot of ways to pursue
+571.16s: that kind of trade and throw your money
+573.12s: away. So don't think that it's like easy
+575.12s: money, it's not. You have to build
+576.80s: things pretty smart in order to capture
+579.68s: it, but there is a profit mechanism
+581.40s: there. There is a pretty good
+582.84s: opportunity there.
+585.08s: Normally,
+586.48s: when we have backwardation, the front
+588.96s: month over the next month, big moves
+592.44s: came less often than what was priced in.
+595.84s: And it's consistent
+597.64s: across the training period and then the
+600.40s: out of sample validation period. So,
+602.80s: what this means is every single group
+605.04s: that you see here pointed the same way.
+607.56s: And a lot of times you might expect the
+609.84s: opposite. But, what this is generally
+612.28s: telling you is that when that curve is
+615.20s: inverted, sometimes that vol gets really
+617.16s: overpriced relative, and the things
+620.60s: start to slow down at that point.
+624.04s: This is a probability. This doesn't mean
+626.84s: it can't happen. It absolutely can. But,
+629.80s: what you should take away from this one
+631.20s: is the fact that if you see
+632.96s: backwardation, that doesn't immediately
+635.64s: mean and actually more often than not
+637.96s: means over the next month, you're not
+640.12s: actually expected to see these massive
+641.96s: moves because most of the time by the
+644.00s: time vol gets inverted, the move has
+646.68s: happened or is in the the throws of
+648.52s: occurring.
+650.24s: Let's talk about another tradable one
+651.64s: here.
+652.64s: Pricing earnings before a release.
+656.20s: One of the interesting things that
+658.08s: people typically think is you want a lot
+659.76s: of vol in order to get through earnings.
+662.44s: And recently, it's changed actually kind
+666.88s: of a lot, and I find it interesting.
+670.40s: What I've found is that
+673.36s: more often than not, if your volatility
+676.92s: coming into an earnings release implied
+679.16s: is 0.8 times the history,
+683.16s: and the history can use the trailing
+685.44s: eight periods, the trailing 12. This is
+688.44s: using the last eight. That's what I
+689.96s: typically will use.
+692.52s: Interestingly,
+694.28s: if it's less than 0.8,
+696.68s: that implied vol tends to beat the
+698.44s: realized vol.
+700.72s: You can kind of think of that in a
+702.96s: logical way.
+704.44s: And you can say that the market here is
+706.08s: pretty complacent, that hedging demand
+708.52s: coming into earnings is still going to
+710.16s: be there, and the market isn't really
+712.60s: pricing in a big move, and subsequently,
+716.44s: viable place to sell vol.
+719.88s: Interestingly more,
+722.16s: is that if that implied vol is 1.2 times
+725.92s: that eight trailing eight period
+727.56s: history,
+729.00s: realized actually expands implied more
+733.04s: frequently.
+734.32s: And you can think of it this way.
+736.32s: When we're coming into those periods and
+738.12s: the market is pricing in a lot of
+739.60s: volatility relative to the prior
+741.80s: history,
+743.04s: a lot of times it's still underpriced.
+745.40s: They're not pricing in enough.
+748.52s: So, this is a much smaller edge. The
+751.88s: variance between these, you could almost
+754.08s: confuse it with noise. I would not take
+756.84s: this to the bank as if it's, you know,
+759.28s: greater than 1.25,
+761.36s: it's it's completely unviable. There's
+763.36s: other conditioners that work really well
+765.36s: here. But, it's a fascinating
+767.40s: relationship and the more tradeable
+769.36s: concept by far is this one. Is the cheap
+772.24s: side relative to the expensive side.
+775.28s: Tradeable. Immediately tradeable.
+777.72s: The cheaper the event, the more often it
+780.08s: beats. That's what we can see.
+783.36s: Last one.
+784.80s: Looking at fear. This is looking at the
+787.40s: indices only. When put skew spikes, the
+791.44s: index over the next month was up
+796.04s: more often than not.
+798.92s: So, you can see on the left-hand side
+800.52s: there, it's showing you the frequency
+803.36s: that the index is higher after 21
+805.44s: trading days, after a month, and it's
+806.92s: 79% of the time after Put-Call skew
+810.00s: spikes compared to 67
+812.24s: and that's in the training period and
+814.48s: then in a holdout from 22 to 26 at 70%
+817.68s: of the time. That's a that's a
+818.76s: meaningful gap here.
+820.80s: And it's a pretty usable pretty easily
+824.12s: tradable idea, which is literally just
+827.00s: trading a call debit spread using a 50
+830.52s: and 25 delta combination
+833.52s: and the return on risk is 19.7%
+838.44s: compared to an 11.3% variant that
+842.12s: otherwise is always on.
+844.32s: There's another really tradable idea
+846.08s: that's generally aimed at just trading a
+848.44s: reversal. That's all it is.
+851.40s: So, the cool thing here is pretty much
+855.20s: all of these you have access to, right?
+857.84s: Volatility, VIX, implied volatility
+860.08s: percentile, easy to calculate,
+862.24s: especially if you've built the O-Talk,
+864.84s: which is completely free sourced.
+867.76s: There's a link to it on my website. I'll
+869.64s: throw a link to that in the notes below
+871.20s: as well for those that are interested.
+873.40s: But, you can easily build your own
+875.52s: version of this. Now, if you're doing
+877.40s: the earning stuff, you're going to have
+879.16s: to get some data. Again, you could do
+880.56s: that with the O-Talk or you know, one of
+882.72s: the platforms that provides it, but that
+884.96s: is a a limitation there.
+887.88s: Let's talk about what's coming up. So,
+891.80s: Microsoft averages 7% of all right now
+895.68s: it's priced at 4.6. So, this is 0.66
+898.28s: times its own history. Right now, it's
+900.32s: priced cheap. So, it reports on the 20th
+904.16s: of October and the 15th of October, it's
+908.32s: priced really really cheap. We'll see as
+910.48s: it gets a little bit closer, but
+912.42s: [snorts] let's monitor how this one
+914.56s: plays out. Obviously, the video is done
+916.64s: before that.
+917.92s: This is just the testing period, the
+920.32s: testing details for those who are
+921.52s: interested in what I did it for testing
+924.48s: and this gives you a little bit more of
+926.48s: a detailed look at some of the readings
+929.24s: that I tested across both periods, the
+931.96s: training period and then the holdout
+933.92s: period and then this is a really simple
+937.44s: card that you can use to build your own
+940.56s: understanding of the surface
+942.92s: specifically giving you direct metrics
+947.12s: and then what typically happens with
+950.56s: those metrics.
+952.28s: That is the entire difference about the
+954.68s: way that I view markets compared to a
+956.32s: lot of people. It's not qualitative.
+958.36s: It's not based on a feel or hope or
+962.16s: loose observation. Most of this stuff is
+964.08s: based on things that I can definitively
+966.00s: measure and point at. That's how I can
+968.24s: be so confident in how I execute. So for
+970.24s: example,
+971.48s: if IV percentile note use percentile is
+976.52s: greater than the 90th threshold meaning
+979.00s: really high, IV is generally speaking
+982.00s: lower over the next 21 trading days. I'm
+984.24s: confident in that. There's different
+985.80s: ways I can trade that. That's it.
+988.24s: So this shows you the gaps
+991.44s: broken out by the indices that I looked
+993.84s: at, the ETFs that I looked at, the large
+996.20s: cap, mid cap, small cap to see where
+998.28s: these things hold across and you'll see
+1001.12s: a lot of it is the strongest in the
+1002.72s: indices. The reason why it generally
+1005.56s: loosens up in the large cap, mid cap,
+1008.08s: small cap for some of these metrics is
+1010.52s: literally just because of all the
+1012.08s: idiosyncratic risk. The indices have a
+1014.16s: pretty predictable behavioral pattern.
+1017.12s: This shows you a little bit about the
+1018.84s: tails. So how often two standard
+1020.76s: deviation moves happen when we see
+1024.04s: things like implied volatility high, low
+1027.32s: or inversion. This is for your general
+1030.52s: context and also when we see like
+1034.68s: earnings moves that are two times the
+1036.48s: implied. This is specifically targeting
+1038.60s: tails.
+1039.76s: And
+1041.12s: very, very often, you'll see that the
+1044.08s: drop below, when IV is at an extreme,
+1048.36s: either high or low, isn't really
+1050.32s: anything to write home about. There's
+1051.52s: not a lot going on there. But the
+1053.24s: probability of rising above, when IV is
+1056.20s: high, is much lower relative on a
+1059.48s: probabilistic scale. It's still low, by
+1061.28s: the way. But relative, much lower. Then
+1065.44s: the just standard periods. IV low flips.
+1069.76s: So, the probability of a two standard
+1071.52s: deviation up move over the next month,
+1074.40s: when IV is low, is quite a bit higher
+1077.52s: than normal periods, and so on.
+1080.44s: This shows you
+1082.84s: five definitive things you can use the
+1085.04s: volatility surface for. As always, if
+1087.04s: you have any questions, let me know. And
+1088.28s: if you like looking at this stuff, check
+1090.32s: out the Outlier Pro community. This is
+1092.40s: the kind of stuff we do every single
+1094.56s: week and every single month being an
+1095.60s: outlier is better.

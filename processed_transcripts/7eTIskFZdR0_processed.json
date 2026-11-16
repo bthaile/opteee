@@ -1,0 +1,282 @@
+[
+  {
+    "video_id": "7eTIskFZdR0",
+    "title": "5 Things the Option Volatility Surface Can Tell You",
+    "text": "What's up, Al Lyers? You may or may not know that options contain an insane amount of information. The video is going to talk about the volatility surface and five things it shows you. If you enjoy this, let me know, and then we could do a more advanced version in the future. This one will be at the beginner level, meant to introduce you to this and some of the things that you can learn literally today very easily and implement effectively immediately. We got to start with the volatility surface and what it actually is. Unlike the Black-Scholes Merton model, which assumes uniform vol, the real market prices individual volatility for every single strike and expiry combination in in underlying's options chains. So, each point gets its own vol. We look at things like what the strike price is. We look at things like the days to expiration. And then every single option along there gets a vol. And depending on the underlying, there are some really unique instances or pieces that we can find in a vol surface that we're going to talk about a little bit as we go on, but we need to remember first that implied volatility is a common unit. So, it allows us to compare strikes and expirations directly. And what you typically will find is that puts tend to cost more money than calls. This is",
+    "start_timestamp_seconds": 0.0,
+    "end_timestamp_seconds": 89.72,
+    "start_timestamp": "00:00",
+    "video_url": "https://www.youtube.com/watch?v=7eTIskFZdR0",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=7eTIskFZdR0&t=0",
+    "chunk_index": 0,
+    "word_count": 235,
+    "upload_date": "20261115",
+    "published_at": "2026-11-15T19:00:15Z",
+    "duration": 1097,
+    "related_wiki_pages": [
+      "concepts/backwardation",
+      "concepts/earnings-volatility",
+      "strategies/selling-premium"
+    ]
+  },
+  {
+    "video_id": "7eTIskFZdR0",
+    "title": "5 Things the Option Volatility Surface Can Tell You",
+    "text": "implied volatility is a common unit. So, it allows us to compare strikes and expirations directly. And what you typically will find is that puts tend to cost more money than calls. This is called put skew. It exists because most underlyings, puts are used to hedge. There's hedging demand and there's a little bit of a premium priced on top of that. That's what you see here. This is looking at SPX, but it's not always the case. Things like GameStop right now and very frequently has call skew, where this would literally be flipped. You would see the put side over here lower and the call side over here higher. So, it's not always the same, but generally speaking, you will expect to see that. When we look at the front to back of this, so we're looking at near-term expirations and later-term expirations, that's called term structure, and it helps us understand how different expirations are being priced. When we're looking within a specific term, left to right, and we're looking at those various deltas, we call that skew. And that's why it's referred to as put skew that we're talking about before. Here are the five things that we're going to cover at a high level today. We're going to talk about how to determine if an option is expensive or cheap. We're going to talk about the relationship of volatility expectations, aka fear. I",
+    "start_timestamp_seconds": 76.44,
+    "end_timestamp_seconds": 163.24,
+    "start_timestamp": "01:16",
+    "video_url": "https://www.youtube.com/watch?v=7eTIskFZdR0",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=7eTIskFZdR0&t=76",
+    "chunk_index": 1,
+    "word_count": 239,
+    "upload_date": "20261115",
+    "published_at": "2026-11-15T19:00:15Z",
+    "duration": 1097,
+    "related_wiki_pages": [
+      "concepts/backwardation",
+      "concepts/earnings-volatility",
+      "strategies/selling-premium"
+    ]
+  },
+  {
+    "video_id": "7eTIskFZdR0",
+    "title": "5 Things the Option Volatility Surface Can Tell You",
+    "text": "going to cover at a high level today. We're going to talk about how to determine if an option is expensive or cheap. We're going to talk about the relationship of volatility expectations, aka fear. I don't really like using fear. I'm using it here just because most people associate it, but I would simply think of it in terms of vol, how much something moves. We can then also look at trading things like short vol through earnings, and there's a slightly counterintuitive piece to this that I think a lot of you will learn a lot from. And then, if put [snorts] fear is really gaining momentum, sometimes that can signal positioning ahead of something that the market knows is coming that we may not know yet. You'll be able to do all five. So, let's start with how do we know when things are expensive? We can compare implied volatility to its own trailing period, not to something else. So, this is what we would refer to as absolute comparison. And one of the things that you'll note here is that I'm using a percentile. So, there's two different metrics you'll see for this used a lot. There's implied volatility rank and implied volatility percentile. The short version of that, I have a video that goes into it more in detail below, but the short version is just use IVP. It's better than IVR, it's",
+    "start_timestamp_seconds": 152.48,
+    "end_timestamp_seconds": 233.0,
+    "start_timestamp": "02:32",
+    "video_url": "https://www.youtube.com/watch?v=7eTIskFZdR0",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=7eTIskFZdR0&t=152",
+    "chunk_index": 2,
+    "word_count": 238,
+    "upload_date": "20261115",
+    "published_at": "2026-11-15T19:00:15Z",
+    "duration": 1097,
+    "related_wiki_pages": [
+      "concepts/backwardation",
+      "concepts/earnings-volatility",
+      "strategies/selling-premium"
+    ]
+  },
+  {
+    "video_id": "7eTIskFZdR0",
+    "title": "5 Things the Option Volatility Surface Can Tell You",
+    "text": "There's implied volatility rank and implied volatility percentile. The short version of that, I have a video that goes into it more in detail below, but the short version is just use IVP. It's better than IVR, it's less prone to skew, there's literally no reason not to. Just use IVP. And all IVP tells us is the share of past year's days with lower IV. That's it. So, we can calculate where we sit right now relative to a prior period. That, generally speaking, tells us a lot about how rich those options are being priced. Now, whether or not an option is expensive is a completely different question from should I buy or sell vol here. They're two different things. When we think about selling vol, we're really interested in what's referred to as variance risk premium, and you'll see that a little bit later. Generally speaking, if you see high implied volatility relative to itself, over the next 30 days most of it comes out. So, what that tells you is from a tradeable concept, if you see implied volatility percentile really elevated, there's an extremely good chance that over the next month that vol is going to come back down. Now, remember, you have to trade the vol that you're looking at. What that means is here we're looking at 30-day implied volatility percentile. Let's say that you like to trade 7-day options, 5-day",
+    "start_timestamp_seconds": 222.04,
+    "end_timestamp_seconds": 312.12,
+    "start_timestamp": "03:42",
+    "video_url": "https://www.youtube.com/watch?v=7eTIskFZdR0",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=7eTIskFZdR0&t=222",
+    "chunk_index": 3,
+    "word_count": 238,
+    "upload_date": "20261115",
+    "published_at": "2026-11-15T19:00:15Z",
+    "duration": 1097,
+    "related_wiki_pages": [
+      "concepts/backwardation",
+      "concepts/earnings-volatility",
+      "strategies/selling-premium"
+    ]
+  },
+  {
+    "video_id": "7eTIskFZdR0",
+    "title": "5 Things the Option Volatility Surface Can Tell You",
+    "text": "Now, remember, you have to trade the vol that you're looking at. What that means is here we're looking at 30-day implied volatility percentile. Let's say that you like to trade 7-day options, 5-day options, whatever. That is a different number than this. That has its own implied volatility percentile. Frequently, it'll be pretty close. But, just know that it's different. So, if you're using the implied volatility percentile provided from a platform, most of the time that's just for the underlying, which is 30-day. Just be aware of that. Okay. The next thing is implied volatility coming down doesn't inherently mean that short premium wins. The reason for that has to do with what you make against what movement actually happens. Short premium doesn't inherently win more frequently after spikes. So, in 2015 to 2021, it was 62 versus 66%. And then 2022 to 2026, 67 versus 62%. So, all this is saying is that if you have realized vol and realized vol happens to elevate significantly even though IV is high already, you may not win. That doesn't mean that selling after a spike is bad. Actually, a lot of times it's a good risk reward as far as what you're making, but just know that the probabilities aren't massively shifting between these. That's all. So, next, we're going to take a quick look at when options are deemed cheap.",
+    "start_timestamp_seconds": 302.44,
+    "end_timestamp_seconds": 396.96,
+    "start_timestamp": "05:02",
+    "video_url": "https://www.youtube.com/watch?v=7eTIskFZdR0",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=7eTIskFZdR0&t=302",
+    "chunk_index": 4,
+    "word_count": 232,
+    "upload_date": "20261115",
+    "published_at": "2026-11-15T19:00:15Z",
+    "duration": 1097,
+    "related_wiki_pages": [
+      "concepts/backwardation",
+      "concepts/earnings-volatility",
+      "strategies/selling-premium"
+    ]
+  },
+  {
+    "video_id": "7eTIskFZdR0",
+    "title": "5 Things the Option Volatility Surface Can Tell You",
+    "text": "times it's a good risk reward as far as what you're making, but just know that the probabilities aren't massively shifting between these. That's all. So, next, we're going to take a quick look at when options are deemed cheap. That's using the very same thing you just learned about, implied volatility percentile. And here, that generally means if we're at the lower range of the percentile. And it's normally calculated over a trailing 1-year period. It doesn't have to be, but just for context, low implied vol typically expands within about a month. So, if you have implied volatility percentile pegged at a lower price point, generally speaking, the probability of implied volatility being up over the next month is pretty good. In 2015 to 2021, it was 65% of the time compared to a regular period. In 22 to 26, 73%. The reason, by the way, why these are broken is because it's trained here and then validated here. So, it's designed to have a little bit of out-of-sample results to to balance everything out. That is an interesting period because low IV sets up cheap relative convexity. Most months can be really quiet and the edge is actually implied volatility expanding. So the interesting thing here is if you're sizing long vol trades, you have to size them appropriately so that subsequent quiet months don't erode too much of your capital. But generally speaking,",
+    "start_timestamp_seconds": 384.76,
+    "end_timestamp_seconds": 486.88,
+    "start_timestamp": "06:24",
+    "video_url": "https://www.youtube.com/watch?v=7eTIskFZdR0",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=7eTIskFZdR0&t=384",
+    "chunk_index": 5,
+    "word_count": 237,
+    "upload_date": "20261115",
+    "published_at": "2026-11-15T19:00:15Z",
+    "duration": 1097,
+    "related_wiki_pages": [
+      "concepts/backwardation",
+      "concepts/earnings-volatility",
+      "strategies/selling-premium"
+    ]
+  },
+  {
+    "video_id": "7eTIskFZdR0",
+    "title": "5 Things the Option Volatility Surface Can Tell You",
+    "text": "is actually implied volatility expanding. So the interesting thing here is if you're sizing long vol trades, you have to size them appropriately so that subsequent quiet months don't erode too much of your capital. But generally speaking, you can see that the range is very real for being long vol when implied volatility percentile is at a very low end of its range. Again, this is looking inside indices and sector ETFs. Let's talk about near-term fear. We need to talk about contango and backwardation. Contango is what the market normally looks like. And what that means is it's an upward sloping curve of volatility as we go through different terms. So 30-day vol is a little bit lower than 60-day, which is a little bit lower than 90-day. And the reason that exists is because most of the time we're less certain about what might happen over the next 90 days compared to the next 30 days and we expect more could happen over this period. But then sometimes that shifts massively. And something near-term can happen that we realize is a big big problem up front. You can think about the Trump tariffs, you can think about the attacks on Iran, you can think about Ukraine-Russia, you can think about COVID. All of those periods have backwardation. And that's where the front becomes more expensive than the back. There are a lot of ways, very",
+    "start_timestamp_seconds": 469.16,
+    "end_timestamp_seconds": 554.88,
+    "start_timestamp": "07:49",
+    "video_url": "https://www.youtube.com/watch?v=7eTIskFZdR0",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=7eTIskFZdR0&t=469",
+    "chunk_index": 6,
+    "word_count": 238,
+    "upload_date": "20261115",
+    "published_at": "2026-11-15T19:00:15Z",
+    "duration": 1097,
+    "related_wiki_pages": [
+      "concepts/backwardation",
+      "concepts/earnings-volatility",
+      "strategies/selling-premium"
+    ]
+  },
+  {
+    "video_id": "7eTIskFZdR0",
+    "title": "5 Things the Option Volatility Surface Can Tell You",
+    "text": "on Iran, you can think about Ukraine-Russia, you can think about COVID. All of those periods have backwardation. And that's where the front becomes more expensive than the back. There are a lot of ways, very lucrative ways I will mention, to trade when this happens because it's it's not common and it's very predictable subsequently what happens from here. There's also a lot of ways to pursue that kind of trade and throw your money away. So don't think that it's like easy money, it's not. You have to build things pretty smart in order to capture it, but there is a profit mechanism there. There is a pretty good opportunity there. Normally, when we have backwardation, the front month over the next month, big moves came less often than what was priced in. And it's consistent across the training period and then the out of sample validation period. So, what this means is every single group that you see here pointed the same way. And a lot of times you might expect the opposite. But, what this is generally telling you is that when that curve is inverted, sometimes that vol gets really overpriced relative, and the things start to slow down at that point. This is a probability. This doesn't mean it can't happen. It absolutely can. But, what you should take away from this one is the fact that if you see",
+    "start_timestamp_seconds": 544.68,
+    "end_timestamp_seconds": 631.2,
+    "start_timestamp": "09:04",
+    "video_url": "https://www.youtube.com/watch?v=7eTIskFZdR0",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=7eTIskFZdR0&t=544",
+    "chunk_index": 7,
+    "word_count": 236,
+    "upload_date": "20261115",
+    "published_at": "2026-11-15T19:00:15Z",
+    "duration": 1097,
+    "related_wiki_pages": [
+      "concepts/backwardation",
+      "concepts/earnings-volatility",
+      "strategies/selling-premium"
+    ]
+  },
+  {
+    "video_id": "7eTIskFZdR0",
+    "title": "5 Things the Option Volatility Surface Can Tell You",
+    "text": "start to slow down at that point. This is a probability. This doesn't mean it can't happen. It absolutely can. But, what you should take away from this one is the fact that if you see backwardation, that doesn't immediately mean and actually more often than not means over the next month, you're not actually expected to see these massive moves because most of the time by the time vol gets inverted, the move has happened or is in the the throws of occurring. Let's talk about another tradable one here. Pricing earnings before a release. One of the interesting things that people typically think is you want a lot of vol in order to get through earnings. And recently, it's changed actually kind of a lot, and I find it interesting. What I've found is that more often than not, if your volatility coming into an earnings release implied is 0.8 times the history, and the history can use the trailing eight periods, the trailing 12. This is using the last eight. That's what I typically will use. Interestingly, if it's less than 0.8, that implied vol tends to beat the realized vol. You can kind of think of that in a logical way. And you can say that the market here is pretty complacent, that hedging demand coming into earnings is still going to be there, and the market isn't really pricing in a big move, and subsequently, viable place to sell vol.",
+    "start_timestamp_seconds": 620.6,
+    "end_timestamp_seconds": 716.44,
+    "start_timestamp": "10:20",
+    "video_url": "https://www.youtube.com/watch?v=7eTIskFZdR0",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=7eTIskFZdR0&t=620",
+    "chunk_index": 8,
+    "word_count": 245,
+    "upload_date": "20261115",
+    "published_at": "2026-11-15T19:00:15Z",
+    "duration": 1097,
+    "related_wiki_pages": [
+      "concepts/backwardation",
+      "concepts/earnings-volatility",
+      "strategies/selling-premium"
+    ]
+  },
+  {
+    "video_id": "7eTIskFZdR0",
+    "title": "5 Things the Option Volatility Surface Can Tell You",
+    "text": "logical way. And you can say that the market here is pretty complacent, that hedging demand coming into earnings is still going to be there, and the market isn't really pricing in a big move, and subsequently, viable place to sell vol. Interestingly more, is that if that implied vol is 1.2 times that eight trailing eight period history, realized actually expands implied more frequently. And you can think of it this way. When we're coming into those periods and the market is pricing in a lot of volatility relative to the prior history, a lot of times it's still underpriced. They're not pricing in enough. So, this is a much smaller edge. The variance between these, you could almost confuse it with noise. I would not take this to the bank as if it's, you know, greater than 1.25, it's it's completely unviable. There's other conditioners that work really well here. But, it's a fascinating relationship and the more tradeable concept by far is this one. Is the cheap side relative to the expensive side. Tradeable. Immediately tradeable. The cheaper the event, the more often it beats. That's what we can see. Last one. Looking at fear. This is looking at the indices only. When put skew spikes, the index over the next month was up more often than not. So, you can see on the left-hand side there, it's showing you the frequency",
+    "start_timestamp_seconds": 702.96,
+    "end_timestamp_seconds": 800.52,
+    "start_timestamp": "11:42",
+    "video_url": "https://www.youtube.com/watch?v=7eTIskFZdR0",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=7eTIskFZdR0&t=702",
+    "chunk_index": 9,
+    "word_count": 235,
+    "upload_date": "20261115",
+    "published_at": "2026-11-15T19:00:15Z",
+    "duration": 1097,
+    "related_wiki_pages": [
+      "concepts/backwardation",
+      "concepts/earnings-volatility",
+      "strategies/selling-premium"
+    ]
+  },
+  {
+    "video_id": "7eTIskFZdR0",
+    "title": "5 Things the Option Volatility Surface Can Tell You",
+    "text": "Looking at fear. This is looking at the indices only. When put skew spikes, the index over the next month was up more often than not. So, you can see on the left-hand side there, it's showing you the frequency that the index is higher after 21 trading days, after a month, and it's 79% of the time after Put-Call skew spikes compared to 67 and that's in the training period and then in a holdout from 22 to 26 at 70% of the time. That's a that's a meaningful gap here. And it's a pretty usable pretty easily tradable idea, which is literally just trading a call debit spread using a 50 and 25 delta combination and the return on risk is 19.7% compared to an 11.3% variant that otherwise is always on. There's another really tradable idea that's generally aimed at just trading a reversal. That's all it is. So, the cool thing here is pretty much all of these you have access to, right? Volatility, VIX, implied volatility percentile, easy to calculate, especially if you've built the O-Talk, which is completely free sourced. There's a link to it on my website. I'll throw a link to that in the notes below as well for those that are interested. But, you can easily build your own version of this. Now, if you're doing the earning stuff, you're going to have to get some data. Again, you could do",
+    "start_timestamp_seconds": 784.8,
+    "end_timestamp_seconds": 879.16,
+    "start_timestamp": "13:04",
+    "video_url": "https://www.youtube.com/watch?v=7eTIskFZdR0",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=7eTIskFZdR0&t=784",
+    "chunk_index": 10,
+    "word_count": 240,
+    "upload_date": "20261115",
+    "published_at": "2026-11-15T19:00:15Z",
+    "duration": 1097,
+    "related_wiki_pages": [
+      "concepts/backwardation",
+      "concepts/earnings-volatility",
+      "strategies/selling-premium"
+    ]
+  },
+  {
+    "video_id": "7eTIskFZdR0",
+    "title": "5 Things the Option Volatility Surface Can Tell You",
+    "text": "as well for those that are interested. But, you can easily build your own version of this. Now, if you're doing the earning stuff, you're going to have to get some data. Again, you could do that with the O-Talk or you know, one of the platforms that provides it, but that is a a limitation there. Let's talk about what's coming up. So, Microsoft averages 7% of all right now it's priced at 4.6. So, this is 0.66 times its own history. Right now, it's priced cheap. So, it reports on the 20th of October and the 15th of October, it's priced really really cheap. We'll see as it gets a little bit closer, but [snorts] let's monitor how this one plays out. Obviously, the video is done before that. This is just the testing period, the testing details for those who are interested in what I did it for testing and this gives you a little bit more of a detailed look at some of the readings that I tested across both periods, the training period and then the holdout period and then this is a really simple card that you can use to build your own understanding of the surface specifically giving you direct metrics and then what typically happens with those metrics. That is the entire difference about the way that I view markets compared to a lot of people. It's not qualitative.",
+    "start_timestamp_seconds": 871.2,
+    "end_timestamp_seconds": 956.32,
+    "start_timestamp": "14:31",
+    "video_url": "https://www.youtube.com/watch?v=7eTIskFZdR0",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=7eTIskFZdR0&t=871",
+    "chunk_index": 11,
+    "word_count": 237,
+    "upload_date": "20261115",
+    "published_at": "2026-11-15T19:00:15Z",
+    "duration": 1097,
+    "related_wiki_pages": [
+      "concepts/backwardation",
+      "concepts/earnings-volatility",
+      "strategies/selling-premium"
+    ]
+  },
+  {
+    "video_id": "7eTIskFZdR0",
+    "title": "5 Things the Option Volatility Surface Can Tell You",
+    "text": "understanding of the surface specifically giving you direct metrics and then what typically happens with those metrics. That is the entire difference about the way that I view markets compared to a lot of people. It's not qualitative. It's not based on a feel or hope or loose observation. Most of this stuff is based on things that I can definitively measure and point at. That's how I can be so confident in how I execute. So for example, if IV percentile note use percentile is greater than the 90th threshold meaning really high, IV is generally speaking lower over the next 21 trading days. I'm confident in that. There's different ways I can trade that. That's it. So this shows you the gaps broken out by the indices that I looked at, the ETFs that I looked at, the large cap, mid cap, small cap to see where these things hold across and you'll see a lot of it is the strongest in the indices. The reason why it generally loosens up in the large cap, mid cap, small cap for some of these metrics is literally just because of all the idiosyncratic risk. The indices have a pretty predictable behavioral pattern. This shows you a little bit about the tails. So how often two standard deviation moves happen when we see things like implied volatility high, low or inversion. This is for your general",
+    "start_timestamp_seconds": 940.56,
+    "end_timestamp_seconds": 1027.32,
+    "start_timestamp": "15:40",
+    "video_url": "https://www.youtube.com/watch?v=7eTIskFZdR0",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=7eTIskFZdR0&t=940",
+    "chunk_index": 12,
+    "word_count": 236,
+    "upload_date": "20261115",
+    "published_at": "2026-11-15T19:00:15Z",
+    "duration": 1097,
+    "related_wiki_pages": [
+      "concepts/backwardation",
+      "concepts/earnings-volatility",
+      "strategies/selling-premium"
+    ]
+  },
+  {
+    "video_id": "7eTIskFZdR0",
+    "title": "5 Things the Option Volatility Surface Can Tell You",
+    "text": "pretty predictable behavioral pattern. This shows you a little bit about the tails. So how often two standard deviation moves happen when we see things like implied volatility high, low or inversion. This is for your general context and also when we see like earnings moves that are two times the implied. This is specifically targeting tails. And very, very often, you'll see that the drop below, when IV is at an extreme, either high or low, isn't really anything to write home about. There's not a lot going on there. But the probability of rising above, when IV is high, is much lower relative on a probabilistic scale. It's still low, by the way. But relative, much lower. Then the just standard periods. IV low flips. So, the probability of a two standard deviation up move over the next month, when IV is low, is quite a bit higher than normal periods, and so on. This shows you five definitive things you can use the volatility surface for. As always, if you have any questions, let me know. And if you like looking at this stuff, check out the Outlier Pro community. This is the kind of stuff we do every single week and every single month being an outlier is better.",
+    "start_timestamp_seconds": 1014.16,
+    "end_timestamp_seconds": 1095.6,
+    "start_timestamp": "16:54",
+    "video_url": "https://www.youtube.com/watch?v=7eTIskFZdR0",
+    "video_url_with_timestamp": "https://www.youtube.com/watch?v=7eTIskFZdR0&t=1014",
+    "chunk_index": 13,
+    "word_count": 213,
+    "upload_date": "20261115",
+    "published_at": "2026-11-15T19:00:15Z",
+    "duration": 1097,
+    "related_wiki_pages": [
+      "concepts/backwardation",
+      "concepts/earnings-volatility",
+      "strategies/selling-premium"
+    ]
+  }
+]
